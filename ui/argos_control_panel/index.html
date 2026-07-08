@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ARGOS Control Panel</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="emblem">A</div>
+          <div>
+            <h1>ARGOS CONTROL PANEL</h1>
+            <p>DETERMINISTIC COGNITIVE ENTERPRISE</p>
+          </div>
+        </div>
+        <div class="system-badge">
+          <span>SYSTEM STATUS</span>
+          <strong id="system-status">NOMINAL</strong>
+        </div>
+        <div class="top-actions">
+          <span id="clock">--</span>
+          <button id="refresh-btn" class="button secondary">Refresh</button>
+          <span class="status-pill">System Health <span class="dot"></span></span>
+        </div>
+      </header>
+
+      <aside class="sidebar engineering-shell">
+        <nav>
+          <div class="nav-item active">Overview</div>
+          <div class="nav-item">Executive</div>
+          <div class="nav-item">Seeker</div>
+          <div class="nav-item">Analyst</div>
+          <div class="nav-item">Risk</div>
+          <div class="nav-item">Trader</div>
+          <div class="nav-item">Historian</div>
+          <div class="nav-item">Librarian</div>
+          <div class="nav-item">Academy</div>
+          <div class="nav-item">Infrastructure</div>
+          <div class="nav-item">System Health</div>
+          <div class="nav-item">Audit Log</div>
+          <div class="nav-item">Documentation</div>
+        </nav>
+        <div class="enterprise-status">
+          <span>Enterprise Status</span>
+          <strong>Operational</strong>
+          <small>All systems normal</small>
+          <div class="uptime">
+            <span>Uptime</span>
+            <b>182D 14H 22M 37S</b>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="command-bridge" class="command-bridge">
+          <div class="capital-heartbeat-strip">
+            <div><span>Portfolio Value</span><b id="capital-portfolio-value">$0.00</b></div>
+            <div><span>Today Return $</span><b id="capital-today-return-usd">$0.00</b></div>
+            <div><span>Today Return %</span><b id="capital-today-return-percent">0.00%</b></div>
+            <div><span>Total Return %</span><b id="capital-total-return-percent">0.00%</b></div>
+            <div><span>Benchmark Return</span><b id="capital-benchmark-return">0.00%</b></div>
+            <div><span>Alpha</span><b id="capital-alpha">0.00%</b></div>
+            <div><span>Cash</span><b id="capital-cash">$0.00</b></div>
+            <div><span>Exposure</span><b id="capital-exposure">0.00%</b></div>
+            <div><span>Max Drawdown</span><b id="capital-max-drawdown">0.00%</b></div>
+            <div><span>Trust Posture</span><b id="capital-trust-posture">Nominal</b></div>
+          </div>
+
+          <div id="bridge-alert-strip" class="bridge-alert-strip"></div>
+
+          <div class="bridge-command-row">
+            <button id="bridge-start-paper" class="button success">Start Paper</button>
+            <button id="bridge-halt" class="button danger">Halt</button>
+            <button id="bridge-pause" class="button warning">Pause</button>
+            <button id="bridge-step" class="button secondary">Step</button>
+            <button id="bridge-replay" class="button secondary">Replay</button>
+            <button id="bridge-lab" class="button secondary">Lab</button>
+            <button id="bridge-engineering" class="button secondary">Engineering</button>
+          </div>
+
+          <div class="capital-main-grid">
+            <section class="bridge-panel capital-graph-panel">
+              <div class="chart-heading">
+                <h2>Capital Performance</h2>
+                <span id="capital-data-source">Awaiting portfolio truth history.</span>
+              </div>
+              <div class="capital-range-row">
+                <button id="capital-range-session" class="capital-range active" data-capital-range="session">Session</button>
+                <button id="capital-range-today" class="capital-range" data-capital-range="today">Today</button>
+                <button id="capital-range-week" class="capital-range" data-capital-range="week">Week</button>
+                <button id="capital-range-month" class="capital-range" data-capital-range="month">Month</button>
+                <button id="capital-range-all" class="capital-range" data-capital-range="all">All</button>
+              </div>
+              <canvas id="capital-equity-chart" width="1180" height="380"></canvas>
+              <div id="capital-empty-state" class="capital-empty-state hidden">Awaiting portfolio truth history.</div>
+            </section>
+
+            <section class="bridge-panel credit-burn-panel">
+              <div class="bridge-panel-title">Credit Expenditure</div>
+              <div id="credit-burn-heartbeat" class="credit-burn-heartbeat"></div>
+            </section>
+
+            <section class="bridge-panel mission-scorecards-panel">
+              <div class="bridge-panel-title">Mission Scorecards</div>
+              <div id="mission-scorecards" class="mission-scorecards"></div>
+            </section>
+          </div>
+
+          <div class="bridge-execution-grid">
+            <section class="bridge-panel baton-panel">
+              <div class="bridge-panel-title">Enterprise Execution Summary</div>
+              <div id="bridge-baton" class="bridge-baton"></div>
+              <div id="bridge-token-metrics" class="bridge-token-metrics"></div>
+            </section>
+
+            <section class="bridge-panel decision-panel">
+              <div class="bridge-panel-title">Current Decision Object</div>
+              <div id="bridge-decision" class="bridge-decision"></div>
+            </section>
+          </div>
+
+          <section class="bridge-panel office-hud-panel">
+            <div class="bridge-panel-title">Office HUD</div>
+            <div id="bridge-office-hud" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="executive-subcommand-bridge" class="subcommand-bridge executive-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Executive Subcommand Bridge</span>
+              <h2>Enterprise Coordination</h2>
+            </div>
+            <button id="executive-return-command" class="button secondary">Return to Command Bridge</button>
+          </div>
+
+          <div class="executive-status-bar">
+            <div><span>ARGOS State</span><b id="exec-argos-state">Standing By</b></div>
+            <div><span>Enterprise Status</span><b id="exec-enterprise-status">Nominal</b></div>
+            <div><span>Environment</span><b id="exec-environment">Offline</b></div>
+            <div><span>Active Workflows</span><b id="exec-active-workflows">0</b></div>
+            <div><span>Throughput</span><b id="exec-throughput">0</b></div>
+            <div><span>LAW VII</span><b id="exec-law">VALID</b></div>
+            <div><span>API Mode</span><b id="exec-api-mode">Disabled</b></div>
+            <div><span>Capital Trust</span><b id="exec-capital-trust">Nominal</b></div>
+            <div><span>Commander Alert</span><b id="exec-alert-state">None</b></div>
+          </div>
+
+          <div class="executive-command-row">
+            <button id="exec-start-paper" class="button success">Start Paper</button>
+            <button id="exec-halt" class="button danger">Halt</button>
+            <button id="exec-pause" class="button warning">Pause After Current Stage</button>
+            <span class="disabled-command">Resume unavailable until paused workflow resume endpoint exists.</span>
+            <button id="exec-open-lab" class="button secondary">Open Lab</button>
+            <button id="exec-open-engineering" class="button secondary">Open Engineering</button>
+          </div>
+
+          <div class="executive-grid">
+            <section class="executive-panel">
+              <div class="bridge-panel-title">Enterprise Coordination</div>
+              <div id="exec-coordination" class="executive-metrics"></div>
+            </section>
+
+            <section class="executive-panel health-matrix-panel">
+              <div class="bridge-panel-title">Organization Health Matrix</div>
+              <div id="exec-health-matrix" class="executive-health-matrix"></div>
+            </section>
+
+            <section class="executive-panel">
+              <div class="bridge-panel-title">Workflow Operations</div>
+              <div id="exec-workflow-operations" class="executive-workflows"></div>
+            </section>
+
+            <section class="executive-panel">
+              <div class="bridge-panel-title">Directive Status</div>
+              <div id="exec-directives" class="executive-directives"></div>
+            </section>
+
+            <section class="executive-panel">
+              <div class="bridge-panel-title">Performance Summary</div>
+              <div id="exec-performance" class="executive-metrics"></div>
+            </section>
+
+            <section class="executive-panel">
+              <div class="bridge-panel-title">Alert Summary</div>
+              <div id="exec-alerts" class="executive-alerts"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="exec-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="seeker-subcommand-bridge" class="subcommand-bridge seeker-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Seeker Subcommand Bridge</span>
+              <h2>Reconnaissance Operations</h2>
+            </div>
+            <button id="seeker-return-executive" class="button secondary">Return to Executive Bridge</button>
+          </div>
+
+          <div class="seeker-status-bar">
+            <div><span>Office State</span><b id="seeker-office-state">Dormant</b></div>
+            <div><span>Mission</span><b id="seeker-mission">Awaiting Assignment</b></div>
+            <div><span>Workflow</span><b id="seeker-workflow">None</b></div>
+            <div><span>Decision Object</span><b id="seeker-decision-object">None</b></div>
+            <div><span>LAW VII</span><b id="seeker-law">VALID</b></div>
+            <div><span>Token Status</span><b id="seeker-token-status">No Token</b></div>
+            <div><span>API Mode</span><b id="seeker-api-mode">Disabled</b></div>
+            <div><span>Universe</span><b id="seeker-universe">Paper Market</b></div>
+            <div><span>Market Session</span><b id="seeker-market-session">Closed</b></div>
+            <div><span>Signal Health</span><b id="seeker-signal-health">Standing By</b></div>
+            <div><span>Mission Objective</span><b id="seeker-current-objective">Awaiting workflow assignment</b></div>
+            <div><span>Commander Alert</span><b id="seeker-alert">None</b></div>
+          </div>
+
+          <div class="seeker-command-row">
+            <button id="seeker-pause" class="button warning">Pause Discovery</button>
+            <button id="seeker-resume" class="button success">Resume Discovery</button>
+            <button id="seeker-replay" class="button secondary">Replay Decision</button>
+            <button id="seeker-open-lab" class="button secondary">Decision Laboratory</button>
+            <button id="seeker-open-executive" class="button secondary">Executive Bridge</button>
+            <button id="seeker-open-engineering" class="button secondary">Engineering</button>
+          </div>
+
+          <div class="seeker-grid">
+            <section class="seeker-panel mission-panel">
+              <div class="bridge-panel-title">Current Discovery Mission</div>
+              <div id="seeker-mission-panel" class="seeker-metrics"></div>
+            </section>
+
+            <section class="seeker-panel radar-panel">
+              <div class="bridge-panel-title radar-title">
+                <span>Discovery Radar</span>
+                <select id="seeker-radar-filter" class="radar-filter">
+                  <option value="all">All Signals</option>
+                  <option value="candidate">Candidate</option>
+                  <option value="watching">Watching</option>
+                  <option value="promoted">Promoted</option>
+                  <option value="rejected">Rejected</option>
+                  <option value="archived">Archived</option>
+                </select>
+              </div>
+              <div id="seeker-radar" class="discovery-radar"></div>
+            </section>
+
+            <section class="seeker-panel queue-panel">
+              <div class="bridge-panel-title">Candidate Queue</div>
+              <div id="seeker-candidate-queue" class="candidate-queue"></div>
+            </section>
+
+            <section class="seeker-panel decision-panel">
+              <div class="bridge-panel-title">Current Decision Object</div>
+              <div id="seeker-current-decision" class="bridge-decision"></div>
+            </section>
+
+            <section class="seeker-panel sources-panel">
+              <div class="bridge-panel-title">Signal Sources</div>
+              <div id="seeker-signal-sources" class="signal-source-grid"></div>
+            </section>
+
+            <section class="seeker-panel metrics-panel">
+              <div class="bridge-panel-title">Discovery Metrics</div>
+              <div id="seeker-discovery-metrics" class="seeker-metrics"></div>
+            </section>
+
+            <section class="seeker-panel market-panel">
+              <div class="bridge-panel-title">Market Intelligence</div>
+              <div id="seeker-market-intelligence" class="seeker-metrics"></div>
+            </section>
+
+            <section class="seeker-panel health-panel">
+              <div class="bridge-panel-title">Office Health</div>
+              <div id="seeker-office-health" class="seeker-metrics"></div>
+            </section>
+
+            <section class="seeker-panel promotions-panel">
+              <div class="bridge-panel-title">Recent Promotions</div>
+              <div id="seeker-promotions" class="recent-promotions"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="seeker-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="subcommand-placeholder" class="subcommand-bridge placeholder-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span id="placeholder-office-label">Office</span>
+              <h2 id="placeholder-title">Subcommand Bridge pending implementation.</h2>
+            </div>
+            <button id="placeholder-return-command" class="button secondary">Return to Command Bridge</button>
+          </div>
+          <div class="placeholder-panel">
+            <b id="placeholder-message">Office Subcommand Bridge pending implementation.</b>
+            <span>This navigation target is live and reserved for the next office-level bridge.</span>
+          </div>
+        </section>
+
+        <div id="engineering-mode" class="engineering-mode hidden">
+        <section class="panel hero">
+          <div class="panel-title">Enterprise Overview</div>
+          <div class="overview-grid">
+            <div class="card org-card">
+              <h2>Organizational Groups</h2>
+              <div class="donut-wrap">
+                <div class="donut"><span>8<br /><small>Groups</small></span></div>
+                <ul id="group-list" class="status-list"></ul>
+              </div>
+            </div>
+            <div class="card readiness">
+              <h2>Operational Readiness</h2>
+              <div class="gauge"><span>100%<small>Ready</small></span></div>
+              <p>All groups certified</p>
+            </div>
+            <div class="card health">
+              <h2>System Health</h2>
+              <canvas id="health-chart" width="520" height="180"></canvas>
+              <ul class="health-list">
+                <li>Infrastructure <b>100%</b></li>
+                <li>Databases <b>100%</b></li>
+                <li>Services <b>100%</b></li>
+                <li>Data Pipelines <b>100%</b></li>
+                <li>Integrations <b>100%</b></li>
+                <li>Security <b>100%</b></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel controls">
+          <div class="panel-title">ARGOS Active Controls</div>
+          <div class="control-grid">
+            <div class="control-card primary-control">
+              <h2>Paper Self-Training</h2>
+              <strong id="paper-state">Inactive</strong>
+              <p>Runs ARGOS in deterministic paper trading mode and records projected API-credit usage.</p>
+              <div class="button-row">
+                <button id="start-paper" class="button success">Start Paper Trading</button>
+                <button id="halt-paper" class="button danger">Halt Paper Trading</button>
+              </div>
+            </div>
+            <div class="control-card">
+              <h2>API Credit Burn</h2>
+              <div class="metric-line"><span>Session</span><b id="session-cost">$0.0000</b></div>
+              <div class="metric-line"><span>Today</span><b id="today-cost">$0.0000</b></div>
+              <div class="metric-line"><span>Month</span><b id="month-cost">$0.0000</b></div>
+              <div class="metric-line"><span>Budget</span><b id="budget-status">GREEN</b></div>
+              <div class="budget-input">
+                <input id="budget-input" type="number" min="0" step="1" value="250" />
+                <button id="set-budget" class="button secondary">Set Budget</button>
+              </div>
+            </div>
+            <div class="control-card">
+              <h2>Active Treasury</h2>
+              <div class="metric-line"><span>Balance</span><b id="treasury-balance">$0.00</b></div>
+              <div class="metric-line"><span>Funds Halted</span><b id="funds-halted">No</b></div>
+              <div class="budget-input">
+                <input id="deposit-input" type="number" min="0" step="100" value="1000" />
+                <button id="deposit-funds" class="button secondary">Deposit User Funds</button>
+              </div>
+              <button id="halt-funds" class="button danger wide">Halt User Funds</button>
+            </div>
+            <div class="control-card">
+              <h2>Real-World Trading</h2>
+              <strong id="live-state">Blocked</strong>
+              <p>Visible control path only. Foundation configuration blocks live trading by design.</p>
+              <div class="button-row">
+                <button id="request-live" class="button warning">Request Live Trading</button>
+                <button id="halt-live" class="button danger">Halt Live Trading</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel infrastructure-panel">
+          <div class="panel-title">Infrastructure & AI Resource Management</div>
+          <div class="infrastructure-grid">
+            <div class="infra-card">
+              <h2>AI & Cost Control</h2>
+              <div id="infra-costs" class="monitor-grid"></div>
+              <div class="filter-grid">
+                <input id="infra-daily-budget" type="number" min="0" step="1" value="25" />
+                <input id="infra-monthly-budget" type="number" min="0" step="1" value="250" />
+                <input id="infra-runtime-limit" type="number" min="1" step="1" value="60" />
+                <select id="infra-mode">
+                  <option>Balanced</option>
+                  <option>Cost Saving</option>
+                  <option>High Performance</option>
+                </select>
+                <select id="infra-org-limit"></select>
+                <input id="infra-org-budget" type="number" min="0" step="1" value="30" />
+                <button id="infra-configure" class="button secondary">Apply Controls</button>
+                <button id="infra-cost-saving" class="button warning">Cost Saving Mode</button>
+                <button id="infra-high-performance" class="button success">High Performance</button>
+              </div>
+            </div>
+            <div class="infra-card">
+              <h2>Infrastructure Health</h2>
+              <div id="infra-health" class="monitor-grid"></div>
+              <h2>AI Model Usage</h2>
+              <div id="infra-models" class="infra-list"></div>
+            </div>
+            <div class="infra-card">
+              <h2>Alerts & Recommendations</h2>
+              <div id="infra-alerts" class="infra-list"></div>
+              <div id="infra-recommendations" class="infra-list"></div>
+              <button id="infra-record-optimization" class="button secondary wide">Record Optimization Action</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel credit-governor-panel">
+          <div class="panel-title">Enterprise Credit Governor</div>
+          <div class="credit-grid">
+            <div class="credit-card">
+              <h2>Credit Budgets</h2>
+              <div id="credit-mode" class="credit-mode">Normal</div>
+              <div class="filter-grid">
+                <input id="credit-daily-budget" type="number" min="0" step="1" value="25" />
+                <input id="credit-weekly-budget" type="number" min="0" step="1" value="100" />
+                <input id="credit-monthly-budget" type="number" min="0" step="1" value="250" />
+                <input id="credit-office" placeholder="Office budget key" />
+                <input id="credit-office-budget" type="number" min="0" step="0.25" value="3" />
+                <input id="credit-workflow" placeholder="Workflow budget key" />
+                <input id="credit-workflow-budget" type="number" min="0" step="0.25" value="5" />
+                <input id="credit-task" placeholder="Task budget key" />
+                <input id="credit-task-budget" type="number" min="0" step="0.25" value="1" />
+                <button id="credit-configure" class="button secondary">Apply Budgets</button>
+              </div>
+            </div>
+            <div class="credit-card">
+              <h2>AI Activation Gate</h2>
+              <div class="filter-grid">
+                <input id="credit-activation-task" value="TASK-COMMANDER-EXPLAIN" />
+                <select id="credit-activation-source">
+                  <option>Commander</option>
+                  <option>Executive</option>
+                  <option>Seeker</option>
+                  <option>Analyst</option>
+                  <option>Risk</option>
+                  <option>Trader</option>
+                  <option>Historian</option>
+                  <option>Librarian</option>
+                  <option>Academy</option>
+                  <option>Scheduled Workflow</option>
+                  <option>Enterprise Event</option>
+                  <option>Critical Alert</option>
+                </select>
+                <input id="credit-activation-office" value="Executive" />
+                <select id="credit-activation-purpose">
+                  <option>Commander explanation</option>
+                  <option>Executive synthesis</option>
+                  <option>Ambiguous reasoning</option>
+                  <option>Conflict analysis</option>
+                  <option>Historian reflection</option>
+                  <option>Librarian summary</option>
+                  <option>Academy lesson generation</option>
+                  <option>Portfolio math</option>
+                  <option>Market data ingestion</option>
+                  <option>Indicator calculations</option>
+                  <option>Dashboard updates</option>
+                </select>
+                <input id="credit-required-output" value="Structured explanation" />
+                <input id="credit-runtime" type="number" min="1" value="5" />
+                <input id="credit-budget" type="number" min="0" step="0.01" value="0.25" />
+                <input id="credit-workflow-name" value="Commander Explanation Workflow" />
+                <input id="credit-organization" value="Executive" />
+                <button id="credit-request-activation" class="button success">Request Activation</button>
+              </div>
+            </div>
+            <div class="credit-card">
+              <h2>Spend Report</h2>
+              <div id="credit-spend" class="monitor-grid compact"></div>
+              <h2>Detections</h2>
+              <div id="credit-detections" class="infra-list"></div>
+              <h2>Activation History</h2>
+              <div id="credit-activations" class="infra-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel api-runtime-panel">
+          <div class="panel-title">API Runtime Monitor</div>
+          <div class="api-runtime-chart-card">
+            <div class="chart-heading">
+              <h2>API Running Totals by Office</h2>
+              <span>Live USD totals refresh while ARGOS is running</span>
+            </div>
+            <canvas id="arm-cost-chart" width="1180" height="320"></canvas>
+            <div id="arm-cost-legend" class="api-cost-legend"></div>
+          </div>
+          <div class="api-runtime-grid">
+            <div class="api-runtime-card">
+              <h2>Runtime Visibility</h2>
+              <div id="arm-summary" class="monitor-grid compact"></div>
+              <h2>Commander Controls</h2>
+              <div class="filter-grid">
+                <select id="arm-target"></select>
+                <input id="arm-value" placeholder="Limit, budget, or trace detail" />
+                <button id="arm-terminate" class="button danger">Terminate API Process</button>
+                <button id="arm-pause" class="button warning">Pause Office</button>
+                <button id="arm-sleep" class="button secondary">Force Sleep</button>
+                <button id="arm-block" class="button danger">Block Activation</button>
+                <button id="arm-approve" class="button success">Approve Continuation</button>
+                <button id="arm-deny" class="button warning">Deny Continuation</button>
+                <button id="arm-runtime" class="button secondary">Set Runtime Limit</button>
+                <button id="arm-budget" class="button secondary">Set Task Budget</button>
+                <button id="arm-low-cost" class="button warning">Low-Cost Mode</button>
+                <button id="arm-paper-safe" class="button success">Paper Safe Mode</button>
+                <button id="arm-live-feed" class="button success wide">Open Live Feed</button>
+                <button id="arm-inspect" class="button secondary wide">Inspect Activation Trace</button>
+                <button id="arm-reset-session" class="button danger wide">Reset API Runtime Session</button>
+              </div>
+            </div>
+            <div class="api-runtime-card">
+              <h2>API Entities</h2>
+              <div id="arm-entities" class="api-entity-list"></div>
+              <h2>Activation Chains</h2>
+              <div id="arm-traces" class="api-call-list compact-list"></div>
+            </div>
+            <div class="api-runtime-card">
+              <h2>Recent API Calls</h2>
+              <div id="arm-calls" class="api-call-list"></div>
+              <h2>API Execution Gateway Events</h2>
+              <div id="gateway-events" class="api-call-list compact-list"></div>
+              <h2>Alerts & Budget Stops</h2>
+              <div id="arm-alerts" class="infra-list"></div>
+            </div>
+          </div>
+          <div id="arm-live-feed-panel" class="api-live-feed hidden">
+            <div class="panel-title sub">API Runtime Live Feed</div>
+            <div id="arm-live-feed-stream" class="api-live-feed-stream"></div>
+          </div>
+        </section>
+
+        <section class="panel prompt-contract-panel">
+          <div class="panel-title">Prompt & Cognitive Contract</div>
+          <div class="api-runtime-grid">
+            <div class="api-runtime-card">
+              <h2>Contract Standard</h2>
+              <div id="prompt-contract-summary" class="monitor-grid compact"></div>
+              <h2>Validation Pipeline</h2>
+              <div id="prompt-contract-validation" class="infra-list"></div>
+            </div>
+            <div class="api-runtime-card">
+              <h2>Office Prompt Templates</h2>
+              <div id="prompt-contract-templates" class="api-call-list"></div>
+            </div>
+            <div class="api-runtime-card">
+              <h2>Office Responsibilities</h2>
+              <div id="prompt-contract-responsibilities" class="infra-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel cognitive-pilot-panel">
+          <div class="panel-title">Controlled Cognitive Pilot</div>
+          <div class="api-runtime-grid">
+            <div class="api-runtime-card">
+              <h2>Pilot Status</h2>
+              <div id="cognitive-pilot-summary" class="monitor-grid compact"></div>
+              <h2>Mission Objectives</h2>
+              <div id="cognitive-pilot-objectives" class="infra-list"></div>
+            </div>
+            <div class="api-runtime-card">
+              <h2>Post-Pilot Report</h2>
+              <div id="cognitive-pilot-report" class="monitor-grid compact"></div>
+            </div>
+            <div class="api-runtime-card">
+              <h2>Pilot Alerts</h2>
+              <div id="cognitive-pilot-alerts" class="infra-list"></div>
+              <h2>Real API Calls by Workflow</h2>
+              <div id="cognitive-pilot-workflows" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel workflow-orchestrator-panel">
+          <div class="panel-title">Enterprise Workflow Orchestrator</div>
+          <div class="workflow-grid">
+            <div class="workflow-card">
+              <h2>Workflow Creation</h2>
+              <div class="filter-grid">
+                <input id="ewo-name" value="Commander Evidence Workflow" />
+                <input id="ewo-stages" value="Executive,Seeker,Analyst,Risk,Executive" />
+                <input id="ewo-schema" value="summary,evidence,audit_identifier" />
+                <input id="ewo-runtime" type="number" min="1" value="120" />
+                <input id="ewo-credit" type="number" min="0" step="0.01" value="0.50" />
+                <button id="ewo-create" class="button success">Create Workflow</button>
+              </div>
+              <h2>Token Authority</h2>
+              <div id="ewo-token" class="workflow-token"></div>
+            </div>
+            <div class="workflow-card">
+              <h2>Execution Controls</h2>
+              <select id="ewo-workflow-select"></select>
+              <div class="filter-grid">
+                <button id="ewo-execute" class="button secondary">Start Execution</button>
+                <button id="ewo-output" class="button success">Produce Output</button>
+                <button id="ewo-transfer" class="button warning">Transfer Token</button>
+                <button id="ewo-next" class="button secondary">Next Stage</button>
+                <button id="ewo-archive" class="button secondary wide">Archive Workflow</button>
+              </div>
+              <div id="ewo-metrics" class="monitor-grid compact"></div>
+            </div>
+            <div class="workflow-card">
+              <h2>Workflow Queue & Audit</h2>
+              <div id="ewo-workflows" class="workflow-list"></div>
+              <h2>Immutable Transfer Audit</h2>
+              <div id="ewo-audit" class="workflow-audit"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel workflow-runtime-panel">
+          <div class="panel-title">Workflow Runtime Monitor</div>
+          <div class="workflow-runtime-grid">
+            <div class="workflow-runtime-card">
+              <h2>Enterprise Workflow Health</h2>
+              <div id="wrm-health" class="monitor-grid compact"></div>
+              <h2>Token Movement</h2>
+              <div id="wrm-token-movement" class="token-movement"></div>
+            </div>
+            <div class="workflow-runtime-card">
+              <h2>Commander Workflow Dashboard</h2>
+              <div id="wrm-workflows" class="wrm-workflow-list"></div>
+              <h2>Recent Completed Workflows</h2>
+              <div id="wrm-recent-completed" class="wrm-workflow-list"></div>
+            </div>
+            <div class="workflow-runtime-card">
+              <h2>Workflow Timeline</h2>
+              <div id="wrm-timeline" class="wrm-timeline"></div>
+              <h2>Workflow Token Integrity</h2>
+              <div id="wrm-token-integrity" class="workflow-alerts"></div>
+              <h2>Commander Alerts</h2>
+              <div id="wrm-alerts" class="workflow-alerts"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel lppc-panel">
+          <div class="panel-title">Live Portfolio & Performance Console</div>
+          <div class="lppc-grid">
+            <div class="lppc-card">
+              <h2>Portfolio Selection</h2>
+              <select id="lppc-portfolio-select"></select>
+              <div id="lppc-summary" class="monitor-grid"></div>
+              <h2>Enterprise Performance</h2>
+              <div id="lppc-performance" class="monitor-grid compact"></div>
+            </div>
+            <div class="lppc-card">
+              <h2>Risk Metrics</h2>
+              <div id="lppc-risk" class="monitor-grid compact"></div>
+              <h2>Synchronization</h2>
+              <div id="lppc-sync" class="monitor-grid compact"></div>
+            </div>
+            <div class="lppc-card">
+              <h2>Positions & Drill-Down</h2>
+              <div id="lppc-positions" class="portfolio-position-list"></div>
+              <h2>Detections</h2>
+              <div id="lppc-detections" class="infra-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel strategy-performance-panel">
+          <div class="panel-title">Live Strategy Performance Console</div>
+          <div class="strategy-performance-grid">
+            <div class="strategy-card wide">
+              <h2>Live Portfolio Panel</h2>
+              <div id="spc-portfolio" class="monitor-grid compact"></div>
+              <h2>Enterprise Scorecard</h2>
+              <div id="spc-scorecard" class="monitor-grid compact"></div>
+            </div>
+            <div class="strategy-card">
+              <h2>Market Benchmarks</h2>
+              <div id="spc-benchmarks" class="infra-list"></div>
+              <h2>Performance Alerts</h2>
+              <div id="spc-alerts" class="infra-list"></div>
+            </div>
+            <div class="strategy-card">
+              <h2>Decision Object Panel</h2>
+              <div id="spc-decision" class="api-call-list compact-list"></div>
+              <h2>Decision Object Evolution</h2>
+              <div id="spc-decision-evolution" class="api-call-list compact-list"></div>
+            </div>
+            <div class="strategy-card wide">
+              <h2>Live Equity Curve</h2>
+              <canvas id="spc-equity-chart" width="1180" height="260"></canvas>
+              <h2>Current Positions</h2>
+              <div id="spc-positions" class="portfolio-position-list"></div>
+            </div>
+            <div class="strategy-card">
+              <h2>Trade Stream</h2>
+              <div id="spc-trades" class="api-call-list compact-list"></div>
+            </div>
+            <div class="strategy-card">
+              <h2>Workflow Contribution</h2>
+              <div id="spc-workflows" class="api-call-list compact-list"></div>
+              <h2>Office Contribution</h2>
+              <div id="spc-offices" class="api-call-list compact-list"></div>
+            </div>
+            <div class="strategy-card">
+              <h2>Strategy Leaderboard</h2>
+              <div id="spc-strategies" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel decision-lab-panel">
+          <div class="panel-title">Decision Laboratory</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Replay Controls</h2>
+              <div class="filter-grid">
+                <select id="dl-workflow-select"></select>
+                <select id="dl-replay-select"></select>
+                <input id="dl-replay-value" placeholder="Stage, revision, or speed" />
+                <button id="dl-start-replay" class="button success">Start Replay</button>
+                <button id="dl-pause" class="button secondary">Pause</button>
+                <button id="dl-resume" class="button success">Resume</button>
+                <button id="dl-step-forward" class="button secondary">Step Forward</button>
+                <button id="dl-step-back" class="button secondary">Step Back</button>
+                <button id="dl-jump-stage" class="button secondary">Jump Stage</button>
+                <button id="dl-jump-revision" class="button secondary">Jump Revision</button>
+                <button id="dl-speed" class="button secondary">Replay Speed</button>
+              </div>
+              <h2>Workflow Replay</h2>
+              <div id="dl-workflows" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Decision Evolution</h2>
+              <div id="dl-decision-replay" class="api-call-list compact-list"></div>
+              <h2>Office Timeline</h2>
+              <div id="dl-office-replay" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Counterfactual Experiment</h2>
+              <div class="filter-grid">
+                <input id="dl-confidence" type="number" step="0.01" min="0" max="1" value="0.75" />
+                <input id="dl-stop-loss" type="number" step="0.01" value="94.50" />
+                <input id="dl-position-size" type="number" step="0.001" min="0" max="1" value="0.03" />
+                <button id="dl-create-experiment" class="button success wide">Create Experiment</button>
+              </div>
+              <h2>Decision Diff</h2>
+              <div id="dl-decision-diff" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Performance Comparison</h2>
+              <div id="dl-performance-comparison" class="api-call-list compact-list"></div>
+              <h2>Historian Notes</h2>
+              <div id="dl-historian" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Experiment Tree</h2>
+              <div id="dl-tree" class="api-call-list compact-list"></div>
+              <h2>Experiment Audit</h2>
+              <div id="dl-audit" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Search</h2>
+              <div class="filter-grid">
+                <input id="dl-search-query" placeholder="Ticker, workflow, office, strategy..." />
+                <button id="dl-search" class="button secondary">Search</button>
+              </div>
+              <div id="dl-search-results" class="api-call-list compact-list"></div>
+              <h2>Laboratory Metrics</h2>
+              <div id="dl-metrics" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel command-console-panel">
+          <div class="panel-title">Command Console</div>
+          <div class="command-console-grid">
+            <div class="command-card">
+              <h2>Commander Directive</h2>
+              <div class="filter-grid">
+                <select id="cc-category">
+                  <option value="">Auto Category</option>
+                  <option>strategic</option>
+                  <option>operational</option>
+                  <option>administrative</option>
+                  <option>scheduling</option>
+                  <option>trading</option>
+                  <option>educational</option>
+                  <option>knowledge</option>
+                  <option>infrastructure</option>
+                  <option>investigation</option>
+                </select>
+                <select id="cc-command"></select>
+                <select id="cc-target"></select>
+                <input id="cc-amount" type="number" min="0" step="100" value="0" />
+                <input id="cc-detail" placeholder="Command detail" />
+                <button id="cc-execute" class="button success">Execute Command</button>
+              </div>
+              <h2>Reusable Macros</h2>
+              <div id="cc-macros" class="macro-grid"></div>
+            </div>
+            <div class="command-card">
+              <h2>Validation & Integrity</h2>
+              <div id="cc-metrics" class="monitor-grid"></div>
+              <div id="cc-detections" class="monitor-grid compact"></div>
+              <h2>Latest Response</h2>
+              <div id="cc-response" class="command-response"></div>
+            </div>
+            <div class="command-card">
+              <h2>Command History</h2>
+              <div class="filter-grid compact-controls">
+                <input id="cc-filter-query" placeholder="Search commands" />
+                <select id="cc-filter-status">
+                  <option value="">All Statuses</option>
+                  <option>AUTHORIZED</option>
+                  <option>COMPLETED</option>
+                  <option>REJECTED</option>
+                  <option>FAILED</option>
+                </select>
+                <button id="cc-apply-filter" class="button secondary">Filter</button>
+                <button id="cc-clear-filter" class="button secondary">Clear</button>
+              </div>
+              <div id="cc-history" class="command-history"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel ecc-panel">
+          <div class="panel-title">Enterprise Command Center</div>
+          <div class="ecc-grid">
+            <div class="ecc-card">
+              <h2>Commander Bridge</h2>
+              <label for="ecc-org-select">Organization</label>
+              <select id="ecc-org-select"></select>
+              <div id="ecc-org-summary" class="ecc-summary"></div>
+              <div class="ecc-actions">
+                <button id="pause-org" class="button warning">Pause</button>
+                <button id="resume-org" class="button success">Resume</button>
+                <button id="mode-paper" class="button secondary">Paper Mode</button>
+                <button id="mode-active" class="button secondary">Active Mode</button>
+                <button id="configure-schedule" class="button secondary">Schedule</button>
+                <button id="review-evidence" class="button secondary">Evidence</button>
+                <button id="inspect-workflows" class="button secondary">Workflows</button>
+                <button id="view-history" class="button secondary">History</button>
+                <button id="export-report" class="button secondary wide">Export ECC Report</button>
+              </div>
+            </div>
+            <div class="ecc-card">
+              <h2>Operational Monitoring</h2>
+              <div id="ecc-monitoring" class="monitor-grid"></div>
+              <h2>Active Alerts</h2>
+              <div id="ecc-alerts" class="alert-list"></div>
+            </div>
+            <div class="ecc-card drill-card">
+              <h2>Deterministic Drill-Down</h2>
+              <div class="drill-path">Enterprise / Organization / Office / Workflow / Task / Evidence / History / Audit</div>
+              <div id="ecc-drilldown" class="drilldown"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel eab-panel">
+          <div class="panel-title">Enterprise Activity Bus</div>
+          <div class="eab-grid">
+            <div class="eab-card">
+              <h2>Bus Health</h2>
+              <div id="eab-health" class="monitor-grid"></div>
+              <h2>Event Integrity</h2>
+              <div id="eab-detections" class="monitor-grid compact"></div>
+            </div>
+            <div class="eab-card">
+              <h2>Commander Filters</h2>
+              <div class="filter-grid">
+                <select id="eab-filter-org"><option value="">All Organizations</option></select>
+                <select id="eab-filter-severity">
+                  <option value="">All Severities</option>
+                  <option>INFO</option>
+                  <option>NOTICE</option>
+                  <option>WARNING</option>
+                  <option>CRITICAL</option>
+                  <option>EMERGENCY</option>
+                </select>
+                <input id="eab-filter-office" placeholder="Office" />
+                <input id="eab-filter-workflow" placeholder="Workflow" />
+                <input id="eab-filter-case" placeholder="Case File" />
+                <input id="eab-filter-status" placeholder="Status" />
+                <button id="apply-eab-filter" class="button secondary">Apply Filter</button>
+                <button id="clear-eab-filter" class="button secondary">Clear Filter</button>
+              </div>
+            </div>
+            <div class="eab-card bus-feed">
+              <h2>Canonical Event Stream</h2>
+              <div id="eab-events" class="event-stream"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel cnac-panel">
+          <div class="panel-title">Commander Notification & Alert Center</div>
+          <div class="cnac-grid">
+            <div class="cnac-card">
+              <h2>Commander Communications</h2>
+              <div id="cnac-metrics" class="monitor-grid"></div>
+              <h2>Notification Integrity</h2>
+              <div id="cnac-detections" class="monitor-grid compact"></div>
+            </div>
+            <div class="cnac-card">
+              <h2>Notification Controls</h2>
+              <div class="filter-grid">
+                <select id="cnac-filter-org"><option value="">All Organizations</option></select>
+                <select id="cnac-filter-priority">
+                  <option value="">All Priorities</option>
+                  <option>Information</option>
+                  <option>Notice</option>
+                  <option>Warning</option>
+                  <option>Critical</option>
+                  <option>Emergency</option>
+                </select>
+                <select id="cnac-filter-type">
+                  <option value="">All Types</option>
+                  <option>Notification</option>
+                  <option>Alert</option>
+                  <option>Warning</option>
+                  <option>Critical Event</option>
+                  <option>Emergency Event</option>
+                </select>
+                <input id="cnac-filter-office" placeholder="Office" />
+                <button id="apply-cnac-filter" class="button secondary">Apply Filter</button>
+                <button id="clear-cnac-filter" class="button secondary">Clear Filter</button>
+                <button id="escalate-cnac" class="button warning">Escalate Unresolved</button>
+                <button id="daily-briefing" class="button secondary">Daily Briefing</button>
+              </div>
+            </div>
+            <div class="cnac-card notification-feed">
+              <h2>Commander Notifications</h2>
+              <div id="cnac-notifications" class="notification-stream"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel ioe-panel">
+          <div class="panel-title">Interactive Organization Explorer</div>
+          <div class="ioe-grid">
+            <div class="ioe-card">
+              <h2>Explorer Filters</h2>
+              <div class="filter-grid">
+                <select id="ioe-filter-org"><option value="">All Organizations</option></select>
+                <select id="ioe-filter-type">
+                  <option value="">All Object Types</option>
+                  <option>Enterprise</option>
+                  <option>Organization</option>
+                  <option>Office</option>
+                  <option>Workflow</option>
+                  <option>Task</option>
+                  <option>Case File</option>
+                  <option>Evidence</option>
+                  <option>Historical Record</option>
+                  <option>Audit Trail</option>
+                  <option>Historical Event</option>
+                  <option>Notification</option>
+                </select>
+                <input id="ioe-filter-office" placeholder="Office" />
+                <input id="ioe-filter-workflow" placeholder="Workflow" />
+                <input id="ioe-filter-status" placeholder="Status" />
+                <input id="ioe-filter-query" placeholder="Search" />
+                <button id="apply-ioe-filter" class="button secondary">Apply Filter</button>
+                <button id="clear-ioe-filter" class="button secondary">Clear Filter</button>
+              </div>
+              <div id="ioe-summary" class="monitor-grid compact"></div>
+            </div>
+            <div class="ioe-card explorer-tree">
+              <h2>Hierarchy</h2>
+              <div id="ioe-nodes" class="ioe-node-list"></div>
+            </div>
+            <div class="ioe-card">
+              <h2>Selected Object</h2>
+              <div id="ioe-detail" class="ioe-detail"></div>
+              <div class="ioe-actions">
+                <button id="ioe-inspect" class="button secondary">Inspect</button>
+                <button id="ioe-bookmark" class="button secondary">Bookmark</button>
+                <button id="ioe-follow" class="button secondary">Follow</button>
+                <button id="ioe-compare" class="button secondary">Compare</button>
+                <button id="ioe-export" class="button secondary">Export</button>
+                <button id="ioe-monitor" class="button secondary">Monitor</button>
+              </div>
+              <h2>Explorer Detections</h2>
+              <div id="ioe-detections" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel scheduler-panel">
+          <div class="panel-title">Office Operating Modes & Scheduling</div>
+          <div class="scheduler-grid">
+            <div class="scheduler-card">
+              <h2>Office Control</h2>
+              <div class="filter-grid">
+                <select id="scheduler-org"></select>
+                <select id="scheduler-office"></select>
+                <select id="scheduler-mode">
+                  <option>Dormant</option>
+                  <option>Event Driven</option>
+                  <option>Scheduled</option>
+                  <option>Business Hours</option>
+                  <option>Continuous Operation</option>
+                </select>
+                <input id="scheduler-timezone" value="America/Cancun" />
+                <input id="scheduler-hours" value="09:30-16:00" />
+                <input id="scheduler-runtime" type="number" min="1" value="60" />
+                <input id="scheduler-budget" type="number" min="0" step="0.25" value="5" />
+                <button id="configure-office" class="button secondary">Configure</button>
+                <button id="activate-office" class="button success">Activate</button>
+                <button id="suspend-office" class="button warning">Suspend</button>
+              </div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Operational Analytics</h2>
+              <div id="scheduler-summary" class="monitor-grid"></div>
+              <div id="scheduler-analytics" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Scheduling Detections</h2>
+              <div id="scheduler-detections" class="monitor-grid compact"></div>
+              <h2>Office States</h2>
+              <div id="scheduler-offices" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel group-summary">
+          <div class="panel-title">Group Status Summary</div>
+          <div id="group-cards" class="cards-row"></div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel activity">
+            <div class="panel-title">Enterprise Activity Feed</div>
+            <table>
+              <tbody id="activity-feed"></tbody>
+            </table>
+          </div>
+          <div class="panel kpis">
+            <div class="panel-title">Key Performance Indicators</div>
+            <div id="kpi-list"></div>
+          </div>
+          <div class="panel resources">
+            <div class="panel-title">System Resources</div>
+            <div id="resource-list" class="resource-rings"></div>
+            <div class="panel-title sub">Upcoming Schedule</div>
+            <div id="schedule-list" class="schedule"></div>
+          </div>
+        </section>
+
+        <section class="panel office-grid">
+          <div class="panel-title">Office Command Matrix</div>
+          <div id="office-matrix"></div>
+        </section>
+        </div>
+      </main>
+    </div>
+    <footer>Copyright © 2026 ARGOS Enterprise Systems. Version 1.0.0 | Build Local</footer>
+    <script src="/app.js"></script>
+  </body>
+</html>
