@@ -1,0 +1,24 @@
+# AUDIT Dependency Report
+
+- `pyproject.toml`: present
+- `requirements.txt`: not present
+- `package.json`: not present
+- Node lock files: none detected
+
+## pyproject.toml
+```toml
+[project]
+name = "argos"
+version = "0.1.0"
+description = "Deterministic Cognitive Enterprise scaffold for ARGOS."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+```
+
+Installed package captures are saved as `audit_python_packages.txt`, `audit_node_packages.txt`, and `audit_environment_versions.txt`.

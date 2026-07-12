@@ -1,0 +1,4815 @@
+{
+  "repository": "ARGOS",
+  "branch": "main",
+  "commit_pre_audit": "212fbea3c912eec83aa3c90287bbed974f19f873",
+  "tag_planned": "argos-audit-candidate-20260712-231120Z",
+  "timestamp_utc": "2026-07-12T23:11:25.114225+00:00",
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "4725dfbb934fbacce5643001d176829c1d534169a18421125df51c1033dbd096",
+      "size": 335,
+      "extension": ".example",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "9c535e0f14066aad9645f021140a3d2a5730540a61d69a4c92e6c2a47b09195e",
+      "size": 369,
+      "extension": "",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "0. Project Management/README.md",
+      "sha256": "a0222f20c3960da8a421fc66ec3aa543b89a6225fd2ae9553b76d88c1f2859bd",
+      "size": 146,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "1. Foundation/README.md",
+      "sha256": "22885b0cd2922b7702997c85727f5cdac03495f732c090a170d2206733c6614f",
+      "size": 2349,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "2. Executive Group/README.md",
+      "sha256": "d0ccd98626e7c2c9d4230828ab68389f84f242672182b80ecd687d7cd48854f5",
+      "size": 1477,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "3. Seeker Group/README.md",
+      "sha256": "c27eba0a3301189d11b8eec79770ab9923a8f3f449d71f35742219232e4d86e7",
+      "size": 2434,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "4. Analyst Group/README.md",
+      "sha256": "4f87b13befde376414290eccbb7be640d485520929bf399d8bac3a87ceab4698",
+      "size": 3078,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "5. Risk Office/README.md",
+      "sha256": "4477120e911ae1a9d0a7d717831c8a1c974172f598bb9feef9127e6cb929acb6",
+      "size": 2930,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "6. Trader Group/README.md",
+      "sha256": "5dd904497c1c7822c7438a90e4eabf53874267e24102ec276eb8ed4c8d97f5e1",
+      "size": 4328,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "7. Historian Group/README.md",
+      "sha256": "22470491bac3ab5fbffb4a071d75351e6999a6b51efb01cbfa838268ad4e56d4",
+      "size": 4484,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "8. Librarian Group/README.md",
+      "sha256": "d258ce1670eb6f7098a04205aaacdcf184261324602d5ca20bcd20acff13b843",
+      "size": 3762,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "9. Academy/README.md",
+      "sha256": "f9e9ddb0f8e4fc2870bd77b4cca589d7862eb75427eb122eb10f568134eca1f0",
+      "size": 3479,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CA_Enterprise_Operations_Scheduler.md",
+      "sha256": "e798f2cc215f25409d9b519d9ea5145f11cff28933678ff04f3e5f08057f19c0",
+      "size": 3992,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CB_Office_Duty_Officer.md",
+      "sha256": "1599fa92c7cebb35925983d165ff2173234a715d079433996d9281b740f4ba24",
+      "size": 2985,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CC_Event_Detection_Engine.md",
+      "sha256": "c18bd5bb9674efe2bff4ded7d0b61753e4aa1806904f2b02e94468490b0778ae",
+      "size": 2642,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CD_Enterprise_Mission_Planner.md",
+      "sha256": "30f774663e13e4440f15db56107d0d44a94974a01e6405400539e00830deccf4",
+      "size": 2817,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CE_Enterprise_Cost_Governor.md",
+      "sha256": "82805749e0b3781987fc331e75d0e02d87cfcf3618acf53eda04b1974533ac55",
+      "size": 2819,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CF_Information_Freshness_Engine.md",
+      "sha256": "4af2291919ba9e0ce22bdceb00146164ebba4266754e90605ed031732067459c",
+      "size": 2361,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CG_Enterprise_Memory_Cache.md",
+      "sha256": "95307e36bbb709ccfeb8bd4c5549977e5bdd3a201acc3784f213ddf624432d4e",
+      "size": 2854,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CH_Workflow_Delta_Engine.md",
+      "sha256": "b594037cc5fe141404367c379f7316a062c9233c5e1b372ed77a96d55bf5876f",
+      "size": 3050,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CJ_Enterprise_Priority_Engine.md",
+      "sha256": "78e30db92807d7ab53be5f9030c182b45af3f4599d7e783b29892587296a962c",
+      "size": 1942,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CK_Position_Monitoring_Network.md",
+      "sha256": "6a95fe1a2d6d9a426a341dd332ebd8986cbe83f6acac91511334ac3f64154b65",
+      "size": 1789,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CL_Enterprise_Communications_Bus.md",
+      "sha256": "4caca2dece478065920d243e9a6528af82b9062bf0bb56345665e34d2d5214ee",
+      "size": 2966,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/EO-CN_Enterprise_Efficiency_Analytics.md",
+      "sha256": "c1b1e280316d4097e21cf13d6370e9bed0a9b740e5f4916d6f3f09670ee8d822",
+      "size": 2409,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Authority_Boundary_Audit.md",
+      "sha256": "264a7a1786dc995872a6a685684a7ed30c998681c4b4c9344c4cd584289947df",
+      "size": 2510,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Dependency_Graph_Report.md",
+      "sha256": "1d7cdaabfae53508db0e9c0c55ab79afcf7cc4e60a262f729541315d35faf01d",
+      "size": 2189,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Engineering_Order_Traceability_Matrix.md",
+      "sha256": "b4dce23f51adeff18cff290df9c250d39af77262e2c30c169efba410f0370bd2",
+      "size": 6498,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_LAW_VII_Compliance_Report.md",
+      "sha256": "6aab5ce480438e7b424ed961b5967bf6551ccaa5137c27d4ec84139af96eba77",
+      "size": 1711,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Operational_Readiness_Checklist.md",
+      "sha256": "9957faa7a55847c0fc3cf4077fe98828c21753d1434019196a1c42de90c6842b",
+      "size": 2029,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Persistence_Coverage_Report.md",
+      "sha256": "bbc5f5d5ae7e6e41b536a1d7fc0fcd37c414d06a2ab51bd89dee3d8a789bca83",
+      "size": 1982,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Placeholder_Synthetic_Logic_Report.md",
+      "sha256": "5d7790f8ccaa19b8325a3e9f38dfe967fae96636cbae082753a1d4c0e5069e15",
+      "size": 2089,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Prioritized_Remediation_Roadmap.md",
+      "sha256": "38b76246f896c47eee554ee69ba87d913f475d396bfe1ea84547834abe732f47",
+      "size": 2026,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Repository_Architecture_Report.md",
+      "sha256": "719225f5d307321a67a2d4b6529110c7e5c370ba762c849cd2e44b72306db9c3",
+      "size": 4663,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-001_Runtime_Integration_Report.md",
+      "sha256": "30f9b100c24b6b2110037f46f75e8d7190c7508d438f6e18fbbea8f75462f3f2",
+      "size": 3360,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-002_Completion_Report.md",
+      "sha256": "b7fc2cfe7fa45dabc68c6834fe8f04529c52a665d060cba4eb6efb1b06b81b97",
+      "size": 3115,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-002_EO-Y_Mutation_Root_Cause.md",
+      "sha256": "3c6e13779225ba8416a402e45ac35f051f52fb7a130f5621124ce432b8656c5c",
+      "size": 1890,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-002_Remaining_Provisional_Surfaces.md",
+      "sha256": "e5fc6ca52b9a4aed638ceb78b8505df032cd7393913cfca2d99d776072d52a69",
+      "size": 1517,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-002_Synthetic_Truth_Inventory.md",
+      "sha256": "38274f71eba327c1a9c9f9073f0d99b12cdbb11676e6d187a07b676f0541225b",
+      "size": 4584,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-002_Test_Report.md",
+      "sha256": "459e75895671d17799385247e26a8c1dd1cf66c1bc707acdb4936b545943748d",
+      "size": 4419,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-002_Truth_Domain_and_Provenance_Model.md",
+      "sha256": "97f44935592eab6192d8e82194f5427dba626c639c0102bbd5332934d976b4dd",
+      "size": 2318,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Broker_Architecture.md",
+      "sha256": "916b62d76831769a11f618295faae4db1b6b181ea66acded5a48636b879c3f64",
+      "size": 1534,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Completion_Report.md",
+      "sha256": "3ceccdf99f644fdb005a8696aa2863dd8d5a91f4df41542d29e116664884b474",
+      "size": 1704,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Execution_Quality.md",
+      "sha256": "411fc33f8e34774aee3e72bac585dc823b839bdaebefb4c1dc197d24aa911dfb",
+      "size": 625,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Fill_Model.md",
+      "sha256": "097c39309d5debe3678e81c5b1129cf1cd9fb4e691f82c060a4fc3106f728c22",
+      "size": 671,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Order_Lifecycle.md",
+      "sha256": "ac0ea79bed581fa1cd9a5d34e8d7c73faf332dba56f660bf72cbd5d175f5e86d",
+      "size": 847,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Remaining_Gaps.md",
+      "sha256": "a0c99317f219f96e6855374b5c60f12c2e794bb7ff64b605453d99317bf3afd5",
+      "size": 776,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-003_Test_Report.md",
+      "sha256": "cfb9179fe89339c07791ac1ab06bd720153f31e01d34b2732364e08c445ca79d",
+      "size": 1111,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Completion_Report.md",
+      "sha256": "b90ac3a0c37ea791e69be3c5e708a571343d5f15fa2e8a4ec419789e16f786f0",
+      "size": 1102,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Exit_Authority_Model.md",
+      "sha256": "e6b591d9c5b2fc1071aafef2164116c050770bcdc8b11d3a34a674f4dfdd6907",
+      "size": 1032,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Legacy_Test_Classification.md",
+      "sha256": "656bc2ae8134754a0f585927359c389fdcad39e35b58e1ded88296f2513a79db",
+      "size": 1345,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Monitoring_and_Reassessment_Model.md",
+      "sha256": "5acc51274e9d1b4ce1307d733676c3ce4c576b973bad0158fd9f7d303d862433",
+      "size": 1159,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Persistence_and_Recovery_Requirements.md",
+      "sha256": "36e872bec0b3d8ef245ce1e8905d7273836e27770b48bdd07387bc2df092e55e",
+      "size": 958,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Position_Lifecycle_Architecture.md",
+      "sha256": "ca414888ac58ab2e9292d92c3e6486de96c80eb54f628f0dbd37a947d8e0b792",
+      "size": 1852,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Position_Reconciliation_Specification.md",
+      "sha256": "e6da26f8fcbcef34cca2e3e1caee390ec1152d62420c50365fdd972700cb8f00",
+      "size": 1173,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Position_and_Trade_Identity_Model.md",
+      "sha256": "9fc79ecfedc3289fd5367774ab7f152674571b362af99fb3d919d7d3b6fcdec0",
+      "size": 990,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Synthetic_Truth_Remediation_Report.md",
+      "sha256": "8ec93fb8e8db862a4ea37e605b05b01ce25a23fd6b26aff7c93208fedecd9049",
+      "size": 1151,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-004_Test_Report.md",
+      "sha256": "f7b919d21aa2802a0559840617f60c0b7194bbd9bf7f0051d377898b1a532836",
+      "size": 1372,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Canonical_Runtime_Architecture.md",
+      "sha256": "f8da15f78757262ec446a6662de375c09ca0f19f1434eb9b248528eaf5d4f79a",
+      "size": 1474,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Legacy_Runtime_Path_Inventory.md",
+      "sha256": "b29583ff81d7e805f89b82b39b63d0ee2bb7ae619b40ac73e242475eb9b9f990",
+      "size": 1171,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Part_1_Implementation_Report.md",
+      "sha256": "d94d83fb84d8de761dc206c6c1c3aff2745c29b0d1908d2679d8850e3219cf14",
+      "size": 1271,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Part_1_Test_Report.md",
+      "sha256": "666480119a2cfdba5c022b7d8a336913c9335b3db00727f4ebb69b2efb609bbd",
+      "size": 1186,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Read_Only_Runtime_Surface_Audit.md",
+      "sha256": "458216f290768b117bfc8f9806870439ac00c51c2ac7ffb1bdd275402b99eef6",
+      "size": 768,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Runtime_Authority_Model.md",
+      "sha256": "dda43cc0e58b87bff977428688e2c66f554a36216ab0b382d68a4aee4d2bfbd5",
+      "size": 1277,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Scheduler_Mission_and_Duty_Model.md",
+      "sha256": "f4c708f4ffbf234910f882cce564c5f66bc3e5f2859cae3882a639c0150cbdb4",
+      "size": 1029,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Series_C_Component_Inventory.md",
+      "sha256": "903d598d5bc4a4ece4b997307e4f556674ebf1cd1a287022a52c04da4cf91833",
+      "size": 3656,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Strategic_Intelligence_to_Seeker_Integration.md",
+      "sha256": "2641f0771cbd8091f5bfe4f8252bf795f35fcbfb5ea1786e7fce676aed92da4f",
+      "size": 824,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-005_Workflow_Token_Integration_Audit.md",
+      "sha256": "d29556042155477acdd17c04e659886ee2dae83b23074dfc01eab6dbe6871fef",
+      "size": 827,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Checkpoint_Restore_Model.md",
+      "sha256": "17d36f9040103eb14fed967af075f6bd5514d7b98471dedd3f3527316afb4bbb",
+      "size": 320,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Completion_Report.md",
+      "sha256": "445643049d96aae37655712f3dc0cd3632380b9c4f4c9fde3286f02902a9b383",
+      "size": 1072,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Corruption_Detection_Model.md",
+      "sha256": "b286fbd2a828b5cc1e90c6e4117e61987b8c3cb2eb3fc50edecea3ec30d3f90b",
+      "size": 353,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_End_to_End_Restart_Test_Report.md",
+      "sha256": "6109d345af8d9d72516a1269051935f73a7f68fe63852a22ca932fb2219ab902",
+      "size": 441,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Enterprise_Persistence_Architecture.md",
+      "sha256": "b7a674d77e2d37358552c350143662569b0f4423bdb68945e1cb065ef20e7cee",
+      "size": 1238,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Entity_Identity_Model.md",
+      "sha256": "a8bb5ae331508bd0b6fc1b8d42531402e8beec7909e88b11573eed0dc3d97985",
+      "size": 380,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Long_Duration_Runtime_Report.md",
+      "sha256": "29c71323c47fe88e180c178b4ed96c99976940a6bbd8f959be1c5f6cd0c6c8a9",
+      "size": 422,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Part_1_Implementation_Report.md",
+      "sha256": "3958aac843a4498cb2fdd7a9ac5b8b1675a010b62944c54a53dc80c9a5ed84c8",
+      "size": 817,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Part_1_Test_Report.md",
+      "sha256": "8e50d69888b118fdfedd61b8d80fa24ded9723b4f8d9228cc126f53c58722106",
+      "size": 986,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Persistence_Failure_Model.md",
+      "sha256": "66d31343a0da5fe364ade4757b830749db03acc5ce2a63f4a24c5658b8bd90dd",
+      "size": 303,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Persistence_Inventory.md",
+      "sha256": "f903e329ed5a0f91e9f9bb5b30485b96e01cb05446ae47388cfd043bc05329e6",
+      "size": 1077,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Reconciliation_Model.md",
+      "sha256": "dc932024c046d7437cf8e0344c122e0c1140ea5d290185da1c56b163a65608aa",
+      "size": 401,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Recovery_Architecture.md",
+      "sha256": "c4c2a22e4ce9fe1dfd27b59f5f4abc97b9df97d5d7f5f35c1423cc822f569018",
+      "size": 639,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Recovery_Test_Report.md",
+      "sha256": "a88a816f203c0d3c98d2402e0987291b3afab0d10222e90afbc445fe5b0f409f",
+      "size": 622,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Restore_Sequence.md",
+      "sha256": "a8600bbe037fa5f4e6b23001b817478180e1361bde5595b9ce8599941aa8d5b0",
+      "size": 465,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Runtime_Checkpoint_Model.md",
+      "sha256": "49a69f9ee2b123d17f303db94f27a988d986fefc7e64501d8bec08728dbc075e",
+      "size": 424,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Runtime_Recovery_Audit.md",
+      "sha256": "2f6152c4fa0c7efc228e17a5c63c788351638c8302a7c0da2834d100099f63c3",
+      "size": 344,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Schema_Versioning_Model.md",
+      "sha256": "5905b9980b6afec66e073c59b1fc9115885cca615f1f5f59f830faea38b521d9",
+      "size": 355,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_State_Ownership_Model.md",
+      "sha256": "cd7995ac8f5a6375a6000a4fe12a1f980d317e6f76c9c246fcbf844689ab5841",
+      "size": 654,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-006_Transaction_Boundary_Model.md",
+      "sha256": "308559f55606a8d8f771063239310745a234fb0cba31873d52239e8317d742b0",
+      "size": 527,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Authority_Certification.md",
+      "sha256": "395b6eefce9de8b830e01cc97fe4206a8547e6f39763508983a05a503b2cac57",
+      "size": 1082,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Certification_Matrix.md",
+      "sha256": "8e931a9f00b159ea84cb4940e8e659e219d080f64a2ecd49ce956ecaace53607",
+      "size": 1944,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Completion_Report.md",
+      "sha256": "77b136b04c5afd2d77df547ef722cc01418b003cc42e30eab1a5850d470582d8",
+      "size": 875,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Cost_Certification.md",
+      "sha256": "50fcdd8a550928b1f8f5f327891852986ca62e052a1befd45f729b666e74fd2d",
+      "size": 443,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Determinism_Certification.md",
+      "sha256": "401056bf586f24311671f0d433b509796f0238ccaa1f3172f595cd2b5bb5979b",
+      "size": 431,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Enterprise_Boundary_Audit.md",
+      "sha256": "7e13640777197a9d50d9f3fc50f055a6e6bb241a5ef89e8d58b0f98708c36b39",
+      "size": 819,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Enterprise_Certification_Framework.md",
+      "sha256": "eb2e74b24f49174e6d20b44a9e5fe32e27640b6be11cc9924137214604a8b375",
+      "size": 1973,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Enterprise_Certification_Report.md",
+      "sha256": "f40e3f31b32827ed0e78dc664d63bc02609bcc5c32dece565e1f7a519f416366",
+      "size": 841,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Enterprise_Certification_Scorecard.md",
+      "sha256": "778e984bce2db9368cfa5ee0b032bd17fd83e5863cede3ca5bfcaa1cefe25018",
+      "size": 556,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Enterprise_Integrity_Report.md",
+      "sha256": "4d7ff6bc8680bc9d3172c3c606ce833c284fc016b4e3fc633772c2374851965c",
+      "size": 733,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Failure_Certification.md",
+      "sha256": "167c7ab03c46fc05374dc5389166eebfcf6de8b0521c8f35ffee7ec4a7cc8552",
+      "size": 489,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Final_Operational_Readiness_Assessment.md",
+      "sha256": "aae2353be29ee8918d383d0501f68d67c3a73d34f0c71bf7655fc81bc71361da",
+      "size": 570,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Final_Synthetic_Truth_Audit.md",
+      "sha256": "076e377482c34514ce8dc7c879d0078a956f96f9a67e3cc4c3fed97d3487688e",
+      "size": 744,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_LAW_VII_Certification.md",
+      "sha256": "70c167468b32b8fc2095c8d3b2d91cfa7273fe37a127f327dc3cbb35d1445262",
+      "size": 495,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Long_Duration_Runtime_Report.md",
+      "sha256": "57d28a2b7b4eac0c6e01456e5710096e0da0eb21ce53d7213f1a5609414d280f",
+      "size": 428,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Long_Duration_Test_Framework.md",
+      "sha256": "672783ff4c8bec5c7567b31456973b564987b6b47bcb541605585b3739ee8578",
+      "size": 968,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Operational_Integrity_Report.md",
+      "sha256": "93456eb0b0d252c42708fe3ed73e225e33b1a83745689717a0463c4fd0620d03",
+      "size": 607,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Operational_Readiness_Matrix.md",
+      "sha256": "fd234c9b33cc76ea64ff497831af5aa43b16c9631c67abe4e73865b253323c66",
+      "size": 1071,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Part_1_Implementation_Report.md",
+      "sha256": "3a5daf20f93fc4cdda06c4098d21d1869b440e35f6bd168a903634a4c6951750",
+      "size": 758,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Part_1_Test_Report.md",
+      "sha256": "73546dae9a4b8279a5bdc4eeab6a258a615796944215749ae8355a8324400145",
+      "size": 814,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Persistence_Certification.md",
+      "sha256": "c482161242dd24eb88d692d8cdaae866ed68ba6741743500794dffaa0bc2635d",
+      "size": 496,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Replay_Certification.md",
+      "sha256": "204021900ce671e74fdc3b9cbfc3f6608f85df61fdfd4d46a46bfc6987ae08b0",
+      "size": 415,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Resource_Utilization_Report.md",
+      "sha256": "dc6827a3cd768f5f8548ea278a32a50ee16c3e7763a5838c102d757c8601ec1a",
+      "size": 456,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Security_Boundary_Report.md",
+      "sha256": "1a1e93d7a3d7f8ebb279a395fa0bf5d9ad9def6e54f90025595dee4a4bbcc05e",
+      "size": 561,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Stress_Test_Report.md",
+      "sha256": "1bb1d6b00e57007181f35e6cbad8f5f4dff0ea0dea87c6d960a7364c1f29fe7c",
+      "size": 380,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/OR-007_Synthetic_Truth_Final_Audit.md",
+      "sha256": "f1712e05ef92036e1e555717f460610d7ff7fec15509387ce93344d5cfba03ea",
+      "size": 921,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/README.md",
+      "sha256": "046eb99e26d2dfd3c6db8a9a2add7fae8987cc147155f03d6f20ccb3c5270652",
+      "size": 1045,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/academy_framework.md",
+      "sha256": "287b882ee153256bfb6cea5252e099d3e3a414e39f8ae5ed7a47bbc7feab18d3",
+      "size": 1181,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/academy_fusion_office.md",
+      "sha256": "5bc18ca6bb5ff23963ea2cc51496a384340aea9e29731c2c759ba21ba308eb5b",
+      "size": 1090,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/academy_operational_readiness.md",
+      "sha256": "60a68b0fa804a35f79e5f3dc5adacbe39b35101e92e61399e1ac078d2afb1d9f",
+      "size": 1196,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/alternative_data_office.md",
+      "sha256": "b6125317c4a8b8ddb68974f4cab00f2c11f052420e08896a050a3017f3ebd925",
+      "size": 889,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/analyst_department_framework.md",
+      "sha256": "63580aaeeddcf722a55ca332a4f0ad2af5f9651ffeab40970bf1d093cd05ce90",
+      "size": 926,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/analyst_operational_readiness.md",
+      "sha256": "8ca30d92977f4d9ca953dc3910da9620c7f16b7e4ad22458054f6cad633d3703",
+      "size": 1240,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/analyst_technical_analysis_office.md",
+      "sha256": "fb1cdac6682ef7ddc207abd462ace4af3d9116447c046026461f434281d1d962",
+      "size": 889,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/analytical_fusion_office.md",
+      "sha256": "af674b0febdfb7d2393e15dd77910bb3523d7ffd455263b28bda65491a59589a",
+      "size": 956,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/argos_control_panel_dashboard.md",
+      "sha256": "1eeab69fa66064c0efb27de88c0040943b92fa7f9014942e975f8ebccbe207c2",
+      "size": 1452,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/audit_traceability_framework.md",
+      "sha256": "83310f19d8fa6c0bc0be48cbb6d3a8aaef0517aa93f10765d91e001fcb719aec",
+      "size": 1292,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/behavioral_analysis_office.md",
+      "sha256": "87d4bfd54d19ff70f4e976c109acd959e05cda36fec9ebd225356f9366aff788",
+      "size": 1024,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/broker_integration_office.md",
+      "sha256": "7ce41434fc75d5fbd79fea293b7ed428fe3ba611582c82578dc4417d89f2d558",
+      "size": 2367,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/bubble_detection_office.md",
+      "sha256": "986994c9b5b389f8e8880ff26cfdd514c4ec4c248eabc203e3567813687819f4",
+      "size": 847,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/canonical_data_contract_framework.md",
+      "sha256": "432e043f080e2f0cea9b585255d9908e112dee11ceb472118fa3bc52b741252c",
+      "size": 1879,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/case_study_office.md",
+      "sha256": "3e34cca433ee0f23369fd85c06d93ffcb59b2c2ea98c2612cdc2b71db02eda97",
+      "size": 1323,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/chief_of_staff.md",
+      "sha256": "f3bad8ce1954966316feb033fec2532c6c65fd7dee5f4a93b3d2d4d3f0cb0e82",
+      "size": 825,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/command_console.md",
+      "sha256": "0ddbb95d370e3944cc36bb32aff90899d123e2910660b01a2e557dd3f0761d73",
+      "size": 2161,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/commander_decision_engine.md",
+      "sha256": "4b98d32de2146d590f1c47fd97241d16ca0a378d26fd2e00c02a6b5cede76caa",
+      "size": 681,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/commander_notification_alert_center.md",
+      "sha256": "de90334cf12ee637d8bacb8d41b1581b7c1fc159ed7c11608990d9b4046f56b8",
+      "size": 1748,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/configuration_environment_framework.md",
+      "sha256": "911a94791d8cd30610cc0b05f66567a6615df4a2d35588744ece17faba8a18a0",
+      "size": 1099,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/cross_discipline_review_office.md",
+      "sha256": "46a1181af4c8edcef526dad2025ff27032597f1bc24d07f9a5b9427c8fdd9210",
+      "size": 927,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/cryptocurrency_office.md",
+      "sha256": "8512795fce51136615bc8ee483994798b7cef182cd6c179e03e5a6b07524b027",
+      "size": 836,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/curriculum_office.md",
+      "sha256": "704b20457c4dee370344b5b9d15718aa7aae46cc77c689ae86909f9ce9034265",
+      "size": 1381,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/database_persistence_foundation.md",
+      "sha256": "9aef20a6267ef9063e841e8146f337413830796e5a8e83d179b97cec95e405de",
+      "size": 1106,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/decision_evaluation_office.md",
+      "sha256": "c2383f2a58c2d4da2bc770ce0f6a146122b0c62d7542581ae287345a4d243ede",
+      "size": 1842,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/derivatives_analysis_office.md",
+      "sha256": "8efae6df85da72d120cd015e580160a56469ede06e76da735d4f0436f7fedb30",
+      "size": 967,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/deterministic_communication_courier_framework.md",
+      "sha256": "6baeef225d6f6dd1388e677d7abfee3120b7e4ec7b5667459721fb8da6cf44f8",
+      "size": 1394,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/doctrine_management_office.md",
+      "sha256": "68b0c63514fffe5815ce454eed6c2c5eb0d411f0e8f4c517ae0160be62429366",
+      "size": 1496,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/enterprise_activity_bus.md",
+      "sha256": "f50e54631ecbdeb9af8a73e3781107d854066be91a774f359c027e2541d8a0dc",
+      "size": 1874,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/enterprise_command_center.md",
+      "sha256": "b9a3ca92469a00e83bf3d82fe77552e51e1caa56e3ab8fc4d023751ec2b358e4",
+      "size": 1622,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/enterprise_credit_governor.md",
+      "sha256": "fd1d39f97df8391285e86b3dfcf4e7c5d480564cc5d00afce3b82f7107530a7e",
+      "size": 2232,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/event_intelligence_office.md",
+      "sha256": "45c5191cadfec707b3f23a76589b1a6b1463e8dcf21fb8dc64802f4643b9db3c",
+      "size": 845,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/evidence_evaluation_office.md",
+      "sha256": "9fbdee76b82f61472738d00339c578cbc416fd3073d627671f9824622c0eb9bc",
+      "size": 1871,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/execution_quality_office.md",
+      "sha256": "4eac6895581db8531f1947b22c63307ef544c73c4722a613190c38532e0621f0",
+      "size": 2137,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/executive_dashboard.md",
+      "sha256": "ce745699ac4c51cab688383e8bc754c5ebc9821348133d585ae5839c429b4d05",
+      "size": 777,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/executive_group_framework.md",
+      "sha256": "b214bdf30b733e01ef269befeb7c0e39a84c9b32315b8f278f18ab179e130de0",
+      "size": 974,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/executive_operational_readiness.md",
+      "sha256": "8d6570190006ca5e3923669debdcb6dea07b5e75b59dfded8ec3af28869f081d",
+      "size": 562,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/executive_workflow.md",
+      "sha256": "1f16691dee67dd095e1631edb8d1ad68e0440856c9b6e99a2f1a28d15b75efe0",
+      "size": 1060,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/finance_tutor_office.md",
+      "sha256": "a7080090ce3aa2651beb2bb53a319909bc8c652b059174731f41bad11fe1b72e",
+      "size": 1103,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/foundation_operational_readiness.md",
+      "sha256": "0fc96ab3d8b6571baaa497d77ef1751d5fa1fd4cc1898fe83e82bde754723b53",
+      "size": 601,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/foundation_testing_framework.md",
+      "sha256": "9913508d348032aa3b5537a0db238bb077ed4be9997da66132226578e3287538",
+      "size": 993,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/fundamental_analysis_office.md",
+      "sha256": "004e44ae34e8e5b56922d1188d459307458ab2dd7fd540e60e00985cce54daf3",
+      "size": 902,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/fundamental_research_office.md",
+      "sha256": "91f251d680ae0894b530b90d81e5edbfaeac5d653ef098f49e5e3764cd82e421",
+      "size": 646,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/fusion_office.md",
+      "sha256": "9cd600e9170939358acbe36dc25784ed3671636dec9a02adfbdbffa668001dfb",
+      "size": 788,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/historian_fusion_office.md",
+      "sha256": "01a04e1bc2b73c007f47c812963a38f29c220accfbe458b4af3e49dd48c5b4a4",
+      "size": 1753,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/historian_group_framework.md",
+      "sha256": "53a0333c10df592091d9e2e2bcc7d27c78683251bb9fd682db11fa908eb42343",
+      "size": 2001,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/historian_operational_readiness.md",
+      "sha256": "75a6a4ad67cbac2cfdb6b881579c3d9e72ffe797d7c088c90d457427fbcf22cf",
+      "size": 1783,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/human_override_kill_switch.md",
+      "sha256": "ee6c19cde44a71c85e75baff0c2d7a0760bc2f09126cd045676508678107676e",
+      "size": 735,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/hypothesis_validation_office.md",
+      "sha256": "0f9411155999c961e86f43d35c792ffd97f9c83156b8e4a362148a83421ebaa7",
+      "size": 1787,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/identity_framework.md",
+      "sha256": "498f9e5c216423511b612232d2637b1a3bd9c85a5226daf91360e210ac156fa1",
+      "size": 1429,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/infrastructure_ai_resource_management.md",
+      "sha256": "a1b0a506a56c92bbbd1cad7fdb9054ff79154c93beded30e1c803d447b7c0a5c",
+      "size": 2348,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/institutional_knowledge_office.md",
+      "sha256": "3a552ad3bfe43bed3ffaacc325690e29bbb3e8f2d4adbc126692ffe465b19d39",
+      "size": 1442,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/instruction_office.md",
+      "sha256": "b51d77df7a8966f3f7310985eb7cce083ebd08ae9d531ecf488cf20df60417f5",
+      "size": 1380,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/interactive_organization_explorer.md",
+      "sha256": "d10d5c5a665a34f8f9aff8af5ef53b75058e9560408d3d8758cc8aa241c9ad26",
+      "size": 1269,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/knowledge_assessment_office.md",
+      "sha256": "58ee705b2913f7dd11809f16d09154d655e7621bad18e5a3c809e3091ab17910",
+      "size": 1266,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/knowledge_graph_office.md",
+      "sha256": "94599e4bbfc0fae5806cd50dff23557fc7d904678ae688d24787b94e0ec06757",
+      "size": 1546,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/learning_integration_office.md",
+      "sha256": "563906b3bca4b8ad27af22c7f29620954245996f1ce8b82627c5d056a988660f",
+      "size": 1594,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/librarian_fusion_office.md",
+      "sha256": "f1c4517c119b9b2faa7c7f0d7a0131e1d6c64077039ab4969de7bd5f88d31570",
+      "size": 1609,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/librarian_group_framework.md",
+      "sha256": "4fe8cfcecbc195ca1ebc41d2eb6259e77e25f2a4c17f03a7c70cd47d6bb7d24f",
+      "size": 1704,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/librarian_operational_readiness.md",
+      "sha256": "76f2e014341069875c63916d34b90027334722890ac23bd83cfd32466282ec74",
+      "size": 1694,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/liquidity_risk_office.md",
+      "sha256": "b46063664e845f2048f91910045572ddb0ae3cd781ce5e1cffa74839d682b091",
+      "size": 918,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/live_portfolio_performance_console.md",
+      "sha256": "112f2a6c31868af0609f50e8f0e32398e195596870cacfc37683fb5b39fa1846",
+      "size": 2016,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/macroeconomic_analysis_office.md",
+      "sha256": "dac65c534e2682904b294e8c0e0a32917c928e043560efcaafb2c88172663809",
+      "size": 868,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/macroeconomic_office.md",
+      "sha256": "2df72a9d3dc9ceac357bd7dc86a6b950ec92a805854c281d779e597cb12586f5",
+      "size": 753,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/model_calibration_office.md",
+      "sha256": "216d69381f41cbf7aa1aec9aee31a62bb652c1e7a18cc0db16249e4af5848f07",
+      "size": 1755,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/news_sentiment_office.md",
+      "sha256": "8070883dec6571b0951cc2542a2caece161ca4f45d4ef3fcbc48091d721bc000",
+      "size": 782,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/office_operating_modes_scheduling.md",
+      "sha256": "9fcce06aa9d7e5563793855b591837130b86b3f04805fc4d2e389378c3728e77",
+      "size": 1483,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/options_flow_office.md",
+      "sha256": "afce3c2b1770f56b7741925813c23bfc2a654d49ef20ea5b66dbaa83642fd455",
+      "size": 838,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/order_management_office.md",
+      "sha256": "d8c49091cb756e778264f6bdfcda853261a458985c1cf70202c59169ce7764f6",
+      "size": 3717,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/performance_measurement_office.md",
+      "sha256": "69883c5ed50832811209be6c3fbf0e616afbf298658a132552f1872ab5b94524",
+      "size": 1967,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/portfolio_risk_office.md",
+      "sha256": "b397282cd8ade0972a720ae646486d5ef0f6f220b07a6ea2f636f37887c0f581",
+      "size": 1036,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/position_management_office.md",
+      "sha256": "4b50b0a7e646c1b674f729d0475e277ddb58ea56f7294fa3207d61e4bfe98293",
+      "size": 2277,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/position_risk_office.md",
+      "sha256": "59f1c39530dbc410812bfd25998d4f76795cca0bf4b906fb96ba93d9347d1272",
+      "size": 1637,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/prompt_evaluation_office.md",
+      "sha256": "0abb05e0f97b4179a0cd6847d07c0e6ce8a72bd2fdd5a0dc7c069ab68d9f6a84",
+      "size": 1447,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/prompt_specification_repository.md",
+      "sha256": "f0c069a6470a71d5774667712be231865c54b180a549fe3da2c69d64f57b7b45",
+      "size": 1293,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/recovery_planning_office.md",
+      "sha256": "b9d415afcd4d87d075f1e3c25fa0539388338a328e39cc27ba524ad2b2a95d37",
+      "size": 1125,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/risk_fusion_office.md",
+      "sha256": "a4f8d5ff3ac21829afc4b11bcec0a6e2b58a85de3056ffce33db5e86e4e6ea83",
+      "size": 857,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/risk_interaction_office.md",
+      "sha256": "4ec07fecceea8c08492da295b580a696674066b1d2bcc22b80e6e3244ba30479",
+      "size": 993,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/risk_office_framework.md",
+      "sha256": "5fb7ebe34613a4ea4d04a719cf4d388fcfb22efd66f0bdbe30b08515aac2412a",
+      "size": 1073,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/risk_operational_readiness.md",
+      "sha256": "68aae19f937e4cab5ce0e9db65307174c9a5a9d2e3d22d52dc2ff1e83cfdb3e6",
+      "size": 1171,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/seeker_department_framework.md",
+      "sha256": "ebfc65a287dc637a1786f16aa0d0921c3f1818ae34f1df4e15aea0af467a768d",
+      "size": 842,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/seeker_operational_readiness.md",
+      "sha256": "39a41c19edbfc73267a0255898913b67d3b04c608a725d6804fd5b5af972f696",
+      "size": 1132,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/specification_repository_office.md",
+      "sha256": "78c9317cf05995fd45632ad563c42a6c0e4ea37d444329e7e9b5901449029dd5",
+      "size": 1553,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/statistical_analysis_office.md",
+      "sha256": "205c4acf1a36e80ba9182819a8ba66d2acb50428331da5754db5cc5fdb4d58ef",
+      "size": 798,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/tail_risk_office.md",
+      "sha256": "9f2f6b9492d12148c218fe35fcdb55a0b4ca71f388d48f0ffafb16513a2b96f8",
+      "size": 1191,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/technical_analysis_office.md",
+      "sha256": "6f13eac4704ee052bb8b797e670fa63531126f76817fab6ea2c0b73528f90f43",
+      "size": 647,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/trade_execution_office.md",
+      "sha256": "7090ec5de6075dfca4bd73b279fc670d3c5a1e6ce25413ead71b7377aec077a9",
+      "size": 3247,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/trade_monitoring_office.md",
+      "sha256": "0ee018bf43e807705af41d5402f3accaafb656b34c15279ced4b56c6418e4f20",
+      "size": 2328,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/trader_fusion_office.md",
+      "sha256": "7f6374f24b1516d388617b0b0b7bf525d1e76154a022d2a7989063bde86f0de0",
+      "size": 2327,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/trader_group_framework.md",
+      "sha256": "f8a02768ea4e7e60d3bb610f3934aec1409f3ec7ca38e0d15302151f83d27c00",
+      "size": 5022,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/trader_operational_readiness.md",
+      "sha256": "b5bd8c21e30c3b6bb363c96d4098f272228305fafe7df38dcb4c5507e5602f7d",
+      "size": 2148,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/treasury_trading_control_panel.md",
+      "sha256": "03f901841c9539fcf3e3270f1407c1a1e48aa74ed70dbd09495c432b02bbb12f",
+      "size": 1329,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Documentation/volatility_risk_office.md",
+      "sha256": "10a34c5b1292e246aee146996c7c79144491eaeae94f29b2acbccd0f2f1a69ef",
+      "size": 1188,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Launch_ARGOS_Control_Panel.cmd",
+      "sha256": "576746e69f6a04cd825e4cb379d258775a47df14a73babe09efe97af4b263e1c",
+      "size": 165,
+      "extension": ".cmd",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "PROJECT_HANDOFF.md",
+      "sha256": "b4feb91ac42b996816a447adfcb92017bb04f8085d2cf02db6d6d08d1b8b6362",
+      "size": 10452,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "README.md",
+      "sha256": "ee6661c668aea1203d8b6d289788a4a0760282ce7c32df2e59fc6222b868f240",
+      "size": 2454,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Scripts/README.md",
+      "sha256": "d0a8a003557af6af8a471ea36195e895b5d349553d08d5e4fd5dffaf984c4c58",
+      "size": 123,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Scripts/launch_argos_control_panel.ps1",
+      "sha256": "898934ecfcb3c4b173aa322c506d3d5b5ba94faef48beff12d96c6d21d0b6c7e",
+      "size": 2957,
+      "extension": ".ps1",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Scripts/start_argos_control_panel.py",
+      "sha256": "c47f6fd45d180cbff06fbd8fe541a7a1b1302950f3bf071a266e4df485397be8",
+      "size": 367,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Scripts/verify_repository_structure.py",
+      "sha256": "0843b928c94d2cb623225022deaff8b3ec46db9fb9e517fb8eb61f0ececfbf16",
+      "size": 18624,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/README.md",
+      "sha256": "eae003b85e164b615ede4a77a882604806ef20ef9c2bd776510ea64bf5d9313b",
+      "size": 130,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_academy_framework.py",
+      "sha256": "71e3b3111310f214771d77c3d37bc167207165e4cff53a79b9ac49bb87594a26",
+      "size": 6390,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_academy_fusion_office.py",
+      "sha256": "6cb062db14fef61aa431eb7bce8584504fb589a51dfb230909b2ceef6bc66ebd",
+      "size": 8252,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_academy_readiness.py",
+      "sha256": "b7049f02fec04f549d6a1b62822c682b081056ee70695115722664bcdc952648",
+      "size": 4573,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_alternative_data_office.py",
+      "sha256": "a239eada1287a05f71e8430f2d9b199208098fb5be13881e06289a258bf14f80",
+      "size": 9274,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_analyst_department_framework.py",
+      "sha256": "162f5aa7163faff6b2dadc79d57d48bb5d390119340bd794689aab2972ae5f6e",
+      "size": 8654,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_analyst_readiness.py",
+      "sha256": "b536a9b20e76d84e68f8dfa94d19f4dbf378379df13cf8e8ccfda1f9530b26db",
+      "size": 2784,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_analyst_technical_analysis_office.py",
+      "sha256": "c247b2507b7711036af2cc4bbf7a770167f156f0dfbb72c1e53b454c0b017522",
+      "size": 8549,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_analytical_fusion_office.py",
+      "sha256": "d1452ffd56a4a73f3a3873052a19e5c635d56bf6df96e5addfef5eb8ecb96230",
+      "size": 11167,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_argos_control_panel_dashboard.py",
+      "sha256": "dc388c8fcc57a6be0e57c8c3d900510a7df50a7c790a43fa95385029b2624cb4",
+      "size": 646164,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_audit_framework.py",
+      "sha256": "1541f688f5a113c3c7e6e1578fc0325471e24262a67400f4f9c7465e8742786b",
+      "size": 6377,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_behavioral_analysis_office.py",
+      "sha256": "4391a27ed0b22b93760b94f7e34fb49179c7d134f245b1fe7b52dc169cfa0af1",
+      "size": 9340,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_broker_integration_office.py",
+      "sha256": "5f0cefcaa27563fcbd1f00742e15970a7ca418644e50468079dfa9b2047f53df",
+      "size": 7770,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_bubble_detection_office.py",
+      "sha256": "114c3c6d34213617fda0860502507621b0922ac258f5c43507ae74de9375c05c",
+      "size": 8349,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_case_study_office.py",
+      "sha256": "dceb9246301ddae9d91096caf5f44955ce1e2adc9cd453f88640c67f4835c4b7",
+      "size": 7129,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_chief_of_staff.py",
+      "sha256": "e0c6339f25c9f066b6d2b042bedb82205be23f89e58eab6b7dac447f912dd026",
+      "size": 8533,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_command_console.py",
+      "sha256": "a1fd6d337bd2a593a99720cff716fb448f7bee0db7478b02eb346f9ab958142e",
+      "size": 4413,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_commander_decision_engine.py",
+      "sha256": "7fb823ca57aab62837fd7aec24249c083138f1ff6edb2e4d64f36a397f182e50",
+      "size": 6805,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_commander_notification_alert_center.py",
+      "sha256": "824e82e6955b48a98b17e3a8663ac7ba172d0b048000a52e285e77d0132c80ed",
+      "size": 5213,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_communication_framework.py",
+      "sha256": "941f6f206d3e221fc16732b15c25e83712c38fd8d606499f4cee73034ffd1849",
+      "size": 4753,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_configuration_framework.py",
+      "sha256": "93699c5f3819567c93cb1368e3b6b900d3beade35f0cb1228bb01bc0dbbf82c6",
+      "size": 5712,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_contract_framework.py",
+      "sha256": "a8704d38d951902319940418a3f88bc904bbdf4ec7d7e267ec16f56611f6d64d",
+      "size": 4848,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_cross_discipline_review_office.py",
+      "sha256": "5a5caacf239bcc12d498b9bf0fed3c47e96cb307c8a235f85373066dc6c4ee37",
+      "size": 11118,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_cryptocurrency_office.py",
+      "sha256": "8549785deff4fa6ad13f7480060d1e0dd6017de38510068a6b513590a0164da9",
+      "size": 9142,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_curriculum_office.py",
+      "sha256": "e8acee8d781611951707492ca4c14a22c563bb81b31376b922c562e0b3fc987d",
+      "size": 9231,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_decision_evaluation_office.py",
+      "sha256": "182fb4475f4c66793f72dc8d7470bd394870437a72a1010f11c35a9c4239dabf",
+      "size": 8023,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_derivatives_analysis_office.py",
+      "sha256": "37dbe55001a009f8fc4aa8f6cf9b00f2171b9012ea39d27e16edb069dd01f700",
+      "size": 8923,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_doctrine_management_office.py",
+      "sha256": "2e680c5b555bf69a51099fa0b7799faa894b8866cf5a34ead1f4af2b7d903497",
+      "size": 6842,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_enterprise_activity_bus.py",
+      "sha256": "6c969f3ea541d350cf3f8d17a8821dac36eb085dbb56eaf8e976c12ff382f471",
+      "size": 5411,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_enterprise_command_center.py",
+      "sha256": "b9abcf76300aec7f8e60662d0ceed40be7eef5ffcd365e5419c3b81d6eee705f",
+      "size": 3780,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_enterprise_credit_governor.py",
+      "sha256": "b5a5ac56c0761eb68317accbb9a88173c3b5278041509598e23a88df7313d64d",
+      "size": 5803,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_event_intelligence_office.py",
+      "sha256": "7f58cee7342eb4ad740bd0db08b242477f53ada2cc5594e61d7f188a6379b1e8",
+      "size": 9195,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_evidence_evaluation_office.py",
+      "sha256": "010ed7ddd628438619dcab4ed9fb482d8c5e01cdff5995463a6f6c2dc8285e63",
+      "size": 7551,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_execution_quality_office.py",
+      "sha256": "507b2d522e9bfc394007c6b193c001aef6c0769e707e1f0c3f215921c3784524",
+      "size": 6461,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_executive_dashboard.py",
+      "sha256": "bcc1ddfb9eba94ef4877d1bd271dd287797fa042cf110851293a877db01a983f",
+      "size": 6745,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_executive_framework.py",
+      "sha256": "5040f387d5800db586b325dd274a119ffef7ec3b98e73d7c17165d2e2f7c4ff5",
+      "size": 4807,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_executive_readiness.py",
+      "sha256": "aedc8bdd6e5e87c469abd1ad50a43e565bccd08aea5df38939647f26a9bb0399",
+      "size": 2271,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_executive_workflow.py",
+      "sha256": "22e030bc7959569b41494d3cd5f0a1d441e1f9154b9d67fdcc6f39a78d3a1590",
+      "size": 8962,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_finance_tutor_office.py",
+      "sha256": "1904215ce7ad09d47bde583e36fd37208995affd9ae7f873f7580e9585bf985e",
+      "size": 7008,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_foundation_readiness.py",
+      "sha256": "616c06f7c07ec4aadb393534dde76d1901134b0492a52d9fca568c3f2166d46a",
+      "size": 2614,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_foundation_testing_framework.py",
+      "sha256": "d1aadb1eb6f237f1a9882a5dda74c396707eef0cfbf66b967ef504780b1f4fb3",
+      "size": 3022,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_fundamental_analysis_office.py",
+      "sha256": "f0354d33b3c7248d30f4cd340c87e85ab9d710b22af60ac86146f48f855d5a61",
+      "size": 9016,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_fundamental_research_office.py",
+      "sha256": "e8f0bc128ee97d2a9bbb932951c4bd8c38aa2747092ad11e72b1e88525c57bfa",
+      "size": 6328,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_fusion_office.py",
+      "sha256": "8fd72a0153b8ff79387282bc1e3f454d6c9b179e2d7f3d81f87ac15d3629e923",
+      "size": 8381,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_historian_fusion_office.py",
+      "sha256": "1c179521c1073648410dd3c837af11fcc32bfb2960f533f2ffeb9407eb59aebe",
+      "size": 7361,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_historian_group_framework.py",
+      "sha256": "5b4e69915e2c0c0bc31b2b9dc7c4737f25b6d5ae100297be26f63d12d9c70feb",
+      "size": 5500,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_historian_readiness.py",
+      "sha256": "2115173ff0d308b82f15a0e0f16d035e0082270d456dfe11530d70dc41e0d875",
+      "size": 4489,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_human_override.py",
+      "sha256": "9b1c8a5e5b4ab19d270a23033bc10632b9b43b470a761203279a009636ee73d8",
+      "size": 5304,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_hypothesis_validation_office.py",
+      "sha256": "323ed72908bdbcbe7994c7d3fffacecc00f8fe8c3d503428008fd7cdd2a92d97",
+      "size": 7401,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_identity_framework.py",
+      "sha256": "156b392f9cebb2521650bc239ac8b11406dd44b53207d450a2f534829c87e7b0",
+      "size": 3465,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_infrastructure_resource_management.py",
+      "sha256": "13d3f6cf8a92af68ade03dba4bfe39dce9d0c9209b77e4d4e1a6cf7635431f57",
+      "size": 4181,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_institutional_knowledge_office.py",
+      "sha256": "243c2a3545d6f8cf720c66a83f0714c2ed42cf195305271ca60ee69288910646",
+      "size": 6691,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_instruction_office.py",
+      "sha256": "56c8086235c47f184ba58103258d890ccc570e8a96441b9e0a5f11a0cea4d961",
+      "size": 7070,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_interactive_organization_explorer.py",
+      "sha256": "a97999bff3bc2067b2f755924c914cec25ebfabb779a725d160a278c78dabb04",
+      "size": 2998,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_knowledge_assessment_office.py",
+      "sha256": "f94b3d7eb7eef422d6c0b53813a3d24afc65ec74e9786c20734564f4ce59ec69",
+      "size": 8375,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_knowledge_graph_office.py",
+      "sha256": "09f7e19b8cd2f5e91c6d566762b9b020bea67544df633bd3a7d29b7f121812e9",
+      "size": 7990,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_learning_integration_office.py",
+      "sha256": "a38a34d7f9c4c6bcd5e2bd680dfd88583e86c91c4df6063f3176a22dfbd1f358",
+      "size": 7216,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_librarian_fusion_office.py",
+      "sha256": "6c217910fcc1e82c5d329c66950c612fcee6b3554eeae4554dad4d882e57235d",
+      "size": 7398,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_librarian_group_framework.py",
+      "sha256": "23cfc84253c1972286b4538d8bdcf2946abc5677e1b629e18e974f9efd4e0bf4",
+      "size": 6066,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_librarian_readiness.py",
+      "sha256": "0f023639476ae8103c129f5b523f4230a3858e966c0e61a73163de6e93734bb7",
+      "size": 4575,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_liquidity_risk_office.py",
+      "sha256": "ebea8e8a99bfa8adccc1745016ed4599469b7251c62204d1be857da04f663988",
+      "size": 8326,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_live_portfolio_performance_console.py",
+      "sha256": "864854f476fa182e6dadde7afe344f73f61fec47efe54ea1912a147ba991c0f3",
+      "size": 4083,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_macroeconomic_analysis_office.py",
+      "sha256": "00d44c943b30f3cdd41f362e0f4f41187a992776758d410f1f8492584a5ebd8b",
+      "size": 8159,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_macroeconomic_office.py",
+      "sha256": "1d78c41a503529e2a845e0b53827f97dc293d7c0fee7afdab4b76233d3c4a821",
+      "size": 7834,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_model_calibration_office.py",
+      "sha256": "8c745eced8ef50948ccca9d5df86ebdb184842dd41871020f18548525f34bd6b",
+      "size": 7070,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_news_sentiment_office.py",
+      "sha256": "47b427989fecc9e5d367a4c40cea1d3b3acfa5ebe1a8f7d0935e63a8c7e23748",
+      "size": 9019,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_office_operating_modes_scheduler.py",
+      "sha256": "8a312830f67b04f232f76a15fa5de46e226cf5b3d4048c67c5aedd2a97c89aa4",
+      "size": 4407,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_options_flow_office.py",
+      "sha256": "ef3f365975d08523c676aaef2a8fcea1fa2a35abce55cf5d6f8c32735fe4bb66",
+      "size": 9160,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_or003_paper_brokerage.py",
+      "sha256": "0e8e9d17af07add3c5eb349cd226fedb083b7f88fbf5b809c8ee2c9300ab73b8",
+      "size": 7127,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_or004_position_lifecycle.py",
+      "sha256": "e6041eb9cc1751459a6c76b9b444a76a1138adda9b65e5928c1e617242212177",
+      "size": 9113,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_or005_canonical_runtime.py",
+      "sha256": "b1d143fa9e4ea012bafd16d5b15c3ab197dea1ce757773adb04f89f8ebd27d38",
+      "size": 4523,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_or006_enterprise_persistence.py",
+      "sha256": "94f3e683e872d9d0ea435bf2c5a25fc70aa559996af21003e180d478479f8144",
+      "size": 5783,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_or007_enterprise_certification.py",
+      "sha256": "36899263d82cc9138d01477b5f80d66a0b97839d8b9d2d182fe173ea4433e874",
+      "size": 2485,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_order_management_office.py",
+      "sha256": "5af87b54c29a615336b558dcbeb7f87918e49f759af3579ead05dc8ca392b7ed",
+      "size": 10454,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_performance_measurement_office.py",
+      "sha256": "b5efa93c700012cde53defa2dc93fe7e17ea057021864db63e68602a6f42d8eb",
+      "size": 6651,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_persistence_framework.py",
+      "sha256": "8d0abbff0d7fcd3e24dc7bb4af23140fa6b5677a77db841ae298cef3c102936b",
+      "size": 7493,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_portfolio_risk_office.py",
+      "sha256": "ce38c6c18b47a7d1b05fe7f68b40715a40d5b8f7030e86c77e89cb6bdf562fa1",
+      "size": 8517,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_position_management_office.py",
+      "sha256": "342ae9e1492d6df288413c329c6ebaa86bebede8a7ebe6e4e8eef6cc57bb1fb6",
+      "size": 7118,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_position_risk_office.py",
+      "sha256": "ee7c0d6b7218ac762010f8780966d2624461dce10fc3badbdc8a28f48eeb8552",
+      "size": 8528,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_prompt_evaluation_office.py",
+      "sha256": "306d894d6ffba1904b7f3413212660ead120883dcfa7f92ac022a73500b05849",
+      "size": 6917,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_prompt_specification_repository.py",
+      "sha256": "a3baea06205d01f55f2c621c19336bccf57ebb94ce0ed16a3622014d6c3c1d9d",
+      "size": 7198,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_recovery_planning_office.py",
+      "sha256": "df10e8a5797b87203ba821d096a4745906186a81d475196d7bf8b0423dbbbf56",
+      "size": 9101,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_repository_structure.py",
+      "sha256": "1976b1bb3dc7cf2919d20a5baaef2aa6e0a84f10bd59e0368cedd6ed9ebf72af",
+      "size": 1194,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_risk_fusion_office.py",
+      "sha256": "a4519a8ab18d92c5805c7698f6acbc8b62acfa6e15caf901d5362dd1c8cb5bdd",
+      "size": 8614,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_risk_interaction_office.py",
+      "sha256": "e6ef789e304f989fb8d1d02416f2de8752c106c36a77020223b395d0b262551c",
+      "size": 9607,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_risk_office_framework.py",
+      "sha256": "3479ef44448499c5f6f7e6c580a6ccdb825e3950f4fe34f9bea27dad5dcd5f30",
+      "size": 6085,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_risk_readiness.py",
+      "sha256": "1c112439f357c62228aa19690188547940c30c8539c434541cb62e42c7f40c2c",
+      "size": 3045,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_seeker_department_framework.py",
+      "sha256": "c8ee44241323b276f1fcafb55f36b09355ba552cce65aca078717fab17855e29",
+      "size": 4956,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_seeker_readiness.py",
+      "sha256": "fb54f44661e8da7152cfe66608f43fa4543b4b55c2398584234402b29cab4c9f",
+      "size": 2770,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_specification_repository_office.py",
+      "sha256": "c07fc900909c20f32db21c3bef5a137fe05610619cdeed1ba9e31a93458f53b2",
+      "size": 7351,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_statistical_analysis_office.py",
+      "sha256": "27209987b02568a0b2a369a3255d6fec88af64b7bf666567dd4d939d40f4092e",
+      "size": 7585,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_tail_risk_office.py",
+      "sha256": "d9582e10d0a02ce92b43cdcf0680eeb98f11b82ed1c6aedd16b4bf4651cc20b0",
+      "size": 8821,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_technical_analysis_office.py",
+      "sha256": "7a93364b4a536c1392870e95915a58a2e8e16f25c86c4ea3b806c9c8091730d7",
+      "size": 5365,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_trade_execution_office.py",
+      "sha256": "a966efc356e5db68eb4a4d432bec06b05c3bc3d4a1a0481461b9357f2cf8bfbf",
+      "size": 8864,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_trade_monitoring_office.py",
+      "sha256": "816a85dd960a89f8fe98c8a657318c2f9678e6713ff3f704e14b184ee0c7a1e2",
+      "size": 9481,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_trader_fusion_office.py",
+      "sha256": "b16de51b1a49b5460ff23d4e475d9b1eaf9851d4dd8959de80d2772fb00e9c7f",
+      "size": 8213,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_trader_group_framework.py",
+      "sha256": "a40a5aa21c5bad46bd6ec925417e8eaa54489c6e615d2b2abfbfe355b396a7ad",
+      "size": 9252,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_trader_readiness.py",
+      "sha256": "3e357e62196c4c0861327a1ca5f064a44a55acedfa11e7f4b3d13fa86a584b75",
+      "size": 4679,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_treasury_trading_control_panel.py",
+      "sha256": "28cfd260f7da502c39ab015dc532f4cf7a3a62e683bacd50ad3c7801d356a3c4",
+      "size": 5931,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "Tests/test_volatility_risk_office.py",
+      "sha256": "92e3359ec0c4f3fc1605ac6ca44a2ba1b0f1815f8349d526c9ac4f4f973ede66",
+      "size": 8461,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/ARGOS_Git_Style_Snapshot_2026-07-08.md",
+      "sha256": "a6f2cb2fe5f339ec42a867b6b70d525faf5a85433979c9800f707afe6f9e02a5",
+      "size": 5101,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/Authorization_to_Proceed_Group_2.md",
+      "sha256": "a0fc97791fca248dd7870cfd1c48caa9230413a4c32f5fda299ba1c6cf30a328",
+      "size": 292,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/Authorization_to_Proceed_Group_3_Seeker.md",
+      "sha256": "dea98f50a6453d76a98ef4a21e16e0f0de297069a7f61bb25ba812c0aeb877d9",
+      "size": 322,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/E-ORR_Executive_Operational_Readiness_Report.md",
+      "sha256": "c6fc2bc585a36f5731fa5b970a51bba9b41b1bcb99dad8fae4ba46988ae119ae",
+      "size": 924,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/ECR-001_Executive_Completion_Report.md",
+      "sha256": "4f62362ba5ba64469483414d30de759447975ce4a5650b65d3212961379be40e",
+      "size": 362,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/FCR-001_Foundation_Completion_Report.md",
+      "sha256": "4ce0f1fed9017461f252081e1820182c81b3ce8ce176c8f16e1d38d521b46e7b",
+      "size": 445,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "outputs/ORR-001_Operational_Readiness_Report.md",
+      "sha256": "e9e2b1506c48c76795dca3537ddbaf2d417e60a2ebd511e8017e7b7cee8852a8",
+      "size": 862,
+      "extension": ".md",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "8480c80f728dd900a2b836cf37b04abc5195d580ca3b635f63d2caa2d9befe43",
+      "size": 247,
+      "extension": ".toml",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/__init__.py",
+      "sha256": "de264554621d245ec5efd6123d5d20f37423ba0211e6669b696662912bc4f084",
+      "size": 215,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/__init__.py",
+      "sha256": "207786af27c984f4fe31ff540d57ab854f587509535e06f999275272396eff35",
+      "size": 7981,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/case_study.py",
+      "sha256": "d54ca9a5f3255061d4fc8d6a316e4049e305912012099f5f6e4ca796f6d0ad58",
+      "size": 17515,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/curriculum.py",
+      "sha256": "edf90bef1e80745e0e7b37bce46d679094508fa2ec24687092daec369a48bb6a",
+      "size": 17449,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/finance_tutor.py",
+      "sha256": "0cfb4eb867167c67b8b1ea683b411a4035310f6dca1cbdbe886a62f2b2e9ff5d",
+      "size": 17197,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/framework.py",
+      "sha256": "c4520009d59dbd90c1d11e03b3319b24b9ca74d52bbabc537564cb6de9b36b3a",
+      "size": 17117,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/fusion.py",
+      "sha256": "8b0777aed534109e641b618ff2e77b7bfc31c78732559811f71030b3d55b435d",
+      "size": 17743,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/instruction.py",
+      "sha256": "eb8c2d2e7912277e4d76a4b90ba686a0879de3c0715b34336ac7ac227825b326",
+      "size": 16759,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/knowledge_assessment.py",
+      "sha256": "defed69b7ba260f6254d5528222e39bc24e780173bfdd81226da493fa5224344",
+      "size": 19799,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/academy/readiness.py",
+      "sha256": "7a0f8af42dd3686b4c9264b1ce2e7cde36731822ad1e8dec57e81d19934a88c0",
+      "size": 18432,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/__init__.py",
+      "sha256": "6828a4dc8c6e645b2cc7726b5bf8386f0c0bf1e5676eda84fe2c5004d5b05808",
+      "size": 9246,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/analytical_fusion.py",
+      "sha256": "5bb5e9d23e7fcc64a38765700c56b11c7f8ab70906a4cf1ec0b0bd1cbbb7142a",
+      "size": 13750,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/behavioral.py",
+      "sha256": "229b1d1dcde878284c9ae60ee444b62f3422ea4b4abb96a618c268e15c28d584",
+      "size": 17407,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/cross_discipline.py",
+      "sha256": "52c76128e1dfd5e58ded6274673a3dc7c9aac5a676c30deac46aa6a788253511",
+      "size": 13978,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/department.py",
+      "sha256": "8c60ad81b2a5668b83c89c4a5adc9149dce7346582498370574744de4adf57e3",
+      "size": 3042,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/derivatives.py",
+      "sha256": "8de442f0e32beac55e26d228c70449eea52984084fa8a7b773090867b9059c2b",
+      "size": 16241,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/fundamental.py",
+      "sha256": "89d4e872c0ee57fdbd8883a3c97442d14d77a39da96a80cdcff43ff5626977fe",
+      "size": 13786,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/macroeconomic.py",
+      "sha256": "beaa1870c24ebebd87a2c867b7d9b626ccc3000599cf8f69ca3edbf2106bf21b",
+      "size": 13082,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/offices.py",
+      "sha256": "013a47fa83f59432fc8646897d00bac50fab55230985e6dc82e07c2212a00057",
+      "size": 11266,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/readiness.py",
+      "sha256": "92238d109cb6333f9d177b805bd86d4fe2a78c6c8987cd4e3d4d734b75077a77",
+      "size": 22139,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/risk_interaction.py",
+      "sha256": "5acaaf01e2db22a46171e0d2593cf8a2d75ac28a10bfe3303304901c0439d692",
+      "size": 15685,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/statistical.py",
+      "sha256": "d024747fb5a5f0c08abffb702514344aa71b8e631e5c8783c946eb8823716815",
+      "size": 12727,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/analyst/technical.py",
+      "sha256": "a2ec9b5fb0638f4560821be3e4c1653cb83a5e5d2cef11bbb62bc395b6d2ac54",
+      "size": 12630,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/__init__.py",
+      "sha256": "265bbafc0a2abb6998180333c3fa0f86f851a9a03b19209f5f6de4e3930a54e7",
+      "size": 22856,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/api_execution_gateway.py",
+      "sha256": "da3358ddcaabe6a7ee4fbcc48eae5d7377f5c383b7b6d7f9ffaee66003bd4c8d",
+      "size": 29899,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/api_runtime_monitor.py",
+      "sha256": "25234251bb05fb7118a2fb54d37ad251aaf5307ef06c7b47fc1a45bc487ad1b4",
+      "size": 25376,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/black_swan_simulation_engine.py",
+      "sha256": "10b8ca42b2b705ccf32cb79cdf87b2c78c8711c5f6bff7237f27ea351fb1715a",
+      "size": 31706,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/blue_ocean_intelligence_office.py",
+      "sha256": "99b30bbe3f9ec27884edf3a080f949ebd0ab9909f319c1cbd9d81d55f4e1df3c",
+      "size": 23035,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "sha256": "8dc6eedcb1f655367b8ce4fc450e1b0c27ce395b87784fe4b95216cac00c6aa5",
+      "size": 33739,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/capital_allocation_engine.py",
+      "sha256": "2813bd54c6f40e002a331b045e88fe1c6f7ef7c63252cf46a6a40f2ef28bb25d",
+      "size": 23913,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/capital_rotation_intelligence_office.py",
+      "sha256": "32931514dab04fc41392733a48e66085a7971e6b8d1aed100d5eee5a3ef51155",
+      "size": 30129,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/closed_position_truth.py",
+      "sha256": "19181dd10bde45e68ed63abd0b07125a6dbe906ef7cf59ef0e3d0627928a70ac",
+      "size": 22928,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/cnac.py",
+      "sha256": "addd2b58f5c6bc595db4a282f7bd9048420f52afbdb56dd797b2ed4dba23b903",
+      "size": 12665,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/cognitive_contract.py",
+      "sha256": "5e2753e1238648f4fb0b6faa2f9c29b0e69f109d347414ebe904cc0352c06ff0",
+      "size": 12435,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/cognitive_pilot.py",
+      "sha256": "3ba343eaa9341032265bc119f372b4996670622f065a977373c9f9d1b54e275c",
+      "size": 11296,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/command_console.py",
+      "sha256": "4778ccc817199bd021862c888c140c8cca87aca3405bce508fb4e1c986353ccc",
+      "size": 17629,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/commander_briefing_generator.py",
+      "sha256": "df8c5c42b3ab5538a41b2179082782ddcdab5b55209cb84368a9b41adee3b20d",
+      "size": 30878,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/commander_daily_review_workspace.py",
+      "sha256": "7d9b932685818c3c5b7afcc33dd6513f7303aab835f055781f5bf433739a7584",
+      "size": 20133,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/commander_strategic_dashboard.py",
+      "sha256": "8a84448627dd3a3ccaa950e2ee74525a5f5bb3d76cef1d62a27d760d5cd3e2b1",
+      "size": 35228,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/correlation_intelligence_engine.py",
+      "sha256": "9a303b8d9e7fc690673106f55667205299ba04131393db9867b18a2a2fc40889",
+      "size": 23026,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/credit_governor.py",
+      "sha256": "711bf8fcf5169a55cdeb777d8193e23425f9e28a791e7cff2dabd65901e3cc59",
+      "size": 22084,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/daily_learning_pipeline.py",
+      "sha256": "16b396414177de8399caa27fb6c84fcfd79fb00dbd0e072403b86d6658ce5c5e",
+      "size": 20781,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/decision_explainability_engine.py",
+      "sha256": "ccef43b10d89ca1b68562b3194d5574a05177a79d9f0a51310b409cb053a8c8d",
+      "size": 17806,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/decision_laboratory.py",
+      "sha256": "0934e3cbc7f6313405cdbbe93601a4638ceca31f4932bb0d1986946935a57111",
+      "size": 24892,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/decision_object_quality_scoring.py",
+      "sha256": "8b6f56d9260b82e23cc64015ce6d4d3f8d4b90b53564478354d47b7cccf11cd8",
+      "size": 18497,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/decision_object_schema.py",
+      "sha256": "3f072e32fcd030879301960689e66625bc5073e4873a1250f46691f5a02c5c99",
+      "size": 25639,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/decline_intelligence_office.py",
+      "sha256": "522d68a85acd655724e0e1aaef6a224b638adf955e0841bbafc058518d29c68f",
+      "size": 24536,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/disruption_intelligence_office.py",
+      "sha256": "f1b8e4f18f629fffe1d1c5ad3598a831d925c382c9fda3cdac27031aab17ec7e",
+      "size": 24837,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/eab.py",
+      "sha256": "720ddde9d318a85031dbb6bc939f84ef9d76cad75b3083ba031d73565c66ed17",
+      "size": 11330,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/ecc.py",
+      "sha256": "1b42223b2b8c0a711fce8433d469639cdc820ca7a12faacb1a01093f80a77207",
+      "size": 16593,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_benchmark_engine.py",
+      "sha256": "064ae9146c8778c38abb9b3c0719344157d1c2c4dda2c39c2f3272c7ab11977c",
+      "size": 21713,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_certification.py",
+      "sha256": "0460cbf7cd0803bd82f8bd55beaacb54e7b13e67c06f77cc70e27a712a3ba3ad",
+      "size": 14485,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_communications_bus.py",
+      "sha256": "2d7dfd73b12a527b2b37403db5979ed9f48340aaa867cf56f095130165bf317f",
+      "size": 51799,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_configuration_registry.py",
+      "sha256": "7aeef329aec806d244f007bdc6a2af6330329c11a5b34306c9790ca8cfc65cce",
+      "size": 31767,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_cost_governor.py",
+      "sha256": "cd990f6ec45928f56d9682b3ab6f5b476b3ea5c2f44af62a34be36ec20f3a8d7",
+      "size": 60852,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_doctrine_policy_manager.py",
+      "sha256": "23fb33685d0e89df9fb614a793966e13f67cadb8ec9b9dc09be463e6c1d06fc8",
+      "size": 84885,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_efficiency_analytics.py",
+      "sha256": "1d08bfaf2c3e4d6e443039c2db61e169e1118a9ff239624e62e9ead49f107306",
+      "size": 45104,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_experiment_scheduler.py",
+      "sha256": "afb4db6ce71b0b4836e1c774863639a26545ebfe77b6e69d87e4d08a943116f2",
+      "size": 16208,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_failure_recovery.py",
+      "sha256": "a3f84b0ff41c78b80c52ae6e5b7c3311bd80bcc98ba86dd133bcb1a983005296",
+      "size": 22439,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_grand_strategy_engine.py",
+      "sha256": "9447bcb50c9991f9a68f922eb6383c3ec5292f4cd8e9d56a72778982b0eafa97",
+      "size": 42722,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_health_monitor.py",
+      "sha256": "f96be7d6c9de4bae2f975a84842e21cb5506655e0114f955a01a83bbcda977e8",
+      "size": 22724,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_learning_engine.py",
+      "sha256": "03ef902285a17ea760a51a9fdc2d1a20bea4959ffab474421f18dc7a2a37f535",
+      "size": 24448,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_memory_cache.py",
+      "sha256": "e0514d9dd97416ff808e18111b8436c759588b70a7a1225127d5c694663aaf0e",
+      "size": 72797,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_operational_guardrails.py",
+      "sha256": "c1a60340423a72a017df56a1f29808b960c8a5c45475f86d4222f01a985242fd",
+      "size": 19314,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_persistence.py",
+      "sha256": "941febaa51d01f2fc1121a1b750b535d8f7091444679d294b8e1322ca8b1f7f0",
+      "size": 17248,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_priority_engine.py",
+      "sha256": "d10bbcfea39043fa4df0d015b85894d96ee68d63cf80df04e50c222008acf12c",
+      "size": 56673,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_reality_calibration.py",
+      "sha256": "a7bea6c46fb20c9fd0c1e0535a54a6ca0d54b29048e5848f7627eaef398df49e",
+      "size": 26234,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_reproducibility_framework.py",
+      "sha256": "e1e5770c33287ad313a3ef4fd70a55dd9468a775a48c944a30fb7094f718ff04",
+      "size": 30814,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/enterprise_risk_factor_engine.py",
+      "sha256": "5e3a7a9ff5c92ef1fbf3c959bf43cda63cf510ec7f8b646cfa40b84726caed8e",
+      "size": 27096,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/event_detection_engine.py",
+      "sha256": "1a0861c0948757cc538264b7fc3a546ffa656737cf8bd7b9eb5b9d7a823844a8",
+      "size": 46780,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/historian_recommendation_engine.py",
+      "sha256": "2005abab579d30ac4cc20667b8bd0e4263119caaa6e4e4dd24e0a0a4413c1573",
+      "size": 27758,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/information_freshness_engine.py",
+      "sha256": "d0738781c317ac9f06dce947b755e8ba1281227841add20c815af3becf23f8c0",
+      "size": 82293,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/infrastructure.py",
+      "sha256": "1cafdd348f34427cb4d6c37d0207d1c28a985b257eb59819265198f285a663cf",
+      "size": 17156,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/ioe.py",
+      "sha256": "eea23cc1cfddbc6f8f3110b8ecb136723e677108ea640b789505a4c1cae3fd11",
+      "size": 17118,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/lppc.py",
+      "sha256": "2a9d7639c6bb5e83603e89f13b2335ba0ac6a5e27959da7f48948517837094eb",
+      "size": 15587,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/market_context_engine.py",
+      "sha256": "f38745c5b40210759b581b1d8d8e4f024b3f4157ff74f211bb0bcb5fb8a98738",
+      "size": 18898,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/market_data_provider.py",
+      "sha256": "3a9283e0fdaedac9f7d274e89ebd23f9886b3044affaf3e511a875cba711c00a",
+      "size": 14537,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/market_replay_engine.py",
+      "sha256": "bd40f20161ffd6c676e55a0f81379b9b95c831de48999b99cf8bea10d8324e53",
+      "size": 24917,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/market_structure_intelligence_office.py",
+      "sha256": "1ba1aa2e5ecf1ffe09747e5d08291c314f8b0aef7095951a71c4f21edf40f2d3",
+      "size": 27357,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/mission_planner.py",
+      "sha256": "2a7b3d83dd8121f4b6798a262fe14236435df0a10f90c93727d4efa0f30f02ca",
+      "size": 61633,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/monte_carlo_portfolio_engine.py",
+      "sha256": "ffed8ef0e6054420dc7c36e6fe69a234f73854ebe6ef67a4d3d07f1feed7ee4d",
+      "size": 29338,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/office_duty_officer.py",
+      "sha256": "3b17e4f0302bcf9a3cf88b98bd3e75161fbd6c7d680730b7cb435c7e42a22bc0",
+      "size": 33831,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/performance_truth_engine.py",
+      "sha256": "308bb676115e68e383eb044faf5abbf087f93f4488874bbd99f93562fa2b6a86",
+      "size": 61312,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/portfolio_construction_engine.py",
+      "sha256": "b313d0a9a1606b29e4360f4a8213638929c945a33cbf6650806726187fbc0986",
+      "size": 28104,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/position_exit_decision_engine.py",
+      "sha256": "1f461279b4e44ec2155797430b8ffe33b10a35a6e64dfc0dd5af0dda819a5f88",
+      "size": 21361,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/position_lifecycle_manager.py",
+      "sha256": "7b616f987521b9a6bad962f69adb5c53f0fa9dca42cdd15c7fa10195861614f4",
+      "size": 17431,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/position_monitoring_network.py",
+      "sha256": "46436055fadbfb02e887c4b765ba7feee8d283ce172581a7be77430593da2b93",
+      "size": 19275,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/position_registry.py",
+      "sha256": "f9ca231fecaa3b1f21148fc0ed46dec1d557075c92548b50e584f56c73a70fae",
+      "size": 27819,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/position_sizing_engine.py",
+      "sha256": "0bc3048d02930e96bf6ff4e5a7a7f6540a1b68a001e32f2aff40c08143f7c382",
+      "size": 30366,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/position_surveillance_engine.py",
+      "sha256": "7b069d2c3b881f56bdeedd8b949767c9a7070f356ee6899af5eb12026660ecb5",
+      "size": 21516,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/prompt_evolution_engine.py",
+      "sha256": "52940f0067f5e558dc5f064093e67ab91681ee75b5ef46656ac99783d9121854",
+      "size": 19930,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/prompt_package_manager.py",
+      "sha256": "ec6f7314e2643a350553eba9a88ed482e454307df7f11e9c04f5b919c7d403b8",
+      "size": 19975,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/runtime.py",
+      "sha256": "571dba01d08b9867018797198809ab516ac5ca626b10f4d337c8b7fe918e1ddf",
+      "size": 232047,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/scheduler.py",
+      "sha256": "599fdcca9c0c23fc62d167caadbd02ed115a27ba611ecb7d9c1894b97aaa1759",
+      "size": 59400,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/server.py",
+      "sha256": "e07b9d40126b780eb9cb1a1551bbc9eb3cebe6b82095e65d76ab6fb37fffff0c",
+      "size": 33542,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/short_opportunity_office.py",
+      "sha256": "c1cb7a36e6e08e8dc82a73abbeb3ffe1ae18ff6dbc79f1370aad00901a87d11e",
+      "size": 22956,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/strategic_intelligence_command.py",
+      "sha256": "4b6d55093a9ebd4eb93e0833fd1ed523bdd4ca6329bee115b7fad528e5020769",
+      "size": 36886,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/strategic_synthesis_office.py",
+      "sha256": "5b4d79e6d90af4d1ab871c2497686bacdc5848175e1c7d11d7b72e69af19ac08",
+      "size": 27449,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/strategy_package_manager.py",
+      "sha256": "8479145124dfb30e02ff03c9d08851304a79965d354051a5d330b4fd0a664e42",
+      "size": 26836,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/strategy_performance_console.py",
+      "sha256": "711cedd3c4359f723b87bc6deac6c1169296b2d34a83700a6fd27c9bcd58e63b",
+      "size": 29396,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/stress_testing_engine.py",
+      "sha256": "6a1c58d360d75a355397499c06727563310db1fee550e773b45f154a9c1a784c",
+      "size": 34795,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/trade_attribution_engine.py",
+      "sha256": "c371528a720df774524b3135e8baea01142bf1ebe9f51f644fd47cefb36184bd",
+      "size": 28786,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/truth_domain.py",
+      "sha256": "1e6600b3f1398039a62fb0fefd55bd75ee140477dce37dbf4b64fb81cab2d154",
+      "size": 7924,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/workflow_delta_engine.py",
+      "sha256": "459ff3e63ec22fdd2d0c2c7bb5e17f1981b2134e473607e1a506e9fa316e446c",
+      "size": 74309,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/workflow_orchestrator.py",
+      "sha256": "a7172f2a6ed43240f1bc79f0628560ee45ce0fa33737c73421bae81eda28d889",
+      "size": 21513,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/control_panel/workflow_runtime_monitor.py",
+      "sha256": "853fe4e61ce8fea0426c73b07410635bcbcc1c0c169f23d23fa9ebb35c0d2b3d",
+      "size": 36709,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/__init__.py",
+      "sha256": "05c6cb1b271ba19db95d976197e39abe9d0eedf1e28f2ce113befa6c5495a5f0",
+      "size": 2632,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/briefing.py",
+      "sha256": "e6a2305a168b02dfcbf9383b48f2876d9a0c69629dded0e35eb628c55e77ff30",
+      "size": 2807,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/cdr.py",
+      "sha256": "79e20a120ae9534a6514311ecf55439ef6e13959fbc1fd59e37dac6e6542c138",
+      "size": 3673,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/chief_of_staff.py",
+      "sha256": "faa83efec3f5bb4b9787c53d300ef78773bf450f7d1633c0fd9aa68da25130f3",
+      "size": 10410,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/commander.py",
+      "sha256": "55b0b75536ae3cdb64e5b47b41fb262d796a7751f107985a348a1614df5c6124",
+      "size": 3885,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/control_panel.py",
+      "sha256": "52ad944a0425f65b80a33051bff147027d5fdf73b40f605c6256c142de4196da",
+      "size": 12427,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/dashboard.py",
+      "sha256": "a084b7fa666af73443ed729bd7d8105ac9e6df53f725608d50eb883a40f01cba",
+      "size": 10568,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/decisions.py",
+      "sha256": "c216c6ced42eea3dc665fd55d6817a7eb6fbcda9c6a9df346fcbfa290fe358e2",
+      "size": 4161,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/engine.py",
+      "sha256": "af589702f061aeb33d9fe449d3a4e4da04cdb11860cf9f868698287cb3a38f62",
+      "size": 3988,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/mailboxes.py",
+      "sha256": "a921f2d8a4c0519d6bb66787457d579d9eff92f15e0b9128263ce5897bebd620",
+      "size": 931,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/override.py",
+      "sha256": "f12c60d643d0febd2f0c99c24eaed11caf5e3e3ab419d9fda91181cc6e605683",
+      "size": 10220,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/readiness.py",
+      "sha256": "a5239a1520fba6259a49fe26aa86657f5560d9768e767006120ecd98f1e7f4a2",
+      "size": 10687,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/executive/workflow.py",
+      "sha256": "c5c06ca1f74c601624049e8f9f25711ce39a65dc7e0340e27d9d79b87fd91eeb",
+      "size": 9442,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/__init__.py",
+      "sha256": "e93f4fee2423bf05db3ee9f9f7d3f412587ac440fa6c07590e510de3815fb79f",
+      "size": 59,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/audit/__init__.py",
+      "sha256": "146b7651c4608e6afc1d97da7abdef9d5e0ff938271e734c570b9fb380b81690",
+      "size": 440,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/audit/events.py",
+      "sha256": "5bbf77846cfc815f1d51e36795ca0aa58769fa80543ff06bb6c845bf9e74386e",
+      "size": 3336,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/audit/log.py",
+      "sha256": "8f78657f9f60cf19c3a9d2a94963e5f922403d4333514fc07c1fda12e7a84dc7",
+      "size": 2213,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/audit/service.py",
+      "sha256": "7a931dbf7f823965694b3a82ccff468f44435a453822712a64ad35a157ffd274",
+      "size": 5802,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/audit/trace.py",
+      "sha256": "2b0450b1a17454c51b9813e15c37f107cc2d61d091914e8a1ad1802c5afb7b25",
+      "size": 1591,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/communication/__init__.py",
+      "sha256": "33b32a419ea9d12d721b1dcbc1895351db840f85a679e879f4597b0e00545940",
+      "size": 537,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/communication/courier.py",
+      "sha256": "364116e3098cb61f0ee13809520f323051611769a0f6c396258e2a41276ba1df",
+      "size": 8049,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/communication/mailboxes.py",
+      "sha256": "12a55c1fe907f5041fef140300224823a3f6aadcbd44f66b2846878dbab6bb9b",
+      "size": 3421,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/configuration/__init__.py",
+      "sha256": "a1a7b71c545664ecb3d353f30bdf7ab5090a768da146b4d3e4b25186efa0abc3",
+      "size": 556,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/configuration/environment.py",
+      "sha256": "b0d9ccb2e62e068583845ecbdcf66115862357b2e22d2b70d8c0a47ceadce606",
+      "size": 1847,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/configuration/service.py",
+      "sha256": "d18e083dc3288fb8b9608a92395cbc9a100ac79cb632da2a1bf7300fc6de5621",
+      "size": 10158,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/contracts/__init__.py",
+      "sha256": "a79edf6bed12da1041615d8644563ef8b8d00d6a84137265284ff702e9bcaa8e",
+      "size": 411,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/contracts/base.py",
+      "sha256": "e4ca0823122d5bd90ded13b82da9a644a5337d318aea2d7c1d526f0e85fb99de",
+      "size": 8883,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/identity/__init__.py",
+      "sha256": "6b7fd3ce63ea4b2a47b94e314b058dbf62ec3e21ba88cedd760fb6bfdea11844",
+      "size": 838,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/identity/identifiers.py",
+      "sha256": "5b71ef40641f638ea5ccb2d47a939394d29cfb67e0a394126da89e4b0aace5cd",
+      "size": 4304,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/identity/registry.py",
+      "sha256": "8e249f42ab13c63e6194a5d96a69106d5de91c6f9a8d17d4204a81b5a7c75a50",
+      "size": 1445,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/persistence/__init__.py",
+      "sha256": "8070573eca5dc4d07b9e20f5dcde6b6ad145ff57792752c468d38760d5b9af39",
+      "size": 730,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/persistence/backup.py",
+      "sha256": "49f501fe435b71b1151f95ecb7515d47ecee8831ae752fd82cf784781ef4da8e",
+      "size": 2001,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/persistence/migrations.py",
+      "sha256": "537a7170940c6c9a6f6b7c6439fdd79f3e179e666237ee36cce52d3eda74413c",
+      "size": 5286,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/persistence/records.py",
+      "sha256": "ac465e0c9eeac1977dc4c04ea569240b3616ced71cf7690dfd28129ac429e0a4",
+      "size": 4102,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/persistence/repository.py",
+      "sha256": "8c5856e81a5a6e2e7d82dbbc923797e49164cb48e5e7e456b6fcbf40460ef2ac",
+      "size": 4295,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/persistence/services.py",
+      "sha256": "c72501155ade7a49ef1c4e3f5ea4058ebd347396237ae9d6d5aff476c6dc25d1",
+      "size": 3415,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/prompts/__init__.py",
+      "sha256": "190552924dc52f18b6af922e915b6c6050aba1542dadd0f7c79de274daa7cbde",
+      "size": 734,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/prompts/dependencies.py",
+      "sha256": "0d715b9c5cb7c750dbee64a6c315357beed8944ad416389187079e9bef6bbf95",
+      "size": 2777,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/prompts/prompts.py",
+      "sha256": "999e116422fccd29ce6b0cead1dac334ee4b1ff4501604710d0c66ee3f0f999a",
+      "size": 9541,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/prompts/specifications.py",
+      "sha256": "bffa004af782f7b6bcf57beaad82addcf39e556432d6eddbd9f28a74260e7490",
+      "size": 3438,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/readiness/__init__.py",
+      "sha256": "f25445cc62a54e57c848b8ed71a33e7cc5a2d9c9534faefdd95a7290f49cc38b",
+      "size": 325,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/readiness/reports.py",
+      "sha256": "7af079538c84b4f28a17a201ac36cb324d908e3077f9b570683f451d11c72523",
+      "size": 2948,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/readiness/verifier.py",
+      "sha256": "a941ea214f20b6a48972c0e5e2686d6bf389bb05d91f00887cfcd88c1c9578f6",
+      "size": 7071,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/testing/__init__.py",
+      "sha256": "d4c1a7ea746176c1f36af053acf7f35b8b36e9bbc594b19732d9d2c98363ecc2",
+      "size": 534,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/testing/registry.py",
+      "sha256": "0233b9d5222e9cd9d8a255cb7b82a28cca7d3e33c6cc2a6b62c524a9a62dca0c",
+      "size": 4832,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/testing/reports.py",
+      "sha256": "14174f89bbf2cc8c6978a7c00630f7fb58eeb08ea45a2ae754d84dcc52d3e534",
+      "size": 3737,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/foundation/testing/runner.py",
+      "sha256": "8331893ed6a41d51a535d3aa69b98527dcdc6f15008ec82457236dad12122383",
+      "size": 2066,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/__init__.py",
+      "sha256": "250c9f935285efb2cc528924897f01cbe633d2a337460cb159a600bc47a4b2e0",
+      "size": 8464,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/decision_evaluation.py",
+      "sha256": "175ca199bff71b352debb7dec67c19580335267f46b4191f84eeb0f3128b1e3b",
+      "size": 20666,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/evidence_evaluation.py",
+      "sha256": "b9bf93b095cb49d02dc73a7bd77cffe038df7f1d97351d87ac6a4a355231a2dd",
+      "size": 19658,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/fusion.py",
+      "sha256": "81246df99c1bdc21d837ab1f1665f64c6bdd0534e6673b0aa03d9d649606d4b8",
+      "size": 17384,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/group.py",
+      "sha256": "d2f62a2d8e7cb42dc389b572cb31cf4e8599a5828072c0c27e25697eead615ff",
+      "size": 14792,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/hypothesis.py",
+      "sha256": "e438eb925956a351218288770367fc7cee1f15b83b87c8c7868f13fab0dc5b49",
+      "size": 18825,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/model_calibration.py",
+      "sha256": "1d1c308cda09981256d621f0e8e1d0d6d69b404093c8315355e6c747644d8401",
+      "size": 17543,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/performance.py",
+      "sha256": "e1f46f5c4c92536153652d39bd4fb98547dcd9845275d28a8a9da8cd0655e742",
+      "size": 17130,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/prompt_evaluation.py",
+      "sha256": "1269d722af2ecb3fbfdaab1fc90b5d6c23181433aee3c64d067a68c58c33dbfd",
+      "size": 23588,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/historian/readiness.py",
+      "sha256": "bd4c61f2f2115353a74bc5eac7a9f0a27201500f49acf684d0c0d086fef27116",
+      "size": 18327,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/__init__.py",
+      "sha256": "c1fa314bb482b1ee80e11ae8fe4eefdf6c82271d04c13b98fb6fcfce7694c6fa",
+      "size": 8639,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/doctrine_management.py",
+      "sha256": "49b8052c54cf5df7c4ecb6fb834c80a5eaba3ebbd5b2a0bb76457372da3df7b0",
+      "size": 15519,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/fusion.py",
+      "sha256": "c3765521ceab9a80fc44cfb97ae49d89d3917c59ebb387e6e33b431100f3666c",
+      "size": 19513,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/group.py",
+      "sha256": "5462377f765a006c1294fe760a4125b627f90d045ecf8753258e2f875c210ceb",
+      "size": 15397,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/institutional_knowledge.py",
+      "sha256": "dc781bc8309df0638c4ab5b0fc6d5b56337f9b701d7b80a77368d80859100de3",
+      "size": 16341,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/knowledge_graph.py",
+      "sha256": "bec94c4d4c2777c07c695515a7bb38a050128a7e9f3c75446c1db4684852a84f",
+      "size": 21146,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/learning_integration.py",
+      "sha256": "ddb1124b89fbaf6f6b2c00011244bbde062116b718a0c3b2b9192aaff034e4e0",
+      "size": 20172,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/readiness.py",
+      "sha256": "c34ecec4490e80b74e959c65647d1c41f46ab93912ea5e55e7d1f78864e5ef24",
+      "size": 17653,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/librarian/specification_repository.py",
+      "sha256": "73e6022b912624e970f1b4b06c1359bf192b4736db3bb24bf8e52e6d6849354d",
+      "size": 21895,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/__init__.py",
+      "sha256": "b7279132a531babaa4f38fd27566fcee326ce24278e33bf45b6c6c498039385c",
+      "size": 9867,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/bubble.py",
+      "sha256": "bb319274f619f40199cfe1951fcf5dc7e1abe2f193e8f9589af54df6c35b62f9",
+      "size": 14565,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/department.py",
+      "sha256": "d5330f8891af8cfdfd7fe39d3198ee555badabe7fc8bb22d730455cbe663570e",
+      "size": 3146,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/fusion.py",
+      "sha256": "71491ac0c573b7aaf7c62829531d5d85bf2486ea28a44a6dae6963427943618b",
+      "size": 13159,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/liquidity.py",
+      "sha256": "eaa5164470ed72250bfc53e4d9803e213edcac0e877befd7c71e3b8d2fadb3a8",
+      "size": 15485,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/offices.py",
+      "sha256": "0323df49ec45bf66cabd2f5d02feb5797f4d9ee7705ec53a06377edc4eb446a8",
+      "size": 8151,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/portfolio.py",
+      "sha256": "971fb54f08f0fc267f792abb79b98e4be882e6ad88ad937954da5321d2db863e",
+      "size": 18908,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/position.py",
+      "sha256": "fa68d5cb654405b81c69299b815c472ca5d0746560109a98ea4b906603780b74",
+      "size": 17863,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/readiness.py",
+      "sha256": "9d273df8f83353d4d3cec874909b8ce28bafd1bde251439382a0050bb12627f7",
+      "size": 15544,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/recovery.py",
+      "sha256": "7abc70b6d0b869930c9e856dbf3b344cf70774ee863931f0db4f8102964bf62a",
+      "size": 14864,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/tail.py",
+      "sha256": "91562a85428b75d42b47a4ff8461724a25d5c7664c781f91986f387ca1eb60a6",
+      "size": 15661,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/risk/volatility.py",
+      "sha256": "5afad058041cd38e1d0daa0076a4b581fbc88c483081cedd8d3695ad5b4408eb",
+      "size": 16828,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/__init__.py",
+      "sha256": "3a312c83406791ef877ff80c96cea842b287fd46333893afa237fe207451da75",
+      "size": 3796,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/alternative_data.py",
+      "sha256": "f8f6b043ad08fe8514b58fa0a9718034084878c1cb6504858ca383a4ae163144",
+      "size": 13416,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/cryptocurrency.py",
+      "sha256": "a6758ff5fe95d29ccfa55cdf3eae5054a669292954a828b216dee30ff594536f",
+      "size": 13389,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/department.py",
+      "sha256": "80b85781b25ee054092871ea3876fb39ea44f4b16e9c06960735d0ac0159409a",
+      "size": 2824,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/event_intelligence.py",
+      "sha256": "3fa65701a83724074afd85de1f01882ccbe39b930fb8bc5a933c7b02050467fb",
+      "size": 13055,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/fundamental.py",
+      "sha256": "51d8e3076e3e97fc3ac6332daba67c9b2987c874a7696fa7255b8becd5975e13",
+      "size": 8633,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/fusion.py",
+      "sha256": "705fa98b009dceffbd50fd263999bf8104a63595f9ed7616b883392871734db2",
+      "size": 14871,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/macroeconomic.py",
+      "sha256": "86a3e78f157d9e27b8e1261216ab928565eec2c7eb559d3318153e11a07a81f2",
+      "size": 13137,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/news_sentiment.py",
+      "sha256": "c8aa6dbfcdc8859d3bb52d228cb7967dbeae68fdeef00c246cf97ce608b9aceb",
+      "size": 14227,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/offices.py",
+      "sha256": "f40f765291a4d6c265c9a59a870a8cf1b7500785ed8164672f6fafb6cd769e7d",
+      "size": 6760,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/options_flow.py",
+      "sha256": "f799e7224e2e482de7015ea509cd014f801d79aaa719c880a62fb4ed79f5250e",
+      "size": 13179,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/readiness.py",
+      "sha256": "a9a5894b9824e31e1ebbcd7c7fdb9d9396a8751378e4128646a9214a233ac0bd",
+      "size": 15846,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/seeker/technical.py",
+      "sha256": "c9486c55305ae9f977e9218bc7eebe828ec84dfd2fcc367c76c0c5b3289f3fbe",
+      "size": 7679,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/__init__.py",
+      "sha256": "e73434516ad3ae229fb9ca36411ea32544bdf4a706cd8a8107cdbb7c8fcb92a7",
+      "size": 13423,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/broker_integration.py",
+      "sha256": "5b2cfbe6e794df93661e522ba134c865a0caed191efe486588200d09c4943e27",
+      "size": 22630,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/execution_quality.py",
+      "sha256": "050f97cac86e2da1dad7450e331ad0e153ac2731f876948176ae7fe334dfb7ff",
+      "size": 17355,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/fusion.py",
+      "sha256": "8dc5f91f457a9e186d79de148c967dd08b1c74a06da14a24a8a8a8f5cef5db46",
+      "size": 22323,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/group.py",
+      "sha256": "94d8d24e0d0eb726735c15ba4f2b8554e0cb22e6b9fcefa707718570bc6a542a",
+      "size": 24047,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/offices.py",
+      "sha256": "5ce5b65f7c1e13adac8c1352eed8829665c78b1c8b2a48c421ea57211e11ba96",
+      "size": 4333,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/order_management.py",
+      "sha256": "bc017f9429e67e77f8d4824f90265b2b6e80ebc74190ec1631e74145fa361cf4",
+      "size": 31908,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/paper_brokerage.py",
+      "sha256": "a75a6779f50d4a64b2b27f019e7973b56118a6e0e453953f37788af4454659cf",
+      "size": 27952,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/position_management.py",
+      "sha256": "7d241f88037bccd5c1c66238e04ebf66436e79900744d503e1b72c6c1b198518",
+      "size": 21418,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/readiness.py",
+      "sha256": "c2234ec8823680893b1f1a41ee635c5369b10cba2e4d593c05d4219e682f18b1",
+      "size": 24970,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/trade_execution.py",
+      "sha256": "ba1b130d0a7ed5f4f946ff04ddc1b11d27ad41bc752c5d5ee25d9cfad79eab98",
+      "size": 38876,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "src/argos/trader/trade_monitoring.py",
+      "sha256": "7e67468b3f6ac4e775bc115c1c0df8aab3f35a264c990f4aca6c508922632b34",
+      "size": 21556,
+      "extension": ".py",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "ui/argos_control_panel/app.js",
+      "sha256": "1950614a368daeb3555d643b7fea99afba4c31da5d2b8ce790a7303795e1aebf",
+      "size": 423794,
+      "extension": ".js",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "ui/argos_control_panel/index.html",
+      "sha256": "a47e4ba61a70d35510bc19192d663f506e256a04f0f64dc6b3bf4d88e8b90b46",
+      "size": 190779,
+      "extension": ".html",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    },
+    {
+      "path": "ui/argos_control_panel/styles.css",
+      "sha256": "2abd91d6ff83547d33da0d43029caf0bfc4c712ea130609122a8a2d98832b3df",
+      "size": 77280,
+      "extension": ".css",
+      "tracked": true,
+      "audit_inclusion_status": "included",
+      "exclusion_reason": ""
+    }
+  ]
+}
