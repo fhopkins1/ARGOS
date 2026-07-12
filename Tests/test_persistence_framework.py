@@ -39,6 +39,16 @@ class PersistenceFrameworkTests(unittest.TestCase):
                 ObjectType.MODEL_SNAPSHOT,
                 ObjectType.STAFF_REGISTRY,
                 ObjectType.DEPARTMENT_REGISTRY,
+                ObjectType.ENTERPRISE_RUNTIME_STATE,
+                ObjectType.ENTERPRISE_RUNTIME_CHECKPOINT,
+                ObjectType.ENTERPRISE_MISSION_STATE,
+                ObjectType.ENTERPRISE_WORKFLOW_STATE,
+                ObjectType.ENTERPRISE_BROKER_STATE,
+                ObjectType.ENTERPRISE_POSITION_STATE,
+                ObjectType.ENTERPRISE_PERFORMANCE_TRUTH,
+                ObjectType.ENTERPRISE_POLICY_STATE,
+                ObjectType.ENTERPRISE_RECOVERY_AUDIT,
+                ObjectType.ENTERPRISE_TRANSACTION,
             },
         )
 

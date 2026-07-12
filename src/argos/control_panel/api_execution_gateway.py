@@ -43,6 +43,13 @@ class ApiExecutionRequest:
     decision_object_id: str = ""
     allow_fallback_to_dry_run: bool = True
     prompt_contract_envelope: dict[str, Any] | None = None
+    mission_id: str = ""
+    office_id: str = ""
+    duty_officer_id: str = ""
+    parent_office_id: str = ""
+    scheduling_authorization_id: str = ""
+    remaining_mission_budget: float = 0.0
+    cost_reservation_id: str = ""
 
 
 @dataclass(frozen=True)
@@ -100,6 +107,11 @@ class ApiExecutionAuditRecord:
     fallback_used: bool
     decision_object_id: str
     audit_identifier: str
+    mission_id: str = ""
+    office_id: str = ""
+    duty_officer_id: str = ""
+    parent_office_id: str = ""
+    scheduling_authorization_id: str = ""
 
 
 @dataclass(frozen=True)
@@ -126,6 +138,8 @@ class ApiExecutionGateway:
         workflow_snapshot: Callable[[], dict[str, Any]],
         authorize_credit: Callable[[ApiExecutionRequest], dict[str, Any]],
         complete_credit_activation: Callable[[str], dict[str, Any]],
+        authorize_cost: Callable[[ApiExecutionRequest], dict[str, Any]] | None = None,
+        record_cost_usage: Callable[[ApiExecutionRequest, ApiExecutionResponse, dict[str, Any]], dict[str, Any]] | None = None,
         real_api_config: RealApiPilotConfig | None = None,
         provider_call: Callable[[ApiExecutionRequest, dict[str, Any]], str] | None = None,
         prompt_contract_library: PromptContractLibrary | None = None,
@@ -133,6 +147,8 @@ class ApiExecutionGateway:
         self._workflow_snapshot = workflow_snapshot
         self._authorize_credit = authorize_credit
         self._complete_credit_activation = complete_credit_activation
+        self._authorize_cost = authorize_cost
+        self._record_cost_usage = record_cost_usage
         self._real_api_config = real_api_config or RealApiPilotConfig()
         self._provider_call = provider_call
         self._prompt_contract_library = prompt_contract_library or PromptContractLibrary()
@@ -156,6 +172,18 @@ class ApiExecutionGateway:
             output_tokens = _deterministic_output_tokens(request)
             estimated_cost = round(max(0.0, float(request.max_cost_usd)), 4)
             actual_cost = estimated_cost
+            cost_authorization = {"allowed": True}
+            if self._authorize_cost and (request.cost_reservation_id or request.execution_mode == "real_api_pilot"):
+                cost_authorization = self._authorize_cost(request)
+                if not cost_authorization.get("allowed"):
+                    response = self._fallback_or_blocked_response(
+                        request,
+                        str(cost_authorization.get("code", "COST_GOVERNOR_REJECTED")),
+                        str(cost_authorization.get("reason", "Enterprise Cost Governor rejected gateway request.")),
+                        started,
+                    )
+                    self._record_audit(request, response)
+                    return response
             activation_state = self._authorize_credit(request)
             activation = activation_state["creditGovernor"]["activations"][0] if activation_state["creditGovernor"]["activations"] else {}
             if activation.get("status") != "APPROVED":
@@ -213,6 +241,8 @@ class ApiExecutionGateway:
                 validation_status=validation_status,
                 fallback_used=fallback_used,
             )
+            if self._record_cost_usage and cost_authorization.get("authorizationId"):
+                self._record_cost_usage(request, response, cost_authorization)
             self._record_audit(request, response)
             return response
         finally:
@@ -412,6 +442,11 @@ class ApiExecutionGateway:
                 fallback_used=response.fallback_used,
                 decision_object_id=response.decision_object_id,
                 audit_identifier=response.audit_identifier,
+                mission_id=request.mission_id,
+                office_id=request.office_id or request.requesting_office,
+                duty_officer_id=request.duty_officer_id,
+                parent_office_id=request.parent_office_id,
+                scheduling_authorization_id=request.scheduling_authorization_id,
             )
         )
 
@@ -481,6 +516,12 @@ def _fallback_request(request: ApiExecutionRequest) -> ApiExecutionRequest:
         decision_object_id=request.decision_object_id,
         allow_fallback_to_dry_run=True,
         prompt_contract_envelope=request.prompt_contract_envelope,
+        mission_id=request.mission_id,
+        office_id=request.office_id,
+        duty_officer_id=request.duty_officer_id,
+        parent_office_id=request.parent_office_id,
+        scheduling_authorization_id=request.scheduling_authorization_id,
+        remaining_mission_budget=request.remaining_mission_budget,
     )
 
 

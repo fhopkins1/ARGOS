@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ARGOS Control Panel</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="app-shell">
@@ -23,7 +23,7 @@
         <div class="top-actions">
           <span id="clock">--</span>
           <button id="refresh-btn" class="button secondary">Refresh</button>
-          <span class="status-pill">System Health <span class="dot"></span></span>
+          <button id="system-health-report" class="status-pill" type="button">System Health <span class="dot"></span></button>
         </div>
       </header>
 
@@ -78,8 +78,117 @@
             <button id="bridge-step" class="button secondary">Step</button>
             <button id="bridge-replay" class="button secondary">Replay</button>
             <button id="bridge-lab" class="button secondary">Lab</button>
-            <button id="bridge-engineering" class="button secondary">Engineering</button>
+            <button id="bridge-commander-report" class="button secondary">Commander Report</button>
           </div>
+
+          <section id="commander-strategic-dashboard" class="bridge-panel commander-strategic-dashboard">
+            <div class="csd-header">
+              <div>
+                <span>Commander Strategic Dashboard</span>
+                <h2 id="csd-recommendation">Strategic posture loading</h2>
+              </div>
+              <div id="csd-command-state" class="csd-command-state"></div>
+            </div>
+            <div class="csd-grid">
+              <section>
+                <div class="bridge-panel-title">Capital State</div>
+                <div id="csd-capital" class="monitor-grid compact"></div>
+                <div id="csd-heartbeat" class="csd-heartbeat"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Enterprise Readiness</div>
+                <div id="csd-readiness" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Reality Fidelity</div>
+                <div id="csd-reality" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Strategic Risk</div>
+                <div id="csd-risk" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Active Portfolio</div>
+                <div id="csd-portfolio" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Performance</div>
+                <div id="csd-performance" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Stress and Survival</div>
+                <div id="csd-stress" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Learning and Research</div>
+                <div id="csd-learning" class="monitor-grid compact"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Attention Queue</div>
+                <div id="csd-attention" class="api-call-list compact-list"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Latest Briefing</div>
+                <div id="csd-briefing" class="api-call-list compact-list"></div>
+              </section>
+              <section>
+                <div class="bridge-panel-title">Grand Strategy</div>
+                <div id="csd-grand-strategy" class="monitor-grid compact"></div>
+              </section>
+            </div>
+            <div id="csd-navigation" class="csd-navigation"></div>
+          </section>
+
+          <section class="bridge-panel commander-daily-workspace">
+            <div class="bridge-panel-title">Commander Daily Review Workspace</div>
+            <div class="commander-workspace-grid">
+              <div>
+                <h2>Morning Readiness</h2>
+                <div id="cdw-morning" class="monitor-grid compact"></div>
+              </div>
+              <div>
+                <h2>Enterprise Operations</h2>
+                <div id="cdw-operations" class="monitor-grid compact"></div>
+              </div>
+              <div>
+                <h2>Commander Approval Queue</h2>
+                <div id="cdw-approvals" class="api-call-list compact-list"></div>
+              </div>
+              <div>
+                <h2>Enterprise Learning</h2>
+                <div id="cdw-learning" class="monitor-grid compact"></div>
+              </div>
+              <div>
+                <h2>End-of-Day Review</h2>
+                <div id="cdw-eod" class="api-call-list compact-list"></div>
+              </div>
+              <div>
+                <h2>Priority Panel</h2>
+                <div id="cdw-priorities" class="api-call-list compact-list"></div>
+              </div>
+              <div>
+                <h2>Commander Insights</h2>
+                <div id="cdw-insights" class="api-call-list compact-list"></div>
+              </div>
+              <div>
+                <h2>Commander Journal</h2>
+                <div class="journal-entry-row">
+                  <select id="cdw-journal-category">
+                    <option>Daily Observations</option>
+                    <option>Strategic Thoughts</option>
+                    <option>Doctrine Notes</option>
+                    <option>Questions</option>
+                    <option>Lessons</option>
+                    <option>Improvement Ideas</option>
+                    <option>Future Research</option>
+                  </select>
+                  <input id="cdw-journal-entry" type="text" placeholder="Record a Commander journal note" />
+                  <button id="cdw-journal-save" class="button secondary">Record</button>
+                </div>
+                <div id="cdw-journal" class="api-call-list compact-list"></div>
+              </div>
+            </div>
+          </section>
 
           <div class="capital-main-grid">
             <section class="bridge-panel capital-graph-panel">
@@ -290,6 +399,1071 @@
             <div class="bridge-panel-title">Office Bridge Navigation</div>
             <div id="seeker-office-nav" class="bridge-office-hud"></div>
           </section>
+        </section>
+
+        <section id="risk-subcommand-bridge" class="subcommand-bridge risk-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Risk Office Subcommand Bridge</span>
+              <h2>Capital Protection Operations</h2>
+            </div>
+            <button id="risk-return-executive" class="button secondary">Return to Executive Bridge</button>
+          </div>
+
+          <div class="risk-status-bar">
+            <div><span>Office Status</span><b id="risk-office-status">Dormant</b></div>
+            <div><span>Current Workflow</span><b id="risk-current-workflow">None</b></div>
+            <div><span>Decision Object</span><b id="risk-decision-object">None</b></div>
+            <div><span>LAW VII</span><b id="risk-law">VALID</b></div>
+            <div><span>Workflow Token</span><b id="risk-token">No Token</b></div>
+            <div><span>Current Revision</span><b id="risk-revision">0</b></div>
+            <div><span>Risk State</span><b id="risk-current-state">Standing By</b></div>
+            <div><span>Enterprise Posture</span><b id="risk-enterprise-posture">Protected</b></div>
+            <div><span>Gateway Status</span><b id="risk-gateway-status">Guarded</b></div>
+            <div><span>Commander Alert</span><b id="risk-commander-alert">None</b></div>
+          </div>
+
+          <div class="risk-command-row">
+            <button id="risk-pause" class="button warning">Pause Risk Review</button>
+            <button id="risk-resume" class="button success">Resume Risk Review</button>
+            <button id="risk-replay" class="button secondary">Replay Decision</button>
+            <button id="risk-open-lab" class="button secondary">Decision Laboratory</button>
+            <button id="risk-open-executive" class="button secondary">Executive Bridge</button>
+            <button id="risk-open-engineering" class="button secondary">Engineering</button>
+          </div>
+
+          <div class="risk-grid">
+            <section class="risk-panel risk-heat-panel">
+              <div class="bridge-panel-title">Risk Heat Map</div>
+              <div id="risk-heat-map" class="risk-heat-map"></div>
+            </section>
+
+            <section class="risk-panel risk-decision-panel">
+              <div class="bridge-panel-title">Current Decision Object</div>
+              <div id="risk-current-decision" class="bridge-decision"></div>
+            </section>
+
+            <section class="risk-panel risk-assessment-panel">
+              <div class="bridge-panel-title">Risk Assessment</div>
+              <div id="risk-assessment" class="risk-metrics"></div>
+            </section>
+
+            <section class="risk-panel risk-exposure-panel">
+              <div class="bridge-panel-title">Capital Exposure</div>
+              <div id="risk-capital-exposure" class="risk-metrics"></div>
+            </section>
+
+            <section class="risk-panel risk-rules-panel">
+              <div class="bridge-panel-title">Risk Rule Validation</div>
+              <div id="risk-rule-validation" class="risk-rule-list"></div>
+            </section>
+
+            <section class="risk-panel risk-history-panel">
+              <div class="bridge-panel-title">Historical Risk Comparison</div>
+              <div id="risk-historical-comparison" class="risk-record-list"></div>
+            </section>
+
+            <section class="risk-panel risk-recent-panel">
+              <div class="bridge-panel-title">Recent Risk Decisions</div>
+              <div id="risk-recent-decisions" class="risk-record-list"></div>
+            </section>
+
+            <section class="risk-panel risk-health-panel">
+              <div class="bridge-panel-title">Office Health</div>
+              <div id="risk-office-health" class="risk-metrics"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="risk-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="trader-subcommand-bridge" class="subcommand-bridge trader-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Trader Office Subcommand Bridge</span>
+              <h2>Execution Control Center</h2>
+            </div>
+            <button id="trader-return-executive" class="button secondary">Return to Executive Bridge</button>
+          </div>
+
+          <div class="trader-status-bar">
+            <div><span>Office Status</span><b id="trader-office-status">Dormant</b></div>
+            <div><span>Current Workflow</span><b id="trader-current-workflow">None</b></div>
+            <div><span>Decision Object</span><b id="trader-decision-object">None</b></div>
+            <div><span>LAW VII</span><b id="trader-law">VALID</b></div>
+            <div><span>Workflow Token</span><b id="trader-token">No Token</b></div>
+            <div><span>Execution Mode</span><b id="trader-execution-mode">Paper Guarded</b></div>
+            <div><span>Paper / Live</span><b id="trader-paper-live">Paper</b></div>
+            <div><span>Current Broker</span><b id="trader-current-broker">Paper Broker</b></div>
+            <div><span>Gateway Status</span><b id="trader-gateway-status">Guarded</b></div>
+            <div><span>Commander Alert</span><b id="trader-commander-alert">None</b></div>
+          </div>
+
+          <div class="trader-command-row">
+            <button id="trader-pause" class="button warning">Pause Execution</button>
+            <button id="trader-resume" class="button success">Resume Execution</button>
+            <button id="trader-cancel-pending" class="button danger">Cancel Pending Orders</button>
+            <button id="trader-replay" class="button secondary">Replay Decision</button>
+            <button id="trader-open-lab" class="button secondary">Decision Laboratory</button>
+            <button id="trader-open-executive" class="button secondary">Executive Bridge</button>
+            <button id="trader-open-engineering" class="button secondary">Engineering</button>
+          </div>
+
+          <div class="trader-grid">
+            <section class="trader-panel order-lifecycle-panel">
+              <div class="bridge-panel-title">Order Lifecycle</div>
+              <div id="trader-order-lifecycle" class="order-lifecycle"></div>
+            </section>
+
+            <section class="trader-panel execution-queue-panel">
+              <div class="bridge-panel-title">Execution Queue</div>
+              <div id="trader-execution-queue" class="execution-queue"></div>
+            </section>
+
+            <section class="trader-panel trader-decision-panel">
+              <div class="bridge-panel-title">Current Decision Object</div>
+              <div id="trader-current-decision" class="bridge-decision"></div>
+            </section>
+
+            <section class="trader-panel trader-position-panel">
+              <div class="bridge-panel-title">Position Management</div>
+              <div id="trader-position-management" class="trader-metrics"></div>
+            </section>
+
+            <section class="trader-panel trader-metrics-panel">
+              <div class="bridge-panel-title">Execution Metrics</div>
+              <div id="trader-execution-metrics" class="trader-metrics"></div>
+            </section>
+
+            <section class="trader-panel trader-completed-panel">
+              <div class="bridge-panel-title">Completed Orders</div>
+              <div id="trader-completed-orders" class="trader-record-list"></div>
+            </section>
+
+            <section class="trader-panel trader-health-panel">
+              <div class="bridge-panel-title">Office Health</div>
+              <div id="trader-office-health" class="trader-metrics"></div>
+            </section>
+
+            <section class="trader-panel trader-active-positions-panel">
+              <div class="bridge-panel-title">Active Positions</div>
+              <div id="trader-active-positions" class="trader-record-list"></div>
+            </section>
+
+            <section class="trader-panel trader-exit-panel">
+              <div class="bridge-panel-title">Exit Recommendations</div>
+              <div id="trader-exit-recommendations" class="trader-record-list"></div>
+            </section>
+
+            <section class="trader-panel trader-orders-panel">
+              <div class="bridge-panel-title">Broker-Realistic Orders</div>
+              <div id="trader-order-status" class="trader-record-list"></div>
+            </section>
+
+            <section class="trader-panel trader-truth-panel">
+              <div class="bridge-panel-title">Closed Position Truth</div>
+              <div id="trader-closed-truth" class="trader-record-list"></div>
+            </section>
+
+            <section class="trader-panel trader-exposure-panel">
+              <div class="bridge-panel-title">Exposure Map</div>
+              <div id="trader-exposure-map" class="trader-metrics"></div>
+            </section>
+
+            <section class="trader-panel trader-surveillance-panel">
+              <div class="bridge-panel-title">Surveillance & Realism Health</div>
+              <div id="trader-surveillance-health" class="trader-metrics"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="trader-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="historian-subcommand-bridge" class="subcommand-bridge historian-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Historian Office Subcommand Bridge</span>
+              <h2>Enterprise Learning Center</h2>
+            </div>
+            <button id="historian-return-executive" class="button secondary">Return to Executive Bridge</button>
+          </div>
+
+          <div class="historian-status-bar">
+            <div><span>Office Status</span><b id="historian-office-status">Dormant</b></div>
+            <div><span>Learning Cycle</span><b id="historian-learning-cycle">None</b></div>
+            <div><span>Current Workflow</span><b id="historian-current-workflow">None</b></div>
+            <div><span>LAW VII</span><b id="historian-law">VALID</b></div>
+            <div><span>Workflow Token</span><b id="historian-token">No Token</b></div>
+            <div><span>Learning Queue</span><b id="historian-learning-queue">0</b></div>
+            <div><span>Truth Status</span><b id="historian-truth-status">Standing By</b></div>
+            <div><span>Laboratory Status</span><b id="historian-lab-status">Ready</b></div>
+            <div><span>Memory Health</span><b id="historian-memory-health">Healthy</b></div>
+            <div><span>Commander Alert</span><b id="historian-commander-alert">None</b></div>
+          </div>
+
+          <div class="historian-command-row">
+            <button id="historian-replay-workflow" class="button secondary">Replay Workflow</button>
+            <button id="historian-open-lab" class="button secondary">Open Decision Laboratory</button>
+            <button id="historian-generate-report" class="button success">Generate Learning Report</button>
+            <button id="historian-compare-prompts" class="button secondary">Compare Prompt Versions</button>
+            <button id="historian-compare-strategies" class="button secondary">Compare Strategies</button>
+            <button id="historian-open-executive" class="button secondary">Executive Bridge</button>
+            <button id="historian-open-engineering" class="button secondary">Engineering</button>
+          </div>
+
+          <div class="historian-grid">
+            <section class="historian-panel learning-timeline-panel">
+              <div class="bridge-panel-title">Enterprise Learning Timeline</div>
+              <div id="historian-learning-timeline" class="learning-timeline"></div>
+            </section>
+
+            <section class="historian-panel decision-evolution-panel">
+              <div class="bridge-panel-title">Decision Object Evolution</div>
+              <div id="historian-decision-evolution" class="historian-record-list"></div>
+            </section>
+
+            <section class="historian-panel truth-analysis-panel">
+              <div class="bridge-panel-title">Performance Truth Analysis</div>
+              <div id="historian-performance-truth" class="historian-metrics"></div>
+            </section>
+
+            <section class="historian-panel lessons-panel">
+              <div class="bridge-panel-title">Lessons Learned</div>
+              <div id="historian-lessons" class="historian-record-list"></div>
+            </section>
+
+            <section class="historian-panel prompt-evolution-panel">
+              <div class="bridge-panel-title">Prompt Evolution</div>
+              <div id="historian-prompt-evolution" class="historian-record-list"></div>
+            </section>
+
+            <section class="historian-panel strategy-evolution-panel">
+              <div class="bridge-panel-title">Strategy Evolution</div>
+              <div id="historian-strategy-evolution" class="historian-record-list"></div>
+            </section>
+
+            <section class="historian-panel recommendations-panel">
+              <div class="bridge-panel-title">Historian Recommendations</div>
+              <div id="historian-recommendations" class="historian-record-list"></div>
+            </section>
+
+            <section class="historian-panel learning-metrics-panel">
+              <div class="bridge-panel-title">Learning Metrics</div>
+              <div id="historian-learning-metrics" class="historian-metrics"></div>
+            </section>
+
+            <section class="historian-panel historian-health-panel">
+              <div class="bridge-panel-title">Office Health</div>
+              <div id="historian-office-health" class="historian-metrics"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="historian-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="librarian-subcommand-bridge" class="subcommand-bridge librarian-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Librarian Office Subcommand Bridge</span>
+              <h2>Enterprise Knowledge Center</h2>
+            </div>
+            <button id="librarian-return-executive" class="button secondary">Return to Executive Bridge</button>
+          </div>
+
+          <div class="librarian-status-bar">
+            <div><span>Office Status</span><b id="librarian-office-status">Dormant</b></div>
+            <div><span>Knowledge Base</span><b id="librarian-knowledge-health">Healthy</b></div>
+            <div><span>Knowledge Sources</span><b id="librarian-knowledge-sources">0</b></div>
+            <div><span>Decision Archive</span><b id="librarian-decision-status">Ready</b></div>
+            <div><span>Prompt Library</span><b id="librarian-prompt-status">Ready</b></div>
+            <div><span>Strategy Library</span><b id="librarian-strategy-status">Ready</b></div>
+            <div><span>Enterprise Memory</span><b id="librarian-memory-health">Healthy</b></div>
+            <div><span>Search Engine</span><b id="librarian-search-health">Ready</b></div>
+            <div><span>Commander Alert</span><b id="librarian-commander-alert">None</b></div>
+          </div>
+
+          <div class="librarian-command-row">
+            <input id="librarian-search-input" class="librarian-search-input" placeholder="Search ticker, workflow, Decision Object, prompt, strategy, office, trade, lesson, date, market regime, news, signal..." />
+            <button id="librarian-search-button" class="button success">Search</button>
+            <button id="librarian-replay" class="button secondary">Replay</button>
+            <button id="librarian-open-lab" class="button secondary">Decision Laboratory</button>
+            <button id="librarian-open-historian" class="button secondary">Open Historian</button>
+            <button id="librarian-open-executive" class="button secondary">Executive Bridge</button>
+            <button id="librarian-open-engineering" class="button secondary">Engineering</button>
+          </div>
+
+          <div class="librarian-grid">
+            <section class="librarian-panel knowledge-graph-panel">
+              <div class="bridge-panel-title">Enterprise Knowledge Graph</div>
+              <div id="librarian-knowledge-graph" class="knowledge-graph"></div>
+            </section>
+
+            <section class="librarian-panel knowledge-search-panel">
+              <div class="bridge-panel-title">Knowledge Search</div>
+              <div id="librarian-search-results" class="librarian-record-list"></div>
+            </section>
+
+            <section class="librarian-panel enterprise-library-panel">
+              <div class="bridge-panel-title">Enterprise Library</div>
+              <div id="librarian-enterprise-library" class="library-shelf-grid"></div>
+            </section>
+
+            <section class="librarian-panel reference-panel">
+              <div class="bridge-panel-title">Reference Material</div>
+              <div id="librarian-reference-material" class="librarian-record-list"></div>
+            </section>
+
+            <section class="librarian-panel decision-archive-panel">
+              <div class="bridge-panel-title">Decision Archive</div>
+              <div id="librarian-decision-archive" class="librarian-record-list"></div>
+            </section>
+
+            <section class="librarian-panel prompt-archive-panel">
+              <div class="bridge-panel-title">Prompt Archive</div>
+              <div id="librarian-prompt-archive" class="librarian-record-list"></div>
+            </section>
+
+            <section class="librarian-panel strategy-archive-panel">
+              <div class="bridge-panel-title">Strategy Archive</div>
+              <div id="librarian-strategy-archive" class="librarian-record-list"></div>
+            </section>
+
+            <section class="librarian-panel knowledge-metrics-panel">
+              <div class="bridge-panel-title">Knowledge Metrics</div>
+              <div id="librarian-knowledge-metrics" class="librarian-metrics"></div>
+            </section>
+
+            <section class="librarian-panel librarian-health-panel">
+              <div class="bridge-panel-title">Office Health</div>
+              <div id="librarian-office-health" class="librarian-metrics"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="librarian-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="academy-subcommand-bridge" class="subcommand-bridge academy-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Academy Office Subcommand Bridge</span>
+              <h2>Enterprise Development Command</h2>
+            </div>
+            <button id="academy-return-executive" class="button secondary">Return to Executive Bridge</button>
+          </div>
+
+          <div class="academy-status-bar">
+            <div><span>Academy Status</span><b id="academy-office-status">Learning</b></div>
+            <div><span>Recommendations Pending</span><b id="academy-recommendations-pending">0</b></div>
+            <div><span>Laboratory Experiments</span><b id="academy-lab-status">Ready</b></div>
+            <div><span>Commander Reviews</span><b id="academy-commander-reviews">0 Pending</b></div>
+            <div><span>Improvement Rate</span><b id="academy-improvement-rate">Increasing</b></div>
+            <div><span>Knowledge Coverage</span><b id="academy-knowledge-coverage">Broad</b></div>
+            <div><span>Capability Score</span><b id="academy-capability-score">0</b></div>
+            <div><span>Commander Alert</span><b id="academy-commander-alert">None</b></div>
+          </div>
+
+          <div class="academy-grid">
+            <section class="academy-panel academy-capability-panel">
+              <div class="bridge-panel-title">Enterprise Capability Growth</div>
+              <div id="academy-capability-growth" class="academy-capability-growth"></div>
+            </section>
+
+            <section class="academy-panel academy-heartbeat-panel">
+              <div class="bridge-panel-title">Academy Heartbeat</div>
+              <div id="academy-heartbeat" class="academy-heartbeat"></div>
+            </section>
+
+            <section class="academy-panel academy-radar-panel">
+              <div class="bridge-panel-title">Enterprise Capability Radar</div>
+              <div id="academy-capability-radar" class="academy-radar"></div>
+            </section>
+
+            <section class="academy-panel academy-feed-panel">
+              <div class="bridge-panel-title">Learning Feed</div>
+              <div id="academy-learning-feed" class="academy-record-list"></div>
+            </section>
+
+            <section class="academy-panel academy-pipeline-panel">
+              <div class="bridge-panel-title">Enterprise Education Pipeline</div>
+              <div id="academy-education-pipeline" class="academy-pipeline"></div>
+            </section>
+
+            <section class="academy-panel academy-weakness-panel">
+              <div class="bridge-panel-title">Current Weaknesses</div>
+              <div id="academy-current-weaknesses" class="academy-record-list"></div>
+            </section>
+
+            <section class="academy-panel academy-velocity-panel">
+              <div class="bridge-panel-title">Learning Velocity</div>
+              <div id="academy-learning-velocity" class="academy-metrics"></div>
+            </section>
+
+            <section class="academy-panel academy-timeline-panel">
+              <div class="bridge-panel-title">Capability Timeline</div>
+              <div id="academy-capability-timeline" class="academy-timeline"></div>
+            </section>
+
+            <section class="academy-panel academy-memory-panel">
+              <div class="bridge-panel-title">Institutional Memory</div>
+              <div id="academy-institutional-memory" class="academy-metrics"></div>
+            </section>
+
+            <section class="academy-panel academy-maturity-panel">
+              <div class="bridge-panel-title">Enterprise Maturity</div>
+              <div id="academy-enterprise-maturity" class="academy-maturity"></div>
+            </section>
+
+            <section class="academy-panel academy-mission-panel">
+              <div class="bridge-panel-title">Academy Mission</div>
+              <div id="academy-mission" class="academy-mission"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="academy-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="strategic-intelligence-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Strategic Intelligence Command</span>
+              <h2>Strategic Reconnaissance Bridge</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="sic-return-command" class="button secondary">Return to Command Bridge</button>
+              <button id="sic-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Command Status</span><b id="sic-command-status">READY</b></div>
+            <div><span>Reports Generated</span><b id="sic-reports-generated">0</b></div>
+            <div><span>Average Confidence</span><b id="sic-average-confidence">0%</b></div>
+            <div><span>Evidence Quality</span><b id="sic-evidence-quality">0%</b></div>
+            <div><span>Office Health</span><b id="sic-office-health">NOMINAL</b></div>
+            <div><span>Workflow State</span><b id="sic-workflow-state">bounded</b></div>
+            <div><span>API Cost</span><b id="sic-api-cost">$0.0000</b></div>
+            <div><span>Authority</span><b id="sic-advisory-mode">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Strategic Products</div>
+              <div id="sic-report-products" class="sic-record-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Strategic Themes</div>
+              <div id="sic-themes" class="sic-tag-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Emerging Industries</div>
+              <div id="sic-emerging" class="sic-tag-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Declining Industries</div>
+              <div id="sic-declining" class="sic-tag-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Research Priorities</div>
+              <div id="sic-research" class="sic-tag-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Global Heat Map</div>
+              <div id="sic-heatmap" class="sic-heatmap"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Time Horizon Distribution</div>
+              <div id="sic-horizons" class="sic-metrics"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Strategic Watch List</div>
+              <div id="sic-watchlist" class="sic-tag-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="sic-confidence" class="sic-metrics"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Subordinate Office Status</div>
+              <div id="sic-offices" class="sic-record-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Performance</div>
+              <div id="sic-history" class="sic-metrics"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Commander Directives</div>
+              <div id="sic-directives" class="sic-record-list"></div>
+            </section>
+
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Strategic Metrics</div>
+              <div id="sic-metrics" class="sic-metrics"></div>
+            </section>
+          </div>
+
+          <section class="executive-footer-nav">
+            <div class="bridge-panel-title">Office Bridge Navigation</div>
+            <div id="sic-office-nav" class="bridge-office-hud"></div>
+          </section>
+        </section>
+
+        <section id="blue-ocean-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Blue Ocean Intelligence Office</span>
+              <h2>Underfollowed Opportunity Discovery</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="boio-return-sic" class="button secondary">Return to SIC</button>
+              <button id="boio-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="boio-status">READY</b></div>
+            <div><span>Discovered</span><b id="boio-discovered">0</b></div>
+            <div><span>Average Score</span><b id="boio-average-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="boio-evidence-quality">0%</b></div>
+            <div><span>Forecast Accuracy</span><b id="boio-forecast-accuracy">0%</b></div>
+            <div><span>API Usage</span><b id="boio-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="boio-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="boio-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Highest Ranked Opportunities</div>
+              <div id="boio-ranked" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Emerging Industries</div>
+              <div id="boio-industries" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Emerging Technologies</div>
+              <div id="boio-technologies" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Blue Ocean Score Distribution</div>
+              <div id="boio-score-distribution" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Innovation Heat Map</div>
+              <div id="boio-innovation-heatmap" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Commercialization Timeline</div>
+              <div id="boio-timeline" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Analyst Coverage Distribution</div>
+              <div id="boio-coverage-distribution" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Institutional Ownership Distribution</div>
+              <div id="boio-ownership-distribution" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Research Pipeline</div>
+              <div id="boio-research-pipeline" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Recently Discovered</div>
+              <div id="boio-recent" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Opportunity Watch List</div>
+              <div id="boio-watchlist" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Forecast Accuracy</div>
+              <div id="boio-history" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Confidence</div>
+              <div id="boio-confidence" class="sic-metrics"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="disruption-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Disruption Intelligence Office</span>
+              <h2>Structural Innovation Assessment</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="dio-return-sic" class="button secondary">Return to SIC</button>
+              <button id="dio-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="dio-status">READY</b></div>
+            <div><span>Produced</span><b id="dio-produced">0</b></div>
+            <div><span>Average Score</span><b id="dio-average-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="dio-evidence-quality">0%</b></div>
+            <div><span>Forecast Accuracy</span><b id="dio-forecast-accuracy">0%</b></div>
+            <div><span>API Usage</span><b id="dio-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="dio-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="dio-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Highest Disruption Scores</div>
+              <div id="dio-ranked" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Technology Readiness</div>
+              <div id="dio-readiness" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Commercialization Timeline</div>
+              <div id="dio-timeline" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Industry Risk Map</div>
+              <div id="dio-industry-risk" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Innovation Heat Map</div>
+              <div id="dio-innovation-heatmap" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Adoption Curve Distribution</div>
+              <div id="dio-adoption-distribution" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Emerging Disruptors</div>
+              <div id="dio-disruptors" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Incumbent Vulnerability</div>
+              <div id="dio-vulnerability" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Strategic Watch List</div>
+              <div id="dio-watchlist" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Forecast Accuracy</div>
+              <div id="dio-history" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="dio-confidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Quality</div>
+              <div id="dio-evidence" class="sic-metrics"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="decline-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Decline Intelligence Office</span>
+              <h2>Structural Deterioration Assessment</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="dclio-return-sic" class="button secondary">Return to SIC</button>
+              <button id="dclio-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="dclio-status">READY</b></div>
+            <div><span>Produced</span><b id="dclio-produced">0</b></div>
+            <div><span>Average Score</span><b id="dclio-average-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="dclio-evidence-quality">0%</b></div>
+            <div><span>Forecast Accuracy</span><b id="dclio-forecast-accuracy">0%</b></div>
+            <div><span>API Usage</span><b id="dclio-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="dclio-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="dclio-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Highest Decline Scores</div>
+              <div id="dclio-ranked" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Declining Industries</div>
+              <div id="dclio-industries" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Declining Companies</div>
+              <div id="dclio-companies" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Technology Obsolescence</div>
+              <div id="dclio-obsolescence" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Demand Trends</div>
+              <div id="dclio-demand" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Competitive Threats</div>
+              <div id="dclio-competition" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Regulatory Risk</div>
+              <div id="dclio-regulatory" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Demerging Industries Map</div>
+              <div id="dclio-map" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Forecast Accuracy</div>
+              <div id="dclio-history" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Recovery Candidates</div>
+              <div id="dclio-recovery" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="dclio-confidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Quality</div>
+              <div id="dclio-evidence" class="sic-metrics"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="short-opportunity-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Short Opportunity Office</span>
+              <h2>Bearish Thesis Assessment</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="soo-return-sic" class="button secondary">Return to SIC</button>
+              <button id="soo-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="soo-status">READY</b></div>
+            <div><span>Produced</span><b id="soo-produced">0</b></div>
+            <div><span>Average Score</span><b id="soo-average-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="soo-evidence-quality">0%</b></div>
+            <div><span>Forecast Accuracy</span><b id="soo-forecast-accuracy">0%</b></div>
+            <div><span>API Usage</span><b id="soo-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="soo-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="soo-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Highest Short Scores</div>
+              <div id="soo-ranked" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Bearish Watch List</div>
+              <div id="soo-watchlist" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Highest Downside Potential</div>
+              <div id="soo-downside" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Industry Weakness</div>
+              <div id="soo-industry" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Financial Distress</div>
+              <div id="soo-distress" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Valuation Extremes</div>
+              <div id="soo-valuation" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Catalyst Calendar</div>
+              <div id="soo-catalysts" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="soo-confidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Counterargument Status</div>
+              <div id="soo-counterarguments" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Quality</div>
+              <div id="soo-evidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Forecast Accuracy</div>
+              <div id="soo-history" class="sic-metrics"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="market-structure-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Market Structure Intelligence Office</span>
+              <h2>Market Mechanics & Regime Assessment</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="msio-return-sic" class="button secondary">Return to SIC</button>
+              <button id="msio-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="msio-status">READY</b></div>
+            <div><span>Produced</span><b id="msio-produced">0</b></div>
+            <div><span>Average Score</span><b id="msio-average-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="msio-evidence-quality">0%</b></div>
+            <div><span>Regime Accuracy</span><b id="msio-regime-accuracy">0%</b></div>
+            <div><span>API Usage</span><b id="msio-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="msio-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="msio-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Market Structure Score</div>
+              <div id="msio-score" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Liquidity Heat Map</div>
+              <div id="msio-liquidity" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Volatility Regimes</div>
+              <div id="msio-volatility" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Breadth Indicators</div>
+              <div id="msio-breadth" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Correlation Matrix</div>
+              <div id="msio-correlation" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Cross-Asset Relationships</div>
+              <div id="msio-cross-asset" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Structural Opportunity Map</div>
+              <div id="msio-opportunities" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Systemic Stress Indicators</div>
+              <div id="msio-stress" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Institutional Participation</div>
+              <div id="msio-institutional" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Regime Timeline</div>
+              <div id="msio-timeline" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="msio-confidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Quality</div>
+              <div id="msio-evidence" class="sic-metrics"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="capital-rotation-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Capital Rotation Intelligence Office</span>
+              <h2>Capital Flow & Rotation Assessment</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="crio-return-sic" class="button secondary">Return to SIC</button>
+              <button id="crio-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="crio-status">READY</b></div>
+            <div><span>Produced</span><b id="crio-produced">0</b></div>
+            <div><span>Average Score</span><b id="crio-average-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="crio-evidence-quality">0%</b></div>
+            <div><span>Rotation Accuracy</span><b id="crio-rotation-accuracy">0%</b></div>
+            <div><span>API Usage</span><b id="crio-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="crio-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="crio-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Capital Rotation Score</div>
+              <div id="crio-score" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Sector Rotation Map</div>
+              <div id="crio-sector" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Industry Rotation Map</div>
+              <div id="crio-industry" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Asset Allocation Changes</div>
+              <div id="crio-allocation" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Geographic Capital Flows</div>
+              <div id="crio-geography" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Institutional Participation</div>
+              <div id="crio-institutional" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">ETF Flow Dashboard</div>
+              <div id="crio-etf" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Mutual Fund Positioning</div>
+              <div id="crio-mutual" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Options Positioning</div>
+              <div id="crio-options" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Risk-On / Risk-Off Indicator</div>
+              <div id="crio-risk" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Rotation Timeline</div>
+              <div id="crio-timeline" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="crio-confidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Quality</div>
+              <div id="crio-evidence" class="sic-metrics"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="strategic-synthesis-subcommand-bridge" class="subcommand-bridge strategic-intelligence-bridge hidden">
+          <div class="subcommand-header">
+            <div>
+              <span>Strategic Synthesis Office</span>
+              <h2>Unified Strategic Assessment</h2>
+            </div>
+            <div class="subcommand-actions">
+              <button id="sso-return-sic" class="button secondary">Return to SIC</button>
+              <button id="sso-open-engineering" class="button secondary">Engineering</button>
+            </div>
+          </div>
+
+          <div class="sic-status-bar">
+            <div><span>Runtime Health</span><b id="sso-status">READY</b></div>
+            <div><span>Produced</span><b id="sso-produced">0</b></div>
+            <div><span>Consensus Score</span><b id="sso-consensus-score">0</b></div>
+            <div><span>Evidence Quality</span><b id="sso-evidence-quality">0%</b></div>
+            <div><span>Classification</span><b id="sso-classification">Neutral</b></div>
+            <div><span>API Usage</span><b id="sso-api-usage">$0.0000</b></div>
+            <div><span>Workflow</span><b id="sso-workflow-status">bounded</b></div>
+            <div><span>Authority</span><b id="sso-authority">ADVISORY</b></div>
+          </div>
+
+          <div class="sic-grid">
+            <section class="sic-panel sic-products-panel">
+              <div class="bridge-panel-title">Strategic Consensus Score</div>
+              <div id="sso-score" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Consensus Matrix</div>
+              <div id="sso-consensus" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Office Agreement Matrix</div>
+              <div id="sso-agreement" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Evidence Heat Map</div>
+              <div id="sso-evidence-heat" class="sic-heatmap"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Confidence Distribution</div>
+              <div id="sso-confidence" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Uncertainty Map</div>
+              <div id="sso-uncertainty" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Strategic Themes</div>
+              <div id="sso-themes" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Emerging Risks</div>
+              <div id="sso-risks" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Research Priorities</div>
+              <div id="sso-research" class="sic-tag-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Commander Briefing</div>
+              <div id="sso-briefing" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Historical Strategic Assessments</div>
+              <div id="sso-history" class="sic-record-list"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Forecast Accuracy</div>
+              <div id="sso-forecast" class="sic-metrics"></div>
+            </section>
+            <section class="sic-panel">
+              <div class="bridge-panel-title">Runtime</div>
+              <div id="sso-runtime" class="sic-metrics"></div>
+            </section>
+          </div>
         </section>
 
         <section id="subcommand-placeholder" class="subcommand-bridge placeholder-bridge hidden">
@@ -563,6 +1737,1058 @@
           </div>
         </section>
 
+        <section class="panel decision-object-schema-panel">
+          <div class="panel-title">Decision Object Schema Freeze</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Schema Registry</h2>
+              <div id="dos-summary" class="monitor-grid compact"></div>
+              <h2>Object Validator</h2>
+              <div id="dos-validation" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Required Fields</h2>
+              <div id="dos-fields" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Optional Fields & Enumerations</h2>
+              <div id="dos-enums" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Validation Rules</h2>
+              <div id="dos-rules" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Repository Browser</h2>
+              <div id="dos-repository" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Hash Viewer</h2>
+              <div id="dos-hashes" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Reference Graph</h2>
+              <div id="dos-lineage" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Compatibility Matrix</h2>
+              <div id="dos-compatibility" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Serialization Standard</h2>
+              <div id="dos-serialization" class="monitor-grid compact"></div>
+              <h2>LAW VII Diagnostics</h2>
+              <div id="dos-diagnostics" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel decision-object-quality-panel">
+          <div class="panel-title">Decision Object Quality Scoring Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Quality Reports</h2>
+              <div id="doq-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="doq-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Quality Reports</h2>
+              <div id="doq-reports" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dimension Scores</h2>
+              <div id="doq-dimensions" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Quality History</h2>
+              <div id="doq-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Trend Analysis</h2>
+              <div id="doq-trends" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Threshold Configuration</h2>
+              <div id="doq-thresholds" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Scoring Algorithms</h2>
+              <div id="doq-algorithms" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Completeness Analysis</h2>
+              <div id="doq-completeness" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Consistency Analysis</h2>
+              <div id="doq-consistency" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Freshness Metrics</h2>
+              <div id="doq-freshness" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Evidence Metrics</h2>
+              <div id="doq-evidence" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Calibration Metrics</h2>
+              <div id="doq-calibration" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Quality Forecasts</h2>
+              <div id="doq-forecasts" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Quality Recommendations</h2>
+              <div id="doq-recommendations" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel decision-explainability-panel">
+          <div class="panel-title">Decision Explainability Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Explainability Repository</h2>
+              <div id="dee-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="dee-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Explainability Repository</h2>
+              <div id="dee-repository" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Reasoning Graph</h2>
+              <div id="dee-reasoning" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Evidence Graph</h2>
+              <div id="dee-evidence" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Evidence Weighting</h2>
+              <div id="dee-weighting" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Explanation Templates</h2>
+              <div id="dee-templates" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Explanation Quality</h2>
+              <div id="dee-quality" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Readability Scores</h2>
+              <div id="dee-readability" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Alternative Decisions</h2>
+              <div id="dee-alternatives" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Confidence Breakdown</h2>
+              <div id="dee-confidence" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Historical Search</h2>
+              <div id="dee-search" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Reference Graph</h2>
+              <div id="dee-reference" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-benchmark-panel">
+          <div class="panel-title">Enterprise Benchmark Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Benchmark Registry</h2>
+              <div id="ebe-summary" class="monitor-grid compact"></div>
+              <h2>Benchmark Diagnostics</h2>
+              <div id="ebe-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Benchmark Registry</h2>
+              <div id="ebe-registry" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Benchmark Configuration</h2>
+              <div id="ebe-configuration" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Benchmark Performance</h2>
+              <div id="ebe-performance" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Benchmark Reports</h2>
+              <div id="ebe-reports" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Trade-Level Comparisons</h2>
+              <div id="ebe-trades" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Strategy-Level Comparisons</h2>
+              <div id="ebe-strategies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Portfolio-Level Comparisons</h2>
+              <div id="ebe-portfolio" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Risk-Adjusted Metrics</h2>
+              <div id="ebe-risk" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Random Baseline Controls</h2>
+              <div id="ebe-random" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>No-Trade Baseline</h2>
+              <div id="ebe-no-trade" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Market Regime Buckets</h2>
+              <div id="ebe-regimes" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Historical Benchmark Data</h2>
+              <div id="ebe-history" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel trade-attribution-panel">
+          <div class="panel-title">Trade Attribution Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Attribution Repository</h2>
+              <div id="tae-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="tae-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Attribution Repository</h2>
+              <div id="tae-repository" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Contribution Analysis</h2>
+              <div id="tae-contribution" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Counterfactual Reports</h2>
+              <div id="tae-counterfactuals" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Strategy Attribution</h2>
+              <div id="tae-strategy" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Prompt Attribution</h2>
+              <div id="tae-prompt" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Market Attribution</h2>
+              <div id="tae-market" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Risk Attribution</h2>
+              <div id="tae-risk" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Execution Attribution</h2>
+              <div id="tae-execution" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Portfolio Attribution</h2>
+              <div id="tae-portfolio" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Randomness Estimation</h2>
+              <div id="tae-randomness" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Attribution Trends</h2>
+              <div id="tae-trends" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Confidence Analysis</h2>
+              <div id="tae-confidence" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Historical Search</h2>
+              <div id="tae-search" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-reproducibility-panel">
+          <div class="panel-title">Enterprise Reproducibility Framework</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Enterprise Snapshots</h2>
+              <div id="erf-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="erf-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Enterprise Snapshots</h2>
+              <div id="erf-snapshots" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Replay Browser</h2>
+              <div id="erf-replay-browser" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Replay Certification</h2>
+              <div id="erf-certification" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Difference Analysis</h2>
+              <div id="erf-differences" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Environment Snapshots</h2>
+              <div id="erf-environment" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Prompt Snapshots</h2>
+              <div id="erf-prompts" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Strategy Snapshots</h2>
+              <div id="erf-strategies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Configuration Snapshots</h2>
+              <div id="erf-configuration" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Provider Snapshots</h2>
+              <div id="erf-providers" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Portfolio Snapshots</h2>
+              <div id="erf-portfolio" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Replay Statistics</h2>
+              <div id="erf-replay-statistics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Historical Coverage</h2>
+              <div id="erf-coverage" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Provenance Graph</h2>
+              <div id="erf-provenance" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-guardrails-panel">
+          <div class="panel-title">Enterprise Operational Guardrails</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Guardrail Registry</h2>
+              <div id="eog-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="eog-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Guardrail Registry</h2>
+              <div id="eog-registry" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Threshold Configuration</h2>
+              <div id="eog-thresholds" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Authorization History</h2>
+              <div id="eog-authorization" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Emergency Halts</h2>
+              <div id="eog-emergency" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Safe Mode Events</h2>
+              <div id="eog-safe-mode" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery Events</h2>
+              <div id="eog-recovery" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Commander Overrides</h2>
+              <div id="eog-overrides" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Health Thresholds</h2>
+              <div id="eog-health" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Quality Thresholds</h2>
+              <div id="eog-quality" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Budget Thresholds</h2>
+              <div id="eog-budget" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Status</h2>
+              <div id="eog-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Operational Timeline</h2>
+              <div id="eog-timeline" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Guardrail Audit History</h2>
+              <div id="eog-audit" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-experiment-scheduler-panel">
+          <div class="panel-title">Enterprise Experiment Scheduler</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Research Backlog</h2>
+              <div id="ees-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="ees-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Research Backlog</h2>
+              <div id="ees-backlog" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Experiment Queue</h2>
+              <div id="ees-queue" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Priority Calculations</h2>
+              <div id="ees-priority" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Information Gain Estimates</h2>
+              <div id="ees-information" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Graph</h2>
+              <div id="ees-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Scheduling Calendar</h2>
+              <div id="ees-calendar" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Laboratory Capacity</h2>
+              <div id="ees-capacity" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Budget Allocation</h2>
+              <div id="ees-budget" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Knowledge Yield Metrics</h2>
+              <div id="ees-yield" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Research Velocity</h2>
+              <div id="ees-velocity" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Commander Priorities</h2>
+              <div id="ees-commander" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Experiment History</h2>
+              <div id="ees-history" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel commander-review-workspace-panel">
+          <div class="panel-title">Commander Daily Review Workspace</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Enterprise Scorecard</h2>
+              <div id="cdrw-scorecard" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="cdrw-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Enterprise Timeline</h2>
+              <div id="cdrw-timeline" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Review Checklist</h2>
+              <div id="cdrw-checklist" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Daily Reports Archive</h2>
+              <div id="cdrw-reports" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Engineering Mode Links</h2>
+              <div id="cdrw-engineering-links" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel prompt-evolution-panel">
+          <div class="panel-title">Prompt Evolution Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Performance Dashboard</h2>
+              <div id="pee-metrics" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="pee-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Prompt Repository</h2>
+              <div id="pee-repository" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Prompt Improvement Candidates</h2>
+              <div id="pee-candidates" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Version Graph & Prompt Lineage</h2>
+              <div id="pee-lineage" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Metadata Editor</h2>
+              <div id="pee-metadata" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Comparison Engine</h2>
+              <div id="pee-comparisons" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Laboratory Results & Replay Statistics</h2>
+              <div id="pee-lab" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Promotion, Retirement & Approval History</h2>
+              <div id="pee-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Version Difference Viewer</h2>
+              <div id="pee-diff" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Prompt Dependency Graph</h2>
+              <div id="pee-dependency" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel prompt-package-panel">
+          <div class="panel-title">Prompt Package Manager</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Package Registry</h2>
+              <div id="ppm-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="ppm-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Installed Packages</h2>
+              <div id="ppm-installed" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Active Packages</h2>
+              <div id="ppm-active" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Office Package Assignment</h2>
+              <div id="ppm-offices" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Version Graph</h2>
+              <div id="ppm-versions" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Graph</h2>
+              <div id="ppm-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Compatibility Matrix</h2>
+              <div id="ppm-compatibility" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Installation History</h2>
+              <div id="ppm-install-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Activation History</h2>
+              <div id="ppm-activation-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Rollback Manager</h2>
+              <div id="ppm-rollback" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Integrity Verification</h2>
+              <div id="ppm-integrity" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Health Dashboard</h2>
+              <div id="ppm-health" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Laboratory Results</h2>
+              <div id="ppm-lab" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Deployment Timeline</h2>
+              <div id="ppm-timeline" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel strategy-package-panel">
+          <div class="panel-title">Strategy Package Manager</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Strategy Package Registry</h2>
+              <div id="spm-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="spm-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Installed Packages</h2>
+              <div id="spm-installed" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Active Packages</h2>
+              <div id="spm-active" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Strategy Assignment</h2>
+              <div id="spm-assignments" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Version Graph</h2>
+              <div id="spm-versions" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Graph</h2>
+              <div id="spm-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Compatibility Matrix</h2>
+              <div id="spm-compatibility" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Installation History</h2>
+              <div id="spm-install-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Activation History</h2>
+              <div id="spm-activation-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Rollback Manager</h2>
+              <div id="spm-rollback" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Integrity Dashboard</h2>
+              <div id="spm-integrity" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Health Dashboard</h2>
+              <div id="spm-health" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Laboratory Results</h2>
+              <div id="spm-lab" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Replay Statistics</h2>
+              <div id="spm-replay" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Counterfactual Reports</h2>
+              <div id="spm-counterfactual" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Market Regime Assignment</h2>
+              <div id="spm-regimes" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Deployment Timeline</h2>
+              <div id="spm-timeline" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-configuration-panel">
+          <div class="panel-title">Enterprise Configuration Registry</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Configuration Registry</h2>
+              <div id="ecr-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="ecr-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Configuration History</h2>
+              <div id="ecr-history" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Version Graph</h2>
+              <div id="ecr-versions" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Graph</h2>
+              <div id="ecr-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Environment Manager</h2>
+              <div id="ecr-environments" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Validation Dashboard</h2>
+              <div id="ecr-validation" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Promotion Queue</h2>
+              <div id="ecr-promotion" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Rollback Manager</h2>
+              <div id="ecr-rollback" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Configuration Diff Viewer</h2>
+              <div id="ecr-diff" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Configuration Search</h2>
+              <div id="ecr-search" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Configuration Health</h2>
+              <div id="ecr-health" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Audit History</h2>
+              <div id="ecr-audit" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-health-panel">
+          <div class="panel-title">Enterprise Health Monitor</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Enterprise Health Score</h2>
+              <div id="ehm-summary" class="monitor-grid compact"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="ehm-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Component Health</h2>
+              <div id="ehm-components" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Graph</h2>
+              <div id="ehm-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Alert History</h2>
+              <div id="ehm-alerts" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Health Calculations</h2>
+              <div id="ehm-calculations" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Telemetry Viewer</h2>
+              <div id="ehm-telemetry" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Health Timeline</h2>
+              <div id="ehm-timeline" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Forecast Models</h2>
+              <div id="ehm-forecasts" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Runtime Statistics</h2>
+              <div id="ehm-runtime" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Infrastructure Metrics</h2>
+              <div id="ehm-infrastructure" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Validation Failures</h2>
+              <div id="ehm-validation" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Provider Diagnostics</h2>
+              <div id="ehm-provider" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Database Diagnostics</h2>
+              <div id="ehm-database" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Internal Health Rules</h2>
+              <div id="ehm-rules" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Health Configuration</h2>
+              <div id="ehm-config" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-recovery-panel">
+          <div class="panel-title">Enterprise Failure Recovery Framework</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Recovery Dashboard</h2>
+              <div id="efr-summary" class="monitor-grid compact"></div>
+              <h2>Recovery Diagnostics</h2>
+              <div id="efr-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Failure History</h2>
+              <div id="efr-failures" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery History</h2>
+              <div id="efr-recoveries" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Failure Timeline</h2>
+              <div id="efr-timeline" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery Dashboard Details</h2>
+              <div id="efr-dashboard" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery Validation</h2>
+              <div id="efr-validation" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Checkpoint Browser</h2>
+              <div id="efr-checkpoints" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery Rules</h2>
+              <div id="efr-rules" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery Statistics</h2>
+              <div id="efr-statistics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recovery Forecasts</h2>
+              <div id="efr-forecasts" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Chaos Testing Controls</h2>
+              <div id="efr-chaos" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Failure Classification</h2>
+              <div id="efr-classification" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Dependency Failures</h2>
+              <div id="efr-dependencies" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Infrastructure Diagnostics</h2>
+              <div id="efr-infrastructure" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Transaction Boundaries</h2>
+              <div id="efr-boundaries" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Quarantine</h2>
+              <div id="efr-quarantine" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel market-context-panel">
+          <div class="panel-title">Market Context Integration Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Market Snapshot Viewer</h2>
+              <div id="mcie-summary" class="monitor-grid compact"></div>
+              <h2>Market Regime Engine</h2>
+              <div id="mcie-regime" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Market Context Repository</h2>
+              <div id="mcie-repository" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Normalized Market Layers</h2>
+              <div id="mcie-layers" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Sector Dashboard</h2>
+              <div id="mcie-sector" class="monitor-grid compact"></div>
+              <h2>Portfolio Context Engine</h2>
+              <div id="mcie-portfolio" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Cache Statistics</h2>
+              <div id="mcie-cache" class="monitor-grid compact"></div>
+              <h2>API Consumption</h2>
+              <div id="mcie-api" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Data Freshness</h2>
+              <div id="mcie-freshness" class="monitor-grid compact"></div>
+              <h2>Source Health</h2>
+              <div id="mcie-source-health" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Normalization Rules</h2>
+              <div id="mcie-normalization" class="api-call-list compact-list"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="mcie-diagnostics" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel market-data-provider-panel">
+          <div class="panel-title">Market Data Provider Abstraction Layer</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Provider Summary</h2>
+              <div id="mdpa-summary" class="monitor-grid compact"></div>
+              <h2>Authentication Status</h2>
+              <div id="mdpa-auth" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Provider Registry</h2>
+              <div id="mdpa-registry" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Provider Configuration</h2>
+              <div id="mdpa-config" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Capability Matrix</h2>
+              <div id="mdpa-capabilities" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Provider Health Dashboard</h2>
+              <div id="mdpa-health" class="monitor-grid compact"></div>
+              <h2>Rate Limit Status</h2>
+              <div id="mdpa-rates" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Call History</h2>
+              <div id="mdpa-calls" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Cost History</h2>
+              <div id="mdpa-costs" class="monitor-grid compact"></div>
+              <h2>Cache Statistics</h2>
+              <div id="mdpa-cache" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Raw Payload Viewer</h2>
+              <div id="mdpa-raw" class="api-call-list compact-list"></div>
+              <h2>Normalization Diagnostics</h2>
+              <div id="mdpa-normalization" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Failover Events</h2>
+              <div id="mdpa-failover" class="api-call-list compact-list"></div>
+              <h2>Replay Mode Tools</h2>
+              <div id="mdpa-replay" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Mock Provider Controls</h2>
+              <div id="mdpa-controls" class="api-call-list compact-list"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="mdpa-diagnostics" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel daily-learning-panel">
+          <div class="panel-title">Daily Enterprise Learning Pipeline</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Daily Learning Records</h2>
+              <div id="dlp-records" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Learning Timeline</h2>
+              <div id="dlp-timeline" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Improvement Backlog</h2>
+              <div id="dlp-backlog" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recommendation Queue</h2>
+              <div id="dlp-recommendations" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Validation Queue</h2>
+              <div id="dlp-validation" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Promotion Queue</h2>
+              <div id="dlp-promotion" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Capability Index Calculations</h2>
+              <div id="dlp-capability" class="monitor-grid compact"></div>
+              <h2>Knowledge Metrics</h2>
+              <div id="dlp-knowledge" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Commander Briefings</h2>
+              <div id="dlp-briefing" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Academy Handoff</h2>
+              <div id="dlp-academy" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Historical Reports</h2>
+              <div id="dlp-memory" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Learning Orchestrator</h2>
+              <div id="dlp-orchestrator" class="monitor-grid compact"></div>
+              <h2>Pipeline Diagnostics</h2>
+              <div id="dlp-diagnostics" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Internal Statistics</h2>
+              <div id="dlp-statistics" class="monitor-grid compact"></div>
+              <h2>Performance Logs</h2>
+              <div id="dlp-logs" class="api-call-list compact-list"></div>
+            </div>
+          </div>
+        </section>
+
         <section class="panel cognitive-pilot-panel">
           <div class="panel-title">Controlled Cognitive Pilot</div>
           <div class="api-runtime-grid">
@@ -776,6 +3002,76 @@
               <div id="dl-search-results" class="api-call-list compact-list"></div>
               <h2>Laboratory Metrics</h2>
               <div id="dl-metrics" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel historian-recommendation-panel">
+          <div class="panel-title">Historian Recommendation Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Recommendation Statistics</h2>
+              <div id="hre-metrics" class="monitor-grid compact"></div>
+              <h2>Evidence Thresholds</h2>
+              <div id="hre-thresholds" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Historical Pattern Database</h2>
+              <div id="hre-patterns" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recommendation Database</h2>
+              <div id="hre-recommendations" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Lesson Archive</h2>
+              <div id="hre-lessons" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Knowledge Gap Reports</h2>
+              <div id="hre-gaps" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Pattern Detection Algorithms</h2>
+              <div id="hre-algorithms" class="api-call-list compact-list"></div>
+              <h2>Recommendation Lifecycle</h2>
+              <div id="hre-lifecycle" class="api-call-list compact-list"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="hre-diagnostics" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-learning-panel">
+          <div class="panel-title">Enterprise Learning Engine</div>
+          <div class="decision-lab-grid">
+            <div class="decision-lab-card">
+              <h2>Learning Statistics</h2>
+              <div id="ele-metrics" class="monitor-grid compact"></div>
+              <h2>Recommendation Thresholds</h2>
+              <div id="ele-thresholds" class="monitor-grid compact"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Observation Database</h2>
+              <div id="ele-observations" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Recommendation Database</h2>
+              <div id="ele-recommendations" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Improvement Backlog</h2>
+              <div id="ele-backlog" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Knowledge Gap Detection</h2>
+              <div id="ele-gaps" class="api-call-list compact-list"></div>
+            </div>
+            <div class="decision-lab-card">
+              <h2>Learning Rules</h2>
+              <div id="ele-rules" class="api-call-list compact-list"></div>
+              <h2>Internal Diagnostics</h2>
+              <div id="ele-diagnostics" class="monitor-grid compact"></div>
             </div>
           </div>
         </section>
@@ -997,8 +3293,534 @@
           </div>
         </section>
 
+        <section class="panel mission-planner-panel">
+          <div class="panel-title">Enterprise Mission Planner</div>
+          <div id="emp-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Planning Queue</h2>
+              <div class="filter-grid">
+                <input id="emp-commander-request" placeholder="Commander mission request" />
+                <button id="emp-create-request" class="button secondary">Create Plan</button>
+                <button id="emp-replay" class="button secondary">Replay</button>
+              </div>
+              <div id="emp-trigger-queue" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Draft Mission Plans</h2>
+              <div id="emp-draft-plans" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Minimum Workforce</h2>
+              <div id="emp-workforce" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Dependency Graph</h2>
+              <div id="emp-dependencies" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Resource Envelope</h2>
+              <div id="emp-resources" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Reuse, Delta, Completion</h2>
+              <div id="emp-reuse-delta" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel cost-governor-panel">
+          <div class="panel-title">Enterprise Cost Governance Bridge</div>
+          <div id="ecg-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Budget Allocation</h2>
+              <div id="ecg-budget" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Protected Reserves</h2>
+              <div id="ecg-reserves" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Mission Reservations</h2>
+              <div class="filter-grid">
+                <input id="ecg-plan-id" placeholder="Mission Plan ID" />
+                <button id="ecg-reserve" class="button secondary">Reserve</button>
+              </div>
+              <div id="ecg-reservations" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Office Cost Table</h2>
+              <div id="ecg-offices" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Provider and Model Usage</h2>
+              <div id="ecg-providers" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Authorization and Forecast</h2>
+              <div id="ecg-authorizations" class="office-state-list"></div>
+              <div id="ecg-forecast" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel information-freshness-panel">
+          <div class="panel-title">Information Freshness Bridge</div>
+          <div id="ifr-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Freshness Inventory</h2>
+              <div class="filter-grid">
+                <input id="ifr-record-id" placeholder="Record ID" />
+                <button id="ifr-evaluate" class="button secondary">Evaluate</button>
+                <button id="ifr-register" class="button secondary">Register Sample</button>
+                <button id="ifr-invalidate" class="button warning">Invalidate</button>
+              </div>
+              <div id="ifr-inventory" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Stale and At-Risk Information</h2>
+              <div id="ifr-at-risk" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Dependency Map</h2>
+              <div id="ifr-dependencies" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Supersession and Contradictions</h2>
+              <div id="ifr-contradictions" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Policy Explorer</h2>
+              <div id="ifr-policies" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Reuse and Refresh</h2>
+              <div id="ifr-reuse" class="monitor-grid compact"></div>
+              <div id="ifr-queue" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-memory-panel">
+          <div class="panel-title">Enterprise Memory Bridge</div>
+          <div id="emc-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Memory Inventory</h2>
+              <div class="filter-grid">
+                <input id="emc-subject" placeholder="Subject ID" />
+                <button id="emc-query" class="button secondary">Query</button>
+                <button id="emc-admit" class="button secondary">Admit Sample</button>
+                <button id="emc-invalidate" class="button warning">Invalidate</button>
+              </div>
+              <div id="emc-inventory" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Admission Decisions</h2>
+              <div id="emc-admissions" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Retrieval Results</h2>
+              <div id="emc-retrievals" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Reuse Evaluations</h2>
+              <div id="emc-reuse" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Invalidation and Access</h2>
+              <div id="emc-invalidations" class="office-state-list"></div>
+              <div id="emc-access" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Governance Exceptions</h2>
+              <div id="emc-contradictions" class="office-state-list"></div>
+              <div id="emc-quarantine" class="office-state-list"></div>
+              <div id="emc-archive" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Indexes, Retention, and EO-CH Feed</h2>
+              <div id="emc-indexes" class="monitor-grid compact"></div>
+              <div id="emc-retention" class="monitor-grid compact"></div>
+              <div id="emc-repository" class="monitor-grid compact"></div>
+              <div id="emc-eoch" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel workflow-delta-panel">
+          <div class="panel-title">Workflow Delta Bridge</div>
+          <div id="wch-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Delta Requests</h2>
+              <div class="filter-grid">
+                <input id="wch-subject" placeholder="Subject ID" />
+                <button id="wch-baseline" class="button secondary">Create Baseline</button>
+                <button id="wch-analyze" class="button secondary">Analyze Delta</button>
+                <button id="wch-export" class="button secondary">Export</button>
+                <button id="wch-replay" class="button secondary">Replay</button>
+                <button id="wch-review" class="button warning">Review</button>
+              </div>
+              <div id="wch-requests" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Change Summary</h2>
+              <div id="wch-summary" class="monitor-grid compact"></div>
+              <div id="wch-fields" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Section Delta</h2>
+              <div id="wch-sections" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Product Impact Matrix</h2>
+              <div id="wch-products" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Office Impact Matrix</h2>
+              <div id="wch-offices" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Dependency Impact Map</h2>
+              <div id="wch-dependencies" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Workflow Graph Comparison</h2>
+              <div id="wch-workflow" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Reuse and Work Reduction</h2>
+              <div id="wch-reuse" class="monitor-grid compact"></div>
+              <div id="wch-mission-feed" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-priority-panel">
+          <div class="panel-title">Enterprise Priority Bridge</div>
+          <div id="epj-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Ranked Mission Queue</h2>
+              <div class="filter-grid">
+                <button id="epj-evaluate" class="button secondary">Evaluate Priority</button>
+                <button id="epj-replay" class="button secondary">Replay</button>
+              </div>
+              <div id="epj-ranked-queue" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Score Breakdown</h2>
+              <div id="epj-score-breakdown" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Safety Precedence</h2>
+              <div id="epj-safety" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Priority Inheritance</h2>
+              <div id="epj-inheritance" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Preemption Assessment</h2>
+              <div id="epj-preemption" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Starvation and Aging</h2>
+              <div id="epj-aging" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Resource Constraints</h2>
+              <div id="epj-resources" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Suspended and Deferred</h2>
+              <div id="epj-deferred" class="office-state-list"></div>
+              <div id="epj-scheduler-feed" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel position-monitoring-panel">
+          <div class="panel-title">Position Monitoring Network</div>
+          <div id="pmn-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Watcher Roster</h2>
+              <div class="filter-grid">
+                <button id="pmn-scan" class="button secondary">Scan Positions</button>
+                <button id="pmn-replay" class="button secondary">Replay</button>
+              </div>
+              <div id="pmn-watchers" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Monitoring Events</h2>
+              <div id="pmn-events" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Watcher Coverage</h2>
+              <div id="pmn-coverage" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>EO-CC Event Feed</h2>
+              <div id="pmn-feed" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-communications-panel">
+          <div class="panel-title">Enterprise Communications Bus</div>
+          <div id="ecl-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Message Stream</h2>
+              <div class="filter-grid">
+                <button id="ecl-publish" class="button secondary">Publish Test</button>
+                <button id="ecl-trace-latest" class="button secondary">Trace Latest</button>
+                <button id="ecl-replay" class="button secondary">Replay Latest</button>
+                <button id="ecl-retry" class="button warning">Retry Dead Letter</button>
+              </div>
+              <div id="ecl-stream" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Correlation Trace</h2>
+              <div id="ecl-trace" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Dead-Letter Queue</h2>
+              <div id="ecl-dead" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Quarantine</h2>
+              <div id="ecl-quarantine" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Subscriber Health</h2>
+              <div id="ecl-subscribers" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Schema Registry</h2>
+              <div id="ecl-schema" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>LAW VII / Authority Boundaries</h2>
+              <div id="ecl-law" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Transport Audit</h2>
+              <div id="ecl-audit" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-efficiency-panel">
+          <div class="panel-title">Enterprise Efficiency Analytics</div>
+          <div id="ecn-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Enterprise Scorecard</h2>
+              <div class="filter-grid">
+                <button id="ecn-refresh" class="button secondary">Refresh Analytics</button>
+                <button id="ecn-compare" class="button secondary">Compare Period</button>
+                <button id="ecn-recalculate" class="button secondary">Recalculate</button>
+                <button id="ecn-lineage-latest" class="button secondary">Lineage</button>
+                <button id="ecn-acknowledge" class="button warning">Acknowledge Finding</button>
+              </div>
+              <div id="ecn-scorecard" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Office Efficiency</h2>
+              <div id="ecn-offices" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Mission Efficiency</h2>
+              <div id="ecn-missions" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Workflow Efficiency</h2>
+              <div id="ecn-workflows" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Cost Efficiency</h2>
+              <div id="ecn-cost" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Reuse and Delta</h2>
+              <div id="ecn-reuse" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Communications Efficiency</h2>
+              <div id="ecn-communications" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Recovery Efficiency</h2>
+              <div id="ecn-recovery" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Findings Console</h2>
+              <div id="ecn-findings" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Metric Lineage</h2>
+              <div id="ecn-lineage" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>LAW VII / Authority Boundaries</h2>
+              <div id="ecn-law" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel enterprise-doctrine-policy-panel">
+          <div class="panel-title">Enterprise Doctrine &amp; Policy Manager</div>
+          <div id="eco-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Active Policy Matrix</h2>
+              <div class="filter-grid">
+                <button id="eco-submit-safe" class="button secondary">Submit Draft</button>
+                <button id="eco-approve-latest" class="button secondary">Approve Latest</button>
+                <button id="eco-stage-latest" class="button secondary">Stage Latest</button>
+                <button id="eco-activate-latest" class="button warning">Activate Plan</button>
+              </div>
+              <div id="eco-active-matrix" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Doctrine Library</h2>
+              <div id="eco-doctrine" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Approval Queue</h2>
+              <div id="eco-approvals" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Activation Console</h2>
+              <div id="eco-activation" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Policy Drift</h2>
+              <div class="filter-grid">
+                <button id="eco-restrictive-directive" class="button secondary">Restrictive Directive</button>
+                <button id="eco-drift-sample" class="button warning">Record Drift</button>
+                <button id="eco-replay" class="button secondary">Replay</button>
+                <button id="eco-impact" class="button secondary">Impact</button>
+              </div>
+              <div id="eco-drift" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Series C Integration</h2>
+              <div id="eco-series-c" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Policy Metrics</h2>
+              <div id="eco-metrics" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>LAW VII / Authority Boundaries</h2>
+              <div id="eco-law" class="monitor-grid compact"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel event-detection-panel">
+          <div class="panel-title">Event Detection Bridge</div>
+          <div id="ede-status" class="event-detection-status"></div>
+          <div class="event-detection-grid">
+            <div class="scheduler-card">
+              <h2>Active Events</h2>
+              <div class="filter-grid">
+                <button id="ede-observe" class="button secondary">Observe Once</button>
+                <button id="ede-replay" class="button secondary">Replay</button>
+              </div>
+              <div id="ede-active-events" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Detector Health</h2>
+              <div id="ede-detectors" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Event Flow</h2>
+              <div id="ede-flow" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Suppression and Deduplication</h2>
+              <div id="ede-suppression" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Event Groups</h2>
+              <div id="ede-groups" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Rules and Thresholds</h2>
+              <div id="ede-rules" class="office-state-list"></div>
+            </div>
+          </div>
+        </section>
+
         <section class="panel scheduler-panel">
-          <div class="panel-title">Office Operating Modes & Scheduling</div>
+          <div class="panel-title">Enterprise Operations Scheduler / Office Operating Modes & Scheduling</div>
+          <div class="eos-bridge">
+            <div class="scheduler-card">
+              <h2>Current Operating Mode</h2>
+              <div id="eos-status" class="monitor-grid compact"></div>
+              <div class="filter-grid">
+                <select id="eos-mode">
+                  <option>Full Paper Trading</option>
+                  <option>Observation Only</option>
+                  <option>Position Management Only</option>
+                  <option>Capital Preservation</option>
+                  <option>Strategic Research Only</option>
+                  <option>Maintenance</option>
+                  <option>Halted</option>
+                </select>
+                <button id="eos-set-mode" class="button secondary">Set Mode</button>
+                <button id="eos-enable" class="button success">Enable Scheduler</button>
+                <button id="eos-disable" class="button warning">Disable Scheduler</button>
+              </div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Mission Controls</h2>
+              <div class="filter-grid">
+                <select id="eos-template"></select>
+                <button id="eos-run-mission" class="button success">Run Mission</button>
+                <input id="eos-cancel-id" placeholder="Mission ID" />
+                <button id="eos-cancel-mission" class="button warning">Cancel Mission</button>
+              </div>
+              <div id="eos-cost-monitor" class="monitor-grid compact"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Mission Timeline</h2>
+              <div id="eos-missions" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Suppressed Work</h2>
+              <div id="eos-suppressed" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Office Duty Officers</h2>
+              <div id="odo-roster" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Duty Requests</h2>
+              <div class="filter-grid">
+                <select id="odo-target"></select>
+                <select id="odo-request-type"></select>
+                <input id="odo-task" placeholder="Tasking" />
+                <button id="odo-submit" class="button secondary">Submit Task</button>
+              </div>
+              <div id="odo-pending" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>Wake Recommendations</h2>
+              <div id="odo-wake-recommendations" class="office-state-list"></div>
+            </div>
+            <div class="scheduler-card">
+              <h2>ODO Suppressed Work</h2>
+              <div id="odo-suppressed" class="office-state-list"></div>
+            </div>
+          </div>
           <div class="scheduler-grid">
             <div class="scheduler-card">
               <h2>Office Control</h2>
@@ -1067,6 +3889,6 @@
       </main>
     </div>
     <footer>Copyright © 2026 ARGOS Enterprise Systems. Version 1.0.0 | Build Local</footer>
-    <script src="/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

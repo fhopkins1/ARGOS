@@ -341,6 +341,62 @@ class EnterpriseWorkflowOrchestrator:
             },
         }
 
+    def recover_from_snapshot(self, snapshot: dict[str, Any]) -> None:
+        """Recover workflows and Workflow Execution Tokens from authoritative persistence."""
+        workflows: dict[str, WorkflowRecord] = {}
+        queue = list(snapshot.get("queue", ()) or ())
+        audits = tuple(OwnershipTransferAudit(**item) for item in snapshot.get("auditHistory", ()) or ())
+        for item in snapshot.get("workflows", ()) or ():
+            token_payload = dict(item.get("token", {}))
+            token = WorkflowExecutionToken(
+                workflow_id=str(token_payload.get("workflow_id", "")),
+                current_owner=str(token_payload.get("current_owner", "")),
+                previous_owner=str(token_payload.get("previous_owner", "")),
+                next_owner=str(token_payload.get("next_owner", "")),
+                workflow_stage=str(token_payload.get("workflow_stage", "")),
+                runtime_budget=int(token_payload.get("runtime_budget", 0) or 0),
+                credit_budget=float(token_payload.get("credit_budget", 0.0) or 0.0),
+                expected_output_schema=tuple(token_payload.get("expected_output_schema", ()) or ()),
+                audit_identifier=str(token_payload.get("audit_identifier", "")),
+                creation_timestamp=str(token_payload.get("creation_timestamp", "")),
+                transfer_count=int(token_payload.get("transfer_count", 0) or 0),
+                workflow_status=str(token_payload.get("workflow_status", "")),
+            )
+            if token.workflow_id != item.get("workflow_id"):
+                raise ValueError("workflow token references a different workflow")
+            record = WorkflowRecord(
+                workflow_id=str(item.get("workflow_id", "")),
+                name=str(item.get("name", "")),
+                workflow_type=str(item.get("workflow_type", "")),
+                initial_stage=str(item.get("initial_stage", "")),
+                stages=tuple(item.get("stages", ()) or ()),
+                current_stage_index=int(item.get("current_stage_index", 0) or 0),
+                queue_position=int(item.get("queue_position", 0) or 0),
+                retry_count=int(item.get("retry_count", 0) or 0),
+                runtime_used=int(item.get("runtime_used", 0) or 0),
+                credits_used=float(item.get("credits_used", 0.0) or 0.0),
+                token_usage=int(item.get("token_usage", 0) or 0),
+                execution_time_seconds=int(item.get("execution_time_seconds", 0) or 0),
+                latest_output=dict(item.get("latest_output", {}) or {}),
+                output_history=tuple(item.get("output_history", ()) or ()),
+                validation_status=str(item.get("validation_status", "")),
+                completion_state=str(item.get("completion_state", "")),
+                office_states=dict(item.get("office_states", {}) or {}),
+                token=token,
+            )
+            if record.workflow_id in workflows:
+                raise ValueError(f"duplicate recovered workflow: {record.workflow_id}")
+            workflows[record.workflow_id] = record
+        active_token_owners = [(record.workflow_id, record.token.current_owner) for record in workflows.values() if record.token.current_owner and record.token.workflow_status not in {WorkflowStatus.COMPLETED.value, WorkflowStatus.ARCHIVED.value}]
+        if len(active_token_owners) != len({workflow_id for workflow_id, _ in active_token_owners}):
+            raise ValueError("duplicate workflow token ownership detected during recovery")
+        missing_queue = [workflow_id for workflow_id in queue if workflow_id not in workflows]
+        if missing_queue:
+            raise ValueError("workflow queue references unknown workflow")
+        self._workflows = workflows
+        self._queue = queue
+        self._audit_history = list(audits)
+
     def workflow(self, workflow_id: str) -> WorkflowRecord:
         """Return one workflow record without exposing mutable storage."""
         return self._workflow(workflow_id)

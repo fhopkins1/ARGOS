@@ -324,12 +324,15 @@ def _workflow_replay_package(workflow: dict[str, Any], performance_truth: dict[s
     latest = _latest_decision(workflow)
     outcome = _outcome_by_decision(latest.get("decisionObjectId", ""), performance_truth)
     trade = next((item for item in performance_truth.get("tradeLedger", ()) if item["workflow_id"] == workflow["workflow_id"]), {})
+    order = next((item for item in performance_truth.get("orderLedger", ()) if item["workflow_id"] == workflow["workflow_id"]), {})
     return {
         "workflowId": workflow["workflow_id"],
         "decisionObjectId": latest.get("decisionObjectId", ""),
         "workflowTokenId": workflow["token"]["audit_identifier"],
-        "strategy": trade.get("strategy_id", latest.get("currentStrategy", "")),
-        "executionEnvironment": trade.get("execution_environment", "paper"),
+        "strategy": trade.get("strategy_id") or order.get("strategy_id", latest.get("currentStrategy", "")),
+        "executionEnvironment": trade.get("execution_environment") or order.get("execution_environment", "paper"),
+        "brokerOrderStatus": order.get("status", ""),
+        "brokerOrderSymbol": order.get("symbol", ""),
         "portfolioOutcome": outcome.get("actual_trade_result", 0.0),
         "officeSequence": tuple(workflow.get("stages", ())),
         "executionTimeline": tuple(_timeline_from_outputs(workflow)),
@@ -460,6 +463,10 @@ def _search(query: str, replay_packages: tuple[dict[str, Any], ...], experiments
         haystack = " ".join(str(value) for value in trade.values()).lower()
         if needle in haystack:
             results.append({"type": "Trade Ledger", "identifier": trade["trade_id"], "summary": trade["symbol"]})
+    for order in performance_truth.get("orderLedger", ()):
+        haystack = " ".join(str(value) for value in order.values()).lower()
+        if needle in haystack:
+            results.append({"type": "Broker Order", "identifier": order["order_id"], "summary": order["symbol"]})
     for experiment in experiments:
         haystack = " ".join(str(value) for value in asdict(experiment).values()).lower()
         if needle in haystack:

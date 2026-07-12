@@ -5,6 +5,8 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from typing import Any
 
+from .prompt_package_manager import package_trace_for_template
+
 
 PROMPT_CONTRACT_VERSION = "OE-011F-1.0.0"
 DEFAULT_TEMPERATURE = 0.2
@@ -149,6 +151,7 @@ def build_prompt_contract_envelope(
 ) -> dict[str, Any]:
     """Build the standard OE-011F prompt envelope."""
     template = library.office_template(current_office)
+    package_trace = package_trace_for_template(template.prompt_template_id, template.prompt_version)
     return {
         "enterprise_identity": "ARGOS Deterministic Cognitive Enterprise",
         "workflow_id": workflow_id,
@@ -179,6 +182,7 @@ def build_prompt_contract_envelope(
         "hallucination_policy": "Return INSUFFICIENT_EVIDENCE when evidence is insufficient.",
         "response_format": "JSON_ONLY",
         "contract_version": PROMPT_CONTRACT_VERSION,
+        **package_trace,
     }
 
 
@@ -233,6 +237,11 @@ def prompt_contract_trace(envelope: dict[str, Any], response: dict[str, Any] | N
         "officeVersion": envelope.get("office_version", ""),
         "schemaVersion": envelope.get("schema_version", ""),
         "contractVersion": envelope.get("contract_version", PROMPT_CONTRACT_VERSION),
+        "promptPackageId": envelope.get("promptPackageId", ""),
+        "promptPackageVersion": envelope.get("promptPackageVersion", ""),
+        "promptPackageStatus": envelope.get("promptPackageStatus", ""),
+        "promptPackageManager": envelope.get("promptPackageManager", ""),
+        "consumptionMode": envelope.get("consumptionMode", ""),
         "temperature": envelope.get("temperature", DEFAULT_TEMPERATURE),
         "topP": envelope.get("top_p", DEFAULT_TOP_P),
         "outputSchema": tuple(envelope.get("output_schema", ())),

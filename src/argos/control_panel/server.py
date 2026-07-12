@@ -52,6 +52,96 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
             if parsed.path == "/api/performance-truth/state":
                 self._json(runtime.performance_truth_state())
                 return
+            if parsed.path == "/api/trader/bridge":
+                self._json(runtime.state()["traderCommandBridge"])
+                return
+            if parsed.path == "/api/commander/strategic-dashboard":
+                self._json(runtime.state()["commanderStrategicDashboard"])
+                return
+            if parsed.path == "/api/commander/briefing":
+                self._json(runtime.state()["commanderBriefingGenerator"])
+                return
+            if parsed.path == "/api/information-freshness/state":
+                self._json(runtime.state()["informationFreshnessEngine"])
+                return
+            if parsed.path == "/api/enterprise-memory/state":
+                self._json(runtime.state()["enterpriseMemoryCache"])
+                return
+            if parsed.path == "/api/workflow-delta/state":
+                self._json(runtime.state()["workflowDeltaEngine"])
+                return
+            if parsed.path == "/api/enterprise-priority/state":
+                self._json(runtime.state()["enterprisePriorityEngine"])
+                return
+            if parsed.path == "/api/position-monitoring/state":
+                self._json(runtime.state()["positionMonitoringNetwork"])
+                return
+            if parsed.path == "/api/communications-bus/state":
+                self._json(runtime.communications_bus_state())
+                return
+            if parsed.path == "/api/efficiency-analytics/state":
+                self._json(runtime.state()["enterpriseEfficiencyAnalytics"])
+                return
+            if parsed.path == "/api/doctrine-policy/state":
+                self._json(runtime.doctrine_policy_state())
+                return
+            if parsed.path == "/api/grand-strategy/state":
+                self._json(runtime.state()["enterpriseGrandStrategyEngine"])
+                return
+            if parsed.path == "/api/strategic-intelligence/state":
+                self._json(runtime.state()["strategicIntelligenceCommand"])
+                return
+            if parsed.path == "/api/blue-ocean/state":
+                self._json(runtime.state()["blueOceanIntelligenceOffice"])
+                return
+            if parsed.path == "/api/disruption/state":
+                self._json(runtime.state()["disruptionIntelligenceOffice"])
+                return
+            if parsed.path == "/api/decline/state":
+                self._json(runtime.state()["declineIntelligenceOffice"])
+                return
+            if parsed.path == "/api/short-opportunity/state":
+                self._json(runtime.state()["shortOpportunityOffice"])
+                return
+            if parsed.path == "/api/market-structure/state":
+                self._json(runtime.state()["marketStructureIntelligenceOffice"])
+                return
+            if parsed.path == "/api/capital-rotation/state":
+                self._json(runtime.state()["capitalRotationIntelligenceOffice"])
+                return
+            if parsed.path == "/api/strategic-synthesis/state":
+                self._json(runtime.state()["strategicSynthesisOffice"])
+                return
+            if parsed.path == "/api/reality-calibration/state":
+                self._json(runtime.state()["enterpriseRealityCalibrationEngine"])
+                return
+            if parsed.path == "/api/correlation-intelligence/state":
+                self._json(runtime.state()["correlationIntelligenceEngine"])
+                return
+            if parsed.path == "/api/market-replay/state":
+                self._json(runtime.state()["marketReplayEngine"])
+                return
+            if parsed.path == "/api/stress-testing/state":
+                self._json(runtime.state()["stressTestingEngine"])
+                return
+            if parsed.path == "/api/black-swan/state":
+                self._json(runtime.state()["blackSwanSimulationEngine"])
+                return
+            if parsed.path == "/api/monte-carlo/state":
+                self._json(runtime.state()["monteCarloPortfolioEngine"])
+                return
+            if parsed.path == "/api/risk-factor/state":
+                self._json(runtime.state()["enterpriseRiskFactorEngine"])
+                return
+            if parsed.path == "/api/capital-allocation/state":
+                self._json(runtime.state()["capitalAllocationEngine"])
+                return
+            if parsed.path == "/api/portfolio-construction/state":
+                self._json(runtime.state()["portfolioConstructionEngine"])
+                return
+            if parsed.path == "/api/position-sizing/state":
+                self._json(runtime.state()["positionSizingEngine"])
+                return
             if parsed.path == "/api/decision-laboratory/state":
                 filters = {key: values[-1] for key, values in parse_qs(parsed.query).items()}
                 self._json(runtime.decision_laboratory_state(str(filters.get("q", ""))))
@@ -80,6 +170,10 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
                 "/api/bridge/pause": runtime.pause_after_current_stage,
                 "/api/bridge/step": runtime.step_paused_workflow,
                 "/api/bridge/resume": runtime.resume_after_pause,
+                "/api/trader/cancel-pending-orders": runtime.cancel_pending_orders,
+                "/api/historian/generate-learning-report": runtime.generate_learning_report,
+                "/api/historian/compare-prompt-versions": runtime.compare_prompt_versions,
+                "/api/historian/compare-strategies": runtime.compare_strategies,
                 "/api/treasury/halt": runtime.halt_user_funds,
                 "/api/live/request": runtime.request_real_world_trading,
                 "/api/live/halt": runtime.halt_real_world_trading,
@@ -124,6 +218,188 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
             if parsed.path == "/api/scheduler/suspend":
                 self._json(runtime.suspend_office(str(body.get("organization", "")), str(body.get("office", "")), str(body.get("trigger", "Commander"))))
                 return
+            if parsed.path == "/api/eos/control":
+                self._json(runtime.eos_control(str(body.get("action", "")), body))
+                return
+            if parsed.path == "/api/odo/task":
+                self._json(runtime.submit_duty_officer_request(body))
+                return
+            if parsed.path == "/api/event-detection/observe":
+                self._json(runtime.event_detection_observe())
+                return
+            if parsed.path == "/api/event-detection/replay":
+                self._json(runtime.event_detection_replay(tuple(body.get("observations", ()) or ())))
+                return
+            if parsed.path == "/api/event-detection/resolve":
+                self._json(
+                    runtime.resolve_event_detection_event(
+                        str(body.get("eventId", "")),
+                        str(body.get("reason", "Commander resolved event.")),
+                    )
+                )
+                return
+            if parsed.path == "/api/mission-planner/plan-event":
+                self._json(runtime.mission_planner_plan_event(dict(body.get("event", body)), submit_to_scheduler=bool(body.get("submitToScheduler", False))))
+                return
+            if parsed.path == "/api/mission-planner/commander-request":
+                self._json(runtime.mission_planner_commander_request(body, submit_to_scheduler=bool(body.get("submitToScheduler", False))))
+                return
+            if parsed.path == "/api/mission-planner/submit":
+                self._json(runtime.mission_planner_submit_plan(str(body.get("missionPlanId", ""))))
+                return
+            if parsed.path == "/api/mission-planner/replay":
+                self._json(runtime.mission_planner_replay(tuple(body.get("triggers", ()) or ())))
+                return
+            if parsed.path == "/api/cost-governor/reserve":
+                self._json(runtime.cost_governor_reserve_for_plan(str(body.get("missionPlanId", ""))))
+                return
+            if parsed.path == "/api/cost-governor/release":
+                self._json(runtime.cost_governor_release_reservation(str(body.get("reservationId", ""))))
+                return
+            if parsed.path == "/api/cost-governor/settle":
+                self._json(runtime.cost_governor_settle_reservation(str(body.get("reservationId", ""))))
+                return
+            if parsed.path == "/api/cost-governor/policy":
+                self._json(runtime.cost_governor_policy(body))
+                return
+            if parsed.path == "/api/information-freshness/register":
+                self._json(runtime.information_freshness_register(body))
+                return
+            if parsed.path == "/api/information-freshness/evaluate":
+                self._json(runtime.information_freshness_evaluate(str(body.get("recordId", body.get("record_id", ""))), dict(body.get("context", {}))))
+                return
+            if parsed.path == "/api/information-freshness/invalidate":
+                self._json(runtime.information_freshness_invalidate(str(body.get("recordId", body.get("record_id", ""))), str(body.get("reason", "manual_invalidation")), body))
+                return
+            if parsed.path == "/api/information-freshness/supersede":
+                self._json(runtime.information_freshness_supersede(str(body.get("priorRecordId", body.get("prior_record_id", ""))), dict(body.get("newRecord", body.get("new_record", {})))))
+                return
+            if parsed.path == "/api/information-freshness/contradiction":
+                self._json(runtime.information_freshness_contradiction(body))
+                return
+            if parsed.path == "/api/information-freshness/policy":
+                self._json(runtime.information_freshness_policy(body))
+                return
+            if parsed.path == "/api/enterprise-memory/admit":
+                self._json(runtime.enterprise_memory_admit(body))
+                return
+            if parsed.path == "/api/enterprise-memory/query":
+                self._json(runtime.enterprise_memory_query(body))
+                return
+            if parsed.path == "/api/enterprise-memory/invalidate":
+                self._json(runtime.enterprise_memory_invalidate(str(body.get("recordId", body.get("cacheRecordId", body.get("cache_record_id", "")))), body))
+                return
+            if parsed.path == "/api/enterprise-memory/supersede":
+                self._json(runtime.enterprise_memory_supersede(str(body.get("priorRecordId", body.get("prior_record_id", ""))), dict(body.get("newRecord", body.get("new_record", {})))))
+                return
+            if parsed.path == "/api/enterprise-memory/contradiction":
+                self._json(runtime.enterprise_memory_contradiction(str(body.get("recordId", body.get("cacheRecordId", body.get("cache_record_id", "")))), body))
+                return
+            if parsed.path == "/api/enterprise-memory/quarantine":
+                self._json(runtime.enterprise_memory_quarantine(str(body.get("recordId", body.get("cacheRecordId", body.get("cache_record_id", "")))), body))
+                return
+            if parsed.path == "/api/enterprise-memory/archive":
+                self._json(runtime.enterprise_memory_archive(str(body.get("recordId", body.get("cacheRecordId", body.get("cache_record_id", "")))), body))
+                return
+            if parsed.path == "/api/workflow-delta/baseline":
+                self._json(runtime.workflow_delta_create_baseline(body))
+                return
+            if parsed.path == "/api/workflow-delta/analyze":
+                self._json(runtime.workflow_delta_analyze(body))
+                return
+            if parsed.path == "/api/workflow-delta/recover":
+                self._json(runtime.workflow_delta_recover(dict(body.get("snapshot", body))))
+                return
+            if parsed.path == "/api/workflow-delta/export":
+                self._json(runtime.workflow_delta_export(str(body.get("packageId", body.get("package_id", ""))), str(body.get("format", "json"))))
+                return
+            if parsed.path == "/api/workflow-delta/replay":
+                self._json(runtime.workflow_delta_replay(str(body.get("packageId", body.get("package_id", "")))))
+                return
+            if parsed.path == "/api/workflow-delta/review":
+                self._json(runtime.workflow_delta_review(str(body.get("packageId", body.get("package_id", ""))), body))
+                return
+            if parsed.path == "/api/enterprise-priority/evaluate":
+                self._json(runtime.enterprise_priority_evaluate(body))
+                return
+            if parsed.path == "/api/enterprise-priority/recover":
+                self._json(runtime.enterprise_priority_recover(dict(body.get("snapshot", body))))
+                return
+            if parsed.path == "/api/enterprise-priority/replay":
+                self._json(runtime.enterprise_priority_replay(body))
+                return
+            if parsed.path == "/api/enterprise-priority/modifier":
+                self._json(runtime.enterprise_priority_modifier(str(body.get("candidateId", body.get("candidate_id", ""))), body))
+                return
+            if parsed.path == "/api/position-monitoring/scan":
+                self._json(runtime.position_monitoring_scan())
+                return
+            if parsed.path == "/api/position-monitoring/recover":
+                self._json(runtime.position_monitoring_recover(dict(body.get("snapshot", body))))
+                return
+            if parsed.path == "/api/position-monitoring/replay":
+                self._json(runtime.position_monitoring_replay())
+                return
+            if parsed.path == "/api/communications-bus/publish":
+                self._json(runtime.communications_bus_publish_sample(body))
+                return
+            if parsed.path == "/api/communications-bus/retry":
+                self._json(runtime.communications_bus_retry_dead_letter(str(body.get("deadLetterId", body.get("dead_letter_id", ""))), dict(body.get("authorization", {}))))
+                return
+            if parsed.path == "/api/communications-bus/replay":
+                self._json(runtime.communications_bus_replay(str(body.get("messageId", body.get("message_id", ""))), analytical=bool(body.get("analytical", True)), authorization=dict(body.get("authorization", {}))))
+                return
+            if parsed.path == "/api/communications-bus/recover":
+                self._json(runtime.communications_bus_recover(dict(body.get("snapshot", body))))
+                return
+            if parsed.path == "/api/communications-bus/trace":
+                self._json(runtime.communications_bus_trace(str(body.get("correlationId", body.get("correlation_id", "")))))
+                return
+            if parsed.path == "/api/efficiency-analytics/refresh":
+                self._json(runtime.efficiency_analytics_refresh(body))
+                return
+            if parsed.path == "/api/efficiency-analytics/acknowledge":
+                self._json(runtime.efficiency_acknowledge_finding(str(body.get("findingId", body.get("finding_id", ""))), str(body.get("reason", "Commander acknowledged efficiency finding."))))
+                return
+            if parsed.path == "/api/efficiency-analytics/recalculate":
+                self._json(runtime.efficiency_recalculate_metric(str(body.get("metricValueId", body.get("metric_value_id", ""))), str(body.get("formulaVersion", body.get("formula_version", "")))))
+                return
+            if parsed.path == "/api/efficiency-analytics/lineage":
+                self._json(runtime.efficiency_metric_lineage(str(body.get("metricValueId", body.get("metric_value_id", "")))))
+                return
+            if parsed.path == "/api/efficiency-analytics/compare":
+                self._json(runtime.efficiency_compare_periods(dict(body.get("left", {})), dict(body.get("right", {}))))
+                return
+            if parsed.path == "/api/doctrine-policy/submit":
+                self._json(runtime.doctrine_policy_submit(body))
+                return
+            if parsed.path == "/api/doctrine-policy/approve":
+                self._json(runtime.doctrine_policy_approve(str(body.get("policyVersionId", body.get("policy_version_id", ""))), body))
+                return
+            if parsed.path == "/api/doctrine-policy/schedule":
+                self._json(runtime.doctrine_policy_schedule(str(body.get("policyVersionId", body.get("policy_version_id", ""))), body))
+                return
+            if parsed.path == "/api/doctrine-policy/activate":
+                self._json(runtime.doctrine_policy_activate(str(body.get("activationPlanId", body.get("activation_plan_id", ""))), body))
+                return
+            if parsed.path == "/api/doctrine-policy/suspend":
+                self._json(runtime.doctrine_policy_suspend(str(body.get("policyVersionId", body.get("policy_version_id", ""))), str(body.get("reason", "Commander requested policy suspension."))))
+                return
+            if parsed.path == "/api/doctrine-policy/rollback":
+                self._json(runtime.doctrine_policy_rollback(str(body.get("policyVersionId", body.get("policy_version_id", ""))), body))
+                return
+            if parsed.path == "/api/doctrine-policy/directive":
+                self._json(runtime.doctrine_policy_directive(body))
+                return
+            if parsed.path == "/api/doctrine-policy/drift":
+                self._json(runtime.doctrine_policy_drift(body))
+                return
+            if parsed.path == "/api/doctrine-policy/replay":
+                self._json(runtime.doctrine_policy_replay(body))
+                return
+            if parsed.path == "/api/doctrine-policy/impact":
+                self._json(runtime.doctrine_policy_impact(str(body.get("policyVersionId", body.get("policy_version_id", "")))))
+                return
             if parsed.path == "/api/cnac/acknowledge":
                 self._json(runtime.acknowledge_notification(str(body.get("notificationId", ""))))
                 return
@@ -149,6 +425,9 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
                 return
             if parsed.path == "/api/command/macro":
                 self._json(runtime.command_console_macro(str(body.get("macroName", ""))))
+                return
+            if parsed.path == "/api/commander/journal":
+                self._json(runtime.add_commander_journal_entry(str(body.get("category", "")), str(body.get("entry", ""))))
                 return
             if parsed.path == "/api/infrastructure/configure":
                 organization_limit = body.get("organizationLimitUsd")

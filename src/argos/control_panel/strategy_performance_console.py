@@ -50,7 +50,12 @@ class LiveStrategyPerformanceConsole:
         gateway_events = tuple(api_execution_gateway.get("events", ()))
         decision_revisions = _decision_revisions(workflows)
         current_decision = _current_decision_object(workflow_runtime_monitor, decision_revisions)
-        if performance_truth.get("calculations", {}).get("portfolio", {}).get("numberOfPositions", 0) or performance_truth.get("tradeLedger"):
+        if (
+            performance_truth.get("calculations", {}).get("portfolio", {}).get("numberOfPositions", 0)
+            or performance_truth.get("tradeLedger")
+            or performance_truth.get("portfolioLedger")
+            or performance_truth.get("orderLedger")
+        ):
             portfolio_panel = _portfolio_panel_from_truth(performance_truth)
             positions = _positions_from_truth(performance_truth)
             trades = _trades_from_truth(performance_truth)
@@ -333,15 +338,27 @@ def _decision_revisions(workflows: tuple[dict[str, Any], ...]) -> tuple[dict[str
 def _current_decision_object(workflow_runtime_monitor: dict[str, Any], decision_revisions: tuple[dict[str, Any], ...]) -> dict[str, Any]:
     active = workflow_runtime_monitor.get("activeWorkflow") or {}
     active_id = active.get("workflowIdentifier")
-    evolution = next((item for item in decision_revisions if item["workflowId"] == active_id), None)
-    if evolution is None and decision_revisions:
-        evolution = decision_revisions[-1]
+    active_evolution = next((item for item in decision_revisions if item["workflowId"] == active_id), None)
+    completed_ids = {
+        item.get("workflowIdentifier")
+        for item in workflow_runtime_monitor.get("recentCompletedWorkflows", ())
+        if item.get("status") == "Archived"
+    }
+    completed_evolution = next(
+        (item for item in reversed(decision_revisions) if item["workflowId"] in completed_ids),
+        None,
+    )
+    if active_evolution and active_evolution.get("revisionCount", 0) >= 5:
+        evolution = active_evolution
+    else:
+        evolution = completed_evolution or active_evolution or (decision_revisions[-1] if decision_revisions else None)
     latest = evolution["revisions"][-1] if evolution else {}
+    selected_active = bool(evolution and evolution["workflowId"] == active_id)
     return {
         "decisionObjectId": latest.get("decisionObjectId", ""),
-        "workflowId": active_id or (evolution["workflowId"] if evolution else ""),
-        "currentStage": active.get("currentStage") or latest.get("office", ""),
-        "currentOwner": active.get("currentOwner", ""),
+        "workflowId": evolution["workflowId"] if evolution else active_id or "",
+        "currentStage": active.get("currentStage") if selected_active else latest.get("office", ""),
+        "currentOwner": active.get("currentOwner", "") if selected_active else latest.get("office", ""),
         "currentConfidence": latest.get("confidence", 0.0),
         "currentRecommendation": latest.get("recommendation", "STANDBY"),
         "evidenceCount": latest.get("evidenceCount", 0),
@@ -352,6 +369,13 @@ def _current_decision_object(workflow_runtime_monitor: dict[str, Any], decision_
         "stopLoss": latest.get("stopLoss", 0.0),
         "expectedReturn": latest.get("expectedReturn", 0.0),
         "currentRevision": latest.get("revision", 0),
+        "qualityReport": latest.get("qualityReport", {}),
+        "decisionObjectQuality": latest.get("decisionObjectQuality", 0.0),
+        "qualityGrade": latest.get("qualityGrade", "Unknown"),
+        "decisionReadiness": latest.get("decisionReadiness", "Unknown"),
+        "explainabilityReport": latest.get("explainabilityReport", {}),
+        "explainabilityReportId": latest.get("explainabilityReportId", ""),
+        "commanderReadabilityScore": latest.get("commanderReadabilityScore", 0.0),
     }
 
 

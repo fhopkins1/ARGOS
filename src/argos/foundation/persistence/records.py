@@ -21,6 +21,16 @@ class ObjectType(str, Enum):
     MODEL_SNAPSHOT = "model_snapshot"
     STAFF_REGISTRY = "staff_registry"
     DEPARTMENT_REGISTRY = "department_registry"
+    ENTERPRISE_RUNTIME_STATE = "enterprise_runtime_state"
+    ENTERPRISE_RUNTIME_CHECKPOINT = "enterprise_runtime_checkpoint"
+    ENTERPRISE_MISSION_STATE = "enterprise_mission_state"
+    ENTERPRISE_WORKFLOW_STATE = "enterprise_workflow_state"
+    ENTERPRISE_BROKER_STATE = "enterprise_broker_state"
+    ENTERPRISE_POSITION_STATE = "enterprise_position_state"
+    ENTERPRISE_PERFORMANCE_TRUTH = "enterprise_performance_truth"
+    ENTERPRISE_POLICY_STATE = "enterprise_policy_state"
+    ENTERPRISE_RECOVERY_AUDIT = "enterprise_recovery_audit"
+    ENTERPRISE_TRANSACTION = "enterprise_transaction"
 
 
 @dataclass(frozen=True)
