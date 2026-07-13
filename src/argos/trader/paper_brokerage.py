@@ -13,6 +13,7 @@ from argos.control_panel.market_data_provider import MarketDataProviderAbstracti
 from argos.control_panel.performance_truth_engine import PerformanceTruthEngine
 from argos.control_panel.position_monitoring_network import PositionMonitoringNetwork
 from argos.control_panel.truth_domain import make_paper_operational_truth_envelope, validate_decision_object_for_operational_truth
+from argos.control_panel.truth_promotion import PromotionDecisionStatus, TruthPromotionAuthority
 from argos.foundation.contracts import utc_timestamp
 
 from .execution_quality import CompletedExecutionRecord, ExecutionQualityOffice
@@ -384,9 +385,13 @@ class DeterministicPaperBrokerage:
             return PaperBrokerRejectionCode.INVALID_WORKFLOW_OWNER
         if str(getattr(workflow_token, "workflow_status", "")) not in {"Executing", "Ownership Transferred"}:
             return PaperBrokerRejectionCode.EXPIRED_WORKFLOW_TOKEN
-        decision = ticket.decision_object or {}
+        decision = dict(ticket.decision_object or {})
+        decision.setdefault("workflowId", ticket.workflow_id)
+        decision.setdefault("missionId", ticket.mission_id)
+        decision.setdefault("workflowTokenId", ticket.workflow_token)
         provenance = validate_decision_object_for_operational_truth(decision, execution_environment="paper")
-        if not provenance.valid:
+        promotion = TruthPromotionAuthority().promote_decision_object(decision, requested_consumer="Trader")
+        if not provenance.valid or promotion.decision != PromotionDecisionStatus.APPROVED:
             return PaperBrokerRejectionCode.MISSING_DECISION_PROVENANCE
         if not ticket.risk_approval_id:
             return PaperBrokerRejectionCode.MISSING_RISK_APPROVAL

@@ -17,6 +17,7 @@ from argos.foundation.persistence.records import ObjectType, PersistentRecord
 
 from .canonical_enterprise_runtime import CanonicalEnterpriseRuntime, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure
 from .truth_domain import OperationalTruthEnvelope, TruthEnvelopeError, make_paper_operational_truth_envelope, require_operational_truth_envelope
+from .truth_promotion import PromotionDecisionStatus, PromotionScope, TruthPromotionAuthority
 
 
 OPERATIONAL_AUTHORITY_OBJECT_TYPES = {
@@ -290,7 +291,17 @@ class DurableEnterprisePersistenceStore:
         if object_type not in OPERATIONAL_AUTHORITY_OBJECT_TYPES:
             return {}
         try:
-            return require_operational_truth_envelope(truth_envelope, target_authority="DurableEnterprisePersistenceStore")
+            envelope = require_operational_truth_envelope(truth_envelope, target_authority="DurableEnterprisePersistenceStore")
+            promotion = TruthPromotionAuthority().promote_operational_envelope(
+                truth_envelope,
+                scope=PromotionScope.PERFORMANCE_TRUTH_INGESTION,
+                requested_consumer="PerformanceTruthEngine",
+                object_type=object_type.value,
+                object_id=object_id,
+            )
+            if promotion.decision != PromotionDecisionStatus.APPROVED:
+                raise TruthEnvelopeError(promotion.reason_codes)
+            return {**envelope, "eo_dc_promotion_decision": asdict(promotion)}
         except TruthEnvelopeError as exc:
             self._diagnostic("TRUTH_ENVELOPE_REJECTED", RecoverySeverity.CRITICAL, object_type.value, f"{object_id}: {','.join(exc.codes)}", False)
             raise EnterprisePersistenceError(f"truth envelope rejected for {object_type.value}:{object_id}: {','.join(exc.codes)}") from exc

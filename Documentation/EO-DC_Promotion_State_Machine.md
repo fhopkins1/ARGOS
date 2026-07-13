@@ -1,0 +1,12 @@
+# EO-DC Promotion State Machine
+
+Canonical lifecycle:
+
+`CREATED -> DOMAIN_IDENTIFIED -> PROVENANCE_VALIDATED -> AUTHORITY_VALIDATED -> LINEAGE_VALIDATED -> EVIDENCE_VALIDATED -> SCOPE_CERTIFIED -> PROMOTION_APPROVED -> AUTHORITATIVE_OWNER_ACCEPTED -> AUTHORITATIVE_FACT_CREATED`
+
+Terminal and isolation states:
+
+`REJECTED`, `DEGRADED`, `QUARANTINED`, `EXPIRED`, `REVOKED`, `SUPERSEDED`, `INCONCLUSIVE`, `PROOF_ONLY`, `SIMULATION_ONLY`, `REPLAY_ONLY`, `TEST_ONLY`, `LIVE_DISABLED`.
+
+EO-DC approval does not create the financial fact. The authoritative owner must still accept the approved input.
+

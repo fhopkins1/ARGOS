@@ -19,6 +19,7 @@ from .truth_domain import (
     require_operational_truth_envelope,
     validate_decision_object_for_operational_truth,
 )
+from .truth_promotion import PromotionDecisionStatus, TruthPromotionAuthority
 
 
 BENCHMARK_RETURNS = {
@@ -414,6 +415,9 @@ class PerformanceTruthEngine:
         timestamp = str(broker_order.get("updated_at") or broker_order.get("created_at") or utc_timestamp())
         execution_environment = "paper"
         try:
+            promotion = TruthPromotionAuthority().promote_performance_truth(truth_envelope, object_id=str(broker_order.get("order_id", "")))
+            if promotion.decision != PromotionDecisionStatus.APPROVED:
+                raise TruthEnvelopeError(promotion.reason_codes)
             validated_envelope = require_operational_truth_envelope(
                 truth_envelope,
                 target_authority="PerformanceTruthEngine",
