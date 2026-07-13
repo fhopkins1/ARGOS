@@ -518,6 +518,11 @@ class CanonicalEnterpriseRuntime:
         duplicates = self.stateful_authority_duplicates()
         if duplicates:
             self._raise_failure("DUPLICATE_STATEFUL_AUTHORITY", "CanonicalEnterpriseRuntime", f"Duplicate component authority detected: {duplicates}.")
+        from .constitutional_invariants import ConstitutionalInvariantEngine
+
+        invariant_sweep = ConstitutionalInvariantEngine().evaluate_startup(self)
+        if invariant_sweep.verdict == "FAIL":
+            self._raise_failure("CONSTITUTIONAL_INVARIANT_STARTUP_FAILURE", "ConstitutionalInvariantEngine", f"EO-DA startup invariant failure: {invariant_sweep.blocking_count} blocking findings.")
 
     def _duty_decisions_for(self, mission: Any, workflow: Any) -> list[dict[str, Any]]:
         eos_snapshot = self.components.scheduler.snapshot()
