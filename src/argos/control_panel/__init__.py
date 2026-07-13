@@ -72,6 +72,7 @@ from .short_opportunity_office import ShortOpportunityConfig, ShortOpportunityOf
 from .strategic_intelligence_command import StrategicIntelligenceCommand, StrategicIntelligenceConfig, StrategicIntelligenceReport
 from .strategic_synthesis_office import CommanderStrategicAssessment, StrategicConsensusScore, StrategicSynthesisConfig, StrategicSynthesisOffice
 from .runtime import ControlPanelRuntime, OfficeCommand, OperatingCostSnapshot, create_runtime
+from .runtime_provider import CanonicalRuntimeProvider, RuntimeProviderError, RuntimeProviderStatus, create_runtime_provider_for_tests, get_server_runtime_provider, reset_server_runtime_provider_for_tests
 from .scheduler import EnterpriseMission, EnterpriseOperatingMode, EnterpriseOperationsScheduler, MissionTemplate, OfficeActivationRequest, OfficeScheduler, OperatingMode
 from .strategy_package_manager import StrategyPackage, StrategyPackageManager
 from .stress_testing_engine import StressScenarioRecord, StressTestRecord, StressTestingConfig, StressTestingEngine
@@ -83,6 +84,9 @@ from .workflow_runtime_monitor import WorkflowMonitorAlert, WorkflowRuntimeMonit
 
 __all__ = [
     "ControlPanelRuntime",
+    "CanonicalRuntimeProvider",
+    "RuntimeProviderError",
+    "RuntimeProviderStatus",
     "CanonicalEnterpriseComponents",
     "CanonicalEnterpriseRuntime",
     "CanonicalRuntimeError",
@@ -471,5 +475,8 @@ __all__ = [
     "PromptTemplate",
     "PortfolioPosition",
     "PortfolioSnapshot",
+    "create_runtime_provider_for_tests",
     "create_runtime",
+    "get_server_runtime_provider",
+    "reset_server_runtime_provider_for_tests",
 ]

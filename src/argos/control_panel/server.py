@@ -9,18 +9,39 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from .runtime import create_runtime
+from .runtime_provider import get_server_runtime_provider
 
 
 UI_ROOT = Path(__file__).resolve().parents[3] / "ui" / "argos_control_panel"
 
 
+class _CompatibilityRuntimeProxy:
+    """Lazily constructs the legacy dashboard facade only for compatibility routes."""
+
+    def __init__(self) -> None:
+        self._runtime = None
+
+    @property
+    def runtime(self):
+        if self._runtime is None:
+            self._runtime = create_runtime()
+        return self._runtime
+
+    def __getattr__(self, name: str):
+        return getattr(self.runtime, name)
+
+
 def run(host: str = "127.0.0.1", port: int = 8765) -> None:
     """Run the local ARGOS Control Panel server."""
-    runtime = create_runtime()
+    provider = get_server_runtime_provider()
+    runtime = _CompatibilityRuntimeProxy()
 
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self) -> None:  # noqa: N802
             parsed = urlparse(self.path)
+            if parsed.path == "/api/runtime/provider":
+                self._json(provider.snapshot())
+                return
             if parsed.path == "/api/state":
                 self._json(runtime.state())
                 return
@@ -165,8 +186,10 @@ def run(host: str = "127.0.0.1", port: int = 8765) -> None:
             parsed = urlparse(self.path)
             body = self._body()
             routes = {
-                "/api/paper/start": runtime.start_paper_self_training,
-                "/api/paper/halt": runtime.halt_paper_self_training,
+                "/api/paper/start": provider.start,
+                "/api/paper/halt": provider.halt,
+                "/api/proof/paper/start": runtime.start_paper_self_training,
+                "/api/proof/paper/halt": runtime.halt_paper_self_training,
                 "/api/bridge/pause": runtime.pause_after_current_stage,
                 "/api/bridge/step": runtime.step_paused_workflow,
                 "/api/bridge/resume": runtime.resume_after_pause,

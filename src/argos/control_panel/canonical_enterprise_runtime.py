@@ -6,6 +6,7 @@ from dataclasses import asdict, dataclass
 from enum import Enum
 import hashlib
 import json
+from types import MappingProxyType
 from typing import Any
 
 from argos.foundation.audit import AuditService
@@ -95,6 +96,16 @@ class RuntimeAdmissionRecord:
 
 
 @dataclass(frozen=True)
+class StatefulAuthorityDiagnostic:
+    authority: str
+    runtime_attribute: str
+    implementation: str
+    identity: int
+    duplicate: bool
+    construction_site: str
+
+
+@dataclass(frozen=True)
 class SeriesCComponentInventoryItem:
     eo_id: str
     title: str
@@ -147,8 +158,23 @@ class CanonicalEnterpriseRuntime:
         self.live_trading_enabled = live_trading_enabled
         self.mode = CanonicalRuntimeMode.STOPPED
         self.components = components or self._build_components()
+        self._authority_construction_sites = MappingProxyType(
+            {
+                "workflow_orchestrator": "CanonicalEnterpriseRuntime._build_components",
+                "scheduler": "CanonicalEnterpriseRuntime._build_components",
+                "mission_planner": "CanonicalEnterpriseRuntime._build_components",
+                "duty_officers": "EnterpriseOperationsScheduler.duty_officers",
+                "communications_bus": "CanonicalEnterpriseRuntime._build_components",
+                "paper_broker": "CanonicalEnterpriseRuntime._build_components",
+                "performance_truth": "CanonicalEnterpriseRuntime._build_components",
+                "position_monitoring": "CanonicalEnterpriseRuntime._build_components",
+                "doctrine_policy": "CanonicalEnterpriseRuntime._build_components",
+                "position_lifecycle": "CanonicalEnterpriseRuntime._build_components",
+            }
+        )
         self._loop_started = False
         self._start_count = 0
+        self._halt_count = 0
         self._failures: list[RuntimeFailure] = []
         self._admissions: list[RuntimeAdmissionRecord] = []
         self._strategic_mandates: dict[str, dict[str, Any]] = {}
@@ -252,9 +278,12 @@ class CanonicalEnterpriseRuntime:
         return self.runtime_status()
 
     def halt(self, *, reason: str = "Commander or runtime halt requested.") -> dict[str, Any]:
+        if self.mode == CanonicalRuntimeMode.HALTED and not self._loop_started:
+            return self.runtime_status()
         self.mode = CanonicalRuntimeMode.HALTING
         self.components.scheduler.set_mode(EnterpriseOperatingMode.HALTED.value, actor="CanonicalEnterpriseRuntime", reason=reason)
         self._loop_started = False
+        self._halt_count += 1
         self.mode = CanonicalRuntimeMode.HALTED
         return self.runtime_status()
 
@@ -350,7 +379,9 @@ class CanonicalEnterpriseRuntime:
             "truthDomain": RuntimeMode.PAPER.value if self.mode in {CanonicalRuntimeMode.PAPER_IDLE, CanonicalRuntimeMode.PAPER_ACTIVE, CanonicalRuntimeMode.PAPER_DEGRADED} else self.mode.value.upper(),
             "loopStarted": self._loop_started,
             "startCount": self._start_count,
+            "haltCount": self._halt_count,
             "componentIds": self.component_identity(),
+            "statefulAuthorityDiagnostics": tuple(asdict(item) for item in self.stateful_authority_diagnostics()),
             "workflowCounts": workflow["metrics"],
             "missionAdmissionCount": len(self._admissions),
             "failureCount": len(self._failures),
@@ -367,6 +398,7 @@ class CanonicalEnterpriseRuntime:
                 "live_trading_enabled": self.live_trading_enabled,
                 "loop_started": self._loop_started,
                 "start_count": self._start_count,
+                "halt_count": self._halt_count,
                 "failures": tuple(asdict(item) for item in self._failures),
                 "admissions": tuple(asdict(item) for item in self._admissions),
                 "strategic_mandates": tuple(self._strategic_mandates.values()),
@@ -394,6 +426,7 @@ class CanonicalEnterpriseRuntime:
         self.live_trading_enabled = bool(payload.get("live_trading_enabled", False))
         self._loop_started = bool(payload.get("loop_started", False))
         self._start_count = int(payload.get("start_count", 0) or 0)
+        self._halt_count = int(payload.get("halt_count", 0) or 0)
         self._failures = tuple(RuntimeFailure(**item) for item in payload.get("failures", ()))  # type: ignore[assignment]
         self._failures = list(self._failures)
         self._admissions = tuple(RuntimeAdmissionRecord(**item) for item in payload.get("admissions", ()))  # type: ignore[assignment]
@@ -410,6 +443,7 @@ class CanonicalEnterpriseRuntime:
             "liveTradingEnabled": self.live_trading_enabled,
             "loopStarted": self._loop_started,
             "startCount": self._start_count,
+            "haltCount": self._halt_count,
             "failures": tuple(asdict(item) for item in self._failures),
             "authority": {
                 "runtimeMakesFinancialDecisions": False,
@@ -423,6 +457,29 @@ class CanonicalEnterpriseRuntime:
 
     def component_identity(self) -> dict[str, int]:
         return {name: id(value) for name, value in self.components.__dict__.items()}
+
+    def stateful_authority_diagnostics(self) -> tuple[StatefulAuthorityDiagnostic, ...]:
+        identities = self.component_identity()
+        reverse: dict[int, list[str]] = {}
+        for name, identity in identities.items():
+            reverse.setdefault(identity, []).append(name)
+        diagnostics = []
+        for name in self._authority_construction_sites:
+            identity = identities.get(name, 0)
+            aliases = set(reverse.get(identity, ()))
+            duplicate = len(aliases) > 1 and aliases != {"scheduler", "duty_officers"}
+            value = getattr(self.components, name)
+            diagnostics.append(
+                StatefulAuthorityDiagnostic(
+                    authority=name,
+                    runtime_attribute=name,
+                    implementation=value.__class__.__name__,
+                    identity=identity,
+                    duplicate=duplicate,
+                    construction_site=self._authority_construction_sites[name],
+                )
+            )
+        return tuple(diagnostics)
 
     def stateful_authority_duplicates(self) -> tuple[str, ...]:
         identities = self.component_identity()

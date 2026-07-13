@@ -27,6 +27,7 @@ from .blue_ocean_intelligence_office import BlueOceanIntelligenceOffice
 from .black_swan_simulation_engine import BlackSwanSimulationEngine
 from .capital_allocation_engine import CapitalAllocationEngine
 from .capital_rotation_intelligence_office import CapitalRotationIntelligenceOffice
+from .canonical_enterprise_runtime import CanonicalEnterpriseRuntime
 from .command_console import CommandConsole
 from .commander_briefing_generator import CommanderBriefingGenerator
 from .commander_daily_review_workspace import CommanderDailyReviewWorkspace
@@ -126,9 +127,10 @@ class OfficeCommand:
 
 
 class ControlPanelRuntime:
-    """In-memory local dashboard runtime."""
+    """Compatibility dashboard runtime backed by canonical production authorities."""
 
     def __init__(self) -> None:
+        self.canonical_runtime = CanonicalEnterpriseRuntime()
         self.audit = AuditService()
         self.persistence = InMemoryPersistenceRepository(canonical_schemas())
         self.override = HumanOverrideService(self.audit, self.persistence)
@@ -146,7 +148,7 @@ class ControlPanelRuntime:
         )
         self.control = ARGOSControlPanel(self.config, self.persistence, self.audit, self.override)
         self.eab = EnterpriseActivityBus(self.audit, self.persistence)
-        self.enterprise_communications_bus = EnterpriseCommunicationsBus()
+        self.enterprise_communications_bus = self.canonical_runtime.components.communications_bus
         self.enterprise_communications_bus.schema_registry.register(
             MessageSchemaRegistration(
                 "POLICY_PUBLICATION",
@@ -158,11 +160,11 @@ class ControlPanelRuntime:
                 compatibility_mode=CompatibilityMode.EXACT_VERSION_ONLY,
             )
         )
-        self.enterprise_doctrine_policy_manager = EnterpriseDoctrinePolicyManager()
+        self.enterprise_doctrine_policy_manager = self.canonical_runtime.components.doctrine_policy
         self.command_console = CommandConsole()
         self.blue_ocean_intelligence_office = BlueOceanIntelligenceOffice()
         self.capital_allocation_engine = CapitalAllocationEngine()
-        self.closed_position_truth_builder = ClosedPositionTruthBuilder()
+        self.closed_position_truth_builder = self.canonical_runtime.components.closed_position_truth
         self.commander_briefing_generator = CommanderBriefingGenerator()
         self.commander_daily_review_workspace = CommanderDailyReviewWorkspace()
         self.commander_strategic_dashboard = CommanderStrategicDashboard()
@@ -191,22 +193,22 @@ class ControlPanelRuntime:
         self.enterprise_learning_engine = EnterpriseLearningEngine()
         self.enterprise_configuration_registry = EnterpriseConfigurationRegistry()
         self.enterprise_benchmark_engine = EnterpriseBenchmarkEngine()
-        self.enterprise_cost_governor = EnterpriseCostGovernor()
-        self.enterprise_efficiency_analytics = EnterpriseEfficiencyAnalytics()
+        self.enterprise_cost_governor = self.canonical_runtime.components.cost_governor
+        self.enterprise_efficiency_analytics = self.canonical_runtime.components.efficiency_analytics
         self.enterprise_experiment_scheduler = EnterpriseExperimentScheduler()
         self.enterprise_failure_recovery = EnterpriseFailureRecoveryFramework()
         self.enterprise_grand_strategy_engine = EnterpriseGrandStrategyEngine()
         self.enterprise_health_monitor = EnterpriseHealthMonitor()
-        self.event_detection_engine = EventDetectionEngine()
+        self.event_detection_engine = self.canonical_runtime.components.event_detection
         self.enterprise_operational_guardrails = EnterpriseOperationalGuardrails()
         self.enterprise_reality_calibration = EnterpriseRealityCalibrationEngine()
         self.enterprise_reproducibility_framework = EnterpriseReproducibilityFramework()
         self.enterprise_risk_factor_engine = EnterpriseRiskFactorEngine()
         self.historian_recommendation_engine = HistorianRecommendationEngine()
-        self.information_freshness_engine = InformationFreshnessEngine()
-        self.enterprise_memory_cache = EnterpriseMemoryCache(self.information_freshness_engine)
-        self.workflow_delta_engine = WorkflowDeltaEngine(self.information_freshness_engine, self.enterprise_memory_cache)
-        self.enterprise_priority_engine = EnterprisePriorityEngine()
+        self.information_freshness_engine = self.canonical_runtime.components.freshness_engine
+        self.enterprise_memory_cache = self.canonical_runtime.components.memory_cache
+        self.workflow_delta_engine = self.canonical_runtime.components.workflow_delta
+        self.enterprise_priority_engine = self.canonical_runtime.components.priority_engine
         self.prompt_evolution_engine = PromptEvolutionEngine()
         self.prompt_package_manager = PromptPackageManager()
         self.strategy_package_manager = StrategyPackageManager()
@@ -219,24 +221,24 @@ class ControlPanelRuntime:
         self.ioe = InteractiveOrganizationExplorer()
         self.lppc = LivePortfolioPerformanceConsole()
         self.market_context_engine = MarketContextIntegrationEngine()
-        self.market_data_provider = MarketDataProviderAbstractionLayer()
+        self.market_data_provider = self.canonical_runtime.components.market_data
         self.market_replay_engine = MarketReplayEngine()
         self.market_structure_intelligence_office = MarketStructureIntelligenceOffice()
-        self.mission_planner = EnterpriseMissionPlanner()
+        self.mission_planner = self.canonical_runtime.components.mission_planner
         self.capital_rotation_intelligence_office = CapitalRotationIntelligenceOffice()
         self.monte_carlo_portfolio_engine = MonteCarloPortfolioEngine()
-        self.performance_truth_engine = PerformanceTruthEngine()
+        self.performance_truth_engine = self.canonical_runtime.components.performance_truth
         self.position_exit_decision_engine = ExitDecisionEngine()
-        self.position_monitoring_network = PositionMonitoringNetwork()
+        self.position_monitoring_network = self.canonical_runtime.components.position_monitoring
         self.position_sizing_engine = PositionSizingEngine()
         self.position_surveillance_engine = PositionSurveillanceEngine()
         self.portfolio_construction_engine = PortfolioConstructionEngine()
-        self.strategic_intelligence_command = StrategicIntelligenceCommand()
+        self.strategic_intelligence_command = self.canonical_runtime.components.strategic_intelligence
         self.strategic_synthesis_office = StrategicSynthesisOffice()
         self.strategy_performance_console = LiveStrategyPerformanceConsole()
         self.scheduler = OfficeScheduler()
         self.short_opportunity_office = ShortOpportunityOffice()
-        self.workflow_orchestrator = EnterpriseWorkflowOrchestrator()
+        self.workflow_orchestrator = self.canonical_runtime.components.workflow_orchestrator
         self.workflow_runtime_monitor = WorkflowRuntimeMonitor()
         self.api_execution_gateway = ApiExecutionGateway(
             workflow_snapshot=self.workflow_orchestrator.snapshot,
