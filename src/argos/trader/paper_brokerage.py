@@ -12,7 +12,7 @@ from argos.control_panel.enterprise_communications_bus import EnterpriseCommunic
 from argos.control_panel.market_data_provider import MarketDataProviderAbstractionLayer
 from argos.control_panel.performance_truth_engine import PerformanceTruthEngine
 from argos.control_panel.position_monitoring_network import PositionMonitoringNetwork
-from argos.control_panel.truth_domain import validate_decision_object_for_operational_truth
+from argos.control_panel.truth_domain import make_paper_operational_truth_envelope, validate_decision_object_for_operational_truth
 from argos.foundation.contracts import utc_timestamp
 
 from .execution_quality import CompletedExecutionRecord, ExecutionQualityOffice
@@ -470,7 +470,19 @@ class DeterministicPaperBrokerage:
 
     def _record_performance_truth(self, order: PaperBrokerOrderRecord) -> None:
         if self.performance_truth and hasattr(self.performance_truth, "record_broker_authoritative_order"):
-            self.performance_truth.record_broker_authoritative_order(_json_ready(order))
+            source_event = order.events[-1].event_id if order.events else order.order_id
+            envelope = make_paper_operational_truth_envelope(
+                originating_authority="DeterministicPaperBrokerage",
+                originating_workflow_id=order.ticket.workflow_id,
+                workflow_token_id=order.ticket.workflow_token,
+                mission_id=order.ticket.mission_id,
+                source_event_id=source_event,
+                idempotency_key=order.order_id,
+                timestamp_utc=order.updated_at,
+                caller="PerformanceTruthEngine",
+                source_system=PAPER_BROKERAGE_ID,
+            )
+            self.performance_truth.record_broker_authoritative_order(_json_ready(order), truth_envelope=envelope)
 
     def _record_execution_quality(self, order: PaperBrokerOrderRecord, case_file_id: str, trade_cycle_id: str, document_sequence: int) -> None:
         if not self.execution_quality or not order.fills:

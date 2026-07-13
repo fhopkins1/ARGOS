@@ -16,6 +16,14 @@ from argos.foundation.persistence.backup import BackupBundle, BackupService
 from argos.foundation.persistence.records import ObjectType, PersistentRecord
 
 from .canonical_enterprise_runtime import CanonicalEnterpriseRuntime, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure
+from .truth_domain import OperationalTruthEnvelope, TruthEnvelopeError, make_paper_operational_truth_envelope, require_operational_truth_envelope
+
+
+OPERATIONAL_AUTHORITY_OBJECT_TYPES = {
+    ObjectType.ENTERPRISE_BROKER_STATE,
+    ObjectType.ENTERPRISE_POSITION_STATE,
+    ObjectType.ENTERPRISE_PERFORMANCE_TRUTH,
+}
 
 
 class PersistenceCategory(str, Enum):
@@ -72,6 +80,7 @@ class TransactionWrite:
     truth_domain: str = "PAPER"
     idempotency_key: str = ""
     require_new_identity: bool = False
+    truth_envelope: OperationalTruthEnvelope | dict[str, Any] | None = None
 
 
 @dataclass(frozen=True)
@@ -116,9 +125,11 @@ class DurableEnterprisePersistenceStore:
         truth_domain: str = "PAPER",
         idempotency_key: str = "",
         require_new_identity: bool = False,
+        truth_envelope: OperationalTruthEnvelope | dict[str, Any] | None = None,
     ) -> PersistentRecord:
         self._preflight_write(object_type, object_id, require_new_identity=require_new_identity)
-        envelope = self._envelope(object_id, payload, truth_domain=truth_domain, idempotency_key=idempotency_key)
+        operational_envelope = self._operational_truth_envelope(object_type, object_id, truth_envelope)
+        envelope = self._envelope(object_id, payload, truth_domain=truth_domain, idempotency_key=idempotency_key, operational_truth_envelope=operational_envelope)
         try:
             record = self.repository.persist(object_type, object_id, envelope)
             self._flush()
@@ -140,6 +151,7 @@ class DurableEnterprisePersistenceStore:
                 truth_domain=write.truth_domain,
                 idempotency_key=write.idempotency_key or boundary_id,
                 require_new_identity=write.require_new_identity,
+                truth_envelope=write.truth_envelope,
             )
             for write in writes
         )
@@ -176,9 +188,9 @@ class DurableEnterprisePersistenceStore:
                 TransactionWrite(ObjectType.ENTERPRISE_RUNTIME_STATE, "canonical-runtime", snapshot["runtime"], idempotency_key="canonical-runtime"),
                 TransactionWrite(ObjectType.ENTERPRISE_MISSION_STATE, "canonical-missions", snapshot["missions"], idempotency_key="canonical-missions"),
                 TransactionWrite(ObjectType.ENTERPRISE_WORKFLOW_STATE, "canonical-workflows", snapshot["workflows"], idempotency_key="canonical-workflows"),
-                TransactionWrite(ObjectType.ENTERPRISE_BROKER_STATE, "paper-broker", snapshot["broker"], idempotency_key="paper-broker"),
-                TransactionWrite(ObjectType.ENTERPRISE_POSITION_STATE, "position-registry", snapshot["positions"], idempotency_key="position-registry"),
-                TransactionWrite(ObjectType.ENTERPRISE_PERFORMANCE_TRUTH, "performance-truth-paper", snapshot["performance_truth"], idempotency_key="performance-truth-paper"),
+                TransactionWrite(ObjectType.ENTERPRISE_BROKER_STATE, "paper-broker", snapshot["broker"], idempotency_key="paper-broker", truth_envelope=self._runtime_truth_envelope("DeterministicPaperBrokerage", "paper-broker", "paper-broker")),
+                TransactionWrite(ObjectType.ENTERPRISE_POSITION_STATE, "position-registry", snapshot["positions"], idempotency_key="position-registry", truth_envelope=self._runtime_truth_envelope("PositionRegistry", "position-registry", "position-registry")),
+                TransactionWrite(ObjectType.ENTERPRISE_PERFORMANCE_TRUTH, "performance-truth-paper", snapshot["performance_truth"], idempotency_key="performance-truth-paper", truth_envelope=self._runtime_truth_envelope("PerformanceTruthEngine", "performance-truth-paper", "performance-truth-paper")),
                 TransactionWrite(ObjectType.ENTERPRISE_POLICY_STATE, "doctrine-policy", snapshot["policy"], idempotency_key="doctrine-policy"),
             ),
         )
@@ -274,7 +286,29 @@ class DurableEnterprisePersistenceStore:
             self._diagnostic("DUPLICATE_IDENTITY_REJECTED", RecoverySeverity.CRITICAL, object_type.value, object_id, False)
             raise EnterprisePersistenceError(f"duplicate identity rejected: {object_type.value}:{object_id}")
 
-    def _envelope(self, entity_id: str, payload: dict[str, Any], *, truth_domain: str, idempotency_key: str) -> dict[str, Any]:
+    def _operational_truth_envelope(self, object_type: ObjectType, object_id: str, truth_envelope: OperationalTruthEnvelope | dict[str, Any] | None) -> dict[str, Any]:
+        if object_type not in OPERATIONAL_AUTHORITY_OBJECT_TYPES:
+            return {}
+        try:
+            return require_operational_truth_envelope(truth_envelope, target_authority="DurableEnterprisePersistenceStore")
+        except TruthEnvelopeError as exc:
+            self._diagnostic("TRUTH_ENVELOPE_REJECTED", RecoverySeverity.CRITICAL, object_type.value, f"{object_id}: {','.join(exc.codes)}", False)
+            raise EnterprisePersistenceError(f"truth envelope rejected for {object_type.value}:{object_id}: {','.join(exc.codes)}") from exc
+
+    def _runtime_truth_envelope(self, authority: str, source_event_id: str, idempotency_key: str) -> OperationalTruthEnvelope:
+        return make_paper_operational_truth_envelope(
+            originating_authority=authority,
+            originating_workflow_id="OR006-RUNTIME-SNAPSHOT",
+            workflow_token_id="OR006-RUNTIME-TOKEN",
+            mission_id="OR006-PERSISTENCE-MISSION",
+            source_event_id=source_event_id,
+            idempotency_key=idempotency_key,
+            timestamp_utc=utc_timestamp(),
+            caller="DurableEnterprisePersistenceStore",
+            source_system="CanonicalEnterpriseRuntime",
+        )
+
+    def _envelope(self, entity_id: str, payload: dict[str, Any], *, truth_domain: str, idempotency_key: str, operational_truth_envelope: dict[str, Any] | None = None) -> dict[str, Any]:
         existing = max((record.version for record in self.repository.all_records()), default=0)
         clean_payload = _json_ready(payload)
         return {
@@ -287,6 +321,7 @@ class DurableEnterprisePersistenceStore:
             "payload": clean_payload,
             "payload_hash": _stable_hash(clean_payload),
             "idempotency_key": idempotency_key or entity_id,
+            "operational_truth_envelope": operational_truth_envelope or {},
             "migration_compatibility": {"minimum_reader": "OR-006.1", "history_rewrite_allowed": False},
         }
 

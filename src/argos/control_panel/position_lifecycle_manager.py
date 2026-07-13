@@ -209,6 +209,7 @@ class EnterprisePositionLifecycleManager:
             performance_truth=truth,
             position_surveillance=surveillance_state or {},
             exit_decision_engine=exit_decision_state or {},
+            enterprise_benchmark_engine=_benchmark_engine_from_performance_truth(truth, position.decision_object_id),
             timestamp_utc=utc_timestamp(),
         )
         self.performance_truth.ingest_closed_position_truth(tuple(closed_truth.get("latestClosedPositionTruthRecords", ())))
@@ -319,3 +320,25 @@ def _json_ready(value: Any) -> Any:
     if isinstance(value, (tuple, list)):
         return tuple(_json_ready(item) for item in value)
     return value
+
+
+def _benchmark_engine_from_performance_truth(performance_truth: dict[str, Any], decision_object_id: str) -> dict[str, Any]:
+    latest_by_benchmark: dict[str, dict[str, Any]] = {}
+    for record in performance_truth.get("benchmarkHistory", ()):
+        name = str(record.get("benchmark", ""))
+        if name:
+            latest_by_benchmark[name] = dict(record)
+    comparisons = []
+    for name in ("SPY", "SPY Buy And Hold"):
+        source = latest_by_benchmark.get("SPY") if name.startswith("SPY") else latest_by_benchmark.get(name)
+        if source:
+            comparisons.append(
+                {
+                    "decisionObjectId": decision_object_id,
+                    "benchmarkName": name,
+                    "benchmarkReturn": float(source.get("benchmark_return", 0.0) or 0.0),
+                    "source": "PerformanceTruthEngine.benchmarkHistory",
+                }
+            )
+            break
+    return {"tradeLevelComparisons": tuple(comparisons)}

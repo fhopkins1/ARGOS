@@ -18,10 +18,10 @@ class ClosedPositionTruthConfig:
     enabled: bool = True
     require_benchmark_data: bool = False
     require_attribution_payload: bool = False
-    allow_degraded_truth_creation: bool = True
+    allow_degraded_truth_creation: bool = False
     duplicate_truth_policy: str = "return_existing"
     lifecycle_analytics_enabled: bool = True
-    learning_event_enabled: bool = True
+    learning_event_enabled: bool = False
     reconciliation_strictness: str = "strict"
     benchmark_defaults: tuple[str, ...] = ("SPY", "QQQ", "Cash")
     execution_quality_scoring_enabled: bool = True
@@ -76,6 +76,21 @@ class ClosedPositionTruthRecord:
     hash: str
 
 
+@dataclass(frozen=True)
+class DegradedClosedPositionAnalyticalRecord:
+    """Analytical-only lifecycle output that is not authoritative truth."""
+
+    analytical_record_id: str
+    position_id: str
+    reason: str
+    benchmark_payload: dict[str, Any]
+    attribution_payload: dict[str, Any]
+    truth_classification: str
+    certification_status: str
+    learning_promotion_allowed: bool
+    created_at: str
+
+
 class ClosedPositionTruthBuilder:
     """Build append-only Closed Position Truth records from completed positions."""
 
@@ -85,6 +100,7 @@ class ClosedPositionTruthBuilder:
         self._records_by_position: dict[str, ClosedPositionTruthRecord] = {}
         self._reconciliation_events: list[dict[str, Any]] = []
         self._learning_events: list[dict[str, Any]] = []
+        self._degraded_analytical_records: list[DegradedClosedPositionAnalyticalRecord] = []
 
     def build(
         self,
@@ -140,11 +156,13 @@ class ClosedPositionTruthBuilder:
             "configuration": asdict(resolved),
             "closedPositionTruthRecords": tuple(asdict(item) for item in self._records),
             "latestClosedPositionTruthRecords": tuple(asdict(item) for item in latest_records),
+            "degradedAnalyticalRecords": tuple(asdict(item) for item in self._degraded_analytical_records),
             "reconciliationEvents": tuple(self._reconciliation_events),
             "learningEvents": tuple(self._learning_events),
             "metrics": {
                 "truthRecordCount": len(self._records),
                 "latestTruthRecordCount": len(latest_records),
+                "degradedAnalyticalRecordCount": len(self._degraded_analytical_records),
                 "reconciliationEventCount": len(self._reconciliation_events),
                 "learningEventCount": len(self._learning_events),
             },
@@ -231,6 +249,9 @@ class ClosedPositionTruthBuilder:
         if attribution["status"] == "DEGRADED" and config.require_attribution_payload:
             self._reconcile(position_id, "attribution_payload_missing", "Attribution payload is required but unavailable.", attribution)
             return None
+        if (benchmark["status"] == "DEGRADED" or attribution["status"] == "DEGRADED") and not config.allow_degraded_truth_creation:
+            self._record_degraded_analytical(position_id, benchmark, attribution, timestamp)
+            return None
 
         entry_time = str(entry_orders[0].get("timestamp", position.get("entry_time", "")))
         exit_time = str(exit_orders[-1].get("timestamp", position.get("updated_at", "")))
@@ -291,6 +312,25 @@ class ClosedPositionTruthBuilder:
         duplicate = any(item["positionId"] == position_id and item["eventType"] == event_type for item in self._reconciliation_events)
         if not duplicate:
             self._reconciliation_events.append(event)
+
+    def _record_degraded_analytical(self, position_id: str, benchmark: dict[str, Any], attribution: dict[str, Any], timestamp: str) -> None:
+        duplicate = any(item.position_id == position_id for item in self._degraded_analytical_records)
+        if duplicate:
+            return
+        self._degraded_analytical_records.append(
+            DegradedClosedPositionAnalyticalRecord(
+                analytical_record_id=f"CPT-ANALYTICAL-{len(self._degraded_analytical_records) + 1:06d}",
+                position_id=position_id,
+                reason="degraded_benchmark_or_attribution",
+                benchmark_payload=benchmark,
+                attribution_payload=attribution,
+                truth_classification="DEGRADED_ANALYTICAL_ONLY",
+                certification_status="DEGRADED_ANALYTICAL_ONLY",
+                learning_promotion_allowed=False,
+                created_at=timestamp,
+            )
+        )
+        self._reconcile(position_id, "degraded_analytical_only", "Degraded lifecycle evidence was retained outside authoritative Closed Position Truth.", {"benchmark": benchmark, "attribution": attribution})
 
     def _resolved_config(self, enterprise_configuration_registry: dict[str, Any] | None) -> ClosedPositionTruthConfig:
         if not enterprise_configuration_registry:

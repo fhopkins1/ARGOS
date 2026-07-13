@@ -40,6 +40,56 @@ class ProvenanceStatus(str, Enum):
     REJECTED = "REJECTED"
 
 
+class CertificationStatus(str, Enum):
+    """Canonical certification states used by operational truth envelopes."""
+
+    PAPER_OPERATIONAL_CERTIFIED = "PAPER_OPERATIONAL_CERTIFIED"
+    PROOF_MODE_NOT_ACTIONABLE = "PROOF_MODE_NOT_ACTIONABLE"
+    SIMULATION_ONLY_NOT_OPERATIONAL_TRUTH = "SIMULATION_ONLY_NOT_OPERATIONAL_TRUTH"
+    DEGRADED_ANALYTICAL_ONLY = "DEGRADED_ANALYTICAL_ONLY"
+    UNCERTIFIED = "UNCERTIFIED"
+    REJECTED_NOT_OPERATIONAL_TRUTH = "REJECTED_NOT_OPERATIONAL_TRUTH"
+
+
+class TruthEnvelopeError(ValueError):
+    """Raised when an authoritative write lacks validated operational truth."""
+
+    def __init__(self, codes: tuple[str, ...]) -> None:
+        self.codes = codes
+        super().__init__(",".join(codes))
+
+
+@dataclass(frozen=True)
+class OperationalTruthEnvelope:
+    """Validated provenance contract for authoritative PAPER writes."""
+
+    truth_domain: str
+    provenance_status: str
+    truth_classification: str
+    certification_status: str
+    originating_authority: str
+    originating_workflow_id: str
+    workflow_token_id: str
+    mission_id: str
+    source_event_id: str
+    schema_version: str
+    validation_result: str
+    idempotency_key: str
+    timestamp_utc: str
+    caller: str
+    source_system: str = ""
+    degraded: bool = False
+
+
+@dataclass(frozen=True)
+class TruthEnvelopeValidation:
+    """Deterministic envelope validation result."""
+
+    valid: bool
+    codes: tuple[str, ...]
+    envelope: dict[str, Any]
+
+
 PLACEHOLDER_SOURCES = {
     "deterministic_placeholder",
     "runtime_placeholder",
@@ -53,6 +103,21 @@ AUTHORIZED_OFFICE_PRODUCERS = {
     "Analyst",
     "Risk",
     "Trader",
+    "Historian",
+}
+
+AUTHORIZED_OPERATIONAL_AUTHORITIES = {
+    "EnterpriseWorkflowOrchestrator",
+    "EnterpriseOperationsScheduler",
+    "EnterpriseMissionPlanner",
+    "DeterministicPaperBrokerage",
+    "PositionRegistry",
+    "PerformanceTruthEngine",
+    "EnterpriseDoctrinePolicyManager",
+    "Risk",
+    "Trader",
+    "Seeker",
+    "Analyst",
     "Historian",
 }
 
@@ -191,6 +256,120 @@ def validate_decision_object_for_operational_truth(decision_object: dict[str, An
     )
 
 
+def make_paper_operational_truth_envelope(
+    *,
+    originating_authority: str,
+    originating_workflow_id: str,
+    workflow_token_id: str,
+    mission_id: str,
+    source_event_id: str,
+    idempotency_key: str,
+    timestamp_utc: str,
+    caller: str,
+    source_system: str = "",
+    schema_version: str = "IFVR-001.3.5",
+) -> OperationalTruthEnvelope:
+    """Create the canonical validated envelope for PAPER operational truth."""
+    return OperationalTruthEnvelope(
+        truth_domain=RuntimeMode.PAPER.value,
+        provenance_status=ProvenanceStatus.VALIDATED.value,
+        truth_classification=TruthClassification.PAPER_OPERATIONAL.value,
+        certification_status=CertificationStatus.PAPER_OPERATIONAL_CERTIFIED.value,
+        originating_authority=originating_authority,
+        originating_workflow_id=originating_workflow_id,
+        workflow_token_id=workflow_token_id,
+        mission_id=mission_id,
+        source_event_id=source_event_id,
+        schema_version=schema_version,
+        validation_result="VALIDATED",
+        idempotency_key=idempotency_key,
+        timestamp_utc=timestamp_utc,
+        caller=caller,
+        source_system=source_system or originating_authority,
+        degraded=False,
+    )
+
+
+def validate_operational_truth_envelope(
+    envelope: OperationalTruthEnvelope | dict[str, Any] | None,
+    *,
+    target_authority: str,
+    allowed_authorities: set[str] | None = None,
+) -> TruthEnvelopeValidation:
+    """Validate the canonical envelope required at authoritative write boundaries."""
+    payload = _envelope_payload(envelope)
+    authorities = allowed_authorities or AUTHORIZED_OPERATIONAL_AUTHORITIES
+    codes: list[str] = []
+    if not payload:
+        codes.append("MISSING_TRUTH_ENVELOPE")
+    truth_domain = str(payload.get("truth_domain") or payload.get("truthDomain") or "").upper()
+    classification = str(payload.get("truth_classification") or payload.get("truthClassification") or "")
+    provenance = str(payload.get("provenance_status") or payload.get("provenanceStatus") or "")
+    certification = str(payload.get("certification_status") or payload.get("certificationStatus") or "")
+    validation = str(payload.get("validation_result") or payload.get("validationResult") or "")
+    authority = str(payload.get("originating_authority") or payload.get("originatingAuthority") or "")
+    degraded = bool(payload.get("degraded", False))
+
+    if truth_domain != RuntimeMode.PAPER.value:
+        if truth_domain in {RuntimeMode.PROOF.value, "PROOF"}:
+            codes.append("PROOF_MODE_NOT_ACTIONABLE")
+        elif truth_domain in {RuntimeMode.SIMULATION.value, "SIMULATION"}:
+            codes.append("SIMULATION_VALUE_IN_OPERATIONAL_PATH")
+        elif truth_domain == RuntimeMode.LIVE.value:
+            codes.append("LIVE_DISABLED")
+        else:
+            codes.append("INVALID_TRUTH_DOMAIN")
+    if classification != TruthClassification.PAPER_OPERATIONAL.value:
+        if classification == TruthClassification.PROOF_ONLY.value:
+            codes.append("PROOF_MODE_NOT_ACTIONABLE")
+        elif classification == TruthClassification.SIMULATION_ONLY.value:
+            codes.append("SIMULATION_VALUE_IN_OPERATIONAL_PATH")
+        elif classification == TruthClassification.LIVE_DISABLED.value:
+            codes.append("LIVE_DISABLED")
+        else:
+            codes.append("INVALID_TRUTH_CLASSIFICATION")
+    if provenance != ProvenanceStatus.VALIDATED.value:
+        codes.append("PROVENANCE_NOT_VALIDATED")
+    if certification != CertificationStatus.PAPER_OPERATIONAL_CERTIFIED.value:
+        codes.append("UNCERTIFIED_OPERATIONAL_TRUTH")
+    if validation != "VALIDATED":
+        codes.append("VALIDATION_RESULT_NOT_VALIDATED")
+    if degraded:
+        codes.append("DEGRADED_TRUTH_NOT_AUTHORITATIVE")
+    if authority not in authorities:
+        codes.append("UNAUTHORIZED_AUTHORITY")
+    for field in (
+        "originating_workflow_id",
+        "workflow_token_id",
+        "mission_id",
+        "source_event_id",
+        "schema_version",
+        "idempotency_key",
+        "timestamp_utc",
+        "caller",
+    ):
+        if not str(payload.get(field) or payload.get(_camel(field)) or ""):
+            codes.append(f"MISSING_{field.upper()}")
+    if target_authority and str(payload.get("caller") or "") != target_authority:
+        codes.append("CALLER_TARGET_AUTHORITY_MISMATCH")
+
+    unique = tuple(dict.fromkeys(codes))
+    return TruthEnvelopeValidation(valid=not unique, codes=unique, envelope=payload)
+
+
+def require_operational_truth_envelope(
+    envelope: OperationalTruthEnvelope | dict[str, Any] | None,
+    *,
+    target_authority: str,
+    allowed_authorities: set[str] | None = None,
+) -> dict[str, Any]:
+    """Return a validated envelope payload or raise deterministic rejection codes."""
+    validation = validate_operational_truth_envelope(envelope, target_authority=target_authority, allowed_authorities=allowed_authorities)
+    if not validation.valid:
+        raise TruthEnvelopeError(validation.codes)
+    return validation.envelope
+
+
 def deterministic_id(source_system: str, workflow_id: str, decision_object_id: str, source_record_ids: tuple[str, ...]) -> str:
     payload = {
         "decision_object_id": decision_object_id,
@@ -201,3 +380,15 @@ def deterministic_id(source_system: str, workflow_id: str, decision_object_id: s
     digest = hashlib.sha256(json.dumps(payload, sort_keys=True, separators=(",", ":"), default=str).encode("utf-8")).hexdigest()[:16]
     return f"TRUTH-{digest.upper()}"
 
+
+def _envelope_payload(envelope: OperationalTruthEnvelope | dict[str, Any] | None) -> dict[str, Any]:
+    if envelope is None:
+        return {}
+    if isinstance(envelope, OperationalTruthEnvelope):
+        return dict(envelope.__dict__)
+    return dict(envelope)
+
+
+def _camel(field: str) -> str:
+    parts = field.split("_")
+    return parts[0] + "".join(part.capitalize() for part in parts[1:])

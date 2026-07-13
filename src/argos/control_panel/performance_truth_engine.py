@@ -12,7 +12,13 @@ from typing import Any
 
 from argos.foundation.contracts import utc_timestamp
 from .position_registry import PositionRegistry
-from .truth_domain import paper_broker_metadata, validate_decision_object_for_operational_truth
+from .truth_domain import (
+    OperationalTruthEnvelope,
+    TruthEnvelopeError,
+    paper_broker_metadata,
+    require_operational_truth_envelope,
+    validate_decision_object_for_operational_truth,
+)
 
 
 BENCHMARK_RETURNS = {
@@ -400,13 +406,31 @@ class PerformanceTruthEngine:
         self._append_portfolio_valuation(workflow_id, decision_object_id, token_id, token_id, "paper", timestamp)
         return asdict(order)
 
-    def record_broker_authoritative_order(self, broker_order: dict[str, Any]) -> dict[str, Any]:
+    def record_broker_authoritative_order(self, broker_order: dict[str, Any], *, truth_envelope: OperationalTruthEnvelope | dict[str, Any] | None = None) -> dict[str, Any]:
         """Record an OR-003 broker-authoritative paper order without fabricating execution truth."""
         ticket = dict(broker_order.get("ticket", {}) or {})
         market = dict(broker_order.get("market_state", {}) or {})
         fills = tuple(dict(item) for item in broker_order.get("fills", ()) or ())
         timestamp = str(broker_order.get("updated_at") or broker_order.get("created_at") or utc_timestamp())
         execution_environment = "paper"
+        try:
+            validated_envelope = require_operational_truth_envelope(
+                truth_envelope,
+                target_authority="PerformanceTruthEngine",
+                allowed_authorities={"DeterministicPaperBrokerage"},
+            )
+        except TruthEnvelopeError as exc:
+            self._reject_truth_record(
+                record_type="broker_authoritative_order",
+                source_system="DeterministicPaperBrokerage",
+                workflow_id=str(ticket.get("workflow_id", "")),
+                decision_object_id=str(ticket.get("decision_object_id", "")),
+                token_id=str(ticket.get("workflow_token", "")),
+                codes=exc.codes,
+                execution_environment=execution_environment,
+                timestamp=timestamp,
+            )
+            return {"accepted": False, "reason": "TRUTH_ENVELOPE_REJECTED", "codes": exc.codes}
         decision = dict(ticket.get("decision_object", {}) or {})
         provenance = validate_decision_object_for_operational_truth(decision, execution_environment=execution_environment)
         if not provenance.valid:
@@ -451,6 +475,7 @@ class PerformanceTruthEngine:
                 "missionId": str(ticket.get("mission_id", "")),
                 "traderIdentity": str(ticket.get("trader_identity", "")),
                 "accountId": str(ticket.get("account_id", "")),
+                "truthEnvelope": validated_envelope,
             },
             broker_profile_id=self._broker_profile["profileId"],
             account_type=self._broker_profile["accountType"],
