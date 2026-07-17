@@ -34,6 +34,7 @@ from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, Br
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
 from .fault_injection_lab import CampaignOutcome, CampaignReport, EO_DE_VERSION, FaultCategory, FaultDefinition, FaultExecutionRecord, FaultInjectionRecoveryLaboratory, FaultSeverity, ResourceSnapshot, canonical_fault_catalog
+from .long_duration_operations_lab import AdmissionEnvironment, AdmissionResult, BoundednessFinding, CampaignCatalogEntry, CampaignDefinition, CampaignSegment, DriftSummary, DurationMode, EO_DF_VERSION, EnduranceCampaignReport, EnduranceCampaignType, EnduranceFailureClass, EndurancePassCriteria, EnduranceStage, EnduranceVerdict, EvidenceBundle, LongDurationOperationsLaboratory, TelemetrySample, long_duration_campaign_catalog
 from .enterprise_communications_bus import BusHealthState, CompatibilityMode, DeadLetterRecord, DeliveryRecord, DeliveryState, EnterpriseCommunicationsBus, EnterpriseMessageEnvelope, EnterpriseMessageKind, MessageAuditRecord, MessageMode, MessageSchemaRegistration, MessageSchemaRegistry, MessageSubscription, PublishResult, QuarantineRecord, ReplayStatus
 from .enterprise_cost_governor import BudgetAccount, BudgetCategory, BudgetPeriodType, BudgetScope, BudgetState, CircuitBreakerRecord, CostAuthorizationDecision, CostAuthorizationRecord, CostAuthorizationRequest, CostLedgerEntry, CostReservation, CostReservationRequest, CostType, CostUsageRecord, EnterpriseBudgetPolicy, EnterpriseCostGovernor, ReservationState
 from .enterprise_doctrine_policy_manager import ActivationStrategy, AcknowledgementState, CommanderPolicyDirective, CompatibilityDecision, DoctrineType, DriftClassification, EnterpriseDoctrinePolicyManager, EnterpriseDoctrineRecord, EnterprisePolicyDefinition, EnterprisePolicyVersion, PolicyActivationPlan, PolicyApprovalRecord, PolicyCompatibilityResult, PolicyDistributionRecord, PolicyDomain, PolicyDriftRecord, PolicyErrorCode, PolicyLevel, PolicyManagementHealthState, PolicySchemaDefinition, PolicySchemaRegistry, PolicyScope, PolicyScopeType, PolicyStatus, ResolvedPolicyConfiguration
@@ -244,6 +245,25 @@ __all__ = [
     "FaultSeverity",
     "ResourceSnapshot",
     "canonical_fault_catalog",
+    "AdmissionEnvironment",
+    "AdmissionResult",
+    "BoundednessFinding",
+    "CampaignCatalogEntry",
+    "CampaignDefinition",
+    "CampaignSegment",
+    "DriftSummary",
+    "DurationMode",
+    "EO_DF_VERSION",
+    "EnduranceCampaignReport",
+    "EnduranceCampaignType",
+    "EnduranceFailureClass",
+    "EndurancePassCriteria",
+    "EnduranceStage",
+    "EnduranceVerdict",
+    "EvidenceBundle",
+    "LongDurationOperationsLaboratory",
+    "TelemetrySample",
+    "long_duration_campaign_catalog",
     "authoritative_write_site_registry",
     "constitutional_authority_registry",
     "constitutional_invariant_catalog",
