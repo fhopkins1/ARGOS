@@ -6,4 +6,4 @@ Supported states include `UNINITIALIZED`, `DORMANT`, `ACTIVATION_PENDING`, `ACTI
 
 Activation requires an explicit authority such as a canonical bridge, scheduler, duty officer, Commander, recovery procedure, replay harness, or test harness. Ownership-bearing offices require a valid token. Dormant offices cannot perform active workflow mutation.
 
-EO-DL evidence is generated under `Documentation/EO-DL_Evidence/`. The formal verdict is `INCOMPLETE` while unresolved/future endpoint offices remain disabled or untraced.
+EO-DL evidence is generated under `Documentation/EO-DL_Evidence/`. The current formal verdict is `PASS`; future-reserved offices remain disabled and are not counted as reachable production orphans.

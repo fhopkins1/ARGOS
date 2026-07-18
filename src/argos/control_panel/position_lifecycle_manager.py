@@ -11,6 +11,7 @@ from typing import Any
 from argos.foundation.contracts import utc_timestamp
 from argos.trader.paper_brokerage import DeterministicPaperBrokerage, PaperBrokerOrderTicket
 
+from .canonical_bridge_fabric import CanonicalBridgeExecutor, BridgeResultStatus, make_bridge_request
 from .closed_position_truth import ClosedPositionTruthBuilder
 from .enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode
 from .market_data_provider import MarketDataProviderAbstractionLayer
@@ -86,6 +87,7 @@ class EnterprisePositionLifecycleManager:
         exit_decision_engine: ExitDecisionEngine | None = None,
         closed_truth_builder: ClosedPositionTruthBuilder | None = None,
         communications_bus: EnterpriseCommunicationsBus | None = None,
+        bridge_executor: CanonicalBridgeExecutor | None = None,
     ) -> None:
         self.performance_truth = performance_truth
         self.paper_broker = paper_broker
@@ -95,6 +97,7 @@ class EnterprisePositionLifecycleManager:
         self.exit_decision_engine = exit_decision_engine or ExitDecisionEngine()
         self.closed_truth_builder = closed_truth_builder or ClosedPositionTruthBuilder()
         self.communications_bus = communications_bus
+        self.bridge_executor = bridge_executor or CanonicalBridgeExecutor(runtime_instance_id="ARGOS-POSITION-LIFECYCLE")
         self._authorizations: dict[str, ExitAuthorizationRecord] = {}
         self._closing_order_by_authorization: dict[str, str] = {}
         self._reconciliations: list[PositionLifecycleReconciliation] = []
@@ -195,6 +198,25 @@ class EnterprisePositionLifecycleManager:
             execution_plan_id=authorization.exit_decision_id,
             decision_object=decision_object,
         )
+        bridge_payload = {"authorization_id": authorization.authorization_id, "order_id": order_id, "position_id": position.position_id, "quantity": authorization.authorized_quantity}
+        workflow_token_id = str(getattr(workflow_token, "audit_identifier", ""))
+        if not self.bridge_executor.ownership.owner(position.workflow_id):
+            self.bridge_executor.ownership.establish(position.workflow_id, "Trader", workflow_token_id)
+        bridge_result = self.bridge_executor.execute(
+            make_bridge_request(
+                bridge_id="BRIDGE-TRADER-BROKER-001",
+                runtime_instance_id=self.bridge_executor.runtime_instance_id,
+                workflow_id=position.workflow_id,
+                source="Trader",
+                destination="Paper Broker",
+                artifact_id=order_id,
+                payload=bridge_payload,
+                current_owner="Trader",
+                token_id=workflow_token_id,
+            )
+        )
+        if bridge_result.status != BridgeResultStatus.ACCEPTED:
+            return {"accepted": False, "reason": bridge_result.rejection_code.value if bridge_result.rejection_code else "BRIDGE_REJECTED", "bridgeResult": _json_ready(bridge_result)}
         result = self.paper_broker.submit_order(ticket, workflow_token=workflow_token)
         if result.accepted:
             self._closing_order_by_authorization[authorization.authorization_id] = order_id

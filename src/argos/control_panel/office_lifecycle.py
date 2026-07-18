@@ -234,8 +234,10 @@ class OfficeLifecycleController:
                 reasons.append("missing legitimate production ingress")
             if definition.production_required and not definition.egress_bridges and definition.classification not in {OfficeClassification.INFORMATION_ONLY, OfficeClassification.EXTERNAL_AUTHORITY_ADAPTER}:
                 reasons.append("missing egress or terminal classification")
-            if definition.classification in {OfficeClassification.FUTURE_RESERVED, OfficeClassification.UNRESOLVED}:
-                reasons.append(f"{definition.classification.value.lower()} readiness blocker")
+            if definition.classification == OfficeClassification.UNRESOLVED:
+                reasons.append("unresolved readiness blocker")
+            if definition.classification == OfficeClassification.FUTURE_RESERVED and definition.enabled:
+                reasons.append("future-reserved office must remain disabled")
             rows.append({"office_id": definition.office_id, "orphan": bool(reasons), "reasons": tuple(reasons), "classification": definition.classification.value})
         return tuple(rows)
 

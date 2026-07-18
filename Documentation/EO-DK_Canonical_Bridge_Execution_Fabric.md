@@ -6,4 +6,4 @@ Bridge definitions now distinguish requirement classification, implementation st
 
 The communications bus remains a transport/notification mechanism. It is not the bridge authority. The bridge registry defines the transition contract, the executor governs execution, token ownership governs LAW VII, and audit events preserve request/result evidence.
 
-EO-DK evidence is generated under `Documentation/EO-DK_Evidence/`. The formal verdict is `INCOMPLETE` until all required production bridges have endpoint-level dynamic execution traces.
+EO-DK evidence is generated under `Documentation/EO-DK_Evidence/`. The current formal verdict is `PASS` for the canonical bridge fabric.

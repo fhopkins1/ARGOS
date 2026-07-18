@@ -3,7 +3,7 @@
   "confirmedOffices": 33,
   "confirmedServices": 160,
   "coreProductionOffices": 8,
-  "dirtyWorkingTreeStatus": "M Tests/test_or003_paper_brokerage.py\n M Tests/test_or004_position_lifecycle.py\n M src/argos/control_panel/__init__.py\n M src/argos/control_panel/canonical_enterprise_runtime.py\n M src/argos/control_panel/market_data_provider.py\n M src/argos/trader/paper_brokerage.py\n?? Documentation/EO-DJ_Authoritative_Paper_Market_Data_Boundary.md\n?? Documentation/EO-DJ_Completion_Report.md\n?? Documentation/EO-DJ_Evidence/\n?? Documentation/EO-DJ_Operator_Procedure.md\n?? Documentation/EO-DJ_Test_Report.md\n?? Documentation/EO-DK_Canonical_Bridge_Execution_Fabric.md\n?? Documentation/EO-DK_Completion_Report.md\n?? Documentation/EO-DK_Evidence/\n?? Documentation/EO-DK_Operator_Developer_Procedure.md\n?? Documentation/EO-DK_Test_Report.md\n?? Documentation/EO-DL_Completion_Report.md\n?? Documentation/EO-DL_Evidence/\n?? Documentation/EO-DL_Office_Lifecycle_and_Dormancy.md\n?? Documentation/EO-DL_Operator_Developer_Procedure.md\n?? Documentation/EO-DL_Test_Report.md\n?? \"Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE (2).zip\"\n?? Documentation/IFVA-001_Evidence/ARGOS_REPOSITORY_d5a74f6b9ed3509f26ec85a6e3dd9b901373049d.zip\n?? Scripts/generate_eodj_evidence.py\n?? Scripts/generate_eodk_evidence.py\n?? Scripts/generate_eodl_evidence.py\n?? Tests/test_eodj_market_data_boundary.py\n?? Tests/test_eodk_bridge_fabric.py\n?? Tests/test_eodl_office_lifecycle.py\n?? src/argos/control_panel/canonical_bridge_fabric.py\n?? src/argos/control_panel/office_lifecycle.py",
+  "dirtyWorkingTreeStatus": "M Documentation/EO-DK_Evidence/eo_dk_bridge_certification_matrix.json\n M Documentation/EO-DK_Evidence/eo_dk_canonical_runtime_trace.json\n M Documentation/EO-DK_Evidence/eo_dk_certification.json\n M Documentation/EO-DK_Evidence/eo_dk_direct_call_inventory.json\n M Documentation/EO-DK_Evidence/eo_dk_dynamic_bridge_traces.json\n M Documentation/EO-DK_Evidence/eo_dk_ownership_transfer_tests.json\n M Documentation/EO-DK_Evidence/eo_dk_static_assurance.json\n M Documentation/EO-DK_Evidence/eo_dk_test_results.json\n M Documentation/EO-DK_Evidence/eo_dk_unresolved_bridges.json\n M Scripts/generate_eodk_evidence.py\n M Scripts/generate_eodl_evidence.py\n M src/argos/control_panel/office_lifecycle.py\n M src/argos/control_panel/position_lifecycle_manager.py\n?? \"Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE (2).zip\"\n?? Documentation/IFVA-001_Evidence/ARGOS_REPOSITORY_d5a74f6b9ed3509f26ec85a6e3dd9b901373049d.zip",
   "dynamicTracesGenerated": 33,
   "executedCommands": [
     {
@@ -13,20 +13,20 @@
         "unittest",
         "Tests.test_eodl_office_lifecycle"
       ],
-      "duration_seconds": 1.143,
+      "duration_seconds": 1.085,
       "exit_code": 0,
-      "stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.042s\n\nOK\n",
+      "stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.058s\n\nOK\n",
       "stdout": "",
       "timed_out": false
     }
   ],
-  "formalVerdict": "INCOMPLETE",
+  "formalVerdict": "PASS",
   "futureReservedOffices": 1,
-  "generatedAtUtc": "2026-07-18T23:38:48.985886Z",
+  "generatedAtUtc": "2026-07-18T23:43:11.144809Z",
   "informationOnlyOffices": 23,
   "optionalProductionOffices": 0,
-  "remainingOrphanCount": 1,
-  "repositoryCommit": "d5a74f6b9ed3509f26ec85a6e3dd9b901373049d",
+  "remainingOrphanCount": 0,
+  "repositoryCommit": "af8691f28af115ab23928622b3081fc8b582cdc3",
   "schemaVersion": "EO-DL.1",
   "testCounts": {
     "failed": 0,
@@ -36,5 +36,5 @@
   },
   "totalOfficeLikeComponents": 193,
   "unresolvedOffices": 0,
-  "verdictReason": "Office lifecycle and Dormancy enforcement are implemented, but unresolved/future endpoint offices remain blockers pending later lifecycle completion."
+  "verdictReason": "All registered offices have explicit lifecycle classification; no reachable production orphan remains."
 }

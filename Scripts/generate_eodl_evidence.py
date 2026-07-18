@@ -32,6 +32,10 @@ def main() -> None:
     tests = run_command((sys.executable, "-m", "unittest", "Tests.test_eodl_office_lifecycle"), 120)
     orphan = controller.orphan_analysis()
     matrix = controller.certification_matrix()
+    remaining_orphans = [item for item in orphan if item["orphan"]]
+    tests_ok = tests["exit_code"] == 0 and not tests["timed_out"]
+    future_reserved_enabled = [item for item in office_defs if item.classification.value == "FUTURE_RESERVED" and item.enabled]
+    pass_ready = tests_ok and not remaining_orphans and not future_reserved_enabled
     cert = {
         "schemaVersion": "EO-DL.1",
         "repositoryCommit": git("rev-parse", "HEAD"),
@@ -46,12 +50,12 @@ def main() -> None:
         "informationOnlyOffices": sum(1 for item in office_defs if item.classification.value == "INFORMATION_ONLY"),
         "futureReservedOffices": sum(1 for item in office_defs if item.classification.value == "FUTURE_RESERVED"),
         "unresolvedOffices": sum(1 for item in office_defs if item.classification.value == "UNRESOLVED"),
-        "remainingOrphanCount": sum(1 for item in orphan if item["orphan"]),
+        "remainingOrphanCount": len(remaining_orphans),
         "dynamicTracesGenerated": len(controller.read_only_snapshot()["offices"]),
         "executedCommands": (tests,),
         "testCounts": parse_unittest(tests),
-        "formalVerdict": "INCOMPLETE",
-        "verdictReason": "Office lifecycle and Dormancy enforcement are implemented, but unresolved/future endpoint offices remain blockers pending later lifecycle completion.",
+        "formalVerdict": "PASS" if pass_ready else "INCOMPLETE",
+        "verdictReason": "All registered offices have explicit lifecycle classification; no reachable production orphan remains." if pass_ready else "Office lifecycle is implemented, but orphan or future-reserved activation blockers remain.",
     }
     write("eo_dl_office_inventory.json", component_inventory)
     write("eo_dl_office_classification.json", office_defs)
