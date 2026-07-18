@@ -30,6 +30,12 @@ from .enterprise_learning_engine import EnterpriseLearningEngine, LearningObserv
 from .enterprise_configuration_registry import EnterpriseConfigurationRegistry, ConfigurationEntry
 from .enterprise_benchmark_engine import BenchmarkRegistryEntry, EnterpriseBenchmarkEngine
 from .enterprise_certification import CertificationCampaignResult, CertificationFinding, CertificationLevel, CertificationRecord, EnterpriseCertificationHarness, FindingSeverity, OperationalReadinessRecord, ReadinessResult
+from .full_position_lifecycle_runtime import EO_DM_VERSION, LifecycleClosureReport, LifecycleEvidenceStage, LifecycleStageStatus, execute_canonical_position_lifecycle
+from .financial_recovery_authority import EO_DN_VERSION, FinancialRecoveryAuthority, FinancialRecoveryReport, RecoveredState, RecoveryDomainResult, RecoveryVerdict
+from .production_read_surface_registry import EO_DO_VERSION, ProductionReadSurfaceCertification, ProductionReadSurfaceConstitutionalRegistry, ProductionReadSurfaceRecord, ProductionReadVerdict
+from .constitutional_trace_campaign import EO_DP_VERSION, ConstitutionalTrace, ConstitutionalTraceCampaignReport, ExecutedConstitutionalTraceCampaign, TraceVerdict
+from .continuous_paper_endurance import EO_DQ_VERSION, ContinuousPaperEnduranceAuthority, PaperEnduranceCertification, PaperEnduranceVerdict
+from .independent_constitutional_certification import EO_DR_VERSION, EvidenceValidationRecord, IndependentCertificationReport, IndependentConstitutionalCertificationAuthority, IndependentVerdict, ProductionReadinessClass
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
@@ -193,6 +199,37 @@ __all__ = [
     "CertificationFinding",
     "CertificationLevel",
     "CertificationRecord",
+    "EO_DM_VERSION",
+    "LifecycleClosureReport",
+    "LifecycleEvidenceStage",
+    "LifecycleStageStatus",
+    "execute_canonical_position_lifecycle",
+    "EO_DN_VERSION",
+    "FinancialRecoveryAuthority",
+    "FinancialRecoveryReport",
+    "RecoveredState",
+    "RecoveryDomainResult",
+    "RecoveryVerdict",
+    "EO_DO_VERSION",
+    "ProductionReadSurfaceCertification",
+    "ProductionReadSurfaceConstitutionalRegistry",
+    "ProductionReadSurfaceRecord",
+    "ProductionReadVerdict",
+    "EO_DP_VERSION",
+    "ConstitutionalTrace",
+    "ConstitutionalTraceCampaignReport",
+    "ExecutedConstitutionalTraceCampaign",
+    "TraceVerdict",
+    "EO_DQ_VERSION",
+    "ContinuousPaperEnduranceAuthority",
+    "PaperEnduranceCertification",
+    "PaperEnduranceVerdict",
+    "EO_DR_VERSION",
+    "EvidenceValidationRecord",
+    "IndependentCertificationReport",
+    "IndependentConstitutionalCertificationAuthority",
+    "IndependentVerdict",
+    "ProductionReadinessClass",
     "AuthoritativeWriteSite",
     "BlockingLevel",
     "BrokerPositionInvariantMonitor",

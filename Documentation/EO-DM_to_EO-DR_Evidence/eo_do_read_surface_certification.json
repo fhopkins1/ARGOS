@@ -1,0 +1,203 @@
+{
+  "certified_surface_count": 13,
+  "duplicate_registration_rejected": true,
+  "proof_domain_separation_enforced": true,
+  "records": [
+    {
+      "authorities_read": [
+        "Canonical Runtime",
+        "Scheduler",
+        "Workflow Orchestrator"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "018cf6bb55c1ef7313a4e4c4c1b0675dbcc6569d6483a0b617cd33709ff0ba5b",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-RUNTIME-SNAPSHOT-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Commander",
+        "Performance Truth",
+        "Policy"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "986842310474bda0cba95b3f99a24cda560faf5c0c28250e2140dd85e3792aa2",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/commander/strategic-dashboard",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-COMMANDER-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "all read models"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "0a910cf650a3dd2b88470155f71c1719ef2263dc72aa97e208c77287f72b32a5",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-DASHBOARD-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Runtime Provider"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "d5cc1ad8c7212ff2500d4222b65bce5d09a95340136bb88669ade03a109d8af6",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/runtime/provider",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-API-STATUS-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Paper Broker",
+        "Position Registry"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "c1e5dd622d09772533be986227bab07254e4914a0d7b170c116989a8fb8eb0bd",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/trader/bridge",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-BROKER-SUMMARY-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Position Registry",
+        "EO-CK"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "e4fa4d3dc9fda02bf3e7ae5011689f433fc9463d2e2e257c218c595fde46af31",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/position-monitoring/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-POSITION-SUMMARY-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Performance Truth"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "2937aa87c5b5e4e3e4e1f9d5e7f23158008a832e714e11a038ff618079044260",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/performance-truth/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-PERFORMANCE-TRUTH-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Replay"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "a3fef0a7aaec9259090bd98440cfcd821cf0a8607f3134a823312d1ec54b5610",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/market-replay/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-REPLAY-VIEW-001",
+      "truth_domains": [
+        "REPLAY",
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Decision Laboratory"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "edeb64fd050166e94c9c82b73a0fdc3ed88f8776b011f77e74d09a122d717db6",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/decision-laboratory/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-DECISION-LAB-001",
+      "truth_domains": [
+        "SIMULATION",
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Transaction Coordinator"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "7b7e4d52010bfac0e4b60bf0cf9a9d64cf15004c838971e715cc84b770c098f8",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DD-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Truth Promotion Authority"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "d18b3e10b94df167d14c47d0ae04fc68cfc8472a1541df5fcff3d5de46ed55e7",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DC-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "EO-DE"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "910a425181f3e84bfde406c14c58de5e0897dd6312f852dad2aebb0f6031d618",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DE-001",
+      "truth_domains": [
+        "TEST",
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "EO-DF"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "b5b6fc309d27aebc7e59b794674e6b532f166432f3d742bb74ea8504312bb096",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DF-001",
+      "truth_domains": [
+        "TEST",
+        "PAPER"
+      ]
+    }
+  ],
+  "registered_surface_count": 13,
+  "schema_version": "EO-DO.1",
+  "timestamp_utc": "2026-07-18T23:56:22.228222Z",
+  "verdict": "PASS"
+}

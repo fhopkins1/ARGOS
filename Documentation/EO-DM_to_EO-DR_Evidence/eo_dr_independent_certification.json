@@ -1,0 +1,55 @@
+{
+  "blocker_inventory": [
+    "EO-DQ wall-clock extended endurance remains incomplete; accelerated paper endurance passed only."
+  ],
+  "evidence_hash": "838279bea231a72f53846844e2ee1a487e317c13290ba9026c6bea439a74b3f8",
+  "evidence_validations": [
+    {
+      "artifact": "eo_dm_lifecycle_closure.json",
+      "hash_valid": true,
+      "present": true,
+      "reason": "",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "eo_dn_recovery_report.json",
+      "hash_valid": true,
+      "present": true,
+      "reason": "",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "eo_do_read_surface_certification.json",
+      "hash_valid": true,
+      "present": true,
+      "reason": "",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "eo_dp_trace_campaign.json",
+      "hash_valid": true,
+      "present": true,
+      "reason": "",
+      "verdict": "PASS"
+    },
+    {
+      "artifact": "eo_dq_endurance_certification.json",
+      "hash_valid": true,
+      "present": true,
+      "reason": "",
+      "verdict": "PASS"
+    }
+  ],
+  "readiness_class": "Development Only",
+  "repository_fingerprint": "8286350126fca53916fb7d00d40f9f1d7ed855dd9f832828bb73740a5eea7607",
+  "schema_version": "EO-DR.1",
+  "scorecard": {
+    "artifactCount": 5,
+    "blockerCount": 1,
+    "productionLiveTradingCertified": false,
+    "validArtifactCount": 5,
+    "wallClockEnduranceComplete": false
+  },
+  "timestamp_utc": "2026-07-18T23:56:24.342573Z",
+  "verdict": "INCOMPLETE"
+}

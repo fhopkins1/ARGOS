@@ -1,0 +1,167 @@
+{
+  "certification_matrix": [
+    {
+      "category": "Runtime",
+      "evidenceHash": "8799abb4faf46a763b1eda833e1b35d5261ac47a5eff32742e2e532fe16b7b2a",
+      "status": "PASS",
+      "traceId": "EO-DP-RUNTIME"
+    },
+    {
+      "category": "Workflow",
+      "evidenceHash": "f7232ddc844500550a80048bca8261881dec8d9712b3fb93a9f1d9887be692a4",
+      "status": "PASS",
+      "traceId": "EO-DP-WORKFLOW"
+    },
+    {
+      "category": "Bridge",
+      "evidenceHash": "cde6306ad29db7ce13a78daf0f1f98e7332b4fe3846a3749b4e062e72681ebcb",
+      "status": "PASS",
+      "traceId": "EO-DP-BRIDGE"
+    },
+    {
+      "category": "Office",
+      "evidenceHash": "c1b4ed2e53a81b6aa12c132f4b99499cb0bb04da1bf960f79560000619c4ab13",
+      "status": "PASS",
+      "traceId": "EO-DP-OFFICE"
+    },
+    {
+      "category": "Market Data",
+      "evidenceHash": "4c9f4204fad9aebd91acfc967a826cd9017ce210047ee5b4ecc1ff03b30a5fa4",
+      "status": "PASS",
+      "traceId": "EO-DP-MARKET"
+    },
+    {
+      "category": "Financial",
+      "evidenceHash": "fb7b61ef9ccae0d3e4e1e7b186517d69faf98fa314162a2543fa57dc7346c4c4",
+      "status": "PASS",
+      "traceId": "EO-DP-FINANCIAL"
+    },
+    {
+      "category": "Recovery",
+      "evidenceHash": "3f15191e5c1f849b59972c4bab4155443af629e9c6a070f437feb316a617d371",
+      "status": "PASS",
+      "traceId": "EO-DP-RECOVERY"
+    },
+    {
+      "category": "Read Surfaces",
+      "evidenceHash": "4362710c131db90bf4202f528a0a8bce0a448a1f907d413cf8182e25e38261f1",
+      "status": "PASS",
+      "traceId": "EO-DP-READ"
+    },
+    {
+      "category": "Synthetic Truth",
+      "evidenceHash": "333bf698921b1f8ffdc0fc7f1ab979d920cdb0061736b06a571ecdeff0df987c",
+      "status": "PASS",
+      "traceId": "EO-DP-SYNTHETIC"
+    },
+    {
+      "category": "Endurance",
+      "evidenceHash": "a77f9d10a5b96fdd3e3363d01c9aeef31e18982f4b9b8687613c93df1a4a2a46",
+      "status": "PASS",
+      "traceId": "EO-DP-ENDURANCE"
+    }
+  ],
+  "evidence_hash": "735661313256149a5c3b24aed0491af7766ae2a5a4a658eaff2ad97bd321f1d3",
+  "passed_trace_count": 10,
+  "schema_version": "EO-DP.1",
+  "scorecard": {
+    "missingTraceCount": 0,
+    "passRate": 1.0,
+    "repositoryCommit": "dad0f0dd30ff1fcd7618018908b8ee2ec6dc441c"
+  },
+  "timestamp_utc": "2026-07-18T23:56:24.211831Z",
+  "trace_count": 10,
+  "traces": [
+    {
+      "category": "Runtime",
+      "evidence_hash": "8799abb4faf46a763b1eda833e1b35d5261ac47a5eff32742e2e532fe16b7b2a",
+      "evidence_references": [
+        "8799abb4faf46a763b1eda833e1b35d5261ac47a5eff32742e2e532fe16b7b2a"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-RUNTIME"
+    },
+    {
+      "category": "Workflow",
+      "evidence_hash": "f7232ddc844500550a80048bca8261881dec8d9712b3fb93a9f1d9887be692a4",
+      "evidence_references": [
+        "f7232ddc844500550a80048bca8261881dec8d9712b3fb93a9f1d9887be692a4"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-WORKFLOW"
+    },
+    {
+      "category": "Bridge",
+      "evidence_hash": "cde6306ad29db7ce13a78daf0f1f98e7332b4fe3846a3749b4e062e72681ebcb",
+      "evidence_references": [
+        "cde6306ad29db7ce13a78daf0f1f98e7332b4fe3846a3749b4e062e72681ebcb"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-BRIDGE"
+    },
+    {
+      "category": "Office",
+      "evidence_hash": "c1b4ed2e53a81b6aa12c132f4b99499cb0bb04da1bf960f79560000619c4ab13",
+      "evidence_references": [
+        "c1b4ed2e53a81b6aa12c132f4b99499cb0bb04da1bf960f79560000619c4ab13"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-OFFICE"
+    },
+    {
+      "category": "Market Data",
+      "evidence_hash": "4c9f4204fad9aebd91acfc967a826cd9017ce210047ee5b4ecc1ff03b30a5fa4",
+      "evidence_references": [
+        "4c9f4204fad9aebd91acfc967a826cd9017ce210047ee5b4ecc1ff03b30a5fa4"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-MARKET"
+    },
+    {
+      "category": "Financial",
+      "evidence_hash": "fb7b61ef9ccae0d3e4e1e7b186517d69faf98fa314162a2543fa57dc7346c4c4",
+      "evidence_references": [
+        "fb7b61ef9ccae0d3e4e1e7b186517d69faf98fa314162a2543fa57dc7346c4c4"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-FINANCIAL"
+    },
+    {
+      "category": "Recovery",
+      "evidence_hash": "3f15191e5c1f849b59972c4bab4155443af629e9c6a070f437feb316a617d371",
+      "evidence_references": [
+        "3f15191e5c1f849b59972c4bab4155443af629e9c6a070f437feb316a617d371"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-RECOVERY"
+    },
+    {
+      "category": "Read Surfaces",
+      "evidence_hash": "4362710c131db90bf4202f528a0a8bce0a448a1f907d413cf8182e25e38261f1",
+      "evidence_references": [
+        "4362710c131db90bf4202f528a0a8bce0a448a1f907d413cf8182e25e38261f1"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-READ"
+    },
+    {
+      "category": "Synthetic Truth",
+      "evidence_hash": "333bf698921b1f8ffdc0fc7f1ab979d920cdb0061736b06a571ecdeff0df987c",
+      "evidence_references": [
+        "333bf698921b1f8ffdc0fc7f1ab979d920cdb0061736b06a571ecdeff0df987c"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-SYNTHETIC"
+    },
+    {
+      "category": "Endurance",
+      "evidence_hash": "a77f9d10a5b96fdd3e3363d01c9aeef31e18982f4b9b8687613c93df1a4a2a46",
+      "evidence_references": [
+        "a77f9d10a5b96fdd3e3363d01c9aeef31e18982f4b9b8687613c93df1a4a2a46"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-ENDURANCE"
+    }
+  ],
+  "verdict": "PASS"
+}
