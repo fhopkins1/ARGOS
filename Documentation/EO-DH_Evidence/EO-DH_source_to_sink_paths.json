@@ -1,0 +1,538 @@
+[
+  {
+    "blocked": true,
+    "bridge_ids": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "evidence": [
+      "Synthetic provider is labeled APPROVED_FOR_TEST and must remain quarantined from paper decisions."
+    ],
+    "path_id": "PATH-SYN-MARKET-001",
+    "reachability": "PAPER_DECISION_REACHABLE",
+    "sink": "Analytical Offices",
+    "source_class": "SYNTHETIC_MARKET_DATA",
+    "source_file": "src/argos/control_panel/market_data_provider.py",
+    "source_symbol": "MarketDataProviderAbstractionLayer"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "evidence": [
+      "Mock provider is still primary paper source; EO-DH exposes it as a blocker until authoritative provider or explicit operator certification exists."
+    ],
+    "path_id": "PATH-SYN-MARKET-002",
+    "reachability": "PAPER_DECISION_REACHABLE",
+    "sink": "Analytical Offices",
+    "source_class": "SYNTHETIC_MARKET_DATA",
+    "source_file": "src/argos/control_panel/market_data_provider.py",
+    "source_symbol": "get_quote"
+  },
+  {
+    "blocked": true,
+    "bridge_ids": [
+      "BRIDGE-COST-API-001"
+    ],
+    "evidence": [
+      "Gateway dry-run output is labeled fallback and rejected by promotion controls when authoritative evidence is required."
+    ],
+    "path_id": "PATH-SYN-API-001",
+    "reachability": "PAPER_DECISION_REACHABLE",
+    "sink": "Commander",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src/argos/control_panel/api_execution_gateway.py",
+    "source_symbol": "_fallback_or_blocked_response"
+  },
+  {
+    "blocked": true,
+    "bridge_ids": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-EOCK-SURVEILLANCE-001",
+      "BRIDGE-SURVEILLANCE-EXIT-001",
+      "BRIDGE-EXIT-AUTH-001",
+      "BRIDGE-EXIT-TRADER-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001",
+      "BRIDGE-CLOSE-CPT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "evidence": [
+      "EO-DH now requires authoritative fill IDs for buy and sell position mutations."
+    ],
+    "path_id": "PATH-SYN-POSITION-001",
+    "reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+    "sink": "Position Registry",
+    "source_class": "SYNTHETIC_POSITION",
+    "source_file": "src/argos/control_panel/position_registry.py",
+    "source_symbol": "PositionRegistry.create_from_execution"
+  },
+  {
+    "blocked": true,
+    "bridge_ids": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CLOSE-CPT-001",
+      "BRIDGE-CPT-PT-001",
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "evidence": [
+      "EO-DH now rejects positive filled quantity when no broker fill evidence is present."
+    ],
+    "path_id": "PATH-SYN-TRUTH-001",
+    "reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+    "sink": "PerformanceTruthEngine",
+    "source_class": "SYNTHETIC_PERFORMANCE_TRUTH",
+    "source_file": "src/argos/control_panel/performance_truth_engine.py",
+    "source_symbol": "record_broker_authoritative_order"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "evidence": [
+      "Compatibility state is read-facing and must not create or persist authoritative paper truth."
+    ],
+    "path_id": "PATH-SYN-DASHBOARD-001",
+    "reachability": "COMPATIBILITY_REACHABLE",
+    "sink": "Commander",
+    "source_class": "SYNTHETIC_DASHBOARD_STATE",
+    "source_file": "src/argos/control_panel/runtime.py",
+    "source_symbol": "ControlPanelRuntime.state"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "evidence": [
+      "EO-DB recovery bridge is conditional; missing financial evidence must remain unresolved rather than reconstructed."
+    ],
+    "path_id": "PATH-SYN-RECOVERY-001",
+    "reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+    "sink": "Runtime Provider",
+    "source_class": "SYNTHETIC_RECOVERY",
+    "source_file": "src/argos/control_panel/enterprise_persistence.py",
+    "source_symbol": "recover"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0008",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\__init__.py",
+    "source_symbol": "__init__"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0009",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\api_runtime_monitor.py",
+    "source_symbol": "api_runtime_monitor"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0010",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\blue_ocean_intelligence_office.py",
+    "source_symbol": "blue_ocean_intelligence_office"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0011",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\cognitive_pilot.py",
+    "source_symbol": "cognitive_pilot"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0012",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\commander_strategic_dashboard.py",
+    "source_symbol": "commander_strategic_dashboard"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0013",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\decision_object_schema.py",
+    "source_symbol": "decision_object_schema"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0014",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\disruption_intelligence_office.py",
+    "source_symbol": "disruption_intelligence_office"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0015",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\enterprise_benchmark_engine.py",
+    "source_symbol": "enterprise_benchmark_engine"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0016",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\enterprise_certification.py",
+    "source_symbol": "enterprise_certification"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0017",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\enterprise_configuration_registry.py",
+    "source_symbol": "enterprise_configuration_registry"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0018",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\enterprise_failure_recovery.py",
+    "source_symbol": "enterprise_failure_recovery"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0019",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\enterprise_reality_calibration.py",
+    "source_symbol": "enterprise_reality_calibration"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0020",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\enterprise_reproducibility_framework.py",
+    "source_symbol": "enterprise_reproducibility_framework"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0021",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\fault_injection_lab.py",
+    "source_symbol": "fault_injection_lab"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0022",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\information_freshness_engine.py",
+    "source_symbol": "information_freshness_engine"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0023",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\long_duration_operations_lab.py",
+    "source_symbol": "long_duration_operations_lab"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0024",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\mission_planner.py",
+    "source_symbol": "mission_planner"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0025",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\monte_carlo_portfolio_engine.py",
+    "source_symbol": "monte_carlo_portfolio_engine"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0026",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\office_duty_officer.py",
+    "source_symbol": "office_duty_officer"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0027",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\performance_truth_engine.py",
+    "source_symbol": "performance_truth_engine"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0028",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\runtime.py",
+    "source_symbol": "runtime"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0029",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\runtime_bridge_certification.py",
+    "source_symbol": "runtime_bridge_certification"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0030",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\strategic_intelligence_command.py",
+    "source_symbol": "strategic_intelligence_command"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0031",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\synthetic_truth_quarantine.py",
+    "source_symbol": "synthetic_truth_quarantine"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0032",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\truth_domain.py",
+    "source_symbol": "truth_domain"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0033",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\truth_promotion.py",
+    "source_symbol": "truth_promotion"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0034",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\control_panel\\workflow_runtime_monitor.py",
+    "source_symbol": "workflow_runtime_monitor"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0035",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\historian\\readiness.py",
+    "source_symbol": "readiness"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0036",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\librarian\\readiness.py",
+    "source_symbol": "readiness"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0037",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\risk\\readiness.py",
+    "source_symbol": "readiness"
+  },
+  {
+    "blocked": false,
+    "bridge_ids": [],
+    "evidence": [
+      "source and sink terms share module"
+    ],
+    "path_id": "PATH-STATIC-0038",
+    "reachability": "UNKNOWN_REACHABILITY",
+    "sink": "authoritative sink candidate",
+    "source_class": "UNSAFE_FALLBACK",
+    "source_file": "src\\argos\\trader\\readiness.py",
+    "source_symbol": "readiness"
+  }
+]

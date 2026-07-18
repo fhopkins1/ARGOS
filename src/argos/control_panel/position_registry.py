@@ -229,6 +229,9 @@ class PositionRegistry:
         existing = self._positions.get(position_id)
         filled = float(order.get("filled_quantity", 0.0) or 0.0)
         fill_ids = _fill_ids(order)
+        if filled > 0 and not fill_ids:
+            self._audit("position_create_rejected", position_id, ("missing authoritative fill id",), str(order.get("workflow_id", "")))
+            raise ValueError("authoritative fill id required for position mutation")
         if existing and fill_ids and set(fill_ids).issubset(set(existing.fill_ids)):
             self._audit("duplicate_fill_rejected", position_id, fill_ids, str(order.get("workflow_id", "")))
             return existing
@@ -314,6 +317,9 @@ class PositionRegistry:
             raise ValueError(f"unknown position: {position_id}")
         sold = float(order.get("filled_quantity", 0.0) or 0.0)
         fill_ids = _fill_ids(order)
+        if sold > 0 and not fill_ids:
+            self._audit("position_sell_rejected", position_id, ("missing authoritative fill id",), str(order.get("workflow_id", "")))
+            raise ValueError("authoritative fill id required for position mutation")
         if fill_ids and set(fill_ids).issubset(set(existing.fill_ids)):
             self._audit("duplicate_fill_rejected", position_id, fill_ids, str(order.get("workflow_id", "")))
             return existing

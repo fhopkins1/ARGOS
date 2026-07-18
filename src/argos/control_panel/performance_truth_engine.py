@@ -451,6 +451,18 @@ class PerformanceTruthEngine:
             return {"accepted": False, "reason": "DECISION_PROVENANCE_REJECTED", "codes": provenance.codes}
         status = str(broker_order.get("status", "")).upper()
         filled_quantity = round(float(broker_order.get("filled_quantity", 0.0) or 0.0), 4)
+        if filled_quantity > 0 and not fills:
+            self._reject_truth_record(
+                record_type="broker_authoritative_order",
+                source_system="DeterministicPaperBrokerage",
+                workflow_id=str(ticket.get("workflow_id", "")),
+                decision_object_id=str(ticket.get("decision_object_id", "")),
+                token_id=str(ticket.get("workflow_token", "")),
+                codes=("AUTHORITATIVE_FILL_EVIDENCE_REQUIRED",),
+                execution_environment=execution_environment,
+                timestamp=timestamp,
+            )
+            return {"accepted": False, "reason": "AUTHORITATIVE_FILL_EVIDENCE_REQUIRED", "codes": ("AUTHORITATIVE_FILL_EVIDENCE_REQUIRED",)}
         average_fill_price = round(float(broker_order.get("average_fill_price", 0.0) or 0.0), 4)
         reference_mid = round((float(market.get("bid", average_fill_price) or average_fill_price) + float(market.get("ask", average_fill_price) or average_fill_price)) / 2, 4)
         slippage = round(sum(float(item.get("slippage", 0.0) or 0.0) for item in fills), 4)
