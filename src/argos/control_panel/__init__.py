@@ -38,6 +38,7 @@ from .long_duration_operations_lab import AdmissionEnvironment, AdmissionResult,
 from .read_only_integrity import DigestProfile, EO_DG_VERSION, ProtectedStateDomain, ReadCertificationStatus, ReadConsistencyLevel, ReadCounterSnapshot, ReadEvidenceRecord, ReadFindingClass, ReadIntegrityEvidenceStore, ReadIntegrityResult, ReadIntegritySeverity, ReadIntegrityStatus, ReadOnlyIntegrityGuard as EODGReadOnlyIntegrityGuard, ReadSurfaceDefinition, ReadSurfaceRegistry, ReadSurfaceType, RouteAuditFinding, SemanticDigestEngine, StaticReadArchitectureReport, protected_state_registry, read_surface_registry, semantic_digest_profiles
 from .runtime_bridge_certification import BridgeCertificationState, BridgeFindingClass, BridgeFindingSeverity, BridgeTraceEvent, EO_DB_VERSION, OfficeInventoryRecord, RuntimeBridgeCertificationHarness, RuntimeBridgeCertificationReport, RuntimeBridgeDefinition, RuntimeBridgeFinding, RuntimeBridgeRegistry, StaticCallEdge, office_inventory, required_runtime_bridge_matrix, static_call_graph
 from .synthetic_truth_quarantine import DegradedDataRecord, DynamicSyntheticAttackResult, EO_DH_VERSION, FallbackPolicy, QuarantineController, QuarantineNamespace, SourceToSinkPath, StaticSyntheticCandidate, SyntheticFindingClass, SyntheticFindingStatus, SyntheticReachability, SyntheticSeverity, SyntheticTruthAuditReport, SyntheticTruthCategory, SyntheticTruthEradicationEngine, SyntheticTruthFinding, SyntheticTruthRegistry, UnknownState, UnknownStateRecord, baseline_synthetic_truth_findings, degraded_record, load_eodb_reachability, quarantine_namespaces, scan_synthetic_candidates, source_to_sink_analysis, unavailable_state
+from .test_evidence_office import AuditScorecard, ConstitutionalRequirement, ConstitutionalRequirementRegistry, CoverageStatus, EO_DI_VERSION, EOAcceptanceCriterion, EvidenceClass, EvidenceRecord, RequirementClass, TestCompletenessEvidenceOffice, TestExecutionResult, TestInventory, TestInventoryRecord, TestStrength, TraceabilityRow, VerificationDefect, VerificationDefectClass, VerificationDefectStatus, VerificationSeverity, classify_test_strength, constitutional_requirement_catalog, eo_acceptance_criteria
 from .enterprise_communications_bus import BusHealthState, CompatibilityMode, DeadLetterRecord, DeliveryRecord, DeliveryState, EnterpriseCommunicationsBus, EnterpriseMessageEnvelope, EnterpriseMessageKind, MessageAuditRecord, MessageMode, MessageSchemaRegistration, MessageSchemaRegistry, MessageSubscription, PublishResult, QuarantineRecord, ReplayStatus
 from .enterprise_cost_governor import BudgetAccount, BudgetCategory, BudgetPeriodType, BudgetScope, BudgetState, CircuitBreakerRecord, CostAuthorizationDecision, CostAuthorizationRecord, CostAuthorizationRequest, CostLedgerEntry, CostReservation, CostReservationRequest, CostType, CostUsageRecord, EnterpriseBudgetPolicy, EnterpriseCostGovernor, ReservationState
 from .enterprise_doctrine_policy_manager import ActivationStrategy, AcknowledgementState, CommanderPolicyDirective, CompatibilityDecision, DoctrineType, DriftClassification, EnterpriseDoctrinePolicyManager, EnterpriseDoctrineRecord, EnterprisePolicyDefinition, EnterprisePolicyVersion, PolicyActivationPlan, PolicyApprovalRecord, PolicyCompatibilityResult, PolicyDistributionRecord, PolicyDomain, PolicyDriftRecord, PolicyErrorCode, PolicyLevel, PolicyManagementHealthState, PolicySchemaDefinition, PolicySchemaRegistry, PolicyScope, PolicyScopeType, PolicyStatus, ResolvedPolicyConfiguration
@@ -330,6 +331,28 @@ __all__ = [
     "scan_synthetic_candidates",
     "source_to_sink_analysis",
     "unavailable_state",
+    "AuditScorecard",
+    "ConstitutionalRequirement",
+    "ConstitutionalRequirementRegistry",
+    "CoverageStatus",
+    "EO_DI_VERSION",
+    "EOAcceptanceCriterion",
+    "EvidenceClass",
+    "EvidenceRecord",
+    "RequirementClass",
+    "TestCompletenessEvidenceOffice",
+    "TestExecutionResult",
+    "TestInventory",
+    "TestInventoryRecord",
+    "TestStrength",
+    "TraceabilityRow",
+    "VerificationDefect",
+    "VerificationDefectClass",
+    "VerificationDefectStatus",
+    "VerificationSeverity",
+    "classify_test_strength",
+    "constitutional_requirement_catalog",
+    "eo_acceptance_criteria",
     "authoritative_write_site_registry",
     "constitutional_authority_registry",
     "constitutional_invariant_catalog",

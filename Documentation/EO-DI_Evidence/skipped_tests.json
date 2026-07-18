@@ -1,0 +1,438 @@
+[
+  {
+    "actual_assertion_count": 3,
+    "bridge_ids": [],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertEqual",
+      "assertFalse",
+      "assertTrue"
+    ],
+    "file": "Tests\\test_academy_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_academy_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-ACADEMY-READINESS-TEST-ACADEMY-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 2,
+    "bridge_ids": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-ANALYST-RISK-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertFalse"
+    ],
+    "file": "Tests\\test_analyst_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_analyst_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-ANALYST-READINESS-TEST-ANALYST-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 4,
+    "bridge_ids": [
+      "BRIDGE-ANALYST-RISK-001",
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertEqual",
+      "assertTrue",
+      "assertIn"
+    ],
+    "file": "Tests\\test_curriculum_office.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [
+      "REQ-RUNTIME-001",
+      "REQ-BROKER-001",
+      "REQ-RECOVERY-001"
+    ],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_personalized_pathway_skips_demonstrated_competencies_and_preserves_prerequisite_order",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-CURRICULUM-OFFICE-TEST-PERSONALIZED-PATHWAY-SKIPS-DEMONSTRATED-COMPETENCIES-AND-PRESERVES-PREREQUISITE-ORDER",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 2,
+    "bridge_ids": [],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertFalse"
+    ],
+    "file": "Tests\\test_executive_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_executive_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-EXECUTIVE-READINESS-TEST-EXECUTIVE-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 2,
+    "bridge_ids": [],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertFalse"
+    ],
+    "file": "Tests\\test_foundation_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_readiness_blocks_when_any_test_fails",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-FOUNDATION-READINESS-TEST-READINESS-BLOCKS-WHEN-ANY-TEST-FAILS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 3,
+    "bridge_ids": [
+      "BRIDGE-PT-HISTORIAN-001",
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertEqual",
+      "assertFalse",
+      "assertTrue"
+    ],
+    "file": "Tests\\test_historian_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_historian_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-HISTORIAN-READINESS-TEST-HISTORIAN-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 3,
+    "bridge_ids": [],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertEqual",
+      "assertFalse",
+      "assertTrue"
+    ],
+    "file": "Tests\\test_librarian_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_librarian_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-LIBRARIAN-READINESS-TEST-LIBRARIAN-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 2,
+    "bridge_ids": [
+      "BRIDGE-ANALYST-RISK-001",
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertFalse"
+    ],
+    "file": "Tests\\test_risk_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_risk_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-RISK-READINESS-TEST-RISK-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 2,
+    "bridge_ids": [
+      "BRIDGE-SI-SEEKER-001",
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertFalse"
+    ],
+    "file": "Tests\\test_seeker_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_seeker_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-SEEKER-READINESS-TEST-SEEKER-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  },
+  {
+    "actual_assertion_count": 5,
+    "bridge_ids": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-TRADER-BROKER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "canonical_runtime_reachability": false,
+    "compatibility_dependencies": [],
+    "evidence_path": "Documentation/EO-DI_Evidence/test_results.json",
+    "execution_time": 0.0,
+    "expected_assertions": [
+      "assertEqual",
+      "assertFalse",
+      "assertTrue"
+    ],
+    "file": "Tests\\test_trader_readiness.py",
+    "fixture_dependencies": [
+      "test_"
+    ],
+    "flaky_status": "unknown",
+    "invariant_ids": [],
+    "last_executed_commit": "51b3247374377fcbf882dc5f4595e735efbfe2f3",
+    "last_result": "unknown",
+    "mock_dependencies": [],
+    "proof_dependencies": [],
+    "quarantined_status": "not_quarantined",
+    "replay_dependencies": [],
+    "requirement_ids": [],
+    "runtime_mode": "test",
+    "schema_version": "EO-DI.1",
+    "side_effects": [
+      "isolated test state"
+    ],
+    "simulation_dependencies": [],
+    "skipped_status": "skipped",
+    "strength_classification": "LEVEL_1_LOCAL_UNIT",
+    "subsystem": "ARGOS",
+    "symbol": "test_trader_readiness_blocks_failed_tests",
+    "test_framework": "unittest",
+    "test_id": "TEST-TEST-TRADER-READINESS-TEST-TRADER-READINESS-BLOCKS-FAILED-TESTS",
+    "test_type": "LEVEL_1_LOCAL_UNIT",
+    "truth_domains": [
+      "TEST"
+    ]
+  }
+]

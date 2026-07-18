@@ -1,0 +1,601 @@
+[
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [],
+    "linked_invariant_ids": [
+      "INV-LAWVII-001"
+    ],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Workflow Orchestrator",
+    "owning_subsystem": "Workflow Orchestrator",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_4_CANONICAL_RUNTIME",
+    "requirement_class": "LAW VII",
+    "requirement_id": "REQ-LAWVII-001",
+    "requirement_text": "Workflow token exclusivity",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "EO-DA",
+    "source_engineering_order": "EO-DA",
+    "source_section": "LAW VII",
+    "superseded_by": "",
+    "title": "Workflow token exclusivity"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PROVEN",
+    "linked_bridge_ids": [],
+    "linked_invariant_ids": [
+      "INV-RUNTIME-001",
+      "INV-LIVE-001"
+    ],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Runtime Provider",
+    "owning_subsystem": "Runtime Provider",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_4_CANONICAL_RUNTIME",
+    "requirement_class": "runtime uniqueness",
+    "requirement_id": "REQ-RUNTIME-001",
+    "requirement_text": "Single canonical runtime and live disabled",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "CRITICAL",
+    "source_document": "EO-DA/OR-005",
+    "source_engineering_order": "OR-005",
+    "source_section": "runtime uniqueness",
+    "superseded_by": "",
+    "title": "Single canonical runtime and live disabled"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001",
+      "BRIDGE-MISSION-WORKFLOW-001",
+      "BRIDGE-WORKFLOW-OFFICE-001",
+      "BRIDGE-SI-SEEKER-001",
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-ANALYST-RISK-001",
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-TRADER-BROKER-001",
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-EOCK-SURVEILLANCE-001",
+      "BRIDGE-SURVEILLANCE-EXIT-001",
+      "BRIDGE-EXIT-AUTH-001",
+      "BRIDGE-EXIT-TRADER-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001",
+      "BRIDGE-CLOSE-CPT-001",
+      "BRIDGE-CPT-PT-001",
+      "BRIDGE-PT-HISTORIAN-001",
+      "BRIDGE-HISTORIAN-LEARNING-001",
+      "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "BRIDGE-COST-API-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001",
+      "BRIDGE-REPLAY-LAB-001",
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "linked_invariant_ids": [],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Runtime Bridge Certification",
+    "owning_subsystem": "Runtime Bridge Certification",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_5_CONSTITUTIONAL_END_TO_END",
+    "requirement_class": "bridge requirement",
+    "requirement_id": "REQ-BRIDGE-001",
+    "requirement_text": "Required bridges have canonical evidence",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "EO-DB",
+    "source_engineering_order": "EO-DB",
+    "source_section": "bridge matrix",
+    "superseded_by": "",
+    "title": "Required bridges have canonical evidence"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "linked_invariant_ids": [
+      "INV-BROKER-001"
+    ],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Paper Broker",
+    "owning_subsystem": "Paper Broker",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_3_INTEGRATION",
+    "requirement_class": "Broker authority",
+    "requirement_id": "REQ-BROKER-001",
+    "requirement_text": "Broker owns paper orders and fills",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "OR-003",
+    "source_engineering_order": "OR-003",
+    "source_section": "Broker authority",
+    "superseded_by": "",
+    "title": "Broker owns paper orders and fills"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "linked_invariant_ids": [
+      "INV-POSITION-001"
+    ],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [
+      "SYN-POSITION-001"
+    ],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Position Registry",
+    "owning_subsystem": "Position Registry",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_3_INTEGRATION",
+    "requirement_class": "position authority",
+    "requirement_id": "REQ-POSITION-001",
+    "requirement_text": "Positions require authoritative fill lineage",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "OR-004/EO-DH",
+    "source_engineering_order": "EO-DH",
+    "source_section": "Position authority",
+    "superseded_by": "",
+    "title": "Positions require authoritative fill lineage"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [],
+    "linked_invariant_ids": [],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [
+      "SYN-MARKET-001",
+      "SYN-MARKET-002",
+      "SYN-DECISION-001",
+      "SYN-API-001",
+      "SYN-POSITION-001",
+      "SYN-TRUTH-001",
+      "SYN-CPT-001",
+      "SYN-DASHBOARD-001",
+      "SYN-RECOVERY-001",
+      "SYN-REPLAY-001"
+    ],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Synthetic Truth Quarantine",
+    "owning_subsystem": "Synthetic Truth Quarantine",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_6_FAULT_AND_RECOVERY",
+    "requirement_class": "synthetic-truth prohibition",
+    "requirement_id": "REQ-SYNTHETIC-001",
+    "requirement_text": "Synthetic truth cannot reach paper sinks",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "EO-DH",
+    "source_engineering_order": "EO-DH",
+    "source_section": "synthetic truth",
+    "superseded_by": "",
+    "title": "Synthetic truth cannot reach paper sinks"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PROVEN",
+    "linked_bridge_ids": [],
+    "linked_invariant_ids": [
+      "INV-READONLY-001"
+    ],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Read-Only Integrity Guard",
+    "owning_subsystem": "Read-Only Integrity Guard",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_4_CANONICAL_RUNTIME",
+    "requirement_class": "read-only integrity",
+    "requirement_id": "REQ-READONLY-001",
+    "requirement_text": "Read surfaces do not mutate authoritative state",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "EO-DG",
+    "source_engineering_order": "EO-DG",
+    "source_section": "read-only integrity",
+    "superseded_by": "",
+    "title": "Read surfaces do not mutate authoritative state"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-POSITION-PT-001"
+    ],
+    "linked_invariant_ids": [],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [
+      "OPENING_FILL",
+      "PARTIAL_OPENING_FILL",
+      "POSITION_INCREASE",
+      "PARTIAL_REDUCTION",
+      "FULL_CLOSURE",
+      "ORDER_CANCELLATION",
+      "ORDER_EXPIRATION",
+      "SETTLEMENT",
+      "REVERSAL",
+      "CORPORATE_ACTION",
+      "RECOVERY",
+      "RECONCILIATION_CORRECTION"
+    ],
+    "owning_constitutional_authority": "Transaction Coordinator",
+    "owning_subsystem": "Transaction Coordinator",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_6_FAULT_AND_RECOVERY",
+    "requirement_class": "transaction integrity",
+    "requirement_id": "REQ-TRANSACTION-001",
+    "requirement_text": "Financial cross-owner state uses EO-DD",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "EO-DD",
+    "source_engineering_order": "EO-DD",
+    "source_section": "transaction integrity",
+    "superseded_by": "",
+    "title": "Financial cross-owner state uses EO-DD"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "PARTIALLY_PROVEN",
+    "linked_bridge_ids": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "linked_invariant_ids": [],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [
+      "SYN-RECOVERY-001"
+    ],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Persistence and Recovery",
+    "owning_subsystem": "Persistence and Recovery",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_6_FAULT_AND_RECOVERY",
+    "requirement_class": "recovery",
+    "requirement_id": "REQ-RECOVERY-001",
+    "requirement_text": "Recovery is deterministic and non-inventive",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "OR-006/EO-DB/EO-DH",
+    "source_engineering_order": "OR-006",
+    "source_section": "recovery",
+    "superseded_by": "",
+    "title": "Recovery is deterministic and non-inventive"
+  },
+  {
+    "applicable_operating_modes": [
+      "paper"
+    ],
+    "applicable_truth_domains": [
+      "PAPER"
+    ],
+    "blocking_status": "BLOCKING",
+    "certification_relevance": "EO-DJ certification input",
+    "current_coverage_status": "IMPLEMENTED_NOT_PROVEN",
+    "linked_bridge_ids": [],
+    "linked_invariant_ids": [],
+    "linked_persistence_entities": [
+      "enterprise_persistence"
+    ],
+    "linked_synthetic_truth_finding_ids": [],
+    "linked_transaction_types": [],
+    "owning_constitutional_authority": "Long Duration Operations Lab",
+    "owning_subsystem": "Long Duration Operations Lab",
+    "required_dynamic_evidence": [
+      "runtime/test evidence"
+    ],
+    "required_endurance_evidence": [
+      "endurance evidence where applicable"
+    ],
+    "required_fault_evidence": [
+      "fault evidence where applicable"
+    ],
+    "required_implementation_evidence": [
+      "source module"
+    ],
+    "required_read_only_evidence": [
+      "read digest where applicable"
+    ],
+    "required_recovery_evidence": [
+      "recovery evidence where applicable"
+    ],
+    "required_static_evidence": [
+      "static registry"
+    ],
+    "required_test_strength": "LEVEL_7_LONG_DURATION_OPERATION",
+    "requirement_class": "resource boundedness",
+    "requirement_id": "REQ-ENDURANCE-001",
+    "requirement_text": "Long-duration evidence is bounded and honest",
+    "schema_version": "EO-DI.1",
+    "severity_if_violated": "MAJOR",
+    "source_document": "EO-DF",
+    "source_engineering_order": "EO-DF",
+    "source_section": "endurance",
+    "superseded_by": "",
+    "title": "Long-duration evidence is bounded and honest"
+  }
+]
