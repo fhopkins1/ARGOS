@@ -1,0 +1,26 @@
+{
+  "seekerToAnalyst": {
+    "artifact_id": "SEEKER-REPORT-1",
+    "audit_record_ids": [
+      "AUD-D34285E3E93A"
+    ],
+    "bridge_id": "BRIDGE-SEEKER-ANALYST-001",
+    "completed_at_utc": "2026-07-18T23:38:47.378820Z",
+    "destination": "Analyst",
+    "destination_acceptance_status": "ACCEPTED",
+    "deterministic_result_hash": "d34285e3e93a938a7176d635c4e1bf7aeae07ed53314e6a7171ec2a55b050e9c",
+    "durable_intent_id": "BRIDGE-INTENT-733B676848899A42",
+    "execution_id": "EO-DK-EXEC-430E147D809F",
+    "prior_owner": "Seeker",
+    "recovery_status": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_code": null,
+    "requested_at_utc": "2026-07-18T23:38:47.378755Z",
+    "resulting_owner": "Analyst",
+    "resulting_workflow_state": "COMPLETE",
+    "schema_version": "EO-DK.1",
+    "source": "Seeker",
+    "source_release_status": "RELEASED_TO_DORMANT",
+    "status": "ACCEPTED",
+    "workflow_id": "WF-EODK"
+  }
+}

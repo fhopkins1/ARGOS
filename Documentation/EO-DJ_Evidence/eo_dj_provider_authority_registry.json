@@ -1,0 +1,115 @@
+[
+  {
+    "allowed_proof_domains": [
+      "PAPER_AUTHORITATIVE"
+    ],
+    "configuration_requirements": [
+      "provider_adapter",
+      "credentials_reference"
+    ],
+    "enabled": false,
+    "implementation": "operator_configured_adapter",
+    "policy_version": "EO-DJ.1",
+    "provider_classification": "AUTHORITATIVE_EXTERNAL",
+    "provider_id": "external-paper",
+    "provider_name": "External Paper Market Data",
+    "schema_version": "EO-DJ.1",
+    "supported_markets": [
+      "US"
+    ],
+    "supported_observation_types": [
+      "QUOTE",
+      "MARKET_STATUS"
+    ]
+  },
+  {
+    "allowed_proof_domains": [
+      "LIVE_AUTHORITATIVE"
+    ],
+    "configuration_requirements": [
+      "provider_adapter",
+      "credentials_reference",
+      "live_approval"
+    ],
+    "enabled": false,
+    "implementation": "operator_configured_adapter",
+    "policy_version": "EO-DJ.1",
+    "provider_classification": "AUTHORITATIVE_EXTERNAL",
+    "provider_id": "external-live",
+    "provider_name": "External Live Market Data",
+    "schema_version": "EO-DJ.1",
+    "supported_markets": [
+      "US"
+    ],
+    "supported_observation_types": [
+      "QUOTE",
+      "MARKET_STATUS"
+    ]
+  },
+  {
+    "allowed_proof_domains": [
+      "REPLAY"
+    ],
+    "configuration_requirements": [
+      "dataset_id"
+    ],
+    "enabled": true,
+    "implementation": "NonProductionMarketDataProvider",
+    "policy_version": "EO-DJ.1",
+    "provider_classification": "REPLAY_INPUT",
+    "provider_id": "replay-market-data",
+    "provider_name": "Replay Market Data",
+    "schema_version": "EO-DJ.1",
+    "supported_markets": [
+      "REPLAY"
+    ],
+    "supported_observation_types": [
+      "QUOTE",
+      "MARKET_STATUS"
+    ]
+  },
+  {
+    "allowed_proof_domains": [
+      "TEST"
+    ],
+    "configuration_requirements": [
+      "fixture_id"
+    ],
+    "enabled": true,
+    "implementation": "NonProductionMarketDataProvider",
+    "policy_version": "EO-DJ.1",
+    "provider_classification": "TEST_FIXTURE",
+    "provider_id": "test-market-data",
+    "provider_name": "Test Market Data Fixture",
+    "schema_version": "EO-DJ.1",
+    "supported_markets": [
+      "TEST"
+    ],
+    "supported_observation_types": [
+      "QUOTE",
+      "MARKET_STATUS"
+    ]
+  },
+  {
+    "allowed_proof_domains": [
+      "DEVELOPMENT_SIMULATION"
+    ],
+    "configuration_requirements": [
+      "explicit_development_mode"
+    ],
+    "enabled": true,
+    "implementation": "NonProductionMarketDataProvider",
+    "policy_version": "EO-DJ.1",
+    "provider_classification": "DEVELOPMENT_SIMULATION",
+    "provider_id": "development-simulation-market-data",
+    "provider_name": "Development Simulation Market Data",
+    "schema_version": "EO-DJ.1",
+    "supported_markets": [
+      "DEV"
+    ],
+    "supported_observation_types": [
+      "QUOTE",
+      "MARKET_STATUS"
+    ]
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "decisionGuard": {
+    "accepted": true,
+    "message": "decision guard accepted",
+    "observation_id": "MDOBS-6609A80205B333D381C12F53",
+    "proof_domain": "PAPER_AUTHORITATIVE",
+    "provider_id": "eodj-controlled-authoritative",
+    "rejection_code": null
+  },
+  "events": [
+    {
+      "correlationId": "MD-CORR-fdfadd3ce6e0",
+      "decisionObjectId": "DO-EO-DJ",
+      "eventId": "MD-EVT-000001",
+      "eventType": "observation_requested",
+      "instrumentId": "AAPL",
+      "observationId": "",
+      "observationType": "QUOTE",
+      "proofDomain": "PAPER_AUTHORITATIVE",
+      "providerAuthority": "UNKNOWN",
+      "providerId": "eodj-controlled-authoritative",
+      "requestId": "MD-REQ-73c04c04317b",
+      "timestampUtc": "2026-07-18T23:38:47.391692Z",
+      "workflowId": "WF-EO-DJ"
+    },
+    {
+      "correlationId": "MD-CORR-fdfadd3ce6e0",
+      "decisionObjectId": "DO-EO-DJ",
+      "eventId": "MD-EVT-000002",
+      "eventType": "observation_persisted",
+      "instrumentId": "AAPL",
+      "observationId": "MDOBS-6609A80205B333D381C12F53",
+      "observationType": "QUOTE",
+      "proofDomain": "PAPER_AUTHORITATIVE",
+      "providerAuthority": "AUTHORITATIVE_EXTERNAL",
+      "providerId": "eodj-controlled-authoritative",
+      "requestId": "MD-REQ-73c04c04317b",
+      "timestampUtc": "2026-07-18T23:38:47.391794Z",
+      "workflowId": "WF-EO-DJ"
+    }
+  ],
+  "gatewayResult": {
+    "accepted": true,
+    "audit_events": [
+      {
+        "correlationId": "MD-CORR-fdfadd3ce6e0",
+        "decisionObjectId": "DO-EO-DJ",
+        "eventId": "MD-EVT-000001",
+        "eventType": "observation_requested",
+        "instrumentId": "AAPL",
+        "observationId": "",
+        "observationType": "QUOTE",
+        "proofDomain": "PAPER_AUTHORITATIVE",
+        "providerAuthority": "UNKNOWN",
+        "providerId": "eodj-controlled-authoritative",
+        "requestId": "MD-REQ-73c04c04317b",
+        "timestampUtc": "2026-07-18T23:38:47.391692Z",
+        "workflowId": "WF-EO-DJ"
+      },
+      {
+        "correlationId": "MD-CORR-fdfadd3ce6e0",
+        "decisionObjectId": "DO-EO-DJ",
+        "eventId": "MD-EVT-000002",
+        "eventType": "observation_persisted",
+        "instrumentId": "AAPL",
+        "observationId": "MDOBS-6609A80205B333D381C12F53",
+        "observationType": "QUOTE",
+        "proofDomain": "PAPER_AUTHORITATIVE",
+        "providerAuthority": "AUTHORITATIVE_EXTERNAL",
+        "providerId": "eodj-controlled-authoritative",
+        "requestId": "MD-REQ-73c04c04317b",
+        "timestampUtc": "2026-07-18T23:38:47.391794Z",
+        "workflowId": "WF-EO-DJ"
+      }
+    ],
+    "message": "observation accepted",
+    "observation": {
+      "adjustment_status": "UNADJUSTED",
+      "correlation_id": "MD-CORR-fdfadd3ce6e0",
+      "deterministic_hash": "a7a3381b3bac56d20ba983c37cebb8a6a7162ef4fe5b80c63299e2766aee81f7",
+      "evidence_status": "AUTHORITATIVE",
+      "freshness": {
+        "age_seconds": 0,
+        "classification": "FRESH",
+        "evaluated_at_utc": "2026-07-18T22:00:00Z",
+        "expire_after_seconds": 300,
+        "market_session_context": "regular_or_paper_session",
+        "maximum_age_seconds": 60,
+        "policy_id": "MD-FRESHNESS-PAPER-001",
+        "policy_version": "EO-DJ.1",
+        "source_timestamp_utc": "2026-07-18T22:00:00Z"
+      },
+      "ingestion_timestamp_utc": "2026-07-18T23:38:47.391770Z",
+      "instrument_id": "AAPL",
+      "normalized_payload": {
+        "ask": "197.13",
+        "bid": "197.12",
+        "last": "197.125",
+        "symbol": "AAPL",
+        "venue": "NASDAQ",
+        "volume": "100000"
+      },
+      "observation_id": "MDOBS-6609A80205B333D381C12F53",
+      "observation_type": "QUOTE",
+      "persistence_id": "MDOBS-6609A80205B333D381C12F53",
+      "proof_domain": "PAPER_AUTHORITATIVE",
+      "provider_classification": "AUTHORITATIVE_EXTERNAL",
+      "provider_id": "eodj-controlled-authoritative",
+      "request_id": "MD-REQ-73c04c04317b",
+      "schema_version": "EO-DJ.1",
+      "source_authority": "AUTHORITATIVE_EXTERNAL",
+      "source_timestamp_utc": "2026-07-18T22:00:00Z",
+      "symbol": "AAPL",
+      "venue": "NASDAQ"
+    },
+    "rejection_code": null,
+    "status": "SUCCESS"
+  },
+  "store": {
+    "conflictCount": 0,
+    "conflicts": [],
+    "observationCount": 1,
+    "observations": [
+      {
+        "adjustment_status": "UNADJUSTED",
+        "correlation_id": "MD-CORR-fdfadd3ce6e0",
+        "deterministic_hash": "a7a3381b3bac56d20ba983c37cebb8a6a7162ef4fe5b80c63299e2766aee81f7",
+        "evidence_status": "AUTHORITATIVE",
+        "freshness": {
+          "age_seconds": 0,
+          "classification": "FRESH",
+          "evaluated_at_utc": "2026-07-18T22:00:00Z",
+          "expire_after_seconds": 300,
+          "market_session_context": "regular_or_paper_session",
+          "maximum_age_seconds": 60,
+          "policy_id": "MD-FRESHNESS-PAPER-001",
+          "policy_version": "EO-DJ.1",
+          "source_timestamp_utc": "2026-07-18T22:00:00Z"
+        },
+        "ingestion_timestamp_utc": "2026-07-18T23:38:47.391770Z",
+        "instrument_id": "AAPL",
+        "normalized_payload": {
+          "ask": "197.13",
+          "bid": "197.12",
+          "last": "197.125",
+          "symbol": "AAPL",
+          "venue": "NASDAQ",
+          "volume": "100000"
+        },
+        "observation_id": "MDOBS-6609A80205B333D381C12F53",
+        "observation_type": "QUOTE",
+        "persistence_id": "MDOBS-6609A80205B333D381C12F53",
+        "proof_domain": "PAPER_AUTHORITATIVE",
+        "provider_classification": "AUTHORITATIVE_EXTERNAL",
+        "provider_id": "eodj-controlled-authoritative",
+        "request_id": "MD-REQ-73c04c04317b",
+        "schema_version": "EO-DJ.1",
+        "source_authority": "AUTHORITATIVE_EXTERNAL",
+        "source_timestamp_utc": "2026-07-18T22:00:00Z",
+        "symbol": "AAPL",
+        "venue": "NASDAQ"
+      }
+    ],
+    "schemaVersion": "EO-DJ.1"
+  }
+}

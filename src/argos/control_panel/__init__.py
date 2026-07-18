@@ -33,6 +33,8 @@ from .enterprise_certification import CertificationCampaignResult, Certification
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
+from .canonical_bridge_fabric import BridgeExecutionRequest, BridgeExecutionResult, BridgeIdempotencyPolicy, BridgeImplementationStatus, BridgeRejectionCode, BridgeRequirementClass, BridgeResultStatus, BridgeTransferClass, CanonicalBridgeDefinition, CanonicalBridgeExecutor, CanonicalBridgeRegistry, EO_DK_VERSION, WorkflowOwnershipLedger, bridge_inventory, default_bridge_definitions, make_bridge_request
+from .office_lifecycle import EO_DL_VERSION, OfficeActivationAuthority, OfficeActivationResult, OfficeCertificationStatus, OfficeClassification, OfficeDefinition, OfficeLifecycleController, OfficeLifecycleState, OfficeRejectionCode, OfficeRegistry, OfficeStateRecord, default_office_definitions, duplicate_role_analysis, office_component_inventory
 from .fault_injection_lab import CampaignOutcome, CampaignReport, EO_DE_VERSION, FaultCategory, FaultDefinition, FaultExecutionRecord, FaultInjectionRecoveryLaboratory, FaultSeverity, ResourceSnapshot, canonical_fault_catalog
 from .long_duration_operations_lab import AdmissionEnvironment, AdmissionResult, BoundednessFinding, CampaignCatalogEntry, CampaignDefinition, CampaignSegment, DriftSummary, DurationMode, EO_DF_VERSION, EnduranceCampaignReport, EnduranceCampaignType, EnduranceFailureClass, EndurancePassCriteria, EnduranceStage, EnduranceVerdict, EvidenceBundle, LongDurationOperationsLaboratory, TelemetrySample, long_duration_campaign_catalog
 from .read_only_integrity import DigestProfile, EO_DG_VERSION, ProtectedStateDomain, ReadCertificationStatus, ReadConsistencyLevel, ReadCounterSnapshot, ReadEvidenceRecord, ReadFindingClass, ReadIntegrityEvidenceStore, ReadIntegrityResult, ReadIntegritySeverity, ReadIntegrityStatus, ReadOnlyIntegrityGuard as EODGReadOnlyIntegrityGuard, ReadSurfaceDefinition, ReadSurfaceRegistry, ReadSurfaceType, RouteAuditFinding, SemanticDigestEngine, StaticReadArchitectureReport, protected_state_registry, read_surface_registry, semantic_digest_profiles
@@ -61,7 +63,7 @@ from .infrastructure import InfrastructureResourceManager, ResourceControls, Res
 from .ioe import ExplorerAction, ExplorerNode, InteractiveOrganizationExplorer
 from .lppc import LivePortfolioPerformanceConsole, PortfolioPosition, PortfolioSnapshot
 from .market_context_engine import MarketContextIntegrationEngine, MarketContextObject
-from .market_data_provider import MarketDataProviderAbstractionLayer, ProviderRegistryEntry
+from .market_data_provider import ControlledAuthoritativeMarketDataProvider, DerivedMarketFact, EO_DJ_VERSION, FreshnessEvaluation, FreshnessPolicy as MarketDataFreshnessPolicy, MarketDataDecisionGuard, MarketDataDecisionGuardResult, MarketDataEvidenceStatus, MarketDataEvidenceStore, MarketDataFreshnessStatus, MarketDataGateway, MarketDataGatewayResult, MarketDataObservation, MarketDataProofDomain, MarketDataProviderAbstractionLayer, MarketDataProviderRequest, MarketDataProviderResult, MarketDataRejectionCode, MarketDataResultStatus, MarketObservationType, NonProductionMarketDataProvider, ProviderAuthorityClass, ProviderAuthorityRecord, ProviderAuthorityRegistry, ProviderRegistryEntry, default_provider_authority_records, evaluate_freshness, market_source_inventory, production_reachability_report
 from .market_replay_engine import HistoricalReplayMarketProvider, MarketReplayConfig, MarketReplayEngine, ReplayClock, ReplayRunRecord, ReplayScenarioRecord
 from .mission_planner import EnterpriseMissionPlanner, MissionCompletionPolicy, MissionDependency, MissionInputRequirement, MissionObjective, MissionOfficeAssignment, MissionOutputContract, MissionPlanRecord, MissionPlanStatus, MissionPriorityClass, MissionResourceEnvelope, MissionTemplateRecord, MissionTrigger, MissionTriggerType, MissionType
 from .office_duty_officer import CapabilityProfile, DutyOfficerDecision, OfficeDutyOfficer, OfficeDutyOfficerRegistry, OfficeTaskingRequest
@@ -516,6 +518,63 @@ __all__ = [
     "MarketContextIntegrationEngine",
     "MarketContextObject",
     "MarketDataProviderAbstractionLayer",
+    "ControlledAuthoritativeMarketDataProvider",
+    "DerivedMarketFact",
+    "EO_DJ_VERSION",
+    "MarketDataDecisionGuard",
+    "MarketDataDecisionGuardResult",
+    "MarketDataEvidenceStatus",
+    "MarketDataEvidenceStore",
+    "MarketDataFreshnessPolicy",
+    "MarketDataFreshnessStatus",
+    "MarketDataGateway",
+    "MarketDataGatewayResult",
+    "MarketDataObservation",
+    "MarketDataProofDomain",
+    "MarketDataProviderRequest",
+    "MarketDataProviderResult",
+    "MarketDataRejectionCode",
+    "MarketDataResultStatus",
+    "MarketObservationType",
+    "NonProductionMarketDataProvider",
+    "ProviderAuthorityClass",
+    "ProviderAuthorityRecord",
+    "ProviderAuthorityRegistry",
+    "ProviderRegistryEntry",
+    "default_provider_authority_records",
+    "evaluate_freshness",
+    "market_source_inventory",
+    "production_reachability_report",
+    "BridgeExecutionRequest",
+    "BridgeExecutionResult",
+    "BridgeIdempotencyPolicy",
+    "BridgeImplementationStatus",
+    "BridgeRejectionCode",
+    "BridgeRequirementClass",
+    "BridgeResultStatus",
+    "BridgeTransferClass",
+    "CanonicalBridgeDefinition",
+    "CanonicalBridgeExecutor",
+    "CanonicalBridgeRegistry",
+    "EO_DK_VERSION",
+    "WorkflowOwnershipLedger",
+    "bridge_inventory",
+    "default_bridge_definitions",
+    "make_bridge_request",
+    "EO_DL_VERSION",
+    "OfficeActivationAuthority",
+    "OfficeActivationResult",
+    "OfficeCertificationStatus",
+    "OfficeClassification",
+    "OfficeDefinition",
+    "OfficeLifecycleController",
+    "OfficeLifecycleState",
+    "OfficeRejectionCode",
+    "OfficeRegistry",
+    "OfficeStateRecord",
+    "default_office_definitions",
+    "duplicate_role_analysis",
+    "office_component_inventory",
     "EnterpriseMissionPlanner",
     "MissionCompletionPolicy",
     "MissionDependency",

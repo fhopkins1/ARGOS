@@ -1,0 +1,31 @@
+{
+  "boundaryTests": {
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "unittest",
+      "Tests.test_eodj_market_data_boundary"
+    ],
+    "duration_seconds": 1.056,
+    "exit_code": 0,
+    "stderr": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.007s\n\nOK\n",
+    "stdout": "",
+    "timed_out": false
+  },
+  "staticAssurance": {
+    "allowlist": [],
+    "findingCount": 2,
+    "findings": [
+      {
+        "finding": "synthetic_quote_provider_default",
+        "path": "src\\argos\\control_panel\\enterprise_certification.py",
+        "pattern": "ARGOS Synthetic Market Data"
+      },
+      {
+        "finding": "random_market_generation",
+        "path": "src\\argos\\control_panel\\monte_carlo_portfolio_engine.py",
+        "pattern": "random."
+      }
+    ]
+  }
+}

@@ -19,7 +19,7 @@ from argos.foundation.configuration import ConfigurationService  # noqa: E402
 from argos.foundation.contracts import utc_timestamp  # noqa: E402
 from argos.foundation.persistence import InMemoryPersistenceRepository, canonical_schemas  # noqa: E402
 from argos.foundation.prompts import PromptRepository  # noqa: E402
-from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount, PaperBrokerOrderTicket  # noqa: E402
+from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount, PaperBrokerMarketDataAdapter, PaperBrokerOrderTicket  # noqa: E402
 
 
 def config() -> ConfigurationService:
@@ -48,9 +48,9 @@ def decision() -> dict[str, object]:
         "direction": "buy",
         "thesis": "OR-004 supervised paper position",
         "evidence": "Authorized office judgment",
-        "market_context": "mock quote",
+        "market_context": "controlled authoritative quote",
         "entry_conditions": "broker executable",
-        "price_source": "mock",
+        "price_source": "controlled-authoritative",
         "quantity": "2",
         "position_sizing_basis": "cash",
         "confidence": "0.7",
@@ -80,6 +80,16 @@ def decision() -> dict[str, object]:
 
 
 class AAPLMarketDataProvider(MarketDataProviderAbstractionLayer):
+    def __init__(self) -> None:
+        timestamp = utc_timestamp()
+        configured = MarketDataProviderAbstractionLayer.with_controlled_authoritative_provider(
+            observations={
+                "AAPL": {"symbol": "AAPL", "bid": "502.24", "ask": "502.26", "last": "502.25", "volume": "1000000", "venue": "NASDAQ", "source_timestamp_utc": timestamp},
+                "MARKET": {"symbol": "MARKET", "status": "PAPER_OPEN", "venue": "US", "source_timestamp_utc": timestamp},
+            }
+        )
+        super().__init__(gateway=configured.gateway, provider_id="controlled-authoritative")
+
     def snapshot(self, *, timestamp_utc: str, workflow_id: str = "", decision_object_id: str = "") -> dict[str, object]:
         quote = self.get_quote("AAPL", timestamp_utc, workflow_id=workflow_id, decision_object_id=decision_object_id)["normalizedObject"]
         return {"normalizedObjects": {"quotes": (quote,), "marketStatus": ({"status": "PAPER_OPEN", "timestamp": timestamp_utc},)}}
@@ -119,6 +129,7 @@ class PositionLifecycleTests(unittest.TestCase):
             order_management=omo,
             performance_truth=truth,
             communications_bus=bus,
+            market_data=PaperBrokerMarketDataAdapter(AAPLMarketDataProvider()),
             account=PaperBrokerAccount("ACCT-PAPER-001", 100000.0),
         )
         manager = EnterprisePositionLifecycleManager(

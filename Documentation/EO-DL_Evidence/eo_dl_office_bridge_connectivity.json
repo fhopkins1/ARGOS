@@ -1,0 +1,276 @@
+[
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-COST-API-001"
+    ],
+    "office_id": "OFFICE-EO-DB-001"
+  },
+  {
+    "egress": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "ingress": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "office_id": "OFFICE-EO-DB-002"
+  },
+  {
+    "egress": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "ingress": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "office_id": "OFFICE-EO-DB-003"
+  },
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "office_id": "OFFICE-EO-DB-004"
+  },
+  {
+    "egress": [
+      "BRIDGE-CPT-PT-001"
+    ],
+    "ingress": [
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "office_id": "OFFICE-EO-DB-005"
+  },
+  {
+    "egress": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "ingress": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-006"
+  },
+  {
+    "egress": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-007"
+  },
+  {
+    "egress": [
+      "BRIDGE-COST-API-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-008"
+  },
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "office_id": "OFFICE-EO-DB-009"
+  },
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "office_id": "OFFICE-EO-DB-010"
+  },
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "office_id": "OFFICE-EO-DB-011"
+  },
+  {
+    "egress": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "ingress": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "office_id": "OFFICE-EO-DB-012"
+  },
+  {
+    "egress": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-013"
+  },
+  {
+    "egress": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-014"
+  },
+  {
+    "egress": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "ingress": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "office_id": "OFFICE-EO-DB-015"
+  },
+  {
+    "egress": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "ingress": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "office_id": "OFFICE-EO-DB-016"
+  },
+  {
+    "egress": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "ingress": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "office_id": "OFFICE-EO-DB-017"
+  },
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "office_id": "OFFICE-EO-DB-018"
+  },
+  {
+    "egress": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "ingress": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "office_id": "OFFICE-EO-DB-019"
+  },
+  {
+    "egress": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "ingress": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-020"
+  },
+  {
+    "egress": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "ingress": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "office_id": "OFFICE-EO-DB-021"
+  },
+  {
+    "egress": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-022"
+  },
+  {
+    "egress": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "ingress": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "office_id": "OFFICE-EO-DB-023"
+  },
+  {
+    "egress": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-024"
+  },
+  {
+    "egress": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "ingress": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "office_id": "OFFICE-EO-DB-025"
+  },
+  {
+    "egress": [],
+    "ingress": [
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "office_id": "OFFICE-EO-DB-026"
+  },
+  {
+    "egress": [
+      "BRIDGE-SCHED-MISSION-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-027"
+  },
+  {
+    "egress": [
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "ingress": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-028"
+  },
+  {
+    "egress": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "ingress": [],
+    "office_id": "OFFICE-EO-DB-029"
+  },
+  {
+    "egress": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "ingress": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "office_id": "OFFICE-EO-DB-030"
+  },
+  {
+    "egress": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "ingress": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-031"
+  },
+  {
+    "egress": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "ingress": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "office_id": "OFFICE-EO-DB-032"
+  },
+  {
+    "egress": [],
+    "ingress": [],
+    "office_id": "OFFICE-FUTURE-EO-DM"
+  }
+]

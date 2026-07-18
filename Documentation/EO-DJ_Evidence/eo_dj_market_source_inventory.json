@@ -1,0 +1,42 @@
+[
+  {
+    "classification": "canonical ingress gateway",
+    "file": "src/argos/control_panel/market_data_provider.py",
+    "production_reachable": true,
+    "source_id": "MD-SRC-001",
+    "status": "authoritative boundary",
+    "symbol": "MarketDataGateway"
+  },
+  {
+    "classification": "authoritative external adapter stub for tests",
+    "file": "src/argos/control_panel/market_data_provider.py",
+    "production_reachable": false,
+    "source_id": "MD-SRC-002",
+    "status": "explicit injection only",
+    "symbol": "ControlledAuthoritativeMarketDataProvider"
+  },
+  {
+    "classification": "test/replay/development simulation",
+    "file": "src/argos/control_panel/market_data_provider.py",
+    "production_reachable": false,
+    "source_id": "MD-SRC-003",
+    "status": "barred from paper/live by registry",
+    "symbol": "NonProductionMarketDataProvider"
+  },
+  {
+    "classification": "decision sink",
+    "file": "src/argos/trader/paper_brokerage.py",
+    "production_reachable": true,
+    "source_id": "MD-SRC-004",
+    "status": "requires EO-DJ observation",
+    "symbol": "PaperBrokerMarketDataAdapter"
+  },
+  {
+    "classification": "decision sink",
+    "file": "src/argos/control_panel/position_lifecycle_manager.py",
+    "production_reachable": true,
+    "source_id": "MD-SRC-005",
+    "status": "uses EO-DJ snapshot facade",
+    "symbol": "monitor_positions"
+  }
+]

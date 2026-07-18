@@ -1,0 +1,76 @@
+{
+  "auditEvents": [
+    {
+      "artifactId": "EWO-WF-000001",
+      "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
+      "destination": "Analyst",
+      "durableIntentId": "BRIDGE-INTENT-713068190731149E",
+      "eventId": "EO-DK-AUD-000001",
+      "eventType": "BridgeRequested",
+      "executionId": "EO-DK-EXEC-8DC3E5C0E3B2",
+      "rejectionCode": "",
+      "resultStatus": "",
+      "source": "Workflow Orchestrator",
+      "timestampUtc": "2026-07-18T23:38:47.393699Z",
+      "transferClass": "OWNERSHIP_TRANSFER",
+      "workflowId": "EWO-WF-000001"
+    },
+    {
+      "artifactId": "EWO-WF-000001",
+      "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
+      "destination": "Analyst",
+      "durableIntentId": "BRIDGE-INTENT-713068190731149E",
+      "eventId": "EO-DK-AUD-000002",
+      "eventType": "BridgeAccepted",
+      "executionId": "EO-DK-EXEC-8DC3E5C0E3B2",
+      "rejectionCode": "",
+      "resultStatus": "ACCEPTED",
+      "source": "Workflow Orchestrator",
+      "timestampUtc": "2026-07-18T23:38:47.393729Z",
+      "transferClass": "OWNERSHIP_TRANSFER",
+      "workflowId": "EWO-WF-000001"
+    }
+  ],
+  "dynamicTraceCount": 1,
+  "ownership": {
+    "owners": {
+      "EWO-WF-000001": "Analyst"
+    },
+    "releasedOwners": {
+      "EWO-WF-000001": [
+        "Workflow Orchestrator"
+      ]
+    },
+    "tokens": {
+      "EWO-WF-000001": "AE-EWO-000001"
+    }
+  },
+  "registeredBridgeCount": 30,
+  "runtimeInstanceId": "ARGOS-CANONICAL-RUNTIME",
+  "traces": [
+    {
+      "artifact_id": "EWO-WF-000001",
+      "audit_record_ids": [
+        "AUD-3B756C0D7869"
+      ],
+      "bridge_id": "BRIDGE-WORKFLOW-OFFICE-001",
+      "completed_at_utc": "2026-07-18T23:38:47.393716Z",
+      "destination": "Analyst",
+      "destination_acceptance_status": "ACCEPTED",
+      "deterministic_result_hash": "3b756c0d78695436b0a5874d7d2e0af1602170ccf522228b49817de9231057fd",
+      "durable_intent_id": "BRIDGE-INTENT-713068190731149E",
+      "execution_id": "EO-DK-EXEC-8DC3E5C0E3B2",
+      "prior_owner": "Workflow Orchestrator",
+      "recovery_status": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+      "rejection_code": null,
+      "requested_at_utc": "2026-07-18T23:38:47.393663Z",
+      "resulting_owner": "Analyst",
+      "resulting_workflow_state": "COMPLETE",
+      "schema_version": "EO-DK.1",
+      "source": "Workflow Orchestrator",
+      "source_release_status": "RELEASED_TO_DORMANT",
+      "status": "ACCEPTED",
+      "workflow_id": "EWO-WF-000001"
+    }
+  ]
+}

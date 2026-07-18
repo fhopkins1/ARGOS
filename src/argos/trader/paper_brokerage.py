@@ -162,8 +162,12 @@ class PaperBrokerMarketDataAdapter:
 
     def market_state(self, symbol: str, timestamp_utc: str, workflow_id: str, decision_object_id: str) -> MarketState | None:
         quote = self.provider.get_quote(symbol, timestamp_utc, workflow_id=workflow_id, decision_object_id=decision_object_id)
-        normalized = quote.get("normalizedObject", {})
+        normalized = quote.get("normalizedObject") or {}
+        if not normalized:
+            return None
         source = normalized.get("sourceAttribution", {})
+        status_response = self.provider.get_market_status(timestamp_utc)
+        market_status = (status_response.get("normalizedObject") or {}).get("status", "UNKNOWN")
         try:
             return MarketState(
                 symbol=str(normalized["symbol"]).upper(),
@@ -171,7 +175,7 @@ class PaperBrokerMarketDataAdapter:
                 ask=float(normalized["ask"]),
                 last=float(normalized["last"]),
                 volume=float(normalized.get("volume", 0.0) or 0.0),
-                session=str(self.provider.get_market_status(timestamp_utc)["normalizedObject"].get("status", "UNKNOWN")),
+                session=str(market_status),
                 source=str(source.get("providerId", "unknown")),
                 timestamp_utc=str(source.get("dataTimestamp", timestamp_utc)),
                 replay_identifier=str(source.get("rawPayloadReference", "")),
@@ -532,7 +536,7 @@ class DeterministicPaperBrokerage:
         if not self.position_monitoring or not self.performance_truth:
             return
         snapshot = self.performance_truth.snapshot(execution_environment="paper")
-        provider = MarketDataProviderAbstractionLayer().snapshot(timestamp_utc=utc_timestamp())
+        provider = self.market_data.provider.snapshot(timestamp_utc=utc_timestamp())
         self.position_monitoring.scan(position_registry=snapshot.get("positionRegistry", {}), market_data_provider=provider, performance_truth=snapshot)
 
     def _require_order(self, order_id: str) -> PaperBrokerOrderRecord:

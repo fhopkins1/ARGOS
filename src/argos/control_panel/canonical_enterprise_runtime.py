@@ -19,6 +19,7 @@ from argos.trader.execution_quality import ExecutionQualityOffice
 from argos.trader.paper_brokerage import PaperBrokerMarketDataAdapter
 
 from .api_execution_gateway import ApiExecutionGateway, ApiExecutionRequest, RealApiPilotConfig
+from .canonical_bridge_fabric import CanonicalBridgeExecutor, make_bridge_request
 from .closed_position_truth import ClosedPositionTruthBuilder
 from .enterprise_communications_bus import EnterpriseCommunicationsBus
 from .enterprise_cost_governor import EnterpriseCostGovernor, ReservationState
@@ -31,6 +32,7 @@ from .information_freshness_engine import InformationFreshnessEngine
 from .market_data_provider import MarketDataProviderAbstractionLayer
 from .mission_planner import EnterpriseMissionPlanner, MissionPlanStatus
 from .office_duty_officer import OfficeDutyOfficerRegistry, OfficeTaskingRequest
+from .office_lifecycle import OfficeActivationAuthority, OfficeLifecycleController
 from .performance_truth_engine import PerformanceTruthEngine
 from .position_lifecycle_manager import EnterprisePositionLifecycleManager
 from .position_monitoring_network import PositionMonitoringNetwork
@@ -178,6 +180,8 @@ class CanonicalEnterpriseRuntime:
         self._failures: list[RuntimeFailure] = []
         self._admissions: list[RuntimeAdmissionRecord] = []
         self._strategic_mandates: dict[str, dict[str, Any]] = {}
+        self.bridge_executor = CanonicalBridgeExecutor(runtime_instance_id="ARGOS-CANONICAL-RUNTIME")
+        self.office_lifecycle = OfficeLifecycleController(bridge_executor=self.bridge_executor)
 
     @staticmethod
     def _build_components() -> CanonicalEnterpriseComponents:
@@ -315,6 +319,23 @@ class CanonicalEnterpriseRuntime:
             initial_stage=mission.workflow_type,
         )
         dispatched = self.components.scheduler.dispatch_mission(mission.mission_id, workflow_id=workflow.workflow_id, token_id=workflow.token.audit_identifier)
+        self.bridge_executor.ownership.establish(workflow.workflow_id, "Workflow Orchestrator", workflow.token.audit_identifier)
+        bridge_payload = {"mission_id": mission.mission_id, "workflow_id": workflow.workflow_id, "template_id": template_id}
+        self.bridge_executor.execute(
+            make_bridge_request(
+                bridge_id="BRIDGE-WORKFLOW-OFFICE-001",
+                runtime_instance_id=self.bridge_executor.runtime_instance_id,
+                workflow_id=workflow.workflow_id,
+                source="Workflow Orchestrator",
+                destination=first_stage,
+                artifact_id=workflow.workflow_id,
+                payload=bridge_payload,
+                current_owner="Workflow Orchestrator",
+                next_owner=first_stage,
+                token_id=workflow.token.audit_identifier,
+            )
+        )
+        self.office_lifecycle.activate(first_stage, authority=OfficeActivationAuthority.CANONICAL_BRIDGE, workflow_id=workflow.workflow_id, token_id=workflow.token.audit_identifier, current_owner=first_stage, proof_domain=RuntimeMode.PAPER.value)
         duty_decisions = self._duty_decisions_for(dispatched, workflow)
         record = RuntimeAdmissionRecord(
             admission_id=f"OR005-ADM-{len(self._admissions) + 1:06d}",
@@ -387,6 +408,8 @@ class CanonicalEnterpriseRuntime:
             "failureCount": len(self._failures),
             "paperBrokerOrderCount": sum(len(items) for items in self.components.paper_broker.order_book.snapshot().values()),
             "positionCount": len(self.components.performance_truth.position_registry.active_positions()),
+            "bridgeFabric": self.bridge_executor.snapshot(),
+            "officeLifecycle": self.office_lifecycle.read_only_snapshot(),
         }
 
     def enterprise_persistence_snapshot(self) -> dict[str, Any]:

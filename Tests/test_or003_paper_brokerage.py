@@ -7,7 +7,7 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 SRC_ROOT = REPOSITORY_ROOT / "src"
 sys.path.insert(0, str(SRC_ROOT))
 
-from argos.control_panel import EnterpriseCommunicationsBus, PerformanceTruthEngine, PositionMonitoringNetwork, WorkflowExecutionToken  # noqa: E402
+from argos.control_panel import EnterpriseCommunicationsBus, MarketDataProviderAbstractionLayer, PerformanceTruthEngine, PositionMonitoringNetwork, WorkflowExecutionToken  # noqa: E402
 from argos.foundation.audit import AuditService  # noqa: E402
 from argos.foundation.configuration import ConfigurationService  # noqa: E402
 from argos.foundation.contracts import utc_timestamp  # noqa: E402
@@ -52,9 +52,9 @@ def decision() -> dict[str, object]:
         "direction": "buy",
         "thesis": "Authorized paper test",
         "evidence": "Authorized office judgment",
-        "market_context": "mock quote",
+        "market_context": "controlled authoritative quote",
         "entry_conditions": "broker executable",
-        "price_source": "mock",
+        "price_source": "controlled-authoritative",
         "quantity": "1",
         "position_sizing_basis": "cash",
         "confidence": "0.7",
@@ -139,7 +139,7 @@ class PaperBrokerageTests(unittest.TestCase):
             performance_truth=truth,
             communications_bus=EnterpriseCommunicationsBus(),
             position_monitoring=PositionMonitoringNetwork(),
-            market_data=market_data,
+            market_data=market_data or PaperBrokerMarketDataAdapter(MarketDataProviderAbstractionLayer.with_controlled_authoritative_provider(observations={"AAPL": {"symbol": "AAPL", "bid": "502.24", "ask": "502.26", "last": "502.25", "volume": "1000000", "venue": "NASDAQ", "source_timestamp_utc": utc_timestamp()}, "MARKET": {"symbol": "MARKET", "status": "PAPER_OPEN", "venue": "US", "source_timestamp_utc": utc_timestamp()}})),
             account=PaperBrokerAccount("ACCT-PAPER-001", 100000.0),
         )
         return broker, broker.communications_bus, truth

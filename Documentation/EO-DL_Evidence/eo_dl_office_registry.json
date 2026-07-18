@@ -1,0 +1,1324 @@
+[
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "API Gateway bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/api_gateway.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-COST-API-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-001",
+    "office_name": "API Gateway",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Analyst bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/analyst.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-002",
+    "office_name": "Analyst",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Authorization Authority bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/authorization_authority.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-003",
+    "office_name": "Authorization Authority",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Canonical Runtime bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/canonical_runtime.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-004",
+    "office_name": "Canonical Runtime",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Closed Position Truth bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-CPT-PT-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/closed_position_truth.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-005",
+    "office_name": "Closed Position Truth",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Commander bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/commander.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-006",
+    "office_name": "Commander",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Communications Bus bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/communications_bus.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-007",
+    "office_name": "Communications Bus",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Cost Governor bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-COST-API-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/cost_governor.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-008",
+    "office_name": "Cost Governor",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Decision Laboratory bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/decision_laboratory.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-009",
+    "office_name": "Decision Laboratory",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Doctrine bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/doctrine.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-010",
+    "office_name": "Doctrine",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Duty Officer bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/duty_officer.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-011",
+    "office_name": "Duty Officer",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "EO-CK bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/eo_ck.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-012",
+    "office_name": "EO-CK",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "EO-DG bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/eo_dg.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-013",
+    "office_name": "EO-DG",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Event Detection bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/event_detection.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-014",
+    "office_name": "Event Detection",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Exit Decision bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/exit_decision.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-015",
+    "office_name": "Exit Decision",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Fill Ledger bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/fill_ledger.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-016",
+    "office_name": "Fill Ledger",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Historian bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/historian.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-017",
+    "office_name": "Historian",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Learning Systems bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/learning_systems.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-018",
+    "office_name": "Learning Systems",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Mission Planner bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/mission_planner.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-019",
+    "office_name": "Mission Planner",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "constitutional_role": "Paper Broker bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/paper_broker.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-020",
+    "office_name": "Paper Broker",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Performance Truth bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/performance_truth.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-021",
+    "office_name": "Performance Truth",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Persistence bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/persistence.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-022",
+    "office_name": "Persistence",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Position Registry bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/position_registry.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-023",
+    "office_name": "Position Registry",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Replay bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/replay.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-024",
+    "office_name": "Replay",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Risk bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/risk.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-025",
+    "office_name": "Risk",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Runtime Provider bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/runtime_provider.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-026",
+    "office_name": "Runtime Provider",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Scheduler bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-SCHED-MISSION-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/scheduler.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-027",
+    "office_name": "Scheduler",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Seeker bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/seeker.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-028",
+    "office_name": "Seeker",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Strategic Intelligence bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/strategic_intelligence.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-029",
+    "office_name": "Strategic Intelligence",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Surveillance bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/surveillance.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-030",
+    "office_name": "Surveillance",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "CORE_PRODUCTION",
+    "constitutional_role": "Trader bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/trader.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-031",
+    "office_name": "Trader",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": false,
+    "production_required": true,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "background_activity_policy": "no autonomous work while Dormant",
+    "classification": "INFORMATION_ONLY",
+    "constitutional_role": "Workflow Orchestrator bridge authority and handoff participant.",
+    "default_state": "DORMANT",
+    "egress_bridges": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "enabled": true,
+    "implementation_path": "src/argos/control_panel/workflow_orchestrator.py",
+    "information_subscriptions": [],
+    "ingress_bridges": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-EO-DB-032",
+    "office_name": "Workflow Orchestrator",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": false,
+    "persistence_required": false,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  },
+  {
+    "allowed_activation_authorities": [],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "background_activity_policy": "no production activation",
+    "classification": "FUTURE_RESERVED",
+    "constitutional_role": "Reserved endpoint for later full position lifecycle closure.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": false,
+    "implementation_path": "future",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-FUTURE-EO-DM",
+    "office_name": "EO-DM Position Lifecycle Completion",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": true,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "allowed_activation_authorities": [],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "background_activity_policy": "no production activation",
+    "classification": "FUTURE_RESERVED",
+    "constitutional_role": "Reserved endpoint for later full position lifecycle closure.",
+    "default_state": "DORMANT",
+    "egress_bridges": [],
+    "enabled": false,
+    "implementation_path": "future",
+    "information_subscriptions": [],
+    "ingress_bridges": [],
+    "multiplicity_policy": "singleton",
+    "office_id": "OFFICE-FUTURE-EO-DM",
+    "office_name": "EO-DM Position Lifecycle Completion",
+    "office_version": "EO-DL.1",
+    "ownership_bearing": true,
+    "persistence_required": true,
+    "production_required": false,
+    "recovery_required": true,
+    "required_dependencies": [],
+    "retirement_status": "",
+    "schema_version": "EO-DL.1"
+  }
+]

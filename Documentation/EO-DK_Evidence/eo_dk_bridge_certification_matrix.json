@@ -1,0 +1,1292 @@
+[
+  {
+    "accepted_artifact_type": "scheduled_obligation.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SCHED-MISSION-001",
+    "bridge_name": "Scheduler -> Mission Planner",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Mission Planner",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "scheduled_obligation.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Scheduler",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "validated_event.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EVENT-MISSION-001",
+    "bridge_name": "Event Detection -> Mission Planner",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Mission Planner",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "validated_event.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Event Detection",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "mission_plan.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-MISSION-WORKFLOW-001",
+    "bridge_name": "Mission Planner -> Workflow Orchestrator",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Workflow Orchestrator",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "mission_plan.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Mission Planner",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": true,
+    "transaction_required": true,
+    "transfer_class": "OWNERSHIP_TRANSFER"
+  },
+  {
+    "accepted_artifact_type": "workflow_activation.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-WORKFLOW-OFFICE-001",
+    "bridge_name": "Workflow Orchestrator -> Initial Office",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Duty Officer",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "workflow_activation.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Workflow Orchestrator",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": true,
+    "transaction_required": true,
+    "transfer_class": "OWNERSHIP_TRANSFER"
+  },
+  {
+    "accepted_artifact_type": "strategic_mandate.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SI-SEEKER-001",
+    "bridge_name": "Strategic Intelligence -> Seeker",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Seeker",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "strategic_mandate.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Strategic Intelligence",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "decision_candidate.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SEEKER-ANALYST-001",
+    "bridge_name": "Seeker -> Analyst",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "DYNAMICALLY_TRACED",
+    "deprecated": false,
+    "destination_component": "Analyst",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": true,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "decision_candidate.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Seeker",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": true,
+    "transaction_required": true,
+    "transfer_class": "OWNERSHIP_TRANSFER"
+  },
+  {
+    "accepted_artifact_type": "analysis_product.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-ANALYST-RISK-001",
+    "bridge_name": "Analyst -> Risk",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Risk",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "analysis_product.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Analyst",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": true,
+    "transaction_required": true,
+    "transfer_class": "OWNERSHIP_TRANSFER"
+  },
+  {
+    "accepted_artifact_type": "risk_recommendation.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-RISK-AUTH-001",
+    "bridge_name": "Risk -> Authorization Authority",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Authorization Authority",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "risk_recommendation.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Risk",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "trade_authorization.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-AUTH-TRADER-001",
+    "bridge_name": "Authorization Authority -> Trader",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Trader",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "trade_authorization.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Authorization Authority",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": true,
+    "transaction_required": true,
+    "transfer_class": "OWNERSHIP_TRANSFER"
+  },
+  {
+    "accepted_artifact_type": "paper_order_ticket.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-TRADER-BROKER-001",
+    "bridge_name": "Trader -> Paper Broker",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Paper Broker",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "paper_order_ticket.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Trader",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "EXTERNAL_EXECUTION"
+  },
+  {
+    "accepted_artifact_type": "broker_fill.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-BROKER-FILL-001",
+    "bridge_name": "Paper Broker -> Fill Ledger",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Fill Ledger",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "broker_fill.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Paper Broker",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "position_fill_application.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-FILL-POSITION-001",
+    "bridge_name": "Fill Ledger -> Position Registry",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Position Registry",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "position_fill_application.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Fill Ledger",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "performance_truth_reference.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-POSITION-PT-001",
+    "bridge_name": "Position Registry -> Performance Truth",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Performance Truth",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "performance_truth_reference.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Position Registry",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "position_enrollment.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-POSITION-EOCK-001",
+    "bridge_name": "Position Registry -> EO-CK Enrollment",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "EO-CK",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "position_enrollment.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Position Registry",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "position_surveillance_request.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EOCK-SURVEILLANCE-001",
+    "bridge_name": "EO-CK -> Position Surveillance",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Surveillance",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "position_surveillance_request.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "EO-CK",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "exit_signal.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SURVEILLANCE-EXIT-001",
+    "bridge_name": "Position Surveillance -> Exit Decision",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Exit Decision",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "exit_signal.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Surveillance",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "exit_authorization_request.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EXIT-AUTH-001",
+    "bridge_name": "Exit Decision -> Authorization Authority",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Authorization Authority",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "exit_authorization_request.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Exit Decision",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "closing_order_intent.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EXIT-TRADER-001",
+    "bridge_name": "Authorized Exit -> Trader",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Trader",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "closing_order_intent.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Authorization Authority",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": true,
+    "transaction_required": true,
+    "transfer_class": "OWNERSHIP_TRANSFER"
+  },
+  {
+    "accepted_artifact_type": "closing_fill.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-CLOSING-FILL-POSITION-001",
+    "bridge_name": "Closing Fill -> Position Registry",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Position Registry",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "closing_fill.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Paper Broker",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "closed_position_truth.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-CLOSE-CPT-001",
+    "bridge_name": "Position Closure -> Closed Position Truth",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Closed Position Truth",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "closed_position_truth.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Position Registry",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "terminal_performance_truth.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-CPT-PT-001",
+    "bridge_name": "Closed Position Truth -> Performance Truth",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Performance Truth",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "terminal_performance_truth.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Closed Position Truth",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "historian_record.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-PT-HISTORIAN-001",
+    "bridge_name": "Performance Truth -> Historian",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Historian",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "historian_record.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Performance Truth",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "learning_input.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-HISTORIAN-LEARNING-001",
+    "bridge_name": "Historian -> Learning Systems",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Learning Systems",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "learning_input.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Historian",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "commander_directive.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-COMMANDER-DIRECTIVE-001",
+    "bridge_name": "Commander -> Directive Channels",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Doctrine",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "commander_directive.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Commander",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "api_execution_request.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-COST-API-001",
+    "bridge_name": "Cost Governor -> API Execution Gateway",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "API Gateway",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "api_execution_request.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Cost Governor",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "EXTERNAL_EXECUTION"
+  },
+  {
+    "accepted_artifact_type": "freshness_cache_decision.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+    "bridge_name": "Freshness / Cache / Workflow Delta -> Analytical Offices",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Analyst",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "freshness_cache_decision.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Communications Bus",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "enterprise_persistence_snapshot.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+    "bridge_name": "Persistence -> Recovery",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Canonical Runtime",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "enterprise_persistence_snapshot.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Persistence",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "runtime_recovery_result.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+    "bridge_name": "Recovery -> Canonical Runtime",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Runtime Provider",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "runtime_recovery_result.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Persistence",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "replay_lab_result.v1",
+    "allowed_proof_domains": [
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-REPLAY-LAB-001",
+    "bridge_name": "Replay -> Decision Laboratory",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "STATICALLY_VALIDATED",
+    "deprecated": false,
+    "destination_component": "Decision Laboratory",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "PARTIAL",
+    "input_artifact_type": "replay_lab_result.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REPLAY_ONLY",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "Replay",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  },
+  {
+    "accepted_artifact_type": "assurance_read_model.v1",
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "proof",
+      "replay"
+    ],
+    "audit_policy": "emit request and result audit records",
+    "bridge_id": "BRIDGE-ASSURANCE-COMMANDER-001",
+    "bridge_name": "Assurance Offices -> Commander",
+    "bridge_version": "EO-DK.1",
+    "certification_status": "CONDITIONALLY_PRODUCTION",
+    "deprecated": false,
+    "destination_component": "Commander",
+    "destination_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "dynamic_trace_present": false,
+    "enabled": true,
+    "failure_policy": "bounded retry then Commander-visible failure",
+    "idempotency_policy": "NON_RETRYABLE_FINANCIAL",
+    "implementation_status": "IMPLEMENTED",
+    "input_artifact_type": "assurance_read_model.v1",
+    "payload_schema_version": "EO-DB.1",
+    "persistence_required": true,
+    "recovery_policy": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "requirement_class": "REQUIRED_PRODUCTION",
+    "retry_policy": "idempotent by declared idempotency key",
+    "schema_version": "EO-DK.1",
+    "source_component": "EO-DG",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "timeout_seconds": 30,
+    "token_required": false,
+    "transaction_required": true,
+    "transfer_class": "INFORMATION_DELIVERY"
+  }
+]
