@@ -1,0 +1,451 @@
+{
+  "commander_read_model": {
+    "blockedOrRecoveryRequired": [],
+    "commanderLimitations": {
+      "mayCreateFill": false,
+      "mayCreatePerformanceTruth": false,
+      "mayEnableLiveTrading": false,
+      "mayFabricateRepair": false,
+      "mayMarkPartialComplete": false,
+      "mayMutatePosition": false
+    },
+    "engineName": "Transaction and Reconciliation Coordinator",
+    "engineVersion": "EO-DD.1",
+    "engineeringOrder": "EO-DD",
+    "financialMutationAuthority": false,
+    "journalIntegrityFindings": [],
+    "liveTradingEnabled": false,
+    "outboxDepth": 4,
+    "transactionCount": 1,
+    "transactionTypeRegistry": [
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "OPENING_FILL"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "PARTIAL_OPENING_FILL"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "POSITION_INCREASE"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "PARTIAL_REDUCTION"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth",
+          "Closed Position Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "FULL_CLOSURE"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": false,
+        "required_participants": [
+          "Paper Broker",
+          "Performance Truth"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "ORDER_CANCELLATION"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": false,
+        "required_participants": [
+          "Paper Broker",
+          "Performance Truth"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "ORDER_EXPIRATION"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Performance Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "SETTLEMENT"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "REVERSAL"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": true,
+        "required_participants": [
+          "Position Registry",
+          "Performance Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "CORPORATE_ACTION"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": false,
+        "required_participants": [
+          "Transaction Coordinator",
+          "Performance Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "RECOVERY"
+      },
+      {
+        "coordinator_mutation_authority": false,
+        "creates_financial_truth": false,
+        "required_participants": [
+          "Transaction Coordinator",
+          "Performance Truth",
+          "Historian"
+        ],
+        "requires_eodc_approval": true,
+        "transaction_type": "RECONCILIATION_CORRECTION"
+      }
+    ]
+  },
+  "events": [
+    {
+      "event": "intent_created",
+      "intent": {
+        "account_id": "ACCT-PAPER-001",
+        "asset_id": "AAPL",
+        "created_at_utc": "2026-07-18T22:36:55.894721Z",
+        "creation_sequence": 1,
+        "doctrine_version": "",
+        "eodc_decision": "APPROVED",
+        "eodc_decision_id": "IFVA-EODC-DECISION-001",
+        "expected_postconditions": [
+          "broker fill has position lineage",
+          "performance truth preserved",
+          "historian evidence preserved"
+        ],
+        "expected_preconditions": [
+          "EO-DC approval present",
+          "paper truth domain only",
+          "live trading disabled"
+        ],
+        "expiration_utc": "",
+        "fill_id": "IFVA-FILL-001",
+        "idempotency_key": "IFVA-TX-OPENING-FILL-001",
+        "intended_participants": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth",
+          "Historian"
+        ],
+        "mission_id": "IFVA-MISSION-001",
+        "order_id": "IFVA-ORDER-001",
+        "participant_dependency_order": [
+          "Paper Broker",
+          "Position Registry",
+          "Performance Truth",
+          "Historian"
+        ],
+        "policy_version": "",
+        "position_id": "",
+        "reconciliation_strategy": "QUARANTINE_ON_CONFLICT",
+        "recovery_strategy": "RESUME_AFTER_RECONCILIATION",
+        "required_participant_actions": [
+          "Paper Broker: acknowledge durable application evidence",
+          "Position Registry: acknowledge durable application evidence",
+          "Performance Truth: acknowledge durable application evidence",
+          "Historian: acknowledge durable application evidence"
+        ],
+        "schema_version": "EO-DD.1",
+        "source_authority": "DeterministicPaperBrokerage",
+        "source_event_id": "IFVA-FILL-EVENT-001",
+        "transaction_hash": "c60e8f3a7cf5f3c3fe36663120795f77c88f7af4b4fa8cf425ee0e2c4a98b11d",
+        "transaction_id": "EO-DD-TX-000001",
+        "transaction_type": "OPENING_FILL",
+        "truth_domain": "PAPER",
+        "workflow_execution_token_id": "IFVA-TOKEN-001",
+        "workflow_id": "IFVA-WORKFLOW-001"
+      }
+    },
+    {
+      "ack": {
+        "acknowledgment_id": "EO-DD-ACK-000001",
+        "evidence_reference": "IFVA evidence for Paper Broker",
+        "idempotency_key": "EO-DD-TX-000001:Paper Broker:IFVA evidence for Paper Broker:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Paper Broker",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895089Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      "event": "participant_acknowledged"
+    },
+    {
+      "ack": {
+        "acknowledgment_id": "EO-DD-ACK-000002",
+        "evidence_reference": "IFVA evidence for Position Registry",
+        "idempotency_key": "EO-DD-TX-000001:Position Registry:IFVA evidence for Position Registry:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Position Registry",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895161Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      "event": "participant_acknowledged"
+    },
+    {
+      "ack": {
+        "acknowledgment_id": "EO-DD-ACK-000003",
+        "evidence_reference": "IFVA evidence for Performance Truth",
+        "idempotency_key": "EO-DD-TX-000001:Performance Truth:IFVA evidence for Performance Truth:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Performance Truth",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895209Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      "event": "participant_acknowledged"
+    },
+    {
+      "ack": {
+        "acknowledgment_id": "EO-DD-ACK-000004",
+        "evidence_reference": "IFVA evidence for Historian",
+        "idempotency_key": "EO-DD-TX-000001:Historian:IFVA evidence for Historian:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Historian",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895253Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      "event": "participant_acknowledged"
+    },
+    {
+      "event": "evaluate_commit",
+      "state": "RECONCILIATION_PENDING"
+    },
+    {
+      "event": "reconcile_transaction",
+      "result": {
+        "blocks_commit": false,
+        "checked_at_utc": "2026-07-18T22:36:55.895322Z",
+        "discrepancies": [],
+        "eoda_monitor": "BrokerPositionInvariantMonitor",
+        "transaction_id": "EO-DD-TX-000001",
+        "verdict": "RECONCILED"
+      }
+    }
+  ],
+  "integrity_findings": [],
+  "live_trading_enabled": false,
+  "snapshot": {
+    "acknowledgments": [
+      {
+        "acknowledgment_id": "EO-DD-ACK-000001",
+        "evidence_reference": "IFVA evidence for Paper Broker",
+        "idempotency_key": "EO-DD-TX-000001:Paper Broker:IFVA evidence for Paper Broker:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Paper Broker",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895089Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      {
+        "acknowledgment_id": "EO-DD-ACK-000002",
+        "evidence_reference": "IFVA evidence for Position Registry",
+        "idempotency_key": "EO-DD-TX-000001:Position Registry:IFVA evidence for Position Registry:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Position Registry",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895161Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      {
+        "acknowledgment_id": "EO-DD-ACK-000003",
+        "evidence_reference": "IFVA evidence for Performance Truth",
+        "idempotency_key": "EO-DD-TX-000001:Performance Truth:IFVA evidence for Performance Truth:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Performance Truth",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895209Z",
+        "transaction_id": "EO-DD-TX-000001"
+      },
+      {
+        "acknowledgment_id": "EO-DD-ACK-000004",
+        "evidence_reference": "IFVA evidence for Historian",
+        "idempotency_key": "EO-DD-TX-000001:Historian:IFVA evidence for Historian:ifva-001",
+        "output_version": "ifva-001",
+        "participant_authority": "Historian",
+        "participant_state": "ACKNOWLEDGED",
+        "timestamp_utc": "2026-07-18T22:36:55.895253Z",
+        "transaction_id": "EO-DD-TX-000001"
+      }
+    ],
+    "intent": {
+      "account_id": "ACCT-PAPER-001",
+      "asset_id": "AAPL",
+      "created_at_utc": "2026-07-18T22:36:55.894721Z",
+      "creation_sequence": 1,
+      "doctrine_version": "",
+      "eodc_decision": "APPROVED",
+      "eodc_decision_id": "IFVA-EODC-DECISION-001",
+      "expected_postconditions": [
+        "broker fill has position lineage",
+        "performance truth preserved",
+        "historian evidence preserved"
+      ],
+      "expected_preconditions": [
+        "EO-DC approval present",
+        "paper truth domain only",
+        "live trading disabled"
+      ],
+      "expiration_utc": "",
+      "fill_id": "IFVA-FILL-001",
+      "idempotency_key": "IFVA-TX-OPENING-FILL-001",
+      "intended_participants": [
+        "Paper Broker",
+        "Position Registry",
+        "Performance Truth",
+        "Historian"
+      ],
+      "mission_id": "IFVA-MISSION-001",
+      "order_id": "IFVA-ORDER-001",
+      "participant_dependency_order": [
+        "Paper Broker",
+        "Position Registry",
+        "Performance Truth",
+        "Historian"
+      ],
+      "policy_version": "",
+      "position_id": "",
+      "reconciliation_strategy": "QUARANTINE_ON_CONFLICT",
+      "recovery_strategy": "RESUME_AFTER_RECONCILIATION",
+      "required_participant_actions": [
+        "Paper Broker: acknowledge durable application evidence",
+        "Position Registry: acknowledge durable application evidence",
+        "Performance Truth: acknowledge durable application evidence",
+        "Historian: acknowledge durable application evidence"
+      ],
+      "schema_version": "EO-DD.1",
+      "source_authority": "DeterministicPaperBrokerage",
+      "source_event_id": "IFVA-FILL-EVENT-001",
+      "transaction_hash": "c60e8f3a7cf5f3c3fe36663120795f77c88f7af4b4fa8cf425ee0e2c4a98b11d",
+      "transaction_id": "EO-DD-TX-000001",
+      "transaction_type": "OPENING_FILL",
+      "truth_domain": "PAPER",
+      "workflow_execution_token_id": "IFVA-TOKEN-001",
+      "workflow_id": "IFVA-WORKFLOW-001"
+    },
+    "journal_depth": 8,
+    "participants": [
+      {
+        "ack_count": 1,
+        "authority": "Paper Broker",
+        "dependency_order": 1,
+        "failure_code": "",
+        "last_evidence_reference": "IFVA evidence for Paper Broker",
+        "last_output_version": "ifva-001",
+        "participant_id": "EO-DD-TX-000001-P01",
+        "required_action": "Paper Broker: acknowledge durable application evidence",
+        "state": "ACKNOWLEDGED",
+        "transaction_id": "EO-DD-TX-000001",
+        "updated_at_utc": "2026-07-18T22:36:55.895076Z"
+      },
+      {
+        "ack_count": 1,
+        "authority": "Position Registry",
+        "dependency_order": 2,
+        "failure_code": "",
+        "last_evidence_reference": "IFVA evidence for Position Registry",
+        "last_output_version": "ifva-001",
+        "participant_id": "EO-DD-TX-000001-P02",
+        "required_action": "Position Registry: acknowledge durable application evidence",
+        "state": "ACKNOWLEDGED",
+        "transaction_id": "EO-DD-TX-000001",
+        "updated_at_utc": "2026-07-18T22:36:55.895152Z"
+      },
+      {
+        "ack_count": 1,
+        "authority": "Performance Truth",
+        "dependency_order": 3,
+        "failure_code": "",
+        "last_evidence_reference": "IFVA evidence for Performance Truth",
+        "last_output_version": "ifva-001",
+        "participant_id": "EO-DD-TX-000001-P03",
+        "required_action": "Performance Truth: acknowledge durable application evidence",
+        "state": "ACKNOWLEDGED",
+        "transaction_id": "EO-DD-TX-000001",
+        "updated_at_utc": "2026-07-18T22:36:55.895202Z"
+      },
+      {
+        "ack_count": 1,
+        "authority": "Historian",
+        "dependency_order": 4,
+        "failure_code": "",
+        "last_evidence_reference": "IFVA evidence for Historian",
+        "last_output_version": "ifva-001",
+        "participant_id": "EO-DD-TX-000001-P04",
+        "required_action": "Historian: acknowledge durable application evidence",
+        "state": "ACKNOWLEDGED",
+        "transaction_id": "EO-DD-TX-000001",
+        "updated_at_utc": "2026-07-18T22:36:55.895246Z"
+      }
+    ],
+    "reconciliation": {
+      "blocks_commit": false,
+      "checked_at_utc": "2026-07-18T22:36:55.895322Z",
+      "discrepancies": [],
+      "eoda_monitor": "BrokerPositionInvariantMonitor",
+      "transaction_id": "EO-DD-TX-000001",
+      "verdict": "RECONCILED"
+    },
+    "state": "RECONCILED",
+    "transaction_id": "EO-DD-TX-000001",
+    "transaction_type": "OPENING_FILL"
+  }
+}

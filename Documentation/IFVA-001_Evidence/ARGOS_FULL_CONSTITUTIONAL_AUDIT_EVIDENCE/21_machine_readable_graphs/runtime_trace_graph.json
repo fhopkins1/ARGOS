@@ -1,0 +1,297 @@
+{
+  "events": [
+    {
+      "event": "constructed",
+      "snapshot": {
+        "componentIds": {
+          "api_gateway": 2525019874240,
+          "closed_position_truth": 2525015733120,
+          "communications_bus": 2525015724720,
+          "cost_governor": 2525015725728,
+          "doctrine_policy": 2525015728080,
+          "duty_officers": 2525015722032,
+          "efficiency_analytics": 2525015730096,
+          "event_detection": 2525015723376,
+          "freshness_engine": 2525015726736,
+          "market_data": 2525015731776,
+          "memory_cache": 2525015727072,
+          "mission_planner": 2525015722704,
+          "paper_broker": 2525019871216,
+          "performance_truth": 2525015732112,
+          "position_lifecycle": 2525019872224,
+          "position_monitoring": 2525015732784,
+          "priority_engine": 2525015727744,
+          "scheduler": 2525015721696,
+          "strategic_intelligence": 2525015731104,
+          "workflow_delta": 2525015727408,
+          "workflow_orchestrator": 2525015724384
+        },
+        "failureCount": 0,
+        "haltCount": 0,
+        "loopStarted": false,
+        "missionAdmissionCount": 0,
+        "mode": "stopped",
+        "paperBrokerOrderCount": 0,
+        "positionCount": 0,
+        "startCount": 0,
+        "statefulAuthorityDiagnostics": [
+          {
+            "authority": "workflow_orchestrator",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015724384,
+            "implementation": "EnterpriseWorkflowOrchestrator",
+            "runtime_attribute": "workflow_orchestrator"
+          },
+          {
+            "authority": "scheduler",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015721696,
+            "implementation": "EnterpriseOperationsScheduler",
+            "runtime_attribute": "scheduler"
+          },
+          {
+            "authority": "mission_planner",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015722704,
+            "implementation": "EnterpriseMissionPlanner",
+            "runtime_attribute": "mission_planner"
+          },
+          {
+            "authority": "duty_officers",
+            "construction_site": "EnterpriseOperationsScheduler.duty_officers",
+            "duplicate": false,
+            "identity": 2525015722032,
+            "implementation": "OfficeDutyOfficerRegistry",
+            "runtime_attribute": "duty_officers"
+          },
+          {
+            "authority": "communications_bus",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015724720,
+            "implementation": "EnterpriseCommunicationsBus",
+            "runtime_attribute": "communications_bus"
+          },
+          {
+            "authority": "paper_broker",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525019871216,
+            "implementation": "DeterministicPaperBrokerage",
+            "runtime_attribute": "paper_broker"
+          },
+          {
+            "authority": "performance_truth",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015732112,
+            "implementation": "PerformanceTruthEngine",
+            "runtime_attribute": "performance_truth"
+          },
+          {
+            "authority": "position_monitoring",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015732784,
+            "implementation": "PositionMonitoringNetwork",
+            "runtime_attribute": "position_monitoring"
+          },
+          {
+            "authority": "doctrine_policy",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015728080,
+            "implementation": "EnterpriseDoctrinePolicyManager",
+            "runtime_attribute": "doctrine_policy"
+          },
+          {
+            "authority": "position_lifecycle",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525019872224,
+            "implementation": "EnterprisePositionLifecycleManager",
+            "runtime_attribute": "position_lifecycle"
+          }
+        ],
+        "truthDomain": "STOPPED",
+        "workflowCounts": {
+          "activeWorkflowCount": 0,
+          "nonDormantAfterTransferViolations": 0,
+          "queuedWorkflowCount": 0,
+          "tokenExclusivityViolations": 0,
+          "transferCount": 0,
+          "workflowCount": 0
+        }
+      },
+      "status": {
+        "authority": {
+          "brokerAuthority": "DeterministicPaperBrokerage",
+          "performanceTruthCreatesOutcomes": false,
+          "positionAuthority": "PositionRegistry via PerformanceTruth and EnterprisePositionLifecycleManager",
+          "runtimeCreatesBrokerFills": false,
+          "runtimeMakesFinancialDecisions": false,
+          "runtimeMutatesPositions": false
+        },
+        "failures": [],
+        "haltCount": 0,
+        "liveTradingEnabled": false,
+        "loopStarted": false,
+        "mode": "stopped",
+        "requestedMode": "paper_idle",
+        "startCount": 0
+      }
+    },
+    {
+      "event": "start",
+      "snapshot": {
+        "componentIds": {
+          "api_gateway": 2525019874240,
+          "closed_position_truth": 2525015733120,
+          "communications_bus": 2525015724720,
+          "cost_governor": 2525015725728,
+          "doctrine_policy": 2525015728080,
+          "duty_officers": 2525015722032,
+          "efficiency_analytics": 2525015730096,
+          "event_detection": 2525015723376,
+          "freshness_engine": 2525015726736,
+          "market_data": 2525015731776,
+          "memory_cache": 2525015727072,
+          "mission_planner": 2525015722704,
+          "paper_broker": 2525019871216,
+          "performance_truth": 2525015732112,
+          "position_lifecycle": 2525019872224,
+          "position_monitoring": 2525015732784,
+          "priority_engine": 2525015727744,
+          "scheduler": 2525015721696,
+          "strategic_intelligence": 2525015731104,
+          "workflow_delta": 2525015727408,
+          "workflow_orchestrator": 2525015724384
+        },
+        "failureCount": 0,
+        "haltCount": 0,
+        "loopStarted": true,
+        "missionAdmissionCount": 0,
+        "mode": "paper_idle",
+        "paperBrokerOrderCount": 0,
+        "positionCount": 0,
+        "startCount": 1,
+        "statefulAuthorityDiagnostics": [
+          {
+            "authority": "workflow_orchestrator",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015724384,
+            "implementation": "EnterpriseWorkflowOrchestrator",
+            "runtime_attribute": "workflow_orchestrator"
+          },
+          {
+            "authority": "scheduler",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015721696,
+            "implementation": "EnterpriseOperationsScheduler",
+            "runtime_attribute": "scheduler"
+          },
+          {
+            "authority": "mission_planner",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015722704,
+            "implementation": "EnterpriseMissionPlanner",
+            "runtime_attribute": "mission_planner"
+          },
+          {
+            "authority": "duty_officers",
+            "construction_site": "EnterpriseOperationsScheduler.duty_officers",
+            "duplicate": false,
+            "identity": 2525015722032,
+            "implementation": "OfficeDutyOfficerRegistry",
+            "runtime_attribute": "duty_officers"
+          },
+          {
+            "authority": "communications_bus",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015724720,
+            "implementation": "EnterpriseCommunicationsBus",
+            "runtime_attribute": "communications_bus"
+          },
+          {
+            "authority": "paper_broker",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525019871216,
+            "implementation": "DeterministicPaperBrokerage",
+            "runtime_attribute": "paper_broker"
+          },
+          {
+            "authority": "performance_truth",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015732112,
+            "implementation": "PerformanceTruthEngine",
+            "runtime_attribute": "performance_truth"
+          },
+          {
+            "authority": "position_monitoring",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015732784,
+            "implementation": "PositionMonitoringNetwork",
+            "runtime_attribute": "position_monitoring"
+          },
+          {
+            "authority": "doctrine_policy",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525015728080,
+            "implementation": "EnterpriseDoctrinePolicyManager",
+            "runtime_attribute": "doctrine_policy"
+          },
+          {
+            "authority": "position_lifecycle",
+            "construction_site": "CanonicalEnterpriseRuntime._build_components",
+            "duplicate": false,
+            "identity": 2525019872224,
+            "implementation": "EnterprisePositionLifecycleManager",
+            "runtime_attribute": "position_lifecycle"
+          }
+        ],
+        "truthDomain": "PAPER",
+        "workflowCounts": {
+          "activeWorkflowCount": 0,
+          "nonDormantAfterTransferViolations": 0,
+          "queuedWorkflowCount": 0,
+          "tokenExclusivityViolations": 0,
+          "transferCount": 0,
+          "workflowCount": 0
+        }
+      },
+      "status": {
+        "authority": {
+          "brokerAuthority": "DeterministicPaperBrokerage",
+          "performanceTruthCreatesOutcomes": false,
+          "positionAuthority": "PositionRegistry via PerformanceTruth and EnterprisePositionLifecycleManager",
+          "runtimeCreatesBrokerFills": false,
+          "runtimeMakesFinancialDecisions": false,
+          "runtimeMutatesPositions": false
+        },
+        "failures": [],
+        "haltCount": 0,
+        "liveTradingEnabled": false,
+        "loopStarted": true,
+        "mode": "paper_idle",
+        "requestedMode": "paper_idle",
+        "startCount": 1
+      }
+    },
+    {
+      "event": "exception",
+      "message": "unknown EOS mission template: IFVA-001-AUDIT-SCHEDULED-OBLIGATION",
+      "type": "ValueError"
+    }
+  ]
+}

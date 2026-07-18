@@ -1,0 +1,764 @@
+[
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "API Gateway bridge authority and handoff participant.",
+    "current_status": "CERTIFIED_PRODUCTION",
+    "event_interfaces": [
+      "API_GATEWAY_EXECUTE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-COST-API-001"
+    ],
+    "office_id": "OFFICE-EO-DB-001",
+    "office_name": "API Gateway",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "RISK_REVIEW"
+    ],
+    "constitutional_purpose": "Analyst bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "ANALYSIS_REQUEST",
+      "ANALYTICAL_INPUT"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "office_id": "OFFICE-EO-DB-002",
+    "office_name": "Analyst",
+    "outbound_bridges": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "ORDER_INTENT",
+      "CLOSE_ORDER_INTENT"
+    ],
+    "constitutional_purpose": "Authorization Authority bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "AUTHORIZATION_REVIEW",
+      "EXIT_AUTHORIZATION"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "office_id": "OFFICE-EO-DB-003",
+    "office_name": "Authorization Authority",
+    "outbound_bridges": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "Canonical Runtime bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [
+      "RECOVER_RUNTIME"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "office_id": "OFFICE-EO-DB-004",
+    "office_name": "Canonical Runtime",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "PERFORMANCE_TRUTH_TERMINAL"
+    ],
+    "constitutional_purpose": "Closed Position Truth bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "CLOSED_TRUTH_BUILD"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "office_id": "OFFICE-EO-DB-005",
+    "office_name": "Closed Position Truth",
+    "outbound_bridges": [
+      "BRIDGE-CPT-PT-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "COMMANDER_DIRECTIVE"
+    ],
+    "constitutional_purpose": "Commander bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [
+      "ASSURANCE_OBSERVE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-006",
+    "office_name": "Commander",
+    "outbound_bridges": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "ANALYTICAL_INPUT"
+    ],
+    "constitutional_purpose": "Communications Bus bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-007",
+    "office_name": "Communications Bus",
+    "outbound_bridges": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "API_GATEWAY_EXECUTE"
+    ],
+    "constitutional_purpose": "Cost Governor bridge authority and handoff participant.",
+    "current_status": "CERTIFIED_PRODUCTION",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-008",
+    "office_name": "Cost Governor",
+    "outbound_bridges": [
+      "BRIDGE-COST-API-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "Decision Laboratory bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "REPLAY_ANALYSIS"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "office_id": "OFFICE-EO-DB-009",
+    "office_name": "Decision Laboratory",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "Doctrine bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [
+      "COMMANDER_DIRECTIVE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "office_id": "OFFICE-EO-DB-010",
+    "office_name": "Doctrine",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "Duty Officer bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [
+      "OFFICE_WAKE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "office_id": "OFFICE-EO-DB-011",
+    "office_name": "Duty Officer",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "SURVEILLANCE_OBSERVE"
+    ],
+    "constitutional_purpose": "EO-CK bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "MONITOR_POSITION"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "office_id": "OFFICE-EO-DB-012",
+    "office_name": "EO-CK",
+    "outbound_bridges": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "ASSURANCE_OBSERVE"
+    ],
+    "constitutional_purpose": "EO-DG bridge authority and handoff participant.",
+    "current_status": "CERTIFIED_PRODUCTION",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-013",
+    "office_name": "EO-DG",
+    "outbound_bridges": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "MISSION_CANDIDATE"
+    ],
+    "constitutional_purpose": "Event Detection bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-014",
+    "office_name": "Event Detection",
+    "outbound_bridges": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "EXIT_AUTHORIZATION"
+    ],
+    "constitutional_purpose": "Exit Decision bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "EXIT_EVALUATE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "office_id": "OFFICE-EO-DB-015",
+    "office_name": "Exit Decision",
+    "outbound_bridges": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "POSITION_MUTATION"
+    ],
+    "constitutional_purpose": "Fill Ledger bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "FILL_LEDGER_APPEND"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "office_id": "OFFICE-EO-DB-016",
+    "office_name": "Fill Ledger",
+    "outbound_bridges": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "LEARNING_CANDIDATE"
+    ],
+    "constitutional_purpose": "Historian bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "HISTORIAN_PRESERVE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "office_id": "OFFICE-EO-DB-017",
+    "office_name": "Historian",
+    "outbound_bridges": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "Learning Systems bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "LEARNING_CANDIDATE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "office_id": "OFFICE-EO-DB-018",
+    "office_name": "Learning Systems",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "CREATE_WORKFLOW"
+    ],
+    "constitutional_purpose": "Mission Planner bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "MISSION_DUE",
+      "MISSION_CANDIDATE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "office_id": "OFFICE-EO-DB-019",
+    "office_name": "Mission Planner",
+    "outbound_bridges": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "FILL_LEDGER_APPEND",
+      "POSITION_REDUCTION"
+    ],
+    "constitutional_purpose": "Paper Broker bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "BROKER_SUBMIT"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-020",
+    "office_name": "Paper Broker",
+    "outbound_bridges": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "HISTORIAN_PRESERVE"
+    ],
+    "constitutional_purpose": "Performance Truth bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "PERFORMANCE_TRUTH_APPEND",
+      "PERFORMANCE_TRUTH_TERMINAL"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "office_id": "OFFICE-EO-DB-021",
+    "office_name": "Performance Truth",
+    "outbound_bridges": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "RECOVER_RUNTIME",
+      "RUNTIME_REJOIN"
+    ],
+    "constitutional_purpose": "Persistence bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-022",
+    "office_name": "Persistence",
+    "outbound_bridges": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "PERFORMANCE_TRUTH_APPEND",
+      "MONITOR_POSITION",
+      "CLOSED_TRUTH_BUILD"
+    ],
+    "constitutional_purpose": "Position Registry bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "POSITION_MUTATION",
+      "POSITION_REDUCTION"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "office_id": "OFFICE-EO-DB-023",
+    "office_name": "Position Registry",
+    "outbound_bridges": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "REPLAY_ANALYSIS"
+    ],
+    "constitutional_purpose": "Replay bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-024",
+    "office_name": "Replay",
+    "outbound_bridges": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "AUTHORIZATION_REVIEW"
+    ],
+    "constitutional_purpose": "Risk bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "RISK_REVIEW"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "office_id": "OFFICE-EO-DB-025",
+    "office_name": "Risk",
+    "outbound_bridges": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [],
+    "constitutional_purpose": "Runtime Provider bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [
+      "RUNTIME_REJOIN"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "office_id": "OFFICE-EO-DB-026",
+    "office_name": "Runtime Provider",
+    "outbound_bridges": [],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "MISSION_DUE"
+    ],
+    "constitutional_purpose": "Scheduler bridge authority and handoff participant.",
+    "current_status": "CERTIFIED_PRODUCTION",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-027",
+    "office_name": "Scheduler",
+    "outbound_bridges": [
+      "BRIDGE-SCHED-MISSION-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "ANALYSIS_REQUEST"
+    ],
+    "constitutional_purpose": "Seeker bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "SEEKER_MANDATE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-028",
+    "office_name": "Seeker",
+    "outbound_bridges": [
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "SEEKER_MANDATE"
+    ],
+    "constitutional_purpose": "Strategic Intelligence bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [],
+    "inbound_bridges": [],
+    "office_id": "OFFICE-EO-DB-029",
+    "office_name": "Strategic Intelligence",
+    "outbound_bridges": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "EXIT_EVALUATE"
+    ],
+    "constitutional_purpose": "Surveillance bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "SURVEILLANCE_OBSERVE"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "office_id": "OFFICE-EO-DB-030",
+    "office_name": "Surveillance",
+    "outbound_bridges": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "BROKER_SUBMIT"
+    ],
+    "constitutional_purpose": "Trader bridge authority and handoff participant.",
+    "current_status": "PARTIAL",
+    "event_interfaces": [
+      "ORDER_INTENT",
+      "CLOSE_ORDER_INTENT"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "office_id": "OFFICE-EO-DB-031",
+    "office_name": "Trader",
+    "outbound_bridges": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  },
+  {
+    "command_interfaces": [
+      "OFFICE_WAKE"
+    ],
+    "constitutional_purpose": "Workflow Orchestrator bridge authority and handoff participant.",
+    "current_status": "CONDITIONALLY_PRODUCTION",
+    "event_interfaces": [
+      "CREATE_WORKFLOW"
+    ],
+    "inbound_bridges": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "office_id": "OFFICE-EO-DB-032",
+    "office_name": "Workflow Orchestrator",
+    "outbound_bridges": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "paper_mode_reachability": "required",
+    "persistence_state": "declared per bridge registry",
+    "proof_only_reachability": "not counted as production",
+    "recovery_state": "declared per bridge registry",
+    "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+    "test_only_reachability": "not counted as production",
+    "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+  }
+]

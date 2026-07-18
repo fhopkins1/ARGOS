@@ -1,0 +1,71 @@
+[
+  {
+    "authoritative_ledgers_reachable": [],
+    "candidate_category": "UNSAFE_FALLBACK",
+    "commit_discovered": "f26278806ee280acaa897e25fe07a9f81ef1c3aa",
+    "commit_remediated": "",
+    "consumer": "Analytical Offices",
+    "dynamic_reachability": "UNKNOWN_REACHABILITY",
+    "eodb_bridge_ids": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "evidence_hash": "7ce14e69a7e9fbd359d1557c1bde57f3a7eaa47b1ec49e99dd97f876b37ade2e",
+    "file": "src/argos/control_panel/market_data_provider.py",
+    "finding_class": "SYNTHETIC_MARKET_DATA",
+    "finding_id": "SYN-MARKET-002",
+    "generated_value_or_behavior": "Mock market provider remains paper-labeled provisional source",
+    "line_end": 146,
+    "line_start": 146,
+    "operating_mode": "paper",
+    "production_paper_reachability": "PAPER_DECISION_REACHABLE",
+    "rationale": "Mock provider is still primary paper source; EO-DH exposes it as a blocker until authoritative provider or explicit operator certification exists.",
+    "remediation_owner": "EO-DH",
+    "required_remediation": "remove, block, quarantine, or relabel with explicit unavailable/degraded state",
+    "schema_version": "EO-DH.1",
+    "severity": "MAJOR",
+    "source_evidence": [
+      "src/argos/control_panel/market_data_provider.py"
+    ],
+    "static_reachability": "PAPER_DECISION_REACHABLE",
+    "status": "UNRESOLVED",
+    "symbol": "get_quote",
+    "test_reference": "Tests/test_eodh_synthetic_truth_quarantine.py",
+    "title": "Mock market provider remains paper-labeled provisional source",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_ledgers_reachable": [],
+    "candidate_category": "UNKNOWN",
+    "commit_discovered": "f26278806ee280acaa897e25fe07a9f81ef1c3aa",
+    "commit_remediated": "",
+    "consumer": "Runtime Provider",
+    "dynamic_reachability": "UNKNOWN_REACHABILITY",
+    "eodb_bridge_ids": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "evidence_hash": "93d0cf779fc33193828a61b54ba0122a6448577c0b8fbea28124a43c85a76296",
+    "file": "src/argos/control_panel/enterprise_persistence.py",
+    "finding_class": "SYNTHETIC_RECOVERY",
+    "finding_id": "SYN-RECOVERY-001",
+    "generated_value_or_behavior": "Recovery must block missing evidence",
+    "line_end": 1,
+    "line_start": 1,
+    "operating_mode": "paper",
+    "production_paper_reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+    "rationale": "EO-DB recovery bridge is conditional; missing financial evidence must remain unresolved rather than reconstructed.",
+    "remediation_owner": "EO-DH",
+    "required_remediation": "remove, block, quarantine, or relabel with explicit unavailable/degraded state",
+    "schema_version": "EO-DH.1",
+    "severity": "MAJOR",
+    "source_evidence": [
+      "src/argos/control_panel/enterprise_persistence.py"
+    ],
+    "static_reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+    "status": "UNRESOLVED",
+    "symbol": "recover",
+    "test_reference": "Tests/test_eodh_synthetic_truth_quarantine.py",
+    "title": "Recovery must block missing evidence",
+    "truth_domain": "PAPER"
+  }
+]

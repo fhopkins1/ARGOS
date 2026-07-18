@@ -1,0 +1,1473 @@
+[
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-SCHED-MISSION-001",
+    "certification_state": "CERTIFIED_PRODUCTION",
+    "command_or_event_type": "MISSION_DUE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "not required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-SCHED-MISSION-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/canonical_enterprise_runtime.py"
+    ],
+    "limitations": [],
+    "name": "Scheduler -> Mission Planner",
+    "payload_schema": "scheduled_obligation.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "token not issued until workflow admission",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Scheduler",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "EnterpriseOperationsScheduler.create_scheduled_mission",
+    "target_authority": "Mission Planner",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "EnterpriseMissionPlanner.plan_scheduled_obligation",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "due obligation",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-EVENT-MISSION-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "MISSION_CANDIDATE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-EVENT-MISSION-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/event_detection_engine.py",
+      "src/argos/control_panel/mission_planner.py"
+    ],
+    "limitations": [
+      "event-driven mission admission is implemented but not dynamically certified end to end"
+    ],
+    "name": "Event Detection -> Mission Planner",
+    "payload_schema": "validated_event.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "token not issued until workflow admission",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Event Detection",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "EventDetectionEngine",
+    "target_authority": "Mission Planner",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "EnterpriseMissionPlanner",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "material event",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-MISSION-WORKFLOW-001",
+    "certification_state": "CERTIFIED_PRODUCTION",
+    "command_or_event_type": "CREATE_WORKFLOW",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "not required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-MISSION-WORKFLOW-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "src/argos/control_panel/workflow_orchestrator.py"
+    ],
+    "limitations": [],
+    "name": "Mission Planner -> Workflow Orchestrator",
+    "payload_schema": "mission_plan.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "initial token issued by target",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Mission Planner",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "MissionPlanRecord",
+    "target_authority": "Workflow Orchestrator",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "EnterpriseWorkflowOrchestrator.create_validate_queue_assign",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "accepted mission",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-WORKFLOW-OFFICE-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "OFFICE_WAKE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "not required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-WORKFLOW-OFFICE-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "src/argos/control_panel/office_duty_officer.py"
+    ],
+    "limitations": [
+      "initial owner is represented by workflow type compatibility naming"
+    ],
+    "name": "Workflow Orchestrator -> Initial Office",
+    "payload_schema": "workflow_activation.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "target owns active token",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Workflow Orchestrator",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "WorkflowRecord",
+    "target_authority": "Duty Officer",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "OfficeDutyOfficerRegistry",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "workflow assigned",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-SI-SEEKER-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "SEEKER_MANDATE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-SI-SEEKER-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "src/argos/control_panel/strategic_intelligence_command.py"
+    ],
+    "limitations": [
+      "Seeker office implementation remains compatibility package, but runtime-authored substitutes are blocked"
+    ],
+    "name": "Strategic Intelligence -> Seeker",
+    "payload_schema": "strategic_mandate.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "source completes before seeker receives",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Strategic Intelligence",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "StrategicIntelligenceCommand",
+    "target_authority": "Seeker",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "CanonicalEnterpriseRuntime.request_seeker_work",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "strategic mandate",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-SEEKER-ANALYST-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "ANALYSIS_REQUEST",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-SEEKER-ANALYST-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/cognitive_contract.py"
+    ],
+    "limitations": [],
+    "name": "Seeker -> Analyst",
+    "payload_schema": "decision_candidate.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "explicit token transfer required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Seeker",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "Seeker output",
+    "target_authority": "Analyst",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "Analyst input",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "candidate or no-candidate",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-ANALYST-RISK-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "RISK_REVIEW",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-ANALYST-RISK-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/cognitive_contract.py"
+    ],
+    "limitations": [],
+    "name": "Analyst -> Risk",
+    "payload_schema": "analysis_product.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "explicit token transfer required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Analyst",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "Analyst output",
+    "target_authority": "Risk",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "Risk input",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "analysis completion",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-RISK-AUTH-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "AUTHORIZATION_REVIEW",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-RISK-AUTH-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_lifecycle_manager.py"
+    ],
+    "limitations": [],
+    "name": "Risk -> Authorization Authority",
+    "payload_schema": "risk_recommendation.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "explicit token transfer required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Risk",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "Risk recommendation",
+    "target_authority": "Authorization Authority",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "Authorization decision",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "risk disposition",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-AUTH-TRADER-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "ORDER_INTENT",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-AUTH-TRADER-001:payload_identity",
+    "implementation_files": [
+      "src/argos/trader/paper_brokerage.py"
+    ],
+    "limitations": [],
+    "name": "Authorization Authority -> Trader",
+    "payload_schema": "trade_authorization.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "Trader owns token before order construction",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Authorization Authority",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "authorization",
+    "target_authority": "Trader",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "order intent",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "approved instruction",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-TRADER-BROKER-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "BROKER_SUBMIT",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-TRADER-BROKER-001:payload_identity",
+    "implementation_files": [
+      "src/argos/trader/paper_brokerage.py",
+      "Tests/test_or003_paper_brokerage.py"
+    ],
+    "limitations": [
+      "OR-003 broker realism is paper-only; EO-DD coordination is certified as required evidence, not live"
+    ],
+    "name": "Trader -> Paper Broker",
+    "payload_schema": "paper_order_ticket.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "Trader token owner required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Trader",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "OrderManagementOffice",
+    "target_authority": "Paper Broker",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "DeterministicPaperBrokerage.submit_order",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "order intent",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-BROKER-FILL-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "FILL_LEDGER_APPEND",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-BROKER-FILL-001:payload_identity",
+    "implementation_files": [
+      "src/argos/trader/paper_brokerage.py"
+    ],
+    "limitations": [],
+    "name": "Paper Broker -> Fill Ledger",
+    "payload_schema": "broker_fill.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "broker-owned token lineage preserved",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Paper Broker",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "Broker fill event",
+    "target_authority": "Fill Ledger",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "fill ledger",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "broker fill",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-FILL-POSITION-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "POSITION_MUTATION",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-FILL-POSITION-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/control_panel/transaction_reconciliation.py",
+      "Tests/test_or004_position_lifecycle.py"
+    ],
+    "limitations": [],
+    "name": "Fill Ledger -> Position Registry",
+    "payload_schema": "position_fill_application.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "fill token lineage required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Fill Ledger",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "broker fill",
+    "target_authority": "Position Registry",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "PositionRegistry",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "filled quantity",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-POSITION-PT-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "PERFORMANCE_TRUTH_APPEND",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-POSITION-PT-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/performance_truth_engine.py",
+      "src/argos/control_panel/transaction_reconciliation.py"
+    ],
+    "limitations": [],
+    "name": "Position Registry -> Performance Truth",
+    "payload_schema": "performance_truth_reference.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "position mutation token lineage required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Position Registry",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "Position mutation",
+    "target_authority": "Performance Truth",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "PerformanceTruthEngine",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "authoritative position update",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-POSITION-EOCK-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "MONITOR_POSITION",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-POSITION-EOCK-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_monitoring_network.py"
+    ],
+    "limitations": [],
+    "name": "Position Registry -> EO-CK Enrollment",
+    "payload_schema": "position_enrollment.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "position owner evidence required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Position Registry",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "open position",
+    "target_authority": "EO-CK",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "PositionMonitoringNetwork",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "open position",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-EOCK-SURVEILLANCE-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "SURVEILLANCE_OBSERVE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "not required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-EOCK-SURVEILLANCE-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_surveillance_engine.py"
+    ],
+    "limitations": [],
+    "name": "EO-CK -> Position Surveillance",
+    "payload_schema": "position_surveillance_request.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "read-only observation token scope required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "EO-CK",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "monitoring schedule",
+    "target_authority": "Surveillance",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "PositionSurveillanceEngine",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "monitoring cadence",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-SURVEILLANCE-EXIT-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "EXIT_EVALUATE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-SURVEILLANCE-EXIT-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_exit_decision_engine.py"
+    ],
+    "limitations": [],
+    "name": "Position Surveillance -> Exit Decision",
+    "payload_schema": "exit_signal.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "exit evaluator token scope required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Surveillance",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "surveillance observation",
+    "target_authority": "Exit Decision",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "ExitDecisionEngine",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "material condition",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-EXIT-AUTH-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "EXIT_AUTHORIZATION",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-EXIT-AUTH-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_lifecycle_manager.py"
+    ],
+    "limitations": [],
+    "name": "Exit Decision -> Authorization Authority",
+    "payload_schema": "exit_authorization_request.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "explicit token transfer required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Exit Decision",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "exit recommendation",
+    "target_authority": "Authorization Authority",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "authorization",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "exit recommendation",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-EXIT-TRADER-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "CLOSE_ORDER_INTENT",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-EXIT-TRADER-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_lifecycle_manager.py",
+      "Tests/test_or004_position_lifecycle.py"
+    ],
+    "limitations": [],
+    "name": "Authorized Exit -> Trader",
+    "payload_schema": "closing_order_intent.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "Trader token owner required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Authorization Authority",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "exit authorization",
+    "target_authority": "Trader",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "Trader close intent",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "authorized exit",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-CLOSING-FILL-POSITION-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "POSITION_REDUCTION",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-CLOSING-FILL-POSITION-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/position_lifecycle_manager.py",
+      "src/argos/control_panel/transaction_reconciliation.py"
+    ],
+    "limitations": [],
+    "name": "Closing Fill -> Position Registry",
+    "payload_schema": "closing_fill.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "fill token lineage required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Paper Broker",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "closing fill",
+    "target_authority": "Position Registry",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "PositionRegistry.reduce",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "closing fill",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-CLOSE-CPT-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "CLOSED_TRUTH_BUILD",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-CLOSE-CPT-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/closed_position_truth.py",
+      "Tests/test_or004_position_lifecycle.py"
+    ],
+    "limitations": [],
+    "name": "Position Closure -> Closed Position Truth",
+    "payload_schema": "closed_position_truth.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "closure token lineage required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Position Registry",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "closed position",
+    "target_authority": "Closed Position Truth",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "ClosedPositionTruthBuilder",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "zero quantity closure",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-CPT-PT-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "PERFORMANCE_TRUTH_TERMINAL",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-CPT-PT-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/performance_truth_engine.py"
+    ],
+    "limitations": [],
+    "name": "Closed Position Truth -> Performance Truth",
+    "payload_schema": "terminal_performance_truth.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "closed truth token lineage required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Closed Position Truth",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "closed truth record",
+    "target_authority": "Performance Truth",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "PerformanceTruthEngine",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "terminal lifecycle fact",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-PT-HISTORIAN-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "HISTORIAN_PRESERVE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-PT-HISTORIAN-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/historian_recommendation_engine.py"
+    ],
+    "limitations": [],
+    "name": "Performance Truth -> Historian",
+    "payload_schema": "historian_record.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "truth lineage token required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Performance Truth",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "performance fact",
+    "target_authority": "Historian",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "Historian",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "committed performance truth",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-HISTORIAN-LEARNING-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "LEARNING_CANDIDATE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-HISTORIAN-LEARNING-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/enterprise_learning_engine.py"
+    ],
+    "limitations": [],
+    "name": "Historian -> Learning Systems",
+    "payload_schema": "learning_input.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "learning token or batch authority required",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Historian",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "historian record",
+    "target_authority": "Learning Systems",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "EnterpriseLearningEngine",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "eligible learning candidate",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-COMMANDER-DIRECTIVE-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "COMMANDER_DIRECTIVE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "not required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-COMMANDER-DIRECTIVE-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/enterprise_doctrine_policy_manager.py",
+      "src/argos/control_panel/server.py"
+    ],
+    "limitations": [
+      "Commander may request investigation/remediation but cannot mark bridges certified"
+    ],
+    "name": "Commander -> Directive Channels",
+    "payload_schema": "commander_directive.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "Commander cannot own office token",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Commander",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "Commander directive",
+    "target_authority": "Doctrine",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "EnterpriseDoctrinePolicyManager",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "explicit directive",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-COST-API-001",
+    "certification_state": "CERTIFIED_PRODUCTION",
+    "command_or_event_type": "API_GATEWAY_EXECUTE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-COST-API-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/api_execution_gateway.py",
+      "src/argos/control_panel/canonical_enterprise_runtime.py"
+    ],
+    "limitations": [],
+    "name": "Cost Governor -> API Execution Gateway",
+    "payload_schema": "api_execution_request.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "requesting office owns workflow token",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Cost Governor",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "CostAuthorizationDecision",
+    "target_authority": "API Gateway",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "ApiExecutionGateway",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "external call request",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+    "certification_state": "PARTIAL",
+    "command_or_event_type": "ANALYTICAL_INPUT",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "PARTIAL_BRIDGE"
+    ],
+    "idempotency_key": "BRIDGE-FRESHNESS-ANALYTICAL-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/information_freshness_engine.py",
+      "src/argos/control_panel/enterprise_memory_cache.py",
+      "src/argos/control_panel/workflow_delta_engine.py"
+    ],
+    "limitations": [],
+    "name": "Freshness / Cache / Workflow Delta -> Analytical Offices",
+    "payload_schema": "freshness_cache_decision.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "office token required before regeneration",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Communications Bus",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "freshness decision",
+    "target_authority": "Analyst",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "analytical office",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "cache reuse or regeneration",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "RECOVER_RUNTIME",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-PERSIST-RECOVERY-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/enterprise_persistence.py",
+      "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "Tests/test_or006_enterprise_persistence.py"
+    ],
+    "limitations": [],
+    "name": "Persistence -> Recovery",
+    "payload_schema": "enterprise_persistence_snapshot.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "token ownership reconstructed",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Persistence",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "DurableEnterprisePersistenceStore",
+    "target_authority": "Canonical Runtime",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "CanonicalEnterpriseRuntime.restore_enterprise_persistence_snapshot",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "restart",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+    "certification_state": "CONDITIONALLY_PRODUCTION",
+    "command_or_event_type": "RUNTIME_REJOIN",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-RECOVERY-RUNTIME-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/runtime_provider.py",
+      "src/argos/control_panel/enterprise_persistence.py"
+    ],
+    "limitations": [],
+    "name": "Recovery -> Canonical Runtime",
+    "payload_schema": "runtime_recovery_result.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "one provider after recovery",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Persistence",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "RecoveryAuditRecord",
+    "target_authority": "Runtime Provider",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "CanonicalRuntimeProvider",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "recovery complete",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-REPLAY-LAB-001",
+    "certification_state": "REPLAY_ONLY",
+    "command_or_event_type": "REPLAY_ANALYSIS",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-REPLAY-LAB-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/market_replay_engine.py",
+      "src/argos/control_panel/decision_laboratory.py"
+    ],
+    "limitations": [],
+    "name": "Replay -> Decision Laboratory",
+    "payload_schema": "replay_lab_result.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "no active paper token transfer",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "replay",
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "Replay",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "ReplayRunRecord",
+    "target_authority": "Decision Laboratory",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "DecisionLaboratory",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "isolated replay",
+    "truth_domains": [
+      "PAPER"
+    ]
+  },
+  {
+    "authority_validation": "EO-DA authority registry plus bridge source/target declaration",
+    "bridge_id": "BRIDGE-ASSURANCE-COMMANDER-001",
+    "certification_state": "CERTIFIED_PRODUCTION",
+    "command_or_event_type": "ASSURANCE_OBSERVE",
+    "commander_visibility": "visible through EO-DB Commander read model",
+    "dynamic_reachability": "canonical runtime trace required for certified production; otherwise classified with limitation",
+    "eodc_promotion_requirement": "not required",
+    "eodd_transaction_requirement": "not required",
+    "failure_classification": [
+      "UNKNOWN"
+    ],
+    "idempotency_key": "BRIDGE-ASSURANCE-COMMANDER-001:payload_identity",
+    "implementation_files": [
+      "src/argos/control_panel/read_only_integrity.py",
+      "src/argos/control_panel/runtime_bridge_certification.py"
+    ],
+    "limitations": [],
+    "name": "Assurance Offices -> Commander",
+    "payload_schema": "assurance_read_model.v1",
+    "persistence_behavior": "declared handoff state must be durable or reconstructable",
+    "recovery_behavior": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "required_workflow_token_state": "no token transfer; read-only",
+    "retry_behavior": "idempotent by declared idempotency key",
+    "runtime_modes": [
+      "paper"
+    ],
+    "schema_version": "EO-DB.1",
+    "source_authority": "EO-DG",
+    "source_preconditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "source_symbol": "assurance read models",
+    "target_authority": "Commander",
+    "target_preconditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "target_symbol": "Commander",
+    "test_references": [
+      "Tests/test_eodb_runtime_bridge_certification.py"
+    ],
+    "timeout_behavior": "bounded retry then Commander-visible failure",
+    "trigger": "read-only assurance view",
+    "truth_domains": [
+      "PAPER"
+    ]
+  }
+]

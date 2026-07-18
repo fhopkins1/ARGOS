@@ -1,0 +1,889 @@
+{
+  "bridgeCounts": {
+    "bypass": 0,
+    "certifiedProduction": 4,
+    "compatibilityOnly": 0,
+    "conditionallyProduction": 11,
+    "dead": 0,
+    "duplicate": 0,
+    "missing": 0,
+    "partial": 14,
+    "proofOnly": 0,
+    "replayOnly": 1,
+    "required": 30,
+    "simulationOnly": 0,
+    "testOnly": 0
+  },
+  "bridgeMatrixHash": "0dc0ba29328bb1ce347b322a910a80c8d482e65a634cde39fa815070cf4d1ece",
+  "certifiesArgos": false,
+  "certifiesContinuousPaperTrading": false,
+  "commanderControls": {
+    "mayBypassWorkflowTokenTransfer": false,
+    "mayCreateMissingAcknowledgment": false,
+    "mayCreateRemediationDirective": true,
+    "mayEnableLiveTrading": false,
+    "mayFabricateReachability": false,
+    "mayHaltPaperOperationOnCriticalFailure": true,
+    "mayManuallyMarkBridgeCertified": false,
+    "mayOverrideEODA": false,
+    "mayOverrideEODC": false,
+    "mayOverrideEODD": false,
+    "mayRequestInvestigation": true,
+    "mayRequestRetest": true,
+    "mayViewBridgeMatrix": true
+  },
+  "engineName": "Runtime Bridge Certification and Remediation",
+  "engineVersion": "EO-DB.1",
+  "engineeringOrder": "EO-DB",
+  "financialMutationAuthority": false,
+  "findings": [
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-COST-API-001",
+      "evidence": [
+        "PROVENANCE_UNVERIFIED",
+        "SOURCE_AUTHORITY_INVALID"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0056",
+      "reason": "EO-DC promotion gate rejected paper bridge evidence.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "evidence": [
+        "UNAUTHORIZED_AUTHORITY"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0057",
+      "reason": "EO-DC envelope fixture failed validation.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "evidence": [
+        "PROVENANCE_UNVERIFIED",
+        "SOURCE_AUTHORITY_INVALID"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0058",
+      "reason": "EO-DC promotion gate rejected paper bridge evidence.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+      "evidence": [
+        "UNAUTHORIZED_AUTHORITY"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0059",
+      "reason": "EO-DC envelope fixture failed validation.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+      "evidence": [
+        "PROVENANCE_UNVERIFIED",
+        "SOURCE_AUTHORITY_INVALID"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0060",
+      "reason": "EO-DC promotion gate rejected paper bridge evidence.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+      "evidence": [
+        "Historian",
+        "Position Registry",
+        "Closed Position Truth",
+        "Paper Broker",
+        "Performance Truth",
+        "Transaction Coordinator"
+      ],
+      "finding_class": "EO_DD",
+      "finding_id": "EO-DB-FINDING-0061",
+      "reason": "Financial bridge requires EO-DD but does not map to a registered participant.",
+      "remediation_owner": "EO-DD",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+      "evidence": [
+        "UNAUTHORIZED_AUTHORITY"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0062",
+      "reason": "EO-DC envelope fixture failed validation.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+      "evidence": [
+        "PROVENANCE_UNVERIFIED",
+        "SOURCE_AUTHORITY_INVALID"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0063",
+      "reason": "EO-DC promotion gate rejected paper bridge evidence.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+      "evidence": [
+        "Historian",
+        "Position Registry",
+        "Closed Position Truth",
+        "Paper Broker",
+        "Performance Truth",
+        "Transaction Coordinator"
+      ],
+      "finding_class": "EO_DD",
+      "finding_id": "EO-DB-FINDING-0064",
+      "reason": "Financial bridge requires EO-DD but does not map to a registered participant.",
+      "remediation_owner": "EO-DD",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-REPLAY-LAB-001",
+      "evidence": [
+        "src/argos/control_panel/market_replay_engine.py",
+        "src/argos/control_panel/decision_laboratory.py"
+      ],
+      "finding_class": "AUTHORITY",
+      "finding_id": "EO-DB-FINDING-0065",
+      "reason": "Target authority Decision Laboratory is not in the EO-DA authority registry.",
+      "remediation_owner": "EO-DA",
+      "severity": "MAJOR"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-REPLAY-LAB-001",
+      "evidence": [
+        "UNAUTHORIZED_AUTHORITY"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0066",
+      "reason": "EO-DC envelope fixture failed validation.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-REPLAY-LAB-001",
+      "evidence": [
+        "PROVENANCE_UNVERIFIED",
+        "SOURCE_AUTHORITY_INVALID"
+      ],
+      "finding_class": "EO_DC",
+      "finding_id": "EO-DB-FINDING-0067",
+      "reason": "EO-DC promotion gate rejected paper bridge evidence.",
+      "remediation_owner": "EO-DC",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "BRIDGE-ASSURANCE-COMMANDER-001",
+      "evidence": [
+        "src/argos/control_panel/read_only_integrity.py",
+        "src/argos/control_panel/runtime_bridge_certification.py"
+      ],
+      "finding_class": "AUTHORITY",
+      "finding_id": "EO-DB-FINDING-0068",
+      "reason": "Source authority EO-DG is not in the EO-DA authority registry.",
+      "remediation_owner": "EO-DA",
+      "severity": "MAJOR"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/eab/events",
+      "evidence": [
+        "/api/eab/events"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0069",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/cnac/notifications",
+      "evidence": [
+        "/api/cnac/notifications"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0070",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/ioe/explorer",
+      "evidence": [
+        "/api/ioe/explorer"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0071",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/command/history",
+      "evidence": [
+        "/api/command/history"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0072",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/infrastructure/state",
+      "evidence": [
+        "/api/infrastructure/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0073",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/lppc/state",
+      "evidence": [
+        "/api/lppc/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0074",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/strategy-performance/state",
+      "evidence": [
+        "/api/strategy-performance/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0075",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/commander/briefing",
+      "evidence": [
+        "/api/commander/briefing"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0076",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/information-freshness/state",
+      "evidence": [
+        "/api/information-freshness/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0077",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/enterprise-memory/state",
+      "evidence": [
+        "/api/enterprise-memory/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0078",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/workflow-delta/state",
+      "evidence": [
+        "/api/workflow-delta/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0079",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/enterprise-priority/state",
+      "evidence": [
+        "/api/enterprise-priority/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0080",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/communications-bus/state",
+      "evidence": [
+        "/api/communications-bus/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0081",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/efficiency-analytics/state",
+      "evidence": [
+        "/api/efficiency-analytics/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0082",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/doctrine-policy/state",
+      "evidence": [
+        "/api/doctrine-policy/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0083",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/grand-strategy/state",
+      "evidence": [
+        "/api/grand-strategy/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0084",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/strategic-intelligence/state",
+      "evidence": [
+        "/api/strategic-intelligence/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0085",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/blue-ocean/state",
+      "evidence": [
+        "/api/blue-ocean/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0086",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/disruption/state",
+      "evidence": [
+        "/api/disruption/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0087",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/decline/state",
+      "evidence": [
+        "/api/decline/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0088",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/short-opportunity/state",
+      "evidence": [
+        "/api/short-opportunity/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0089",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/market-structure/state",
+      "evidence": [
+        "/api/market-structure/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0090",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/capital-rotation/state",
+      "evidence": [
+        "/api/capital-rotation/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0091",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/strategic-synthesis/state",
+      "evidence": [
+        "/api/strategic-synthesis/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0092",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/reality-calibration/state",
+      "evidence": [
+        "/api/reality-calibration/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0093",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/correlation-intelligence/state",
+      "evidence": [
+        "/api/correlation-intelligence/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0094",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/stress-testing/state",
+      "evidence": [
+        "/api/stress-testing/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0095",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/black-swan/state",
+      "evidence": [
+        "/api/black-swan/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0096",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/monte-carlo/state",
+      "evidence": [
+        "/api/monte-carlo/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0097",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/risk-factor/state",
+      "evidence": [
+        "/api/risk-factor/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0098",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/capital-allocation/state",
+      "evidence": [
+        "/api/capital-allocation/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0099",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/portfolio-construction/state",
+      "evidence": [
+        "/api/portfolio-construction/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0100",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/position-sizing/state",
+      "evidence": [
+        "/api/position-sizing/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0101",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/credit-governor/state",
+      "evidence": [
+        "/api/credit-governor/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0102",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/api-runtime-monitor/state",
+      "evidence": [
+        "/api/api-runtime-monitor/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0103",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/workflow-orchestrator/state",
+      "evidence": [
+        "/api/workflow-orchestrator/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0104",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    },
+    {
+      "blocks_ci": true,
+      "bridge_id": "ROUTE-/api/workflow-runtime-monitor/state",
+      "evidence": [
+        "/api/workflow-runtime-monitor/state"
+      ],
+      "finding_class": "READ_ONLY",
+      "finding_id": "EO-DB-FINDING-0105",
+      "reason": "production GET read surface is not registered",
+      "remediation_owner": "EO-DG",
+      "severity": "CRITICAL"
+    }
+  ],
+  "liveTradingEnabled": false,
+  "officesDiscovered": 32,
+  "orphanedOffices": [
+    {
+      "command_interfaces": [
+        "ANALYTICAL_INPUT"
+      ],
+      "constitutional_purpose": "Communications Bus bridge authority and handoff participant.",
+      "current_status": "PARTIAL",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-007",
+      "office_name": "Communications Bus",
+      "outbound_bridges": [
+        "BRIDGE-FRESHNESS-ANALYTICAL-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "API_GATEWAY_EXECUTE"
+      ],
+      "constitutional_purpose": "Cost Governor bridge authority and handoff participant.",
+      "current_status": "CERTIFIED_PRODUCTION",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-008",
+      "office_name": "Cost Governor",
+      "outbound_bridges": [
+        "BRIDGE-COST-API-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "ASSURANCE_OBSERVE"
+      ],
+      "constitutional_purpose": "EO-DG bridge authority and handoff participant.",
+      "current_status": "CERTIFIED_PRODUCTION",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-013",
+      "office_name": "EO-DG",
+      "outbound_bridges": [
+        "BRIDGE-ASSURANCE-COMMANDER-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "MISSION_CANDIDATE"
+      ],
+      "constitutional_purpose": "Event Detection bridge authority and handoff participant.",
+      "current_status": "PARTIAL",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-014",
+      "office_name": "Event Detection",
+      "outbound_bridges": [
+        "BRIDGE-EVENT-MISSION-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "RECOVER_RUNTIME",
+        "RUNTIME_REJOIN"
+      ],
+      "constitutional_purpose": "Persistence bridge authority and handoff participant.",
+      "current_status": "CONDITIONALLY_PRODUCTION",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-022",
+      "office_name": "Persistence",
+      "outbound_bridges": [
+        "BRIDGE-PERSIST-RECOVERY-001",
+        "BRIDGE-RECOVERY-RUNTIME-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "REPLAY_ANALYSIS"
+      ],
+      "constitutional_purpose": "Replay bridge authority and handoff participant.",
+      "current_status": "PARTIAL",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-024",
+      "office_name": "Replay",
+      "outbound_bridges": [
+        "BRIDGE-REPLAY-LAB-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "MISSION_DUE"
+      ],
+      "constitutional_purpose": "Scheduler bridge authority and handoff participant.",
+      "current_status": "CERTIFIED_PRODUCTION",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-027",
+      "office_name": "Scheduler",
+      "outbound_bridges": [
+        "BRIDGE-SCHED-MISSION-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    },
+    {
+      "command_interfaces": [
+        "SEEKER_MANDATE"
+      ],
+      "constitutional_purpose": "Strategic Intelligence bridge authority and handoff participant.",
+      "current_status": "CONDITIONALLY_PRODUCTION",
+      "event_interfaces": [],
+      "inbound_bridges": [],
+      "office_id": "OFFICE-EO-DB-029",
+      "office_name": "Strategic Intelligence",
+      "outbound_bridges": [
+        "BRIDGE-SI-SEEKER-001"
+      ],
+      "paper_mode_reachability": "required",
+      "persistence_state": "declared per bridge registry",
+      "proof_only_reachability": "not counted as production",
+      "recovery_state": "declared per bridge registry",
+      "runtime_registration": "CanonicalEnterpriseRuntime or compatibility facade classification",
+      "test_only_reachability": "not counted as production",
+      "token_requirements": "explicit where bridge crosses workflow ownership; read-only where observational"
+    }
+  ],
+  "recentDynamicReachability": [
+    {
+      "bridge_id": "BRIDGE-SCHED-MISSION-001",
+      "failure": "",
+      "mission_id": "EOS-MIS-000001",
+      "payload_identity": "EOS-MIS-000001",
+      "persistence_sequence": 1,
+      "recovery_path": "enterprise_persistence_snapshot",
+      "result": "DEFERRED",
+      "source_authority": "Scheduler",
+      "target_authority": "Mission Planner",
+      "token_id": "AE-EWO-000001",
+      "token_owner_after": "Workflow Orchestrator",
+      "token_owner_before": "Scheduler",
+      "trace_id": "TRACE-EO-DB-SCHED-MISSION-001",
+      "transaction_id": "",
+      "truth_domain": "PAPER",
+      "workflow_id": "EWO-WF-000001"
+    },
+    {
+      "bridge_id": "BRIDGE-MISSION-WORKFLOW-001",
+      "failure": "",
+      "mission_id": "EOS-MIS-000001",
+      "payload_identity": "EMP-PLAN-000001",
+      "persistence_sequence": 2,
+      "recovery_path": "workflow snapshot",
+      "result": "ADMITTED",
+      "source_authority": "Mission Planner",
+      "target_authority": "Workflow Orchestrator",
+      "token_id": "AE-EWO-000001",
+      "token_owner_after": "Workflow Orchestrator",
+      "token_owner_before": "Mission Planner",
+      "trace_id": "TRACE-EO-DB-MISSION-WORKFLOW-001",
+      "transaction_id": "",
+      "truth_domain": "PAPER",
+      "workflow_id": "EWO-WF-000001"
+    },
+    {
+      "bridge_id": "BRIDGE-SI-SEEKER-001",
+      "failure": "",
+      "mission_id": "EOS-MIS-000001",
+      "payload_identity": "SIC-MANDATE-000001",
+      "persistence_sequence": 3,
+      "recovery_path": "strategic mandate store",
+      "result": "ACCEPTED",
+      "source_authority": "Strategic Intelligence",
+      "target_authority": "Seeker",
+      "token_id": "AE-EWO-000001",
+      "token_owner_after": "Seeker",
+      "token_owner_before": "Strategic Intelligence",
+      "trace_id": "TRACE-EO-DB-SI-SEEKER-001",
+      "transaction_id": "",
+      "truth_domain": "PAPER",
+      "workflow_id": "EWO-WF-000001"
+    }
+  ],
+  "verdict": "FAIL"
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "attack_id": "ATTACK-TEST-CANDIDATE",
+    "attack_name": "TEST injection into Seeker",
+    "authoritative_mutation": false,
+    "evidence": [
+      "QUARANTINED_TEST_ARTIFACT_REJECTED_FROM_SEEKER"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "TEST",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "Seeker"
+  },
+  {
+    "attack_id": "ATTACK-PROOF-RISK",
+    "attack_name": "PROOF injection into Risk",
+    "authoritative_mutation": false,
+    "evidence": [
+      "QUARANTINED_PROOF_ARTIFACT_REJECTED_FROM_RISK"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "PROOF",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "Risk"
+  },
+  {
+    "attack_id": "ATTACK-SIM-TRADER",
+    "attack_name": "SIMULATION injection into Trader",
+    "authoritative_mutation": false,
+    "evidence": [
+      "QUARANTINED_SIMULATION_ARTIFACT_REJECTED_FROM_TRADER"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "SIMULATION",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "Trader"
+  },
+  {
+    "attack_id": "ATTACK-REPLAY-TRUTH",
+    "attack_name": "REPLAY injection into PerformanceTruthEngine",
+    "authoritative_mutation": false,
+    "evidence": [
+      "QUARANTINED_REPLAY_ARTIFACT_REJECTED_FROM_PERFORMANCETRUTHENGINE"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "REPLAY",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "PerformanceTruthEngine"
+  },
+  {
+    "attack_id": "ATTACK-DISPLAY-PERSIST",
+    "attack_name": "DISPLAY injection into Persistence",
+    "authoritative_mutation": false,
+    "evidence": [
+      "QUARANTINED_DISPLAY_ARTIFACT_REJECTED_FROM_PERSISTENCE"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "DISPLAY",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "Persistence"
+  },
+  {
+    "attack_id": "ATTACK-RAW-PAPER-STRING",
+    "attack_name": "raw paper string without EO-DC envelope",
+    "authoritative_mutation": false,
+    "evidence": [
+      "INVALID_TRUTH_CLASSIFICATION",
+      "PROVENANCE_NOT_VALIDATED",
+      "UNCERTIFIED_OPERATIONAL_TRUTH",
+      "VALIDATION_RESULT_NOT_VALIDATED",
+      "UNAUTHORIZED_AUTHORITY",
+      "MISSING_ORIGINATING_WORKFLOW_ID",
+      "MISSING_WORKFLOW_TOKEN_ID",
+      "MISSING_MISSION_ID",
+      "MISSING_SOURCE_EVENT_ID",
+      "MISSING_SCHEMA_VERSION",
+      "MISSING_IDEMPOTENCY_KEY",
+      "MISSING_TIMESTAMP_UTC",
+      "MISSING_CALLER",
+      "CALLER_TARGET_AUTHORITY_MISMATCH"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "PAPER",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "PerformanceTruthEngine"
+  },
+  {
+    "attack_id": "ATTACK-DEGRADED-LEARNING",
+    "attack_name": "degraded record into certified learning",
+    "authoritative_mutation": false,
+    "evidence": [
+      "DEGRADED_NOT_AUTHORITATIVE",
+      "WORKFLOW_MISSING",
+      "MISSION_MISSING",
+      "TOKEN_MISSING",
+      "LINEAGE_MISSING",
+      "PROVENANCE_MISSING",
+      "PROVENANCE_UNVERIFIED",
+      "SOURCE_AUTHORITY_INVALID"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "PAPER",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "EnterpriseLearningEngine"
+  },
+  {
+    "attack_id": "ATTACK-MISSING-AS-ZERO",
+    "attack_name": "missing price coerced to zero",
+    "authoritative_mutation": false,
+    "evidence": [
+      "fallback prohibited for authoritative or decision-bearing field"
+    ],
+    "expected": "reject/quarantine/no authoritative mutation",
+    "injected_domain": "PAPER",
+    "quarantined": true,
+    "rejected": true,
+    "result": "REJECTED",
+    "target_sink": "Trader"
+  }
+]

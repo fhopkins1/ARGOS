@@ -1,0 +1,336 @@
+{
+  "edges": [
+    {
+      "bridge_id": "BRIDGE-SCHED-MISSION-001",
+      "source": "Scheduler",
+      "target": "Mission Planner"
+    },
+    {
+      "bridge_id": "BRIDGE-EVENT-MISSION-001",
+      "source": "Event Detection",
+      "target": "Mission Planner"
+    },
+    {
+      "bridge_id": "BRIDGE-MISSION-WORKFLOW-001",
+      "source": "Mission Planner",
+      "target": "Workflow Orchestrator"
+    },
+    {
+      "bridge_id": "BRIDGE-WORKFLOW-OFFICE-001",
+      "source": "Workflow Orchestrator",
+      "target": "Duty Officer"
+    },
+    {
+      "bridge_id": "BRIDGE-SI-SEEKER-001",
+      "source": "Strategic Intelligence",
+      "target": "Seeker"
+    },
+    {
+      "bridge_id": "BRIDGE-SEEKER-ANALYST-001",
+      "source": "Seeker",
+      "target": "Analyst"
+    },
+    {
+      "bridge_id": "BRIDGE-ANALYST-RISK-001",
+      "source": "Analyst",
+      "target": "Risk"
+    },
+    {
+      "bridge_id": "BRIDGE-RISK-AUTH-001",
+      "source": "Risk",
+      "target": "Authorization Authority"
+    },
+    {
+      "bridge_id": "BRIDGE-AUTH-TRADER-001",
+      "source": "Authorization Authority",
+      "target": "Trader"
+    },
+    {
+      "bridge_id": "BRIDGE-TRADER-BROKER-001",
+      "source": "Trader",
+      "target": "Paper Broker"
+    },
+    {
+      "bridge_id": "BRIDGE-BROKER-FILL-001",
+      "source": "Paper Broker",
+      "target": "Fill Ledger"
+    },
+    {
+      "bridge_id": "BRIDGE-FILL-POSITION-001",
+      "source": "Fill Ledger",
+      "target": "Position Registry"
+    },
+    {
+      "bridge_id": "BRIDGE-POSITION-PT-001",
+      "source": "Position Registry",
+      "target": "Performance Truth"
+    },
+    {
+      "bridge_id": "BRIDGE-POSITION-EOCK-001",
+      "source": "Position Registry",
+      "target": "EO-CK"
+    },
+    {
+      "bridge_id": "BRIDGE-EOCK-SURVEILLANCE-001",
+      "source": "EO-CK",
+      "target": "Surveillance"
+    },
+    {
+      "bridge_id": "BRIDGE-SURVEILLANCE-EXIT-001",
+      "source": "Surveillance",
+      "target": "Exit Decision"
+    },
+    {
+      "bridge_id": "BRIDGE-EXIT-AUTH-001",
+      "source": "Exit Decision",
+      "target": "Authorization Authority"
+    },
+    {
+      "bridge_id": "BRIDGE-EXIT-TRADER-001",
+      "source": "Authorization Authority",
+      "target": "Trader"
+    },
+    {
+      "bridge_id": "BRIDGE-CLOSING-FILL-POSITION-001",
+      "source": "Paper Broker",
+      "target": "Position Registry"
+    },
+    {
+      "bridge_id": "BRIDGE-CLOSE-CPT-001",
+      "source": "Position Registry",
+      "target": "Closed Position Truth"
+    },
+    {
+      "bridge_id": "BRIDGE-CPT-PT-001",
+      "source": "Closed Position Truth",
+      "target": "Performance Truth"
+    },
+    {
+      "bridge_id": "BRIDGE-PT-HISTORIAN-001",
+      "source": "Performance Truth",
+      "target": "Historian"
+    },
+    {
+      "bridge_id": "BRIDGE-HISTORIAN-LEARNING-001",
+      "source": "Historian",
+      "target": "Learning Systems"
+    },
+    {
+      "bridge_id": "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "source": "Commander",
+      "target": "Doctrine"
+    },
+    {
+      "bridge_id": "BRIDGE-COST-API-001",
+      "source": "Cost Governor",
+      "target": "API Gateway"
+    },
+    {
+      "bridge_id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "source": "Communications Bus",
+      "target": "Analyst"
+    },
+    {
+      "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+      "source": "Persistence",
+      "target": "Canonical Runtime"
+    },
+    {
+      "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+      "source": "Persistence",
+      "target": "Runtime Provider"
+    },
+    {
+      "bridge_id": "BRIDGE-REPLAY-LAB-001",
+      "source": "Replay",
+      "target": "Decision Laboratory"
+    },
+    {
+      "bridge_id": "BRIDGE-ASSURANCE-COMMANDER-001",
+      "source": "EO-DG",
+      "target": "Commander"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "BRIDGE-SCHED-MISSION-001",
+      "source": "Scheduler",
+      "target": "Mission Planner",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-EVENT-MISSION-001",
+      "source": "Event Detection",
+      "target": "Mission Planner",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-MISSION-WORKFLOW-001",
+      "source": "Mission Planner",
+      "target": "Workflow Orchestrator",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-WORKFLOW-OFFICE-001",
+      "source": "Workflow Orchestrator",
+      "target": "Duty Officer",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-SI-SEEKER-001",
+      "source": "Strategic Intelligence",
+      "target": "Seeker",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-SEEKER-ANALYST-001",
+      "source": "Seeker",
+      "target": "Analyst",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-ANALYST-RISK-001",
+      "source": "Analyst",
+      "target": "Risk",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-RISK-AUTH-001",
+      "source": "Risk",
+      "target": "Authorization Authority",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-AUTH-TRADER-001",
+      "source": "Authorization Authority",
+      "target": "Trader",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-TRADER-BROKER-001",
+      "source": "Trader",
+      "target": "Paper Broker",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-BROKER-FILL-001",
+      "source": "Paper Broker",
+      "target": "Fill Ledger",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-FILL-POSITION-001",
+      "source": "Fill Ledger",
+      "target": "Position Registry",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-POSITION-PT-001",
+      "source": "Position Registry",
+      "target": "Performance Truth",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-POSITION-EOCK-001",
+      "source": "Position Registry",
+      "target": "EO-CK",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-EOCK-SURVEILLANCE-001",
+      "source": "EO-CK",
+      "target": "Surveillance",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-SURVEILLANCE-EXIT-001",
+      "source": "Surveillance",
+      "target": "Exit Decision",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-EXIT-AUTH-001",
+      "source": "Exit Decision",
+      "target": "Authorization Authority",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-EXIT-TRADER-001",
+      "source": "Authorization Authority",
+      "target": "Trader",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-CLOSING-FILL-POSITION-001",
+      "source": "Paper Broker",
+      "target": "Position Registry",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-CLOSE-CPT-001",
+      "source": "Position Registry",
+      "target": "Closed Position Truth",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-CPT-PT-001",
+      "source": "Closed Position Truth",
+      "target": "Performance Truth",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-PT-HISTORIAN-001",
+      "source": "Performance Truth",
+      "target": "Historian",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-HISTORIAN-LEARNING-001",
+      "source": "Historian",
+      "target": "Learning Systems",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "source": "Commander",
+      "target": "Doctrine",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-COST-API-001",
+      "source": "Cost Governor",
+      "target": "API Gateway",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "source": "Communications Bus",
+      "target": "Analyst",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-PERSIST-RECOVERY-001",
+      "source": "Persistence",
+      "target": "Canonical Runtime",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-RECOVERY-RUNTIME-001",
+      "source": "Persistence",
+      "target": "Runtime Provider",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-REPLAY-LAB-001",
+      "source": "Replay",
+      "target": "Decision Laboratory",
+      "type": "bridge"
+    },
+    {
+      "id": "BRIDGE-ASSURANCE-COMMANDER-001",
+      "source": "EO-DG",
+      "target": "Commander",
+      "type": "bridge"
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "certifiesArgos": false,
+  "commanderControls": {
+    "mayApproveUnsupportedFallback": false,
+    "mayEnableLiveTrading": false,
+    "mayEraseFindings": false,
+    "mayFabricateMissingEvidence": false,
+    "mayHaltPaperOperationOnCriticalSyntheticTruth": true,
+    "mayPromoteDegradedRecords": false,
+    "mayQuarantineOptionalUnsafeSubsystem": true,
+    "mayReclassifyProhibitedTruthAsLegitimate": false,
+    "mayRequestInvestigation": true,
+    "mayRequestRemediation": true,
+    "mayViewFindings": true
+  },
+  "dynamicAttacks": [
+    {
+      "attack_id": "ATTACK-TEST-CANDIDATE",
+      "attack_name": "TEST injection into Seeker",
+      "authoritative_mutation": false,
+      "evidence": [
+        "QUARANTINED_TEST_ARTIFACT_REJECTED_FROM_SEEKER"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "TEST",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "Seeker"
+    },
+    {
+      "attack_id": "ATTACK-PROOF-RISK",
+      "attack_name": "PROOF injection into Risk",
+      "authoritative_mutation": false,
+      "evidence": [
+        "QUARANTINED_PROOF_ARTIFACT_REJECTED_FROM_RISK"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "PROOF",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "Risk"
+    },
+    {
+      "attack_id": "ATTACK-SIM-TRADER",
+      "attack_name": "SIMULATION injection into Trader",
+      "authoritative_mutation": false,
+      "evidence": [
+        "QUARANTINED_SIMULATION_ARTIFACT_REJECTED_FROM_TRADER"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "SIMULATION",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "Trader"
+    },
+    {
+      "attack_id": "ATTACK-REPLAY-TRUTH",
+      "attack_name": "REPLAY injection into PerformanceTruthEngine",
+      "authoritative_mutation": false,
+      "evidence": [
+        "QUARANTINED_REPLAY_ARTIFACT_REJECTED_FROM_PERFORMANCETRUTHENGINE"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "REPLAY",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "PerformanceTruthEngine"
+    },
+    {
+      "attack_id": "ATTACK-DISPLAY-PERSIST",
+      "attack_name": "DISPLAY injection into Persistence",
+      "authoritative_mutation": false,
+      "evidence": [
+        "QUARANTINED_DISPLAY_ARTIFACT_REJECTED_FROM_PERSISTENCE"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "DISPLAY",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "Persistence"
+    },
+    {
+      "attack_id": "ATTACK-RAW-PAPER-STRING",
+      "attack_name": "raw paper string without EO-DC envelope",
+      "authoritative_mutation": false,
+      "evidence": [
+        "INVALID_TRUTH_CLASSIFICATION",
+        "PROVENANCE_NOT_VALIDATED",
+        "UNCERTIFIED_OPERATIONAL_TRUTH",
+        "VALIDATION_RESULT_NOT_VALIDATED",
+        "UNAUTHORIZED_AUTHORITY",
+        "MISSING_ORIGINATING_WORKFLOW_ID",
+        "MISSING_WORKFLOW_TOKEN_ID",
+        "MISSING_MISSION_ID",
+        "MISSING_SOURCE_EVENT_ID",
+        "MISSING_SCHEMA_VERSION",
+        "MISSING_IDEMPOTENCY_KEY",
+        "MISSING_TIMESTAMP_UTC",
+        "MISSING_CALLER",
+        "CALLER_TARGET_AUTHORITY_MISMATCH"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "PAPER",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "PerformanceTruthEngine"
+    },
+    {
+      "attack_id": "ATTACK-DEGRADED-LEARNING",
+      "attack_name": "degraded record into certified learning",
+      "authoritative_mutation": false,
+      "evidence": [
+        "DEGRADED_NOT_AUTHORITATIVE",
+        "WORKFLOW_MISSING",
+        "MISSION_MISSING",
+        "TOKEN_MISSING",
+        "LINEAGE_MISSING",
+        "PROVENANCE_MISSING",
+        "PROVENANCE_UNVERIFIED",
+        "SOURCE_AUTHORITY_INVALID"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "PAPER",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "EnterpriseLearningEngine"
+    },
+    {
+      "attack_id": "ATTACK-MISSING-AS-ZERO",
+      "attack_name": "missing price coerced to zero",
+      "authoritative_mutation": false,
+      "evidence": [
+        "fallback prohibited for authoritative or decision-bearing field"
+      ],
+      "expected": "reject/quarantine/no authoritative mutation",
+      "injected_domain": "PAPER",
+      "quarantined": true,
+      "rejected": true,
+      "result": "REJECTED",
+      "target_sink": "Trader"
+    }
+  ],
+  "engineName": "Synthetic Truth Eradication and Fallback Quarantine",
+  "engineVersion": "EO-DH.1",
+  "engineeringOrder": "EO-DH",
+  "financialOrAnalyticalDecisionAuthority": false,
+  "findingCounts": {
+    "branch": "main",
+    "candidate_files_scanned": 429,
+    "candidate_symbols_scanned": 1186,
+    "certifies_argos": false,
+    "certifies_continuous_paper_trading": false,
+    "commit_sha": "f26278806ee280acaa897e25fe07a9f81ef1c3aa",
+    "compatibility_reachable_findings": 1,
+    "critical_findings_remaining": 0,
+    "dead_code_findings": 0,
+    "degraded_misrepresented_findings": 1,
+    "display_only_findings": 1,
+    "dynamic_attack_rejected": 8,
+    "dynamic_attack_total": 8,
+    "engine_version": "EO-DH.1",
+    "financial_or_analytical_decision_authority": false,
+    "findings_quarantined": 3,
+    "findings_remaining": 3,
+    "findings_remediated": 2,
+    "findings_removed": 0,
+    "generated_at_utc": "2026-07-18T22:36:55.167334Z",
+    "live_trading_enabled": false,
+    "major_findings_remaining": 3,
+    "paper_authoritative_reachable_findings": 3,
+    "paper_decision_reachable_findings": 3,
+    "paper_presentation_reachable_findings": 1,
+    "production_fixture_import_violations": 0,
+    "prohibited_operational_findings": 2,
+    "proof_only_findings": 1,
+    "registry_hash": "e0d48c6ad53f75baa74957350dfb71c219bb91edc8d0e3cf8482dd23f90cb072",
+    "replay_only_findings": 1,
+    "simulation_only_findings": 1,
+    "static_source_to_sink_paths": 38,
+    "synthetic_candidates_discovered": 19620,
+    "test_only_findings": 0,
+    "unknown_findings": 1,
+    "unsafe_fallbacks": 2,
+    "verdict": "FAIL"
+  },
+  "liveTradingEnabled": false,
+  "quarantineNamespaces": [
+    {
+      "commander_label": "TEST - NONAUTHORITATIVE",
+      "domain": "TEST",
+      "namespace_id": "QUAR-TEST",
+      "permitted_runtime_modes": [
+        "test"
+      ],
+      "persistence_namespace": "quarantine/test",
+      "prohibited_consumers": [
+        "Trader",
+        "Paper Broker",
+        "Position Registry",
+        "PerformanceTruthEngine",
+        "Historian"
+      ],
+      "promotion_allowed": false
+    },
+    {
+      "commander_label": "PROOF - NONAUTHORITATIVE",
+      "domain": "PROOF",
+      "namespace_id": "QUAR-PROOF",
+      "permitted_runtime_modes": [
+        "proof"
+      ],
+      "persistence_namespace": "quarantine/proof",
+      "prohibited_consumers": [
+        "Trader",
+        "Paper Broker",
+        "Position Registry",
+        "PerformanceTruthEngine",
+        "Historian"
+      ],
+      "promotion_allowed": false
+    },
+    {
+      "commander_label": "SIMULATION - NONAUTHORITATIVE",
+      "domain": "SIMULATION",
+      "namespace_id": "QUAR-SIM",
+      "permitted_runtime_modes": [
+        "simulation"
+      ],
+      "persistence_namespace": "quarantine/simulation",
+      "prohibited_consumers": [
+        "Trader",
+        "Paper Broker",
+        "Position Registry",
+        "PerformanceTruthEngine",
+        "Historian"
+      ],
+      "promotion_allowed": false
+    },
+    {
+      "commander_label": "REPLAY - NONAUTHORITATIVE",
+      "domain": "REPLAY",
+      "namespace_id": "QUAR-REPLAY",
+      "permitted_runtime_modes": [
+        "replay"
+      ],
+      "persistence_namespace": "quarantine/replay",
+      "prohibited_consumers": [
+        "Paper Broker",
+        "Position Registry",
+        "PerformanceTruthEngine",
+        "Historian"
+      ],
+      "promotion_allowed": false
+    },
+    {
+      "commander_label": "DISPLAY - NONAUTHORITATIVE",
+      "domain": "DISPLAY",
+      "namespace_id": "QUAR-DISPLAY",
+      "permitted_runtime_modes": [
+        "development",
+        "paper"
+      ],
+      "persistence_namespace": "quarantine/display",
+      "prohibited_consumers": [
+        "Persistence",
+        "Paper Broker",
+        "Position Registry",
+        "PerformanceTruthEngine",
+        "Historian"
+      ],
+      "promotion_allowed": false
+    }
+  ],
+  "registryHash": "e0d48c6ad53f75baa74957350dfb71c219bb91edc8d0e3cf8482dd23f90cb072",
+  "unresolvedBlockingFindings": [
+    {
+      "authoritative_ledgers_reachable": [],
+      "candidate_category": "UNSAFE_FALLBACK",
+      "commit_discovered": "f26278806ee280acaa897e25fe07a9f81ef1c3aa",
+      "commit_remediated": "",
+      "consumer": "Analytical Offices",
+      "dynamic_reachability": "UNKNOWN_REACHABILITY",
+      "eodb_bridge_ids": [
+        "BRIDGE-REPLAY-LAB-001"
+      ],
+      "evidence_hash": "7ce14e69a7e9fbd359d1557c1bde57f3a7eaa47b1ec49e99dd97f876b37ade2e",
+      "file": "src/argos/control_panel/market_data_provider.py",
+      "finding_class": "SYNTHETIC_MARKET_DATA",
+      "finding_id": "SYN-MARKET-002",
+      "generated_value_or_behavior": "Mock market provider remains paper-labeled provisional source",
+      "line_end": 146,
+      "line_start": 146,
+      "operating_mode": "paper",
+      "production_paper_reachability": "PAPER_DECISION_REACHABLE",
+      "rationale": "Mock provider is still primary paper source; EO-DH exposes it as a blocker until authoritative provider or explicit operator certification exists.",
+      "remediation_owner": "EO-DH",
+      "required_remediation": "remove, block, quarantine, or relabel with explicit unavailable/degraded state",
+      "schema_version": "EO-DH.1",
+      "severity": "MAJOR",
+      "source_evidence": [
+        "src/argos/control_panel/market_data_provider.py"
+      ],
+      "static_reachability": "PAPER_DECISION_REACHABLE",
+      "status": "UNRESOLVED",
+      "symbol": "get_quote",
+      "test_reference": "Tests/test_eodh_synthetic_truth_quarantine.py",
+      "title": "Mock market provider remains paper-labeled provisional source",
+      "truth_domain": "PAPER"
+    },
+    {
+      "authoritative_ledgers_reachable": [],
+      "candidate_category": "UNKNOWN",
+      "commit_discovered": "f26278806ee280acaa897e25fe07a9f81ef1c3aa",
+      "commit_remediated": "",
+      "consumer": "Runtime Provider",
+      "dynamic_reachability": "UNKNOWN_REACHABILITY",
+      "eodb_bridge_ids": [
+        "BRIDGE-PERSIST-RECOVERY-001",
+        "BRIDGE-RECOVERY-RUNTIME-001"
+      ],
+      "evidence_hash": "93d0cf779fc33193828a61b54ba0122a6448577c0b8fbea28124a43c85a76296",
+      "file": "src/argos/control_panel/enterprise_persistence.py",
+      "finding_class": "SYNTHETIC_RECOVERY",
+      "finding_id": "SYN-RECOVERY-001",
+      "generated_value_or_behavior": "Recovery must block missing evidence",
+      "line_end": 1,
+      "line_start": 1,
+      "operating_mode": "paper",
+      "production_paper_reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+      "rationale": "EO-DB recovery bridge is conditional; missing financial evidence must remain unresolved rather than reconstructed.",
+      "remediation_owner": "EO-DH",
+      "required_remediation": "remove, block, quarantine, or relabel with explicit unavailable/degraded state",
+      "schema_version": "EO-DH.1",
+      "severity": "MAJOR",
+      "source_evidence": [
+        "src/argos/control_panel/enterprise_persistence.py"
+      ],
+      "static_reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+      "status": "UNRESOLVED",
+      "symbol": "recover",
+      "test_reference": "Tests/test_eodh_synthetic_truth_quarantine.py",
+      "title": "Recovery must block missing evidence",
+      "truth_domain": "PAPER"
+    }
+  ],
+  "verdict": "FAIL"
+}
