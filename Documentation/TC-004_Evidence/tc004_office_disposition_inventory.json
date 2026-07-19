@@ -14,7 +14,7 @@
     "disposition": "INFORMATION_ONLY",
     "egress": [],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-COST-API-001"
     ],
@@ -117,7 +117,7 @@
     "disposition": "INFORMATION_ONLY",
     "egress": [],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-PERSIST-RECOVERY-001"
     ],
@@ -151,7 +151,7 @@
       "BRIDGE-CPT-PT-001"
     ],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-CLOSE-CPT-001"
     ],
@@ -185,7 +185,7 @@
       "BRIDGE-COMMANDER-DIRECTIVE-001"
     ],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-ASSURANCE-COMMANDER-001"
     ],
@@ -313,7 +313,7 @@
     "disposition": "INFORMATION_ONLY",
     "egress": [],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-COMMANDER-DIRECTIVE-001"
     ],
@@ -611,7 +611,7 @@
       "BRIDGE-MISSION-WORKFLOW-001"
     ],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-SCHED-MISSION-001",
       "BRIDGE-EVENT-MISSION-001"
@@ -647,7 +647,7 @@
       "BRIDGE-CLOSING-FILL-POSITION-001"
     ],
     "final_classification": "EXTERNAL_AUTHORITY_ADAPTER",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-TRADER-BROKER-001"
     ],
@@ -671,8 +671,8 @@
       "COMMANDER"
     ],
     "background_activity": "no autonomous work while Dormant",
-    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
-    "certification_status": "STATICALLY_VALIDATED",
+    "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
     "component_id": "OFFICE-EO-DB-021",
     "component_name": "Performance Truth",
     "constitutional_role": "Performance Truth bridge authority and handoff participant.",
@@ -681,7 +681,7 @@
       "BRIDGE-PT-HISTORIAN-001"
     ],
     "final_classification": "CORE_PRODUCTION",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-POSITION-PT-001",
       "BRIDGE-CPT-PT-001"
@@ -739,8 +739,8 @@
       "COMMANDER"
     ],
     "background_activity": "no autonomous work while Dormant",
-    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
-    "certification_status": "STATICALLY_VALIDATED",
+    "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
     "component_id": "OFFICE-EO-DB-023",
     "component_name": "Position Registry",
     "constitutional_role": "Position Registry bridge authority and handoff participant.",
@@ -751,7 +751,7 @@
       "BRIDGE-CLOSE-CPT-001"
     ],
     "final_classification": "CORE_PRODUCTION",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-FILL-POSITION-001",
       "BRIDGE-CLOSING-FILL-POSITION-001"
@@ -850,7 +850,7 @@
     "disposition": "INFORMATION_ONLY",
     "egress": [],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-RECOVERY-RUNTIME-001"
     ],
@@ -906,8 +906,8 @@
       "COMMANDER"
     ],
     "background_activity": "no autonomous work while Dormant",
-    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
-    "certification_status": "STATICALLY_VALIDATED",
+    "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
     "component_id": "OFFICE-EO-DB-028",
     "component_name": "Seeker",
     "constitutional_role": "Seeker bridge authority and handoff participant.",
@@ -916,7 +916,7 @@
       "BRIDGE-SEEKER-ANALYST-001"
     ],
     "final_classification": "CORE_PRODUCTION",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-SI-SEEKER-001"
     ],
@@ -1006,8 +1006,8 @@
       "COMMANDER"
     ],
     "background_activity": "no autonomous work while Dormant",
-    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
-    "certification_status": "STATICALLY_VALIDATED",
+    "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
     "component_id": "OFFICE-EO-DB-031",
     "component_name": "Trader",
     "constitutional_role": "Trader bridge authority and handoff participant.",
@@ -1016,7 +1016,7 @@
       "BRIDGE-TRADER-BROKER-001"
     ],
     "final_classification": "CORE_PRODUCTION",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-AUTH-TRADER-001",
       "BRIDGE-EXIT-TRADER-001"
@@ -1051,7 +1051,7 @@
       "BRIDGE-WORKFLOW-OFFICE-001"
     ],
     "final_classification": "INFORMATION_ONLY",
-    "highest_trace_equivalence_level": "STRUCTURAL",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
     "ingress": [
       "BRIDGE-MISSION-WORKFLOW-001"
     ],

@@ -58,7 +58,7 @@
         "state": "VERIFIED"
       }
     ],
-    "evidence_hash": "81824799bdbd506096cdbc42aad663a3d83294855a39f6da98746f5a2a8a8228",
+    "evidence_hash": "a0ae2fac3883ad6da794dd3685ecb73d1437d3bc97da3ef9fab55b7b258a3bed",
     "failure_results": [
       {
         "passed": false,
@@ -104,7 +104,7 @@
                 "providerAuthority": "UNKNOWN",
                 "providerId": "controlled-authoritative",
                 "requestId": "MD-REQ-7bd976dcf5fa",
-                "timestampUtc": "2026-07-19T01:56:29.263143Z",
+                "timestampUtc": "2026-07-19T12:27:27.163243Z",
                 "workflowId": "WF-CS001"
               },
               {
@@ -119,7 +119,7 @@
                 "providerAuthority": "AUTHORITATIVE_EXTERNAL",
                 "providerId": "controlled-authoritative",
                 "requestId": "MD-REQ-7bd976dcf5fa",
-                "timestampUtc": "2026-07-19T01:56:29.263279Z",
+                "timestampUtc": "2026-07-19T12:27:27.163449Z",
                 "workflowId": "WF-CS001"
               }
             ],
@@ -140,7 +140,7 @@
               "dataTimestamp": "2026-07-18T15:00:00Z",
               "deterministicHash": "e7807ee30736f45e8a87ec2b5e3c45eec7fb0eda227ee260415b7b9fd4b515b8",
               "freshness": "FRESH",
-              "ingestionTimestamp": "2026-07-19T01:56:29.263244Z",
+              "ingestionTimestamp": "2026-07-19T12:27:27.163397Z",
               "proofDomain": "PAPER_AUTHORITATIVE",
               "providerId": "controlled-authoritative",
               "providerType": "AUTHORITATIVE_EXTERNAL",
@@ -159,7 +159,7 @@
               "staleData": false,
               "symbol": "AAPL",
               "symbolMismatch": false,
-              "timestamp": "2026-07-19T01:56:29.263244Z",
+              "timestamp": "2026-07-19T12:27:27.163397Z",
               "validationStatus": "VALID"
             },
             "volume": "100000"
@@ -178,7 +178,7 @@
       "schemaVersion": "EO-DJ.1",
       "syntheticFallbackEnabled": false
     },
-    "timestamp_utc": "2026-07-19T01:56:29.263576Z",
+    "timestamp_utc": "2026-07-19T12:27:27.164350Z",
     "title": "Authoritative Market Data Certification",
     "verdict": "INCOMPLETE"
   },
@@ -273,7 +273,7 @@
         "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "e566ce0241f2150101fb2ef4b03d990adc0ddc7b62924ad8f526bc6d039a1504",
+    "evidence_hash": "f6a4fafcdf6f601daf18c3b8b5950c51b3f9bb2387ed810363ab37a9e6da11e1",
     "failure_results": [
       {
         "bridgeId": "BRIDGE-SCHED-MISSION-001",
@@ -925,11 +925,11 @@
     ],
     "schema_version": "CS.1",
     "static_assurance": {
-      "callGraphEdges": 57355,
+      "callGraphEdges": 58397,
       "requiredRuntimeBridgeMatrix": 30,
       "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
     },
-    "timestamp_utc": "2026-07-19T01:56:32.099841Z",
+    "timestamp_utc": "2026-07-19T12:27:31.626514Z",
     "title": "Canonical Bridge Execution Certification",
     "verdict": "INCOMPLETE"
   },
@@ -1729,7 +1729,7 @@
       "registeredOffices": 33,
       "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
     },
-    "timestamp_utc": "2026-07-19T01:56:32.115555Z",
+    "timestamp_utc": "2026-07-19T12:27:31.647959Z",
     "title": "Office Lifecycle and Constitutional Authority Certification",
     "verdict": "INCOMPLETE"
   },
@@ -1864,7 +1864,7 @@
         "state": "CERTIFIED"
       }
     ],
-    "evidence_hash": "450b8ccabb4213867a7f81568642f7bf58e170e3a00c053c14c3718fffc0910d",
+    "evidence_hash": "69d0d5093a85da227adac2a8c050aae265f3aa7bc748816d250c2604efd59cac",
     "failure_results": [],
     "metrics": {
       "closedTruthCount": 1,
@@ -1875,7 +1875,7 @@
     "readiness": "Conditionally Operational",
     "recovery_results": [
       {
-        "deterministic_signature": "e88fd22868ae9f880c3212fc2c941b1decadf46a87c3ef3e3925c9e0ae85073f",
+        "deterministic_signature": "f486748571ba3df4a0f21264756d30ee6459ba9617904731de30557395691e32",
         "domains": [
           {
             "domain": "market_evidence",
@@ -1906,7 +1906,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-D244DC489FBE"
+              "FILL-E49F8D4F7FD4"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -1948,7 +1948,7 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:56:32.146514Z",
+        "timestamp_utc": "2026-07-19T12:27:31.688151Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
@@ -1958,7 +1958,7 @@
         "authoritative_market_boundary_used": true,
         "bridge_trace_count": 1,
         "closed_truth_count": 1,
-        "evidence_hash": "e82006398d2eb554800ef3f982123fdb3f0a49b8c778d59bd138327e787c1f02",
+        "evidence_hash": "776610b3e9b4b6f71e7eb2593e4347b6e783a23322357b69a29c65eafe8c942c",
         "office_lifecycle_controls_used": true,
         "open_quantity_after_close": 0.0,
         "report_id": "EO-DM-LIFECYCLE-CLOSURE-001",
@@ -1987,7 +1987,7 @@
           {
             "authority": "Paper Broker",
             "evidence_references": [
-              "FILL-D244DC489FBE"
+              "FILL-E49F8D4F7FD4"
             ],
             "name": "Opening fill evidence",
             "stage_id": "EO-DM-STAGE-OPEN-FILL",
@@ -1998,7 +1998,7 @@
             "authority": "Position Registry",
             "evidence_references": [
               "POS-AAPL-DO-EO-DM",
-              "FILL-D244DC489FBE"
+              "FILL-E49F8D4F7FD4"
             ],
             "name": "Position truth from fill",
             "stage_id": "EO-DM-STAGE-POSITION",
@@ -2028,7 +2028,7 @@
           {
             "authority": "Paper Broker",
             "evidence_references": [
-              "FILL-A49718DFC4F7"
+              "FILL-C086F7A73FF2"
             ],
             "name": "Closing fill evidence",
             "stage_id": "EO-DM-STAGE-CLOSE-FILL",
@@ -2057,7 +2057,7 @@
           }
         ],
         "synthetic_truth_created": false,
-        "timestamp_utc": "2026-07-19T01:56:32.143352Z",
+        "timestamp_utc": "2026-07-19T12:27:31.683702Z",
         "transaction_protection_model": "EO-DD participant model referenced; broker and position mutation remain separate authorities.",
         "verdict": "PASS"
       }
@@ -2066,7 +2066,7 @@
     "static_assurance": {
       "financialMutationSitesReviewed": true
     },
-    "timestamp_utc": "2026-07-19T01:56:32.146999Z",
+    "timestamp_utc": "2026-07-19T12:27:31.689124Z",
     "title": "Financial Lifecycle Constitutional Certification",
     "verdict": "INCOMPLETE"
   },
@@ -2169,7 +2169,7 @@
         "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "80081d199eeeae4f35f531649585183296c5c59634e370094f876d382368e980",
+    "evidence_hash": "8784e093d483b3b804e9fb9d19de4d5f366309e4710a9279cf2e76a2b007ac01",
     "failure_results": [
       {
         "continuedExecutionAllowed": false,
@@ -2187,7 +2187,7 @@
     "readiness": "Conditionally Operational",
     "recovery_results": [
       {
-        "deterministic_signature": "961a895b1359452df22533c1e3942cf2c05f6585db06d161c0a6caa9e6d75227",
+        "deterministic_signature": "4ff155ae0ff267153ba2a514cd1a3a0d84e9f2702daf0e5009f6ad4921f018f2",
         "domains": [
           {
             "domain": "market_evidence",
@@ -2218,8 +2218,8 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-94B356CFEA37",
-              "FILL-65E7B13A11D8"
+              "FILL-6A89FDBCC0BC",
+              "FILL-14B8A1CC9F26"
             ],
             "state": "RECOVERED",
             "unresolved_references": []
@@ -2256,12 +2256,12 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:56:32.172258Z",
+        "timestamp_utc": "2026-07-19T12:27:31.727040Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       },
       {
-        "deterministic_signature": "5070199939a55d1b8a8904c63c931b0f0b7e05d90156c6c71c42fe339b5ae3af",
+        "deterministic_signature": "cb338b5ada94e1ce65973a2025c41002fa3ae61a7d5554662d051fae1a7aabd6",
         "domains": [
           {
             "domain": "market_evidence",
@@ -2292,7 +2292,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-94B356CFEA37"
+              "FILL-6A89FDBCC0BC"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -2334,14 +2334,14 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:56:32.174648Z",
+        "timestamp_utc": "2026-07-19T12:27:31.733529Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
     ],
     "runtime_traces": [
       {
-        "deterministic_signature": "961a895b1359452df22533c1e3942cf2c05f6585db06d161c0a6caa9e6d75227",
+        "deterministic_signature": "4ff155ae0ff267153ba2a514cd1a3a0d84e9f2702daf0e5009f6ad4921f018f2",
         "domains": [
           {
             "domain": "market_evidence",
@@ -2372,8 +2372,8 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-94B356CFEA37",
-              "FILL-65E7B13A11D8"
+              "FILL-6A89FDBCC0BC",
+              "FILL-14B8A1CC9F26"
             ],
             "state": "RECOVERED",
             "unresolved_references": []
@@ -2410,12 +2410,12 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:56:32.172258Z",
+        "timestamp_utc": "2026-07-19T12:27:31.727040Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       },
       {
-        "deterministic_signature": "5070199939a55d1b8a8904c63c931b0f0b7e05d90156c6c71c42fe339b5ae3af",
+        "deterministic_signature": "cb338b5ada94e1ce65973a2025c41002fa3ae61a7d5554662d051fae1a7aabd6",
         "domains": [
           {
             "domain": "market_evidence",
@@ -2446,7 +2446,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-94B356CFEA37"
+              "FILL-6A89FDBCC0BC"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -2488,7 +2488,7 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:56:32.174648Z",
+        "timestamp_utc": "2026-07-19T12:27:31.733529Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
@@ -2499,7 +2499,7 @@
       "snapshotPrimaryTruthAuthority": false,
       "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
     },
-    "timestamp_utc": "2026-07-19T01:56:32.175283Z",
+    "timestamp_utc": "2026-07-19T12:27:31.734502Z",
     "title": "Deterministic Recovery and Fail-Closed Authority Certification",
     "verdict": "INCOMPLETE"
   },
@@ -2602,7 +2602,7 @@
         "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "e540c22cccaced599b7bc7d03eb77cd31e712560ce6def5248d2b61815fc2477",
+    "evidence_hash": "210b4f398097006cd7d1192a6c5c16d1b5d6f857bc2f210a03c297d862bd99fb",
     "failure_results": [],
     "metrics": {
       "authoritativeInventoryComplete": false,
@@ -2622,7 +2622,7 @@
           "Workflow Orchestrator"
         ],
         "digest_stable": true,
-        "evidence_hash": "5d750ae59f169fa9d90a45f4616e15f6746c3b5bcbb091ffa7a5269dc0437eba",
+        "evidence_hash": "f9c401b8f1364969b72674395745434bd32a39d16d41e47a2aba7c3feadcc660",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2638,7 +2638,7 @@
           "Policy"
         ],
         "digest_stable": true,
-        "evidence_hash": "ac1e08edebc6d91aa66189a12be31ca4eadc7eef4cb2bb0b17e879db0c875cdd",
+        "evidence_hash": "072f277001f41ea28b3d2f73d9f870480e31a357842a871de9374ae9ac7db461",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/commander/strategic-dashboard",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2652,7 +2652,7 @@
           "all read models"
         ],
         "digest_stable": true,
-        "evidence_hash": "b03bbc99ff0dcca8b47069258bfd2431a5dde0501880afc977708cd2d97898e2",
+        "evidence_hash": "9edb47e1b5e7cbd295ee5125c9c973d5a14a11442f85ee875c7c8ffef432effd",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2666,7 +2666,7 @@
           "Runtime Provider"
         ],
         "digest_stable": true,
-        "evidence_hash": "1065d7bf210d613f0c76b1ffd628c0fddf71c34084333194e72579860a89a8e7",
+        "evidence_hash": "088ec9d8e03966b0c81a580bc500a36830255e7ba314585d5b5145d00eaf3352",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/runtime/provider",
         "status": "CERTIFIED_READ_ONLY",
@@ -2681,7 +2681,7 @@
           "Position Registry"
         ],
         "digest_stable": true,
-        "evidence_hash": "d996a9b53df8c283a04ccd6d1ce6acbc5d43639cc51802e27e3186ae294cdb76",
+        "evidence_hash": "ab06eae5421b1092cd5fe775d88f0b1539db01485ac464a83d62e04564139934",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/trader/bridge",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2696,7 +2696,7 @@
           "EO-CK"
         ],
         "digest_stable": true,
-        "evidence_hash": "98ed8534c5619c9481ec77c3903871377e06ed276b11df4d163ed470d2393199",
+        "evidence_hash": "a3bcb0d2435f810dc6a739ee57e5de931250d8c94cd10a1366d9c30a4f9212f7",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/position-monitoring/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2710,7 +2710,7 @@
           "Performance Truth"
         ],
         "digest_stable": true,
-        "evidence_hash": "274956263306ccf4bcc104a0ac8978659242d3a85155f2d8f9d1a258fab5989c",
+        "evidence_hash": "0c56b39d6242dee7cab1c9f446a132016bbfa1306bef37d1056601fc336b0174",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/performance-truth/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2724,7 +2724,7 @@
           "Replay"
         ],
         "digest_stable": true,
-        "evidence_hash": "2cd832882fe390cd1bf45e12c367a084d6439a6d71e210971ea500363cd4f8cb",
+        "evidence_hash": "670532c5ffa22d47efde0fa423f6b477200618b5342009b5378a4354f25848d7",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/market-replay/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2739,7 +2739,7 @@
           "Decision Laboratory"
         ],
         "digest_stable": true,
-        "evidence_hash": "760e4d90a5092b6824ec2f0ecd2ae2fa8fb270fba714fd484233370d520e2825",
+        "evidence_hash": "7cc687b7c975a01ed677db1ceeb70e16106dce684be6156fffa3930d680f75b3",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/decision-laboratory/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2754,7 +2754,7 @@
           "Transaction Coordinator"
         ],
         "digest_stable": true,
-        "evidence_hash": "2d2620651092eabe70813fb2b6d85369074be7f1a49198379880af79859802c0",
+        "evidence_hash": "2e64323b5c30b6aa7c185585ddb63166f9aeff252f99ad7f085c1ab516b684af",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2768,7 +2768,7 @@
           "Truth Promotion Authority"
         ],
         "digest_stable": true,
-        "evidence_hash": "e91b8918ee093cd3c8f563ef36f04434e362423328aaea05cea5013034e0d1c6",
+        "evidence_hash": "582e756dcccd42de0489dd4ea27ab82f9a372079fd1c19f1a03a1bc9ffac34a4",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2782,7 +2782,7 @@
           "EO-DE"
         ],
         "digest_stable": true,
-        "evidence_hash": "d7d946a19d01ef61bfb6a358f1c3c77dfa6fdffe47b83805af3efaaba718d075",
+        "evidence_hash": "bd533d4de65fbcfd662e571c912988204b5d34c3cca6e6c0ce406cd79045442b",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2797,7 +2797,7 @@
           "EO-DF"
         ],
         "digest_stable": true,
-        "evidence_hash": "51edae294499d072f7e1f29e35e28e20f799234a8f0236ff9ef8f9d9ff8a6906",
+        "evidence_hash": "e5531a6ce37344802fb1d66e16832dc54b15e1b3e4024e4169d2160a4edb22a8",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2812,7 +2812,7 @@
     "static_assurance": {
       "duplicateRegistrationRejected": true
     },
-    "timestamp_utc": "2026-07-19T01:56:32.184201Z",
+    "timestamp_utc": "2026-07-19T12:27:31.748291Z",
     "title": "Production Read-Surface Constitutional Certification",
     "verdict": "INCOMPLETE"
   },
@@ -2923,7 +2923,7 @@
         "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "59ca2f3455c0df26782e103254068d0b9453151c64b54eaf2f39860bf46ff649",
+    "evidence_hash": "0b627defa558c769201a1994f028ce2695efefe54f9a2ad241e826288384fd19",
     "failure_results": [],
     "metrics": {
       "authoritativeDenominatorUsed": true,
@@ -2938,7 +2938,7 @@
     "readiness": "Conditionally Operational",
     "recovery_results": [
       {
-        "deterministic_signature": "749a3db96268cd45772b8bd709db97907569993aa4b44cc75022e58280096bb2",
+        "deterministic_signature": "c26adaa7bf4f4429eacea45ed1e5905f3464c3161970bf267b7c6052859a5b8b",
         "domains": [
           {
             "domain": "market_evidence",
@@ -2969,7 +2969,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-0732771CA6C6"
+              "FILL-5C0031D446A5"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -3011,7 +3011,7 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:56:32.212347Z",
+        "timestamp_utc": "2026-07-19T12:27:31.785655Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
@@ -3028,81 +3028,81 @@
       },
       {
         "category": "Workflow",
-        "evidence_hash": "e7240b647b1b0d3cc94cbf294b3a2595808fda61c8c6ca0fc6e5e4b972cc162c",
+        "evidence_hash": "9c76741090c7607837d86c775c67af308fc4e5acbdf4ea0ece55912c0f9a3925",
         "evidence_references": [
-          "e7240b647b1b0d3cc94cbf294b3a2595808fda61c8c6ca0fc6e5e4b972cc162c"
+          "9c76741090c7607837d86c775c67af308fc4e5acbdf4ea0ece55912c0f9a3925"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-WORKFLOW"
       },
       {
         "category": "Bridge",
-        "evidence_hash": "039ee98cb5b93ef349c7d26d6a26845050d58680c1a32f58a3019470e68db56e",
+        "evidence_hash": "10b12cc9359b9023c5354dee9f9a96690634eedbf3cbeb4603ac08645d319442",
         "evidence_references": [
-          "039ee98cb5b93ef349c7d26d6a26845050d58680c1a32f58a3019470e68db56e"
+          "10b12cc9359b9023c5354dee9f9a96690634eedbf3cbeb4603ac08645d319442"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-BRIDGE"
       },
       {
         "category": "Office",
-        "evidence_hash": "bf09a9d893633217e5d489b9320a124576b7b4427d019cdbf26e9f010ab209bd",
+        "evidence_hash": "40aa87b42a462dfa588caf05380e294a174889faffc918ee89e129ed67a20fa6",
         "evidence_references": [
-          "bf09a9d893633217e5d489b9320a124576b7b4427d019cdbf26e9f010ab209bd"
+          "40aa87b42a462dfa588caf05380e294a174889faffc918ee89e129ed67a20fa6"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-OFFICE"
       },
       {
         "category": "Market Data",
-        "evidence_hash": "53c53da583c8ae7146cdc8439a7524a7fc8c02a2e59bff928f152d89d9cf22c4",
+        "evidence_hash": "efcf6c60cb0c340f92c4edb4fe13266c6f18909e0592231d3e479023080def94",
         "evidence_references": [
-          "53c53da583c8ae7146cdc8439a7524a7fc8c02a2e59bff928f152d89d9cf22c4"
+          "efcf6c60cb0c340f92c4edb4fe13266c6f18909e0592231d3e479023080def94"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-MARKET"
       },
       {
         "category": "Financial",
-        "evidence_hash": "79e1399b7bb84574ca098751cbce1900b2d93ccbc255093244ebbae09e93d78c",
+        "evidence_hash": "9dc09bf7db51935318248b7b73a45d847616eb37f44bb066e384ba7aa3ec7b53",
         "evidence_references": [
-          "79e1399b7bb84574ca098751cbce1900b2d93ccbc255093244ebbae09e93d78c"
+          "9dc09bf7db51935318248b7b73a45d847616eb37f44bb066e384ba7aa3ec7b53"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-FINANCIAL"
       },
       {
         "category": "Recovery",
-        "evidence_hash": "24cb982b34501d1b731032845f45ea0f321cbe1db9b96f2dd8cb37ae510dff6f",
+        "evidence_hash": "5ab6e6afae836d65f429fcd169e191c433dc411e8343fb982498ee14f64a90af",
         "evidence_references": [
-          "24cb982b34501d1b731032845f45ea0f321cbe1db9b96f2dd8cb37ae510dff6f"
+          "5ab6e6afae836d65f429fcd169e191c433dc411e8343fb982498ee14f64a90af"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-RECOVERY"
       },
       {
         "category": "Read Surfaces",
-        "evidence_hash": "eb193e05fd810fa3ecde5b3652ebccfb35b40fd8981ae6933179c2d7f410b764",
+        "evidence_hash": "9393703c16b0884aab552c0504df45d517825453daf6a2e8aa0943548c31a6f7",
         "evidence_references": [
-          "eb193e05fd810fa3ecde5b3652ebccfb35b40fd8981ae6933179c2d7f410b764"
+          "9393703c16b0884aab552c0504df45d517825453daf6a2e8aa0943548c31a6f7"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-READ"
       },
       {
         "category": "Synthetic Truth",
-        "evidence_hash": "7c04cb81ad11504c3905d4000cfd7da6dd91c1f18e2f2157c54bc20f3c614ad3",
+        "evidence_hash": "0e6001cc072aa3653d511be0f3bf17a743e5683f736cb01842e10dd77441308d",
         "evidence_references": [
-          "7c04cb81ad11504c3905d4000cfd7da6dd91c1f18e2f2157c54bc20f3c614ad3"
+          "0e6001cc072aa3653d511be0f3bf17a743e5683f736cb01842e10dd77441308d"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-SYNTHETIC"
       },
       {
         "category": "Endurance",
-        "evidence_hash": "6e769f3cf8cfd1f817979506517cc50b7c374a78c957ef6fb294badf39e4d672",
+        "evidence_hash": "30fda6bb3f90829bfacc8eb8830acfccd1ec8be13a90157d5723603ce96bfb0c",
         "evidence_references": [
-          "6e769f3cf8cfd1f817979506517cc50b7c374a78c957ef6fb294badf39e4d672"
+          "30fda6bb3f90829bfacc8eb8830acfccd1ec8be13a90157d5723603ce96bfb0c"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-ENDURANCE"
@@ -3111,9 +3111,9 @@
     "schema_version": "CS.1",
     "static_assurance": {
       "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT",
-      "traceEvidenceHash": "6307b28ec0caa452a3fd72ab5e6627a97224971ac9742b3f302a16db6a33366c"
+      "traceEvidenceHash": "f857d1697a7f7de1e0155382126cde3082b91399374ccde054f42dd681fe7ea6"
     },
-    "timestamp_utc": "2026-07-19T01:56:36.079485Z",
+    "timestamp_utc": "2026-07-19T12:27:37.511225Z",
     "title": "Executed Constitutional Trace Certification",
     "verdict": "INCOMPLETE"
   },
@@ -3216,7 +3216,7 @@
         "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "d7e720aa8a5b36ad3773a056e19545ebf4de60a1d8fe26c8877d00000f0672d8",
+    "evidence_hash": "ba7411a532571db2b75617be538dfd48024a97386d457b1a0592bc7d7175621b",
     "failure_results": [],
     "metrics": {
       "acceleratedEnduranceCompleted": true,
@@ -3243,7 +3243,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "d4a436aff20118bd5c9e63a04abc8edbfbc0671619474bb3c6203272b93820b6",
-        "end_timestamp_utc": "2026-07-19T01:56:36.082866Z",
+        "end_timestamp_utc": "2026-07-19T12:27:37.515789Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -5263,7 +5263,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:56:36.082853Z",
+        "start_timestamp_utc": "2026-07-19T12:27:37.515767Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -5283,7 +5283,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "38c7d572aab1ab1d00494c8b6cb70a2f69eb03fc591210f624a90e3877de995a",
-        "end_timestamp_utc": "2026-07-19T01:56:36.085673Z",
+        "end_timestamp_utc": "2026-07-19T12:27:37.519484Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -7303,7 +7303,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:56:36.085660Z",
+        "start_timestamp_utc": "2026-07-19T12:27:37.519465Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -7323,7 +7323,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "6ab19934f264293b766a71f47ff69a92982412557e14c1dbed0c1d8faf77440f",
-        "end_timestamp_utc": "2026-07-19T01:56:36.093781Z",
+        "end_timestamp_utc": "2026-07-19T12:27:37.529203Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -9353,7 +9353,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:56:36.093769Z",
+        "start_timestamp_utc": "2026-07-19T12:27:37.529190Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -9375,7 +9375,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "d4a436aff20118bd5c9e63a04abc8edbfbc0671619474bb3c6203272b93820b6",
-        "end_timestamp_utc": "2026-07-19T01:56:36.082866Z",
+        "end_timestamp_utc": "2026-07-19T12:27:37.515789Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -11395,7 +11395,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:56:36.082853Z",
+        "start_timestamp_utc": "2026-07-19T12:27:37.515767Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -11415,7 +11415,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "38c7d572aab1ab1d00494c8b6cb70a2f69eb03fc591210f624a90e3877de995a",
-        "end_timestamp_utc": "2026-07-19T01:56:36.085673Z",
+        "end_timestamp_utc": "2026-07-19T12:27:37.519484Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -13435,7 +13435,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:56:36.085660Z",
+        "start_timestamp_utc": "2026-07-19T12:27:37.519465Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -13455,7 +13455,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "6ab19934f264293b766a71f47ff69a92982412557e14c1dbed0c1d8faf77440f",
-        "end_timestamp_utc": "2026-07-19T01:56:36.093781Z",
+        "end_timestamp_utc": "2026-07-19T12:27:37.529203Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -15485,7 +15485,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:56:36.093769Z",
+        "start_timestamp_utc": "2026-07-19T12:27:37.529190Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -15495,7 +15495,7 @@
     "static_assurance": {
       "liveTradingEnabled": false
     },
-    "timestamp_utc": "2026-07-19T01:56:36.119027Z",
+    "timestamp_utc": "2026-07-19T12:27:37.561584Z",
     "title": "Continuous Operational Endurance Certification",
     "verdict": "INCOMPLETE"
   }

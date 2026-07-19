@@ -1,0 +1,1322 @@
+[
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SCHED-MISSION-001",
+    "destination_authority": "Mission Planner",
+    "destination_component": "Mission Planner",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "scheduled_obligation.v1",
+    "output_schema": "scheduled_obligation.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Scheduler",
+    "source_component": "Scheduler",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EVENT-MISSION-001",
+    "destination_authority": "Mission Planner",
+    "destination_component": "Mission Planner",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "validated_event.v1",
+    "output_schema": "validated_event.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Event Detection",
+    "source_component": "Event Detection",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-MISSION-WORKFLOW-001",
+    "destination_authority": "Workflow Orchestrator",
+    "destination_component": "Workflow Orchestrator",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "mission_plan.v1",
+    "output_schema": "mission_plan.v1",
+    "ownership_semantics": "OWNERSHIP_TRANSFER",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Mission Planner",
+    "source_component": "Mission Planner",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-WORKFLOW-OFFICE-001",
+    "destination_authority": "Duty Officer",
+    "destination_component": "Duty Officer",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "workflow_activation.v1",
+    "output_schema": "workflow_activation.v1",
+    "ownership_semantics": "OWNERSHIP_TRANSFER",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Workflow Orchestrator",
+    "source_component": "Workflow Orchestrator",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SI-SEEKER-001",
+    "destination_authority": "Seeker",
+    "destination_component": "Seeker",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "strategic_mandate.v1",
+    "output_schema": "strategic_mandate.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Strategic Intelligence",
+    "source_component": "Strategic Intelligence",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SEEKER-ANALYST-001",
+    "destination_authority": "Analyst",
+    "destination_component": "Analyst",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "decision_candidate.v1",
+    "output_schema": "decision_candidate.v1",
+    "ownership_semantics": "OWNERSHIP_TRANSFER",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Seeker",
+    "source_component": "Seeker",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-ANALYST-RISK-001",
+    "destination_authority": "Risk",
+    "destination_component": "Risk",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "analysis_product.v1",
+    "output_schema": "analysis_product.v1",
+    "ownership_semantics": "OWNERSHIP_TRANSFER",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Analyst",
+    "source_component": "Analyst",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-RISK-AUTH-001",
+    "destination_authority": "Authorization Authority",
+    "destination_component": "Authorization Authority",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "risk_recommendation.v1",
+    "output_schema": "risk_recommendation.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Risk",
+    "source_component": "Risk",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-AUTH-TRADER-001",
+    "destination_authority": "Trader",
+    "destination_component": "Trader",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "trade_authorization.v1",
+    "output_schema": "trade_authorization.v1",
+    "ownership_semantics": "OWNERSHIP_TRANSFER",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Authorization Authority",
+    "source_component": "Authorization Authority",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-TRADER-BROKER-001",
+    "destination_authority": "Paper Broker",
+    "destination_component": "Paper Broker",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "paper_order_ticket.v1",
+    "output_schema": "paper_order_ticket.v1",
+    "ownership_semantics": "EXTERNAL_EXECUTION",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Trader",
+    "source_component": "Trader",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-BROKER-FILL-001",
+    "destination_authority": "Fill Ledger",
+    "destination_component": "Fill Ledger",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "broker_fill.v1",
+    "output_schema": "broker_fill.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Paper Broker",
+    "source_component": "Paper Broker",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-FILL-POSITION-001",
+    "destination_authority": "Position Registry",
+    "destination_component": "Position Registry",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "position_fill_application.v1",
+    "output_schema": "position_fill_application.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Fill Ledger",
+    "source_component": "Fill Ledger",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-POSITION-PT-001",
+    "destination_authority": "Performance Truth",
+    "destination_component": "Performance Truth",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "performance_truth_reference.v1",
+    "output_schema": "performance_truth_reference.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Position Registry",
+    "source_component": "Position Registry",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-POSITION-EOCK-001",
+    "destination_authority": "EO-CK",
+    "destination_component": "EO-CK",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "position_enrollment.v1",
+    "output_schema": "position_enrollment.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Position Registry",
+    "source_component": "Position Registry",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EOCK-SURVEILLANCE-001",
+    "destination_authority": "Surveillance",
+    "destination_component": "Surveillance",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "position_surveillance_request.v1",
+    "output_schema": "position_surveillance_request.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "EO-CK",
+    "source_component": "EO-CK",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-SURVEILLANCE-EXIT-001",
+    "destination_authority": "Exit Decision",
+    "destination_component": "Exit Decision",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "exit_signal.v1",
+    "output_schema": "exit_signal.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Surveillance",
+    "source_component": "Surveillance",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EXIT-AUTH-001",
+    "destination_authority": "Authorization Authority",
+    "destination_component": "Authorization Authority",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "exit_authorization_request.v1",
+    "output_schema": "exit_authorization_request.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Exit Decision",
+    "source_component": "Exit Decision",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-EXIT-TRADER-001",
+    "destination_authority": "Trader",
+    "destination_component": "Trader",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "closing_order_intent.v1",
+    "output_schema": "closing_order_intent.v1",
+    "ownership_semantics": "OWNERSHIP_TRANSFER",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Authorization Authority",
+    "source_component": "Authorization Authority",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-CLOSING-FILL-POSITION-001",
+    "destination_authority": "Position Registry",
+    "destination_component": "Position Registry",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "closing_fill.v1",
+    "output_schema": "closing_fill.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Paper Broker",
+    "source_component": "Paper Broker",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-CLOSE-CPT-001",
+    "destination_authority": "Closed Position Truth",
+    "destination_component": "Closed Position Truth",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "closed_position_truth.v1",
+    "output_schema": "closed_position_truth.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Position Registry",
+    "source_component": "Position Registry",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-CPT-PT-001",
+    "destination_authority": "Performance Truth",
+    "destination_component": "Performance Truth",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "terminal_performance_truth.v1",
+    "output_schema": "terminal_performance_truth.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Closed Position Truth",
+    "source_component": "Closed Position Truth",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-PT-HISTORIAN-001",
+    "destination_authority": "Historian",
+    "destination_component": "Historian",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "historian_record.v1",
+    "output_schema": "historian_record.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Performance Truth",
+    "source_component": "Performance Truth",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-HISTORIAN-LEARNING-001",
+    "destination_authority": "Learning Systems",
+    "destination_component": "Learning Systems",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "learning_input.v1",
+    "output_schema": "learning_input.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Historian",
+    "source_component": "Historian",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-COMMANDER-DIRECTIVE-001",
+    "destination_authority": "Doctrine",
+    "destination_component": "Doctrine",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "commander_directive.v1",
+    "output_schema": "commander_directive.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Commander",
+    "source_component": "Commander",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-COST-API-001",
+    "destination_authority": "API Gateway",
+    "destination_component": "API Gateway",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "not information-only",
+    "input_schema": "api_execution_request.v1",
+    "output_schema": "api_execution_request.v1",
+    "ownership_semantics": "EXTERNAL_EXECUTION",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Cost Governor",
+    "source_component": "Cost Governor",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+    "destination_authority": "Analyst",
+    "destination_component": "Analyst",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "freshness_cache_decision.v1",
+    "output_schema": "freshness_cache_decision.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Communications Bus",
+    "source_component": "Communications Bus",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-PERSIST-RECOVERY-001",
+    "destination_authority": "Canonical Runtime",
+    "destination_component": "Canonical Runtime",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "enterprise_persistence_snapshot.v1",
+    "output_schema": "enterprise_persistence_snapshot.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Persistence",
+    "source_component": "Persistence",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-RECOVERY-RUNTIME-001",
+    "destination_authority": "Runtime Provider",
+    "destination_component": "Runtime Provider",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "runtime_recovery_result.v1",
+    "output_schema": "runtime_recovery_result.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Persistence",
+    "source_component": "Persistence",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-REPLAY-LAB-001",
+    "destination_authority": "Decision Laboratory",
+    "destination_component": "Decision Laboratory",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "replay_lab_result.v1",
+    "output_schema": "replay_lab_result.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "REPLAY"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "Replay",
+    "source_component": "Replay",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  },
+  {
+    "acceptance_conditions": [
+      "target exists",
+      "target authority registered"
+    ],
+    "activation_conditions": [
+      "source exists",
+      "source authority registered"
+    ],
+    "artifact_type": "EO-DB.1",
+    "audit_requirements": "emit request and result audit records",
+    "bridge_id": "BRIDGE-ASSURANCE-COMMANDER-001",
+    "destination_authority": "Commander",
+    "destination_component": "Commander",
+    "destination_component_classification": "runtime authority",
+    "dormancy_implications": "source released for ownership transfer; source retains authority for information delivery",
+    "failure_severity": "major",
+    "idempotency_rules": "NON_RETRYABLE_FINANCIAL",
+    "information_delivery_semantics": "immutable information delivery",
+    "input_schema": "assurance_read_model.v1",
+    "output_schema": "assurance_read_model.v1",
+    "ownership_semantics": "INFORMATION_DELIVERY",
+    "persistence_requirements": "required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "readiness_impact": "blocks EO-EA PASS when below canonical execution",
+    "recovery_rules": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_conditions": [
+      "invalid authority",
+      "invalid provenance",
+      "wrong proof domain",
+      "missing acceptance",
+      "duplicate strict-once request"
+    ],
+    "retry_rules": "idempotent by declared idempotency key",
+    "schema_version": "EO-EA.1",
+    "source_authority": "EO-DG",
+    "source_component": "EO-DG",
+    "source_component_classification": "runtime authority",
+    "timeout_rules": "30s",
+    "token_requirement": "not required",
+    "workflow_type": "paper,proof,replay"
+  }
+]

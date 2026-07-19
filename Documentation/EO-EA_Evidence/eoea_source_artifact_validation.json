@@ -1,0 +1,176 @@
+[
+  {
+    "bridgeId": "BRIDGE-SCHED-MISSION-001",
+    "sourceArtifact": "EOEA-ART-001",
+    "sourceAuthority": "Scheduler",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-EVENT-MISSION-001",
+    "sourceArtifact": "EOEA-ART-002",
+    "sourceAuthority": "Event Detection",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-MISSION-WORKFLOW-001",
+    "sourceArtifact": "EOEA-ART-003",
+    "sourceAuthority": "Mission Planner",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
+    "sourceArtifact": "EOEA-ART-004",
+    "sourceAuthority": "Workflow Orchestrator",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-SI-SEEKER-001",
+    "sourceArtifact": "EOEA-ART-005",
+    "sourceAuthority": "Strategic Intelligence",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-SEEKER-ANALYST-001",
+    "sourceArtifact": "EOEA-ART-006",
+    "sourceAuthority": "Seeker",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-ANALYST-RISK-001",
+    "sourceArtifact": "EOEA-ART-007",
+    "sourceAuthority": "Analyst",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-RISK-AUTH-001",
+    "sourceArtifact": "EOEA-ART-008",
+    "sourceAuthority": "Risk",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-AUTH-TRADER-001",
+    "sourceArtifact": "EOEA-ART-009",
+    "sourceAuthority": "Authorization Authority",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-TRADER-BROKER-001",
+    "sourceArtifact": "EOEA-ART-010",
+    "sourceAuthority": "Trader",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-BROKER-FILL-001",
+    "sourceArtifact": "EOEA-ART-011",
+    "sourceAuthority": "Paper Broker",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-FILL-POSITION-001",
+    "sourceArtifact": "EOEA-ART-012",
+    "sourceAuthority": "Fill Ledger",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-POSITION-PT-001",
+    "sourceArtifact": "EOEA-ART-013",
+    "sourceAuthority": "Position Registry",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-POSITION-EOCK-001",
+    "sourceArtifact": "EOEA-ART-014",
+    "sourceAuthority": "Position Registry",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-EOCK-SURVEILLANCE-001",
+    "sourceArtifact": "EOEA-ART-015",
+    "sourceAuthority": "EO-CK",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-SURVEILLANCE-EXIT-001",
+    "sourceArtifact": "EOEA-ART-016",
+    "sourceAuthority": "Surveillance",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-EXIT-AUTH-001",
+    "sourceArtifact": "EOEA-ART-017",
+    "sourceAuthority": "Exit Decision",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-EXIT-TRADER-001",
+    "sourceArtifact": "EOEA-ART-018",
+    "sourceAuthority": "Authorization Authority",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-CLOSING-FILL-POSITION-001",
+    "sourceArtifact": "EOEA-ART-019",
+    "sourceAuthority": "Paper Broker",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-CLOSE-CPT-001",
+    "sourceArtifact": "EOEA-ART-020",
+    "sourceAuthority": "Position Registry",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-CPT-PT-001",
+    "sourceArtifact": "EOEA-ART-021",
+    "sourceAuthority": "Closed Position Truth",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-PT-HISTORIAN-001",
+    "sourceArtifact": "EOEA-ART-022",
+    "sourceAuthority": "Performance Truth",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001",
+    "sourceArtifact": "EOEA-ART-023",
+    "sourceAuthority": "Historian",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-COMMANDER-DIRECTIVE-001",
+    "sourceArtifact": "EOEA-ART-024",
+    "sourceAuthority": "Commander",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-COST-API-001",
+    "sourceArtifact": "EOEA-ART-025",
+    "sourceAuthority": "Cost Governor",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+    "sourceArtifact": "EOEA-ART-026",
+    "sourceAuthority": "Communications Bus",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-PERSIST-RECOVERY-001",
+    "sourceArtifact": "EOEA-ART-027",
+    "sourceAuthority": "Persistence",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-RECOVERY-RUNTIME-001",
+    "sourceArtifact": "EOEA-ART-028",
+    "sourceAuthority": "Persistence",
+    "validProducer": true
+  },
+  {
+    "bridgeId": "BRIDGE-ASSURANCE-COMMANDER-001",
+    "sourceArtifact": "EOEA-ART-030",
+    "sourceAuthority": "EO-DG",
+    "validProducer": true
+  }
+]

@@ -129,7 +129,7 @@
       "state": "CERTIFIED"
     }
   ],
-  "evidence_hash": "1b8529454293a02501c9aacf12a54866928eadafcaa14e4a47d642637e6564c2",
+  "evidence_hash": "638f67e00a1dde6c1515fff21f294ea14e8552121b6ff5f21d732e5ad3821623",
   "failure_results": [],
   "metrics": {
     "closedTruthCount": 1,
@@ -140,7 +140,7 @@
   "readiness": "Conditionally Operational",
   "recovery_results": [
     {
-      "deterministic_signature": "0a9e40a284ba621eeb94f86d5b48bbc49a59bf73db48e71231386c9eb8b8499a",
+      "deterministic_signature": "66b3b62b193a23ac289234b9019b82655647ddb453fdaaa003e80e3ab12f7bae",
       "domains": [
         {
           "domain": "market_evidence",
@@ -171,7 +171,7 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-3FF2C602FB38"
+            "FILL-25375BB2AF23"
           ],
           "state": "UNRESOLVED",
           "unresolved_references": [
@@ -213,7 +213,7 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:56:25.251233Z",
+      "timestamp_utc": "2026-07-19T12:27:20.891835Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     }
@@ -223,7 +223,7 @@
       "authoritative_market_boundary_used": true,
       "bridge_trace_count": 1,
       "closed_truth_count": 1,
-      "evidence_hash": "468734928ff084286ad4410a45cec1b28268cc9aae54dbb56af7c4242395535b",
+      "evidence_hash": "6a0b46f528d7014bfeba0506133131176cb8f10ad331a190d8533bd5f8f930e3",
       "office_lifecycle_controls_used": true,
       "open_quantity_after_close": 0.0,
       "report_id": "EO-DM-LIFECYCLE-CLOSURE-001",
@@ -252,7 +252,7 @@
         {
           "authority": "Paper Broker",
           "evidence_references": [
-            "FILL-3FF2C602FB38"
+            "FILL-25375BB2AF23"
           ],
           "name": "Opening fill evidence",
           "stage_id": "EO-DM-STAGE-OPEN-FILL",
@@ -263,7 +263,7 @@
           "authority": "Position Registry",
           "evidence_references": [
             "POS-AAPL-DO-EO-DM",
-            "FILL-3FF2C602FB38"
+            "FILL-25375BB2AF23"
           ],
           "name": "Position truth from fill",
           "stage_id": "EO-DM-STAGE-POSITION",
@@ -293,7 +293,7 @@
         {
           "authority": "Paper Broker",
           "evidence_references": [
-            "FILL-B400E8137508"
+            "FILL-621B8E3E78E0"
           ],
           "name": "Closing fill evidence",
           "stage_id": "EO-DM-STAGE-CLOSE-FILL",
@@ -322,7 +322,7 @@
         }
       ],
       "synthetic_truth_created": false,
-      "timestamp_utc": "2026-07-19T01:56:25.246781Z",
+      "timestamp_utc": "2026-07-19T12:27:20.886791Z",
       "transaction_protection_model": "EO-DD participant model referenced; broker and position mutation remain separate authorities.",
       "verdict": "PASS"
     }
@@ -331,7 +331,7 @@
   "static_assurance": {
     "financialMutationSitesReviewed": true
   },
-  "timestamp_utc": "2026-07-19T01:56:25.251888Z",
+  "timestamp_utc": "2026-07-19T12:27:20.892591Z",
   "title": "Financial Lifecycle Constitutional Certification",
   "verdict": "INCOMPLETE"
 }

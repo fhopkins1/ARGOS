@@ -97,7 +97,7 @@
       "state": "CONDITIONALLY_CERTIFIED"
     }
   ],
-  "evidence_hash": "12c1f45d61773c066d86f5c1a1172681108ba14c33ab989d5dc0c131bc6b78f7",
+  "evidence_hash": "c25c2798424f1722b41425b941d16b1cc7628ef28cb518f2c13f4eb97b651ba7",
   "failure_results": [
     {
       "continuedExecutionAllowed": false,
@@ -115,7 +115,7 @@
   "readiness": "Conditionally Operational",
   "recovery_results": [
     {
-      "deterministic_signature": "a62ac0cf4048e4a1d3f61c8091c9cc81498b5b8f94ca39b9149c600b11cba5d1",
+      "deterministic_signature": "51a534f1aa08c4d454b8be144f237253f3930435b0703a9addda8719ef4a192a",
       "domains": [
         {
           "domain": "market_evidence",
@@ -146,8 +146,8 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-97E93295ED85",
-            "FILL-595E260026C8"
+            "FILL-6E1006B3373F",
+            "FILL-33C70C518961"
           ],
           "state": "RECOVERED",
           "unresolved_references": []
@@ -184,12 +184,12 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:56:25.282364Z",
+      "timestamp_utc": "2026-07-19T12:27:20.931072Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     },
     {
-      "deterministic_signature": "680cdb61305a77045004ab8760594bb6724b21ceca0b3e36d1d79ab2c1eb29c8",
+      "deterministic_signature": "deacb5a14c2982318d06013dee085c2c4c6ef26dd85c92bb49559b78ecca57b4",
       "domains": [
         {
           "domain": "market_evidence",
@@ -220,7 +220,7 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-97E93295ED85"
+            "FILL-6E1006B3373F"
           ],
           "state": "UNRESOLVED",
           "unresolved_references": [
@@ -262,14 +262,14 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:56:25.285563Z",
+      "timestamp_utc": "2026-07-19T12:27:20.934472Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     }
   ],
   "runtime_traces": [
     {
-      "deterministic_signature": "a62ac0cf4048e4a1d3f61c8091c9cc81498b5b8f94ca39b9149c600b11cba5d1",
+      "deterministic_signature": "51a534f1aa08c4d454b8be144f237253f3930435b0703a9addda8719ef4a192a",
       "domains": [
         {
           "domain": "market_evidence",
@@ -300,8 +300,8 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-97E93295ED85",
-            "FILL-595E260026C8"
+            "FILL-6E1006B3373F",
+            "FILL-33C70C518961"
           ],
           "state": "RECOVERED",
           "unresolved_references": []
@@ -338,12 +338,12 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:56:25.282364Z",
+      "timestamp_utc": "2026-07-19T12:27:20.931072Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     },
     {
-      "deterministic_signature": "680cdb61305a77045004ab8760594bb6724b21ceca0b3e36d1d79ab2c1eb29c8",
+      "deterministic_signature": "deacb5a14c2982318d06013dee085c2c4c6ef26dd85c92bb49559b78ecca57b4",
       "domains": [
         {
           "domain": "market_evidence",
@@ -374,7 +374,7 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-97E93295ED85"
+            "FILL-6E1006B3373F"
           ],
           "state": "UNRESOLVED",
           "unresolved_references": [
@@ -416,7 +416,7 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:56:25.285563Z",
+      "timestamp_utc": "2026-07-19T12:27:20.934472Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     }
@@ -427,7 +427,7 @@
     "snapshotPrimaryTruthAuthority": false,
     "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
   },
-  "timestamp_utc": "2026-07-19T01:56:25.286413Z",
+  "timestamp_utc": "2026-07-19T12:27:20.935390Z",
   "title": "Deterministic Recovery and Fail-Closed Authority Certification",
   "verdict": "INCOMPLETE"
 }

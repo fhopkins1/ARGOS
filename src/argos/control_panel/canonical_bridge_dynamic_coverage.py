@@ -12,6 +12,7 @@ from argos.foundation.contracts import utc_timestamp
 
 from .authority_promotion_closure import PromotionResult, execute_tc002_certification
 from .canonical_bridge_fabric import BridgeImplementationStatus, BridgeRequirementClass, BridgeTransferClass, default_bridge_definitions
+from .canonical_bridge_denominator_execution import BridgeExecutionEvidenceClass, execute_eoea_certification
 from .runtime_bridge_certification import required_runtime_bridge_matrix
 from .trace_equivalence import TraceEquivalenceLevel, execute_tc001_certification
 
@@ -95,8 +96,14 @@ def execute_tc003_certification(repository_commit: str = "WORKTREE") -> dict[str
     definitions = default_bridge_definitions()
     tc001 = execute_tc001_certification(repository_commit=repository_commit)
     tc002 = execute_tc002_certification(repository_commit=repository_commit)
+    eoea = execute_eoea_certification(repository_commit=repository_commit)
     authority_by_bridge = {item["bridge_id"]: item for item in tc002["core_bridge_authority_results"]}
-    canonical_bridge_ids = tuple(tc001["bridge_coverage"]["eligible_subject_ids"])
+    canonical_bridge_ids = tuple(
+        dict.fromkeys(
+            tuple(tc001["bridge_coverage"]["eligible_subject_ids"])
+            + tuple(row["bridge_id"] for row in eoea["bridge_coverage_matrix"] if row["final_status"] == BridgeExecutionEvidenceClass.CANONICAL_RUNTIME_EXECUTED.value)
+        )
+    )
     plan = tuple(_plan_row(definition) for definition in definitions)
     matrix = tuple(_matrix_row(definition, authority_by_bridge.get(definition.bridge_id, {}), canonical_bridge_ids) for definition in definitions)
     summary = _coverage_summary(matrix)
@@ -130,7 +137,7 @@ def execute_tc003_certification(repository_commit: str = "WORKTREE") -> dict[str
         "uncovered_bridges": tuple(asdict(row) for row in matrix if row.canonical_execution_status != DynamicCoverageStatus.CANONICAL_RUNTIME_EXECUTED),
         "bridge_certification_matrix": tuple(asdict(row) for row in matrix),
         "static_assurance": _static_assurance(summary),
-        "dynamic_validation": {"tc001Verdict": tc001["certification"]["verdict"], "tc002Verdict": tc002["certification"]["verdict"], "coverage": asdict(summary)},
+        "dynamic_validation": {"tc001Verdict": tc001["certification"]["verdict"], "tc002Verdict": tc002["certification"]["verdict"], "eoeaVerdict": eoea["certification"]["verdict"], "coverage": asdict(summary)},
     }
 
 

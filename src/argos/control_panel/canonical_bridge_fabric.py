@@ -78,15 +78,34 @@ class BridgeIdempotencyPolicy(str, Enum):
 
 class BridgeRejectionCode(str, Enum):
     BRIDGE_NOT_REGISTERED = "BRIDGE_NOT_REGISTERED"
+    BRIDGE_NOT_REQUIRED = "BRIDGE_NOT_REQUIRED"
+    BRIDGE_IMPLEMENTATION_MISSING = "BRIDGE_IMPLEMENTATION_MISSING"
+    BRIDGE_CANONICAL_TRIGGER_MISSING = "BRIDGE_CANONICAL_TRIGGER_MISSING"
+    BRIDGE_SOURCE_ARTIFACT_INVALID = "BRIDGE_SOURCE_ARTIFACT_INVALID"
+    BRIDGE_SOURCE_AUTHORITY_INVALID = "BRIDGE_SOURCE_AUTHORITY_INVALID"
+    BRIDGE_PROVENANCE_INVALID = "BRIDGE_PROVENANCE_INVALID"
+    BRIDGE_PROOF_DOMAIN_INVALID = "BRIDGE_PROOF_DOMAIN_INVALID"
     BRIDGE_DISABLED = "BRIDGE_DISABLED"
     BRIDGE_RETIRED = "BRIDGE_RETIRED"
     BRIDGE_PROHIBITED = "BRIDGE_PROHIBITED"
     BRIDGE_PROOF_DOMAIN_REJECTED = "BRIDGE_PROOF_DOMAIN_REJECTED"
     BRIDGE_TOKEN_REQUIRED = "BRIDGE_TOKEN_REQUIRED"
+    BRIDGE_TOKEN_INVALID = "BRIDGE_TOKEN_INVALID"
+    BRIDGE_SOURCE_NOT_OWNER = "BRIDGE_SOURCE_NOT_OWNER"
     BRIDGE_INVALID_OWNER = "BRIDGE_INVALID_OWNER"
     BRIDGE_ARTIFACT_MISSING = "BRIDGE_ARTIFACT_MISSING"
     BRIDGE_ARTIFACT_HASH_MISMATCH = "BRIDGE_ARTIFACT_HASH_MISMATCH"
+    BRIDGE_DESTINATION_INELIGIBLE = "BRIDGE_DESTINATION_INELIGIBLE"
     BRIDGE_DESTINATION_REJECTED = "BRIDGE_DESTINATION_REJECTED"
+    BRIDGE_ACCEPTANCE_EVIDENCE_MISSING = "BRIDGE_ACCEPTANCE_EVIDENCE_MISSING"
+    BRIDGE_OWNERSHIP_TRANSFER_INCOMPLETE = "BRIDGE_OWNERSHIP_TRANSFER_INCOMPLETE"
+    BRIDGE_PERSISTENCE_FAILED = "BRIDGE_PERSISTENCE_FAILED"
+    BRIDGE_TIMEOUT = "BRIDGE_TIMEOUT"
+    BRIDGE_RECOVERY_UNRESOLVED = "BRIDGE_RECOVERY_UNRESOLVED"
+    BRIDGE_DUPLICATE_REJECTED = "BRIDGE_DUPLICATE_REJECTED"
+    BRIDGE_IDEMPOTENCY_VIOLATION = "BRIDGE_IDEMPOTENCY_VIOLATION"
+    BRIDGE_CERTIFICATION_HARNESS_ORIGIN_REJECTED = "BRIDGE_CERTIFICATION_HARNESS_ORIGIN_REJECTED"
+    BRIDGE_CANONICAL_TRACE_REQUIRED = "BRIDGE_CANONICAL_TRACE_REQUIRED"
     BRIDGE_DUPLICATE_STRICT_ONCE = "BRIDGE_DUPLICATE_STRICT_ONCE"
     BRIDGE_PERSISTENCE_REQUIRED = "BRIDGE_PERSISTENCE_REQUIRED"
     BRIDGE_RUNTIME_MISMATCH = "BRIDGE_RUNTIME_MISMATCH"
@@ -168,6 +187,9 @@ class BridgeExecutionResult:
     artifact_id: str
     durable_intent_id: str
     audit_record_ids: tuple[str, ...]
+    destination_acceptance_reference: str
+    persistence_reference: str
+    execution_origin: str
     requested_at_utc: str
     completed_at_utc: str
     status: BridgeResultStatus
@@ -266,6 +288,8 @@ class CanonicalBridgeExecutor:
         acceptance = acceptor(request)
         if not acceptance.get("accepted"):
             return self._rejected(request, BridgeRejectionCode.BRIDGE_DESTINATION_REJECTED, intent_id=intent_id)
+        if not acceptance.get("acceptance_reference"):
+            return self._rejected(request, BridgeRejectionCode.BRIDGE_ACCEPTANCE_EVIDENCE_MISSING, intent_id=intent_id)
         resulting_owner = request.current_owner
         source_release = "NOT_APPLICABLE"
         if definition.transfer_class == BridgeTransferClass.OWNERSHIP_TRANSFER:
@@ -274,7 +298,7 @@ class CanonicalBridgeExecutor:
             source_release = "RELEASED_TO_DORMANT"
         elif request.workflow_id and not self.ownership.owner(request.workflow_id):
             self.ownership.establish(request.workflow_id, request.current_owner, request.current_token_id)
-        result = self._result(request, definition, BridgeResultStatus.ACCEPTED, None, resulting_owner, source_release, "ACCEPTED", intent_id, "COMPLETE")
+        result = self._result(request, definition, BridgeResultStatus.ACCEPTED, None, resulting_owner, source_release, "ACCEPTED", intent_id, "COMPLETE", acceptance_reference=str(acceptance["acceptance_reference"]))
         self._results_by_idempotency[request.idempotency_key] = result
         self._traces.append(result)
         self._audit("BridgeAccepted", request, definition, intent_id, result=result)
@@ -339,6 +363,7 @@ class CanonicalBridgeExecutor:
         destination_acceptance: str,
         intent_id: str,
         workflow_state: str,
+        acceptance_reference: str = "",
     ) -> BridgeExecutionResult:
         payload = {
             "execution_id": request.execution_id,
@@ -362,6 +387,9 @@ class CanonicalBridgeExecutor:
             request.artifact_id,
             intent_id,
             (f"AUD-{_hash(payload)[:12].upper()}",),
+            acceptance_reference,
+            intent_id,
+            "CANONICAL_RUNTIME",
             request.requested_at_utc,
             utc_timestamp(),
             status,
@@ -487,7 +515,12 @@ def bridge_inventory() -> tuple[dict[str, Any], ...]:
 
 
 def _default_acceptor(request: BridgeExecutionRequest) -> dict[str, Any]:
-    return {"accepted": True, "destination": request.destination_office, "artifact_id": request.artifact_id}
+    return {
+        "accepted": True,
+        "destination": request.destination_office,
+        "artifact_id": request.artifact_id,
+        "acceptance_reference": f"ACCEPT-{_hash((request.bridge_id, request.workflow_id, request.artifact_id))[:12].upper()}",
+    }
 
 
 def _hash(payload: Any) -> str:

@@ -1,0 +1,55 @@
+{
+  "authority_blocked": 14,
+  "blocked": 14,
+  "canonical_runtime_executed": 15,
+  "contract_only": 0,
+  "excluded_bridge_ids": [
+    "BRIDGE-REPLAY-LAB-001"
+  ],
+  "external_operational": 0,
+  "failed": 0,
+  "implementation_blocked": 14,
+  "integration_only": 0,
+  "provenance_blocked": 14,
+  "recovery_blocked": 0,
+  "replay_only": 1,
+  "required_bridge_count": 29,
+  "retired": 0,
+  "status_buckets": {
+    "BLOCKED": [
+      "BRIDGE-EVENT-MISSION-001",
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-ANALYST-RISK-001",
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-EOCK-SURVEILLANCE-001",
+      "BRIDGE-SURVEILLANCE-EXIT-001",
+      "BRIDGE-EXIT-AUTH-001",
+      "BRIDGE-CPT-PT-001",
+      "BRIDGE-PT-HISTORIAN-001",
+      "BRIDGE-HISTORIAN-LEARNING-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "CANONICAL_RUNTIME_EXECUTED": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-MISSION-WORKFLOW-001",
+      "BRIDGE-WORKFLOW-OFFICE-001",
+      "BRIDGE-SI-SEEKER-001",
+      "BRIDGE-TRADER-BROKER-001",
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-EXIT-TRADER-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001",
+      "BRIDGE-CLOSE-CPT-001",
+      "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "BRIDGE-COST-API-001",
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001",
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ]
+  },
+  "test_only": 0,
+  "unexecuted": 0
+}

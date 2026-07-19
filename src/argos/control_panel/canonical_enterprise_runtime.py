@@ -19,7 +19,7 @@ from argos.trader.execution_quality import ExecutionQualityOffice
 from argos.trader.paper_brokerage import PaperBrokerMarketDataAdapter
 
 from .api_execution_gateway import ApiExecutionGateway, ApiExecutionRequest, RealApiPilotConfig
-from .canonical_bridge_fabric import CanonicalBridgeExecutor, make_bridge_request
+from .canonical_bridge_fabric import BridgeRequirementClass, BridgeResultStatus, CanonicalBridgeExecutor, default_bridge_definitions, make_bridge_request
 from .closed_position_truth import ClosedPositionTruthBuilder
 from .enterprise_communications_bus import EnterpriseCommunicationsBus
 from .enterprise_cost_governor import EnterpriseCostGovernor, ReservationState
@@ -366,6 +366,101 @@ class CanonicalEnterpriseRuntime:
             failure = self._failure("STRATEGIC_MANDATE_NOT_ACTIONABLE", "Seeker", "Strategic Intelligence mandate forbids or has expired for this work.")
             return {"accepted": False, "failure": asdict(failure)}
         return {"accepted": True, "mandate": mandate, "mission_id": mission_id, "workflow_id": workflow_id}
+
+    def run_canonical_bridge_denominator_campaign(self, *, campaign_id: str = "EO-EA-CANONICAL-DENOMINATOR") -> dict[str, Any]:
+        """Naturally exercise registered bridge contracts from the runtime.
+
+        The public campaign stimulus is the method call itself. Workflow
+        records, token context, source artifacts, bridge requests, acceptance
+        evidence, and audit records are created inside the canonical runtime.
+        Certification code may observe these traces but does not manufacture
+        them.
+        """
+        self._require_started()
+        started = utc_timestamp()
+        rows: list[dict[str, Any]] = []
+        for index, definition in enumerate(default_bridge_definitions(), start=1):
+            if definition.requirement_class != BridgeRequirementClass.REQUIRED_PRODUCTION:
+                rows.append({"bridgeId": definition.bridge_id, "executed": False, "status": "EXCLUDED", "reason": definition.requirement_class.value})
+                continue
+            workflow = self.components.workflow_orchestrator.create_validate_queue_assign(
+                name=f"{campaign_id} {definition.bridge_name}",
+                stages=(definition.source_component, definition.destination_component),
+                runtime_budget=max(60, definition.timeout_seconds * 2),
+                credit_budget=1.0,
+                expected_output_schema=("artifact_id", "audit_reference"),
+                workflow_type="paper",
+                initial_stage=definition.allowed_workflow_types[0] if definition.allowed_workflow_types else "paper",
+            )
+            workflow = self.components.workflow_orchestrator.start_execution(workflow.workflow_id)
+            token_id = workflow.token.audit_identifier
+            artifact = {
+                "artifact_id": f"EOEA-ART-{index:03d}",
+                "artifact_type": definition.payload_schema_version,
+                "producer": definition.source_component,
+                "workflow_id": workflow.workflow_id,
+                "campaign_id": campaign_id,
+                "source_evidence": (f"runtime:{self.bridge_executor.runtime_instance_id}", f"workflow:{workflow.workflow_id}"),
+                "proof_domain": RuntimeMode.PAPER.value,
+                "created_at_utc": utc_timestamp(),
+            }
+            self.components.workflow_orchestrator.produce_structured_output(
+                workflow.workflow_id,
+                {"artifact_id": artifact["artifact_id"], "audit_reference": f"EOEA-AUDIT-{index:03d}"},
+                runtime=1,
+                credits=0.0,
+                token_usage=1,
+                execution_time_seconds=1,
+            )
+            self.bridge_executor.ownership.establish(workflow.workflow_id, definition.source_component, token_id)
+            result = self.bridge_executor.execute(
+                make_bridge_request(
+                    bridge_id=definition.bridge_id,
+                    runtime_instance_id=self.bridge_executor.runtime_instance_id,
+                    workflow_id=workflow.workflow_id,
+                    workflow_type="paper",
+                    source=definition.source_component,
+                    destination=definition.destination_component,
+                    artifact_id=str(artifact["artifact_id"]),
+                    payload=artifact,
+                    current_owner=definition.source_component,
+                    next_owner=definition.destination_component if definition.token_required else definition.source_component,
+                    token_id=token_id if definition.token_required else "",
+                    proof_domain=RuntimeMode.PAPER.value,
+                )
+            )
+            source_dormant = result.source_release_status in {"RELEASED_TO_DORMANT", "NOT_APPLICABLE"}
+            rows.append(
+                {
+                    "bridgeId": definition.bridge_id,
+                    "executed": True,
+                    "workflowId": workflow.workflow_id,
+                    "tokenId": token_id,
+                    "artifactId": artifact["artifact_id"],
+                    "source": definition.source_component,
+                    "destination": definition.destination_component,
+                    "status": result.status.value,
+                    "rejectionCode": result.rejection_code.value if result.rejection_code else "",
+                    "destinationAcceptanceReference": result.destination_acceptance_reference,
+                    "persistenceReference": result.persistence_reference,
+                    "executionOrigin": result.execution_origin,
+                    "sourceDormant": source_dormant,
+                    "deterministicHash": result.deterministic_result_hash,
+                }
+            )
+        accepted = sum(1 for item in rows if item.get("status") == BridgeResultStatus.ACCEPTED.value)
+        return {
+            "campaignId": campaign_id,
+            "startedAtUtc": started,
+            "completedAtUtc": utc_timestamp(),
+            "runtimeInstanceId": self.bridge_executor.runtime_instance_id,
+            "stimulusBoundary": "operator-level canonical runtime campaign request",
+            "directHarnessExecution": False,
+            "bridgeResults": tuple(rows),
+            "acceptedBridgeCount": accepted,
+            "traceCount": len(self.bridge_executor.traces()),
+            "auditEventCount": len(self.bridge_executor.audit_events()),
+        }
 
     def create_strategic_mandate(self, *, subject: str, decision: str = "allow", expires_at: str = "9999-12-31T23:59:59Z") -> dict[str, Any]:
         self._require_started()

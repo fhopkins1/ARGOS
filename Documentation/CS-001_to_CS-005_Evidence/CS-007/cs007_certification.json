@@ -105,7 +105,7 @@
       "state": "CONDITIONALLY_CERTIFIED"
     }
   ],
-  "evidence_hash": "515d063df0bcb4c667d5720d8070b91e36fd18a225908e80a534029e96f43492",
+  "evidence_hash": "41035c08fae86e44da3d999ac9c779698f0e5457cad8b1fdff6f9b0186c58b35",
   "failure_results": [],
   "metrics": {
     "authoritativeDenominatorUsed": true,
@@ -120,7 +120,7 @@
   "readiness": "Conditionally Operational",
   "recovery_results": [
     {
-      "deterministic_signature": "587ab2edfc446b97484f61360776810e958401d24f8f69bc43ca24cb8fc7b222",
+      "deterministic_signature": "f63ae083b17b0593f6aee54c2e7da0f328b2449c1d43946cfe00df03da9059c5",
       "domains": [
         {
           "domain": "market_evidence",
@@ -151,7 +151,7 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-210C78367758"
+            "FILL-43FDAD6097FF"
           ],
           "state": "UNRESOLVED",
           "unresolved_references": [
@@ -193,7 +193,7 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:56:25.327030Z",
+      "timestamp_utc": "2026-07-19T12:27:20.993274Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     }
@@ -210,81 +210,81 @@
     },
     {
       "category": "Workflow",
-      "evidence_hash": "9f28258413f8ef0bd62be26a7b79890969cb31ef6b1dc7811976dca04ee9f3a3",
+      "evidence_hash": "b04a4695ed07b3ee4770e7d102b85b6a2a53ba48fe19589dc77700bdd2288c80",
       "evidence_references": [
-        "9f28258413f8ef0bd62be26a7b79890969cb31ef6b1dc7811976dca04ee9f3a3"
+        "b04a4695ed07b3ee4770e7d102b85b6a2a53ba48fe19589dc77700bdd2288c80"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-WORKFLOW"
     },
     {
       "category": "Bridge",
-      "evidence_hash": "2330bd3662dbcdb2b0867a4dd467d3958a96cf83ba58eb98817e11a11b608941",
+      "evidence_hash": "320236fb2df48630e7f934ff3fc44153e9cb6717db4b4453fd82375fa9a74f3f",
       "evidence_references": [
-        "2330bd3662dbcdb2b0867a4dd467d3958a96cf83ba58eb98817e11a11b608941"
+        "320236fb2df48630e7f934ff3fc44153e9cb6717db4b4453fd82375fa9a74f3f"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-BRIDGE"
     },
     {
       "category": "Office",
-      "evidence_hash": "5e83cf098f7343225e0d73efb2aad9c46b67f771b44e06873188e35fdb60175d",
+      "evidence_hash": "e133b8751aa9661503a4b45c80d415a34c692609f3dd29ee52816920ea79d1ff",
       "evidence_references": [
-        "5e83cf098f7343225e0d73efb2aad9c46b67f771b44e06873188e35fdb60175d"
+        "e133b8751aa9661503a4b45c80d415a34c692609f3dd29ee52816920ea79d1ff"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-OFFICE"
     },
     {
       "category": "Market Data",
-      "evidence_hash": "0544b5f15e206266dd6be505567ed0f5f2e152544a7de2dbb117fcc91a023ea7",
+      "evidence_hash": "4e64fe23b885c8ad4caccb868f8e30dd5fbd2c3dd1412e09153e898789fb02bd",
       "evidence_references": [
-        "0544b5f15e206266dd6be505567ed0f5f2e152544a7de2dbb117fcc91a023ea7"
+        "4e64fe23b885c8ad4caccb868f8e30dd5fbd2c3dd1412e09153e898789fb02bd"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-MARKET"
     },
     {
       "category": "Financial",
-      "evidence_hash": "eca3340fc02637d2493c20eaf630216ce1abab9e040f0466a91dd147889d6820",
+      "evidence_hash": "68c904243667d0769229dbef7eab2cb540341fbf3ee928e735b4d8e4792b20a6",
       "evidence_references": [
-        "eca3340fc02637d2493c20eaf630216ce1abab9e040f0466a91dd147889d6820"
+        "68c904243667d0769229dbef7eab2cb540341fbf3ee928e735b4d8e4792b20a6"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-FINANCIAL"
     },
     {
       "category": "Recovery",
-      "evidence_hash": "04646bd5580062896fe199c8d488240860e0ff816e7e2b95bdf6f9abef006b3d",
+      "evidence_hash": "9586da54b9b51a3715cff05403469babe855266a51d1c21fcef81680cfb33115",
       "evidence_references": [
-        "04646bd5580062896fe199c8d488240860e0ff816e7e2b95bdf6f9abef006b3d"
+        "9586da54b9b51a3715cff05403469babe855266a51d1c21fcef81680cfb33115"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-RECOVERY"
     },
     {
       "category": "Read Surfaces",
-      "evidence_hash": "b36027f31b5f464332efcdd4c475d5e3bac625c75748fc97e7ba4c0bc121737e",
+      "evidence_hash": "b2afc1db498fee6a8254457c72c4cf4e66ad30a886a1bafa7d86c41e738f484a",
       "evidence_references": [
-        "b36027f31b5f464332efcdd4c475d5e3bac625c75748fc97e7ba4c0bc121737e"
+        "b2afc1db498fee6a8254457c72c4cf4e66ad30a886a1bafa7d86c41e738f484a"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-READ"
     },
     {
       "category": "Synthetic Truth",
-      "evidence_hash": "1d6babd895b9bf6e399a83ff61762e7e6c9f87dbd35a0cc56994a9c3c2d60114",
+      "evidence_hash": "18765eb47e2b75ca44817a1d5ac20ee3e8b13375411d4c915b9a680775c71aa6",
       "evidence_references": [
-        "1d6babd895b9bf6e399a83ff61762e7e6c9f87dbd35a0cc56994a9c3c2d60114"
+        "18765eb47e2b75ca44817a1d5ac20ee3e8b13375411d4c915b9a680775c71aa6"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-SYNTHETIC"
     },
     {
       "category": "Endurance",
-      "evidence_hash": "885395ab7dfa186b152e815365d4cbcbe17113413cb40e6915b2c212eca830aa",
+      "evidence_hash": "10dabf67404f4677881b50e87f8dd1caf117f9dada431fc6ac3061891fbfbacc",
       "evidence_references": [
-        "885395ab7dfa186b152e815365d4cbcbe17113413cb40e6915b2c212eca830aa"
+        "10dabf67404f4677881b50e87f8dd1caf117f9dada431fc6ac3061891fbfbacc"
       ],
       "status": "PASS",
       "trace_id": "EO-DP-ENDURANCE"
@@ -293,9 +293,9 @@
   "schema_version": "CS.1",
   "static_assurance": {
     "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT",
-    "traceEvidenceHash": "6fe9488922b5b6abdbf4b13002b376b364c1834760f8d35e50e81a6caf77b6e9"
+    "traceEvidenceHash": "9ace6d7ac374bba0597e9dc3b82eca6b87915dc372d0c0e27a5838827b587782"
   },
-  "timestamp_utc": "2026-07-19T01:56:29.229417Z",
+  "timestamp_utc": "2026-07-19T12:27:27.090965Z",
   "title": "Executed Constitutional Trace Certification",
   "verdict": "INCOMPLETE"
 }
