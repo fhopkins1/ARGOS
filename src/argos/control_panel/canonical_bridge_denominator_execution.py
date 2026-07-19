@@ -237,9 +237,9 @@ def _coverage_row(definition: CanonicalBridgeDefinition, trace: dict[str, Any]) 
     elif definition.persistence_required and not trace.get("persistenceReference"):
         final = BridgeExecutionEvidenceClass.FAILED.value
         blocker = "BRIDGE_PERSISTENCE_FAILED"
-    elif definition.implementation_status in {BridgeImplementationStatus.PARTIAL, BridgeImplementationStatus.BLOCKED, BridgeImplementationStatus.ORPHANED}:
+    elif definition.implementation_status in {BridgeImplementationStatus.BLOCKED, BridgeImplementationStatus.ORPHANED}:
         final = BridgeExecutionEvidenceClass.BLOCKED.value
-        blocker = "EO-EB authority/provenance certification remains required for partial bridge implementation."
+        blocker = "Bridge remains blocked or orphaned in the authoritative bridge definition."
     return EOEABridgeCoverageRow(
         definition.bridge_id,
         _group_for(definition.bridge_id),

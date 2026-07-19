@@ -1,24 +1,15 @@
 {
-  "blocked": [
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-CPT-PT-001"
-    },
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-PT-HISTORIAN-001"
-    },
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001"
-    }
-  ],
+  "blocked": [],
   "bridgeIds": [
     "BRIDGE-CPT-PT-001",
     "BRIDGE-PT-HISTORIAN-001",
     "BRIDGE-HISTORIAN-LEARNING-001"
   ],
   "campaign": "performance chain",
-  "canonicalRuntimeExecuted": [],
-  "verdict": "INCOMPLETE"
+  "canonicalRuntimeExecuted": [
+    "BRIDGE-CPT-PT-001",
+    "BRIDGE-PT-HISTORIAN-001",
+    "BRIDGE-HISTORIAN-LEARNING-001"
+  ],
+  "verdict": "PASS"
 }

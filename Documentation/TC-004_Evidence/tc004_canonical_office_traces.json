@@ -39,6 +39,77 @@
     ],
     "background_activity": "no autonomous work while Dormant",
     "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
+    "component_id": "OFFICE-EO-DB-002",
+    "component_name": "Analyst",
+    "constitutional_role": "Analyst bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-003",
+    "component_name": "Authorization Authority",
+    "constitutional_role": "Authorization Authority bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
     "certification_status": "STATICALLY_VALIDATED",
     "component_id": "OFFICE-EO-DB-004",
     "component_name": "Canonical Runtime",
@@ -204,6 +275,174 @@
     "background_activity": "no autonomous work while Dormant",
     "blocker": "",
     "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-012",
+    "component_name": "EO-CK",
+    "constitutional_role": "EO-CK bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-015",
+    "component_name": "Exit Decision",
+    "constitutional_role": "Exit Decision bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-016",
+    "component_name": "Fill Ledger",
+    "constitutional_role": "Fill Ledger bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
+    "component_id": "OFFICE-EO-DB-017",
+    "component_name": "Historian",
+    "constitutional_role": "Historian bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "service"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-018",
+    "component_name": "Learning Systems",
+    "constitutional_role": "Learning Systems bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
     "component_id": "OFFICE-EO-DB-019",
     "component_name": "Mission Planner",
     "constitutional_role": "Mission Planner bridge authority and handoff participant.",
@@ -345,6 +584,40 @@
     ],
     "background_activity": "no autonomous work while Dormant",
     "blocker": "",
+    "certification_status": "PRODUCTION_VALID",
+    "component_id": "OFFICE-EO-DB-025",
+    "component_name": "Risk",
+    "constitutional_role": "Risk bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
     "certification_status": "STATICALLY_VALIDATED",
     "component_id": "OFFICE-EO-DB-026",
     "component_name": "Runtime Provider",
@@ -402,6 +675,40 @@
     "schema_version": "TC-004.1",
     "token_requirement": true,
     "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-030",
+    "component_name": "Surveillance",
+    "constitutional_role": "Surveillance bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
   },
   {
     "activation_authority": [

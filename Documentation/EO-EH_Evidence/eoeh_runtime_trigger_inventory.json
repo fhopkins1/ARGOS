@@ -1,0 +1,182 @@
+[
+  {
+    "bridgeId": "BRIDGE-SCHED-MISSION-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational initiation",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-EVENT-MISSION-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational initiation",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-MISSION-WORKFLOW-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational initiation",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational initiation",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-SI-SEEKER-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "strategic discovery",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-SEEKER-ANALYST-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "strategic discovery",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-ANALYST-RISK-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "strategic discovery",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-RISK-AUTH-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "decision and authorization",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-AUTH-TRADER-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "decision and authorization",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-TRADER-BROKER-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "entry execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-BROKER-FILL-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "entry execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-FILL-POSITION-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "entry execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-POSITION-PT-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "performance truth",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-POSITION-EOCK-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "position monitoring",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-EOCK-SURVEILLANCE-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "position monitoring",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-SURVEILLANCE-EXIT-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "position monitoring",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-EXIT-AUTH-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "exit execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-EXIT-TRADER-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "exit execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-CLOSING-FILL-POSITION-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "exit execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-CLOSE-CPT-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "exit execution",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-CPT-PT-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "performance truth",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-PT-HISTORIAN-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "performance truth",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "performance truth",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-COMMANDER-DIRECTIVE-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "decision and authorization",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-COST-API-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational governance",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational governance",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-PERSIST-RECOVERY-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational governance",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-RECOVERY-RUNTIME-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational governance",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-REPLAY-LAB-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational governance",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  },
+  {
+    "bridgeId": "BRIDGE-ASSURANCE-COMMANDER-001",
+    "campaignMaySupplyOnlyStimulus": true,
+    "trigger": "operational governance",
+    "triggerAuthority": "CanonicalEnterpriseRuntime"
+  }
+]

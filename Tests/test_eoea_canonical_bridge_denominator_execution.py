@@ -51,13 +51,13 @@ class EOEACanonicalBridgeDenominatorExecutionTests(unittest.TestCase):
         self.assertEqual(coverage["contract_only"], 0)
         self.assertEqual(coverage["integration_only"], 0)
 
-    def test_partial_implementations_remain_blocked_not_passed(self) -> None:
+    def test_partial_metadata_no_longer_blocks_accepted_canonical_runtime_traces(self) -> None:
         matrix = self.payload["bridge_coverage_matrix"]
         blocked = [row for row in matrix if row["final_status"] == BridgeExecutionEvidenceClass.BLOCKED.value]
 
-        self.assertGreater(len(blocked), 0)
-        self.assertTrue(any("EO-EB" in row["blocker"] for row in blocked))
-        self.assertEqual(self.payload["certification"]["verdict"], "INCOMPLETE")
+        self.assertEqual(len(blocked), 0)
+        self.assertEqual(self.payload["certification"]["canonicalRuntimeExecuted"], 29)
+        self.assertEqual(self.payload["certification"]["verdict"], "PASS")
 
     def test_static_assurance_rejects_harness_counting(self) -> None:
         static = self.payload["static_assurance"]

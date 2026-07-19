@@ -1,22 +1,5 @@
 {
-  "blocked": [
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-SEEKER-ANALYST-001"
-    },
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-ANALYST-RISK-001"
-    },
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-RISK-AUTH-001"
-    },
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-AUTH-TRADER-001"
-    }
-  ],
+  "blocked": [],
   "bridgeIds": [
     "BRIDGE-SI-SEEKER-001",
     "BRIDGE-SEEKER-ANALYST-001",
@@ -26,7 +9,11 @@
   ],
   "campaign": "strategic chain",
   "canonicalRuntimeExecuted": [
-    "BRIDGE-SI-SEEKER-001"
+    "BRIDGE-SI-SEEKER-001",
+    "BRIDGE-SEEKER-ANALYST-001",
+    "BRIDGE-ANALYST-RISK-001",
+    "BRIDGE-RISK-AUTH-001",
+    "BRIDGE-AUTH-TRADER-001"
   ],
-  "verdict": "INCOMPLETE"
+  "verdict": "PASS"
 }

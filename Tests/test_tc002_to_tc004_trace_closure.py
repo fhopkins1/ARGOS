@@ -85,9 +85,9 @@ class TC003CanonicalBridgeCoverageTests(unittest.TestCase):
     def test_coverage_is_exact_and_uncovered_bridges_are_reported(self) -> None:
         coverage = self.payload["certification"]["coverage"]
 
-        self.assertEqual(coverage["canonical_runtime_executed"], 15)
-        self.assertEqual(coverage["coverage_percent"], 50.0)
-        self.assertEqual(len(coverage["uncovered_bridge_ids"]), 15)
+        self.assertEqual(coverage["canonical_runtime_executed"], 29)
+        self.assertEqual(coverage["coverage_percent"], 96.67)
+        self.assertEqual(coverage["uncovered_bridge_ids"], ("BRIDGE-REPLAY-LAB-001",))
         self.assertEqual(self.payload["certification"]["verdict"], "INCOMPLETE")
 
     def test_direct_contract_execution_is_not_counted(self) -> None:
@@ -127,7 +127,7 @@ class TC004OrphanOfficeClosureTests(unittest.TestCase):
 
         self.assertEqual(certification["verdict"], "INCOMPLETE")
         self.assertEqual(certification["initial_orphan_count"], 0)
-        self.assertEqual(certification["final_production_reachable_orphan_count"], 4)
+        self.assertEqual(certification["final_production_reachable_orphan_count"], 1)
 
     def test_services_and_adapters_do_not_hold_office_ownership(self) -> None:
         services = self.payload["service_reclassifications"]

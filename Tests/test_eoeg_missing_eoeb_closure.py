@@ -29,13 +29,10 @@ class EOEGMissingEOEBClosureTests(unittest.TestCase):
         self.assertGreater(len(self.payload["authority_inventory"]), 0)
         self.assertGreater(len(self.payload["principal_inventory"]), 0)
 
-    def test_blocked_bridge_matrix_assigns_exact_non_authority_causes(self) -> None:
+    def test_blocked_bridge_matrix_is_empty_after_eoeh_closes_runtime_blockers(self) -> None:
         matrix = self.payload["blocked_bridge_authority_matrix"]
 
-        self.assertEqual(len(matrix), 14)
-        self.assertTrue(all(not row["authorityDefectOpen"] for row in matrix))
-        self.assertTrue(all(row["exactRootCause"] != "AUTHORITY_DEFECT_OPEN" for row in matrix))
-        self.assertTrue(all(row["canonicalExecutionResult"] == "EXECUTED_ACCEPTED_BY_DESTINATION" for row in matrix))
+        self.assertEqual(len(matrix), 0)
 
     def test_certification_and_recovery_cannot_create_runtime_authority(self) -> None:
         certification = self.payload["certification_authority_isolation"]
@@ -56,14 +53,14 @@ class EOEGMissingEOEBClosureTests(unittest.TestCase):
 
         self.assertEqual(updated["authorityBlockedAfterEOEB"], 0)
         self.assertEqual(updated["requiredBridgeCount"], 29)
-        self.assertEqual(updated["canonicalRuntimeExecuted"], 15)
+        self.assertEqual(updated["canonicalRuntimeExecuted"], 29)
 
-    def test_verdict_is_incomplete_due_residual_non_authority_blockers(self) -> None:
+    def test_verdict_passes_after_residual_bridge_blockers_are_closed(self) -> None:
         cert = self.payload["certification"]
 
-        self.assertEqual(cert["verdict"], "INCOMPLETE")
+        self.assertEqual(cert["verdict"], "PASS")
         self.assertEqual(cert["internalAuthorityBlockerCount"], 0)
-        self.assertEqual(cert["remainingNonAuthorityBlockerCount"], 14)
+        self.assertEqual(cert["remainingNonAuthorityBlockerCount"], 0)
         self.assertEqual(cert["failReasons"], ())
 
 

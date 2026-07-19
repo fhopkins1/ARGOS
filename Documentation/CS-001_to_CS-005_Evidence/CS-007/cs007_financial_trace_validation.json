@@ -2,7 +2,7 @@
   "authoritative_market_boundary_used": true,
   "bridge_trace_count": 1,
   "closed_truth_count": 1,
-  "evidence_hash": "f6f2efb9f5a4a43d3c40d3229118b5041ac5b24dfe5b6bd11182775bbfb2f473",
+  "evidence_hash": "3dc5ffa91c9bae090e7f21a36585ebe5fa710cd6bae70b53de11b9393788f1eb",
   "office_lifecycle_controls_used": true,
   "open_quantity_after_close": 0.0,
   "report_id": "EO-DM-LIFECYCLE-CLOSURE-001",
@@ -31,7 +31,7 @@
     {
       "authority": "Paper Broker",
       "evidence_references": [
-        "FILL-43FDAD6097FF"
+        "FILL-8F6963522A1C"
       ],
       "name": "Opening fill evidence",
       "stage_id": "EO-DM-STAGE-OPEN-FILL",
@@ -42,7 +42,7 @@
       "authority": "Position Registry",
       "evidence_references": [
         "POS-AAPL-DO-EO-DM",
-        "FILL-43FDAD6097FF"
+        "FILL-8F6963522A1C"
       ],
       "name": "Position truth from fill",
       "stage_id": "EO-DM-STAGE-POSITION",
@@ -72,7 +72,7 @@
     {
       "authority": "Paper Broker",
       "evidence_references": [
-        "FILL-2D5EAD8BE97D"
+        "FILL-37AED8BB14D6"
       ],
       "name": "Closing fill evidence",
       "stage_id": "EO-DM-STAGE-CLOSE-FILL",
@@ -101,7 +101,7 @@
     }
   ],
   "synthetic_truth_created": false,
-  "timestamp_utc": "2026-07-19T12:27:20.988669Z",
+  "timestamp_utc": "2026-07-19T13:49:30.698035Z",
   "transaction_protection_model": "EO-DD participant model referenced; broker and position mutation remain separate authorities.",
   "verdict": "PASS"
 }

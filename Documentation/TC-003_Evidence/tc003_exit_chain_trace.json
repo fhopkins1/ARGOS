@@ -1,10 +1,5 @@
 {
-  "blocked": [
-    {
-      "blocker": "Missing TC-001-qualified canonical runtime trace.",
-      "bridgeId": "BRIDGE-EXIT-AUTH-001"
-    }
-  ],
+  "blocked": [],
   "bridgeIds": [
     "BRIDGE-EXIT-AUTH-001",
     "BRIDGE-EXIT-TRADER-001",
@@ -13,9 +8,10 @@
   ],
   "campaign": "exit chain",
   "canonicalRuntimeExecuted": [
+    "BRIDGE-EXIT-AUTH-001",
     "BRIDGE-EXIT-TRADER-001",
     "BRIDGE-CLOSING-FILL-POSITION-001",
     "BRIDGE-CLOSE-CPT-001"
   ],
-  "verdict": "INCOMPLETE"
+  "verdict": "PASS"
 }

@@ -6,61 +6,33 @@
   },
   "tc003": {
     "coverage": {
-      "canonical_runtime_executed": 15,
+      "canonical_runtime_executed": 29,
       "conditionally_external_bridge_ids": [
         "BRIDGE-TRADER-BROKER-001",
         "BRIDGE-COST-API-001"
       ],
       "contract_only": 0,
-      "coverage_percent": 50.0,
+      "coverage_percent": 96.67,
       "external_operational_executed": 0,
       "failed": 0,
       "failed_bridge_ids": [],
       "integration_only": 0,
-      "not_executed": 15,
+      "not_executed": 1,
       "orphan_dependent_bridge_ids": [
-        "BRIDGE-EVENT-MISSION-001",
-        "BRIDGE-SEEKER-ANALYST-001",
-        "BRIDGE-ANALYST-RISK-001",
-        "BRIDGE-RISK-AUTH-001",
-        "BRIDGE-AUTH-TRADER-001",
-        "BRIDGE-BROKER-FILL-001",
-        "BRIDGE-POSITION-EOCK-001",
-        "BRIDGE-EOCK-SURVEILLANCE-001",
-        "BRIDGE-SURVEILLANCE-EXIT-001",
-        "BRIDGE-EXIT-AUTH-001",
-        "BRIDGE-CPT-PT-001",
-        "BRIDGE-PT-HISTORIAN-001",
-        "BRIDGE-HISTORIAN-LEARNING-001",
-        "BRIDGE-FRESHNESS-ANALYTICAL-001",
         "BRIDGE-REPLAY-LAB-001"
       ],
       "schema_version": "TC-003.1",
       "total_required_bridges": 30,
       "uncovered_bridge_ids": [
-        "BRIDGE-EVENT-MISSION-001",
-        "BRIDGE-SEEKER-ANALYST-001",
-        "BRIDGE-ANALYST-RISK-001",
-        "BRIDGE-RISK-AUTH-001",
-        "BRIDGE-AUTH-TRADER-001",
-        "BRIDGE-BROKER-FILL-001",
-        "BRIDGE-POSITION-EOCK-001",
-        "BRIDGE-EOCK-SURVEILLANCE-001",
-        "BRIDGE-SURVEILLANCE-EXIT-001",
-        "BRIDGE-EXIT-AUTH-001",
-        "BRIDGE-CPT-PT-001",
-        "BRIDGE-PT-HISTORIAN-001",
-        "BRIDGE-HISTORIAN-LEARNING-001",
-        "BRIDGE-FRESHNESS-ANALYTICAL-001",
         "BRIDGE-REPLAY-LAB-001"
       ]
     },
-    "evidence_hash": "7a59d11f2292db3d101af1c116779f98fa1ee1471cef8b0cb02cfa2a85c9e057",
+    "evidence_hash": "d7af0260ef421a193d1197d05160aaa6f2b60ae5faa9e72d11a99462342cb61c",
     "order_id": "TC-003",
     "readiness": "Canonical bridge coverage measured from authoritative denominator; uncovered bridges remain assigned to TC-004 or later execution work.",
-    "repository_commit": "0aeec77fb6eb0768ffbaaa313725dc6d49ca31ca",
+    "repository_commit": "19995eb2b4e84de3f03669fc4ee8871c993c9ec6",
     "schema_version": "TC-003.1",
-    "timestamp_utc": "2026-07-19T12:27:15.622411Z",
+    "timestamp_utc": "2026-07-19T13:49:27.027691Z",
     "verdict": "INCOMPLETE"
   }
 }
