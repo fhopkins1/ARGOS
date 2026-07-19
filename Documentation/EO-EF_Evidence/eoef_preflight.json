@@ -1,0 +1,42 @@
+{
+  "gates": [
+    {
+      "evidence": "INCOMPLETE",
+      "gateId": "EO-EA",
+      "severity": "BLOCK",
+      "status": "PASS"
+    },
+    {
+      "evidence": "INCOMPLETE",
+      "gateId": "EO-EC",
+      "severity": "BLOCK",
+      "status": "PASS"
+    },
+    {
+      "evidence": "INCOMPLETE",
+      "gateId": "EO-ED",
+      "severity": "BLOCK",
+      "status": "PASS"
+    },
+    {
+      "evidence": "FAIL",
+      "gateId": "EO-EE",
+      "severity": "FAIL",
+      "status": "BLOCKED"
+    },
+    {
+      "evidence": "PASS",
+      "gateId": "DETERMINISTIC_RESTART",
+      "severity": "BLOCK",
+      "status": "PASS"
+    },
+    {
+      "evidence": "FAIL",
+      "gateId": "BOUNDED_INTERNAL_SUITE",
+      "severity": "FAIL",
+      "status": "BLOCKED"
+    }
+  ],
+  "preflightPassed": false,
+  "repositoryCommit": "0f2584293d6a55140a20ff503b9bb704d33f288a"
+}

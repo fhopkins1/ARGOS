@@ -1,0 +1,27 @@
+{
+  "configFiles": [
+    "pyproject.toml"
+  ],
+  "customRunners": [],
+  "evidenceGenerators": [
+    "Scripts\\generate_cs001_to_cs005_evidence.py",
+    "Scripts\\generate_eodj_evidence.py",
+    "Scripts\\generate_eodk_evidence.py",
+    "Scripts\\generate_eodl_evidence.py",
+    "Scripts\\generate_eodm_to_eodr_evidence.py",
+    "Scripts\\generate_eoea_evidence.py",
+    "Scripts\\generate_eoec_evidence.py",
+    "Scripts\\generate_eoed_evidence.py",
+    "Scripts\\generate_eoee_evidence.py",
+    "Scripts\\generate_eoef_evidence.py",
+    "Scripts\\generate_tc001_evidence.py",
+    "Scripts\\generate_tc002_to_tc004_evidence.py",
+    "Scripts\\generate_tc005_to_tc008_evidence.py"
+  ],
+  "frameworks": [
+    "unittest"
+  ],
+  "testRoots": [
+    "Tests"
+  ]
+}

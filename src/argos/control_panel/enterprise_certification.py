@@ -148,7 +148,7 @@ class EnterpriseCertificationHarness:
             ("simulation_only_paths", "SIMULATION_ONLY", "Accepted simulation-only"),
             ("placeholder_paths", "placeholder", "Quarantined or documentation-required"),
             ("runtime_self_training", "start_paper_self_training", "Quarantined proof compatibility"),
-            ("synthetic_market_data", "ARGOS Synthetic Market Data", "Accepted test/paper fallback requiring operator labeling"),
+            ("synthetic_market_data", "NonProductionMarketDataProvider", "Accepted test/paper fallback requiring operator labeling"),
         )
         searchable = list((self.repository_root / "src").rglob("*.py")) + list((self.repository_root / "Documentation").rglob("*.md"))
         for finding_name, pattern, classification in patterns:

@@ -45,6 +45,8 @@ from .trace_closure_final import TC_005_VERSION, TC_006_VERSION, TC_007_VERSION,
 from .canonical_bridge_denominator_execution import EO_EA_VERSION, BridgeExecutionEvidenceClass, BridgeTruthModel, EOEABridgeCoverageRow, execute_eoea_certification
 from .production_synthetic_truth_elimination import EO_EC_VERSION, EOECMajorFindingClosure, EOECTruthClass, execute_eoec_certification
 from .deterministic_persistence_recovery_closure import EO_ED_VERSION, execute_eoed_certification
+from .full_suite_failure_timeout_elimination import EO_EE_VERSION, EOEEOutcome, EOEETestEntry, execute_eoee_certification
+from .wall_clock_operational_campaigns import EO_EF_VERSION, EOEFCampaignStatus, execute_eoef_certification
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
@@ -311,6 +313,13 @@ __all__ = [
     "execute_eoec_certification",
     "EO_ED_VERSION",
     "execute_eoed_certification",
+    "EO_EE_VERSION",
+    "EOEEOutcome",
+    "EOEETestEntry",
+    "execute_eoee_certification",
+    "EO_EF_VERSION",
+    "EOEFCampaignStatus",
+    "execute_eoef_certification",
     "AuthoritativeWriteSite",
     "BlockingLevel",
     "BrokerPositionInvariantMonitor",
