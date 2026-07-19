@@ -1,0 +1,154 @@
+[
+  {
+    "deterministic_signature": "e3176b03fe93ed404af9eb7325d6090cbaf36b675e83d04fb2a2920e6ad87c3e",
+    "domains": [
+      {
+        "domain": "market_evidence",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "openOrder",
+          "closeOrder"
+        ],
+        "state": "UNRESOLVED",
+        "unresolved_references": [
+          "openOrder.price_source",
+          "closeOrder.price_source"
+        ]
+      },
+      {
+        "domain": "broker_orders",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "openOrder",
+          "closeOrder"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      },
+      {
+        "domain": "fills",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "openOrder",
+          "closeOrder",
+          "FILL-32305D7859D2",
+          "FILL-A95FFD150C60"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      },
+      {
+        "domain": "position",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "positionAfterClose"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      },
+      {
+        "domain": "closed_truth",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "performanceTruth"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      },
+      {
+        "domain": "bridge_trace",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "bridgeTrace"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      }
+    ],
+    "fabricated_financial_truth": false,
+    "recreated_authority": false,
+    "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
+    "schema_version": "EO-DN.1",
+    "timestamp_utc": "2026-07-19T01:29:39.659173Z",
+    "unknowns_preserved": true,
+    "verdict": "PASS"
+  },
+  {
+    "deterministic_signature": "15fe5a3e624608d926ee20ae5b0359fcff2263038b46e88fe0a2550b690206e5",
+    "domains": [
+      {
+        "domain": "market_evidence",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "openOrder",
+          "closeOrder"
+        ],
+        "state": "UNRESOLVED",
+        "unresolved_references": [
+          "openOrder.price_source",
+          "closeOrder.price_source"
+        ]
+      },
+      {
+        "domain": "broker_orders",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "openOrder",
+          "closeOrder"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      },
+      {
+        "domain": "fills",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "openOrder",
+          "closeOrder",
+          "FILL-32305D7859D2"
+        ],
+        "state": "UNRESOLVED",
+        "unresolved_references": [
+          "closeOrder.fills",
+          "closing fill evidence missing"
+        ]
+      },
+      {
+        "domain": "position",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "positionAfterClose"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      },
+      {
+        "domain": "closed_truth",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "performanceTruth"
+        ],
+        "state": "UNRESOLVED",
+        "unresolved_references": [
+          "closing fill evidence missing"
+        ]
+      },
+      {
+        "domain": "bridge_trace",
+        "quarantine_reason": "",
+        "recovered_references": [
+          "bridgeTrace"
+        ],
+        "state": "RECOVERED",
+        "unresolved_references": []
+      }
+    ],
+    "fabricated_financial_truth": false,
+    "recreated_authority": false,
+    "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
+    "schema_version": "EO-DN.1",
+    "timestamp_utc": "2026-07-19T01:29:39.660495Z",
+    "unknowns_preserved": true,
+    "verdict": "PASS"
+  }
+]

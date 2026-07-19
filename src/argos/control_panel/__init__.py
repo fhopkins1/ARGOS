@@ -36,6 +36,7 @@ from .production_read_surface_registry import EO_DO_VERSION, ProductionReadSurfa
 from .constitutional_trace_campaign import EO_DP_VERSION, ConstitutionalTrace, ConstitutionalTraceCampaignReport, ExecutedConstitutionalTraceCampaign, TraceVerdict
 from .continuous_paper_endurance import EO_DQ_VERSION, ContinuousPaperEnduranceAuthority, PaperEnduranceCertification, PaperEnduranceVerdict
 from .independent_constitutional_certification import EO_DR_VERSION, EvidenceValidationRecord, IndependentCertificationReport, IndependentConstitutionalCertificationAuthority, IndependentVerdict, ProductionReadinessClass
+from .constitutional_certification_series import CS_VERSION, CSCertificationReport, CSCertificationRow, CSCertificationState, CSVerdict, ConstitutionalCertificationSeries, run_all_cs_certifications
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
@@ -230,6 +231,13 @@ __all__ = [
     "IndependentConstitutionalCertificationAuthority",
     "IndependentVerdict",
     "ProductionReadinessClass",
+    "CS_VERSION",
+    "CSCertificationReport",
+    "CSCertificationRow",
+    "CSCertificationState",
+    "CSVerdict",
+    "ConstitutionalCertificationSeries",
+    "run_all_cs_certifications",
     "AuthoritativeWriteSite",
     "BlockingLevel",
     "BrokerPositionInvariantMonitor",

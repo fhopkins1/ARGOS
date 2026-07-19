@@ -1,0 +1,78 @@
+{
+  "deterministic_signature": "6b644b6a2d40ab1ca9e45bdb95d23fa9bb086dfe3eada1014c8e490843676270",
+  "domains": [
+    {
+      "domain": "market_evidence",
+      "quarantine_reason": "",
+      "recovered_references": [
+        "openOrder",
+        "closeOrder"
+      ],
+      "state": "UNRESOLVED",
+      "unresolved_references": [
+        "openOrder.price_source",
+        "closeOrder.price_source"
+      ]
+    },
+    {
+      "domain": "broker_orders",
+      "quarantine_reason": "",
+      "recovered_references": [
+        "openOrder",
+        "closeOrder"
+      ],
+      "state": "RECOVERED",
+      "unresolved_references": []
+    },
+    {
+      "domain": "fills",
+      "quarantine_reason": "",
+      "recovered_references": [
+        "openOrder",
+        "closeOrder",
+        "FILL-6B31E84DC338"
+      ],
+      "state": "UNRESOLVED",
+      "unresolved_references": [
+        "closeOrder.fills",
+        "closing fill evidence missing"
+      ]
+    },
+    {
+      "domain": "position",
+      "quarantine_reason": "",
+      "recovered_references": [
+        "positionAfterClose"
+      ],
+      "state": "RECOVERED",
+      "unresolved_references": []
+    },
+    {
+      "domain": "closed_truth",
+      "quarantine_reason": "",
+      "recovered_references": [
+        "performanceTruth"
+      ],
+      "state": "UNRESOLVED",
+      "unresolved_references": [
+        "closing fill evidence missing"
+      ]
+    },
+    {
+      "domain": "bridge_trace",
+      "quarantine_reason": "",
+      "recovered_references": [
+        "bridgeTrace"
+      ],
+      "state": "RECOVERED",
+      "unresolved_references": []
+    }
+  ],
+  "fabricated_financial_truth": false,
+  "recreated_authority": false,
+  "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
+  "schema_version": "EO-DN.1",
+  "timestamp_utc": "2026-07-19T01:29:39.644441Z",
+  "unknowns_preserved": true,
+  "verdict": "PASS"
+}

@@ -1,0 +1,179 @@
+{
+  "account_id": "ACCT-PAPER-001",
+  "asset_type": "EQUITY",
+  "available_quantity": 0.0,
+  "average_cost": 502.261,
+  "broker_order_ids": [
+    "ORD-EO-DM-OPEN",
+    "ORD-EXIT-CD428B0C132C"
+  ],
+  "certification_state": "PAPER_OPERATIONAL_CERTIFIED",
+  "created_at": "2026-07-19T01:29:39.628298Z",
+  "current_confidence": 0.72,
+  "current_price": 502.25,
+  "current_risk": 0.3114,
+  "current_value": 0.0,
+  "decision_object_id": "DO-EO-DM",
+  "entry_price": 502.261,
+  "entry_thesis": "BUY",
+  "entry_time": "2026-07-19T01:29:39.628298Z",
+  "execution_mode": "PAPER",
+  "exit_conditions": [
+    "profit_target",
+    "stop_loss"
+  ],
+  "exit_recommendation": "SELL_EXECUTED",
+  "fill_ids": [
+    "FILL-6B31E84DC338",
+    "FILL-8ACECAF496A8"
+  ],
+  "last_valuation_provenance": {
+    "order_id": "ORD-EXIT-CD428B0C132C",
+    "source": "broker_sell_fill",
+    "timestamp": "2026-07-19T01:29:39.628298Z"
+  },
+  "lifecycle_status": "closed",
+  "market_context": {},
+  "mission_id": "MISSION-EO-DM",
+  "monitoring_history": [
+    {
+      "changed_fields": [
+        "account_id",
+        "asset_type",
+        "available_quantity",
+        "average_cost",
+        "broker_order_ids",
+        "certification_state",
+        "created_at",
+        "current_confidence",
+        "current_price",
+        "current_risk",
+        "current_value",
+        "decision_object_id",
+        "entry_price",
+        "entry_thesis",
+        "entry_time",
+        "execution_mode",
+        "exit_conditions",
+        "exit_recommendation",
+        "fill_ids",
+        "last_valuation_provenance",
+        "lifecycle_status",
+        "market_context",
+        "mission_id",
+        "monitoring_history",
+        "owner",
+        "pending_close_quantity",
+        "position_id",
+        "profit_target",
+        "quantity",
+        "realized_pnl",
+        "realized_pnl_from_fills",
+        "side",
+        "stop_loss",
+        "symbol",
+        "time_in_trade",
+        "trader_identity",
+        "trailing_stop",
+        "truth_domain",
+        "unrealized_pnl",
+        "updated_at",
+        "workflow_id",
+        "workflow_token_lineage"
+      ],
+      "new_status": "open",
+      "position_id": "POS-AAPL-DO-EO-DM",
+      "previous_status": "",
+      "reason": "buy execution created position",
+      "source": "PaperBrokerExecution",
+      "timestamp": "2026-07-19T01:29:39.632719Z",
+      "workflow_id": "WF-EO-DM"
+    },
+    {
+      "changed_fields": [
+        "current_risk",
+        "lifecycle_status",
+        "updated_at"
+      ],
+      "new_status": "monitoring",
+      "position_id": "POS-AAPL-DO-EO-DM",
+      "previous_status": "open",
+      "reason": "position surveillance state refresh",
+      "source": "PositionSurveillanceEngine",
+      "timestamp": "2026-07-19T01:29:39.633810Z",
+      "workflow_id": "WF-EO-DM"
+    },
+    {
+      "changed_fields": [
+        "exit_recommendation",
+        "lifecycle_status",
+        "updated_at"
+      ],
+      "new_status": "exit_recommended",
+      "position_id": "POS-AAPL-DO-EO-DM",
+      "previous_status": "monitoring",
+      "reason": "EO-XC profit_target_reached",
+      "source": "ExitDecisionEngine",
+      "timestamp": "2026-07-19T01:29:39.635576Z",
+      "workflow_id": "WF-EO-DM"
+    },
+    {
+      "changed_fields": [
+        "available_quantity",
+        "lifecycle_status",
+        "pending_close_quantity",
+        "updated_at"
+      ],
+      "new_status": "exit_pending",
+      "position_id": "POS-AAPL-DO-EO-DM",
+      "previous_status": "exit_recommended",
+      "reason": "exit authorized pending broker execution",
+      "source": "EnterprisePositionLifecycleManager",
+      "timestamp": "2026-07-19T01:29:39.636577Z",
+      "workflow_id": "WF-EO-DM"
+    },
+    {
+      "changed_fields": [
+        "broker_order_ids",
+        "current_value",
+        "exit_recommendation",
+        "fill_ids",
+        "last_valuation_provenance",
+        "lifecycle_status",
+        "pending_close_quantity",
+        "quantity",
+        "realized_pnl",
+        "realized_pnl_from_fills",
+        "unrealized_pnl",
+        "updated_at"
+      ],
+      "new_status": "closed",
+      "position_id": "POS-AAPL-DO-EO-DM",
+      "previous_status": "exit_pending",
+      "reason": "sell execution reduced position",
+      "source": "PaperBrokerExecution",
+      "timestamp": "2026-07-19T01:29:39.640716Z",
+      "workflow_id": "WF-EO-DM"
+    }
+  ],
+  "owner": "Enterprise",
+  "pending_close_quantity": 0.0,
+  "position_id": "POS-AAPL-DO-EO-DM",
+  "profit_target": 501.0,
+  "quantity": 0.0,
+  "realized_pnl": -0.046,
+  "realized_pnl_from_fills": -0.046,
+  "side": "LONG",
+  "stop_loss": 480.0,
+  "symbol": "AAPL",
+  "time_in_trade": "0m",
+  "trader_identity": "Trader",
+  "trailing_stop": 0.0,
+  "truth_domain": "PAPER_OPERATIONAL",
+  "unrealized_pnl": -0.0,
+  "updated_at": "2026-07-19T01:29:39.628298Z",
+  "workflow_id": "WF-EO-DM",
+  "workflow_token_lineage": [
+    "TOK-EO-DM"
+  ]
+}

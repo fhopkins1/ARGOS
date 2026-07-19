@@ -1,0 +1,89 @@
+[
+  {
+    "accepted": true,
+    "response": {
+      "auditRecord": {
+        "accepted": true,
+        "auditId": "MDPA-AUD-EA3FDD8DA4F1",
+        "cost": {
+          "actualCostUsd": 0.0,
+          "estimatedCostUsd": 0.0
+        },
+        "endpoint": "get_quote",
+        "events": [
+          {
+            "correlationId": "MD-CORR-48886d36a77c",
+            "decisionObjectId": "DO-CS001",
+            "eventId": "MD-EVT-000001",
+            "eventType": "observation_requested",
+            "instrumentId": "AAPL",
+            "observationId": "",
+            "observationType": "QUOTE",
+            "proofDomain": "PAPER_AUTHORITATIVE",
+            "providerAuthority": "UNKNOWN",
+            "providerId": "controlled-authoritative",
+            "requestId": "MD-REQ-7bd976dcf5fa",
+            "timestampUtc": "2026-07-19T01:29:38.053109Z",
+            "workflowId": "WF-CS001"
+          },
+          {
+            "correlationId": "MD-CORR-48886d36a77c",
+            "decisionObjectId": "DO-CS001",
+            "eventId": "MD-EVT-000002",
+            "eventType": "observation_persisted",
+            "instrumentId": "AAPL",
+            "observationId": "MDOBS-EB09AC1A26690E6CEC87A133",
+            "observationType": "QUOTE",
+            "proofDomain": "PAPER_AUTHORITATIVE",
+            "providerAuthority": "AUTHORITATIVE_EXTERNAL",
+            "providerId": "controlled-authoritative",
+            "requestId": "MD-REQ-7bd976dcf5fa",
+            "timestampUtc": "2026-07-19T01:29:38.053225Z",
+            "workflowId": "WF-CS001"
+          }
+        ],
+        "observationId": "MDOBS-EB09AC1A26690E6CEC87A133",
+        "provider": "controlled-authoritative",
+        "rejectionCode": "",
+        "timestamp": "2026-07-18T15:00:00Z"
+      },
+      "normalizedObject": {
+        "ask": "100.04",
+        "bid": "100.00",
+        "last": "100.02",
+        "marketEvidenceReference": "MDOBS-EB09AC1A26690E6CEC87A133",
+        "objectType": "NormalizedQuote",
+        "observationId": "MDOBS-EB09AC1A26690E6CEC87A133",
+        "sourceAttribution": {
+          "correlationId": "MD-CORR-48886d36a77c",
+          "dataTimestamp": "2026-07-18T15:00:00Z",
+          "deterministicHash": "e7807ee30736f45e8a87ec2b5e3c45eec7fb0eda227ee260415b7b9fd4b515b8",
+          "freshness": "FRESH",
+          "ingestionTimestamp": "2026-07-19T01:29:38.053198Z",
+          "proofDomain": "PAPER_AUTHORITATIVE",
+          "providerId": "controlled-authoritative",
+          "providerType": "AUTHORITATIVE_EXTERNAL",
+          "rawPayloadReference": "MDOBS-EB09AC1A26690E6CEC87A133",
+          "requestId": "MD-REQ-7bd976dcf5fa",
+          "schemaVersion": "EO-DJ.1",
+          "sourceAuthority": "AUTHORITATIVE_EXTERNAL"
+        },
+        "symbol": "AAPL",
+        "validation": {
+          "ageSeconds": 0,
+          "freshnessStatus": "FRESH",
+          "malformedPayload": false,
+          "policyId": "MD-FRESHNESS-PAPER-001",
+          "policyVersion": "EO-DJ.1",
+          "staleData": false,
+          "symbol": "AAPL",
+          "symbolMismatch": false,
+          "timestamp": "2026-07-19T01:29:38.053198Z",
+          "validationStatus": "VALID"
+        },
+        "volume": "100000"
+      }
+    },
+    "scenario": "controlled authoritative quote"
+  }
+]

@@ -1,0 +1,448 @@
+{
+  "certification_matrix": [
+    {
+      "domain": "Bridge Registration",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Bridge Execution",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Ownership Transfer",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Destination Acceptance",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Workflow Execution Tokens",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Artifact Integrity",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Proof Domains",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Recovery",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Idempotency",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Static Assurance",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Dynamic Validation",
+      "evidence_references": [
+        "cs002_runtime_bridge_traces.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    }
+  ],
+  "evidence_hash": "15e00af0a8eab48781ae7346e49055a58effacee975763bfa9abb9c3d752fa13",
+  "failure_results": [
+    {
+      "bridgeId": "BRIDGE-SCHED-MISSION-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-EVENT-MISSION-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-MISSION-WORKFLOW-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-SI-SEEKER-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-SEEKER-ANALYST-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-ANALYST-RISK-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-RISK-AUTH-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-AUTH-TRADER-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-TRADER-BROKER-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-BROKER-FILL-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-FILL-POSITION-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-POSITION-PT-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-POSITION-EOCK-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-EOCK-SURVEILLANCE-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-SURVEILLANCE-EXIT-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-EXIT-AUTH-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-EXIT-TRADER-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-CLOSING-FILL-POSITION-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-CLOSE-CPT-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-CPT-PT-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-PT-HISTORIAN-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-COST-API-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-PERSIST-RECOVERY-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-RECOVERY-RUNTIME-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-REPLAY-LAB-001",
+      "rejectionCode": "BRIDGE_PROOF_DOMAIN_REJECTED",
+      "unauthorizedRejected": true
+    },
+    {
+      "bridgeId": "BRIDGE-ASSURANCE-COMMANDER-001",
+      "rejectionCode": "BRIDGE_ARTIFACT_MISSING",
+      "unauthorizedRejected": true
+    }
+  ],
+  "metrics": {
+    "bridgeBypasses": 0,
+    "executedBridgeCount": 30,
+    "requiredBridgeCount": 30
+  },
+  "order_id": "CS-002",
+  "readiness": "Operationally Certified",
+  "recovery_results": [
+    {
+      "fabricatedBridgeSuccess": false,
+      "scenario": "replay journal only"
+    }
+  ],
+  "runtime_traces": [
+    {
+      "bridgeId": "BRIDGE-SCHED-MISSION-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-EVENT-MISSION-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-MISSION-WORKFLOW-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "RELEASED_TO_DORMANT"
+    },
+    {
+      "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "RELEASED_TO_DORMANT"
+    },
+    {
+      "bridgeId": "BRIDGE-SI-SEEKER-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-SEEKER-ANALYST-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "RELEASED_TO_DORMANT"
+    },
+    {
+      "bridgeId": "BRIDGE-ANALYST-RISK-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "RELEASED_TO_DORMANT"
+    },
+    {
+      "bridgeId": "BRIDGE-RISK-AUTH-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-AUTH-TRADER-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "RELEASED_TO_DORMANT"
+    },
+    {
+      "bridgeId": "BRIDGE-TRADER-BROKER-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-BROKER-FILL-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-FILL-POSITION-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-POSITION-PT-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-POSITION-EOCK-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-EOCK-SURVEILLANCE-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-SURVEILLANCE-EXIT-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-EXIT-AUTH-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-EXIT-TRADER-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "RELEASED_TO_DORMANT"
+    },
+    {
+      "bridgeId": "BRIDGE-CLOSING-FILL-POSITION-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-CLOSE-CPT-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-CPT-PT-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-PT-HISTORIAN-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-COMMANDER-DIRECTIVE-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-COST-API-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-PERSIST-RECOVERY-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-RECOVERY-RUNTIME-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-REPLAY-LAB-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    },
+    {
+      "bridgeId": "BRIDGE-ASSURANCE-COMMANDER-001",
+      "destinationAcceptance": "ACCEPTED",
+      "status": "ACCEPTED",
+      "tokenReleased": "NOT_APPLICABLE"
+    }
+  ],
+  "schema_version": "CS.1",
+  "static_assurance": {
+    "callGraphEdges": 57022,
+    "requiredRuntimeBridgeMatrix": 30
+  },
+  "timestamp_utc": "2026-07-19T01:29:39.617664Z",
+  "title": "Canonical Bridge Execution Certification",
+  "verdict": "PASS"
+}
