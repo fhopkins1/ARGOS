@@ -2,181 +2,481 @@
   {
     "bridgeId": "BRIDGE-SCHED-MISSION-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-EVENT-MISSION-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-MISSION-WORKFLOW-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "RELEASED_TO_DORMANT"
+    "tokenReleased": "RELEASED_TO_DORMANT",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "RELEASED_TO_DORMANT"
+    "tokenReleased": "RELEASED_TO_DORMANT",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-SI-SEEKER-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-SEEKER-ANALYST-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "RELEASED_TO_DORMANT"
+    "tokenReleased": "RELEASED_TO_DORMANT",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-ANALYST-RISK-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "RELEASED_TO_DORMANT"
+    "tokenReleased": "RELEASED_TO_DORMANT",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-RISK-AUTH-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-AUTH-TRADER-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "RELEASED_TO_DORMANT"
+    "tokenReleased": "RELEASED_TO_DORMANT",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-TRADER-BROKER-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-BROKER-FILL-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-FILL-POSITION-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-POSITION-PT-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-POSITION-EOCK-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-EOCK-SURVEILLANCE-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-SURVEILLANCE-EXIT-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-EXIT-AUTH-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-EXIT-TRADER-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "RELEASED_TO_DORMANT"
+    "tokenReleased": "RELEASED_TO_DORMANT",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-CLOSING-FILL-POSITION-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-CLOSE-CPT-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-CPT-PT-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-PT-HISTORIAN-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-COMMANDER-DIRECTIVE-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-COST-API-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-FRESHNESS-ANALYTICAL-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-PERSIST-RECOVERY-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-RECOVERY-RUNTIME-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-REPLAY-LAB-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   },
   {
     "bridgeId": "BRIDGE-ASSURANCE-COMMANDER-001",
     "destinationAcceptance": "ACCEPTED",
+    "executionOrigin": "CERTIFICATION_HARNESS",
+    "productionEquivalent": false,
+    "rejectionCodes": [
+      "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+      "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+      "TRACE_CAUSALITY_INCOMPLETE",
+      "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+      "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+    ],
     "status": "ACCEPTED",
-    "tokenReleased": "NOT_APPLICABLE"
+    "tokenReleased": "NOT_APPLICABLE",
+    "traceEquivalenceLevel": "CONTRACT"
   }
 ]

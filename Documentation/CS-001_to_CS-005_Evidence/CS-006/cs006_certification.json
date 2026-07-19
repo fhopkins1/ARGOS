@@ -5,108 +5,109 @@
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Authorization",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Dependency Declaration",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Mutation Protection",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Cache Safety",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Derived Data Integrity",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Runtime Inspection",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Audit Inspection",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Export Integrity",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Proof Domains",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Static Assurance",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Dynamic Validation",
       "evidence_references": [
         "cs006_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+      "state": "CONDITIONALLY_CERTIFIED"
     }
   ],
-  "evidence_hash": "d38907ac1afebd339b4a36f9e2791d6611545b303f21a93cc49755c0e137f59c",
+  "evidence_hash": "bd3717890871028d4dd79cf6bb0273a81d76edb5169cdc3f20a6ca71f7019818",
   "failure_results": [],
   "metrics": {
+    "authoritativeInventoryComplete": false,
     "certifiedSurfaceCount": 13,
     "proofDomainSeparationEnforced": true,
     "registeredSurfaceCount": 13,
     "runtimeMutations": 0
   },
   "order_id": "CS-006",
-  "readiness": "Operationally Certified",
+  "readiness": "Conditionally Operational",
   "recovery_results": [],
   "runtime_traces": [
     {
@@ -116,7 +117,7 @@
         "Workflow Orchestrator"
       ],
       "digest_stable": true,
-      "evidence_hash": "53c76a629a307baae763de19d52a7c49dc964b3e36c68bf5e901120dcf89191a",
+      "evidence_hash": "95b562207f5344e3b88f4216acd385081bb2b357e3c0513e32820b75f65a3312",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/state",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -132,7 +133,7 @@
         "Policy"
       ],
       "digest_stable": true,
-      "evidence_hash": "e0583cfaeb52d6e14e485ed19c587780ba74948a4edfeab8c4460f65d53552ca",
+      "evidence_hash": "3d7e24ecd6622204b769f0ef2f574cc34a8e272eb55c5d64bbb8db5bf722642b",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/commander/strategic-dashboard",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -146,7 +147,7 @@
         "all read models"
       ],
       "digest_stable": true,
-      "evidence_hash": "b3e214819a80b48cc8e640d7407ef405dd303a90dad5c003d114077d4c4bbc7a",
+      "evidence_hash": "e6d8f8fddc790a7b5dc0fe6a22c18683b5c5fc485540d56e24b7f36e6ebf3691",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/state",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -160,7 +161,7 @@
         "Runtime Provider"
       ],
       "digest_stable": true,
-      "evidence_hash": "8e6a79b624691e100e5820b29c4e9ba6ebff03c1e37c74825c0354da4a0120b2",
+      "evidence_hash": "7cb23cfd8cfa4cc1175c54b00749a2a2fa2280c0cd383e8dbd44b652e66b8d82",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/runtime/provider",
       "status": "CERTIFIED_READ_ONLY",
@@ -175,7 +176,7 @@
         "Position Registry"
       ],
       "digest_stable": true,
-      "evidence_hash": "618825079fe05d77621dd7139f4fc430ff9fc131d5b43902ec7705ba93c5acab",
+      "evidence_hash": "2c8f18118271e84b545673b8f1f4ed03c244e9078ad9b43875f7d8e132727578",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/trader/bridge",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -190,7 +191,7 @@
         "EO-CK"
       ],
       "digest_stable": true,
-      "evidence_hash": "f6fdb84d6bffbdbffb4a84c5643642e11b4a4e4da30f0578d8fe4b6e4db5b9b5",
+      "evidence_hash": "d13cd3ef6bd115c4a10fffb1b6a1fb83c60dcfc03a80538034548b56fd67fb86",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/position-monitoring/state",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -204,7 +205,7 @@
         "Performance Truth"
       ],
       "digest_stable": true,
-      "evidence_hash": "e21f2cce1fd94cc984eb3677a98e0f8a10b21f160925a6e800dfd8266e1a0e20",
+      "evidence_hash": "c899523e84112e36cf71e283d35c40ff23788d9b342a0d312cd027735c4810cc",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/performance-truth/state",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -218,7 +219,7 @@
         "Replay"
       ],
       "digest_stable": true,
-      "evidence_hash": "d1fde68922a0a7ea60faa4aff0cd8da69e0678d488b9614169366fffbf0a9882",
+      "evidence_hash": "47d28730ea5681cf9698a8de215a62c4fcfb4a24b73c4336681813803ae98a0c",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/market-replay/state",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -233,7 +234,7 @@
         "Decision Laboratory"
       ],
       "digest_stable": true,
-      "evidence_hash": "c46ca2615120a0f2a063cc108927ac9386451ffb3c2256e0b67e3816d12e120e",
+      "evidence_hash": "74f354e7b9e0d89a3cd53c1aab762c46ef71b23493187f6b4c804dcc3735ebb6",
       "mutation_attempt_rejected": true,
       "route_or_callable": "/api/decision-laboratory/state",
       "status": "CONDITIONALLY_READ_ONLY",
@@ -248,7 +249,7 @@
         "Transaction Coordinator"
       ],
       "digest_stable": true,
-      "evidence_hash": "78b1e4dd5953e1b7c5a0cc2d63908efd256fb2b32fd8fe99ad3ee7e76abdc07c",
+      "evidence_hash": "bbc5eac2e7db639a57fb1fa2b10c1329e0188f530d8eea67bc17f7c2eb8314cc",
       "mutation_attempt_rejected": true,
       "route_or_callable": "callable",
       "status": "CERTIFIED_READ_ONLY",
@@ -262,7 +263,7 @@
         "Truth Promotion Authority"
       ],
       "digest_stable": true,
-      "evidence_hash": "67c606a56867b3274125b8fe5da6e972069a2f77942c9eed38b8638931df7e24",
+      "evidence_hash": "f417a9f5e306a31dd0514dbd464dcde3685a3de864d52b158bd8b0365e8282b1",
       "mutation_attempt_rejected": true,
       "route_or_callable": "callable",
       "status": "CERTIFIED_READ_ONLY",
@@ -276,7 +277,7 @@
         "EO-DE"
       ],
       "digest_stable": true,
-      "evidence_hash": "4a184590efaa0eeffae1b422a0b7381ccc002c69953d24505b4543cb6c05a042",
+      "evidence_hash": "7ad43c1ad19966dc9a884331e6055ad5e54be483eaad75f3a2517dc523044c87",
       "mutation_attempt_rejected": true,
       "route_or_callable": "callable",
       "status": "CERTIFIED_READ_ONLY",
@@ -291,7 +292,7 @@
         "EO-DF"
       ],
       "digest_stable": true,
-      "evidence_hash": "6997a2d2402e815757fa36852c878a49ecb705f90062ecb0987873c747688b6e",
+      "evidence_hash": "980437b7c625acb132dae834a089a2c63cf5ffb69db7589e2359ae460887b2c1",
       "mutation_attempt_rejected": true,
       "route_or_callable": "callable",
       "status": "CERTIFIED_READ_ONLY",
@@ -306,7 +307,7 @@
   "static_assurance": {
     "duplicateRegistrationRejected": true
   },
-  "timestamp_utc": "2026-07-19T01:33:09.010576Z",
+  "timestamp_utc": "2026-07-19T01:56:25.296908Z",
   "title": "Production Read-Surface Constitutional Certification",
-  "verdict": "PASS"
+  "verdict": "INCOMPLETE"
 }

@@ -5,99 +5,99 @@
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Office Classification",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Activation Authority",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Workflow Eligibility",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Workflow Execution Token Enforcement",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Dormancy",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Authority Boundaries",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Recovery",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Background Activity",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Proof Domains",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Static Assurance",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Dynamic Validation",
       "evidence_references": [
         "cs003_lifecycle_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+      "state": "CONDITIONALLY_CERTIFIED"
     }
   ],
-  "evidence_hash": "38942416a71be7b0939ab1eb27b746e9abf5847ca3d0313a1fa0122cdb6add36",
+  "evidence_hash": "77ec937160eb24047e0c07c54350b84b24f07dbc7eda779667582e74e7ecb8fd",
   "failure_results": [
     {
       "officeId": "OFFICE-EO-DB-001",
@@ -264,10 +264,11 @@
     "dormantAfterExecution": true,
     "duplicateRoles": 0,
     "officeCount": 32,
-    "orphanCount": 0
+    "orphanCount": 0,
+    "productionEquivalentTraceCount": 0
   },
   "order_id": "CS-003",
-  "readiness": "Operationally Certified",
+  "readiness": "Conditionally Operational",
   "recovery_results": [
     {
       "fabricatedOfficeAuthority": false,
@@ -278,201 +279,522 @@
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-001"
+      "officeId": "OFFICE-EO-DB-001",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-002"
+      "officeId": "OFFICE-EO-DB-002",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-003"
+      "officeId": "OFFICE-EO-DB-003",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-004"
+      "officeId": "OFFICE-EO-DB-004",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-005"
+      "officeId": "OFFICE-EO-DB-005",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-006"
+      "officeId": "OFFICE-EO-DB-006",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-007"
+      "officeId": "OFFICE-EO-DB-007",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-008"
+      "officeId": "OFFICE-EO-DB-008",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-009"
+      "officeId": "OFFICE-EO-DB-009",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-010"
+      "officeId": "OFFICE-EO-DB-010",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-011"
+      "officeId": "OFFICE-EO-DB-011",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-012"
+      "officeId": "OFFICE-EO-DB-012",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-013"
+      "officeId": "OFFICE-EO-DB-013",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-014"
+      "officeId": "OFFICE-EO-DB-014",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-015"
+      "officeId": "OFFICE-EO-DB-015",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-016"
+      "officeId": "OFFICE-EO-DB-016",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-017"
+      "officeId": "OFFICE-EO-DB-017",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-018"
+      "officeId": "OFFICE-EO-DB-018",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-019"
+      "officeId": "OFFICE-EO-DB-019",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "EXTERNAL_AUTHORITY_ADAPTER",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-020"
+      "officeId": "OFFICE-EO-DB-020",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-021"
+      "officeId": "OFFICE-EO-DB-021",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-022"
+      "officeId": "OFFICE-EO-DB-022",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-023"
+      "officeId": "OFFICE-EO-DB-023",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-024"
+      "officeId": "OFFICE-EO-DB-024",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-025"
+      "officeId": "OFFICE-EO-DB-025",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-026"
+      "officeId": "OFFICE-EO-DB-026",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-027"
+      "officeId": "OFFICE-EO-DB-027",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-028"
+      "officeId": "OFFICE-EO-DB-028",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-029"
+      "officeId": "OFFICE-EO-DB-029",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-030"
+      "officeId": "OFFICE-EO-DB-030",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "CORE_PRODUCTION",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-031"
+      "officeId": "OFFICE-EO-DB-031",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     },
     {
       "activationAccepted": true,
       "classification": "INFORMATION_ONLY",
+      "executionOrigin": "CERTIFICATION_HARNESS",
       "finalState": "DORMANT",
-      "officeId": "OFFICE-EO-DB-032"
+      "officeId": "OFFICE-EO-DB-032",
+      "productionEquivalent": false,
+      "rejectionCodes": [
+        "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+        "TRACE_CAUSALITY_INCOMPLETE",
+        "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+        "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+      ],
+      "traceEquivalenceLevel": "CONTRACT"
     }
   ],
   "schema_version": "CS.1",
   "static_assurance": {
-    "registeredOffices": 33
+    "registeredOffices": 33,
+    "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
   },
-  "timestamp_utc": "2026-07-19T01:33:08.975689Z",
+  "timestamp_utc": "2026-07-19T01:56:25.214178Z",
   "title": "Office Lifecycle and Constitutional Authority Certification",
-  "verdict": "PASS"
+  "verdict": "INCOMPLETE"
 }

@@ -29,12 +29,16 @@ class ConstitutionalCertificationSeriesTests(unittest.TestCase):
         self.assertEqual(certification["metrics"]["productionSyntheticPaths"], 0)
         self.assertFalse(certification["metrics"]["externalProviderDeploymentVerified"])
 
-    def test_bridge_office_and_recovery_certify_from_runtime_evidence(self) -> None:
-        self.assertEqual(self.results["CS-002"]["certification"]["verdict"], CSVerdict.PASS.value)
-        self.assertEqual(self.results["CS-003"]["certification"]["verdict"], CSVerdict.PASS.value)
-        self.assertEqual(self.results["CS-005"]["certification"]["verdict"], CSVerdict.PASS.value)
-        self.assertEqual(self.results["CS-006"]["certification"]["verdict"], CSVerdict.PASS.value)
-        self.assertEqual(self.results["CS-007"]["certification"]["verdict"], CSVerdict.PASS.value)
+    def test_bridge_office_recovery_read_and_trace_orders_are_equivalence_incomplete(self) -> None:
+        for order_id in ("CS-002", "CS-003", "CS-005", "CS-006", "CS-007"):
+            certification = self.results[order_id]["certification"]
+            self.assertEqual(certification["verdict"], CSVerdict.INCOMPLETE.value)
+            self.assertEqual(certification["readiness"], "Conditionally Operational")
+
+        self.assertEqual(self.results["CS-002"]["certification"]["metrics"]["productionEquivalentTraceCount"], 0)
+        self.assertEqual(self.results["CS-003"]["certification"]["metrics"]["productionEquivalentTraceCount"], 0)
+        self.assertFalse(self.results["CS-006"]["certification"]["metrics"]["authoritativeInventoryComplete"])
+        self.assertTrue(self.results["CS-007"]["certification"]["metrics"]["authoritativeDenominatorUsed"])
 
     def test_financial_lifecycle_is_conditionally_operational_without_external_broker_certification(self) -> None:
         certification = self.results["CS-004"]["certification"]

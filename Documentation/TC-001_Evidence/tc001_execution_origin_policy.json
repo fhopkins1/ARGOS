@@ -1,0 +1,17 @@
+{
+  "certificationHarnessMayCreateProductionEquivalentTrace": false,
+  "origins": {
+    "CANONICAL_PRODUCTION_RUNTIME": "CANONICAL_RUNTIME",
+    "CANONICAL_RUNTIME_TEST_HARNESS": "INTEGRATION",
+    "CERTIFICATION_HARNESS": "CONTRACT",
+    "EXTERNAL_OPERATIONAL_SYSTEM": "EXTERNAL_OPERATIONAL",
+    "INTEGRATION_HELPER": "INTEGRATION",
+    "STATIC_DOCUMENTATION_EVIDENCE": "STRUCTURAL",
+    "SYNTHETIC_FIXTURE_REPLAY": "CONTRACT",
+    "UNIT_TEST_HELPER": "CONTRACT",
+    "UNKNOWN": "NONE"
+  },
+  "productionMinimum": "CANONICAL_RUNTIME",
+  "schemaVersion": "TC-001.1",
+  "unknownOriginMayCertifyProduction": false
+}

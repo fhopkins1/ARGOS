@@ -30,6 +30,7 @@ from .market_data_provider import (
 )
 from .office_lifecycle import OfficeActivationAuthority, OfficeClassification, OfficeLifecycleController, OfficeLifecycleState, default_office_definitions, duplicate_role_analysis
 from .runtime_bridge_certification import required_runtime_bridge_matrix, static_call_graph
+from .trace_equivalence import TraceEquivalenceAuthority, TraceRejectionCode
 
 
 CS_VERSION = "CS.1"
@@ -109,6 +110,7 @@ class ConstitutionalCertificationSeries:
         return {"certification": _jsonable(asdict(report)), "provider_inventory": market_source_inventory(), "provider_authority": static, "market_runtime_traces": traces, "failure_campaign": failures}
 
     def cs002_bridge_execution(self) -> dict[str, Any]:
+        trace_authority = TraceEquivalenceAuthority()
         traces: list[dict[str, Any]] = []
         failures: list[dict[str, Any]] = []
         for definition in default_bridge_definitions():
@@ -130,7 +132,19 @@ class ConstitutionalCertificationSeries:
                     proof_domain="REPLAY" if definition.requirement_class.value == "REPLAY_ONLY" else "PAPER",
                 )
             )
-            traces.append({"bridgeId": definition.bridge_id, "status": result.status.value, "destinationAcceptance": result.destination_acceptance_status, "tokenReleased": result.source_release_status})
+            equivalence = trace_authority.evaluate(trace_authority.certification_harness_record(definition.bridge_id, "WORKTREE", trace_id=result.execution_id))
+            traces.append(
+                {
+                    "bridgeId": definition.bridge_id,
+                    "status": result.status.value,
+                    "destinationAcceptance": result.destination_acceptance_status,
+                    "tokenReleased": result.source_release_status,
+                    "executionOrigin": "CERTIFICATION_HARNESS",
+                    "traceEquivalenceLevel": equivalence.equivalence_level.value,
+                    "productionEquivalent": equivalence.production_equivalent,
+                    "rejectionCodes": tuple(item.value for item in equivalence.rejection_codes),
+                }
+            )
             try:
                 bad_workflow_id = f"WF-CS002-BAD-{definition.bridge_id}"
                 executor.ownership.establish(bad_workflow_id, definition.source_component, "BAD-TOKEN")
@@ -153,12 +167,23 @@ class ConstitutionalCertificationSeries:
         all_executed = all(trace["status"] == BridgeResultStatus.ACCEPTED.value for trace in traces)
         call_edges = static_call_graph(".")
         no_bypasses = True
-        matrix = tuple(_row(name, CSCertificationState.CERTIFIED if all_executed and no_bypasses else CSCertificationState.CERTIFICATION_FAILED, ("cs002_runtime_bridge_traces.json",)) for name in ("Bridge Registration", "Bridge Execution", "Ownership Transfer", "Destination Acceptance", "Workflow Execution Tokens", "Artifact Integrity", "Proof Domains", "Recovery", "Idempotency", "Static Assurance", "Dynamic Validation"))
-        verdict = CSVerdict.PASS if all_executed and no_bypasses and all(item["unauthorizedRejected"] for item in failures) else CSVerdict.FAIL
-        report = _report("CS-002", "Canonical Bridge Execution Certification", verdict, "Operationally Certified" if verdict == CSVerdict.PASS else "Not Ready", matrix, {"requiredBridgeCount": len(traces), "executedBridgeCount": sum(1 for item in traces if item["status"] == "ACCEPTED"), "bridgeBypasses": 0 if no_bypasses else 1}, tuple(traces), tuple(failures), ({"scenario": "replay journal only", "fabricatedBridgeSuccess": False},), {"callGraphEdges": len(call_edges), "requiredRuntimeBridgeMatrix": len(required_runtime_bridge_matrix())})
+        contract_passed = all_executed and no_bypasses and all(item["unauthorizedRejected"] for item in failures)
+        production_equivalent_count = sum(1 for item in traces if item["productionEquivalent"])
+        matrix = tuple(
+            _row(
+                name,
+                CSCertificationState.CONDITIONALLY_CERTIFIED if contract_passed else CSCertificationState.CERTIFICATION_FAILED,
+                ("cs002_runtime_bridge_traces.json",),
+                "Certification harness traces are contract evidence and are not canonical-runtime production traces." if contract_passed else "",
+            )
+            for name in ("Bridge Registration", "Bridge Execution", "Ownership Transfer", "Destination Acceptance", "Workflow Execution Tokens", "Artifact Integrity", "Proof Domains", "Recovery", "Idempotency", "Static Assurance", "Dynamic Validation")
+        )
+        verdict = CSVerdict.INCOMPLETE if contract_passed else CSVerdict.FAIL
+        report = _report("CS-002", "Canonical Bridge Execution Certification", verdict, "Conditionally Operational" if contract_passed else "Not Ready", matrix, {"requiredBridgeCount": len(traces), "executedBridgeCount": sum(1 for item in traces if item["status"] == "ACCEPTED"), "productionEquivalentTraceCount": production_equivalent_count, "productionEquivalenceMinimum": trace_authority.production_minimum.value, "bridgeBypasses": 0 if no_bypasses else 1}, tuple(traces), tuple(failures), ({"scenario": "replay journal only", "fabricatedBridgeSuccess": False},), {"callGraphEdges": len(call_edges), "requiredRuntimeBridgeMatrix": len(required_runtime_bridge_matrix()), "traceEquivalenceBlocker": TraceRejectionCode.CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT.value})
         return {"certification": _jsonable(asdict(report)), "bridge_inventory": tuple(_jsonable(asdict(item)) for item in default_bridge_definitions()), "runtime_bridge_traces": tuple(traces), "bridge_failures": tuple(failures)}
 
     def cs003_office_lifecycle(self) -> dict[str, Any]:
+        trace_authority = TraceEquivalenceAuthority()
         controller = OfficeLifecycleController()
         traces: list[dict[str, Any]] = []
         failures: list[dict[str, Any]] = []
@@ -178,7 +203,8 @@ class ConstitutionalCertificationSeries:
             result = controller.activate(office.office_id, authority=OfficeActivationAuthority.CANONICAL_BRIDGE, workflow_id=f"WF-CS003-{office.office_id}", token_id=f"TOK-CS003-{office.office_id}", current_owner=office.office_id, proof_domain="PAPER")
             controller.transition(office.office_id, OfficeLifecycleState.DORMANT)
             state = controller.state(office.office_id)
-            traces.append({"officeId": office.office_id, "activationAccepted": result.accepted, "finalState": state.state.value, "classification": office.classification.value})
+            equivalence = trace_authority.evaluate(trace_authority.certification_harness_record(office.office_id, "WORKTREE", trace_id=f"CS003-{office.office_id}"))
+            traces.append({"officeId": office.office_id, "activationAccepted": result.accepted, "finalState": state.state.value, "classification": office.classification.value, "executionOrigin": "CERTIFICATION_HARNESS", "traceEquivalenceLevel": equivalence.equivalence_level.value, "productionEquivalent": equivalence.production_equivalent, "rejectionCodes": tuple(item.value for item in equivalence.rejection_codes)})
             if office.ownership_bearing:
                 bad = controller.activate(office.office_id, authority=OfficeActivationAuthority.CANONICAL_BRIDGE, workflow_id=f"WF-CS003-BAD-{office.office_id}", token_id="", current_owner=office.office_id, proof_domain="PAPER")
                 failures.append({"officeId": office.office_id, "unauthorizedRejected": not bad.accepted, "rejectionCode": bad.rejection_code.value if bad.rejection_code else ""})
@@ -189,9 +215,10 @@ class ConstitutionalCertificationSeries:
         all_executed = all(item["activationAccepted"] for item in traces)
         orphan_count = sum(1 for item in orphan_analysis if item["orphan"])
         no_orphans = orphan_count == 0
-        matrix = tuple(_row(name, CSCertificationState.CERTIFIED if all_executed and all_dormant and no_orphans else CSCertificationState.CERTIFICATION_FAILED, ("cs003_lifecycle_validation.json",)) for name in ("Office Registration", "Office Classification", "Activation Authority", "Workflow Eligibility", "Workflow Execution Token Enforcement", "Dormancy", "Authority Boundaries", "Recovery", "Background Activity", "Proof Domains", "Static Assurance", "Dynamic Validation"))
-        verdict = CSVerdict.PASS if all_executed and all_dormant and no_orphans and all(item["unauthorizedRejected"] for item in failures) else CSVerdict.FAIL
-        report = _report("CS-003", "Office Lifecycle and Constitutional Authority Certification", verdict, "Operationally Certified" if verdict == CSVerdict.PASS else "Not Ready", matrix, {"officeCount": len(traces), "dormantAfterExecution": all_dormant, "orphanCount": orphan_count, "duplicateRoles": len(duplicate_role_analysis())}, tuple(traces), tuple(failures), ({"scenario": "durable office state only", "fabricatedOfficeAuthority": False},), {"registeredOffices": len(default_office_definitions())})
+        contract_passed = all_executed and all_dormant and no_orphans and all(item["unauthorizedRejected"] for item in failures)
+        matrix = tuple(_row(name, CSCertificationState.CONDITIONALLY_CERTIFIED if contract_passed else CSCertificationState.CERTIFICATION_FAILED, ("cs003_lifecycle_validation.json",), "Direct office activation is contract evidence until observed through canonical runtime bridge causality." if contract_passed else "") for name in ("Office Registration", "Office Classification", "Activation Authority", "Workflow Eligibility", "Workflow Execution Token Enforcement", "Dormancy", "Authority Boundaries", "Recovery", "Background Activity", "Proof Domains", "Static Assurance", "Dynamic Validation"))
+        verdict = CSVerdict.INCOMPLETE if contract_passed else CSVerdict.FAIL
+        report = _report("CS-003", "Office Lifecycle and Constitutional Authority Certification", verdict, "Conditionally Operational" if contract_passed else "Not Ready", matrix, {"officeCount": len(traces), "dormantAfterExecution": all_dormant, "orphanCount": orphan_count, "duplicateRoles": len(duplicate_role_analysis()), "productionEquivalentTraceCount": sum(1 for item in traces if item["productionEquivalent"])}, tuple(traces), tuple(failures), ({"scenario": "durable office state only", "fabricatedOfficeAuthority": False},), {"registeredOffices": len(default_office_definitions()), "traceEquivalenceBlocker": TraceRejectionCode.CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT.value})
         return {"certification": _jsonable(asdict(report)), "office_inventory": tuple(_jsonable(asdict(item)) for item in default_office_definitions()), "lifecycle_validation": tuple(traces), "orphan_analysis": orphan_analysis, "failure_campaign": tuple(failures)}
 
     def cs004_financial_lifecycle(self) -> dict[str, Any]:
@@ -204,23 +231,31 @@ class ConstitutionalCertificationSeries:
         return {"certification": _jsonable(asdict(report)), "financial_inventory": lifecycle["managerSnapshot"], "entry_traces": lifecycle["openOrder"], "position_traces": lifecycle["positionAfterClose"], "exit_traces": lifecycle["closeOrder"], "recovery_validation": _jsonable(asdict(recovery))}
 
     def cs005_recovery(self) -> dict[str, Any]:
+        trace_authority = TraceEquivalenceAuthority()
         lifecycle = execute_canonical_position_lifecycle()
         recovery = FinancialRecoveryAuthority()
         complete = recovery.recover(lifecycle)
         missing = recovery.recover_missing_close_fill(lifecycle)
         traces = (_jsonable(asdict(complete)), _jsonable(asdict(missing)))
         passable = complete.verdict.value == "PASS" and missing.verdict.value == "PASS" and all(not item["fabricated_financial_truth"] and not item["recreated_authority"] for item in traces)
-        matrix = tuple(_row(name, CSCertificationState.CERTIFIED if passable else CSCertificationState.CERTIFICATION_FAILED, ("cs005_dynamic_validation.json",)) for name in ("Recovery Authority", "Runtime Recovery", "Workflow Recovery", "Bridge Recovery", "Office Recovery", "Workflow Execution Tokens", "Financial Recovery", "Quarantine", "Reconciliation", "Proof Domains", "Static Assurance", "Dynamic Validation"))
-        verdict = CSVerdict.PASS if passable else CSVerdict.FAIL
-        report = _report("CS-005", "Deterministic Recovery and Fail-Closed Authority Certification", verdict, "Paper Ready" if verdict == CSVerdict.PASS else "Not Ready", matrix, {"fabricatedAuthority": False, "fabricatedFinancialTruth": False, "unknownsPreserved": True}, traces, ({"scenario": "missing close fill", "continuedExecutionAllowed": False, "uncertaintyPreserved": True},), traces, {"cacheTruthAuthority": False, "snapshotPrimaryTruthAuthority": False})
+        production_equivalence = trace_authority.evaluate(trace_authority.certification_harness_record("CS-005", "WORKTREE"))
+        matrix = tuple(_row(name, CSCertificationState.CONDITIONALLY_CERTIFIED if passable else CSCertificationState.CERTIFICATION_FAILED, ("cs005_dynamic_validation.json",), "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces." if passable else "") for name in ("Recovery Authority", "Runtime Recovery", "Workflow Recovery", "Bridge Recovery", "Office Recovery", "Workflow Execution Tokens", "Financial Recovery", "Quarantine", "Reconciliation", "Proof Domains", "Static Assurance", "Dynamic Validation"))
+        verdict = CSVerdict.INCOMPLETE if passable else CSVerdict.FAIL
+        report = _report("CS-005", "Deterministic Recovery and Fail-Closed Authority Certification", verdict, "Conditionally Operational" if passable else "Not Ready", matrix, {"fabricatedAuthority": False, "fabricatedFinancialTruth": False, "unknownsPreserved": True, "productionEquivalentTraceCount": int(production_equivalence.production_equivalent)}, traces, ({"scenario": "missing close fill", "continuedExecutionAllowed": False, "uncertaintyPreserved": True},), traces, {"cacheTruthAuthority": False, "snapshotPrimaryTruthAuthority": False, "traceEquivalenceBlocker": TraceRejectionCode.CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT.value})
         return {"certification": _jsonable(asdict(report)), "recovery_inventory": traces, "runtime_recovery": traces[0], "financial_recovery": traces[1], "quarantine_validation": report.failure_results}
 
     def cs006_read_surfaces(self) -> dict[str, Any]:
         certification = ProductionReadSurfaceConstitutionalRegistry().certify()
         records = tuple(certification.records)
-        passable = certification.verdict.value == "PASS"
+        registry_passed = certification.verdict.value == "PASS"
+        authoritative_inventory_complete = False
         matrix = tuple(
-            _row(name, CSCertificationState.CERTIFIED if passable else CSCertificationState.CERTIFICATION_FAILED, ("cs006_dynamic_validation.json",))
+            _row(
+                name,
+                CSCertificationState.CONDITIONALLY_CERTIFIED if registry_passed else CSCertificationState.CERTIFICATION_FAILED,
+                ("cs006_dynamic_validation.json",),
+                "Registered surfaces are read-pure, but the complete production read inventory remains unproven." if registry_passed else "",
+            )
             for name in (
                 "Read Registration",
                 "Authorization",
@@ -239,14 +274,15 @@ class ConstitutionalCertificationSeries:
         report = _report(
             "CS-006",
             "Production Read-Surface Constitutional Certification",
-            CSVerdict.PASS if passable else CSVerdict.FAIL,
-            "Operationally Certified" if passable else "Not Ready",
+            CSVerdict.INCOMPLETE if registry_passed and not authoritative_inventory_complete else CSVerdict.FAIL,
+            "Conditionally Operational" if registry_passed else "Not Ready",
             matrix,
             {
                 "registeredSurfaceCount": certification.registered_surface_count,
                 "certifiedSurfaceCount": certification.certified_surface_count,
                 "runtimeMutations": sum(1 for item in records if not item.digest_stable),
                 "proofDomainSeparationEnforced": certification.proof_domain_separation_enforced,
+                "authoritativeInventoryComplete": authoritative_inventory_complete,
             },
             tuple(_jsonable(asdict(item)) for item in records),
             (),
@@ -256,12 +292,20 @@ class ConstitutionalCertificationSeries:
         return {"certification": _jsonable(asdict(report)), "read_inventory": tuple(_jsonable(asdict(item)) for item in records), "read_registry": tuple(_jsonable(asdict(item)) for item in records), "mutation_validation": _jsonable(asdict(certification)), "runtime_validation": tuple(_jsonable(asdict(item)) for item in records)}
 
     def cs007_trace_certification(self) -> dict[str, Any]:
+        trace_authority = TraceEquivalenceAuthority()
         campaign = ExecutedConstitutionalTraceCampaign().execute(repository_commit="WORKTREE")
         report_payload = campaign["report"]
         traces = tuple(report_payload["traces"])
-        passable = report_payload["verdict"] == "PASS"
+        internal_passed = report_payload["verdict"] == "PASS"
+        required_subject_ids = tuple(definition.bridge_id for definition in default_bridge_definitions())
+        coverage = trace_authority.coverage(required_subject_ids, ())
         matrix = tuple(
-            _row(name, CSCertificationState.CERTIFIED if passable else CSCertificationState.CONDITIONALLY_CERTIFIED, ("cs007_dynamic_validation.json",))
+            _row(
+                name,
+                CSCertificationState.CONDITIONALLY_CERTIFIED if internal_passed else CSCertificationState.CERTIFICATION_FAILED,
+                ("cs007_dynamic_validation.json",),
+                "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage." if internal_passed else "",
+            )
             for name in (
                 "Runtime Coverage",
                 "Workflow Coverage",
@@ -281,14 +325,14 @@ class ConstitutionalCertificationSeries:
         report = _report(
             "CS-007",
             "Executed Constitutional Trace Certification",
-            CSVerdict.PASS if passable else CSVerdict.INCOMPLETE,
-            "Operationally Certified" if passable else "Conditionally Operational",
+            CSVerdict.INCOMPLETE if internal_passed else CSVerdict.FAIL,
+            "Conditionally Operational" if internal_passed else "Not Ready",
             matrix,
-            {"traceCount": report_payload["trace_count"], "passedTraceCount": report_payload["passed_trace_count"], "passRate": report_payload["scorecard"]["passRate"]},
+            {"traceCount": report_payload["trace_count"], "passedTraceCount": report_payload["passed_trace_count"], "passRate": report_payload["scorecard"]["passRate"], "authoritativeDenominatorUsed": True, "productionEquivalentTraceCount": coverage.numerator, "requiredTraceSubjectCount": coverage.denominator, "productionEquivalentCoveragePercent": coverage.percent},
             traces,
             (),
             (campaign["recovery"],),
-            {"traceEvidenceHash": report_payload["evidence_hash"]},
+            {"traceEvidenceHash": report_payload["evidence_hash"], "traceEquivalenceBlocker": TraceRejectionCode.CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT.value},
         )
         return {"certification": _jsonable(asdict(report)), "trace_inventory": traces, "execution_coverage": report_payload["scorecard"], "bridge_trace_validation": campaign["lifecycle"]["bridgeTrace"], "office_trace_validation": tuple(item for item in traces if item["category"] == "Office"), "financial_trace_validation": campaign["lifecycle"]["report"], "recovery_trace_validation": campaign["recovery"], "trace_consistency": report_payload}
 

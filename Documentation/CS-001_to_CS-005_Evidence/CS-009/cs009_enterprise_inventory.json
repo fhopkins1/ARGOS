@@ -58,7 +58,7 @@
         "state": "VERIFIED"
       }
     ],
-    "evidence_hash": "e985ad76f4884cc1cb366613cb9e7776aa880ce734aaa470fcfb64768a37e828",
+    "evidence_hash": "81824799bdbd506096cdbc42aad663a3d83294855a39f6da98746f5a2a8a8228",
     "failure_results": [
       {
         "passed": false,
@@ -104,7 +104,7 @@
                 "providerAuthority": "UNKNOWN",
                 "providerId": "controlled-authoritative",
                 "requestId": "MD-REQ-7bd976dcf5fa",
-                "timestampUtc": "2026-07-19T01:33:10.921697Z",
+                "timestampUtc": "2026-07-19T01:56:29.263143Z",
                 "workflowId": "WF-CS001"
               },
               {
@@ -119,7 +119,7 @@
                 "providerAuthority": "AUTHORITATIVE_EXTERNAL",
                 "providerId": "controlled-authoritative",
                 "requestId": "MD-REQ-7bd976dcf5fa",
-                "timestampUtc": "2026-07-19T01:33:10.921782Z",
+                "timestampUtc": "2026-07-19T01:56:29.263279Z",
                 "workflowId": "WF-CS001"
               }
             ],
@@ -140,7 +140,7 @@
               "dataTimestamp": "2026-07-18T15:00:00Z",
               "deterministicHash": "e7807ee30736f45e8a87ec2b5e3c45eec7fb0eda227ee260415b7b9fd4b515b8",
               "freshness": "FRESH",
-              "ingestionTimestamp": "2026-07-19T01:33:10.921761Z",
+              "ingestionTimestamp": "2026-07-19T01:56:29.263244Z",
               "proofDomain": "PAPER_AUTHORITATIVE",
               "providerId": "controlled-authoritative",
               "providerType": "AUTHORITATIVE_EXTERNAL",
@@ -159,7 +159,7 @@
               "staleData": false,
               "symbol": "AAPL",
               "symbolMismatch": false,
-              "timestamp": "2026-07-19T01:33:10.921761Z",
+              "timestamp": "2026-07-19T01:56:29.263244Z",
               "validationStatus": "VALID"
             },
             "volume": "100000"
@@ -178,7 +178,7 @@
       "schemaVersion": "EO-DJ.1",
       "syntheticFallbackEnabled": false
     },
-    "timestamp_utc": "2026-07-19T01:33:10.921960Z",
+    "timestamp_utc": "2026-07-19T01:56:29.263576Z",
     "title": "Authoritative Market Data Certification",
     "verdict": "INCOMPLETE"
   },
@@ -189,91 +189,91 @@
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Bridge Execution",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Ownership Transfer",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Destination Acceptance",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Workflow Execution Tokens",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Artifact Integrity",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Proof Domains",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Recovery",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Idempotency",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Static Assurance",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dynamic Validation",
         "evidence_references": [
           "cs002_runtime_bridge_traces.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Certification harness traces are contract evidence and are not canonical-runtime production traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "b781b2f1c7517ba53ab746e5e3e1c152cf67bbec32c1789d0c0c40cd8e75392d",
+    "evidence_hash": "e566ce0241f2150101fb2ef4b03d990adc0ddc7b62924ad8f526bc6d039a1504",
     "failure_results": [
       {
         "bridgeId": "BRIDGE-SCHED-MISSION-001",
@@ -429,10 +429,12 @@
     "metrics": {
       "bridgeBypasses": 0,
       "executedBridgeCount": 30,
+      "productionEquivalenceMinimum": "CANONICAL_RUNTIME",
+      "productionEquivalentTraceCount": 0,
       "requiredBridgeCount": 30
     },
     "order_id": "CS-002",
-    "readiness": "Operationally Certified",
+    "readiness": "Conditionally Operational",
     "recovery_results": [
       {
         "fabricatedBridgeSuccess": false,
@@ -443,192 +445,493 @@
       {
         "bridgeId": "BRIDGE-SCHED-MISSION-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-EVENT-MISSION-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-MISSION-WORKFLOW-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "RELEASED_TO_DORMANT"
+        "tokenReleased": "RELEASED_TO_DORMANT",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-WORKFLOW-OFFICE-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "RELEASED_TO_DORMANT"
+        "tokenReleased": "RELEASED_TO_DORMANT",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-SI-SEEKER-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-SEEKER-ANALYST-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "RELEASED_TO_DORMANT"
+        "tokenReleased": "RELEASED_TO_DORMANT",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-ANALYST-RISK-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "RELEASED_TO_DORMANT"
+        "tokenReleased": "RELEASED_TO_DORMANT",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-RISK-AUTH-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-AUTH-TRADER-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "RELEASED_TO_DORMANT"
+        "tokenReleased": "RELEASED_TO_DORMANT",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-TRADER-BROKER-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-BROKER-FILL-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-FILL-POSITION-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-POSITION-PT-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-POSITION-EOCK-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-EOCK-SURVEILLANCE-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-SURVEILLANCE-EXIT-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-EXIT-AUTH-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-EXIT-TRADER-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "RELEASED_TO_DORMANT"
+        "tokenReleased": "RELEASED_TO_DORMANT",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-CLOSING-FILL-POSITION-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-CLOSE-CPT-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-CPT-PT-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-PT-HISTORIAN-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-HISTORIAN-LEARNING-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-COMMANDER-DIRECTIVE-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-COST-API-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-FRESHNESS-ANALYTICAL-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-PERSIST-RECOVERY-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-RECOVERY-RUNTIME-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-REPLAY-LAB-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "bridgeId": "BRIDGE-ASSURANCE-COMMANDER-001",
         "destinationAcceptance": "ACCEPTED",
+        "executionOrigin": "CERTIFICATION_HARNESS",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
         "status": "ACCEPTED",
-        "tokenReleased": "NOT_APPLICABLE"
+        "tokenReleased": "NOT_APPLICABLE",
+        "traceEquivalenceLevel": "CONTRACT"
       }
     ],
     "schema_version": "CS.1",
     "static_assurance": {
-      "callGraphEdges": 57103,
-      "requiredRuntimeBridgeMatrix": 30
+      "callGraphEdges": 57355,
+      "requiredRuntimeBridgeMatrix": 30,
+      "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
     },
-    "timestamp_utc": "2026-07-19T01:33:12.369584Z",
+    "timestamp_utc": "2026-07-19T01:56:32.099841Z",
     "title": "Canonical Bridge Execution Certification",
-    "verdict": "PASS"
+    "verdict": "INCOMPLETE"
   },
   "CS-003": {
     "certification_matrix": [
@@ -637,99 +940,99 @@
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Office Classification",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Activation Authority",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Workflow Eligibility",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Workflow Execution Token Enforcement",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dormancy",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Authority Boundaries",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Recovery",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Background Activity",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Proof Domains",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Static Assurance",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dynamic Validation",
         "evidence_references": [
           "cs003_lifecycle_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Direct office activation is contract evidence until observed through canonical runtime bridge causality.",
+        "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "38942416a71be7b0939ab1eb27b746e9abf5847ca3d0313a1fa0122cdb6add36",
+    "evidence_hash": "77ec937160eb24047e0c07c54350b84b24f07dbc7eda779667582e74e7ecb8fd",
     "failure_results": [
       {
         "officeId": "OFFICE-EO-DB-001",
@@ -896,10 +1199,11 @@
       "dormantAfterExecution": true,
       "duplicateRoles": 0,
       "officeCount": 32,
-      "orphanCount": 0
+      "orphanCount": 0,
+      "productionEquivalentTraceCount": 0
     },
     "order_id": "CS-003",
-    "readiness": "Operationally Certified",
+    "readiness": "Conditionally Operational",
     "recovery_results": [
       {
         "fabricatedOfficeAuthority": false,
@@ -910,203 +1214,524 @@
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-001"
+        "officeId": "OFFICE-EO-DB-001",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-002"
+        "officeId": "OFFICE-EO-DB-002",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-003"
+        "officeId": "OFFICE-EO-DB-003",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-004"
+        "officeId": "OFFICE-EO-DB-004",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-005"
+        "officeId": "OFFICE-EO-DB-005",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-006"
+        "officeId": "OFFICE-EO-DB-006",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-007"
+        "officeId": "OFFICE-EO-DB-007",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-008"
+        "officeId": "OFFICE-EO-DB-008",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-009"
+        "officeId": "OFFICE-EO-DB-009",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-010"
+        "officeId": "OFFICE-EO-DB-010",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-011"
+        "officeId": "OFFICE-EO-DB-011",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-012"
+        "officeId": "OFFICE-EO-DB-012",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-013"
+        "officeId": "OFFICE-EO-DB-013",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-014"
+        "officeId": "OFFICE-EO-DB-014",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-015"
+        "officeId": "OFFICE-EO-DB-015",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-016"
+        "officeId": "OFFICE-EO-DB-016",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-017"
+        "officeId": "OFFICE-EO-DB-017",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-018"
+        "officeId": "OFFICE-EO-DB-018",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-019"
+        "officeId": "OFFICE-EO-DB-019",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "EXTERNAL_AUTHORITY_ADAPTER",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-020"
+        "officeId": "OFFICE-EO-DB-020",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-021"
+        "officeId": "OFFICE-EO-DB-021",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-022"
+        "officeId": "OFFICE-EO-DB-022",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-023"
+        "officeId": "OFFICE-EO-DB-023",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-024"
+        "officeId": "OFFICE-EO-DB-024",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-025"
+        "officeId": "OFFICE-EO-DB-025",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-026"
+        "officeId": "OFFICE-EO-DB-026",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-027"
+        "officeId": "OFFICE-EO-DB-027",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-028"
+        "officeId": "OFFICE-EO-DB-028",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-029"
+        "officeId": "OFFICE-EO-DB-029",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-030"
+        "officeId": "OFFICE-EO-DB-030",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "CORE_PRODUCTION",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-031"
+        "officeId": "OFFICE-EO-DB-031",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       },
       {
         "activationAccepted": true,
         "classification": "INFORMATION_ONLY",
+        "executionOrigin": "CERTIFICATION_HARNESS",
         "finalState": "DORMANT",
-        "officeId": "OFFICE-EO-DB-032"
+        "officeId": "OFFICE-EO-DB-032",
+        "productionEquivalent": false,
+        "rejectionCodes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "traceEquivalenceLevel": "CONTRACT"
       }
     ],
     "schema_version": "CS.1",
     "static_assurance": {
-      "registeredOffices": 33
+      "registeredOffices": 33,
+      "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
     },
-    "timestamp_utc": "2026-07-19T01:33:12.378074Z",
+    "timestamp_utc": "2026-07-19T01:56:32.115555Z",
     "title": "Office Lifecycle and Constitutional Authority Certification",
-    "verdict": "PASS"
+    "verdict": "INCOMPLETE"
   },
   "CS-004": {
     "certification_matrix": [
@@ -1239,7 +1864,7 @@
         "state": "CERTIFIED"
       }
     ],
-    "evidence_hash": "b841612872a870d0088b624b00448731a34caa2ff4bfdfeb96f169f25bc146bc",
+    "evidence_hash": "450b8ccabb4213867a7f81568642f7bf58e170e3a00c053c14c3718fffc0910d",
     "failure_results": [],
     "metrics": {
       "closedTruthCount": 1,
@@ -1250,7 +1875,7 @@
     "readiness": "Conditionally Operational",
     "recovery_results": [
       {
-        "deterministic_signature": "eb3715e5da17bfd52defd883c5de6aab851396fca5e306c95e99f4b94317607e",
+        "deterministic_signature": "e88fd22868ae9f880c3212fc2c941b1decadf46a87c3ef3e3925c9e0ae85073f",
         "domains": [
           {
             "domain": "market_evidence",
@@ -1281,7 +1906,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-788D514D330F"
+              "FILL-D244DC489FBE"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -1323,7 +1948,7 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:33:12.394250Z",
+        "timestamp_utc": "2026-07-19T01:56:32.146514Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
@@ -1333,7 +1958,7 @@
         "authoritative_market_boundary_used": true,
         "bridge_trace_count": 1,
         "closed_truth_count": 1,
-        "evidence_hash": "a7073c2cf504fb215744123ed205a64481f7a0c3ca34a5b80c54e636898e29fd",
+        "evidence_hash": "e82006398d2eb554800ef3f982123fdb3f0a49b8c778d59bd138327e787c1f02",
         "office_lifecycle_controls_used": true,
         "open_quantity_after_close": 0.0,
         "report_id": "EO-DM-LIFECYCLE-CLOSURE-001",
@@ -1362,7 +1987,7 @@
           {
             "authority": "Paper Broker",
             "evidence_references": [
-              "FILL-788D514D330F"
+              "FILL-D244DC489FBE"
             ],
             "name": "Opening fill evidence",
             "stage_id": "EO-DM-STAGE-OPEN-FILL",
@@ -1373,7 +1998,7 @@
             "authority": "Position Registry",
             "evidence_references": [
               "POS-AAPL-DO-EO-DM",
-              "FILL-788D514D330F"
+              "FILL-D244DC489FBE"
             ],
             "name": "Position truth from fill",
             "stage_id": "EO-DM-STAGE-POSITION",
@@ -1403,7 +2028,7 @@
           {
             "authority": "Paper Broker",
             "evidence_references": [
-              "FILL-67627B817D64"
+              "FILL-A49718DFC4F7"
             ],
             "name": "Closing fill evidence",
             "stage_id": "EO-DM-STAGE-CLOSE-FILL",
@@ -1432,7 +2057,7 @@
           }
         ],
         "synthetic_truth_created": false,
-        "timestamp_utc": "2026-07-19T01:33:12.392168Z",
+        "timestamp_utc": "2026-07-19T01:56:32.143352Z",
         "transaction_protection_model": "EO-DD participant model referenced; broker and position mutation remain separate authorities.",
         "verdict": "PASS"
       }
@@ -1441,7 +2066,7 @@
     "static_assurance": {
       "financialMutationSitesReviewed": true
     },
-    "timestamp_utc": "2026-07-19T01:33:12.394549Z",
+    "timestamp_utc": "2026-07-19T01:56:32.146999Z",
     "title": "Financial Lifecycle Constitutional Certification",
     "verdict": "INCOMPLETE"
   },
@@ -1452,99 +2077,99 @@
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Runtime Recovery",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Workflow Recovery",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Bridge Recovery",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Office Recovery",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Workflow Execution Tokens",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Financial Recovery",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Quarantine",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Reconciliation",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Proof Domains",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Static Assurance",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dynamic Validation",
         "evidence_references": [
           "cs005_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+        "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "a5d08a9dbc16c1b40e887e401493b21d4a554e241e59e4748272d70722698b08",
+    "evidence_hash": "80081d199eeeae4f35f531649585183296c5c59634e370094f876d382368e980",
     "failure_results": [
       {
         "continuedExecutionAllowed": false,
@@ -1555,13 +2180,14 @@
     "metrics": {
       "fabricatedAuthority": false,
       "fabricatedFinancialTruth": false,
+      "productionEquivalentTraceCount": 0,
       "unknownsPreserved": true
     },
     "order_id": "CS-005",
-    "readiness": "Paper Ready",
+    "readiness": "Conditionally Operational",
     "recovery_results": [
       {
-        "deterministic_signature": "f30af37438ff669b2a99addbc02321b5d7197705cde96aa8e1ea3b9863efbce1",
+        "deterministic_signature": "961a895b1359452df22533c1e3942cf2c05f6585db06d161c0a6caa9e6d75227",
         "domains": [
           {
             "domain": "market_evidence",
@@ -1592,8 +2218,8 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-6CF4237735DC",
-              "FILL-B53C88E5AFC6"
+              "FILL-94B356CFEA37",
+              "FILL-65E7B13A11D8"
             ],
             "state": "RECOVERED",
             "unresolved_references": []
@@ -1630,12 +2256,12 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:33:12.408657Z",
+        "timestamp_utc": "2026-07-19T01:56:32.172258Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       },
       {
-        "deterministic_signature": "99be9bca1de6e234e2c2d355976314387c6ec8acb1a7b20fc4f4f9ed33024a05",
+        "deterministic_signature": "5070199939a55d1b8a8904c63c931b0f0b7e05d90156c6c71c42fe339b5ae3af",
         "domains": [
           {
             "domain": "market_evidence",
@@ -1666,7 +2292,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-6CF4237735DC"
+              "FILL-94B356CFEA37"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -1708,14 +2334,14 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:33:12.409924Z",
+        "timestamp_utc": "2026-07-19T01:56:32.174648Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
     ],
     "runtime_traces": [
       {
-        "deterministic_signature": "f30af37438ff669b2a99addbc02321b5d7197705cde96aa8e1ea3b9863efbce1",
+        "deterministic_signature": "961a895b1359452df22533c1e3942cf2c05f6585db06d161c0a6caa9e6d75227",
         "domains": [
           {
             "domain": "market_evidence",
@@ -1746,8 +2372,8 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-6CF4237735DC",
-              "FILL-B53C88E5AFC6"
+              "FILL-94B356CFEA37",
+              "FILL-65E7B13A11D8"
             ],
             "state": "RECOVERED",
             "unresolved_references": []
@@ -1784,12 +2410,12 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:33:12.408657Z",
+        "timestamp_utc": "2026-07-19T01:56:32.172258Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       },
       {
-        "deterministic_signature": "99be9bca1de6e234e2c2d355976314387c6ec8acb1a7b20fc4f4f9ed33024a05",
+        "deterministic_signature": "5070199939a55d1b8a8904c63c931b0f0b7e05d90156c6c71c42fe339b5ae3af",
         "domains": [
           {
             "domain": "market_evidence",
@@ -1820,7 +2446,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-6CF4237735DC"
+              "FILL-94B356CFEA37"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -1862,7 +2488,7 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:33:12.409924Z",
+        "timestamp_utc": "2026-07-19T01:56:32.174648Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
@@ -1870,11 +2496,12 @@
     "schema_version": "CS.1",
     "static_assurance": {
       "cacheTruthAuthority": false,
-      "snapshotPrimaryTruthAuthority": false
+      "snapshotPrimaryTruthAuthority": false,
+      "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
     },
-    "timestamp_utc": "2026-07-19T01:33:12.410300Z",
+    "timestamp_utc": "2026-07-19T01:56:32.175283Z",
     "title": "Deterministic Recovery and Fail-Closed Authority Certification",
-    "verdict": "PASS"
+    "verdict": "INCOMPLETE"
   },
   "CS-006": {
     "certification_matrix": [
@@ -1883,108 +2510,109 @@
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Authorization",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dependency Declaration",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Mutation Protection",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Cache Safety",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Derived Data Integrity",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Runtime Inspection",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Audit Inspection",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Export Integrity",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Proof Domains",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Static Assurance",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dynamic Validation",
         "evidence_references": [
           "cs006_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Registered surfaces are read-pure, but the complete production read inventory remains unproven.",
+        "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "9afa30c5584dc68c26d02acd7d025b0ad290a224f9134f9accd3b6c62476ffa5",
+    "evidence_hash": "e540c22cccaced599b7bc7d03eb77cd31e712560ce6def5248d2b61815fc2477",
     "failure_results": [],
     "metrics": {
+      "authoritativeInventoryComplete": false,
       "certifiedSurfaceCount": 13,
       "proofDomainSeparationEnforced": true,
       "registeredSurfaceCount": 13,
       "runtimeMutations": 0
     },
     "order_id": "CS-006",
-    "readiness": "Operationally Certified",
+    "readiness": "Conditionally Operational",
     "recovery_results": [],
     "runtime_traces": [
       {
@@ -1994,7 +2622,7 @@
           "Workflow Orchestrator"
         ],
         "digest_stable": true,
-        "evidence_hash": "a956b55acc6b0a1a413cbe97a8b465ad9bfd3b057ecde3de41acb45c8cb174f2",
+        "evidence_hash": "5d750ae59f169fa9d90a45f4616e15f6746c3b5bcbb091ffa7a5269dc0437eba",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2010,7 +2638,7 @@
           "Policy"
         ],
         "digest_stable": true,
-        "evidence_hash": "ae74c7fe14062b4691f198c8f45a61da55e0270c90ecb1491e18f94707d55128",
+        "evidence_hash": "ac1e08edebc6d91aa66189a12be31ca4eadc7eef4cb2bb0b17e879db0c875cdd",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/commander/strategic-dashboard",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2024,7 +2652,7 @@
           "all read models"
         ],
         "digest_stable": true,
-        "evidence_hash": "4760a71768cea3c2eaa32f1bd259440c3d9a6878b56dd4bd5d2e02a58074d318",
+        "evidence_hash": "b03bbc99ff0dcca8b47069258bfd2431a5dde0501880afc977708cd2d97898e2",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2038,7 +2666,7 @@
           "Runtime Provider"
         ],
         "digest_stable": true,
-        "evidence_hash": "6c61bfa1c1ee3bf1b5e801521feae579e2935a5153244822cbe725f21978f970",
+        "evidence_hash": "1065d7bf210d613f0c76b1ffd628c0fddf71c34084333194e72579860a89a8e7",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/runtime/provider",
         "status": "CERTIFIED_READ_ONLY",
@@ -2053,7 +2681,7 @@
           "Position Registry"
         ],
         "digest_stable": true,
-        "evidence_hash": "e40158be6aaa3ad41d7aca47159de0c9fcfc737bae430a9650510587898ecca1",
+        "evidence_hash": "d996a9b53df8c283a04ccd6d1ce6acbc5d43639cc51802e27e3186ae294cdb76",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/trader/bridge",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2068,7 +2696,7 @@
           "EO-CK"
         ],
         "digest_stable": true,
-        "evidence_hash": "e2e01b455236397702533823cc4859b4832895aaf0a8addb0f53f42a05a310a0",
+        "evidence_hash": "98ed8534c5619c9481ec77c3903871377e06ed276b11df4d163ed470d2393199",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/position-monitoring/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2082,7 +2710,7 @@
           "Performance Truth"
         ],
         "digest_stable": true,
-        "evidence_hash": "4a4adcc38881581653ccee707df0f95cda1a2c939a124efeb71c442228fc1f9e",
+        "evidence_hash": "274956263306ccf4bcc104a0ac8978659242d3a85155f2d8f9d1a258fab5989c",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/performance-truth/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2096,7 +2724,7 @@
           "Replay"
         ],
         "digest_stable": true,
-        "evidence_hash": "de7575e8592b208ad70b973c69124ad82b5cb3dbe9253a38e1b719a37fc67516",
+        "evidence_hash": "2cd832882fe390cd1bf45e12c367a084d6439a6d71e210971ea500363cd4f8cb",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/market-replay/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2111,7 +2739,7 @@
           "Decision Laboratory"
         ],
         "digest_stable": true,
-        "evidence_hash": "d23750448cc01d3346878d9a8f25e3d83239952a4525672334c0d4563c8b0674",
+        "evidence_hash": "760e4d90a5092b6824ec2f0ecd2ae2fa8fb270fba714fd484233370d520e2825",
         "mutation_attempt_rejected": true,
         "route_or_callable": "/api/decision-laboratory/state",
         "status": "CONDITIONALLY_READ_ONLY",
@@ -2126,7 +2754,7 @@
           "Transaction Coordinator"
         ],
         "digest_stable": true,
-        "evidence_hash": "172cd2b4f43c9d577f41be33f6e0a022207cf23b512409fd08797139493dda9d",
+        "evidence_hash": "2d2620651092eabe70813fb2b6d85369074be7f1a49198379880af79859802c0",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2140,7 +2768,7 @@
           "Truth Promotion Authority"
         ],
         "digest_stable": true,
-        "evidence_hash": "731fc51f8f4002c8459183eaeeecf435046dc7876742fd02a12a7da34597cb75",
+        "evidence_hash": "e91b8918ee093cd3c8f563ef36f04434e362423328aaea05cea5013034e0d1c6",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2154,7 +2782,7 @@
           "EO-DE"
         ],
         "digest_stable": true,
-        "evidence_hash": "03c0a8e30be06468b4b76244380dc89968b35d1bef1a0b3c570088dae7971dc1",
+        "evidence_hash": "d7d946a19d01ef61bfb6a358f1c3c77dfa6fdffe47b83805af3efaaba718d075",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2169,7 +2797,7 @@
           "EO-DF"
         ],
         "digest_stable": true,
-        "evidence_hash": "21d412512f80639b839654ce9d2defa4fd76b45be0ea60136dfda089315e5d3a",
+        "evidence_hash": "51edae294499d072f7e1f29e35e28e20f799234a8f0236ff9ef8f9d9ff8a6906",
         "mutation_attempt_rejected": true,
         "route_or_callable": "callable",
         "status": "CERTIFIED_READ_ONLY",
@@ -2184,9 +2812,9 @@
     "static_assurance": {
       "duplicateRegistrationRejected": true
     },
-    "timestamp_utc": "2026-07-19T01:33:12.414413Z",
+    "timestamp_utc": "2026-07-19T01:56:32.184201Z",
     "title": "Production Read-Surface Constitutional Certification",
-    "verdict": "PASS"
+    "verdict": "INCOMPLETE"
   },
   "CS-007": {
     "certification_matrix": [
@@ -2195,118 +2823,122 @@
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Workflow Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Bridge Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Office Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Financial Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Recovery Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Read Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Failure Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Proof-Domain Coverage",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Trace Integrity",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Trace Reproducibility",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Static Assurance",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       },
       {
         "domain": "Dynamic Validation",
         "evidence_references": [
           "cs007_dynamic_validation.json"
         ],
-        "limitation": "",
-        "state": "CERTIFIED"
+        "limitation": "Coverage denominator is authoritative bridge inventory; selected helper traces cannot redefine coverage.",
+        "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "0a18446bb501840d57bb696493eb9ce1644a0c1b819fa4725dccc0d2f4007dc6",
+    "evidence_hash": "59ca2f3455c0df26782e103254068d0b9453151c64b54eaf2f39860bf46ff649",
     "failure_results": [],
     "metrics": {
+      "authoritativeDenominatorUsed": true,
       "passRate": 1.0,
       "passedTraceCount": 10,
+      "productionEquivalentCoveragePercent": 0.0,
+      "productionEquivalentTraceCount": 0,
+      "requiredTraceSubjectCount": 30,
       "traceCount": 10
     },
     "order_id": "CS-007",
-    "readiness": "Operationally Certified",
+    "readiness": "Conditionally Operational",
     "recovery_results": [
       {
-        "deterministic_signature": "e48824b332babc88bfcab51aaf58b6ef33f47d01b2b684c49928db23cef9100b",
+        "deterministic_signature": "749a3db96268cd45772b8bd709db97907569993aa4b44cc75022e58280096bb2",
         "domains": [
           {
             "domain": "market_evidence",
@@ -2337,7 +2969,7 @@
             "recovered_references": [
               "openOrder",
               "closeOrder",
-              "FILL-A10955B79BA1"
+              "FILL-0732771CA6C6"
             ],
             "state": "UNRESOLVED",
             "unresolved_references": [
@@ -2379,7 +3011,7 @@
         "recreated_authority": false,
         "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
         "schema_version": "EO-DN.1",
-        "timestamp_utc": "2026-07-19T01:33:12.427677Z",
+        "timestamp_utc": "2026-07-19T01:56:32.212347Z",
         "unknowns_preserved": true,
         "verdict": "PASS"
       }
@@ -2396,81 +3028,81 @@
       },
       {
         "category": "Workflow",
-        "evidence_hash": "72cb9b21435b819e5c358500aaff0ee5dd01f72efb4c6a909b61e78acc1489d7",
+        "evidence_hash": "e7240b647b1b0d3cc94cbf294b3a2595808fda61c8c6ca0fc6e5e4b972cc162c",
         "evidence_references": [
-          "72cb9b21435b819e5c358500aaff0ee5dd01f72efb4c6a909b61e78acc1489d7"
+          "e7240b647b1b0d3cc94cbf294b3a2595808fda61c8c6ca0fc6e5e4b972cc162c"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-WORKFLOW"
       },
       {
         "category": "Bridge",
-        "evidence_hash": "8ad64522fe2e93d36c3852a1688546937092b963daca166e9e427f4457f3715f",
+        "evidence_hash": "039ee98cb5b93ef349c7d26d6a26845050d58680c1a32f58a3019470e68db56e",
         "evidence_references": [
-          "8ad64522fe2e93d36c3852a1688546937092b963daca166e9e427f4457f3715f"
+          "039ee98cb5b93ef349c7d26d6a26845050d58680c1a32f58a3019470e68db56e"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-BRIDGE"
       },
       {
         "category": "Office",
-        "evidence_hash": "b1b52feb19ec2a5299a58e2b90b7183eec4bd329cbdcfb57ce7aa8285f0c7704",
+        "evidence_hash": "bf09a9d893633217e5d489b9320a124576b7b4427d019cdbf26e9f010ab209bd",
         "evidence_references": [
-          "b1b52feb19ec2a5299a58e2b90b7183eec4bd329cbdcfb57ce7aa8285f0c7704"
+          "bf09a9d893633217e5d489b9320a124576b7b4427d019cdbf26e9f010ab209bd"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-OFFICE"
       },
       {
         "category": "Market Data",
-        "evidence_hash": "25663c2002c9ad0f68b4dbee5f0f0e88e1f38cf257f75f8f9bc67d813462bbf1",
+        "evidence_hash": "53c53da583c8ae7146cdc8439a7524a7fc8c02a2e59bff928f152d89d9cf22c4",
         "evidence_references": [
-          "25663c2002c9ad0f68b4dbee5f0f0e88e1f38cf257f75f8f9bc67d813462bbf1"
+          "53c53da583c8ae7146cdc8439a7524a7fc8c02a2e59bff928f152d89d9cf22c4"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-MARKET"
       },
       {
         "category": "Financial",
-        "evidence_hash": "7fe27485b682382ad1b96c9bec684ff1c59ce1e00120fd3164eaec08aa1d4e2a",
+        "evidence_hash": "79e1399b7bb84574ca098751cbce1900b2d93ccbc255093244ebbae09e93d78c",
         "evidence_references": [
-          "7fe27485b682382ad1b96c9bec684ff1c59ce1e00120fd3164eaec08aa1d4e2a"
+          "79e1399b7bb84574ca098751cbce1900b2d93ccbc255093244ebbae09e93d78c"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-FINANCIAL"
       },
       {
         "category": "Recovery",
-        "evidence_hash": "f84d451fe6f160651609d22890bc4859ac859df581b0bb0f2572ce0199e7192b",
+        "evidence_hash": "24cb982b34501d1b731032845f45ea0f321cbe1db9b96f2dd8cb37ae510dff6f",
         "evidence_references": [
-          "f84d451fe6f160651609d22890bc4859ac859df581b0bb0f2572ce0199e7192b"
+          "24cb982b34501d1b731032845f45ea0f321cbe1db9b96f2dd8cb37ae510dff6f"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-RECOVERY"
       },
       {
         "category": "Read Surfaces",
-        "evidence_hash": "801a36fd2c1d63e5fa52a9fbede6799e9b5d512484ea899adda5fca7f506ee41",
+        "evidence_hash": "eb193e05fd810fa3ecde5b3652ebccfb35b40fd8981ae6933179c2d7f410b764",
         "evidence_references": [
-          "801a36fd2c1d63e5fa52a9fbede6799e9b5d512484ea899adda5fca7f506ee41"
+          "eb193e05fd810fa3ecde5b3652ebccfb35b40fd8981ae6933179c2d7f410b764"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-READ"
       },
       {
         "category": "Synthetic Truth",
-        "evidence_hash": "a5985013b641586c48da50833d98156c94cf819c7e582a9b398386add3e8a28d",
+        "evidence_hash": "7c04cb81ad11504c3905d4000cfd7da6dd91c1f18e2f2157c54bc20f3c614ad3",
         "evidence_references": [
-          "a5985013b641586c48da50833d98156c94cf819c7e582a9b398386add3e8a28d"
+          "7c04cb81ad11504c3905d4000cfd7da6dd91c1f18e2f2157c54bc20f3c614ad3"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-SYNTHETIC"
       },
       {
         "category": "Endurance",
-        "evidence_hash": "820665532d177a05a27b6f60ff69122d48b2d14f75e7eb25b130073e2d4a35b1",
+        "evidence_hash": "6e769f3cf8cfd1f817979506517cc50b7c374a78c957ef6fb294badf39e4d672",
         "evidence_references": [
-          "820665532d177a05a27b6f60ff69122d48b2d14f75e7eb25b130073e2d4a35b1"
+          "6e769f3cf8cfd1f817979506517cc50b7c374a78c957ef6fb294badf39e4d672"
         ],
         "status": "PASS",
         "trace_id": "EO-DP-ENDURANCE"
@@ -2478,11 +3110,12 @@
     ],
     "schema_version": "CS.1",
     "static_assurance": {
-      "traceEvidenceHash": "3afd34a294a379336d61637227a79970cf4f854cbdd29c4d128928a12b10a939"
+      "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT",
+      "traceEvidenceHash": "6307b28ec0caa452a3fd72ab5e6627a97224971ac9742b3f302a16db6a33366c"
     },
-    "timestamp_utc": "2026-07-19T01:33:14.278562Z",
+    "timestamp_utc": "2026-07-19T01:56:36.079485Z",
     "title": "Executed Constitutional Trace Certification",
-    "verdict": "PASS"
+    "verdict": "INCOMPLETE"
   },
   "CS-008": {
     "certification_matrix": [
@@ -2583,7 +3216,7 @@
         "state": "CONDITIONALLY_CERTIFIED"
       }
     ],
-    "evidence_hash": "87e86677074130f484b229884e9ea27b7ca391bd5258962b27591e586ff59803",
+    "evidence_hash": "d7e720aa8a5b36ad3773a056e19545ebf4de60a1d8fe26c8877d00000f0672d8",
     "failure_results": [],
     "metrics": {
       "acceleratedEnduranceCompleted": true,
@@ -2610,7 +3243,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "d4a436aff20118bd5c9e63a04abc8edbfbc0671619474bb3c6203272b93820b6",
-        "end_timestamp_utc": "2026-07-19T01:33:14.280091Z",
+        "end_timestamp_utc": "2026-07-19T01:56:36.082866Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -4630,7 +5263,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:33:14.280084Z",
+        "start_timestamp_utc": "2026-07-19T01:56:36.082853Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -4650,7 +5283,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "38c7d572aab1ab1d00494c8b6cb70a2f69eb03fc591210f624a90e3877de995a",
-        "end_timestamp_utc": "2026-07-19T01:33:14.281277Z",
+        "end_timestamp_utc": "2026-07-19T01:56:36.085673Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -6670,7 +7303,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:33:14.281273Z",
+        "start_timestamp_utc": "2026-07-19T01:56:36.085660Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -6690,7 +7323,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "6ab19934f264293b766a71f47ff69a92982412557e14c1dbed0c1d8faf77440f",
-        "end_timestamp_utc": "2026-07-19T01:33:14.284576Z",
+        "end_timestamp_utc": "2026-07-19T01:56:36.093781Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -8720,7 +9353,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:33:14.284574Z",
+        "start_timestamp_utc": "2026-07-19T01:56:36.093769Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -8742,7 +9375,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "d4a436aff20118bd5c9e63a04abc8edbfbc0671619474bb3c6203272b93820b6",
-        "end_timestamp_utc": "2026-07-19T01:33:14.280091Z",
+        "end_timestamp_utc": "2026-07-19T01:56:36.082866Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -10762,7 +11395,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:33:14.280084Z",
+        "start_timestamp_utc": "2026-07-19T01:56:36.082853Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -10782,7 +11415,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "38c7d572aab1ab1d00494c8b6cb70a2f69eb03fc591210f624a90e3877de995a",
-        "end_timestamp_utc": "2026-07-19T01:33:14.281277Z",
+        "end_timestamp_utc": "2026-07-19T01:56:36.085673Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -12802,7 +13435,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:33:14.281273Z",
+        "start_timestamp_utc": "2026-07-19T01:56:36.085660Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -12822,7 +13455,7 @@
         "critical_findings": [],
         "cumulative_segmented_duration_seconds": 240,
         "determinism_signature": "6ab19934f264293b766a71f47ff69a92982412557e14c1dbed0c1d8faf77440f",
-        "end_timestamp_utc": "2026-07-19T01:33:14.284576Z",
+        "end_timestamp_utc": "2026-07-19T01:56:36.093781Z",
         "eoda_integration": {
           "active": true,
           "criticalFailures": 0
@@ -14852,7 +15485,7 @@
           }
         ],
         "stage": "STAGE_1_ACCELERATED_24H",
-        "start_timestamp_utc": "2026-07-19T01:33:14.284574Z",
+        "start_timestamp_utc": "2026-07-19T01:56:36.093769Z",
         "synthetic_truth_introduced": false,
         "termination_reason": "configured duration complete",
         "verdict": "PASS"
@@ -14862,7 +15495,7 @@
     "static_assurance": {
       "liveTradingEnabled": false
     },
-    "timestamp_utc": "2026-07-19T01:33:14.295467Z",
+    "timestamp_utc": "2026-07-19T01:56:36.119027Z",
     "title": "Continuous Operational Endurance Certification",
     "verdict": "INCOMPLETE"
   }

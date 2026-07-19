@@ -5,99 +5,99 @@
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Runtime Recovery",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Workflow Recovery",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Bridge Recovery",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Office Recovery",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Workflow Execution Tokens",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Financial Recovery",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Quarantine",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Reconciliation",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Proof Domains",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Static Assurance",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     },
     {
       "domain": "Dynamic Validation",
       "evidence_references": [
         "cs005_dynamic_validation.json"
       ],
-      "limitation": "",
-      "state": "CERTIFIED"
+      "limitation": "Recovery replay is validated, but production recovery equivalence requires canonical-runtime recovery traces.",
+      "state": "CONDITIONALLY_CERTIFIED"
     }
   ],
-  "evidence_hash": "ab602df9134d23e664da399244e42885398e81818ffcd1e67effd3141d4ceaa8",
+  "evidence_hash": "12c1f45d61773c066d86f5c1a1172681108ba14c33ab989d5dc0c131bc6b78f7",
   "failure_results": [
     {
       "continuedExecutionAllowed": false,
@@ -108,13 +108,14 @@
   "metrics": {
     "fabricatedAuthority": false,
     "fabricatedFinancialTruth": false,
+    "productionEquivalentTraceCount": 0,
     "unknownsPreserved": true
   },
   "order_id": "CS-005",
-  "readiness": "Paper Ready",
+  "readiness": "Conditionally Operational",
   "recovery_results": [
     {
-      "deterministic_signature": "450807f3138282c90ca9b52dc01cb721f8f0fadbe067dcb3dc5c9cd3993ba268",
+      "deterministic_signature": "a62ac0cf4048e4a1d3f61c8091c9cc81498b5b8f94ca39b9149c600b11cba5d1",
       "domains": [
         {
           "domain": "market_evidence",
@@ -145,8 +146,8 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-B979AAD22C03",
-            "FILL-AEBEC4A1B3E0"
+            "FILL-97E93295ED85",
+            "FILL-595E260026C8"
           ],
           "state": "RECOVERED",
           "unresolved_references": []
@@ -183,12 +184,12 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:33:09.004153Z",
+      "timestamp_utc": "2026-07-19T01:56:25.282364Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     },
     {
-      "deterministic_signature": "31cd90138e4d7ba009d1d4b3722a90e3d88dd50d2629911479ecabb13e36432f",
+      "deterministic_signature": "680cdb61305a77045004ab8760594bb6724b21ceca0b3e36d1d79ab2c1eb29c8",
       "domains": [
         {
           "domain": "market_evidence",
@@ -219,7 +220,7 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-B979AAD22C03"
+            "FILL-97E93295ED85"
           ],
           "state": "UNRESOLVED",
           "unresolved_references": [
@@ -261,14 +262,14 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:33:09.005790Z",
+      "timestamp_utc": "2026-07-19T01:56:25.285563Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     }
   ],
   "runtime_traces": [
     {
-      "deterministic_signature": "450807f3138282c90ca9b52dc01cb721f8f0fadbe067dcb3dc5c9cd3993ba268",
+      "deterministic_signature": "a62ac0cf4048e4a1d3f61c8091c9cc81498b5b8f94ca39b9149c600b11cba5d1",
       "domains": [
         {
           "domain": "market_evidence",
@@ -299,8 +300,8 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-B979AAD22C03",
-            "FILL-AEBEC4A1B3E0"
+            "FILL-97E93295ED85",
+            "FILL-595E260026C8"
           ],
           "state": "RECOVERED",
           "unresolved_references": []
@@ -337,12 +338,12 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:33:09.004153Z",
+      "timestamp_utc": "2026-07-19T01:56:25.282364Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     },
     {
-      "deterministic_signature": "31cd90138e4d7ba009d1d4b3722a90e3d88dd50d2629911479ecabb13e36432f",
+      "deterministic_signature": "680cdb61305a77045004ab8760594bb6724b21ceca0b3e36d1d79ab2c1eb29c8",
       "domains": [
         {
           "domain": "market_evidence",
@@ -373,7 +374,7 @@
           "recovered_references": [
             "openOrder",
             "closeOrder",
-            "FILL-B979AAD22C03"
+            "FILL-97E93295ED85"
           ],
           "state": "UNRESOLVED",
           "unresolved_references": [
@@ -415,7 +416,7 @@
       "recreated_authority": false,
       "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
       "schema_version": "EO-DN.1",
-      "timestamp_utc": "2026-07-19T01:33:09.005790Z",
+      "timestamp_utc": "2026-07-19T01:56:25.285563Z",
       "unknowns_preserved": true,
       "verdict": "PASS"
     }
@@ -423,9 +424,10 @@
   "schema_version": "CS.1",
   "static_assurance": {
     "cacheTruthAuthority": false,
-    "snapshotPrimaryTruthAuthority": false
+    "snapshotPrimaryTruthAuthority": false,
+    "traceEquivalenceBlocker": "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
   },
-  "timestamp_utc": "2026-07-19T01:33:09.006106Z",
+  "timestamp_utc": "2026-07-19T01:56:25.286413Z",
   "title": "Deterministic Recovery and Fail-Closed Authority Certification",
-  "verdict": "PASS"
+  "verdict": "INCOMPLETE"
 }

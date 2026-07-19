@@ -105,12 +105,12 @@
       "state": "CONDITIONALLY_CERTIFIED"
     }
   ],
-  "evidence_hash": "4c519d9b5b8e40299a2d033cc2587e877b08f72b3ab1ea7f8221aa5ca7085c44",
+  "evidence_hash": "6a5c7014ba1440292294e7d54c3a252c4e6443df7d7376716a60e6bf89f73b4a",
   "failure_results": [],
   "metrics": {
-    "blockerCount": 3,
+    "blockerCount": 8,
     "certificationOrderCount": 8,
-    "passCount": 5,
+    "passCount": 0,
     "readiness": "Conditionally Operational"
   },
   "order_id": "CS-009",
@@ -118,49 +118,49 @@
   "recovery_results": [],
   "runtime_traces": [
     {
-      "evidenceHash": "e985ad76f4884cc1cb366613cb9e7776aa880ce734aaa470fcfb64768a37e828",
+      "evidenceHash": "81824799bdbd506096cdbc42aad663a3d83294855a39f6da98746f5a2a8a8228",
       "orderId": "CS-001",
       "readiness": "Conditionally Paper Ready",
       "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "b781b2f1c7517ba53ab746e5e3e1c152cf67bbec32c1789d0c0c40cd8e75392d",
+      "evidenceHash": "e566ce0241f2150101fb2ef4b03d990adc0ddc7b62924ad8f526bc6d039a1504",
       "orderId": "CS-002",
-      "readiness": "Operationally Certified",
-      "verdict": "PASS"
+      "readiness": "Conditionally Operational",
+      "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "38942416a71be7b0939ab1eb27b746e9abf5847ca3d0313a1fa0122cdb6add36",
+      "evidenceHash": "77ec937160eb24047e0c07c54350b84b24f07dbc7eda779667582e74e7ecb8fd",
       "orderId": "CS-003",
-      "readiness": "Operationally Certified",
-      "verdict": "PASS"
+      "readiness": "Conditionally Operational",
+      "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "b841612872a870d0088b624b00448731a34caa2ff4bfdfeb96f169f25bc146bc",
+      "evidenceHash": "450b8ccabb4213867a7f81568642f7bf58e170e3a00c053c14c3718fffc0910d",
       "orderId": "CS-004",
       "readiness": "Conditionally Operational",
       "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "a5d08a9dbc16c1b40e887e401493b21d4a554e241e59e4748272d70722698b08",
+      "evidenceHash": "80081d199eeeae4f35f531649585183296c5c59634e370094f876d382368e980",
       "orderId": "CS-005",
-      "readiness": "Paper Ready",
-      "verdict": "PASS"
+      "readiness": "Conditionally Operational",
+      "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "9afa30c5584dc68c26d02acd7d025b0ad290a224f9134f9accd3b6c62476ffa5",
+      "evidenceHash": "e540c22cccaced599b7bc7d03eb77cd31e712560ce6def5248d2b61815fc2477",
       "orderId": "CS-006",
-      "readiness": "Operationally Certified",
-      "verdict": "PASS"
+      "readiness": "Conditionally Operational",
+      "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "0a18446bb501840d57bb696493eb9ce1644a0c1b819fa4725dccc0d2f4007dc6",
+      "evidenceHash": "59ca2f3455c0df26782e103254068d0b9453151c64b54eaf2f39860bf46ff649",
       "orderId": "CS-007",
-      "readiness": "Operationally Certified",
-      "verdict": "PASS"
+      "readiness": "Conditionally Operational",
+      "verdict": "INCOMPLETE"
     },
     {
-      "evidenceHash": "87e86677074130f484b229884e9ea27b7ca391bd5258962b27591e586ff59803",
+      "evidenceHash": "d7e720aa8a5b36ad3773a056e19545ebf4de60a1d8fe26c8877d00000f0672d8",
       "orderId": "CS-008",
       "readiness": "Conditionally Operational",
       "verdict": "INCOMPLETE"
@@ -171,7 +171,7 @@
     "evidenceAligned": true,
     "repositoryAligned": true
   },
-  "timestamp_utc": "2026-07-19T01:33:14.302550Z",
+  "timestamp_utc": "2026-07-19T01:56:36.132038Z",
   "title": "Enterprise Constitutional Certification and Readiness Authority",
   "verdict": "INCOMPLETE"
 }
