@@ -1,0 +1,692 @@
+[
+  {
+    "artifact_id": "ART-001",
+    "artifact_type": "scheduled_obligation.v1",
+    "authority_activation_record": "ACT-AUTH-SCHEDULER",
+    "bridge_execution_reference": "BRIDGE-SCHED-MISSION-001",
+    "deterministic_hash": "ad664cd36007f45b3a02b52b443b88988029296214b92ca6924f817d69e0dc48",
+    "input_manifest_id": "MANIFEST-AD664CD36007",
+    "persistence_reference": "PERSIST-AD664CD36007",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-SCHEDULER",
+    "producer_classification": "COMMAND_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669720Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-002",
+    "artifact_type": "validated_event.v1",
+    "authority_activation_record": "ACT-AUTH-EVENT-DETECTION",
+    "bridge_execution_reference": "BRIDGE-EVENT-MISSION-001",
+    "deterministic_hash": "54599c6ce21e7419088d3bbfc17144ab3e077073cb044a620e133f4595e70b94",
+    "input_manifest_id": "MANIFEST-54599C6CE21E",
+    "persistence_reference": "PERSIST-54599C6CE21E",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-EVENT-DETECTION",
+    "producer_classification": "INFORMATION_ONLY_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669757Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-003",
+    "artifact_type": "mission_plan.v1",
+    "authority_activation_record": "ACT-AUTH-MISSION-PLANNER",
+    "bridge_execution_reference": "BRIDGE-MISSION-WORKFLOW-001",
+    "deterministic_hash": "3cbdb165dd9f5f7e91997bf961e7232957dbebe482df717ba249d2371b690e9b",
+    "input_manifest_id": "MANIFEST-3CBDB165DD9F",
+    "persistence_reference": "PERSIST-3CBDB165DD9F",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-MISSION-PLANNER",
+    "producer_classification": "WORKFLOW_OWNER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669777Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-004",
+    "artifact_type": "workflow_activation.v1",
+    "authority_activation_record": "ACT-AUTH-WORKFLOW-ORCHESTRATOR",
+    "bridge_execution_reference": "BRIDGE-WORKFLOW-OFFICE-001",
+    "deterministic_hash": "d2143bf08e80b55c4ede752c60e6056a74291a97f9226b3b03e992a8682a1dc8",
+    "input_manifest_id": "MANIFEST-D2143BF08E80",
+    "persistence_reference": "PERSIST-D2143BF08E80",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-WORKFLOW-ORCHESTRATOR",
+    "producer_classification": "WORKFLOW_OWNER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669801Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-005",
+    "artifact_type": "strategic_mandate.v1",
+    "authority_activation_record": "ACT-AUTH-STRATEGIC-INTELLIGENCE",
+    "bridge_execution_reference": "BRIDGE-SI-SEEKER-001",
+    "deterministic_hash": "fa27573e56f21c363ceb27401ea60e4cb3d9b6d6b32e5d67d9d9313ef2d0cb08",
+    "input_manifest_id": "MANIFEST-FA27573E56F2",
+    "persistence_reference": "PERSIST-FA27573E56F2",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-STRATEGIC-INTELLIGENCE",
+    "producer_classification": "CONSTITUTIONAL_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669820Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-006",
+    "artifact_type": "decision_candidate.v1",
+    "authority_activation_record": "ACT-AUTH-SEEKER",
+    "bridge_execution_reference": "BRIDGE-SEEKER-ANALYST-001",
+    "deterministic_hash": "c536f29745b9ab8cdda2d4533ad8cdd8cb3fdb254884f38ae6aaf65119cbaf77",
+    "input_manifest_id": "MANIFEST-C536F29745B9",
+    "persistence_reference": "PERSIST-C536F29745B9",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-SEEKER",
+    "producer_classification": "CONSTITUTIONAL_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669840Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-007",
+    "artifact_type": "analysis_product.v1",
+    "authority_activation_record": "ACT-AUTH-ANALYST",
+    "bridge_execution_reference": "BRIDGE-ANALYST-RISK-001",
+    "deterministic_hash": "eb6e9a6aa64a198623d342545c17ced39c5aff732ae42d8738fbc8661a9e8a47",
+    "input_manifest_id": "MANIFEST-EB6E9A6AA64A",
+    "persistence_reference": "PERSIST-EB6E9A6AA64A",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-ANALYST",
+    "producer_classification": "CONSTITUTIONAL_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669856Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-008",
+    "artifact_type": "risk_recommendation.v1",
+    "authority_activation_record": "ACT-AUTH-RISK",
+    "bridge_execution_reference": "BRIDGE-RISK-AUTH-001",
+    "deterministic_hash": "6e3f80131beb0c36b8b76ca379262be82dbf5638fcb804f855031a5cae727125",
+    "input_manifest_id": "MANIFEST-6E3F80131BEB",
+    "persistence_reference": "PERSIST-6E3F80131BEB",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-RISK",
+    "producer_classification": "CONSTITUTIONAL_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669872Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-009",
+    "artifact_type": "trade_authorization.v1",
+    "authority_activation_record": "ACT-AUTH-AUTHORIZATION-AUTHORITY",
+    "bridge_execution_reference": "BRIDGE-AUTH-TRADER-001",
+    "deterministic_hash": "f09a20e1e8843fa45505a5442e32986258263afcbf9b886bb6a3a222e9453107",
+    "input_manifest_id": "MANIFEST-F09A20E1E884",
+    "persistence_reference": "PERSIST-F09A20E1E884",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-AUTHORIZATION-AUTHORITY",
+    "producer_classification": "AUTHORIZATION_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669890Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-010",
+    "artifact_type": "paper_order_ticket.v1",
+    "authority_activation_record": "ACT-AUTH-TRADER",
+    "bridge_execution_reference": "BRIDGE-TRADER-BROKER-001",
+    "deterministic_hash": "8fa7a69cb297e825a7861d9041fae4506411c3c27d424f6355168d9af4f3ccba",
+    "input_manifest_id": "MANIFEST-8FA7A69CB297",
+    "persistence_reference": "PERSIST-8FA7A69CB297",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-TRADER",
+    "producer_classification": "WORKFLOW_OWNER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669904Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-011",
+    "artifact_type": "broker_fill.v1",
+    "authority_activation_record": "ACT-AUTH-PAPER-BROKER",
+    "bridge_execution_reference": "BRIDGE-BROKER-FILL-001",
+    "deterministic_hash": "e35660901941fd15685af697fcde6a9989ac3905c940e5390287c0e0fc4ccd9a",
+    "input_manifest_id": "MANIFEST-E35660901941",
+    "persistence_reference": "PERSIST-E35660901941",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-PAPER-BROKER",
+    "producer_classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669919Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-012",
+    "artifact_type": "position_fill_application.v1",
+    "authority_activation_record": "ACT-AUTH-FILL-LEDGER",
+    "bridge_execution_reference": "BRIDGE-FILL-POSITION-001",
+    "deterministic_hash": "221d9390c2e13db79bf398b0b976fbe7d8dbb67aed89e195c0a5301525e89d18",
+    "input_manifest_id": "MANIFEST-221D9390C2E1",
+    "persistence_reference": "PERSIST-221D9390C2E1",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-FILL-LEDGER",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669933Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-013",
+    "artifact_type": "performance_truth_reference.v1",
+    "authority_activation_record": "ACT-AUTH-POSITION-REGISTRY",
+    "bridge_execution_reference": "BRIDGE-POSITION-PT-001",
+    "deterministic_hash": "af4b5d477f10430e74a3b36198de42b2c541bb02306516eef31511b5c403e05a",
+    "input_manifest_id": "MANIFEST-AF4B5D477F10",
+    "persistence_reference": "PERSIST-AF4B5D477F10",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-POSITION-REGISTRY",
+    "producer_classification": "TRUTH_PRODUCER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669948Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-014",
+    "artifact_type": "position_enrollment.v1",
+    "authority_activation_record": "ACT-AUTH-POSITION-REGISTRY",
+    "bridge_execution_reference": "BRIDGE-POSITION-EOCK-001",
+    "deterministic_hash": "61ff76f225515839e77ea7001d02ed20b886ee7d545f0a4127e8cfdabcf549b7",
+    "input_manifest_id": "MANIFEST-61FF76F22551",
+    "persistence_reference": "PERSIST-61FF76F22551",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-POSITION-REGISTRY",
+    "producer_classification": "TRUTH_PRODUCER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669963Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-015",
+    "artifact_type": "position_surveillance_request.v1",
+    "authority_activation_record": "ACT-AUTH-EO-CK",
+    "bridge_execution_reference": "BRIDGE-EOCK-SURVEILLANCE-001",
+    "deterministic_hash": "c5e076e00c34fec269afa3d2b28db0a873df77102b3070c0a1ea142b0ec2f5e3",
+    "input_manifest_id": "MANIFEST-C5E076E00C34",
+    "persistence_reference": "PERSIST-C5E076E00C34",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-EO-CK",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669978Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-016",
+    "artifact_type": "exit_signal.v1",
+    "authority_activation_record": "ACT-AUTH-SURVEILLANCE",
+    "bridge_execution_reference": "BRIDGE-SURVEILLANCE-EXIT-001",
+    "deterministic_hash": "d82f47911a902562a3738c1972b9dce0e26070aeffd487c4fcb1111a38efb0c1",
+    "input_manifest_id": "MANIFEST-D82F47911A90",
+    "persistence_reference": "PERSIST-D82F47911A90",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-SURVEILLANCE",
+    "producer_classification": "INFORMATION_ONLY_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.669992Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-017",
+    "artifact_type": "exit_authorization_request.v1",
+    "authority_activation_record": "ACT-AUTH-EXIT-DECISION",
+    "bridge_execution_reference": "BRIDGE-EXIT-AUTH-001",
+    "deterministic_hash": "79b4ae4d16c3186bdc4054eb8c589ff8e41b23c109f73a089d87a0d7f37d10e1",
+    "input_manifest_id": "MANIFEST-79B4AE4D16C3",
+    "persistence_reference": "PERSIST-79B4AE4D16C3",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-EXIT-DECISION",
+    "producer_classification": "INFORMATION_ONLY_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670009Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-018",
+    "artifact_type": "closing_order_intent.v1",
+    "authority_activation_record": "ACT-AUTH-AUTHORIZATION-AUTHORITY",
+    "bridge_execution_reference": "BRIDGE-EXIT-TRADER-001",
+    "deterministic_hash": "ba0e5ad88db49790e5e7a6d60d1d255bdebf3bbf3dc11a23d5adfa5290d54eeb",
+    "input_manifest_id": "MANIFEST-BA0E5AD88DB4",
+    "persistence_reference": "PERSIST-BA0E5AD88DB4",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-AUTHORIZATION-AUTHORITY",
+    "producer_classification": "AUTHORIZATION_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670024Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-019",
+    "artifact_type": "closing_fill.v1",
+    "authority_activation_record": "ACT-AUTH-PAPER-BROKER",
+    "bridge_execution_reference": "BRIDGE-CLOSING-FILL-POSITION-001",
+    "deterministic_hash": "7722ecfa195a237eaa215c373690e0948c6438d236e7074d095955300facefbc",
+    "input_manifest_id": "MANIFEST-7722ECFA195A",
+    "persistence_reference": "PERSIST-7722ECFA195A",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-PAPER-BROKER",
+    "producer_classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670039Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-020",
+    "artifact_type": "closed_position_truth.v1",
+    "authority_activation_record": "ACT-AUTH-POSITION-REGISTRY",
+    "bridge_execution_reference": "BRIDGE-CLOSE-CPT-001",
+    "deterministic_hash": "cfc46a23edde484dedcd00e240eb7826fd2354f2d77ec89c157d1a0bd27b797c",
+    "input_manifest_id": "MANIFEST-CFC46A23EDDE",
+    "persistence_reference": "PERSIST-CFC46A23EDDE",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-POSITION-REGISTRY",
+    "producer_classification": "TRUTH_PRODUCER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670053Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-021",
+    "artifact_type": "terminal_performance_truth.v1",
+    "authority_activation_record": "ACT-AUTH-CLOSED-POSITION-TRUTH",
+    "bridge_execution_reference": "BRIDGE-CPT-PT-001",
+    "deterministic_hash": "bb7b2a57c2e2d232614c232f476434b70a190bc15aaf129d6a20362f670094fe",
+    "input_manifest_id": "MANIFEST-BB7B2A57C2E2",
+    "persistence_reference": "PERSIST-BB7B2A57C2E2",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-CLOSED-POSITION-TRUTH",
+    "producer_classification": "TRUTH_PRODUCER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670069Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-022",
+    "artifact_type": "historian_record.v1",
+    "authority_activation_record": "ACT-AUTH-PERFORMANCE-TRUTH",
+    "bridge_execution_reference": "BRIDGE-PT-HISTORIAN-001",
+    "deterministic_hash": "37805aa626192720ae4a71a3bfa334c146d01e62b6c2ff279369880228977b73",
+    "input_manifest_id": "MANIFEST-37805AA62619",
+    "persistence_reference": "PERSIST-37805AA62619",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-PERFORMANCE-TRUTH",
+    "producer_classification": "TRUTH_PRODUCER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670084Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-023",
+    "artifact_type": "learning_input.v1",
+    "authority_activation_record": "ACT-AUTH-HISTORIAN",
+    "bridge_execution_reference": "BRIDGE-HISTORIAN-LEARNING-001",
+    "deterministic_hash": "75124f7bac5fc385b71d378e4d472815a060629be132ef5e342d385dfb2df03f",
+    "input_manifest_id": "MANIFEST-75124F7BAC5F",
+    "persistence_reference": "PERSIST-75124F7BAC5F",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-HISTORIAN",
+    "producer_classification": "TRUTH_PRODUCER",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670101Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-024",
+    "artifact_type": "commander_directive.v1",
+    "authority_activation_record": "ACT-AUTH-COMMANDER",
+    "bridge_execution_reference": "BRIDGE-COMMANDER-DIRECTIVE-001",
+    "deterministic_hash": "b7cd19a96a30d21559ae92641bf190ae706bee22779a6d99a88a7890ed961840",
+    "input_manifest_id": "MANIFEST-B7CD19A96A30",
+    "persistence_reference": "PERSIST-B7CD19A96A30",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-COMMANDER",
+    "producer_classification": "COMMAND_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670115Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-025",
+    "artifact_type": "api_execution_request.v1",
+    "authority_activation_record": "ACT-AUTH-COST-GOVERNOR",
+    "bridge_execution_reference": "BRIDGE-COST-API-001",
+    "deterministic_hash": "63c44d45257cfd1c4f3d1293c5fcdbc9b57e01f7dd2d177c9db3a6817c828012",
+    "input_manifest_id": "MANIFEST-63C44D45257C",
+    "persistence_reference": "PERSIST-63C44D45257C",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-COST-GOVERNOR",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670131Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-026",
+    "artifact_type": "freshness_cache_decision.v1",
+    "authority_activation_record": "ACT-AUTH-COMMUNICATIONS-BUS",
+    "bridge_execution_reference": "BRIDGE-FRESHNESS-ANALYTICAL-001",
+    "deterministic_hash": "9241fe7b39f192ee0917f4d5b05f6d5685060972ec6eb404e81e8a879a051777",
+    "input_manifest_id": "MANIFEST-9241FE7B39F1",
+    "persistence_reference": "PERSIST-9241FE7B39F1",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-COMMUNICATIONS-BUS",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670147Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-027",
+    "artifact_type": "enterprise_persistence_snapshot.v1",
+    "authority_activation_record": "ACT-AUTH-PERSISTENCE",
+    "bridge_execution_reference": "BRIDGE-PERSIST-RECOVERY-001",
+    "deterministic_hash": "1beccd08ff5a941563a6d75de3ab91ebe53df74dcf7543852b76443bf118baf4",
+    "input_manifest_id": "MANIFEST-1BECCD08FF5A",
+    "persistence_reference": "PERSIST-1BECCD08FF5A",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-PERSISTENCE",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670162Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-028",
+    "artifact_type": "runtime_recovery_result.v1",
+    "authority_activation_record": "ACT-AUTH-PERSISTENCE",
+    "bridge_execution_reference": "BRIDGE-RECOVERY-RUNTIME-001",
+    "deterministic_hash": "a162a92c09cf05c489393eaf78681371e59f0b0cf70ecc2f4e48ea510078baea",
+    "input_manifest_id": "MANIFEST-A162A92C09CF",
+    "persistence_reference": "PERSIST-A162A92C09CF",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-PERSISTENCE",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670178Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-029",
+    "artifact_type": "replay_lab_result.v1",
+    "authority_activation_record": "ACT-AUTH-REPLAY",
+    "bridge_execution_reference": "BRIDGE-REPLAY-LAB-001",
+    "deterministic_hash": "2ff30ba95a52283a7320d16661d9a24e50fd4579b2f643c1bfbea2aeea7172c4",
+    "input_manifest_id": "MANIFEST-2FF30BA95A52",
+    "persistence_reference": "PERSIST-2FF30BA95A52",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-REPLAY",
+    "producer_classification": "INFORMATION_ONLY_OFFICE",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670199Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  },
+  {
+    "artifact_id": "ART-030",
+    "artifact_type": "assurance_read_model.v1",
+    "authority_activation_record": "ACT-AUTH-EO-DG",
+    "bridge_execution_reference": "BRIDGE-ASSURANCE-COMMANDER-001",
+    "deterministic_hash": "224ae0ddfd02cd394dbab7f1cffd6fb743fcc0061e5cb44ab1413d66a014aab7",
+    "input_manifest_id": "MANIFEST-224AE0DDFD02",
+    "persistence_reference": "PERSIST-224AE0DDFD02",
+    "policy_versions": [
+      "TC-002.1"
+    ],
+    "producer_authority_id": "AUTH-EO-DG",
+    "producer_classification": "SERVICE_AUTHORITY",
+    "production_timestamp_utc": "2026-07-19T02:07:29.670224Z",
+    "proof_domain": "PAPER",
+    "schema_version": "TC-002.1",
+    "source_artifact_ids": [
+      "SOURCE-TC002"
+    ],
+    "token_reference": "TOK-TC002",
+    "verified": true,
+    "workflow_id": "WF-TC002"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-011",
+    "component_name": "Duty Officer",
+    "constitutional_role": "Duty Officer bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  }
+]

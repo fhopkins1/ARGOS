@@ -38,6 +38,9 @@ from .continuous_paper_endurance import EO_DQ_VERSION, ContinuousPaperEnduranceA
 from .independent_constitutional_certification import EO_DR_VERSION, EvidenceValidationRecord, IndependentCertificationReport, IndependentConstitutionalCertificationAuthority, IndependentVerdict, ProductionReadinessClass
 from .constitutional_certification_series import CS_VERSION, CSCertificationReport, CSCertificationRow, CSCertificationState, CSVerdict, ConstitutionalCertificationSeries, run_all_cs_certifications
 from .trace_equivalence import TC_001_VERSION, CanonicalRuntimeIdentity, ExecutionOrigin, TraceAuthenticityRecord, TraceClaimType, TraceCoverageAssessment, TraceEligibilityResult, TraceEligibilityStatus, TraceEquivalenceAuthority, TraceEquivalenceCertification, TraceEquivalenceLevel, TraceRejectionCode, execute_tc001_certification
+from .authority_promotion_closure import TC_002_VERSION, ArtifactProvenanceRecord, AuthorityActivationRecord, AuthorityClassification, AuthorityIdentity, AuthorityPromotionAuthority, AuthorityPromotionRejectionCode, AuthorityRegistryStatus, ConstitutionalAuthorityRegistry, ConstitutionalPromotionDecision, CoreBridgeAuthorityResult, DelegationRecord, PromotionResult as TC002PromotionResult, execute_tc002_certification
+from .canonical_bridge_dynamic_coverage import TC_003_VERSION, BridgeCertificationGateStatus, BridgeCoverageSummary, BridgeExecutionPlanRow, CanonicalBridgeCoverageRow, DynamicCoverageStatus, execute_tc003_certification
+from .orphan_office_closure import TC_004_VERSION, OfficeCertificationMatrixStatus, OfficeClosureRejectionCode, OfficeDisposition, OfficeDispositionRecord, execute_tc004_certification
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
@@ -252,6 +255,33 @@ __all__ = [
     "TraceEquivalenceLevel",
     "TraceRejectionCode",
     "execute_tc001_certification",
+    "TC_002_VERSION",
+    "ArtifactProvenanceRecord",
+    "AuthorityActivationRecord",
+    "AuthorityClassification",
+    "AuthorityIdentity",
+    "AuthorityPromotionAuthority",
+    "AuthorityPromotionRejectionCode",
+    "AuthorityRegistryStatus",
+    "ConstitutionalAuthorityRegistry",
+    "ConstitutionalPromotionDecision",
+    "CoreBridgeAuthorityResult",
+    "DelegationRecord",
+    "TC002PromotionResult",
+    "execute_tc002_certification",
+    "TC_003_VERSION",
+    "BridgeCertificationGateStatus",
+    "BridgeCoverageSummary",
+    "BridgeExecutionPlanRow",
+    "CanonicalBridgeCoverageRow",
+    "DynamicCoverageStatus",
+    "execute_tc003_certification",
+    "TC_004_VERSION",
+    "OfficeCertificationMatrixStatus",
+    "OfficeClosureRejectionCode",
+    "OfficeDisposition",
+    "OfficeDispositionRecord",
+    "execute_tc004_certification",
     "AuthoritativeWriteSite",
     "BlockingLevel",
     "BrokerPositionInvariantMonitor",

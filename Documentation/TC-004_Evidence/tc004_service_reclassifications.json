@@ -1,0 +1,37 @@
+[
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "SERVICE_CONFIRMED",
+    "component_id": "OFFICE-EO-DB-020",
+    "component_name": "Paper Broker",
+    "constitutional_role": "Paper Broker bridge authority and handoff participant.",
+    "disposition": "RECLASSIFY_SERVICE_OR_ADAPTER",
+    "egress": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "final_classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "adapter"
+  }
+]

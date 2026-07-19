@@ -1,0 +1,1095 @@
+[
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-001",
+    "component_name": "API Gateway",
+    "constitutional_role": "API Gateway bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-COST-API-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-002",
+    "component_name": "Analyst",
+    "constitutional_role": "Analyst bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-003",
+    "component_name": "Authorization Authority",
+    "constitutional_role": "Authorization Authority bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-004",
+    "component_name": "Canonical Runtime",
+    "constitutional_role": "Canonical Runtime bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-005",
+    "component_name": "Closed Position Truth",
+    "constitutional_role": "Closed Position Truth bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-CPT-PT-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-006",
+    "component_name": "Commander",
+    "constitutional_role": "Commander bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-007",
+    "component_name": "Communications Bus",
+    "constitutional_role": "Communications Bus bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-008",
+    "component_name": "Cost Governor",
+    "constitutional_role": "Cost Governor bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-COST-API-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-009",
+    "component_name": "Decision Laboratory",
+    "constitutional_role": "Decision Laboratory bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-010",
+    "component_name": "Doctrine",
+    "constitutional_role": "Doctrine bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-011",
+    "component_name": "Duty Officer",
+    "constitutional_role": "Duty Officer bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "CANONICAL_RUNTIME",
+    "ingress": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-012",
+    "component_name": "EO-CK",
+    "constitutional_role": "EO-CK bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-013",
+    "component_name": "EO-DG",
+    "constitutional_role": "EO-DG bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-014",
+    "component_name": "Event Detection",
+    "constitutional_role": "Event Detection bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-015",
+    "component_name": "Exit Decision",
+    "constitutional_role": "Exit Decision bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-016",
+    "component_name": "Fill Ledger",
+    "constitutional_role": "Fill Ledger bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-017",
+    "component_name": "Historian",
+    "constitutional_role": "Historian bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "service"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-018",
+    "component_name": "Learning Systems",
+    "constitutional_role": "Learning Systems bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-019",
+    "component_name": "Mission Planner",
+    "constitutional_role": "Mission Planner bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "SERVICE_CONFIRMED",
+    "component_id": "OFFICE-EO-DB-020",
+    "component_name": "Paper Broker",
+    "constitutional_role": "Paper Broker bridge authority and handoff participant.",
+    "disposition": "RECLASSIFY_SERVICE_OR_ADAPTER",
+    "egress": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "final_classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "adapter"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-021",
+    "component_name": "Performance Truth",
+    "constitutional_role": "Performance Truth bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "service"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-022",
+    "component_name": "Persistence",
+    "constitutional_role": "Persistence bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-023",
+    "component_name": "Position Registry",
+    "constitutional_role": "Position Registry bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-024",
+    "component_name": "Replay",
+    "constitutional_role": "Replay bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-025",
+    "component_name": "Risk",
+    "constitutional_role": "Risk bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-026",
+    "component_name": "Runtime Provider",
+    "constitutional_role": "Runtime Provider bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-027",
+    "component_name": "Scheduler",
+    "constitutional_role": "Scheduler bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-SCHED-MISSION-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-028",
+    "component_name": "Seeker",
+    "constitutional_role": "Seeker bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-029",
+    "component_name": "Strategic Intelligence",
+    "constitutional_role": "Strategic Intelligence bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-030",
+    "component_name": "Surveillance",
+    "constitutional_role": "Surveillance bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "Production office has no TC-001-qualified canonical office trace yet.",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-031",
+    "component_name": "Trader",
+    "constitutional_role": "Trader bridge authority and handoff participant.",
+    "disposition": "INTEGRATE",
+    "egress": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "final_classification": "CORE_PRODUCTION",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "CORE_PRODUCTION",
+    "production_necessity": "required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  },
+  {
+    "activation_authority": [
+      "CANONICAL_BRIDGE",
+      "SCHEDULER",
+      "COMMANDER"
+    ],
+    "background_activity": "no autonomous work while Dormant",
+    "blocker": "",
+    "certification_status": "STATICALLY_VALIDATED",
+    "component_id": "OFFICE-EO-DB-032",
+    "component_name": "Workflow Orchestrator",
+    "constitutional_role": "Workflow Orchestrator bridge authority and handoff participant.",
+    "disposition": "INFORMATION_ONLY",
+    "egress": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "final_classification": "INFORMATION_ONLY",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "lifecycle": "DORMANT",
+    "prior_classification": "INFORMATION_ONLY",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER",
+      "PROOF",
+      "REPLAY"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": false,
+    "true_type": "information-only component"
+  },
+  {
+    "activation_authority": [],
+    "background_activity": "no production activation",
+    "blocker": "",
+    "certification_status": "FUTURE_RESERVED_CONFIRMED",
+    "component_id": "OFFICE-FUTURE-EO-DM",
+    "component_name": "EO-DM Position Lifecycle Completion",
+    "constitutional_role": "Reserved endpoint for later full position lifecycle closure.",
+    "disposition": "FUTURE_RESERVED",
+    "egress": [],
+    "final_classification": "FUTURE_RESERVED",
+    "highest_trace_equivalence_level": "STRUCTURAL",
+    "ingress": [],
+    "lifecycle": "DORMANT",
+    "prior_classification": "FUTURE_RESERVED",
+    "production_necessity": "not production-required",
+    "proof_domains": [
+      "PAPER"
+    ],
+    "recovery": "required",
+    "schema_version": "TC-004.1",
+    "token_requirement": true,
+    "true_type": "true office"
+  }
+]

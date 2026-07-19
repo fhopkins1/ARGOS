@@ -1,0 +1,136 @@
+[
+  {
+    "permits_degraded": false,
+    "permits_learning": false,
+    "permits_replay": false,
+    "permitted_consumers": [
+      "Trader"
+    ],
+    "permitted_source_authorities": [
+      "Seeker",
+      "Analyst",
+      "Risk",
+      "Trader"
+    ],
+    "requires_operational_envelope": false,
+    "scope": "TRADER_ORDER_CONSTRUCTION"
+  },
+  {
+    "permits_degraded": false,
+    "permits_learning": false,
+    "permits_replay": false,
+    "permitted_consumers": [
+      "DeterministicPaperBrokerage"
+    ],
+    "permitted_source_authorities": [
+      "Trader"
+    ],
+    "requires_operational_envelope": false,
+    "scope": "BROKER_SUBMISSION"
+  },
+  {
+    "permits_degraded": false,
+    "permits_learning": false,
+    "permits_replay": false,
+    "permitted_consumers": [
+      "PositionRegistry"
+    ],
+    "permitted_source_authorities": [
+      "DeterministicPaperBrokerage"
+    ],
+    "requires_operational_envelope": true,
+    "scope": "POSITION_REGISTRY_MUTATION"
+  },
+  {
+    "permits_degraded": false,
+    "permits_learning": false,
+    "permits_replay": false,
+    "permitted_consumers": [
+      "PerformanceTruthEngine"
+    ],
+    "permitted_source_authorities": [
+      "DeterministicPaperBrokerage",
+      "PositionRegistry",
+      "PerformanceTruthEngine"
+    ],
+    "requires_operational_envelope": true,
+    "scope": "PERFORMANCE_TRUTH_INGESTION"
+  },
+  {
+    "permits_degraded": false,
+    "permits_learning": false,
+    "permits_replay": true,
+    "permitted_consumers": [
+      "Historian"
+    ],
+    "permitted_source_authorities": [
+      "PerformanceTruthEngine",
+      "PositionRegistry",
+      "DeterministicPaperBrokerage"
+    ],
+    "requires_operational_envelope": true,
+    "scope": "HISTORIAN_PRESERVATION"
+  },
+  {
+    "permits_degraded": false,
+    "permits_learning": true,
+    "permits_replay": false,
+    "permitted_consumers": [
+      "EnterpriseLearningEngine",
+      "LearningIntegrationOffice"
+    ],
+    "permitted_source_authorities": [
+      "PerformanceTruthEngine",
+      "ClosedPositionTruthBuilder",
+      "Historian"
+    ],
+    "requires_operational_envelope": true,
+    "scope": "CERTIFIED_LEARNING"
+  },
+  {
+    "permits_degraded": true,
+    "permits_learning": false,
+    "permits_replay": true,
+    "permitted_consumers": [
+      "Commander"
+    ],
+    "permitted_source_authorities": [
+      "Seeker",
+      "Analyst",
+      "Risk",
+      "Trader",
+      "PerformanceTruthEngine",
+      "Historian"
+    ],
+    "requires_operational_envelope": false,
+    "scope": "COMMANDER_DISPLAY"
+  },
+  {
+    "permits_degraded": true,
+    "permits_learning": false,
+    "permits_replay": true,
+    "permitted_consumers": [
+      "MarketReplayEngine"
+    ],
+    "permitted_source_authorities": [
+      "Replay",
+      "MarketReplayEngine"
+    ],
+    "requires_operational_envelope": false,
+    "scope": "REPLAY_ONLY"
+  },
+  {
+    "permits_degraded": true,
+    "permits_learning": false,
+    "permits_replay": false,
+    "permitted_consumers": [
+      "SimulationResearch"
+    ],
+    "permitted_source_authorities": [
+      "Simulation",
+      "MarketReplayEngine"
+    ],
+    "requires_operational_envelope": false,
+    "scope": "SIMULATION_RESEARCH"
+  }
+]

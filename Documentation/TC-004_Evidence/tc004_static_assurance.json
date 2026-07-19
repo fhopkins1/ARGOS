@@ -1,0 +1,47 @@
+{
+  "componentInventoryCount": 204,
+  "directLifecycleActivationCountsAsProductionTrace": false,
+  "duplicateRoleAnalysis": [],
+  "eoDlRejectionCodesPreserved": [
+    "OFFICE_NOT_REGISTERED",
+    "OFFICE_RETIRED",
+    "OFFICE_PROHIBITED",
+    "OFFICE_FUTURE_RESERVED",
+    "OFFICE_INVALID_ACTIVATION_AUTHORITY",
+    "OFFICE_TOKEN_REQUIRED",
+    "OFFICE_WRONG_OWNER",
+    "OFFICE_DORMANT_MUTATION_REJECTED",
+    "OFFICE_INVALID_TRANSITION"
+  ],
+  "futureReservedProductionReachable": false,
+  "nonterminalOfficesWithoutEgress": [],
+  "productionOfficesWithoutIngress": [
+    "OFFICE-EO-DB-029"
+  ],
+  "rejectionCodes": [
+    "OFFICE_NOT_REGISTERED",
+    "OFFICE_IMPLEMENTATION_MISSING",
+    "OFFICE_CLASSIFICATION_INVALID",
+    "OFFICE_ORPHANED",
+    "OFFICE_NO_VALID_INGRESS",
+    "OFFICE_NO_VALID_EGRESS",
+    "OFFICE_ACTIVATION_UNAUTHORIZED",
+    "OFFICE_TOKEN_REQUIRED",
+    "OFFICE_TOKEN_INVALID",
+    "OFFICE_PROOF_DOMAIN_VIOLATION",
+    "OFFICE_DORMANT",
+    "OFFICE_ALREADY_ACTIVE",
+    "OFFICE_STATE_TRANSITION_INVALID",
+    "OFFICE_BACKGROUND_AUTHORITY_PROHIBITED",
+    "OFFICE_SELF_WAKE_PROHIBITED",
+    "OFFICE_FUTURE_RESERVED",
+    "OFFICE_RETIRED",
+    "OFFICE_PROHIBITED",
+    "OFFICE_UNRESOLVED",
+    "OFFICE_DUPLICATE_RESPONSIBILITY",
+    "OFFICE_RECOVERY_EVIDENCE_MISSING",
+    "OFFICE_SERVICE_RECLASSIFICATION_REQUIRED"
+  ],
+  "selfWakeMethodsAllowed": false,
+  "servicesMayHoldWorkflowTokens": false
+}

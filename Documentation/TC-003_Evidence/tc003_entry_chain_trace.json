@@ -1,0 +1,24 @@
+{
+  "blocked": [
+    {
+      "blocker": "Missing TC-001-qualified canonical runtime trace.",
+      "bridgeId": "BRIDGE-TRADER-BROKER-001"
+    },
+    {
+      "blocker": "Missing TC-001-qualified canonical runtime trace.",
+      "bridgeId": "BRIDGE-BROKER-FILL-001"
+    },
+    {
+      "blocker": "Missing TC-001-qualified canonical runtime trace.",
+      "bridgeId": "BRIDGE-FILL-POSITION-001"
+    }
+  ],
+  "bridgeIds": [
+    "BRIDGE-TRADER-BROKER-001",
+    "BRIDGE-BROKER-FILL-001",
+    "BRIDGE-FILL-POSITION-001"
+  ],
+  "campaign": "entry chain",
+  "canonicalRuntimeExecuted": [],
+  "verdict": "INCOMPLETE"
+}
