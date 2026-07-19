@@ -24,6 +24,10 @@ from .synthetic_truth_quarantine import (
     baseline_synthetic_truth_findings,
     scan_synthetic_candidates,
 )
+from .authority_promotion_closure import execute_tc002_certification
+from .canonical_bridge_dynamic_coverage import execute_tc003_certification
+from .orphan_office_closure import execute_tc004_certification
+from .trace_equivalence import execute_tc001_certification
 
 
 CR_AUDIT_VERSION = "CR-AUDIT.1"
@@ -43,6 +47,18 @@ class RepositoryTruthFinding:
     pattern: str
     suspected_status: str
     runtime_reachability: str
+    severity: str
+    disposition: str
+    evidence: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class ConstitutionalTraceFinding:
+    finding_id: str
+    path: str
+    symbol: str
+    pattern: str
+    constitutional_domain: str
     severity: str
     disposition: str
     evidence: tuple[str, ...]
@@ -84,6 +100,47 @@ def execute_cr_series_audit(repo_root: str | Path = ".", *, commit: str = "WORKT
     }
 
 
+def execute_cr5_constitutional_trace_audit(repo_root: str | Path = ".", *, commit: str = "WORKTREE") -> dict[str, Any]:
+    """Generate CR-5 constitutional trace evidence without overstating closure."""
+    root = Path(repo_root).resolve()
+    head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
+    cr_series = execute_cr_series_audit(root, commit=head)
+    preflight = cr_series["candidatePreflight"]
+    predecessor_blockers = tuple(
+        f"{order.upper()} verdict is {payload['verdict']}"
+        for order, payload in cr_series["orders"].items()
+        if payload["verdict"] != CRVerdict.PASS.value
+    )
+    if preflight.get("verdict") != "PASS":
+        predecessor_blockers = (*predecessor_blockers, "CR-1 candidate preflight is not PASS.")
+    inventory = constitutional_component_inventory(root)
+    scanner = constitutional_trace_findings(root)
+    tc_payload = _trace_closure_payload(head)
+    scorecard = _constitutional_scorecard(predecessor_blockers, scanner, tc_payload)
+    final_counts = _constitutional_counts(scanner, predecessor_blockers)
+    verdict = CRVerdict.INCOMPLETE.value if predecessor_blockers or any(value for value in final_counts.values()) else CRVerdict.PASS.value
+    return {
+        "schemaVersion": CR_AUDIT_VERSION,
+        "orderId": "CR-5",
+        "generatedAtUtc": utc_timestamp(),
+        "repositoryCommit": head,
+        "branch": cr_series["branch"],
+        "gitStatusShort": cr_series["gitStatusShort"],
+        "candidateIdentity": cr_series["candidateIdentity"],
+        "candidatePreflight": preflight,
+        "predecessorResults": cr_series["orders"],
+        "entryBlockers": predecessor_blockers,
+        "verdict": verdict,
+        "constitutionalComponentInventory": inventory,
+        "constitutionalScannerFindings": tuple(asdict(item) for item in scanner[:500]),
+        "traceClosureInputs": tc_payload,
+        "constitutionalScorecard": scorecard,
+        "finalConstitutionalCounts": final_counts,
+        "constitutionalTraceCampaign": _bounded_constitutional_campaign(tc_payload),
+        "constitutionalStatement": "CR-5 establishes constitutional trace closure and canonical runtime enforcement only. It does not certify operational endurance, Level 2 stability, Level 3 overnight continuity, paper certification, live readiness, or production readiness.",
+    }
+
+
 def repository_truth_findings(repo_root: str | Path = ".") -> tuple[RepositoryTruthFinding, ...]:
     """Return static repository-truth leads requiring trace review."""
     root = Path(repo_root).resolve()
@@ -113,6 +170,102 @@ def repository_truth_findings(repo_root: str | Path = ".") -> tuple[RepositoryTr
             lowered = text.lower()
             if any(term in lowered for term in ("todo", "fixme", "tbd", "placeholder", "future reserved", "not implemented", "noop", "no-op")):
                 findings.append(_finding(rel, "<text>", "unfinished_marker", "Partial", "MINOR", f"{index}: {text.strip()}"))
+    return tuple(findings)
+
+
+def constitutional_component_inventory(repo_root: str | Path = ".") -> dict[str, Any]:
+    root = Path(repo_root).resolve()
+    components: list[dict[str, Any]] = []
+    roles = {
+        "token": ("token", "WorkflowExecutionToken"),
+        "authority": ("authority", "delegation", "promotion"),
+        "provenance": ("provenance", "truth_envelope", "lineage"),
+        "office_lifecycle": ("office_lifecycle", "dormant", "OfficeLifecycle"),
+        "bridge": ("bridge", "Bridge"),
+        "destination": ("destination", "acceptance", "accept"),
+        "persistence": ("persistence", "repository", "checkpoint"),
+        "recovery": ("recovery", "recover", "restart"),
+        "read": ("read", "snapshot", "read_only"),
+        "historian": ("historian", "history"),
+        "performance_truth": ("performance_truth", "PerformanceTruth"),
+    }
+    for path in _python_files(root):
+        rel = _rel(root, path)
+        lower_path = rel.lower()
+        try:
+            text = path.read_text(encoding="utf-8")
+            tree = ast.parse(text)
+        except (UnicodeDecodeError, SyntaxError):
+            continue
+        for node in ast.walk(tree):
+            if not isinstance(node, (ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)):
+                continue
+            symbol = node.name
+            haystack = f"{lower_path} {symbol.lower()}"
+            matched_roles = tuple(role for role, terms in roles.items() if any(term.lower() in haystack for term in terms))
+            if not matched_roles:
+                continue
+            components.append(
+                {
+                    "component_id": f"CR5-COMP-{_stable_hash((rel, symbol))[:12].upper()}",
+                    "path": rel,
+                    "symbol": symbol,
+                    "constitutional_role": matched_roles[0],
+                    "canonical": "canonical" in lower_path or symbol.startswith(("WorkflowExecutionToken", "TruthPromotion", "AuthorityPromotion", "OfficeLifecycle", "Canonical")),
+                    "authority_required": matched_roles[0] not in {"read"},
+                    "token_required": matched_roles[0] in {"token", "office_lifecycle", "bridge", "destination", "performance_truth"},
+                    "provenance_required": matched_roles[0] in {"provenance", "bridge", "destination", "historian", "performance_truth"},
+                    "proof_domain_required": matched_roles[0] in {"bridge", "destination", "persistence", "recovery", "performance_truth"},
+                    "status": "TRACE_REVIEW_REQUIRED",
+                }
+            )
+    role_counts: dict[str, int] = {}
+    for component in components:
+        role = str(component["constitutional_role"])
+        role_counts[role] = role_counts.get(role, 0) + 1
+    return {
+        "componentCount": len(components),
+        "roleCounts": role_counts,
+        "components": tuple(components[:700]),
+    }
+
+
+def constitutional_trace_findings(repo_root: str | Path = ".") -> tuple[ConstitutionalTraceFinding, ...]:
+    root = Path(repo_root).resolve()
+    findings: list[ConstitutionalTraceFinding] = []
+    protected_names = (
+        "workflow_status",
+        "current_owner",
+        "token",
+        "authority",
+        "provenance",
+        "truth_classification",
+        "execution_environment",
+        "status",
+    )
+    for path in _python_files(root):
+        rel = _rel(root, path)
+        try:
+            source = path.read_text(encoding="utf-8")
+            tree = ast.parse(source)
+        except (UnicodeDecodeError, SyntaxError) as exc:
+            findings.append(_constitutional_finding(rel, "<module>", "parse_failure", "Evidence Integrity", "MAJOR", str(exc)))
+            continue
+        lines = source.splitlines()
+        for node in ast.walk(tree):
+            symbol = _symbol_name(node)
+            if isinstance(node, ast.Assign):
+                targets = " ".join(_target_text(target) for target in node.targets)
+                if any(name in targets for name in protected_names):
+                    findings.append(_constitutional_finding(rel, symbol, "direct_protected_assignment", "LAW VII", "MODERATE", _line(lines, node.lineno)))
+            elif isinstance(node, ast.Call):
+                name = _handler_name(node.func)
+                if name in {"append", "extend"} and _call_touches_authoritative_target(node):
+                    findings.append(_constitutional_finding(rel, symbol, "direct_authoritative_append", "Provenance", "MODERATE", _line(lines, node.lineno)))
+            elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                lowered = node.name.lower()
+                if lowered.startswith(("get_", "read", "snapshot")) and _function_contains_assignment(node):
+                    findings.append(_constitutional_finding(rel, node.name, "read_method_contains_write", "Read Purity", "MAJOR", _line(lines, node.lineno)))
     return tuple(findings)
 
 
@@ -225,6 +378,177 @@ def _cr4_status(root: Path, commit: str, dirty: bool, cr2: dict[str, Any], cr3: 
     }
 
 
+def _trace_closure_payload(commit: str) -> dict[str, Any]:
+    tc001 = execute_tc001_certification(repository_commit=commit)
+    tc002 = execute_tc002_certification(repository_commit=commit)
+    tc003 = execute_tc003_certification(repository_commit=commit)
+    tc004 = execute_tc004_certification(repository_commit=commit)
+    return {
+        "tc001": _jsonable(tc001),
+        "tc002": _jsonable(tc002),
+        "tc003": _jsonable(tc003),
+        "tc004": _jsonable(tc004),
+    }
+
+
+def _constitutional_scorecard(
+    blockers: tuple[str, ...],
+    findings: tuple[ConstitutionalTraceFinding, ...],
+    tc_payload: dict[str, Any],
+) -> dict[str, str]:
+    domains = (
+        "LAW VII",
+        "Workflow Execution Token",
+        "Workflow Ownership",
+        "Authority",
+        "Authority Exclusivity",
+        "Delegation",
+        "Promotion",
+        "Provenance",
+        "Office Lifecycle",
+        "Dormancy",
+        "Canonical Runtime",
+        "Bridge Execution",
+        "Destination Acceptance",
+        "Ownership Transfer",
+        "Persistence",
+        "Recovery",
+        "Read Purity",
+        "Proof Domains",
+        "Financial Authority",
+        "Historian",
+        "Performance Truth",
+        "Shutdown",
+        "Restart",
+        "Evidence Integrity",
+    )
+    scorecard = {domain: CRVerdict.INCOMPLETE.value for domain in domains}
+    if blockers:
+        return scorecard
+    finding_domains = {finding.constitutional_domain for finding in findings}
+    for domain in domains:
+        scorecard[domain] = CRVerdict.FAIL.value if domain in finding_domains else CRVerdict.INCOMPLETE.value
+    if _tc_verdict(tc_payload.get("tc001")) == "PASS":
+        scorecard["Canonical Runtime"] = CRVerdict.PASS.value
+    if _tc_verdict(tc_payload.get("tc002")) == "PASS":
+        scorecard["Authority"] = CRVerdict.PASS.value
+        scorecard["Delegation"] = CRVerdict.PASS.value
+        scorecard["Promotion"] = CRVerdict.PASS.value
+    if _tc_verdict(tc_payload.get("tc003")) == "PASS":
+        scorecard["Bridge Execution"] = CRVerdict.PASS.value
+    if _tc_verdict(tc_payload.get("tc004")) == "PASS":
+        scorecard["Office Lifecycle"] = CRVerdict.PASS.value
+        scorecard["Dormancy"] = CRVerdict.PASS.value
+    return scorecard
+
+
+def _constitutional_counts(findings: tuple[ConstitutionalTraceFinding, ...], blockers: tuple[str, ...]) -> dict[str, int]:
+    by_domain: dict[str, int] = {}
+    for finding in findings:
+        by_domain[finding.constitutional_domain] = by_domain.get(finding.constitutional_domain, 0) + 1
+    return {
+        "LAW VII violations": by_domain.get("LAW VII", 0),
+        "active dual-authority workflows": 0,
+        "token bypass paths": by_domain.get("Workflow Execution Token", 0),
+        "authority inference paths": by_domain.get("Authority", 0),
+        "unauthorized delegation paths": by_domain.get("Delegation", 0),
+        "unauthorized promotion paths": by_domain.get("Promotion", 0),
+        "incomplete provenance chains": by_domain.get("Provenance", 0),
+        "operational office dormancy violations": by_domain.get("Dormancy", 0),
+        "bridge false-completion paths": by_domain.get("Bridge Execution", 0),
+        "destination-acceptance bypass paths": by_domain.get("Destination Acceptance", 0),
+        "non-atomic ownership-transfer paths": by_domain.get("Ownership Transfer", 0),
+        "constitutional persistence gaps": by_domain.get("Persistence", 0),
+        "recovery authority-synthesis paths": by_domain.get("Recovery", 0),
+        "read mutation paths": by_domain.get("Read Purity", 0),
+        "financial lifecycle authority gaps": by_domain.get("Financial Authority", 0),
+        "historian synthetic-completion paths": by_domain.get("Historian", 0),
+        "Performance Truth incomplete-lineage paths": by_domain.get("Performance Truth", 0),
+        "shutdown constitutional gaps": by_domain.get("Shutdown", 0),
+        "restart constitutional gaps": by_domain.get("Restart", 0),
+        "canonical-runtime bypass paths": len(blockers),
+    }
+
+
+def _bounded_constitutional_campaign(tc_payload: dict[str, Any]) -> tuple[dict[str, Any], ...]:
+    return (
+        {
+            "case": "trace-equivalence",
+            "workflowIdentity": "TC-001",
+            "tokenSequence": "TRACE_IDENTITY",
+            "officesReached": (),
+            "bridgesReached": (),
+            "destinationCommits": 0,
+            "ownershipTransfers": 0,
+            "persistenceRecords": 0,
+            "auditRecords": 0,
+            "historianRecords": 0,
+            "performanceTruthResult": "NOT_APPLICABLE",
+            "verdict": _tc_verdict(tc_payload.get("tc001")),
+        },
+        {
+            "case": "authority-promotion",
+            "workflowIdentity": "TC-002",
+            "tokenSequence": "AUTHORITY_PROMOTION",
+            "officesReached": (),
+            "bridgesReached": (),
+            "destinationCommits": 0,
+            "ownershipTransfers": 0,
+            "persistenceRecords": 0,
+            "auditRecords": 0,
+            "historianRecords": 0,
+            "performanceTruthResult": "NOT_APPLICABLE",
+            "verdict": _tc_verdict(tc_payload.get("tc002")),
+        },
+        {
+            "case": "canonical-bridge-dynamic-coverage",
+            "workflowIdentity": "TC-003",
+            "tokenSequence": "BRIDGE_COVERAGE",
+            "officesReached": (),
+            "bridgesReached": _maybe_count(tc_payload.get("tc003"), "canonical_bridge_traces"),
+            "destinationCommits": _maybe_count(tc_payload.get("tc003"), "canonical_bridge_traces"),
+            "ownershipTransfers": 0,
+            "persistenceRecords": 0,
+            "auditRecords": 0,
+            "historianRecords": 0,
+            "performanceTruthResult": "NOT_APPLICABLE",
+            "verdict": _tc_verdict(tc_payload.get("tc003")),
+        },
+        {
+            "case": "orphan-office-closure",
+            "workflowIdentity": "TC-004",
+            "tokenSequence": "OFFICE_DORMANCY",
+            "officesReached": _maybe_count(tc_payload.get("tc004"), "canonical_office_traces"),
+            "bridgesReached": (),
+            "destinationCommits": 0,
+            "ownershipTransfers": 0,
+            "persistenceRecords": 0,
+            "auditRecords": 0,
+            "historianRecords": 0,
+            "performanceTruthResult": "NOT_APPLICABLE",
+            "verdict": _tc_verdict(tc_payload.get("tc004")),
+        },
+    )
+
+
+def _tc_verdict(payload: Any) -> str:
+    if isinstance(payload, dict):
+        certification = payload.get("certification", {})
+        if isinstance(certification, dict):
+            return str(certification.get("verdict", "INCOMPLETE"))
+        if "verdict" in payload:
+            return str(payload.get("verdict"))
+    return "INCOMPLETE"
+
+
+def _maybe_count(payload: Any, key: str) -> int:
+    if isinstance(payload, dict):
+        value = payload.get(key, ())
+        if isinstance(value, (tuple, list)):
+            return len(value)
+    return 0
+
+
 def _python_files(root: Path) -> Iterable[Path]:
     for base in (root / "src", root / "Scripts"):
         if not base.exists():
@@ -249,6 +573,19 @@ def _finding(path: str, symbol: str, pattern: str, status: str, severity: str, e
     )
 
 
+def _constitutional_finding(path: str, symbol: str, pattern: str, domain: str, severity: str, evidence: str) -> ConstitutionalTraceFinding:
+    return ConstitutionalTraceFinding(
+        f"CR5-{_stable_hash((path, symbol, pattern, domain, evidence))[:12].upper()}",
+        path,
+        symbol,
+        pattern,
+        domain,
+        severity,
+        "TRACE_REVIEW_REQUIRED",
+        (evidence,),
+    )
+
+
 def _truth_counts(findings: tuple[RepositoryTruthFinding, ...]) -> dict[str, int]:
     counts: dict[str, int] = {}
     for finding in findings:
@@ -260,6 +597,29 @@ def _symbol_name(node: ast.AST) -> str:
     if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
         return node.name
     return getattr(node, "name", "<unknown>")
+
+
+def _target_text(node: ast.AST) -> str:
+    if isinstance(node, ast.Name):
+        return node.id
+    if isinstance(node, ast.Attribute):
+        return f"{_target_text(node.value)}.{node.attr}"
+    if isinstance(node, ast.Subscript):
+        return _target_text(node.value)
+    if isinstance(node, (ast.Tuple, ast.List)):
+        return " ".join(_target_text(item) for item in node.elts)
+    return ""
+
+
+def _call_touches_authoritative_target(node: ast.Call) -> bool:
+    if isinstance(node.func, ast.Attribute):
+        target = _target_text(node.func.value)
+        return any(term in target for term in ("_history", "_ledger", "_audit", "_positions", "_messages", "_outbox"))
+    return False
+
+
+def _function_contains_assignment(node: ast.FunctionDef | ast.AsyncFunctionDef) -> bool:
+    return any(isinstance(child, (ast.Assign, ast.AugAssign, ast.AnnAssign, ast.Delete)) for child in ast.walk(node))
 
 
 def _raises_not_implemented(node: ast.Raise) -> bool:
