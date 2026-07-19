@@ -1,0 +1,151 @@
+{
+  "certification": {
+    "bridge_coverage": {
+      "denominator": 30,
+      "eligible_subject_ids": [
+        "BRIDGE-WORKFLOW-OFFICE-001"
+      ],
+      "missing_subject_ids": [
+        "BRIDGE-SCHED-MISSION-001",
+        "BRIDGE-EVENT-MISSION-001",
+        "BRIDGE-MISSION-WORKFLOW-001",
+        "BRIDGE-SI-SEEKER-001",
+        "BRIDGE-SEEKER-ANALYST-001",
+        "BRIDGE-ANALYST-RISK-001",
+        "BRIDGE-RISK-AUTH-001",
+        "BRIDGE-AUTH-TRADER-001",
+        "BRIDGE-TRADER-BROKER-001",
+        "BRIDGE-BROKER-FILL-001",
+        "BRIDGE-FILL-POSITION-001",
+        "BRIDGE-POSITION-PT-001",
+        "BRIDGE-POSITION-EOCK-001",
+        "BRIDGE-EOCK-SURVEILLANCE-001",
+        "BRIDGE-SURVEILLANCE-EXIT-001",
+        "BRIDGE-EXIT-AUTH-001",
+        "BRIDGE-EXIT-TRADER-001",
+        "BRIDGE-CLOSING-FILL-POSITION-001",
+        "BRIDGE-CLOSE-CPT-001",
+        "BRIDGE-CPT-PT-001",
+        "BRIDGE-PT-HISTORIAN-001",
+        "BRIDGE-HISTORIAN-LEARNING-001",
+        "BRIDGE-COMMANDER-DIRECTIVE-001",
+        "BRIDGE-COST-API-001",
+        "BRIDGE-FRESHNESS-ANALYTICAL-001",
+        "BRIDGE-PERSIST-RECOVERY-001",
+        "BRIDGE-RECOVERY-RUNTIME-001",
+        "BRIDGE-REPLAY-LAB-001",
+        "BRIDGE-ASSURANCE-COMMANDER-001"
+      ],
+      "numerator": 1,
+      "percent": 3.33,
+      "required_subject_ids": [
+        "BRIDGE-SCHED-MISSION-001",
+        "BRIDGE-EVENT-MISSION-001",
+        "BRIDGE-MISSION-WORKFLOW-001",
+        "BRIDGE-WORKFLOW-OFFICE-001",
+        "BRIDGE-SI-SEEKER-001",
+        "BRIDGE-SEEKER-ANALYST-001",
+        "BRIDGE-ANALYST-RISK-001",
+        "BRIDGE-RISK-AUTH-001",
+        "BRIDGE-AUTH-TRADER-001",
+        "BRIDGE-TRADER-BROKER-001",
+        "BRIDGE-BROKER-FILL-001",
+        "BRIDGE-FILL-POSITION-001",
+        "BRIDGE-POSITION-PT-001",
+        "BRIDGE-POSITION-EOCK-001",
+        "BRIDGE-EOCK-SURVEILLANCE-001",
+        "BRIDGE-SURVEILLANCE-EXIT-001",
+        "BRIDGE-EXIT-AUTH-001",
+        "BRIDGE-EXIT-TRADER-001",
+        "BRIDGE-CLOSING-FILL-POSITION-001",
+        "BRIDGE-CLOSE-CPT-001",
+        "BRIDGE-CPT-PT-001",
+        "BRIDGE-PT-HISTORIAN-001",
+        "BRIDGE-HISTORIAN-LEARNING-001",
+        "BRIDGE-COMMANDER-DIRECTIVE-001",
+        "BRIDGE-COST-API-001",
+        "BRIDGE-FRESHNESS-ANALYTICAL-001",
+        "BRIDGE-PERSIST-RECOVERY-001",
+        "BRIDGE-RECOVERY-RUNTIME-001",
+        "BRIDGE-REPLAY-LAB-001",
+        "BRIDGE-ASSURANCE-COMMANDER-001"
+      ],
+      "schema_version": "TC-001.1"
+    },
+    "canonical_runtime_trace_count": 1,
+    "certification_harness_rejected_count": 3,
+    "contradiction_report": [
+      {
+        "blocking": true,
+        "contradiction_id": "TC001-CONTRA-BRIDGE-COVERAGE",
+        "description": "Bridge trace coverage is calculated from the authoritative bridge inventory, not the selected trace list.",
+        "rejection_code": "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+        "schema_version": "TC-001.1",
+        "subject": "bridge coverage"
+      }
+    ],
+    "eligibility_results": [
+      {
+        "equivalence_level": "CANONICAL_RUNTIME",
+        "production_equivalent": true,
+        "rejection_codes": [],
+        "schema_version": "TC-001.1",
+        "status": "ELIGIBLE",
+        "subject_id": "BRIDGE-WORKFLOW-OFFICE-001",
+        "trace_id": "EO-DK-EXEC-8DC3E5C0E3B2"
+      },
+      {
+        "equivalence_level": "CONTRACT",
+        "production_equivalent": false,
+        "rejection_codes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "schema_version": "TC-001.1",
+        "status": "INELIGIBLE",
+        "subject_id": "CS-002",
+        "trace_id": "TC001-HARNESS-CS-002"
+      },
+      {
+        "equivalence_level": "CONTRACT",
+        "production_equivalent": false,
+        "rejection_codes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "schema_version": "TC-001.1",
+        "status": "INELIGIBLE",
+        "subject_id": "CS-003",
+        "trace_id": "TC001-HARNESS-CS-003"
+      },
+      {
+        "equivalence_level": "CONTRACT",
+        "production_equivalent": false,
+        "rejection_codes": [
+          "TRACE_PRODUCTION_EQUIVALENCE_FAILED",
+          "TRACE_CANONICAL_RUNTIME_UNVERIFIED",
+          "TRACE_CAUSALITY_INCOMPLETE",
+          "TRACE_CERTIFICATION_HARNESS_ORCHESTRATED",
+          "CERTIFICATION_EVIDENCE_NOT_PRODUCTION_EQUIVALENT"
+        ],
+        "schema_version": "TC-001.1",
+        "status": "INELIGIBLE",
+        "subject_id": "CS-005",
+        "trace_id": "TC001-HARNESS-CS-005"
+      }
+    ],
+    "evidence_hash": "59149fe91af1c6ec6c0470a54e1f5482f7a023b52eedef2bf50bbc53f79853f1",
+    "order_id": "TC-001",
+    "readiness": "Trace Equivalence Framework Installed; Canonical Trace Coverage Incomplete",
+    "repository_commit": "c46ae5fb2ac547f2969077c69a60ba4b407e22e6",
+    "schema_version": "TC-001.1",
+    "timestamp_utc": "2026-07-19T02:21:12.628903Z",
+    "verdict": "INCOMPLETE"
+  }
+}

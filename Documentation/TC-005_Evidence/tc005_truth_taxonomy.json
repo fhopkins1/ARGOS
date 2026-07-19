@@ -1,0 +1,43 @@
+{
+  "eligibleProductionPaperDecisionClasses": [
+    "Raw authoritative evidence",
+    "Derived constitutional fact",
+    "Simulated execution evidence (paper broker only)"
+  ],
+  "taxonomy": [
+    "FABRICATED_RAW_OBSERVATION",
+    "FABRICATED_DERIVED_FACT",
+    "UNSUPPORTED_DEFAULT",
+    "STALE_VALUE_PROMOTED_AS_CURRENT",
+    "MISSING_VALUE_RECONSTRUCTED",
+    "SIMULATION_DOMAIN_ESCAPE",
+    "REPLAY_DOMAIN_ESCAPE",
+    "TEST_DOMAIN_ESCAPE",
+    "DEVELOPMENT_DOMAIN_ESCAPE",
+    "ACKNOWLEDGEMENT_PROMOTED_AS_FILL",
+    "ORDER_PROMOTED_AS_POSITION",
+    "POSITION_PROMOTED_AS_CLOSURE",
+    "CLOSURE_PROMOTED_WITHOUT_FILL",
+    "PERFORMANCE_PROMOTED_WITHOUT_CLOSED_TRUTH",
+    "AUTHORITY_SELF_ASSERTION",
+    "BRIDGE_COMPLETION_SELF_ASSERTION",
+    "RECOVERY_COMPLETION_INFERENCE",
+    "CERTIFICATION_SELF_ASSERTION",
+    "TRACE_FABRICATION",
+    "PLACEHOLDER_PRODUCTION_OUTPUT",
+    "UNKNOWN_REPRESENTED_AS_KNOWN",
+    "UNSAFE_FALLBACK",
+    "UNVERIFIED_EXTERNAL_EVIDENCE",
+    "PROVENANCE_BREAK",
+    "PROOF_DOMAIN_CONTAMINATION"
+  ],
+  "truthClasses": [
+    "Raw authoritative evidence",
+    "Derived constitutional fact",
+    "Simulated execution evidence (paper broker only)",
+    "Replay evidence",
+    "Test evidence",
+    "Development evidence",
+    "Unresolved evidence"
+  ]
+}

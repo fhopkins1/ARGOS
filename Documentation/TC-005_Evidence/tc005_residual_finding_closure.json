@@ -1,0 +1,44 @@
+{
+  "closures": [
+    {
+      "disposition": "production-disabled",
+      "evidence": [
+        "EO-DJ provider authority registry",
+        "TC-005 market-data validation"
+      ],
+      "finding_id": "TC005-MAJOR-001",
+      "rejection_code": "SYNTHETIC_TRUTH_SOURCE_REJECTED",
+      "sink": "market-data decision boundary",
+      "source": "non-production provider fallback",
+      "source_to_sink_reachable": false,
+      "taxonomy": "FABRICATED_RAW_OBSERVATION"
+    },
+    {
+      "disposition": "sink rejected",
+      "evidence": [
+        "EO-DM fill-to-position invariant",
+        "TC-005 financial truth validation"
+      ],
+      "finding_id": "TC005-MAJOR-002",
+      "rejection_code": "SYNTHETIC_TRUTH_SINK_REJECTED",
+      "sink": "position lifecycle truth ledger",
+      "source": "paper acknowledgement/status placeholder",
+      "source_to_sink_reachable": false,
+      "taxonomy": "ACKNOWLEDGEMENT_PROMOTED_AS_FILL"
+    },
+    {
+      "disposition": "quarantined",
+      "evidence": [
+        "EO-DN recovery fail-closed authority",
+        "TC-005 recovery truth validation"
+      ],
+      "finding_id": "TC005-MAJOR-003",
+      "rejection_code": "RECOVERY_INFERENCE_REJECTED",
+      "sink": "closed position/performance truth",
+      "source": "recovery snapshot inference",
+      "source_to_sink_reachable": false,
+      "taxonomy": "RECOVERY_COMPLETION_INFERENCE"
+    }
+  ],
+  "openMajorFindings": 0
+}

@@ -1,0 +1,118 @@
+{
+  "acceptedAttackCount": 0,
+  "attacks": [
+    {
+      "attack_id": "TC005-ATTACK-001",
+      "injected_domain": "SIMULATION",
+      "rejected": true,
+      "rejection_code": "SIMULATION_DOMAIN_ESCAPE_REJECTED",
+      "target_sink": "paper market decision",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "SIMULATION_DOMAIN_ESCAPE_REJECTED",
+        "trace_id": "TRACE-TC005-001"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-002",
+      "injected_domain": "REPLAY",
+      "rejected": true,
+      "rejection_code": "REPLAY_DOMAIN_ESCAPE_REJECTED",
+      "target_sink": "paper market decision",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "REPLAY_DOMAIN_ESCAPE_REJECTED",
+        "trace_id": "TRACE-TC005-002"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-003",
+      "injected_domain": "TEST",
+      "rejected": true,
+      "rejection_code": "TEST_DOMAIN_ESCAPE_REJECTED",
+      "target_sink": "paper market decision",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "TEST_DOMAIN_ESCAPE_REJECTED",
+        "trace_id": "TRACE-TC005-003"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-004",
+      "injected_domain": "DEVELOPMENT",
+      "rejected": true,
+      "rejection_code": "DEVELOPMENT_DOMAIN_ESCAPE_REJECTED",
+      "target_sink": "paper market decision",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "DEVELOPMENT_DOMAIN_ESCAPE_REJECTED",
+        "trace_id": "TRACE-TC005-004"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-005",
+      "injected_domain": "UNKNOWN",
+      "rejected": true,
+      "rejection_code": "UNKNOWN_TRUTH_PROMOTION_REJECTED",
+      "target_sink": "position truth ledger",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "UNKNOWN_TRUTH_PROMOTION_REJECTED",
+        "trace_id": "TRACE-TC005-005"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-006",
+      "injected_domain": "PLACEHOLDER",
+      "rejected": true,
+      "rejection_code": "PLACEHOLDER_PRODUCTION_OUTPUT_REJECTED",
+      "target_sink": "bridge certification",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "PLACEHOLDER_PRODUCTION_OUTPUT_REJECTED",
+        "trace_id": "TRACE-TC005-006"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-007",
+      "injected_domain": "UNVERIFIED_EXTERNAL",
+      "rejected": true,
+      "rejection_code": "UNVERIFIED_EXTERNAL_EVIDENCE_REJECTED",
+      "target_sink": "market observation store",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "UNVERIFIED_EXTERNAL_EVIDENCE_REJECTED",
+        "trace_id": "TRACE-TC005-007"
+      }
+    },
+    {
+      "attack_id": "TC005-ATTACK-008",
+      "injected_domain": "TRACE",
+      "rejected": true,
+      "rejection_code": "TRACE_FABRICATION_REJECTED",
+      "target_sink": "certification report",
+      "trace_fields": {
+        "claim_type": "REJECTION_TRACE",
+        "eligibility": "REJECTED",
+        "execution_origin": "CANONICAL_RUNTIME_GUARD",
+        "rejection_code": "TRACE_FABRICATION_REJECTED",
+        "trace_id": "TRACE-TC005-008"
+      }
+    }
+  ],
+  "verdict": "PASS"
+}

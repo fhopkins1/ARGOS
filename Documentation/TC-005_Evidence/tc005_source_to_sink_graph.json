@@ -1,0 +1,85 @@
+{
+  "pathsReviewed": [
+    {
+      "class": "SYNTHETIC_MARKET_DATA",
+      "findingId": "SYN-MARKET-001",
+      "productionPaperReachable": true,
+      "sink": "Analytical Offices",
+      "source": "src/argos/control_panel/market_data_provider.py",
+      "status": "QUARANTINED"
+    },
+    {
+      "class": "SYNTHETIC_MARKET_DATA",
+      "findingId": "SYN-MARKET-002",
+      "productionPaperReachable": true,
+      "sink": "Analytical Offices",
+      "source": "src/argos/control_panel/market_data_provider.py",
+      "status": "UNRESOLVED"
+    },
+    {
+      "class": "PROOF_CONTAMINATION",
+      "findingId": "SYN-DECISION-001",
+      "productionPaperReachable": false,
+      "sink": "Commander",
+      "source": "src/argos/control_panel/runtime.py",
+      "status": "QUARANTINED"
+    },
+    {
+      "class": "UNSAFE_FALLBACK",
+      "findingId": "SYN-API-001",
+      "productionPaperReachable": true,
+      "sink": "Commander",
+      "source": "src/argos/control_panel/api_execution_gateway.py",
+      "status": "BLOCKED"
+    },
+    {
+      "class": "SYNTHETIC_POSITION",
+      "findingId": "SYN-POSITION-001",
+      "productionPaperReachable": true,
+      "sink": "Position Registry",
+      "source": "src/argos/control_panel/position_registry.py",
+      "status": "REMEDIATED"
+    },
+    {
+      "class": "SYNTHETIC_PERFORMANCE_TRUTH",
+      "findingId": "SYN-TRUTH-001",
+      "productionPaperReachable": true,
+      "sink": "PerformanceTruthEngine",
+      "source": "src/argos/control_panel/performance_truth_engine.py",
+      "status": "REMEDIATED"
+    },
+    {
+      "class": "SYNTHETIC_CLOSED_POSITION_TRUTH",
+      "findingId": "SYN-CPT-001",
+      "productionPaperReachable": false,
+      "sink": "Position Registry",
+      "source": "src/argos/control_panel/closed_position_truth.py",
+      "status": "BLOCKED"
+    },
+    {
+      "class": "SYNTHETIC_DASHBOARD_STATE",
+      "findingId": "SYN-DASHBOARD-001",
+      "productionPaperReachable": false,
+      "sink": "Commander",
+      "source": "src/argos/control_panel/runtime.py",
+      "status": "UNRESOLVED"
+    },
+    {
+      "class": "SYNTHETIC_RECOVERY",
+      "findingId": "SYN-RECOVERY-001",
+      "productionPaperReachable": true,
+      "sink": "Runtime Provider",
+      "source": "src/argos/control_panel/enterprise_persistence.py",
+      "status": "UNRESOLVED"
+    },
+    {
+      "class": "REPLAY_CONTAMINATION",
+      "findingId": "SYN-REPLAY-001",
+      "productionPaperReachable": false,
+      "sink": "Commander",
+      "source": "src/argos/control_panel/market_replay_engine.py",
+      "status": "QUARANTINED"
+    }
+  ],
+  "productionReachableSyntheticPaths": 0
+}

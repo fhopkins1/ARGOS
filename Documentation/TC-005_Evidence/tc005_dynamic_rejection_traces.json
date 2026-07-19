@@ -1,0 +1,62 @@
+{
+  "traceCompatibility": "TC-001 fields included",
+  "traces": [
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "SIMULATION_DOMAIN_ESCAPE_REJECTED",
+      "trace_id": "TRACE-TC005-001"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "REPLAY_DOMAIN_ESCAPE_REJECTED",
+      "trace_id": "TRACE-TC005-002"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "TEST_DOMAIN_ESCAPE_REJECTED",
+      "trace_id": "TRACE-TC005-003"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "DEVELOPMENT_DOMAIN_ESCAPE_REJECTED",
+      "trace_id": "TRACE-TC005-004"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "UNKNOWN_TRUTH_PROMOTION_REJECTED",
+      "trace_id": "TRACE-TC005-005"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "PLACEHOLDER_PRODUCTION_OUTPUT_REJECTED",
+      "trace_id": "TRACE-TC005-006"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "UNVERIFIED_EXTERNAL_EVIDENCE_REJECTED",
+      "trace_id": "TRACE-TC005-007"
+    },
+    {
+      "claim_type": "REJECTION_TRACE",
+      "eligibility": "REJECTED",
+      "execution_origin": "CANONICAL_RUNTIME_GUARD",
+      "rejection_code": "TRACE_FABRICATION_REJECTED",
+      "trace_id": "TRACE-TC005-008"
+    }
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,21 @@
+{
+  "fallbacks": [
+    {
+      "accepted_as_truth": false,
+      "fallback_id": "TC005-FALLBACK-001",
+      "fallback_type": "last-known/default quote",
+      "production_behavior": "reject/defer/report unavailable",
+      "prohibited_sink": "production paper market decision",
+      "rejection_code": "UNSAFE_FALLBACK_REJECTED"
+    },
+    {
+      "accepted_as_truth": false,
+      "fallback_id": "TC005-FALLBACK-002",
+      "fallback_type": "placeholder/no-op success",
+      "production_behavior": "reject/quarantine/adverse evidence",
+      "prohibited_sink": "production bridge/certification result",
+      "rejection_code": "NO_OP_PRODUCTION_SUCCESS_REJECTED"
+    }
+  ],
+  "openUnsafeFallbacks": 0
+}
