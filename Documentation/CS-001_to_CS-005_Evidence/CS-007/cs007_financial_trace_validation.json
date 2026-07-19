@@ -1,0 +1,107 @@
+{
+  "authoritative_market_boundary_used": true,
+  "bridge_trace_count": 1,
+  "closed_truth_count": 1,
+  "evidence_hash": "7a40733550b1f18b7b1e10bbe82d25876781f14bac9f21a9d6ccbb80cbeecf63",
+  "office_lifecycle_controls_used": true,
+  "open_quantity_after_close": 0.0,
+  "report_id": "EO-DM-LIFECYCLE-CLOSURE-001",
+  "schema_version": "EO-DM.1",
+  "stages": [
+    {
+      "authority": "Trader",
+      "evidence_references": [
+        "DO-EO-DM"
+      ],
+      "name": "Entry decision",
+      "stage_id": "EO-DM-STAGE-ENTRY",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Paper Broker",
+      "evidence_references": [
+        "ORD-EO-DM-OPEN"
+      ],
+      "name": "Opening order accepted",
+      "stage_id": "EO-DM-STAGE-OPEN-ORDER",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Paper Broker",
+      "evidence_references": [
+        "FILL-2A939858F878"
+      ],
+      "name": "Opening fill evidence",
+      "stage_id": "EO-DM-STAGE-OPEN-FILL",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Position Registry",
+      "evidence_references": [
+        "POS-AAPL-DO-EO-DM",
+        "FILL-2A939858F878"
+      ],
+      "name": "Position truth from fill",
+      "stage_id": "EO-DM-STAGE-POSITION",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Executive/Risk/Policy",
+      "evidence_references": [
+        "EXIT-AUTH-6813671BFBE2"
+      ],
+      "name": "Exit authorization did not close position",
+      "stage_id": "EO-DM-STAGE-AUTH",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "EO-DK Bridge Fabric",
+      "evidence_references": [
+        "BRIDGE-TRADER-BROKER-001"
+      ],
+      "name": "Trader to broker bridge",
+      "stage_id": "EO-DM-STAGE-BRIDGE",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Paper Broker",
+      "evidence_references": [
+        "FILL-C3B484C7B364"
+      ],
+      "name": "Closing fill evidence",
+      "stage_id": "EO-DM-STAGE-CLOSE-FILL",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Closed Position Truth",
+      "evidence_references": [
+        "CPT-000001"
+      ],
+      "name": "Closed position truth",
+      "stage_id": "EO-DM-STAGE-CLOSED",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    },
+    {
+      "authority": "Position Lifecycle Manager",
+      "evidence_references": [
+        "POS-REC-87FB203D507A"
+      ],
+      "name": "Lifecycle reconciliation",
+      "stage_id": "EO-DM-STAGE-RECON",
+      "status": "COMPLETE",
+      "unresolved_reason": ""
+    }
+  ],
+  "synthetic_truth_created": false,
+  "timestamp_utc": "2026-07-19T01:33:09.023701Z",
+  "transaction_protection_model": "EO-DD participant model referenced; broker and position mutation remain separate authorities.",
+  "verdict": "PASS"
+}

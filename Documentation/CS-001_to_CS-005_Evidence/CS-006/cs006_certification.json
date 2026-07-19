@@ -1,0 +1,312 @@
+{
+  "certification_matrix": [
+    {
+      "domain": "Read Registration",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Authorization",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Dependency Declaration",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Mutation Protection",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Cache Safety",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Derived Data Integrity",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Runtime Inspection",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Audit Inspection",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Export Integrity",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Proof Domains",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Static Assurance",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Dynamic Validation",
+      "evidence_references": [
+        "cs006_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    }
+  ],
+  "evidence_hash": "d38907ac1afebd339b4a36f9e2791d6611545b303f21a93cc49755c0e137f59c",
+  "failure_results": [],
+  "metrics": {
+    "certifiedSurfaceCount": 13,
+    "proofDomainSeparationEnforced": true,
+    "registeredSurfaceCount": 13,
+    "runtimeMutations": 0
+  },
+  "order_id": "CS-006",
+  "readiness": "Operationally Certified",
+  "recovery_results": [],
+  "runtime_traces": [
+    {
+      "authorities_read": [
+        "Canonical Runtime",
+        "Scheduler",
+        "Workflow Orchestrator"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "53c76a629a307baae763de19d52a7c49dc964b3e36c68bf5e901120dcf89191a",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-RUNTIME-SNAPSHOT-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Commander",
+        "Performance Truth",
+        "Policy"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "e0583cfaeb52d6e14e485ed19c587780ba74948a4edfeab8c4460f65d53552ca",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/commander/strategic-dashboard",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-COMMANDER-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "all read models"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "b3e214819a80b48cc8e640d7407ef405dd303a90dad5c003d114077d4c4bbc7a",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-DASHBOARD-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Runtime Provider"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "8e6a79b624691e100e5820b29c4e9ba6ebff03c1e37c74825c0354da4a0120b2",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/runtime/provider",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-API-STATUS-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Paper Broker",
+        "Position Registry"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "618825079fe05d77621dd7139f4fc430ff9fc131d5b43902ec7705ba93c5acab",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/trader/bridge",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-BROKER-SUMMARY-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Position Registry",
+        "EO-CK"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "f6fdb84d6bffbdbffb4a84c5643642e11b4a4e4da30f0578d8fe4b6e4db5b9b5",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/position-monitoring/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-POSITION-SUMMARY-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Performance Truth"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "e21f2cce1fd94cc984eb3677a98e0f8a10b21f160925a6e800dfd8266e1a0e20",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/performance-truth/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-PERFORMANCE-TRUTH-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Replay"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "d1fde68922a0a7ea60faa4aff0cd8da69e0678d488b9614169366fffbf0a9882",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/market-replay/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-REPLAY-VIEW-001",
+      "truth_domains": [
+        "REPLAY",
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Decision Laboratory"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "c46ca2615120a0f2a063cc108927ac9386451ffb3c2256e0b67e3816d12e120e",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "/api/decision-laboratory/state",
+      "status": "CONDITIONALLY_READ_ONLY",
+      "surface_id": "READ-DECISION-LAB-001",
+      "truth_domains": [
+        "SIMULATION",
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Transaction Coordinator"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "78b1e4dd5953e1b7c5a0cc2d63908efd256fb2b32fd8fe99ad3ee7e76abdc07c",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DD-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "Truth Promotion Authority"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "67c606a56867b3274125b8fe5da6e972069a2f77942c9eed38b8638931df7e24",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DC-001",
+      "truth_domains": [
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "EO-DE"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "4a184590efaa0eeffae1b422a0b7381ccc002c69953d24505b4543cb6c05a042",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DE-001",
+      "truth_domains": [
+        "TEST",
+        "PAPER"
+      ]
+    },
+    {
+      "authorities_read": [
+        "EO-DF"
+      ],
+      "digest_stable": true,
+      "evidence_hash": "6997a2d2402e815757fa36852c878a49ecb705f90062ecb0987873c747688b6e",
+      "mutation_attempt_rejected": true,
+      "route_or_callable": "callable",
+      "status": "CERTIFIED_READ_ONLY",
+      "surface_id": "READ-EO-DF-001",
+      "truth_domains": [
+        "TEST",
+        "PAPER"
+      ]
+    }
+  ],
+  "schema_version": "CS.1",
+  "static_assurance": {
+    "duplicateRegistrationRejected": true
+  },
+  "timestamp_utc": "2026-07-19T01:33:09.010576Z",
+  "title": "Production Read-Surface Constitutional Certification",
+  "verdict": "PASS"
+}

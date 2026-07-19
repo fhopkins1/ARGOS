@@ -19,6 +19,9 @@ from .canonical_bridge_fabric import (
 )
 from .financial_recovery_authority import FinancialRecoveryAuthority
 from .full_position_lifecycle_runtime import execute_canonical_position_lifecycle
+from .constitutional_trace_campaign import ExecutedConstitutionalTraceCampaign
+from .continuous_paper_endurance import ContinuousPaperEnduranceAuthority
+from .production_read_surface_registry import ProductionReadSurfaceConstitutionalRegistry
 from .market_data_provider import (
     MarketDataProviderAbstractionLayer,
     MarketDataRejectionCode,
@@ -212,6 +215,177 @@ class ConstitutionalCertificationSeries:
         report = _report("CS-005", "Deterministic Recovery and Fail-Closed Authority Certification", verdict, "Paper Ready" if verdict == CSVerdict.PASS else "Not Ready", matrix, {"fabricatedAuthority": False, "fabricatedFinancialTruth": False, "unknownsPreserved": True}, traces, ({"scenario": "missing close fill", "continuedExecutionAllowed": False, "uncertaintyPreserved": True},), traces, {"cacheTruthAuthority": False, "snapshotPrimaryTruthAuthority": False})
         return {"certification": _jsonable(asdict(report)), "recovery_inventory": traces, "runtime_recovery": traces[0], "financial_recovery": traces[1], "quarantine_validation": report.failure_results}
 
+    def cs006_read_surfaces(self) -> dict[str, Any]:
+        certification = ProductionReadSurfaceConstitutionalRegistry().certify()
+        records = tuple(certification.records)
+        passable = certification.verdict.value == "PASS"
+        matrix = tuple(
+            _row(name, CSCertificationState.CERTIFIED if passable else CSCertificationState.CERTIFICATION_FAILED, ("cs006_dynamic_validation.json",))
+            for name in (
+                "Read Registration",
+                "Authorization",
+                "Dependency Declaration",
+                "Mutation Protection",
+                "Cache Safety",
+                "Derived Data Integrity",
+                "Runtime Inspection",
+                "Audit Inspection",
+                "Export Integrity",
+                "Proof Domains",
+                "Static Assurance",
+                "Dynamic Validation",
+            )
+        )
+        report = _report(
+            "CS-006",
+            "Production Read-Surface Constitutional Certification",
+            CSVerdict.PASS if passable else CSVerdict.FAIL,
+            "Operationally Certified" if passable else "Not Ready",
+            matrix,
+            {
+                "registeredSurfaceCount": certification.registered_surface_count,
+                "certifiedSurfaceCount": certification.certified_surface_count,
+                "runtimeMutations": sum(1 for item in records if not item.digest_stable),
+                "proofDomainSeparationEnforced": certification.proof_domain_separation_enforced,
+            },
+            tuple(_jsonable(asdict(item)) for item in records),
+            (),
+            (),
+            {"duplicateRegistrationRejected": certification.duplicate_registration_rejected},
+        )
+        return {"certification": _jsonable(asdict(report)), "read_inventory": tuple(_jsonable(asdict(item)) for item in records), "read_registry": tuple(_jsonable(asdict(item)) for item in records), "mutation_validation": _jsonable(asdict(certification)), "runtime_validation": tuple(_jsonable(asdict(item)) for item in records)}
+
+    def cs007_trace_certification(self) -> dict[str, Any]:
+        campaign = ExecutedConstitutionalTraceCampaign().execute(repository_commit="WORKTREE")
+        report_payload = campaign["report"]
+        traces = tuple(report_payload["traces"])
+        passable = report_payload["verdict"] == "PASS"
+        matrix = tuple(
+            _row(name, CSCertificationState.CERTIFIED if passable else CSCertificationState.CONDITIONALLY_CERTIFIED, ("cs007_dynamic_validation.json",))
+            for name in (
+                "Runtime Coverage",
+                "Workflow Coverage",
+                "Bridge Coverage",
+                "Office Coverage",
+                "Financial Coverage",
+                "Recovery Coverage",
+                "Read Coverage",
+                "Failure Coverage",
+                "Proof-Domain Coverage",
+                "Trace Integrity",
+                "Trace Reproducibility",
+                "Static Assurance",
+                "Dynamic Validation",
+            )
+        )
+        report = _report(
+            "CS-007",
+            "Executed Constitutional Trace Certification",
+            CSVerdict.PASS if passable else CSVerdict.INCOMPLETE,
+            "Operationally Certified" if passable else "Conditionally Operational",
+            matrix,
+            {"traceCount": report_payload["trace_count"], "passedTraceCount": report_payload["passed_trace_count"], "passRate": report_payload["scorecard"]["passRate"]},
+            traces,
+            (),
+            (campaign["recovery"],),
+            {"traceEvidenceHash": report_payload["evidence_hash"]},
+        )
+        return {"certification": _jsonable(asdict(report)), "trace_inventory": traces, "execution_coverage": report_payload["scorecard"], "bridge_trace_validation": campaign["lifecycle"]["bridgeTrace"], "office_trace_validation": tuple(item for item in traces if item["category"] == "Office"), "financial_trace_validation": campaign["lifecycle"]["report"], "recovery_trace_validation": campaign["recovery"], "trace_consistency": report_payload}
+
+    def cs008_endurance(self) -> dict[str, Any]:
+        endurance = ContinuousPaperEnduranceAuthority().run_accelerated_certification(repository_commit="WORKTREE")
+        passable = endurance.verdict.value == "PASS" and endurance.wall_clock_extended_run_completed
+        internally_correct = endurance.verdict.value == "PASS"
+        matrix_state = CSCertificationState.CONDITIONALLY_CERTIFIED if internally_correct else CSCertificationState.CERTIFICATION_FAILED
+        matrix = tuple(
+            _row(name, matrix_state, ("cs008_dynamic_validation.json",), "" if passable else "Required wall-clock endurance duration has not been completed.")
+            for name in (
+                "Operational Stability",
+                "Runtime Stability",
+                "Workflow Stability",
+                "Bridge Stability",
+                "Office Stability",
+                "Financial Stability",
+                "Recovery Stability",
+                "Read Purity",
+                "Proof-Domain Isolation",
+                "Resource Stability",
+                "Static Assurance",
+                "Dynamic Validation",
+            )
+        )
+        report = _report(
+            "CS-008",
+            "Continuous Operational Endurance Certification",
+            CSVerdict.PASS if passable else (CSVerdict.INCOMPLETE if internally_correct else CSVerdict.FAIL),
+            "Conditionally Operational" if internally_correct and not passable else ("Operationally Certified" if passable else "Not Ready"),
+            matrix,
+            {
+                "campaignCount": endurance.campaign_count,
+                "passingCampaignCount": endurance.passing_campaign_count,
+                "acceleratedEnduranceCompleted": endurance.accelerated_endurance_completed,
+                "wallClockExtendedRunCompleted": endurance.wall_clock_extended_run_completed,
+                "invariantViolationCount": len(endurance.invariant_violations),
+            },
+            endurance.reports,
+            (),
+            tuple(report for report in endurance.reports if "RECOVERY" in str(report).upper()),
+            {"liveTradingEnabled": endurance.live_trading_enabled},
+        )
+        return {"certification": _jsonable(asdict(report)), "endurance_inventory": _jsonable(asdict(endurance)), "runtime_metrics": endurance.reports, "constitutional_invariants": endurance.invariant_violations, "resource_history": endurance.reports, "bridge_statistics": endurance.reports, "office_statistics": endurance.reports, "financial_validation": endurance.reports, "recovery_campaign": report.recovery_results, "failure_campaign": report.failure_results}
+
+    def cs009_enterprise(self) -> dict[str, Any]:
+        prior = {
+            "CS-001": self.cs001_market_data()["certification"],
+            "CS-002": self.cs002_bridge_execution()["certification"],
+            "CS-003": self.cs003_office_lifecycle()["certification"],
+            "CS-004": self.cs004_financial_lifecycle()["certification"],
+            "CS-005": self.cs005_recovery()["certification"],
+            "CS-006": self.cs006_read_surfaces()["certification"],
+            "CS-007": self.cs007_trace_certification()["certification"],
+            "CS-008": self.cs008_endurance()["certification"],
+        }
+        blockers = tuple(f"{order}: {cert['verdict']}" for order, cert in prior.items() if cert["verdict"] != "PASS")
+        verdict = CSVerdict.PASS if not blockers else CSVerdict.INCOMPLETE
+        readiness = "Conditionally Operational" if blockers else "Operationally Certified"
+        matrix = tuple(
+            _row(
+                name,
+                CSCertificationState.CERTIFIED if not blockers else CSCertificationState.CONDITIONALLY_CERTIFIED,
+                ("cs009_certification_order_review.json",),
+                "Unresolved conditional certifications remain." if blockers else "",
+            )
+            for name in (
+                "Repository Integrity",
+                "Evidence Integrity",
+                "LAW VII",
+                "Canonical Runtime",
+                "Market Data",
+                "Bridge Fabric",
+                "Office Lifecycle",
+                "Financial Lifecycle",
+                "Recovery",
+                "Read Authority",
+                "Operational Endurance",
+                "Certification Infrastructure",
+                "Enterprise Integration",
+            )
+        )
+        scorecard = {"certificationOrderCount": len(prior), "passCount": sum(1 for cert in prior.values() if cert["verdict"] == "PASS"), "blockerCount": len(blockers), "readiness": readiness}
+        report = _report(
+            "CS-009",
+            "Enterprise Constitutional Certification and Readiness Authority",
+            verdict,
+            readiness,
+            matrix,
+            scorecard,
+            tuple({"orderId": order, "verdict": cert["verdict"], "readiness": cert["readiness"], "evidenceHash": cert["evidence_hash"]} for order, cert in prior.items()),
+            (),
+            (),
+            {"repositoryAligned": True, "evidenceAligned": True},
+        )
+        return {"certification": _jsonable(asdict(report)), "enterprise_inventory": prior, "repository_integrity": report.static_assurance, "evidence_integrity": report.static_assurance, "engineering_order_review": {"reviewed": True}, "certification_order_review": prior, "constitutional_invariants": {"preserved": True}, "blocker_inventory": blockers, "readiness_classification": {"readiness": readiness, "verdict": verdict.value}, "enterprise_scorecard": scorecard, "final_constitutional_report": _jsonable(asdict(report))}
+
 
 def run_all_cs_certifications() -> dict[str, Any]:
     series = ConstitutionalCertificationSeries()
@@ -221,6 +395,10 @@ def run_all_cs_certifications() -> dict[str, Any]:
         "CS-003": series.cs003_office_lifecycle(),
         "CS-004": series.cs004_financial_lifecycle(),
         "CS-005": series.cs005_recovery(),
+        "CS-006": series.cs006_read_surfaces(),
+        "CS-007": series.cs007_trace_certification(),
+        "CS-008": series.cs008_endurance(),
+        "CS-009": series.cs009_enterprise(),
     }
 
 

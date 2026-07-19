@@ -15,8 +15,8 @@ class ConstitutionalCertificationSeriesTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.results = run_all_cs_certifications()
 
-    def test_all_five_orders_emit_certification_artifacts(self) -> None:
-        self.assertEqual(set(self.results), {"CS-001", "CS-002", "CS-003", "CS-004", "CS-005"})
+    def test_all_orders_emit_certification_artifacts(self) -> None:
+        self.assertEqual(set(self.results), {"CS-001", "CS-002", "CS-003", "CS-004", "CS-005", "CS-006", "CS-007", "CS-008", "CS-009"})
         for order_id, payload in self.results.items():
             self.assertIn("certification", payload)
             self.assertEqual(payload["certification"]["order_id"], order_id)
@@ -33,6 +33,8 @@ class ConstitutionalCertificationSeriesTests(unittest.TestCase):
         self.assertEqual(self.results["CS-002"]["certification"]["verdict"], CSVerdict.PASS.value)
         self.assertEqual(self.results["CS-003"]["certification"]["verdict"], CSVerdict.PASS.value)
         self.assertEqual(self.results["CS-005"]["certification"]["verdict"], CSVerdict.PASS.value)
+        self.assertEqual(self.results["CS-006"]["certification"]["verdict"], CSVerdict.PASS.value)
+        self.assertEqual(self.results["CS-007"]["certification"]["verdict"], CSVerdict.PASS.value)
 
     def test_financial_lifecycle_is_conditionally_operational_without_external_broker_certification(self) -> None:
         certification = self.results["CS-004"]["certification"]
@@ -41,6 +43,15 @@ class ConstitutionalCertificationSeriesTests(unittest.TestCase):
         self.assertEqual(certification["metrics"]["closedTruthCount"], 1)
         self.assertEqual(certification["metrics"]["openQuantityAfterClose"], 0.0)
         self.assertFalse(certification["metrics"]["externalBrokerCertified"])
+
+    def test_endurance_and_enterprise_readiness_preserve_remaining_blockers(self) -> None:
+        endurance = self.results["CS-008"]["certification"]
+        enterprise = self.results["CS-009"]["certification"]
+
+        self.assertEqual(endurance["verdict"], CSVerdict.INCOMPLETE.value)
+        self.assertFalse(endurance["metrics"]["wallClockExtendedRunCompleted"])
+        self.assertEqual(enterprise["verdict"], CSVerdict.INCOMPLETE.value)
+        self.assertEqual(enterprise["readiness"], "Conditionally Operational")
 
 
 if __name__ == "__main__":

@@ -1,9 +1,9 @@
 {
   "average_fill_price": 502.239,
-  "created_at": "2026-07-19T01:29:39.636723Z",
+  "created_at": "2026-07-19T01:33:08.983970Z",
   "events": [
     {
-      "content_hash": "260aaa2a6b7b3d0077119a3f5d1a6ae0db2fee152f4b351f6b0115474a1e9ac2",
+      "content_hash": "65225eaa5362f606c7a697a6577944a53b84784021b5a3f02b8aa5230c231089",
       "event_id": "PBE-56DB15477408",
       "event_type": "Order Accepted",
       "order_id": "ORD-EXIT-CD428B0C132C",
@@ -20,25 +20,25 @@
           "ask": 502.26,
           "bid": 502.24,
           "last": 502.25,
-          "replay_identifier": "MDOBS-21359C82DA67B357BA8D6CAA",
+          "replay_identifier": "MDOBS-3A5A3A7D597E14A88BD685F1",
           "session": "PAPER_OPEN",
           "source": "controlled-authoritative",
           "symbol": "AAPL",
-          "timestamp_utc": "2026-07-19T01:29:39.628298Z",
+          "timestamp_utc": "2026-07-19T01:33:08.976919Z",
           "truth_domain": "PAPER",
           "volume": 1000000.0
         },
-        "timestamp": "2026-07-19T01:29:39.637537Z",
+        "timestamp": "2026-07-19T01:33:08.984749Z",
         "traderIdentity": "Trader",
         "truthDomain": "PAPER_OPERATIONAL",
         "workflowId": "WF-EO-DM",
         "workflowToken": "TOK-EO-DM"
       },
       "status": "accepted",
-      "timestamp_utc": "2026-07-19T01:29:39.637537Z"
+      "timestamp_utc": "2026-07-19T01:33:08.984749Z"
     },
     {
-      "content_hash": "5d43449f6cb1af914045e114f86a4352ff2e28b5a40feacab52630aeaeda2267",
+      "content_hash": "bba1a224a03aaa303246d45cbb2b137f5aa7bc878771b396c9feac2bbe55e2b7",
       "event_id": "PBE-658FCE228F03",
       "event_type": "Fill",
       "order_id": "ORD-EXIT-CD428B0C132C",
@@ -46,14 +46,14 @@
         "fill": {
           "commission": 0.0,
           "execution_id": "EXEC-72A0B5A92ABD",
-          "fill_id": "FILL-8ACECAF496A8",
+          "fill_id": "FILL-5B28ACBCD11B",
           "order_id": "ORD-EXIT-CD428B0C132C",
           "price": 502.239,
           "price_source": "controlled-authoritative",
           "quantity": 2.0,
           "remaining_quantity": 0.0,
           "slippage": 0.002,
-          "timestamp_utc": "2026-07-19T01:29:39.628298Z"
+          "timestamp_utc": "2026-07-19T01:33:08.976919Z"
         }
       },
       "provenance": {
@@ -68,25 +68,25 @@
           "ask": 502.26,
           "bid": 502.24,
           "last": 502.25,
-          "replay_identifier": "MDOBS-21359C82DA67B357BA8D6CAA",
+          "replay_identifier": "MDOBS-3A5A3A7D597E14A88BD685F1",
           "session": "PAPER_OPEN",
           "source": "controlled-authoritative",
           "symbol": "AAPL",
-          "timestamp_utc": "2026-07-19T01:29:39.628298Z",
+          "timestamp_utc": "2026-07-19T01:33:08.976919Z",
           "truth_domain": "PAPER",
           "volume": 1000000.0
         },
-        "timestamp": "2026-07-19T01:29:39.638044Z",
+        "timestamp": "2026-07-19T01:33:08.985186Z",
         "traderIdentity": "Trader",
         "truthDomain": "PAPER_OPERATIONAL",
         "workflowId": "WF-EO-DM",
         "workflowToken": "TOK-EO-DM"
       },
       "status": "filled",
-      "timestamp_utc": "2026-07-19T01:29:39.638044Z"
+      "timestamp_utc": "2026-07-19T01:33:08.985186Z"
     },
     {
-      "content_hash": "623d109b018c22760d0afa008702cfe118a8ec3c81685a0bf46a059015eba674",
+      "content_hash": "4c9811ff1521ba2508300ec8b66d08e16c2bf26c8310aedb7f5043a6b613b3b6",
       "event_id": "PBE-F3F2D142B7E7",
       "event_type": "Settlement",
       "order_id": "ORD-EXIT-CD428B0C132C",
@@ -105,22 +105,22 @@
           "ask": 502.26,
           "bid": 502.24,
           "last": 502.25,
-          "replay_identifier": "MDOBS-21359C82DA67B357BA8D6CAA",
+          "replay_identifier": "MDOBS-3A5A3A7D597E14A88BD685F1",
           "session": "PAPER_OPEN",
           "source": "controlled-authoritative",
           "symbol": "AAPL",
-          "timestamp_utc": "2026-07-19T01:29:39.628298Z",
+          "timestamp_utc": "2026-07-19T01:33:08.976919Z",
           "truth_domain": "PAPER",
           "volume": 1000000.0
         },
-        "timestamp": "2026-07-19T01:29:39.638096Z",
+        "timestamp": "2026-07-19T01:33:08.985234Z",
         "traderIdentity": "Trader",
         "truthDomain": "PAPER_OPERATIONAL",
         "workflowId": "WF-EO-DM",
         "workflowToken": "TOK-EO-DM"
       },
       "status": "filled",
-      "timestamp_utc": "2026-07-19T01:29:39.638096Z"
+      "timestamp_utc": "2026-07-19T01:33:08.985234Z"
     }
   ],
   "filled_quantity": 2.0,
@@ -128,14 +128,14 @@
     {
       "commission": 0.0,
       "execution_id": "EXEC-72A0B5A92ABD",
-      "fill_id": "FILL-8ACECAF496A8",
+      "fill_id": "FILL-5B28ACBCD11B",
       "order_id": "ORD-EXIT-CD428B0C132C",
       "price": 502.239,
       "price_source": "controlled-authoritative",
       "quantity": 2.0,
       "remaining_quantity": 0.0,
       "slippage": 0.002,
-      "timestamp_utc": "2026-07-19T01:29:39.628298Z"
+      "timestamp_utc": "2026-07-19T01:33:08.976919Z"
     }
   ],
   "lifecycle": [
@@ -151,11 +151,11 @@
     "ask": 502.26,
     "bid": 502.24,
     "last": 502.25,
-    "replay_identifier": "MDOBS-21359C82DA67B357BA8D6CAA",
+    "replay_identifier": "MDOBS-3A5A3A7D597E14A88BD685F1",
     "session": "PAPER_OPEN",
     "source": "controlled-authoritative",
     "symbol": "AAPL",
-    "timestamp_utc": "2026-07-19T01:29:39.628298Z",
+    "timestamp_utc": "2026-07-19T01:33:08.976919Z",
     "truth_domain": "PAPER",
     "volume": 1000000.0
   },
@@ -165,7 +165,7 @@
   "requested_quantity": 2.0,
   "reserved_cash": 0.0,
   "settlement_state": "settled",
-  "settlement_timestamp": "2026-07-19T01:29:39.638096Z",
+  "settlement_timestamp": "2026-07-19T01:33:08.985234Z",
   "status": "settled",
   "ticket": {
     "account_id": "ACCT-PAPER-001",
@@ -222,5 +222,5 @@
     "workflow_id": "WF-EO-DM",
     "workflow_token": "TOK-EO-DM"
   },
-  "updated_at": "2026-07-19T01:29:39.628298Z"
+  "updated_at": "2026-07-19T01:33:08.976919Z"
 }

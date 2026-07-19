@@ -56,6 +56,48 @@ ARTIFACT_MAP = {
         "quarantine_validation": "cs005_quarantine_validation.json",
         "certification": "cs005_certification.json",
     },
+    "CS-006": {
+        "read_inventory": "cs006_read_inventory.json",
+        "read_registry": "cs006_read_registry.json",
+        "mutation_validation": "cs006_mutation_validation.json",
+        "runtime_validation": "cs006_runtime_validation.json",
+        "certification": "cs006_certification.json",
+    },
+    "CS-007": {
+        "trace_inventory": "cs007_trace_inventory.json",
+        "execution_coverage": "cs007_execution_coverage.json",
+        "bridge_trace_validation": "cs007_bridge_trace_validation.json",
+        "office_trace_validation": "cs007_office_trace_validation.json",
+        "financial_trace_validation": "cs007_financial_trace_validation.json",
+        "recovery_trace_validation": "cs007_recovery_trace_validation.json",
+        "trace_consistency": "cs007_trace_consistency.json",
+        "certification": "cs007_certification.json",
+    },
+    "CS-008": {
+        "endurance_inventory": "cs008_endurance_inventory.json",
+        "runtime_metrics": "cs008_runtime_metrics.json",
+        "constitutional_invariants": "cs008_constitutional_invariants.json",
+        "resource_history": "cs008_resource_history.json",
+        "bridge_statistics": "cs008_bridge_statistics.json",
+        "office_statistics": "cs008_office_statistics.json",
+        "financial_validation": "cs008_financial_validation.json",
+        "recovery_campaign": "cs008_recovery_campaign.json",
+        "failure_campaign": "cs008_failure_campaign.json",
+        "certification": "cs008_certification.json",
+    },
+    "CS-009": {
+        "enterprise_inventory": "cs009_enterprise_inventory.json",
+        "repository_integrity": "cs009_repository_integrity.json",
+        "evidence_integrity": "cs009_evidence_integrity.json",
+        "engineering_order_review": "cs009_engineering_order_review.json",
+        "certification_order_review": "cs009_certification_order_review.json",
+        "constitutional_invariants": "cs009_constitutional_invariants.json",
+        "blocker_inventory": "cs009_blocker_inventory.json",
+        "readiness_classification": "cs009_readiness_classification.json",
+        "enterprise_scorecard": "cs009_enterprise_scorecard.json",
+        "final_constitutional_report": "cs009_final_constitutional_report.json",
+        "certification": "cs009_certification.json",
+    },
 }
 
 REQUIRED_EMPTY_ALIASES = {
@@ -95,6 +137,21 @@ REQUIRED_EMPTY_ALIASES = {
         "cs005_static_assurance.json",
         "cs005_dynamic_validation.json",
     ),
+    "CS-006": (
+        "cs006_cache_validation.json",
+        "cs006_proof_domain_validation.json",
+        "cs006_audit_validation.json",
+        "cs006_static_assurance.json",
+        "cs006_dynamic_validation.json",
+    ),
+    "CS-007": (
+        "cs007_static_assurance.json",
+        "cs007_dynamic_validation.json",
+    ),
+    "CS-008": (
+        "cs008_dynamic_validation.json",
+    ),
+    "CS-009": (),
 }
 
 

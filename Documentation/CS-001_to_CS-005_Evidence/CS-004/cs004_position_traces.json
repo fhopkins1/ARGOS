@@ -8,7 +8,7 @@
     "ORD-EXIT-CD428B0C132C"
   ],
   "certification_state": "PAPER_OPERATIONAL_CERTIFIED",
-  "created_at": "2026-07-19T01:29:39.628298Z",
+  "created_at": "2026-07-19T01:33:08.976919Z",
   "current_confidence": 0.72,
   "current_price": 502.25,
   "current_risk": 0.3114,
@@ -16,7 +16,7 @@
   "decision_object_id": "DO-EO-DM",
   "entry_price": 502.261,
   "entry_thesis": "BUY",
-  "entry_time": "2026-07-19T01:29:39.628298Z",
+  "entry_time": "2026-07-19T01:33:08.976919Z",
   "execution_mode": "PAPER",
   "exit_conditions": [
     "profit_target",
@@ -24,13 +24,13 @@
   ],
   "exit_recommendation": "SELL_EXECUTED",
   "fill_ids": [
-    "FILL-6B31E84DC338",
-    "FILL-8ACECAF496A8"
+    "FILL-AA5E6AA39C8D",
+    "FILL-5B28ACBCD11B"
   ],
   "last_valuation_provenance": {
     "order_id": "ORD-EXIT-CD428B0C132C",
     "source": "broker_sell_fill",
-    "timestamp": "2026-07-19T01:29:39.628298Z"
+    "timestamp": "2026-07-19T01:33:08.976919Z"
   },
   "lifecycle_status": "closed",
   "market_context": {},
@@ -86,7 +86,7 @@
       "previous_status": "",
       "reason": "buy execution created position",
       "source": "PaperBrokerExecution",
-      "timestamp": "2026-07-19T01:29:39.632719Z",
+      "timestamp": "2026-07-19T01:33:08.980600Z",
       "workflow_id": "WF-EO-DM"
     },
     {
@@ -100,7 +100,7 @@
       "previous_status": "open",
       "reason": "position surveillance state refresh",
       "source": "PositionSurveillanceEngine",
-      "timestamp": "2026-07-19T01:29:39.633810Z",
+      "timestamp": "2026-07-19T01:33:08.981507Z",
       "workflow_id": "WF-EO-DM"
     },
     {
@@ -114,7 +114,7 @@
       "previous_status": "monitoring",
       "reason": "EO-XC profit_target_reached",
       "source": "ExitDecisionEngine",
-      "timestamp": "2026-07-19T01:29:39.635576Z",
+      "timestamp": "2026-07-19T01:33:08.982978Z",
       "workflow_id": "WF-EO-DM"
     },
     {
@@ -129,7 +129,7 @@
       "previous_status": "exit_recommended",
       "reason": "exit authorized pending broker execution",
       "source": "EnterprisePositionLifecycleManager",
-      "timestamp": "2026-07-19T01:29:39.636577Z",
+      "timestamp": "2026-07-19T01:33:08.983855Z",
       "workflow_id": "WF-EO-DM"
     },
     {
@@ -152,7 +152,7 @@
       "previous_status": "exit_pending",
       "reason": "sell execution reduced position",
       "source": "PaperBrokerExecution",
-      "timestamp": "2026-07-19T01:29:39.640716Z",
+      "timestamp": "2026-07-19T01:33:08.987661Z",
       "workflow_id": "WF-EO-DM"
     }
   ],
@@ -171,7 +171,7 @@
   "trailing_stop": 0.0,
   "truth_domain": "PAPER_OPERATIONAL",
   "unrealized_pnl": -0.0,
-  "updated_at": "2026-07-19T01:29:39.628298Z",
+  "updated_at": "2026-07-19T01:33:08.976919Z",
   "workflow_id": "WF-EO-DM",
   "workflow_token_lineage": [
     "TOK-EO-DM"

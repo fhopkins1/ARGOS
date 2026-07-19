@@ -1,0 +1,296 @@
+{
+  "certification_matrix": [
+    {
+      "domain": "Runtime Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Workflow Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Bridge Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Office Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Financial Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Recovery Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Read Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Failure Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Proof-Domain Coverage",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Trace Integrity",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Trace Reproducibility",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Static Assurance",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    },
+    {
+      "domain": "Dynamic Validation",
+      "evidence_references": [
+        "cs007_dynamic_validation.json"
+      ],
+      "limitation": "",
+      "state": "CERTIFIED"
+    }
+  ],
+  "evidence_hash": "79cae2dcb7ab132b29abcf2fc1af2e0c93d31581223a9427c4a294c30eba2bcb",
+  "failure_results": [],
+  "metrics": {
+    "passRate": 1.0,
+    "passedTraceCount": 10,
+    "traceCount": 10
+  },
+  "order_id": "CS-007",
+  "readiness": "Operationally Certified",
+  "recovery_results": [
+    {
+      "deterministic_signature": "4885e3addd4c1df24f13b7edc21ef3caac8dcb3f8c7a9bc129a77ad8a17ab2e8",
+      "domains": [
+        {
+          "domain": "market_evidence",
+          "quarantine_reason": "",
+          "recovered_references": [
+            "openOrder",
+            "closeOrder"
+          ],
+          "state": "UNRESOLVED",
+          "unresolved_references": [
+            "openOrder.price_source",
+            "closeOrder.price_source"
+          ]
+        },
+        {
+          "domain": "broker_orders",
+          "quarantine_reason": "",
+          "recovered_references": [
+            "openOrder",
+            "closeOrder"
+          ],
+          "state": "RECOVERED",
+          "unresolved_references": []
+        },
+        {
+          "domain": "fills",
+          "quarantine_reason": "",
+          "recovered_references": [
+            "openOrder",
+            "closeOrder",
+            "FILL-2A939858F878"
+          ],
+          "state": "UNRESOLVED",
+          "unresolved_references": [
+            "closeOrder.fills",
+            "closing fill evidence missing"
+          ]
+        },
+        {
+          "domain": "position",
+          "quarantine_reason": "",
+          "recovered_references": [
+            "positionAfterClose"
+          ],
+          "state": "RECOVERED",
+          "unresolved_references": []
+        },
+        {
+          "domain": "closed_truth",
+          "quarantine_reason": "",
+          "recovered_references": [
+            "performanceTruth"
+          ],
+          "state": "UNRESOLVED",
+          "unresolved_references": [
+            "closing fill evidence missing"
+          ]
+        },
+        {
+          "domain": "bridge_trace",
+          "quarantine_reason": "",
+          "recovered_references": [
+            "bridgeTrace"
+          ],
+          "state": "RECOVERED",
+          "unresolved_references": []
+        }
+      ],
+      "fabricated_financial_truth": false,
+      "recreated_authority": false,
+      "report_id": "EO-DN-FINANCIAL-RECOVERY-001",
+      "schema_version": "EO-DN.1",
+      "timestamp_utc": "2026-07-19T01:33:09.025390Z",
+      "unknowns_preserved": true,
+      "verdict": "PASS"
+    }
+  ],
+  "runtime_traces": [
+    {
+      "category": "Runtime",
+      "evidence_hash": "8799abb4faf46a763b1eda833e1b35d5261ac47a5eff32742e2e532fe16b7b2a",
+      "evidence_references": [
+        "8799abb4faf46a763b1eda833e1b35d5261ac47a5eff32742e2e532fe16b7b2a"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-RUNTIME"
+    },
+    {
+      "category": "Workflow",
+      "evidence_hash": "e9e404b4c97f20b2a131422fe1dcfd4552f92932f93b0bb5c6ba4ec123439909",
+      "evidence_references": [
+        "e9e404b4c97f20b2a131422fe1dcfd4552f92932f93b0bb5c6ba4ec123439909"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-WORKFLOW"
+    },
+    {
+      "category": "Bridge",
+      "evidence_hash": "a4eb609ddc224d07f3f4a10143574f24a079dbb439fae8bbdc67e8761a8ee6b6",
+      "evidence_references": [
+        "a4eb609ddc224d07f3f4a10143574f24a079dbb439fae8bbdc67e8761a8ee6b6"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-BRIDGE"
+    },
+    {
+      "category": "Office",
+      "evidence_hash": "b1abdef186afb7509b583cf978145333d8dcbb22b7347a0d651b324f85657e34",
+      "evidence_references": [
+        "b1abdef186afb7509b583cf978145333d8dcbb22b7347a0d651b324f85657e34"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-OFFICE"
+    },
+    {
+      "category": "Market Data",
+      "evidence_hash": "481e770eb2bed074ea27144706bd65d9b2ed7a31d564333fd378c94dd70adbff",
+      "evidence_references": [
+        "481e770eb2bed074ea27144706bd65d9b2ed7a31d564333fd378c94dd70adbff"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-MARKET"
+    },
+    {
+      "category": "Financial",
+      "evidence_hash": "77faab341ca4bb649ce691f647e1b251bd19c4d7d0ea3965ed3d77d31d1cbb54",
+      "evidence_references": [
+        "77faab341ca4bb649ce691f647e1b251bd19c4d7d0ea3965ed3d77d31d1cbb54"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-FINANCIAL"
+    },
+    {
+      "category": "Recovery",
+      "evidence_hash": "9618a83869ad6d8bb4fdc7b5bdd779e4746c1b434f004160206f767d078e275c",
+      "evidence_references": [
+        "9618a83869ad6d8bb4fdc7b5bdd779e4746c1b434f004160206f767d078e275c"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-RECOVERY"
+    },
+    {
+      "category": "Read Surfaces",
+      "evidence_hash": "3139a47da2f66992d218d6a247e0b6a6372dd0122593e760c61fa84c2f0c58bb",
+      "evidence_references": [
+        "3139a47da2f66992d218d6a247e0b6a6372dd0122593e760c61fa84c2f0c58bb"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-READ"
+    },
+    {
+      "category": "Synthetic Truth",
+      "evidence_hash": "177aa4eeeff92775e474c00f068b1797d46cc8302ab084f9614c0d85ae29df2d",
+      "evidence_references": [
+        "177aa4eeeff92775e474c00f068b1797d46cc8302ab084f9614c0d85ae29df2d"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-SYNTHETIC"
+    },
+    {
+      "category": "Endurance",
+      "evidence_hash": "5b9c6998f4b9d944ce1b30874c1575a8a36cdbd3515e2a78fdc4a1e10b25b147",
+      "evidence_references": [
+        "5b9c6998f4b9d944ce1b30874c1575a8a36cdbd3515e2a78fdc4a1e10b25b147"
+      ],
+      "status": "PASS",
+      "trace_id": "EO-DP-ENDURANCE"
+    }
+  ],
+  "schema_version": "CS.1",
+  "static_assurance": {
+    "traceEvidenceHash": "736c7f7d96349e16a761f9af83e708bb975ec89e8362628a72670ca2690cff39"
+  },
+  "timestamp_utc": "2026-07-19T01:33:10.897076Z",
+  "title": "Executed Constitutional Trace Certification",
+  "verdict": "PASS"
+}

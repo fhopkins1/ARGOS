@@ -1,0 +1,26 @@
+[
+  {
+    "artifact_id": "ORD-EXIT-CD428B0C132C",
+    "audit_record_ids": [
+      "AUD-19F25FE115BF"
+    ],
+    "bridge_id": "BRIDGE-TRADER-BROKER-001",
+    "completed_at_utc": "2026-07-19T01:33:09.018684Z",
+    "destination": "Paper Broker",
+    "destination_acceptance_status": "ACCEPTED",
+    "deterministic_result_hash": "19f25fe115bf591c37bf129b51dc7940a93713b9178822c89c10a1417e966346",
+    "durable_intent_id": "BRIDGE-INTENT-797E50D01F16935D",
+    "execution_id": "EO-DK-EXEC-5BECD8556F9C",
+    "prior_owner": "Trader",
+    "recovery_status": "restart must not duplicate mission, workflow, order, fill, position, truth, historian, or enrollment",
+    "rejection_code": null,
+    "requested_at_utc": "2026-07-19T01:33:09.018652Z",
+    "resulting_owner": "Trader",
+    "resulting_workflow_state": "COMPLETE",
+    "schema_version": "EO-DK.1",
+    "source": "Trader",
+    "source_release_status": "NOT_APPLICABLE",
+    "status": "ACCEPTED",
+    "workflow_id": "WF-EO-DM"
+  }
+]
