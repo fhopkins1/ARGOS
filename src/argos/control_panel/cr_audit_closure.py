@@ -38,6 +38,8 @@ from .trace_equivalence import execute_tc001_certification
 CR_AUDIT_VERSION = "CR-AUDIT.1"
 CR6_GENERATOR_VERSION = "CR6-ARTIFACT-REGENERATION.1"
 CR7_GENERATOR_VERSION = "CR7-FULL-SUITE-ACCOUNTING.1"
+CR8_GENERATOR_VERSION = "CR8-LEVEL2-A-ENDURANCE.1"
+CR10_GENERATOR_VERSION = "CR10-LEVEL3-PAPER-CANDIDATE.1"
 
 
 class CRVerdict(str, Enum):
@@ -258,6 +260,129 @@ def execute_cr7_full_suite_accounting_audit(
         "repeatedSuiteAccounting": repeated,
         "verdict": verdict,
         "constitutionalStatement": "CR-7 certifies test accounting only when the complete denominator is cleanly executed and repeated. It does not certify paper, live, production, or operational endurance readiness.",
+    }
+
+
+def execute_cr8_level2_campaign_a_audit(
+    repo_root: str | Path = ".",
+    *,
+    commit: str = "WORKTREE",
+    cr7_payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Prepare CR-8 Level 2 Campaign A evidence and block launch until predecessor gates pass."""
+    root = Path(repo_root).resolve()
+    head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
+    cr7 = cr7_payload or execute_cr7_full_suite_accounting_audit(root, commit=head)
+    identity = build_candidate_identity(root, certification=False, allow_dirty=True)
+    preflight = run_preflight(root, certification=True).get("preflight_result", {})
+    predecessor_results = {**cr7["predecessorResults"], "cr7": {"orderId": "CR-7", "verdict": cr7["verdict"], "commit": cr7["repositoryCommit"]}}
+    blockers = list(_predecessor_blockers(predecessor_results))
+    if preflight.get("verdict") != "PASS":
+        blockers.append("CR-8 candidate preflight is not PASS; campaign launch is prohibited.")
+    if cr7["verdict"] != CRVerdict.PASS.value:
+        blockers.append("CR-7 canonical full-suite certification is not PASS.")
+    config = _cr8_campaign_configuration(identity, head)
+    attempt = _blocked_operational_attempt("CR-8-L2-A-ATTEMPT-001", head, config, 7200, blockers)
+    certification = _operational_campaign_certification(
+        "CR-8",
+        head,
+        blockers,
+        required_seconds=7200,
+        attempted_seconds=0,
+        successful_attempt_id=None,
+        readiness="Level 2 Campaign A launch is blocked; no operational endurance certification is claimed.",
+    )
+    return {
+        "schemaVersion": CR_AUDIT_VERSION,
+        "orderId": "CR-8",
+        "generatorVersion": CR8_GENERATOR_VERSION,
+        "generatedAtUtc": utc_timestamp(),
+        "repositoryCommit": head,
+        "branch": _git(root, "rev-parse", "--abbrev-ref", "HEAD"),
+        "gitStatusShort": _git(root, "status", "--short"),
+        "candidateIdentity": identity["candidate_identity"],
+        "candidatePreflight": preflight,
+        "predecessorResults": predecessor_results,
+        "entryBlockers": tuple(blockers),
+        "campaignConfiguration": config,
+        "campaignAttempts": (attempt,),
+        "baselineState": _not_captured_baseline("preflight blocked launch"),
+        "runtimeReadiness": _blocked_readiness(blockers),
+        "monitoringPlan": _level2_monitoring_plan(),
+        "activityFloor": _level2_activity_floor(),
+        "reconciliationPlan": _level2_reconciliation_plan(),
+        "shutdownPlan": _controlled_shutdown_plan(),
+        "certification": certification,
+        "verdict": certification["verdict"],
+        "constitutionalStatement": "CR-8 establishes Level 2 Campaign A only after a real 7,200-second qualifying wall-clock campaign. It does not certify paper, live, or production readiness.",
+    }
+
+
+def execute_cr10_level3_paper_candidate_audit(
+    repo_root: str | Path = ".",
+    *,
+    commit: str = "WORKTREE",
+    cr8_payload: dict[str, Any] | None = None,
+    cr9_payload: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    """Prepare CR-10 Level 3 evidence and block Paper Candidate claims until CR-8/CR-9 and overnight proof pass."""
+    root = Path(repo_root).resolve()
+    head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
+    cr8 = cr8_payload or execute_cr8_level2_campaign_a_audit(root, commit=head)
+    cr9 = cr9_payload or _discover_cr9_payload(root)
+    identity = build_candidate_identity(root, certification=False, allow_dirty=True)
+    preflight = run_preflight(root, certification=True).get("preflight_result", {})
+    predecessor_results = {
+        **cr8["predecessorResults"],
+        "cr8": {"orderId": "CR-8", "verdict": cr8["verdict"], "commit": cr8["repositoryCommit"]},
+        "cr9": cr9,
+    }
+    blockers = list(_predecessor_blockers(predecessor_results))
+    if preflight.get("verdict") != "PASS":
+        blockers.append("CR-10 candidate preflight is not PASS; overnight launch is prohibited.")
+    if cr8["verdict"] != CRVerdict.PASS.value:
+        blockers.append("CR-8 Level 2 Campaign A is not PASS.")
+    if cr9.get("verdict") != CRVerdict.PASS.value:
+        blockers.append("CR-9 Level 2 Campaign B evidence is missing or not PASS.")
+    config = _cr10_campaign_configuration(identity, head)
+    attempt = _blocked_operational_attempt("CR-10-L3-OVERNIGHT-ATTEMPT-001", head, config, 28800, blockers)
+    paper_candidate = {
+        "designation": "Controlled Paper Candidate",
+        "qualified": False,
+        "reason": "Overnight continuity and morning reconciliation have not been executed from a clean candidate with all predecessor gates PASS.",
+    }
+    certification = _operational_campaign_certification(
+        "CR-10",
+        head,
+        blockers,
+        required_seconds=28800,
+        attempted_seconds=0,
+        successful_attempt_id=None,
+        readiness="Level 3 overnight campaign is blocked; Controlled Paper Candidate is not claimed.",
+    )
+    return {
+        "schemaVersion": CR_AUDIT_VERSION,
+        "orderId": "CR-10",
+        "generatorVersion": CR10_GENERATOR_VERSION,
+        "generatedAtUtc": utc_timestamp(),
+        "repositoryCommit": head,
+        "branch": _git(root, "rev-parse", "--abbrev-ref", "HEAD"),
+        "gitStatusShort": _git(root, "status", "--short"),
+        "candidateIdentity": identity["candidate_identity"],
+        "candidatePreflight": preflight,
+        "predecessorResults": predecessor_results,
+        "entryBlockers": tuple(blockers),
+        "campaignConfiguration": config,
+        "campaignAttempts": (attempt,),
+        "overnightPhases": _level3_phase_plan(),
+        "monitoringPlan": _level3_monitoring_plan(),
+        "morningReconciliationPlan": _level3_morning_reconciliation_plan(),
+        "financialReconciliationPlan": _level3_financial_reconciliation_plan(),
+        "shutdownPlan": _controlled_shutdown_plan(),
+        "paperCandidateQualification": paper_candidate,
+        "certification": certification,
+        "verdict": certification["verdict"],
+        "constitutionalStatement": "CR-10 may qualify ARGOS as Controlled Paper Candidate only after a real 28,800-second uninterrupted overnight campaign and morning reconciliation. It does not certify live brokerage or production deployment.",
     }
 
 
@@ -692,6 +817,283 @@ def _cr7_environment_identity(root: Path) -> dict[str, Any]:
         "timeZone": os.environ.get("TZ", ""),
         "environmentVariables": {key: {"present": bool(value), "sha256": hashlib.sha256(value.encode("utf-8")).hexdigest()} for key, value in interesting_env.items()},
         "dependencyHash": build_candidate_identity(root, certification=False, allow_dirty=True)["candidate_identity"]["dependency_hash"],
+    }
+
+
+def _predecessor_blockers(results: dict[str, dict[str, Any]]) -> tuple[str, ...]:
+    return tuple(
+        f"{order.upper()} verdict is {payload.get('verdict', 'INCOMPLETE')}"
+        for order, payload in results.items()
+        if payload.get("verdict") != CRVerdict.PASS.value
+    )
+
+
+def _cr8_campaign_configuration(identity: dict[str, Any], commit: str) -> dict[str, Any]:
+    candidate = _candidate_identity_block(identity, commit)
+    config = {
+        "campaign_id": "CR-8-L2-A",
+        "campaign_version": "1",
+        "required_duration_seconds": 7200,
+        "duration_mode": "WALL_CLOCK_MONOTONIC",
+        "runtime_mode": "paper-authoritative",
+        "proof_domain": "PAPER_OPERATIONAL_ENDURANCE_LEVEL_2_A",
+        "workflow_generation_policy": "steady representative bounded paper workload across fixed monitoring windows",
+        "scheduler_policy": "dispatch due work only, record latency, missed schedules, duplicates, and stalls",
+        "queue_policy": "bounded queues, accountable producers and consumers, finite retries, dead-letter accounting",
+        "provider_policy": "paper-authoritative provider routing only; no synthetic fallback into authoritative paths",
+        "broker_policy": "paper broker only; live trading disabled; broker requests reconciled against paper ledgers",
+        "persistence_policy": "durable checkpoints and authoritative state hashes must remain candidate-consistent",
+        "checkpoint_policy": "strictly increasing sequence with candidate/configuration/policy/schema identity",
+        "resource_thresholds": {"memory_growth": "bounded", "threads": "bounded", "queue_depth": "bounded", "scheduler_lag": "policy-defined"},
+        "health_thresholds": {"runtime": "READY", "scheduler": "READY", "queues": "HEALTHY", "persistence": "HEALTHY"},
+        "shutdown_policy": "graceful controlled shutdown with persistence, historian, and Performance Truth flush",
+        "failure_policy": "fail immediately on constitutional violation, candidate mutation, synthetic truth, lost work, unreconciled state, or resource threshold breach",
+        "candidate_identity": candidate,
+    }
+    return {**config, "configuration_hash": _stable_hash(config)}
+
+
+def _cr10_campaign_configuration(identity: dict[str, Any], commit: str) -> dict[str, Any]:
+    candidate = _candidate_identity_block(identity, commit)
+    config = {
+        "campaign_id": "CR-10-L3-OVERNIGHT",
+        "campaign_version": "1",
+        "required_duration_seconds": 28800,
+        "duration_mode": "WALL_CLOCK_MONOTONIC",
+        "runtime_mode": "paper-authoritative-autonomous",
+        "proof_domain": "CONTROLLED_PAPER_CANDIDATE_LEVEL_3",
+        "workflow_generation_policy": "distributed unattended overnight paper workload with morning reconciliation",
+        "scheduler_policy": "continuous overnight scheduler liveness with five-minute metric cadence",
+        "queue_policy": "bounded overnight queues with morning item accounting and no unexplained remainder",
+        "provider_policy": "paper-authoritative providers only; provider health sampled throughout overnight run",
+        "broker_policy": "paper broker continuity and financial reconciliation only; live brokerage disabled",
+        "persistence_policy": "checkpoint continuity, durable state identity, and morning recovery proof",
+        "checkpoint_policy": "strict sequence, hash validity, no gaps, candidate identity unchanged",
+        "resource_thresholds": {"rss": "bounded", "cpu": "bounded", "threads": "bounded", "sockets": "bounded", "database_growth": "bounded"},
+        "health_thresholds": {"morning_health": "all required services healthy before shutdown"},
+        "shutdown_policy": "controlled shutdown releases resources and leaves all offices dormant",
+        "failure_policy": "fail on intervention, runtime crash, reconciliation failure, candidate mutation, synthetic truth, or constitutional violation",
+        "candidate_identity": candidate,
+    }
+    return {**config, "configuration_hash": _stable_hash(config)}
+
+
+def _blocked_operational_attempt(
+    attempt_id: str,
+    commit: str,
+    config: dict[str, Any],
+    required_seconds: int,
+    blockers: Iterable[str],
+) -> dict[str, Any]:
+    blocker_tuple = tuple(blockers)
+    return {
+        "attemptId": attempt_id,
+        "candidateCommit": commit,
+        "campaignConfigurationHash": config["configuration_hash"],
+        "wallClockUtcStart": None,
+        "wallClockUtcEnd": None,
+        "monotonicStart": None,
+        "monotonicEnd": None,
+        "requiredQualifyingSeconds": required_seconds,
+        "qualifyingDurationSeconds": 0,
+        "excludedIntervals": (),
+        "terminationReason": "PREFLIGHT_BLOCKED" if blocker_tuple else "NOT_STARTED",
+        "failures": blocker_tuple,
+        "evidenceAdmissible": False,
+        "status": "PREFLIGHT_BLOCKED" if blocker_tuple else "NOT_STARTED",
+    }
+
+
+def _operational_campaign_certification(
+    order_id: str,
+    commit: str,
+    blockers: Iterable[str],
+    *,
+    required_seconds: int,
+    attempted_seconds: int,
+    successful_attempt_id: str | None,
+    readiness: str,
+) -> dict[str, Any]:
+    blocker_tuple = tuple(blockers)
+    verdict = CRVerdict.INCOMPLETE.value if blocker_tuple or attempted_seconds < required_seconds else CRVerdict.PASS.value
+    return {
+        "orderId": order_id,
+        "repositoryCommit": commit,
+        "verdict": verdict,
+        "requiredQualifyingSeconds": required_seconds,
+        "verifiedQualifyingSeconds": attempted_seconds,
+        "successfulAttemptId": successful_attempt_id,
+        "preflightPassed": not blocker_tuple,
+        "blockers": blocker_tuple,
+        "readiness": readiness,
+        "evidenceHash": _stable_hash((order_id, commit, blocker_tuple, required_seconds, attempted_seconds, successful_attempt_id)),
+        "timestampUtc": utc_timestamp(),
+    }
+
+
+def _not_captured_baseline(reason: str) -> dict[str, Any]:
+    fields = (
+        "portfolio cash",
+        "settled cash",
+        "reserved cash",
+        "buying power",
+        "portfolio equity",
+        "open positions",
+        "pending orders",
+        "workflow count",
+        "authority holders",
+        "active tokens",
+        "queue depths",
+        "scheduler state",
+        "checkpoint state",
+        "historian sequence",
+        "Performance Truth sequence",
+        "process resource state",
+    )
+    return {"captured": False, "reason": reason, "requiredFields": fields, "baselineHash": ""}
+
+
+def _blocked_readiness(blockers: Iterable[str]) -> dict[str, Any]:
+    services = (
+        "candidate validation",
+        "persistence",
+        "recovery",
+        "scheduler",
+        "workers",
+        "queues",
+        "provider registry",
+        "paper broker",
+        "proof-domain policy",
+        "constitutional services",
+        "historian",
+        "Performance Truth",
+    )
+    return {"ready": False, "blockers": tuple(blockers), "services": tuple({"service": service, "status": "NOT_EVALUATED"} for service in services)}
+
+
+def _level2_monitoring_plan() -> dict[str, Any]:
+    domains = (
+        "candidate identity",
+        "scheduler stability",
+        "queue stability",
+        "workflow continuity",
+        "office transitions",
+        "bridge transitions",
+        "provider routing",
+        "paper broker state",
+        "persistence",
+        "historian",
+        "Performance Truth",
+        "resources",
+        "health",
+    )
+    return {"sampleCadenceSeconds": 300, "qualifyingRuntimeSource": "monotonic clock", "domains": domains}
+
+
+def _level2_activity_floor() -> dict[str, Any]:
+    return {
+        "windowSeconds": 300,
+        "minimumActiveWindowProportion": 0.75,
+        "minimums": {
+            "workflowsCreated": "policy-defined before launch",
+            "workflowsCompleted": "policy-defined before launch",
+            "riskRejections": "at least one if strategy conditions reach risk",
+            "providerUnavailableOrAbstentionOutcomes": "accounted when present",
+            "brokerSubmissions": "only when strategy conditions permit",
+            "checkpoints": "at least one per monitoring window",
+            "historianRecords": "positive and monotonically increasing",
+            "schedulerDispatches": "positive across active windows",
+            "queueConsumptionEvents": "positive across active windows",
+        },
+    }
+
+
+def _level2_reconciliation_plan() -> dict[str, Any]:
+    return {
+        "workflowEquation": "created = completed + rejected + failed + cancelled + halted + pending + quarantined",
+        "orders": "submitted, accepted, rejected, filled, cancelled, pending, and quarantined must reconcile",
+        "positions": "open, closed, monitored, and quarantined position states must reconcile",
+        "financial": "cash, reservations, fees, realized P/L, unrealized P/L, and portfolio value must reconcile",
+        "historian": "sequence must be continuous with no duplicate or missing events",
+        "performanceTruth": "records must have complete lineage and no synthetic or replay contamination",
+    }
+
+
+def _controlled_shutdown_plan() -> dict[str, Any]:
+    return {
+        "required": True,
+        "steps": (
+            "stop new scheduler dispatch",
+            "drain or account queues",
+            "flush persistence",
+            "finalize checkpoints",
+            "flush historian",
+            "flush Performance Truth",
+            "set offices dormant",
+            "stop workers",
+            "release processes, sockets, files, and timers",
+        ),
+    }
+
+
+def _discover_cr9_payload(root: Path) -> dict[str, Any]:
+    candidates = (root / "outputs").glob("cr9*/cr9*_result.json") if (root / "outputs").exists() else ()
+    for path in sorted(candidates):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        return {"orderId": "CR-9", "verdict": str(payload.get("verdict", "INCOMPLETE")), "commit": payload.get("repositoryCommit", ""), "source": _rel(root, path)}
+    return {"orderId": "CR-9", "verdict": "INCOMPLETE", "commit": "", "source": "not found"}
+
+
+def _level3_phase_plan() -> tuple[dict[str, Any], ...]:
+    return (
+        {"phase": "Evening Launch", "status": "NOT_STARTED", "requiredProof": ("clean repository", "scheduler ready", "queues ready", "broker ready", "baseline captured")},
+        {"phase": "Overnight Autonomous Operation", "status": "NOT_STARTED", "requiredProof": ("no manual intervention", "no restarts", "no source/config edits")},
+        {"phase": "Overnight Monitoring", "status": "NOT_STARTED", "requiredProof": ("five-minute metrics", "constitutional monitoring", "resource monitoring")},
+        {"phase": "Morning Wake", "status": "NOT_STARTED", "requiredProof": ("runtime alive", "workers functioning", "queues progressing", "broker reconciles")},
+        {"phase": "Morning Reconciliation", "status": "NOT_STARTED", "requiredProof": ("workflow accounting", "financial accounting", "historian accounting", "Performance Truth accounting")},
+        {"phase": "Controlled Shutdown", "status": "NOT_STARTED", "requiredProof": ("resources released", "offices dormant", "no lingering process or socket")},
+    )
+
+
+def _level3_monitoring_plan() -> dict[str, Any]:
+    return {
+        "sampleCadenceSeconds": 300,
+        "requiredSeconds": 28800,
+        "metrics": (
+            "scheduler",
+            "queue depth",
+            "workflow counts",
+            "open positions",
+            "pending orders",
+            "authority holders",
+            "checkpoint",
+            "CPU",
+            "memory",
+            "threads",
+            "file descriptors",
+            "historian sequence",
+            "Performance Truth sequence",
+            "database size",
+            "provider health",
+            "broker health",
+            "health status",
+        ),
+    }
+
+
+def _level3_morning_reconciliation_plan() -> dict[str, Any]:
+    categories = ("workflows", "orders", "fills", "positions", "closed positions", "Performance Truth", "historian", "checkpoints", "authority holders", "workflow tokens", "scheduler events", "queue items")
+    return {"requiredEquation": "created = completed + rejected + failed + cancelled + halted + pending + quarantined", "categories": categories, "unexplainedRemainderAllowed": False}
+
+
+def _level3_financial_reconciliation_plan() -> dict[str, Any]:
+    return {
+        "equation": "opening cash + deposits + sales - purchases - fees - reservations = closing cash",
+        "requiredFields": ("opening cash", "deposits", "purchases", "sales", "fees", "reservations", "closing cash", "portfolio value", "realized P/L", "unrealized P/L", "Performance Truth"),
+        "tolerance": "exact for ledger quantities; explicitly documented decimal precision for currency",
     }
 
 
