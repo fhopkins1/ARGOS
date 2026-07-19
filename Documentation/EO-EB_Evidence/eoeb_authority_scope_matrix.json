@@ -1,0 +1,785 @@
+[
+  {
+    "actionScopes": [
+      "MISSION_DUE"
+    ],
+    "artifactScopes": [
+      "scheduled_obligation.v1"
+    ],
+    "authorityId": "AUTH-SCHEDULER",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-SCHED-MISSION-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "MISSION_DUE",
+      "MISSION_CANDIDATE",
+      "CREATE_WORKFLOW"
+    ],
+    "artifactScopes": [
+      "scheduled_obligation.v1",
+      "validated_event.v1",
+      "mission_plan.v1"
+    ],
+    "authorityId": "AUTH-MISSION-PLANNER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "MISSION_CANDIDATE"
+    ],
+    "artifactScopes": [
+      "validated_event.v1"
+    ],
+    "authorityId": "AUTH-EVENT-DETECTION",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "CREATE_WORKFLOW",
+      "OFFICE_WAKE"
+    ],
+    "artifactScopes": [
+      "mission_plan.v1",
+      "workflow_activation.v1"
+    ],
+    "authorityId": "AUTH-WORKFLOW-ORCHESTRATOR",
+    "bridgeDestinationScopes": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "OFFICE_WAKE"
+    ],
+    "artifactScopes": [
+      "workflow_activation.v1"
+    ],
+    "authorityId": "AUTH-DUTY-OFFICER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "SEEKER_MANDATE"
+    ],
+    "artifactScopes": [
+      "strategic_mandate.v1"
+    ],
+    "authorityId": "AUTH-STRATEGIC-INTELLIGENCE",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "SEEKER_MANDATE",
+      "ANALYSIS_REQUEST"
+    ],
+    "artifactScopes": [
+      "strategic_mandate.v1",
+      "decision_candidate.v1"
+    ],
+    "authorityId": "AUTH-SEEKER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "ANALYSIS_REQUEST",
+      "RISK_REVIEW",
+      "ANALYTICAL_INPUT"
+    ],
+    "artifactScopes": [
+      "decision_candidate.v1",
+      "analysis_product.v1",
+      "freshness_cache_decision.v1"
+    ],
+    "authorityId": "AUTH-ANALYST",
+    "bridgeDestinationScopes": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "RISK_REVIEW",
+      "AUTHORIZATION_REVIEW"
+    ],
+    "artifactScopes": [
+      "analysis_product.v1",
+      "risk_recommendation.v1"
+    ],
+    "authorityId": "AUTH-RISK",
+    "bridgeDestinationScopes": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "AUTHORIZATION_REVIEW",
+      "ORDER_INTENT",
+      "EXIT_AUTHORIZATION",
+      "CLOSE_ORDER_INTENT"
+    ],
+    "artifactScopes": [
+      "risk_recommendation.v1",
+      "trade_authorization.v1",
+      "exit_authorization_request.v1",
+      "closing_order_intent.v1"
+    ],
+    "authorityId": "AUTH-AUTHORIZATION-AUTHORITY",
+    "bridgeDestinationScopes": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "ORDER_INTENT",
+      "BROKER_SUBMIT",
+      "CLOSE_ORDER_INTENT"
+    ],
+    "artifactScopes": [
+      "trade_authorization.v1",
+      "paper_order_ticket.v1",
+      "closing_order_intent.v1"
+    ],
+    "authorityId": "AUTH-TRADER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "BROKER_SUBMIT",
+      "FILL_LEDGER_APPEND",
+      "POSITION_REDUCTION"
+    ],
+    "artifactScopes": [
+      "paper_order_ticket.v1",
+      "broker_fill.v1",
+      "closing_fill.v1"
+    ],
+    "authorityId": "AUTH-PAPER-BROKER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "FILL_LEDGER_APPEND",
+      "POSITION_MUTATION"
+    ],
+    "artifactScopes": [
+      "broker_fill.v1",
+      "position_fill_application.v1"
+    ],
+    "authorityId": "AUTH-FILL-LEDGER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "POSITION_MUTATION",
+      "PERFORMANCE_TRUTH_APPEND",
+      "MONITOR_POSITION",
+      "POSITION_REDUCTION",
+      "CLOSED_TRUTH_BUILD"
+    ],
+    "artifactScopes": [
+      "position_fill_application.v1",
+      "performance_truth_reference.v1",
+      "position_enrollment.v1",
+      "closing_fill.v1",
+      "closed_position_truth.v1"
+    ],
+    "authorityId": "AUTH-POSITION-REGISTRY",
+    "bridgeDestinationScopes": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "PERFORMANCE_TRUTH_APPEND",
+      "PERFORMANCE_TRUTH_TERMINAL",
+      "HISTORIAN_PRESERVE"
+    ],
+    "artifactScopes": [
+      "performance_truth_reference.v1",
+      "terminal_performance_truth.v1",
+      "historian_record.v1"
+    ],
+    "authorityId": "AUTH-PERFORMANCE-TRUTH",
+    "bridgeDestinationScopes": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "MONITOR_POSITION",
+      "SURVEILLANCE_OBSERVE"
+    ],
+    "artifactScopes": [
+      "position_enrollment.v1",
+      "position_surveillance_request.v1"
+    ],
+    "authorityId": "AUTH-EO-CK",
+    "bridgeDestinationScopes": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "SURVEILLANCE_OBSERVE",
+      "EXIT_EVALUATE"
+    ],
+    "artifactScopes": [
+      "position_surveillance_request.v1",
+      "exit_signal.v1"
+    ],
+    "authorityId": "AUTH-SURVEILLANCE",
+    "bridgeDestinationScopes": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "EXIT_EVALUATE",
+      "EXIT_AUTHORIZATION"
+    ],
+    "artifactScopes": [
+      "exit_signal.v1",
+      "exit_authorization_request.v1"
+    ],
+    "authorityId": "AUTH-EXIT-DECISION",
+    "bridgeDestinationScopes": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "CLOSED_TRUTH_BUILD",
+      "PERFORMANCE_TRUTH_TERMINAL"
+    ],
+    "artifactScopes": [
+      "closed_position_truth.v1",
+      "terminal_performance_truth.v1"
+    ],
+    "authorityId": "AUTH-CLOSED-POSITION-TRUTH",
+    "bridgeDestinationScopes": [
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-CPT-PT-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "HISTORIAN_PRESERVE",
+      "LEARNING_CANDIDATE"
+    ],
+    "artifactScopes": [
+      "historian_record.v1",
+      "learning_input.v1"
+    ],
+    "authorityId": "AUTH-HISTORIAN",
+    "bridgeDestinationScopes": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "LEARNING_CANDIDATE"
+    ],
+    "artifactScopes": [
+      "learning_input.v1"
+    ],
+    "authorityId": "AUTH-LEARNING-SYSTEMS",
+    "bridgeDestinationScopes": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "COMMANDER_DIRECTIVE",
+      "ASSURANCE_OBSERVE"
+    ],
+    "artifactScopes": [
+      "commander_directive.v1",
+      "assurance_read_model.v1"
+    ],
+    "authorityId": "AUTH-COMMANDER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "bridgeSourceScopes": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "COMMANDER_DIRECTIVE"
+    ],
+    "artifactScopes": [
+      "commander_directive.v1"
+    ],
+    "authorityId": "AUTH-DOCTRINE",
+    "bridgeDestinationScopes": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "API_GATEWAY_EXECUTE"
+    ],
+    "artifactScopes": [
+      "api_execution_request.v1"
+    ],
+    "authorityId": "AUTH-COST-GOVERNOR",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-COST-API-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "API_GATEWAY_EXECUTE"
+    ],
+    "artifactScopes": [
+      "api_execution_request.v1"
+    ],
+    "authorityId": "AUTH-API-GATEWAY",
+    "bridgeDestinationScopes": [
+      "BRIDGE-COST-API-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "ANALYTICAL_INPUT"
+    ],
+    "artifactScopes": [
+      "freshness_cache_decision.v1"
+    ],
+    "authorityId": "AUTH-COMMUNICATIONS-BUS",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "RECOVER_RUNTIME",
+      "RUNTIME_REJOIN"
+    ],
+    "artifactScopes": [
+      "enterprise_persistence_snapshot.v1",
+      "runtime_recovery_result.v1"
+    ],
+    "authorityId": "AUTH-PERSISTENCE",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "RECOVER_RUNTIME"
+    ],
+    "artifactScopes": [
+      "enterprise_persistence_snapshot.v1"
+    ],
+    "authorityId": "AUTH-CANONICAL-RUNTIME",
+    "bridgeDestinationScopes": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "RUNTIME_REJOIN"
+    ],
+    "artifactScopes": [
+      "runtime_recovery_result.v1"
+    ],
+    "authorityId": "AUTH-RUNTIME-PROVIDER",
+    "bridgeDestinationScopes": [
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "REPLAY_ANALYSIS"
+    ],
+    "artifactScopes": [
+      "replay_lab_result.v1"
+    ],
+    "authorityId": "AUTH-REPLAY",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "REPLAY_ANALYSIS"
+    ],
+    "artifactScopes": [
+      "replay_lab_result.v1"
+    ],
+    "authorityId": "AUTH-DECISION-LABORATORY",
+    "bridgeDestinationScopes": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "ASSURANCE_OBSERVE"
+    ],
+    "artifactScopes": [
+      "assurance_read_model.v1"
+    ],
+    "authorityId": "AUTH-EO-DG",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "proofDomains": [
+      "PAPER"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper"
+    ]
+  },
+  {
+    "actionScopes": [
+      "observe"
+    ],
+    "artifactScopes": [
+      "certification_report"
+    ],
+    "authorityId": "AUTH-CERTIFICATION-AUTHORITY",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [],
+    "proofDomains": [
+      "PAPER",
+      "REPLAY",
+      "TEST"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "paper",
+      "replay",
+      "test"
+    ]
+  },
+  {
+    "actionScopes": [
+      "replay"
+    ],
+    "artifactScopes": [
+      "ReplayRecord"
+    ],
+    "authorityId": "AUTH-MARKETREPLAYENGINE",
+    "bridgeDestinationScopes": [],
+    "bridgeSourceScopes": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "proofDomains": [
+      "REPLAY"
+    ],
+    "scopeExplicit": true,
+    "workflowScopes": [
+      "replay"
+    ]
+  }
+]

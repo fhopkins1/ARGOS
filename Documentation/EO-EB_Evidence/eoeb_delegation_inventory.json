@@ -1,0 +1,122 @@
+[
+  {
+    "audit_references": [
+      "AUD-D54B2B171D"
+    ],
+    "delegating_authority": "AUTH-COMMANDER",
+    "delegation_id": "TC002-DEL-D54B2B171D0B",
+    "deterministic_hash": "d54b2b171d0bfbf42776aa41347c56a1ec9337817c550792de6cfdc90e306a40",
+    "expires_at_utc": "9999-12-31T23:59:59Z",
+    "permitted_actions": [
+      "schedule paper workflow"
+    ],
+    "policy_basis": "TC-002.1",
+    "proof_domain_scope": [
+      "PAPER"
+    ],
+    "receiving_authority": "AUTH-SCHEDULER",
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "starts_at_utc": "2026-07-19T13:38:44.408865Z",
+    "validation_status": "VALID",
+    "workflow_scope": [
+      "paper"
+    ]
+  },
+  {
+    "audit_references": [
+      "AUD-03560CF03B"
+    ],
+    "delegating_authority": "AUTH-SCHEDULER",
+    "delegation_id": "TC002-DEL-03560CF03B2D",
+    "deterministic_hash": "03560cf03b2dbe5c8607fb4fa535109dae9f514c64a677f7220e325870c3a7ed",
+    "expires_at_utc": "9999-12-31T23:59:59Z",
+    "permitted_actions": [
+      "create mission plan"
+    ],
+    "policy_basis": "TC-002.1",
+    "proof_domain_scope": [
+      "PAPER"
+    ],
+    "receiving_authority": "AUTH-MISSION-PLANNER",
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "starts_at_utc": "2026-07-19T13:38:44.408911Z",
+    "validation_status": "VALID",
+    "workflow_scope": [
+      "paper"
+    ]
+  },
+  {
+    "audit_references": [
+      "AUD-C34B9CC12A"
+    ],
+    "delegating_authority": "AUTH-RISK",
+    "delegation_id": "TC002-DEL-C34B9CC12A7E",
+    "deterministic_hash": "c34b9cc12a7e0e613b58f093a15359b3e060d7a82d4b718cbe1de5135590cf49",
+    "expires_at_utc": "9999-12-31T23:59:59Z",
+    "permitted_actions": [
+      "request trade authorization"
+    ],
+    "policy_basis": "TC-002.1",
+    "proof_domain_scope": [
+      "PAPER"
+    ],
+    "receiving_authority": "AUTH-AUTHORIZATION-AUTHORITY",
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "starts_at_utc": "2026-07-19T13:38:44.408948Z",
+    "validation_status": "VALID",
+    "workflow_scope": [
+      "paper"
+    ]
+  },
+  {
+    "audit_references": [
+      "AUD-2F3A8349E8"
+    ],
+    "delegating_authority": "AUTH-TRADER",
+    "delegation_id": "TC002-DEL-2F3A8349E8A7",
+    "deterministic_hash": "2f3a8349e8a768a840a5991a17c0b5214006d59f193b0c966f0dc5f8306618a9",
+    "expires_at_utc": "9999-12-31T23:59:59Z",
+    "permitted_actions": [
+      "submit paper order"
+    ],
+    "policy_basis": "TC-002.1",
+    "proof_domain_scope": [
+      "PAPER"
+    ],
+    "receiving_authority": "AUTH-PAPER-BROKER",
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "starts_at_utc": "2026-07-19T13:38:44.408981Z",
+    "validation_status": "VALID",
+    "workflow_scope": [
+      "paper"
+    ]
+  },
+  {
+    "audit_references": [
+      "AUD-DEF9AFCBC8"
+    ],
+    "delegating_authority": "AUTH-PERSISTENCE",
+    "delegation_id": "TC002-DEL-DEF9AFCBC85B",
+    "deterministic_hash": "def9afcbc85b9696f6f88528935b087190be32f7af97bacce7f05c9a3bdc4d6f",
+    "expires_at_utc": "9999-12-31T23:59:59Z",
+    "permitted_actions": [
+      "restore evidence-backed state"
+    ],
+    "policy_basis": "TC-002.1",
+    "proof_domain_scope": [
+      "PAPER"
+    ],
+    "receiving_authority": "AUTH-CANONICAL-RUNTIME",
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "starts_at_utc": "2026-07-19T13:38:44.409016Z",
+    "validation_status": "VALID",
+    "workflow_scope": [
+      "paper"
+    ]
+  }
+]

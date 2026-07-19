@@ -1,0 +1,42 @@
+{
+  "certificationAuthorities": [
+    {
+      "activation_requirements": [
+        "none"
+      ],
+      "allowed_proof_domains": [
+        "PAPER",
+        "REPLAY",
+        "TEST"
+      ],
+      "allowed_workflow_types": [
+        "paper",
+        "replay",
+        "test"
+      ],
+      "authority_id": "AUTH-CERTIFICATION-AUTHORITY",
+      "authority_name": "Certification Authority",
+      "authority_version": "TC-002.1",
+      "classification": "CERTIFICATION_AUTHORITY",
+      "constitutional_role": "Observes and evaluates evidence without production authority.",
+      "delegation_policy": "may not delegate production authority",
+      "implementation_identity": "src/argos/control_panel/constitutional_certification_series.py",
+      "office_or_service_identity": "Certification Authority",
+      "permitted_artifact_types": [
+        "certification_report"
+      ],
+      "permitted_bridge_destinations": [],
+      "permitted_bridge_sources": [],
+      "permitted_command_types": [
+        "observe"
+      ],
+      "production_enabled": false,
+      "revoked": false,
+      "schema_version": "TC-002.1",
+      "token_required": false
+    }
+  ],
+  "certificationProductionEnabled": false,
+  "mayCreateRuntimeAuthority": false,
+  "mayPromoteRuntimeTruth": false
+}

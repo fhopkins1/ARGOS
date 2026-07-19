@@ -1,0 +1,13 @@
+{
+  "explanation": "TC-002 provided authority/provenance behavior and evidence, but EO-EB itself was not exposed as an implementation or evidence package for the audited candidate.",
+  "status": "SUPERSEDED_WITHOUT_RECERTIFICATION",
+  "supportingFiles": [
+    "src/argos/control_panel/authority_promotion_closure.py",
+    "Tests/test_tc002_to_tc004_trace_closure.py"
+  ],
+  "supportingSymbols": [
+    "execute_tc002_certification",
+    "ConstitutionalAuthorityRegistry",
+    "AuthorityPromotionAuthority"
+  ]
+}

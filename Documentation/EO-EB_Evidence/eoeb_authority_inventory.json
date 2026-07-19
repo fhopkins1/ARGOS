@@ -1,0 +1,1227 @@
+[
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-SCHEDULER",
+    "authority_name": "Scheduler",
+    "authority_version": "TC-002.1",
+    "classification": "COMMAND_AUTHORITY",
+    "constitutional_role": "Scheduler bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/scheduler.py",
+    "office_or_service_identity": "OFFICE-EO-DB-027",
+    "permitted_artifact_types": [
+      "scheduled_obligation.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-SCHED-MISSION-001"
+    ],
+    "permitted_command_types": [
+      "MISSION_DUE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-MISSION-PLANNER",
+    "authority_name": "Mission Planner",
+    "authority_version": "TC-002.1",
+    "classification": "WORKFLOW_OWNER",
+    "constitutional_role": "Mission Planner bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/mission_planner.py",
+    "office_or_service_identity": "OFFICE-EO-DB-019",
+    "permitted_artifact_types": [
+      "scheduled_obligation.v1",
+      "validated_event.v1",
+      "mission_plan.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-SCHED-MISSION-001",
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "permitted_command_types": [
+      "MISSION_DUE",
+      "MISSION_CANDIDATE",
+      "CREATE_WORKFLOW"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-EVENT-DETECTION",
+    "authority_name": "Event Detection",
+    "authority_version": "TC-002.1",
+    "classification": "INFORMATION_ONLY_OFFICE",
+    "constitutional_role": "Event Detection bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/event_detection.py",
+    "office_or_service_identity": "OFFICE-EO-DB-014",
+    "permitted_artifact_types": [
+      "validated_event.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-EVENT-MISSION-001"
+    ],
+    "permitted_command_types": [
+      "MISSION_CANDIDATE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-WORKFLOW-ORCHESTRATOR",
+    "authority_name": "Workflow Orchestrator",
+    "authority_version": "TC-002.1",
+    "classification": "WORKFLOW_OWNER",
+    "constitutional_role": "Workflow Orchestrator bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/workflow_orchestrator.py",
+    "office_or_service_identity": "OFFICE-EO-DB-032",
+    "permitted_artifact_types": [
+      "mission_plan.v1",
+      "workflow_activation.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-MISSION-WORKFLOW-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "permitted_command_types": [
+      "CREATE_WORKFLOW",
+      "OFFICE_WAKE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-DUTY-OFFICER",
+    "authority_name": "Duty Officer",
+    "authority_version": "TC-002.1",
+    "classification": "INFORMATION_ONLY_OFFICE",
+    "constitutional_role": "Duty Officer bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/duty_officer.py",
+    "office_or_service_identity": "OFFICE-EO-DB-011",
+    "permitted_artifact_types": [
+      "workflow_activation.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-WORKFLOW-OFFICE-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "OFFICE_WAKE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-STRATEGIC-INTELLIGENCE",
+    "authority_name": "Strategic Intelligence",
+    "authority_version": "TC-002.1",
+    "classification": "CONSTITUTIONAL_OFFICE",
+    "constitutional_role": "Strategic Intelligence bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/strategic_intelligence.py",
+    "office_or_service_identity": "OFFICE-EO-DB-029",
+    "permitted_artifact_types": [
+      "strategic_mandate.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "permitted_command_types": [
+      "SEEKER_MANDATE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-SEEKER",
+    "authority_name": "Seeker",
+    "authority_version": "TC-002.1",
+    "classification": "CONSTITUTIONAL_OFFICE",
+    "constitutional_role": "Seeker bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/seeker.py",
+    "office_or_service_identity": "OFFICE-EO-DB-028",
+    "permitted_artifact_types": [
+      "strategic_mandate.v1",
+      "decision_candidate.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-SI-SEEKER-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-SEEKER-ANALYST-001"
+    ],
+    "permitted_command_types": [
+      "SEEKER_MANDATE",
+      "ANALYSIS_REQUEST"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-ANALYST",
+    "authority_name": "Analyst",
+    "authority_version": "TC-002.1",
+    "classification": "CONSTITUTIONAL_OFFICE",
+    "constitutional_role": "Analyst bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/analyst.py",
+    "office_or_service_identity": "OFFICE-EO-DB-002",
+    "permitted_artifact_types": [
+      "decision_candidate.v1",
+      "analysis_product.v1",
+      "freshness_cache_decision.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-SEEKER-ANALYST-001",
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "permitted_command_types": [
+      "ANALYSIS_REQUEST",
+      "RISK_REVIEW",
+      "ANALYTICAL_INPUT"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-RISK",
+    "authority_name": "Risk",
+    "authority_version": "TC-002.1",
+    "classification": "CONSTITUTIONAL_OFFICE",
+    "constitutional_role": "Risk bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/risk.py",
+    "office_or_service_identity": "OFFICE-EO-DB-025",
+    "permitted_artifact_types": [
+      "analysis_product.v1",
+      "risk_recommendation.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-ANALYST-RISK-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-RISK-AUTH-001"
+    ],
+    "permitted_command_types": [
+      "RISK_REVIEW",
+      "AUTHORIZATION_REVIEW"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-AUTHORIZATION-AUTHORITY",
+    "authority_name": "Authorization Authority",
+    "authority_version": "TC-002.1",
+    "classification": "AUTHORIZATION_AUTHORITY",
+    "constitutional_role": "Authorization Authority bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/authorization_authority.py",
+    "office_or_service_identity": "OFFICE-EO-DB-003",
+    "permitted_artifact_types": [
+      "risk_recommendation.v1",
+      "trade_authorization.v1",
+      "exit_authorization_request.v1",
+      "closing_order_intent.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-RISK-AUTH-001",
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "permitted_command_types": [
+      "AUTHORIZATION_REVIEW",
+      "ORDER_INTENT",
+      "EXIT_AUTHORIZATION",
+      "CLOSE_ORDER_INTENT"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-TRADER",
+    "authority_name": "Trader",
+    "authority_version": "TC-002.1",
+    "classification": "WORKFLOW_OWNER",
+    "constitutional_role": "Trader bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/trader.py",
+    "office_or_service_identity": "OFFICE-EO-DB-031",
+    "permitted_artifact_types": [
+      "trade_authorization.v1",
+      "paper_order_ticket.v1",
+      "closing_order_intent.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-AUTH-TRADER-001",
+      "BRIDGE-EXIT-TRADER-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "permitted_command_types": [
+      "ORDER_INTENT",
+      "BROKER_SUBMIT",
+      "CLOSE_ORDER_INTENT"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-PAPER-BROKER",
+    "authority_name": "Paper Broker",
+    "authority_version": "TC-002.1",
+    "classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "constitutional_role": "Paper Broker bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/paper_broker.py",
+    "office_or_service_identity": "OFFICE-EO-DB-020",
+    "permitted_artifact_types": [
+      "paper_order_ticket.v1",
+      "broker_fill.v1",
+      "closing_fill.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-TRADER-BROKER-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-BROKER-FILL-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "permitted_command_types": [
+      "BROKER_SUBMIT",
+      "FILL_LEDGER_APPEND",
+      "POSITION_REDUCTION"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-FILL-LEDGER",
+    "authority_name": "Fill Ledger",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Fill Ledger bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/fill_ledger.py",
+    "office_or_service_identity": "OFFICE-EO-DB-016",
+    "permitted_artifact_types": [
+      "broker_fill.v1",
+      "position_fill_application.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-BROKER-FILL-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-FILL-POSITION-001"
+    ],
+    "permitted_command_types": [
+      "FILL_LEDGER_APPEND",
+      "POSITION_MUTATION"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-POSITION-REGISTRY",
+    "authority_name": "Position Registry",
+    "authority_version": "TC-002.1",
+    "classification": "TRUTH_PRODUCER",
+    "constitutional_role": "Position Registry bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/position_registry.py",
+    "office_or_service_identity": "OFFICE-EO-DB-023",
+    "permitted_artifact_types": [
+      "position_fill_application.v1",
+      "performance_truth_reference.v1",
+      "position_enrollment.v1",
+      "closing_fill.v1",
+      "closed_position_truth.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-FILL-POSITION-001",
+      "BRIDGE-CLOSING-FILL-POSITION-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-POSITION-EOCK-001",
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "permitted_command_types": [
+      "POSITION_MUTATION",
+      "PERFORMANCE_TRUTH_APPEND",
+      "MONITOR_POSITION",
+      "POSITION_REDUCTION",
+      "CLOSED_TRUTH_BUILD"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-PERFORMANCE-TRUTH",
+    "authority_name": "Performance Truth",
+    "authority_version": "TC-002.1",
+    "classification": "TRUTH_PRODUCER",
+    "constitutional_role": "Performance Truth bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/performance_truth.py",
+    "office_or_service_identity": "OFFICE-EO-DB-021",
+    "permitted_artifact_types": [
+      "performance_truth_reference.v1",
+      "terminal_performance_truth.v1",
+      "historian_record.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-POSITION-PT-001",
+      "BRIDGE-CPT-PT-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "permitted_command_types": [
+      "PERFORMANCE_TRUTH_APPEND",
+      "PERFORMANCE_TRUTH_TERMINAL",
+      "HISTORIAN_PRESERVE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-EO-CK",
+    "authority_name": "EO-CK",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "EO-CK bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/eo_ck.py",
+    "office_or_service_identity": "OFFICE-EO-DB-012",
+    "permitted_artifact_types": [
+      "position_enrollment.v1",
+      "position_surveillance_request.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-POSITION-EOCK-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "permitted_command_types": [
+      "MONITOR_POSITION",
+      "SURVEILLANCE_OBSERVE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-SURVEILLANCE",
+    "authority_name": "Surveillance",
+    "authority_version": "TC-002.1",
+    "classification": "INFORMATION_ONLY_OFFICE",
+    "constitutional_role": "Surveillance bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/surveillance.py",
+    "office_or_service_identity": "OFFICE-EO-DB-030",
+    "permitted_artifact_types": [
+      "position_surveillance_request.v1",
+      "exit_signal.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-EOCK-SURVEILLANCE-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "permitted_command_types": [
+      "SURVEILLANCE_OBSERVE",
+      "EXIT_EVALUATE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-EXIT-DECISION",
+    "authority_name": "Exit Decision",
+    "authority_version": "TC-002.1",
+    "classification": "INFORMATION_ONLY_OFFICE",
+    "constitutional_role": "Exit Decision bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/exit_decision.py",
+    "office_or_service_identity": "OFFICE-EO-DB-015",
+    "permitted_artifact_types": [
+      "exit_signal.v1",
+      "exit_authorization_request.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-SURVEILLANCE-EXIT-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-EXIT-AUTH-001"
+    ],
+    "permitted_command_types": [
+      "EXIT_EVALUATE",
+      "EXIT_AUTHORIZATION"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-CLOSED-POSITION-TRUTH",
+    "authority_name": "Closed Position Truth",
+    "authority_version": "TC-002.1",
+    "classification": "TRUTH_PRODUCER",
+    "constitutional_role": "Closed Position Truth bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/closed_position_truth.py",
+    "office_or_service_identity": "OFFICE-EO-DB-005",
+    "permitted_artifact_types": [
+      "closed_position_truth.v1",
+      "terminal_performance_truth.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-CLOSE-CPT-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-CPT-PT-001"
+    ],
+    "permitted_command_types": [
+      "CLOSED_TRUTH_BUILD",
+      "PERFORMANCE_TRUTH_TERMINAL"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-HISTORIAN",
+    "authority_name": "Historian",
+    "authority_version": "TC-002.1",
+    "classification": "TRUTH_PRODUCER",
+    "constitutional_role": "Historian bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/historian.py",
+    "office_or_service_identity": "OFFICE-EO-DB-017",
+    "permitted_artifact_types": [
+      "historian_record.v1",
+      "learning_input.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-PT-HISTORIAN-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "permitted_command_types": [
+      "HISTORIAN_PRESERVE",
+      "LEARNING_CANDIDATE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-LEARNING-SYSTEMS",
+    "authority_name": "Learning Systems",
+    "authority_version": "TC-002.1",
+    "classification": "TRUTH_PRODUCER",
+    "constitutional_role": "Learning Systems bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/learning_systems.py",
+    "office_or_service_identity": "OFFICE-EO-DB-018",
+    "permitted_artifact_types": [
+      "learning_input.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-HISTORIAN-LEARNING-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "LEARNING_CANDIDATE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-COMMANDER",
+    "authority_name": "Commander",
+    "authority_version": "TC-002.1",
+    "classification": "COMMAND_AUTHORITY",
+    "constitutional_role": "Commander bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/commander.py",
+    "office_or_service_identity": "OFFICE-EO-DB-006",
+    "permitted_artifact_types": [
+      "commander_directive.v1",
+      "assurance_read_model.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "permitted_bridge_sources": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "permitted_command_types": [
+      "COMMANDER_DIRECTIVE",
+      "ASSURANCE_OBSERVE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-DOCTRINE",
+    "authority_name": "Doctrine",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Doctrine bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/doctrine.py",
+    "office_or_service_identity": "OFFICE-EO-DB-010",
+    "permitted_artifact_types": [
+      "commander_directive.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-COMMANDER-DIRECTIVE-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "COMMANDER_DIRECTIVE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-COST-GOVERNOR",
+    "authority_name": "Cost Governor",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Cost Governor bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/cost_governor.py",
+    "office_or_service_identity": "OFFICE-EO-DB-008",
+    "permitted_artifact_types": [
+      "api_execution_request.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-COST-API-001"
+    ],
+    "permitted_command_types": [
+      "API_GATEWAY_EXECUTE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-API-GATEWAY",
+    "authority_name": "API Gateway",
+    "authority_version": "TC-002.1",
+    "classification": "EXTERNAL_AUTHORITY_ADAPTER",
+    "constitutional_role": "API Gateway bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/api_gateway.py",
+    "office_or_service_identity": "OFFICE-EO-DB-001",
+    "permitted_artifact_types": [
+      "api_execution_request.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-COST-API-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "API_GATEWAY_EXECUTE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-COMMUNICATIONS-BUS",
+    "authority_name": "Communications Bus",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Communications Bus bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/communications_bus.py",
+    "office_or_service_identity": "OFFICE-EO-DB-007",
+    "permitted_artifact_types": [
+      "freshness_cache_decision.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-FRESHNESS-ANALYTICAL-001"
+    ],
+    "permitted_command_types": [
+      "ANALYTICAL_INPUT"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-PERSISTENCE",
+    "authority_name": "Persistence",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Persistence bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/persistence.py",
+    "office_or_service_identity": "OFFICE-EO-DB-022",
+    "permitted_artifact_types": [
+      "enterprise_persistence_snapshot.v1",
+      "runtime_recovery_result.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-PERSIST-RECOVERY-001",
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "permitted_command_types": [
+      "RECOVER_RUNTIME",
+      "RUNTIME_REJOIN"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-CANONICAL-RUNTIME",
+    "authority_name": "Canonical Runtime",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Canonical Runtime bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/canonical_runtime.py",
+    "office_or_service_identity": "OFFICE-EO-DB-004",
+    "permitted_artifact_types": [
+      "enterprise_persistence_snapshot.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-PERSIST-RECOVERY-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "RECOVER_RUNTIME"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-RUNTIME-PROVIDER",
+    "authority_name": "Runtime Provider",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "Runtime Provider bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/runtime_provider.py",
+    "office_or_service_identity": "OFFICE-EO-DB-026",
+    "permitted_artifact_types": [
+      "runtime_recovery_result.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-RECOVERY-RUNTIME-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "RUNTIME_REJOIN"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-REPLAY",
+    "authority_name": "Replay",
+    "authority_version": "TC-002.1",
+    "classification": "INFORMATION_ONLY_OFFICE",
+    "constitutional_role": "Replay bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/replay.py",
+    "office_or_service_identity": "OFFICE-EO-DB-024",
+    "permitted_artifact_types": [
+      "replay_lab_result.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "permitted_command_types": [
+      "REPLAY_ANALYSIS"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-DECISION-LABORATORY",
+    "authority_name": "Decision Laboratory",
+    "authority_version": "TC-002.1",
+    "classification": "INFORMATION_ONLY_OFFICE",
+    "constitutional_role": "Decision Laboratory bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/decision_laboratory.py",
+    "office_or_service_identity": "OFFICE-EO-DB-009",
+    "permitted_artifact_types": [
+      "replay_lab_result.v1"
+    ],
+    "permitted_bridge_destinations": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "REPLAY_ANALYSIS"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "canonical runtime registration"
+    ],
+    "allowed_proof_domains": [
+      "PAPER"
+    ],
+    "allowed_workflow_types": [
+      "paper"
+    ],
+    "authority_id": "AUTH-EO-DG",
+    "authority_name": "EO-DG",
+    "authority_version": "TC-002.1",
+    "classification": "SERVICE_AUTHORITY",
+    "constitutional_role": "EO-DG bridge authority and handoff participant.",
+    "delegation_policy": "explicit delegation required; certification harness delegation prohibited",
+    "implementation_identity": "src/argos/control_panel/eo_dg.py",
+    "office_or_service_identity": "OFFICE-EO-DB-013",
+    "permitted_artifact_types": [
+      "assurance_read_model.v1"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-ASSURANCE-COMMANDER-001"
+    ],
+    "permitted_command_types": [
+      "ASSURANCE_OBSERVE"
+    ],
+    "production_enabled": true,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": true
+  },
+  {
+    "activation_requirements": [
+      "none"
+    ],
+    "allowed_proof_domains": [
+      "PAPER",
+      "REPLAY",
+      "TEST"
+    ],
+    "allowed_workflow_types": [
+      "paper",
+      "replay",
+      "test"
+    ],
+    "authority_id": "AUTH-CERTIFICATION-AUTHORITY",
+    "authority_name": "Certification Authority",
+    "authority_version": "TC-002.1",
+    "classification": "CERTIFICATION_AUTHORITY",
+    "constitutional_role": "Observes and evaluates evidence without production authority.",
+    "delegation_policy": "may not delegate production authority",
+    "implementation_identity": "src/argos/control_panel/constitutional_certification_series.py",
+    "office_or_service_identity": "Certification Authority",
+    "permitted_artifact_types": [
+      "certification_report"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [],
+    "permitted_command_types": [
+      "observe"
+    ],
+    "production_enabled": false,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  },
+  {
+    "activation_requirements": [
+      "replay mode"
+    ],
+    "allowed_proof_domains": [
+      "REPLAY"
+    ],
+    "allowed_workflow_types": [
+      "replay"
+    ],
+    "authority_id": "AUTH-MARKETREPLAYENGINE",
+    "authority_name": "MarketReplayEngine",
+    "authority_version": "TC-002.1",
+    "classification": "REPLAY_AUTHORITY",
+    "constitutional_role": "Replay-only evidence provider.",
+    "delegation_policy": "replay isolated",
+    "implementation_identity": "src/argos/control_panel/market_replay_engine.py",
+    "office_or_service_identity": "MarketReplayEngine",
+    "permitted_artifact_types": [
+      "ReplayRecord"
+    ],
+    "permitted_bridge_destinations": [],
+    "permitted_bridge_sources": [
+      "BRIDGE-REPLAY-LAB-001"
+    ],
+    "permitted_command_types": [
+      "replay"
+    ],
+    "production_enabled": false,
+    "revoked": false,
+    "schema_version": "TC-002.1",
+    "token_required": false
+  }
+]
