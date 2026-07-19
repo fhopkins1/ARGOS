@@ -16,6 +16,12 @@ from pathlib import Path
 from typing import Any, Callable, Iterable
 
 from argos.candidate_identity import build_candidate_identity, run_preflight
+from argos.css.css001_orchestration.implementation import run as run_css001
+from argos.css.css002_lifecycle_triggers.implementation import run as run_css002
+from argos.css.css003_verifier_framework.implementation import run as run_css003
+from argos.css.css004_repository_truth.implementation import run as run_css004
+from argos.css.css005_governance_interface.implementation import run as run_css005
+from argos.css.css006_drift_interface.implementation import run as run_css006
 from argos.foundation.contracts import utc_timestamp
 
 from .continuous_constitutional_certification import (
@@ -81,7 +87,7 @@ def css_subsystem_contracts() -> tuple[CSSSubsystemContract, ...]:
             "Certification Orchestration",
             CIC03_VERSION,
             CONTRACT_VERSION,
-            "src/argos/control_panel/css_separation.py:execute_css001_orchestration",
+            "src/argos/css/css001_orchestration/implementation.py:run",
             ("candidateIdentity", "subsystemRegistry", "dependencyGraph"),
             ("orchestrationEvidence", "orchestrationVerdict"),
             ("PASS", "FAIL"),
@@ -97,7 +103,7 @@ def css_subsystem_contracts() -> tuple[CSSSubsystemContract, ...]:
             "Lifecycle Triggers",
             CIC03_VERSION,
             CONTRACT_VERSION,
-            "src/argos/control_panel/css_separation.py:execute_css002_lifecycle_triggers",
+            "src/argos/css/css002_lifecycle_triggers/implementation.py:run",
             ("candidateIdentity", "repositoryStatus", "triggerPolicy"),
             ("triggerEvidence", "triggerVerdict"),
             ("PASS", "FAIL"),
@@ -113,7 +119,7 @@ def css_subsystem_contracts() -> tuple[CSSSubsystemContract, ...]:
             "Verifier Framework",
             CIC03_VERSION,
             CONTRACT_VERSION,
-            "src/argos/control_panel/css_separation.py:execute_css003_verifier_framework",
+            "src/argos/css/css003_verifier_framework/implementation.py:run",
             ("candidateIdentity", "verificationTaskCatalog"),
             ("verificationEvidence", "verificationVerdict"),
             ("PASS", "FAIL"),
@@ -129,7 +135,7 @@ def css_subsystem_contracts() -> tuple[CSSSubsystemContract, ...]:
             "Repository Truth and Evidence Lineage",
             CIC03_VERSION,
             CONTRACT_VERSION,
-            "src/argos/control_panel/css_separation.py:execute_css004_repository_truth",
+            "src/argos/css/css004_repository_truth/implementation.py:run",
             ("candidateIdentity", "repositoryTruthIndex", "evidenceManifest"),
             ("repositoryTruthEvidence", "claimRegistry", "lineageVerdict"),
             ("PASS", "FAIL"),
@@ -145,7 +151,7 @@ def css_subsystem_contracts() -> tuple[CSSSubsystemContract, ...]:
             "Certification Governance",
             CIC03_VERSION,
             CONTRACT_VERSION,
-            "src/argos/control_panel/css_separation.py:execute_css005_governance",
+            "src/argos/css/css005_governance_interface/implementation.py:run",
             ("candidateIdentity", "crPrerequisites", "subsystemResults"),
             ("governanceEvidence", "readinessVerdict"),
             ("PASS", "FAIL"),
@@ -161,7 +167,7 @@ def css_subsystem_contracts() -> tuple[CSSSubsystemContract, ...]:
             "Drift Detection Interface",
             CIC03_VERSION,
             CONTRACT_VERSION,
-            "src/argos/control_panel/css_separation.py:execute_css006_drift_detection",
+            "src/argos/css/css006_drift_interface/implementation.py:run",
             ("candidateIdentity", "repositoryTruthIndex", "evidenceManifest", "baseline"),
             ("driftEvidence", "regressionVerdict"),
             ("PASS", "FAIL"),
@@ -348,13 +354,103 @@ def execute_css006_drift_detection(root: Path, commit: str, context: dict[str, A
 
 def _subsystem_registry() -> dict[str, SubsystemExecutor]:
     return {
-        "CSS-001": execute_css001_orchestration,
-        "CSS-002": execute_css002_lifecycle_triggers,
-        "CSS-003": execute_css003_verifier_framework,
-        "CSS-004": execute_css004_repository_truth,
-        "CSS-005": execute_css005_governance,
-        "CSS-006": execute_css006_drift_detection,
+        "CSS-001": _run_physical_css001,
+        "CSS-002": _run_physical_css002,
+        "CSS-003": _run_physical_css003,
+        "CSS-004": _run_physical_css004,
+        "CSS-005": _run_physical_css005,
+        "CSS-006": _run_physical_css006,
     }
+
+
+def _run_physical_css001(root: Path, commit: str, context: dict[str, Any]) -> CSSSubsystemResult:
+    from argos.css.css001_orchestration.contract import capability as cap001
+    from argos.css.css002_lifecycle_triggers.contract import capability as cap002
+    from argos.css.css003_verifier_framework.contract import capability as cap003
+    from argos.css.css004_repository_truth.contract import capability as cap004
+    from argos.css.css005_governance_interface.contract import capability as cap005
+    from argos.css.css006_drift_interface.contract import capability as cap006
+
+    envelope = run_css001(
+        context["candidateIdentity"],
+        capabilities=(cap001(), cap002(), cap003(), cap004(), cap005(), cap006()),
+        dependency_graph=context["dependencyGraph"],
+    )
+    return _subsystem_result_from_envelope(envelope)
+
+
+def _run_physical_css002(root: Path, commit: str, context: dict[str, Any]) -> CSSSubsystemResult:
+    events = (
+        {"eventId": "repo-checkout", "type": "repository_checkout"},
+        {"eventId": "branch-validation", "type": "branch_validation"},
+        {"eventId": "scheduled-health", "type": "scheduled_health_validation"},
+    )
+    if context["candidatePreflight"].get("verdict") != "PASS":
+        events = (*events, {"eventId": "candidate-dirty", "type": "drift_evaluation"})
+    return _subsystem_result_from_envelope(run_css002(context["candidateIdentity"], events=events, dependency_results=context.get("priorResults", ())))
+
+
+def _run_physical_css003(root: Path, commit: str, context: dict[str, Any]) -> CSSSubsystemResult:
+    sustainment = execute_css_sustainment_pipeline(root, commit=commit, cr7_payload=context.get("cr7Payload"), cr10_payload=context.get("cr10Payload"))
+    task_catalog = sustainment["verificationTaskCatalog"]
+    tasks = task_catalog.get("tasks", ()) if isinstance(task_catalog, dict) else task_catalog
+    verifiers = tuple({"verifierId": item["taskId"], "version": "1"} for item in tasks)
+    state = "PASSED" if sustainment["driftReport"]["verdict"] == "PASS" else "FAILED"
+    results = tuple({"verifierId": item["taskId"], "state": state} for item in tasks)
+    return _subsystem_result_from_envelope(run_css003(context["candidateIdentity"], verifiers=verifiers, results=results, dependency_results=context.get("priorResults", ())))
+
+
+def _run_physical_css004(root: Path, commit: str, context: dict[str, Any]) -> CSSSubsystemResult:
+    manifest = build_css_evidence_manifest(root, commit=commit)
+    artifacts = manifest["historicalArtifactInventory"].get("records") or manifest["historicalArtifactInventory"].get("artifacts", ())
+    evidence_refs = tuple(
+        {
+            "artifactId": item["path"],
+            "candidateIdentityDigest": context["candidateIdentity"]["stable_identity_hash"],
+            "artifactDigest": item.get("contentHash", item.get("sha256", "")),
+            "observedDigest": item.get("contentHash", item.get("sha256", "")),
+        }
+        for item in artifacts[:25]
+    )
+    return _subsystem_result_from_envelope(run_css004(context["candidateIdentity"], evidence_references=evidence_refs, dependency_results=context.get("priorResults", ())))
+
+
+def _run_physical_css005(root: Path, commit: str, context: dict[str, Any]) -> CSSSubsystemResult:
+    cr7 = context.get("cr7Payload") or {}
+    cr10 = context.get("cr10Payload") or {}
+    prereqs = (
+        {"verdictId": "CR7", "status": cr7.get("verdict", "FAIL"), "source": "authoritative_verdict"},
+        {"verdictId": "CR10", "status": cr10.get("verdict", "FAIL"), "source": "authoritative_verdict"},
+    )
+    return _subsystem_result_from_envelope(run_css005(context["candidateIdentity"], prerequisite_verdicts=prereqs, dependency_results=context.get("priorResults", ())))
+
+
+def _run_physical_css006(root: Path, commit: str, context: dict[str, Any]) -> CSSSubsystemResult:
+    index = build_repository_truth_index(root, commit=commit)
+    manifest = build_css_evidence_manifest(root, commit=commit)
+    drift = detect_certification_drift(root, commit=commit, repository_index=index, evidence_manifest=manifest)
+    comparisons = tuple({"domain": "repository_content", "severity": "BLOCKING", "material": True} for _ in drift["blockingFindings"])
+    return _subsystem_result_from_envelope(run_css006(context["candidateIdentity"], baseline_identity="ARGOS-CSS-BASELINE.1", comparisons=comparisons, dependency_results=context.get("priorResults", ())))
+
+
+def _subsystem_result_from_envelope(envelope: dict[str, Any]) -> CSSSubsystemResult:
+    candidate = envelope["candidate_identity"]
+    subsystem_id = envelope["subsystem_id"]
+    status = CSSSubsystemStatus.PASS if envelope["execution_status"] == "COMPLETED" and envelope["verdict"] == "PASS" else CSSSubsystemStatus.FAIL
+    evidence = envelope["evidence"]
+    return CSSSubsystemResult(
+        subsystem_id,
+        envelope["subsystem_version"],
+        envelope["contract_version"],
+        candidate.get("stable_identity_hash") or candidate.get("candidateIdentityDigest", ""),
+        f"{subsystem_id}-EXEC-{_stable_hash((subsystem_id, envelope['result_digest']))[:12].upper()}",
+        f"{subsystem_id}-TRACE-{_stable_hash(evidence)[:12].upper()}",
+        status,
+        tuple(envelope.get("failure_codes", ())),
+        (evidence.get("evidenceDigest", ""),),
+        evidence,
+        evidence.get("evidenceDigest", envelope["result_digest"]),
+    )
 
 
 def _subsystem_result(subsystem_id: str, context: dict[str, Any], failures: Iterable[str], output: dict[str, Any]) -> CSSSubsystemResult:

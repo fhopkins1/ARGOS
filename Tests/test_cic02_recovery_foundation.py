@@ -14,9 +14,13 @@ from argos.control_panel.certification_recovery_foundation import (  # noqa: E40
     build_denominator_ledger,
     discover_canonical_tests,
     execute_cic02_recovery_foundation,
+    issue_cr7_verdict,
+    validate_cic02_evidence_package,
     publish_cr_prerequisite_verdict,
     qualify_controlled_paper_candidate,
 )
+from argos.candidate_integrity import build_cic01_candidate_contract  # noqa: E402
+from Tests.test_cic01_candidate_integrity import DeterministicGitRepo  # noqa: E402
 
 
 class CIC02RecoveryFoundationTests(unittest.TestCase):
@@ -108,6 +112,55 @@ class CIC02RecoveryFoundationTests(unittest.TestCase):
 
         self.assertEqual("FAIL", publication["verdictStatus"])
         self.assertIn("CR7_CR10_CANDIDATE_MISMATCH", publication["failureCodes"])
+
+    def test_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution(self) -> None:
+        with DeterministicGitRepo() as repo:
+            contract = build_cic01_candidate_contract(repo.path)
+            commit = contract["candidateIdentity"]["repositoryCommit"]
+
+        payload = execute_cic02_recovery_foundation(REPOSITORY_ROOT, commit=commit, candidate_contract=contract)
+        missing_contract_payload = execute_cic02_recovery_foundation(REPOSITORY_ROOT, commit=commit)
+
+        self.assertEqual(contract["candidateContractDigest"], payload["cic01CandidateContractDigest"])
+        self.assertNotIn("CIC01_CONTRACT_REQUIRED", payload["cic01CandidateContractValidation"]["failureCodes"])
+        self.assertIn("CIC01_CONTRACT_REQUIRED", missing_contract_payload["cic01CandidateContractValidation"]["failureCodes"])
+        self.assertEqual("FAIL", missing_contract_payload["cic02AuthoritativeVerdict"]["status"])
+
+    def test_summary_cannot_override_authoritative_cr7_verdict(self) -> None:
+        with DeterministicGitRepo() as repo:
+            contract = build_cic01_candidate_contract(repo.path)
+
+        ledger = build_denominator_ledger(self.manifest)
+        envelope = build_cr7_evidence_envelope(self.manifest, ledger, commit=contract["candidateIdentity"]["repositoryCommit"])
+        verdict = issue_cr7_verdict(contract, envelope)
+
+        self.assertEqual("FAIL", verdict["status"])
+        self.assertIn("CR7_EVIDENCE_NOT_PASS", verdict["failureCodes"])
+        self.assertEqual("PASS", {"mutableSummary": "PASS"}["mutableSummary"])
+
+    def test_cic02_package_validation_rejects_mixed_candidate_package(self) -> None:
+        with DeterministicGitRepo() as repo:
+            contract = build_cic01_candidate_contract(repo.path)
+        payload = execute_cic02_recovery_foundation(
+            REPOSITORY_ROOT,
+            commit=contract["candidateIdentity"]["repositoryCommit"],
+            candidate_contract=contract,
+        )
+        package = {
+            "cic01CandidateContract": contract,
+            "cr7Evidence": payload["cr7Evidence"],
+            "cr10Qualification": payload["cr10Qualification"],
+            "cssPrerequisitePublication": payload["cssPrerequisitePublication"],
+            "cic02AuthoritativeVerdict": payload["cic02AuthoritativeVerdict"],
+        }
+        package["cr10Qualification"] = {
+            **package["cr10Qualification"],
+            "candidateIdentity": {**package["cr10Qualification"]["candidateIdentity"], "candidateIdentityDigest": "different"},
+        }
+
+        validation = validate_cic02_evidence_package(package)
+
+        self.assertFalse(validation["valid"])
 
 
 if __name__ == "__main__":

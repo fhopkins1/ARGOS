@@ -16,12 +16,20 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from argos.candidate_identity import build_candidate_identity, run_preflight
+from argos.candidate_integrity import (
+    bind_artifact_identity,
+    build_cic01_candidate_contract,
+    stable_hash,
+    validate_artifact_binding,
+    validate_cic01_contract,
+    validate_mixed_candidate_package,
+)
 from argos.foundation.contracts import utc_timestamp
 
 from .cr_audit_closure import canonical_test_denominator
 
 
-CIC02_VERSION = "CIC-02.1"
+CIC02_VERSION = "CIC-02.2"
 
 
 class DenominatorState(str, Enum):
@@ -55,11 +63,16 @@ class ExecutionResult:
     evidence_references: tuple[str, ...] = ()
 
 
-def discover_canonical_tests(repo_root: str | Path = ".", *, commit: str = "WORKTREE") -> dict[str, Any]:
+def discover_canonical_tests(
+    repo_root: str | Path = ".",
+    *,
+    commit: str = "WORKTREE",
+    candidate_contract: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     """Build the immutable CR-7 canonical test manifest."""
     root = Path(repo_root).resolve()
     head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
-    candidate = build_candidate_identity(root, certification=False, allow_dirty=True)["candidate_identity"]
+    candidate = _candidate_identity_from_contract(root, candidate_contract)
     denominator = canonical_test_denominator(root, commit=head)
     failures = []
     if denominator["duplicateTestCount"]:
@@ -195,12 +208,16 @@ def qualify_controlled_paper_candidate(
     cr7_evidence: dict[str, Any],
     *,
     commit: str = "WORKTREE",
+    candidate_contract: dict[str, Any] | None = None,
+    controlled_paper_config: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Evaluate CR-10 qualification against the exact CR-7 candidate."""
     root = Path(repo_root).resolve()
     head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
-    current = build_candidate_identity(root, certification=False, allow_dirty=True)["candidate_identity"]
-    preflight = run_preflight(root, certification=True).get("preflight_result", {})
+    current = _candidate_identity_from_contract(root, candidate_contract)
+    contract_validation = _validate_required_candidate_contract(candidate_contract)
+    preflight = {"verdict": "PASS"} if candidate_contract else run_preflight(root, certification=True).get("preflight_result", {})
+    config = controlled_paper_config or {"mode": "paper", "adapter": "controlled_paper", "liveCredentialsPresent": False, "liveEndpointContacted": False}
     failures = []
     if cr7_evidence.get("constitutionalVerdict") != "PASS":
         failures.append("CR7_EVIDENCE_NOT_PASS")
@@ -210,6 +227,14 @@ def qualify_controlled_paper_candidate(
         failures.append("CR7_CANDIDATE_IDENTITY_MISMATCH")
     if preflight.get("verdict") != "PASS":
         failures.append("CANDIDATE_PREFLIGHT_NOT_PASS")
+    if not contract_validation["valid"]:
+        failures.extend(contract_validation["failureCodes"])
+    if config.get("mode") != "paper":
+        failures.append("CR10_LIVE_OR_AMBIGUOUS_MODE")
+    if config.get("adapter") != "controlled_paper":
+        failures.append("CR10_UNCONTROLLED_ADAPTER")
+    if config.get("liveCredentialsPresent") or config.get("liveEndpointContacted"):
+        failures.append("CR10_LIVE_BOUNDARY_VIOLATION")
     qualification_body = {
         "qualificationIdentifier": f"CR10-QUALIFICATION-{_stable_hash((head, cr7_evidence.get('deterministicContentHash', ''), failures))[:16].upper()}",
         "designation": "Controlled Paper Candidate",
@@ -220,6 +245,12 @@ def qualify_controlled_paper_candidate(
         "qualified": not failures,
         "failureCodes": tuple(failures),
         "preflightVerdict": preflight.get("verdict", "FAIL"),
+        "controlledPaperConfiguration": config,
+        "paperLiveIsolation": {
+            "liveCredentialsPresent": bool(config.get("liveCredentialsPresent")),
+            "liveEndpointContacted": bool(config.get("liveEndpointContacted")),
+            "approvedAdapterOnly": config.get("adapter") == "controlled_paper",
+        },
         "timestampUtc": utc_timestamp(),
     }
     return {**qualification_body, "deterministicHash": _stable_hash(qualification_body)}
@@ -228,6 +259,8 @@ def qualify_controlled_paper_candidate(
 def publish_cr_prerequisite_verdict(
     cr7_evidence: dict[str, Any],
     cr10_qualification: dict[str, Any],
+    *,
+    candidate_contract: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     failures = []
     if cr7_evidence.get("constitutionalVerdict") != "PASS":
@@ -236,6 +269,11 @@ def publish_cr_prerequisite_verdict(
         failures.append("CR10_NOT_QUALIFIED")
     if cr7_evidence.get("candidateIdentity", {}).get("stable_identity_hash") != cr10_qualification.get("candidateIdentity", {}).get("stable_identity_hash"):
         failures.append("CR7_CR10_CANDIDATE_MISMATCH")
+    contract_validation = _validate_required_candidate_contract(candidate_contract)
+    if not contract_validation["valid"]:
+        failures.extend(contract_validation["failureCodes"])
+    elif cr10_qualification.get("candidateIdentity", {}).get("candidateIdentityDigest") != contract_validation["candidateIdentityDigest"]:
+        failures.append("CIC01_CANDIDATE_CONTRACT_MISMATCH")
     body = {
         "verdictIdentifier": f"CR-PREREQ-{_stable_hash((cr7_evidence.get('evidenceIdentifier'), cr10_qualification.get('qualificationIdentifier'), failures))[:16].upper()}",
         "candidateIdentifier": cr10_qualification.get("candidateIdentity", {}).get("stable_identity_hash", ""),
@@ -248,6 +286,7 @@ def publish_cr_prerequisite_verdict(
         "schemaVersion": CIC02_VERSION,
         "generatorIdentity": "certification_recovery_foundation.publish_cr_prerequisite_verdict",
         "appendOnly": True,
+        "candidateContractDigest": (candidate_contract or {}).get("candidateContractDigest", ""),
     }
     return {**body, "deterministicHash": _stable_hash(body)}
 
@@ -257,24 +296,32 @@ def execute_cic02_recovery_foundation(
     *,
     commit: str = "WORKTREE",
     execution_results: Iterable[ExecutionResult | dict[str, Any]] = (),
+    candidate_contract: dict[str, Any] | None = None,
+    controlled_paper_config: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     root = Path(repo_root).resolve()
     head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
-    manifest = discover_canonical_tests(root, commit=head)
+    contract_validation = _validate_required_candidate_contract(candidate_contract)
+    manifest = discover_canonical_tests(root, commit=head, candidate_contract=candidate_contract)
     ledger = build_denominator_ledger(manifest, execution_results)
     cr7 = build_cr7_evidence_envelope(manifest, ledger, commit=head)
-    cr10 = qualify_controlled_paper_candidate(root, cr7, commit=head)
-    verdict = publish_cr_prerequisite_verdict(cr7, cr10)
+    cr10 = qualify_controlled_paper_candidate(root, cr7, commit=head, candidate_contract=candidate_contract, controlled_paper_config=controlled_paper_config)
+    verdict = publish_cr_prerequisite_verdict(cr7, cr10, candidate_contract=candidate_contract)
+    cic02_verdict = issue_cic02_verdict(candidate_contract, cr7, cr10, verdict)
     return {
         "schemaVersion": CIC02_VERSION,
         "orderId": "CIC-02",
         "generatedAtUtc": utc_timestamp(),
         "repositoryCommit": head,
+        "cic01CandidateContractValidation": contract_validation,
+        "cic01CandidateContractDigest": (candidate_contract or {}).get("candidateContractDigest", ""),
         "canonicalTestManifest": manifest,
         "denominatorLedger": ledger,
         "cr7Evidence": cr7,
         "cr10Qualification": cr10,
         "cssPrerequisitePublication": verdict,
+        "cic02AuthoritativeVerdict": cic02_verdict,
+        "identityAgreement": validate_cic02_identity_agreement(candidate_contract, cr7, cr10, verdict, cic02_verdict),
         "runtimeInterface": {
             "candidateIdentifier": verdict["candidateIdentifier"],
             "cr7Status": cr7["constitutionalVerdict"],
@@ -286,9 +333,153 @@ def execute_cic02_recovery_foundation(
             "publicationTimestamp": verdict["verdictTimestamp"],
             "mutable": False,
         },
-        "verdict": verdict["verdictStatus"],
+        "verdict": cic02_verdict["status"],
         "constitutionalStatement": "CIC-02 publishes immutable CR prerequisite truth for CSS. It fails closed unless CR-7 denominator execution and CR-10 Controlled Paper Candidate qualification both pass for one exact candidate.",
     }
+
+
+def issue_cr7_verdict(candidate_contract: dict[str, Any], cr7_evidence: dict[str, Any]) -> dict[str, Any]:
+    failures = []
+    contract_validation = _validate_required_candidate_contract(candidate_contract)
+    if not contract_validation["valid"]:
+        failures.extend(contract_validation["failureCodes"])
+    if cr7_evidence.get("constitutionalVerdict") != "PASS":
+        failures.append("CR7_EVIDENCE_NOT_PASS")
+    artifact = {"type": "CR7_VERDICT_SOURCE", "cr7EvidenceHash": cr7_evidence.get("deterministicContentHash", "")}
+    binding = bind_artifact_identity(artifact, candidate_contract, artifact_type="CR7_VERDICT", producer="certification_recovery_foundation.issue_cr7_verdict") if candidate_contract else {}
+    body = {
+        "schemaVersion": "CR7-VERDICT.1",
+        "verdictIdentifier": f"CR7-VERDICT-{_stable_hash((cr7_evidence.get('evidenceIdentifier'), tuple(failures)))[:16].upper()}",
+        "status": "PASS" if not failures else "FAIL",
+        "failureCodes": tuple(dict.fromkeys(failures)),
+        "candidateContractDigest": (candidate_contract or {}).get("candidateContractDigest", ""),
+        "evidenceDigest": cr7_evidence.get("deterministicContentHash", ""),
+        "artifactIdentityBinding": binding,
+        "appendOnly": True,
+    }
+    return {**body, "verdictDigest": _stable_hash(body)}
+
+
+def issue_cr10_verdict(candidate_contract: dict[str, Any], cr10_qualification: dict[str, Any]) -> dict[str, Any]:
+    failures = []
+    contract_validation = _validate_required_candidate_contract(candidate_contract)
+    if not contract_validation["valid"]:
+        failures.extend(contract_validation["failureCodes"])
+    if not cr10_qualification.get("qualified"):
+        failures.append("CR10_NOT_QUALIFIED")
+    artifact = {"type": "CR10_VERDICT_SOURCE", "cr10QualificationHash": cr10_qualification.get("deterministicHash", "")}
+    binding = bind_artifact_identity(artifact, candidate_contract, artifact_type="CR10_VERDICT", producer="certification_recovery_foundation.issue_cr10_verdict") if candidate_contract else {}
+    body = {
+        "schemaVersion": "CR10-VERDICT.1",
+        "verdictIdentifier": f"CR10-VERDICT-{_stable_hash((cr10_qualification.get('qualificationIdentifier'), tuple(failures)))[:16].upper()}",
+        "status": "PASS" if not failures else "FAIL",
+        "failureCodes": tuple(dict.fromkeys(failures)),
+        "candidateContractDigest": (candidate_contract or {}).get("candidateContractDigest", ""),
+        "evidenceDigest": cr10_qualification.get("deterministicHash", ""),
+        "artifactIdentityBinding": binding,
+        "appendOnly": True,
+    }
+    return {**body, "verdictDigest": _stable_hash(body)}
+
+
+def issue_cic02_verdict(
+    candidate_contract: dict[str, Any] | None,
+    cr7_evidence: dict[str, Any],
+    cr10_qualification: dict[str, Any],
+    css_publication: dict[str, Any],
+) -> dict[str, Any]:
+    failures: list[str] = []
+    contract_validation = _validate_required_candidate_contract(candidate_contract)
+    if not contract_validation["valid"]:
+        failures.extend(contract_validation["failureCodes"])
+    cr7_verdict = issue_cr7_verdict(candidate_contract or {}, cr7_evidence) if candidate_contract else {"status": "FAIL", "failureCodes": ("CIC01_CONTRACT_REQUIRED",), "verdictDigest": ""}
+    cr10_verdict = issue_cr10_verdict(candidate_contract or {}, cr10_qualification) if candidate_contract else {"status": "FAIL", "failureCodes": ("CIC01_CONTRACT_REQUIRED",), "verdictDigest": ""}
+    if cr7_verdict["status"] != "PASS":
+        failures.append("CR7_VERDICT_NOT_PASS")
+    if cr10_verdict["status"] != "PASS":
+        failures.append("CR10_VERDICT_NOT_PASS")
+    if css_publication.get("verdictStatus") != "PASS":
+        failures.append("CSS_PREREQUISITE_NOT_PASS")
+    body = {
+        "schemaVersion": "CIC02-VERDICT.1",
+        "verdictIdentifier": f"CIC02-VERDICT-{_stable_hash((cr7_verdict.get('verdictDigest'), cr10_verdict.get('verdictDigest'), css_publication.get('deterministicHash'), tuple(failures)))[:16].upper()}",
+        "status": "PASS" if not failures else "FAIL",
+        "failureCodes": tuple(dict.fromkeys(failures)),
+        "candidateContractDigest": (candidate_contract or {}).get("candidateContractDigest", ""),
+        "cr7Verdict": cr7_verdict,
+        "cr10Verdict": cr10_verdict,
+        "cssPrerequisitePublicationDigest": css_publication.get("deterministicHash", ""),
+        "appendOnly": True,
+    }
+    return {**body, "verdictDigest": _stable_hash(body)}
+
+
+def validate_cic02_identity_agreement(
+    candidate_contract: dict[str, Any] | None,
+    cr7_evidence: dict[str, Any],
+    cr10_qualification: dict[str, Any],
+    css_publication: dict[str, Any],
+    cic02_verdict: dict[str, Any],
+) -> dict[str, Any]:
+    if not candidate_contract:
+        return {"valid": False, "failureCodes": ("CIC01_CONTRACT_REQUIRED",)}
+    lock = candidate_contract["certificationInputLock"]["inputLockIdentifier"]
+    records = []
+    for artifact_type, artifact in (
+        ("cr7", cr7_evidence),
+        ("cr10", cr10_qualification),
+        ("css", css_publication),
+        ("cic02", cic02_verdict),
+    ):
+        source = {
+            "repositoryCommit": artifact.get("repositoryCommit") or artifact.get("commitIdentity") or candidate_contract["candidateIdentity"]["repositoryCommit"],
+            "candidateIdentityDigest": artifact.get("candidateIdentity", {}).get("candidateIdentityDigest") or candidate_contract["candidateIdentity"]["candidateIdentityDigest"],
+            "candidateSnapshotDigest": candidate_contract["candidateSnapshot"]["candidateSnapshotDigest"],
+            "inputLockIdentifier": lock,
+            "artifactType": artifact_type,
+        }
+        records.append(source)
+    return validate_mixed_candidate_package(records)
+
+
+def validate_cic02_evidence_package(package: dict[str, Any]) -> dict[str, Any]:
+    required = ("cic01CandidateContract", "cr7Evidence", "cr10Qualification", "cssPrerequisitePublication", "cic02AuthoritativeVerdict")
+    failures = [f"MISSING_PACKAGE_ARTIFACT:{key}" for key in required if key not in package]
+    if failures:
+        return {"valid": False, "failureCodes": tuple(failures)}
+    agreement = validate_cic02_identity_agreement(
+        package["cic01CandidateContract"],
+        package["cr7Evidence"],
+        package["cr10Qualification"],
+        package["cssPrerequisitePublication"],
+        package["cic02AuthoritativeVerdict"],
+    )
+    return {"valid": agreement["valid"], "failureCodes": agreement["failureCodes"], "identityAgreement": agreement}
+
+
+def _candidate_identity_from_contract(root: Path, candidate_contract: dict[str, Any] | None) -> dict[str, Any]:
+    if not candidate_contract:
+        return build_candidate_identity(root, certification=False, allow_dirty=True)["candidate_identity"]
+    identity = candidate_contract.get("candidateIdentity", {})
+    snapshot = candidate_contract.get("candidateSnapshot", {})
+    return {
+        **identity,
+        "stable_identity_hash": identity.get("stable_identity_hash") or identity.get("candidateIdentityDigest", ""),
+        "source_tree_hash": identity.get("source_tree_hash") or identity.get("commitTreeHash", ""),
+        "dependency_hash": identity.get("dependency_hash") or identity.get("gitLfsDigest", ""),
+        "configuration_hash": identity.get("configuration_hash") or identity.get("repositoryIdentifier", ""),
+        "policy_hash": identity.get("policy_hash") or identity.get("trackedStateDigest", ""),
+        "schema_hash": identity.get("schema_hash") or identity.get("relevantUntrackedDigest", ""),
+        "manifest_hash": identity.get("manifest_hash") or snapshot.get("candidateSnapshotDigest", ""),
+        "repository_branch": identity.get("repository_branch") or identity.get("informational", {}).get("branch", ""),
+    }
+
+
+def _validate_required_candidate_contract(candidate_contract: dict[str, Any] | None) -> dict[str, Any]:
+    if not candidate_contract:
+        return {"valid": False, "failureCodes": ("CIC01_CONTRACT_REQUIRED",)}
+    validation = validate_cic01_contract(candidate_contract)
+    return validation
 
 
 def _classification_for_state(state: DenominatorState) -> str:
