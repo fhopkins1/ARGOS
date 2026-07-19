@@ -1,0 +1,24 @@
+[
+  {
+    "adverse_id": "EOEJ-CLOSED-001",
+    "constitutional_interpretation": "Public trader imports must not depend on eager canonical-runtime construction.",
+    "final_status": "CLOSED",
+    "outcome_type": "COLLECTION_ERROR",
+    "primary_root_cause": "PRODUCTION_IMPLEMENTATION_DEFECT",
+    "remediation": "Moved paper brokerage control-panel dependencies to local imports and canonical runtime imports to concrete submodules.",
+    "subsystem": "Trader",
+    "targeted_rerun_result": "PASS",
+    "test_id": "trader package import tests"
+  },
+  {
+    "adverse_id": "EOEJ-CLOSED-002",
+    "constitutional_interpretation": "The protected invariant is EAB publication of the control action with proof-domain labeling.",
+    "final_status": "CLOSED",
+    "outcome_type": "FAILURE",
+    "primary_root_cause": "TEST_EXPECTATION_STALE",
+    "remediation": "Updated assertion from historical paper label to current proof-mode event and evidence marker.",
+    "subsystem": "EnterpriseActivityBus",
+    "targeted_rerun_result": "PASS",
+    "test_id": "EnterpriseActivityBusTests.test_runtime_publishes_control_actions_to_eab"
+  }
+]

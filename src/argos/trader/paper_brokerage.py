@@ -6,14 +6,8 @@ from dataclasses import asdict, dataclass, fields, is_dataclass, replace
 from enum import Enum
 import hashlib
 import json
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
-from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode
-from argos.control_panel.market_data_provider import MarketDataProviderAbstractionLayer
-from argos.control_panel.performance_truth_engine import PerformanceTruthEngine
-from argos.control_panel.position_monitoring_network import PositionMonitoringNetwork
-from argos.control_panel.truth_domain import make_paper_operational_truth_envelope, validate_decision_object_for_operational_truth
-from argos.control_panel.truth_promotion import PromotionDecisionStatus, TruthPromotionAuthority
 from argos.foundation.contracts import utc_timestamp
 
 from .execution_quality import CompletedExecutionRecord, ExecutionQualityOffice
@@ -24,6 +18,12 @@ from .order_management import (
     OrderLifecycleState,
     OrderManagementOffice,
 )
+
+if TYPE_CHECKING:
+    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus
+    from argos.control_panel.market_data_provider import MarketDataProviderAbstractionLayer
+    from argos.control_panel.performance_truth_engine import PerformanceTruthEngine
+    from argos.control_panel.position_monitoring_network import PositionMonitoringNetwork
 
 
 PAPER_BROKERAGE_ID = "BROKER-PAPER-OR003"
@@ -158,6 +158,8 @@ class PaperBrokerMarketDataAdapter:
     """Read bid/ask market observations from the existing market-data layer."""
 
     def __init__(self, provider: MarketDataProviderAbstractionLayer | None = None) -> None:
+        from argos.control_panel.market_data_provider import MarketDataProviderAbstractionLayer
+
         self.provider = provider or MarketDataProviderAbstractionLayer()
 
     def market_state(self, symbol: str, timestamp_utc: str, workflow_id: str, decision_object_id: str) -> MarketState | None:
@@ -381,6 +383,9 @@ class DeterministicPaperBrokerage:
         return updated
 
     def _validate(self, ticket: PaperBrokerOrderTicket, workflow_token: Any, market: MarketState | None) -> PaperBrokerRejectionCode | None:
+        from argos.control_panel.truth_domain import validate_decision_object_for_operational_truth
+        from argos.control_panel.truth_promotion import PromotionDecisionStatus, TruthPromotionAuthority
+
         if self.order_book.get(ticket.order_id):
             return PaperBrokerRejectionCode.DUPLICATE_ORDER
         if not ticket.workflow_id or not ticket.workflow_token:
@@ -453,6 +458,8 @@ class DeterministicPaperBrokerage:
     def _publish(self, event: BrokerEventRecord) -> None:
         if not self.communications_bus:
             return
+        from argos.control_panel.enterprise_communications_bus import MessageMode
+
         self._sequence += 1
         self.communications_bus.publish_event(
             message_type="ENTERPRISE_ACTIVITY_EVENT",
@@ -479,6 +486,8 @@ class DeterministicPaperBrokerage:
 
     def _record_performance_truth(self, order: PaperBrokerOrderRecord) -> None:
         if self.performance_truth and hasattr(self.performance_truth, "record_broker_authoritative_order"):
+            from argos.control_panel.truth_domain import make_paper_operational_truth_envelope
+
             source_event = order.events[-1].event_id if order.events else order.order_id
             envelope = make_paper_operational_truth_envelope(
                 originating_authority="DeterministicPaperBrokerage",

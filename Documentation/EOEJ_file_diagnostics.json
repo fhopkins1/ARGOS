@@ -1,0 +1,1007 @@
+{
+  "totalTests": 1284,
+  "totalFiles": 125,
+  "elapsedSeconds": 609.765,
+  "results": [
+    {
+      "file": "test_academy_framework.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.044,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.027s\n\nOK\n"
+    },
+    {
+      "file": "test_academy_fusion_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.226,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.027s\n\nOK\n"
+    },
+    {
+      "file": "test_academy_readiness.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.323,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.036s\n\nOK\n"
+    },
+    {
+      "file": "test_alternative_data_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.09,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.024s\n\nOK\n"
+    },
+    {
+      "file": "test_analyst_department_framework.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.204,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.034s\n\nOK\n"
+    },
+    {
+      "file": "test_analyst_readiness.py",
+      "selected": 4,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.118,
+      "tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.165s\n\nOK\n"
+    },
+    {
+      "file": "test_analyst_technical_analysis_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.276,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.016s\n\nOK\n"
+    },
+    {
+      "file": "test_analytical_fusion_office.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.419,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.021s\n\nOK\n"
+    },
+    {
+      "file": "test_argos_control_panel_dashboard.py",
+      "selected": 431,
+      "status": "TIMEOUT",
+      "returnCode": null,
+      "elapsedSeconds": 120.074,
+      "tail": ".........FFFF.F...FF............................................F..F"
+    },
+    {
+      "file": "test_audit_framework.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.46,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "file": "test_behavioral_analysis_office.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.608,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "file": "test_broker_integration_office.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 0.923,
+      "tail": "E\n======================================================================\nERROR: test_broker_integration_office (unittest.loader._FailedTest.test_broker_integration_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_broker_integration_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_broker_integration_office.py\", line 15, in <module>\n    from argos.trader import (  # noqa: E402\n    ...<13 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_bubble_detection_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.684,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "file": "test_case_study_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.633,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_chief_of_staff.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.6,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "test_command_console.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 8.856,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 6.084s\n\nOK\n"
+    },
+    {
+      "file": "test_commander_decision_engine.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.54,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "file": "test_commander_notification_alert_center.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.913,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.520s\n\nOK\n"
+    },
+    {
+      "file": "test_communication_framework.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.473,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "file": "test_configuration_framework.py",
+      "selected": 11,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.456,
+      "tail": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "file": "test_contract_framework.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.388,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "file": "test_cross_discipline_review_office.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.596,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.014s\n\nOK\n"
+    },
+    {
+      "file": "test_cryptocurrency_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.571,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_cs001_to_cs005_certification_series.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 39.899,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 37.280s\n\nOK\n"
+    },
+    {
+      "file": "test_curriculum_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.162,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.041s\n\nOK\n"
+    },
+    {
+      "file": "test_decision_evaluation_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.274,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.028s\n\nOK\n"
+    },
+    {
+      "file": "test_derivatives_analysis_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.037,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.016s\n\nOK\n"
+    },
+    {
+      "file": "test_doctrine_management_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.134,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.025s\n\nOK\n"
+    },
+    {
+      "file": "test_enterprise_activity_bus.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 4.019,
+      "tail": "...F.\n======================================================================\nFAIL: test_runtime_publishes_control_actions_to_eab (test_enterprise_activity_bus.EnterpriseActivityBusTests.test_runtime_publishes_control_actions_to_eab)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_enterprise_activity_bus.py\", line 117, in test_runtime_publishes_control_actions_to_eab\n    self.assertTrue(any(event[\"summary\"] == \"Paper self-training started\" for event in state[\"eab\"][\"events\"]))\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 5 tests in 0.748s\n\nFAILED (failures=1)\n"
+    },
+    {
+      "file": "test_enterprise_command_center.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 4.21,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 1.680s\n\nOK\n"
+    },
+    {
+      "file": "test_enterprise_credit_governor.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 3.789,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 1.240s\n\nOK\n"
+    },
+    {
+      "file": "test_eoda_constitutional_invariants.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.278,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.081s\n\nOK\n"
+    },
+    {
+      "file": "test_eodb_runtime_bridge_certification.py",
+      "selected": 12,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 20.89,
+      "tail": "............\n----------------------------------------------------------------------\nRan 12 tests in 18.492s\n\nOK\n"
+    },
+    {
+      "file": "test_eodc_truth_promotion.py",
+      "selected": 10,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.427,
+      "tail": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.022s\n\nOK\n"
+    },
+    {
+      "file": "test_eodd_transaction_reconciliation.py",
+      "selected": 11,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.685,
+      "tail": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "file": "test_eode_fault_injection_lab.py",
+      "selected": 10,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.502,
+      "tail": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.059s\n\nOK\n"
+    },
+    {
+      "file": "test_eodf_long_duration_operations_lab.py",
+      "selected": 17,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.55,
+      "tail": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.044s\n\nOK\n"
+    },
+    {
+      "file": "test_eodg_read_only_integrity.py",
+      "selected": 15,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.551,
+      "tail": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.075s\n\nOK\n"
+    },
+    {
+      "file": "test_eodh_synthetic_truth_quarantine.py",
+      "selected": 14,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 28.868,
+      "tail": "..............\n----------------------------------------------------------------------\nRan 14 tests in 26.411s\n\nOK\n"
+    },
+    {
+      "file": "test_eodi_test_evidence_office.py",
+      "selected": 14,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 90.246,
+      "tail": "..............\n----------------------------------------------------------------------\nRan 14 tests in 87.889s\n\nOK\n"
+    },
+    {
+      "file": "test_eodj_market_data_boundary.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.097,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_eodk_bridge_fabric.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.165,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.036s\n\nOK\n"
+    },
+    {
+      "file": "test_eodl_office_lifecycle.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.967,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.098s\n\nOK\n"
+    },
+    {
+      "file": "test_eodm_to_eodr_constitutional_closure.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 15.454,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 13.282s\n\nOK\n"
+    },
+    {
+      "file": "test_eoea_canonical_bridge_denominator_execution.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.191,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.052s\n\nOK\n"
+    },
+    {
+      "file": "test_eoec_production_synthetic_truth_elimination.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 13.942,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 11.750s\n\nOK\n"
+    },
+    {
+      "file": "test_eoed_deterministic_persistence_recovery.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.463,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.357s\n\nOK\n"
+    },
+    {
+      "file": "test_eoee_full_suite_failure_timeout_elimination.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 9.195,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 7.395s\n\nOK\n"
+    },
+    {
+      "file": "test_eoef_wall_clock_operational_campaigns.py",
+      "selected": 4,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 20.025,
+      "tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 17.267s\n\nOK\n"
+    },
+    {
+      "file": "test_eoeg_missing_eoeb_closure.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.824,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.615s\n\nOK\n"
+    },
+    {
+      "file": "test_eoeh_remaining_bridge_blocker_elimination.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 3.006,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.756s\n\nOK\n"
+    },
+    {
+      "file": "test_event_intelligence_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.507,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.012s\n\nOK\n"
+    },
+    {
+      "file": "test_evidence_evaluation_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.604,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "file": "test_execution_quality_office.py",
+      "selected": 4,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 0.795,
+      "tail": "E\n======================================================================\nERROR: test_execution_quality_office (unittest.loader._FailedTest.test_execution_quality_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_execution_quality_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_execution_quality_office.py\", line 14, in <module>\n    from argos.trader import CompletedExecutionRecord, ExecutionQualityOffice  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_executive_dashboard.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.498,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.023s\n\nOK\n"
+    },
+    {
+      "file": "test_executive_framework.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.488,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "file": "test_executive_readiness.py",
+      "selected": 3,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.533,
+      "tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "file": "test_executive_workflow.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.55,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "test_finance_tutor_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.574,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_foundation_readiness.py",
+      "selected": 4,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.422,
+      "tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "file": "test_foundation_testing_framework.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.481,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.172s\n\nOK\n"
+    },
+    {
+      "file": "test_fundamental_analysis_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.552,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_fundamental_research_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.53,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "file": "test_fusion_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.54,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.014s\n\nOK\n"
+    },
+    {
+      "file": "test_historian_fusion_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.643,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.015s\n\nOK\n"
+    },
+    {
+      "file": "test_historian_group_framework.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.634,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "file": "test_historian_readiness.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.654,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.019s\n\nOK\n"
+    },
+    {
+      "file": "test_human_override.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.537,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "file": "test_hypothesis_validation_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.611,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "test_identity_framework.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.3,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "file": "test_ifvr001_phase35_truth_envelope.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.385,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.038s\n\nOK\n"
+    },
+    {
+      "file": "test_ifvr001_runtime_convergence.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.255,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.093s\n\nOK\n"
+    },
+    {
+      "file": "test_infrastructure_resource_management.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.922,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.842s\n\nOK\n"
+    },
+    {
+      "file": "test_institutional_knowledge_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.604,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "file": "test_instruction_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.558,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.016s\n\nOK\n"
+    },
+    {
+      "file": "test_interactive_organization_explorer.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.802,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.667s\n\nOK\n"
+    },
+    {
+      "file": "test_knowledge_assessment_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.557,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.016s\n\nOK\n"
+    },
+    {
+      "file": "test_knowledge_graph_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.501,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.016s\n\nOK\n"
+    },
+    {
+      "file": "test_learning_integration_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.532,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.015s\n\nOK\n"
+    },
+    {
+      "file": "test_librarian_fusion_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.575,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "test_librarian_group_framework.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.577,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "test_librarian_readiness.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.483,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "file": "test_liquidity_risk_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.492,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "file": "test_live_portfolio_performance_console.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 5.093,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 2.833s\n\nOK\n"
+    },
+    {
+      "file": "test_macroeconomic_analysis_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.374,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.004s\n\nOK\n"
+    },
+    {
+      "file": "test_macroeconomic_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.417,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "file": "test_model_calibration_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.495,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "file": "test_news_sentiment_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.402,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "file": "test_office_operating_modes_scheduler.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.543,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.776s\n\nOK\n"
+    },
+    {
+      "file": "test_options_flow_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.389,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "file": "test_or003_paper_brokerage.py",
+      "selected": 3,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.724,
+      "tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.027s\n\nOK\n"
+    },
+    {
+      "file": "test_or004_position_lifecycle.py",
+      "selected": 3,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.013,
+      "tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.063s\n\nOK\n"
+    },
+    {
+      "file": "test_or005_canonical_runtime.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.028,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.102s\n\nOK\n"
+    },
+    {
+      "file": "test_or006_enterprise_persistence.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.36,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.719s\n\nOK\n"
+    },
+    {
+      "file": "test_or007_enterprise_certification.py",
+      "selected": 3,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 3.742,
+      "tail": "...\n----------------------------------------------------------------------\nRan 3 tests in 1.981s\n\nOK\n"
+    },
+    {
+      "file": "test_order_management_office.py",
+      "selected": 9,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 0.569,
+      "tail": "E\n======================================================================\nERROR: test_order_management_office (unittest.loader._FailedTest.test_order_management_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_order_management_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_order_management_office.py\", line 15, in <module>\n    from argos.trader import BrokerOrderMessage, ExecutionOrderRequest, OrderFillRecord, OrderLifecycleState, OrderManagementOffice  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_performance_measurement_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.438,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.018s\n\nOK\n"
+    },
+    {
+      "file": "test_persistence_framework.py",
+      "selected": 9,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.303,
+      "tail": ".........\n----------------------------------------------------------------------\nRan 9 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "file": "test_portfolio_risk_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.508,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "file": "test_position_management_office.py",
+      "selected": 6,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 0.625,
+      "tail": "E\n======================================================================\nERROR: test_position_management_office (unittest.loader._FailedTest.test_position_management_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_position_management_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_position_management_office.py\", line 14, in <module>\n    from argos.trader import BrokerPositionRecord, PositionExecutionEvent, PositionLifecycleState, PositionManagementOffice  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_position_risk_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.484,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "file": "test_prompt_evaluation_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.484,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.015s\n\nOK\n"
+    },
+    {
+      "file": "test_prompt_specification_repository.py",
+      "selected": 10,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.304,
+      "tail": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.002s\n\nOK\n"
+    },
+    {
+      "file": "test_recovery_planning_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.528,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "file": "test_repository_structure.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.289,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.040s\n\nOK\n"
+    },
+    {
+      "file": "test_risk_fusion_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.509,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "file": "test_risk_interaction_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.402,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.006s\n\nOK\n"
+    },
+    {
+      "file": "test_risk_office_framework.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.551,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "file": "test_risk_readiness.py",
+      "selected": 4,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.612,
+      "tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.017s\n\nOK\n"
+    },
+    {
+      "file": "test_seeker_department_framework.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.535,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nOK\n"
+    },
+    {
+      "file": "test_seeker_readiness.py",
+      "selected": 4,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.529,
+      "tail": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.059s\n\nOK\n"
+    },
+    {
+      "file": "test_specification_repository_office.py",
+      "selected": 5,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.547,
+      "tail": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_statistical_analysis_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.523,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "file": "test_tail_risk_office.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.631,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "file": "test_tc001_trace_equivalence.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 24.291,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 21.982s\n\nOK\n"
+    },
+    {
+      "file": "test_tc002_to_tc004_trace_closure.py",
+      "selected": 15,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 2.842,
+      "tail": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.674s\n\nOK\n"
+    },
+    {
+      "file": "test_tc005_to_tc008_trace_closure.py",
+      "selected": 8,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 79.522,
+      "tail": "........\n----------------------------------------------------------------------\nRan 8 tests in 77.248s\n\nOK\n"
+    },
+    {
+      "file": "test_technical_analysis_office.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.957,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.013s\n\nOK\n"
+    },
+    {
+      "file": "test_trade_execution_office.py",
+      "selected": 7,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 1.534,
+      "tail": "E\n======================================================================\nERROR: test_trade_execution_office (unittest.loader._FailedTest.test_trade_execution_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_trade_execution_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_trade_execution_office.py\", line 14, in <module>\n    from argos.trader import (  # noqa: E402\n    ...<5 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_trade_monitoring_office.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 1.643,
+      "tail": "E\n======================================================================\nERROR: test_trade_monitoring_office (unittest.loader._FailedTest.test_trade_monitoring_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_trade_monitoring_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_trade_monitoring_office.py\", line 14, in <module>\n    from argos.trader import (  # noqa: E402\n    ...<11 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_trader_fusion_office.py",
+      "selected": 4,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 1.798,
+      "tail": "E\n======================================================================\nERROR: test_trader_fusion_office (unittest.loader._FailedTest.test_trader_fusion_office)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_trader_fusion_office\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_trader_fusion_office.py\", line 15, in <module>\n    from argos.trader import (  # noqa: E402\n    ...<13 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_trader_group_framework.py",
+      "selected": 6,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 1.581,
+      "tail": "E\n======================================================================\nERROR: test_trader_group_framework (unittest.loader._FailedTest.test_trader_group_framework)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_trader_group_framework\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_trader_group_framework.py\", line 20, in <module>\n    from argos.trader import ExecutionState, TRADER_GROUP_ID, TraderFrameworkLibrary, TraderGroup, trader_office_templates  # noqa: E402\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_trader_readiness.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR",
+      "returnCode": 1,
+      "elapsedSeconds": 1.435,
+      "tail": "E\n======================================================================\nERROR: test_trader_readiness (unittest.loader._FailedTest.test_trader_readiness)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_trader_readiness\nTraceback (most recent call last):\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\unittest\\loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests\\test_trader_readiness.py\", line 11, in <module>\n    from argos.trader import (  # noqa: E402\n    ...<5 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py\", line 136, in <module>\n    from .paper_brokerage import (\n    ...<16 lines>...\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\paper_brokerage.py\", line 11, in <module>\n    from argos.control_panel.enterprise_communications_bus import EnterpriseCommunicationsBus, MessageMode\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\__init__.py\", line 15, in <module>\n    from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem\n  File \"C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\control_panel\\canonical_enterprise_runtime.py\", line 17, in <module>\n    from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount\nImportError: cannot import name 'DeterministicPaperBrokerage' from partially initialized module 'argos.trader' (most likely due to a circular import) (C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src\\argos\\trader\\__init__.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "file": "test_treasury_trading_control_panel.py",
+      "selected": 6,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 0.931,
+      "tail": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.015s\n\nOK\n"
+    },
+    {
+      "file": "test_volatility_risk_office.py",
+      "selected": 7,
+      "status": "PASS",
+      "returnCode": 0,
+      "elapsedSeconds": 1.193,
+      "tail": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.017s\n\nOK\n"
+    }
+  ]
+}

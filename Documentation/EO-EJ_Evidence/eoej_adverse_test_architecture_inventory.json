@@ -1,0 +1,80 @@
+{
+  "diagnosticFiles": [
+    "Documentation/EOEJ_baseline_unittest_discover.log",
+    "Documentation/EOEJ_file_diagnostics.json"
+  ],
+  "dominantRootCauseGroups": [
+    "trader/control_panel circular import on paper brokerage import",
+    "stale proof-mode dashboard expectations expecting operational paper truth side effects",
+    "removed mock market-data provider expectation after authoritative provider registry hardening",
+    "workflow retention test remains an unresolved timeout contributor"
+  ],
+  "failedOrTimeoutFiles": [
+    {
+      "elapsedSeconds": 120.074,
+      "file": "test_argos_control_panel_dashboard.py",
+      "selected": 431,
+      "status": "TIMEOUT"
+    },
+    {
+      "elapsedSeconds": 0.923,
+      "file": "test_broker_integration_office.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 4.019,
+      "file": "test_enterprise_activity_bus.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 0.795,
+      "file": "test_execution_quality_office.py",
+      "selected": 4,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 0.569,
+      "file": "test_order_management_office.py",
+      "selected": 9,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 0.625,
+      "file": "test_position_management_office.py",
+      "selected": 6,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 1.534,
+      "file": "test_trade_execution_office.py",
+      "selected": 7,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 1.643,
+      "file": "test_trade_monitoring_office.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 1.798,
+      "file": "test_trader_fusion_office.py",
+      "selected": 4,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 1.581,
+      "file": "test_trader_group_framework.py",
+      "selected": 6,
+      "status": "FAIL_OR_ERROR"
+    },
+    {
+      "elapsedSeconds": 1.435,
+      "file": "test_trader_readiness.py",
+      "selected": 5,
+      "status": "FAIL_OR_ERROR"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "failedFilesAtBaseline": 10,
+  "fileDiagnosticCommand": "py -3 -m unittest discover -s Tests -p <file>",
+  "files": 125,
+  "postRemediationKnownClosedFiles": [
+    "test_broker_integration_office.py",
+    "test_execution_quality_office.py",
+    "test_order_management_office.py",
+    "test_position_management_office.py",
+    "test_trade_execution_office.py",
+    "test_trade_monitoring_office.py",
+    "test_trader_fusion_office.py",
+    "test_trader_group_framework.py",
+    "test_trader_readiness.py",
+    "test_enterprise_activity_bus.py"
+  ],
+  "timeoutFilesAtBaseline": 1
+}

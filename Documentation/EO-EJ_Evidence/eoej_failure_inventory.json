@@ -1,0 +1,35 @@
+[
+  {
+    "adverse_id": "EOEJ-CLOSED-002",
+    "constitutional_interpretation": "The protected invariant is EAB publication of the control action with proof-domain labeling.",
+    "final_status": "CLOSED",
+    "outcome_type": "FAILURE",
+    "primary_root_cause": "TEST_EXPECTATION_STALE",
+    "remediation": "Updated assertion from historical paper label to current proof-mode event and evidence marker.",
+    "subsystem": "EnterpriseActivityBus",
+    "targeted_rerun_result": "PASS",
+    "test_id": "EnterpriseActivityBusTests.test_runtime_publishes_control_actions_to_eab"
+  },
+  {
+    "adverse_id": "EOEJ-OPEN-001",
+    "constitutional_interpretation": "Proof-mode self-training intentionally does not create certified PAPER order-ledger truth.",
+    "final_status": "OPEN",
+    "outcome_type": "FAILURE",
+    "primary_root_cause": "TEST_EXPECTATION_STALE",
+    "remediation": "Rework historical dashboard tests to use a certified OR-003 paper-broker stimulus or assert proof-mode non-mutation.",
+    "subsystem": "DashboardPaperWorkflow",
+    "targeted_rerun_result": "FAIL",
+    "test_id": "ARGOSControlPanelDashboardTests.test_broker_realistic_paper_trading_fills_only_with_deposited_cash_during_regular_session"
+  },
+  {
+    "adverse_id": "EOEJ-OPEN-002",
+    "constitutional_interpretation": "EO-DJ provider authority registry removed the legacy mock provider from the production-facing provider set.",
+    "final_status": "OPEN",
+    "outcome_type": "FAILURE",
+    "primary_root_cause": "TEST_EXPECTATION_STALE",
+    "remediation": "Update EO-G assertions to check authoritative test/development provider IDs and production reachability rules.",
+    "subsystem": "MarketDataProvider",
+    "targeted_rerun_result": "FAIL",
+    "test_id": "ARGOSControlPanelDashboardTests.test_eo_g_provider_registry_capabilities_and_normalized_objects_are_visible"
+  }
+]

@@ -114,7 +114,9 @@ class EnterpriseActivityBusTests(unittest.TestCase):
 
         self.assertIn("eab", state)
         self.assertGreaterEqual(len(state["eab"]["events"]), 9)
-        self.assertTrue(any(event["summary"] == "Paper self-training started" for event in state["eab"]["events"]))
+        start_events = tuple(event for event in state["eab"]["events"] if event["summary"] == "Proof-mode self-training started")
+        self.assertTrue(start_events)
+        self.assertTrue(any("PROOF MODE - NOT OPERATIONAL TRUTH" in event["supporting_evidence"] for event in start_events))
         self.assertTrue(any(event["subscriber"] == "Commander" for event in state["eab"]["deliveries"]))
 
     def test_ui_exposes_eab_controls_and_filter_endpoint(self) -> None:

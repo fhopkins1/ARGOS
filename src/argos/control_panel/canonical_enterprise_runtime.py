@@ -14,9 +14,9 @@ from argos.foundation.configuration import ConfigurationService
 from argos.foundation.contracts import utc_timestamp
 from argos.foundation.persistence import InMemoryPersistenceRepository, canonical_schemas
 from argos.foundation.prompts import PromptRepository
-from argos.trader import DeterministicPaperBrokerage, OrderManagementOffice, PaperBrokerAccount
+from argos.trader.order_management import OrderManagementOffice
 from argos.trader.execution_quality import ExecutionQualityOffice
-from argos.trader.paper_brokerage import PaperBrokerMarketDataAdapter
+from argos.trader.paper_brokerage import DeterministicPaperBrokerage, PaperBrokerAccount, PaperBrokerMarketDataAdapter
 
 from .api_execution_gateway import ApiExecutionGateway, ApiExecutionRequest, RealApiPilotConfig
 from .canonical_bridge_fabric import BridgeRequirementClass, BridgeResultStatus, CanonicalBridgeExecutor, default_bridge_definitions, make_bridge_request

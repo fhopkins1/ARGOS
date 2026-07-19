@@ -1,0 +1,16 @@
+{
+  "allClosed": false,
+  "timeoutContributors": [
+    {
+      "adverse_id": "EOEJ-OPEN-003",
+      "constitutional_interpretation": "The final dashboard workflow-retention test remains a long-running timeout contributor.",
+      "final_status": "OPEN",
+      "outcome_type": "TIMEOUT",
+      "primary_root_cause": "TIMEOUT_CONTRIBUTOR",
+      "remediation": "Bound workflow-loop completion or replace the fixture with deterministic completed workflow records.",
+      "subsystem": "WorkflowRuntimeMonitor",
+      "targeted_rerun_result": "TIMEOUT",
+      "test_id": "ARGOSControlPanelDashboardTests.test_workflow_runtime_monitor_retains_latest_ten_completed_workflows"
+    }
+  ]
+}

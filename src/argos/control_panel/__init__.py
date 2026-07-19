@@ -12,7 +12,6 @@ from .commander_daily_review_workspace import CommanderDailyReviewWorkspace, Com
 from .commander_strategic_dashboard import CommanderStrategicDashboard, CommanderStrategicDashboardConfig
 from .cnac import CommanderNotificationAlertCenter, CommanderNotification, NotificationType, Priority
 from .closed_position_truth import ClosedPositionTruthBuilder, ClosedPositionTruthConfig, ClosedPositionTruthRecord
-from .canonical_enterprise_runtime import CanonicalEnterpriseComponents, CanonicalEnterpriseRuntime, CanonicalRuntimeError, CanonicalRuntimeMode, RuntimeAdmissionRecord, RuntimeFailure, SeriesCComponentInventoryItem
 from .correlation_intelligence_engine import CorrelationIntelligenceConfig, CorrelationIntelligenceEngine, CorrelationIntelligenceRecord
 from .cognitive_contract import PromptContractLibrary, PromptTemplate
 from .cognitive_pilot import ControlledCognitivePilot, ControlledCognitivePilotLimits
@@ -49,6 +48,7 @@ from .full_suite_failure_timeout_elimination import EO_EE_VERSION, EOEEOutcome, 
 from .wall_clock_operational_campaigns import EO_EF_VERSION, EOEFCampaignStatus, execute_eoef_certification
 from .missing_eoeb_closure import EO_EG_VERSION, EOEBPriorStatus, execute_eoeg_certification
 from .remaining_bridge_blocker_elimination import EO_EH_VERSION, EOEHBlockerType, execute_eoeh_certification
+from .full_suite_failure_error_closure import EO_EJ_VERSION, EOEJAdverseResult, EOEJRootCause, execute_eoej_certification
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
@@ -328,6 +328,10 @@ __all__ = [
     "EO_EH_VERSION",
     "EOEHBlockerType",
     "execute_eoeh_certification",
+    "EO_EJ_VERSION",
+    "EOEJAdverseResult",
+    "EOEJRootCause",
+    "execute_eoej_certification",
     "AuthoritativeWriteSite",
     "BlockingLevel",
     "BrokerPositionInvariantMonitor",
@@ -848,3 +852,24 @@ __all__ = [
     "get_server_runtime_provider",
     "reset_server_runtime_provider_for_tests",
 ]
+
+
+_LAZY_CANONICAL_RUNTIME_EXPORTS = {
+    "CanonicalEnterpriseComponents",
+    "CanonicalEnterpriseRuntime",
+    "CanonicalRuntimeError",
+    "CanonicalRuntimeMode",
+    "RuntimeAdmissionRecord",
+    "RuntimeFailure",
+    "SeriesCComponentInventoryItem",
+}
+
+
+def __getattr__(name: str):
+    if name in _LAZY_CANONICAL_RUNTIME_EXPORTS:
+        from . import canonical_enterprise_runtime
+
+        value = getattr(canonical_enterprise_runtime, name)
+        globals()[name] = value
+        return value
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
