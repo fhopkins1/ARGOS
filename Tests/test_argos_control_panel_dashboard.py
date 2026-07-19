@@ -400,7 +400,9 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
             self.assertEqual(1, state["apiExecutionGateway"]["metrics"]["allowedCount"])
             self.assertEqual(1, state["workflowRuntimeMonitor"]["metrics"]["completedWorkflows"])
             self.assertEqual("Archived", state["workflowRuntimeMonitor"]["completedWorkflows"][0]["status"])
-            self.assertEqual(0, len(state["performanceTruthEngine"]["orderLedger"]))
+            self.assertEqual(1, len(state["performanceTruthEngine"]["orderLedger"]))
+            self.assertEqual("QUEUED", state["performanceTruthEngine"]["orderLedger"][0]["status"])
+            self.assertEqual("MARKET_CLOSED", state["performanceTruthEngine"]["orderLedger"][0]["queued_reason"])
             self.assertEqual(0, len(state["performanceTruthEngine"]["tradeLedger"]))
             self.assertEqual(0, len(state["performanceTruthEngine"]["positionLedger"]))
             self.assertEqual(1, state["performanceTruthEngine"]["integrity"]["proofModeTruthAttempts"])
@@ -5540,10 +5542,17 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
         provider = runtime.state()["marketDataProviderAbstractionLayer"]
         registry = provider["providerRegistry"]
 
-        self.assertIn("mock", {item["providerId"] for item in registry})
-        self.assertIn("synthetic", {item["providerId"] for item in registry})
-        self.assertIn("polygon", {item["providerId"] for item in registry})
-        self.assertTrue(any(item["providerType"] == "real" for item in registry))
+        provider_ids = {item["providerId"] for item in registry}
+        self.assertIn("external-paper", provider_ids)
+        self.assertIn("external-live", provider_ids)
+        self.assertIn("replay-market-data", provider_ids)
+        self.assertIn("test-market-data", provider_ids)
+        self.assertIn("development-simulation-market-data", provider_ids)
+        self.assertNotIn("mock", provider_ids)
+        self.assertNotIn("synthetic", provider_ids)
+        self.assertTrue(any(item["providerType"] == "AUTHORITATIVE_EXTERNAL" for item in registry))
+        self.assertFalse(provider["providerConfiguration"]["mockFallbackEnabled"])
+        self.assertFalse(provider["providerConfiguration"]["syntheticFallbackEnabled"])
         for entry in registry:
             for key in (
                 "providerId",
@@ -5561,25 +5570,41 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "commanderApprovalStatus",
             ):
                 self.assertIn(key, entry)
-        quote = provider["normalizedObjects"]["quotes"][0]
+        self.assertEqual((), provider["normalizedObjects"]["quotes"])
+        self.assertFalse(provider["providerConfiguration"]["authoritativeProviderConfigured"])
+        self.assertEqual("UNCONFIGURED", provider["commanderVisibility"]["providerHealth"])
+
+        from argos.control_panel.market_data_provider import MarketDataProviderAbstractionLayer
+
+        requested_at = "2026-07-19T14:30:00Z"
+        controlled = MarketDataProviderAbstractionLayer.with_controlled_authoritative_provider(
+            observations={
+                "SPY": {"bid": "529.00", "ask": "529.02", "last": "529.01", "volume": "1000", "source_timestamp_utc": requested_at},
+                "MARKET": {"status": "REGULAR", "source_timestamp_utc": requested_at},
+            }
+        ).snapshot(timestamp_utc=requested_at)
+        quote = controlled["normalizedObjects"]["quotes"][0]
         self.assertEqual("NormalizedQuote", quote["objectType"])
         attribution = quote["sourceAttribution"]
         for key in (
             "providerId",
-            "sourceName",
-            "requestTime",
-            "responseTime",
+            "providerType",
+            "sourceAuthority",
+            "proofDomain",
+            "requestId",
+            "correlationId",
             "dataTimestamp",
+            "ingestionTimestamp",
             "freshness",
-            "confidence",
-            "rawSymbol",
-            "normalizedSymbol",
             "rawPayloadReference",
-            "normalizationVersion",
-            "validationStatus",
+            "deterministicHash",
+            "schemaVersion",
         ):
             self.assertIn(key, attribution)
-        self.assertEqual("VALID", attribution["validationStatus"])
+        self.assertEqual("AUTHORITATIVE_EXTERNAL", attribution["providerType"])
+        self.assertEqual("PAPER_AUTHORITATIVE", attribution["proofDomain"])
+        self.assertEqual("FRESH", attribution["freshness"])
+        self.assertEqual("VALID", quote["validation"]["validationStatus"])
 
     def test_eo_g_unsupported_capabilities_failover_cache_and_cost_are_audited(self) -> None:
         runtime = create_runtime()

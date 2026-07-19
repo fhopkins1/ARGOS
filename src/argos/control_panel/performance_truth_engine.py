@@ -760,6 +760,18 @@ class PerformanceTruthEngine:
         if broker_fills:
             order_payload["fills"] = tuple(broker_fills)
             order_payload["fill_ids"] = tuple(str(item.get("fill_id", item.get("fillId", ""))) for item in broker_fills)
+        elif order.filled_quantity > 0:
+            order_payload["fills"] = (
+                {
+                    "fill_id": f"{order.order_id}-FILL-001",
+                    "order_id": order.order_id,
+                    "quantity": order.filled_quantity,
+                    "price": order.average_fill_price,
+                    "timestamp": order.timestamp,
+                    "source": "PerformanceTruthEngine.PaperBrokerModel",
+                },
+            )
+            order_payload["fill_ids"] = (f"{order.order_id}-FILL-001",)
         order_payload["mission_id"] = order.intended_order.get("missionId", "")
         order_payload["trader_identity"] = order.intended_order.get("traderIdentity", "")
         order_payload["account_id"] = order.intended_order.get("accountId", "")

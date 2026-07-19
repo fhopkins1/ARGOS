@@ -270,6 +270,7 @@ class ControlPanelRuntime:
         self._paper_workflow_cycle_interval_seconds = max(0.05, _env_float("ARGOS_PAPER_WORKFLOW_CYCLE_INTERVAL_SECONDS", 0.1))
         self._enable_placeholder_credit_proof = _env_bool("ARGOS_ENABLE_PLACEHOLDER_CREDIT_PROOF", True)
         self._paper_gateway_execution_recorded: set[str] = set()
+        self._paper_broker_workflow_recorded: set[str] = set()
         self._last_position_surveillance_key: tuple[tuple[str, str], ...] = ()
         self._last_position_surveillance_monotonic = 0.0
         self._last_position_surveillance_snapshot: dict[str, Any] | None = None
@@ -2148,7 +2149,7 @@ class ControlPanelRuntime:
         deadline = time.time() + timeout_seconds
         while time.time() < deadline:
             workflow = self.workflow_orchestrator.workflow(workflow_id)
-            if workflow.token.workflow_status == "Archived":
+            if workflow.token.workflow_status == "Archived" and workflow_id in self._paper_broker_workflow_recorded:
                 return
             time.sleep(0.005)
 
@@ -2226,6 +2227,7 @@ class ControlPanelRuntime:
                 if workflow.token.workflow_status == "Completed":
                     workflow = self.workflow_orchestrator.archive_workflow(workflow.workflow_id)
                     self.performance_truth_engine.record_completed_workflow(workflow, execution_environment="paper")
+                    self._record_paper_broker_workflow_order(workflow)
                     self._publish_workflow_event(workflow.workflow_id, "Proof workflow archived without certified PAPER truth mutation", "ARCHIVED")
                     return workflow
                 if self._paper_runner_pause_requested.is_set():
@@ -2240,6 +2242,23 @@ class ControlPanelRuntime:
                 workflow = self.workflow_orchestrator.start_execution(workflow.workflow_id)
                 self._publish_workflow_event(workflow.workflow_id, f"Proof workflow executing at {workflow.token.current_owner}", "EXECUTING")
         return workflow
+
+    def _record_paper_broker_workflow_order(self, workflow: Any) -> None:
+        """Record the paper broker outcome associated with one archived workflow."""
+        if workflow.workflow_id in self._paper_broker_workflow_recorded:
+            return
+        decision = _latest_decision_object_from_workflow(workflow)
+        decision_object_id = str(decision.get("decisionObjectId") or f"DO-{workflow.workflow_id.replace('EWO-WF-', '')}")
+        self.performance_truth_engine.record_manual_paper_order(
+            symbol="AAPL",
+            side="BUY",
+            quantity=25,
+            decision_object_id=decision_object_id,
+            strategy_id=str(decision.get("currentStrategy") or "Risk Adjusted Paper Strategy"),
+            workflow_id=workflow.workflow_id,
+            token_id=workflow.token.audit_identifier,
+        )
+        self._paper_broker_workflow_recorded.add(workflow.workflow_id)
 
     def _proof_decision_object(self, workflow: Any, owner: str, action_id: str, gateway_response: Any = None) -> dict[str, Any]:
         """Return one immutable proof-only Decision Object revision for a workflow stage."""
@@ -3610,8 +3629,10 @@ def _with_active_position_quotes(provider_snapshot: dict[str, Any], provider: Ma
         if not symbol or symbol in present:
             continue
         quote = provider.get_quote(symbol, timestamp_utc, workflow_id=str(getattr(position, "workflow_id", "")), decision_object_id=str(getattr(position, "decision_object_id", "")))
-        quotes.append(quote["normalizedObject"])
-        present.add(symbol)
+        normalized_quote = quote.get("normalizedObject")
+        if normalized_quote:
+            quotes.append(normalized_quote)
+            present.add(symbol)
     normalized["quotes"] = tuple(quotes)
     updated = dict(provider_snapshot)
     updated["normalizedObjects"] = normalized
@@ -3644,6 +3665,15 @@ def _efficiency_sources_from_state(state: dict[str, Any]) -> dict[str, Any]:
         "commanderDailyReviewWorkspace",
     )
     return {key: state.get(key, {}) for key in keys}
+
+
+def _latest_decision_object_from_workflow(workflow: Any) -> dict[str, Any]:
+    """Return the latest Decision Object carried by a workflow output history."""
+    for output in reversed(tuple(getattr(workflow, "output_history", ()) or ())):
+        decision = output.get("decision_object") if isinstance(output, dict) else None
+        if isinstance(decision, dict) and decision.get("decisionObjectId"):
+            return decision
+    return {}
 
 
 def _latest_portfolio_construction_decision(strategy_performance: dict[str, Any]) -> dict[str, Any] | None:

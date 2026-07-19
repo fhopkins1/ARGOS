@@ -603,7 +603,8 @@ class EnterpriseCommunicationsBus:
         return tuple(_public(item) for item in self._outbox if item.message_id == message_id)
 
     def get_correlation_trace(self, correlation_id: str) -> dict[str, Any]:
-        messages = tuple(item for item in self._messages.values() if item.correlation_id == correlation_id or item.root_message_id == correlation_id)
+        message_snapshot = tuple(self._messages.values())
+        messages = tuple(item for item in message_snapshot if item.correlation_id == correlation_id or item.root_message_id == correlation_id)
         nodes = tuple(_trace_node(item, self.get_delivery_state(item.message_id)) for item in sorted(messages, key=lambda item: item.published_at or item.created_at))
         return {"correlationId": correlation_id, "messageCount": len(nodes), "nodes": nodes}
 
@@ -625,9 +626,14 @@ class EnterpriseCommunicationsBus:
 
     def snapshot(self) -> dict[str, Any]:
         metrics = dict(self._metrics)
-        pending = [item for item in self._outbox if item.delivery_state in {DeliveryState.PENDING, DeliveryState.RETRY_SCHEDULED, DeliveryState.DELIVERED}]
-        acknowledged = [item for item in self._outbox if item.delivery_state == DeliveryState.ACKNOWLEDGED]
-        delivered_total = len(self._outbox)
+        message_snapshot = tuple(self._messages.values())
+        outbox_snapshot = tuple(self._outbox)
+        dead_letter_snapshot = tuple(self._dead_letters)
+        quarantine_snapshot = tuple(self._quarantine)
+        audit_snapshot = tuple(self._audit)
+        pending = [item for item in outbox_snapshot if item.delivery_state in {DeliveryState.PENDING, DeliveryState.RETRY_SCHEDULED, DeliveryState.DELIVERED}]
+        acknowledged = [item for item in outbox_snapshot if item.delivery_state == DeliveryState.ACKNOWLEDGED]
+        delivered_total = len(outbox_snapshot)
         health_state = self._health_state(pending)
         success = 100.0 if delivered_total == 0 else round((len(acknowledged) / delivered_total) * 100, 2)
         return {
@@ -635,13 +641,13 @@ class EnterpriseCommunicationsBus:
             "engineeringOrder": "EO-CL",
             "health": health_state.value,
             "summary": {
-                "messagesPublished": len(self._messages),
-                "messagesPublishedPerMinute": len(self._messages),
+                "messagesPublished": len(message_snapshot),
+                "messagesPublishedPerMinute": len(message_snapshot),
                 "deliverySuccessRate": success,
                 "currentOutboxDepth": len(pending),
-                "retryBacklog": sum(1 for item in self._outbox if item.delivery_state == DeliveryState.RETRY_SCHEDULED),
-                "deadLetterCount": len(self._dead_letters),
-                "quarantineCount": len(self._quarantine),
+                "retryBacklog": sum(1 for item in outbox_snapshot if item.delivery_state == DeliveryState.RETRY_SCHEDULED),
+                "deadLetterCount": len(dead_letter_snapshot),
+                "quarantineCount": len(quarantine_snapshot),
                 "oldestUndeliveredMessage": min((item.first_attempt_at for item in pending), default=""),
                 "liveLaneLatencyMs": 0,
                 "paperLaneLatencyMs": 0,
@@ -650,13 +656,13 @@ class EnterpriseCommunicationsBus:
                 "schemaCompatibilityWarnings": sum(1 for item in self.schema_registry.snapshot() if item.get("deprecated")),
                 "sequenceGapWarnings": len(self._sequence_gaps),
             },
-            "messageStream": tuple(_public(item) for item in sorted(self._messages.values(), key=lambda item: item.published_at or item.created_at, reverse=True)[:80]),
-            "outbox": tuple(_public(item) for item in reversed(self._outbox[-80:])),
-            "deadLetters": tuple(_public(item) for item in reversed(self._dead_letters[-40:])),
-            "quarantine": tuple(_public(item) for item in reversed(self._quarantine[-40:])),
+            "messageStream": tuple(_public(item) for item in sorted(message_snapshot, key=lambda item: item.published_at or item.created_at, reverse=True)[:80]),
+            "outbox": tuple(_public(item) for item in reversed(outbox_snapshot[-80:])),
+            "deadLetters": tuple(_public(item) for item in reversed(dead_letter_snapshot[-40:])),
+            "quarantine": tuple(_public(item) for item in reversed(quarantine_snapshot[-40:])),
             "subscriberHealth": tuple(self._subscriber_health(item) for item in sorted(self._subscriptions.values(), key=lambda item: item.subscription_id)),
             "schemaRegistry": self.schema_registry.snapshot(),
-            "correlationIndex": tuple({"correlationId": key, "messageCount": len(self.get_correlation_trace(key)["nodes"])} for key in sorted({item.correlation_id for item in self._messages.values()})[:20]),
+            "correlationIndex": tuple({"correlationId": key, "messageCount": len([item for item in message_snapshot if item.correlation_id == key or item.root_message_id == key])} for key in sorted({item.correlation_id for item in message_snapshot})[:20]),
             "sequenceGaps": tuple(self._sequence_gaps[-20:]),
             "replayRecords": tuple(self._replay_records[-20:]),
             "rejections": tuple(self._rejections[-30:]),
@@ -665,12 +671,12 @@ class EnterpriseCommunicationsBus:
                 **metrics,
                 "outboxDepth": len(pending),
                 "inboxProcessingDepth": len(self._inbox_keys),
-                "retryBacklog": sum(1 for item in self._outbox if item.delivery_state == DeliveryState.RETRY_SCHEDULED),
+                "retryBacklog": sum(1 for item in outbox_snapshot if item.delivery_state == DeliveryState.RETRY_SCHEDULED),
                 "oldestPendingMessage": min((item.first_attempt_at for item in pending), default=""),
                 "subscriberAvailability": self._subscriber_availability(),
                 "liveLaneServiceLevel": "PROTECTED",
                 "paperLaneServiceLevel": "THROTTLED_WHEN_NEEDED",
-                "transportStorageGrowth": len(self._messages) + len(self._outbox) + len(self._audit),
+                "transportStorageGrowth": len(message_snapshot) + len(outbox_snapshot) + len(audit_snapshot),
             },
             "healthDimensions": {
                 "publishAvailability": "AVAILABLE",

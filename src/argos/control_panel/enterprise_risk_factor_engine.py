@@ -526,7 +526,11 @@ def _size_multiplier(score: float) -> float:
 
 
 def _quotes(provider: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    return {str(item.get("symbol", "")).upper(): item for item in provider.get("normalizedObjects", {}).get("quotes", ())}
+    return {
+        str(item.get("symbol", "")).upper(): item
+        for item in provider.get("normalizedObjects", {}).get("quotes", ())
+        if isinstance(item, dict)
+    }
 
 
 def _value(position: dict[str, Any]) -> float:
