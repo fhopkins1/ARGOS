@@ -26,6 +26,7 @@ from .cr_audit_closure import (
     execute_cr7_full_suite_accounting_audit,
     synthetic_truth_inventory,
 )
+from .proof_based_certification import ClaimState, ProofClaim, ProofEdge, ProofEdgeType, ProofGraph, ProofNode, ProofNodeType, evaluate_proof_claim
 
 
 CSS_VERSION = "CSS-SUSTAINMENT.1"
@@ -154,10 +155,12 @@ def build_certification_claim_registry(
         ("CSS-CLAIM-DRIFT-GUARD", "Certification drift detection compares candidate repository truth against immutable baseline evidence.", ("src/argos/control_panel/continuous_constitutional_certification.py",), ("Tests/test_css_continuous_certification.py",)),
     )
     indexed_paths = {item["path"] for item in index["items"]}
+    proof_contract = _proof_registry_candidate_contract(head)
     for claim_id, description, implementations, tests in claim_specs:
         missing_impl = tuple(path for path in implementations if path not in indexed_paths)
         missing_tests = tuple(path for path in tests if path not in indexed_paths)
-        status = CSSVerdict.FAIL.value if missing_impl or missing_tests else CSSVerdict.PASS.value
+        proof_evaluation = _presence_proof_evaluation(claim_id, description, implementations, tests, proof_contract, missing_impl, missing_tests)
+        status = CSSVerdict.PASS.value if proof_evaluation["state"] == ClaimState.PROVEN.value else CSSVerdict.FAIL.value
         claims.append(
             {
                 "claimId": claim_id,
@@ -168,7 +171,12 @@ def build_certification_claim_registry(
                 "evidenceFreshness": "CURRENT_CANDIDATE_REQUIRED",
                 "dependencies": implementations + tests,
                 "verificationStatus": status,
-                "findings": tuple(f"missing implementation {path}" for path in missing_impl) + tuple(f"missing test {path}" for path in missing_tests),
+                "proofState": proof_evaluation["state"],
+                "proofGraphDigest": proof_evaluation["proofGraphDigest"],
+                "proofEvaluationDigest": proof_evaluation["evaluationDigest"],
+                "findings": tuple(f"missing implementation {path}" for path in missing_impl)
+                + tuple(f"missing test {path}" for path in missing_tests)
+                + tuple(proof_evaluation["reasonCodes"]),
             }
         )
     blockers = tuple(f"{claim['claimId']}:{finding}" for claim in claims for finding in claim["findings"])
@@ -181,6 +189,73 @@ def build_certification_claim_registry(
         "claims": tuple(claims),
         "registryHash": _stable_hash(claims),
     }
+
+
+def _proof_registry_candidate_contract(commit: str) -> dict[str, Any]:
+    return {
+        "schemaVersion": "CIC01-CANDIDATE-CONTRACT.1",
+        "status": "PASS",
+        "candidateIdentity": {
+            "repositoryCommit": commit,
+            "candidateIdentityDigest": _stable_hash(("CSS-REGISTRY", commit)),
+            "stable_identity_hash": _stable_hash(("CSS-REGISTRY", commit)),
+        },
+        "candidateSnapshot": {
+            "candidateIdentityDigest": _stable_hash(("CSS-REGISTRY", commit)),
+            "candidateSnapshotDigest": _stable_hash(("CSS-REGISTRY-SNAPSHOT", commit)),
+        },
+        "certificationInputLock": {
+            "candidateIdentityDigest": _stable_hash(("CSS-REGISTRY", commit)),
+            "candidateSnapshotDigest": _stable_hash(("CSS-REGISTRY-SNAPSHOT", commit)),
+            "inputLockIdentifier": f"CSS-REGISTRY-LOCK-{_stable_hash(commit)[:12].upper()}",
+        },
+    }
+
+
+def _presence_proof_evaluation(
+    claim_id: str,
+    description: str,
+    implementations: tuple[str, ...],
+    tests: tuple[str, ...],
+    candidate_contract: dict[str, Any],
+    missing_impl: tuple[str, ...],
+    missing_tests: tuple[str, ...],
+) -> dict[str, Any]:
+    candidate = candidate_contract["candidateIdentity"]
+    digest = candidate["candidateIdentityDigest"]
+    commit = candidate["repositoryCommit"]
+    claim = ProofClaim(
+        claim_id,
+        claim_id,
+        "CSS-CLAIM-PROOF-REQUIRED",
+        "CIC-04.1",
+        digest,
+        f"{claim_id}-PROOF-GRAPH",
+        True,
+        "CSS-CLAIM-REGISTRY",
+    )
+    impl_identity = {"module": "argos.control_panel.continuous_constitutional_certification", "qualname": "build_certification_claim_registry", "declaredPaths": implementations}
+    nodes = [
+        ProofNode("requirement", ProofNodeType.CONSTITUTIONAL_REQUIREMENT, {"description": description}, "CSS", candidate_identity_digest=digest, repository_commit=commit),
+        ProofNode("rule", ProofNodeType.RULE_VERSION, {"ruleId": claim.rule_id, "ruleVersion": claim.rule_version}, "CSS", candidate_identity_digest=digest, repository_commit=commit),
+        ProofNode("symbol", ProofNodeType.IMPLEMENTATION_SYMBOL, impl_identity, "CSS", candidate_identity_digest=digest, repository_commit=commit),
+        ProofNode("runtime", ProofNodeType.RUNTIME_PATH, {"approved": not missing_impl, "reachesImplementationSymbol": not missing_impl, "bypassDetected": False}, "CSS", candidate_identity_digest=digest, repository_commit=commit),
+        ProofNode("test", ProofNodeType.TEST_IDENTITY, {"testId": tests[0] if tests else "", "testDefinitionDigest": _stable_hash(tests)}, "CSS", candidate_identity_digest=digest, repository_commit=commit),
+    ]
+    if not missing_tests:
+        nodes.append(ProofNode("execution", ProofNodeType.TEST_EXECUTION, {"collected": True, "executed": False, "terminalOutcome": "NOT_EXECUTED", "testDefinitionDigest": _stable_hash(tests)}, "CSS", candidate_identity_digest=digest, repository_commit=commit))
+    graph = ProofGraph(
+        claim.proof_graph_id,
+        claim.claim_id,
+        tuple(nodes),
+        (
+            ProofEdge("e1", "requirement", "rule", ProofEdgeType.GOVERNED_BY, "structured", "VERIFIED", {}, candidate_identity_digest=digest, rule_version=claim.rule_version),
+            ProofEdge("e2", "rule", "symbol", ProofEdgeType.IMPLEMENTED_BY, "structured", "VERIFIED", {}, candidate_identity_digest=digest, rule_version=claim.rule_version),
+            ProofEdge("e3", "symbol", "runtime", ProofEdgeType.EXPOSED_THROUGH, "structured", "VERIFIED", {}, candidate_identity_digest=digest, rule_version=claim.rule_version),
+            ProofEdge("e4", "runtime", "test", ProofEdgeType.EXERCISED_BY, "structured", "VERIFIED", {}, candidate_identity_digest=digest, rule_version=claim.rule_version),
+        ),
+    )
+    return evaluate_proof_claim(claim, graph, candidate_contract)
 
 
 def build_css_evidence_manifest(repo_root: str | Path = ".", *, commit: str = "WORKTREE") -> dict[str, Any]:
