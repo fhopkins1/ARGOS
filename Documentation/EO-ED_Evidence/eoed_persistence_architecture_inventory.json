@@ -1,0 +1,110 @@
+[
+  {
+    "authoritative_owner": "CanonicalEnterpriseRuntime",
+    "category": "C_ephemeral_runtime_state",
+    "component": "Runtime",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "canonical-runtime singleton",
+    "object_type": "enterprise_runtime_state",
+    "restore_order": 5,
+    "schema_owner": "OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "EnterpriseOperationsScheduler",
+    "category": "A_authoritative_persistent_state",
+    "component": "Scheduler/Missions",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "mission_id",
+    "object_type": "enterprise_mission_state",
+    "restore_order": 7,
+    "schema_owner": "EO-CA/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "EnterpriseMissionPlanner",
+    "category": "A_authoritative_persistent_state",
+    "component": "Mission Plans",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "mission_plan_id",
+    "object_type": "enterprise_mission_state",
+    "restore_order": 8,
+    "schema_owner": "EO-CD/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "EnterpriseWorkflowOrchestrator",
+    "category": "A_authoritative_persistent_state",
+    "component": "Workflows/Tokens",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "workflow_id and token audit id",
+    "object_type": "enterprise_workflow_state",
+    "restore_order": 9,
+    "schema_owner": "LAW_VII/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "DeterministicPaperBrokerage",
+    "category": "A_authoritative_persistent_state",
+    "component": "Broker Orders/Fills",
+    "corruption_handling": "degraded_recovery",
+    "idempotency_requirement": "order_id/fill_id",
+    "object_type": "enterprise_broker_state",
+    "restore_order": 12,
+    "schema_owner": "OR-003/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "PositionRegistry",
+    "category": "A_authoritative_persistent_state",
+    "component": "Positions",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "position_id/fill_id",
+    "object_type": "enterprise_position_state",
+    "restore_order": 15,
+    "schema_owner": "OR-004/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "PerformanceTruthEngine",
+    "category": "A_authoritative_persistent_state",
+    "component": "Performance Truth",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "record id + truth domain",
+    "object_type": "enterprise_performance_truth",
+    "restore_order": 17,
+    "schema_owner": "PerformanceTruth/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "EnterpriseDoctrinePolicyManager",
+    "category": "A_authoritative_persistent_state",
+    "component": "Policy/Doctrine",
+    "corruption_handling": "fail_closed",
+    "idempotency_requirement": "policy version id",
+    "object_type": "enterprise_policy_state",
+    "restore_order": 3,
+    "schema_owner": "EO-CO/OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "PAPER"
+  },
+  {
+    "authoritative_owner": "CanonicalEnterpriseRuntime",
+    "category": "C_ephemeral_runtime_state",
+    "component": "Runtime Checkpoints",
+    "corruption_handling": "ignore_if_authoritative_state_disagrees",
+    "idempotency_requirement": "checkpoint_id",
+    "object_type": "enterprise_runtime_checkpoint",
+    "restore_order": 22,
+    "schema_owner": "OR-006",
+    "serialization_format": "hash_chained_json_backup",
+    "truth_domain": "RUNTIME_CHECKPOINT"
+  }
+]

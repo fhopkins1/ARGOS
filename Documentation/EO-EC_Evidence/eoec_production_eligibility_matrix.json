@@ -1,0 +1,37 @@
+[
+  {
+    "analysis": true,
+    "broker": false,
+    "marketData": true,
+    "reason": "external authoritative evidence accepted at boundary",
+    "sourceClass": "AUTHORITATIVE_EXTERNAL"
+  },
+  {
+    "analysis": false,
+    "broker": true,
+    "marketData": false,
+    "reason": "execution mechanics only",
+    "sourceClass": "PAPER_EXECUTION_SIMULATION"
+  },
+  {
+    "analysis": false,
+    "broker": false,
+    "marketData": false,
+    "reason": "diagnostic display only",
+    "sourceClass": "DEGRADED_INFORMATIONAL"
+  },
+  {
+    "analysis": false,
+    "broker": false,
+    "marketData": false,
+    "reason": "fail-closed missing truth",
+    "sourceClass": "UNKNOWN_UNAVAILABLE"
+  },
+  {
+    "analysis": false,
+    "broker": false,
+    "marketData": false,
+    "reason": "test/proof/replay/display quarantine",
+    "sourceClass": "SYNTHETIC_QUARANTINED"
+  }
+]

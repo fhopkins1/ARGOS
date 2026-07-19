@@ -43,6 +43,8 @@ from .canonical_bridge_dynamic_coverage import TC_003_VERSION, BridgeCertificati
 from .orphan_office_closure import TC_004_VERSION, OfficeCertificationMatrixStatus, OfficeClosureRejectionCode, OfficeDisposition, OfficeDispositionRecord, execute_tc004_certification
 from .trace_closure_final import TC_005_VERSION, TC_006_VERSION, TC_007_VERSION, TC_008_VERSION, AuthoritativeTruthClass, ProofDomainAttack, ResidualFindingClosure, SyntheticTruthTaxonomy, TCRejectionCode, UnsafeFallbackClosure, execute_tc005_certification, execute_tc006_certification, execute_tc007_certification, execute_tc008_certification
 from .canonical_bridge_denominator_execution import EO_EA_VERSION, BridgeExecutionEvidenceClass, BridgeTruthModel, EOEABridgeCoverageRow, execute_eoea_certification
+from .production_synthetic_truth_elimination import EO_EC_VERSION, EOECMajorFindingClosure, EOECTruthClass, execute_eoec_certification
+from .deterministic_persistence_recovery_closure import EO_ED_VERSION, execute_eoed_certification
 from .constitutional_invariants import AuthoritativeWriteSite, BlockingLevel, BrokerPositionInvariantMonitor, ConstitutionalAuthority, ConstitutionalInvariantEngine, EvaluationStage, InvariantDefinition, InvariantDomain, InvariantEvaluationResult, InvariantResultState, InvariantSeverity, InvariantSweepResult, InvariantViolationRecord, LawVIIMonitor, ReadOnlyIntegrityGuard, TruthDomainInvariantGate, authoritative_write_site_registry, constitutional_authority_registry, constitutional_invariant_catalog
 from .truth_promotion import EvidenceQuality, PromotionDecision, PromotionDecisionStatus, PromotionRejectionCode, PromotionRecord, PromotionScope, PromotionScopeDefinition, PromotionState, TruthInformationClass, TruthPromotionAuthority, ValidatedTruthEnvelope, PROMOTION_SCOPE_REGISTRY
 from .transaction_reconciliation import DiscrepancySeverity, EO_DD_VERSION, ParticipantAcknowledgment, ParticipantState, ReconciliationDiscrepancy, ReconciliationResult, ReconciliationStrategy, RecoveryStrategy, TRANSACTION_TYPE_REGISTRY, TransactionCoordinatorError, TransactionIntent, TransactionJournal, TransactionJournalRecord, TransactionOutboxEvent, TransactionParticipant, TransactionReconciliationCoordinator, TransactionSnapshot, TransactionState, TransactionType, TransactionTypeDefinition
@@ -303,6 +305,12 @@ __all__ = [
     "BridgeTruthModel",
     "EOEABridgeCoverageRow",
     "execute_eoea_certification",
+    "EO_EC_VERSION",
+    "EOECMajorFindingClosure",
+    "EOECTruthClass",
+    "execute_eoec_certification",
+    "EO_ED_VERSION",
+    "execute_eoed_certification",
     "AuthoritativeWriteSite",
     "BlockingLevel",
     "BrokerPositionInvariantMonitor",

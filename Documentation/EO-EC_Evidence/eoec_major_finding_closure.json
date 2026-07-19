@@ -1,0 +1,32 @@
+[
+  {
+    "closure_status": "STRUCTURALLY_CLOSED_INTERNAL",
+    "finding_id": "SYN-MARKET-002",
+    "prior_reachability": "PAPER_DECISION_REACHABLE",
+    "prior_status": "UNRESOLVED",
+    "production_decision_reachable": false,
+    "residual_dependency": "external authoritative market provider remains uncertified",
+    "structural_control": "EO-DJ canonical market-data boundary rejects non-production providers from paper decisions",
+    "title": "Mock market provider remains paper-labeled provisional source"
+  },
+  {
+    "closure_status": "STRUCTURALLY_CLOSED_INTERNAL",
+    "finding_id": "SYN-DASHBOARD-001",
+    "prior_reachability": "COMPATIBILITY_REACHABLE",
+    "prior_status": "UNRESOLVED",
+    "production_decision_reachable": false,
+    "residual_dependency": "none for decision authority",
+    "structural_control": "EO-DO/TC read-surface registry prevents compatibility reads from becoming operational truth",
+    "title": "Compatibility dashboard state remains presentation reachable"
+  },
+  {
+    "closure_status": "STRUCTURALLY_CLOSED_INTERNAL",
+    "finding_id": "SYN-RECOVERY-001",
+    "prior_reachability": "PAPER_AUTHORITATIVE_REACHABLE",
+    "prior_status": "UNRESOLVED",
+    "production_decision_reachable": false,
+    "residual_dependency": "EO-ED deterministic persistence campaign remains required",
+    "structural_control": "EO-DH/EO-DN recovery controls preserve unknown state instead of reconstructing truth",
+    "title": "Recovery must block missing evidence"
+  }
+]

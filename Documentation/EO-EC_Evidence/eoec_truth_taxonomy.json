@@ -1,0 +1,10 @@
+{
+  "acceptedFillTruth": "fill truth requires accepted broker fill evidence distinct from acknowledgement",
+  "authoritativeMarketEvidence": "external provider observation with identity, timestamp, freshness and persisted raw payload reference",
+  "brokerExecutionSimulation": "paper broker may simulate execution mechanics but may not fabricate market evidence",
+  "certificationEvidence": "auditor evidence only; cannot mutate runtime truth",
+  "closedPositionTruth": "closed performance truth requires a closed-position record",
+  "degradedInformation": "visible for diagnosis only; never satisfies authoritative production truth",
+  "positionTruth": "position lifecycle derives only from accepted fills and accepted closing fills",
+  "unknownUnavailable": "safe terminal state for missing evidence"
+}

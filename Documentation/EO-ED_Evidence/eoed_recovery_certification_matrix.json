@@ -1,0 +1,110 @@
+[
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "case_file",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "operational_document",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "audit_event",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "configuration_snapshot",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "prompt_snapshot",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "model_snapshot",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "staff_registry",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "department_registry",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_runtime_state",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_runtime_checkpoint",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_mission_state",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_workflow_state",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": true,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_broker_state",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": true,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_position_state",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": true,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_performance_truth",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_policy_state",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_recovery_audit",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  },
+  {
+    "externalReconciliationDependency": false,
+    "mayInferCompletion": false,
+    "objectType": "enterprise_transaction",
+    "recoveryRule": "restore latest hash-verified record; otherwise quarantine/unresolved"
+  }
+]

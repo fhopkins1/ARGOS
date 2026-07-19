@@ -1,0 +1,74 @@
+[
+  {
+    "category": "C_ephemeral_runtime_state",
+    "component": "Runtime",
+    "durableRequired": false,
+    "objectType": "enterprise_runtime_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 5
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Scheduler/Missions",
+    "durableRequired": true,
+    "objectType": "enterprise_mission_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 7
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Mission Plans",
+    "durableRequired": true,
+    "objectType": "enterprise_mission_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 8
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Workflows/Tokens",
+    "durableRequired": true,
+    "objectType": "enterprise_workflow_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 9
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Broker Orders/Fills",
+    "durableRequired": true,
+    "objectType": "enterprise_broker_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 12
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Positions",
+    "durableRequired": true,
+    "objectType": "enterprise_position_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 15
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Performance Truth",
+    "durableRequired": true,
+    "objectType": "enterprise_performance_truth",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 17
+  },
+  {
+    "category": "A_authoritative_persistent_state",
+    "component": "Policy/Doctrine",
+    "durableRequired": true,
+    "objectType": "enterprise_policy_state",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 3
+  },
+  {
+    "category": "C_ephemeral_runtime_state",
+    "component": "Runtime Checkpoints",
+    "durableRequired": false,
+    "objectType": "enterprise_runtime_checkpoint",
+    "recoveryDisposition": "RESTORE_FROM_RECORD_OR_REMAIN_UNRESOLVED",
+    "restoreOrder": 22
+  }
+]
