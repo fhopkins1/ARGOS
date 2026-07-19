@@ -1,0 +1,38 @@
+{
+  "adverseEvidencePreserved": true,
+  "artifact": "eoem_campaign_b_idle_validation.json",
+  "blockedAction": "Level 2 Campaign B reproducibility",
+  "campaignStarted": false,
+  "entryBlockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EM can begin Level 2 Campaign B reproducibility.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    },
+    {
+      "blockingReason": "EO-EK is required to PASS before EO-EM can begin Level 2 Campaign B reproducibility.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EK",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EK_Evidence\\eoek_certification.json"
+    },
+    {
+      "blockingReason": "EO-EL is required to PASS before EO-EM can begin Level 2 Campaign B reproducibility.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EL",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EL_Evidence\\eoel_certification.json"
+    }
+  ],
+  "noRuntimeResultFabricated": true,
+  "noSyntheticDurationUsed": true,
+  "observedDurationSeconds": 0,
+  "orderId": "EO-EM",
+  "readinessDomain": "Level 2 reproducibility",
+  "repositoryCommit": "1cce705ee08da06c60ba66f34ab282cfdb527695",
+  "requiredDurationSeconds": 7200,
+  "schemaVersion": "EO-EK-EO-EO.1",
+  "status": "BLOCKED_BY_ENTRY_GATE"
+}

@@ -1,0 +1,24 @@
+{
+  "adverseEvidencePreserved": true,
+  "artifact": "eoek_test_order_manifests.json",
+  "blockedAction": "six repeated full-suite campaigns",
+  "campaignStarted": false,
+  "entryBlockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EK can begin six repeated full-suite campaigns.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    }
+  ],
+  "noRuntimeResultFabricated": true,
+  "noSyntheticDurationUsed": true,
+  "observedDurationSeconds": 0,
+  "orderId": "EO-EK",
+  "readinessDomain": "Repeated deterministic certification",
+  "repositoryCommit": "1cce705ee08da06c60ba66f34ab282cfdb527695",
+  "requiredDurationSeconds": 0,
+  "schemaVersion": "EO-EK-EO-EO.1",
+  "status": "BLOCKED_BY_ENTRY_GATE"
+}

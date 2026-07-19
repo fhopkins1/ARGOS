@@ -1,0 +1,37 @@
+{
+  "blockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EL can begin Level 2 Campaign A.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    },
+    {
+      "blockingReason": "EO-EK is required to PASS before EO-EL can begin Level 2 Campaign A.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EK",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EK_Evidence\\eoek_certification.json"
+    }
+  ],
+  "disposition": "RUNTIME_NOT_STARTED_ENTRY_GATE_FAILED",
+  "orderId": "EO-EL",
+  "passed": false,
+  "prerequisiteVerdicts": [
+    {
+      "orderId": "EO-EJ",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json",
+      "verdict": "FAIL"
+    },
+    {
+      "orderId": "EO-EK",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EK_Evidence\\eoek_certification.json",
+      "verdict": "FAIL"
+    }
+  ],
+  "requiredPrerequisites": [
+    "EO-EJ",
+    "EO-EK"
+  ]
+}

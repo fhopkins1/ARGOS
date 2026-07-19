@@ -1,0 +1,32 @@
+{
+  "adverseEvidencePreserved": true,
+  "campaignStarted": false,
+  "entryBlockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EL can begin Level 2 Campaign A.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    },
+    {
+      "blockingReason": "EO-EK is required to PASS before EO-EL can begin Level 2 Campaign A.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EK",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EK_Evidence\\eoek_certification.json"
+    }
+  ],
+  "entryGatePassed": false,
+  "evidenceHash": "9895f672b5d703051e7d719a5519b4c1eec3293d06dc9c41103ee0ca037aca21",
+  "noDurationFabricated": true,
+  "noHistoricalEvidencePromoted": true,
+  "observedDurationSeconds": 0,
+  "orderId": "EO-EL",
+  "readinessClassification": "NOT_CERTIFIED",
+  "repositoryCommit": "1cce705ee08da06c60ba66f34ab282cfdb527695",
+  "requiredDurationSeconds": 7200,
+  "schemaVersion": "EO-EK-EO-EO.1",
+  "timestampUtc": "2026-07-19T15:16:10.093021Z",
+  "verdict": "FAIL"
+}

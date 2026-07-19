@@ -1,0 +1,31 @@
+{
+  "adverseEvidencePreserved": true,
+  "artifact": "eoel_token_monitoring.json",
+  "blockedAction": "Level 2 Campaign A",
+  "campaignStarted": false,
+  "entryBlockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EL can begin Level 2 Campaign A.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    },
+    {
+      "blockingReason": "EO-EK is required to PASS before EO-EL can begin Level 2 Campaign A.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EK",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EK_Evidence\\eoek_certification.json"
+    }
+  ],
+  "noRuntimeResultFabricated": true,
+  "noSyntheticDurationUsed": true,
+  "observedDurationSeconds": 0,
+  "orderId": "EO-EL",
+  "readinessDomain": "Level 2 endurance campaign A",
+  "repositoryCommit": "1cce705ee08da06c60ba66f34ab282cfdb527695",
+  "requiredDurationSeconds": 0,
+  "schemaVersion": "EO-EK-EO-EO.1",
+  "status": "BLOCKED_BY_ENTRY_GATE"
+}

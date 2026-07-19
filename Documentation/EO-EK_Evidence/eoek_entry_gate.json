@@ -1,0 +1,24 @@
+{
+  "blockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EK can begin six repeated full-suite campaigns.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    }
+  ],
+  "disposition": "RUNTIME_NOT_STARTED_ENTRY_GATE_FAILED",
+  "orderId": "EO-EK",
+  "passed": false,
+  "prerequisiteVerdicts": [
+    {
+      "orderId": "EO-EJ",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json",
+      "verdict": "FAIL"
+    }
+  ],
+  "requiredPrerequisites": [
+    "EO-EJ"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "adverseEvidencePreserved": true,
+  "artifact": "eoen_scheduler_stability.json",
+  "blockedAction": "Level 3 overnight campaign",
+  "campaignStarted": false,
+  "entryBlockers": [
+    {
+      "blockingReason": "EO-EJ is required to PASS before EO-EN can begin Level 3 overnight campaign.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EJ",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EJ_Evidence\\eoej_certification.json"
+    },
+    {
+      "blockingReason": "EO-EK is required to PASS before EO-EN can begin Level 3 overnight campaign.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EK",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EK_Evidence\\eoek_certification.json"
+    },
+    {
+      "blockingReason": "EO-EL is required to PASS before EO-EN can begin Level 3 overnight campaign.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EL",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EL_Evidence\\eoel_certification.json"
+    },
+    {
+      "blockingReason": "EO-EM is required to PASS before EO-EN can begin Level 3 overnight campaign.",
+      "observedVerdict": "FAIL",
+      "orderId": "EO-EM",
+      "requiredVerdict": "PASS",
+      "source": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\EO-EM_Evidence\\eoem_certification.json"
+    }
+  ],
+  "noRuntimeResultFabricated": true,
+  "noSyntheticDurationUsed": true,
+  "observedDurationSeconds": 0,
+  "orderId": "EO-EN",
+  "readinessDomain": "Level 3 endurance",
+  "repositoryCommit": "1cce705ee08da06c60ba66f34ab282cfdb527695",
+  "requiredDurationSeconds": 0,
+  "schemaVersion": "EO-EK-EO-EO.1",
+  "status": "BLOCKED_BY_ENTRY_GATE"
+}
