@@ -50,6 +50,14 @@ class INFMOFailure(str, Enum):
     UNRESOLVED_CERTIFICATION_FINDING = "unresolved_certification_finding"
     MISSING_FREEZE_DECLARATION = "missing_freeze_declaration"
     MISSING_SENTINEL_AUTHORIZATION = "missing_sentinel_authorization"
+    DENOMINATOR_MUTATION = "denominator_mutation"
+    DUPLICATE_TEST = "duplicate_test"
+    ORPHAN_TEST = "orphan_test"
+    DISABLED_TEST = "disabled_test"
+    NON_DETERMINISTIC_SCHEDULING = "non_deterministic_scheduling"
+    ENDURANCE_FAILURE = "endurance_failure"
+    REPEATABILITY_DIVERGENCE = "repeatability_divergence"
+    MUTABLE_CERTIFICATION_RESULT = "mutable_certification_result"
 
 
 @dataclass(frozen=True)
@@ -447,6 +455,139 @@ class InfrastructureConstitutionalCertificationEngine:
         return FinalInfrastructureCertification(status, unique, _digest(asdict(package)), status == INFMOStatus.CONSTITUTIONAL_FREEZE)
 
 
+@dataclass(frozen=True)
+class InfrastructureTestRegistration:
+    test_id: str
+    category: str
+    executable: bool
+    disabled: bool
+    orphaned: bool
+
+
+@dataclass(frozen=True)
+class CertificationTimeoutRecord:
+    test_id: str
+    elapsed_seconds: float
+    configured_timeout_seconds: float
+    system_state: str
+    candidate_id: str
+    workflow_id: str
+    stack_reference: str
+    failure_classification: str
+
+
+@dataclass(frozen=True)
+class EnduranceCycleRecord:
+    cycle_id: str
+    runtime_validated: bool
+    startup_validated: bool
+    shutdown_validated: bool
+    persistence_validated: bool
+    replay_validated: bool
+    workflow_validated: bool
+    authority_validated: bool
+    repository_validated: bool
+    evidence_hash: str
+
+
+@dataclass(frozen=True)
+class RepeatabilityRunRecord:
+    run_id: str
+    execution_order_hash: str
+    evidence_hash: str
+    candidate_hash: str
+    repository_hash: str
+    persistence_hash: str
+    replay_hash: str
+    authority_hash: str
+
+
+@dataclass(frozen=True)
+class CertificationSessionInput:
+    session_id: str
+    candidate_id: str
+    repository_id: str
+    certification_id: str
+    expected_tests: tuple[str, ...]
+    registered_tests: tuple[InfrastructureTestRegistration, ...]
+    denominator_hash_before: str
+    denominator_hash_after: str
+    approved_concurrency: bool
+    execution_order: tuple[str, ...]
+    timeout_records: tuple[CertificationTimeoutRecord, ...]
+    endurance_cycles: tuple[EnduranceCycleRecord, ...]
+    repeatability_runs: tuple[RepeatabilityRunRecord, ...]
+    immutable_evidence_hash: str
+    audit_package_hash: str
+    pass_inputs: Mapping[str, bool]
+
+
+@dataclass(frozen=True)
+class InfrastructureCertificationExecutionRecord:
+    status: INFMOStatus
+    failures: tuple[INFMOFailure, ...]
+    deterministic_order: tuple[str, ...]
+    audit_package_hash: str
+    result_digest: str
+
+
+class InfrastructureCertificationExecutionEngine:
+    """INF-MO-004 deterministic certification execution and audit-package engine."""
+
+    required_pass_inputs = (
+        "candidate_identity",
+        "repository_identity",
+        "replay",
+        "persistence",
+        "law_vii",
+        "authority",
+        "bridge",
+        "synthetic_truth_zero",
+        "repeatability",
+        "endurance",
+        "immutable_evidence",
+    )
+
+    def execute(self, session: CertificationSessionInput) -> InfrastructureCertificationExecutionRecord:
+        failures: list[INFMOFailure] = []
+        expected = tuple(session.expected_tests)
+        registered_ids = tuple(item.test_id for item in session.registered_tests)
+        if set(expected) != set(registered_ids):
+            failures.append(INFMOFailure.INCOMPLETE_COVERAGE)
+        if len(set(registered_ids)) != len(registered_ids):
+            failures.append(INFMOFailure.DUPLICATE_TEST)
+        if any(item.disabled for item in session.registered_tests):
+            failures.append(INFMOFailure.DISABLED_TEST)
+        if any(item.orphaned for item in session.registered_tests):
+            failures.append(INFMOFailure.ORPHAN_TEST)
+        if any(not item.executable for item in session.registered_tests):
+            failures.append(INFMOFailure.UNKNOWN_VERIFICATION)
+        if session.denominator_hash_before != session.denominator_hash_after:
+            failures.append(INFMOFailure.DENOMINATOR_MUTATION)
+        if tuple(sorted(expected)) != session.execution_order:
+            failures.append(INFMOFailure.NON_DETERMINISTIC_SCHEDULING)
+        if session.approved_concurrency:
+            failures.append(INFMOFailure.NON_DETERMINISTIC_SCHEDULING)
+        if session.timeout_records:
+            failures.append(INFMOFailure.TIMEOUT_AMBIGUITY)
+        if not session.endurance_cycles or any(not _endurance_cycle_passed(cycle) for cycle in session.endurance_cycles):
+            failures.append(INFMOFailure.ENDURANCE_FAILURE)
+        if not _repeatability_passed(session.repeatability_runs):
+            failures.append(INFMOFailure.REPEATABILITY_DIVERGENCE)
+        if _blank(session.immutable_evidence_hash) or _blank(session.audit_package_hash):
+            failures.append(INFMOFailure.MUTABLE_CERTIFICATION_RESULT)
+        if any(not session.pass_inputs.get(name, False) for name in self.required_pass_inputs):
+            failures.append(INFMOFailure.UNRESOLVED_CERTIFICATION_FINDING)
+        unique = tuple(dict.fromkeys(failures))
+        return InfrastructureCertificationExecutionRecord(
+            status=INFMOStatus.PASS if not unique else INFMOStatus.FAIL_CLOSED,
+            failures=unique,
+            deterministic_order=session.execution_order,
+            audit_package_hash=session.audit_package_hash,
+            result_digest=_digest(asdict(session)),
+        )
+
+
 def _blank(value: str) -> bool:
     return str(value).strip().lower() in {"", "unknown", "placeholder", "synthetic", "none", "null"}
 
@@ -454,3 +595,34 @@ def _blank(value: str) -> bool:
 def _digest(payload: object) -> str:
     encoded = json.dumps(payload, sort_keys=True, default=str, separators=(",", ":")).encode("utf-8")
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+
+def _endurance_cycle_passed(cycle: EnduranceCycleRecord) -> bool:
+    return all(
+        (
+            cycle.runtime_validated,
+            cycle.startup_validated,
+            cycle.shutdown_validated,
+            cycle.persistence_validated,
+            cycle.replay_validated,
+            cycle.workflow_validated,
+            cycle.authority_validated,
+            cycle.repository_validated,
+            not _blank(cycle.evidence_hash),
+        )
+    )
+
+
+def _repeatability_passed(runs: tuple[RepeatabilityRunRecord, ...]) -> bool:
+    if len(runs) < 2:
+        return False
+    fields = (
+        "execution_order_hash",
+        "evidence_hash",
+        "candidate_hash",
+        "repository_hash",
+        "persistence_hash",
+        "replay_hash",
+        "authority_hash",
+    )
+    return all(len({getattr(run, field) for run in runs}) == 1 for field in fields)
