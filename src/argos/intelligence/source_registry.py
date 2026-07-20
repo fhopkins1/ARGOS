@@ -1005,7 +1005,7 @@ def canonical_source_records() -> tuple[ApprovedSourceRecord, ...]:
             ("broker_order_acceptance", "broker_fill", "account_buying_power", "cash_balance", "position_quantity", "margin_requirement"),
             ("issuer_guidance", "market_news", "live_bid", "legal_liability"),
             ("issuer_intent", "market_price_truth", "investment_merit"),
-            ("Intelligence", "Sentinel", "Trader", "Historian", "Risk"),
+            ("Intelligence", "Sentinel", "Seeker", "Trader", "Historian", "Risk"),
             ("broker_execution_state", "account_reconciliation", "execution_critical_service"),
             ("development", "test", "paper"),
             ("SURF-BROKER-PAPER-API",),
