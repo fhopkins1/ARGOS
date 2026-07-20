@@ -252,6 +252,17 @@ from .broker_search_doctrine import (
     default_broker_retrieval_plans,
     reconcile_broker_truth,
 )
+from .information_eligibility import (
+    FRESHNESS_LIMIT_SECONDS,
+    PROHIBITED_TRADER_ACTIVITIES,
+    RETURN_TO_UPSTREAM,
+    TraderEligibilityDecision,
+    TraderEligibilityReport,
+    TraderExecutionPackage,
+    TraderInformationEligibilityEngine,
+    TraderInformationObject,
+    TraderValidationFailure,
+)
 
 __all__ = [
     "TRADER_GROUP_ID",
@@ -482,4 +493,13 @@ __all__ = [
     "default_broker_identity",
     "default_broker_retrieval_plans",
     "reconcile_broker_truth",
+    "FRESHNESS_LIMIT_SECONDS",
+    "PROHIBITED_TRADER_ACTIVITIES",
+    "RETURN_TO_UPSTREAM",
+    "TraderEligibilityDecision",
+    "TraderEligibilityReport",
+    "TraderExecutionPackage",
+    "TraderInformationEligibilityEngine",
+    "TraderInformationObject",
+    "TraderValidationFailure",
 ]

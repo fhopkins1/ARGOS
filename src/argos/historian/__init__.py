@@ -144,6 +144,20 @@ from .readiness import (
     HistorianReadinessReportGenerator,
     HistorianReadinessResult,
 )
+from .search_reconstruction import (
+    CorrectionRevisionLink,
+    EvidenceTemporalRelationship,
+    EvidenceUseRecord,
+    HistoricalInformationCutoff,
+    HistoricalReconstruction,
+    HistoricalSearchRecord,
+    HistorianSearchArchive,
+    RetrospectiveSearchAuthorization,
+    SkippedSearchReason,
+    TemporalEvidenceClassification,
+    classify_temporal_evidence,
+    historical_record_from_search_evidence,
+)
 
 __all__ = [
     "HISTORIAN_CHIEF_OFFICE_ID",
@@ -272,4 +286,16 @@ __all__ = [
     "HistorianReadinessDeficiency",
     "HistorianReadinessReportGenerator",
     "HistorianReadinessResult",
+    "CorrectionRevisionLink",
+    "EvidenceTemporalRelationship",
+    "EvidenceUseRecord",
+    "HistoricalInformationCutoff",
+    "HistoricalReconstruction",
+    "HistoricalSearchRecord",
+    "HistorianSearchArchive",
+    "RetrospectiveSearchAuthorization",
+    "SkippedSearchReason",
+    "TemporalEvidenceClassification",
+    "classify_temporal_evidence",
+    "historical_record_from_search_evidence",
 ]
