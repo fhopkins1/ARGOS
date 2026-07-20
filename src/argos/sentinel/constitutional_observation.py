@@ -43,6 +43,10 @@ class SentinelFailure(str, Enum):
     WORKFLOW_CREATION_ATTEMPT = "workflow_creation_attempt"
     TRACEABILITY_GAP = "traceability_gap"
     MISSING_CERTIFICATION_EVIDENCE = "missing_certification_evidence"
+    REPLAY_DIVERGENCE = "replay_divergence"
+    MISSING_RUNTIME_TRACE = "missing_runtime_trace"
+    MISSING_BRIDGE_EVIDENCE = "missing_bridge_evidence"
+    MUTABLE_CERTIFICATION_ARTIFACT = "mutable_certification_artifact"
 
 
 @dataclass(frozen=True)
@@ -292,6 +296,203 @@ class SyntheticObservationEliminationEngine:
 
 
 @dataclass(frozen=True)
+class ObservationRuntimeTrace:
+    mission_id: str
+    observation_id: str
+    scheduler_trace: str
+    observation_execution_trace: str
+    evidence_generation_trace: str
+    duplicate_evaluation_trace: str
+    independence_evaluation_trace: str
+    conflict_evaluation_trace: str
+    archival_trace: str
+    commander_notification_trace: str
+    trace_digest: str
+
+
+@dataclass(frozen=True)
+class ObservationEvidenceRecord:
+    observation_id: str
+    mission_id: str
+    commander_assignment_id: str
+    observation_timestamp: str
+    monitored_domain: str
+    observation_result_hash: str
+    duplicate_status: SentinelDecision
+    source_independence_result: SentinelDecision
+    conflict_evaluation: SentinelDecision
+    execution_trace_digest: str
+    evidence_checksum: str
+
+
+@dataclass(frozen=True)
+class ObservationPipelineResult:
+    decision: SentinelDecision
+    failures: tuple[SentinelFailure, ...]
+    validation: ObservationValidationDecision
+    evidence: ObservationEvidenceRecord
+    runtime_trace: ObservationRuntimeTrace
+    notification_trace: CommanderNotificationTrace | None
+
+
+class RuntimeObservationPipeline:
+    """SENT-MO-001 deterministic observation execution pipeline."""
+
+    def __init__(
+        self,
+        validator: ObservationIntegrityValidator | None = None,
+        notifier: CommanderNotificationRuntime | None = None,
+    ) -> None:
+        self.validator = validator or ObservationIntegrityValidator()
+        self.notifier = notifier or CommanderNotificationRuntime()
+        self._archive: tuple[ObservationEvidenceRecord, ...] = ()
+        self._traces: tuple[ObservationRuntimeTrace, ...] = ()
+
+    @property
+    def archive(self) -> tuple[ObservationEvidenceRecord, ...]:
+        return self._archive
+
+    @property
+    def traces(self) -> tuple[ObservationRuntimeTrace, ...]:
+        return self._traces
+
+    def execute(
+        self,
+        schedule_entry: ObservationScheduleEntry,
+        observation: ObservationRecord,
+        source: SourceRecord,
+        prior_observations: Iterable[ObservationRecord] = (),
+        require_independent_corroboration: bool = False,
+        corroborating_sources: Iterable[SourceRecord] = (),
+    ) -> ObservationPipelineResult:
+        validation = self.validator.validate(
+            observation,
+            source,
+            prior_observations,
+            corroborating_sources,
+            require_independent_corroboration,
+        )
+        duplicate_status = SentinelDecision.DUPLICATE if SentinelFailure.DUPLICATE_OBSERVATION in validation.failures else SentinelDecision.PASS
+        independence_status = SentinelDecision.FAIL_CLOSED if SentinelFailure.SOURCE_NOT_INDEPENDENT in validation.failures else SentinelDecision.PASS
+        conflict_status = SentinelDecision.CONFLICT if SentinelFailure.CONFLICTING_OBSERVATION in validation.failures else SentinelDecision.PASS
+        trace = _runtime_trace(schedule_entry, observation, validation, "")
+        evidence = ObservationEvidenceRecord(
+            observation_id=observation.observation_id,
+            mission_id=observation.mission_assignment_id,
+            commander_assignment_id=observation.mission_assignment_id,
+            observation_timestamp=observation.observation_timestamp,
+            monitored_domain=schedule_entry.objective_id,
+            observation_result_hash=observation.value_hash,
+            duplicate_status=duplicate_status,
+            source_independence_result=independence_status,
+            conflict_evaluation=conflict_status,
+            execution_trace_digest=trace.trace_digest,
+            evidence_checksum=_digest({"observation": asdict(observation), "validation": asdict(validation)}),
+        )
+        notification_trace = None
+        failures = list(validation.failures)
+        if validation.admissible:
+            notification_trace = self.notifier.notify(
+                CommanderNotificationRequest(
+                    notification_id=f"NOTIFY-{observation.observation_id}",
+                    observation_id=observation.observation_id,
+                    event_id=f"EVENT-{observation.observation_id}",
+                    commander_recipient="Commander",
+                    runtime_bridge_id="SENTINEL-COMMANDER-BRIDGE",
+                    workflow_token_id=observation.mission_assignment_id,
+                    authority_verified=True,
+                    bridge_verified=True,
+                    token_continuous=True,
+                    downstream_recipients=("Commander",),
+                )
+            )
+            failures.extend(notification_trace.failures)
+            trace = _runtime_trace(schedule_entry, observation, validation, notification_trace.runtime_trace_id)
+            evidence = ObservationEvidenceRecord(
+                observation_id=evidence.observation_id,
+                mission_id=evidence.mission_id,
+                commander_assignment_id=evidence.commander_assignment_id,
+                observation_timestamp=evidence.observation_timestamp,
+                monitored_domain=evidence.monitored_domain,
+                observation_result_hash=evidence.observation_result_hash,
+                duplicate_status=evidence.duplicate_status,
+                source_independence_result=evidence.source_independence_result,
+                conflict_evaluation=evidence.conflict_evaluation,
+                execution_trace_digest=trace.trace_digest,
+                evidence_checksum=_digest({"observation": asdict(observation), "trace": asdict(trace)}),
+            )
+        unique = tuple(dict.fromkeys(failures))
+        self._archive = self._archive + (evidence,)
+        self._traces = self._traces + (trace,)
+        return ObservationPipelineResult(
+            decision=SentinelDecision.PASS if not unique else SentinelDecision.FAIL_CLOSED,
+            failures=unique,
+            validation=validation,
+            evidence=evidence,
+            runtime_trace=trace,
+            notification_trace=notification_trace,
+        )
+
+
+@dataclass(frozen=True)
+class ObservationReplayResult:
+    decision: SentinelDecision
+    failures: tuple[SentinelFailure, ...]
+    replay_digest: str
+
+
+class ObservationReplayEngine:
+    """Replays runtime traces and evidence without creating new observation truth."""
+
+    def replay(self, traces: Iterable[ObservationRuntimeTrace], evidence: Iterable[ObservationEvidenceRecord]) -> ObservationReplayResult:
+        trace_items = tuple(traces)
+        evidence_items = tuple(evidence)
+        failures: list[SentinelFailure] = []
+        if len(trace_items) != len(evidence_items):
+            failures.append(SentinelFailure.REPLAY_DIVERGENCE)
+        for trace, record in zip(trace_items, evidence_items):
+            if trace.trace_digest != record.execution_trace_digest:
+                failures.append(SentinelFailure.REPLAY_DIVERGENCE)
+        digest = _digest({"traces": tuple(asdict(item) for item in trace_items), "evidence": tuple(asdict(item) for item in evidence_items)})
+        unique = tuple(dict.fromkeys(failures))
+        return ObservationReplayResult(SentinelDecision.PASS if not unique else SentinelDecision.FAIL_CLOSED, unique, digest)
+
+
+@dataclass(frozen=True)
+class CommanderBridgeDiagnostic:
+    bridge_id: str
+    throughput_count: int
+    rejected_count: int
+    authority_failures: int
+    token_continuity_failures: int
+    replay_consistent: bool
+    evidence_generated: bool
+
+
+class CommanderBridgeCertification:
+    """SENT-MO-002 bridge diagnostics and replay consistency certification."""
+
+    def certify(self, traces: Iterable[CommanderNotificationTrace], diagnostic: CommanderBridgeDiagnostic) -> SentinelCertificationDecision:
+        trace_items = tuple(traces)
+        failures: list[SentinelFailure] = []
+        if not diagnostic.evidence_generated or any(not item.audit_identifier for item in trace_items):
+            failures.append(SentinelFailure.MISSING_BRIDGE_EVIDENCE)
+        if diagnostic.authority_failures:
+            failures.append(SentinelFailure.AUTHORITY_UNVERIFIED)
+        if diagnostic.token_continuity_failures:
+            failures.append(SentinelFailure.TOKEN_DISCONTINUITY)
+        if not diagnostic.replay_consistent:
+            failures.append(SentinelFailure.REPLAY_DIVERGENCE)
+        unique = tuple(dict.fromkeys(failures))
+        return SentinelCertificationDecision(
+            decision=SentinelDecision.PASS if not unique else SentinelDecision.FAIL_CLOSED,
+            failures=unique,
+            package_hash=_digest({"traces": tuple(asdict(item) for item in trace_items), "diagnostic": asdict(diagnostic)}),
+            certified=not unique,
+        )
+
+
+@dataclass(frozen=True)
 class SentinelTraceabilityRecord:
     requirement_id: str
     governing_doctrine: str
@@ -351,6 +552,71 @@ class SentinelCertificationFramework:
         )
 
 
+@dataclass(frozen=True)
+class SentinelAuditPackage:
+    repository_revision: str
+    verification_summary: Mapping[str, bool]
+    constitutional_requirements_tested: tuple[str, ...]
+    runtime_evidence_hash: str
+    observation_evidence_hash: str
+    authority_evidence_hash: str
+    bridge_evidence_hash: str
+    trace_evidence_hash: str
+    constitutional_deficiencies: tuple[str, ...]
+    pass_fail_determination: SentinelDecision
+    package_digest: str
+
+
+class SentinelConstitutionalAuditPackageGenerator:
+    """SENT-MO-003 immutable Sentinel constitutional audit package generator."""
+
+    def generate(
+        self,
+        repository_revision: str,
+        certification_input: SentinelCertificationInput,
+        runtime_traces: Iterable[ObservationRuntimeTrace],
+        observation_evidence: Iterable[ObservationEvidenceRecord],
+        bridge_traces: Iterable[CommanderNotificationTrace],
+    ) -> SentinelAuditPackage:
+        framework_decision = SentinelCertificationFramework().certify(certification_input)
+        deficiencies = tuple(failure.value for failure in framework_decision.failures)
+        runtime_items = tuple(runtime_traces)
+        evidence_items = tuple(observation_evidence)
+        bridge_items = tuple(bridge_traces)
+        missing = []
+        if not runtime_items:
+            missing.append(SentinelFailure.MISSING_RUNTIME_TRACE.value)
+        if not evidence_items:
+            missing.append(SentinelFailure.INCOMPLETE_EVIDENCE.value)
+        if not bridge_items:
+            missing.append(SentinelFailure.MISSING_BRIDGE_EVIDENCE.value)
+        deficiencies = tuple(dict.fromkeys(deficiencies + tuple(missing)))
+        decision = SentinelDecision.PASS if framework_decision.certified and not deficiencies else SentinelDecision.FAIL_CLOSED
+        payload = {
+            "repository_revision": repository_revision,
+            "verification_summary": dict(certification_input.verification_results),
+            "traceability": tuple(asdict(item) for item in certification_input.traceability),
+            "runtime_traces": tuple(asdict(item) for item in runtime_items),
+            "observation_evidence": tuple(asdict(item) for item in evidence_items),
+            "bridge_traces": tuple(asdict(item) for item in bridge_items),
+            "deficiencies": deficiencies,
+            "decision": decision.value,
+        }
+        return SentinelAuditPackage(
+            repository_revision=repository_revision,
+            verification_summary=certification_input.verification_results,
+            constitutional_requirements_tested=tuple(sorted(certification_input.verification_results)),
+            runtime_evidence_hash=_digest(tuple(asdict(item) for item in runtime_items)),
+            observation_evidence_hash=_digest(tuple(asdict(item) for item in evidence_items)),
+            authority_evidence_hash=_digest(tuple(item.evidence_artifact for item in certification_input.traceability if "authority" in item.requirement_id.lower())),
+            bridge_evidence_hash=_digest(tuple(asdict(item) for item in bridge_items)),
+            trace_evidence_hash=_digest(tuple(item.evidence_artifact for item in certification_input.traceability)),
+            constitutional_deficiencies=deficiencies,
+            pass_fail_determination=decision,
+            package_digest=_digest(payload),
+        )
+
+
 def observation_fingerprint(observation: ObservationRecord) -> str:
     payload = {
         "objective_id": observation.objective_id,
@@ -360,6 +626,34 @@ def observation_fingerprint(observation: ObservationRecord) -> str:
         "mission_assignment_id": observation.mission_assignment_id,
     }
     return _digest(payload)
+
+
+def _runtime_trace(
+    schedule_entry: ObservationScheduleEntry,
+    observation: ObservationRecord,
+    validation: ObservationValidationDecision,
+    commander_notification_trace: str,
+) -> ObservationRuntimeTrace:
+    trace_payload = {
+        "schedule": asdict(schedule_entry),
+        "observation": observation.observation_id,
+        "validation": validation.decision.value,
+        "notification": commander_notification_trace,
+    }
+    digest = _digest(trace_payload)
+    return ObservationRuntimeTrace(
+        mission_id=observation.mission_assignment_id,
+        observation_id=observation.observation_id,
+        scheduler_trace=_digest(asdict(schedule_entry)),
+        observation_execution_trace=_digest(asdict(observation)),
+        evidence_generation_trace=_digest({"evidence": observation.evidence_references}),
+        duplicate_evaluation_trace=_digest({"duplicate": SentinelFailure.DUPLICATE_OBSERVATION in validation.failures}),
+        independence_evaluation_trace=_digest({"independent": SentinelFailure.SOURCE_NOT_INDEPENDENT not in validation.failures}),
+        conflict_evaluation_trace=_digest({"conflict": SentinelFailure.CONFLICTING_OBSERVATION in validation.failures}),
+        archival_trace=_digest({"archive": observation.observation_id}),
+        commander_notification_trace=commander_notification_trace,
+        trace_digest=digest,
+    )
 
 
 def _trace_complete(item: SentinelTraceabilityRecord) -> bool:
