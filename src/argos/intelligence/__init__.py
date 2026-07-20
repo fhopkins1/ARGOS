@@ -75,6 +75,21 @@ from .source_registry import (
     registry_conformance_report,
     validate_resolved_destination,
 )
+from .search_doctrine import (
+    CanonicalFactType,
+    CanonicalSearchAuditRecord,
+    CanonicalSearchCertification,
+    CanonicalSearchEngine,
+    CanonicalSearchError,
+    CanonicalSearchPlan,
+    CanonicalSearchPlanRegistry,
+    CanonicalSearchRequest,
+    CanonicalSearchStatus,
+    FactDomain,
+    SourceRole as CanonicalSourceRole,
+    default_canonical_search_plans,
+    default_fact_types,
+)
 
 __all__ = [
     "UNKNOWN",
@@ -148,4 +163,17 @@ __all__ = [
     "recover_registry_snapshot",
     "registry_conformance_report",
     "validate_resolved_destination",
+    "CanonicalFactType",
+    "CanonicalSearchAuditRecord",
+    "CanonicalSearchCertification",
+    "CanonicalSearchEngine",
+    "CanonicalSearchError",
+    "CanonicalSearchPlan",
+    "CanonicalSearchPlanRegistry",
+    "CanonicalSearchRequest",
+    "CanonicalSearchStatus",
+    "FactDomain",
+    "CanonicalSourceRole",
+    "default_canonical_search_plans",
+    "default_fact_types",
 ]
