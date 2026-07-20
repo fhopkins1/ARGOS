@@ -10,10 +10,13 @@ sys.path.insert(0, str(SRC_ROOT))
 from argos.sentinel import (  # noqa: E402
     CommanderBridgeCertification,
     CommanderBridgeDiagnostic,
+    CommanderNotificationRequest,
+    CommanderNotificationRuntime,
     DeterministicObservationScheduler,
     MonitoringObjective,
     ObservationRecord,
     ObservationReplayEngine,
+    ObservationScheduleEntry,
     RuntimeObservationPipeline,
     SentinelCertificationFramework,
     SentinelCertificationInput,
@@ -71,6 +74,23 @@ def observation(**overrides) -> ObservationRecord:
     return ObservationRecord(**data)
 
 
+def notification(**overrides) -> CommanderNotificationRequest:
+    data = {
+        "notification_id": "NOTIFY-RUNTIME",
+        "observation_id": "OBS-RUNTIME",
+        "event_id": "EVENT-RUNTIME",
+        "commander_recipient": "Commander",
+        "runtime_bridge_id": "SENTINEL-COMMANDER-BRIDGE",
+        "workflow_token_id": "CMD-AUTH-RUNTIME",
+        "authority_verified": True,
+        "bridge_verified": True,
+        "token_continuous": True,
+        "downstream_recipients": ("Commander",),
+    }
+    data.update(overrides)
+    return CommanderNotificationRequest(**data)
+
+
 def certification_input(**overrides) -> SentinelCertificationInput:
     results = {category: True for category in SentinelCertificationFramework.required_categories}
     data = {
@@ -102,6 +122,12 @@ class SentinelRuntimeCertificationRevisionTests(unittest.TestCase):
 
         self.assertEqual(result.decision, SentinelDecision.PASS)
         self.assertIsNotNone(result.notification_trace)
+        self.assertEqual(result.evidence.sufficiency_evaluation, SentinelDecision.PASS)
+        self.assertEqual(result.evidence.priority_evaluation, SentinelDecision.PASS)
+        self.assertEqual(result.evidence.ordering_sequence, 1)
+        self.assertTrue(result.runtime_trace.observation_ordering_trace.startswith("sha256:"))
+        self.assertTrue(result.runtime_trace.sufficiency_evaluation_trace.startswith("sha256:"))
+        self.assertTrue(result.runtime_trace.priority_evaluation_trace.startswith("sha256:"))
         self.assertEqual(replay.decision, SentinelDecision.PASS)
         self.assertEqual(pipeline.archive[0].execution_trace_digest, pipeline.traces[0].trace_digest)
 
@@ -151,6 +177,62 @@ class SentinelRuntimeCertificationRevisionTests(unittest.TestCase):
         self.assertIn(SentinelFailure.AUTHORITY_UNVERIFIED, failed.failures)
         self.assertIn(SentinelFailure.TOKEN_DISCONTINUITY, failed.failures)
         self.assertIn(SentinelFailure.REPLAY_DIVERGENCE, failed.failures)
+
+    def test_commander_bridge_orders_simultaneous_notifications_deterministically(self) -> None:
+        runtime = CommanderNotificationRuntime()
+        first = notification(notification_id="NOTIFY-B", observation_id="OBS-B", event_id="EVENT-1")
+        second = notification(notification_id="NOTIFY-A", observation_id="OBS-A", event_id="EVENT-1")
+
+        batch = runtime.notify_batch((first, second))
+        replay = CommanderNotificationRuntime().notify_batch((first, second))
+
+        self.assertEqual(tuple(item.audit_identifier for item in batch), ("AUDIT-NOTIFY-A", "AUDIT-NOTIFY-B"))
+        self.assertEqual(tuple(item.runtime_trace_id for item in batch), tuple(item.runtime_trace_id for item in replay))
+        self.assertTrue(all(item.notification_order[0] == "Commander" for item in batch))
+        self.assertTrue(all(item.bridge_evidence_digest.startswith("sha256:") for item in batch))
+
+    def test_commander_bridge_rejection_preserves_trace_and_evidence(self) -> None:
+        rejected = CommanderNotificationRuntime().notify(
+            notification(
+                notification_id="NOTIFY-REJECT",
+                commander_recipient="Risk",
+                authority_verified=False,
+                bridge_verified=False,
+                token_continuous=False,
+                workflow_creation_attempted=True,
+                downstream_recipients=("Risk", "Commander"),
+            )
+        )
+
+        self.assertEqual(rejected.decision, SentinelDecision.FAIL_CLOSED)
+        self.assertIn(SentinelFailure.COMMANDER_NOT_FIRST, rejected.failures)
+        self.assertIn(SentinelFailure.AUTHORITY_UNVERIFIED, rejected.failures)
+        self.assertIn(SentinelFailure.BRIDGE_UNVERIFIED, rejected.failures)
+        self.assertIn(SentinelFailure.TOKEN_DISCONTINUITY, rejected.failures)
+        self.assertIn(SentinelFailure.WORKFLOW_CREATION_ATTEMPT, rejected.failures)
+        self.assertIn("authority_unverified", rejected.bridge_rejection_reason)
+        self.assertTrue(rejected.runtime_trace_id.startswith("sha256:"))
+        self.assertTrue(rejected.bridge_evidence_digest.startswith("sha256:"))
+
+    def test_runtime_pipeline_fails_closed_when_sufficiency_or_priority_missing(self) -> None:
+        bad_priority = ObservationScheduleEntry(
+            sequence_number=0,
+            objective_id="OBJ-RUNTIME",
+            scheduled_execution_time="2026-07-20T12:00:00Z",
+            priority=-1,
+            retry_policy=(5,),
+            timeout_seconds=30,
+        )
+        pipeline = RuntimeObservationPipeline()
+
+        result = pipeline.execute(bad_priority, observation(evidence_references=()), source())
+
+        self.assertEqual(result.decision, SentinelDecision.FAIL_CLOSED)
+        self.assertIn(SentinelFailure.INSUFFICIENT_OBSERVATION, result.failures)
+        self.assertIn(SentinelFailure.PRIORITY_UNDETERMINED, result.failures)
+        self.assertIsNone(result.notification_trace)
+        self.assertEqual(result.evidence.sufficiency_evaluation, SentinelDecision.FAIL_CLOSED)
+        self.assertEqual(result.evidence.priority_evaluation, SentinelDecision.FAIL_CLOSED)
 
     def test_audit_package_generator_fails_closed_on_missing_runtime_or_bridge_evidence(self) -> None:
         package = SentinelConstitutionalAuditPackageGenerator().generate(
