@@ -12,6 +12,7 @@ from argos.control_panel.semantic_drift_engine import cic06_main  # noqa: E402
 
 
 if __name__ == "__main__":
-    output = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else REPOSITORY_ROOT / "outputs" / "cic06_semantic_drift"
+    if len(sys.argv) > 1:
+        raise SystemExit(cic06_main(sys.argv[1:]))
+    output = REPOSITORY_ROOT / "outputs" / "cic06_semantic_drift"
     raise SystemExit(cic06_main(["--repo-root", str(REPOSITORY_ROOT), "--output", str(output)]))
-

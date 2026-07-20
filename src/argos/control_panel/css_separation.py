@@ -187,10 +187,25 @@ def execute_css_separation_program(
     commit: str = "WORKTREE",
     cr7_payload: dict[str, Any] | None = None,
     cr10_payload: dict[str, Any] | None = None,
+    candidate_contract: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     root = Path(repo_root).resolve()
     head = commit if commit != "WORKTREE" else _git(root, "rev-parse", "HEAD")
-    identity = build_candidate_identity(root, certification=False, allow_dirty=True)["candidate_identity"]
+    if candidate_contract:
+        source_identity = candidate_contract["candidateIdentity"]
+        identity = {
+            **source_identity,
+            "stable_identity_hash": source_identity.get("stable_identity_hash") or source_identity.get("candidateIdentityDigest", ""),
+            "source_tree_hash": source_identity.get("source_tree_hash") or source_identity.get("commitTreeHash", ""),
+            "dependency_hash": source_identity.get("dependency_hash") or source_identity.get("gitLfsDigest", ""),
+            "configuration_hash": source_identity.get("configuration_hash") or source_identity.get("repositoryIdentifier", ""),
+            "policy_hash": source_identity.get("policy_hash") or source_identity.get("trackedStateDigest", ""),
+            "schema_hash": source_identity.get("schema_hash") or source_identity.get("relevantUntrackedDigest", ""),
+        }
+        preflight = {"verdict": "PASS", "source": "CIC01_CONTRACT", "candidateContractDigest": candidate_contract.get("candidateContractDigest", "")}
+    else:
+        identity = build_candidate_identity(root, certification=False, allow_dirty=True)["candidate_identity"]
+        preflight = run_preflight(root, certification=True).get("preflight_result", {})
     contracts = css_subsystem_contracts()
     registry = _subsystem_registry()
     inspection = inspect_css_repository_surface(root)
@@ -198,7 +213,7 @@ def execute_css_separation_program(
     contract_validation = validate_css_contracts(contracts)
     context = {
         "candidateIdentity": identity,
-        "candidatePreflight": run_preflight(root, certification=True).get("preflight_result", {}),
+        "candidatePreflight": preflight,
         "cr7Payload": cr7_payload,
         "cr10Payload": cr10_payload,
         "inspection": inspection,

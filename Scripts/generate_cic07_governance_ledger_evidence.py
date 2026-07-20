@@ -12,5 +12,7 @@ from argos.control_panel.certification_governance_ledger import cic07_main  # no
 
 
 if __name__ == "__main__":
-    output = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else REPOSITORY_ROOT / "outputs" / "cic07_governance_ledger"
+    if len(sys.argv) > 1:
+        raise SystemExit(cic07_main(sys.argv[1:]))
+    output = REPOSITORY_ROOT / "outputs" / "cic07_governance_ledger"
     raise SystemExit(cic07_main(["--output", str(output), "--repo-root", str(REPOSITORY_ROOT)]))

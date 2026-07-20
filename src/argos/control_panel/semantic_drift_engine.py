@@ -16,6 +16,10 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from argos.candidate_integrity import stable_hash
+from argos.control_panel.certified_baseline_bootstrap import (
+    build_semantic_baseline_manifest,
+    load_authoritative_baseline,
+)
 
 
 CIC06_VERSION = "CIC-06.1"
@@ -119,6 +123,13 @@ class CIC06FailureCode(str, Enum):
     BASELINE_CORRUPTION = "CIC06_BASELINE_CORRUPTION"
     REPORT_CORRUPTION = "CIC06_REPORT_CORRUPTION"
     INCOMPLETE_COMPARISON = "CIC06_INCOMPLETE_COMPARISON"
+    REQUIRED_DOMAIN_MISSING = "CIC06_REQUIRED_DOMAIN_MISSING"
+    REQUIRED_DOMAIN_EMPTY = "CIC06_REQUIRED_DOMAIN_EMPTY"
+    REQUIRED_DOMAIN_UNPROVEN = "CIC06_REQUIRED_DOMAIN_UNPROVEN"
+    REQUIRED_DOMAIN_EVIDENCE_MISSING = "CIC06_REQUIRED_DOMAIN_EVIDENCE_MISSING"
+    EMPTY_VERSUS_EMPTY_UNKNOWN = "CIC06_EMPTY_VERSUS_EMPTY_UNKNOWN"
+    BASELINE_NOT_FOUND = "CIC06_BASELINE_NOT_FOUND"
+    BASELINE_INTEGRITY_INVALID = "CIC06_BASELINE_INTEGRITY_INVALID"
 
 
 @dataclass(frozen=True)
@@ -292,6 +303,132 @@ def compare_semantic_drift(request: ComparisonRequest | dict[str, Any]) -> dict[
     return {**body, "reportDigest": stable_hash(body)}
 
 
+def compare_authoritative_baseline_to_candidate(
+    repo_root: str | Path,
+    *,
+    candidate_contract: dict[str, Any],
+    baseline_store: str | Path,
+    cic02_result: dict[str, Any],
+    cic03_result: dict[str, Any],
+    cic04_result: dict[str, Any],
+) -> dict[str, Any]:
+    """Production CIC-06 path.
+
+    This path consumes a verified CIC-05 baseline and a freshly extracted
+    candidate semantic manifest.  It never falls back to demo data or empty
+    semantic objects.
+    """
+    baseline_load = load_authoritative_baseline(baseline_store)
+    if baseline_load.get("status") != "PASS":
+        candidate = candidate_contract.get("candidateIdentity", {})
+        req = ComparisonRequest(
+            "CIC06-PRODUCTION-COMPARISON",
+            {"repositoryCommit": "0" * 40, "candidateIdentityDigest": ""},
+            candidate,
+            {},
+            {},
+        )
+        report = compare_semantic_drift(req)
+        report = {**report, "failureCodes": tuple(report["failureCodes"]) + tuple(baseline_load.get("failureCodes", (CIC06FailureCode.BASELINE_NOT_FOUND.value,))), "baselineLoad": baseline_load}
+        return {**{key: value for key, value in report.items() if key != "reportDigest"}, "reportDigest": stable_hash({key: value for key, value in report.items() if key != "reportDigest"})}
+    baseline = baseline_load["baseline"]
+    candidate_semantic = build_semantic_baseline_manifest(
+        repo_root,
+        candidate_contract,
+        {
+            "cic02": cic02_result,
+            "cic03": cic03_result,
+            "cic04": cic04_result,
+            "cssBootstrapGates": tuple(cic03_result.get("subsystemResults", ())),
+            "constitutionalFindings": (),
+            "syntheticTruthFindings": (),
+        },
+    )
+    baseline_manifest = _comparison_manifest_from_cic05(baseline["semanticManifest"])
+    candidate_manifest = _comparison_manifest_from_cic05(candidate_semantic)
+    validation = validate_required_domain_inputs(baseline["semanticManifest"], candidate_semantic)
+    req = ComparisonRequest(
+        "CIC06-PRODUCTION-COMPARISON",
+        baseline["candidateIdentity"],
+        candidate_contract["candidateIdentity"],
+        baseline_manifest,
+        candidate_manifest,
+    )
+    report = compare_semantic_drift(req)
+    extra_failures = tuple(validation["failureCodes"])
+    if extra_failures:
+        body = {key: value for key, value in report.items() if key != "reportDigest"}
+        body["finalDriftClassification"] = DriftClassification.UNKNOWN_DRIFT.value
+        body["highestSeverity"] = DriftClassification.UNKNOWN_DRIFT.value
+        body["candidateMayContinueTowardCertification"] = False
+        body["failureCodes"] = tuple(body["failureCodes"]) + extra_failures
+        body["domainCompletionAccounting"] = validation
+        body["baselineLoad"] = baseline_load
+        body["candidateSemanticManifestHash"] = candidate_semantic["semanticManifestHash"]
+        return {**body, "reportDigest": stable_hash(body)}
+    body = {
+        **{key: value for key, value in report.items() if key != "reportDigest"},
+        "domainCompletionAccounting": validation,
+        "baselineLoad": baseline_load,
+        "candidateSemanticManifestHash": candidate_semantic["semanticManifestHash"],
+        "productionGeneration": {
+            "demoRequestUsed": False,
+            "baselineSource": baseline_load.get("baselinePath", ""),
+            "candidateExtractor": "CIC-05 semantic manifest builder",
+        },
+    }
+    return {**body, "reportDigest": stable_hash(body)}
+
+
+def validate_required_domain_inputs(baseline_semantic: dict[str, Any], candidate_semantic: dict[str, Any]) -> dict[str, Any]:
+    failures: list[str] = []
+    rows = []
+    baseline_domains = baseline_semantic.get("domains", {})
+    candidate_domains = candidate_semantic.get("domains", {})
+    for domain in DriftDomain:
+        base = baseline_domains.get(domain.value)
+        cand = candidate_domains.get(domain.value)
+        codes: list[str] = []
+        for label, payload in (("baseline", base), ("candidate", cand)):
+            if not payload:
+                codes.append(f"{CIC06FailureCode.REQUIRED_DOMAIN_MISSING.value}:{label}:{domain.value}")
+                continue
+            if not payload.get("semanticObjects"):
+                codes.append(f"{CIC06FailureCode.REQUIRED_DOMAIN_EMPTY.value}:{label}:{domain.value}")
+            if not payload.get("evidenceReferences"):
+                codes.append(f"{CIC06FailureCode.REQUIRED_DOMAIN_EVIDENCE_MISSING.value}:{label}:{domain.value}")
+            if not payload.get("proofReferences"):
+                codes.append(f"{CIC06FailureCode.REQUIRED_DOMAIN_UNPROVEN.value}:{label}:{domain.value}")
+            if payload.get("validationStatus") != "VALID" or payload.get("completenessVerdict") != "COMPLETE":
+                codes.append(f"{CIC06FailureCode.INCOMPLETE_COMPARISON.value}:{label}:{domain.value}")
+        if base and cand and not base.get("semanticObjects") and not cand.get("semanticObjects"):
+            codes.append(f"{CIC06FailureCode.EMPTY_VERSUS_EMPTY_UNKNOWN.value}:{domain.value}")
+        failures.extend(codes)
+        rows.append(
+            {
+                "domain": domain.value,
+                "baselinePresent": bool(base),
+                "candidatePresent": bool(cand),
+                "baselineObjectCount": len(tuple((base or {}).get("semanticObjects", ()))),
+                "candidateObjectCount": len(tuple((cand or {}).get("semanticObjects", ()))),
+                "evidenceBound": bool((base or {}).get("evidenceReferences")) and bool((cand or {}).get("evidenceReferences")),
+                "proofBound": bool((base or {}).get("proofReferences")) and bool((cand or {}).get("proofReferences")),
+                "evaluated": not codes,
+                "failureCodes": tuple(codes),
+            }
+        )
+    return {"schemaVersion": "CIC06-DOMAIN-ACCOUNTING.1", "mandatoryDomainCount": 14, "evaluatedDomainCount": sum(1 for row in rows if row["evaluated"]), "rows": tuple(rows), "valid": not failures, "failureCodes": tuple(dict.fromkeys(failures)), "accountingDigest": stable_hash(rows)}
+
+
+def _comparison_manifest_from_cic05(semantic_manifest: dict[str, Any]) -> dict[str, Any]:
+    return {
+        domain: {
+            "semanticObjects": payload.get("semanticObjects", ()),
+        }
+        for domain, payload in sorted(semantic_manifest.get("domains", {}).items())
+    }
+
+
 def validate_request(req: ComparisonRequest) -> list[str]:
     failures: list[str] = []
     for label, identity, code in (
@@ -300,8 +437,6 @@ def validate_request(req: ComparisonRequest) -> list[str]:
     ):
         if not identity.get("candidateIdentityDigest") or len(str(identity.get("repositoryCommit", ""))) != 40:
             failures.append(f"{code}:{label}")
-    if req.baseline_identity.get("candidateIdentityDigest") == req.candidate_identity.get("candidateIdentityDigest"):
-        failures.append(f"{CIC06FailureCode.INPUT_INVALID.value}:baseline_candidate_same_identity")
     if not req.requested_domains:
         failures.append(f"{CIC06FailureCode.INCOMPLETE_COMPARISON.value}:no_domains")
     return failures
@@ -527,6 +662,10 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(_jsonable(payload), indent=2, sort_keys=True), encoding="utf-8")
 
 
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def _file_record(path: Path, root: Path) -> dict[str, str]:
     return {"path": path.relative_to(root).as_posix(), "sha256": _file_hash(path)}
 
@@ -548,8 +687,36 @@ def cic06_main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="CIC-06 semantic drift evidence")
     parser.add_argument("--repo-root", default=".")
     parser.add_argument("--output", required=True)
+    parser.add_argument("--candidate-contract")
+    parser.add_argument("--baseline-store")
+    parser.add_argument("--cic02-result")
+    parser.add_argument("--cic03-result")
+    parser.add_argument("--cic04-result")
     args = parser.parse_args(argv)
-    report = compare_semantic_drift(demo_request(args.repo_root))
+    required = (args.candidate_contract, args.baseline_store, args.cic02_result, args.cic03_result, args.cic04_result)
+    if not all(required):
+        failure = {
+            "schemaVersion": REPORT_SCHEMA_VERSION,
+            "comparisonId": "CIC06-PRODUCTION-COMPARISON",
+            "candidateIdentity": {},
+            "baselineIdentity": {},
+            "finalDriftClassification": DriftClassification.INPUT_INVALID.value,
+            "candidateMayContinueTowardCertification": False,
+            "failureCodes": ("CIC06_PRODUCTION_INPUTS_REQUIRED",),
+            "domainResults": (),
+            "driftRecords": (),
+            "recertificationPlan": {"actions": (RecertificationAction.MANUAL_AUDIT_REQUIRED.value,), "certificationGateSatisfied": False},
+        }
+        report = {**failure, "reportDigest": stable_hash(failure)}
+    else:
+        report = compare_authoritative_baseline_to_candidate(
+            args.repo_root,
+            candidate_contract=_read_json(Path(args.candidate_contract)),
+            baseline_store=args.baseline_store,
+            cic02_result=_read_json(Path(args.cic02_result)),
+            cic03_result=_read_json(Path(args.cic03_result)),
+            cic04_result=_read_json(Path(args.cic04_result)),
+        )
     manifest = write_cic06_evidence(report, args.output)
     print(json.dumps(_jsonable(manifest), indent=2, sort_keys=True))
     return 0 if manifest.get("verdict") == "PASS" else 1

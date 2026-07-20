@@ -77,6 +77,16 @@ class GovernanceErrorCode(str, Enum):
     LEDGER_HASH_MISMATCH = "CIC07_LEDGER_HASH_MISMATCH"
     PROJECTION_MISMATCH = "CIC07_PROJECTION_MISMATCH"
     EXPORT_INCOMPLETE = "CIC07_EXPORT_INCOMPLETE"
+    CANDIDATE_MISMATCH = "CIC07_CANDIDATE_MISMATCH"
+    ZERO_COMMIT_REJECTED = "CIC07_ZERO_COMMIT_REJECTED"
+    CR7_NOT_PASS = "CIC07_CR7_NOT_PASS"
+    CR10_NOT_PASS = "CIC07_CR10_NOT_PASS"
+    BASELINE_INVALID = "CIC07_BASELINE_INVALID"
+    DRIFT_REPORT_INVALID = "CIC07_DRIFT_REPORT_INVALID"
+    DRIFT_REPORT_DEMONSTRATION_DATA = "CIC07_DRIFT_REPORT_DEMONSTRATION_DATA"
+    AUTHORITY_WILDCARD_PROHIBITED = "CIC07_AUTHORITY_WILDCARD_PROHIBITED"
+    WORKFLOW_TOKEN_INVALID = "CIC07_WORKFLOW_TOKEN_INVALID"
+    SAMPLE_BUILDER_PRODUCTION_REACHABLE = "CIC07_SAMPLE_BUILDER_PRODUCTION_REACHABLE"
 
 
 TRANSITION_MATRIX = {
@@ -184,7 +194,8 @@ class CertificationGovernanceLedger:
             return {"status": "FAIL", "entry": {}, "failureCodes": (GovernanceErrorCode.CONCURRENCY_CONFLICT.value,)}
         failures = validate_command(command, CertificationStatus(prior))
         status = "FAIL" if failures else "COMMITTED"
-        resulting = prior if failures else command.target_status.value
+        observational = command.action == GovernanceAction.RECORD_DRIFT
+        resulting = prior if failures or observational else command.target_status.value
         entry = LedgerEntry(
             len(self._entries) + 1,
             f"CIC07-LEDGER-{stable_hash((len(self._entries) + 1, command.command_id, command_digest))[:16].upper()}",
@@ -223,7 +234,10 @@ def validate_command(command: GovernanceCommand, prior_status: CertificationStat
     failures: list[str] = []
     if not command.authority.valid or command.action not in command.authority.actions or command.authority.workflow_token == "":
         failures.append(GovernanceErrorCode.AUTHORIZATION_DENIED.value)
-    if command.target_status not in TRANSITION_MATRIX.get(prior_status, set()) and not (prior_status == CertificationStatus.PENDING and command.action in {GovernanceAction.RECORD_DRIFT, GovernanceAction.RECORD_RULE_CHANGE, GovernanceAction.QUARANTINE_EVIDENCE, GovernanceAction.ANNOTATE}):
+    if command.authority.scope in {"*", "ANY", "SAMPLE", "DEMO", "TEST", "PLACEHOLDER"} and command.authority.authority_source == "PRODUCTION_CIC07":
+        failures.append(GovernanceErrorCode.AUTHORITY_WILDCARD_PROHIBITED.value)
+    observational = command.action == GovernanceAction.RECORD_DRIFT
+    if not observational and command.target_status not in TRANSITION_MATRIX.get(prior_status, set()) and not (prior_status == CertificationStatus.PENDING and command.action in {GovernanceAction.RECORD_RULE_CHANGE, GovernanceAction.QUARANTINE_EVIDENCE, GovernanceAction.ANNOTATE}):
         failures.append(f"{GovernanceErrorCode.INVALID_TRANSITION.value}:{prior_status.value}->{command.target_status.value}")
     decision = command.decision
     if command.action == GovernanceAction.ISSUE:
@@ -236,6 +250,134 @@ def validate_command(command: GovernanceCommand, prior_status: CertificationStat
         if not decision.evidence_manifest_digest or "QUARANTINED" in command.evidence_scope:
             failures.append(GovernanceErrorCode.EVIDENCE_QUARANTINED.value)
     return tuple(dict.fromkeys(failures))
+
+
+def generate_authoritative_governance_evidence(
+    *,
+    candidate_contract: dict[str, Any],
+    cic02_result: dict[str, Any],
+    cic04_result: dict[str, Any],
+    cic05_result: dict[str, Any],
+    cic06_report: dict[str, Any],
+    authority_record: dict[str, Any],
+    workflow_token: dict[str, Any],
+    output_dir: str | Path,
+    action: GovernanceAction = GovernanceAction.ISSUE,
+) -> dict[str, Any]:
+    decision, eligibility = evaluate_certification_eligibility(candidate_contract, cic02_result, cic04_result, cic05_result, cic06_report)
+    authority = _authority_from_record(authority_record, workflow_token, action, candidate_contract)
+    ledger = CertificationGovernanceLedger()
+    command = GovernanceCommand(
+        "CIC07-AUTHORITATIVE-COMMAND-001",
+        action,
+        decision.certification_id,
+        CertificationStatus.ISSUED if action == GovernanceAction.ISSUE else CertificationStatus.PENDING,
+        decision,
+        authority,
+        reason_code="authoritative-input-evaluation",
+        evidence_scope=tuple(eligibility["artifactDigests"]),
+    )
+    command_result = ledger.apply(command)
+    export = ledger.audit_export()
+    manifest = write_cic07_evidence(export, output_dir)
+    out = Path(output_dir).resolve()
+    status_report = {
+        "schemaVersion": "CIC07-AUTHORITATIVE-STATUS.1",
+        "ledgerIntegrityStatus": "PASS" if export["integrityVerification"]["valid"] else "FAIL",
+        "commandValidityStatus": "PASS" if not command_result["failureCodes"] else "FAIL",
+        "certificationEligibilityStatus": "PASS" if eligibility["eligible"] else "FAIL",
+        "certificationIssuanceStatus": "ISSUED" if command_result["status"] == "COMMITTED" and action == GovernanceAction.ISSUE else "NOT_ISSUED",
+        "overallCIC07Acceptance": "PASS" if export["integrityVerification"]["valid"] and command_result["status"] == "COMMITTED" and eligibility["eligible"] else "FAIL",
+        "candidateIdentityDigest": candidate_contract.get("candidateIdentity", {}).get("candidateIdentityDigest", ""),
+        "baselineIdentifier": cic05_result.get("baseline", {}).get("baselineIdentifier", ""),
+        "failureCodes": tuple(dict.fromkeys(tuple(eligibility["failureCodes"]) + tuple(command_result["failureCodes"]))),
+        "artifactDigests": eligibility["artifactDigests"],
+        "commandResult": command_result,
+        "governanceManifestDigest": manifest["manifestDigest"],
+    }
+    _write_json(out / "cic07_authoritative_status.json", status_report)
+    _write_json(out / "cic07_certification_eligibility.json", eligibility)
+    _write_json(out / "cic07_command_record.json", command_result)
+    _write_json(out / "cic07_input_manifest.json", _input_manifest(candidate_contract, cic02_result, cic04_result, cic05_result, cic06_report, authority_record, workflow_token))
+    return {**status_report, "statusDigest": stable_hash(status_report)}
+
+
+def evaluate_certification_eligibility(
+    candidate_contract: dict[str, Any],
+    cic02_result: dict[str, Any],
+    cic04_result: dict[str, Any],
+    cic05_result: dict[str, Any],
+    cic06_report: dict[str, Any],
+) -> tuple[CertificationDecision, dict[str, Any]]:
+    candidate = candidate_contract.get("candidateIdentity", {})
+    digest = candidate.get("candidateIdentityDigest", "")
+    commit = candidate.get("repositoryCommit", "")
+    failures: list[str] = []
+    if len(commit) != 40 or set(commit) == {"0"}:
+        failures.append(GovernanceErrorCode.ZERO_COMMIT_REJECTED.value)
+    if cic02_result.get("cr7Evidence", {}).get("constitutionalVerdict") != "PASS" or cic02_result.get("cic02AuthoritativeVerdict", {}).get("status") != "PASS":
+        failures.append(GovernanceErrorCode.CR7_NOT_PASS.value)
+    if not cic02_result.get("cr10Qualification", {}).get("qualified"):
+        failures.append(GovernanceErrorCode.CR10_NOT_PASS.value)
+    if cic04_result.get("authoritativeVerdict", {}).get("status") != "PASS":
+        failures.append(GovernanceErrorCode.PROOF_MISSING.value)
+    if cic05_result.get("status") != "PASS" or cic05_result.get("verification", {}).get("status") != "VALID":
+        failures.append(GovernanceErrorCode.BASELINE_INVALID.value)
+    if cic06_report.get("productionGeneration", {}).get("demoRequestUsed") is not False:
+        failures.append(GovernanceErrorCode.DRIFT_REPORT_DEMONSTRATION_DATA.value)
+    if cic06_report.get("candidateMayContinueTowardCertification") is not True:
+        failures.append(GovernanceErrorCode.DRIFT_REPORT_INVALID.value)
+    for name, artifact in (("cic02", cic02_result), ("cic04", cic04_result), ("cic05", cic05_result), ("cic06", cic06_report)):
+        text = json.dumps(_jsonable(artifact), sort_keys=True)
+        if digest not in text or commit not in text:
+            failures.append(f"{GovernanceErrorCode.CANDIDATE_MISMATCH.value}:{name}")
+    artifact_digests = {
+        "cic02": stable_hash(cic02_result),
+        "cic04": stable_hash(cic04_result),
+        "cic05": stable_hash(cic05_result),
+        "cic06": stable_hash(cic06_report),
+    }
+    decision = CertificationDecision(
+        f"ARGOS-CERT-{stable_hash((digest, commit))[:12].upper()}",
+        digest,
+        commit,
+        cic05_result.get("baseline", {}).get("baselineIdentifier", ""),
+        cic05_result.get("baseline", {}).get("baselineContentHash", ""),
+        "ARGOS-RULESET",
+        "CIC07-POLICY.1",
+        stable_hash("ARGOS-RULESET"),
+        artifact_digests["cic02"],
+        cic04_result.get("authoritativeVerdict", {}).get("verdictDigest", ""),
+        cic06_report.get("reportDigest", ""),
+        stable_hash((cic02_result.get("cssPrerequisitePublication", {}), cic04_result.get("authoritativeVerdict", {}))),
+        "PASS" if not failures else "FAIL",
+        "PROVEN" if cic04_result.get("authoritativeVerdict", {}).get("status") == "PASS" else "UNKNOWN",
+        cic06_report.get("finalDriftClassification", DriftClassification.UNKNOWN_DRIFT.value),
+        "CIC07-POLICY.1",
+        CertificationLevel.PAPER_CANDIDATE,
+    )
+    eligibility = {"schemaVersion": "CIC07-CERTIFICATION-ELIGIBILITY.1", "eligible": not failures, "failureCodes": tuple(dict.fromkeys(failures)), "artifactDigests": artifact_digests, "candidateIdentityDigest": digest, "repositoryCommit": commit}
+    return decision, {**eligibility, "eligibilityDigest": stable_hash(eligibility)}
+
+
+def _authority_from_record(record: dict[str, Any], token: dict[str, Any], action: GovernanceAction, candidate_contract: dict[str, Any]) -> GovernanceAuthority:
+    candidate_digest = candidate_contract.get("candidateIdentity", {}).get("candidateIdentityDigest", "")
+    actions = tuple(GovernanceAction(item) for item in record.get("actions", ()))
+    valid = bool(
+        record.get("valid")
+        and token.get("valid")
+        and action in actions
+        and record.get("candidateIdentityDigest") == candidate_digest
+        and token.get("candidateIdentityDigest") == candidate_digest
+        and record.get("scope") not in {"*", "ANY", "SAMPLE", "DEMO", "TEST", "PLACEHOLDER", ""}
+    )
+    return GovernanceAuthority(str(record.get("actorId", "")), "PRODUCTION_CIC07", actions, str(record.get("scope", "")), str(token.get("tokenId", "")), valid)
+
+
+def _input_manifest(*artifacts: dict[str, Any]) -> dict[str, Any]:
+    rows = tuple({"index": index, "digest": stable_hash(artifact)} for index, artifact in enumerate(artifacts, start=1))
+    body = {"schemaVersion": "CIC07-INPUT-MANIFEST.1", "artifacts": rows}
+    return {**body, "manifestDigest": stable_hash(body)}
 
 
 def rebuild_projection(entries: Iterable[dict[str, Any]]) -> dict[str, dict[str, Any]]:
@@ -399,6 +541,10 @@ def _write_json(path: Path, payload: Any) -> None:
     path.write_text(json.dumps(_jsonable(payload), indent=2, sort_keys=True), encoding="utf-8")
 
 
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def _file_record(path: Path, root: Path) -> dict[str, str]:
     return {"path": path.relative_to(root).as_posix(), "sha256": _file_hash(path)}
 
@@ -428,12 +574,44 @@ def cic07_main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="CIC-07 governance ledger evidence")
     parser.add_argument("--output", required=True)
     parser.add_argument("--repo-root", default=".")
+    parser.add_argument("--candidate-contract")
+    parser.add_argument("--cic02-result")
+    parser.add_argument("--cic04-result")
+    parser.add_argument("--cic05-result")
+    parser.add_argument("--cic06-report")
+    parser.add_argument("--authority-record")
+    parser.add_argument("--workflow-token")
     args = parser.parse_args(argv)
-    repo_root = Path(args.repo_root).resolve()
-    export = demo_ledger(_git(repo_root, "rev-parse", "HEAD")).audit_export()
-    manifest = write_cic07_evidence(export, args.output)
-    print(json.dumps(_jsonable(manifest), indent=2, sort_keys=True))
-    return 0 if manifest.get("verdict") == "PASS" else 1
+    required = (args.candidate_contract, args.cic02_result, args.cic04_result, args.cic05_result, args.cic06_report, args.authority_record, args.workflow_token)
+    if not all(required):
+        out = Path(args.output).resolve()
+        out.mkdir(parents=True, exist_ok=True)
+        failure = {
+            "schemaVersion": "CIC07-AUTHORITATIVE-STATUS.1",
+            "ledgerIntegrityStatus": "NOT_EVALUATED",
+            "commandValidityStatus": "FAIL",
+            "certificationEligibilityStatus": "NOT_EVALUATED",
+            "certificationIssuanceStatus": "NOT_ISSUED",
+            "overallCIC07Acceptance": "FAIL",
+            "failureCodes": ("CIC07_PRODUCTION_INPUTS_REQUIRED",),
+        }
+        _write_json(out / "cic07_authoritative_status.json", failure)
+        export = CertificationGovernanceLedger().audit_export()
+        manifest = write_cic07_evidence(export, out)
+        print(json.dumps(_jsonable({**failure, "governanceManifestDigest": manifest["manifestDigest"]}), indent=2, sort_keys=True))
+        return 1
+    status = generate_authoritative_governance_evidence(
+        candidate_contract=_read_json(Path(args.candidate_contract)),
+        cic02_result=_read_json(Path(args.cic02_result)),
+        cic04_result=_read_json(Path(args.cic04_result)),
+        cic05_result=_read_json(Path(args.cic05_result)),
+        cic06_report=_read_json(Path(args.cic06_report)),
+        authority_record=_read_json(Path(args.authority_record)),
+        workflow_token=_read_json(Path(args.workflow_token)),
+        output_dir=args.output,
+    )
+    print(json.dumps(_jsonable(status), indent=2, sort_keys=True))
+    return 0 if status.get("overallCIC07Acceptance") == "PASS" else 1
 
 
 if __name__ == "__main__":  # pragma: no cover
