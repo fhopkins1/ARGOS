@@ -40,18 +40,20 @@ def scheduler_with_mission() -> tuple[EnterpriseOperationsScheduler, object]:
     return scheduler, mission
 
 
-def source_plan() -> SentinelSourcePlanReference:
-    return SentinelSourcePlanReference(
-        source_plan_id="SRCPLAN-SENT-RM-003",
-        objective_id="OBJ-SENT-RM-003",
-        source_id="APPROVED-SOURCE-RM-003",
-        adapter_id="SENTINEL-APPROVED-SOURCE-ADAPTER/1.0.0",
-        source_host="approved.example",
-        source_path="/events",
-        retrieval_method="approved_poll",
-        entitlement_class="paper-authoritative",
-        operationally_allowed=True,
-    )
+def source_plan(**overrides) -> SentinelSourcePlanReference:
+    data = {
+        "source_plan_id": "SRCPLAN-SENT-RM-003",
+        "objective_id": "OBJ-SENT-RM-003",
+        "source_id": "APPROVED-SOURCE-RM-003",
+        "adapter_id": "SENTINEL-APPROVED-SOURCE-ADAPTER/1.0.0",
+        "source_host": "approved.example",
+        "source_path": "/events",
+        "retrieval_method": "approved_poll",
+        "entitlement_class": "paper-authoritative",
+        "operationally_allowed": True,
+    }
+    data.update(overrides)
+    return SentinelSourcePlanReference(**data)
 
 
 def authority_for(mission, candidate: str = "commit:sentinel-rm003-candidate", runtime: str = "ARGOS-CANONICAL-RUNTIME") -> SentinelAuthorityRegistry:
@@ -93,6 +95,14 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.final_office_readiness, EnterpriseCertificationDecision.PASS)
         self.assertIn("SENT-RM-003-008", package.remediation_order_coverage)
         self.assertIn("SENT-RM-003-016", package.remediation_order_coverage)
+        self.assertEqual(package.component_registry.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.self_certification_separation.result, EnterpriseCertificationDecision.PASS)
+        self.assertFalse(package.self_certification_separation.sentinel_controls_certification_verdict)
+        self.assertEqual(package.mission_intake_validation.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.lifecycle_state_machine.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.source_plan_enforcement.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.raw_evidence_preservation.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.source_admissibility.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.responsibility_validation.ownership_result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.behavior_completeness.missing_behaviors, ())
         self.assertEqual(package.runtime_completeness.missing_runtime_paths, ())
@@ -187,6 +197,56 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.validation_suite.failed_tests, ())
         self.assertIn("recovery_validation", package.constitutional_integration.workflow_stages)
         self.assertIn("aggregation_manifest", package.constitutional_integration.workflow_stages)
+
+    def test_component_registry_and_self_certification_boundary_are_explicit(self) -> None:
+        support = SentinelOfficeIntegritySupport()
+        definition = sentinel_office_responsibility_definition()
+
+        registry = support.evaluate_component_registry(definition)
+        separation = support.evaluate_self_certification_separation()
+
+        self.assertEqual(registry.result, EnterpriseCertificationDecision.PASS)
+        self.assertIn("SentinelCanonicalRuntime", registry.registered_components)
+        self.assertEqual(registry.infrastructure_contamination, ())
+        self.assertEqual(registry.orphan_requirements, ())
+        self.assertEqual(separation.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(separation.detected_self_certification_paths, ())
+        self.assertEqual(separation.independent_authority, "Independent Office Certification Authority")
+
+    def test_mission_intake_lifecycle_source_plan_raw_and_admissibility_records_pass_from_runtime_evidence(self) -> None:
+        runtime, execution = runtime_and_execution()
+        plan = source_plan()
+        package = SentinelOfficeIntegritySupport().build_package(
+            execution=execution,
+            repository=runtime.persistence,
+            source_plan=plan,
+        )
+
+        self.assertEqual(package.mission_intake_validation.validation_stages, ("mission_resolved", "authority_validated", "sentinel_scheduled"))
+        self.assertEqual(package.lifecycle_state_machine.observed_lifecycle, ("DORMANT", "ACTIVATION_REQUESTED", "ACTIVE", "COMPLETING", "DORMANT"))
+        self.assertEqual(package.lifecycle_state_machine.illegal_transitions, ())
+        self.assertEqual(package.source_plan_enforcement.approved_source_plan, plan.source_plan_id)
+        self.assertEqual(package.source_plan_enforcement.enforcement_failures, ())
+        self.assertTrue(package.raw_evidence_preservation.preservation_precedes_normalization)
+        self.assertTrue(package.raw_evidence_preservation.normalized_observation_references_raw)
+        self.assertEqual(package.source_admissibility.admissibility_decision, "ADMIT")
+
+    def test_invalid_source_plan_and_inadmissible_source_fail_closed(self) -> None:
+        runtime, execution = runtime_and_execution()
+        support = SentinelOfficeIntegritySupport()
+        disabled = source_plan(operationally_allowed=False)
+        malformed = source_plan(source_host="", entitlement_class="")
+
+        disabled_enforcement = support.evaluate_source_plan_enforcement(execution, disabled)
+        disabled_admissibility = support.evaluate_source_admissibility(execution, disabled)
+        malformed_admissibility = support.evaluate_source_admissibility(execution, malformed)
+
+        self.assertEqual(disabled_enforcement.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("source_plan_not_operationally_allowed", disabled_enforcement.enforcement_failures)
+        self.assertEqual(disabled_admissibility.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(disabled_admissibility.rejection_code, "DISABLED_SOURCE")
+        self.assertEqual(malformed_admissibility.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn(malformed_admissibility.rejection_code, {"INVALID_ENDPOINT", "INVALID_ENTITLEMENT"})
 
     def test_missing_persistence_record_fails_closed_without_fabricating_completion(self) -> None:
         definition = sentinel_office_responsibility_definition()
