@@ -1202,6 +1202,102 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("Commander bridge required by test fixture", test_registry.enterprise_dependency_findings)
         self.assertEqual(test_registry.certification_aggregation_result, "FAIL")
 
+    def test_seek_rm004_registry_governance_package_covers_collision_metrics_identifiers_and_versions(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_rm004_registry_governance_evidence_package(
+            candidate=candidate(candidate_type="PUBLIC_COMMON_EQUITY"),
+            discovery_evidence=(discovery_evidence(),),
+        )
+
+        self.assertEqual(package.final_rm004_registry_governance_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-004-006",
+                "SEEK-RM-004-007",
+                "SEEK-RM-004-009",
+                "SEEK-RM-004-010",
+            ),
+        )
+        self.assertIn("SEEK-RM-004-002", package.unprovided_dependency_orders)
+        self.assertIn("SEEK-RM-004-008", package.unprovided_dependency_orders)
+        self.assertEqual(package.collision_resolution.collision_class, "COL-001")
+        self.assertEqual(package.collision_resolution.final_collision_state, "RESOLVED_DISTINCT")
+        self.assertFalse(package.collision_resolution.candidate_evaluation_blocked)
+        self.assertEqual(len(package.metrics_registry.metric_categories), 10)
+        self.assertEqual(package.metrics_registry.implementation_defined_certification_metrics, ())
+        self.assertEqual(len(package.identifier_registry.namespaces), 20)
+        self.assertEqual(package.identifier_registry.reserved_identifier_violations, ())
+        self.assertEqual(package.version_compatibility_matrix.unknown_compatibility_pairs, ())
+        self.assertEqual(package.version_compatibility_matrix.certification_incompatible_pairs, ())
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm004_registry_governance_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+
+        collision = support.evaluate_rm004_collision_resolution(
+            candidate=candidate(),
+            discovery_evidence=(),
+            collision_class="COL-010",
+            collision_set=("CID-000001000", "CID-000001001"),
+            missing_investigation_steps=("preserve_registry_versions",),
+            heuristic_resolution_findings=("similarity_score_selected_winner",),
+            replay_reproduces_outcome=False,
+            recovery_preserves_state=False,
+        )
+        good_metrics = support.evaluate_rm004_metrics_registry()
+        bad_metric = replace(good_metrics.entries[0], metric_id="BAD-1", units="", precision="floating point approximation")
+        metrics = support.evaluate_rm004_metrics_registry(
+            mutated_entries=(bad_metric,) + good_metrics.entries[1:],
+            implementation_defined_certification_metrics=("operator_quality_score",),
+            replay_divergent_metrics=("SEEK-MET-000002",),
+        )
+        good_identifiers = support.evaluate_rm004_identifier_registry(
+            observed_identifiers=("CID-000001000", "EVD-000001001")
+        )
+        bad_namespace = replace(good_identifiers.namespaces[0], prefix="cid")
+        identifiers = support.evaluate_rm004_identifier_registry(
+            observed_identifiers=("CID-000000001", "CID-000000001", "BAD-123"),
+            mutated_namespaces=(bad_namespace,) + good_identifiers.namespaces[1:],
+            collision_findings=("CID-000001000 allocated twice",),
+            replay_preserves_identifiers=False,
+            recovery_preserves_identifiers=False,
+        )
+        good_versions = support.evaluate_rm004_version_compatibility_matrix()
+        bad_entry = replace(
+            good_versions.compatibility_entries[0],
+            compatibility_classification="Unknown",
+            replay_allowed=False,
+            recovery_allowed=False,
+            certification_allowed=False,
+            migration_required=True,
+            required_migration_version="",
+        )
+        versions = support.evaluate_rm004_version_compatibility_matrix(
+            required_version_pairs=(("SEEK-RM-004-001-CCR/1.0.0", "MISSING/1.0.0"),),
+            mutated_entries=(bad_entry,) + good_versions.compatibility_entries[1:],
+            implicit_compatibility_findings=("minor_version_assumed_compatible",),
+        )
+
+        self.assertEqual(collision.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(collision.final_collision_state, "QUARANTINED")
+        self.assertTrue(collision.candidate_evaluation_blocked)
+        self.assertIn("similarity_score_selected_winner", collision.heuristic_resolution_findings)
+        self.assertEqual(metrics.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("BAD-1", metrics.invalid_metric_ids)
+        self.assertIn("BAD-1", metrics.invalid_units)
+        self.assertIn("BAD-1", metrics.precision_violations)
+        self.assertIn("operator_quality_score", metrics.implementation_defined_certification_metrics)
+        self.assertEqual(identifiers.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("cid", identifiers.invalid_prefixes)
+        self.assertIn("CID-000000001", identifiers.reserved_identifier_violations)
+        self.assertIn("CID-000000001", identifiers.duplicate_identifiers)
+        self.assertIn("BAD-123", identifiers.invalid_identifiers)
+        self.assertEqual(versions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("SEEK-RM-004-001-CCR/1.0.0->MISSING/1.0.0", versions.missing_matrix_entries)
+        self.assertIn("MISSING/1.0.0", versions.missing_version_records)
+        self.assertIn("SEEK-RM-004-001-CCR/1.0.0->SEEK-RM-004-001-CCR/1.0.0", versions.unknown_compatibility_pairs)
+        self.assertIn("minor_version_assumed_compatible", versions.implicit_compatibility_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

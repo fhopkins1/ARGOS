@@ -1565,6 +1565,155 @@ class SeekerRm004CertificationCompletionEvidencePackage:
 
 
 @dataclass(frozen=True)
+class SeekerRm004CollisionResolutionRecord:
+    collision_identifier: str
+    doctrine_version: str
+    collision_taxonomy: Mapping[str, str]
+    collision_state_inventory: tuple[str, ...]
+    collision_set: tuple[str, ...]
+    collision_class: str
+    investigation_steps: tuple[str, ...]
+    missing_investigation_steps: tuple[str, ...]
+    admissible_evidence_references: tuple[str, ...]
+    heuristic_resolution_findings: tuple[str, ...]
+    collision_outcome: str
+    final_collision_state: str
+    candidate_evaluation_blocked: bool
+    merge_preserves_history: bool
+    replay_reproduces_outcome: bool
+    recovery_preserves_state: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004MetricRegistryEntry:
+    metric_id: str
+    metric_name: str
+    metric_category: str
+    constitutional_purpose: str
+    owning_office: str
+    calculation_definition: str
+    required_inputs: tuple[str, ...]
+    optional_inputs: tuple[str, ...]
+    units: str
+    precision: str
+    update_trigger: str
+    persistence_requirements: str
+    replay_requirements: str
+    certification_usage: str
+    interpretation_rules: str
+    failure_conditions: tuple[str, ...]
+    registry_version: str
+    status: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004MetricsRegistryRecord:
+    registry_identifier: str
+    registry_version: str
+    registry_hash: str
+    entries: tuple[SeekerRm004MetricRegistryEntry, ...]
+    metric_categories: tuple[str, ...]
+    duplicate_metric_ids: tuple[str, ...]
+    invalid_metric_ids: tuple[str, ...]
+    incomplete_metric_ids: tuple[str, ...]
+    invalid_units: tuple[str, ...]
+    precision_violations: tuple[str, ...]
+    implementation_defined_certification_metrics: tuple[str, ...]
+    replay_divergent_metrics: tuple[str, ...]
+    immutable_historical_storage: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004IdentifierNamespaceEntry:
+    namespace: str
+    prefix: str
+    purpose: str
+    syntax: str
+    lifecycle_states: tuple[str, ...]
+    reserved_ranges: tuple[str, ...]
+    replay_semantics: str
+    recovery_semantics: str
+    collision_handling: str
+    version: str
+    status: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004IdentifierRegistryRecord:
+    registry_identifier: str
+    registry_version: str
+    registry_hash: str
+    namespaces: tuple[SeekerRm004IdentifierNamespaceEntry, ...]
+    duplicate_prefixes: tuple[str, ...]
+    invalid_prefixes: tuple[str, ...]
+    incomplete_namespaces: tuple[str, ...]
+    observed_identifiers: tuple[str, ...]
+    invalid_identifiers: tuple[str, ...]
+    duplicate_identifiers: tuple[str, ...]
+    reserved_identifier_violations: tuple[str, ...]
+    collision_findings: tuple[str, ...]
+    replay_preserves_identifiers: bool
+    recovery_preserves_identifiers: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004VersionCompatibilityEntry:
+    source_version: str
+    target_version: str
+    compatibility_classification: str
+    migration_required: bool
+    replay_allowed: bool
+    recovery_allowed: bool
+    certification_allowed: bool
+    persistence_allowed: bool
+    checkpoint_allowed: bool
+    required_migration_version: str
+    approval_record: str
+    effective_date: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004VersionCompatibilityRecord:
+    matrix_identifier: str
+    matrix_version: str
+    matrix_hash: str
+    version_registry: Mapping[str, str]
+    compatibility_entries: tuple[SeekerRm004VersionCompatibilityEntry, ...]
+    missing_version_records: tuple[str, ...]
+    missing_matrix_entries: tuple[str, ...]
+    unknown_compatibility_pairs: tuple[str, ...]
+    implicit_compatibility_findings: tuple[str, ...]
+    migration_registry: Mapping[str, str]
+    undefined_migrations: tuple[str, ...]
+    replay_incompatible_pairs: tuple[str, ...]
+    recovery_incompatible_pairs: tuple[str, ...]
+    certification_incompatible_pairs: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004RegistryGovernanceEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    unprovided_dependency_orders: tuple[str, ...]
+    collision_resolution: SeekerRm004CollisionResolutionRecord
+    metrics_registry: SeekerRm004MetricsRegistryRecord
+    identifier_registry: SeekerRm004IdentifierRegistryRecord
+    version_compatibility_matrix: SeekerRm004VersionCompatibilityRecord
+    final_rm004_registry_governance_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -1679,6 +1828,13 @@ class SeekerOfficeIntegritySupport:
     )
 
     rm004_unprovided_dependency_orders = ("SEEK-RM-004-002",)
+
+    rm004_registry_governance_order_coverage = (
+        "SEEK-RM-004-006",
+        "SEEK-RM-004-007",
+        "SEEK-RM-004-009",
+        "SEEK-RM-004-010",
+    )
 
     remediation_order_coverage = (
         "SEEK-RM-001-001",
@@ -6703,6 +6859,442 @@ class SeekerOfficeIntegritySupport:
     def _valid_rule_id(self, value: str) -> bool:
         parts = value.split("-")
         return len(parts) == 4 and parts[0] == "SEEK" and parts[1] == "RULE" and parts[2].isupper() and len(parts[3]) == 4 and parts[3].isdigit()
+
+    def build_rm004_registry_governance_evidence_package(
+        self,
+        *,
+        candidate: SeekerCandidateIdentityInput,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+    ) -> SeekerRm004RegistryGovernanceEvidencePackage:
+        collision = self.evaluate_rm004_collision_resolution(candidate=candidate, discovery_evidence=discovery_evidence)
+        metrics = self.evaluate_rm004_metrics_registry()
+        identifiers = self.evaluate_rm004_identifier_registry(
+            observed_identifiers=(
+                "CID-000001000",
+                "CLS-000001001",
+                "RID-000001002",
+                "EVD-000001003",
+                "TEST-000001004",
+                "MET-000001005",
+            )
+        )
+        versions = self.evaluate_rm004_version_compatibility_matrix()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (collision, metrics, identifiers, versions)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = SeekerRm004RegistryGovernanceEvidencePackage(
+            package_identifier=f"SEEK-RM-004-GOVERNANCE-{_digest((candidate.candidate_reference, tuple(item.evidence_id for item in discovery_evidence)))[:12].upper()}",
+            governing_doctrine="SEEK-RM-004-006-007-009-010/1.0.0",
+            remediation_order_coverage=self.rm004_registry_governance_order_coverage,
+            unprovided_dependency_orders=self.rm004_unprovided_dependency_orders + ("SEEK-RM-004-008",),
+            collision_resolution=collision,
+            metrics_registry=metrics,
+            identifier_registry=identifiers,
+            version_compatibility_matrix=versions,
+            final_rm004_registry_governance_readiness=final,
+            immutable_audit_references=(
+                collision.collision_identifier,
+                metrics.registry_identifier,
+                identifiers.registry_identifier,
+                versions.matrix_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_rm004_collision_resolution(
+        self,
+        *,
+        candidate: SeekerCandidateIdentityInput,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        collision_class: str = "COL-001",
+        collision_set: tuple[str, ...] = (),
+        missing_investigation_steps: tuple[str, ...] = (),
+        heuristic_resolution_findings: tuple[str, ...] = (),
+        replay_reproduces_outcome: bool = True,
+        recovery_preserves_state: bool = True,
+    ) -> SeekerRm004CollisionResolutionRecord:
+        taxonomy = MappingProxyType(
+            {
+                "COL-001": "Exact Duplicate",
+                "COL-002": "Identifier Conflict",
+                "COL-003": "Partial Identity Match",
+                "COL-004": "Alias Collision",
+                "COL-005": "Normalization Collision",
+                "COL-006": "Source Disagreement",
+                "COL-007": "Historical Identity Change",
+                "COL-008": "Cross-Jurisdiction Collision",
+                "COL-009": "Namespace Collision",
+                "COL-010": "Unknown Collision",
+            }
+        )
+        states = ("DETECTED", "INVESTIGATING", "RESOLVED_IDENTICAL", "RESOLVED_DISTINCT", "QUARANTINED", "REJECTED", "SUPERSEDED", "CLOSED")
+        investigation = (
+            "preserve_raw_identities",
+            "preserve_normalized_identities",
+            "preserve_provenance",
+            "preserve_timestamps",
+            "preserve_registry_versions",
+            "evaluate_identity_schemas",
+            "evaluate_evidence_quality",
+            "evaluate_historical_identity_continuity",
+            "evaluate_namespace_consistency",
+            "produce_deterministic_outcome",
+        )
+        evidence_refs = tuple(item.evidence_id for item in discovery_evidence)
+        participants = collision_set or (candidate.candidate_reference,)
+        known_class = collision_class in taxonomy
+        evidence_complete = bool(evidence_refs) and not missing_investigation_steps
+        if not known_class or collision_class == "COL-010":
+            outcome = "EVIDENCE_INSUFFICIENT"
+            final_state = "QUARANTINED"
+        elif heuristic_resolution_findings:
+            outcome = "EVIDENCE_CONTRADICTORY"
+            final_state = "REJECTED"
+        elif evidence_complete and len(participants) <= 1:
+            outcome = "IDENTITIES_DISTINCT"
+            final_state = "RESOLVED_DISTINCT"
+        elif evidence_complete and collision_class in {"COL-001", "COL-005"}:
+            outcome = "IDENTITIES_IDENTICAL"
+            final_state = "RESOLVED_IDENTICAL"
+        elif evidence_complete:
+            outcome = "IDENTITIES_DISTINCT"
+            final_state = "RESOLVED_DISTINCT"
+        else:
+            outcome = "EVIDENCE_INSUFFICIENT"
+            final_state = "QUARANTINED"
+        blocked = final_state in {"QUARANTINED", "REJECTED"} or not known_class
+        passed = (
+            known_class
+            and evidence_complete
+            and not heuristic_resolution_findings
+            and replay_reproduces_outcome
+            and recovery_preserves_state
+            and final_state in {"RESOLVED_IDENTICAL", "RESOLVED_DISTINCT"}
+        )
+        record = SeekerRm004CollisionResolutionRecord(
+            collision_identifier=f"SEEK-RM-004-006-COL-{_digest((participants, collision_class, evidence_refs, outcome))[:12].upper()}",
+            doctrine_version="SEEK-RM-004-006/1.0.0",
+            collision_taxonomy=taxonomy,
+            collision_state_inventory=states,
+            collision_set=participants,
+            collision_class=collision_class,
+            investigation_steps=investigation,
+            missing_investigation_steps=missing_investigation_steps,
+            admissible_evidence_references=evidence_refs,
+            heuristic_resolution_findings=heuristic_resolution_findings,
+            collision_outcome=outcome,
+            final_collision_state=final_state,
+            candidate_evaluation_blocked=blocked,
+            merge_preserves_history=outcome != "IDENTITIES_IDENTICAL" or bool(evidence_refs),
+            replay_reproduces_outcome=replay_reproduces_outcome,
+            recovery_preserves_state=recovery_preserves_state,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm004_metrics_registry(
+        self,
+        *,
+        mutated_entries: tuple[SeekerRm004MetricRegistryEntry, ...] | None = None,
+        implementation_defined_certification_metrics: tuple[str, ...] = (),
+        replay_divergent_metrics: tuple[str, ...] = (),
+    ) -> SeekerRm004MetricsRegistryRecord:
+        entries = mutated_entries if mutated_entries is not None else self._rm004_metric_registry_entries()
+        ids = tuple(entry.metric_id for entry in entries)
+        duplicates = tuple(sorted({item for item in ids if ids.count(item) > 1}))
+        invalid_ids = tuple(item for item in ids if not self._valid_fixed_identifier(item, "SEEK-MET", 6))
+        required = tuple(field.name for field in fields(SeekerRm004MetricRegistryEntry))
+        incomplete = tuple(
+            entry.metric_id
+            for entry in entries
+            if any(getattr(entry, field_name) in ("", (), None) for field_name in required if field_name != "optional_inputs")
+        )
+        allowed_units = {"count", "ratio", "percentage", "bytes", "milliseconds", "seconds", "minutes", "hours", "decimal score", "Boolean", "enumerated state"}
+        invalid_units = tuple(entry.metric_id for entry in entries if entry.units not in allowed_units)
+        precision_violations = tuple(entry.metric_id for entry in entries if not entry.precision or "floating" in entry.precision.lower())
+        categories = tuple(dict.fromkeys(entry.metric_category for entry in entries))
+        passed = (
+            len(categories) == 10
+            and not duplicates
+            and not invalid_ids
+            and not incomplete
+            and not invalid_units
+            and not precision_violations
+            and not implementation_defined_certification_metrics
+            and not replay_divergent_metrics
+        )
+        registry_hash = _digest(entries)
+        record = SeekerRm004MetricsRegistryRecord(
+            registry_identifier=f"SEEK-RM-004-007-MET-{registry_hash[:12].upper()}",
+            registry_version="SEEK-RM-004-007-METRICS/1.0.0",
+            registry_hash=registry_hash,
+            entries=entries,
+            metric_categories=categories,
+            duplicate_metric_ids=duplicates,
+            invalid_metric_ids=invalid_ids,
+            incomplete_metric_ids=incomplete,
+            invalid_units=invalid_units,
+            precision_violations=precision_violations,
+            implementation_defined_certification_metrics=implementation_defined_certification_metrics,
+            replay_divergent_metrics=replay_divergent_metrics,
+            immutable_historical_storage=True,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm004_identifier_registry(
+        self,
+        *,
+        observed_identifiers: tuple[str, ...],
+        mutated_namespaces: tuple[SeekerRm004IdentifierNamespaceEntry, ...] | None = None,
+        collision_findings: tuple[str, ...] = (),
+        replay_preserves_identifiers: bool = True,
+        recovery_preserves_identifiers: bool = True,
+    ) -> SeekerRm004IdentifierRegistryRecord:
+        namespaces = mutated_namespaces if mutated_namespaces is not None else self._rm004_identifier_namespaces()
+        prefixes = tuple(item.prefix for item in namespaces)
+        duplicates = tuple(sorted({item for item in prefixes if prefixes.count(item) > 1}))
+        invalid_prefixes = tuple(item for item in prefixes if not item.isupper() or not item.isascii() or not item)
+        required = tuple(field.name for field in fields(SeekerRm004IdentifierNamespaceEntry))
+        incomplete = tuple(
+            item.namespace
+            for item in namespaces
+            if any(getattr(item, field_name) in ("", (), None) for field_name in required)
+        )
+        prefix_set = set(prefixes)
+        invalid_identifiers = tuple(identifier for identifier in observed_identifiers if not self._valid_observed_identifier(identifier, prefix_set))
+        duplicate_identifiers = tuple(sorted({item for item in observed_identifiers if observed_identifiers.count(item) > 1}))
+        reserved = tuple(
+            identifier
+            for identifier in observed_identifiers
+            if self._identifier_number(identifier) is not None and self._identifier_number(identifier) < 1000
+        )
+        passed = (
+            len(namespaces) == 20
+            and not duplicates
+            and not invalid_prefixes
+            and not incomplete
+            and not invalid_identifiers
+            and not duplicate_identifiers
+            and not reserved
+            and not collision_findings
+            and replay_preserves_identifiers
+            and recovery_preserves_identifiers
+        )
+        registry_hash = _digest(namespaces)
+        record = SeekerRm004IdentifierRegistryRecord(
+            registry_identifier=f"SEEK-RM-004-009-ID-{registry_hash[:12].upper()}",
+            registry_version="SEEK-RM-004-009-IDENTIFIERS/1.0.0",
+            registry_hash=registry_hash,
+            namespaces=namespaces,
+            duplicate_prefixes=duplicates,
+            invalid_prefixes=invalid_prefixes,
+            incomplete_namespaces=incomplete,
+            observed_identifiers=observed_identifiers,
+            invalid_identifiers=invalid_identifiers,
+            duplicate_identifiers=duplicate_identifiers,
+            reserved_identifier_violations=reserved,
+            collision_findings=collision_findings,
+            replay_preserves_identifiers=replay_preserves_identifiers,
+            recovery_preserves_identifiers=recovery_preserves_identifiers,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm004_version_compatibility_matrix(
+        self,
+        *,
+        required_version_pairs: tuple[tuple[str, str], ...] = (),
+        mutated_entries: tuple[SeekerRm004VersionCompatibilityEntry, ...] | None = None,
+        implicit_compatibility_findings: tuple[str, ...] = (),
+    ) -> SeekerRm004VersionCompatibilityRecord:
+        entries = mutated_entries if mutated_entries is not None else self._rm004_version_compatibility_entries()
+        registry = MappingProxyType(
+            {
+                "Candidate Class Registry": "SEEK-RM-004-001-CCR/1.0.0",
+                "Evaluation Rule Registry": "SEEK-RM-004-003-RULES/1.0.0",
+                "Certification Threshold Registry": "SEEK-RM-004-004-THRESHOLDS/1.0.0",
+                "Certification Test Registry": "SEEK-RM-004-005-TESTS/1.0.0",
+                "Collision Resolution Doctrine": "SEEK-RM-004-006/1.0.0",
+                "Metrics Registry": "SEEK-RM-004-007-METRICS/1.0.0",
+                "Identifier Registry": "SEEK-RM-004-009-IDENTIFIERS/1.0.0",
+                "Version Compatibility Matrix": "SEEK-RM-004-010-MATRIX/1.0.0",
+            }
+        )
+        pair_set = {(entry.source_version, entry.target_version) for entry in entries}
+        required_pairs = required_version_pairs or tuple((version, version) for version in registry.values())
+        missing_pairs = tuple(f"{source}->{target}" for source, target in required_pairs if (source, target) not in pair_set)
+        known_versions = set(registry.values())
+        missing_versions = tuple(version for pair in required_pairs for version in pair if version not in known_versions)
+        unknown_pairs = tuple(f"{entry.source_version}->{entry.target_version}" for entry in entries if entry.compatibility_classification == "Unknown")
+        undefined_migrations = tuple(
+            f"{entry.source_version}->{entry.target_version}"
+            for entry in entries
+            if entry.migration_required and not entry.required_migration_version
+        )
+        replay_bad = tuple(f"{entry.source_version}->{entry.target_version}" for entry in entries if not entry.replay_allowed)
+        recovery_bad = tuple(f"{entry.source_version}->{entry.target_version}" for entry in entries if not entry.recovery_allowed)
+        certification_bad = tuple(f"{entry.source_version}->{entry.target_version}" for entry in entries if not entry.certification_allowed)
+        migrations = MappingProxyType({entry.required_migration_version: f"{entry.source_version}->{entry.target_version}" for entry in entries if entry.required_migration_version})
+        passed = (
+            not missing_pairs
+            and not missing_versions
+            and not unknown_pairs
+            and not implicit_compatibility_findings
+            and not undefined_migrations
+            and not replay_bad
+            and not recovery_bad
+            and not certification_bad
+        )
+        matrix_hash = _digest(entries)
+        record = SeekerRm004VersionCompatibilityRecord(
+            matrix_identifier=f"SEEK-RM-004-010-MATRIX-{matrix_hash[:12].upper()}",
+            matrix_version="SEEK-RM-004-010-MATRIX/1.0.0",
+            matrix_hash=matrix_hash,
+            version_registry=registry,
+            compatibility_entries=entries,
+            missing_version_records=missing_versions,
+            missing_matrix_entries=missing_pairs,
+            unknown_compatibility_pairs=unknown_pairs,
+            implicit_compatibility_findings=implicit_compatibility_findings,
+            migration_registry=migrations,
+            undefined_migrations=undefined_migrations,
+            replay_incompatible_pairs=replay_bad,
+            recovery_incompatible_pairs=recovery_bad,
+            certification_incompatible_pairs=certification_bad,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def _rm004_metric_registry_entries(self) -> tuple[SeekerRm004MetricRegistryEntry, ...]:
+        specs = (
+            ("M-IDENT", "Identity Uniqueness Ratio", "ratio", "exact rational to 6 decimal places", "PASS evaluation"),
+            ("M-DISC", "Discovery Completeness", "percentage", "integer percentage", "PASS evaluation"),
+            ("M-EVID", "Evidence Completeness", "percentage", "integer percentage", "PASS evaluation"),
+            ("M-NORM", "Normalization Success Count", "count", "integer", "diagnostic reporting"),
+            ("M-VAL", "Validation Failure Count", "count", "integer", "PASS evaluation"),
+            ("M-LIFE", "Lifecycle Transition Count", "count", "integer", "historical analysis"),
+            ("M-REPLAY", "Replay Divergence Count", "count", "integer", "PASS evaluation"),
+            ("M-REC", "Recovery Success Count", "count", "integer", "PASS evaluation"),
+            ("M-CERT", "Certification Traceability Completeness", "percentage", "integer percentage", "PASS evaluation"),
+            ("M-PERF", "Processing Latency", "milliseconds", "integer milliseconds", "performance reporting"),
+        )
+        entries = []
+        for index, (category, name, unit, precision, usage) in enumerate(specs, start=1):
+            entries.append(
+                SeekerRm004MetricRegistryEntry(
+                    metric_id=f"SEEK-MET-{index:06d}",
+                    metric_name=name,
+                    metric_category=category,
+                    constitutional_purpose=f"Measure {name.lower()} without altering constitutional policy.",
+                    owning_office="Seeker Office",
+                    calculation_definition="deterministic aggregation over admissible immutable evidence",
+                    required_inputs=("admissible_evidence", "registry_version", "calculation_version"),
+                    optional_inputs=("window_identifier",),
+                    units=unit,
+                    precision=precision,
+                    update_trigger="event-driven and replay-driven",
+                    persistence_requirements="permanent for certification metrics; historical values immutable",
+                    replay_requirements="identical admissible inputs reproduce identical metric values",
+                    certification_usage=usage,
+                    interpretation_rules="metric informs registered certification thresholds only when designated for PASS evaluation",
+                    failure_conditions=("missing_required_inputs", "invalid_units", "precision_violation", "version_mismatch", "inadmissible_evidence", "replay_mismatch"),
+                    registry_version="SEEK-RM-004-007-METRICS/1.0.0",
+                    status="ACTIVE",
+                )
+            )
+        return tuple(entries)
+
+    def _rm004_identifier_namespaces(self) -> tuple[SeekerRm004IdentifierNamespaceEntry, ...]:
+        rows = (
+            ("Candidate", "CID", "Candidate identity"),
+            ("Candidate Class", "CLS", "Candidate classification"),
+            ("Rule", "RID", "Constitutional rule identity"),
+            ("Evaluation", "EVAL", "Rule execution identity"),
+            ("Validation", "VAL", "Validation execution"),
+            ("Observation", "OBS", "Imported observation identity"),
+            ("Evidence", "EVD", "Immutable evidence object"),
+            ("Certification Test", "TEST", "Certification test"),
+            ("Certification Run", "CERT", "Certification execution"),
+            ("Manifest", "MAN", "Manifest identity"),
+            ("Registry Entry", "REG", "Registry record"),
+            ("Schema", "SCH", "Constitutional schema"),
+            ("Version", "VER", "Registry version"),
+            ("Lifecycle Transition", "TRN", "Transition event"),
+            ("Replay", "RPL", "Replay execution"),
+            ("Recovery", "REC", "Recovery execution"),
+            ("Audit", "AUD", "Constitutional audit"),
+            ("Error", "ERR", "Error identity"),
+            ("Rejection", "REJ", "Rejection evidence"),
+            ("Metrics", "MET", "Metric identity"),
+        )
+        return tuple(
+            SeekerRm004IdentifierNamespaceEntry(
+                namespace=namespace,
+                prefix=prefix,
+                purpose=purpose,
+                syntax=f"{prefix}-#########",
+                lifecycle_states=("Reserved", "Allocated", "Active", "Historical"),
+                reserved_ranges=("000000000", "000000001-000000099", "000000100-000000999"),
+                replay_semantics="preserve identifiers where identity preservation is required",
+                recovery_semantics="preserve allocated identifiers across checkpoint recovery",
+                collision_handling="halt allocation and resolve under SEEK-RM-004-006",
+                version="SEEK-RM-004-009/1.0.0",
+                status="ACTIVE",
+            )
+            for namespace, prefix, purpose in rows
+        )
+
+    def _rm004_version_compatibility_entries(self) -> tuple[SeekerRm004VersionCompatibilityEntry, ...]:
+        versions = (
+            "SEEK-RM-004-001-CCR/1.0.0",
+            "SEEK-RM-004-003-RULES/1.0.0",
+            "SEEK-RM-004-004-THRESHOLDS/1.0.0",
+            "SEEK-RM-004-005-TESTS/1.0.0",
+            "SEEK-RM-004-006/1.0.0",
+            "SEEK-RM-004-007-METRICS/1.0.0",
+            "SEEK-RM-004-009-IDENTIFIERS/1.0.0",
+            "SEEK-RM-004-010-MATRIX/1.0.0",
+        )
+        return tuple(
+            SeekerRm004VersionCompatibilityEntry(
+                source_version=version,
+                target_version=version,
+                compatibility_classification="Fully Compatible",
+                migration_required=False,
+                replay_allowed=True,
+                recovery_allowed=True,
+                certification_allowed=True,
+                persistence_allowed=True,
+                checkpoint_allowed=True,
+                required_migration_version="",
+                approval_record="SEEK-RM-004-010-APPROVAL",
+                effective_date="2026-07-21T00:00:00Z",
+            )
+            for version in versions
+        )
+
+    def _valid_fixed_identifier(self, value: str, prefix: str, digits: int) -> bool:
+        expected = f"{prefix}-"
+        return value.startswith(expected) and len(value) == len(expected) + digits and value[len(expected):].isdigit()
+
+    def _valid_observed_identifier(self, value: str, prefixes: set[str]) -> bool:
+        if "-" not in value:
+            return False
+        prefix, number = value.split("-", 1)
+        return prefix in prefixes and len(number) == 9 and number.isdigit()
+
+    def _identifier_number(self, value: str) -> int | None:
+        if "-" not in value:
+            return None
+        number = value.split("-", 1)[1]
+        return int(number) if number.isdigit() else None
 
 
 def _digest(value: Any) -> str:
