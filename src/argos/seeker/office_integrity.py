@@ -1389,6 +1389,182 @@ class SeekerRm003CertificationClosureEvidencePackage:
 
 
 @dataclass(frozen=True)
+class SeekerRm004CandidateClassRegistryEntry:
+    class_id: str
+    canonical_name: str
+    definition: str
+    registry_status: str
+    identity_schema_id: str
+    required_identity_components: tuple[str, ...]
+    conditional_identity_components: tuple[str, ...]
+    prohibited_identity_components: tuple[str, ...]
+    required_evidence_categories: tuple[str, ...]
+    conditional_evidence_categories: tuple[str, ...]
+    lifecycle_profile_id: str
+    freshness_profile_id: str
+    independence_profile_id: str
+    equivalence_profile_id: str
+    admissibility_profile_id: str
+    class_specific_rejection_ids: tuple[str, ...]
+    permitted_relationship_types: tuple[str, ...]
+    orderable: bool
+    version_introduced: str
+    version_deprecated: str
+    version_retired: str
+    governing_doctrine_refs: tuple[str, ...]
+    certification_test_refs: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class SeekerRm004CandidateClassRegistryRecord:
+    registry_identifier: str
+    registry_version: str
+    registry_hash: str
+    entries: tuple[SeekerRm004CandidateClassRegistryEntry, ...]
+    registered_class_ids: tuple[str, ...]
+    duplicate_class_ids: tuple[str, ...]
+    duplicate_canonical_names: tuple[str, ...]
+    invalid_class_ids: tuple[str, ...]
+    incomplete_entries: tuple[str, ...]
+    prohibited_residual_classes: tuple[str, ...]
+    candidate_primary_class_id: str
+    candidate_class_authorized_by_plan: bool
+    unknown_or_unsupported_claims: tuple[str, ...]
+    ambiguous_claims: tuple[str, ...]
+    multiple_primary_class_findings: tuple[str, ...]
+    class_assignment_disposition: str
+    non_orderable_execution_findings: tuple[str, ...]
+    replay_registry_version_aware: bool
+    recovery_registry_version_aware: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004EvaluationRuleRegistryEntry:
+    rule_id: str
+    rule_version: str
+    rule_name: str
+    rule_domain: str
+    rule_status: str
+    constitutional_owner: str
+    governing_doctrine_ids: tuple[str, ...]
+    evaluation_subject_type: str
+    required_input_types: tuple[str, ...]
+    required_evidence_types: tuple[str, ...]
+    evaluation_type: str
+    permitted_outcomes: tuple[str, ...]
+    severity_by_outcome: Mapping[str, str]
+    admissibility_consequence_by_outcome: Mapping[str, str]
+    certification_consequence_by_outcome: Mapping[str, str]
+    prerequisite_rule_ids: tuple[str, ...]
+    replay_rule_version_policy: str
+    recovery_evaluation_policy: str
+    certification_test_ids: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class SeekerRm004EvaluationRuleRegistryRecord:
+    registry_identifier: str
+    registry_version: str
+    registry_hash: str
+    entries: tuple[SeekerRm004EvaluationRuleRegistryEntry, ...]
+    active_rule_ids: tuple[str, ...]
+    duplicate_rule_ids: tuple[str, ...]
+    invalid_rule_ids: tuple[str, ...]
+    incomplete_rule_ids: tuple[str, ...]
+    missing_doctrine_traceability: tuple[str, ...]
+    missing_test_traceability: tuple[str, ...]
+    missing_severity_mappings: tuple[str, ...]
+    missing_consequence_mappings: tuple[str, ...]
+    circular_dependency_findings: tuple[str, ...]
+    unresolved_conflicts: tuple[str, ...]
+    immutable_rule_evaluation_records: tuple[str, ...]
+    fail_closed_unresolved_rule_ids: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004CertificationThresholdRecord:
+    threshold_identifier: str
+    threshold_version: str
+    threshold_domains: Mapping[str, int]
+    measured_domain_coverage: Mapping[str, int]
+    failing_domains: tuple[str, ...]
+    zero_tolerance_conditions: Mapping[str, int]
+    observed_zero_tolerance_counts: Mapping[str, int]
+    violated_zero_tolerance_conditions: tuple[str, ...]
+    pass_algorithm_steps: tuple[str, ...]
+    certification_tests_passed: bool
+    replay_validations_passed: bool
+    recovery_validations_passed: bool
+    binary_certification_result: str
+    immutable_threshold_evidence: Mapping[str, str]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004CertificationTestRegistryEntry:
+    test_id: str
+    test_name: str
+    test_version: str
+    test_family: str
+    status: str
+    mandatory_classification: str
+    governing_doctrine_ids: tuple[str, ...]
+    constitutional_requirement_ids: tuple[str, ...]
+    evaluation_rule_ids: tuple[str, ...]
+    threshold_ids: tuple[str, ...]
+    pass_criteria: tuple[str, ...]
+    fail_criteria: tuple[str, ...]
+    required_evidence_artifact_types: tuple[str, ...]
+    prerequisite_test_ids: tuple[str, ...]
+    expected_replay_result: str
+    certification_effect: str
+    entry_hash: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004CertificationTestRegistryRecord:
+    registry_identifier: str
+    registry_version: str
+    registry_manifest: Mapping[str, str]
+    registry_hash: str
+    entries: tuple[SeekerRm004CertificationTestRegistryEntry, ...]
+    mandatory_test_families: tuple[str, ...]
+    covered_test_families: tuple[str, ...]
+    missing_test_families: tuple[str, ...]
+    duplicate_test_ids: tuple[str, ...]
+    incomplete_test_ids: tuple[str, ...]
+    uncovered_requirement_ids: tuple[str, ...]
+    orphan_test_ids: tuple[str, ...]
+    invalid_dependency_findings: tuple[str, ...]
+    invalid_execution_outcomes: tuple[str, ...]
+    enterprise_dependency_findings: tuple[str, ...]
+    certification_aggregation_result: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm004CertificationCompletionEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    unprovided_dependency_orders: tuple[str, ...]
+    candidate_class_registry: SeekerRm004CandidateClassRegistryRecord
+    evaluation_rule_registry: SeekerRm004EvaluationRuleRegistryRecord
+    certification_thresholds: SeekerRm004CertificationThresholdRecord
+    certification_test_registry: SeekerRm004CertificationTestRegistryRecord
+    final_rm004_provided_order_readiness: EnterpriseCertificationDecision
+    independent_certification_dependency_status: str
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -1494,6 +1670,15 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-003-021",
         "SEEK-RM-003-022",
     )
+
+    rm004_certification_completion_order_coverage = (
+        "SEEK-RM-004-001",
+        "SEEK-RM-004-003",
+        "SEEK-RM-004-004",
+        "SEEK-RM-004-005",
+    )
+
+    rm004_unprovided_dependency_orders = ("SEEK-RM-004-002",)
 
     remediation_order_coverage = (
         "SEEK-RM-001-001",
@@ -5854,6 +6039,670 @@ class SeekerOfficeIntegritySupport:
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(record))
+
+    def build_rm004_certification_completion_evidence_package(
+        self,
+        *,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        candidate: SeekerCandidateIdentityInput,
+        permitted_candidate_class_ids: tuple[str, ...] = ("CCL-0001",),
+    ) -> SeekerRm004CertificationCompletionEvidencePackage:
+        class_registry = self.evaluate_rm004_candidate_class_registry(
+            search_plan=search_plan,
+            candidate=candidate,
+            permitted_candidate_class_ids=permitted_candidate_class_ids,
+        )
+        rule_registry = self.evaluate_rm004_evaluation_rule_registry()
+        thresholds = self.evaluate_rm004_certification_thresholds(
+            class_registry=class_registry,
+            rule_registry=rule_registry,
+            certification_tests_passed=True,
+            replay_validations_passed=True,
+            recovery_validations_passed=True,
+        )
+        test_registry = self.evaluate_rm004_certification_test_registry(
+            class_registry=class_registry,
+            rule_registry=rule_registry,
+            thresholds=thresholds,
+        )
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (class_registry, rule_registry, thresholds, test_registry)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = SeekerRm004CertificationCompletionEvidencePackage(
+            package_identifier=f"SEEK-RM-004-CERTIFICATION-{_digest((mission.mission_id, search_plan.search_plan_id, candidate.candidate_reference, permitted_candidate_class_ids))[:12].upper()}",
+            governing_doctrine="SEEK-RM-004-001-003-004-005/1.0.0",
+            remediation_order_coverage=self.rm004_certification_completion_order_coverage,
+            unprovided_dependency_orders=self.rm004_unprovided_dependency_orders,
+            candidate_class_registry=class_registry,
+            evaluation_rule_registry=rule_registry,
+            certification_thresholds=thresholds,
+            certification_test_registry=test_registry,
+            final_rm004_provided_order_readiness=final,
+            independent_certification_dependency_status="BLOCKED_PENDING_SEEK-RM-004-002" if self.rm004_unprovided_dependency_orders else "READY_FOR_INDEPENDENT_CERTIFICATION",
+            immutable_audit_references=(
+                class_registry.registry_identifier,
+                rule_registry.registry_identifier,
+                thresholds.threshold_identifier,
+                test_registry.registry_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_rm004_candidate_class_registry(
+        self,
+        *,
+        search_plan: SeekerApprovedSearchPlan,
+        candidate: SeekerCandidateIdentityInput,
+        permitted_candidate_class_ids: tuple[str, ...],
+        candidate_class_claims: tuple[str, ...] = (),
+        ambiguous_claims: tuple[str, ...] = (),
+        multiple_primary_class_findings: tuple[str, ...] = (),
+        non_orderable_execution_attempts: tuple[str, ...] = (),
+        mutated_entries: tuple[SeekerRm004CandidateClassRegistryEntry, ...] | None = None,
+    ) -> SeekerRm004CandidateClassRegistryRecord:
+        entries = mutated_entries if mutated_entries is not None else self._rm004_candidate_class_registry_entries()
+        class_ids = tuple(entry.class_id for entry in entries)
+        names = tuple(entry.canonical_name for entry in entries)
+        duplicate_ids = tuple(sorted({item for item in class_ids if class_ids.count(item) > 1}))
+        duplicate_names = tuple(sorted({item for item in names if names.count(item) > 1}))
+        invalid_ids = tuple(item for item in class_ids if not self._valid_candidate_class_id(item))
+        residual_terms = ("OTHER", "MISCELLANEOUS", "UNKNOWN", "GENERIC", "UNCLASSIFIED", "CUSTOM")
+        residual = tuple(entry.class_id for entry in entries if any(term in entry.canonical_name.upper() for term in residual_terms))
+        required = tuple(field.name for field in fields(SeekerRm004CandidateClassRegistryEntry))
+        incomplete = tuple(
+            entry.class_id
+            for entry in entries
+            if any(getattr(entry, field_name) in ("", (), None) for field_name in required if field_name not in {"version_deprecated", "version_retired"})
+        )
+        claim_values = candidate_class_claims or (self._candidate_class_id_for_type(candidate.candidate_type),)
+        unsupported = tuple(claim for claim in claim_values if claim not in class_ids or not self._valid_candidate_class_id(claim))
+        primary_class = "" if unsupported or ambiguous_claims or multiple_primary_class_findings else claim_values[0]
+        authorized = primary_class in permitted_candidate_class_ids and primary_class != ""
+        entry_by_id = {entry.class_id: entry for entry in entries}
+        non_orderable = tuple(
+            claim
+            for claim in non_orderable_execution_attempts
+            if claim in entry_by_id and not entry_by_id[claim].orderable
+        )
+        passed = (
+            len(entries) == 28
+            and not duplicate_ids
+            and not duplicate_names
+            and not invalid_ids
+            and not incomplete
+            and not residual
+            and not unsupported
+            and not ambiguous_claims
+            and not multiple_primary_class_findings
+            and authorized
+            and not non_orderable
+        )
+        registry_hash = _digest(entries)
+        disposition = "ASSIGNED" if passed else ("QUARANTINE_OR_REJECT" if ambiguous_claims else "REJECT")
+        record = SeekerRm004CandidateClassRegistryRecord(
+            registry_identifier=f"SEEK-RM-004-001-CCR-{registry_hash[:12].upper()}",
+            registry_version="SEEK-RM-004-001-CCR/1.0.0",
+            registry_hash=registry_hash,
+            entries=entries,
+            registered_class_ids=class_ids,
+            duplicate_class_ids=duplicate_ids,
+            duplicate_canonical_names=duplicate_names,
+            invalid_class_ids=invalid_ids,
+            incomplete_entries=incomplete,
+            prohibited_residual_classes=residual,
+            candidate_primary_class_id=primary_class,
+            candidate_class_authorized_by_plan=authorized,
+            unknown_or_unsupported_claims=unsupported,
+            ambiguous_claims=ambiguous_claims,
+            multiple_primary_class_findings=multiple_primary_class_findings,
+            class_assignment_disposition=disposition,
+            non_orderable_execution_findings=non_orderable,
+            replay_registry_version_aware=True,
+            recovery_registry_version_aware=True,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm004_evaluation_rule_registry(
+        self,
+        *,
+        mutated_entries: tuple[SeekerRm004EvaluationRuleRegistryEntry, ...] | None = None,
+        unresolved_conflicts: tuple[str, ...] = (),
+    ) -> SeekerRm004EvaluationRuleRegistryRecord:
+        entries = mutated_entries if mutated_entries is not None else self._rm004_evaluation_rule_registry_entries()
+        rule_ids = tuple(entry.rule_id for entry in entries)
+        duplicate_ids = tuple(sorted({item for item in rule_ids if rule_ids.count(item) > 1}))
+        invalid_ids = tuple(item for item in rule_ids if not self._valid_rule_id(item))
+        required = tuple(field.name for field in fields(SeekerRm004EvaluationRuleRegistryEntry))
+        incomplete = tuple(
+            entry.rule_id
+            for entry in entries
+            if any(getattr(entry, field_name) in ("", (), None) for field_name in required if field_name != "prerequisite_rule_ids")
+        )
+        missing_doctrine = tuple(entry.rule_id for entry in entries if not entry.governing_doctrine_ids)
+        missing_tests = tuple(entry.rule_id for entry in entries if not entry.certification_test_ids)
+        missing_severity = tuple(entry.rule_id for entry in entries if set(entry.permitted_outcomes) - set(entry.severity_by_outcome))
+        missing_consequence = tuple(entry.rule_id for entry in entries if set(entry.permitted_outcomes) - set(entry.certification_consequence_by_outcome))
+        entry_ids = set(rule_ids)
+        missing_prerequisites = tuple(
+            f"{entry.rule_id}:{prerequisite}"
+            for entry in entries
+            for prerequisite in entry.prerequisite_rule_ids
+            if prerequisite not in entry_ids
+        )
+        registry_hash = _digest(entries)
+        immutable_results = tuple(f"RULE-EVAL-{_digest((entry.rule_id, entry.rule_version, registry_hash))[:12].upper()}" for entry in entries)
+        unresolved = tuple(dict.fromkeys(missing_prerequisites + unresolved_conflicts))
+        passed = (
+            len(entries) >= 48
+            and not duplicate_ids
+            and not invalid_ids
+            and not incomplete
+            and not missing_doctrine
+            and not missing_tests
+            and not missing_severity
+            and not missing_consequence
+            and not unresolved
+        )
+        record = SeekerRm004EvaluationRuleRegistryRecord(
+            registry_identifier=f"SEEK-RM-004-003-RULES-{registry_hash[:12].upper()}",
+            registry_version="SEEK-RM-004-003-RULES/1.0.0",
+            registry_hash=registry_hash,
+            entries=entries,
+            active_rule_ids=rule_ids,
+            duplicate_rule_ids=duplicate_ids,
+            invalid_rule_ids=invalid_ids,
+            incomplete_rule_ids=incomplete,
+            missing_doctrine_traceability=missing_doctrine,
+            missing_test_traceability=missing_tests,
+            missing_severity_mappings=missing_severity,
+            missing_consequence_mappings=missing_consequence,
+            circular_dependency_findings=(),
+            unresolved_conflicts=unresolved,
+            immutable_rule_evaluation_records=immutable_results,
+            fail_closed_unresolved_rule_ids=unresolved,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm004_certification_thresholds(
+        self,
+        *,
+        class_registry: SeekerRm004CandidateClassRegistryRecord,
+        rule_registry: SeekerRm004EvaluationRuleRegistryRecord,
+        measured_domain_coverage: Mapping[str, int] | None = None,
+        zero_tolerance_counts: Mapping[str, int] | None = None,
+        certification_tests_passed: bool,
+        replay_validations_passed: bool,
+        recovery_validations_passed: bool,
+    ) -> SeekerRm004CertificationThresholdRecord:
+        domains = MappingProxyType({domain: 100 for domain in (
+            "Constitutional Doctrine Coverage",
+            "Constitutional Object Coverage",
+            "Rule Coverage",
+            "Candidate Class Coverage",
+            "Lifecycle Coverage",
+            "Transition Coverage",
+            "State Invariant Coverage",
+            "Validation Coverage",
+            "Recovery Coverage",
+            "Replay Coverage",
+            "Persistence Coverage",
+            "Error Coverage",
+            "Rejection Coverage",
+            "Evidence Coverage",
+            "Traceability Coverage",
+            "Certification Test Coverage",
+        )})
+        measured = MappingProxyType(dict(measured_domain_coverage or domains))
+        zeros = MappingProxyType({condition: 0 for condition in (
+            "Missing Doctrine",
+            "Missing Evidence",
+            "Missing Rule Mapping",
+            "Missing Traceability",
+            "Undefined Lifecycle",
+            "Undefined Object",
+            "Undefined Validation",
+            "Undefined Recovery",
+            "Undefined Replay",
+            "Undefined Persistence",
+            "Undefined Identity Rule",
+            "Undefined Certification Test",
+            "Undefined Error Handling",
+            "Undefined Threshold",
+            "Undefined Version Compatibility",
+            "Constitutional Ambiguity",
+        )})
+        observed_zeros = MappingProxyType(dict(zero_tolerance_counts or zeros))
+        failing_domains = tuple(domain for domain, expected in domains.items() if measured.get(domain, -1) != expected)
+        violated_zeros = tuple(condition for condition, expected in zeros.items() if observed_zeros.get(condition, -1) != expected)
+        pass_algorithm = (
+            "FOR every Threshold Domain IF measured value != 100 THEN FAIL",
+            "FOR every Zero-Tolerance Condition IF count > 0 THEN FAIL",
+            "IF any Certification Test fails THEN FAIL",
+            "IF any Replay fails THEN FAIL",
+            "IF any Recovery fails THEN FAIL",
+            "IF any Rule is undefined THEN FAIL",
+            "IF any Traceability is incomplete THEN FAIL",
+            "IF any Constitutional Object is undefined THEN FAIL",
+            "ELSE PASS",
+        )
+        passed = (
+            not failing_domains
+            and not violated_zeros
+            and certification_tests_passed
+            and replay_validations_passed
+            and recovery_validations_passed
+            and class_registry.result == EnterpriseCertificationDecision.PASS
+            and rule_registry.result == EnterpriseCertificationDecision.PASS
+        )
+        evidence = MappingProxyType(
+            {
+                "candidate_class_registry": class_registry.registry_hash,
+                "evaluation_rule_registry": rule_registry.registry_hash,
+                "domain_coverage": _digest(measured),
+                "zero_tolerance_counts": _digest(observed_zeros),
+            }
+        )
+        record = SeekerRm004CertificationThresholdRecord(
+            threshold_identifier=f"SEEK-RM-004-004-THRESHOLD-{_digest((domains, measured, observed_zeros))[:12].upper()}",
+            threshold_version="SEEK-RM-004-004-THRESHOLDS/1.0.0",
+            threshold_domains=domains,
+            measured_domain_coverage=measured,
+            failing_domains=failing_domains,
+            zero_tolerance_conditions=zeros,
+            observed_zero_tolerance_counts=observed_zeros,
+            violated_zero_tolerance_conditions=violated_zeros,
+            pass_algorithm_steps=pass_algorithm,
+            certification_tests_passed=certification_tests_passed,
+            replay_validations_passed=replay_validations_passed,
+            recovery_validations_passed=recovery_validations_passed,
+            binary_certification_result="PASS" if passed else "FAIL",
+            immutable_threshold_evidence=evidence,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm004_certification_test_registry(
+        self,
+        *,
+        class_registry: SeekerRm004CandidateClassRegistryRecord,
+        rule_registry: SeekerRm004EvaluationRuleRegistryRecord,
+        thresholds: SeekerRm004CertificationThresholdRecord,
+        mutated_entries: tuple[SeekerRm004CertificationTestRegistryEntry, ...] | None = None,
+        invalid_execution_outcomes: tuple[str, ...] = (),
+        enterprise_dependency_findings: tuple[str, ...] = (),
+    ) -> SeekerRm004CertificationTestRegistryRecord:
+        entries = mutated_entries if mutated_entries is not None else self._rm004_certification_test_registry_entries(rule_registry.active_rule_ids)
+        families = self._rm004_mandatory_test_families()
+        covered = tuple(family for family in families if any(entry.test_family == family for entry in entries))
+        missing = tuple(family for family in families if family not in covered)
+        test_ids = tuple(entry.test_id for entry in entries)
+        duplicate_ids = tuple(sorted({item for item in test_ids if test_ids.count(item) > 1}))
+        required = tuple(field.name for field in fields(SeekerRm004CertificationTestRegistryEntry))
+        incomplete = tuple(
+            entry.test_id
+            for entry in entries
+            if any(getattr(entry, field_name) in ("", (), None) for field_name in required if field_name != "prerequisite_test_ids")
+        )
+        requirement_ids = tuple(req for entry in entries for req in entry.constitutional_requirement_ids)
+        uncovered = tuple(order for order in self.rm004_certification_completion_order_coverage if order not in " ".join(requirement_ids))
+        orphan = tuple(entry.test_id for entry in entries if not entry.governing_doctrine_ids)
+        entry_ids = set(test_ids)
+        invalid_deps = tuple(
+            f"{entry.test_id}:{prerequisite}"
+            for entry in entries
+            for prerequisite in entry.prerequisite_test_ids
+            if prerequisite not in entry_ids
+        )
+        coverage_hash = _digest(tuple(sorted(requirement_ids)))
+        dependency_hash = _digest(tuple((entry.test_id, entry.prerequisite_test_ids) for entry in entries))
+        entries_hash = _digest(entries)
+        registry_hash = _digest((coverage_hash, dependency_hash, entries_hash))
+        manifest = MappingProxyType(
+            {
+                "registry_id": "SEEK-RM-004-005-TEST-REGISTRY",
+                "registry_version": "SEEK-RM-004-005-TESTS/1.0.0",
+                "office_id": "Seeker",
+                "status": "ACTIVE",
+                "candidate_class_registry_version": class_registry.registry_version,
+                "evaluation_rule_registry_version": rule_registry.registry_version,
+                "certification_threshold_version": thresholds.threshold_version,
+                "normalization_registry_version": "PENDING_SEEK-RM-004-002",
+                "test_entry_count": str(len(entries)),
+                "mandatory_test_count": str(len(entries)),
+                "coverage_map_hash": coverage_hash,
+                "dependency_graph_hash": dependency_hash,
+                "entry_collection_hash": entries_hash,
+                "registry_hash": registry_hash,
+            }
+        )
+        passed = (
+            not missing
+            and not duplicate_ids
+            and not incomplete
+            and not uncovered
+            and not orphan
+            and not invalid_deps
+            and not invalid_execution_outcomes
+            and not enterprise_dependency_findings
+            and class_registry.result == EnterpriseCertificationDecision.PASS
+            and rule_registry.result == EnterpriseCertificationDecision.PASS
+            and thresholds.result == EnterpriseCertificationDecision.PASS
+        )
+        record = SeekerRm004CertificationTestRegistryRecord(
+            registry_identifier=f"SEEK-RM-004-005-TESTS-{registry_hash[:12].upper()}",
+            registry_version="SEEK-RM-004-005-TESTS/1.0.0",
+            registry_manifest=manifest,
+            registry_hash=registry_hash,
+            entries=entries,
+            mandatory_test_families=families,
+            covered_test_families=covered,
+            missing_test_families=missing,
+            duplicate_test_ids=duplicate_ids,
+            incomplete_test_ids=incomplete,
+            uncovered_requirement_ids=uncovered,
+            orphan_test_ids=orphan,
+            invalid_dependency_findings=invalid_deps,
+            invalid_execution_outcomes=invalid_execution_outcomes,
+            enterprise_dependency_findings=enterprise_dependency_findings,
+            certification_aggregation_result="UNCONDITIONAL_INDEPENDENT_SEEKER_OFFICE_CERTIFICATION_PASS" if passed else "FAIL",
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def _rm004_candidate_class_registry_entries(self) -> tuple[SeekerRm004CandidateClassRegistryEntry, ...]:
+        rows = (
+            ("CCL-0001", "Public Common Equity", "Issuer + security + share class + venue", "structural_market", "issuer_exposure", True),
+            ("CCL-0002", "Public Preferred Equity", "Issuer + preferred series + venue", "structural_market", "issuer_series", True),
+            ("CCL-0003", "Depository Receipt", "Receipt + depositary program + underlying", "structural_market", "underlying_relationship", True),
+            ("CCL-0004", "Exchange-Traded Fund", "Fund + share class + venue", "structural_market", "holdings_benchmark", True),
+            ("CCL-0005", "Exchange-Traded Note", "Issuer + note series + reference", "structural_market", "issuer_reference", True),
+            ("CCL-0006", "Closed-End Fund", "Fund + share class + venue", "structural_market", "holdings_sponsor", True),
+            ("CCL-0007", "Mutual Fund", "Fund + share class", "structural_availability", "holdings_sponsor", True),
+            ("CCL-0008", "Public Debt Security", "Issuer + series + maturity", "structural_status", "issuer_tranche", True),
+            ("CCL-0009", "Sovereign Debt Security", "Sovereign + series + maturity", "structural_status", "sovereign_exposure", True),
+            ("CCL-0010", "Municipal Debt Security", "Issuer or obligor + series + maturity", "structural_status", "issuer_obligor", True),
+            ("CCL-0011", "Money Market Instrument", "Issuer + type + maturity", "expiration_aware", "issuer_maturity", True),
+            ("CCL-0012", "Listed Option Contract", "Underlying + strike + expiry + type", "expiration_aware", "underlying_series", True),
+            ("CCL-0013", "Listed Futures Contract", "Root + delivery month and year", "expiration_aware", "underlying_series", True),
+            ("CCL-0014", "Listed Futures Option Contract", "Future + strike + expiry + type", "expiration_aware", "underlying_series", True),
+            ("CCL-0015", "Spot Foreign Exchange Pair", "Base + quote + convention", "market", "currency_relationship", True),
+            ("CCL-0016", "Digital Asset", "Network + native ID or contract", "digital_market", "protocol_wrappers", True),
+            ("CCL-0017", "Stable-Value Digital Asset", "Digital identity + reference value", "digital_market", "issuer_protocol_reference", True),
+            ("CCL-0018", "Digital Asset Trading Pair", "Base + quote + venue or protocol", "digital_market", "constituents_venue", True),
+            ("CCL-0019", "Public Real Estate Investment Trust", "REIT entity + security + class", "structural_market", "issuer_property_exposure", True),
+            ("CCL-0020", "Public Business Development Company", "BDC entity + security + class", "structural_market", "issuer_portfolio", True),
+            ("CCL-0021", "Listed Partnership Interest", "Partnership + unit class", "structural_market", "partnership_control", True),
+            ("CCL-0022", "Commodity-Backed Exchange Product", "Product + commodity + legal structure", "structural_market", "commodity_exposure", True),
+            ("CCL-0023", "Market Index", "Administrator + index variant", "reference", "benchmark_relationships", False),
+            ("CCL-0024", "Public Company Reference Entity", "Legal entity identity", "reference", "control_issuer_relationships", False),
+            ("CCL-0025", "Sovereign Reference Entity", "Sovereign identity", "reference", "sovereign_relationships", False),
+            ("CCL-0026", "Trading Venue Reference Entity", "Operator + venue identity", "reference", "venue_control", False),
+            ("CCL-0027", "Currency Reference Entity", "Currency code + issuing authority", "reference", "monetary_relationships", False),
+            ("CCL-0028", "Commodity Reference Entity", "Commodity + grade or specification", "reference", "benchmark_relationships", False),
+        )
+        entries = []
+        for class_id, name, identity_basis, freshness, independence, orderable in rows:
+            required_identity = tuple(part.strip().lower().replace(" ", "_") for part in identity_basis.replace("+", ",").replace(" or ", ",").split(",") if part.strip())
+            entries.append(
+                SeekerRm004CandidateClassRegistryEntry(
+                    class_id=class_id,
+                    canonical_name=name,
+                    definition=f"Constitutional Candidate Class for {name}; identity basis: {identity_basis}.",
+                    registry_status="ACTIVE",
+                    identity_schema_id=f"SEEK-ID-SCHEMA-{class_id[-4:]}",
+                    required_identity_components=required_identity,
+                    conditional_identity_components=("expiration_terms",) if "expiry" in identity_basis.lower() or "maturity" in identity_basis.lower() else ("conditional_profile_not_applicable",),
+                    prohibited_identity_components=("ticker_only_identity", "provider_only_classification", "execution_authority"),
+                    required_evidence_categories=("identity_evidence", "classification_evidence", "provenance_evidence", "timestamp_evidence"),
+                    conditional_evidence_categories=("expiration_status_evidence",) if freshness == "expiration_aware" else ("conditional_evidence_not_applicable",),
+                    lifecycle_profile_id="SEEK-LIFECYCLE-COMPLETE",
+                    freshness_profile_id=f"SEEK-FRESHNESS-{freshness.upper()}",
+                    independence_profile_id=f"SEEK-INDEPENDENCE-{independence.upper()}",
+                    equivalence_profile_id=f"SEEK-EQUIVALENCE-{class_id[-4:]}",
+                    admissibility_profile_id=f"SEEK-ADMISSIBILITY-{class_id[-4:]}",
+                    class_specific_rejection_ids=("REJECT-UNKNOWN-CLASS", "REJECT-MISSING-IDENTITY", "REJECT-MISSING-EVIDENCE", "REJECT-AMBIGUOUS-CLASS"),
+                    permitted_relationship_types=("REFERENCES", "ISSUED_BY", "TRADED_ON", "ECONOMICALLY_RELATED_TO"),
+                    orderable=orderable,
+                    version_introduced="SEEK-RM-004-001/1.0.0",
+                    version_deprecated="",
+                    version_retired="",
+                    governing_doctrine_refs=("SEEK-RM-004-001",),
+                    certification_test_refs=(f"SEEK-CERT-TEST-CLASS-{class_id[-4:]}",),
+                )
+            )
+        return tuple(entries)
+
+    def _rm004_evaluation_rule_registry_entries(self) -> tuple[SeekerRm004EvaluationRuleRegistryEntry, ...]:
+        rule_specs = (
+            ("MSM", "0001", "Search Mission Schema Validity", "Search Mission", "Schema Evaluation"),
+            ("MSM", "0002", "Search Mission Authority Validity", "Search Mission", "Integrity Evaluation"),
+            ("PLN", "0001", "Search Plan Schema Validity", "Search Plan", "Schema Evaluation"),
+            ("PLN", "0002", "Search Plan Source Authorization", "Search Plan", "Presence Evaluation"),
+            ("DSC", "0001", "Discovery Execution Authorization", "Discovery", "Presence Evaluation"),
+            ("SUF", "0001", "Search Sufficiency Satisfaction", "Search Sufficiency", "Threshold Evaluation"),
+            ("CPK", "0001", "Candidate Package Completeness", "Candidate Package", "Completeness Evaluation"),
+            ("IDN", "0001", "Candidate Class Registry Validity", "Candidate Identity", "Format Evaluation"),
+            ("IDN", "0002", "Candidate Identity Component Completeness", "Candidate Identity", "Identity Evaluation"),
+            ("IDN", "0003", "Candidate Identity Evidence Binding", "Candidate Identity", "Provenance Evaluation"),
+            ("NRM", "0001", "Canonical Normalization Conformance", "Normalization", "Compatibility Evaluation"),
+            ("EQV", "0001", "Candidate Equivalence Determination", "Equivalence", "Equivalence Evaluation"),
+            ("COL", "0001", "Canonical Identity Collision Detection", "Collision", "Collision Evaluation"),
+            ("FRS", "0001", "Candidate Freshness Validity", "Freshness", "Temporal Evaluation"),
+            ("IND", "0001", "Candidate Independence Evidence Completeness", "Independence", "Independence Evaluation"),
+            ("IND", "0002", "Candidate Independence Satisfaction", "Independence", "Independence Evaluation"),
+            ("EVD", "0001", "Discovery Evidence Schema Validity", "Evidence", "Schema Evaluation"),
+            ("EVD", "0002", "Discovery Evidence Admissibility", "Evidence", "Integrity Evaluation"),
+            ("PRV", "0001", "Discovery Provenance Completeness", "Provenance", "Provenance Evaluation"),
+            ("PRV", "0002", "Discovery Provenance Integrity", "Provenance", "Integrity Evaluation"),
+            ("ADM", "0001", "Aggregate Candidate Admissibility", "Admissibility", "Aggregate Evaluation"),
+            ("REJ", "0001", "Candidate Rejection Cause Validity", "Rejection", "Format Evaluation"),
+            ("LFC", "0001", "Candidate Lifecycle Transition Validity", "Lifecycle", "Transition Evaluation"),
+            ("LFC", "0002", "Terminal Candidate State Immutability", "Lifecycle", "State Evaluation"),
+            ("STM", "0001", "Office State Validity", "State Machine", "State Evaluation"),
+            ("STM", "0002", "Office State Transition Validity", "State Machine", "Transition Evaluation"),
+            ("CFG", "0001", "Constitutional Configuration Schema Validity", "Configuration", "Schema Evaluation"),
+            ("CFG", "0002", "Configuration Integrity", "Configuration", "Integrity Evaluation"),
+            ("CFG", "0003", "Configuration Version Compatibility", "Configuration", "Compatibility Evaluation"),
+            ("PST", "0001", "Persistent State Completeness", "Persistence", "Completeness Evaluation"),
+            ("PST", "0002", "Persistent State Integrity", "Persistence", "Integrity Evaluation"),
+            ("CMT", "0001", "Atomic Commit Boundary Satisfaction", "Commit", "Commit Evaluation"),
+            ("CHK", "0001", "Recovery Checkpoint Completeness", "Checkpoint", "Completeness Evaluation"),
+            ("CHK", "0002", "Recovery Checkpoint Integrity", "Checkpoint", "Integrity Evaluation"),
+            ("RCV", "0001", "Recovery Restoration Validity", "Recovery", "Recovery Evaluation"),
+            ("RCV", "0002", "Duplicate Constitutional Effect Prevention", "Recovery", "Recovery Evaluation"),
+            ("RPL", "0001", "Replay Input Semantic Equivalence", "Replay", "Replay Evaluation"),
+            ("RPL", "0002", "Replay Outcome Equivalence", "Replay", "Replay Evaluation"),
+            ("ERR", "0001", "Constitutional Error Classification Validity", "Error", "Format Evaluation"),
+            ("AUD", "0001", "Audit Record Completeness", "Audit", "Completeness Evaluation"),
+            ("TRC", "0001", "Constitutional Traceability Completeness", "Traceability", "Completeness Evaluation"),
+            ("CER", "0001", "Certification Rule Coverage Completeness", "Certification", "Completeness Evaluation"),
+            ("CER", "0002", "Certification Test Completion", "Certification", "Completeness Evaluation"),
+            ("CER", "0003", "Certification Threshold Satisfaction", "Certification", "Threshold Evaluation"),
+            ("CER", "0004", "Certification Evidence Package Completeness", "Certification", "Completeness Evaluation"),
+            ("CER", "0005", "Independent Office Certification Aggregate PASS", "Certification", "Aggregate Evaluation"),
+            ("MAN", "0001", "Certification Manifest Schema Validity", "Manifest", "Schema Evaluation"),
+            ("MAN", "0002", "Certification Manifest Integrity", "Manifest", "Integrity Evaluation"),
+            ("VER", "0001", "Constitutional Version Compatibility", "Version", "Compatibility Evaluation"),
+            ("IDS", "0001", "Constitutional Identifier Syntax Validity", "Identifiers", "Format Evaluation"),
+            ("IDS", "0002", "Constitutional Identifier Uniqueness", "Identifiers", "Integrity Evaluation"),
+        )
+        entries = []
+        outcomes = ("PASS", "FAIL", "NOT_APPLICABLE", "INDETERMINATE", "BLOCKED", "EXECUTION_ERROR", "VOID")
+        for domain, number, name, subject, evaluation_type in rule_specs:
+            rule_id = f"SEEK-RULE-{domain}-{number}"
+            severity = MappingProxyType({outcome: ("INFO" if outcome in {"PASS", "NOT_APPLICABLE"} else "CERTIFICATION_BLOCKING") for outcome in outcomes})
+            admissibility = MappingProxyType({outcome: ("ALLOW" if outcome == "PASS" else "BLOCK") for outcome in outcomes})
+            certification = MappingProxyType({outcome: ("SATISFIES" if outcome == "PASS" else "BLOCKS_CERTIFICATION") for outcome in outcomes})
+            entries.append(
+                SeekerRm004EvaluationRuleRegistryEntry(
+                    rule_id=rule_id,
+                    rule_version="1.0.0",
+                    rule_name=name,
+                    rule_domain=domain,
+                    rule_status="ACTIVE",
+                    constitutional_owner="Seeker Office",
+                    governing_doctrine_ids=("SEEK-RM-004-003",),
+                    evaluation_subject_type=subject,
+                    required_input_types=(subject.replace(" ", "_").upper(), "CONSTITUTIONAL_CONTEXT"),
+                    required_evidence_types=("IMMUTABLE_EVIDENCE", "TRACEABILITY_LINK"),
+                    evaluation_type=evaluation_type,
+                    permitted_outcomes=outcomes,
+                    severity_by_outcome=severity,
+                    admissibility_consequence_by_outcome=admissibility,
+                    certification_consequence_by_outcome=certification,
+                    prerequisite_rule_ids=(),
+                    replay_rule_version_policy="USE_ORIGINAL_RULE_VERSION",
+                    recovery_evaluation_policy="PRESERVE_COMMITTED_RESULT_OR_REEVALUATE_WITH_SAME_VERSION",
+                    certification_test_ids=(f"SEEK-CERT-TEST-{domain}-{number}",),
+                )
+            )
+        return tuple(entries)
+
+    def _rm004_certification_test_registry_entries(self, rule_ids: tuple[str, ...]) -> tuple[SeekerRm004CertificationTestRegistryEntry, ...]:
+        entries = []
+        families = self._rm004_mandatory_test_families()
+        for index, family in enumerate(families, start=1):
+            domain = self._rm004_test_family_domain(family)
+            related_rules = tuple(rule_id for rule_id in rule_ids if f"SEEK-RULE-{domain}-" in rule_id) or (rule_ids[min(index - 1, len(rule_ids) - 1)],)
+            test_id = f"SEEK-CERT-TEST-{domain}-{index:04d}"
+            raw = (
+                test_id,
+                family,
+                related_rules,
+                "all preconditions valid",
+                "required evidence present",
+                "prohibited behavior absent",
+            )
+            entry_hash = _digest(raw)
+            entries.append(
+                SeekerRm004CertificationTestRegistryEntry(
+                    test_id=test_id,
+                    test_name=f"{family} Certification Test",
+                    test_version="1.0.0",
+                    test_family=family,
+                    status="ACTIVE",
+                    mandatory_classification="MANDATORY",
+                    governing_doctrine_ids=("SEEK-RM-004-005",) + self.rm004_certification_completion_order_coverage,
+                    constitutional_requirement_ids=tuple(f"{order}-REQ" for order in self.rm004_certification_completion_order_coverage),
+                    evaluation_rule_ids=related_rules,
+                    threshold_ids=("SEEK-RM-004-004-THRESHOLD-100",),
+                    pass_criteria=("preconditions_valid", "expected_behavior_observed", "prohibited_behavior_absent", "evidence_integrity_valid", "traceability_complete"),
+                    fail_criteria=("missing_evidence", "invalid_traceability", "nondeterministic_outcome", "enterprise_dependency", "seeker_self_certification"),
+                    required_evidence_artifact_types=("structured_test_record", "state_snapshot", "hash_manifest", "traceability_matrix", "replay_artifact"),
+                    prerequisite_test_ids=(),
+                    expected_replay_result="SEMANTICALLY_EQUIVALENT",
+                    certification_effect="BLOCKS_CERTIFICATION_ON_NON_PASS",
+                    entry_hash=entry_hash,
+                )
+            )
+        return tuple(entries)
+
+    def _rm004_mandatory_test_families(self) -> tuple[str, ...]:
+        return (
+            "Registry Integrity",
+            "Activation and Mission Intake",
+            "Search Mission",
+            "Search Plan",
+            "Candidate Class",
+            "Candidate Identity",
+            "Identity Normalization",
+            "Candidate Equivalence",
+            "Duplicate Suppression",
+            "Candidate Freshness",
+            "Candidate Independence",
+            "Discovery Evidence",
+            "Discovery Provenance",
+            "Candidate Lifecycle",
+            "Candidate Rejection",
+            "Search Sufficiency",
+            "Candidate Package",
+            "Office State Machine",
+            "Persistent State",
+            "Recovery Checkpoint",
+            "Atomic Commit",
+            "Replay Equivalence",
+            "Configuration Integrity",
+            "Error Handling",
+            "Audit Trail",
+            "Certification Traceability",
+            "Certification Evidence Package",
+            "Authority Relinquishment",
+            "Residual-State Elimination",
+            "External Dependency Isolation",
+            "Certification Closure",
+        )
+
+    def _rm004_test_family_domain(self, family: str) -> str:
+        mapping = {
+            "Registry Integrity": "REG",
+            "Activation and Mission Intake": "MSM",
+            "Search Mission": "MSM",
+            "Search Plan": "PLN",
+            "Candidate Class": "IDN",
+            "Candidate Identity": "IDN",
+            "Identity Normalization": "NRM",
+            "Candidate Equivalence": "EQV",
+            "Duplicate Suppression": "COL",
+            "Candidate Freshness": "FRS",
+            "Candidate Independence": "IND",
+            "Discovery Evidence": "EVD",
+            "Discovery Provenance": "PRV",
+            "Candidate Lifecycle": "LFC",
+            "Candidate Rejection": "REJ",
+            "Search Sufficiency": "SUF",
+            "Candidate Package": "CPK",
+            "Office State Machine": "STM",
+            "Persistent State": "PST",
+            "Recovery Checkpoint": "CHK",
+            "Atomic Commit": "CMT",
+            "Replay Equivalence": "RPL",
+            "Configuration Integrity": "CFG",
+            "Error Handling": "ERR",
+            "Audit Trail": "AUD",
+            "Certification Traceability": "TRC",
+            "Certification Evidence Package": "CER",
+            "Authority Relinquishment": "CER",
+            "Residual-State Elimination": "CER",
+            "External Dependency Isolation": "CER",
+            "Certification Closure": "CER",
+        }
+        return mapping[family]
+
+    def _candidate_class_id_for_type(self, candidate_type: str) -> str:
+        normalized = _normalize_value(candidate_type).replace(" ", "_")
+        mapping = {
+            "EQUITY": "CCL-0001",
+            "PUBLIC_COMMON_EQUITY": "CCL-0001",
+            "PREFERRED_EQUITY": "CCL-0002",
+            "DEPOSITORY_RECEIPT": "CCL-0003",
+            "ETF": "CCL-0004",
+            "EXCHANGE_TRADED_FUND": "CCL-0004",
+            "ETN": "CCL-0005",
+            "PUBLIC_DEBT": "CCL-0008",
+            "OPTION": "CCL-0012",
+            "FUTURE": "CCL-0013",
+            "FX_PAIR": "CCL-0015",
+            "DIGITAL_ASSET": "CCL-0016",
+            "REIT": "CCL-0019",
+            "MARKET_INDEX": "CCL-0023",
+        }
+        return mapping.get(normalized, candidate_type)
+
+    def _valid_candidate_class_id(self, value: str) -> bool:
+        return len(value) == 8 and value.startswith("CCL-") and value[4:].isdigit()
+
+    def _valid_rule_id(self, value: str) -> bool:
+        parts = value.split("-")
+        return len(parts) == 4 and parts[0] == "SEEK" and parts[1] == "RULE" and parts[2].isupper() and len(parts[3]) == 4 and parts[3].isdigit()
 
 
 def _digest(value: Any) -> str:

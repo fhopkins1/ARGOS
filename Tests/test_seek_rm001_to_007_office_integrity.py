@@ -1,3 +1,4 @@
+from dataclasses import replace
 from pathlib import Path
 import sys
 import unittest
@@ -1094,6 +1095,112 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("Replay Evidence", evidence.missing_sections)
         self.assertIn("SeekerRm003ConstitutionalConfigurationObjectRecord", evidence.inadmissible_artifacts)
         self.assertFalse(evidence.supports_unconditional_pass)
+
+    def test_seek_rm004_certification_completion_package_covers_provided_orders(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_rm004_certification_completion_evidence_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1", "discovery": "DISCOVERY/1"}),
+            search_plan=search_plan(),
+            candidate=candidate(candidate_type="PUBLIC_COMMON_EQUITY"),
+            permitted_candidate_class_ids=("CCL-0001",),
+        )
+
+        self.assertEqual(package.final_rm004_provided_order_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-004-001",
+                "SEEK-RM-004-003",
+                "SEEK-RM-004-004",
+                "SEEK-RM-004-005",
+            ),
+        )
+        self.assertEqual(package.unprovided_dependency_orders, ("SEEK-RM-004-002",))
+        self.assertEqual(package.independent_certification_dependency_status, "BLOCKED_PENDING_SEEK-RM-004-002")
+        self.assertEqual(len(package.candidate_class_registry.entries), 28)
+        self.assertEqual(package.candidate_class_registry.candidate_primary_class_id, "CCL-0001")
+        self.assertTrue(package.candidate_class_registry.candidate_class_authorized_by_plan)
+        self.assertEqual(package.candidate_class_registry.unknown_or_unsupported_claims, ())
+        self.assertEqual(package.candidate_class_registry.ambiguous_claims, ())
+        self.assertGreaterEqual(len(package.evaluation_rule_registry.entries), 48)
+        self.assertEqual(package.evaluation_rule_registry.missing_test_traceability, ())
+        self.assertEqual(package.certification_thresholds.binary_certification_result, "PASS")
+        self.assertEqual(package.certification_thresholds.failing_domains, ())
+        self.assertIn("Certification Closure", package.certification_test_registry.covered_test_families)
+        self.assertEqual(package.certification_test_registry.missing_test_families, ())
+        self.assertEqual(package.certification_test_registry.enterprise_dependency_findings, ())
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm004_certification_completion_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+
+        class_registry = support.evaluate_rm004_candidate_class_registry(
+            search_plan=search_plan(),
+            candidate=candidate(candidate_type="UNCLASSIFIED"),
+            permitted_candidate_class_ids=("CCL-0001",),
+            candidate_class_claims=("UNCLASSIFIED", "CCL-0023"),
+            ambiguous_claims=("source_conflict_between_equity_and_index",),
+            multiple_primary_class_findings=("CCL-0001+CCL-0023",),
+            non_orderable_execution_attempts=("CCL-0023",),
+        )
+        good_rules = support.evaluate_rm004_evaluation_rule_registry()
+        bad_rule_entry = replace(good_rules.entries[0], certification_test_ids=())
+        rule_registry = support.evaluate_rm004_evaluation_rule_registry(
+            mutated_entries=(bad_rule_entry,) + good_rules.entries[1:],
+            unresolved_conflicts=("SEEK-RULE-IDN-0001 conflicts with unregistered identity logic",),
+        )
+        thresholds = support.evaluate_rm004_certification_thresholds(
+            class_registry=class_registry,
+            rule_registry=rule_registry,
+            measured_domain_coverage={"Rule Coverage": 99, "Candidate Class Coverage": 100},
+            zero_tolerance_counts={"Missing Rule Mapping": 1, "Constitutional Ambiguity": 1},
+            certification_tests_passed=False,
+            replay_validations_passed=True,
+            recovery_validations_passed=False,
+        )
+        good_test_registry = support.evaluate_rm004_certification_test_registry(
+            class_registry=support.evaluate_rm004_candidate_class_registry(
+                search_plan=search_plan(),
+                candidate=candidate(candidate_type="PUBLIC_COMMON_EQUITY"),
+                permitted_candidate_class_ids=("CCL-0001",),
+            ),
+            rule_registry=good_rules,
+            thresholds=support.evaluate_rm004_certification_thresholds(
+                class_registry=support.evaluate_rm004_candidate_class_registry(
+                    search_plan=search_plan(),
+                    candidate=candidate(candidate_type="PUBLIC_COMMON_EQUITY"),
+                    permitted_candidate_class_ids=("CCL-0001",),
+                ),
+                rule_registry=good_rules,
+                certification_tests_passed=True,
+                replay_validations_passed=True,
+                recovery_validations_passed=True,
+            ),
+        )
+        test_registry = support.evaluate_rm004_certification_test_registry(
+            class_registry=class_registry,
+            rule_registry=rule_registry,
+            thresholds=thresholds,
+            mutated_entries=good_test_registry.entries[:-1],
+            invalid_execution_outcomes=("SEEK-CERT-TEST-CER-0031:INCONCLUSIVE",),
+            enterprise_dependency_findings=("Commander bridge required by test fixture",),
+        )
+
+        self.assertEqual(class_registry.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("UNCLASSIFIED", class_registry.unknown_or_unsupported_claims)
+        self.assertIn("source_conflict_between_equity_and_index", class_registry.ambiguous_claims)
+        self.assertIn("CCL-0023", class_registry.non_orderable_execution_findings)
+        self.assertEqual(rule_registry.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn(good_rules.entries[0].rule_id, rule_registry.missing_test_traceability)
+        self.assertIn("SEEK-RULE-IDN-0001 conflicts with unregistered identity logic", rule_registry.unresolved_conflicts)
+        self.assertEqual(thresholds.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Rule Coverage", thresholds.failing_domains)
+        self.assertIn("Missing Rule Mapping", thresholds.violated_zero_tolerance_conditions)
+        self.assertEqual(thresholds.binary_certification_result, "FAIL")
+        self.assertEqual(test_registry.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Certification Closure", test_registry.missing_test_families)
+        self.assertIn("SEEK-CERT-TEST-CER-0031:INCONCLUSIVE", test_registry.invalid_execution_outcomes)
+        self.assertIn("Commander bridge required by test fixture", test_registry.enterprise_dependency_findings)
+        self.assertEqual(test_registry.certification_aggregation_result, "FAIL")
 
 
 if __name__ == "__main__":
