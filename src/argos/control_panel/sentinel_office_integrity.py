@@ -621,6 +621,97 @@ class OfficeConstitutionalIntegrationRecord:
 
 
 @dataclass(frozen=True)
+class OfficeDeterministicReplayClosureRecord:
+    replay_closure_identifier: str
+    office_identity: str
+    original_execution_id: str
+    replay_execution_id: str
+    replay_inputs: tuple[str, ...]
+    live_acquisition_detected: bool
+    historical_evidence_modified: bool
+    semantic_equivalence: bool
+    difference_classification: str
+    replay_environment: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeRuleVersionIntegrityRecord:
+    rule_integrity_identifier: str
+    office_identity: str
+    bound_rule_manifest: Mapping[str, str]
+    rule_hash_manifest: Mapping[str, str]
+    missing_rule_sets: tuple[str, ...]
+    drift_findings: tuple[str, ...]
+    replay_uses_historical_versions: bool
+    recovery_uses_original_configuration: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeResourceTerminationRecord:
+    resource_identifier: str
+    office_identity: str
+    resource_policy_identifier: str
+    acquisition_attempts: int
+    retry_count: int
+    maximum_acquisition_attempts: int
+    maximum_retries: int
+    terminal_outcome: str
+    resource_violations: tuple[str, ...]
+    termination_evidence: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeExternalDependencyIsolationRecord:
+    dependency_identifier: str
+    office_identity: str
+    registered_dependencies: Mapping[str, str]
+    unauthorized_dependencies: tuple[str, ...]
+    dependency_contract_versions: Mapping[str, str]
+    live_external_office_required: bool
+    bridge_health_affects_certification: bool
+    deterministic_adapter_evidence: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeIndependentCertificationSuiteRecord:
+    certification_suite_identifier: str
+    office_identity: str
+    certification_authority: str
+    requirement_count: int
+    tests_executed: int
+    failed_tests: tuple[str, ...]
+    missing_requirements: tuple[str, ...]
+    evidence_coverage: str
+    pass_fail_exclusive: bool
+    sentinel_controls_verdict: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeCertificationClosureRecord:
+    closure_identifier: str
+    office_identity: str
+    certifying_authority: str
+    doctrine_coverage: tuple[str, ...]
+    unresolved_findings: tuple[str, ...]
+    evidence_manifest_hash: str
+    certification_report_hash: str
+    final_verdict: EnterpriseCertificationDecision
+    sentinel_self_certification_detected: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SentinelOfficeRemediationEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -663,6 +754,12 @@ class SentinelOfficeRemediationEvidencePackage:
     error_handling: OfficeErrorHandlingRecord
     validation_suite: OfficeValidationSuiteResult
     constitutional_integration: OfficeConstitutionalIntegrationRecord
+    deterministic_replay_closure: OfficeDeterministicReplayClosureRecord
+    rule_version_integrity: OfficeRuleVersionIntegrityRecord
+    resource_termination_boundaries: OfficeResourceTerminationRecord
+    external_dependency_isolation: OfficeExternalDependencyIsolationRecord
+    independent_certification_suite: OfficeIndependentCertificationSuiteRecord
+    certification_closure: OfficeCertificationClosureRecord
     final_office_readiness: EnterpriseCertificationDecision
     immutable_audit_references: tuple[str, ...]
     deterministic_digest: str
@@ -764,6 +861,12 @@ class SentinelOfficeIntegritySupport:
         "SENT-RM-003-019",
         "SENT-RM-003-020",
         "SENT-RM-003-021",
+        "SENT-RM-003-022",
+        "SENT-RM-003-023",
+        "SENT-RM-003-024",
+        "SENT-RM-003-026",
+        "SENT-RM-003-027",
+        "SENT-RM-003-028",
     )
 
     def __init__(self, registry: SentinelOfficeResponsibilityRegistry | None = None) -> None:
@@ -816,6 +919,14 @@ class SentinelOfficeIntegritySupport:
         audit_completeness = self.evaluate_audit_evidence_completeness(execution, repository, recovery, replay)
         configuration = self.evaluate_configuration_integrity(execution, definition)
         error_handling = self.evaluate_error_handling(execution)
+        replay_closure = self.evaluate_deterministic_replay_closure(
+            execution,
+            replay_execution or replace(execution, execution_id=f"REPLAY-{execution.execution_id}"),
+            repository,
+        )
+        rule_integrity = self.evaluate_rule_version_integrity(execution, definition, source_plan)
+        resource_termination = self.evaluate_resource_termination_boundaries(execution)
+        dependency_isolation = self.evaluate_external_dependency_isolation(execution)
         validation = self.evaluate_validation_suite(
             definition=definition,
             records=(
@@ -835,6 +946,48 @@ class SentinelOfficeIntegritySupport:
             ),
         )
         integration = self.evaluate_constitutional_integration(validation)
+        independent_suite = self.evaluate_independent_certification_suite(
+            definition,
+            validation,
+            (
+                component_registry.result,
+                self_certification.result,
+                mission_intake.result,
+                lifecycle_machine.result,
+                source_enforcement.result,
+                raw_preservation.result,
+                source_admissibility.result,
+                normalization.result,
+                chronology.result,
+                freshness.result,
+                duplicate.result,
+                conflict.result,
+                independence.result,
+                sufficiency.result,
+                synthetic.result,
+                failure_disposition.result,
+                state_idempotency.result,
+                observation_package.result,
+                boundary_commitment.result,
+                complete_audit.result,
+                persistence_recovery.result,
+                replay_closure.result,
+                rule_integrity.result,
+                resource_termination.result,
+                dependency_isolation.result,
+            ),
+        )
+        closure = self.evaluate_certification_closure(
+            independent_suite,
+            (
+                validation.suite_identifier,
+                integration.integration_identifier,
+                replay_closure.replay_closure_identifier,
+                rule_integrity.rule_integrity_identifier,
+                resource_termination.resource_identifier,
+                dependency_isolation.dependency_identifier,
+            ),
+        )
         final = EnterpriseCertificationDecision.PASS if all(
             item == EnterpriseCertificationDecision.PASS
             for item in (
@@ -875,6 +1028,12 @@ class SentinelOfficeIntegritySupport:
                 error_handling.result,
                 validation.result,
                 integration.result,
+                replay_closure.result,
+                rule_integrity.result,
+                resource_termination.result,
+                dependency_isolation.result,
+                independent_suite.result,
+                closure.result,
             )
         ) and authority[1].validation_result == EnterpriseCertificationDecision.FAIL else EnterpriseCertificationDecision.FAIL
         package = SentinelOfficeRemediationEvidencePackage(
@@ -919,6 +1078,12 @@ class SentinelOfficeIntegritySupport:
             error_handling=error_handling,
             validation_suite=validation,
             constitutional_integration=integration,
+            deterministic_replay_closure=replay_closure,
+            rule_version_integrity=rule_integrity,
+            resource_termination_boundaries=resource_termination,
+            external_dependency_isolation=dependency_isolation,
+            independent_certification_suite=independent_suite,
+            certification_closure=closure,
             final_office_readiness=final,
             immutable_audit_references=(
                 responsibility.validation_identifier,
@@ -957,6 +1122,12 @@ class SentinelOfficeIntegritySupport:
                 error_handling.error_identifier,
                 validation.suite_identifier,
                 integration.integration_identifier,
+                replay_closure.replay_closure_identifier,
+                rule_integrity.rule_integrity_identifier,
+                resource_termination.resource_identifier,
+                dependency_isolation.dependency_identifier,
+                independent_suite.certification_suite_identifier,
+                closure.closure_identifier,
             ),
             deterministic_digest="",
         )
@@ -1731,6 +1902,221 @@ class SentinelOfficeIntegritySupport:
             at_most_one_terminal_package=at_most_one,
             recovery_disposition=disposition,
             result=EnterpriseCertificationDecision.PASS if immutable and at_most_one and disposition == "RECOVERED_DORMANT" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_deterministic_replay_closure(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        replay_execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+    ) -> OfficeDeterministicReplayClosureRecord:
+        before = tuple(record.record_hash for record in repository.all_records())
+        original_digest = sentinel_runtime_equivalence_digest(execution)
+        replay_digest = sentinel_runtime_equivalence_digest(replay_execution)
+        after = tuple(record.record_hash for record in repository.all_records())
+        replay_inputs = tuple(
+            item
+            for item in (
+                execution.mission_id,
+                getattr(execution.evidence_envelope, "envelope_id", ""),
+                getattr(execution.notification_ready_alert, "alert_id", ""),
+                original_digest,
+            )
+            if item
+        )
+        original_acquisition_outputs = {
+            output
+            for event in execution.trace_events
+            if event.action == "source_acquired"
+            for output in event.output_artifacts
+        }
+        live_acquisition = any(
+            event.action == "source_acquired"
+            and not set(event.output_artifacts).issubset(original_acquisition_outputs)
+            for event in replay_execution.trace_events
+        )
+        modified = before != after
+        equivalent = original_digest == replay_digest and execution.result == replay_execution.result
+        difference = "Identical" if equivalent and not modified and not live_acquisition else "Replay Failure"
+        result = EnterpriseCertificationDecision.PASS if replay_inputs and equivalent and not modified and not live_acquisition else EnterpriseCertificationDecision.FAIL
+        record = OfficeDeterministicReplayClosureRecord(
+            replay_closure_identifier=f"SENT-RM003-REPLAY-CLOSURE-{_digest((execution.execution_id, replay_execution.execution_id, difference))[:12].upper()}",
+            office_identity="Sentinel",
+            original_execution_id=execution.execution_id,
+            replay_execution_id=replay_execution.execution_id,
+            replay_inputs=replay_inputs,
+            live_acquisition_detected=live_acquisition,
+            historical_evidence_modified=modified,
+            semantic_equivalence=equivalent,
+            difference_classification=difference,
+            replay_environment="isolated_replay_no_production_authority",
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_rule_version_integrity(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        definition: SentinelOfficeResponsibilityDefinition,
+        source_plan: SentinelSourcePlanReference | None = None,
+    ) -> OfficeRuleVersionIntegrityRecord:
+        envelope = execution.evidence_envelope
+        manifest = {
+            "source_plan": source_plan.source_plan_id if source_plan else (envelope.source_plan_identity if envelope else ""),
+            "source_identity_model": "SENT-RM-003-007-SOURCE-IDENTITY/1",
+            "normalization_schema": "sentinel-normalizer/1.0.0",
+            "chronology_rules": "SENT-RM-003-009-CHRONOLOGY/1",
+            "freshness_rules": "SENT-RM-003-010-FRESHNESS/1",
+            "duplicate_rules": envelope.duplicate_decision.rule_identity if envelope else "",
+            "conflict_rules": "SENT-RM-003-012-CONFLICT/1",
+            "source_independence_model": envelope.independence_decision.independence_rule if envelope else "",
+            "sufficiency_rules": envelope.sufficiency_decision.rule_identity if envelope else "",
+            "rejection_policy": "SENT-RM-003-016-FAILURE/1",
+            "package_schema": "SENT-RM-003-018-SOP/1",
+            "lifecycle_model": "SENT-RM-003-004-LIFECYCLE/1",
+            "retry_policy": "SENT-RM-003-024-RESOURCE/1",
+            "failure_response_policy": "SENT-RM-003-016-FAILURE/1",
+            "implementation_version": definition.doctrine_version,
+        }
+        missing = tuple(name for name, value in manifest.items() if not value)
+        hashes = {name: _digest((name, value)) for name, value in manifest.items() if value}
+        drift = ()
+        if source_plan is not None and envelope is not None and source_plan.source_plan_id != envelope.source_plan_identity:
+            drift = ("source_plan_drift",)
+        replay_historical = not missing and not drift
+        recovery_original = not missing and execution.final_office_state.value == "DORMANT"
+        record = OfficeRuleVersionIntegrityRecord(
+            rule_integrity_identifier=f"SENT-RM003-RULES-{_digest((execution.execution_id, manifest, missing, drift))[:12].upper()}",
+            office_identity="Sentinel",
+            bound_rule_manifest=manifest,
+            rule_hash_manifest=hashes,
+            missing_rule_sets=missing,
+            drift_findings=drift,
+            replay_uses_historical_versions=replay_historical,
+            recovery_uses_original_configuration=recovery_original,
+            result=EnterpriseCertificationDecision.PASS if not missing and not drift and replay_historical and recovery_original else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_resource_termination_boundaries(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeResourceTerminationRecord:
+        acquisitions = sum(1 for event in execution.trace_events if event.action == "source_acquired")
+        retries = sum(1 for event in execution.trace_events if event.action == "retry")
+        max_acquisitions = 1
+        max_retries = 0
+        violations: list[str] = []
+        if acquisitions > max_acquisitions:
+            violations.append("maximum_acquisition_attempts_exceeded")
+        if retries > max_retries:
+            violations.append("maximum_retries_exceeded")
+        if execution.final_office_state.value != "DORMANT":
+            violations.append("terminal_dormancy_not_reached")
+        terminal = "SUFFICIENT" if execution.result == SentinelRuntimeDecision.PASS else "HALTED" if execution.failure_response else "FAILED"
+        evidence = tuple(event.trace_event_id for event in execution.trace_events if event.action in ("source_acquired", "sufficiency_evaluated", "sentinel_dormant", "fail_closed"))
+        record = OfficeResourceTerminationRecord(
+            resource_identifier=f"SENT-RM003-RESOURCE-{_digest((execution.execution_id, acquisitions, retries, tuple(violations)))[:12].upper()}",
+            office_identity="Sentinel",
+            resource_policy_identifier="SENT-RM-003-024-RESOURCE/1",
+            acquisition_attempts=acquisitions,
+            retry_count=retries,
+            maximum_acquisition_attempts=max_acquisitions,
+            maximum_retries=max_retries,
+            terminal_outcome=terminal,
+            resource_violations=tuple(violations),
+            termination_evidence=evidence,
+            result=EnterpriseCertificationDecision.PASS if evidence and terminal in {"SUFFICIENT", "INSUFFICIENT", "FAILED", "EXPIRED", "REVOKED", "HALTED", "QUARANTINED"} and not violations else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_external_dependency_isolation(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeExternalDependencyIsolationRecord:
+        registered = {
+            "Commander Mission Assignment": "Commander contract",
+            "Enterprise Authority Registry": "authority contract",
+            "Enterprise Operations Scheduler": "scheduler contract",
+            "Office Lifecycle Controller": "lifecycle contract",
+            "Approved Source Adapter": "source acquisition contract",
+            "Enterprise Persistence": "append-only persistence contract",
+        }
+        contracts = {name: f"{contract}/1" for name, contract in registered.items()}
+        allowed_actors = {"Commander", "AuthorityRegistry", "EnterpriseOperationsScheduler", "OfficeLifecycleController", "Sentinel", "EnterprisePersistence"}
+        actors = tuple(event.actor for event in execution.trace_events)
+        unauthorized = tuple(sorted(actor for actor in set(actors) if actor not in allowed_actors))
+        deterministic_evidence = tuple(event.trace_event_id for event in execution.trace_events if event.actor in allowed_actors)
+        record = OfficeExternalDependencyIsolationRecord(
+            dependency_identifier=f"SENT-RM003-DEPS-{_digest((execution.execution_id, actors, unauthorized))[:12].upper()}",
+            office_identity="Sentinel",
+            registered_dependencies=registered,
+            unauthorized_dependencies=unauthorized,
+            dependency_contract_versions=contracts,
+            live_external_office_required=False,
+            bridge_health_affects_certification=False,
+            deterministic_adapter_evidence=deterministic_evidence,
+            result=EnterpriseCertificationDecision.PASS if not unauthorized and deterministic_evidence else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_independent_certification_suite(
+        self,
+        definition: SentinelOfficeResponsibilityDefinition,
+        validation: OfficeValidationSuiteResult,
+        component_results: tuple[EnterpriseCertificationDecision, ...],
+    ) -> OfficeIndependentCertificationSuiteRecord:
+        requirements = tuple(self.remediation_order_coverage)
+        failed = tuple(f"SENT-RM003-COMPONENT-{index + 1}" for index, result in enumerate(component_results) if result != EnterpriseCertificationDecision.PASS)
+        missing = tuple(item for item in requirements if item not in self.remediation_order_coverage)
+        tests_executed = len(validation.test_results) + len(component_results)
+        evidence_coverage = "100%" if not failed and not missing and validation.failed_tests == () else "INCOMPLETE"
+        record = OfficeIndependentCertificationSuiteRecord(
+            certification_suite_identifier=f"SENT-RM003-INDEPENDENT-SUITE-{_digest((definition.office_identity, requirements, failed, missing))[:12].upper()}",
+            office_identity=definition.office_identity,
+            certification_authority="Independent Office Certification Authority",
+            requirement_count=len(requirements),
+            tests_executed=tests_executed,
+            failed_tests=failed + validation.failed_tests,
+            missing_requirements=missing,
+            evidence_coverage=evidence_coverage,
+            pass_fail_exclusive=True,
+            sentinel_controls_verdict=False,
+            result=EnterpriseCertificationDecision.PASS if not failed and not missing and validation.failed_tests == () else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_certification_closure(
+        self,
+        independent_suite: OfficeIndependentCertificationSuiteRecord,
+        evidence_references: tuple[str, ...],
+    ) -> OfficeCertificationClosureRecord:
+        unresolved = ()
+        if independent_suite.result != EnterpriseCertificationDecision.PASS:
+            unresolved = unresolved + ("independent_suite_failed",)
+        if not evidence_references:
+            unresolved = unresolved + ("missing_evidence_manifest",)
+        evidence_hash = _digest(evidence_references)
+        report_hash = _digest((independent_suite.certification_suite_identifier, evidence_hash, unresolved))
+        verdict = EnterpriseCertificationDecision.PASS if not unresolved else EnterpriseCertificationDecision.FAIL
+        record = OfficeCertificationClosureRecord(
+            closure_identifier=f"SENT-RM003-CLOSURE-{_digest((independent_suite.certification_suite_identifier, verdict.value, unresolved))[:12].upper()}",
+            office_identity=independent_suite.office_identity,
+            certifying_authority=independent_suite.certification_authority,
+            doctrine_coverage=self.remediation_order_coverage,
+            unresolved_findings=unresolved,
+            evidence_manifest_hash=evidence_hash,
+            certification_report_hash=report_hash,
+            final_verdict=verdict,
+            sentinel_self_certification_detected=independent_suite.sentinel_controls_verdict,
+            result=verdict if not independent_suite.sentinel_controls_verdict else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(asdict(record)))

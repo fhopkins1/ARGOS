@@ -1,3 +1,4 @@
+from dataclasses import replace
 from pathlib import Path
 import sys
 import unittest
@@ -335,6 +336,13 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.persistence_atomic_recovery.partial_write_findings, ())
         self.assertEqual(package.persistence_atomic_recovery.duplicate_terminal_package_findings, ())
         self.assertEqual(package.persistence_atomic_recovery.recovery_disposition, "RECOVERED_DORMANT")
+        self.assertIn("SENT-RM-003-028", package.remediation_order_coverage)
+        self.assertEqual(package.deterministic_replay_closure.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.rule_version_integrity.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.resource_termination_boundaries.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.external_dependency_isolation.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.independent_certification_suite.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.certification_closure.final_verdict, EnterpriseCertificationDecision.PASS)
 
     def test_package_boundary_and_synthetic_records_fail_closed_when_evidence_missing(self) -> None:
         runtime, execution = runtime_and_execution()
@@ -388,6 +396,61 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
 
         self.assertEqual(failed.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("sentinel_missing_required_record", failed.missing_records)
+
+    def test_replay_config_resource_dependency_and_closure_records_pass_from_runtime_evidence(self) -> None:
+        first_runtime, first = runtime_and_execution()
+        _, second = runtime_and_execution()
+        package = SentinelOfficeIntegritySupport().build_package(
+            execution=first,
+            replay_execution=second,
+            repository=first_runtime.persistence,
+            source_plan=source_plan(),
+        )
+
+        self.assertFalse(package.deterministic_replay_closure.live_acquisition_detected)
+        self.assertFalse(package.deterministic_replay_closure.historical_evidence_modified)
+        self.assertTrue(package.deterministic_replay_closure.semantic_equivalence)
+        self.assertEqual(package.deterministic_replay_closure.difference_classification, "Identical")
+        self.assertEqual(package.rule_version_integrity.missing_rule_sets, ())
+        self.assertEqual(package.rule_version_integrity.drift_findings, ())
+        self.assertTrue(package.rule_version_integrity.replay_uses_historical_versions)
+        self.assertEqual(package.resource_termination_boundaries.terminal_outcome, "SUFFICIENT")
+        self.assertEqual(package.resource_termination_boundaries.acquisition_attempts, 1)
+        self.assertEqual(package.resource_termination_boundaries.retry_count, 0)
+        self.assertEqual(package.resource_termination_boundaries.resource_violations, ())
+        self.assertEqual(package.external_dependency_isolation.unauthorized_dependencies, ())
+        self.assertFalse(package.external_dependency_isolation.live_external_office_required)
+        self.assertFalse(package.external_dependency_isolation.bridge_health_affects_certification)
+        self.assertEqual(package.independent_certification_suite.evidence_coverage, "100%")
+        self.assertEqual(package.independent_certification_suite.failed_tests, ())
+        self.assertEqual(package.independent_certification_suite.missing_requirements, ())
+        self.assertEqual(package.certification_closure.unresolved_findings, ())
+        self.assertEqual(package.certification_closure.result, EnterpriseCertificationDecision.PASS)
+        self.assertFalse(package.certification_closure.sentinel_self_certification_detected)
+
+    def test_rule_drift_and_closure_fail_closed_without_fabricating_certification(self) -> None:
+        runtime, execution = runtime_and_execution()
+        support = SentinelOfficeIntegritySupport()
+        definition = sentinel_office_responsibility_definition()
+
+        drifted_rules = support.evaluate_rule_version_integrity(
+            execution,
+            definition,
+            source_plan=source_plan(source_plan_id="SRCPLAN-DRIFTED"),
+        )
+        package = support.build_package(execution=execution, repository=runtime.persistence, source_plan=source_plan())
+        failed_suite = replace(
+            package.independent_certification_suite,
+            failed_tests=("synthetic_failure",),
+            result=EnterpriseCertificationDecision.FAIL,
+        )
+        closure = support.evaluate_certification_closure(failed_suite, ())
+
+        self.assertEqual(drifted_rules.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("source_plan_drift", drifted_rules.drift_findings)
+        self.assertEqual(closure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("independent_suite_failed", closure.unresolved_findings)
+        self.assertIn("missing_evidence_manifest", closure.unresolved_findings)
 
 
 if __name__ == "__main__":
