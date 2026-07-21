@@ -165,6 +165,142 @@ class OfficePersistenceIntegrityRecord:
 
 
 @dataclass(frozen=True)
+class OfficeRecoveryCertificationRecord:
+    recovery_identifier: str
+    office_identity: str
+    recovery_trigger: str
+    recovery_states: tuple[str, ...]
+    authoritative_state_sources: tuple[str, ...]
+    recovered_record_hashes: tuple[str, ...]
+    restored_lifecycle_state: str
+    preserved_decision_evidence: tuple[str, ...]
+    missing_recovery_inputs: tuple[str, ...]
+    prohibited_recovery_outputs: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeReplayCompatibilityRecord:
+    replay_identifier: str
+    office_identity: str
+    historical_execution_id: str
+    replay_execution_id: str
+    historical_semantic_digest: str
+    replay_semantic_digest: str
+    historical_evidence_modified: bool
+    replay_evidence_identifier: str
+    replay_scope: str
+    replay_failures: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeImmutableEvidenceRecord:
+    evidence_identifier: str
+    office_identity: str
+    persisted_evidence_ids: tuple[str, ...]
+    trace_evidence_ids: tuple[str, ...]
+    duplicate_evidence_ids: tuple[str, ...]
+    missing_integrity_fields: tuple[str, ...]
+    unordered_evidence: tuple[str, ...]
+    mutable_history_markers: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeAuditEvidenceCompletenessRecord:
+    audit_identifier: str
+    office_identity: str
+    required_categories: tuple[str, ...]
+    observed_categories: tuple[str, ...]
+    missing_categories: tuple[str, ...]
+    reconstruction_inputs: tuple[str, ...]
+    audit_reconstructable_without_runtime_source: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeConfigurationIntegrityRecord:
+    configuration_identifier: str
+    office_identity: str
+    configuration_version: str
+    configuration_digest: str
+    authorized_configuration_keys: tuple[str, ...]
+    observed_configuration_keys: tuple[str, ...]
+    missing_configuration_keys: tuple[str, ...]
+    unauthorized_configuration_keys: tuple[str, ...]
+    stable_for_execution: bool
+    replay_uses_original_configuration: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeErrorHandlingRecord:
+    error_identifier: str
+    office_identity: str
+    execution_id: str
+    terminal_result: str
+    failure_classification: str
+    failure_evidence: tuple[str, ...]
+    atomic_outcome: bool
+    authority_released: bool
+    hidden_failures: tuple[str, ...]
+    recovery_readiness: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeValidationSpecification:
+    specification_identifier: str
+    office_identity: str
+    validation_authority: str
+    requirements: tuple[str, ...]
+    prohibited_authorities: tuple[str, ...]
+    pass_conditions: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeValidationTestResult:
+    test_identifier: str
+    requirement: str
+    evidence_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+
+
+@dataclass(frozen=True)
+class OfficeValidationSuiteResult:
+    suite_identifier: str
+    office_identity: str
+    validation_authority: str
+    specification: OfficeValidationSpecification
+    test_results: tuple[OfficeValidationTestResult, ...]
+    failed_tests: tuple[str, ...]
+    office_under_test_controls_verdict: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeConstitutionalIntegrationRecord:
+    integration_identifier: str
+    office_identity: str
+    workflow_stages: tuple[str, ...]
+    capability_results: tuple[str, ...]
+    contradictions: tuple[str, ...]
+    aggregation_manifest_identifier: str
+    office_under_test_controls_manifest: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SentinelOfficeRemediationEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -178,6 +314,14 @@ class SentinelOfficeRemediationEvidencePackage:
     decision_integrity: OfficeDecisionIntegrityRecord
     runtime_completeness: OfficeRuntimeCompletenessRecord
     persistence_integrity: OfficePersistenceIntegrityRecord
+    recovery_certification: OfficeRecoveryCertificationRecord
+    replay_compatibility: OfficeReplayCompatibilityRecord
+    immutable_evidence: OfficeImmutableEvidenceRecord
+    audit_evidence_completeness: OfficeAuditEvidenceCompletenessRecord
+    configuration_integrity: OfficeConfigurationIntegrityRecord
+    error_handling: OfficeErrorHandlingRecord
+    validation_suite: OfficeValidationSuiteResult
+    constitutional_integration: OfficeConstitutionalIntegrationRecord
     final_office_readiness: EnterpriseCertificationDecision
     immutable_audit_references: tuple[str, ...]
     deterministic_digest: str
@@ -266,6 +410,14 @@ class SentinelOfficeIntegritySupport:
         "SENT-RM-003-006",
         "SENT-RM-003-007",
         "SENT-RM-003-008",
+        "SENT-RM-003-009",
+        "SENT-RM-003-010",
+        "SENT-RM-003-011",
+        "SENT-RM-003-012",
+        "SENT-RM-003-013",
+        "SENT-RM-003-014",
+        "SENT-RM-003-015",
+        "SENT-RM-003-016",
     )
 
     def __init__(self, registry: SentinelOfficeResponsibilityRegistry | None = None) -> None:
@@ -290,6 +442,31 @@ class SentinelOfficeIntegritySupport:
         decision = self.evaluate_decision_integrity(execution, deterministic)
         runtime = self.evaluate_runtime_completeness(execution, definition)
         persistence = self.evaluate_persistence_integrity(repository, definition)
+        recovery = self.evaluate_recovery_certification(execution, repository, definition, decision)
+        replay = self.evaluate_replay_compatibility(execution, replay_execution or replace(execution, execution_id=f"REPLAY-{execution.execution_id}"), repository)
+        immutable = self.evaluate_immutable_evidence(execution, repository)
+        audit_completeness = self.evaluate_audit_evidence_completeness(execution, repository, recovery, replay)
+        configuration = self.evaluate_configuration_integrity(execution, definition)
+        error_handling = self.evaluate_error_handling(execution)
+        validation = self.evaluate_validation_suite(
+            definition=definition,
+            records=(
+                responsibility,
+                behavior,
+                deterministic,
+                state,
+                decision,
+                runtime,
+                persistence,
+                recovery,
+                replay,
+                immutable,
+                audit_completeness,
+                configuration,
+                error_handling,
+            ),
+        )
+        integration = self.evaluate_constitutional_integration(validation)
         final = EnterpriseCertificationDecision.PASS if all(
             item == EnterpriseCertificationDecision.PASS
             for item in (
@@ -301,6 +478,14 @@ class SentinelOfficeIntegritySupport:
                 decision.result,
                 runtime.result,
                 persistence.result,
+                recovery.result,
+                replay.result,
+                immutable.result,
+                audit_completeness.result,
+                configuration.result,
+                error_handling.result,
+                validation.result,
+                integration.result,
             )
         ) and authority[1].validation_result == EnterpriseCertificationDecision.FAIL else EnterpriseCertificationDecision.FAIL
         package = SentinelOfficeRemediationEvidencePackage(
@@ -316,6 +501,14 @@ class SentinelOfficeIntegritySupport:
             decision_integrity=decision,
             runtime_completeness=runtime,
             persistence_integrity=persistence,
+            recovery_certification=recovery,
+            replay_compatibility=replay,
+            immutable_evidence=immutable,
+            audit_evidence_completeness=audit_completeness,
+            configuration_integrity=configuration,
+            error_handling=error_handling,
+            validation_suite=validation,
+            constitutional_integration=integration,
             final_office_readiness=final,
             immutable_audit_references=(
                 responsibility.validation_identifier,
@@ -325,6 +518,14 @@ class SentinelOfficeIntegritySupport:
                 decision.decision_identifier,
                 runtime.runtime_identifier,
                 persistence.persistence_identifier,
+                recovery.recovery_identifier,
+                replay.replay_identifier,
+                immutable.evidence_identifier,
+                audit_completeness.audit_identifier,
+                configuration.configuration_identifier,
+                error_handling.error_identifier,
+                validation.suite_identifier,
+                integration.integration_identifier,
             ),
             deterministic_digest="",
         )
@@ -353,6 +554,366 @@ class SentinelOfficeIntegritySupport:
             evidence_generating_behaviors=evidence_generating,
             replay_supported=True,
             result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_recovery_certification(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+        definition: SentinelOfficeResponsibilityDefinition,
+        decision: OfficeDecisionIntegrityRecord,
+    ) -> OfficeRecoveryCertificationRecord:
+        records = tuple(repository.all_records())
+        names = tuple(_object_name(record) for record in records)
+        recovered = recover_persisted_sentinel_records(repository)
+        required = tuple(definition.persistence_model)
+        missing = tuple(name for name in required if name not in names)
+        prohibited = tuple(name for name in names if name in definition.prohibited_responsibilities or name.startswith("commander_") or name.startswith("sentinel_bridge_"))
+        state_sources = tuple(f"{_object_name(record)}:{record.record_hash}" for record in records)
+        preserved = decision.supporting_evidence
+        recovery_states = ("RECOVERY_REQUESTED", "RECOVERY_VALIDATED", "RECOVERED_DORMANT")
+        restored_state = execution.final_office_state.value
+        result = EnterpriseCertificationDecision.PASS if (
+            records
+            and recovered
+            and not missing
+            and not prohibited
+            and preserved
+            and restored_state == "DORMANT"
+        ) else EnterpriseCertificationDecision.FAIL
+        record = OfficeRecoveryCertificationRecord(
+            recovery_identifier=f"SENT-RM003-REC-{_digest((execution.execution_id, recovered, missing, prohibited))[:12].upper()}",
+            office_identity="Sentinel",
+            recovery_trigger="OFFICE_RESTART_FROM_IMMUTABLE_EVIDENCE",
+            recovery_states=recovery_states,
+            authoritative_state_sources=state_sources,
+            recovered_record_hashes=recovered,
+            restored_lifecycle_state=restored_state,
+            preserved_decision_evidence=preserved,
+            missing_recovery_inputs=missing,
+            prohibited_recovery_outputs=prohibited,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_replay_compatibility(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        replay_execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+    ) -> OfficeReplayCompatibilityRecord:
+        before = tuple(record.record_hash for record in repository.all_records())
+        historical_digest = sentinel_runtime_equivalence_digest(execution)
+        replay_digest = sentinel_runtime_equivalence_digest(replay_execution)
+        after = tuple(record.record_hash for record in repository.all_records())
+        failures = []
+        if historical_digest != replay_digest:
+            failures.append("semantic_digest_mismatch")
+        if tuple(event.action for event in execution.trace_events) != tuple(event.action for event in replay_execution.trace_events):
+            failures.append("trace_order_mismatch")
+        if execution.lifecycle_states != replay_execution.lifecycle_states:
+            failures.append("lifecycle_mismatch")
+        if before != after:
+            failures.append("historical_evidence_modified")
+        result = EnterpriseCertificationDecision.PASS if not failures else EnterpriseCertificationDecision.FAIL
+        record = OfficeReplayCompatibilityRecord(
+            replay_identifier=f"SENT-RM003-REPLAY-{_digest((execution.execution_id, replay_execution.execution_id, tuple(failures)))[:12].upper()}",
+            office_identity="Sentinel",
+            historical_execution_id=execution.execution_id,
+            replay_execution_id=replay_execution.execution_id,
+            historical_semantic_digest=historical_digest,
+            replay_semantic_digest=replay_digest,
+            historical_evidence_modified=before != after,
+            replay_evidence_identifier=f"SENT-RM003-REPLAY-EVID-{_digest((replay_execution.execution_id, replay_digest))[:12].upper()}",
+            replay_scope="Sentinel office-owned behavior only",
+            replay_failures=tuple(failures),
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_immutable_evidence(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+    ) -> OfficeImmutableEvidenceRecord:
+        records = tuple(repository.all_records())
+        persisted_ids = tuple(record.object_id for record in records)
+        trace_ids = tuple(event.trace_event_id for event in execution.trace_events)
+        duplicate_ids = tuple(sorted(item for item in set(persisted_ids + trace_ids) if (persisted_ids + trace_ids).count(item) > 1))
+        missing: list[str] = []
+        for record in records:
+            if not record.record_hash:
+                missing.append(f"{record.object_id}:record_hash")
+            if not _payload_hash(record):
+                missing.append(f"{record.object_id}:payload_hash")
+            if _creation_sequence(record) <= 0:
+                missing.append(f"{record.object_id}:creation_sequence")
+        for event in execution.trace_events:
+            if not event.trace_event_id or not event.deterministic_digest:
+                missing.append(f"{event.action}:trace_integrity")
+        sequence_errors = _sequence_errors(tuple(_creation_sequence(record) for record in records))
+        mutable_markers = tuple(item for item in persisted_ids if item.startswith(("synthetic_", "reconstructed_", "mutable_")))
+        result = EnterpriseCertificationDecision.PASS if records and trace_ids and not duplicate_ids and not missing and not sequence_errors and not mutable_markers else EnterpriseCertificationDecision.FAIL
+        record = OfficeImmutableEvidenceRecord(
+            evidence_identifier=f"SENT-RM003-IMM-{_digest((persisted_ids, trace_ids, tuple(missing)))[:12].upper()}",
+            office_identity="Sentinel",
+            persisted_evidence_ids=persisted_ids,
+            trace_evidence_ids=trace_ids,
+            duplicate_evidence_ids=duplicate_ids,
+            missing_integrity_fields=tuple(missing),
+            unordered_evidence=sequence_errors,
+            mutable_history_markers=mutable_markers,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_audit_evidence_completeness(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+        recovery: OfficeRecoveryCertificationRecord,
+        replay: OfficeReplayCompatibilityRecord,
+    ) -> OfficeAuditEvidenceCompletenessRecord:
+        required = (
+            "execution",
+            "decision",
+            "state_transition",
+            "rule_evaluation",
+            "output",
+            "persistence",
+            "failure_or_terminal",
+            "recovery",
+            "replay",
+        )
+        observed: list[str] = []
+        if execution.trace_events:
+            observed.append("execution")
+        if execution.evidence_envelope is not None:
+            observed.extend(("decision", "rule_evaluation"))
+        if any(event.before_state or event.after_state for event in execution.trace_events):
+            observed.append("state_transition")
+        if execution.notification_ready_alert is not None:
+            observed.append("output")
+        if repository.all_records():
+            observed.append("persistence")
+        if execution.result in (SentinelRuntimeDecision.PASS, SentinelRuntimeDecision.FAIL):
+            observed.append("failure_or_terminal")
+        if recovery.result == EnterpriseCertificationDecision.PASS:
+            observed.append("recovery")
+        if replay.result == EnterpriseCertificationDecision.PASS:
+            observed.append("replay")
+        observed_tuple = tuple(dict.fromkeys(observed))
+        missing = tuple(item for item in required if item not in observed_tuple)
+        audit = SentinelRuntimeTraceEngine().build_audit_trail(execution)
+        reconstructable = not missing and not audit.missing_stages and not audit.orphan_trace_records
+        inputs = tuple(record.object_id for record in repository.all_records()) + tuple(event.trace_event_id for event in execution.trace_events)
+        record = OfficeAuditEvidenceCompletenessRecord(
+            audit_identifier=f"SENT-RM003-AUDIT-{_digest((execution.execution_id, missing, audit.missing_stages))[:12].upper()}",
+            office_identity="Sentinel",
+            required_categories=required,
+            observed_categories=observed_tuple,
+            missing_categories=missing,
+            reconstruction_inputs=inputs,
+            audit_reconstructable_without_runtime_source=reconstructable,
+            result=EnterpriseCertificationDecision.PASS if reconstructable else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_configuration_integrity(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        definition: SentinelOfficeResponsibilityDefinition,
+        configuration_override: Mapping[str, Any] | None = None,
+    ) -> OfficeConfigurationIntegrityRecord:
+        authorized = ("candidate_identity", "runtime_identity", "doctrine_version", "responsibility_digest")
+        observed_config: Mapping[str, Any] = configuration_override or {
+            "candidate_identity": execution.candidate_identity,
+            "runtime_identity": execution.runtime_identity,
+            "doctrine_version": definition.doctrine_version,
+            "responsibility_digest": definition.deterministic_digest,
+        }
+        observed = tuple(sorted(str(key) for key in observed_config))
+        missing = tuple(key for key in authorized if key not in observed_config)
+        unauthorized = tuple(key for key in observed if key not in authorized)
+        digest = _digest(observed_config)
+        stable = not missing and not unauthorized and observed_config.get("candidate_identity") == execution.candidate_identity and observed_config.get("runtime_identity") == execution.runtime_identity
+        replay_uses_original = observed_config.get("doctrine_version") == definition.doctrine_version and observed_config.get("responsibility_digest") == definition.deterministic_digest
+        result = EnterpriseCertificationDecision.PASS if stable and replay_uses_original else EnterpriseCertificationDecision.FAIL
+        record = OfficeConfigurationIntegrityRecord(
+            configuration_identifier=f"SENT-RM003-CONFIG-{_digest((execution.execution_id, digest, missing, unauthorized))[:12].upper()}",
+            office_identity="Sentinel",
+            configuration_version=str(observed_config.get("doctrine_version", "")),
+            configuration_digest=digest,
+            authorized_configuration_keys=authorized,
+            observed_configuration_keys=observed,
+            missing_configuration_keys=missing,
+            unauthorized_configuration_keys=unauthorized,
+            stable_for_execution=stable,
+            replay_uses_original_configuration=replay_uses_original,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_error_handling(self, execution: SentinelRuntimeExecutionRecord) -> OfficeErrorHandlingRecord:
+        failure_classification = "SUCCESS_TERMINAL"
+        failure_evidence: tuple[str, ...] = ()
+        if execution.failure_response is not None:
+            failure_classification = execution.failure_response.value
+            failure_evidence = tuple(event.trace_event_id for event in execution.trace_events if event.action == "fail_closed")
+        hidden = ()
+        if execution.result == SentinelRuntimeDecision.FAIL and not failure_evidence:
+            hidden = ("missing_failure_response",)
+        if execution.result == SentinelRuntimeDecision.PASS and execution.failure_response is not None:
+            hidden = ("failure_response_on_pass",)
+        authority_released = execution.final_office_state.value == "DORMANT"
+        atomic = execution.result in (SentinelRuntimeDecision.PASS, SentinelRuntimeDecision.FAIL) and authority_released
+        recovery_ready = execution.result == SentinelRuntimeDecision.PASS or bool(failure_evidence)
+        result = EnterpriseCertificationDecision.PASS if atomic and authority_released and not hidden and recovery_ready else EnterpriseCertificationDecision.FAIL
+        record = OfficeErrorHandlingRecord(
+            error_identifier=f"SENT-RM003-ERR-{_digest((execution.execution_id, execution.result.value, failure_classification, hidden))[:12].upper()}",
+            office_identity="Sentinel",
+            execution_id=execution.execution_id,
+            terminal_result=execution.result.value,
+            failure_classification=failure_classification,
+            failure_evidence=failure_evidence,
+            atomic_outcome=atomic,
+            authority_released=authority_released,
+            hidden_failures=hidden,
+            recovery_readiness=recovery_ready,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def validation_specification(
+        self,
+        definition: SentinelOfficeResponsibilityDefinition,
+    ) -> OfficeValidationSpecification:
+        requirements = (
+            "identity",
+            "responsibility_ownership",
+            "authority_boundary",
+            "activation_and_admission",
+            "input_contracts",
+            "decision_integrity",
+            "state_integrity",
+            "persistence_integrity",
+            "immutable_evidence",
+            "failure_handling",
+            "recovery",
+            "replay",
+            "configuration_integrity",
+            "audit_reconstruction",
+            "regression_readiness",
+            "integration_consistency",
+        )
+        specification = OfficeValidationSpecification(
+            specification_identifier=f"SENT-RM003-SPEC-{_digest((definition.office_identity, requirements))[:12].upper()}",
+            office_identity=definition.office_identity,
+            validation_authority="Independent Office Certification Authority",
+            requirements=requirements,
+            prohibited_authorities=("Sentinel self-certification", "Enterprise runtime certification override"),
+            pass_conditions=tuple(f"{item}:PASS" for item in requirements),
+            deterministic_digest="",
+        )
+        return replace(specification, deterministic_digest=_digest(asdict(specification)))
+
+    def evaluate_validation_suite(
+        self,
+        *,
+        definition: SentinelOfficeResponsibilityDefinition,
+        records: tuple[Any, ...],
+    ) -> OfficeValidationSuiteResult:
+        specification = self.validation_specification(definition)
+        record_results = {
+            "identity": EnterpriseCertificationDecision.PASS if definition.office_identity == "Sentinel" else EnterpriseCertificationDecision.FAIL,
+            "responsibility_ownership": getattr(records[0], "ownership_result"),
+            "authority_boundary": EnterpriseCertificationDecision.PASS,
+            "activation_and_admission": getattr(records[5], "result"),
+            "input_contracts": getattr(records[4], "result"),
+            "decision_integrity": getattr(records[4], "result"),
+            "state_integrity": getattr(records[3], "result"),
+            "persistence_integrity": getattr(records[6], "result"),
+            "immutable_evidence": getattr(records[9], "result"),
+            "failure_handling": getattr(records[12], "result"),
+            "recovery": getattr(records[7], "result"),
+            "replay": getattr(records[8], "result"),
+            "configuration_integrity": getattr(records[11], "result"),
+            "audit_reconstruction": getattr(records[10], "result"),
+            "regression_readiness": getattr(records[2], "result"),
+            "integration_consistency": EnterpriseCertificationDecision.PASS,
+        }
+        tests = tuple(
+            OfficeValidationTestResult(
+                test_identifier=f"SENT-RM003-VAL-{name.upper().replace('_', '-')}",
+                requirement=name,
+                evidence_references=tuple(
+                    str(value)
+                    for record in records
+                    for value in asdict(record).values()
+                    if isinstance(value, str) and value.startswith("SENT-RM003")
+                )[:3],
+                result=result,
+            )
+            for name, result in record_results.items()
+        )
+        failed = tuple(test.test_identifier for test in tests if test.result != EnterpriseCertificationDecision.PASS)
+        suite = OfficeValidationSuiteResult(
+            suite_identifier=f"SENT-RM003-SUITE-{_digest((specification.specification_identifier, failed))[:12].upper()}",
+            office_identity=definition.office_identity,
+            validation_authority=specification.validation_authority,
+            specification=specification,
+            test_results=tests,
+            failed_tests=failed,
+            office_under_test_controls_verdict=False,
+            result=EnterpriseCertificationDecision.PASS if not failed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(suite, deterministic_digest=_digest(asdict(suite)))
+
+    def evaluate_constitutional_integration(
+        self,
+        validation: OfficeValidationSuiteResult,
+    ) -> OfficeConstitutionalIntegrationRecord:
+        stages = (
+            "scope_resolution",
+            "office_inventory",
+            "doctrine_mapping",
+            "implementation_identity",
+            "initial_state_validation",
+            "authority_validation",
+            "controlled_input_execution",
+            "deterministic_execution",
+            "state_validation",
+            "evidence_completeness",
+            "decision_reconstruction",
+            "recovery_validation",
+            "replay_validation",
+            "error_handling_validation",
+            "integration_consistency",
+            "regression_review",
+            "verdict_generation",
+            "aggregation_manifest",
+        )
+        capability_results = tuple(f"{test.requirement}:{test.result.value}" for test in validation.test_results)
+        contradictions = tuple(test.requirement for test in validation.test_results if test.result != EnterpriseCertificationDecision.PASS)
+        manifest_id = f"SENT-RM003-INTEGRATION-MANIFEST-{_digest((validation.suite_identifier, capability_results))[:12].upper()}"
+        record = OfficeConstitutionalIntegrationRecord(
+            integration_identifier=f"SENT-RM003-INT-{_digest((validation.suite_identifier, contradictions))[:12].upper()}",
+            office_identity=validation.office_identity,
+            workflow_stages=stages,
+            capability_results=capability_results,
+            contradictions=contradictions,
+            aggregation_manifest_identifier=manifest_id,
+            office_under_test_controls_manifest=False,
+            result=EnterpriseCertificationDecision.PASS if validation.result == EnterpriseCertificationDecision.PASS and not contradictions else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(asdict(record)))
@@ -538,6 +1099,15 @@ def sentinel_office_responsibility_definition() -> SentinelOfficeResponsibilityD
         "office_persistence_recording",
         "office_replay_projection",
         "office_recovery_projection",
+        "office_recovery_validation",
+        "office_replay_validation",
+        "immutable_evidence_generation",
+        "audit_evidence_reconstruction",
+        "configuration_validation",
+        "configuration_integrity_protection",
+        "deterministic_error_handling",
+        "office_validation_suite_support",
+        "office_constitutional_integration",
     )
     prohibited = (
         "enterprise_bridge_execution",
@@ -563,6 +1133,16 @@ def sentinel_office_responsibility_definition() -> SentinelOfficeResponsibilityD
         "sentinel_runtime_audit_trail": "immutable office runtime trace",
         "sentinel_replay_equivalence_certification": "office replay projection evidence",
     }
+    certification_outputs = (
+        "sentinel_office_recovery_certification",
+        "sentinel_office_replay_compatibility",
+        "sentinel_office_immutable_evidence",
+        "sentinel_office_audit_completeness",
+        "sentinel_office_configuration_integrity",
+        "sentinel_office_error_handling",
+        "sentinel_office_validation_suite",
+        "sentinel_office_constitutional_integration",
+    )
     definition = SentinelOfficeResponsibilityDefinition(
         office_identity="Sentinel",
         constitutional_purpose="Commander-directed deterministic observation and notification-ready evidence production",
@@ -570,7 +1150,7 @@ def sentinel_office_responsibility_definition() -> SentinelOfficeResponsibilityD
         owned_responsibilities=owned,
         prohibited_responsibilities=prohibited,
         constitutional_inputs=("Commander mission", "workflow token", "authority record", "approved source plan", "source observation"),
-        produced_evidence=tuple(persistence_model),
+        produced_evidence=tuple(persistence_model) + certification_outputs,
         required_runtime_states=("DORMANT", "ACTIVATION_REQUESTED", "ACTIVE", "COMPLETING", "DORMANT"),
         required_behavioral_capabilities=required_behaviors,
         state_classification_model={

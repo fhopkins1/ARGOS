@@ -16,6 +16,7 @@ from argos.control_panel.sentinel_office_integrity import (  # noqa: E402
     sentinel_office_responsibility_definition,
 )
 from argos.sentinel import (  # noqa: E402
+    FailureResponse,
     SentinelAuthorityRegistry,
     SentinelCanonicalRuntime,
     SentinelRuntimeDecision,
@@ -91,6 +92,7 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(execution.result, SentinelRuntimeDecision.PASS)
         self.assertEqual(package.final_office_readiness, EnterpriseCertificationDecision.PASS)
         self.assertIn("SENT-RM-003-008", package.remediation_order_coverage)
+        self.assertIn("SENT-RM-003-016", package.remediation_order_coverage)
         self.assertEqual(package.responsibility_validation.ownership_result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.behavior_completeness.missing_behaviors, ())
         self.assertEqual(package.runtime_completeness.missing_runtime_paths, ())
@@ -98,6 +100,16 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.persistence_integrity.missing_records, ())
         self.assertEqual(package.persistence_integrity.prohibited_records, ())
         self.assertEqual(package.authority_evidence[1].decision, OfficeAuthorityDecision.REJECTED)
+        self.assertEqual(package.recovery_certification.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.replay_compatibility.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.immutable_evidence.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.audit_evidence_completeness.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.configuration_integrity.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.error_handling.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.validation_suite.result, EnterpriseCertificationDecision.PASS)
+        self.assertFalse(package.validation_suite.office_under_test_controls_verdict)
+        self.assertEqual(package.constitutional_integration.result, EnterpriseCertificationDecision.PASS)
+        self.assertFalse(package.constitutional_integration.office_under_test_controls_manifest)
 
     def test_replay_equivalence_preserves_office_decisions_and_state(self) -> None:
         first_runtime, first = runtime_and_execution()
@@ -113,8 +125,68 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertNotEqual(first_runtime.persistence.all_records()[0].record_hash, "")
         self.assertNotEqual(second_runtime.persistence.all_records()[0].record_hash, "")
         self.assertEqual(package.deterministic_execution.result, EnterpriseCertificationDecision.PASS)
+        self.assertFalse(package.replay_compatibility.historical_evidence_modified)
         self.assertTrue(package.decision_integrity.replay_equivalent)
         self.assertEqual(package.state_integrity.invalid_transitions, ())
+
+    def test_recovery_and_replay_use_immutable_office_evidence_without_mutation(self) -> None:
+        runtime, execution = runtime_and_execution()
+        support = SentinelOfficeIntegritySupport()
+        definition = sentinel_office_responsibility_definition()
+        before_hashes = tuple(record.record_hash for record in runtime.persistence.all_records())
+        deterministic = support.evaluate_deterministic_execution(execution, execution)
+        decision = support.evaluate_decision_integrity(execution, deterministic)
+
+        recovery = support.evaluate_recovery_certification(execution, runtime.persistence, definition, decision)
+        replay = support.evaluate_replay_compatibility(execution, execution, runtime.persistence)
+        after_hashes = tuple(record.record_hash for record in runtime.persistence.all_records())
+
+        self.assertEqual(recovery.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(recovery.restored_lifecycle_state, "DORMANT")
+        self.assertEqual(recovery.missing_recovery_inputs, ())
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.PASS)
+        self.assertFalse(replay.historical_evidence_modified)
+        self.assertEqual(before_hashes, after_hashes)
+
+    def test_configuration_and_error_handling_fail_closed_on_invalid_conditions(self) -> None:
+        runtime, execution = runtime_and_execution()
+        support = SentinelOfficeIntegritySupport()
+        definition = sentinel_office_responsibility_definition()
+
+        invalid_config = support.evaluate_configuration_integrity(
+            execution,
+            definition,
+            configuration_override={
+                "candidate_identity": execution.candidate_identity,
+                "runtime_identity": execution.runtime_identity,
+                "doctrine_version": definition.doctrine_version,
+                "unauthorized_runtime_switch": "unsafe",
+            },
+        )
+        failed_execution = runtime._failed_execution(
+            "SENT-RM003-FAILURE-ROOT",
+            scheduler_with_mission()[1],
+            "OBLIGATION-SENT-RM003-FAILURE",
+            FailureResponse.HALT,
+            "missing_authority_record",
+        )
+        failure_record = support.evaluate_error_handling(failed_execution)
+
+        self.assertEqual(invalid_config.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unauthorized_runtime_switch", invalid_config.unauthorized_configuration_keys)
+        self.assertEqual(failure_record.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(failure_record.terminal_result, "FAIL")
+        self.assertNotEqual(failure_record.failure_evidence, ())
+
+    def test_validation_suite_and_integration_are_independent_office_certification_support(self) -> None:
+        runtime, execution = runtime_and_execution()
+        package = SentinelOfficeIntegritySupport().build_package(execution=execution, repository=runtime.persistence)
+
+        self.assertEqual(package.validation_suite.validation_authority, "Independent Office Certification Authority")
+        self.assertGreaterEqual(len(package.validation_suite.test_results), 16)
+        self.assertEqual(package.validation_suite.failed_tests, ())
+        self.assertIn("recovery_validation", package.constitutional_integration.workflow_stages)
+        self.assertIn("aggregation_manifest", package.constitutional_integration.workflow_stages)
 
     def test_missing_persistence_record_fails_closed_without_fabricating_completion(self) -> None:
         definition = sentinel_office_responsibility_definition()
