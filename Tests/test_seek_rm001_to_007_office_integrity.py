@@ -653,6 +653,70 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(state_machine.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("Dormant->Discovery Execution", state_machine.unauthorized_transitions)
 
+    def test_seek_rm002_certification_support_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_certification_support_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "discovery": "DISCOVERY/1", "configuration": "CONFIG/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        self.assertEqual(package.final_support_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-002-015",
+                "SEEK-RM-002-016",
+                "SEEK-RM-002-017",
+                "SEEK-RM-002-018",
+                "SEEK-RM-002-019",
+                "SEEK-RM-002-020",
+                "SEEK-RM-002-021",
+                "SEEK-RM-002-022",
+            ),
+        )
+        self.assertEqual(package.office_owned_persistent_state.unclassified_state, ())
+        self.assertEqual(package.recovery_checkpoint_architecture.invalid_checkpoints, ())
+        self.assertEqual(package.constitutional_commit_boundaries.missing_boundaries, ())
+        self.assertTrue(package.replay_semantic_equivalence.semantic_equivalence)
+        self.assertEqual(package.constitutional_configuration_object.missing_configuration_fields, ())
+        self.assertEqual(package.constitutional_error_taxonomy.unclassified_errors, ())
+        self.assertEqual(package.certification_traceability_architecture.orphan_findings, ())
+        self.assertTrue(package.certification_evidence_package.supports_independent_pass)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm002_certification_support_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        integrity = support.build_package(mission=mission(), search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+        objects = support.build_constitutional_objects_package(mission=mission(), search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+        doctrine = support.build_constitutional_doctrine_package(mission=mission(), search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidates=(candidate(),))
+        bad_commits = support.evaluate_constitutional_commit_boundaries(
+            ("Discovery Evidence Commit", "Mission Acceptance Commit", "Outbound Commitment Boundary"),
+            integrity,
+            partial_commit_findings=("candidate_package_partial",),
+        )
+        bad_replay = support.evaluate_replay_semantic_equivalence(integrity, objects, doctrine, unacceptable_differences=("Candidate Identity",))
+        bad_config = support.evaluate_constitutional_configuration_object(mission(rule_versions={"objective": "SEEK-RM-006/1"}), search_plan(duplicate_rules=(), freshness_requirements=(), independence_requirements=(), sufficiency_requirements=()))
+        bad_errors = support.evaluate_constitutional_error_taxonomy(("mystery impossible condition",))
+        bad_trace = support.evaluate_certification_traceability_architecture(integrity, objects, doctrine, missing_relationships=("orphan_requirement",))
+        bad_evidence = support.evaluate_certification_evidence_package((bad_commits, bad_replay, bad_errors, bad_trace), omitted_sections=("Certification Evidence",))
+
+        self.assertEqual(bad_commits.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Candidate Package Commit", bad_commits.missing_boundaries)
+        self.assertIn("Discovery Evidence Commit->Mission Acceptance Commit", bad_commits.ordering_violations)
+        self.assertIn("candidate_package_partial", bad_commits.partial_commit_findings)
+        self.assertEqual(bad_replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Candidate Identity", bad_replay.failed_invariants)
+        self.assertEqual(bad_config.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("identity", bad_config.missing_configuration_fields)
+        self.assertEqual(bad_errors.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mystery impossible condition", bad_errors.unclassified_errors)
+        self.assertEqual(bad_trace.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("orphan_requirement", bad_trace.orphan_findings)
+        self.assertEqual(bad_evidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Certification Evidence", bad_evidence.missing_sections)
+        self.assertIn("SeekerConstitutionalCommitBoundaryRecord", bad_evidence.inadmissible_artifacts)
+
 
 if __name__ == "__main__":
     unittest.main()
