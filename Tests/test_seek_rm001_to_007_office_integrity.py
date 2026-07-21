@@ -717,6 +717,104 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("Certification Evidence", bad_evidence.missing_sections)
         self.assertIn("SeekerConstitutionalCommitBoundaryRecord", bad_evidence.inadmissible_artifacts)
 
+    def test_seek_rm003_canonical_evidence_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_rm003_canonical_evidence_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        self.assertEqual(package.final_rm003_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-003-001",
+                "SEEK-RM-003-002",
+                "SEEK-RM-003-003",
+                "SEEK-RM-003-004",
+                "SEEK-RM-003-005",
+                "SEEK-RM-003-006",
+            ),
+        )
+        self.assertEqual(package.search_mission_canonical_object.missing_sections, ())
+        self.assertEqual(package.search_mission_canonical_object.authority_findings, ())
+        self.assertTrue(package.search_mission_canonical_object.lifecycle_state_separated)
+        self.assertEqual(package.search_plan_constitutional_contract.missing_sections, ())
+        self.assertEqual(package.search_plan_constitutional_contract.terminal_outcomes, ("COMPLETED", "INSUFFICIENT", "EXHAUSTED", "FAILED", "CANCELLED"))
+        self.assertEqual(package.candidate_package_constitution.candidate_subject_count, 1)
+        self.assertEqual(package.candidate_package_constitution.package_invariant_violations, ())
+        self.assertEqual(package.candidate_identity_doctrine.missing_identity_fields, ())
+        self.assertTrue(package.candidate_identity_doctrine.replay_stable)
+        self.assertEqual(package.candidate_lifecycle_doctrine.terminal_state, "ACCEPTED")
+        self.assertEqual(package.candidate_lifecycle_doctrine.invalid_transitions, ())
+        self.assertEqual(package.search_mission_lifecycle_doctrine.terminal_state, "TERMINATED")
+        self.assertTrue(package.search_mission_lifecycle_doctrine.authority_relinquished)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm003_canonical_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        bad_mission = mission(
+            constitutional_authority="Testing Utility",
+            search_plan_id="SEARCH-PLAN-OTHER",
+            discovery_scope=("candidate_discovery", "portfolio_selection"),
+            rule_versions={"objective": "SEEK-RM-006/1"},
+        )
+        bad_plan = search_plan(
+            approval_status="DRAFT",
+            approved_sources=(),
+            approved_methods=(),
+            sufficiency_requirements=(),
+            termination_conditions=(),
+            execution_limits={},
+        )
+        bad_candidate = candidate(candidate_reference="", attributes={"ticker": "ARG|AMBIGUOUS", "exchange": "NYSE"})
+        integrity = support.build_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+        objects = support.build_constitutional_objects_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        mission_record = support.evaluate_rm003_search_mission_canonical_object(bad_mission, bad_plan, integrity, objects)
+        plan_record = support.evaluate_rm003_search_plan_constitutional_contract(bad_mission, bad_plan, (), integrity, objects)
+        package_record = support.evaluate_rm003_candidate_package_constitution(
+            bad_mission,
+            bad_plan,
+            (bad_candidate, candidate(candidate_reference="CAND-002")),
+            (),
+            integrity,
+            objects,
+        )
+        identity_record = support.evaluate_rm003_candidate_identity_doctrine(bad_candidate, search_plan(), (discovery_evidence(),), None, objects)
+        candidate_lifecycle = support.evaluate_rm003_candidate_lifecycle_doctrine(("DISCOVERED", "IDENTIFIED", "ACCEPTED"))
+        mission_lifecycle = support.evaluate_rm003_search_mission_lifecycle_doctrine(("AUTHORIZED", "DISCOVERY", "TERMINATED"))
+
+        self.assertEqual(mission_record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unauthorized_issuer:Testing Utility", mission_record.authority_findings)
+        self.assertIn("portfolio_selection", mission_record.boundary_findings)
+        self.assertEqual(plan_record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mission_plan_reference_mismatch", plan_record.plan_authority_findings)
+        self.assertIn("unbounded_execution", plan_record.execution_bounds_findings)
+        self.assertEqual(package_record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("single_candidate_invariant", package_record.package_invariant_violations)
+        self.assertIn("Evidence Manifest", package_record.missing_sections)
+        self.assertEqual(identity_record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("candidate_identifier", identity_record.missing_identity_fields)
+        self.assertIn("ticker", identity_record.collision_findings)
+        self.assertEqual(candidate_lifecycle.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("DISCOVERED->IDENTIFIED", candidate_lifecycle.invalid_transitions)
+        self.assertIn("ACQUIRED", candidate_lifecycle.skipped_states)
+        self.assertEqual(mission_lifecycle.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("AUTHORIZED->DISCOVERY", mission_lifecycle.invalid_transitions)
+        self.assertIn("INITIALIZED", mission_lifecycle.skipped_states)
+
 
 if __name__ == "__main__":
     unittest.main()
