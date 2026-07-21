@@ -1064,6 +1064,122 @@ class SeekerRm003CanonicalEvidencePackage:
 
 
 @dataclass(frozen=True)
+class SeekerRm003SearchSufficiencyDoctrineRecord:
+    sufficiency_identifier: str
+    sufficiency_profile: str
+    required_metrics: tuple[str, ...]
+    missing_metrics: tuple[str, ...]
+    metric_results: Mapping[str, str]
+    disposition: str
+    terminal_distinctions: tuple[str, ...]
+    premature_completion_findings: tuple[str, ...]
+    replay_equivalent: bool
+    recovery_equivalent: bool
+    audit_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CandidateEquivalenceDoctrineRecord:
+    equivalence_identifier: str
+    rule_version: str
+    evaluated_candidates: tuple[str, ...]
+    equivalence_classes: Mapping[str, tuple[str, ...]]
+    duplicate_dispositions: Mapping[str, str]
+    unresolved_comparisons: tuple[str, ...]
+    representative_selection: Mapping[str, str]
+    evidence_preserved: bool
+    order_independent: bool
+    replay_equivalent: bool
+    recovery_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CandidateFreshnessDoctrineRecord:
+    freshness_identifier: str
+    freshness_window_registry: Mapping[str, str]
+    evaluated_timestamp_basis: str
+    freshness_status: str
+    stale_or_expired_dependencies: tuple[str, ...]
+    temporal_ambiguity_findings: tuple[str, ...]
+    delivery_eligible: bool
+    historical_replay_mode_separated: bool
+    recovery_reevaluation_required: bool
+    audit_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CandidateIndependenceDoctrineRecord:
+    independence_identifier: str
+    independence_profile: str
+    evaluation_stages: tuple[str, ...]
+    dependency_findings: tuple[str, ...]
+    circularity_findings: tuple[str, ...]
+    corroboration_findings: tuple[str, ...]
+    independence_status: str
+    evidence_origin_verified: bool
+    replay_equivalent: bool
+    recovery_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CandidateRejectionTaxonomyDoctrineRecord:
+    taxonomy_identifier: str
+    taxonomy_version: str
+    allowed_categories: tuple[str, ...]
+    primary_rejection_category: str
+    supplemental_rejection_findings: tuple[str, ...]
+    unsupported_rejection_findings: tuple[str, ...]
+    rejection_record_identifier: str
+    rejected_candidate_preserved: bool
+    replay_preserves_rejection: bool
+    recovery_preserves_rejection: bool
+    audit_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003DiscoveryEvidenceConstitutionRecord:
+    evidence_constitution_identifier: str
+    schema_version: str
+    required_fields: tuple[str, ...]
+    missing_fields: tuple[str, ...]
+    inadmissible_evidence: tuple[str, ...]
+    prohibited_semantic_findings: tuple[str, ...]
+    evidence_hashes: tuple[str, ...]
+    provenance_chains: Mapping[str, tuple[str, ...]]
+    normalization_replayable: bool
+    preservation_immutable: bool
+    audit_reconstructable: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003DoctrineEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    search_sufficiency_doctrine: SeekerRm003SearchSufficiencyDoctrineRecord
+    candidate_equivalence_doctrine: SeekerRm003CandidateEquivalenceDoctrineRecord
+    candidate_freshness_doctrine: SeekerRm003CandidateFreshnessDoctrineRecord
+    candidate_independence_doctrine: SeekerRm003CandidateIndependenceDoctrineRecord
+    candidate_rejection_taxonomy: SeekerRm003CandidateRejectionTaxonomyDoctrineRecord
+    discovery_evidence_constitution: SeekerRm003DiscoveryEvidenceConstitutionRecord
+    final_rm003_doctrine_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -1143,6 +1259,15 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-003-004",
         "SEEK-RM-003-005",
         "SEEK-RM-003-006",
+    )
+
+    rm003_doctrine_order_coverage = (
+        "SEEK-RM-003-007",
+        "SEEK-RM-003-008",
+        "SEEK-RM-003-009",
+        "SEEK-RM-003-010",
+        "SEEK-RM-003-011",
+        "SEEK-RM-003-012",
     )
 
     remediation_order_coverage = (
@@ -4351,6 +4476,404 @@ class SeekerOfficeIntegritySupport:
             audit_events=audit_events,
             replay_reconstructs_sequence=not invalid,
             recovery_checkpoint_valid=not invalid and bool(observed_state_sequence),
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_rm003_doctrine_evidence_package(
+        self,
+        *,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+    ) -> SeekerRm003DoctrineEvidencePackage:
+        primary_candidate = candidates[0] if candidates else SeekerCandidateIdentityInput("", "", (), MappingProxyType({}))
+        integrity = self.build_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=primary_candidate)
+        doctrine = self.build_constitutional_doctrine_package(
+            mission=mission,
+            search_plan=search_plan,
+            discovery_evidence=discovery_evidence,
+            candidates=candidates,
+        )
+        sufficiency = self.evaluate_rm003_search_sufficiency_doctrine(mission, search_plan, discovery_evidence, candidates, integrity, doctrine)
+        equivalence = self.evaluate_rm003_candidate_equivalence_doctrine(search_plan, candidates, discovery_evidence, doctrine)
+        freshness = self.evaluate_rm003_candidate_freshness_doctrine(mission, primary_candidate, discovery_evidence, integrity, doctrine)
+        independence = self.evaluate_rm003_candidate_independence_doctrine(search_plan, primary_candidate, discovery_evidence, integrity, doctrine)
+        rejection = self.evaluate_rm003_candidate_rejection_taxonomy(primary_candidate, (freshness, independence, equivalence), doctrine)
+        evidence = self.evaluate_rm003_discovery_evidence_constitution(mission, search_plan, discovery_evidence, primary_candidate, integrity, doctrine)
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (sufficiency, equivalence, freshness, independence, rejection, evidence)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = SeekerRm003DoctrineEvidencePackage(
+            package_identifier=f"SEEK-RM-003-DOCTRINE-{_digest((mission.mission_id, search_plan.search_plan_id, tuple(c.candidate_reference for c in candidates)))[:12].upper()}",
+            governing_doctrine="SEEK-RM-003-007-TO-012/1.0.0",
+            remediation_order_coverage=self.rm003_doctrine_order_coverage,
+            search_sufficiency_doctrine=sufficiency,
+            candidate_equivalence_doctrine=equivalence,
+            candidate_freshness_doctrine=freshness,
+            candidate_independence_doctrine=independence,
+            candidate_rejection_taxonomy=rejection,
+            discovery_evidence_constitution=evidence,
+            final_rm003_doctrine_readiness=final,
+            immutable_audit_references=(
+                sufficiency.sufficiency_identifier,
+                equivalence.equivalence_identifier,
+                freshness.freshness_identifier,
+                independence.independence_identifier,
+                rejection.taxonomy_identifier,
+                evidence.evidence_constitution_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_rm003_search_sufficiency_doctrine(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+        integrity_package: SeekerOfficeIntegrityEvidencePackage | None = None,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+    ) -> SeekerRm003SearchSufficiencyDoctrineRecord:
+        required = (
+            "explicit_sufficiency_requirement",
+            "approved_profile",
+            "source_completion_ratio",
+            "evidence_completion_ratio",
+            "candidate_freshness_ratio",
+            "candidate_independence_ratio",
+            "unique_admitted_candidate_count",
+            "audit_completion",
+            "replay_equivalence",
+            "recovery_equivalence",
+        )
+        processed_sources = tuple(dict.fromkeys(evidence.source_id for evidence in discovery_evidence))
+        missing = []
+        if not search_plan.sufficiency_requirements:
+            missing.append("explicit_sufficiency_requirement")
+        if not search_plan.approved_sources:
+            missing.append("approved_profile")
+        if any(source not in processed_sources for source in search_plan.approved_sources):
+            missing.append("source_completion_ratio")
+        if not discovery_evidence or any(not evidence.evidence_id or not evidence.evidence_hash for evidence in discovery_evidence):
+            missing.append("evidence_completion_ratio")
+        if integrity_package and integrity_package.freshness_determination.result != EnterpriseCertificationDecision.PASS:
+            missing.append("candidate_freshness_ratio")
+        if integrity_package and integrity_package.relationship_independence.result != EnterpriseCertificationDecision.PASS:
+            missing.append("candidate_independence_ratio")
+        if not candidates or (integrity_package and integrity_package.candidate_package_contract.result != EnterpriseCertificationDecision.PASS):
+            missing.append("unique_admitted_candidate_count")
+        if not integrity_package or integrity_package.complete_audit_trail.result != EnterpriseCertificationDecision.PASS:
+            missing.append("audit_completion")
+        metrics = MappingProxyType(
+            {
+                "source_completion_ratio": "1.0" if "source_completion_ratio" not in missing else "incomplete",
+                "evidence_completion_ratio": "1.0" if "evidence_completion_ratio" not in missing else "incomplete",
+                "candidate_freshness_ratio": "1.0" if "candidate_freshness_ratio" not in missing else "failed",
+                "candidate_independence_ratio": "1.0" if "candidate_independence_ratio" not in missing else "failed",
+                "unique_admitted_candidate_count": str(len({candidate.candidate_reference for candidate in candidates if candidate.candidate_reference})),
+                "audit_completion": "complete" if "audit_completion" not in missing else "incomplete",
+            }
+        )
+        premature = ()
+        if candidates and not search_plan.sufficiency_requirements:
+            premature = ("candidate_found_without_profile",)
+        disposition = "SUFFICIENT" if not missing and not premature else "EVALUATION_INDETERMINATE"
+        record = SeekerRm003SearchSufficiencyDoctrineRecord(
+            sufficiency_identifier=f"SEEK-RM-003-007-SUFFICIENCY-{_digest((mission.mission_id, metrics, tuple(missing), premature))[:12].upper()}",
+            sufficiency_profile="fixed_quantity_with_mandatory_source_completion",
+            required_metrics=required,
+            missing_metrics=tuple(dict.fromkeys(missing)),
+            metric_results=metrics,
+            disposition=disposition,
+            terminal_distinctions=("SUFFICIENT", "INSUFFICIENT", "EXHAUSTED", "RESOURCE_TERMINATED", "CANCELLED", "EXPIRED", "CONSTITUTIONAL_FAILURE"),
+            premature_completion_findings=premature,
+            replay_equivalent=bool(integrity_package and integrity_package.deterministic_replay.result == EnterpriseCertificationDecision.PASS),
+            recovery_equivalent=bool(integrity_package and integrity_package.persistence_atomic_recovery.result == EnterpriseCertificationDecision.PASS),
+            audit_references=(integrity_package.complete_audit_trail.audit_identifier,) if integrity_package else (),
+            result=EnterpriseCertificationDecision.PASS if disposition == "SUFFICIENT" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_candidate_equivalence_doctrine(
+        self,
+        search_plan: SeekerApprovedSearchPlan,
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+    ) -> SeekerRm003CandidateEquivalenceDoctrineRecord:
+        keys: dict[str, tuple[str, ...]] = {}
+        unresolved: list[str] = []
+        for candidate in candidates:
+            components = tuple(_normalize_value(candidate.attributes.get(field, "")) for field in search_plan.identity_requirements)
+            if not candidate.candidate_reference or any(not component for component in components):
+                unresolved.append(candidate.candidate_reference or "missing_candidate_reference")
+                continue
+            keys.setdefault(_digest((candidate.candidate_type, components))[:16].upper(), tuple())
+            keys[_digest((candidate.candidate_type, components))[:16].upper()] = keys[_digest((candidate.candidate_type, components))[:16].upper()] + (candidate.candidate_reference,)
+        duplicate_dispositions = {
+            member: "DUPLICATE_SUPPRESSED_COUNTING_AND_DELIVERY"
+            for members in keys.values()
+            if len(members) > 1
+            for member in members[1:]
+        }
+        representatives = MappingProxyType({key: tuple(sorted(members))[0] for key, members in keys.items() if members})
+        evidence_preserved = bool(discovery_evidence) and all(evidence.evidence_hash for evidence in discovery_evidence)
+        order_independent = tuple(keys) == tuple(sorted(keys))
+        base_pass = True if not doctrine_package else doctrine_package.candidate_equivalence_duplicate_doctrine.result == EnterpriseCertificationDecision.PASS
+        passed = base_pass and not unresolved and evidence_preserved and order_independent
+        record = SeekerRm003CandidateEquivalenceDoctrineRecord(
+            equivalence_identifier=f"SEEK-RM-003-008-EQUIVALENCE-{_digest((keys, unresolved, duplicate_dispositions))[:12].upper()}",
+            rule_version="SEEK-RM-003-008-EQUIVALENCE/1",
+            evaluated_candidates=tuple(candidate.candidate_reference for candidate in candidates),
+            equivalence_classes=MappingProxyType(keys),
+            duplicate_dispositions=MappingProxyType(duplicate_dispositions),
+            unresolved_comparisons=tuple(unresolved),
+            representative_selection=representatives,
+            evidence_preserved=evidence_preserved,
+            order_independent=order_independent,
+            replay_equivalent=True,
+            recovery_equivalent=True,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_candidate_freshness_doctrine(
+        self,
+        mission: SeekerSearchMission,
+        candidate: SeekerCandidateIdentityInput,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        integrity_package: SeekerOfficeIntegrityEvidencePackage | None = None,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+    ) -> SeekerRm003CandidateFreshnessDoctrineRecord:
+        freshness = integrity_package.freshness_determination if integrity_package else self.evaluate_freshness_determination(mission, SeekerApprovedSearchPlan("", "", "", "", "", (), (), (), (), (), (), (), (), (), (), (), {}), candidate, discovery_evidence)
+        registry = MappingProxyType(
+            {
+                "rule_identity": freshness.freshness_rule_version,
+                "candidate_class": candidate.candidate_type,
+                "reference_timestamp_type": freshness.timestamp_basis,
+                "maximum_age_days": str(freshness.freshness_window_days),
+                "expiration_action": "delivery_prohibited",
+                "replay_semantics": "historical_time_separate_from_current_admissibility",
+                "recovery_semantics": "reevaluate_before_continuation",
+            }
+        )
+        ambiguity = ()
+        if freshness.result != EnterpriseCertificationDecision.PASS and freshness.rejection_reason in {"invalid_timestamp", "missing_supporting_evidence"}:
+            ambiguity = (freshness.rejection_reason,)
+        stale = () if freshness.freshness_decision == "FRESH" else (freshness.rejection_reason or freshness.freshness_decision,)
+        delivery = freshness.freshness_decision == "FRESH" and not ambiguity
+        record = SeekerRm003CandidateFreshnessDoctrineRecord(
+            freshness_identifier=f"SEEK-RM-003-009-FRESHNESS-{_digest((candidate.candidate_reference, registry, freshness.freshness_decision))[:12].upper()}",
+            freshness_window_registry=registry,
+            evaluated_timestamp_basis=freshness.timestamp_basis,
+            freshness_status=freshness.freshness_decision,
+            stale_or_expired_dependencies=stale,
+            temporal_ambiguity_findings=ambiguity,
+            delivery_eligible=delivery,
+            historical_replay_mode_separated=True,
+            recovery_reevaluation_required=True,
+            audit_references=(freshness.freshness_identifier,),
+            result=EnterpriseCertificationDecision.PASS if delivery else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_candidate_independence_doctrine(
+        self,
+        search_plan: SeekerApprovedSearchPlan,
+        candidate: SeekerCandidateIdentityInput,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        integrity_package: SeekerOfficeIntegrityEvidencePackage | None = None,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+    ) -> SeekerRm003CandidateIndependenceDoctrineRecord:
+        relationship = integrity_package.relationship_independence if integrity_package else self.evaluate_relationship_independence(search_plan, (candidate,), discovery_evidence)
+        stages = (
+            "Identity verification",
+            "Evidence validation",
+            "Provenance validation",
+            "Source relationship analysis",
+            "Dependency analysis",
+            "Circular-reference detection",
+            "Corroboration evaluation",
+            "Independence determination",
+            "Audit recording",
+        )
+        dependencies = tuple(finding for finding in relationship.duplicate_economic_representations + relationship.unsupported_relationships)
+        circularity = tuple(ref for ref in candidate.evidence_references if ref == candidate.candidate_reference)
+        corroboration = ()
+        if search_plan.independence_requirements and not discovery_evidence:
+            corroboration = ("missing_constitutional_discovery_evidence",)
+        if relationship.result != EnterpriseCertificationDecision.PASS:
+            corroboration = tuple(dict.fromkeys(corroboration + ("independence_validation_failed",)))
+        status = "INDEPENDENT" if not dependencies and not circularity and not corroboration else "INADMISSIBLE"
+        record = SeekerRm003CandidateIndependenceDoctrineRecord(
+            independence_identifier=f"SEEK-RM-003-010-INDEPENDENCE-{_digest((candidate.candidate_reference, dependencies, circularity, corroboration))[:12].upper()}",
+            independence_profile="official_source_evidence_independence",
+            evaluation_stages=stages,
+            dependency_findings=dependencies,
+            circularity_findings=circularity,
+            corroboration_findings=corroboration,
+            independence_status=status,
+            evidence_origin_verified=bool(discovery_evidence) and all(evidence.source_id in search_plan.approved_sources for evidence in discovery_evidence),
+            replay_equivalent=True,
+            recovery_equivalent=True,
+            result=EnterpriseCertificationDecision.PASS if status == "INDEPENDENT" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_candidate_rejection_taxonomy(
+        self,
+        candidate: SeekerCandidateIdentityInput,
+        support_records: tuple[Any, ...],
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+        unsupported_categories: tuple[str, ...] = (),
+    ) -> SeekerRm003CandidateRejectionTaxonomyDoctrineRecord:
+        allowed = (
+            "Identity",
+            "Structural",
+            "Provenance",
+            "Source",
+            "Validation",
+            "Freshness",
+            "Duplicate",
+            "Independence",
+            "Search Scope",
+            "Evidence Sufficiency",
+            "Policy",
+            "Constitutional Integrity",
+            "Internal Processing",
+        )
+        failures = tuple(record for record in support_records if getattr(record, "result", EnterpriseCertificationDecision.PASS) != EnterpriseCertificationDecision.PASS)
+        primary = ""
+        supplemental: list[str] = []
+        for record in failures:
+            name = type(record).__name__.lower()
+            category = "Constitutional Integrity"
+            if "freshness" in name:
+                category = "Freshness"
+            elif "equivalence" in name:
+                category = "Duplicate"
+            elif "independence" in name:
+                category = "Independence"
+            elif "evidence" in name or "sufficiency" in name:
+                category = "Evidence Sufficiency"
+            if not primary:
+                primary = category
+            else:
+                supplemental.append(category)
+        if doctrine_package and doctrine_package.candidate_rejection_taxonomy.final_disposition == "REJECTED" and not primary:
+            primary = doctrine_package.candidate_rejection_taxonomy.primary_rejection_code.split("_", 1)[0].title()
+        unsupported = tuple(category for category in unsupported_categories if category not in allowed)
+        rejected = bool(primary)
+        record = SeekerRm003CandidateRejectionTaxonomyDoctrineRecord(
+            taxonomy_identifier=f"SEEK-RM-003-011-REJECTION-{_digest((candidate.candidate_reference, primary, tuple(supplemental), unsupported))[:12].upper()}",
+            taxonomy_version="SEEK-RM-003-011-REJECTION/1",
+            allowed_categories=allowed,
+            primary_rejection_category=primary or "NONE",
+            supplemental_rejection_findings=tuple(supplemental),
+            unsupported_rejection_findings=unsupported,
+            rejection_record_identifier=f"REJECTION-{_digest((candidate.candidate_reference, primary))[:12].upper()}" if rejected else "",
+            rejected_candidate_preserved=True,
+            replay_preserves_rejection=True,
+            recovery_preserves_rejection=True,
+            audit_references=tuple(getattr(record, "deterministic_digest", "") for record in failures),
+            result=EnterpriseCertificationDecision.FAIL if unsupported else EnterpriseCertificationDecision.PASS,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_discovery_evidence_constitution(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidate: SeekerCandidateIdentityInput,
+        integrity_package: SeekerOfficeIntegrityEvidencePackage | None = None,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+    ) -> SeekerRm003DiscoveryEvidenceConstitutionRecord:
+        required = (
+            "EvidenceID",
+            "SearchMissionID",
+            "SearchPlanID",
+            "AcquisitionTimestamp",
+            "ObservationTimestamp",
+            "SourceIdentifier",
+            "SourceClassification",
+            "SourceLocation",
+            "AcquisitionMethod",
+            "RetrievalContext",
+            "RawEvidence",
+            "NormalizedEvidence",
+            "NormalizationVersion",
+            "EvidenceHash",
+            "ProvenanceChain",
+            "CandidateReferences",
+            "ConfigurationVersion",
+            "ValidationStatus",
+            "IntegrityStatus",
+            "EvidenceClassification",
+            "PreservationStatus",
+            "AuditReference",
+        )
+        missing: list[str] = []
+        inadmissible: list[str] = []
+        prohibited_terms = ("prediction", "recommendation", "analysis", "risk_assessment", "trade_authorization", "score", "ranking")
+        prohibited: list[str] = []
+        chains: dict[str, tuple[str, ...]] = {}
+        for evidence in discovery_evidence:
+            if not evidence.evidence_id:
+                missing.append("EvidenceID")
+            if not mission.mission_id:
+                missing.append("SearchMissionID")
+            if not search_plan.search_plan_id:
+                missing.append("SearchPlanID")
+            if not evidence.retrieved_at:
+                missing.append("AcquisitionTimestamp")
+            if not evidence.source_timestamp:
+                missing.append("ObservationTimestamp")
+            if not evidence.source_id:
+                missing.append("SourceIdentifier")
+            if not evidence.acquisition_method:
+                missing.append("AcquisitionMethod")
+            if not evidence.payload:
+                missing.append("RawEvidence")
+            if not evidence.evidence_hash:
+                missing.append("EvidenceHash")
+            if evidence.source_id not in search_plan.approved_sources:
+                inadmissible.append(f"{evidence.evidence_id}:source_not_approved")
+            if evidence.acquisition_method not in search_plan.approved_methods:
+                inadmissible.append(f"{evidence.evidence_id}:method_not_approved")
+            for key, value in evidence.payload.items():
+                lowered = f"{key} {value}".lower()
+                if any(term in lowered for term in prohibited_terms):
+                    prohibited.append(f"{evidence.evidence_id}:{key}")
+            chains[evidence.evidence_id] = (mission.mission_id, search_plan.search_plan_id, evidence.source_id, candidate.candidate_reference)
+        if not discovery_evidence:
+            missing.extend(required)
+        unique_missing = tuple(dict.fromkeys(missing))
+        hashes = tuple(evidence.evidence_hash for evidence in discovery_evidence)
+        base_pass = True if not integrity_package else integrity_package.discovery_evidence_preservation.result == EnterpriseCertificationDecision.PASS
+        passed = base_pass and not unique_missing and not inadmissible and not prohibited and bool(hashes)
+        record = SeekerRm003DiscoveryEvidenceConstitutionRecord(
+            evidence_constitution_identifier=f"SEEK-RM-003-012-EVIDENCE-{_digest((tuple(e.evidence_id for e in discovery_evidence), unique_missing, inadmissible, prohibited))[:12].upper()}",
+            schema_version="SEEK-RM-003-012-DISCOVERY-EVIDENCE/1",
+            required_fields=required,
+            missing_fields=unique_missing,
+            inadmissible_evidence=tuple(inadmissible),
+            prohibited_semantic_findings=tuple(prohibited),
+            evidence_hashes=hashes,
+            provenance_chains=MappingProxyType(chains),
+            normalization_replayable=True,
+            preservation_immutable=bool(hashes),
+            audit_reconstructable=bool(chains),
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )

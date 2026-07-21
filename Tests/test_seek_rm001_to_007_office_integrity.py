@@ -815,6 +815,99 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("AUTHORIZED->DISCOVERY", mission_lifecycle.invalid_transitions)
         self.assertIn("INITIALIZED", mission_lifecycle.skipped_states)
 
+    def test_seek_rm003_doctrine_evidence_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_rm003_doctrine_evidence_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidates=(candidate(),),
+        )
+
+        self.assertEqual(package.final_rm003_doctrine_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-003-007",
+                "SEEK-RM-003-008",
+                "SEEK-RM-003-009",
+                "SEEK-RM-003-010",
+                "SEEK-RM-003-011",
+                "SEEK-RM-003-012",
+            ),
+        )
+        self.assertEqual(package.search_sufficiency_doctrine.disposition, "SUFFICIENT")
+        self.assertEqual(package.search_sufficiency_doctrine.missing_metrics, ())
+        self.assertTrue(package.candidate_equivalence_doctrine.order_independent)
+        self.assertEqual(package.candidate_equivalence_doctrine.unresolved_comparisons, ())
+        self.assertEqual(package.candidate_freshness_doctrine.freshness_status, "FRESH")
+        self.assertTrue(package.candidate_freshness_doctrine.delivery_eligible)
+        self.assertEqual(package.candidate_independence_doctrine.independence_status, "INDEPENDENT")
+        self.assertEqual(package.candidate_rejection_taxonomy.unsupported_rejection_findings, ())
+        self.assertEqual(package.discovery_evidence_constitution.inadmissible_evidence, ())
+        self.assertEqual(package.discovery_evidence_constitution.prohibited_semantic_findings, ())
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm003_doctrine_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        bad_plan = search_plan(
+            approved_sources=("SEC-EDGAR", "NASDAQ"),
+            sufficiency_requirements=(),
+            termination_conditions=(),
+        )
+        stale_evidence = discovery_evidence(
+            evidence_id="DISC-EVID-STALE",
+            retrieved_at="2026-07-21T10:01:00Z",
+            source_timestamp="2026-01-01T09:55:00Z",
+            payload={
+                "ticker": "ARG",
+                "exchange": "NYSE",
+                "security_identifier": "000000001",
+                "analysis": "do not admit",
+            },
+        )
+        unauthorized_evidence = discovery_evidence(
+            evidence_id="DISC-EVID-BAD",
+            source_id="UNAPPROVED-SOURCE",
+            acquisition_method="manual_guess",
+        )
+        bad_candidate = candidate(candidate_reference="", evidence_references=("DISC-EVID-STALE",))
+        duplicate_candidate = candidate(candidate_reference="CAND-002")
+        integrity = support.build_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+        doctrine = support.build_constitutional_doctrine_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidates=(candidate(),),
+        )
+
+        sufficiency = support.evaluate_rm003_search_sufficiency_doctrine(mission(), bad_plan, (stale_evidence,), (bad_candidate,), integrity, doctrine)
+        equivalence = support.evaluate_rm003_candidate_equivalence_doctrine(search_plan(), (bad_candidate, duplicate_candidate), (stale_evidence,), doctrine)
+        freshness = support.evaluate_rm003_candidate_freshness_doctrine(mission(), bad_candidate, (stale_evidence,), None, doctrine)
+        independence = support.evaluate_rm003_candidate_independence_doctrine(search_plan(), bad_candidate, (), None, doctrine)
+        rejection = support.evaluate_rm003_candidate_rejection_taxonomy(bad_candidate, (freshness, independence), doctrine, unsupported_categories=("Operator Preference",))
+        evidence = support.evaluate_rm003_discovery_evidence_constitution(mission(), search_plan(), (unauthorized_evidence, stale_evidence), bad_candidate, None, doctrine)
+
+        self.assertEqual(sufficiency.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("explicit_sufficiency_requirement", sufficiency.missing_metrics)
+        self.assertEqual(sufficiency.disposition, "EVALUATION_INDETERMINATE")
+        self.assertEqual(equivalence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("missing_candidate_reference", equivalence.unresolved_comparisons)
+        self.assertEqual(freshness.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("outside_freshness_window", freshness.stale_or_expired_dependencies)
+        self.assertFalse(freshness.delivery_eligible)
+        self.assertEqual(independence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("missing_constitutional_discovery_evidence", independence.corroboration_findings)
+        self.assertEqual(rejection.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Operator Preference", rejection.unsupported_rejection_findings)
+        self.assertEqual(evidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("DISC-EVID-BAD:source_not_approved", evidence.inadmissible_evidence)
+        self.assertIn("DISC-EVID-STALE:analysis", evidence.prohibited_semantic_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
