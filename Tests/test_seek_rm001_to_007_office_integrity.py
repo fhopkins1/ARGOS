@@ -579,6 +579,80 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(sufficiency_metrics.result, EnterpriseCertificationDecision.FAIL)
         self.assertEqual(sufficiency_metrics.sufficiency_outcome, "INSUFFICIENT")
 
+    def test_seek_rm002_doctrine_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_constitutional_doctrine_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidates=(candidate(),),
+        )
+
+        self.assertEqual(package.final_doctrine_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-002-008",
+                "SEEK-RM-002-009",
+                "SEEK-RM-002-010",
+                "SEEK-RM-002-011",
+                "SEEK-RM-002-012",
+                "SEEK-RM-002-013",
+                "SEEK-RM-002-014",
+            ),
+        )
+        self.assertEqual(package.candidate_equivalence_duplicate_doctrine.indeterminate_identity_findings, ())
+        self.assertEqual(package.candidate_freshness_policy.freshness_state, "Fresh")
+        self.assertEqual(package.candidate_independence_doctrine.independence_decision, "Independent")
+        self.assertEqual(package.candidate_rejection_taxonomy.final_disposition, "ADMITTED")
+        self.assertEqual(package.discovery_evidence_schema.inadmissible_evidence, ())
+        self.assertEqual(package.discovery_provenance_architecture.missing_chain_stages, ())
+        self.assertEqual(package.constitutional_state_machine.unauthorized_transitions, ())
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm002_doctrine_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        duplicate_candidate = candidate(candidate_reference="CAND-002")
+        candidates = (candidate(), duplicate_candidate)
+        stale_evidence = discovery_evidence(
+            evidence_id="DISC-EVID-STALE",
+            retrieved_at="2026-07-21T10:01:00Z",
+            source_timestamp="2026-01-01T09:55:00Z",
+        )
+        unauthorized_evidence = discovery_evidence(
+            evidence_id="DISC-EVID-BAD",
+            source_id="UNAPPROVED-SOURCE",
+            acquisition_method="manual_guess",
+        )
+        plan = search_plan(approved_sources=("SEC-EDGAR", "NASDAQ"))
+        duplicates = support.evaluate_duplicate_suppression(search_plan(), candidates, (discovery_evidence(),))
+        equivalence = support.evaluate_candidate_equivalence_duplicate_doctrine(search_plan(), candidates, (discovery_evidence(),), duplicates)
+        freshness = support.evaluate_freshness_determination(mission(), search_plan(), candidate(evidence_references=("DISC-EVID-STALE",)), (stale_evidence,))
+        freshness_policy = support.evaluate_candidate_freshness_policy(mission(), candidate(evidence_references=("DISC-EVID-STALE",)), (stale_evidence,), freshness)
+        independence = support.evaluate_relationship_independence(search_plan(), (candidate(),), ())
+        independence_doctrine = support.evaluate_candidate_independence_doctrine(search_plan(), candidate(), (), independence)
+        identity = support.evaluate_candidate_identity(candidate(attributes={"ticker": "ARG|AMBIGUOUS", "exchange": "NYSE"}), search_plan(), (discovery_evidence(),))
+        rejection = support.evaluate_candidate_rejection_taxonomy(mission(), candidate(attributes={"ticker": "ARG|AMBIGUOUS", "exchange": "NYSE"}), (identity,))
+        evidence_schema = support.evaluate_discovery_evidence_constitutional_schema(mission(), plan, (unauthorized_evidence,), candidate(evidence_references=("DISC-EVID-BAD",)))
+        package_contract = support.evaluate_candidate_package_contract(mission(), plan, (candidate(),), (unauthorized_evidence,), (identity,))
+        provenance = support.evaluate_discovery_provenance_architecture(mission(), plan, (unauthorized_evidence,), candidate(evidence_references=("DISC-EVID-BAD",)), package_contract)
+        state_machine = support.evaluate_constitutional_state_machine_doctrine(("Dormant", "Discovery Execution", "Completed"))
+
+        self.assertEqual(equivalence.result, EnterpriseCertificationDecision.PASS)
+        self.assertIn("CAND-002", duplicates.suppressed_duplicates)
+        self.assertEqual(freshness_policy.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(freshness_policy.freshness_state, "Expired")
+        self.assertEqual(independence_doctrine.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("comparison_evidence", independence_doctrine.missing_requirements)
+        self.assertEqual(rejection.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(rejection.final_disposition, "REJECTED")
+        self.assertEqual(rejection.primary_rejection_code, "IDENTITY_AMBIGUOUS")
+        self.assertEqual(evidence_schema.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("DISC-EVID-BAD:source_not_approved", evidence_schema.inadmissible_evidence)
+        self.assertEqual(provenance.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Outbound Commitment", provenance.missing_chain_stages)
+        self.assertEqual(state_machine.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Dormant->Discovery Execution", state_machine.unauthorized_transitions)
+
 
 if __name__ == "__main__":
     unittest.main()
