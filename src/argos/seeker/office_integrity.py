@@ -312,6 +312,105 @@ class SeekerSearchSufficiencyRecord:
 
 
 @dataclass(frozen=True)
+class SeekerUnsupportedCandidateEliminationRecord:
+    elimination_identifier: str
+    candidate_reference: str
+    support_requirements: tuple[str, ...]
+    failed_support_requirements: tuple[str, ...]
+    rejection_reason: str
+    rejection_evidence_references: tuple[str, ...]
+    package_inclusion_permitted: bool
+    replay_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerDispositionHandlingRecord:
+    disposition_identifier: str
+    candidate_reference: str
+    disposition_rule_version: str
+    disposition: str
+    reason_code: str
+    evidence_references: tuple[str, ...]
+    silent_disposition_detected: bool
+    package_protected: bool
+    quarantine_isolated: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerStateIdempotencyRecord:
+    state_identifier: str
+    owned_state: tuple[str, ...]
+    mutation_sequence: tuple[str, ...]
+    duplicate_execution_detected: bool
+    duplicate_outcomes: tuple[str, ...]
+    residual_active_state: tuple[str, ...]
+    idempotency_decision: str
+    final_state: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerCandidatePackageContractRecord:
+    package_contract_identifier: str
+    package_identifier: str
+    contract_version: str
+    outcome_type: str
+    mandatory_sections: tuple[str, ...]
+    missing_sections: tuple[str, ...]
+    prohibited_content_findings: tuple[str, ...]
+    candidate_evidence_traceability: bool
+    rejection_accounting_complete: bool
+    package_integrity_digest: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerBoundaryCommitmentRecord:
+    commitment_identifier: str
+    package_identifier: str
+    commitment_decision: str
+    eligibility_failures: tuple[str, ...]
+    atomic_commitment: bool
+    committed_once: bool
+    authority_relinquished: bool
+    downstream_dependencies: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerCompleteAuditTrailRecord:
+    audit_identifier: str
+    required_audit_stages: tuple[str, ...]
+    observed_audit_stages: tuple[str, ...]
+    missing_audit_stages: tuple[str, ...]
+    decision_traceability_complete: bool
+    evidence_traceability_complete: bool
+    independently_reconstructable: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerPersistenceAtomicRecoveryRecord:
+    persistence_identifier: str
+    checkpoint_boundaries: tuple[str, ...]
+    persisted_state_hashes: tuple[str, ...]
+    partial_write_findings: tuple[str, ...]
+    duplicate_commitment_findings: tuple[str, ...]
+    recovery_disposition: str
+    replay_from_recovery_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -331,6 +430,13 @@ class SeekerOfficeIntegrityEvidencePackage:
     duplicate_suppression: SeekerDuplicateSuppressionRecord
     relationship_independence: SeekerRelationshipIndependenceRecord
     search_sufficiency: SeekerSearchSufficiencyRecord
+    unsupported_candidate_elimination: SeekerUnsupportedCandidateEliminationRecord
+    disposition_handling: SeekerDispositionHandlingRecord
+    state_idempotency: SeekerStateIdempotencyRecord
+    candidate_package_contract: SeekerCandidatePackageContractRecord
+    boundary_commitment: SeekerBoundaryCommitmentRecord
+    complete_audit_trail: SeekerCompleteAuditTrailRecord
+    persistence_atomic_recovery: SeekerPersistenceAtomicRecoveryRecord
     final_office_readiness: EnterpriseCertificationDecision
     immutable_audit_references: tuple[str, ...]
     deterministic_digest: str
@@ -354,6 +460,13 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-012",
         "SEEK-RM-013",
         "SEEK-RM-014",
+        "SEEK-RM-001-015",
+        "SEEK-RM-016",
+        "SEEK-RM-017",
+        "SEEK-RM-018",
+        "SEEK-RM-019",
+        "SEEK-RM-020",
+        "SEEK-RM-021",
     )
 
     component_registry = (
@@ -458,6 +571,56 @@ class SeekerOfficeIntegritySupport:
         duplicates = self.evaluate_duplicate_suppression(search_plan, (candidate,), discovery_evidence)
         independence = self.evaluate_relationship_independence(search_plan, (candidate,), discovery_evidence)
         sufficiency = self.evaluate_search_sufficiency(search_plan, discovery_evidence, (candidate,))
+        elimination = self.evaluate_unsupported_candidate_elimination(
+            candidate,
+            (identity, preservation, freshness, duplicates, independence, sufficiency),
+        )
+        disposition = self.evaluate_disposition_handling(candidate, elimination)
+        state_idempotency = self.evaluate_state_idempotency(
+            lifecycle,
+            mission,
+            package_identifier=f"SEEK-RM-PKG-{_digest((mission.mission_id, search_plan.search_plan_id, candidate.candidate_reference))[:12].upper()}",
+            active_missions=active_missions,
+        )
+        package_contract = self.evaluate_candidate_package_contract(
+            mission,
+            search_plan,
+            (candidate,),
+            discovery_evidence,
+            (identity, preservation, freshness, duplicates, independence, sufficiency, elimination, disposition),
+        )
+        commitment = self.evaluate_boundary_commitment(package_contract, state_idempotency)
+        audit_trail = self.evaluate_complete_audit_trail(
+            (
+                intake.intake_identifier,
+                lifecycle.lifecycle_identifier,
+                enforcement.enforcement_identifier,
+                objective.objective_identifier,
+                identity.identity_identifier,
+                preservation.preservation_identifier,
+                normalization.normalization_identifier,
+                chronology.chronology_identifier,
+                freshness.freshness_identifier,
+                duplicates.duplicate_identifier,
+                independence.relationship_identifier,
+                sufficiency.sufficiency_identifier,
+                elimination.elimination_identifier,
+                disposition.disposition_identifier,
+                package_contract.package_contract_identifier,
+                commitment.commitment_identifier,
+            )
+        )
+        recovery = self.evaluate_persistence_atomic_recovery(
+            (
+                mission.mission_id,
+                search_plan.search_plan_id,
+                candidate.candidate_reference,
+                package_contract.package_identifier,
+                commitment.commitment_identifier,
+            ),
+            package_contract,
+            commitment,
+        )
         final = EnterpriseCertificationDecision.PASS if all(
             record == EnterpriseCertificationDecision.PASS
             for record in (
@@ -475,6 +638,13 @@ class SeekerOfficeIntegritySupport:
                 duplicates.result,
                 independence.result,
                 sufficiency.result,
+                elimination.result,
+                disposition.result,
+                state_idempotency.result,
+                package_contract.result,
+                commitment.result,
+                audit_trail.result,
+                recovery.result,
             )
         ) else EnterpriseCertificationDecision.FAIL
         package = SeekerOfficeIntegrityEvidencePackage(
@@ -496,6 +666,13 @@ class SeekerOfficeIntegritySupport:
             duplicate_suppression=duplicates,
             relationship_independence=independence,
             search_sufficiency=sufficiency,
+            unsupported_candidate_elimination=elimination,
+            disposition_handling=disposition,
+            state_idempotency=state_idempotency,
+            candidate_package_contract=package_contract,
+            boundary_commitment=commitment,
+            complete_audit_trail=audit_trail,
+            persistence_atomic_recovery=recovery,
             final_office_readiness=final,
             immutable_audit_references=(
                 boundary.registry_identifier,
@@ -512,6 +689,13 @@ class SeekerOfficeIntegritySupport:
                 duplicates.duplicate_identifier,
                 independence.relationship_identifier,
                 sufficiency.sufficiency_identifier,
+                elimination.elimination_identifier,
+                disposition.disposition_identifier,
+                state_idempotency.state_identifier,
+                package_contract.package_contract_identifier,
+                commitment.commitment_identifier,
+                audit_trail.audit_identifier,
+                recovery.persistence_identifier,
             ),
             deterministic_digest="",
         )
@@ -1028,6 +1212,269 @@ class SeekerOfficeIntegritySupport:
             sufficiency_decision=decision,
             replay_equivalent=True,
             result=EnterpriseCertificationDecision.PASS if decision == "SUFFICIENT" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_unsupported_candidate_elimination(
+        self,
+        candidate: SeekerCandidateIdentityInput,
+        support_records: tuple[Any, ...],
+    ) -> SeekerUnsupportedCandidateEliminationRecord:
+        requirements = (
+            "candidate_identifier",
+            "immutable_discovery_evidence",
+            "provenance_chain",
+            "identity_validation",
+            "duplicate_resolution",
+            "freshness_validation",
+            "independence_validation",
+            "search_sufficiency",
+        )
+        support_labels = (
+            "identity_validation",
+            "provenance_chain",
+            "freshness_validation",
+            "duplicate_resolution",
+            "independence_validation",
+            "search_sufficiency",
+        )
+        failed = tuple(
+            requirement
+            for requirement, record in zip(support_labels, support_records)
+            if getattr(record, "result", EnterpriseCertificationDecision.FAIL) != EnterpriseCertificationDecision.PASS
+        )
+        if not candidate.candidate_reference:
+            failed = ("candidate_identifier",) + failed
+        if not candidate.evidence_references:
+            failed = failed + ("immutable_discovery_evidence", "provenance_chain")
+        rejection = "SUPPORTED" if not failed else f"UNSUPPORTED:{failed[0]}"
+        record = SeekerUnsupportedCandidateEliminationRecord(
+            elimination_identifier=f"SEEK-RM-UNSUPPORTED-{_digest((candidate.candidate_reference, failed))[:12].upper()}",
+            candidate_reference=candidate.candidate_reference,
+            support_requirements=requirements,
+            failed_support_requirements=tuple(dict.fromkeys(failed)),
+            rejection_reason="" if not failed else rejection,
+            rejection_evidence_references=candidate.evidence_references,
+            package_inclusion_permitted=not failed,
+            replay_equivalent=True,
+            result=EnterpriseCertificationDecision.PASS if not failed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_disposition_handling(
+        self,
+        candidate: SeekerCandidateIdentityInput,
+        elimination: SeekerUnsupportedCandidateEliminationRecord,
+        quarantine_reason: str = "",
+        execution_failure: str = "",
+    ) -> SeekerDispositionHandlingRecord:
+        if execution_failure:
+            disposition = "FAILED"
+            reason = execution_failure
+        elif quarantine_reason:
+            disposition = "QUARANTINED"
+            reason = quarantine_reason
+        elif elimination.package_inclusion_permitted:
+            disposition = "ACCEPTED"
+            reason = "candidate_supported"
+        else:
+            disposition = "REJECTED"
+            reason = elimination.rejection_reason
+        evidence = elimination.rejection_evidence_references or candidate.evidence_references
+        record = SeekerDispositionHandlingRecord(
+            disposition_identifier=f"SEEK-RM-DISPOSITION-{_digest((candidate.candidate_reference, disposition, reason))[:12].upper()}",
+            candidate_reference=candidate.candidate_reference,
+            disposition_rule_version="SEEK-RM-016-DISPOSITION/1",
+            disposition=disposition,
+            reason_code=reason,
+            evidence_references=evidence,
+            silent_disposition_detected=not reason or not evidence,
+            package_protected=disposition == "ACCEPTED" or not elimination.package_inclusion_permitted,
+            quarantine_isolated=disposition != "QUARANTINED" or bool(quarantine_reason),
+            result=EnterpriseCertificationDecision.PASS if reason and evidence else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_state_idempotency(
+        self,
+        lifecycle: SeekerLifecycleStateMachineRecord,
+        mission: SeekerSearchMission,
+        *,
+        package_identifier: str,
+        active_missions: tuple[str, ...] = (),
+    ) -> SeekerStateIdempotencyRecord:
+        duplicate = mission.mission_id in active_missions
+        duplicate_outcomes = (package_identifier,) if duplicate else ()
+        residual = () if lifecycle.terminal_state == SeekerLifecycleState.DORMANT.value else ("active_execution_state",)
+        decision = "REPLAY_EXISTING_OUTCOME" if duplicate else "NEW_EXECUTION"
+        record = SeekerStateIdempotencyRecord(
+            state_identifier=f"SEEK-RM-STATE-{_digest((mission.mission_id, lifecycle.transition_sequence, duplicate, package_identifier))[:12].upper()}",
+            owned_state=self.owned_state,
+            mutation_sequence=lifecycle.transition_sequence,
+            duplicate_execution_detected=duplicate,
+            duplicate_outcomes=duplicate_outcomes,
+            residual_active_state=residual,
+            idempotency_decision=decision,
+            final_state=lifecycle.terminal_state,
+            result=EnterpriseCertificationDecision.PASS if not residual and lifecycle.result == EnterpriseCertificationDecision.PASS else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_candidate_package_contract(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+        decision_records: tuple[Any, ...],
+    ) -> SeekerCandidatePackageContractRecord:
+        package_id = f"SEEK-RM-PKG-{_digest((mission.mission_id, search_plan.search_plan_id, tuple(item.candidate_reference for item in candidates)))[:12].upper()}"
+        sections = (
+            "package_envelope",
+            "candidate_records",
+            "evidence_manifest",
+            "decision_manifest",
+            "rejection_accounting",
+            "search_sufficiency_statement",
+            "source_coverage_statement",
+            "query_coverage_statement",
+            "resource_limit_statement",
+            "chronology_reference",
+            "package_integrity",
+        )
+        evidence_ids = {item.evidence_id for item in evidence}
+        missing: list[str] = []
+        if not mission.mission_id or not search_plan.search_plan_id:
+            missing.append("package_envelope")
+        if any(not item.candidate_reference for item in candidates):
+            missing.append("candidate_records")
+        traceability = all(set(item.evidence_references).issubset(evidence_ids) for item in candidates)
+        if not traceability:
+            missing.append("evidence_manifest")
+        if len(decision_records) < 8 or any(getattr(item, "result", EnterpriseCertificationDecision.FAIL) != EnterpriseCertificationDecision.PASS for item in decision_records):
+            missing.append("decision_manifest")
+        sufficiency = next((item for item in decision_records if isinstance(item, SeekerSearchSufficiencyRecord)), None)
+        if not sufficiency or sufficiency.result != EnterpriseCertificationDecision.PASS:
+            missing.append("search_sufficiency_statement")
+        prohibited = tuple(
+            f"{candidate_item.candidate_reference}.{key}"
+            for candidate_item in candidates
+            for key in candidate_item.attributes
+            if key in {"recommendation", "ranking", "score", "risk_assessment", "trade_authorization", "price_target"}
+        )
+        rejection_accounting = all(hasattr(item, "result") for item in decision_records)
+        digest = _digest((package_id, mission, search_plan.immutable_digest, candidates, tuple(item.evidence_hash for item in evidence), tuple(_digest(item) for item in decision_records)))
+        outcome = "CANDIDATES_DISCOVERED" if candidates else "NO_CANDIDATES_DISCOVERED"
+        record = SeekerCandidatePackageContractRecord(
+            package_contract_identifier=f"SEEK-RM-PACKAGE-CONTRACT-{digest[:12].upper()}",
+            package_identifier=package_id,
+            contract_version="SEEK-RM-018-PACKAGE-CONTRACT/1",
+            outcome_type=outcome,
+            mandatory_sections=sections,
+            missing_sections=tuple(dict.fromkeys(missing)),
+            prohibited_content_findings=prohibited,
+            candidate_evidence_traceability=traceability,
+            rejection_accounting_complete=rejection_accounting,
+            package_integrity_digest=digest,
+            result=EnterpriseCertificationDecision.PASS if not missing and not prohibited and traceability and rejection_accounting else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_boundary_commitment(
+        self,
+        package_contract: SeekerCandidatePackageContractRecord,
+        state_idempotency: SeekerStateIdempotencyRecord,
+        prior_commitments: tuple[str, ...] = (),
+    ) -> SeekerBoundaryCommitmentRecord:
+        failures: list[str] = []
+        if package_contract.result != EnterpriseCertificationDecision.PASS:
+            failures.append("package_contract_invalid")
+        if state_idempotency.result != EnterpriseCertificationDecision.PASS:
+            failures.append("state_integrity_invalid")
+        committed_once = package_contract.package_identifier not in prior_commitments
+        if not committed_once:
+            failures.append("duplicate_commitment")
+        decision = "COMMIT" if not failures else "REJECT"
+        record = SeekerBoundaryCommitmentRecord(
+            commitment_identifier=f"SEEK-RM-COMMIT-{_digest((package_contract.package_identifier, failures, prior_commitments))[:12].upper()}",
+            package_identifier=package_contract.package_identifier,
+            commitment_decision=decision,
+            eligibility_failures=tuple(failures),
+            atomic_commitment=decision == "COMMIT",
+            committed_once=committed_once,
+            authority_relinquished=decision == "COMMIT",
+            downstream_dependencies=(),
+            result=EnterpriseCertificationDecision.PASS if decision == "COMMIT" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_complete_audit_trail(self, audit_references: tuple[str, ...]) -> SeekerCompleteAuditTrailRecord:
+        stages = (
+            "mission_acceptance",
+            "lifecycle_transition",
+            "search_plan_validation",
+            "objective_validation",
+            "candidate_identity",
+            "evidence_preservation",
+            "normalization",
+            "chronology",
+            "freshness",
+            "duplicate_suppression",
+            "independence_validation",
+            "search_sufficiency",
+            "unsupported_elimination",
+            "disposition",
+            "package_generation",
+            "outbound_commitment",
+        )
+        missing = tuple(stage for stage, reference in zip(stages, audit_references) if not reference) + stages[len(audit_references):]
+        decision_traceability = len(audit_references) >= len(stages) and not missing
+        evidence_traceability = all(reference.startswith("SEEK-RM-") for reference in audit_references)
+        record = SeekerCompleteAuditTrailRecord(
+            audit_identifier=f"SEEK-RM-AUDIT-{_digest((audit_references, missing))[:12].upper()}",
+            required_audit_stages=stages,
+            observed_audit_stages=tuple(stage for stage, reference in zip(stages, audit_references) if reference),
+            missing_audit_stages=missing,
+            decision_traceability_complete=decision_traceability,
+            evidence_traceability_complete=evidence_traceability,
+            independently_reconstructable=decision_traceability and evidence_traceability,
+            result=EnterpriseCertificationDecision.PASS if decision_traceability and evidence_traceability else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_persistence_atomic_recovery(
+        self,
+        state_items: tuple[str, ...],
+        package_contract: SeekerCandidatePackageContractRecord,
+        commitment: SeekerBoundaryCommitmentRecord,
+    ) -> SeekerPersistenceAtomicRecoveryRecord:
+        checkpoints = (
+            "mission_committed",
+            "search_plan_committed",
+            "candidate_validation_committed",
+            "package_finalized",
+            "outbound_commitment_committed",
+        )
+        hashes = tuple(_digest((index, item)) for index, item in enumerate(state_items, start=1) if item)
+        partial = tuple(checkpoints[index] for index, item in enumerate(state_items[: len(checkpoints)]) if not item)
+        duplicate_commitments = () if commitment.committed_once else (commitment.package_identifier,)
+        recovered = package_contract.result == EnterpriseCertificationDecision.PASS and commitment.result == EnterpriseCertificationDecision.PASS and not partial and not duplicate_commitments
+        record = SeekerPersistenceAtomicRecoveryRecord(
+            persistence_identifier=f"SEEK-RM-PERSIST-{_digest((state_items, partial, duplicate_commitments))[:12].upper()}",
+            checkpoint_boundaries=checkpoints,
+            persisted_state_hashes=hashes,
+            partial_write_findings=partial,
+            duplicate_commitment_findings=duplicate_commitments,
+            recovery_disposition="RECOVERED_DORMANT" if recovered else "FAIL_CLOSED",
+            replay_from_recovery_equivalent=recovered,
+            result=EnterpriseCertificationDecision.PASS if recovered else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(record))

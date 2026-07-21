@@ -124,6 +124,13 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
                 "SEEK-RM-012",
                 "SEEK-RM-013",
                 "SEEK-RM-014",
+                "SEEK-RM-001-015",
+                "SEEK-RM-016",
+                "SEEK-RM-017",
+                "SEEK-RM-018",
+                "SEEK-RM-019",
+                "SEEK-RM-020",
+                "SEEK-RM-021",
             ),
         )
         self.assertIn("Mission Intake Component", package.boundary_registry.registered_components)
@@ -149,6 +156,15 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.duplicate_suppression.suppressed_duplicates, ())
         self.assertEqual(package.relationship_independence.independence_decision, "VALID")
         self.assertEqual(package.search_sufficiency.sufficiency_decision, "SUFFICIENT")
+        self.assertTrue(package.unsupported_candidate_elimination.package_inclusion_permitted)
+        self.assertEqual(package.disposition_handling.disposition, "ACCEPTED")
+        self.assertEqual(package.state_idempotency.final_state, SeekerLifecycleState.DORMANT.value)
+        self.assertEqual(package.candidate_package_contract.missing_sections, ())
+        self.assertEqual(package.candidate_package_contract.outcome_type, "CANDIDATES_DISCOVERED")
+        self.assertEqual(package.boundary_commitment.commitment_decision, "COMMIT")
+        self.assertTrue(package.boundary_commitment.authority_relinquished)
+        self.assertEqual(package.complete_audit_trail.missing_audit_stages, ())
+        self.assertEqual(package.persistence_atomic_recovery.recovery_disposition, "RECOVERED_DORMANT")
         self.assertNotEqual(package.deterministic_digest, "")
 
     def test_self_certification_metadata_is_detected_and_fails_closed(self) -> None:
@@ -310,6 +326,90 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(relationship.unsupported_relationships, ("CAND-001:Speculative Link",))
         self.assertEqual(insufficient.result, EnterpriseCertificationDecision.FAIL)
         self.assertEqual(insufficient.missing_required_sources, ("ISSUER-IR",))
+
+    def test_unsupported_candidate_elimination_and_disposition_preserve_rejection_evidence(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        identity = support.evaluate_candidate_identity(
+            candidate(attributes={"ticker": "ARG", "exchange": "", "security_identifier": "000000001"}),
+            search_plan(),
+            (discovery_evidence(),),
+        )
+        preservation = support.evaluate_discovery_evidence_preservation(mission(), search_plan(), (discovery_evidence(),), candidate())
+        freshness = support.evaluate_freshness_determination(mission(), search_plan(), candidate(), (discovery_evidence(),))
+        duplicates = support.evaluate_duplicate_suppression(search_plan(), (candidate(),), (discovery_evidence(),))
+        independence = support.evaluate_relationship_independence(search_plan(), (candidate(),), (discovery_evidence(),))
+        sufficiency = support.evaluate_search_sufficiency(search_plan(), (discovery_evidence(),), (candidate(),))
+
+        elimination = support.evaluate_unsupported_candidate_elimination(
+            candidate(),
+            (identity, preservation, freshness, duplicates, independence, sufficiency),
+        )
+        disposition = support.evaluate_disposition_handling(candidate(), elimination)
+
+        self.assertEqual(elimination.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("identity_validation", elimination.failed_support_requirements)
+        self.assertFalse(elimination.package_inclusion_permitted)
+        self.assertEqual(disposition.disposition, "REJECTED")
+        self.assertFalse(disposition.silent_disposition_detected)
+        self.assertTrue(disposition.package_protected)
+
+    def test_candidate_package_contract_blocks_analytical_content_and_missing_decisions(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        bad_candidate = candidate(attributes={**candidate().attributes, "recommendation": "buy"})
+        identity = support.evaluate_candidate_identity(candidate(), search_plan(), (discovery_evidence(),))
+        preservation = support.evaluate_discovery_evidence_preservation(mission(), search_plan(), (discovery_evidence(),), candidate())
+
+        record = support.evaluate_candidate_package_contract(
+            mission(),
+            search_plan(),
+            (bad_candidate,),
+            (discovery_evidence(),),
+            (identity, preservation),
+        )
+
+        self.assertEqual(record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("decision_manifest", record.missing_sections)
+        self.assertEqual(record.prohibited_content_findings, ("CAND-001.recommendation",))
+
+    def test_boundary_commitment_rejects_duplicate_or_invalid_package(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        package = support.build_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        duplicate = support.evaluate_boundary_commitment(
+            package.candidate_package_contract,
+            package.state_idempotency,
+            prior_commitments=(package.candidate_package_contract.package_identifier,),
+        )
+
+        self.assertEqual(duplicate.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(duplicate.commitment_decision, "REJECT")
+        self.assertIn("duplicate_commitment", duplicate.eligibility_failures)
+        self.assertFalse(duplicate.committed_once)
+
+    def test_audit_trail_and_persistence_fail_closed_when_evidence_or_state_is_incomplete(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        package = support.build_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+        incomplete_audit = support.evaluate_complete_audit_trail(package.immutable_audit_references[:3])
+        incomplete_recovery = support.evaluate_persistence_atomic_recovery(
+            (mission().mission_id, "", candidate().candidate_reference),
+            package.candidate_package_contract,
+            package.boundary_commitment,
+        )
+
+        self.assertEqual(incomplete_audit.result, EnterpriseCertificationDecision.FAIL)
+        self.assertNotEqual(incomplete_audit.missing_audit_stages, ())
+        self.assertEqual(incomplete_recovery.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("search_plan_committed", incomplete_recovery.partial_write_findings)
 
 
 if __name__ == "__main__":
