@@ -211,6 +211,58 @@ class SentinelRuntimeTraceEvent:
 
 
 @dataclass(frozen=True)
+class SentinelConstitutionalTraceRecord:
+    trace_identifier: str
+    workflow_identifier: str
+    mission_identifier: str
+    runtime_execution_identifier: str
+    stage_identifier: str
+    stage_timestamp: str
+    execution_order: int
+    executing_component: str
+    operation_performed: str
+    dependency_invoked: str
+    dependency_response: str
+    evidence_identifiers_generated: tuple[str, ...]
+    constitutional_evaluation_result: str
+    success_or_failure_outcome: str
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelRuntimeAuditTrail:
+    audit_identifier: str
+    runtime_execution_identifier: str
+    mission_identifier: str
+    workflow_identifier: str
+    trace_records: tuple[SentinelConstitutionalTraceRecord, ...]
+    coverage_stages: tuple[str, ...]
+    missing_stages: tuple[str, ...]
+    orphan_trace_records: tuple[str, ...]
+    immutable: bool
+    audit_reconstruction_result: SentinelRuntimeDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelReplayCertificationRecord:
+    replay_certification_id: str
+    original_execution_id: str
+    replay_execution_id: str
+    original_semantic_digest: str
+    replay_semantic_digest: str
+    equivalent_trace_order: bool
+    equivalent_decisions: bool
+    equivalent_evidence_relationships: bool
+    equivalent_state_transitions: bool
+    missing_evidence: tuple[str, ...]
+    semantic_differences: tuple[str, ...]
+    result: SentinelRuntimeDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SentinelMissionAssignment:
     assignment_id: str
     schema_version: str
@@ -836,6 +888,116 @@ class SentinelObservationSufficiencyEvaluator:
         return sufficiency, evidence
 
 
+class SentinelRuntimeTraceEngine:
+    """Projects immutable runtime events into audit-ready constitutional traces."""
+
+    required_success_stages = (
+        "mission_resolved",
+        "authority_validated",
+        "sentinel_scheduled",
+        "sentinel_active",
+        "source_acquired",
+        "observation_normalized",
+        "duplicate_suppression_evaluated",
+        "source_independence_evaluated",
+        "conflict_evaluated",
+        "sufficiency_evaluated",
+        "priority_determined",
+        "evidence_generated",
+        "persistence_operation",
+        "sentinel_dormant",
+    )
+
+    def build_audit_trail(self, record: SentinelRuntimeExecutionRecord) -> SentinelRuntimeAuditTrail:
+        trace_records = tuple(self._project_event(record, event, index + 1) for index, event in enumerate(record.trace_events))
+        actions = tuple(item.operation_performed for item in trace_records)
+        required = ("fail_closed",) if record.result == SentinelRuntimeDecision.FAIL else self.required_success_stages
+        missing = tuple(stage for stage in required if stage not in actions)
+        orphaned = tuple(item.trace_identifier for item in trace_records if item.mission_identifier != record.mission_id or item.runtime_execution_identifier != record.execution_id)
+        audit = SentinelRuntimeAuditTrail(
+            audit_identifier=f"SENT-AUDIT-{_hash((record.execution_id, actions))[:12].upper()}",
+            runtime_execution_identifier=record.execution_id,
+            mission_identifier=record.mission_id,
+            workflow_identifier=record.mission_id,
+            trace_records=trace_records,
+            coverage_stages=actions,
+            missing_stages=missing,
+            orphan_trace_records=orphaned,
+            immutable=True,
+            audit_reconstruction_result=SentinelRuntimeDecision.PASS if not missing and not orphaned else SentinelRuntimeDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(audit, deterministic_digest=_hash(asdict(audit)))
+
+    def replay_audit_trail(self, audit: SentinelRuntimeAuditTrail) -> SentinelRuntimeAuditTrail:
+        return replace(
+            audit,
+            audit_identifier=f"SENT-REPLAY-AUDIT-{_hash(audit.audit_identifier)[:12].upper()}",
+            deterministic_digest="",
+        )
+
+    def certify_replay_equivalence(self, record: SentinelRuntimeExecutionRecord, replay_record: SentinelRuntimeExecutionRecord | None = None) -> SentinelReplayCertificationRecord:
+        replay = replay_record or replace(record, execution_id=f"REPLAY-{record.execution_id}")
+        original_digest = sentinel_runtime_equivalence_digest(record)
+        replay_digest = sentinel_runtime_equivalence_digest(replay)
+        original_audit = self.build_audit_trail(record)
+        replay_audit = self.build_audit_trail(replay)
+        original_actions = tuple(item.operation_performed for item in original_audit.trace_records)
+        replay_actions = tuple(item.operation_performed for item in replay_audit.trace_records)
+        differences: list[str] = []
+        if original_digest != replay_digest:
+            differences.append("semantic_digest")
+        if original_actions != replay_actions:
+            differences.append("trace_order")
+        if record.result != replay.result:
+            differences.append("completion_status")
+        if record.evidence_envelope and replay.evidence_envelope and record.evidence_envelope.envelope_id != replay.evidence_envelope.envelope_id:
+            differences.append("evidence_identity")
+        missing = ()
+        if not record.trace_events:
+            missing = ("runtime_trace",)
+        if record.evidence_envelope is None and record.result == SentinelRuntimeDecision.PASS:
+            missing = missing + ("observation_evidence",)
+        result = SentinelRuntimeDecision.PASS if not differences and not missing else SentinelRuntimeDecision.FAIL
+        certification = SentinelReplayCertificationRecord(
+            replay_certification_id=f"SENT-REPLAY-CERT-{_hash((record.execution_id, replay.execution_id, original_digest, replay_digest))[:12].upper()}",
+            original_execution_id=record.execution_id,
+            replay_execution_id=replay.execution_id,
+            original_semantic_digest=original_digest,
+            replay_semantic_digest=replay_digest,
+            equivalent_trace_order=original_actions == replay_actions,
+            equivalent_decisions=record.result == replay.result,
+            equivalent_evidence_relationships=not record.evidence_envelope or not replay.evidence_envelope or record.evidence_envelope.envelope_id == replay.evidence_envelope.envelope_id,
+            equivalent_state_transitions=record.lifecycle_states == replay.lifecycle_states,
+            missing_evidence=missing,
+            semantic_differences=tuple(differences),
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(certification, deterministic_digest=_hash(asdict(certification)))
+
+    def _project_event(self, record: SentinelRuntimeExecutionRecord, event: SentinelRuntimeTraceEvent, order: int) -> SentinelConstitutionalTraceRecord:
+        trace = SentinelConstitutionalTraceRecord(
+            trace_identifier=event.trace_event_id,
+            workflow_identifier=record.mission_id,
+            mission_identifier=event.mission_identity,
+            runtime_execution_identifier=record.execution_id,
+            stage_identifier=event.rule_identity,
+            stage_timestamp=event.timestamp,
+            execution_order=order,
+            executing_component=event.actor,
+            operation_performed=event.action,
+            dependency_invoked=event.implementation_symbol,
+            dependency_response=event.result,
+            evidence_identifiers_generated=event.output_artifacts,
+            constitutional_evaluation_result=event.result,
+            success_or_failure_outcome="FAIL" if event.failure_code else event.result,
+            failure_reason=event.failure_code,
+            deterministic_digest="",
+        )
+        return replace(trace, deterministic_digest=_hash(asdict(trace)))
+
+
 class SentinelCanonicalRuntime:
     """Executes Sentinel through canonical scheduler, lifecycle, source, and evidence paths."""
 
@@ -974,8 +1136,11 @@ class SentinelCanonicalRuntime:
         pipeline = RuntimeObservationPipeline(validator=ObservationIntegrityValidator())
         result = pipeline.execute(schedule, observation, source, prior_observations)
         duplicate = _duplicate_decision(observation, prior_observations)
+        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "duplicate_suppression_evaluated", "SentinelDuplicateDecision", "SENT-MO-001-STAGE-7", (observation.observation_id,), (duplicate.decision_id,), "ACTIVE", "ACTIVE", duplicate.result)
         independence = SentinelSourceIndependenceDecision(f"IND-{_hash(observation.source_id)[:10].upper()}", (source_plan.source_id,), (source_plan.source_host,), "SENT-GOV-020-INDEPENDENCE/1", "INDEPENDENT", ())
+        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "source_independence_evaluated", "SentinelSourceIndependenceDecision", "SENT-MO-001-STAGE-8", (observation.observation_id,), (independence.decision_id,), "ACTIVE", "ACTIVE", independence.result)
         conflict = SentinelConflictDecision(f"CON-{_hash(observation.observation_id)[:10].upper()}", (), (), (source_plan.source_id,), "NO_CONFLICT", (), "NO_CONFLICT", True)
+        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "conflict_evaluated", "SentinelConflictDecision", "SENT-MO-001-STAGE-9", (observation.observation_id,), (conflict.decision_id,), "ACTIVE", "ACTIVE", conflict.resulting_state)
         policy_registry = self.sufficiency_policy_registry or SentinelSufficiencyPolicyRegistry.for_event_classes((event_class,))
         sufficiency, sufficiency_evidence = SentinelObservationSufficiencyEvaluator(policy_registry).evaluate(
             mission_id=mission.mission_id,
@@ -995,15 +1160,17 @@ class SentinelCanonicalRuntime:
             return self._failed_execution(trace_root, mission, activation_id, FailureResponse.HALT, "SUFFICIENCY_ORIGIN_VALIDATION_FAILED")
         sufficiency_record = self._persist("sentinel_sufficiency_evaluation", sufficiency_evidence.evidence_id, _json_ready(asdict(sufficiency_evidence)), sufficiency_evidence.deterministic_digest)
         sufficiency_origin_record = self._persist("sentinel_sufficiency_origin", sufficiency_origin.origin_record_id, _json_ready(asdict(sufficiency_origin)), sufficiency_origin.deterministic_digest)
+        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "sufficiency_evaluated", SentinelObservationSufficiencyEvaluator.evaluator_version, "SENT-MO-001-STAGE-10", (observation.observation_id,), (sufficiency.decision_id, sufficiency_evidence.evidence_id), "ACTIVE", "ACTIVE", sufficiency.notification_readiness.value)
         priority = SentinelPriorityDecision(f"PRI-{_hash(observation.observation_id)[:10].upper()}", assignment.priority_rule_id, 1, 1, observation.observation_timestamp, observation.observation_id, 1)
-        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "observation_evaluated", "RuntimeObservationPipeline.execute", "SENT-MO-001-STAGES-7-11", (observation.observation_id,), (result.evidence.evidence_checksum,), "ACTIVE", "ACTIVE", result.decision.value)
+        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "priority_determined", "SentinelPriorityDecision", "SENT-MO-001-STAGE-11", (observation.observation_id,), (priority.decision_id,), "ACTIVE", "ACTIVE", str(priority.final_rank))
         envelope = _evidence_envelope(self.candidate_identity, self.runtime_identity, mission, activation_id, source_plan, raw, observation, duplicate, independence, conflict, sufficiency, priority, tuple(item.trace_event_id for item in self.trace_events))
         if envelope.final_notification_readiness_state != SentinelRuntimeDecision.PASS:
             return self._failed_execution(trace_root, mission, activation_id, FailureResponse.HALT, "OBSERVATION_SUFFICIENCY_NOT_SATISFIED:" + ",".join(sufficiency.remaining_uncertainty))
         alert = _notification_ready_alert(envelope, mission, self.candidate_identity, self.runtime_identity, event_class)
-        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "evidence_and_alert_created", "SentinelCanonicalRuntime.execute_observation", "SENT-MO-001-STAGES-12-13", (envelope.envelope_id,), (alert.alert_id,), "ACTIVE", "COMPLETING", "PASS")
+        parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "evidence_generated", "SentinelCanonicalRuntime.execute_observation", "SENT-MO-001-STAGE-12", (observation.observation_id, result.evidence.evidence_checksum), (envelope.envelope_id, alert.alert_id), "ACTIVE", "COMPLETING", "PASS")
         envelope_record = self._persist("sentinel_observation_evidence", envelope.envelope_id, _json_ready(asdict(envelope)), envelope.deterministic_digest)
         alert_record = self._persist("sentinel_notification_ready_alert", alert.alert_id, _json_ready(asdict(alert)), alert.deterministic_digest)
+        parent = self._trace(trace_root, parent, mission, activation_id, "EnterprisePersistence", "persistence_operation", "InMemoryPersistenceRepository.persist", "SENT-MO-001-STAGE-13", (envelope.envelope_id, alert.alert_id), (envelope_record.record_hash, alert_record.record_hash), "COMPLETING", "COMPLETING", "PASS")
         self.scheduler.complete_mission(mission.mission_id, api_calls=1, result_summary="Sentinel notification-ready alert generated.")
         self.lifecycle.transition("Sentinel", OfficeLifecycleState.DORMANT)
         parent = self._trace(trace_root, parent, mission, activation_id, "OfficeLifecycleController", "sentinel_dormant", "OfficeLifecycleController.transition", "SENT-MO-001-STAGE-14", (alert.alert_id,), ("Sentinel:DORMANT",), "COMPLETING", "DORMANT", "PASS")
@@ -1042,7 +1209,17 @@ class SentinelCanonicalRuntime:
                 }
             ),
         )
+        audit_trail = self.audit_trail_for(record)
+        replay_certification = self.certify_replay_equivalence(record)
+        self._persist("sentinel_runtime_audit_trail", audit_trail.audit_identifier, _json_ready(asdict(audit_trail)), audit_trail.deterministic_digest)
+        self._persist("sentinel_replay_equivalence_certification", replay_certification.replay_certification_id, _json_ready(asdict(replay_certification)), replay_certification.deterministic_digest)
         return record
+
+    def audit_trail_for(self, record: SentinelRuntimeExecutionRecord) -> SentinelRuntimeAuditTrail:
+        return SentinelRuntimeTraceEngine().build_audit_trail(record)
+
+    def certify_replay_equivalence(self, record: SentinelRuntimeExecutionRecord, replay_record: SentinelRuntimeExecutionRecord | None = None) -> SentinelReplayCertificationRecord:
+        return SentinelRuntimeTraceEngine().certify_replay_equivalence(record, replay_record)
 
     def _dependency_certification(self) -> SentinelDependencyCertification:
         if self.dependency_certification is not None:

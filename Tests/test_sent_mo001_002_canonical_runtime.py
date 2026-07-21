@@ -23,6 +23,7 @@ from argos.sentinel import (  # noqa: E402
     SentinelEventSufficiencyRule,
     SentinelSufficiencyPolicyRegistry,
     SentinelNotificationStatus,
+    SentinelRuntimeTraceEngine,
     SentinelRuntimeDecision,
     SentinelSourcePlanReference,
     recover_persisted_sentinel_records,
@@ -389,6 +390,54 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
 
         self.assertEqual(record.result, SentinelRuntimeDecision.FAIL)
         self.assertTrue(any("OBSERVATION_SUFFICIENCY_NOT_SATISFIED" in event.failure_code for event in record.trace_events))
+
+    def test_sent_mo1007_runtime_audit_trail_reconstructs_complete_trace(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        runtime = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+        audit = runtime.audit_trail_for(record)
+
+        self.assertEqual(audit.audit_reconstruction_result, SentinelRuntimeDecision.PASS)
+        self.assertEqual(audit.missing_stages, ())
+        self.assertEqual(audit.orphan_trace_records, ())
+        self.assertEqual(tuple(item.execution_order for item in audit.trace_records), tuple(range(1, len(audit.trace_records) + 1)))
+        self.assertIn("duplicate_suppression_evaluated", audit.coverage_stages)
+        self.assertIn("source_independence_evaluated", audit.coverage_stages)
+        self.assertIn("conflict_evaluated", audit.coverage_stages)
+        self.assertIn("sufficiency_evaluated", audit.coverage_stages)
+        self.assertIn("priority_determined", audit.coverage_stages)
+        self.assertIn("persistence_operation", audit.coverage_stages)
+        persisted_names = tuple(item.payload["payload"]["object_name"] for item in runtime.persistence.all_records())
+        self.assertIn("sentinel_runtime_audit_trail", persisted_names)
+        self.assertIn("sentinel_replay_equivalence_certification", persisted_names)
+
+    def test_sent_mo1009_replay_semantic_equivalence_passes_and_detects_divergence(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        runtime = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        equivalent = runtime.certify_replay_equivalence(record)
+        divergent = SentinelRuntimeTraceEngine().certify_replay_equivalence(
+            record,
+            record.__class__(**{**record.__dict__, "result": SentinelRuntimeDecision.FAIL}),
+        )
+
+        self.assertEqual(equivalent.result, SentinelRuntimeDecision.PASS)
+        self.assertEqual(equivalent.semantic_differences, ())
+        self.assertEqual(divergent.result, SentinelRuntimeDecision.FAIL)
+        self.assertIn("semantic_digest", divergent.semantic_differences)
+        self.assertIn("completion_status", divergent.semantic_differences)
 
 
 if __name__ == "__main__":
