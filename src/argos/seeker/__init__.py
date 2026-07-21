@@ -108,6 +108,22 @@ from .evidence_acquisition import (
     investigation_plan,
     resolve_entity,
 )
+from .office_integrity import (
+    SeekerApprovedSearchPlan,
+    SeekerBoundaryRegistryRecord,
+    SeekerCandidateIdentityInput,
+    SeekerCandidateIdentityValidationRecord,
+    SeekerDiscoveryEvidence,
+    SeekerLifecycleState,
+    SeekerLifecycleStateMachineRecord,
+    SeekerMissionIntakeRecord,
+    SeekerObjectiveValidationRecord,
+    SeekerOfficeIntegrityEvidencePackage,
+    SeekerOfficeIntegritySupport,
+    SeekerSearchMission,
+    SeekerSearchPlanEnforcementRecord,
+    SeekerSelfCertificationSeparationRecord,
+)
 
 __all__ = [
     "CandidateOpportunityReportGenerator",
@@ -193,5 +209,19 @@ __all__ = [
     "build_queries",
     "investigation_plan",
     "resolve_entity",
+    "SeekerApprovedSearchPlan",
+    "SeekerBoundaryRegistryRecord",
+    "SeekerCandidateIdentityInput",
+    "SeekerCandidateIdentityValidationRecord",
+    "SeekerDiscoveryEvidence",
+    "SeekerLifecycleState",
+    "SeekerLifecycleStateMachineRecord",
+    "SeekerMissionIntakeRecord",
+    "SeekerObjectiveValidationRecord",
+    "SeekerOfficeIntegrityEvidencePackage",
+    "SeekerOfficeIntegritySupport",
+    "SeekerSearchMission",
+    "SeekerSearchPlanEnforcementRecord",
+    "SeekerSelfCertificationSeparationRecord",
     "seeker_office_templates",
 ]
