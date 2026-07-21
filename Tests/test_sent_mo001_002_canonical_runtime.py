@@ -14,8 +14,10 @@ from argos.sentinel import (  # noqa: E402
     FailureResponse,
     SENTINEL_COMMANDER_BRIDGE_ID,
     SentinelAuthorityRegistry,
+    SentinelBridgeDeliveryCompositionRoot,
     SentinelCanonicalRuntime,
     SentinelCommanderBridgeRuntime,
+    SentinelDeliveryConstitutionalState,
     SentinelDependencyCertifier,
     SentinelEnterpriseCompositionRoot,
     SentinelEnterpriseServiceRegistry,
@@ -233,6 +235,114 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         self.assertEqual(delivery.sentinel_delivery_state, SentinelNotificationStatus.REJECTED)
         self.assertIsNone(delivery.commander_receipt)
         self.assertEqual((), bridge_runtime.static_bypass_analysis()["unresolved_findings"])
+
+    def test_sent_mo002_001_to_014_certified_delivery_uses_enterprise_services_and_reconciliation_state(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        execution = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        ).execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+        assert execution.notification_ready_alert is not None
+        root = SentinelBridgeDeliveryCompositionRoot.for_mission(
+            mission,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+        services = root.services()
+        bridge_runtime = SentinelCommanderBridgeRuntime.from_enterprise_services(
+            services,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        delivery = bridge_runtime.deliver(execution.notification_ready_alert)
+
+        self.assertIs(bridge_runtime.commander, services.commander)
+        self.assertIs(bridge_runtime.communications_bus, services.communications_bus)
+        self.assertIs(bridge_runtime.bridge_registry, services.bridge_registry)
+        self.assertEqual(delivery.sentinel_delivery_state, SentinelNotificationStatus.ACKNOWLEDGED)
+        self.assertIsNotNone(delivery.bridge_resolution_evidence)
+        self.assertIsNotNone(delivery.bridge_authority_evidence)
+        self.assertIsNotNone(delivery.notification_authority_evidence)
+        self.assertIsNotNone(delivery.commander_resolution_evidence)
+        self.assertIsNotNone(delivery.bus_transmission_evidence)
+        self.assertIsNotNone(delivery.delivery_reconciliation_record)
+        self.assertIsNotNone(delivery.derived_delivery_state_record)
+        assert delivery.derived_delivery_state_record is not None
+        assert delivery.delivery_reconciliation_record is not None
+        self.assertEqual(delivery.delivery_reconciliation_record.reconciliation_outcome, SentinelRuntimeDecision.PASS)
+        self.assertEqual(delivery.derived_delivery_state_record.current_delivery_state, SentinelDeliveryConstitutionalState.DELIVERED)
+        persisted_names = tuple(item.payload["payload"]["object_name"] for item in bridge_runtime.persistence.all_records())
+        for name in (
+            "sentinel_bridge_resolution",
+            "sentinel_bridge_authority",
+            "sentinel_notification_authority",
+            "sentinel_commander_resolution",
+            "sentinel_bus_transmission",
+            "sentinel_delivery_reconciliation",
+            "sentinel_delivery_state",
+            "sentinel_immutable_bridge_evidence",
+            "sentinel_delivery_replay_evidence",
+            "sentinel_delivery_recovery_evidence",
+            "sentinel_bridge_bypass_evidence",
+            "sentinel_bridge_certification_evidence_package",
+        ):
+            self.assertIn(name, persisted_names)
+
+    def test_sent_mo002_005_certified_delivery_fails_closed_without_commander_resolution(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        execution = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        ).execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+        assert execution.notification_ready_alert is not None
+        bridge_runtime = SentinelCommanderBridgeRuntime(
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+            require_certified_delivery=True,
+        )
+
+        delivery = bridge_runtime.deliver(execution.notification_ready_alert)
+
+        self.assertEqual(delivery.sentinel_delivery_state, SentinelNotificationStatus.REJECTED)
+        self.assertEqual(delivery.bridge_rejection_code, "certified_delivery_dependencies_unavailable")
+        self.assertIsNone(delivery.commander_receipt)
+
+    def test_sent_mo002_009_bus_acceptance_alone_never_declares_delivery(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        execution = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        ).execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+        assert execution.notification_ready_alert is not None
+        root = SentinelBridgeDeliveryCompositionRoot.for_mission(
+            mission,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+        services = root.services()
+        services.commander.authority_registry = SentinelAuthorityRegistry(())
+        bridge_runtime = SentinelCommanderBridgeRuntime.from_enterprise_services(
+            services,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        delivery = bridge_runtime.deliver(execution.notification_ready_alert)
+
+        self.assertEqual(delivery.sentinel_delivery_state, SentinelNotificationStatus.REJECTED)
+        self.assertIsNotNone(delivery.bus_transmission_evidence)
+        self.assertIsNotNone(delivery.derived_delivery_state_record)
+        assert delivery.derived_delivery_state_record is not None
+        self.assertNotEqual(delivery.derived_delivery_state_record.current_delivery_state, SentinelDeliveryConstitutionalState.DELIVERED)
+        self.assertIn("commander_receipt_missing_or_invalid", delivery.derived_delivery_state_record.constitutional_deficiency_codes)
 
     def test_sent_mo1001_certified_composition_root_supplies_runtime_dependencies(self) -> None:
         root = SentinelEnterpriseCompositionRoot.paper()

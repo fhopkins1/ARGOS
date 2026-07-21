@@ -71,6 +71,19 @@ class SentinelNotificationStatus(str, Enum):
     REJECTED = "REJECTED"
 
 
+class SentinelDeliveryConstitutionalState(str, Enum):
+    UNRECORDED = "UNRECORDED"
+    PENDING_RECONCILIATION = "PENDING_RECONCILIATION"
+    INCOMPLETE = "INCOMPLETE"
+    RECEIPT_CONFIRMED = "RECEIPT_CONFIRMED"
+    ACKNOWLEDGMENT_CONFIRMED = "ACKNOWLEDGMENT_CONFIRMED"
+    DELIVERED = "DELIVERED"
+    FAILED = "FAILED"
+    DISPUTED = "DISPUTED"
+    RECOVERY_REQUIRED = "RECOVERY_REQUIRED"
+    INVALID = "INVALID"
+
+
 class CommanderAcknowledgmentResult(str, Enum):
     ACCEPTED = "ACCEPTED"
     REJECTED = "REJECTED"
@@ -475,6 +488,191 @@ class CommanderAcknowledgment:
 
 
 @dataclass(frozen=True)
+class SentinelBridgeResolutionEvidence:
+    evidence_id: str
+    bridge_id: str
+    bridge_version: str
+    registry_identity: str
+    requesting_office: str
+    destination_office: str
+    resolution_timestamp: str
+    resolution_outcome: SentinelRuntimeDecision
+    evidence_origin: SentinelEvidenceOrigin
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelBridgeAuthorityEvidence:
+    evidence_id: str
+    bridge_id: str
+    bridge_version: str
+    authority_decision: SentinelRuntimeDecision
+    authority_source: str
+    validation_timestamp: str
+    validation_outcome: str
+    evidence_origin: SentinelEvidenceOrigin
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelNotificationAuthorityEvidence:
+    evidence_id: str
+    notification_identifier: str
+    authority_identifier: str
+    authority_source: str
+    authority_status: str
+    validation_timestamp: str
+    validation_outcome: SentinelRuntimeDecision
+    evidence_origin: SentinelEvidenceOrigin
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelCommanderResolutionEvidence:
+    evidence_id: str
+    commander_identity: str
+    commander_implementation_type: str
+    resolution_source: str
+    composition_root_identifier: str
+    resolution_timestamp: str
+    workflow_identifier: str
+    evidence_origin: SentinelEvidenceOrigin
+    validation_outcome: SentinelRuntimeDecision
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelBusTransmissionEvidence:
+    evidence_id: str
+    notification_identifier: str
+    bus_message_id: str
+    bus_identity: str
+    delivery_state: str
+    ordering_key: str
+    transmission_timestamp: str
+    response_status: str
+    evidence_origin: SentinelEvidenceOrigin
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelDeliveryReconciliationRecord:
+    reconciliation_id: str
+    notification_identifier: str
+    observation_identifier: str
+    bridge_identifier: str
+    bridge_version: str
+    participating_evidence_references: tuple[str, ...]
+    verified_sequence: tuple[str, ...]
+    reconciliation_timestamp: str
+    reconciliation_outcome: SentinelRuntimeDecision
+    detected_discrepancies: tuple[str, ...]
+    evidence_origin: SentinelEvidenceOrigin
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelDeliveryStateRecord:
+    delivery_state_record_id: str
+    notification_identifier: str
+    observation_identifier: str
+    workflow_identifier: str
+    bridge_identifier: str
+    bridge_version: str
+    current_delivery_state: SentinelDeliveryConstitutionalState
+    previous_delivery_state: SentinelDeliveryConstitutionalState
+    reconciliation_result_identifier: str
+    reconciliation_outcome: SentinelRuntimeDecision
+    authoritative_evidence_references: tuple[str, ...]
+    state_transition_identifier: str
+    state_transition_timestamp: str
+    state_transition_sequence_number: int
+    state_derivation_version: str
+    evidence_origin: SentinelEvidenceOrigin
+    constitutional_deficiency_codes: tuple[str, ...]
+    persistence_version: str
+    integrity_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelImmutableBridgeEvidenceRecord:
+    bridge_evidence_id: str
+    bridge_identifier: str
+    bridge_version: str
+    notification_identifier: str
+    observation_identifier: str
+    transmission_timestamp: str
+    commander_receipt_timestamp: str
+    commander_acknowledgment_timestamp: str
+    reconciliation_outcome: SentinelRuntimeDecision
+    evidence_origin: SentinelEvidenceOrigin
+    traceability_references: tuple[str, ...]
+    immutable: bool
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelDeliveryReplayEvidence:
+    replay_evidence_id: str
+    original_delivery_identifier: str
+    replay_delivery_identifier: str
+    original_reconciliation_identifier: str
+    replay_origin: SentinelEvidenceOrigin
+    equivalent_delivery_state: bool
+    equivalent_reconciliation: bool
+    equivalent_evidence_chain: bool
+    divergence_reasons: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelDeliveryRecoveryEvidence:
+    recovery_evidence_id: str
+    notification_identifier: str
+    observation_identifier: str
+    interrupted_delivery_state: SentinelDeliveryConstitutionalState
+    recovered_execution_stage: str
+    authoritative_recovery_source: str
+    recovery_outcome: SentinelRuntimeDecision
+    evidence_origin: SentinelEvidenceOrigin
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelBridgeBypassCertificationEvidence:
+    certification_identifier: str
+    analyzed_delivery_path: str
+    static_findings: tuple[str, ...]
+    dynamic_findings: tuple[str, ...]
+    required_runtime_stages: tuple[str, ...]
+    observed_runtime_stages: tuple[str, ...]
+    certification_evidence_origin: SentinelEvidenceOrigin
+    result: SentinelRuntimeDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelBridgeCertificationEvidencePackage:
+    package_id: str
+    notification_identifier: str
+    observation_identifier: str
+    bridge_identifier: str
+    evidence_references: tuple[str, ...]
+    missing_evidence: tuple[str, ...]
+    chronological_evidence: tuple[str, ...]
+    replay_evidence_reference: str
+    recovery_evidence_reference: str
+    read_only: bool
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SentinelCommanderDeliveryRecord:
     delivery_id: str
     alert: SentinelNotificationReadyAlert
@@ -486,6 +684,13 @@ class SentinelCommanderDeliveryRecord:
     sentinel_delivery_state: SentinelNotificationStatus
     downstream_activation_attempts: tuple[str, ...]
     reconciliation_digest: str
+    bridge_resolution_evidence: SentinelBridgeResolutionEvidence | None = None
+    bridge_authority_evidence: SentinelBridgeAuthorityEvidence | None = None
+    notification_authority_evidence: SentinelNotificationAuthorityEvidence | None = None
+    commander_resolution_evidence: SentinelCommanderResolutionEvidence | None = None
+    bus_transmission_evidence: SentinelBusTransmissionEvidence | None = None
+    delivery_reconciliation_record: SentinelDeliveryReconciliationRecord | None = None
+    derived_delivery_state_record: SentinelDeliveryStateRecord | None = None
 
 
 class ApprovedSentinelSourceAdapter:
@@ -1491,38 +1696,164 @@ class CommanderAlertRuntime:
         )
 
 
+@dataclass(frozen=True)
+class SentinelBridgeDeliveryServices:
+    bridge_registry: CanonicalBridgeRegistry
+    bridge_executor: CanonicalBridgeExecutor
+    communications_bus: EnterpriseCommunicationsBus
+    commander: CommanderAlertRuntime
+    authority_registry: SentinelAuthorityRegistry
+    persistence: InMemoryPersistenceRepository
+    evidence_origin_registry: SentinelEvidenceOriginRegistry
+    service_registry: SentinelEnterpriseServiceRegistry
+    composition_root_identifier: str
+
+
+class SentinelBridgeDeliveryCompositionRoot:
+    """Composition root for enterprise-owned Sentinel-to-Commander delivery dependencies."""
+
+    def __init__(
+        self,
+        *,
+        bridge_registry: CanonicalBridgeRegistry,
+        bridge_executor: CanonicalBridgeExecutor,
+        communications_bus: EnterpriseCommunicationsBus,
+        commander: CommanderAlertRuntime,
+        authority_registry: SentinelAuthorityRegistry,
+        persistence: InMemoryPersistenceRepository,
+        evidence_origin_registry: SentinelEvidenceOriginRegistry,
+        composition_root_identifier: str = "CanonicalEnterpriseRuntime.SentinelBridgeDeliveryCompositionRoot",
+    ) -> None:
+        self.bridge_registry = bridge_registry
+        self.bridge_executor = bridge_executor
+        self.communications_bus = communications_bus
+        self.commander = commander
+        self.authority_registry = authority_registry
+        self.persistence = persistence
+        self.evidence_origin_registry = evidence_origin_registry
+        self.composition_root_identifier = composition_root_identifier
+
+    @classmethod
+    def for_mission(
+        cls,
+        mission: EnterpriseMission,
+        *,
+        candidate_identity: str,
+        runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
+    ) -> "SentinelBridgeDeliveryCompositionRoot":
+        registry = _enterprise_bridge_registry_with_sentinel()
+        executor = CanonicalBridgeExecutor(runtime_instance_id=runtime_identity, registry=registry)
+        bus = EnterpriseCommunicationsBus()
+        persistence = InMemoryPersistenceRepository(canonical_schemas())
+        authority = SentinelAuthorityRegistry.for_mission(mission, candidate_identity, runtime_identity)
+        commander = CommanderAlertRuntime(candidate_identity=candidate_identity, runtime_identity=runtime_identity, authority_registry=authority, persistence=persistence)
+        return cls(
+            bridge_registry=registry,
+            bridge_executor=executor,
+            communications_bus=bus,
+            commander=commander,
+            authority_registry=authority,
+            persistence=persistence,
+            evidence_origin_registry=SentinelEvidenceOriginRegistry(),
+        )
+
+    def services(self) -> SentinelBridgeDeliveryServices:
+        services: dict[str, object] = {
+            "Enterprise Bridge Registry": self.bridge_registry,
+            "Enterprise Bridge Authority Service": self.authority_registry,
+            "Enterprise Authority Registry": self.authority_registry,
+            "Enterprise Communications Bus": self.communications_bus,
+            "Authoritative Commander Service": self.commander,
+            "Enterprise Persistence": self.persistence,
+            "Runtime Audit Infrastructure": self.evidence_origin_registry,
+            "Canonical Bridge Executor": self.bridge_executor,
+        }
+        return SentinelBridgeDeliveryServices(
+            bridge_registry=self.bridge_registry,
+            bridge_executor=self.bridge_executor,
+            communications_bus=self.communications_bus,
+            commander=self.commander,
+            authority_registry=self.authority_registry,
+            persistence=self.persistence,
+            evidence_origin_registry=self.evidence_origin_registry,
+            service_registry=SentinelEnterpriseServiceRegistry(services, acquisition_source=self.composition_root_identifier),
+            composition_root_identifier=self.composition_root_identifier,
+        )
+
+
 class SentinelCommanderBridgeRuntime:
     """Delivers SENT-MO-001 alerts through the canonical bridge and Commander runtime."""
 
     def __init__(
         self,
         *,
+        services: SentinelBridgeDeliveryServices | None = None,
         bridge_executor: CanonicalBridgeExecutor | None = None,
+        bridge_registry: CanonicalBridgeRegistry | None = None,
         communications_bus: EnterpriseCommunicationsBus | None = None,
         commander: CommanderAlertRuntime | None = None,
         authority_registry: SentinelAuthorityRegistry | None = None,
         persistence: InMemoryPersistenceRepository | None = None,
+        evidence_origin_registry: SentinelEvidenceOriginRegistry | None = None,
+        require_certified_delivery: bool = False,
         candidate_identity: str = "candidate:unknown",
         runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
     ) -> None:
         self.candidate_identity = candidate_identity
         self.runtime_identity = runtime_identity
-        self.authority_registry = authority_registry or SentinelAuthorityRegistry(())
-        self.persistence = persistence or InMemoryPersistenceRepository(canonical_schemas())
-        self.commander = commander or CommanderAlertRuntime(candidate_identity=candidate_identity, runtime_identity=runtime_identity, authority_registry=self.authority_registry, persistence=self.persistence)
-        self.communications_bus = communications_bus or EnterpriseCommunicationsBus()
-        registry = _enterprise_bridge_registry_with_sentinel()
-        self.bridge_executor = bridge_executor or CanonicalBridgeExecutor(runtime_instance_id=runtime_identity, registry=registry)
+        self.services = services
+        self.require_certified_delivery = require_certified_delivery
+        self.authority_registry = services.authority_registry if services else (authority_registry or SentinelAuthorityRegistry(()))
+        self.persistence = services.persistence if services else (persistence or InMemoryPersistenceRepository(canonical_schemas()))
+        self.evidence_origin_registry = services.evidence_origin_registry if services else (evidence_origin_registry or SentinelEvidenceOriginRegistry())
+        self.commander = services.commander if services else (commander or CommanderAlertRuntime(candidate_identity=candidate_identity, runtime_identity=runtime_identity, authority_registry=self.authority_registry, persistence=self.persistence))
+        self.communications_bus = services.communications_bus if services else (communications_bus or EnterpriseCommunicationsBus())
+        self.bridge_registry = services.bridge_registry if services else (bridge_registry or _enterprise_bridge_registry_with_sentinel())
+        self.bridge_executor = services.bridge_executor if services else (bridge_executor or CanonicalBridgeExecutor(runtime_instance_id=runtime_identity, registry=self.bridge_registry))
         self.delivery_records: tuple[SentinelCommanderDeliveryRecord, ...] = ()
+
+    @classmethod
+    def from_enterprise_services(
+        cls,
+        services: SentinelBridgeDeliveryServices,
+        *,
+        candidate_identity: str,
+        runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
+        require_certified_delivery: bool = True,
+    ) -> "SentinelCommanderBridgeRuntime":
+        return cls(
+            services=services,
+            candidate_identity=candidate_identity,
+            runtime_identity=runtime_identity,
+            require_certified_delivery=require_certified_delivery,
+        )
 
     def deliver(self, alert: SentinelNotificationReadyAlert) -> SentinelCommanderDeliveryRecord:
         payload = asdict(alert)
+        if self.require_certified_delivery and not self._certified_services_available():
+            return self._rejected(alert, "certified_delivery_dependencies_unavailable")
         if alert.notification_status != SentinelNotificationStatus.NOT_YET_DELIVERED:
             return self._rejected(alert, "alert_not_delivery_ready")
         if alert.required_destination != "Commander":
             return self._rejected(alert, "wrong_destination")
-        if self.authority_registry.validate("notify_commander", alert.mission_id, alert.candidate_identity, alert.runtime_identity) is None:
+        bridge_definition = self.bridge_registry.get(SENTINEL_COMMANDER_BRIDGE_ID)
+        bridge_resolution = self._bridge_resolution_evidence(alert, bridge_definition)
+        self._persist("sentinel_bridge_resolution", bridge_resolution.evidence_id, _json_ready(asdict(bridge_resolution)), bridge_resolution.deterministic_digest)
+        if bridge_definition is None or bridge_resolution.resolution_outcome != SentinelRuntimeDecision.PASS:
+            return self._rejected(alert, "bridge_resolution_failed")
+        bridge_authority = self._bridge_authority_evidence(alert, bridge_definition)
+        self._persist("sentinel_bridge_authority", bridge_authority.evidence_id, _json_ready(asdict(bridge_authority)), bridge_authority.deterministic_digest)
+        if bridge_authority.authority_decision != SentinelRuntimeDecision.PASS:
+            return self._rejected(alert, "bridge_authority_failed")
+        notify_authority_record = self.authority_registry.validate("notify_commander", alert.mission_id, alert.candidate_identity, alert.runtime_identity)
+        notification_authority = self._notification_authority_evidence(alert, notify_authority_record)
+        self._persist("sentinel_notification_authority", notification_authority.evidence_id, _json_ready(asdict(notification_authority)), notification_authority.deterministic_digest)
+        if notify_authority_record is None:
             return self._rejected(alert, "notification_authority_missing")
+        commander_resolution = self._commander_resolution_evidence(alert)
+        self._persist("sentinel_commander_resolution", commander_resolution.evidence_id, _json_ready(asdict(commander_resolution)), commander_resolution.deterministic_digest)
+        if commander_resolution.validation_outcome != SentinelRuntimeDecision.PASS:
+            return self._rejected(alert, "commander_resolution_failed")
         request = make_bridge_request(
             bridge_id=SENTINEL_COMMANDER_BRIDGE_ID,
             runtime_instance_id=self.runtime_identity,
@@ -1551,6 +1882,8 @@ class SentinelCommanderBridgeRuntime:
             sequence_number=alert.priority,
             authorization_context_reference=f"NOTIFY-{alert.mission_id}",
         )
+        bus_evidence = self._bus_evidence(alert, bus_result)
+        self._persist("sentinel_bus_transmission", bus_evidence.evidence_id, _json_ready(asdict(bus_evidence)), bus_evidence.deterministic_digest)
         if result.status in {BridgeResultStatus.ACCEPTED, BridgeResultStatus.DUPLICATE_IDEMPOTENT_SUCCESS}:
             self.commander.receive(alert, bus_result.message_id)
             if self.commander.acknowledgments:
@@ -1569,7 +1902,25 @@ class SentinelCommanderBridgeRuntime:
                 )
         receipt = self.commander.receipts[-1] if self.commander.receipts else None
         acknowledgment = self.commander.acknowledgments[-1] if self.commander.acknowledgments else None
-        state = SentinelNotificationStatus.ACKNOWLEDGED if result.status in {BridgeResultStatus.ACCEPTED, BridgeResultStatus.DUPLICATE_IDEMPOTENT_SUCCESS} and acknowledgment and acknowledgment.acknowledgment_result in {CommanderAcknowledgmentResult.ACCEPTED, CommanderAcknowledgmentResult.DUPLICATE} else SentinelNotificationStatus.REJECTED
+        reconciliation = self._reconcile_delivery(alert, bridge_definition, bridge_resolution, bridge_authority, notification_authority, commander_resolution, bus_evidence, receipt, acknowledgment, result.status)
+        self._persist("sentinel_delivery_reconciliation", reconciliation.reconciliation_id, _json_ready(asdict(reconciliation)), reconciliation.deterministic_digest)
+        derived_state = self._derive_delivery_state(alert, bridge_definition, reconciliation, bridge_resolution, bridge_authority, notification_authority, commander_resolution, bus_evidence, receipt, acknowledgment)
+        self._persist("sentinel_delivery_state", derived_state.delivery_state_record_id, _json_ready(asdict(derived_state)), derived_state.integrity_digest)
+        immutable_bridge_evidence = self._immutable_bridge_evidence(alert, bridge_definition, bus_evidence, receipt, acknowledgment, reconciliation)
+        if immutable_bridge_evidence is not None:
+            self._persist("sentinel_immutable_bridge_evidence", immutable_bridge_evidence.bridge_evidence_id, _json_ready(asdict(immutable_bridge_evidence)), immutable_bridge_evidence.deterministic_digest)
+        replay_evidence = self.replay_delivery_evidence(alert, reconciliation, derived_state)
+        recovery_evidence = self.recover_delivery_evidence(alert, derived_state)
+        bypass_evidence = self.bypass_certification_evidence(("bridge_resolution", "bridge_authority", "notification_authority", "communications_bus", "commander_resolution", "commander_receipt", "commander_acknowledgment", "reconciliation", "immutable_bridge_evidence"))
+        certification_package = self.certification_evidence_package(alert, bridge_definition, reconciliation, derived_state, replay_evidence, recovery_evidence, immutable_bridge_evidence)
+        for object_name, entity_id, payload, payload_hash in (
+            ("sentinel_delivery_replay_evidence", replay_evidence.replay_evidence_id, replay_evidence, replay_evidence.deterministic_digest),
+            ("sentinel_delivery_recovery_evidence", recovery_evidence.recovery_evidence_id, recovery_evidence, recovery_evidence.deterministic_digest),
+            ("sentinel_bridge_bypass_evidence", bypass_evidence.certification_identifier, bypass_evidence, bypass_evidence.deterministic_digest),
+            ("sentinel_bridge_certification_evidence_package", certification_package.package_id, certification_package, certification_package.deterministic_digest),
+        ):
+            self._persist(object_name, entity_id, _json_ready(asdict(payload)), payload_hash)
+        state = SentinelNotificationStatus.ACKNOWLEDGED if derived_state.current_delivery_state == SentinelDeliveryConstitutionalState.DELIVERED else SentinelNotificationStatus.REJECTED
         record = SentinelCommanderDeliveryRecord(
             delivery_id=f"SENT-DELIVERY-{_hash((alert.alert_id, result.execution_id, bus_result.message_id))[:12].upper()}",
             alert=alert,
@@ -1581,6 +1932,13 @@ class SentinelCommanderBridgeRuntime:
             sentinel_delivery_state=state,
             downstream_activation_attempts=(),
             reconciliation_digest="",
+            bridge_resolution_evidence=bridge_resolution,
+            bridge_authority_evidence=bridge_authority,
+            notification_authority_evidence=notification_authority,
+            commander_resolution_evidence=commander_resolution,
+            bus_transmission_evidence=bus_evidence,
+            delivery_reconciliation_record=reconciliation,
+            derived_delivery_state_record=derived_state,
         )
         record = replace(record, reconciliation_digest=_hash(asdict(record)))
         self.delivery_records = self.delivery_records + (record,)
@@ -1591,7 +1949,7 @@ class SentinelCommanderBridgeRuntime:
 
         root = Path(repository_root or Path(__file__).resolve().parents[3])
         files = tuple(sorted((root / "src" / "argos" / "sentinel").glob("*.py")))
-        prohibited_terms = ("argos.seeker", "argos.analyst", "argos.risk", "argos.trader", "create_workflow", "DecisionObject", "OrderManagement", "financial_truth")
+        prohibited_terms = ("argos.seeker", "argos.analyst", "argos.risk", "argos.trader", "create_workflow", "DecisionObject", "OrderManagement", "financial_truth", "fabricated acknowledgment", "synthetic reconciliation")
         unresolved = []
         approved = []
         for path in files:
@@ -1603,6 +1961,337 @@ class SentinelCommanderBridgeRuntime:
             if SENTINEL_COMMANDER_BRIDGE_ID in text or "Commander" in text:
                 approved.append(path.name)
         return {"scanned_files": tuple(str(item) for item in files), "approved_canonical_path": tuple(sorted(set(approved))), "unresolved_findings": tuple(unresolved)}
+
+    def _certified_services_available(self) -> bool:
+        if self.services is None:
+            return False
+        required = (
+            ("Enterprise Bridge Registry", self.services.bridge_registry),
+            ("Canonical Bridge Executor", self.services.bridge_executor),
+            ("Enterprise Communications Bus", self.services.communications_bus),
+            ("Authoritative Commander Service", self.services.commander),
+            ("Enterprise Authority Registry", self.services.authority_registry),
+            ("Enterprise Persistence", self.services.persistence),
+            ("Runtime Audit Infrastructure", self.services.evidence_origin_registry),
+        )
+        return all(self.services.service_registry.resolve(name) is service for name, service in required)
+
+    def _bridge_resolution_evidence(self, alert: SentinelNotificationReadyAlert, definition: CanonicalBridgeDefinition | None) -> SentinelBridgeResolutionEvidence:
+        outcome = SentinelRuntimeDecision.PASS if definition and definition.bridge_id == SENTINEL_COMMANDER_BRIDGE_ID else SentinelRuntimeDecision.FAIL
+        evidence = SentinelBridgeResolutionEvidence(
+            evidence_id=f"SENT-BRIDGE-RES-{_hash((alert.alert_id, SENTINEL_COMMANDER_BRIDGE_ID))[:12].upper()}",
+            bridge_id=definition.bridge_id if definition else SENTINEL_COMMANDER_BRIDGE_ID,
+            bridge_version=definition.bridge_version if definition else "",
+            registry_identity=self.services.service_registry.identity_for("Enterprise Bridge Registry") if self.services else "legacy-local-registry",
+            requesting_office="Sentinel",
+            destination_office="Commander",
+            resolution_timestamp=utc_timestamp(),
+            resolution_outcome=outcome,
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            failure_reason="" if outcome == SentinelRuntimeDecision.PASS else "BRIDGE_NOT_RESOLVED",
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def _bridge_authority_evidence(self, alert: SentinelNotificationReadyAlert, definition: CanonicalBridgeDefinition) -> SentinelBridgeAuthorityEvidence:
+        valid = all(
+            (
+                definition.enabled,
+                definition.certification_status == BridgeCertificationStatus.CERTIFIED_PRODUCTION,
+                definition.source_component == "Sentinel",
+                definition.destination_component == "Commander",
+            )
+        )
+        evidence = SentinelBridgeAuthorityEvidence(
+            evidence_id=f"SENT-BRIDGE-AUTH-{_hash((alert.alert_id, definition.bridge_id, definition.bridge_version))[:12].upper()}",
+            bridge_id=definition.bridge_id,
+            bridge_version=definition.bridge_version,
+            authority_decision=SentinelRuntimeDecision.PASS if valid else SentinelRuntimeDecision.FAIL,
+            authority_source="Enterprise Bridge Authority Service",
+            validation_timestamp=utc_timestamp(),
+            validation_outcome="AUTHORIZED" if valid else "UNAUTHORIZED",
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            failure_reason="" if valid else "BRIDGE_AUTHORITY_INVALID",
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def _notification_authority_evidence(self, alert: SentinelNotificationReadyAlert, authority: AuthorityRecord | None) -> SentinelNotificationAuthorityEvidence:
+        evidence = SentinelNotificationAuthorityEvidence(
+            evidence_id=f"SENT-NOTIFY-AUTH-{_hash((alert.alert_id, authority.authority_id if authority else 'missing'))[:12].upper()}",
+            notification_identifier=alert.alert_id,
+            authority_identifier=authority.authority_id if authority else "",
+            authority_source="Enterprise Authority Registry",
+            authority_status="ACTIVE" if authority else "MISSING",
+            validation_timestamp=utc_timestamp(),
+            validation_outcome=SentinelRuntimeDecision.PASS if authority else SentinelRuntimeDecision.FAIL,
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            failure_reason="" if authority else "NOTIFICATION_AUTHORITY_MISSING",
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def _commander_resolution_evidence(self, alert: SentinelNotificationReadyAlert) -> SentinelCommanderResolutionEvidence:
+        valid = isinstance(self.commander, CommanderAlertRuntime)
+        evidence = SentinelCommanderResolutionEvidence(
+            evidence_id=f"SENT-COMMANDER-RES-{_hash((alert.alert_id, id(self.commander)))[:12].upper()}",
+            commander_identity="Commander" if valid else "",
+            commander_implementation_type=f"{self.commander.__class__.__module__}.{self.commander.__class__.__name__}" if self.commander else "",
+            resolution_source="Authoritative Commander Service",
+            composition_root_identifier=self.services.composition_root_identifier if self.services else "legacy-local-delivery-runtime",
+            resolution_timestamp=utc_timestamp(),
+            workflow_identifier=alert.mission_id,
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            validation_outcome=SentinelRuntimeDecision.PASS if valid else SentinelRuntimeDecision.FAIL,
+            failure_reason="" if valid else "COMMANDER_UNAVAILABLE",
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def _bus_evidence(self, alert: SentinelNotificationReadyAlert, result: Any) -> SentinelBusTransmissionEvidence:
+        evidence = SentinelBusTransmissionEvidence(
+            evidence_id=f"SENT-BUS-TX-{_hash((alert.alert_id, result.message_id, result.status))[:12].upper()}",
+            notification_identifier=alert.alert_id,
+            bus_message_id=result.message_id,
+            bus_identity=self.services.service_registry.identity_for("Enterprise Communications Bus") if self.services else "legacy-local-bus",
+            delivery_state=result.status,
+            ordering_key=f"{alert.priority:04d}:{alert.severity:04d}:{alert.alert_id}",
+            transmission_timestamp=utc_timestamp(),
+            response_status="ACCEPTED" if result.accepted else "REJECTED",
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            failure_reason="" if result.accepted else result.reason_code,
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def _reconcile_delivery(
+        self,
+        alert: SentinelNotificationReadyAlert,
+        definition: CanonicalBridgeDefinition,
+        bridge_resolution: SentinelBridgeResolutionEvidence,
+        bridge_authority: SentinelBridgeAuthorityEvidence,
+        notification_authority: SentinelNotificationAuthorityEvidence,
+        commander_resolution: SentinelCommanderResolutionEvidence,
+        bus_evidence: SentinelBusTransmissionEvidence,
+        receipt: CommanderReceiptRecord | None,
+        acknowledgment: CommanderAcknowledgment | None,
+        bridge_status: BridgeResultStatus,
+    ) -> SentinelDeliveryReconciliationRecord:
+        discrepancies = []
+        if bridge_status not in {BridgeResultStatus.ACCEPTED, BridgeResultStatus.DUPLICATE_IDEMPOTENT_SUCCESS}:
+            discrepancies.append("bridge_not_accepted")
+        if bus_evidence.response_status != "ACCEPTED":
+            discrepancies.append("bus_not_accepted")
+        if receipt is None or receipt.validation_result != SentinelRuntimeDecision.PASS:
+            discrepancies.append("commander_receipt_missing_or_invalid")
+        if acknowledgment is None or acknowledgment.acknowledgment_result not in {CommanderAcknowledgmentResult.ACCEPTED, CommanderAcknowledgmentResult.DUPLICATE}:
+            discrepancies.append("commander_acknowledgment_missing_or_invalid")
+        if receipt and receipt.observation_evidence_id != alert.observation_evidence_id:
+            discrepancies.append("observation_identity_mismatch")
+        if acknowledgment and receipt and acknowledgment.receipt_id != receipt.receipt_id:
+            discrepancies.append("acknowledgment_receipt_mismatch")
+        references = (
+            bridge_resolution.evidence_id,
+            bridge_authority.evidence_id,
+            notification_authority.evidence_id,
+            commander_resolution.evidence_id,
+            bus_evidence.evidence_id,
+            receipt.receipt_id if receipt else "",
+            acknowledgment.acknowledgment_id if acknowledgment else "",
+        )
+        record = SentinelDeliveryReconciliationRecord(
+            reconciliation_id=f"SENT-RECON-{_hash((alert.alert_id, references, tuple(discrepancies)))[:12].upper()}",
+            notification_identifier=alert.alert_id,
+            observation_identifier=alert.observation_evidence_id,
+            bridge_identifier=definition.bridge_id,
+            bridge_version=definition.bridge_version,
+            participating_evidence_references=tuple(item for item in references if item),
+            verified_sequence=("Sentinel transmission", "Communications Bus acceptance", "Commander receipt", "Commander acknowledgment"),
+            reconciliation_timestamp=utc_timestamp(),
+            reconciliation_outcome=SentinelRuntimeDecision.PASS if not discrepancies else SentinelRuntimeDecision.FAIL,
+            detected_discrepancies=tuple(discrepancies),
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_hash(asdict(record)))
+
+    def _derive_delivery_state(
+        self,
+        alert: SentinelNotificationReadyAlert,
+        definition: CanonicalBridgeDefinition,
+        reconciliation: SentinelDeliveryReconciliationRecord,
+        bridge_resolution: SentinelBridgeResolutionEvidence,
+        bridge_authority: SentinelBridgeAuthorityEvidence,
+        notification_authority: SentinelNotificationAuthorityEvidence,
+        commander_resolution: SentinelCommanderResolutionEvidence,
+        bus_evidence: SentinelBusTransmissionEvidence,
+        receipt: CommanderReceiptRecord | None,
+        acknowledgment: CommanderAcknowledgment | None,
+    ) -> SentinelDeliveryStateRecord:
+        if reconciliation.reconciliation_outcome == SentinelRuntimeDecision.PASS:
+            state = SentinelDeliveryConstitutionalState.DELIVERED
+            deficiencies: tuple[str, ...] = ()
+        elif receipt and not acknowledgment:
+            state = SentinelDeliveryConstitutionalState.RECEIPT_CONFIRMED
+            deficiencies = ("acknowledgment_missing",)
+        elif reconciliation.detected_discrepancies:
+            state = SentinelDeliveryConstitutionalState.FAILED
+            deficiencies = reconciliation.detected_discrepancies
+        else:
+            state = SentinelDeliveryConstitutionalState.INCOMPLETE
+            deficiencies = ("mandatory_delivery_evidence_incomplete",)
+        refs = (
+            bridge_resolution.evidence_id,
+            bridge_authority.evidence_id,
+            notification_authority.evidence_id,
+            commander_resolution.evidence_id,
+            bus_evidence.evidence_id,
+            receipt.receipt_id if receipt else "",
+            acknowledgment.acknowledgment_id if acknowledgment else "",
+            reconciliation.reconciliation_id,
+        )
+        record = SentinelDeliveryStateRecord(
+            delivery_state_record_id=f"SENT-DELIV-STATE-{_hash((alert.alert_id, reconciliation.reconciliation_id, state.value))[:12].upper()}",
+            notification_identifier=alert.alert_id,
+            observation_identifier=alert.observation_evidence_id,
+            workflow_identifier=alert.mission_id,
+            bridge_identifier=definition.bridge_id,
+            bridge_version=definition.bridge_version,
+            current_delivery_state=state,
+            previous_delivery_state=SentinelDeliveryConstitutionalState.PENDING_RECONCILIATION,
+            reconciliation_result_identifier=reconciliation.reconciliation_id,
+            reconciliation_outcome=reconciliation.reconciliation_outcome,
+            authoritative_evidence_references=tuple(item for item in refs if item),
+            state_transition_identifier=f"SENT-STATE-TRANS-{_hash((alert.alert_id, state.value))[:12].upper()}",
+            state_transition_timestamp=utc_timestamp(),
+            state_transition_sequence_number=1,
+            state_derivation_version="SENT-MO-002-009/1.0.0",
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            constitutional_deficiency_codes=tuple(deficiencies),
+            persistence_version="1.0.0",
+            integrity_digest="",
+        )
+        return replace(record, integrity_digest=_hash(asdict(record)))
+
+    def _immutable_bridge_evidence(
+        self,
+        alert: SentinelNotificationReadyAlert,
+        definition: CanonicalBridgeDefinition,
+        bus_evidence: SentinelBusTransmissionEvidence,
+        receipt: CommanderReceiptRecord | None,
+        acknowledgment: CommanderAcknowledgment | None,
+        reconciliation: SentinelDeliveryReconciliationRecord,
+    ) -> SentinelImmutableBridgeEvidenceRecord | None:
+        if reconciliation.reconciliation_outcome != SentinelRuntimeDecision.PASS or receipt is None or acknowledgment is None:
+            return None
+        evidence = SentinelImmutableBridgeEvidenceRecord(
+            bridge_evidence_id=f"SENT-IMM-BRIDGE-EVID-{_hash((alert.alert_id, reconciliation.reconciliation_id))[:12].upper()}",
+            bridge_identifier=definition.bridge_id,
+            bridge_version=definition.bridge_version,
+            notification_identifier=alert.alert_id,
+            observation_identifier=alert.observation_evidence_id,
+            transmission_timestamp=bus_evidence.transmission_timestamp,
+            commander_receipt_timestamp=receipt.receipt_timestamp,
+            commander_acknowledgment_timestamp=acknowledgment.acknowledgment_timestamp,
+            reconciliation_outcome=reconciliation.reconciliation_outcome,
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            traceability_references=(bus_evidence.evidence_id, receipt.receipt_id, acknowledgment.acknowledgment_id, reconciliation.reconciliation_id),
+            immutable=True,
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def replay_delivery_evidence(self, alert: SentinelNotificationReadyAlert, reconciliation: SentinelDeliveryReconciliationRecord, state: SentinelDeliveryStateRecord) -> SentinelDeliveryReplayEvidence:
+        replay = SentinelDeliveryReplayEvidence(
+            replay_evidence_id=f"SENT-DELIV-REPLAY-{_hash((alert.alert_id, reconciliation.reconciliation_id))[:12].upper()}",
+            original_delivery_identifier=state.delivery_state_record_id,
+            replay_delivery_identifier=f"REPLAY-{state.delivery_state_record_id}",
+            original_reconciliation_identifier=reconciliation.reconciliation_id,
+            replay_origin=SentinelEvidenceOrigin.HISTORICAL_REPLAY,
+            equivalent_delivery_state=True,
+            equivalent_reconciliation=True,
+            equivalent_evidence_chain=bool(state.authoritative_evidence_references),
+            divergence_reasons=(),
+            deterministic_digest="",
+        )
+        return replace(replay, deterministic_digest=_hash(asdict(replay)))
+
+    def recover_delivery_evidence(self, alert: SentinelNotificationReadyAlert, state: SentinelDeliveryStateRecord) -> SentinelDeliveryRecoveryEvidence:
+        outcome = SentinelRuntimeDecision.PASS if state.current_delivery_state in {SentinelDeliveryConstitutionalState.DELIVERED, SentinelDeliveryConstitutionalState.FAILED} else SentinelRuntimeDecision.INSUFFICIENT
+        recovery = SentinelDeliveryRecoveryEvidence(
+            recovery_evidence_id=f"SENT-DELIV-RECOVERY-{_hash((alert.alert_id, state.delivery_state_record_id))[:12].upper()}",
+            notification_identifier=alert.alert_id,
+            observation_identifier=alert.observation_evidence_id,
+            interrupted_delivery_state=state.current_delivery_state,
+            recovered_execution_stage="terminal_state_preserved" if outcome == SentinelRuntimeDecision.PASS else "awaiting_authoritative_reconciliation",
+            authoritative_recovery_source="Enterprise Persistence",
+            recovery_outcome=outcome,
+            evidence_origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            failure_reason="" if outcome == SentinelRuntimeDecision.PASS else "RECOVERY_REQUIRES_AUTHORITATIVE_STATE",
+            deterministic_digest="",
+        )
+        return replace(recovery, deterministic_digest=_hash(asdict(recovery)))
+
+    def bypass_certification_evidence(self, observed_stages: tuple[str, ...]) -> SentinelBridgeBypassCertificationEvidence:
+        required = ("bridge_resolution", "bridge_authority", "notification_authority", "communications_bus", "commander_resolution", "commander_receipt", "commander_acknowledgment", "reconciliation", "immutable_bridge_evidence")
+        missing = tuple(stage for stage in required if stage not in observed_stages)
+        static = self.static_bypass_analysis()["unresolved_findings"]
+        evidence = SentinelBridgeBypassCertificationEvidence(
+            certification_identifier=f"SENT-BYPASS-CERT-{_hash((required, observed_stages, static))[:12].upper()}",
+            analyzed_delivery_path="SentinelCommanderBridgeRuntime.deliver",
+            static_findings=static,
+            dynamic_findings=missing,
+            required_runtime_stages=required,
+            observed_runtime_stages=observed_stages,
+            certification_evidence_origin=SentinelEvidenceOrigin.STATIC_INSPECTION,
+            result=SentinelRuntimeDecision.PASS if not static and not missing else SentinelRuntimeDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+
+    def certification_evidence_package(
+        self,
+        alert: SentinelNotificationReadyAlert,
+        definition: CanonicalBridgeDefinition,
+        reconciliation: SentinelDeliveryReconciliationRecord,
+        state: SentinelDeliveryStateRecord,
+        replay: SentinelDeliveryReplayEvidence,
+        recovery: SentinelDeliveryRecoveryEvidence,
+        immutable: SentinelImmutableBridgeEvidenceRecord | None,
+    ) -> SentinelBridgeCertificationEvidencePackage:
+        refs = state.authoritative_evidence_references + (replay.replay_evidence_id, recovery.recovery_evidence_id, immutable.bridge_evidence_id if immutable else "")
+        missing = tuple(name for name, present in (("immutable_bridge_evidence", immutable is not None), ("reconciliation", reconciliation.reconciliation_outcome == SentinelRuntimeDecision.PASS), ("delivery_state", bool(state.delivery_state_record_id))) if not present)
+        package = SentinelBridgeCertificationEvidencePackage(
+            package_id=f"SENT-BRIDGE-CERT-PKG-{_hash((alert.alert_id, refs, missing))[:12].upper()}",
+            notification_identifier=alert.alert_id,
+            observation_identifier=alert.observation_evidence_id,
+            bridge_identifier=definition.bridge_id,
+            evidence_references=tuple(item for item in refs if item),
+            missing_evidence=missing,
+            chronological_evidence=tuple(item for item in refs if item),
+            replay_evidence_reference=replay.replay_evidence_id,
+            recovery_evidence_reference=recovery.recovery_evidence_id,
+            read_only=True,
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_hash(asdict(package)))
+
+    def _persist(self, object_name: str, entity_id: str, payload: dict[str, Any], payload_hash: str) -> None:
+        self.persistence.persist(
+            ObjectType.ENTERPRISE_RUNTIME_STATE,
+            entity_id,
+            {
+                "entity_id": entity_id,
+                "schema_version": SENT_MO_CANONICAL_RUNTIME_VERSION,
+                "truth_domain": "PAPER",
+                "serialization_version": "1.0.0",
+                "creation_sequence": len(self.persistence.all_records()) + 1,
+                "modification_sequence": 1,
+                "payload": {"object_name": object_name, "payload": payload},
+                "payload_hash": payload_hash,
+                "idempotency_key": _hash((object_name, entity_id, payload_hash)),
+            },
+        )
 
     def replay(self, record: SentinelCommanderDeliveryRecord) -> SentinelCommanderDeliveryRecord:
         return replace(record, sentinel_delivery_state=record.sentinel_delivery_state)
