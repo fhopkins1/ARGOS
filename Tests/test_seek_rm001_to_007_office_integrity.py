@@ -908,6 +908,114 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("DISC-EVID-BAD:source_not_approved", evidence.inadmissible_evidence)
         self.assertIn("DISC-EVID-STALE:analysis", evidence.prohibited_semantic_findings)
 
+    def test_seek_rm003_operational_integrity_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_rm003_operational_integrity_evidence_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1", "discovery": "DISCOVERY/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        self.assertEqual(package.final_rm003_operational_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-003-013",
+                "SEEK-RM-003-014",
+                "SEEK-RM-003-015",
+                "SEEK-RM-003-016",
+                "SEEK-RM-003-017",
+                "SEEK-RM-003-018",
+            ),
+        )
+        self.assertEqual(package.discovery_provenance_architecture.orphan_objects, ())
+        self.assertTrue(package.discovery_provenance_architecture.independently_reconstructable)
+        self.assertEqual(package.office_state_machine.terminal_state, "DORMANT_CLEAN")
+        self.assertTrue(package.office_state_machine.authority_relinquished)
+        self.assertEqual(package.office_owned_persistent_state.unclassified_state, ())
+        self.assertTrue(package.office_owned_persistent_state.recovery_supported)
+        self.assertEqual(package.recovery_checkpoint_architecture.unauthorized_boundaries, ())
+        self.assertTrue(package.recovery_checkpoint_architecture.replay_compatible)
+        self.assertEqual(package.constitutional_commit_boundaries.missing_commit_boundaries, ())
+        self.assertTrue(package.constitutional_commit_boundaries.monotonic_sequence_verified)
+        self.assertTrue(package.replay_semantic_equivalence.semantic_equivalence)
+        self.assertEqual(package.replay_semantic_equivalence.failed_invariants, ())
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm003_operational_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        integrity = support.build_package(mission=mission(), search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+        objects = support.build_constitutional_objects_package(mission=mission(), search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+        doctrine = support.build_constitutional_doctrine_package(mission=mission(), search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidates=(candidate(),))
+        cert_support = support.build_certification_support_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1", "discovery": "DISCOVERY/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        provenance = support.evaluate_rm003_discovery_provenance_architecture(
+            mission(search_plan_id="OTHER-PLAN"),
+            search_plan(),
+            (),
+            candidate(candidate_reference=""),
+            integrity,
+            doctrine,
+            omitted_node_classes=("Discovery Evidence",),
+            omitted_edge_classes=("ACQUIRED_FROM_SOURCE",),
+            orphan_objects=("orphan_candidate",),
+        )
+        state_machine = support.evaluate_rm003_office_state_machine(("DORMANT", "DISCOVERY_EXECUTING", "DORMANT_CLEAN"), multiple_current_state_findings=("dual_current_state",))
+        persistence = support.evaluate_rm003_office_owned_persistent_state(
+            integrity,
+            objects,
+            doctrine,
+            cert_support,
+            unclassified_state=("operator_cache",),
+            residual_state_findings=("active_authority_handle",),
+        )
+        checkpoints = support.evaluate_rm003_recovery_checkpoint_architecture(
+            cert_support.recovery_checkpoint_architecture,
+            observed_boundaries=("Search Mission acceptance", "Partial parsing buffer"),
+            invalid_checkpoint_findings=("integrity_hash_mismatch",),
+        )
+        commits = support.evaluate_rm003_constitutional_commit_boundaries(
+            ("CB-002 Search Plan Established", "CB-001 Search Mission Accepted", "CB-999 Runtime Convenience Commit"),
+            partial_commit_findings=("candidate_partial_write",),
+        )
+        replay = support.evaluate_rm003_replay_semantic_equivalence(
+            integrity,
+            objects,
+            doctrine,
+            cert_support,
+            failed_invariants=("Evidence Integrity",),
+            prohibited_runtime_differences=("changed_candidate_identity",),
+        )
+
+        self.assertEqual(provenance.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Discovery Evidence", provenance.missing_node_classes)
+        self.assertIn("ACQUIRED_FROM_SOURCE", provenance.missing_edge_classes)
+        self.assertIn("orphan_candidate", provenance.orphan_objects)
+        self.assertIn("mission_plan_provenance_mismatch", provenance.integrity_findings)
+        self.assertEqual(state_machine.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("DORMANT->DISCOVERY_EXECUTING", state_machine.illegal_transitions)
+        self.assertIn("MISSION_RECEIVED", state_machine.skipped_mandatory_states)
+        self.assertIn("dual_current_state", state_machine.multiple_current_state_findings)
+        self.assertEqual(persistence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("operator_cache", persistence.unclassified_state)
+        self.assertIn("active_authority_handle", persistence.residual_state_findings)
+        self.assertEqual(checkpoints.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Partial parsing buffer", checkpoints.unauthorized_boundaries)
+        self.assertIn("integrity_hash_mismatch", checkpoints.invalid_checkpoint_findings)
+        self.assertEqual(commits.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("CB-003 Candidate Discovered", commits.missing_commit_boundaries)
+        self.assertIn("CB-999 Runtime Convenience Commit", commits.unauthorized_commit_boundaries)
+        self.assertIn("CB-002 Search Plan Established->CB-001 Search Mission Accepted", commits.ordering_violations)
+        self.assertIn("candidate_partial_write", commits.partial_commit_findings)
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Evidence Integrity", replay.failed_invariants)
+        self.assertIn("changed_candidate_identity", replay.prohibited_runtime_differences)
+
 
 if __name__ == "__main__":
     unittest.main()

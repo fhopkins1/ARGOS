@@ -1180,6 +1180,127 @@ class SeekerRm003DoctrineEvidencePackage:
 
 
 @dataclass(frozen=True)
+class SeekerRm003DiscoveryProvenanceArchitectureRecord:
+    provenance_identifier: str
+    graph_schema_version: str
+    required_node_classes: tuple[str, ...]
+    missing_node_classes: tuple[str, ...]
+    required_edge_classes: tuple[str, ...]
+    missing_edge_classes: tuple[str, ...]
+    mission_root: str
+    provenance_chain: tuple[str, ...]
+    orphan_objects: tuple[str, ...]
+    integrity_findings: tuple[str, ...]
+    recovery_lineage_separate: bool
+    replay_lineage_separate: bool
+    independently_reconstructable: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003OfficeStateMachineRecord:
+    state_machine_identifier: str
+    canonical_states: tuple[str, ...]
+    observed_state_sequence: tuple[str, ...]
+    illegal_transitions: tuple[str, ...]
+    skipped_mandatory_states: tuple[str, ...]
+    multiple_current_state_findings: tuple[str, ...]
+    terminal_state: str
+    authority_relinquished: bool
+    recovery_state_validated: bool
+    replay_state_equivalent: bool
+    audit_reconstructable: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003OfficeOwnedPersistentStateRecord:
+    persistence_identifier: str
+    classification_registry_version: str
+    persistent_state_classes: tuple[str, ...]
+    conditionally_persistent_state_classes: tuple[str, ...]
+    transient_state_classes: tuple[str, ...]
+    prohibited_residual_state_classes: tuple[str, ...]
+    unclassified_state: tuple[str, ...]
+    residual_state_findings: tuple[str, ...]
+    integrity_manifest: Mapping[str, str]
+    recovery_supported: bool
+    replay_supported: bool
+    audit_supported: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003RecoveryCheckpointArchitectureRecord:
+    checkpoint_identifier: str
+    authorized_boundaries: tuple[str, ...]
+    observed_boundaries: tuple[str, ...]
+    unauthorized_boundaries: tuple[str, ...]
+    missing_checkpoint_contents: tuple[str, ...]
+    invalid_checkpoint_findings: tuple[str, ...]
+    checkpoint_sequence: tuple[str, ...]
+    integrity_verified: bool
+    recovery_idempotent: bool
+    replay_compatible: bool
+    audit_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003ConstitutionalCommitBoundaryRecord:
+    commit_architecture_identifier: str
+    canonical_commit_boundaries: tuple[str, ...]
+    observed_commit_boundaries: tuple[str, ...]
+    missing_commit_boundaries: tuple[str, ...]
+    unauthorized_commit_boundaries: tuple[str, ...]
+    ordering_violations: tuple[str, ...]
+    partial_commit_findings: tuple[str, ...]
+    monotonic_sequence_verified: bool
+    referential_integrity_verified: bool
+    recovery_from_completed_boundary_only: bool
+    replay_preserves_commit_ordering: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003ReplaySemanticEquivalenceRecord:
+    replay_identifier: str
+    replay_invariants: tuple[str, ...]
+    preserved_invariants: tuple[str, ...]
+    failed_invariants: tuple[str, ...]
+    acceptable_runtime_differences: tuple[str, ...]
+    prohibited_runtime_differences: tuple[str, ...]
+    replay_classification: str
+    identical_constitutional_inputs: bool
+    semantic_equivalence: bool
+    recovery_replay_equivalent: bool
+    audit_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003OperationalIntegrityEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    discovery_provenance_architecture: SeekerRm003DiscoveryProvenanceArchitectureRecord
+    office_state_machine: SeekerRm003OfficeStateMachineRecord
+    office_owned_persistent_state: SeekerRm003OfficeOwnedPersistentStateRecord
+    recovery_checkpoint_architecture: SeekerRm003RecoveryCheckpointArchitectureRecord
+    constitutional_commit_boundaries: SeekerRm003ConstitutionalCommitBoundaryRecord
+    replay_semantic_equivalence: SeekerRm003ReplaySemanticEquivalenceRecord
+    final_rm003_operational_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -1268,6 +1389,15 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-003-010",
         "SEEK-RM-003-011",
         "SEEK-RM-003-012",
+    )
+
+    rm003_operational_order_coverage = (
+        "SEEK-RM-003-013",
+        "SEEK-RM-003-014",
+        "SEEK-RM-003-015",
+        "SEEK-RM-003-016",
+        "SEEK-RM-003-017",
+        "SEEK-RM-003-018",
     )
 
     remediation_order_coverage = (
@@ -4875,6 +5005,426 @@ class SeekerOfficeIntegritySupport:
             preservation_immutable=bool(hashes),
             audit_reconstructable=bool(chains),
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_rm003_operational_integrity_evidence_package(
+        self,
+        *,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidate: SeekerCandidateIdentityInput,
+    ) -> SeekerRm003OperationalIntegrityEvidencePackage:
+        integrity = self.build_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=candidate)
+        objects = self.build_constitutional_objects_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=candidate)
+        doctrine = self.build_constitutional_doctrine_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidates=(candidate,))
+        support = self.build_certification_support_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=candidate)
+        provenance = self.evaluate_rm003_discovery_provenance_architecture(mission, search_plan, discovery_evidence, candidate, integrity, doctrine)
+        state_machine = self.evaluate_rm003_office_state_machine()
+        persistent_state = self.evaluate_rm003_office_owned_persistent_state(integrity, objects, doctrine, support)
+        checkpoints = self.evaluate_rm003_recovery_checkpoint_architecture(support.recovery_checkpoint_architecture)
+        commits = self.evaluate_rm003_constitutional_commit_boundaries()
+        replay = self.evaluate_rm003_replay_semantic_equivalence(integrity, objects, doctrine, support)
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (provenance, state_machine, persistent_state, checkpoints, commits, replay)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = SeekerRm003OperationalIntegrityEvidencePackage(
+            package_identifier=f"SEEK-RM-003-OPERATIONAL-{_digest((mission.mission_id, search_plan.search_plan_id, candidate.candidate_reference))[:12].upper()}",
+            governing_doctrine="SEEK-RM-003-013-TO-018/1.0.0",
+            remediation_order_coverage=self.rm003_operational_order_coverage,
+            discovery_provenance_architecture=provenance,
+            office_state_machine=state_machine,
+            office_owned_persistent_state=persistent_state,
+            recovery_checkpoint_architecture=checkpoints,
+            constitutional_commit_boundaries=commits,
+            replay_semantic_equivalence=replay,
+            final_rm003_operational_readiness=final,
+            immutable_audit_references=(
+                provenance.provenance_identifier,
+                state_machine.state_machine_identifier,
+                persistent_state.persistence_identifier,
+                checkpoints.checkpoint_identifier,
+                commits.commit_architecture_identifier,
+                replay.replay_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_rm003_discovery_provenance_architecture(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidate: SeekerCandidateIdentityInput,
+        integrity_package: SeekerOfficeIntegrityEvidencePackage | None = None,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage | None = None,
+        *,
+        omitted_node_classes: tuple[str, ...] = (),
+        omitted_edge_classes: tuple[str, ...] = (),
+        orphan_objects: tuple[str, ...] = (),
+        integrity_findings: tuple[str, ...] = (),
+    ) -> SeekerRm003DiscoveryProvenanceArchitectureRecord:
+        nodes = (
+            "Search Mission",
+            "Search Plan",
+            "Execution Activity",
+            "Source Interaction",
+            "Discovery Evidence",
+            "Evidence Normalization",
+            "Candidate Observation",
+            "Candidate Identity",
+            "Candidate Evaluation",
+            "Lifecycle Transition",
+            "Equivalence Determination",
+            "Freshness Determination",
+            "Independence Determination",
+            "Rejection Determination",
+            "Search Sufficiency Determination",
+            "Candidate Package",
+            "Recovery Checkpoint",
+            "Replay Execution",
+            "Audit Event",
+        )
+        edges = (
+            "DERIVED_FROM_MISSION",
+            "GOVERNED_BY_PLAN",
+            "PRODUCED_BY_ACTIVITY",
+            "ACQUIRED_FROM_SOURCE",
+            "NORMALIZED_FROM_RAW",
+            "OBSERVED_AS_CANDIDATE",
+            "IDENTIFIED_BY",
+            "EVALUATED_BY",
+            "TRANSITIONED_BY",
+            "DISPOSED_BY",
+            "PACKAGED_BY",
+            "AUDITED_BY",
+        )
+        missing_nodes = tuple(node for node in nodes if node in omitted_node_classes)
+        missing_edges = tuple(edge for edge in edges if edge in omitted_edge_classes)
+        evidence_ids = tuple(evidence.evidence_id for evidence in discovery_evidence)
+        chain = (mission.mission_id, search_plan.search_plan_id) + evidence_ids + (candidate.candidate_reference,)
+        if not mission.mission_id:
+            orphan_objects = tuple(dict.fromkeys(orphan_objects + ("missing_mission_root",)))
+        if mission.search_plan_id != search_plan.search_plan_id:
+            integrity_findings = tuple(dict.fromkeys(integrity_findings + ("mission_plan_provenance_mismatch",)))
+        if not discovery_evidence:
+            missing_nodes = tuple(dict.fromkeys(missing_nodes + ("Discovery Evidence", "Source Interaction")))
+        if not candidate.candidate_reference:
+            orphan_objects = tuple(dict.fromkeys(orphan_objects + ("candidate_without_provenance_identity",)))
+        base_pass = True
+        if doctrine_package:
+            base_pass = doctrine_package.discovery_provenance_architecture.result == EnterpriseCertificationDecision.PASS
+        passed = base_pass and not missing_nodes and not missing_edges and not orphan_objects and not integrity_findings and all(chain)
+        record = SeekerRm003DiscoveryProvenanceArchitectureRecord(
+            provenance_identifier=f"SEEK-RM-003-013-PROVENANCE-{_digest((chain, missing_nodes, missing_edges, orphan_objects, integrity_findings))[:12].upper()}",
+            graph_schema_version="SEEK-RM-003-013-PROVENANCE-GRAPH/1",
+            required_node_classes=nodes,
+            missing_node_classes=missing_nodes,
+            required_edge_classes=edges,
+            missing_edge_classes=missing_edges,
+            mission_root=mission.mission_id,
+            provenance_chain=chain,
+            orphan_objects=orphan_objects,
+            integrity_findings=integrity_findings,
+            recovery_lineage_separate=True,
+            replay_lineage_separate=True,
+            independently_reconstructable=not missing_nodes and not missing_edges and not orphan_objects,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_office_state_machine(
+        self,
+        observed_state_sequence: tuple[str, ...] | None = None,
+        *,
+        multiple_current_state_findings: tuple[str, ...] = (),
+    ) -> SeekerRm003OfficeStateMachineRecord:
+        canonical = (
+            "DORMANT",
+            "MISSION_RECEIVED",
+            "MISSION_VALIDATING",
+            "MISSION_AUTHORIZED",
+            "PLAN_CONSTRUCTING",
+            "PLAN_VALIDATING",
+            "PLAN_COMMITTED",
+            "DISCOVERY_EXECUTING",
+            "CANDIDATE_PROCESSING",
+            "EQUIVALENCE_EVALUATING",
+            "FRESHNESS_EVALUATING",
+            "INDEPENDENCE_EVALUATING",
+            "CANDIDATE_FINALIZING",
+            "SUFFICIENCY_EVALUATING",
+            "COMPLETION_COMMITTING",
+            "MISSION_COMPLETED",
+            "EVIDENCE_FINALIZING",
+            "AUTHORITY_RELINQUISHING",
+            "DORMANT_CLEAN",
+        )
+        sequence = observed_state_sequence or canonical
+        legal = {canonical[index]: (canonical[index + 1],) for index in range(len(canonical) - 1)}
+        legal["DORMANT_CLEAN"] = ()
+        illegal = tuple(
+            f"{sequence[index]}->{sequence[index + 1]}"
+            for index in range(len(sequence) - 1)
+            if sequence[index + 1] not in legal.get(sequence[index], ())
+        )
+        skipped = tuple(state for state in canonical if state not in sequence)
+        terminal = sequence[-1] if sequence else ""
+        relinquished = terminal == "DORMANT_CLEAN" and "AUTHORITY_RELINQUISHING" in sequence
+        passed = bool(sequence) and not illegal and not skipped and not multiple_current_state_findings and relinquished
+        record = SeekerRm003OfficeStateMachineRecord(
+            state_machine_identifier=f"SEEK-RM-003-014-STATE-MACHINE-{_digest((sequence, illegal, skipped, multiple_current_state_findings))[:12].upper()}",
+            canonical_states=canonical,
+            observed_state_sequence=sequence,
+            illegal_transitions=illegal,
+            skipped_mandatory_states=skipped,
+            multiple_current_state_findings=multiple_current_state_findings,
+            terminal_state=terminal,
+            authority_relinquished=relinquished,
+            recovery_state_validated=not illegal,
+            replay_state_equivalent=not illegal,
+            audit_reconstructable=bool(sequence),
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_office_owned_persistent_state(
+        self,
+        integrity_package: SeekerOfficeIntegrityEvidencePackage,
+        object_package: SeekerConstitutionalObjectsEvidencePackage,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage,
+        support_package: SeekerCertificationSupportEvidencePackage,
+        *,
+        unclassified_state: tuple[str, ...] = (),
+        residual_state_findings: tuple[str, ...] = (),
+    ) -> SeekerRm003OfficeOwnedPersistentStateRecord:
+        persistent = (
+            "Search Mission",
+            "Search Plan",
+            "Discovery Evidence",
+            "Discovery Provenance",
+            "Candidate Identity",
+            "Candidate Package",
+            "Candidate Lifecycle",
+            "Search Sufficiency",
+            "Candidate Rejection",
+            "Commit History",
+            "Recovery Checkpoint",
+            "Replay State",
+            "Audit Records",
+            "Certification Evidence",
+        )
+        conditional = (
+            "Raw Source Response",
+            "Candidate Extraction Data",
+            "Incomplete Candidate Package Assembly",
+            "Validation Result",
+            "Delivery Authorization",
+        )
+        transient = (
+            "Runtime Handles",
+            "Stack Frames",
+            "Temporary Caches",
+            "Backoff Timers",
+            "Diagnostic Traces",
+            "Comparison Accelerators",
+        )
+        prohibited = (
+            "Active Mission Authority Handle",
+            "Uncommitted Candidate Assembly",
+            "Uncommitted Delivery Payload",
+            "Obsolete Current-State Projection",
+            "Partial Write",
+        )
+        manifest = MappingProxyType(
+            {
+                "office_integrity": integrity_package.deterministic_digest,
+                "constitutional_objects": object_package.deterministic_digest,
+                "constitutional_doctrine": doctrine_package.deterministic_digest,
+                "certification_support": support_package.deterministic_digest,
+            }
+        )
+        passed = all(manifest.values()) and not unclassified_state and not residual_state_findings
+        record = SeekerRm003OfficeOwnedPersistentStateRecord(
+            persistence_identifier=f"SEEK-RM-003-015-PERSISTENCE-{_digest((manifest, unclassified_state, residual_state_findings))[:12].upper()}",
+            classification_registry_version="SEEK-RM-003-015-STATE-REGISTRY/1",
+            persistent_state_classes=persistent,
+            conditionally_persistent_state_classes=conditional,
+            transient_state_classes=transient,
+            prohibited_residual_state_classes=prohibited,
+            unclassified_state=unclassified_state,
+            residual_state_findings=residual_state_findings,
+            integrity_manifest=manifest,
+            recovery_supported=support_package.recovery_checkpoint_architecture.result == EnterpriseCertificationDecision.PASS,
+            replay_supported=support_package.replay_semantic_equivalence.result == EnterpriseCertificationDecision.PASS,
+            audit_supported=integrity_package.complete_audit_trail.result == EnterpriseCertificationDecision.PASS,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_recovery_checkpoint_architecture(
+        self,
+        checkpoint_record: SeekerRecoveryCheckpointArchitectureRecord,
+        *,
+        observed_boundaries: tuple[str, ...] | None = None,
+        invalid_checkpoint_findings: tuple[str, ...] = (),
+    ) -> SeekerRm003RecoveryCheckpointArchitectureRecord:
+        authorized = (
+            "Search Mission acceptance",
+            "Search Plan commitment",
+            "Candidate Package commitment",
+            "Candidate lifecycle transition commit",
+            "Candidate rejection commit",
+            "Mission completion commit",
+            "Mission cancellation commit",
+            "Mission termination commit",
+        )
+        observed = observed_boundaries or (
+            "Search Mission acceptance",
+            "Search Plan commitment",
+            "Candidate Package commitment",
+            "Mission completion commit",
+            "Mission termination commit",
+        )
+        unauthorized = tuple(boundary for boundary in observed if boundary not in authorized)
+        required_contents = (
+            "Checkpoint Identifier",
+            "Search Mission Identifier",
+            "Search Plan Identifier",
+            "Candidate Package identifiers",
+            "office execution state",
+            "lifecycle states",
+            "persistent office-owned state",
+            "configuration version",
+            "doctrine versions",
+            "recovery sequence number",
+            "replay compatibility version",
+            "integrity hash",
+            "certification status",
+        )
+        missing = tuple(content for content in required_contents if checkpoint_record.result != EnterpriseCertificationDecision.PASS and content in {"integrity hash", "certification status"})
+        sequence = tuple(f"CHK-{index + 1:03d}:{boundary}" for index, boundary in enumerate(observed))
+        integrity = checkpoint_record.result == EnterpriseCertificationDecision.PASS and not invalid_checkpoint_findings
+        passed = not unauthorized and not missing and not invalid_checkpoint_findings and integrity
+        record = SeekerRm003RecoveryCheckpointArchitectureRecord(
+            checkpoint_identifier=f"SEEK-RM-003-016-CHECKPOINT-{_digest((observed, unauthorized, missing, invalid_checkpoint_findings))[:12].upper()}",
+            authorized_boundaries=authorized,
+            observed_boundaries=observed,
+            unauthorized_boundaries=unauthorized,
+            missing_checkpoint_contents=missing,
+            invalid_checkpoint_findings=invalid_checkpoint_findings,
+            checkpoint_sequence=sequence,
+            integrity_verified=integrity,
+            recovery_idempotent=integrity,
+            replay_compatible=checkpoint_record.replay_interruption_equivalent and integrity,
+            audit_references=(checkpoint_record.checkpoint_identifier,),
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_constitutional_commit_boundaries(
+        self,
+        observed_commit_boundaries: tuple[str, ...] | None = None,
+        *,
+        partial_commit_findings: tuple[str, ...] = (),
+    ) -> SeekerRm003ConstitutionalCommitBoundaryRecord:
+        canonical = (
+            "CB-001 Search Mission Accepted",
+            "CB-002 Search Plan Established",
+            "CB-003 Candidate Discovered",
+            "CB-004 Candidate Acquisition Completed",
+            "CB-005 Candidate Normalization Completed",
+            "CB-006 Candidate Identity Established",
+            "CB-007 Candidate Validation Completed",
+            "CB-008 Candidate Enrichment Completed",
+            "CB-009 Candidate Evaluation Completed",
+            "CB-010 Candidate Accepted",
+            "CB-011 Candidate Rejected",
+            "CB-012 Search Sufficiency Determined",
+            "CB-013 Mission Completed",
+        )
+        observed = observed_commit_boundaries or canonical
+        missing = tuple(boundary for boundary in canonical if boundary not in observed)
+        unauthorized = tuple(boundary for boundary in observed if boundary not in canonical)
+        order = {boundary: index for index, boundary in enumerate(canonical)}
+        known = tuple(boundary for boundary in observed if boundary in order)
+        ordering = tuple(
+            f"{known[index]}->{known[index + 1]}"
+            for index in range(len(known) - 1)
+            if order[known[index]] > order[known[index + 1]]
+        )
+        passed = not missing and not unauthorized and not ordering and not partial_commit_findings
+        record = SeekerRm003ConstitutionalCommitBoundaryRecord(
+            commit_architecture_identifier=f"SEEK-RM-003-017-COMMIT-{_digest((observed, missing, unauthorized, ordering, partial_commit_findings))[:12].upper()}",
+            canonical_commit_boundaries=canonical,
+            observed_commit_boundaries=observed,
+            missing_commit_boundaries=missing,
+            unauthorized_commit_boundaries=unauthorized,
+            ordering_violations=ordering,
+            partial_commit_findings=partial_commit_findings,
+            monotonic_sequence_verified=not ordering and bool(known),
+            referential_integrity_verified=not missing and not unauthorized,
+            recovery_from_completed_boundary_only=not partial_commit_findings,
+            replay_preserves_commit_ordering=not ordering,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_replay_semantic_equivalence(
+        self,
+        integrity_package: SeekerOfficeIntegrityEvidencePackage,
+        object_package: SeekerConstitutionalObjectsEvidencePackage,
+        doctrine_package: SeekerConstitutionalDoctrineEvidencePackage,
+        support_package: SeekerCertificationSupportEvidencePackage,
+        *,
+        failed_invariants: tuple[str, ...] = (),
+        prohibited_runtime_differences: tuple[str, ...] = (),
+    ) -> SeekerRm003ReplaySemanticEquivalenceRecord:
+        invariants = (
+            "Mission Identity",
+            "Candidate Identity",
+            "Evidence Integrity",
+            "Validation Outcomes",
+            "Lifecycle Progression",
+            "Completion Determination",
+            "Audit Semantics",
+            "Authority Ownership",
+            "Immutable Outputs",
+            "Certification Evidence",
+        )
+        preserved = tuple(invariant for invariant in invariants if invariant not in failed_invariants)
+        base_equivalent = (
+            integrity_package.deterministic_replay.result == EnterpriseCertificationDecision.PASS
+            and object_package.search_mission_lifecycle.result == EnterpriseCertificationDecision.PASS
+            and doctrine_package.constitutional_state_machine.result == EnterpriseCertificationDecision.PASS
+            and support_package.replay_semantic_equivalence.result == EnterpriseCertificationDecision.PASS
+        )
+        semantic = base_equivalent and not failed_invariants and not prohibited_runtime_differences
+        record = SeekerRm003ReplaySemanticEquivalenceRecord(
+            replay_identifier=f"SEEK-RM-003-018-REPLAY-{_digest((failed_invariants, prohibited_runtime_differences, base_equivalent))[:12].upper()}",
+            replay_invariants=invariants,
+            preserved_invariants=preserved,
+            failed_invariants=failed_invariants,
+            acceptable_runtime_differences=("execution timing", "thread scheduling", "memory addresses", "process identifiers", "replay audit identifiers"),
+            prohibited_runtime_differences=prohibited_runtime_differences,
+            replay_classification="SEMANTICALLY_EQUIVALENT" if semantic else "NON_EQUIVALENT",
+            identical_constitutional_inputs=True,
+            semantic_equivalence=semantic,
+            recovery_replay_equivalent=support_package.recovery_checkpoint_architecture.result == EnterpriseCertificationDecision.PASS and semantic,
+            audit_references=(
+                integrity_package.deterministic_replay.replay_identifier,
+                support_package.replay_semantic_equivalence.replay_identifier,
+            ),
+            result=EnterpriseCertificationDecision.PASS if semantic else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(record))
