@@ -16,6 +16,12 @@ from argos.sentinel import (  # noqa: E402
     SentinelAuthorityRegistry,
     SentinelCanonicalRuntime,
     SentinelCommanderBridgeRuntime,
+    SentinelDependencyCertifier,
+    SentinelEnterpriseCompositionRoot,
+    SentinelEnterpriseServiceRegistry,
+    SentinelEnterpriseServices,
+    SentinelEventSufficiencyRule,
+    SentinelSufficiencyPolicyRegistry,
     SentinelNotificationStatus,
     SentinelRuntimeDecision,
     SentinelSourcePlanReference,
@@ -226,6 +232,163 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         self.assertEqual(delivery.sentinel_delivery_state, SentinelNotificationStatus.REJECTED)
         self.assertIsNone(delivery.commander_receipt)
         self.assertEqual((), bridge_runtime.static_bypass_analysis()["unresolved_findings"])
+
+    def test_sent_mo1001_certified_composition_root_supplies_runtime_dependencies(self) -> None:
+        root = SentinelEnterpriseCompositionRoot.paper()
+        root.scheduler.enabled = True
+        root.scheduler.operating_mode = EnterpriseOperatingMode.OBSERVATION_ONLY
+        mission = root.scheduler.create_commander_directed_mission(
+            mission_name="Certified Sentinel monitoring",
+            required_offices=("Sentinel",),
+            directive_id="CMD-DIR-SENTINEL-CERT",
+            priority="Commander-Directed",
+            maximum_api_calls=1,
+            workflow_type="commander_directed_mission",
+        )
+        services = root.services_for_mission(
+            mission,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+            event_classes=("EXPOSURE_SOURCE_ALERT",),
+        )
+        certification = SentinelDependencyCertifier().certify(services)
+        runtime = SentinelCanonicalRuntime.from_enterprise_services(
+            services,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        self.assertEqual(certification.result, SentinelRuntimeDecision.PASS)
+        self.assertEqual(record.result, SentinelRuntimeDecision.PASS)
+        self.assertIs(runtime.scheduler, services.scheduler)
+        self.assertIs(runtime.persistence, services.persistence)
+        persisted_names = tuple(item.payload["payload"]["object_name"] for item in runtime.persistence.all_records())
+        self.assertIn("sentinel_dependency_certification", persisted_names)
+        self.assertIn("sentinel_authority_origin", persisted_names)
+        self.assertIn("sentinel_sufficiency_evaluation", persisted_names)
+        self.assertIn("sentinel_sufficiency_origin", persisted_names)
+
+    def test_sent_mo1004_certification_mode_fails_closed_without_composition_root(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        runtime = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+            require_certified_dependencies=True,
+        )
+
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        self.assertEqual(record.result, SentinelRuntimeDecision.FAIL)
+        self.assertEqual(record.failure_response, FailureResponse.HALT)
+        self.assertTrue(any("DEPENDENCY_CERTIFICATION_FAILED" in event.failure_code for event in record.trace_events))
+
+    def test_sent_mo1002_rejects_missing_authoritative_authority_in_certified_runtime(self) -> None:
+        root = SentinelEnterpriseCompositionRoot.paper()
+        root.scheduler.enabled = True
+        root.scheduler.operating_mode = EnterpriseOperatingMode.OBSERVATION_ONLY
+        mission = root.scheduler.create_commander_directed_mission(
+            mission_name="Authority negative Sentinel monitoring",
+            required_offices=("Sentinel",),
+            directive_id="CMD-DIR-SENTINEL-AUTH-NEG",
+            priority="Commander-Directed",
+            maximum_api_calls=1,
+            workflow_type="commander_directed_mission",
+        )
+        services = root.services_for_mission(
+            mission,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+            event_classes=("EXPOSURE_SOURCE_ALERT",),
+        )
+        bad_services = SentinelEnterpriseServices(
+            scheduler=services.scheduler,
+            lifecycle=services.lifecycle,
+            source_adapter=services.source_adapter,
+            mission_registry=services.mission_registry,
+            authority_registry=SentinelAuthorityRegistry(()),
+            persistence=services.persistence,
+            evidence_origin_registry=services.evidence_origin_registry,
+            sufficiency_policy_registry=services.sufficiency_policy_registry,
+            service_registry=services.service_registry,
+        )
+        runtime = SentinelCanonicalRuntime.from_enterprise_services(
+            bad_services,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        self.assertEqual(record.result, SentinelRuntimeDecision.FAIL)
+        self.assertTrue(any("DEPENDENCY_CERTIFICATION_FAILED" in event.failure_code for event in record.trace_events))
+
+    def test_sent_mo1005_sufficiency_uses_authoritative_event_class_policy(self) -> None:
+        root = SentinelEnterpriseCompositionRoot.paper()
+        root.scheduler.enabled = True
+        root.scheduler.operating_mode = EnterpriseOperatingMode.OBSERVATION_ONLY
+        mission = root.scheduler.create_commander_directed_mission(
+            mission_name="Sufficiency negative Sentinel monitoring",
+            required_offices=("Sentinel",),
+            directive_id="CMD-DIR-SENTINEL-SUFF-NEG",
+            priority="Commander-Directed",
+            maximum_api_calls=1,
+            workflow_type="commander_directed_mission",
+        )
+        services = root.services_for_mission(
+            mission,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+            event_classes=("EXPOSURE_SOURCE_ALERT",),
+        )
+        strict_policy = SentinelSufficiencyPolicyRegistry(
+            (
+                SentinelEventSufficiencyRule(
+                    rule_id="SENT-TEST-STRICT-TWO-INDEPENDENT-SOURCES/1",
+                    event_class="EXPOSURE_SOURCE_ALERT",
+                    required_evidence_fields=("event_class", "value_hash", "source_timestamp", "raw_evidence"),
+                    required_source_count=2,
+                    required_independent_source_count=2,
+                    required_dependencies=("Enterprise Authority Registry", "Enterprise Persistence", "Runtime Audit Infrastructure"),
+                ),
+            )
+        )
+        strict_registry = SentinelEnterpriseServiceRegistry(
+            {
+                "Enterprise Scheduler": services.scheduler,
+                "Enterprise Mission Registry": services.mission_registry,
+                "Enterprise Authority Registry": services.authority_registry,
+                "Enterprise Persistence": services.persistence,
+                "Runtime Audit Infrastructure": services.evidence_origin_registry,
+                "Approved Operational Source Adapters": services.source_adapter,
+                "Constitutional Sufficiency Policy": strict_policy,
+            },
+            acquisition_source="test strict constitutional policy registry",
+        )
+        strict_services = SentinelEnterpriseServices(
+            scheduler=services.scheduler,
+            lifecycle=services.lifecycle,
+            source_adapter=services.source_adapter,
+            mission_registry=services.mission_registry,
+            authority_registry=services.authority_registry,
+            persistence=services.persistence,
+            evidence_origin_registry=services.evidence_origin_registry,
+            sufficiency_policy_registry=strict_policy,
+            service_registry=strict_registry,
+        )
+        runtime = SentinelCanonicalRuntime.from_enterprise_services(
+            strict_services,
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        self.assertEqual(record.result, SentinelRuntimeDecision.FAIL)
+        self.assertTrue(any("OBSERVATION_SUFFICIENCY_NOT_SATISFIED" in event.failure_code for event in record.trace_events))
 
 
 if __name__ == "__main__":

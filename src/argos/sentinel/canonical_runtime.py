@@ -95,6 +95,15 @@ class SourceAdapterMode(str, Enum):
     REPLAY_ISOLATED = "REPLAY_ISOLATED"
 
 
+class SentinelEvidenceOrigin(str, Enum):
+    RUNTIME_OBSERVATION = "Runtime Observation"
+    CAPTURED_AUTHORITATIVE_RESPONSE = "Captured Authoritative Response"
+    HISTORICAL_REPLAY = "Historical Replay"
+    CONSTITUTIONAL_SIMULATION = "Constitutional Simulation"
+    UNIT_TEST = "Unit Test"
+    STATIC_INSPECTION = "Static Inspection"
+
+
 @dataclass(frozen=True)
 class AuthorityRecord:
     authority_id: str
@@ -108,6 +117,72 @@ class AuthorityRecord:
     revoked: bool = False
     expired: bool = False
     superseded: bool = False
+
+
+@dataclass(frozen=True)
+class SentinelRuntimeEvidenceOriginRecord:
+    origin_record_id: str
+    evidence_identifier: str
+    origin: SentinelEvidenceOrigin
+    producing_subsystem: str
+    associated_mission: str
+    creation_time: str
+    immutable: bool
+    metadata: Mapping[str, str]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelDependencyRecord:
+    dependency_id: str
+    dependency_type: str
+    constitutional_role: str
+    implementation_identity: str
+    acquisition_source: str
+    enterprise_owned: bool
+    available: bool
+    validation_result: SentinelRuntimeDecision
+    failure_reason: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelDependencyCertification:
+    certification_id: str
+    records: tuple[SentinelDependencyRecord, ...]
+    result: SentinelRuntimeDecision
+    failure_reasons: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SentinelEventSufficiencyRule:
+    rule_id: str
+    event_class: str
+    required_evidence_fields: tuple[str, ...]
+    required_source_count: int
+    required_independent_source_count: int
+    required_dependencies: tuple[str, ...]
+    optional_corroboration_allowed: bool = True
+
+
+@dataclass(frozen=True)
+class SentinelSufficiencyEvaluationEvidence:
+    evidence_id: str
+    mission_identifier: str
+    observation_identifiers: tuple[str, ...]
+    event_class: str
+    sufficiency_decision: SentinelRuntimeDecision
+    constitutional_rule_set: str
+    independent_source_analysis: tuple[str, ...]
+    dependency_evaluation: tuple[str, ...]
+    missing_requirements: tuple[str, ...]
+    missing_evidence: tuple[str, ...]
+    missing_independent_sources: tuple[str, ...]
+    unresolved_dependencies: tuple[str, ...]
+    timestamp: str
+    evaluator_version: str
+    deterministic_digest: str
 
 
 @dataclass(frozen=True)
@@ -434,6 +509,70 @@ class DeterministicSentinelSourceAdapter(ApprovedSentinelSourceAdapter):
     mode = SourceAdapterMode.TEST_ISOLATED
 
 
+class SentinelEvidenceOriginRegistry:
+    """Validates immutable origin metadata for Sentinel constitutional evidence."""
+
+    approved_origins = tuple(SentinelEvidenceOrigin)
+
+    def declare(
+        self,
+        *,
+        evidence_identifier: str,
+        origin: SentinelEvidenceOrigin,
+        producing_subsystem: str,
+        associated_mission: str,
+        metadata: Mapping[str, str] | None = None,
+    ) -> SentinelRuntimeEvidenceOriginRecord:
+        if origin not in self.approved_origins:
+            raise ValueError("unapproved Sentinel evidence origin")
+        record = SentinelRuntimeEvidenceOriginRecord(
+            origin_record_id=f"SENT-ORIGIN-{_hash((evidence_identifier, origin.value, producing_subsystem))[:12].upper()}",
+            evidence_identifier=evidence_identifier,
+            origin=origin,
+            producing_subsystem=producing_subsystem,
+            associated_mission=associated_mission,
+            creation_time=utc_timestamp(),
+            immutable=True,
+            metadata=dict(metadata or {}),
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_hash(asdict(record)))
+
+    def validate(self, record: SentinelRuntimeEvidenceOriginRecord | None) -> bool:
+        return bool(record and record.immutable and record.origin in self.approved_origins and record.evidence_identifier and record.producing_subsystem)
+
+
+class SentinelEnterpriseServiceRegistry:
+    """Authoritative service registry view consumed by Sentinel certification paths."""
+
+    def __init__(self, services: Mapping[str, object], *, acquisition_source: str = "CanonicalEnterpriseRuntime") -> None:
+        self._services = dict(services)
+        self.acquisition_source = acquisition_source
+
+    def resolve(self, dependency_type: str) -> object | None:
+        return self._services.get(dependency_type)
+
+    def identity_for(self, dependency_type: str) -> str:
+        service = self.resolve(dependency_type)
+        if service is None:
+            return ""
+        identity = getattr(service, "adapter_id", "") or getattr(service, "__class__", type(service)).__name__
+        return f"{service.__class__.__module__}.{identity}"
+
+
+@dataclass(frozen=True)
+class SentinelEnterpriseServices:
+    scheduler: EnterpriseOperationsScheduler
+    lifecycle: OfficeLifecycleController
+    source_adapter: ApprovedSentinelSourceAdapter
+    mission_registry: SentinelMissionRegistry
+    authority_registry: SentinelAuthorityRegistry
+    persistence: InMemoryPersistenceRepository
+    evidence_origin_registry: SentinelEvidenceOriginRegistry
+    sufficiency_policy_registry: "SentinelSufficiencyPolicyRegistry"
+    service_registry: SentinelEnterpriseServiceRegistry
+
+
 class SentinelMissionRegistry:
     """Canonical mission registry view backed by EnterpriseOperationsScheduler."""
 
@@ -478,6 +617,225 @@ class SentinelAuthorityRegistry:
                 return record
         return None
 
+
+class SentinelEnterpriseCompositionRoot:
+    """Composition root that owns Sentinel enterprise dependencies before injection."""
+
+    def __init__(
+        self,
+        *,
+        scheduler: EnterpriseOperationsScheduler,
+        lifecycle: OfficeLifecycleController,
+        persistence: InMemoryPersistenceRepository,
+        source_adapter: ApprovedSentinelSourceAdapter,
+        acquisition_source: str = "CanonicalEnterpriseRuntime.SentinelEnterpriseCompositionRoot",
+    ) -> None:
+        self.scheduler = scheduler
+        self.lifecycle = lifecycle
+        self.persistence = persistence
+        self.source_adapter = source_adapter
+        self.evidence_origin_registry = SentinelEvidenceOriginRegistry()
+        self.acquisition_source = acquisition_source
+
+    @classmethod
+    def paper(cls) -> "SentinelEnterpriseCompositionRoot":
+        return cls(
+            scheduler=EnterpriseOperationsScheduler(),
+            lifecycle=_sentinel_lifecycle_controller(),
+            persistence=InMemoryPersistenceRepository(canonical_schemas()),
+            source_adapter=ApprovedSentinelSourceAdapter(),
+        )
+
+    def services_for_mission(
+        self,
+        mission: EnterpriseMission,
+        *,
+        candidate_identity: str,
+        runtime_identity: str,
+        event_classes: Iterable[str],
+    ) -> SentinelEnterpriseServices:
+        mission_registry = SentinelMissionRegistry(self.scheduler)
+        authority_registry = SentinelAuthorityRegistry.for_mission(mission, candidate_identity, runtime_identity)
+        sufficiency_policy = SentinelSufficiencyPolicyRegistry.for_event_classes(event_classes)
+        services: dict[str, object] = {
+            "Enterprise Scheduler": self.scheduler,
+            "Enterprise Mission Registry": mission_registry,
+            "Enterprise Authority Registry": authority_registry,
+            "Enterprise Persistence": self.persistence,
+            "Runtime Audit Infrastructure": self.evidence_origin_registry,
+            "Approved Operational Source Adapters": self.source_adapter,
+            "Constitutional Sufficiency Policy": sufficiency_policy,
+        }
+        registry = SentinelEnterpriseServiceRegistry(services, acquisition_source=self.acquisition_source)
+        return SentinelEnterpriseServices(
+            scheduler=self.scheduler,
+            lifecycle=self.lifecycle,
+            source_adapter=self.source_adapter,
+            mission_registry=mission_registry,
+            authority_registry=authority_registry,
+            persistence=self.persistence,
+            evidence_origin_registry=self.evidence_origin_registry,
+            sufficiency_policy_registry=sufficiency_policy,
+            service_registry=registry,
+        )
+
+
+class SentinelDependencyCertifier:
+    """Certifies externally acquired Sentinel runtime dependencies."""
+
+    required_dependencies = (
+        ("Enterprise Scheduler", "scheduler", "mission scheduling and activation"),
+        ("Enterprise Mission Registry", "mission_registry", "Commander mission acquisition"),
+        ("Enterprise Authority Registry", "authority_registry", "authority validation"),
+        ("Enterprise Persistence", "persistence", "immutable runtime evidence"),
+        ("Runtime Audit Infrastructure", "evidence_origin_registry", "evidence origin certification"),
+        ("Approved Operational Source Adapters", "source_adapter", "approved observation acquisition"),
+        ("Constitutional Sufficiency Policy", "sufficiency_policy_registry", "authoritative observation sufficiency"),
+    )
+
+    def certify(self, services: SentinelEnterpriseServices | None, *, source: str = "canonical enterprise composition root") -> SentinelDependencyCertification:
+        records: list[SentinelDependencyRecord] = []
+        failures: list[str] = []
+        for dependency_type, attribute, role in self.required_dependencies:
+            service = getattr(services, attribute, None) if services is not None else None
+            available = service is not None
+            enterprise_owned = available and services is not None and services.service_registry.resolve(dependency_type) is service
+            failure = "" if available and enterprise_owned else ("MISSING_DEPENDENCY" if not available else "UNAUTHORIZED_LOCAL_SUBSTITUTE")
+            if failure:
+                failures.append(f"{dependency_type}:{failure}")
+            record = SentinelDependencyRecord(
+                dependency_id=f"SENT-DEP-{_hash((dependency_type, attribute, source))[:12].upper()}",
+                dependency_type=dependency_type,
+                constitutional_role=role,
+                implementation_identity=services.service_registry.identity_for(dependency_type) if services is not None else "",
+                acquisition_source=source,
+                enterprise_owned=enterprise_owned,
+                available=available,
+                validation_result=SentinelRuntimeDecision.PASS if available and enterprise_owned else SentinelRuntimeDecision.FAIL,
+                failure_reason=failure,
+                deterministic_digest="",
+            )
+            records.append(replace(record, deterministic_digest=_hash(asdict(record))))
+        result = SentinelRuntimeDecision.PASS if not failures else SentinelRuntimeDecision.FAIL
+        certification = SentinelDependencyCertification(
+            certification_id=f"SENT-DEPCERT-{_hash(tuple(item.dependency_id for item in records))[:12].upper()}",
+            records=tuple(records),
+            result=result,
+            failure_reasons=tuple(failures),
+            deterministic_digest="",
+        )
+        return replace(certification, deterministic_digest=_hash(asdict(certification)))
+
+
+class SentinelSufficiencyPolicyRegistry:
+    """Authoritative event-class sufficiency policy consumed by the runtime."""
+
+    def __init__(self, rules: Iterable[SentinelEventSufficiencyRule]) -> None:
+        self._rules = {rule.event_class: rule for rule in rules}
+
+    @classmethod
+    def for_event_classes(cls, event_classes: Iterable[str]) -> "SentinelSufficiencyPolicyRegistry":
+        return cls(
+            SentinelEventSufficiencyRule(
+                rule_id="SENT-GOV-018-MINIMUM-AUTHORITATIVE-EVIDENCE/1",
+                event_class=event_class,
+                required_evidence_fields=("event_class", "value_hash", "source_timestamp", "raw_evidence"),
+                required_source_count=1,
+                required_independent_source_count=1,
+                required_dependencies=("Enterprise Authority Registry", "Enterprise Persistence", "Runtime Audit Infrastructure"),
+            )
+            for event_class in event_classes
+        )
+
+    def rule_for(self, event_class: str) -> SentinelEventSufficiencyRule | None:
+        return self._rules.get(event_class)
+
+
+class SentinelObservationSufficiencyEvaluator:
+    """Determines observation sufficiency from authoritative event-class policy only."""
+
+    evaluator_version = "SENT-MO1-005-SUFFICIENCY-EVALUATOR/1.0.0"
+
+    def __init__(self, policy_registry: SentinelSufficiencyPolicyRegistry) -> None:
+        self.policy_registry = policy_registry
+
+    def evaluate(
+        self,
+        *,
+        mission_id: str,
+        event_class: str,
+        observations: Iterable[ObservationRecord],
+        source_records: Mapping[str, SourceRecord],
+        dependency_certification: SentinelDependencyCertification,
+    ) -> tuple[SentinelSufficiencyDecision, SentinelSufficiencyEvaluationEvidence]:
+        observed = tuple(observations)
+        rule = self.policy_registry.rule_for(event_class)
+        if rule is None:
+            return self._result(mission_id, event_class, observed, SentinelRuntimeDecision.FAIL, "", (), (), ("missing_event_class_policy",), (), (), ("Constitutional Sufficiency Policy",))
+        missing_evidence = []
+        for observation in observed:
+            if not observation.value_hash:
+                missing_evidence.append(f"{observation.observation_id}:value_hash")
+            if not observation.observation_timestamp:
+                missing_evidence.append(f"{observation.observation_id}:source_timestamp")
+            if not observation.evidence_references:
+                missing_evidence.append(f"{observation.observation_id}:raw_evidence")
+        present_sources = tuple(dict.fromkeys(item.source_id for item in observed))
+        independent_groups = tuple(dict.fromkeys(source_records[item].independence_group for item in present_sources if item in source_records and source_records[item].enabled and source_records[item].authorized))
+        missing_sources: list[str] = []
+        if len(present_sources) < rule.required_source_count:
+            missing_sources.append(f"required_sources:{rule.required_source_count}")
+        if len(independent_groups) < rule.required_independent_source_count:
+            missing_sources.append(f"required_independent_sources:{rule.required_independent_source_count}")
+        unresolved_dependencies = tuple(item for item in rule.required_dependencies if not any(record.dependency_type == item and record.validation_result == SentinelRuntimeDecision.PASS for record in dependency_certification.records))
+        missing_requirements = tuple(missing_evidence + missing_sources + list(unresolved_dependencies))
+        decision = SentinelRuntimeDecision.PASS if not missing_requirements else SentinelRuntimeDecision.INSUFFICIENT
+        return self._result(mission_id, event_class, observed, decision, rule.rule_id, present_sources, independent_groups, tuple(missing_requirements), tuple(missing_evidence), tuple(missing_sources), unresolved_dependencies)
+
+    def _result(
+        self,
+        mission_id: str,
+        event_class: str,
+        observations: tuple[ObservationRecord, ...],
+        decision: SentinelRuntimeDecision,
+        rule_id: str,
+        present_sources: tuple[str, ...],
+        independent_groups: tuple[str, ...],
+        missing_requirements: tuple[str, ...],
+        missing_evidence: tuple[str, ...],
+        missing_sources: tuple[str, ...],
+        unresolved_dependencies: tuple[str, ...],
+    ) -> tuple[SentinelSufficiencyDecision, SentinelSufficiencyEvaluationEvidence]:
+        evidence = SentinelSufficiencyEvaluationEvidence(
+            evidence_id=f"SENT-SUFF-EVID-{_hash((mission_id, event_class, tuple(item.observation_id for item in observations), missing_requirements))[:12].upper()}",
+            mission_identifier=mission_id,
+            observation_identifiers=tuple(item.observation_id for item in observations),
+            event_class=event_class,
+            sufficiency_decision=decision,
+            constitutional_rule_set=rule_id,
+            independent_source_analysis=independent_groups,
+            dependency_evaluation=unresolved_dependencies,
+            missing_requirements=missing_requirements,
+            missing_evidence=missing_evidence,
+            missing_independent_sources=missing_sources,
+            unresolved_dependencies=unresolved_dependencies,
+            timestamp=utc_timestamp(),
+            evaluator_version=self.evaluator_version,
+            deterministic_digest="",
+        )
+        evidence = replace(evidence, deterministic_digest=_hash(asdict(evidence)))
+        sufficiency = SentinelSufficiencyDecision(
+            decision_id=f"SUF-{_hash(evidence.evidence_id)[:10].upper()}",
+            rule_identity=rule_id,
+            required_fields_satisfied=() if missing_evidence else ("event_class", "value_hash", "source_timestamp", "raw_evidence"),
+            required_sources_present=present_sources,
+            mandatory_corroboration_satisfied=not missing_sources,
+            remaining_uncertainty=missing_requirements,
+            notification_readiness=decision,
+        )
+        return sufficiency, evidence
+
+
 class SentinelCanonicalRuntime:
     """Executes Sentinel through canonical scheduler, lifecycle, source, and evidence paths."""
 
@@ -490,6 +848,10 @@ class SentinelCanonicalRuntime:
         mission_registry: SentinelMissionRegistry | None = None,
         authority_registry: SentinelAuthorityRegistry | None = None,
         persistence: InMemoryPersistenceRepository | None = None,
+        evidence_origin_registry: SentinelEvidenceOriginRegistry | None = None,
+        sufficiency_policy_registry: SentinelSufficiencyPolicyRegistry | None = None,
+        service_registry: SentinelEnterpriseServiceRegistry | None = None,
+        require_certified_dependencies: bool = False,
         candidate_identity: str = "candidate:unknown",
         runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
     ) -> None:
@@ -502,6 +864,35 @@ class SentinelCanonicalRuntime:
         self.runtime_identity = runtime_identity
         self.trace_events: tuple[SentinelRuntimeTraceEvent, ...] = ()
         self.persistence = persistence or InMemoryPersistenceRepository(canonical_schemas())
+        self.evidence_origin_registry = evidence_origin_registry or SentinelEvidenceOriginRegistry()
+        self.sufficiency_policy_registry = sufficiency_policy_registry
+        self.service_registry = service_registry
+        self.require_certified_dependencies = require_certified_dependencies
+        self.dependency_certification: SentinelDependencyCertification | None = None
+
+    @classmethod
+    def from_enterprise_services(
+        cls,
+        services: SentinelEnterpriseServices,
+        *,
+        candidate_identity: str,
+        runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
+        require_certified_dependencies: bool = True,
+    ) -> "SentinelCanonicalRuntime":
+        return cls(
+            scheduler=services.scheduler,
+            lifecycle=services.lifecycle,
+            source_adapter=services.source_adapter,
+            mission_registry=services.mission_registry,
+            authority_registry=services.authority_registry,
+            persistence=services.persistence,
+            evidence_origin_registry=services.evidence_origin_registry,
+            sufficiency_policy_registry=services.sufficiency_policy_registry,
+            service_registry=services.service_registry,
+            require_certified_dependencies=require_certified_dependencies,
+            candidate_identity=candidate_identity,
+            runtime_identity=runtime_identity,
+        )
 
     def execute_observation(
         self,
@@ -513,13 +904,29 @@ class SentinelCanonicalRuntime:
         prior_observations: Iterable[ObservationRecord] = (),
     ) -> SentinelRuntimeExecutionRecord:
         trace_root = f"SENT-TRACE-{_hash((mission.mission_id, self.candidate_identity))[:12].upper()}"
+        certification = self._dependency_certification()
+        if self.require_certified_dependencies and certification.result != SentinelRuntimeDecision.PASS:
+            return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "DEPENDENCY_CERTIFICATION_FAILED:" + ",".join(certification.failure_reasons))
+        dependency_record = self._persist("sentinel_dependency_certification", certification.certification_id, _json_ready(asdict(certification)), certification.deterministic_digest)
         canonical_mission = self.mission_registry.resolve(mission.mission_id)
         if canonical_mission is None:
             return self._failed_execution(trace_root, mission, "", FailureResponse.QUARANTINE, "MISSION_NOT_IN_CANONICAL_REGISTRY")
+        if self.authority_registry is None and self.require_certified_dependencies:
+            return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "AUTHORITY_REGISTRY_UNAVAILABLE")
         authority_registry = self.authority_registry or SentinelAuthorityRegistry.for_mission(canonical_mission, self.candidate_identity, self.runtime_identity)
         authority_record = authority_registry.validate("observe", canonical_mission.mission_id, self.candidate_identity, self.runtime_identity)
         if authority_record is None:
             return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "AUTHORITY_REGISTRY_VALIDATION_FAILED")
+        authority_origin = self.evidence_origin_registry.declare(
+            evidence_identifier=authority_record.authority_id,
+            origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            producing_subsystem="Enterprise Authority Registry",
+            associated_mission=canonical_mission.mission_id,
+            metadata={"operation": "observe", "recipient": authority_record.recipient},
+        )
+        if not self.evidence_origin_registry.validate(authority_origin):
+            return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "AUTHORITY_ORIGIN_VALIDATION_FAILED")
+        authority_origin_record = self._persist("sentinel_authority_origin", authority_origin.origin_record_id, _json_ready(asdict(authority_origin)), authority_origin.deterministic_digest)
         if self.source_adapter.mode != SourceAdapterMode.PAPER_AUTHORITATIVE:
             return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "DETERMINISTIC_ADAPTER_ISOLATED_FROM_OPERATIONAL_EXECUTION")
         assignment = self._resolve_assignment(canonical_mission, source_plan, event_class, authority_record)
@@ -540,8 +947,28 @@ class SentinelCanonicalRuntime:
         raw = self.source_adapter.acquire(source_plan, event_class=event_class, value_hash=value_hash)
         if raw.response_status != "OK":
             return self._failed_execution(trace_root, mission, activation_id, FailureResponse.QUARANTINE, "SOURCE_ACQUISITION_FAILED")
+        raw_origin = self.evidence_origin_registry.declare(
+            evidence_identifier=raw.raw_evidence_id,
+            origin=SentinelEvidenceOrigin.CAPTURED_AUTHORITATIVE_RESPONSE,
+            producing_subsystem=self.source_adapter.adapter_id,
+            associated_mission=mission.mission_id,
+            metadata={"source": source_plan.source_id, "host": source_plan.source_host},
+        )
+        if not self.evidence_origin_registry.validate(raw_origin):
+            return self._failed_execution(trace_root, mission, activation_id, FailureResponse.HALT, "RAW_EVIDENCE_ORIGIN_VALIDATION_FAILED")
+        raw_origin_record = self._persist("sentinel_raw_evidence_origin", raw_origin.origin_record_id, _json_ready(asdict(raw_origin)), raw_origin.deterministic_digest)
         parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "source_acquired", self.source_adapter.adapter_id, "SENT-MO-001-STAGE-5", (source_plan.source_plan_id,), (raw.raw_evidence_id,), "ACTIVE", "ACTIVE", "PASS")
         observation = self.source_adapter.normalize(raw, assignment, source_plan, schedule, value_hash=value_hash)
+        observation_origin = self.evidence_origin_registry.declare(
+            evidence_identifier=observation.observation_id,
+            origin=SentinelEvidenceOrigin.RUNTIME_OBSERVATION,
+            producing_subsystem="SentinelCanonicalRuntime.normalize",
+            associated_mission=mission.mission_id,
+            metadata={"source": source_plan.source_id, "raw_evidence": raw.raw_evidence_id},
+        )
+        if not self.evidence_origin_registry.validate(observation_origin):
+            return self._failed_execution(trace_root, mission, activation_id, FailureResponse.HALT, "OBSERVATION_ORIGIN_VALIDATION_FAILED")
+        observation_origin_record = self._persist("sentinel_observation_origin", observation_origin.origin_record_id, _json_ready(asdict(observation_origin)), observation_origin.deterministic_digest)
         parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "observation_normalized", "sentinel-normalizer/1.0.0", "SENT-MO-001-STAGE-6", (raw.raw_evidence_id,), (observation.observation_id,), "ACTIVE", "ACTIVE", "PASS")
         source = SourceRecord(source_plan.source_id, True, True, "HEALTHY", source_plan.source_host, 1.0, 1.0)
         pipeline = RuntimeObservationPipeline(validator=ObservationIntegrityValidator())
@@ -549,14 +976,34 @@ class SentinelCanonicalRuntime:
         duplicate = _duplicate_decision(observation, prior_observations)
         independence = SentinelSourceIndependenceDecision(f"IND-{_hash(observation.source_id)[:10].upper()}", (source_plan.source_id,), (source_plan.source_host,), "SENT-GOV-020-INDEPENDENCE/1", "INDEPENDENT", ())
         conflict = SentinelConflictDecision(f"CON-{_hash(observation.observation_id)[:10].upper()}", (), (), (source_plan.source_id,), "NO_CONFLICT", (), "NO_CONFLICT", True)
-        sufficiency = SentinelSufficiencyDecision(f"SUF-{_hash(observation.observation_id)[:10].upper()}", assignment.sufficiency_rule_id, ("event_class", "value_hash", "source_timestamp", "raw_evidence"), (source_plan.source_id,), True, (), SentinelRuntimeDecision.PASS if result.decision.value == "PASS" else SentinelRuntimeDecision.INSUFFICIENT)
+        policy_registry = self.sufficiency_policy_registry or SentinelSufficiencyPolicyRegistry.for_event_classes((event_class,))
+        sufficiency, sufficiency_evidence = SentinelObservationSufficiencyEvaluator(policy_registry).evaluate(
+            mission_id=mission.mission_id,
+            event_class=event_class,
+            observations=(observation,),
+            source_records={source.source_id: source},
+            dependency_certification=certification,
+        )
+        sufficiency_origin = self.evidence_origin_registry.declare(
+            evidence_identifier=sufficiency_evidence.evidence_id,
+            origin=SentinelEvidenceOrigin.RUNTIME_OBSERVATION,
+            producing_subsystem=SentinelObservationSufficiencyEvaluator.evaluator_version,
+            associated_mission=mission.mission_id,
+            metadata={"rule": sufficiency.rule_identity, "decision": sufficiency.notification_readiness.value},
+        )
+        if not self.evidence_origin_registry.validate(sufficiency_origin):
+            return self._failed_execution(trace_root, mission, activation_id, FailureResponse.HALT, "SUFFICIENCY_ORIGIN_VALIDATION_FAILED")
+        sufficiency_record = self._persist("sentinel_sufficiency_evaluation", sufficiency_evidence.evidence_id, _json_ready(asdict(sufficiency_evidence)), sufficiency_evidence.deterministic_digest)
+        sufficiency_origin_record = self._persist("sentinel_sufficiency_origin", sufficiency_origin.origin_record_id, _json_ready(asdict(sufficiency_origin)), sufficiency_origin.deterministic_digest)
         priority = SentinelPriorityDecision(f"PRI-{_hash(observation.observation_id)[:10].upper()}", assignment.priority_rule_id, 1, 1, observation.observation_timestamp, observation.observation_id, 1)
         parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "observation_evaluated", "RuntimeObservationPipeline.execute", "SENT-MO-001-STAGES-7-11", (observation.observation_id,), (result.evidence.evidence_checksum,), "ACTIVE", "ACTIVE", result.decision.value)
         envelope = _evidence_envelope(self.candidate_identity, self.runtime_identity, mission, activation_id, source_plan, raw, observation, duplicate, independence, conflict, sufficiency, priority, tuple(item.trace_event_id for item in self.trace_events))
+        if envelope.final_notification_readiness_state != SentinelRuntimeDecision.PASS:
+            return self._failed_execution(trace_root, mission, activation_id, FailureResponse.HALT, "OBSERVATION_SUFFICIENCY_NOT_SATISFIED:" + ",".join(sufficiency.remaining_uncertainty))
         alert = _notification_ready_alert(envelope, mission, self.candidate_identity, self.runtime_identity, event_class)
         parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "evidence_and_alert_created", "SentinelCanonicalRuntime.execute_observation", "SENT-MO-001-STAGES-12-13", (envelope.envelope_id,), (alert.alert_id,), "ACTIVE", "COMPLETING", "PASS")
-        envelope_record = self._persist("sentinel_observation_evidence", envelope.envelope_id, asdict(envelope), envelope.deterministic_digest)
-        alert_record = self._persist("sentinel_notification_ready_alert", alert.alert_id, asdict(alert), alert.deterministic_digest)
+        envelope_record = self._persist("sentinel_observation_evidence", envelope.envelope_id, _json_ready(asdict(envelope)), envelope.deterministic_digest)
+        alert_record = self._persist("sentinel_notification_ready_alert", alert.alert_id, _json_ready(asdict(alert)), alert.deterministic_digest)
         self.scheduler.complete_mission(mission.mission_id, api_calls=1, result_summary="Sentinel notification-ready alert generated.")
         self.lifecycle.transition("Sentinel", OfficeLifecycleState.DORMANT)
         parent = self._trace(trace_root, parent, mission, activation_id, "OfficeLifecycleController", "sentinel_dormant", "OfficeLifecycleController.transition", "SENT-MO-001-STAGE-14", (alert.alert_id,), ("Sentinel:DORMANT",), "COMPLETING", "DORMANT", "PASS")
@@ -576,8 +1023,72 @@ class SentinelCanonicalRuntime:
             deterministic_digest="",
         )
         semantic = sentinel_runtime_equivalence_digest(record)
-        record = replace(record, deterministic_digest=_hash({"record": asdict(record), "persistence": (envelope_record.record_hash, alert_record.record_hash), "semantic": semantic}))
+        record = replace(
+            record,
+            deterministic_digest=_hash(
+                {
+                    "record": asdict(record),
+                    "persistence": (
+                        dependency_record.record_hash,
+                        authority_origin_record.record_hash,
+                        raw_origin_record.record_hash,
+                        observation_origin_record.record_hash,
+                        sufficiency_record.record_hash,
+                        sufficiency_origin_record.record_hash,
+                        envelope_record.record_hash,
+                        alert_record.record_hash,
+                    ),
+                    "semantic": semantic,
+                }
+            ),
+        )
         return record
+
+    def _dependency_certification(self) -> SentinelDependencyCertification:
+        if self.dependency_certification is not None:
+            return self.dependency_certification
+        if self.service_registry is None:
+            if self.require_certified_dependencies:
+                services = None
+            else:
+                policy = self.sufficiency_policy_registry or SentinelSufficiencyPolicyRegistry.for_event_classes(("EXPOSURE_SOURCE_ALERT",))
+                registry = SentinelEnterpriseServiceRegistry(
+                    {
+                        "Enterprise Scheduler": self.scheduler,
+                        "Enterprise Mission Registry": self.mission_registry,
+                        "Enterprise Authority Registry": self.authority_registry or SentinelAuthorityRegistry(()),
+                        "Enterprise Persistence": self.persistence,
+                        "Runtime Audit Infrastructure": self.evidence_origin_registry,
+                        "Approved Operational Source Adapters": self.source_adapter,
+                        "Constitutional Sufficiency Policy": policy,
+                    },
+                    acquisition_source="legacy non-certification test harness",
+                )
+                services = SentinelEnterpriseServices(
+                    scheduler=self.scheduler,
+                    lifecycle=self.lifecycle,
+                    source_adapter=self.source_adapter,
+                    mission_registry=self.mission_registry,
+                    authority_registry=self.authority_registry or SentinelAuthorityRegistry(()),
+                    persistence=self.persistence,
+                    evidence_origin_registry=self.evidence_origin_registry,
+                    sufficiency_policy_registry=policy,
+                    service_registry=registry,
+                )
+        else:
+            services = SentinelEnterpriseServices(
+                scheduler=self.scheduler,
+                lifecycle=self.lifecycle,
+                source_adapter=self.source_adapter,
+                mission_registry=self.mission_registry,
+                authority_registry=self.authority_registry or SentinelAuthorityRegistry(()),
+                persistence=self.persistence,
+                evidence_origin_registry=self.evidence_origin_registry,
+                sufficiency_policy_registry=self.sufficiency_policy_registry or SentinelSufficiencyPolicyRegistry.for_event_classes(()),
+                service_registry=self.service_registry,
+            )
+        self.dependency_certification = SentinelDependencyCertifier().certify(services)
+        return self.dependency_certification
 
     def _resolve_assignment(self, mission: EnterpriseMission, source_plan: SentinelSourcePlanReference, event_class: str, authority: AuthorityRecord) -> SentinelMissionAssignment:
         payload = (mission.mission_id, self.candidate_identity, source_plan.source_plan_id, event_class)
@@ -1142,3 +1653,15 @@ def _notification_ready_alert(
 def _hash(payload: object) -> str:
     encoded = json.dumps(payload, sort_keys=True, default=str, separators=(",", ":")).encode("utf-8")
     return "sha256:" + hashlib.sha256(encoded).hexdigest()
+
+
+def _json_ready(value: object) -> object:
+    if isinstance(value, Enum):
+        return value.value
+    if isinstance(value, Mapping):
+        return {str(key): _json_ready(item) for key, item in value.items()}
+    if isinstance(value, tuple):
+        return tuple(_json_ready(item) for item in value)
+    if isinstance(value, list):
+        return [_json_ready(item) for item in value]
+    return value
