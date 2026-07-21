@@ -103,6 +103,13 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.source_plan_enforcement.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.raw_evidence_preservation.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.source_admissibility.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.normalization_integrity.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.chronology_integrity.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.freshness_determination.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.duplicate_suppression.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.conflict_preservation.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.source_independence_corroboration.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.observation_sufficiency.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.responsibility_validation.ownership_result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.behavior_completeness.missing_behaviors, ())
         self.assertEqual(package.runtime_completeness.missing_runtime_paths, ())
@@ -247,6 +254,50 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(disabled_admissibility.rejection_code, "DISABLED_SOURCE")
         self.assertEqual(malformed_admissibility.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn(malformed_admissibility.rejection_code, {"INVALID_ENDPOINT", "INVALID_ENTITLEMENT"})
+
+    def test_observation_processing_records_cover_normalization_through_sufficiency(self) -> None:
+        runtime, execution = runtime_and_execution()
+        package = SentinelOfficeIntegritySupport().build_package(
+            execution=execution,
+            repository=runtime.persistence,
+            source_plan=source_plan(),
+        )
+
+        self.assertTrue(package.normalization_integrity.lineage_complete)
+        self.assertTrue(package.normalization_integrity.raw_evidence_preserved)
+        self.assertEqual(package.normalization_integrity.prohibited_transformations, ())
+        self.assertEqual(package.chronology_integrity.missing_categories, ())
+        self.assertEqual(package.chronology_integrity.ordering_violations, ())
+        self.assertTrue(package.chronology_integrity.utc_canonical)
+        self.assertEqual(package.freshness_determination.freshness_result, "FRESH")
+        self.assertEqual(package.freshness_determination.boundary_behavior, "inclusive_at_exact_limit")
+        self.assertEqual(package.duplicate_suppression.duplicate_result, "UNIQUE")
+        self.assertIn("exclude_duplicate_from_sufficiency", package.duplicate_suppression.suppression_effects)
+        self.assertEqual(package.conflict_preservation.conflict_result, "NO_CONFLICT")
+        self.assertFalse(package.conflict_preservation.analytical_resolution_attempted)
+        self.assertEqual(package.source_independence_corroboration.independence_decision, "INDEPENDENT")
+        self.assertFalse(package.source_independence_corroboration.invented_relationship_metadata)
+        self.assertEqual(package.observation_sufficiency.terminal_sufficiency_outcome, "SUFFICIENT")
+        self.assertEqual(package.observation_sufficiency.unsatisfied_requirements, ())
+
+    def test_processing_records_fail_closed_when_runtime_evidence_is_missing(self) -> None:
+        _, execution = runtime_and_execution()
+        broken = execution.__class__(
+            **{
+                **execution.__dict__,
+                "evidence_envelope": None,
+                "notification_ready_alert": None,
+            }
+        )
+        support = SentinelOfficeIntegritySupport()
+
+        self.assertEqual(support.evaluate_normalization_integrity(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(support.evaluate_chronology_integrity(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(support.evaluate_freshness_determination(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(support.evaluate_duplicate_suppression(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(support.evaluate_conflict_preservation(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(support.evaluate_source_independence_corroboration(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(support.evaluate_observation_sufficiency(broken).result, EnterpriseCertificationDecision.FAIL)
 
     def test_missing_persistence_record_fails_closed_without_fabricating_completion(self) -> None:
         definition = sentinel_office_responsibility_definition()

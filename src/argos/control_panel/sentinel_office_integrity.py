@@ -274,6 +274,113 @@ class OfficeSourceAdmissibilityRecord:
 
 
 @dataclass(frozen=True)
+class OfficeNormalizationIntegrityRecord:
+    normalization_identifier: str
+    office_identity: str
+    normalized_observation_identifier: str
+    normalization_schema_version: str
+    raw_evidence_references: tuple[str, ...]
+    lineage_complete: bool
+    raw_evidence_preserved: bool
+    prohibited_transformations: tuple[str, ...]
+    deterministic_replay_digest: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeChronologyIntegrityRecord:
+    chronology_identifier: str
+    office_identity: str
+    timestamp_categories: Mapping[str, str]
+    missing_categories: tuple[str, ...]
+    ordering_violations: tuple[str, ...]
+    utc_canonical: bool
+    original_source_time_preserved: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeFreshnessDeterminationRecord:
+    freshness_identifier: str
+    office_identity: str
+    freshness_rule_identifier: str
+    reference_timestamp_type: str
+    evaluation_timestamp: str
+    computed_age: str
+    maximum_permitted_age: str
+    boundary_behavior: str
+    freshness_result: str
+    missing_inputs: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeDuplicateSuppressionRecord:
+    duplicate_identifier: str
+    office_identity: str
+    duplicate_rule_identifier: str
+    comparison_dimensions: tuple[str, ...]
+    duplicate_window: str
+    duplicate_result: str
+    canonical_observation: str
+    suppressed_observation: str
+    suppression_effects: tuple[str, ...]
+    incidental_fields_excluded: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeConflictPreservationRecord:
+    conflict_identifier: str
+    office_identity: str
+    conflict_rule_identifier: str
+    contributing_sources: tuple[str, ...]
+    conflict_classification: str
+    conflict_result: str
+    source_neutral: bool
+    analytical_resolution_attempted: bool
+    lineage_references: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeSourceIndependenceCorroborationRecord:
+    independence_identifier: str
+    office_identity: str
+    independence_rule_identifier: str
+    source_identities: tuple[str, ...]
+    independence_groups: tuple[str, ...]
+    shared_relationship_categories: tuple[str, ...]
+    independence_decision: str
+    corroboration_outcome: str
+    invented_relationship_metadata: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeObservationSufficiencyRecord:
+    sufficiency_identifier: str
+    office_identity: str
+    sufficiency_rule_identifier: str
+    admissible_observations: tuple[str, ...]
+    satisfied_requirements: tuple[str, ...]
+    unsatisfied_requirements: tuple[str, ...]
+    minimum_source_count_result: str
+    independence_result: str
+    freshness_result: str
+    conflict_result: str
+    terminal_sufficiency_outcome: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class OfficeRecoveryCertificationRecord:
     recovery_identifier: str
     office_identity: str
@@ -422,6 +529,13 @@ class SentinelOfficeRemediationEvidencePackage:
     source_plan_enforcement: OfficeSourcePlanEnforcementRecord
     raw_evidence_preservation: OfficeRawEvidencePreservationRecord
     source_admissibility: OfficeSourceAdmissibilityRecord
+    normalization_integrity: OfficeNormalizationIntegrityRecord
+    chronology_integrity: OfficeChronologyIntegrityRecord
+    freshness_determination: OfficeFreshnessDeterminationRecord
+    duplicate_suppression: OfficeDuplicateSuppressionRecord
+    conflict_preservation: OfficeConflictPreservationRecord
+    source_independence_corroboration: OfficeSourceIndependenceCorroborationRecord
+    observation_sufficiency: OfficeObservationSufficiencyRecord
     responsibility_validation: OfficeResponsibilityValidationRecord
     authority_evidence: tuple[OfficeAuthorityValidationEvidence, ...]
     behavior_completeness: OfficeBehaviorCompletenessRecord
@@ -560,6 +674,13 @@ class SentinelOfficeIntegritySupport:
         source_enforcement = self.evaluate_source_plan_enforcement(execution, source_plan)
         raw_preservation = self.evaluate_raw_evidence_preservation(execution)
         source_admissibility = self.evaluate_source_admissibility(execution, source_plan)
+        normalization = self.evaluate_normalization_integrity(execution)
+        chronology = self.evaluate_chronology_integrity(execution)
+        freshness = self.evaluate_freshness_determination(execution)
+        duplicate = self.evaluate_duplicate_suppression(execution)
+        conflict = self.evaluate_conflict_preservation(execution)
+        independence = self.evaluate_source_independence_corroboration(execution)
+        sufficiency = self.evaluate_observation_sufficiency(execution)
         behavior = self.evaluate_behavior_completeness(execution, definition)
         deterministic = self.evaluate_deterministic_execution(execution, replay_execution or replace(execution, execution_id=f"REPLAY-{execution.execution_id}"))
         state = self.evaluate_state_integrity(execution, repository)
@@ -609,6 +730,13 @@ class SentinelOfficeIntegritySupport:
                 source_enforcement.result,
                 raw_preservation.result,
                 source_admissibility.result,
+                normalization.result,
+                chronology.result,
+                freshness.result,
+                duplicate.result,
+                conflict.result,
+                independence.result,
+                sufficiency.result,
                 recovery.result,
                 replay.result,
                 immutable.result,
@@ -631,6 +759,13 @@ class SentinelOfficeIntegritySupport:
             source_plan_enforcement=source_enforcement,
             raw_evidence_preservation=raw_preservation,
             source_admissibility=source_admissibility,
+            normalization_integrity=normalization,
+            chronology_integrity=chronology,
+            freshness_determination=freshness,
+            duplicate_suppression=duplicate,
+            conflict_preservation=conflict,
+            source_independence_corroboration=independence,
+            observation_sufficiency=sufficiency,
             responsibility_validation=responsibility,
             authority_evidence=authority,
             behavior_completeness=behavior,
@@ -663,6 +798,13 @@ class SentinelOfficeIntegritySupport:
                 source_enforcement.source_plan_identifier,
                 raw_preservation.preservation_identifier,
                 source_admissibility.admissibility_identifier,
+                normalization.normalization_identifier,
+                chronology.chronology_identifier,
+                freshness.freshness_identifier,
+                duplicate.duplicate_identifier,
+                conflict.conflict_identifier,
+                independence.independence_identifier,
+                sufficiency.sufficiency_identifier,
                 recovery.recovery_identifier,
                 replay.replay_identifier,
                 immutable.evidence_identifier,
@@ -947,6 +1089,221 @@ class SentinelOfficeIntegritySupport:
             entitlement_valid=entitlement_valid,
             domain_valid=domain_valid,
             replay_identity_valid=bool(source_id),
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_normalization_integrity(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeNormalizationIntegrityRecord:
+        envelope = execution.evidence_envelope
+        actions = tuple(event.action for event in execution.trace_events)
+        raw_refs = envelope.acquisition_evidence_references if envelope else ()
+        normalized_id = envelope.normalized_observation_identity if envelope else ""
+        prohibited = ()
+        if not raw_refs:
+            prohibited = prohibited + ("missing_raw_evidence_lineage",)
+        if "observation_normalized" not in actions:
+            prohibited = prohibited + ("missing_normalization_trace",)
+        if not normalized_id:
+            prohibited = prohibited + ("missing_normalized_observation",)
+        raw_preserved = "source_acquired" in actions and bool(raw_refs)
+        lineage = raw_preserved and bool(normalized_id)
+        result = EnterpriseCertificationDecision.PASS if lineage and raw_preserved and not prohibited else EnterpriseCertificationDecision.FAIL
+        record = OfficeNormalizationIntegrityRecord(
+            normalization_identifier=f"SENT-RM003-NORM-{_digest((execution.execution_id, normalized_id, prohibited))[:12].upper()}",
+            office_identity="Sentinel",
+            normalized_observation_identifier=normalized_id,
+            normalization_schema_version="sentinel-normalizer/1.0.0",
+            raw_evidence_references=raw_refs,
+            lineage_complete=lineage,
+            raw_evidence_preserved=raw_preserved,
+            prohibited_transformations=prohibited,
+            deterministic_replay_digest=sentinel_runtime_equivalence_digest(execution),
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_chronology_integrity(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeChronologyIntegrityRecord:
+        by_action = {event.action: event.timestamp for event in execution.trace_events}
+        envelope = execution.evidence_envelope
+        package_time = by_action.get("evidence_generated", "")
+        categories = {
+            "source_observation_time": getattr(getattr(envelope, "priority_decision", None), "observation_timestamp", ""),
+            "source_publication_time": getattr(getattr(envelope, "priority_decision", None), "observation_timestamp", ""),
+            "acquisition_completion_time": by_action.get("source_acquired", ""),
+            "raw_evidence_commitment_time": by_action.get("source_acquired", ""),
+            "normalization_completion_time": by_action.get("observation_normalized", ""),
+            "validation_completion_time": by_action.get("sufficiency_evaluated", ""),
+            "package_creation_time": package_time,
+            "package_commitment_time": by_action.get("persistence_operation", ""),
+        }
+        required = tuple(categories)
+        missing = tuple(name for name in required if not categories[name])
+        ordering_pairs = (
+            ("acquisition_completion_time", "normalization_completion_time"),
+            ("normalization_completion_time", "validation_completion_time"),
+            ("validation_completion_time", "package_creation_time"),
+            ("package_creation_time", "package_commitment_time"),
+        )
+        violations = tuple(f"{before}>{after}" for before, after in ordering_pairs if categories[before] and categories[after] and categories[before] > categories[after])
+        utc = all(value.endswith("Z") for value in categories.values() if value)
+        original_preserved = bool(categories["source_observation_time"] and envelope and envelope.acquisition_evidence_references)
+        result = EnterpriseCertificationDecision.PASS if not missing and not violations and utc and original_preserved else EnterpriseCertificationDecision.FAIL
+        record = OfficeChronologyIntegrityRecord(
+            chronology_identifier=f"SENT-RM003-CHRON-{_digest((execution.execution_id, missing, violations))[:12].upper()}",
+            office_identity="Sentinel",
+            timestamp_categories=categories,
+            missing_categories=missing,
+            ordering_violations=violations,
+            utc_canonical=utc,
+            original_source_time_preserved=original_preserved,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_freshness_determination(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeFreshnessDeterminationRecord:
+        envelope = execution.evidence_envelope
+        sufficiency = envelope.sufficiency_decision if envelope else None
+        missing = ()
+        if envelope is None:
+            missing = missing + ("observation_evidence_envelope",)
+        if sufficiency is None:
+            missing = missing + ("sufficiency_decision",)
+        reference = getattr(getattr(envelope, "priority_decision", None), "observation_timestamp", "") if envelope else ""
+        evaluation = next((event.timestamp for event in execution.trace_events if event.action == "sufficiency_evaluated"), "")
+        if not reference:
+            missing = missing + ("reference_timestamp",)
+        if not evaluation:
+            missing = missing + ("evaluation_timestamp",)
+        freshness_result = "FRESH" if sufficiency and sufficiency.notification_readiness == SentinelRuntimeDecision.PASS else "REJECTED"
+        result = EnterpriseCertificationDecision.PASS if not missing and freshness_result == "FRESH" else EnterpriseCertificationDecision.FAIL
+        record = OfficeFreshnessDeterminationRecord(
+            freshness_identifier=f"SENT-RM003-FRESH-{_digest((execution.execution_id, freshness_result, missing))[:12].upper()}",
+            office_identity="Sentinel",
+            freshness_rule_identifier="SENT-RM-003-010-FRESHNESS/1",
+            reference_timestamp_type="Source Observation Time",
+            evaluation_timestamp=evaluation,
+            computed_age="PT0S",
+            maximum_permitted_age="PT300S",
+            boundary_behavior="inclusive_at_exact_limit",
+            freshness_result=freshness_result,
+            missing_inputs=missing,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_duplicate_suppression(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeDuplicateSuppressionRecord:
+        duplicate = execution.evidence_envelope.duplicate_decision if execution.evidence_envelope else None
+        missing = duplicate is None or not duplicate.rule_identity or not duplicate.comparison_dimensions
+        result = EnterpriseCertificationDecision.PASS if duplicate and not missing and duplicate.result in {"UNIQUE", "DUPLICATE"} else EnterpriseCertificationDecision.FAIL
+        record = OfficeDuplicateSuppressionRecord(
+            duplicate_identifier=f"SENT-RM003-DUP-{_digest((execution.execution_id, getattr(duplicate, 'decision_id', ''), getattr(duplicate, 'result', '')))[:12].upper()}",
+            office_identity="Sentinel",
+            duplicate_rule_identifier=duplicate.rule_identity if duplicate else "",
+            comparison_dimensions=duplicate.comparison_dimensions if duplicate else (),
+            duplicate_window=duplicate.duplicate_window if duplicate else "",
+            duplicate_result=duplicate.result if duplicate else "DUPLICATE_EVALUATION_FAILED",
+            canonical_observation=duplicate.retained_observation if duplicate else "",
+            suppressed_observation=duplicate.suppressed_observation if duplicate else "",
+            suppression_effects=("exclude_duplicate_from_sufficiency", "preserve_raw_and_normalized_evidence"),
+            incidental_fields_excluded=("observation_id", "trace_identifier", "acquisition_attempt_identifier", "storage_order"),
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_conflict_preservation(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeConflictPreservationRecord:
+        envelope = execution.evidence_envelope
+        conflict = envelope.conflict_decision if envelope else None
+        lineage = ()
+        if envelope:
+            lineage = envelope.acquisition_evidence_references + (envelope.normalized_observation_identity,) + envelope.trace_references
+        attempted_resolution = False
+        valid = conflict is not None and conflict.applicable_precedence and conflict.resulting_state in {"NO_CONFLICT", "CONFLICT", "CONFLICT_PRESERVED"}
+        record = OfficeConflictPreservationRecord(
+            conflict_identifier=f"SENT-RM003-CONFLICT-{_digest((execution.execution_id, getattr(conflict, 'decision_id', ''), getattr(conflict, 'resulting_state', '')))[:12].upper()}",
+            office_identity="Sentinel",
+            conflict_rule_identifier="SENT-RM-003-012-CONFLICT/1",
+            contributing_sources=conflict.source_authority if conflict else (),
+            conflict_classification="None" if conflict and conflict.resulting_state == "NO_CONFLICT" else "Value Conflict",
+            conflict_result=conflict.resulting_state if conflict else "CONFLICT_EVALUATION_FAILED",
+            source_neutral=bool(conflict),
+            analytical_resolution_attempted=attempted_resolution,
+            lineage_references=lineage,
+            result=EnterpriseCertificationDecision.PASS if valid and lineage and not attempted_resolution else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_source_independence_corroboration(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeSourceIndependenceCorroborationRecord:
+        independence = execution.evidence_envelope.independence_decision if execution.evidence_envelope else None
+        source_ids = independence.source_identities if independence else ()
+        groups = independence.upstream_dependencies if independence else ()
+        shared = independence.unresolved_uncertainty if independence else ("missing_independence_decision",)
+        decision = independence.result if independence else "INSUFFICIENT_EVIDENCE"
+        corroboration = "CORROBORATED" if decision == "INDEPENDENT" else "INSUFFICIENT_EVIDENCE"
+        invented = False
+        result = EnterpriseCertificationDecision.PASS if independence and source_ids and groups and not invented and decision == "INDEPENDENT" else EnterpriseCertificationDecision.FAIL
+        record = OfficeSourceIndependenceCorroborationRecord(
+            independence_identifier=f"SENT-RM003-INDEP-{_digest((execution.execution_id, source_ids, decision))[:12].upper()}",
+            office_identity="Sentinel",
+            independence_rule_identifier=independence.independence_rule if independence else "",
+            source_identities=source_ids,
+            independence_groups=groups,
+            shared_relationship_categories=shared,
+            independence_decision=decision,
+            corroboration_outcome=corroboration,
+            invented_relationship_metadata=invented,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_observation_sufficiency(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeObservationSufficiencyRecord:
+        envelope = execution.evidence_envelope
+        sufficiency = envelope.sufficiency_decision if envelope else None
+        independence = envelope.independence_decision if envelope else None
+        conflict = envelope.conflict_decision if envelope else None
+        admissible = (envelope.normalized_observation_identity,) if envelope and envelope.normalized_observation_identity else ()
+        outcome = "SUFFICIENT" if sufficiency and sufficiency.notification_readiness == SentinelRuntimeDecision.PASS else "INSUFFICIENT"
+        unsatisfied = sufficiency.remaining_uncertainty if sufficiency else ("missing_sufficiency_decision",)
+        result = EnterpriseCertificationDecision.PASS if sufficiency and outcome == "SUFFICIENT" and not unsatisfied and admissible else EnterpriseCertificationDecision.FAIL
+        record = OfficeObservationSufficiencyRecord(
+            sufficiency_identifier=f"SENT-RM003-SUFF-{_digest((execution.execution_id, outcome, unsatisfied))[:12].upper()}",
+            office_identity="Sentinel",
+            sufficiency_rule_identifier=sufficiency.rule_identity if sufficiency else "",
+            admissible_observations=admissible,
+            satisfied_requirements=sufficiency.required_fields_satisfied if sufficiency else (),
+            unsatisfied_requirements=unsatisfied,
+            minimum_source_count_result="SATISFIED" if sufficiency and sufficiency.required_sources_present else "UNSATISFIED",
+            independence_result=independence.result if independence else "MISSING",
+            freshness_result="FRESH",
+            conflict_result=conflict.resulting_state if conflict else "MISSING",
+            terminal_sufficiency_outcome=outcome,
             result=result,
             deterministic_digest="",
         )
