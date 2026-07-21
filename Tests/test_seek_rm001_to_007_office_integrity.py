@@ -473,6 +473,112 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("independent_suite_failed", closure.unresolved_deficiencies)
         self.assertIn("missing_closure_evidence", closure.unresolved_deficiencies)
 
+    def test_seek_rm002_constitutional_object_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_constitutional_objects_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "discovery": "DISCOVERY/1", "configuration": "CONFIG/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        self.assertEqual(package.final_object_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-002-001",
+                "SEEK-RM-002-002",
+                "SEEK-RM-002-003",
+                "SEEK-RM-002-004",
+                "SEEK-RM-002-005",
+                "SEEK-RM-002-006",
+                "SEEK-RM-002-007",
+            ),
+        )
+        self.assertEqual(package.search_mission_object.missing_fields, ())
+        self.assertEqual(package.search_plan_object.missing_sections, ())
+        self.assertEqual(package.candidate_package_object.invariant_violations, ())
+        self.assertEqual(package.candidate_identity_doctrine.confidence_status, "VERIFIED")
+        self.assertEqual(package.candidate_lifecycle.terminal_outcome, "Accepted and Committed")
+        self.assertEqual(package.search_mission_lifecycle.terminal_state, "Completed")
+        self.assertEqual(package.search_sufficiency_metrics.sufficiency_outcome, "SUFFICIENT")
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm002_constitutional_objects_fail_closed_on_invalid_inputs(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        bad_mission = mission(
+            constitutional_authority="",
+            search_plan_id="SEARCH-PLAN-OTHER",
+            discovery_scope=("candidate_discovery", "trade_authorization"),
+        )
+        bad_plan = search_plan(
+            approved_sources=("SEC-EDGAR", "NASDAQ"),
+            sufficiency_requirements=(),
+            termination_conditions=(),
+        )
+        bad_candidate = candidate(attributes={"ticker": "ARG|AMBIGUOUS", "exchange": "NYSE"})
+        bad_evidence = (discovery_evidence(source_id="SEC-EDGAR"),)
+
+        mission_object = support.evaluate_search_mission_constitutional_object(bad_mission, bad_plan)
+        plan_object = support.evaluate_search_plan_constitutional_object(bad_mission, bad_plan, bad_evidence, (bad_candidate,))
+        identity = support.evaluate_candidate_identity(bad_candidate, bad_plan, bad_evidence)
+        freshness = support.evaluate_freshness_determination(mission(), bad_plan, bad_candidate, bad_evidence)
+        duplicates = support.evaluate_duplicate_suppression(bad_plan, (bad_candidate,), bad_evidence)
+        independence = support.evaluate_relationship_independence(bad_plan, (bad_candidate,), bad_evidence)
+        sufficiency = support.evaluate_search_sufficiency(bad_plan, bad_evidence, (bad_candidate,))
+        preservation = support.evaluate_discovery_evidence_preservation(mission(), bad_plan, bad_evidence, bad_candidate)
+        contract = support.evaluate_candidate_package_contract(
+            mission(),
+            bad_plan,
+            (bad_candidate, candidate(candidate_reference="CAND-002")),
+            bad_evidence,
+            (identity, preservation, freshness, duplicates, independence, sufficiency),
+        )
+        candidate_package = support.evaluate_candidate_package_constitutional_object(
+            mission(),
+            bad_plan,
+            (bad_candidate, candidate(candidate_reference="CAND-002")),
+            bad_evidence,
+            contract,
+            (identity, preservation, freshness, duplicates, independence, sufficiency),
+        )
+        identity_doctrine = support.evaluate_enterprise_candidate_identity_doctrine(bad_candidate, bad_plan, bad_evidence)
+        candidate_lifecycle = support.evaluate_candidate_constitutional_lifecycle(
+            bad_candidate,
+            identity,
+            duplicates,
+            freshness,
+            independence,
+            sufficiency,
+            contract,
+        )
+        mission_lifecycle = support.evaluate_search_mission_constitutional_lifecycle(mission(), contract, sufficiency)
+        sufficiency_metrics = support.evaluate_search_sufficiency_metrics(
+            mission(),
+            bad_plan,
+            bad_evidence,
+            (bad_candidate,),
+            sufficiency,
+            freshness,
+            duplicates,
+            independence,
+            contract,
+        )
+
+        self.assertEqual(mission_object.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("authorization_identifier", mission_object.missing_fields)
+        self.assertIn("trade_authorization", mission_object.prohibited_authority_findings)
+        self.assertEqual(plan_object.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mission_reference", plan_object.missing_sections)
+        self.assertIn("completion_criteria", plan_object.missing_sections)
+        self.assertEqual(candidate_package.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("single_candidate_invariant", candidate_package.invariant_violations)
+        self.assertEqual(identity_doctrine.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(identity_doctrine.confidence_status, "REJECTED")
+        self.assertEqual(candidate_lifecycle.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(mission_lifecycle.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(sufficiency_metrics.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(sufficiency_metrics.sufficiency_outcome, "INSUFFICIENT")
+
 
 if __name__ == "__main__":
     unittest.main()
