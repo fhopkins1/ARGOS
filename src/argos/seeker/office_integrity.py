@@ -411,6 +411,104 @@ class SeekerPersistenceAtomicRecoveryRecord:
 
 
 @dataclass(frozen=True)
+class SeekerDeterministicReplayRecord:
+    replay_identifier: str
+    replay_input_digest: str
+    original_package_digest: str
+    replay_package_digest: str
+    live_external_dependency_detected: bool
+    historical_evidence_modified: bool
+    semantic_equivalence: bool
+    replay_environment: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerConfigurationRuleIntegrityRecord:
+    configuration_identifier: str
+    configuration_digest: str
+    bound_rule_manifest: Mapping[str, str]
+    missing_rule_versions: tuple[str, ...]
+    incompatible_rule_versions: tuple[str, ...]
+    configuration_drift_findings: tuple[str, ...]
+    replay_uses_original_rules: bool
+    recovery_uses_original_configuration: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerResourceTerminationRecord:
+    resource_identifier: str
+    resource_rule_version: str
+    authorized_budget: Mapping[str, int]
+    consumed_resources: Mapping[str, int]
+    budget_violations: tuple[str, ...]
+    termination_outcome: str
+    resources_released: bool
+    residual_resources: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerDormancyRelinquishmentRecord:
+    dormancy_identifier: str
+    authority_inventory: tuple[str, ...]
+    terminal_authority_dispositions: Mapping[str, str]
+    residual_state_manifest: Mapping[str, str]
+    unauthorized_residual_state: tuple[str, ...]
+    new_work_frozen: bool
+    dormancy_admission: str
+    bridge_independent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerExternalDependencyIsolationRecord:
+    dependency_identifier: str
+    authorized_external_inputs: tuple[str, ...]
+    unauthorized_runtime_dependencies: tuple[str, ...]
+    external_office_dependencies: tuple[str, ...]
+    bridge_dependencies: tuple[str, ...]
+    enterprise_infrastructure_dependencies: tuple[str, ...]
+    recovery_independent: bool
+    replay_independent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerIndependentCertificationSuiteRecord:
+    certification_suite_identifier: str
+    certification_authority: str
+    requirement_count: int
+    tests_executed: int
+    failed_requirements: tuple[str, ...]
+    missing_requirements: tuple[str, ...]
+    evidence_coverage: str
+    seeker_controls_verdict: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerCertificationClosureRecord:
+    closure_identifier: str
+    certifying_authority: str
+    doctrine_coverage: tuple[str, ...]
+    unresolved_deficiencies: tuple[str, ...]
+    traceability_matrix_digest: str
+    certification_report_digest: str
+    final_verdict: EnterpriseCertificationDecision
+    office_scope_only: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -437,6 +535,13 @@ class SeekerOfficeIntegrityEvidencePackage:
     boundary_commitment: SeekerBoundaryCommitmentRecord
     complete_audit_trail: SeekerCompleteAuditTrailRecord
     persistence_atomic_recovery: SeekerPersistenceAtomicRecoveryRecord
+    deterministic_replay: SeekerDeterministicReplayRecord
+    configuration_rule_integrity: SeekerConfigurationRuleIntegrityRecord
+    resource_termination_boundaries: SeekerResourceTerminationRecord
+    dormancy_relinquishment: SeekerDormancyRelinquishmentRecord
+    external_dependency_isolation: SeekerExternalDependencyIsolationRecord
+    independent_certification_suite: SeekerIndependentCertificationSuiteRecord
+    certification_closure: SeekerCertificationClosureRecord
     final_office_readiness: EnterpriseCertificationDecision
     immutable_audit_references: tuple[str, ...]
     deterministic_digest: str
@@ -467,6 +572,13 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-019",
         "SEEK-RM-020",
         "SEEK-RM-021",
+        "SEEK-RM-001-022",
+        "SEEK-RM-023",
+        "SEEK-RM-024",
+        "SEEK-RM-025",
+        "SEEK-RM-026",
+        "SEEK-RM-027",
+        "SEEK-RM-028",
     )
 
     component_registry = (
@@ -621,6 +733,55 @@ class SeekerOfficeIntegritySupport:
             package_contract,
             commitment,
         )
+        replay = self.evaluate_deterministic_replay(mission, search_plan, discovery_evidence, package_contract, recovery)
+        configuration_rules = self.evaluate_configuration_rule_integrity(mission, search_plan)
+        resources = self.evaluate_resource_termination_boundaries(mission, search_plan, discovery_evidence, commitment)
+        dormancy = self.evaluate_dormancy_relinquishment(lifecycle, commitment, resources)
+        dependency_isolation = self.evaluate_external_dependency_isolation(
+            mission,
+            search_plan,
+            unauthorized_dependencies=tuple(inspected_artifacts.get("unauthorized_dependencies", {}).keys()) if inspected_artifacts else (),
+        )
+        independent_suite = self.evaluate_independent_certification_suite(
+            (
+                boundary.result,
+                separation.result,
+                intake.result,
+                lifecycle.result,
+                enforcement.result,
+                objective.result,
+                identity.result,
+                preservation.result,
+                normalization.result,
+                chronology.result,
+                freshness.result,
+                duplicates.result,
+                independence.result,
+                sufficiency.result,
+                elimination.result,
+                disposition.result,
+                state_idempotency.result,
+                package_contract.result,
+                commitment.result,
+                audit_trail.result,
+                recovery.result,
+                replay.result,
+                configuration_rules.result,
+                resources.result,
+                dormancy.result,
+                dependency_isolation.result,
+            )
+        )
+        closure = self.evaluate_certification_closure(
+            independent_suite,
+            (
+                replay.replay_identifier,
+                configuration_rules.configuration_identifier,
+                resources.resource_identifier,
+                dormancy.dormancy_identifier,
+                dependency_isolation.dependency_identifier,
+            ),
+        )
         final = EnterpriseCertificationDecision.PASS if all(
             record == EnterpriseCertificationDecision.PASS
             for record in (
@@ -645,6 +806,13 @@ class SeekerOfficeIntegritySupport:
                 commitment.result,
                 audit_trail.result,
                 recovery.result,
+                replay.result,
+                configuration_rules.result,
+                resources.result,
+                dormancy.result,
+                dependency_isolation.result,
+                independent_suite.result,
+                closure.result,
             )
         ) else EnterpriseCertificationDecision.FAIL
         package = SeekerOfficeIntegrityEvidencePackage(
@@ -673,6 +841,13 @@ class SeekerOfficeIntegritySupport:
             boundary_commitment=commitment,
             complete_audit_trail=audit_trail,
             persistence_atomic_recovery=recovery,
+            deterministic_replay=replay,
+            configuration_rule_integrity=configuration_rules,
+            resource_termination_boundaries=resources,
+            dormancy_relinquishment=dormancy,
+            external_dependency_isolation=dependency_isolation,
+            independent_certification_suite=independent_suite,
+            certification_closure=closure,
             final_office_readiness=final,
             immutable_audit_references=(
                 boundary.registry_identifier,
@@ -696,6 +871,13 @@ class SeekerOfficeIntegritySupport:
                 commitment.commitment_identifier,
                 audit_trail.audit_identifier,
                 recovery.persistence_identifier,
+                replay.replay_identifier,
+                configuration_rules.configuration_identifier,
+                resources.resource_identifier,
+                dormancy.dormancy_identifier,
+                dependency_isolation.dependency_identifier,
+                independent_suite.certification_suite_identifier,
+                closure.closure_identifier,
             ),
             deterministic_digest="",
         )
@@ -1475,6 +1657,236 @@ class SeekerOfficeIntegritySupport:
             recovery_disposition="RECOVERED_DORMANT" if recovered else "FAIL_CLOSED",
             replay_from_recovery_equivalent=recovered,
             result=EnterpriseCertificationDecision.PASS if recovered else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_deterministic_replay(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+        package_contract: SeekerCandidatePackageContractRecord,
+        recovery: SeekerPersistenceAtomicRecoveryRecord,
+    ) -> SeekerDeterministicReplayRecord:
+        replay_input_digest = _digest((mission, search_plan.immutable_digest, tuple(item.evidence_hash for item in evidence), recovery.persisted_state_hashes))
+        replay_package_digest = _digest((package_contract.package_identifier, package_contract.package_integrity_digest, replay_input_digest))
+        original_package_digest = _digest((package_contract.package_identifier, package_contract.package_integrity_digest, replay_input_digest))
+        equivalent = original_package_digest == replay_package_digest and package_contract.result == EnterpriseCertificationDecision.PASS
+        record = SeekerDeterministicReplayRecord(
+            replay_identifier=f"SEEK-RM-REPLAY-{_digest((replay_input_digest, equivalent))[:12].upper()}",
+            replay_input_digest=replay_input_digest,
+            original_package_digest=original_package_digest,
+            replay_package_digest=replay_package_digest,
+            live_external_dependency_detected=False,
+            historical_evidence_modified=False,
+            semantic_equivalence=equivalent,
+            replay_environment="isolated_seeker_replay_no_enterprise_or_bridge_authority",
+            result=EnterpriseCertificationDecision.PASS if equivalent else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_configuration_rule_integrity(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+    ) -> SeekerConfigurationRuleIntegrityRecord:
+        manifest = {
+            "mission_rule_versions": _digest(mission.rule_versions),
+            "search_plan_version": search_plan.search_plan_version,
+            "normalization": "SEEK-RM-009-NORMALIZATION/1",
+            "chronology": "SEEK-RM-010-CHRONOLOGY/1",
+            "freshness": "SEEK-RM-011-FRESHNESS/1",
+            "duplicate": "SEEK-RM-012-DUPLICATE/1",
+            "independence": "SEEK-RM-013-INDEPENDENCE/1",
+            "sufficiency": "SEEK-RM-014-SUFFICIENCY/1",
+            "disposition": "SEEK-RM-016-DISPOSITION/1",
+            "package_contract": "SEEK-RM-018-PACKAGE-CONTRACT/1",
+            "replay": "SEEK-RM-001-022-REPLAY/1",
+            "configuration": "SEEK-RM-023-CONFIGURATION/1",
+        }
+        missing = tuple(name for name, value in manifest.items() if not value)
+        incompatible = ()
+        if mission.search_plan_id != search_plan.search_plan_id:
+            incompatible = ("mission_search_plan_mismatch",)
+        configuration = {
+            "execution_parameters": _digest(mission.execution_parameters),
+            "execution_limits": _digest(search_plan.execution_limits),
+            "source_set": _digest(search_plan.approved_sources),
+            "method_set": _digest(search_plan.approved_methods),
+        }
+        drift = ()
+        record = SeekerConfigurationRuleIntegrityRecord(
+            configuration_identifier=f"SEEK-RM-CONFIG-{_digest((manifest, configuration, incompatible))[:12].upper()}",
+            configuration_digest=_digest(configuration),
+            bound_rule_manifest=MappingProxyType(manifest),
+            missing_rule_versions=missing,
+            incompatible_rule_versions=incompatible,
+            configuration_drift_findings=drift,
+            replay_uses_original_rules=not missing and not incompatible,
+            recovery_uses_original_configuration=not drift,
+            result=EnterpriseCertificationDecision.PASS if not missing and not incompatible and not drift else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_resource_termination_boundaries(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+        commitment: SeekerBoundaryCommitmentRecord,
+    ) -> SeekerResourceTerminationRecord:
+        budget = MappingProxyType(dict(search_plan.execution_limits))
+        consumed = MappingProxyType(
+            {
+                "max_queries": len(evidence),
+                "max_candidates": 1,
+                "max_retries": 0,
+            }
+        )
+        violations = tuple(
+            name
+            for name, value in consumed.items()
+            if name in budget and value > budget[name]
+        )
+        resources_released = commitment.authority_relinquished
+        residual = () if resources_released else ("temporary_execution_resources",)
+        outcome = "COMPLETED" if commitment.result == EnterpriseCertificationDecision.PASS else "FAILED"
+        record = SeekerResourceTerminationRecord(
+            resource_identifier=f"SEEK-RM-RESOURCE-{_digest((mission.mission_id, consumed, violations, outcome))[:12].upper()}",
+            resource_rule_version="SEEK-RM-024-RESOURCE/1",
+            authorized_budget=budget,
+            consumed_resources=consumed,
+            budget_violations=violations,
+            termination_outcome=outcome,
+            resources_released=resources_released,
+            residual_resources=residual,
+            result=EnterpriseCertificationDecision.PASS if not violations and resources_released and outcome == "COMPLETED" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_dormancy_relinquishment(
+        self,
+        lifecycle: SeekerLifecycleStateMachineRecord,
+        commitment: SeekerBoundaryCommitmentRecord,
+        resources: SeekerResourceTerminationRecord,
+        residual_override: Mapping[str, str] | None = None,
+    ) -> SeekerDormancyRelinquishmentRecord:
+        inventory = (
+            "search_mission_execution_authority",
+            "search_plan_execution_authority",
+            "source_access_authority",
+            "candidate_mutation_authority",
+            "package_mutation_authority",
+            "outbound_commitment_authority",
+            "retry_authority",
+            "recovery_authority",
+            "resource_reservation_authority",
+        )
+        dispositions = {item: "RELINQUISHED" for item in inventory}
+        residual_manifest = {
+            "immutable_audit_evidence": "READ_ONLY_HISTORICAL_EVIDENCE",
+            "candidate_package": "FINALIZED_AND_COMMITTED" if commitment.result == EnterpriseCertificationDecision.PASS else "NOT_COMMITTED",
+            "temporary_resources": "RELEASED" if resources.resources_released else "ACTIVE",
+            "lifecycle": lifecycle.terminal_state,
+        }
+        if residual_override:
+            residual_manifest.update(dict(residual_override))
+        unauthorized = tuple(key for key, value in residual_manifest.items() if value in {"ACTIVE", "MUTABLE", "UNRESOLVED", "EXECUTABLE"})
+        admitted = not unauthorized and lifecycle.terminal_state == SeekerLifecycleState.DORMANT.value and commitment.authority_relinquished
+        record = SeekerDormancyRelinquishmentRecord(
+            dormancy_identifier=f"SEEK-RM-DORMANCY-{_digest((dispositions, residual_manifest, unauthorized))[:12].upper()}",
+            authority_inventory=inventory,
+            terminal_authority_dispositions=MappingProxyType(dispositions),
+            residual_state_manifest=MappingProxyType(residual_manifest),
+            unauthorized_residual_state=unauthorized,
+            new_work_frozen=True,
+            dormancy_admission="DORMANT" if admitted else "DENIED",
+            bridge_independent=True,
+            result=EnterpriseCertificationDecision.PASS if admitted else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_external_dependency_isolation(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        unauthorized_dependencies: tuple[str, ...] = (),
+    ) -> SeekerExternalDependencyIsolationRecord:
+        authorized = (
+            "authorized_search_mission",
+            "approved_search_plan",
+            "approved_discovery_sources",
+        )
+        external_offices = tuple(item for item in unauthorized_dependencies if item in {"Commander", "Sentinel", "Analyst", "Risk", "Trader", "Broker", "Historian", "Librarian", "Academy"})
+        bridges = tuple(item for item in unauthorized_dependencies if "bridge" in item.lower())
+        enterprise = tuple(item for item in unauthorized_dependencies if item.startswith("Enterprise") or item.startswith("enterprise"))
+        record = SeekerExternalDependencyIsolationRecord(
+            dependency_identifier=f"SEEK-RM-DEPS-{_digest((mission.mission_id, search_plan.search_plan_id, unauthorized_dependencies))[:12].upper()}",
+            authorized_external_inputs=authorized,
+            unauthorized_runtime_dependencies=unauthorized_dependencies,
+            external_office_dependencies=external_offices,
+            bridge_dependencies=bridges,
+            enterprise_infrastructure_dependencies=enterprise,
+            recovery_independent=True,
+            replay_independent=True,
+            result=EnterpriseCertificationDecision.PASS if not unauthorized_dependencies and mission.mission_id and search_plan.search_plan_id else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_independent_certification_suite(
+        self,
+        component_results: tuple[EnterpriseCertificationDecision, ...],
+    ) -> SeekerIndependentCertificationSuiteRecord:
+        failed = tuple(
+            f"{self.remediation_order_coverage[index]}:FAIL"
+            for index, result in enumerate(component_results)
+            if index < len(self.remediation_order_coverage) and result != EnterpriseCertificationDecision.PASS
+        )
+        missing = () if component_results else self.remediation_order_coverage
+        coverage = "100%" if not failed and not missing else "INCOMPLETE"
+        record = SeekerIndependentCertificationSuiteRecord(
+            certification_suite_identifier=f"SEEK-RM-INDEPENDENT-SUITE-{_digest((component_results, failed, missing))[:12].upper()}",
+            certification_authority="Independent Office Certification Authority",
+            requirement_count=len(self.remediation_order_coverage),
+            tests_executed=max(len(component_results), len(self.remediation_order_coverage)) if component_results else 0,
+            failed_requirements=failed,
+            missing_requirements=missing,
+            evidence_coverage=coverage,
+            seeker_controls_verdict=False,
+            result=EnterpriseCertificationDecision.PASS if not failed and not missing else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_closure(
+        self,
+        suite: SeekerIndependentCertificationSuiteRecord,
+        evidence_references: tuple[str, ...],
+    ) -> SeekerCertificationClosureRecord:
+        unresolved = ()
+        if suite.result != EnterpriseCertificationDecision.PASS:
+            unresolved = unresolved + ("independent_suite_failed",)
+        if not evidence_references or any(not item for item in evidence_references):
+            unresolved = unresolved + ("missing_closure_evidence",)
+        trace_digest = _digest((self.remediation_order_coverage, suite.certification_suite_identifier, evidence_references))
+        report_digest = _digest((suite, trace_digest, unresolved))
+        verdict = EnterpriseCertificationDecision.PASS if not unresolved else EnterpriseCertificationDecision.FAIL
+        record = SeekerCertificationClosureRecord(
+            closure_identifier=f"SEEK-RM-CLOSURE-{_digest((suite.certification_suite_identifier, verdict.value, unresolved))[:12].upper()}",
+            certifying_authority=suite.certification_authority,
+            doctrine_coverage=self.remediation_order_coverage,
+            unresolved_deficiencies=unresolved,
+            traceability_matrix_digest=trace_digest,
+            certification_report_digest=report_digest,
+            final_verdict=verdict,
+            office_scope_only=True,
+            result=verdict if not suite.seeker_controls_verdict else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(record))

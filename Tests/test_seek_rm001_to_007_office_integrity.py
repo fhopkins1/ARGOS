@@ -131,6 +131,13 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
                 "SEEK-RM-019",
                 "SEEK-RM-020",
                 "SEEK-RM-021",
+                "SEEK-RM-001-022",
+                "SEEK-RM-023",
+                "SEEK-RM-024",
+                "SEEK-RM-025",
+                "SEEK-RM-026",
+                "SEEK-RM-027",
+                "SEEK-RM-028",
             ),
         )
         self.assertIn("Mission Intake Component", package.boundary_registry.registered_components)
@@ -165,6 +172,14 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertTrue(package.boundary_commitment.authority_relinquished)
         self.assertEqual(package.complete_audit_trail.missing_audit_stages, ())
         self.assertEqual(package.persistence_atomic_recovery.recovery_disposition, "RECOVERED_DORMANT")
+        self.assertTrue(package.deterministic_replay.semantic_equivalence)
+        self.assertFalse(package.deterministic_replay.live_external_dependency_detected)
+        self.assertEqual(package.configuration_rule_integrity.missing_rule_versions, ())
+        self.assertEqual(package.resource_termination_boundaries.budget_violations, ())
+        self.assertEqual(package.dormancy_relinquishment.dormancy_admission, "DORMANT")
+        self.assertEqual(package.external_dependency_isolation.unauthorized_runtime_dependencies, ())
+        self.assertEqual(package.independent_certification_suite.evidence_coverage, "100%")
+        self.assertEqual(package.certification_closure.final_verdict, EnterpriseCertificationDecision.PASS)
         self.assertNotEqual(package.deterministic_digest, "")
 
     def test_self_certification_metadata_is_detected_and_fails_closed(self) -> None:
@@ -410,6 +425,53 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertNotEqual(incomplete_audit.missing_audit_stages, ())
         self.assertEqual(incomplete_recovery.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("search_plan_committed", incomplete_recovery.partial_write_findings)
+
+    def test_replay_configuration_resource_dormancy_dependency_and_closure_records_fail_closed(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        good_package = support.build_package(
+            mission=mission(),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+        config = support.evaluate_configuration_rule_integrity(
+            mission(search_plan_id="SEARCH-PLAN-OTHER"),
+            search_plan(),
+        )
+        resources = support.evaluate_resource_termination_boundaries(
+            mission(),
+            search_plan(execution_limits={"max_queries": 0, "max_candidates": 1}),
+            (discovery_evidence(),),
+            good_package.boundary_commitment,
+        )
+        dormancy = support.evaluate_dormancy_relinquishment(
+            good_package.lifecycle_state_machine,
+            good_package.boundary_commitment,
+            good_package.resource_termination_boundaries,
+            residual_override={"retry_queue": "ACTIVE"},
+        )
+        dependencies = support.evaluate_external_dependency_isolation(
+            mission(),
+            search_plan(),
+            unauthorized_dependencies=("Analyst", "enterprise_scheduler", "seeker_bridge"),
+        )
+        failed_suite = support.evaluate_independent_certification_suite((EnterpriseCertificationDecision.PASS, EnterpriseCertificationDecision.FAIL))
+        closure = support.evaluate_certification_closure(failed_suite, ())
+
+        self.assertEqual(config.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mission_search_plan_mismatch", config.incompatible_rule_versions)
+        self.assertEqual(resources.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("max_queries", resources.budget_violations)
+        self.assertEqual(dormancy.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("retry_queue", dormancy.unauthorized_residual_state)
+        self.assertEqual(dependencies.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Analyst", dependencies.external_office_dependencies)
+        self.assertIn("enterprise_scheduler", dependencies.enterprise_infrastructure_dependencies)
+        self.assertIn("seeker_bridge", dependencies.bridge_dependencies)
+        self.assertEqual(failed_suite.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(closure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("independent_suite_failed", closure.unresolved_deficiencies)
+        self.assertIn("missing_closure_evidence", closure.unresolved_deficiencies)
 
 
 if __name__ == "__main__":
