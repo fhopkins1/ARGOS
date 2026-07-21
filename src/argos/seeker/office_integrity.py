@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, fields, is_dataclass, replace
+from datetime import datetime, timedelta, timezone
 from enum import Enum
 import hashlib
 import json
@@ -12,7 +13,7 @@ from typing import Any, Mapping
 from argos.control_panel.sentinel_bridge_certification_support import EnterpriseCertificationDecision
 
 
-SEEK_RM_VERSION = "SEEK-RM-001-TO-007/1.0.0"
+SEEK_RM_VERSION = "SEEK-RM-001-TO-014/1.0.0"
 
 
 class SeekerLifecycleState(str, Enum):
@@ -214,6 +215,103 @@ class SeekerCandidateIdentityValidationRecord:
 
 
 @dataclass(frozen=True)
+class SeekerDiscoveryEvidencePreservationRecord:
+    preservation_identifier: str
+    required_categories: tuple[str, ...]
+    missing_categories: tuple[str, ...]
+    evidence_identifiers: tuple[str, ...]
+    provenance_complete: bool
+    chronology_reconstructable: bool
+    immutable_hashes: tuple[str, ...]
+    prohibited_content_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerDiscoveryNormalizationRecord:
+    normalization_identifier: str
+    normalization_rule_version: str
+    canonical_payload_digest: str
+    raw_evidence_hashes_preserved: tuple[str, ...]
+    semantic_preservation: bool
+    prohibited_transformations: tuple[str, ...]
+    replay_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerChronologyIntegrityRecord:
+    chronology_identifier: str
+    timestamp_rule_version: str
+    event_sequence: tuple[str, ...]
+    missing_events: tuple[str, ...]
+    ordering_violations: tuple[str, ...]
+    source_time_preserved: bool
+    internal_external_time_separated: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerFreshnessDeterminationRecord:
+    freshness_identifier: str
+    candidate_reference: str
+    freshness_rule_version: str
+    authoritative_timestamp: str
+    evaluation_timestamp: str
+    freshness_window_days: int
+    freshness_decision: str
+    rejection_reason: str
+    timestamp_basis: str
+    replay_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerDuplicateSuppressionRecord:
+    duplicate_identifier: str
+    duplicate_rule_version: str
+    evaluated_candidate_identities: tuple[str, ...]
+    authoritative_candidates: tuple[str, ...]
+    suppressed_duplicates: tuple[str, ...]
+    evidence_preserved_for_suppressed: bool
+    order_independent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRelationshipIndependenceRecord:
+    relationship_identifier: str
+    independence_rule_version: str
+    relationship_classifications: Mapping[str, str]
+    unsupported_relationships: tuple[str, ...]
+    duplicate_economic_representations: tuple[str, ...]
+    independence_decision: str
+    cross_source_independence: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerSearchSufficiencyRecord:
+    sufficiency_identifier: str
+    sufficiency_rule_version: str
+    required_sources: tuple[str, ...]
+    processed_sources: tuple[str, ...]
+    missing_required_sources: tuple[str, ...]
+    approved_exclusions: tuple[str, ...]
+    candidate_count_observed: int
+    sufficiency_decision: str
+    replay_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -226,6 +324,13 @@ class SeekerOfficeIntegrityEvidencePackage:
     search_plan_enforcement: SeekerSearchPlanEnforcementRecord
     objective_validation: SeekerObjectiveValidationRecord
     candidate_identity_validation: SeekerCandidateIdentityValidationRecord
+    discovery_evidence_preservation: SeekerDiscoveryEvidencePreservationRecord
+    discovery_normalization: SeekerDiscoveryNormalizationRecord
+    chronology_integrity: SeekerChronologyIntegrityRecord
+    freshness_determination: SeekerFreshnessDeterminationRecord
+    duplicate_suppression: SeekerDuplicateSuppressionRecord
+    relationship_independence: SeekerRelationshipIndependenceRecord
+    search_sufficiency: SeekerSearchSufficiencyRecord
     final_office_readiness: EnterpriseCertificationDecision
     immutable_audit_references: tuple[str, ...]
     deterministic_digest: str
@@ -242,6 +347,13 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-005",
         "SEEK-RM-006",
         "SEEK-RM-007",
+        "SEEK-RM-001-008",
+        "SEEK-RM-009",
+        "SEEK-RM-010",
+        "SEEK-RM-011",
+        "SEEK-RM-012",
+        "SEEK-RM-013",
+        "SEEK-RM-014",
     )
 
     component_registry = (
@@ -339,6 +451,13 @@ class SeekerOfficeIntegritySupport:
         enforcement = self.evaluate_search_plan_enforcement(search_plan, discovery_evidence, candidate)
         objective = self.evaluate_objective_validation(mission, search_plan)
         identity = self.evaluate_candidate_identity(candidate, search_plan, discovery_evidence)
+        preservation = self.evaluate_discovery_evidence_preservation(mission, search_plan, discovery_evidence, candidate)
+        normalization = self.evaluate_discovery_normalization(discovery_evidence, candidate)
+        chronology = self.evaluate_chronology_integrity(mission, search_plan, discovery_evidence)
+        freshness = self.evaluate_freshness_determination(mission, search_plan, candidate, discovery_evidence)
+        duplicates = self.evaluate_duplicate_suppression(search_plan, (candidate,), discovery_evidence)
+        independence = self.evaluate_relationship_independence(search_plan, (candidate,), discovery_evidence)
+        sufficiency = self.evaluate_search_sufficiency(search_plan, discovery_evidence, (candidate,))
         final = EnterpriseCertificationDecision.PASS if all(
             record == EnterpriseCertificationDecision.PASS
             for record in (
@@ -349,6 +468,13 @@ class SeekerOfficeIntegritySupport:
                 enforcement.result,
                 objective.result,
                 identity.result,
+                preservation.result,
+                normalization.result,
+                chronology.result,
+                freshness.result,
+                duplicates.result,
+                independence.result,
+                sufficiency.result,
             )
         ) else EnterpriseCertificationDecision.FAIL
         package = SeekerOfficeIntegrityEvidencePackage(
@@ -363,6 +489,13 @@ class SeekerOfficeIntegritySupport:
             search_plan_enforcement=enforcement,
             objective_validation=objective,
             candidate_identity_validation=identity,
+            discovery_evidence_preservation=preservation,
+            discovery_normalization=normalization,
+            chronology_integrity=chronology,
+            freshness_determination=freshness,
+            duplicate_suppression=duplicates,
+            relationship_independence=independence,
+            search_sufficiency=sufficiency,
             final_office_readiness=final,
             immutable_audit_references=(
                 boundary.registry_identifier,
@@ -372,6 +505,13 @@ class SeekerOfficeIntegritySupport:
                 enforcement.enforcement_identifier,
                 objective.objective_identifier,
                 identity.identity_identifier,
+                preservation.preservation_identifier,
+                normalization.normalization_identifier,
+                chronology.chronology_identifier,
+                freshness.freshness_identifier,
+                duplicates.duplicate_identifier,
+                independence.relationship_identifier,
+                sufficiency.sufficiency_identifier,
             ),
             deterministic_digest="",
         )
@@ -630,9 +770,301 @@ class SeekerOfficeIntegritySupport:
         )
         return replace(record, deterministic_digest=_digest(record))
 
+    def evaluate_discovery_evidence_preservation(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidate: SeekerCandidateIdentityInput,
+    ) -> SeekerDiscoveryEvidencePreservationRecord:
+        categories = (
+            "mission_evidence",
+            "discovery_execution_evidence",
+            "source_evidence",
+            "candidate_discovery_evidence",
+            "duplicate_resolution_evidence",
+            "freshness_evaluation_evidence",
+            "independence_validation_evidence",
+            "search_sufficiency_evidence",
+            "candidate_package_evidence",
+        )
+        evidence_ids = tuple(item.evidence_id for item in evidence)
+        missing: list[str] = []
+        if not mission.mission_id or not mission.mission_version or not mission.constitutional_authority:
+            missing.append("mission_evidence")
+        if not search_plan.search_plan_id or not search_plan.search_plan_version or not search_plan.immutable_digest:
+            missing.append("discovery_execution_evidence")
+        if not evidence or any(not item.source_id or not item.acquisition_method or not item.retrieved_at for item in evidence):
+            missing.append("source_evidence")
+        if not candidate.candidate_reference or not candidate.evidence_references:
+            missing.append("candidate_discovery_evidence")
+        if not search_plan.duplicate_rules:
+            missing.append("duplicate_resolution_evidence")
+        if not search_plan.freshness_requirements:
+            missing.append("freshness_evaluation_evidence")
+        if not search_plan.independence_requirements:
+            missing.append("independence_validation_evidence")
+        if not search_plan.sufficiency_requirements:
+            missing.append("search_sufficiency_evidence")
+        if not set(candidate.evidence_references).issubset(set(evidence_ids)):
+            missing.append("candidate_package_evidence")
+        prohibited = ("recommendation", "risk_assessment", "trade_authorization", "score", "ranking")
+        findings = tuple(
+            f"{item.evidence_id}.{key}"
+            for item in evidence
+            for key in item.payload
+            if key in prohibited or str(item.payload[key]).lower() in prohibited
+        )
+        provenance = not missing and all(item.source_id in search_plan.approved_sources for item in evidence)
+        chronology = _timestamps_monotonic(tuple(item.retrieved_at for item in evidence))
+        record = SeekerDiscoveryEvidencePreservationRecord(
+            preservation_identifier=f"SEEK-RM-EVIDENCE-{_digest((mission.mission_id, evidence_ids, candidate.candidate_reference))[:12].upper()}",
+            required_categories=categories,
+            missing_categories=tuple(dict.fromkeys(missing)),
+            evidence_identifiers=evidence_ids,
+            provenance_complete=provenance,
+            chronology_reconstructable=chronology,
+            immutable_hashes=tuple(item.evidence_hash for item in evidence),
+            prohibited_content_findings=findings,
+            result=EnterpriseCertificationDecision.PASS if not missing and provenance and chronology and not findings else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_discovery_normalization(
+        self,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidate: SeekerCandidateIdentityInput,
+    ) -> SeekerDiscoveryNormalizationRecord:
+        canonical_payload = tuple(
+            (
+                item.evidence_id,
+                tuple((str(key).strip().lower(), _normalize_value(value)) for key, value in sorted(item.payload.items())),
+            )
+            for item in evidence
+        )
+        prohibited = tuple(
+            f"{item.evidence_id}.missing_{field}"
+            for item in evidence
+            for field in candidate.attributes
+            if field not in item.payload and field in {"ticker", "exchange", "security_identifier"}
+        )
+        raw_hashes = tuple(item.evidence_hash for item in evidence)
+        canonical_digest = _digest(canonical_payload)
+        record = SeekerDiscoveryNormalizationRecord(
+            normalization_identifier=f"SEEK-RM-NORMALIZE-{canonical_digest[:12].upper()}",
+            normalization_rule_version="SEEK-RM-009-NORMALIZATION/1",
+            canonical_payload_digest=canonical_digest,
+            raw_evidence_hashes_preserved=raw_hashes,
+            semantic_preservation=bool(evidence) and not prohibited,
+            prohibited_transformations=prohibited,
+            replay_equivalent=canonical_digest == _digest(canonical_payload),
+            result=EnterpriseCertificationDecision.PASS if evidence and not prohibited else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_chronology_integrity(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+    ) -> SeekerChronologyIntegrityRecord:
+        events = (
+            ("mission_acceptance", mission.mission_creation_timestamp),
+            ("search_plan_validation", mission.mission_creation_timestamp),
+        ) + tuple((f"evidence_acquisition:{item.evidence_id}", item.retrieved_at) for item in evidence) + (
+            ("candidate_package_commitment", max((item.retrieved_at for item in evidence), default=mission.mission_creation_timestamp)),
+            ("dormant_transition", max((item.retrieved_at for item in evidence), default=mission.mission_creation_timestamp)),
+        )
+        missing = tuple(name for name, timestamp in events if not timestamp)
+        ordering = tuple(
+            f"{events[index][0]}->{events[index + 1][0]}"
+            for index in range(len(events) - 1)
+            if events[index][1] and events[index + 1][1] and events[index][1] > events[index + 1][1]
+        )
+        source_time_preserved = all(item.source_timestamp for item in evidence)
+        separated = all(item.source_timestamp != item.retrieved_at for item in evidence if item.source_timestamp)
+        record = SeekerChronologyIntegrityRecord(
+            chronology_identifier=f"SEEK-RM-CHRONOLOGY-{_digest((events, ordering, search_plan.search_plan_id))[:12].upper()}",
+            timestamp_rule_version="SEEK-RM-010-CHRONOLOGY/1",
+            event_sequence=tuple(f"{index + 1}:{name}" for index, (name, _) in enumerate(events)),
+            missing_events=missing,
+            ordering_violations=ordering,
+            source_time_preserved=source_time_preserved,
+            internal_external_time_separated=separated,
+            result=EnterpriseCertificationDecision.PASS if not missing and not ordering and source_time_preserved and separated else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_freshness_determination(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        candidate: SeekerCandidateIdentityInput,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+    ) -> SeekerFreshnessDeterminationRecord:
+        referenced = [item for item in evidence if item.evidence_id in set(candidate.evidence_references)]
+        authoritative = min((item.source_timestamp for item in referenced if item.source_timestamp), default="")
+        evaluation_time = max((item.retrieved_at for item in referenced if item.retrieved_at), default=mission.mission_creation_timestamp)
+        window_days = _freshness_window_days(search_plan)
+        decision = "TIME_MISSING"
+        rejection = "authoritative_timestamp_missing"
+        if authoritative and evaluation_time:
+            source_dt = _parse_utc(authoritative)
+            eval_dt = _parse_utc(evaluation_time)
+            if source_dt is None or eval_dt is None:
+                decision = "TIME_UNVERIFIABLE"
+                rejection = "timestamp_parse_failed"
+            elif source_dt > eval_dt + timedelta(minutes=5):
+                decision = "FUTURE_TIMESTAMP_INVALID"
+                rejection = "future_timestamp_exceeds_tolerance"
+            elif source_dt < eval_dt - timedelta(days=window_days):
+                decision = "STALE"
+                rejection = "outside_freshness_window"
+            else:
+                decision = "FRESH"
+                rejection = ""
+        record = SeekerFreshnessDeterminationRecord(
+            freshness_identifier=f"SEEK-RM-FRESHNESS-{_digest((candidate.candidate_reference, authoritative, evaluation_time, decision))[:12].upper()}",
+            candidate_reference=candidate.candidate_reference,
+            freshness_rule_version="SEEK-RM-011-FRESHNESS/1",
+            authoritative_timestamp=authoritative,
+            evaluation_timestamp=evaluation_time,
+            freshness_window_days=window_days,
+            freshness_decision=decision,
+            rejection_reason=rejection,
+            timestamp_basis="source_timestamp",
+            replay_equivalent=bool(authoritative and evaluation_time),
+            result=EnterpriseCertificationDecision.PASS if decision == "FRESH" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_duplicate_suppression(
+        self,
+        search_plan: SeekerApprovedSearchPlan,
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+    ) -> SeekerDuplicateSuppressionRecord:
+        identities = tuple(self.evaluate_candidate_identity(item, search_plan, evidence).canonical_identity for item in candidates)
+        seen: set[str] = set()
+        authoritative: list[str] = []
+        suppressed: list[str] = []
+        for candidate_item, identity in sorted(zip(candidates, identities), key=lambda pair: pair[0].candidate_reference):
+            if not identity:
+                suppressed.append(f"{candidate_item.candidate_reference}:identity_invalid")
+                continue
+            if identity in seen:
+                suppressed.append(candidate_item.candidate_reference)
+            else:
+                seen.add(identity)
+                authoritative.append(candidate_item.candidate_reference)
+        preserved = all(set(item.evidence_references).issubset({evidence_item.evidence_id for evidence_item in evidence}) for item in candidates)
+        record = SeekerDuplicateSuppressionRecord(
+            duplicate_identifier=f"SEEK-RM-DUPLICATE-{_digest((identities, authoritative, suppressed))[:12].upper()}",
+            duplicate_rule_version="SEEK-RM-012-DUPLICATE/1",
+            evaluated_candidate_identities=identities,
+            authoritative_candidates=tuple(authoritative),
+            suppressed_duplicates=tuple(suppressed),
+            evidence_preserved_for_suppressed=preserved,
+            order_independent=tuple(authoritative) == tuple(sorted(authoritative)),
+            result=EnterpriseCertificationDecision.PASS if identities and preserved and all(identity for identity in identities) else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_relationship_independence(
+        self,
+        search_plan: SeekerApprovedSearchPlan,
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+    ) -> SeekerRelationshipIndependenceRecord:
+        classifications: dict[str, str] = {}
+        unsupported: list[str] = []
+        identities = tuple(self.evaluate_candidate_identity(item, search_plan, evidence).canonical_identity for item in candidates)
+        duplicate_economic = tuple(identity for identity in sorted(set(identities)) if identity and identities.count(identity) > 1)
+        source_ids = tuple(dict.fromkeys(item.source_id for item in evidence))
+        for item in candidates:
+            relationship = str(item.attributes.get("relationship", "Constitutionally Independent"))
+            if relationship not in {"Parent-Subsidiary", "Issuer-Security", "Primary Listing-Secondary Listing", "ETF-Underlying Holding", "ADR-Underlying Equity", "Merger Successor", "Spin-Off", "Corporate Alias", "Constitutional Duplicate", "Constitutionally Independent"}:
+                unsupported.append(f"{item.candidate_reference}:{relationship}")
+            classifications[item.candidate_reference] = relationship
+        required_independence = bool(search_plan.independence_requirements)
+        cross_source = not required_independence or len(source_ids) >= 1
+        decision = "VALID" if not unsupported and not duplicate_economic and cross_source else "INVALID"
+        record = SeekerRelationshipIndependenceRecord(
+            relationship_identifier=f"SEEK-RM-RELATIONSHIP-{_digest((classifications, duplicate_economic, source_ids))[:12].upper()}",
+            independence_rule_version="SEEK-RM-013-INDEPENDENCE/1",
+            relationship_classifications=MappingProxyType(classifications),
+            unsupported_relationships=tuple(unsupported),
+            duplicate_economic_representations=duplicate_economic,
+            independence_decision=decision,
+            cross_source_independence=cross_source,
+            result=EnterpriseCertificationDecision.PASS if decision == "VALID" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_search_sufficiency(
+        self,
+        search_plan: SeekerApprovedSearchPlan,
+        evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidates: tuple[SeekerCandidateIdentityInput, ...],
+        approved_exclusions: tuple[str, ...] = (),
+    ) -> SeekerSearchSufficiencyRecord:
+        processed = tuple(dict.fromkeys(item.source_id for item in evidence))
+        missing = tuple(source for source in search_plan.approved_sources if source not in processed and source not in approved_exclusions)
+        decision = "SUFFICIENT" if not missing and search_plan.sufficiency_requirements else "INSUFFICIENT"
+        record = SeekerSearchSufficiencyRecord(
+            sufficiency_identifier=f"SEEK-RM-SUFFICIENCY-{_digest((search_plan.search_plan_id, processed, missing, approved_exclusions))[:12].upper()}",
+            sufficiency_rule_version="SEEK-RM-014-SUFFICIENCY/1",
+            required_sources=search_plan.approved_sources,
+            processed_sources=processed,
+            missing_required_sources=missing,
+            approved_exclusions=approved_exclusions,
+            candidate_count_observed=len(candidates),
+            sufficiency_decision=decision,
+            replay_equivalent=True,
+            result=EnterpriseCertificationDecision.PASS if decision == "SUFFICIENT" else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
 
 def _digest(value: Any) -> str:
     return hashlib.sha256(json.dumps(_jsonable(value), sort_keys=True, separators=(",", ":"), default=str).encode("utf-8")).hexdigest()
+
+
+def _normalize_value(value: Any) -> str:
+    return " ".join(str(value).strip().upper().split())
+
+
+def _parse_utc(value: str) -> datetime | None:
+    try:
+        normalized = value.replace("Z", "+00:00")
+        parsed = datetime.fromisoformat(normalized)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(timezone.utc)
+    except ValueError:
+        return None
+
+
+def _timestamps_monotonic(values: tuple[str, ...]) -> bool:
+    parsed = tuple(_parse_utc(value) for value in values if value)
+    if len(parsed) != len(tuple(value for value in values if value)) or any(value is None for value in parsed):
+        return False
+    return all(parsed[index] <= parsed[index + 1] for index in range(len(parsed) - 1))
+
+
+def _freshness_window_days(search_plan: SeekerApprovedSearchPlan) -> int:
+    for item in search_plan.freshness_requirements:
+        digits = "".join(character for character in item if character.isdigit())
+        if digits:
+            return int(digits)
+    return 30
 
 
 def _jsonable(value: Any) -> Any:

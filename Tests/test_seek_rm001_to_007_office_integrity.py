@@ -109,7 +109,22 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.final_office_readiness, EnterpriseCertificationDecision.PASS)
         self.assertEqual(
             package.remediation_order_coverage,
-            ("SEEK-RM-001-001", "SEEK-RM-002", "SEEK-RM-003", "SEEK-RM-004", "SEEK-RM-005", "SEEK-RM-006", "SEEK-RM-007"),
+            (
+                "SEEK-RM-001-001",
+                "SEEK-RM-002",
+                "SEEK-RM-003",
+                "SEEK-RM-004",
+                "SEEK-RM-005",
+                "SEEK-RM-006",
+                "SEEK-RM-007",
+                "SEEK-RM-001-008",
+                "SEEK-RM-009",
+                "SEEK-RM-010",
+                "SEEK-RM-011",
+                "SEEK-RM-012",
+                "SEEK-RM-013",
+                "SEEK-RM-014",
+            ),
         )
         self.assertIn("Mission Intake Component", package.boundary_registry.registered_components)
         self.assertIn("Lifecycle Component", package.boundary_registry.registered_components)
@@ -124,6 +139,16 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.objective_validation.validation_decision, "VALID")
         self.assertEqual(package.candidate_identity_validation.validation_decision, "VALID")
         self.assertTrue(package.candidate_identity_validation.identity_immutable)
+        self.assertEqual(package.discovery_evidence_preservation.missing_categories, ())
+        self.assertTrue(package.discovery_evidence_preservation.provenance_complete)
+        self.assertEqual(package.discovery_normalization.prohibited_transformations, ())
+        self.assertTrue(package.discovery_normalization.semantic_preservation)
+        self.assertEqual(package.chronology_integrity.ordering_violations, ())
+        self.assertTrue(package.chronology_integrity.internal_external_time_separated)
+        self.assertEqual(package.freshness_determination.freshness_decision, "FRESH")
+        self.assertEqual(package.duplicate_suppression.suppressed_duplicates, ())
+        self.assertEqual(package.relationship_independence.independence_decision, "VALID")
+        self.assertEqual(package.search_sufficiency.sufficiency_decision, "SUFFICIENT")
         self.assertNotEqual(package.deterministic_digest, "")
 
     def test_self_certification_metadata_is_detected_and_fails_closed(self) -> None:
@@ -211,6 +236,80 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("ticker", record.conflicting_identity_fields)
         self.assertIn("synthetic_identifier", record.unsupported_identity_fields)
         self.assertEqual(record.canonical_identity, "")
+
+    def test_discovery_evidence_preservation_rejects_missing_provenance_or_prohibited_content(self) -> None:
+        bad_evidence = discovery_evidence(evidence_id="DISC-EVID-UNLINKED", payload={"ticker": "ARG", "recommendation": "buy"})
+        record = SeekerOfficeIntegritySupport().evaluate_discovery_evidence_preservation(
+            mission(),
+            search_plan(),
+            (bad_evidence,),
+            candidate(),
+        )
+
+        self.assertEqual(record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("candidate_package_evidence", record.missing_categories)
+        self.assertEqual(record.prohibited_content_findings, ("DISC-EVID-UNLINKED.recommendation",))
+
+    def test_normalization_and_chronology_fail_closed_on_missing_fields_or_reversed_time(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        sparse = discovery_evidence(payload={"ticker": " arg "})
+        reversed_time = discovery_evidence(retrieved_at="2026-07-20T10:01:00Z")
+
+        normalization = support.evaluate_discovery_normalization((sparse,), candidate())
+        chronology = support.evaluate_chronology_integrity(mission(), search_plan(), (reversed_time,))
+
+        self.assertEqual(normalization.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("DISC-EVID-001.missing_exchange", normalization.prohibited_transformations)
+        self.assertEqual(chronology.result, EnterpriseCertificationDecision.FAIL)
+        self.assertNotEqual(chronology.ordering_violations, ())
+
+    def test_freshness_rejects_stale_missing_or_future_timestamps(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        stale = support.evaluate_freshness_determination(
+            mission(),
+            search_plan(),
+            candidate(),
+            (discovery_evidence(source_timestamp="2026-05-01T09:55:00Z"),),
+        )
+        missing = support.evaluate_freshness_determination(
+            mission(),
+            search_plan(),
+            candidate(),
+            (discovery_evidence(source_timestamp=""),),
+        )
+        future = support.evaluate_freshness_determination(
+            mission(),
+            search_plan(),
+            candidate(),
+            (discovery_evidence(source_timestamp="2026-07-22T09:55:00Z"),),
+        )
+
+        self.assertEqual(stale.freshness_decision, "STALE")
+        self.assertEqual(stale.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(missing.freshness_decision, "TIME_MISSING")
+        self.assertEqual(future.freshness_decision, "FUTURE_TIMESTAMP_INVALID")
+
+    def test_duplicate_relationship_and_sufficiency_records_fail_closed_on_invalid_inputs(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        duplicate = candidate(candidate_reference="CAND-002")
+        duplicates = support.evaluate_duplicate_suppression(search_plan(), (candidate(), duplicate), (discovery_evidence(),))
+        relationship = support.evaluate_relationship_independence(
+            search_plan(),
+            (candidate(attributes={**candidate().attributes, "relationship": "Speculative Link"}),),
+            (discovery_evidence(),),
+        )
+        insufficient = support.evaluate_search_sufficiency(
+            search_plan(approved_sources=("SEC-EDGAR", "ISSUER-IR")),
+            (discovery_evidence(),),
+            (candidate(),),
+        )
+
+        self.assertEqual(duplicates.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(duplicates.suppressed_duplicates, ("CAND-002",))
+        self.assertEqual(relationship.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(relationship.unsupported_relationships, ("CAND-001:Speculative Link",))
+        self.assertEqual(insufficient.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(insufficient.missing_required_sources, ("ISSUER-IR",))
 
 
 if __name__ == "__main__":
