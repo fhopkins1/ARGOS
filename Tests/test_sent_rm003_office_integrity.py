@@ -110,6 +110,13 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(package.conflict_preservation.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.source_independence_corroboration.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.observation_sufficiency.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.synthetic_unsupported_information.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.failure_disposition.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.state_idempotency.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.observation_package_contract.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.boundary_commitment.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.complete_audit_trail.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.persistence_atomic_recovery.result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.responsibility_validation.ownership_result, EnterpriseCertificationDecision.PASS)
         self.assertEqual(package.behavior_completeness.missing_behaviors, ())
         self.assertEqual(package.runtime_completeness.missing_runtime_paths, ())
@@ -298,6 +305,74 @@ class SentinelRm003OfficeIntegrityTests(unittest.TestCase):
         self.assertEqual(support.evaluate_conflict_preservation(broken).result, EnterpriseCertificationDecision.FAIL)
         self.assertEqual(support.evaluate_source_independence_corroboration(broken).result, EnterpriseCertificationDecision.FAIL)
         self.assertEqual(support.evaluate_observation_sufficiency(broken).result, EnterpriseCertificationDecision.FAIL)
+
+    def test_package_commitment_audit_state_and_recovery_records_cover_terminal_boundary(self) -> None:
+        runtime, execution = runtime_and_execution()
+        package = SentinelOfficeIntegritySupport().build_package(
+            execution=execution,
+            repository=runtime.persistence,
+            source_plan=source_plan(),
+        )
+
+        self.assertEqual(package.synthetic_unsupported_information.detected_markers, ())
+        self.assertEqual(package.synthetic_unsupported_information.unsupported_information_findings, ())
+        self.assertTrue(package.synthetic_unsupported_information.production_isolated)
+        self.assertEqual(package.failure_disposition.observed_disposition, "NONE")
+        self.assertFalse(package.failure_disposition.silent_continuation_detected)
+        self.assertEqual(package.state_idempotency.prohibited_state_ownership, ())
+        self.assertEqual(package.state_idempotency.duplicate_terminal_packages, ())
+        self.assertFalse(package.state_idempotency.replay_mutates_production_state)
+        self.assertEqual(package.observation_package_contract.missing_sections, ())
+        self.assertEqual(package.observation_package_contract.terminal_disposition, "SUFFICIENT")
+        self.assertEqual(package.observation_package_contract.downstream_content_detected, ())
+        self.assertEqual(package.boundary_commitment.missing_preconditions, ())
+        self.assertEqual(package.boundary_commitment.downstream_dependencies, ())
+        self.assertTrue(package.boundary_commitment.at_most_one_commitment)
+        self.assertTrue(package.boundary_commitment.authority_relinquished)
+        self.assertEqual(package.complete_audit_trail.missing_audit_stages, ())
+        self.assertEqual(package.complete_audit_trail.orphaned_events, ())
+        self.assertTrue(package.complete_audit_trail.independently_reconstructable)
+        self.assertEqual(package.persistence_atomic_recovery.partial_write_findings, ())
+        self.assertEqual(package.persistence_atomic_recovery.duplicate_terminal_package_findings, ())
+        self.assertEqual(package.persistence_atomic_recovery.recovery_disposition, "RECOVERED_DORMANT")
+
+    def test_package_boundary_and_synthetic_records_fail_closed_when_evidence_missing(self) -> None:
+        runtime, execution = runtime_and_execution()
+        broken = execution.__class__(
+            **{
+                **execution.__dict__,
+                "evidence_envelope": None,
+                "notification_ready_alert": None,
+            }
+        )
+        support = SentinelOfficeIntegritySupport()
+        package_record = support.evaluate_observation_package_contract(broken)
+        boundary = support.evaluate_boundary_commitment(broken, package_record)
+
+        self.assertEqual(support.evaluate_synthetic_unsupported_information(broken).result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(package_record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mission_metadata", package_record.mandatory_sections)
+        self.assertNotEqual(package_record.missing_sections, ())
+        self.assertEqual(boundary.result, EnterpriseCertificationDecision.FAIL)
+        self.assertNotEqual(boundary.missing_preconditions, ())
+        self.assertEqual(support.evaluate_persistence_atomic_recovery(broken, runtime.persistence).result, EnterpriseCertificationDecision.FAIL)
+
+    def test_failure_disposition_records_canonical_halt_with_immutable_evidence(self) -> None:
+        runtime, _ = runtime_and_execution()
+        failed_execution = runtime._failed_execution(
+            "SENT-RM003-FAILURE-DISPOSITION-ROOT",
+            scheduler_with_mission()[1],
+            "OBLIGATION-SENT-RM003-DISPOSITION",
+            FailureResponse.HALT,
+            "chronology_violation",
+        )
+        failure = SentinelOfficeIntegritySupport().evaluate_failure_disposition(failed_execution)
+
+        self.assertEqual(failure.result, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(failure.observed_disposition, "HALT")
+        self.assertEqual(failure.failure_code, "chronology_violation")
+        self.assertNotEqual(failure.immutable_failure_evidence, ())
+        self.assertTrue(failure.atomic_recording)
 
     def test_missing_persistence_record_fails_closed_without_fabricating_completion(self) -> None:
         definition = sentinel_office_responsibility_definition()

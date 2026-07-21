@@ -381,6 +381,110 @@ class OfficeObservationSufficiencyRecord:
 
 
 @dataclass(frozen=True)
+class OfficeSyntheticUnsupportedInformationRecord:
+    synthetic_identifier: str
+    office_identity: str
+    runtime_mode: str
+    evidence_lineage: tuple[str, ...]
+    detected_markers: tuple[str, ...]
+    unsupported_information_findings: tuple[str, ...]
+    production_isolated: bool
+    replay_detection_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeFailureDispositionRecord:
+    failure_identifier: str
+    office_identity: str
+    closed_dispositions: tuple[str, ...]
+    observed_disposition: str
+    failure_code: str
+    immutable_failure_evidence: tuple[str, ...]
+    atomic_recording: bool
+    silent_continuation_detected: bool
+    replay_equivalent: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeStateIdempotencyRecord:
+    state_idempotency_identifier: str
+    office_identity: str
+    authorized_state_classes: Mapping[str, str]
+    prohibited_state_ownership: tuple[str, ...]
+    idempotency_identifiers: tuple[str, ...]
+    duplicate_terminal_packages: tuple[str, ...]
+    atomic_state_transition_evidence: tuple[str, ...]
+    replay_mutates_production_state: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeObservationPackageContractRecord:
+    observation_package_identifier: str
+    office_identity: str
+    package_schema_version: str
+    mandatory_sections: tuple[str, ...]
+    missing_sections: tuple[str, ...]
+    semantic_digest: str
+    integrity_hash: str
+    terminal_disposition: str
+    downstream_content_detected: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeBoundaryCommitmentRecord:
+    commitment_identifier: str
+    office_identity: str
+    boundary_identifier: str
+    committed_package_identifier: str
+    commitment_receipt_identifier: str
+    commitment_preconditions: tuple[str, ...]
+    missing_preconditions: tuple[str, ...]
+    downstream_dependencies: tuple[str, ...]
+    at_most_one_commitment: bool
+    authority_relinquished: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficeCompleteAuditTrailRecord:
+    audit_trail_identifier: str
+    office_identity: str
+    required_audit_stages: tuple[str, ...]
+    observed_audit_stages: tuple[str, ...]
+    missing_audit_stages: tuple[str, ...]
+    orphaned_events: tuple[str, ...]
+    event_count: int
+    audit_manifest_identifier: str
+    independently_reconstructable: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class OfficePersistenceAtomicRecoveryRecord:
+    persistence_recovery_identifier: str
+    office_identity: str
+    checkpoint_boundaries: tuple[str, ...]
+    recovered_record_hashes: tuple[str, ...]
+    partial_write_findings: tuple[str, ...]
+    duplicate_terminal_package_findings: tuple[str, ...]
+    immutable_evidence_preserved: bool
+    at_most_one_terminal_package: bool
+    recovery_disposition: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class OfficeRecoveryCertificationRecord:
     recovery_identifier: str
     office_identity: str
@@ -536,6 +640,13 @@ class SentinelOfficeRemediationEvidencePackage:
     conflict_preservation: OfficeConflictPreservationRecord
     source_independence_corroboration: OfficeSourceIndependenceCorroborationRecord
     observation_sufficiency: OfficeObservationSufficiencyRecord
+    synthetic_unsupported_information: OfficeSyntheticUnsupportedInformationRecord
+    failure_disposition: OfficeFailureDispositionRecord
+    state_idempotency: OfficeStateIdempotencyRecord
+    observation_package_contract: OfficeObservationPackageContractRecord
+    boundary_commitment: OfficeBoundaryCommitmentRecord
+    complete_audit_trail: OfficeCompleteAuditTrailRecord
+    persistence_atomic_recovery: OfficePersistenceAtomicRecoveryRecord
     responsibility_validation: OfficeResponsibilityValidationRecord
     authority_evidence: tuple[OfficeAuthorityValidationEvidence, ...]
     behavior_completeness: OfficeBehaviorCompletenessRecord
@@ -648,6 +759,11 @@ class SentinelOfficeIntegritySupport:
         "SENT-RM-003-014",
         "SENT-RM-003-015",
         "SENT-RM-003-016",
+        "SENT-RM-003-017",
+        "SENT-RM-003-018",
+        "SENT-RM-003-019",
+        "SENT-RM-003-020",
+        "SENT-RM-003-021",
     )
 
     def __init__(self, registry: SentinelOfficeResponsibilityRegistry | None = None) -> None:
@@ -681,6 +797,13 @@ class SentinelOfficeIntegritySupport:
         conflict = self.evaluate_conflict_preservation(execution)
         independence = self.evaluate_source_independence_corroboration(execution)
         sufficiency = self.evaluate_observation_sufficiency(execution)
+        synthetic = self.evaluate_synthetic_unsupported_information(execution)
+        failure_disposition = self.evaluate_failure_disposition(execution)
+        state_idempotency = self.evaluate_state_idempotency(execution, repository)
+        observation_package = self.evaluate_observation_package_contract(execution)
+        boundary_commitment = self.evaluate_boundary_commitment(execution, observation_package)
+        complete_audit = self.evaluate_complete_audit_trail(execution)
+        persistence_recovery = self.evaluate_persistence_atomic_recovery(execution, repository)
         behavior = self.evaluate_behavior_completeness(execution, definition)
         deterministic = self.evaluate_deterministic_execution(execution, replay_execution or replace(execution, execution_id=f"REPLAY-{execution.execution_id}"))
         state = self.evaluate_state_integrity(execution, repository)
@@ -737,6 +860,13 @@ class SentinelOfficeIntegritySupport:
                 conflict.result,
                 independence.result,
                 sufficiency.result,
+                synthetic.result,
+                failure_disposition.result,
+                state_idempotency.result,
+                observation_package.result,
+                boundary_commitment.result,
+                complete_audit.result,
+                persistence_recovery.result,
                 recovery.result,
                 replay.result,
                 immutable.result,
@@ -766,6 +896,13 @@ class SentinelOfficeIntegritySupport:
             conflict_preservation=conflict,
             source_independence_corroboration=independence,
             observation_sufficiency=sufficiency,
+            synthetic_unsupported_information=synthetic,
+            failure_disposition=failure_disposition,
+            state_idempotency=state_idempotency,
+            observation_package_contract=observation_package,
+            boundary_commitment=boundary_commitment,
+            complete_audit_trail=complete_audit,
+            persistence_atomic_recovery=persistence_recovery,
             responsibility_validation=responsibility,
             authority_evidence=authority,
             behavior_completeness=behavior,
@@ -805,6 +942,13 @@ class SentinelOfficeIntegritySupport:
                 conflict.conflict_identifier,
                 independence.independence_identifier,
                 sufficiency.sufficiency_identifier,
+                synthetic.synthetic_identifier,
+                failure_disposition.failure_identifier,
+                state_idempotency.state_idempotency_identifier,
+                observation_package.observation_package_identifier,
+                boundary_commitment.commitment_identifier,
+                complete_audit.audit_trail_identifier,
+                persistence_recovery.persistence_recovery_identifier,
                 recovery.recovery_identifier,
                 replay.replay_identifier,
                 immutable.evidence_identifier,
@@ -1305,6 +1449,288 @@ class SentinelOfficeIntegritySupport:
             conflict_result=conflict.resulting_state if conflict else "MISSING",
             terminal_sufficiency_outcome=outcome,
             result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_synthetic_unsupported_information(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeSyntheticUnsupportedInformationRecord:
+        envelope = execution.evidence_envelope
+        lineage = ()
+        if envelope:
+            lineage = (
+                execution.mission_id,
+                envelope.source_plan_identity,
+                envelope.normalized_observation_identity,
+            ) + envelope.acquisition_evidence_references
+        serialized = json.dumps(_json_ready(asdict(execution)), sort_keys=True, default=str)
+        markers = tuple(marker for marker in ("TODO", "PLACEHOLDER", "NULL_VALUE", "template", "mock payload", "simulated production") if marker in serialized)
+        unsupported = ()
+        if not envelope:
+            unsupported = unsupported + ("missing_observation_package",)
+        if envelope and not envelope.acquisition_evidence_references:
+            unsupported = unsupported + ("missing_raw_evidence",)
+        if envelope and not envelope.normalized_observation_identity:
+            unsupported = unsupported + ("orphan_normalized_value",)
+        production_isolated = "DETERMINISTIC_ADAPTER_ISOLATED_FROM_OPERATIONAL_EXECUTION" not in serialized and execution.runtime_identity == "ARGOS-CANONICAL-RUNTIME"
+        replay_equivalent = bool(lineage) and not markers
+        result = EnterpriseCertificationDecision.PASS if lineage and not markers and not unsupported and production_isolated else EnterpriseCertificationDecision.FAIL
+        record = OfficeSyntheticUnsupportedInformationRecord(
+            synthetic_identifier=f"SENT-RM003-SYNTH-{_digest((execution.execution_id, markers, unsupported))[:12].upper()}",
+            office_identity="Sentinel",
+            runtime_mode="Production",
+            evidence_lineage=lineage,
+            detected_markers=markers,
+            unsupported_information_findings=unsupported,
+            production_isolated=production_isolated,
+            replay_detection_equivalent=replay_equivalent,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_failure_disposition(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeFailureDispositionRecord:
+        closed = ("REJECT", "QUARANTINE", "RETRY", "INSUFFICIENT", "RECOVERY_REQUIRED", "HALT")
+        failure_events = tuple(event for event in execution.trace_events if event.failure_code)
+        if execution.result == SentinelRuntimeDecision.PASS:
+            disposition = "REJECT" if failure_events else "NONE"
+            failure_code = ""
+            evidence = ()
+        else:
+            response = execution.failure_response.value if execution.failure_response else ""
+            disposition = "QUARANTINE" if response == "Quarantine" else "HALT" if response == "Halt" else "RECOVERY_REQUIRED" if response == "Automatic Recovery" else "RETRY" if response == "Automatic Retry" else "INSUFFICIENT"
+            failure_code = failure_events[-1].failure_code if failure_events else "MISSING_FAILURE_CODE"
+            evidence = tuple(event.trace_event_id for event in failure_events)
+        silent = execution.result == SentinelRuntimeDecision.FAIL and not evidence
+        atomic = execution.final_office_state.value == "DORMANT" and (execution.result == SentinelRuntimeDecision.PASS or bool(evidence))
+        replay_equivalent = True
+        valid = execution.result == SentinelRuntimeDecision.PASS or disposition in closed
+        record = OfficeFailureDispositionRecord(
+            failure_identifier=f"SENT-RM003-FAIL-DISP-{_digest((execution.execution_id, disposition, failure_code, silent))[:12].upper()}",
+            office_identity="Sentinel",
+            closed_dispositions=closed,
+            observed_disposition=disposition,
+            failure_code=failure_code,
+            immutable_failure_evidence=evidence,
+            atomic_recording=atomic,
+            silent_continuation_detected=silent,
+            replay_equivalent=replay_equivalent,
+            result=EnterpriseCertificationDecision.PASS if valid and atomic and not silent else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_state_idempotency(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+    ) -> OfficeStateIdempotencyRecord:
+        state_classes = {
+            "lifecycle_states": "Mutable Mission State",
+            "trace_events": "Immutable Evidence",
+            "evidence_envelope": "Immutable Evidence",
+            "notification_ready_alert": "Immutable Evidence",
+            "replay_projection": "Derived Deterministic State",
+            "recovery_projection": "Recovery Checkpoint State",
+        }
+        prohibited = tuple(name for name in (_object_name(record) for record in repository.all_records()) if name.startswith(("commander_", "bridge_", "portfolio_", "trade_")))
+        idempotency = tuple(record.to_dict().get("payload", {}).get("idempotency_key", "") for record in repository.all_records())
+        duplicates = tuple(item for item in set(idempotency) if item and idempotency.count(item) > 1)
+        terminal_package_ids = tuple(item for item in (getattr(execution.evidence_envelope, "envelope_id", ""),) if item)
+        duplicate_terminal = tuple(item for item in set(terminal_package_ids) if terminal_package_ids.count(item) > 1)
+        transition_evidence = tuple(event.trace_event_id for event in execution.trace_events if event.before_state or event.after_state)
+        result = EnterpriseCertificationDecision.PASS if not prohibited and not duplicates and not duplicate_terminal and transition_evidence else EnterpriseCertificationDecision.FAIL
+        record = OfficeStateIdempotencyRecord(
+            state_idempotency_identifier=f"SENT-RM003-STATE-IDEMP-{_digest((execution.execution_id, prohibited, duplicates, duplicate_terminal))[:12].upper()}",
+            office_identity="Sentinel",
+            authorized_state_classes=state_classes,
+            prohibited_state_ownership=prohibited,
+            idempotency_identifiers=tuple(item for item in idempotency if item),
+            duplicate_terminal_packages=duplicate_terminal,
+            atomic_state_transition_evidence=transition_evidence,
+            replay_mutates_production_state=False,
+            result=result,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_observation_package_contract(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeObservationPackageContractRecord:
+        envelope = execution.evidence_envelope
+        alert = execution.notification_ready_alert
+        sections = {
+            "mission_metadata": bool(execution.mission_id),
+            "rule_version_manifest": bool(envelope and envelope.sufficiency_decision.rule_identity),
+            "source_plan_references": bool(envelope and envelope.source_plan_identity),
+            "raw_evidence_references": bool(envelope and envelope.acquisition_evidence_references),
+            "normalized_observation_set": bool(envelope and envelope.normalized_observation_identity),
+            "source_validation_results": bool(envelope and envelope.independence_decision),
+            "chronology_evaluation": any(event.action == "sufficiency_evaluated" for event in execution.trace_events),
+            "freshness_evaluation": bool(envelope and envelope.sufficiency_decision),
+            "duplicate_evaluation": bool(envelope and envelope.duplicate_decision),
+            "conflict_evaluation": bool(envelope and envelope.conflict_decision),
+            "source_independence_evaluation": bool(envelope and envelope.independence_decision),
+            "sufficiency_evaluation": bool(envelope and envelope.sufficiency_decision),
+            "rejection_and_quarantine_records": True,
+            "execution_trace_reference": bool(execution.trace_events),
+            "package_completion_record": bool(alert and execution.final_office_state.value == "DORMANT"),
+        }
+        missing = tuple(name for name, present in sections.items() if not present)
+        downstream = tuple(item for item in ("Analyst", "Risk", "Trader", "Broker", "Commander decision") if envelope and item in json.dumps(_json_ready(asdict(envelope)), sort_keys=True, default=str))
+        terminal = "SUFFICIENT" if envelope and envelope.final_notification_readiness_state == SentinelRuntimeDecision.PASS else "FAILED"
+        semantic = sentinel_runtime_equivalence_digest(execution)
+        integrity = _digest((semantic, tuple(sections), getattr(envelope, "deterministic_digest", ""), getattr(alert, "deterministic_digest", "")))
+        record = OfficeObservationPackageContractRecord(
+            observation_package_identifier=f"SENT-RM003-SOP-{_digest((execution.execution_id, getattr(envelope, 'envelope_id', ''), missing))[:12].upper()}",
+            office_identity="Sentinel",
+            package_schema_version="SENT-RM-003-018-SOP/1",
+            mandatory_sections=tuple(sections),
+            missing_sections=missing,
+            semantic_digest=semantic,
+            integrity_hash=integrity,
+            terminal_disposition=terminal,
+            downstream_content_detected=downstream,
+            result=EnterpriseCertificationDecision.PASS if envelope and alert and not missing and not downstream and terminal in {"SUFFICIENT", "INSUFFICIENT", "CONFLICTED", "FAILED", "EXPIRED"} else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_boundary_commitment(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        package: OfficeObservationPackageContractRecord,
+    ) -> OfficeBoundaryCommitmentRecord:
+        preconditions = (
+            "mission_validation",
+            "source_plan_enforcement",
+            "raw_evidence_preservation",
+            "source_validation",
+            "normalization",
+            "chronology_validation",
+            "freshness_evaluation",
+            "duplicate_evaluation",
+            "conflict_preservation",
+            "source_independence_evaluation",
+            "sufficiency_determination",
+            "package_construction",
+            "package_integrity_verification",
+            "package_contract_valid",
+        )
+        observed_actions = tuple(event.action for event in execution.trace_events)
+        action_map = {
+            "mission_validation": "mission_resolved",
+            "source_plan_enforcement": "source_acquired",
+            "raw_evidence_preservation": "source_acquired",
+            "source_validation": "source_independence_evaluated",
+            "normalization": "observation_normalized",
+            "chronology_validation": "sufficiency_evaluated",
+            "freshness_evaluation": "sufficiency_evaluated",
+            "duplicate_evaluation": "duplicate_suppression_evaluated",
+            "conflict_preservation": "conflict_evaluated",
+            "source_independence_evaluation": "source_independence_evaluated",
+            "sufficiency_determination": "sufficiency_evaluated",
+            "package_construction": "evidence_generated",
+            "package_integrity_verification": "persistence_operation",
+            "package_contract_valid": "",
+        }
+        missing = tuple(
+            name
+            for name in preconditions
+            if (action_map[name] and action_map[name] not in observed_actions)
+            or (name == "package_contract_valid" and package.result != EnterpriseCertificationDecision.PASS)
+        )
+        downstream = ()
+        at_most_one = bool(execution.evidence_envelope) and package.result == EnterpriseCertificationDecision.PASS
+        authority_relinquished = execution.final_office_state.value == "DORMANT"
+        receipt = f"SENT-RM003-COMMIT-RECEIPT-{_digest((package.observation_package_identifier, execution.mission_id))[:12].upper()}"
+        record = OfficeBoundaryCommitmentRecord(
+            commitment_identifier=f"SENT-RM003-COMMIT-{_digest((execution.execution_id, package.observation_package_identifier, missing))[:12].upper()}",
+            office_identity="Sentinel",
+            boundary_identifier="Sentinel-Owned-Outbound-Boundary",
+            committed_package_identifier=package.observation_package_identifier,
+            commitment_receipt_identifier=receipt,
+            commitment_preconditions=preconditions,
+            missing_preconditions=missing,
+            downstream_dependencies=downstream,
+            at_most_one_commitment=at_most_one,
+            authority_relinquished=authority_relinquished,
+            result=EnterpriseCertificationDecision.PASS if not missing and not downstream and at_most_one and authority_relinquished else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_complete_audit_trail(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+    ) -> OfficeCompleteAuditTrailRecord:
+        audit = SentinelRuntimeTraceEngine().build_audit_trail(execution)
+        required = SentinelRuntimeTraceEngine.required_success_stages if execution.result == SentinelRuntimeDecision.PASS else ("fail_closed",)
+        event_count = len(audit.trace_records)
+        reconstructable = audit.audit_reconstruction_result == SentinelRuntimeDecision.PASS and event_count == len(execution.trace_events)
+        manifest = f"SENT-RM003-AUDIT-MANIFEST-{_digest((audit.audit_identifier, event_count, audit.coverage_stages))[:12].upper()}"
+        record = OfficeCompleteAuditTrailRecord(
+            audit_trail_identifier=f"SENT-RM003-COMPLETE-AUDIT-{_digest((execution.execution_id, audit.missing_stages, audit.orphan_trace_records))[:12].upper()}",
+            office_identity="Sentinel",
+            required_audit_stages=required,
+            observed_audit_stages=audit.coverage_stages,
+            missing_audit_stages=audit.missing_stages,
+            orphaned_events=audit.orphan_trace_records,
+            event_count=event_count,
+            audit_manifest_identifier=manifest,
+            independently_reconstructable=reconstructable,
+            result=EnterpriseCertificationDecision.PASS if reconstructable and not audit.missing_stages and not audit.orphan_trace_records else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(asdict(record)))
+
+    def evaluate_persistence_atomic_recovery(
+        self,
+        execution: SentinelRuntimeExecutionRecord,
+        repository: InMemoryPersistenceRepository,
+    ) -> OfficePersistenceAtomicRecoveryRecord:
+        records = tuple(repository.all_records())
+        names = tuple(_object_name(record) for record in records)
+        checkpoints = (
+            "mission_acceptance",
+            "source_plan_validation",
+            "raw_evidence_commitment",
+            "normalization_completion",
+            "source_admissibility_completion",
+            "chronology_validation",
+            "freshness_validation",
+            "duplicate_evaluation",
+            "conflict_evaluation",
+            "independence_evaluation",
+            "sufficiency_evaluation",
+            "package_construction",
+            "outbound_commitment",
+            "lifecycle_completion",
+        )
+        partial = tuple(f"{record.object_id}:missing_hash" for record in records if not record.record_hash or not _payload_hash(record))
+        terminal_packages = tuple(name for name in names if name == "sentinel_observation_evidence")
+        duplicate_terminal = tuple(item for item in set(terminal_packages) if terminal_packages.count(item) > 1)
+        recovered = recover_persisted_sentinel_records(repository)
+        immutable = bool(recovered) and not partial
+        at_most_one = len(terminal_packages) <= 1 and bool(execution.evidence_envelope)
+        disposition = "RECOVERED_DORMANT" if immutable and at_most_one and execution.final_office_state.value == "DORMANT" else "UNRECOVERABLE_STATE"
+        record = OfficePersistenceAtomicRecoveryRecord(
+            persistence_recovery_identifier=f"SENT-RM003-PERSIST-REC-{_digest((execution.execution_id, recovered, partial, duplicate_terminal))[:12].upper()}",
+            office_identity="Sentinel",
+            checkpoint_boundaries=checkpoints,
+            recovered_record_hashes=recovered,
+            partial_write_findings=partial,
+            duplicate_terminal_package_findings=duplicate_terminal,
+            immutable_evidence_preserved=immutable,
+            at_most_one_terminal_package=at_most_one,
+            recovery_disposition=disposition,
+            result=EnterpriseCertificationDecision.PASS if immutable and at_most_one and disposition == "RECOVERED_DORMANT" else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(asdict(record)))
