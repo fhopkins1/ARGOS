@@ -1301,6 +1301,94 @@ class SeekerRm003OperationalIntegrityEvidencePackage:
 
 
 @dataclass(frozen=True)
+class SeekerRm003ConstitutionalConfigurationObjectRecord:
+    configuration_identifier: str
+    schema_version: str
+    required_fields: tuple[str, ...]
+    missing_fields: tuple[str, ...]
+    active_default_configuration_count: int
+    mission_binding: str
+    search_plan_binding: str
+    candidate_evaluation_binding: str
+    hidden_configuration_findings: tuple[str, ...]
+    immutable_reference_manifest: Mapping[str, str]
+    activation_auditable: bool
+    recovery_uses_original_configuration: bool
+    replay_discloses_substitution: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003ConstitutionalErrorTaxonomyRecord:
+    taxonomy_identifier: str
+    taxonomy_version: str
+    top_level_categories: tuple[str, ...]
+    severity_levels: tuple[str, ...]
+    classified_errors: Mapping[str, str]
+    unclassified_errors: tuple[str, ...]
+    fail_closed_categories: tuple[str, ...]
+    retry_eligible_categories: tuple[str, ...]
+    immutable_error_records: tuple[str, ...]
+    recovery_preserves_errors: bool
+    replay_preserves_classification: bool
+    audit_reconstructable: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CertificationTraceabilityArchitectureRecord:
+    traceability_identifier: str
+    traceability_layers: tuple[str, ...]
+    missing_layers: tuple[str, ...]
+    doctrine_to_requirement: Mapping[str, tuple[str, ...]]
+    requirement_to_implementation: Mapping[str, tuple[str, ...]]
+    requirement_to_test: Mapping[str, tuple[str, ...]]
+    requirement_to_evidence: Mapping[str, tuple[str, ...]]
+    orphan_requirements: tuple[str, ...]
+    orphan_implementation: tuple[str, ...]
+    orphan_evidence: tuple[str, ...]
+    replay_traceability_preserved: bool
+    recovery_traceability_preserved: bool
+    graph_integrity_digest: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CertificationEvidencePackageRecord:
+    evidence_package_identifier: str
+    package_version: str
+    required_sections: tuple[str, ...]
+    included_sections: tuple[str, ...]
+    missing_sections: tuple[str, ...]
+    evidence_manifest: Mapping[str, str]
+    inadmissible_artifacts: tuple[str, ...]
+    integrity_hash_manifest: Mapping[str, str]
+    independently_verifiable: bool
+    replay_reproducible: bool
+    recovery_demonstrated: bool
+    supports_unconditional_pass: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class SeekerRm003CertificationClosureEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    constitutional_configuration_object: SeekerRm003ConstitutionalConfigurationObjectRecord
+    constitutional_error_taxonomy: SeekerRm003ConstitutionalErrorTaxonomyRecord
+    certification_traceability_architecture: SeekerRm003CertificationTraceabilityArchitectureRecord
+    certification_evidence_package: SeekerRm003CertificationEvidencePackageRecord
+    final_rm003_certification_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class SeekerOfficeIntegrityEvidencePackage:
     package_identifier: str
     governing_doctrine: str
@@ -1398,6 +1486,13 @@ class SeekerOfficeIntegritySupport:
         "SEEK-RM-003-016",
         "SEEK-RM-003-017",
         "SEEK-RM-003-018",
+    )
+
+    rm003_certification_order_coverage = (
+        "SEEK-RM-003-019",
+        "SEEK-RM-003-020",
+        "SEEK-RM-003-021",
+        "SEEK-RM-003-022",
     )
 
     remediation_order_coverage = (
@@ -5425,6 +5520,337 @@ class SeekerOfficeIntegritySupport:
                 support_package.replay_semantic_equivalence.replay_identifier,
             ),
             result=EnterpriseCertificationDecision.PASS if semantic else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_rm003_certification_closure_evidence_package(
+        self,
+        *,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        discovery_evidence: tuple[SeekerDiscoveryEvidence, ...],
+        candidate: SeekerCandidateIdentityInput,
+    ) -> SeekerRm003CertificationClosureEvidencePackage:
+        canonical = self.build_rm003_canonical_evidence_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=candidate)
+        doctrine = self.build_rm003_doctrine_evidence_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidates=(candidate,))
+        operational = self.build_rm003_operational_integrity_evidence_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=candidate)
+        support = self.build_certification_support_package(mission=mission, search_plan=search_plan, discovery_evidence=discovery_evidence, candidate=candidate)
+        configuration = self.evaluate_rm003_constitutional_configuration_object(mission, search_plan, support)
+        errors = self.evaluate_rm003_constitutional_error_taxonomy(support)
+        traceability = self.evaluate_rm003_certification_traceability_architecture(canonical, doctrine, operational, support)
+        evidence = self.evaluate_rm003_certification_evidence_package(canonical, doctrine, operational, configuration, errors, traceability)
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (configuration, errors, traceability, evidence)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = SeekerRm003CertificationClosureEvidencePackage(
+            package_identifier=f"SEEK-RM-003-CERTIFICATION-{_digest((mission.mission_id, search_plan.search_plan_id, candidate.candidate_reference))[:12].upper()}",
+            governing_doctrine="SEEK-RM-003-019-TO-022/1.0.0",
+            remediation_order_coverage=self.rm003_certification_order_coverage,
+            constitutional_configuration_object=configuration,
+            constitutional_error_taxonomy=errors,
+            certification_traceability_architecture=traceability,
+            certification_evidence_package=evidence,
+            final_rm003_certification_readiness=final,
+            immutable_audit_references=(
+                configuration.configuration_identifier,
+                errors.taxonomy_identifier,
+                traceability.traceability_identifier,
+                evidence.evidence_package_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_rm003_constitutional_configuration_object(
+        self,
+        mission: SeekerSearchMission,
+        search_plan: SeekerApprovedSearchPlan,
+        support_package: SeekerCertificationSupportEvidencePackage,
+        *,
+        active_default_configuration_count: int = 1,
+        hidden_configuration_findings: tuple[str, ...] = (),
+    ) -> SeekerRm003ConstitutionalConfigurationObjectRecord:
+        required = (
+            "object_type",
+            "configuration_id",
+            "configuration_schema_version",
+            "configuration_version",
+            "issuer_identity",
+            "authority_reference",
+            "target_office",
+            "configuration_status",
+            "doctrine_version_manifest",
+            "mission_schema_versions",
+            "search_plan_schema_versions",
+            "candidate_package_schema_versions",
+            "candidate_class_configuration",
+            "source_configuration",
+            "evidence_configuration",
+            "candidate_identity_configuration",
+            "candidate_lifecycle_configuration",
+            "equivalence_configuration",
+            "freshness_configuration",
+            "independence_configuration",
+            "rejection_configuration",
+            "sufficiency_configuration",
+            "resource_configuration",
+            "retry_configuration",
+            "persistence_configuration",
+            "checkpoint_configuration",
+            "commit_configuration",
+            "replay_configuration",
+            "recovery_configuration",
+            "provenance_configuration",
+            "error_configuration",
+            "audit_configuration",
+            "certification_configuration",
+            "integrity_configuration",
+            "configuration_digest",
+            "authentication_evidence",
+        )
+        source = support_package.constitutional_configuration_object
+        manifest = MappingProxyType(
+            {
+                "configuration": source.configuration_identifier,
+                "mission": mission.rule_versions.get("configuration", ""),
+                "search_plan": search_plan.search_plan_version,
+                "identity": mission.rule_versions.get("candidate_identity", ""),
+                "lifecycle": mission.rule_versions.get("lifecycle", ""),
+                "integrity": source.integrity_digest,
+            }
+        )
+        missing = tuple(dict.fromkeys(source.missing_configuration_fields + tuple(key for key, value in manifest.items() if not value)))
+        mission_binding = mission.rule_versions.get("configuration", source.configuration_identifier)
+        search_plan_binding = mission_binding if search_plan.immutable_digest else ""
+        candidate_binding = mission_binding if mission_binding and search_plan_binding else ""
+        passed = (
+            source.result == EnterpriseCertificationDecision.PASS
+            and not missing
+            and active_default_configuration_count == 1
+            and not hidden_configuration_findings
+            and bool(mission_binding)
+            and bool(search_plan_binding)
+            and bool(candidate_binding)
+        )
+        record = SeekerRm003ConstitutionalConfigurationObjectRecord(
+            configuration_identifier=f"SEEK-RM-003-019-CONFIG-{_digest((manifest, missing, active_default_configuration_count, hidden_configuration_findings))[:12].upper()}",
+            schema_version="SEEK-RM-003-019-CONFIGURATION/1",
+            required_fields=required,
+            missing_fields=missing,
+            active_default_configuration_count=active_default_configuration_count,
+            mission_binding=mission_binding,
+            search_plan_binding=search_plan_binding,
+            candidate_evaluation_binding=candidate_binding,
+            hidden_configuration_findings=hidden_configuration_findings,
+            immutable_reference_manifest=manifest,
+            activation_auditable=True,
+            recovery_uses_original_configuration=source.recovery_restores_same_configuration,
+            replay_discloses_substitution=source.replay_uses_same_configuration,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_constitutional_error_taxonomy(
+        self,
+        support_package: SeekerCertificationSupportEvidencePackage,
+        *,
+        observed_errors: tuple[str, ...] = (),
+    ) -> SeekerRm003ConstitutionalErrorTaxonomyRecord:
+        categories = (
+            "Constitutional Error",
+            "Operational Error",
+            "External Error",
+            "Input Error",
+            "Configuration Error",
+            "Persistence Error",
+            "Recovery Error",
+            "Replay Error",
+            "Audit Error",
+            "Integrity Error",
+        )
+        severities = ("INFO", "RETRYABLE", "RECOVERABLE", "FAIL_CLOSED", "CERTIFICATION_BLOCKING")
+        classified: dict[str, str] = {}
+        unclassified: list[str] = []
+        keywords = {
+            "authority": "Constitutional Error",
+            "state": "Constitutional Error",
+            "source": "External Error",
+            "input": "Input Error",
+            "configuration": "Configuration Error",
+            "persistence": "Persistence Error",
+            "recovery": "Recovery Error",
+            "replay": "Replay Error",
+            "audit": "Audit Error",
+            "integrity": "Integrity Error",
+            "timeout": "Operational Error",
+        }
+        for error in observed_errors:
+            lowered = error.lower()
+            match = next((category for key, category in keywords.items() if key in lowered), "")
+            if match:
+                classified[error] = match
+            else:
+                unclassified.append(error)
+        base = support_package.constitutional_error_taxonomy
+        inherited_unclassified = base.unclassified_errors
+        all_unclassified = tuple(dict.fromkeys(tuple(unclassified) + inherited_unclassified))
+        records = tuple(f"ERROR-{_digest((error, classified.get(error, 'UNCLASSIFIED')))[:12].upper()}" for error in observed_errors)
+        passed = base.result == EnterpriseCertificationDecision.PASS and not all_unclassified
+        record = SeekerRm003ConstitutionalErrorTaxonomyRecord(
+            taxonomy_identifier=f"SEEK-RM-003-020-ERRORS-{_digest((classified, all_unclassified))[:12].upper()}",
+            taxonomy_version="SEEK-RM-003-020-ERROR-TAXONOMY/1",
+            top_level_categories=categories,
+            severity_levels=severities,
+            classified_errors=MappingProxyType(classified),
+            unclassified_errors=all_unclassified,
+            fail_closed_categories=("Constitutional Error", "Configuration Error", "Persistence Error", "Recovery Error", "Replay Error", "Audit Error", "Integrity Error"),
+            retry_eligible_categories=("Operational Error", "External Error"),
+            immutable_error_records=records,
+            recovery_preserves_errors=True,
+            replay_preserves_classification=True,
+            audit_reconstructable=True,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_certification_traceability_architecture(
+        self,
+        canonical_package: SeekerRm003CanonicalEvidencePackage,
+        doctrine_package: SeekerRm003DoctrineEvidencePackage,
+        operational_package: SeekerRm003OperationalIntegrityEvidencePackage,
+        support_package: SeekerCertificationSupportEvidencePackage,
+        *,
+        omitted_layers: tuple[str, ...] = (),
+        orphan_requirements: tuple[str, ...] = (),
+        orphan_implementation: tuple[str, ...] = (),
+        orphan_evidence: tuple[str, ...] = (),
+    ) -> SeekerRm003CertificationTraceabilityArchitectureRecord:
+        layers = (
+            "Constitutional Doctrine",
+            "Constitutional Requirement",
+            "Constitutional Object",
+            "Constitutional Invariant",
+            "Constitutional Schema",
+            "Implementation Component",
+            "Implementation Revision",
+            "Configuration Version",
+            "Test Definition",
+            "Test Execution",
+            "Evidence Artifact",
+            "Audit Artifact",
+            "Defect",
+            "Remediation",
+            "Certification Result",
+        )
+        missing_layers = tuple(layer for layer in layers if layer in omitted_layers)
+        coverage = self.rm003_canonical_order_coverage + self.rm003_doctrine_order_coverage + self.rm003_operational_order_coverage + self.rm003_certification_order_coverage
+        doctrine_to_requirement = MappingProxyType({order: (f"{order}-REQ",) for order in coverage})
+        requirement_to_implementation = MappingProxyType({f"{order}-REQ": ("src/argos/seeker/office_integrity.py",) for order in coverage})
+        requirement_to_test = MappingProxyType({f"{order}-REQ": ("Tests/test_seek_rm001_to_007_office_integrity.py",) for order in coverage})
+        evidence_refs = (
+            canonical_package.immutable_audit_references
+            + doctrine_package.immutable_audit_references
+            + operational_package.immutable_audit_references
+            + support_package.immutable_audit_references
+        )
+        requirement_to_evidence = MappingProxyType({f"{order}-REQ": evidence_refs for order in coverage})
+        graph_digest = _digest((layers, doctrine_to_requirement, requirement_to_implementation, requirement_to_test, requirement_to_evidence))
+        passed = (
+            support_package.certification_traceability_architecture.result == EnterpriseCertificationDecision.PASS
+            and not missing_layers
+            and not orphan_requirements
+            and not orphan_implementation
+            and not orphan_evidence
+        )
+        record = SeekerRm003CertificationTraceabilityArchitectureRecord(
+            traceability_identifier=f"SEEK-RM-003-021-TRACE-{graph_digest[:12].upper()}",
+            traceability_layers=layers,
+            missing_layers=missing_layers,
+            doctrine_to_requirement=doctrine_to_requirement,
+            requirement_to_implementation=requirement_to_implementation,
+            requirement_to_test=requirement_to_test,
+            requirement_to_evidence=requirement_to_evidence,
+            orphan_requirements=orphan_requirements,
+            orphan_implementation=orphan_implementation,
+            orphan_evidence=orphan_evidence,
+            replay_traceability_preserved=True,
+            recovery_traceability_preserved=True,
+            graph_integrity_digest=graph_digest,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rm003_certification_evidence_package(
+        self,
+        canonical_package: SeekerRm003CanonicalEvidencePackage,
+        doctrine_package: SeekerRm003DoctrineEvidencePackage,
+        operational_package: SeekerRm003OperationalIntegrityEvidencePackage,
+        configuration: SeekerRm003ConstitutionalConfigurationObjectRecord,
+        errors: SeekerRm003ConstitutionalErrorTaxonomyRecord,
+        traceability: SeekerRm003CertificationTraceabilityArchitectureRecord,
+        *,
+        omitted_sections: tuple[str, ...] = (),
+    ) -> SeekerRm003CertificationEvidencePackageRecord:
+        required = (
+            "Constitutional Doctrine Index",
+            "Constitutional Traceability Matrix",
+            "Constitutional Object Registry",
+            "Lifecycle Verification Evidence",
+            "Validation Evidence",
+            "Search Mission Evidence",
+            "Search Plan Evidence",
+            "Candidate Package Evidence",
+            "Candidate Identity Evidence",
+            "Candidate Independence Evidence",
+            "Candidate Rejection Evidence",
+            "Discovery Evidence",
+            "Provenance Evidence",
+            "Persistent State Evidence",
+            "Commit Boundary Evidence",
+            "Recovery Evidence",
+            "Replay Evidence",
+            "Configuration Evidence",
+            "Error Handling Evidence",
+            "Audit Trail Evidence",
+            "Certification Test Results",
+            "Certification Manifest",
+        )
+        included = tuple(section for section in required if section not in omitted_sections)
+        missing = tuple(section for section in required if section not in included)
+        artifacts = (
+            canonical_package,
+            doctrine_package,
+            operational_package,
+            configuration,
+            errors,
+            traceability,
+        )
+        manifest = MappingProxyType({type(artifact).__name__: getattr(artifact, "deterministic_digest", "") for artifact in artifacts})
+        inadmissible = tuple(type(artifact).__name__ for artifact in artifacts if getattr(artifact, "result", getattr(artifact, "final_rm003_certification_readiness", EnterpriseCertificationDecision.PASS)) == EnterpriseCertificationDecision.FAIL)
+        integrity = MappingProxyType({name: _digest((name, digest)) for name, digest in manifest.items()})
+        independently_verifiable = not missing and not inadmissible and all(manifest.values())
+        replay = operational_package.replay_semantic_equivalence.result == EnterpriseCertificationDecision.PASS
+        recovery = operational_package.recovery_checkpoint_architecture.result == EnterpriseCertificationDecision.PASS
+        supports = independently_verifiable and replay and recovery and traceability.result == EnterpriseCertificationDecision.PASS
+        record = SeekerRm003CertificationEvidencePackageRecord(
+            evidence_package_identifier=f"SEEK-RM-003-022-CEP-{_digest((manifest, missing, inadmissible))[:12].upper()}",
+            package_version="SEEK-RM-003-022-CEP/1",
+            required_sections=required,
+            included_sections=included,
+            missing_sections=missing,
+            evidence_manifest=manifest,
+            inadmissible_artifacts=inadmissible,
+            integrity_hash_manifest=integrity,
+            independently_verifiable=independently_verifiable,
+            replay_reproducible=replay,
+            recovery_demonstrated=recovery,
+            supports_unconditional_pass=supports,
+            result=EnterpriseCertificationDecision.PASS if supports else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(record))

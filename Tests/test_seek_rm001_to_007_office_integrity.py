@@ -1016,6 +1016,85 @@ class SeekRm001To007OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("Evidence Integrity", replay.failed_invariants)
         self.assertIn("changed_candidate_identity", replay.prohibited_runtime_differences)
 
+    def test_seek_rm003_certification_closure_package_passes_with_complete_inputs(self) -> None:
+        package = SeekerOfficeIntegritySupport().build_rm003_certification_closure_evidence_package(
+            mission=mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1", "discovery": "DISCOVERY/1"}),
+            search_plan=search_plan(),
+            discovery_evidence=(discovery_evidence(),),
+            candidate=candidate(),
+        )
+
+        self.assertEqual(package.final_rm003_certification_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "SEEK-RM-003-019",
+                "SEEK-RM-003-020",
+                "SEEK-RM-003-021",
+                "SEEK-RM-003-022",
+            ),
+        )
+        self.assertEqual(package.constitutional_configuration_object.missing_fields, ())
+        self.assertEqual(package.constitutional_configuration_object.active_default_configuration_count, 1)
+        self.assertEqual(package.constitutional_error_taxonomy.unclassified_errors, ())
+        self.assertIn("Constitutional Error", package.constitutional_error_taxonomy.fail_closed_categories)
+        self.assertEqual(package.certification_traceability_architecture.missing_layers, ())
+        self.assertEqual(package.certification_traceability_architecture.orphan_requirements, ())
+        self.assertEqual(package.certification_evidence_package.missing_sections, ())
+        self.assertTrue(package.certification_evidence_package.supports_unconditional_pass)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_seek_rm003_certification_closure_records_fail_closed_on_defects(self) -> None:
+        support = SeekerOfficeIntegritySupport()
+        good_mission = mission(rule_versions={**mission().rule_versions, "authorization": "AUTH/1", "configuration": "CONFIG/1", "discovery": "DISCOVERY/1"})
+        canonical = support.build_rm003_canonical_evidence_package(mission=good_mission, search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+        doctrine = support.build_rm003_doctrine_evidence_package(mission=good_mission, search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidates=(candidate(),))
+        operational = support.build_rm003_operational_integrity_evidence_package(mission=good_mission, search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+        cert_support = support.build_certification_support_package(mission=good_mission, search_plan=search_plan(), discovery_evidence=(discovery_evidence(),), candidate=candidate())
+
+        configuration = support.evaluate_rm003_constitutional_configuration_object(
+            mission(rule_versions={"objective": "SEEK-RM-006/1"}),
+            search_plan(),
+            cert_support,
+            active_default_configuration_count=2,
+            hidden_configuration_findings=("ENV_SEEKER_LIMIT",),
+        )
+        errors = support.evaluate_rm003_constitutional_error_taxonomy(cert_support, observed_errors=("mystery behavior", "replay mismatch"))
+        traceability = support.evaluate_rm003_certification_traceability_architecture(
+            canonical,
+            doctrine,
+            operational,
+            cert_support,
+            omitted_layers=("Evidence Artifact",),
+            orphan_requirements=("SEEK-RM-003-021-REQ",),
+            orphan_implementation=("src/argos/seeker/orphan.py",),
+            orphan_evidence=("missing-evidence-record",),
+        )
+        evidence = support.evaluate_rm003_certification_evidence_package(
+            canonical,
+            doctrine,
+            operational,
+            configuration,
+            errors,
+            traceability,
+            omitted_sections=("Replay Evidence",),
+        )
+
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mission", configuration.missing_fields)
+        self.assertEqual(configuration.active_default_configuration_count, 2)
+        self.assertIn("ENV_SEEKER_LIMIT", configuration.hidden_configuration_findings)
+        self.assertEqual(errors.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mystery behavior", errors.unclassified_errors)
+        self.assertIn("replay mismatch", errors.classified_errors)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Evidence Artifact", traceability.missing_layers)
+        self.assertIn("SEEK-RM-003-021-REQ", traceability.orphan_requirements)
+        self.assertEqual(evidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Replay Evidence", evidence.missing_sections)
+        self.assertIn("SeekerRm003ConstitutionalConfigurationObjectRecord", evidence.inadmissible_artifacts)
+        self.assertFalse(evidence.supports_unconditional_pass)
+
 
 if __name__ == "__main__":
     unittest.main()
