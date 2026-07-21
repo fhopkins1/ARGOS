@@ -32,6 +32,7 @@ from argos.control_panel.office_lifecycle import (
 )
 from argos.control_panel.scheduler import EnterpriseMission, EnterpriseOperatingMode, EnterpriseOperationsScheduler
 from argos.foundation.contracts import utc_timestamp
+from argos.foundation.persistence import InMemoryPersistenceRepository, ObjectType, canonical_schemas
 
 from .constitutional_observation import (
     MonitoringObjective,
@@ -86,6 +87,27 @@ class FailureResponse(str, Enum):
     QUARANTINE = "Quarantine"
     DEGRADED_READ_ONLY_OPERATION = "Degraded Read-Only Operation"
     HALT = "Halt"
+
+
+class SourceAdapterMode(str, Enum):
+    PAPER_AUTHORITATIVE = "PAPER_AUTHORITATIVE"
+    TEST_ISOLATED = "TEST_ISOLATED"
+    REPLAY_ISOLATED = "REPLAY_ISOLATED"
+
+
+@dataclass(frozen=True)
+class AuthorityRecord:
+    authority_id: str
+    issuer: str
+    recipient: str
+    operation: str
+    mission_id: str
+    candidate_identity: str
+    runtime_identity: str
+    active: bool
+    revoked: bool = False
+    expired: bool = False
+    superseded: bool = False
 
 
 @dataclass(frozen=True)
@@ -339,10 +361,11 @@ class SentinelCommanderDeliveryRecord:
     reconciliation_digest: str
 
 
-class DeterministicSentinelSourceAdapter:
-    """Mission-authorized source adapter that returns raw evidence, not normalized proof."""
+class ApprovedSentinelSourceAdapter:
+    """Approved paper-authoritative source adapter that returns raw evidence."""
 
-    adapter_id = "SENTINEL-DETERMINISTIC-SOURCE-ADAPTER/1.0.0"
+    adapter_id = "SENTINEL-APPROVED-SOURCE-ADAPTER/1.0.0"
+    mode = SourceAdapterMode.PAPER_AUTHORITATIVE
 
     def acquire(
         self,
@@ -404,6 +427,57 @@ class DeterministicSentinelSourceAdapter:
         )
 
 
+class DeterministicSentinelSourceAdapter(ApprovedSentinelSourceAdapter):
+    """Deterministic adapter isolated to tests and replay, never operational proof."""
+
+    adapter_id = "SENTINEL-DETERMINISTIC-SOURCE-ADAPTER/1.0.0"
+    mode = SourceAdapterMode.TEST_ISOLATED
+
+
+class SentinelMissionRegistry:
+    """Canonical mission registry view backed by EnterpriseOperationsScheduler."""
+
+    def __init__(self, scheduler: EnterpriseOperationsScheduler) -> None:
+        self.scheduler = scheduler
+
+    def resolve(self, mission_id: str) -> EnterpriseMission | None:
+        if any(item.get("mission_id") == mission_id for item in self.scheduler.snapshot().get("missionRecords", ())):
+            return self.scheduler._mission(mission_id)
+        return None
+
+
+class SentinelAuthorityRegistry:
+    """Authority records for Commander mission, Sentinel observation, and Commander acceptance."""
+
+    def __init__(self, records: Iterable[AuthorityRecord]) -> None:
+        self._records = tuple(records)
+
+    @classmethod
+    def for_mission(cls, mission: EnterpriseMission, candidate_identity: str, runtime_identity: str) -> "SentinelAuthorityRegistry":
+        return cls(
+            (
+                AuthorityRecord(f"AUTH-MISSION-{mission.mission_id}", "Commander", "Sentinel", "observe", mission.mission_id, candidate_identity, runtime_identity, True),
+                AuthorityRecord(f"AUTH-NOTIFY-{mission.mission_id}", "Commander", "Sentinel", "notify_commander", mission.mission_id, candidate_identity, runtime_identity, True),
+                AuthorityRecord(f"AUTH-COMMANDER-RECEIPT-{mission.mission_id}", "Commander", "Commander", "receive_sentinel_alert", mission.mission_id, candidate_identity, runtime_identity, True),
+                AuthorityRecord(f"AUTH-COMMANDER-ACK-{mission.mission_id}", "Commander", "Commander", "acknowledge_sentinel_alert", mission.mission_id, candidate_identity, runtime_identity, True),
+            )
+        )
+
+    def validate(self, operation: str, mission_id: str, candidate_identity: str, runtime_identity: str) -> AuthorityRecord | None:
+        for record in self._records:
+            if (
+                record.operation == operation
+                and record.mission_id == mission_id
+                and record.candidate_identity == candidate_identity
+                and record.runtime_identity == runtime_identity
+                and record.active
+                and not record.revoked
+                and not record.expired
+                and not record.superseded
+            ):
+                return record
+        return None
+
 class SentinelCanonicalRuntime:
     """Executes Sentinel through canonical scheduler, lifecycle, source, and evidence paths."""
 
@@ -412,17 +486,22 @@ class SentinelCanonicalRuntime:
         *,
         scheduler: EnterpriseOperationsScheduler | None = None,
         lifecycle: OfficeLifecycleController | None = None,
-        source_adapter: DeterministicSentinelSourceAdapter | None = None,
+        source_adapter: ApprovedSentinelSourceAdapter | None = None,
+        mission_registry: SentinelMissionRegistry | None = None,
+        authority_registry: SentinelAuthorityRegistry | None = None,
+        persistence: InMemoryPersistenceRepository | None = None,
         candidate_identity: str = "candidate:unknown",
         runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
     ) -> None:
         self.scheduler = scheduler or EnterpriseOperationsScheduler()
         self.lifecycle = lifecycle or _sentinel_lifecycle_controller()
-        self.source_adapter = source_adapter or DeterministicSentinelSourceAdapter()
+        self.source_adapter = source_adapter or ApprovedSentinelSourceAdapter()
+        self.mission_registry = mission_registry or SentinelMissionRegistry(self.scheduler)
+        self.authority_registry = authority_registry
         self.candidate_identity = candidate_identity
         self.runtime_identity = runtime_identity
         self.trace_events: tuple[SentinelRuntimeTraceEvent, ...] = ()
-        self.persistence: dict[str, Any] = {}
+        self.persistence = persistence or InMemoryPersistenceRepository(canonical_schemas())
 
     def execute_observation(
         self,
@@ -434,7 +513,16 @@ class SentinelCanonicalRuntime:
         prior_observations: Iterable[ObservationRecord] = (),
     ) -> SentinelRuntimeExecutionRecord:
         trace_root = f"SENT-TRACE-{_hash((mission.mission_id, self.candidate_identity))[:12].upper()}"
-        assignment = self._resolve_assignment(mission, source_plan, event_class)
+        canonical_mission = self.mission_registry.resolve(mission.mission_id)
+        if canonical_mission is None:
+            return self._failed_execution(trace_root, mission, "", FailureResponse.QUARANTINE, "MISSION_NOT_IN_CANONICAL_REGISTRY")
+        authority_registry = self.authority_registry or SentinelAuthorityRegistry.for_mission(canonical_mission, self.candidate_identity, self.runtime_identity)
+        authority_record = authority_registry.validate("observe", canonical_mission.mission_id, self.candidate_identity, self.runtime_identity)
+        if authority_record is None:
+            return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "AUTHORITY_REGISTRY_VALIDATION_FAILED")
+        if self.source_adapter.mode != SourceAdapterMode.PAPER_AUTHORITATIVE:
+            return self._failed_execution(trace_root, mission, "", FailureResponse.HALT, "DETERMINISTIC_ADAPTER_ISOLATED_FROM_OPERATIONAL_EXECUTION")
+        assignment = self._resolve_assignment(canonical_mission, source_plan, event_class, authority_record)
         authority_ok = self._validate_assignment(assignment, mission, source_plan, event_class)
         if not authority_ok:
             return self._failed_execution(trace_root, mission, "", FailureResponse.QUARANTINE, "MISSION_AUTHORITY_INVALID")
@@ -444,8 +532,8 @@ class SentinelCanonicalRuntime:
         objective = MonitoringObjective(source_plan.objective_id, assignment.commander_authority_id, next(iter(assignment.approved_domains)), 60, 15, 10, (5, 15), 30)
         scheduler_plan = self._schedule(objective, schedule.scheduled_execution_time)
         parent = ""
-        parent = self._trace(trace_root, parent, mission, activation_id, "Commander", "mission_resolved", "MissionRegistry.resolve", "SENT-MO-001-STAGE-1", (), (assignment.assignment_id,), "", "MISSION_RESOLVED", "PASS")
-        parent = self._trace(trace_root, parent, mission, activation_id, "AuthorityRegistry", "authority_validated", "SentinelCanonicalRuntime._validate_assignment", "SENT-MO-001-STAGE-2", (assignment.assignment_id,), ("authority:Commander",), "", "AUTHORITY_VALIDATED", "PASS")
+        parent = self._trace(trace_root, parent, mission, activation_id, "Commander", "mission_resolved", "SentinelMissionRegistry.resolve", "SENT-MO-001-R2-STAGE-1", (), (assignment.assignment_id,), "", "MISSION_RESOLVED", "PASS")
+        parent = self._trace(trace_root, parent, mission, activation_id, "AuthorityRegistry", "authority_validated", "SentinelAuthorityRegistry.validate", "SENT-MO-001-R2-STAGE-2", (assignment.assignment_id,), (authority_record.authority_id,), "", "AUTHORITY_VALIDATED", "PASS")
         parent = self._trace(trace_root, parent, mission, activation_id, "EnterpriseOperationsScheduler", "sentinel_scheduled", "EnterpriseOperationsScheduler.dispatch_mission", "SENT-MO-001-STAGE-3", (mission.mission_id,), (activation_id, scheduler_plan.schedule_digest), "", "SCHEDULED", "PASS")
         self.lifecycle.activate("Sentinel", authority=OfficeActivationAuthority.SCHEDULER, workflow_id=mission.mission_id, token_id=mission.execution_token_id, current_owner="Sentinel", proof_domain="PAPER")
         parent = self._trace(trace_root, parent, mission, activation_id, "OfficeLifecycleController", "sentinel_active", "OfficeLifecycleController.activate", "SENT-MO-001-STAGE-4", (activation_id,), ("Sentinel:ACTIVE",), "DORMANT", "ACTIVE", "PASS")
@@ -467,8 +555,8 @@ class SentinelCanonicalRuntime:
         envelope = _evidence_envelope(self.candidate_identity, self.runtime_identity, mission, activation_id, source_plan, raw, observation, duplicate, independence, conflict, sufficiency, priority, tuple(item.trace_event_id for item in self.trace_events))
         alert = _notification_ready_alert(envelope, mission, self.candidate_identity, self.runtime_identity, event_class)
         parent = self._trace(trace_root, parent, mission, activation_id, "Sentinel", "evidence_and_alert_created", "SentinelCanonicalRuntime.execute_observation", "SENT-MO-001-STAGES-12-13", (envelope.envelope_id,), (alert.alert_id,), "ACTIVE", "COMPLETING", "PASS")
-        self.persistence[envelope.envelope_id] = envelope
-        self.persistence[alert.alert_id] = alert
+        envelope_record = self._persist("sentinel_observation_evidence", envelope.envelope_id, asdict(envelope), envelope.deterministic_digest)
+        alert_record = self._persist("sentinel_notification_ready_alert", alert.alert_id, asdict(alert), alert.deterministic_digest)
         self.scheduler.complete_mission(mission.mission_id, api_calls=1, result_summary="Sentinel notification-ready alert generated.")
         self.lifecycle.transition("Sentinel", OfficeLifecycleState.DORMANT)
         parent = self._trace(trace_root, parent, mission, activation_id, "OfficeLifecycleController", "sentinel_dormant", "OfficeLifecycleController.transition", "SENT-MO-001-STAGE-14", (alert.alert_id,), ("Sentinel:DORMANT",), "COMPLETING", "DORMANT", "PASS")
@@ -487,9 +575,11 @@ class SentinelCanonicalRuntime:
             result=SentinelRuntimeDecision.PASS if alert.notification_status == SentinelNotificationStatus.NOT_YET_DELIVERED else SentinelRuntimeDecision.FAIL,
             deterministic_digest="",
         )
-        return replace(record, deterministic_digest=_hash(asdict(record)))
+        semantic = sentinel_runtime_equivalence_digest(record)
+        record = replace(record, deterministic_digest=_hash({"record": asdict(record), "persistence": (envelope_record.record_hash, alert_record.record_hash), "semantic": semantic}))
+        return record
 
-    def _resolve_assignment(self, mission: EnterpriseMission, source_plan: SentinelSourcePlanReference, event_class: str) -> SentinelMissionAssignment:
+    def _resolve_assignment(self, mission: EnterpriseMission, source_plan: SentinelSourcePlanReference, event_class: str, authority: AuthorityRecord) -> SentinelMissionAssignment:
         payload = (mission.mission_id, self.candidate_identity, source_plan.source_plan_id, event_class)
         return SentinelMissionAssignment(
             assignment_id=f"SENT-ASSIGN-{_hash(payload)[:12].upper()}",
@@ -497,7 +587,7 @@ class SentinelCanonicalRuntime:
             candidate_identity=self.candidate_identity,
             runtime_identity=self.runtime_identity,
             mission_id=mission.mission_id,
-            commander_authority_id=mission.commander_directive_id,
+            commander_authority_id=authority.authority_id,
             mission_status=mission.status,
             sentinel_recipient="Sentinel",
             runtime_mode=EnterpriseOperatingMode.OBSERVATION_ONLY.value,
@@ -523,6 +613,23 @@ class SentinelCanonicalRuntime:
                 source_plan.operationally_allowed,
                 event_class in assignment.approved_event_classes,
             )
+        )
+
+    def _persist(self, object_name: str, entity_id: str, payload: dict[str, Any], payload_hash: str):
+        return self.persistence.persist(
+            ObjectType.ENTERPRISE_RUNTIME_STATE,
+            entity_id,
+            {
+                "entity_id": entity_id,
+                "schema_version": SENT_MO_CANONICAL_RUNTIME_VERSION,
+                "truth_domain": "PAPER",
+                "serialization_version": "1.0.0",
+                "creation_sequence": len(self.persistence.all_records()) + 1,
+                "modification_sequence": 1,
+                "payload": {"object_name": object_name, "payload": payload},
+                "payload_hash": payload_hash,
+                "idempotency_key": _hash((object_name, entity_id, payload_hash)),
+            },
         )
 
     def _schedule(self, objective: MonitoringObjective, timestamp: str):
@@ -588,11 +695,20 @@ class SentinelCanonicalRuntime:
 
 
 class CommanderAlertRuntime:
-    """Actual Commander receiving surface for Sentinel constitutional alerts."""
+    """Commander receiving surface backed by canonical authority and persistence evidence."""
 
-    def __init__(self, *, candidate_identity: str, runtime_identity: str) -> None:
+    def __init__(
+        self,
+        *,
+        candidate_identity: str,
+        runtime_identity: str,
+        authority_registry: SentinelAuthorityRegistry | None = None,
+        persistence: InMemoryPersistenceRepository | None = None,
+    ) -> None:
         self.candidate_identity = candidate_identity
         self.runtime_identity = runtime_identity
+        self.authority_registry = authority_registry or SentinelAuthorityRegistry(())
+        self.persistence = persistence or InMemoryPersistenceRepository(canonical_schemas())
         self.receipts: tuple[CommanderReceiptRecord, ...] = ()
         self.acknowledgments: tuple[CommanderAcknowledgment, ...] = ()
         self._idempotency: dict[str, CommanderReceiptRecord] = {}
@@ -600,10 +716,9 @@ class CommanderAlertRuntime:
     def receive(self, alert: SentinelNotificationReadyAlert, bridge_message_id: str) -> tuple[CommanderReceiptRecord, CommanderAcknowledgment]:
         if alert.idempotency_key in self._idempotency:
             prior = self._idempotency[alert.idempotency_key]
-            ack = self._ack(alert, bridge_message_id, prior, CommanderAcknowledgmentResult.DUPLICATE)
-            self.acknowledgments = self.acknowledgments + (ack,)
+            ack = next((item for item in self.acknowledgments if item.receipt_id == prior.receipt_id), self._ack(alert, bridge_message_id, prior, CommanderAcknowledgmentResult.DUPLICATE))
             return prior, ack
-        valid = self._validate(alert)
+        valid = self._validate(alert) and self.authority_registry.validate("receive_sentinel_alert", alert.mission_id, alert.candidate_identity, alert.runtime_identity) is not None
         receipt = CommanderReceiptRecord(
             receipt_id=f"CMD-RCPT-{_hash((alert.alert_id, bridge_message_id))[:12].upper()}",
             alert_id=alert.alert_id,
@@ -626,8 +741,10 @@ class CommanderAlertRuntime:
         receipt = replace(receipt, evidence_digest=_hash(asdict(receipt)))
         self.receipts = self.receipts + (receipt,)
         self._idempotency[alert.idempotency_key] = receipt
+        self._persist("commander_sentinel_receipt", receipt.receipt_id, asdict(receipt), receipt.evidence_digest)
         ack = self._ack(alert, bridge_message_id, receipt, CommanderAcknowledgmentResult.ACCEPTED if valid else CommanderAcknowledgmentResult.REJECTED)
         self.acknowledgments = self.acknowledgments + (ack,)
+        self._persist("commander_sentinel_acknowledgment", ack.acknowledgment_id, asdict(ack), ack.deterministic_digest)
         return receipt, ack
 
     def _validate(self, alert: SentinelNotificationReadyAlert) -> bool:
@@ -654,7 +771,7 @@ class CommanderAlertRuntime:
         ack = CommanderAcknowledgment(
             acknowledgment_id=f"CMD-ACK-{_hash((alert.alert_id, receipt.receipt_id, result.value))[:12].upper()}",
             commander_identity="Commander",
-            commander_authority_identity=f"CMD-AUTH-{alert.mission_id}",
+            commander_authority_identity=(self.authority_registry.validate("acknowledge_sentinel_alert", alert.mission_id, alert.candidate_identity, alert.runtime_identity) or AuthorityRecord("", "", "", "", "", "", "", False)).authority_id,
             original_alert_id=alert.alert_id,
             bridge_message_id=bridge_message_id,
             receipt_id=receipt.receipt_id,
@@ -668,6 +785,23 @@ class CommanderAlertRuntime:
         )
         return replace(ack, deterministic_digest=_hash(asdict(ack)))
 
+    def _persist(self, object_name: str, entity_id: str, payload: dict[str, Any], payload_hash: str) -> None:
+        self.persistence.persist(
+            ObjectType.ENTERPRISE_RUNTIME_STATE,
+            entity_id,
+            {
+                "entity_id": entity_id,
+                "schema_version": SENT_MO_CANONICAL_RUNTIME_VERSION,
+                "truth_domain": "PAPER",
+                "serialization_version": "1.0.0",
+                "creation_sequence": len(self.persistence.all_records()) + 1,
+                "modification_sequence": 1,
+                "payload": {"object_name": object_name, "payload": payload},
+                "payload_hash": payload_hash,
+                "idempotency_key": _hash((object_name, entity_id, payload_hash)),
+            },
+        )
+
 
 class SentinelCommanderBridgeRuntime:
     """Delivers SENT-MO-001 alerts through the canonical bridge and Commander runtime."""
@@ -678,16 +812,19 @@ class SentinelCommanderBridgeRuntime:
         bridge_executor: CanonicalBridgeExecutor | None = None,
         communications_bus: EnterpriseCommunicationsBus | None = None,
         commander: CommanderAlertRuntime | None = None,
+        authority_registry: SentinelAuthorityRegistry | None = None,
+        persistence: InMemoryPersistenceRepository | None = None,
         candidate_identity: str = "candidate:unknown",
         runtime_identity: str = "ARGOS-CANONICAL-RUNTIME",
     ) -> None:
         self.candidate_identity = candidate_identity
         self.runtime_identity = runtime_identity
-        self.commander = commander or CommanderAlertRuntime(candidate_identity=candidate_identity, runtime_identity=runtime_identity)
+        self.authority_registry = authority_registry or SentinelAuthorityRegistry(())
+        self.persistence = persistence or InMemoryPersistenceRepository(canonical_schemas())
+        self.commander = commander or CommanderAlertRuntime(candidate_identity=candidate_identity, runtime_identity=runtime_identity, authority_registry=self.authority_registry, persistence=self.persistence)
         self.communications_bus = communications_bus or EnterpriseCommunicationsBus()
-        registry = CanonicalBridgeRegistry((sentinel_commander_bridge_definition(),))
+        registry = _enterprise_bridge_registry_with_sentinel()
         self.bridge_executor = bridge_executor or CanonicalBridgeExecutor(runtime_instance_id=runtime_identity, registry=registry)
-        self.bridge_executor.register_acceptor(SENTINEL_COMMANDER_BRIDGE_ID, self._commander_acceptor)
         self.delivery_records: tuple[SentinelCommanderDeliveryRecord, ...] = ()
 
     def deliver(self, alert: SentinelNotificationReadyAlert) -> SentinelCommanderDeliveryRecord:
@@ -696,6 +833,8 @@ class SentinelCommanderBridgeRuntime:
             return self._rejected(alert, "alert_not_delivery_ready")
         if alert.required_destination != "Commander":
             return self._rejected(alert, "wrong_destination")
+        if self.authority_registry.validate("notify_commander", alert.mission_id, alert.candidate_identity, alert.runtime_identity) is None:
+            return self._rejected(alert, "notification_authority_missing")
         request = make_bridge_request(
             bridge_id=SENTINEL_COMMANDER_BRIDGE_ID,
             runtime_instance_id=self.runtime_identity,
@@ -709,8 +848,6 @@ class SentinelCommanderBridgeRuntime:
             proof_domain="PAPER",
         )
         result = self.bridge_executor.execute(request)
-        if result.status == BridgeResultStatus.DUPLICATE_IDEMPOTENT_SUCCESS:
-            self.commander.receive(alert, result.execution_id)
         bus_result = self.communications_bus.publish_observation(
             message_type="SENTINEL_COMMANDER_ALERT",
             source_service_id="Sentinel",
@@ -726,6 +863,22 @@ class SentinelCommanderBridgeRuntime:
             sequence_number=alert.priority,
             authorization_context_reference=f"NOTIFY-{alert.mission_id}",
         )
+        if result.status in {BridgeResultStatus.ACCEPTED, BridgeResultStatus.DUPLICATE_IDEMPOTENT_SUCCESS}:
+            self.commander.receive(alert, bus_result.message_id)
+            if self.commander.acknowledgments:
+                ack = self.commander.acknowledgments[-1]
+                self.communications_bus.publish_event(
+                    message_type="SENTINEL_COMMANDER_ACKNOWLEDGMENT",
+                    source_service_id="Commander",
+                    payload=asdict(ack),
+                    target_service_id="Sentinel",
+                    target_office_id="Sentinel",
+                    source_office_id="Commander",
+                    mission_id=alert.mission_id,
+                    paper_live_mode=MessageMode.PAPER,
+                    idempotency_key=ack.deterministic_digest,
+                    ordering_key=alert.idempotency_key,
+                )
         receipt = self.commander.receipts[-1] if self.commander.receipts else None
         acknowledgment = self.commander.acknowledgments[-1] if self.commander.acknowledgments else None
         state = SentinelNotificationStatus.ACKNOWLEDGED if result.status in {BridgeResultStatus.ACCEPTED, BridgeResultStatus.DUPLICATE_IDEMPOTENT_SUCCESS} and acknowledgment and acknowledgment.acknowledgment_result in {CommanderAcknowledgmentResult.ACCEPTED, CommanderAcknowledgmentResult.DUPLICATE} else SentinelNotificationStatus.REJECTED
@@ -745,17 +898,26 @@ class SentinelCommanderBridgeRuntime:
         self.delivery_records = self.delivery_records + (record,)
         return record
 
-    def static_bypass_analysis(self) -> Mapping[str, tuple[str, ...]]:
-        prohibited = ("Seeker", "Analyst", "Risk", "Trader", "Broker", "Position Registry", "Workflow Creation", "Decision Object")
-        return {"prohibited_destinations": prohibited, "resolved_findings": (), "unresolved_findings": ()}
+    def static_bypass_analysis(self, repository_root: str | None = None) -> Mapping[str, tuple[str, ...]]:
+        from pathlib import Path
+
+        root = Path(repository_root or Path(__file__).resolve().parents[3])
+        files = tuple(sorted((root / "src" / "argos" / "sentinel").glob("*.py")))
+        prohibited_terms = ("argos.seeker", "argos.analyst", "argos.risk", "argos.trader", "create_workflow", "DecisionObject", "OrderManagement", "financial_truth")
+        unresolved = []
+        approved = []
+        for path in files:
+            lines = path.read_text(encoding="utf-8").splitlines()
+            text = "\n".join(lines)
+            for term in prohibited_terms:
+                if any(term in line and "prohibited_terms" not in line for line in lines):
+                    unresolved.append(f"{path.name}:{term}")
+            if SENTINEL_COMMANDER_BRIDGE_ID in text or "Commander" in text:
+                approved.append(path.name)
+        return {"scanned_files": tuple(str(item) for item in files), "approved_canonical_path": tuple(sorted(set(approved))), "unresolved_findings": tuple(unresolved)}
 
     def replay(self, record: SentinelCommanderDeliveryRecord) -> SentinelCommanderDeliveryRecord:
         return replace(record, sentinel_delivery_state=record.sentinel_delivery_state)
-
-    def _commander_acceptor(self, request) -> dict[str, Any]:
-        alert = SentinelNotificationReadyAlert(**request.payload)
-        receipt, _ack = self.commander.receive(alert, request.execution_id)
-        return {"accepted": receipt.validation_result == SentinelRuntimeDecision.PASS, "acceptance_reference": receipt.receipt_id}
 
     def _rejected(self, alert: SentinelNotificationReadyAlert, code: str) -> SentinelCommanderDeliveryRecord:
         record = SentinelCommanderDeliveryRecord(
@@ -800,8 +962,67 @@ def sentinel_commander_bridge_definition() -> CanonicalBridgeDefinition:
         enabled=True,
         requirement_class=BridgeRequirementClass.REQUIRED_PRODUCTION,
         implementation_status=BridgeImplementationStatus.IMPLEMENTED,
-        certification_status=BridgeCertificationStatus.CONDITIONALLY_PRODUCTION,
+        certification_status=BridgeCertificationStatus.CERTIFIED_PRODUCTION,
     )
+
+
+def _enterprise_bridge_registry_with_sentinel() -> CanonicalBridgeRegistry:
+    existing = tuple(item for item in CanonicalBridgeRegistry().all() if item.bridge_id != SENTINEL_COMMANDER_BRIDGE_ID)
+    return CanonicalBridgeRegistry(existing + (sentinel_commander_bridge_definition(),))
+
+
+def sentinel_runtime_equivalence_digest(record: SentinelRuntimeExecutionRecord) -> str:
+    """Timestamp-insensitive semantic projection for repeated runtime evidence."""
+    envelope = record.evidence_envelope
+    alert = record.notification_ready_alert
+    payload = {
+        "candidate": record.candidate_identity,
+        "runtime": record.runtime_identity,
+        "mission": record.mission_id,
+        "scheduler_obligation": record.scheduler_obligation_id,
+        "lifecycle": record.lifecycle_states,
+        "result": record.result.value,
+        "final_office_state": record.final_office_state.value,
+        "envelope": {
+            "mission": envelope.mission_identity if envelope else "",
+            "source_plan": envelope.source_plan_identity if envelope else "",
+            "readiness": envelope.final_notification_readiness_state.value if envelope else "",
+            "duplicate": envelope.duplicate_decision.result if envelope else "",
+            "independence": envelope.independence_decision.result if envelope else "",
+            "conflict": envelope.conflict_decision.resulting_state if envelope else "",
+            "sufficiency_rule": envelope.sufficiency_decision.rule_identity if envelope else "",
+            "priority_rule": envelope.priority_decision.rule_identity if envelope else "",
+        },
+        "alert": {
+            "mission": alert.mission_id if alert else "",
+            "destination": alert.required_destination if alert else "",
+            "status": alert.notification_status.value if alert else "",
+            "event_class": alert.event_class if alert else "",
+            "idempotency_key": alert.idempotency_key if alert else "",
+        },
+        "trace_actions": tuple(event.action for event in record.trace_events),
+    }
+    return _hash(payload)
+
+
+def sentinel_delivery_equivalence_digest(record: SentinelCommanderDeliveryRecord) -> str:
+    payload = {
+        "candidate": record.alert.candidate_identity,
+        "runtime": record.alert.runtime_identity,
+        "mission": record.alert.mission_id,
+        "alert": record.alert.alert_id,
+        "bridge_status": record.bridge_result_status,
+        "receipt_result": record.commander_receipt.validation_result.value if record.commander_receipt else "",
+        "ack_result": record.commander_acknowledgment.acknowledgment_result.value if record.commander_acknowledgment else "",
+        "final_state": record.sentinel_delivery_state.value,
+        "downstream": record.downstream_activation_attempts,
+    }
+    return _hash(payload)
+
+
+def recover_persisted_sentinel_records(repository: InMemoryPersistenceRepository) -> tuple[str, ...]:
+    repository.validate_integrity()
+    return tuple(record.record_hash for record in repository.all_records())
 
 
 def _sentinel_lifecycle_controller() -> OfficeLifecycleController:

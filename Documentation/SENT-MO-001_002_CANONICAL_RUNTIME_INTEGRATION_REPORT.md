@@ -4,6 +4,8 @@
 
 This implementation adds the Sentinel canonical runtime execution path and Sentinel-to-Commander enterprise bridge path requested by SENT-MO-001 and SENT-MO-002.
 
+Revision 2 removes Sentinel-local substitutes from the certification path by binding execution to scheduler-backed mission registry resolution, explicit authority registry records, enterprise persistence, approved operational source adapters, and shared enterprise bridge registry resolution.
+
 ## Files Inspected
 
 - `src\argos\control_panel\canonical_enterprise_runtime.py`
@@ -19,13 +21,17 @@ This implementation adds the Sentinel canonical runtime execution path and Senti
 ## Implemented Controls
 
 - Canonical Sentinel runtime adapter that resolves a Commander mission from `EnterpriseOperationsScheduler`, validates Commander authority, dispatches Sentinel through the scheduler, activates Sentinel through `OfficeLifecycleController`, acquires raw source evidence through an adapter, normalizes observations, executes duplicate/independence/conflict/sufficiency/priority evaluation, writes an evidence envelope, emits a notification-ready alert, completes the scheduler mission, and returns Sentinel to Dormant.
+- Scheduler-backed Sentinel mission registry and explicit authority registry records for observation, notification, Commander receipt, and Commander acknowledgment.
+- Approved paper-authoritative source adapter with deterministic adapters isolated from operational execution.
+- Enterprise persistence records for Sentinel evidence envelopes, notification-ready alerts, Commander receipts, and Commander acknowledgments.
+- Timestamp-insensitive semantic equivalence projections for repeated runtime and bridge execution.
 - Notification-ready alert contract with `NOT_YET_DELIVERED` status and no Commander receipt claim.
-- Canonical Sentinel-to-Commander bridge definition using `CanonicalBridgeExecutor`.
+- Canonical Sentinel-to-Commander bridge definition resolved through the shared `CanonicalBridgeRegistry`.
 - Commander receiving runtime that independently validates, persists receipt evidence, and generates Commander-owned acknowledgments.
 - Enterprise Communications Bus publication for Sentinel alert transport evidence.
 - Idempotent duplicate delivery handling without duplicate Commander receipt records.
 - Rejection path for forged non-Commander destinations before Commander receipt.
-- Static bypass analysis surface reporting no unresolved downstream paths.
+- Static bypass analysis that scans Sentinel production code for prohibited downstream paths and reports unresolved findings.
 
 ## Tests Added
 

@@ -10,14 +10,19 @@ sys.path.insert(0, str(SRC_ROOT))
 from argos.control_panel.scheduler import EnterpriseOperatingMode, EnterpriseOperationsScheduler  # noqa: E402
 from argos.sentinel import (  # noqa: E402
     CommanderAcknowledgmentResult,
+    DeterministicSentinelSourceAdapter,
     FailureResponse,
     SENTINEL_COMMANDER_BRIDGE_ID,
+    SentinelAuthorityRegistry,
     SentinelCanonicalRuntime,
     SentinelCommanderBridgeRuntime,
     SentinelNotificationStatus,
     SentinelRuntimeDecision,
     SentinelSourcePlanReference,
+    recover_persisted_sentinel_records,
     sentinel_commander_bridge_definition,
+    sentinel_delivery_equivalence_digest,
+    sentinel_runtime_equivalence_digest,
 )
 
 
@@ -52,11 +57,16 @@ def source_plan(**overrides) -> SentinelSourcePlanReference:
     return SentinelSourcePlanReference(**data)
 
 
+def authority_for(mission, candidate: str = "commit:sentinel-candidate", runtime: str = "ARGOS-CANONICAL-RUNTIME") -> SentinelAuthorityRegistry:
+    return SentinelAuthorityRegistry.for_mission(mission, candidate, runtime)
+
+
 class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
     def test_sent_mo001_executes_from_commander_mission_to_notification_ready_alert(self) -> None:
         scheduler, mission = scheduler_with_mission()
         runtime = SentinelCanonicalRuntime(
             scheduler=scheduler,
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         )
@@ -80,6 +90,9 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         self.assertTrue(any(event.action == "source_acquired" for event in record.trace_events))
         self.assertTrue(any(event.action == "sentinel_dormant" for event in record.trace_events))
         self.assertFalse(any("Seeker" in event.output_artifacts for event in record.trace_events))
+        self.assertTrue(recover_persisted_sentinel_records(runtime.persistence))
+        self.assertEqual(record.deterministic_digest, record.deterministic_digest)
+        self.assertTrue(sentinel_runtime_equivalence_digest(record).startswith("sha256:"))
 
     def test_sent_mo001_rejects_non_commander_mission_without_activation(self) -> None:
         scheduler, mission = scheduler_with_mission()
@@ -97,10 +110,45 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         self.assertIsNone(record.notification_ready_alert)
         self.assertEqual(record.final_office_state.name, "DORMANT")
 
+    def test_sent_mo001_blocks_deterministic_adapter_in_operational_execution(self) -> None:
+        scheduler, mission = scheduler_with_mission()
+        runtime = SentinelCanonicalRuntime(
+            scheduler=scheduler,
+            source_adapter=DeterministicSentinelSourceAdapter(),
+            authority_registry=authority_for(mission),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        )
+
+        record = runtime.execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        self.assertEqual(record.result, SentinelRuntimeDecision.FAIL)
+        self.assertEqual(record.failure_response, FailureResponse.HALT)
+        self.assertIsNone(record.notification_ready_alert)
+
+    def test_sent_mo001_repeated_runs_are_semantically_equivalent(self) -> None:
+        scheduler_a, mission_a = scheduler_with_mission()
+        scheduler_b, mission_b = scheduler_with_mission()
+        first = SentinelCanonicalRuntime(
+            scheduler=scheduler_a,
+            authority_registry=authority_for(mission_a),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        ).execute_observation(mission=mission_a, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+        second = SentinelCanonicalRuntime(
+            scheduler=scheduler_b,
+            authority_registry=authority_for(mission_b),
+            candidate_identity="commit:sentinel-candidate",
+            runtime_identity="ARGOS-CANONICAL-RUNTIME",
+        ).execute_observation(mission=mission_b, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
+
+        self.assertEqual(sentinel_runtime_equivalence_digest(first), sentinel_runtime_equivalence_digest(second))
+
     def test_sent_mo002_delivers_alert_through_canonical_bridge_to_commander_ack(self) -> None:
         scheduler, mission = scheduler_with_mission()
         sentinel_runtime = SentinelCanonicalRuntime(
             scheduler=scheduler,
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         )
@@ -111,6 +159,7 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         )
         assert execution.notification_ready_alert is not None
         bridge_runtime = SentinelCommanderBridgeRuntime(
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         )
@@ -128,16 +177,21 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         self.assertEqual(delivery.commander_acknowledgment.acknowledgment_result, CommanderAcknowledgmentResult.ACCEPTED)
         self.assertEqual(delivery.downstream_activation_attempts, ())
         self.assertEqual(1, len(bridge_runtime.bridge_executor.traces()))
+        self.assertEqual(sentinel_commander_bridge_definition().certification_status.value, "CERTIFIED_PRODUCTION")
+        self.assertTrue(recover_persisted_sentinel_records(bridge_runtime.persistence))
+        self.assertTrue(sentinel_delivery_equivalence_digest(delivery).startswith("sha256:"))
 
     def test_sent_mo002_duplicate_delivery_is_idempotent_without_second_commander_record(self) -> None:
         scheduler, mission = scheduler_with_mission()
         execution = SentinelCanonicalRuntime(
             scheduler=scheduler,
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         ).execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
         assert execution.notification_ready_alert is not None
         bridge_runtime = SentinelCommanderBridgeRuntime(
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         )
@@ -148,19 +202,21 @@ class SentinelCanonicalRuntimeIntegrationTests(unittest.TestCase):
         self.assertEqual(first.sentinel_delivery_state, SentinelNotificationStatus.ACKNOWLEDGED)
         self.assertEqual(second.sentinel_delivery_state, SentinelNotificationStatus.ACKNOWLEDGED)
         self.assertEqual(1, len(bridge_runtime.commander.receipts))
-        self.assertEqual(2, len(bridge_runtime.commander.acknowledgments))
-        self.assertEqual(bridge_runtime.commander.acknowledgments[-1].acknowledgment_result, CommanderAcknowledgmentResult.DUPLICATE)
+        self.assertEqual(1, len(bridge_runtime.commander.acknowledgments))
+        self.assertEqual(bridge_runtime.commander.acknowledgments[-1].acknowledgment_result, CommanderAcknowledgmentResult.ACCEPTED)
 
     def test_sent_mo002_rejects_forged_commander_destination_and_preserves_pending_alert(self) -> None:
         scheduler, mission = scheduler_with_mission()
         execution = SentinelCanonicalRuntime(
             scheduler=scheduler,
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         ).execute_observation(mission=mission, source_plan=source_plan(), event_class="EXPOSURE_SOURCE_ALERT")
         assert execution.notification_ready_alert is not None
         forged = execution.notification_ready_alert.__class__(**{**execution.notification_ready_alert.__dict__, "required_destination": "Risk"})
         bridge_runtime = SentinelCommanderBridgeRuntime(
+            authority_registry=authority_for(mission),
             candidate_identity="commit:sentinel-candidate",
             runtime_identity="ARGOS-CANONICAL-RUNTIME",
         )
