@@ -157,6 +157,105 @@ class AnalystRm003OfficeSpecificationTests(unittest.TestCase):
         self.assertIn("Current Accepted Conclusion", obs.missing_schema_fields)
         self.assertIn("Risk modified belief", obs.ownership_violations)
 
+    def test_rm003_constitutional_architecture_package_covers_rejection_evidence_provenance_state_and_persistence(self) -> None:
+        package = AnalystOfficeSpecificationSupport().build_constitutional_architecture_package()
+
+        self.assertEqual(package.final_architecture_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.specification_order_coverage,
+            (
+                "ANALYST-RM-003-011",
+                "ANALYST-RM-003-012",
+                "ANALYST-RM-003-013",
+                "ANALYST-RM-003-014",
+                "ANALYST-RM-003-015",
+            ),
+        )
+        self.assertIn("AR-015 Constitutional Invariant Rejection", package.rejection_taxonomy.rejection_classes)
+        self.assertIn("Rejection Class", package.rejection_taxonomy.rejection_record_fields)
+        self.assertIn("Constitutional Identity", package.evidence_constitution.schema_sections)
+        self.assertIn("Evidence Identifier", package.evidence_constitution.schema_sections["Constitutional Identity"])
+        self.assertIn("provenance completeness", package.evidence_constitution.admissibility_rules)
+        self.assertIn("Reasoning Graphs", package.provenance_architecture.governed_object_scope)
+        self.assertIn("Final Conclusion", package.provenance_architecture.required_chain)
+        self.assertIn("Terminated", package.office_state_machine.execution_states)
+        self.assertIn("Created->Executing", package.office_state_machine.prohibited_transitions)
+        self.assertIn("Mission State", package.persistent_state.persistent_inventory)
+        self.assertIn("Runtime Execution Context", package.persistent_state.transient_inventory)
+        self.assertEqual(package.persistent_state.classification_rules["Runtime Memory"], "Transient")
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_constitutional_architecture_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeSpecificationSupport()
+
+        rejection = support.evaluate_rejection_taxonomy_specification(
+            missing_classes=("AR-014 Replay Rejection",),
+            ambiguous_authority_findings=("external office assigned rejection",),
+            mutation_findings=("rejection class edited",),
+            lifecycle_violations=("Rejected->Under Evaluation",),
+            missing_audit_evidence=("triggering evidence absent",),
+            replay_inconsistencies=("AR-005 replayed as AR-006",),
+            recovery_inconsistencies=("recovery re-adjudicated object",),
+            traceability_gaps=("rule evaluation missing",),
+        )
+        evidence = support.evaluate_evidence_constitution_specification(
+            missing_schema_fields=("Evidence Identifier",),
+            unapproved_class_findings=("Opinion Evidence",),
+            admissibility_failures=("provenance incomplete",),
+            normalization_failures=("timestamp not canonicalized",),
+            orphaned_relationship_findings=("final conclusion reference missing",),
+            persistence_gaps=("validation state omitted",),
+            replay_divergence_findings=("evidence identity regenerated",),
+            recovery_mutation_findings=("accepted evidence modified",),
+        )
+        provenance = support.evaluate_provenance_architecture_specification(
+            missing_scope=("Recommendations",),
+            undocumented_source_findings=("manual spreadsheet input",),
+            graph_cycle_findings=("confidence depends on itself",),
+            missing_chain_stages=("Certification Evidence",),
+            validation_failures=("dependency integrity failed",),
+            persistence_gaps=("edge metadata omitted",),
+            replay_divergence_findings=("lineage changed",),
+            recovery_gaps=("node relationship lost",),
+        )
+        state_machine = support.evaluate_office_state_machine_specification(
+            missing_states=("Output Validation",),
+            illegal_transition_findings=("Created->Executing",),
+            unauthorized_transition_findings=("Commander modified Analyst state",),
+            validation_failures=("configuration integrity failed",),
+            persistence_failures=("Completion not committed",),
+            replay_divergence_findings=("state sequence changed",),
+            recovery_violations=("Recovery->Created",),
+            audit_gaps=("transition timestamp missing",),
+        )
+        persistent = support.evaluate_persistent_state_specification(
+            missing_persistent_categories=("Belief State",),
+            missing_transient_categories=("Temporary Validation Workspace",),
+            dual_classification_findings=("scheduler allocation persisted",),
+            implicit_persistence_findings=("cache acquired constitutional meaning",),
+            atomic_commit_failures=("partial evidence commit",),
+            durability_failures=("state lost after restart",),
+            replay_divergence_findings=("reasoning relationship changed",),
+            recovery_divergence_findings=("audit history not restored",),
+            audit_gaps=("commit boundary unaudited",),
+        )
+
+        self.assertEqual(rejection.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("AR-014 Replay Rejection", rejection.missing_classes)
+        self.assertIn("rejection class edited", rejection.mutation_findings)
+        self.assertEqual(evidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Evidence Identifier", evidence.missing_schema_fields)
+        self.assertIn("Opinion Evidence", evidence.unapproved_class_findings)
+        self.assertEqual(provenance.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Recommendations", provenance.missing_scope)
+        self.assertIn("Certification Evidence", provenance.missing_chain_stages)
+        self.assertEqual(state_machine.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Output Validation", state_machine.missing_states)
+        self.assertIn("Created->Executing", state_machine.illegal_transition_findings)
+        self.assertEqual(persistent.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Belief State", persistent.missing_persistent_categories)
+        self.assertIn("Temporary Validation Workspace", persistent.missing_transient_categories)
+
 
 if __name__ == "__main__":
     unittest.main()

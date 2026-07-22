@@ -170,6 +170,133 @@ class AnalystRm003MissionDoctrineEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystRejectionTaxonomySpecificationRecord:
+    specification_identifier: str
+    rejection_classes: Mapping[str, str]
+    rejection_record_fields: tuple[str, ...]
+    rejection_lifecycle: tuple[str, ...]
+    persistence_obligations: tuple[str, ...]
+    replay_restoration_fields: tuple[str, ...]
+    recovery_restoration_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_classes: tuple[str, ...]
+    ambiguous_authority_findings: tuple[str, ...]
+    mutation_findings: tuple[str, ...]
+    lifecycle_violations: tuple[str, ...]
+    missing_audit_evidence: tuple[str, ...]
+    replay_inconsistencies: tuple[str, ...]
+    recovery_inconsistencies: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystEvidenceConstitutionSpecificationRecord:
+    specification_identifier: str
+    schema_sections: Mapping[str, tuple[str, ...]]
+    evidence_classes: tuple[str, ...]
+    admissibility_rules: tuple[str, ...]
+    normalization_steps: tuple[str, ...]
+    relationship_targets: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_schema_fields: tuple[str, ...]
+    unapproved_class_findings: tuple[str, ...]
+    admissibility_failures: tuple[str, ...]
+    normalization_failures: tuple[str, ...]
+    orphaned_relationship_findings: tuple[str, ...]
+    persistence_gaps: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_mutation_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystProvenanceArchitectureSpecificationRecord:
+    specification_identifier: str
+    governed_object_scope: tuple[str, ...]
+    identity_fields: tuple[str, ...]
+    source_classes: tuple[str, ...]
+    relationship_types: tuple[str, ...]
+    required_chain: tuple[str, ...]
+    node_fields: tuple[str, ...]
+    edge_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_scope: tuple[str, ...]
+    undocumented_source_findings: tuple[str, ...]
+    graph_cycle_findings: tuple[str, ...]
+    missing_chain_stages: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    persistence_gaps: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystOfficeStateMachineSpecificationRecord:
+    specification_identifier: str
+    execution_states: tuple[str, ...]
+    legal_transitions: Mapping[str, tuple[str, ...]]
+    special_transitions: Mapping[str, tuple[str, ...]]
+    prohibited_transitions: tuple[str, ...]
+    persistence_boundaries: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_states: tuple[str, ...]
+    illegal_transition_findings: tuple[str, ...]
+    unauthorized_transition_findings: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    persistence_failures: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_violations: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystPersistentStateSpecificationRecord:
+    specification_identifier: str
+    persistent_inventory: Mapping[str, tuple[str, ...]]
+    transient_inventory: Mapping[str, tuple[str, ...]]
+    classification_rules: Mapping[str, str]
+    persistence_lifecycle: tuple[str, ...]
+    durability_events: tuple[str, ...]
+    replay_restoration_fields: tuple[str, ...]
+    recovery_restoration_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_persistent_categories: tuple[str, ...]
+    missing_transient_categories: tuple[str, ...]
+    dual_classification_findings: tuple[str, ...]
+    implicit_persistence_findings: tuple[str, ...]
+    atomic_commit_failures: tuple[str, ...]
+    durability_failures: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_divergence_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm003ConstitutionalArchitectureEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    specification_order_coverage: tuple[str, ...]
+    rejection_taxonomy: AnalystRejectionTaxonomySpecificationRecord
+    evidence_constitution: AnalystEvidenceConstitutionSpecificationRecord
+    provenance_architecture: AnalystProvenanceArchitectureSpecificationRecord
+    office_state_machine: AnalystOfficeStateMachineSpecificationRecord
+    persistent_state: AnalystPersistentStateSpecificationRecord
+    final_architecture_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeSpecificationSupport:
     """Build deterministic certification-support records for ANALYST-RM-003."""
 
@@ -181,6 +308,14 @@ class AnalystOfficeSpecificationSupport:
         "ANALYST-RM-003-008",
         "ANALYST-RM-003-009",
         "ANALYST-RM-003-010",
+    )
+
+    constitutional_architecture_order_coverage = (
+        "ANALYST-RM-003-011",
+        "ANALYST-RM-003-012",
+        "ANALYST-RM-003-013",
+        "ANALYST-RM-003-014",
+        "ANALYST-RM-003-015",
     )
 
     def build_package(self) -> AnalystRm003SpecificationEvidencePackage:
@@ -506,6 +641,37 @@ class AnalystOfficeSpecificationSupport:
         )
         return replace(package, deterministic_digest=_digest(package))
 
+    def build_constitutional_architecture_package(self) -> AnalystRm003ConstitutionalArchitectureEvidencePackage:
+        rejection = self.evaluate_rejection_taxonomy_specification()
+        evidence = self.evaluate_evidence_constitution_specification()
+        provenance = self.evaluate_provenance_architecture_specification()
+        state_machine = self.evaluate_office_state_machine_specification()
+        persistent_state = self.evaluate_persistent_state_specification()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (rejection, evidence, provenance, state_machine, persistent_state)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm003ConstitutionalArchitectureEvidencePackage(
+            package_identifier=f"ANALYST-RM-003-CONSTITUTIONAL-ARCH-{_digest((rejection, evidence, provenance, state_machine, persistent_state))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-003-011-TO-015/1.0.0",
+            specification_order_coverage=self.constitutional_architecture_order_coverage,
+            rejection_taxonomy=rejection,
+            evidence_constitution=evidence,
+            provenance_architecture=provenance,
+            office_state_machine=state_machine,
+            persistent_state=persistent_state,
+            final_architecture_readiness=final,
+            immutable_audit_references=(
+                rejection.specification_identifier,
+                evidence.specification_identifier,
+                provenance.specification_identifier,
+                state_machine.specification_identifier,
+                persistent_state.specification_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
     def evaluate_mission_lifecycle_specification(
         self,
         *,
@@ -739,6 +905,317 @@ class AnalystOfficeSpecificationSupport:
             supersession_violations=supersession_violations,
             replay_divergence_findings=replay_divergence_findings,
             recovery_mutation_findings=recovery_mutation_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_rejection_taxonomy_specification(
+        self,
+        *,
+        missing_classes: tuple[str, ...] = (),
+        ambiguous_authority_findings: tuple[str, ...] = (),
+        mutation_findings: tuple[str, ...] = (),
+        lifecycle_violations: tuple[str, ...] = (),
+        missing_audit_evidence: tuple[str, ...] = (),
+        replay_inconsistencies: tuple[str, ...] = (),
+        recovery_inconsistencies: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+    ) -> AnalystRejectionTaxonomySpecificationRecord:
+        classes = MappingProxyType(
+            {
+                "AR-001 Identity Rejection": "Identity cannot be constitutionally established",
+                "AR-002 Schema Rejection": "Object violates constitutional schema",
+                "AR-003 Ownership Rejection": "Ownership cannot be constitutionally verified",
+                "AR-004 Authority Rejection": "Execution authority invalid",
+                "AR-005 Evidence Admissibility Rejection": "Evidence violates constitutional admissibility",
+                "AR-006 Evidence Integrity Rejection": "Evidence integrity cannot be verified",
+                "AR-007 Reasoning Rejection": "Reasoning violates constitutional doctrine",
+                "AR-008 Confidence Rejection": "Confidence assessment constitutionally invalid",
+                "AR-009 Lifecycle Rejection": "Illegal lifecycle behavior",
+                "AR-010 Configuration Rejection": "Configuration constitutionally invalid",
+                "AR-011 Validation Rejection": "Required constitutional validation failed",
+                "AR-012 Traceability Rejection": "Complete provenance cannot be demonstrated",
+                "AR-013 Persistence Rejection": "Required persistence obligations failed",
+                "AR-014 Replay Rejection": "Replay semantic equivalence cannot be achieved",
+                "AR-015 Constitutional Invariant Rejection": "One or more immutable constitutional invariants have been violated",
+            }
+        )
+        fields_required = ("Rejection Identifier", "Object Identifier", "Object Type", "Rejection Class", "Constitutional Rule Violated", "Validation Results", "Triggering Evidence", "Timestamp", "Authority", "Replay Eligibility", "Recovery Eligibility", "Certification References")
+        lifecycle = ("Under Evaluation", "Rejection Pending", "Rejected", "Audit Complete", "Archived")
+        persistence = ("rejection classification", "rejection evidence", "violated constitutional rules", "validation reports", "provenance", "audit records")
+        replay = ("rejection class", "rejection evidence", "violated rules", "rejection authority", "audit records")
+        recovery = ("rejection status", "rejection evidence", "validation results", "audit records", "replay eligibility")
+        invariants = ("ART-001 every rejected object has exactly one rejection class", "ART-002 rejection classifications are immutable", "ART-003 rejected objects never resume execution", "ART-004 every rejection preserves complete evidence", "ART-005 every rejection is independently auditable", "ART-006 replay reproduces identical rejection outcomes", "ART-007 recovery restores identical rejection state", "ART-008 every rejection references the violated constitutional rule", "ART-009 every rejection preserves provenance", "ART-010 constitutional invariant violations are always terminal")
+        missing = tuple(item for item in classes if item in missing_classes)
+        passed = not missing and not ambiguous_authority_findings and not mutation_findings and not lifecycle_violations and not missing_audit_evidence and not replay_inconsistencies and not recovery_inconsistencies and not traceability_gaps
+        record = AnalystRejectionTaxonomySpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-011-REJECT-{_digest((classes, invariants))[:12].upper()}",
+            rejection_classes=classes,
+            rejection_record_fields=fields_required,
+            rejection_lifecycle=lifecycle,
+            persistence_obligations=persistence,
+            replay_restoration_fields=replay,
+            recovery_restoration_fields=recovery,
+            invariants=invariants,
+            missing_classes=missing,
+            ambiguous_authority_findings=ambiguous_authority_findings,
+            mutation_findings=mutation_findings,
+            lifecycle_violations=lifecycle_violations,
+            missing_audit_evidence=missing_audit_evidence,
+            replay_inconsistencies=replay_inconsistencies,
+            recovery_inconsistencies=recovery_inconsistencies,
+            traceability_gaps=traceability_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_evidence_constitution_specification(
+        self,
+        *,
+        missing_schema_fields: tuple[str, ...] = (),
+        unapproved_class_findings: tuple[str, ...] = (),
+        admissibility_failures: tuple[str, ...] = (),
+        normalization_failures: tuple[str, ...] = (),
+        orphaned_relationship_findings: tuple[str, ...] = (),
+        persistence_gaps: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_mutation_findings: tuple[str, ...] = (),
+    ) -> AnalystEvidenceConstitutionSpecificationRecord:
+        schema = MappingProxyType(
+            {
+                "Constitutional Identity": ("Evidence Identifier", "Evidence Version", "Evidence Class", "Object Type Identifier", "Schema Version"),
+                "Provenance": ("Originating Office", "Originating Object", "Originating Authority", "Acquisition Timestamp", "Acceptance Timestamp", "Chain of Custody Reference"),
+                "Evidence Metadata": ("Evidence Category", "Evidence Source", "Observation Timestamp", "Effective Time", "Freshness Status", "Confidence of Acquisition", "Integrity Verification Status"),
+                "Normalization": ("Canonical Representation", "Normalization Version", "Duplicate Status", "Equivalence References"),
+                "Validation": ("Validation Status", "Validation Results", "Admissibility Status", "Validation Timestamp"),
+                "Traceability": ("Analytical Mission Identifier", "Reasoning Graph References", "Hypothesis References", "Conclusion References", "Audit References"),
+            }
+        )
+        classes = ("Candidate Evidence", "Observational Evidence", "Historical Evidence", "Quantitative Evidence", "Qualitative Evidence", "Derived Evidence", "Validation Evidence", "Contextual Evidence", "External Supporting Evidence")
+        admissibility = ("ownership legitimacy", "provenance completeness", "schema compliance", "integrity verification", "normalization", "constitutional authority", "version compatibility")
+        normalization = ("schema normalization", "identifier normalization", "unit normalization", "timestamp normalization", "reference normalization", "duplicate identification", "equivalence evaluation")
+        relationships = ("originating Analytical Mission", "Analysis Plan", "Reasoning Graph", "competing hypotheses", "intermediate conclusions", "final conclusions", "validation records", "audit records")
+        invariants = ("exactly one immutable identity", "exactly one constitutional owner", "immutable accepted contents", "complete provenance", "deterministic normalization", "deterministic validation", "deterministic admissibility", "deterministic persistence", "deterministic replay", "deterministic recovery", "complete traceability", "complete auditability")
+        all_fields = tuple(field for section in schema.values() for field in section)
+        missing = tuple(field for field in all_fields if field in missing_schema_fields)
+        passed = not missing and not unapproved_class_findings and not admissibility_failures and not normalization_failures and not orphaned_relationship_findings and not persistence_gaps and not replay_divergence_findings and not recovery_mutation_findings
+        record = AnalystEvidenceConstitutionSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-012-EVID-{_digest((schema, classes))[:12].upper()}",
+            schema_sections=schema,
+            evidence_classes=classes,
+            admissibility_rules=admissibility,
+            normalization_steps=normalization,
+            relationship_targets=relationships,
+            invariants=invariants,
+            missing_schema_fields=missing,
+            unapproved_class_findings=unapproved_class_findings,
+            admissibility_failures=admissibility_failures,
+            normalization_failures=normalization_failures,
+            orphaned_relationship_findings=orphaned_relationship_findings,
+            persistence_gaps=persistence_gaps,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_mutation_findings=recovery_mutation_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_provenance_architecture_specification(
+        self,
+        *,
+        missing_scope: tuple[str, ...] = (),
+        undocumented_source_findings: tuple[str, ...] = (),
+        graph_cycle_findings: tuple[str, ...] = (),
+        missing_chain_stages: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        persistence_gaps: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+    ) -> AnalystProvenanceArchitectureSpecificationRecord:
+        scope = ("Analytical Missions", "Analysis Plans", "Candidate Packages", "Evidence Objects", "Evidence Evaluations", "Reasoning Graphs", "Intermediate Conclusions", "Confidence Objects", "Hypothesis Objects", "Contradiction Objects", "Consensus Objects", "Analytical Packages", "Recommendations", "Validation Results", "Audit Records", "Certification Evidence")
+        identity = ("Provenance Identifier", "Provenance Version", "Schema Version", "Constitutional Version", "Object Owner", "Originating Workflow Identifier", "Mission Identifier", "Creation Timestamp", "Integrity Metadata")
+        sources = ("Candidate Packages", "Sentinel Observations", "Historical References", "Enterprise Belief State", "Configuration Objects", "Validation Results", "Replay Inputs", "Recovery Checkpoints")
+        relationships = ("source relationships", "dependency relationships", "transformation relationships", "reasoning relationships", "validation relationships", "supersession relationships", "publication relationships")
+        chain = ("Originating Analytical Mission", "Analysis Plan", "Input Objects", "Evidence Objects", "Validation Results", "Reasoning Graph Nodes", "Intermediate Conclusions", "Confidence Determination", "Contradiction Analysis", "Consensus Evaluation", "Final Conclusion", "Recommendation", "Publication", "Certification Evidence")
+        nodes = ("node identifier", "object identifier", "object class", "owner", "lifecycle state", "version", "integrity metadata")
+        edges = ("parent node", "child node", "dependency type", "relationship semantics", "creation timestamp")
+        invariants = ("every constitutional output possesses complete provenance", "provenance graphs are acyclic", "provenance identifiers are immutable", "every transformation preserves lineage", "reasoning is completely traceable", "confidence possesses complete provenance", "recommendations possess complete provenance", "replay reproduces identical provenance", "recovery restores identical provenance", "implementation shall not influence provenance generation")
+        missing_objects = tuple(item for item in scope if item in missing_scope)
+        missing_stages = tuple(item for item in chain if item in missing_chain_stages)
+        passed = not missing_objects and not undocumented_source_findings and not graph_cycle_findings and not missing_stages and not validation_failures and not persistence_gaps and not replay_divergence_findings and not recovery_gaps
+        record = AnalystProvenanceArchitectureSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-013-PROV-{_digest((scope, chain))[:12].upper()}",
+            governed_object_scope=scope,
+            identity_fields=identity,
+            source_classes=sources,
+            relationship_types=relationships,
+            required_chain=chain,
+            node_fields=nodes,
+            edge_fields=edges,
+            invariants=invariants,
+            missing_scope=missing_objects,
+            undocumented_source_findings=undocumented_source_findings,
+            graph_cycle_findings=graph_cycle_findings,
+            missing_chain_stages=missing_stages,
+            validation_failures=validation_failures,
+            persistence_gaps=persistence_gaps,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_office_state_machine_specification(
+        self,
+        *,
+        missing_states: tuple[str, ...] = (),
+        illegal_transition_findings: tuple[str, ...] = (),
+        unauthorized_transition_findings: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        persistence_failures: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_violations: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystOfficeStateMachineSpecificationRecord:
+        states = ("Created", "Pending Validation", "Validating", "Validated", "Pending Authorization", "Authorized", "Initializing", "Executing", "Awaiting Dependencies", "Performing Analysis", "Evaluating Hypotheses", "Computing Confidence", "Resolving Contradictions", "Producing Outputs", "Output Validation", "Ready for Delivery", "Completed", "Archived", "Replaying", "Recovering", "Failed", "Terminated")
+        transitions = MappingProxyType(
+            {
+                "Created": ("Pending Validation",),
+                "Pending Validation": ("Validating",),
+                "Validating": ("Validated", "Failed"),
+                "Validated": ("Pending Authorization",),
+                "Pending Authorization": ("Authorized",),
+                "Authorized": ("Initializing",),
+                "Initializing": ("Executing",),
+                "Executing": ("Awaiting Dependencies", "Performing Analysis", "Recovering", "Failed"),
+                "Awaiting Dependencies": ("Performing Analysis", "Failed"),
+                "Performing Analysis": ("Evaluating Hypotheses", "Failed"),
+                "Evaluating Hypotheses": ("Computing Confidence", "Failed"),
+                "Computing Confidence": ("Resolving Contradictions", "Failed"),
+                "Resolving Contradictions": ("Producing Outputs", "Failed"),
+                "Producing Outputs": ("Output Validation", "Failed"),
+                "Output Validation": ("Ready for Delivery", "Failed"),
+                "Ready for Delivery": ("Completed", "Failed"),
+                "Completed": ("Archived",),
+                "Archived": ("Terminated", "Replaying"),
+                "Replaying": ("Terminated",),
+                "Recovering": ("Executing", "Failed"),
+                "Failed": ("Terminated",),
+                "Terminated": (),
+            }
+        )
+        special = MappingProxyType({"Archived": ("Replaying",), "Executing": ("Recovering",), "Any Active State": ("Failed",), "Failed": ("Terminated",)})
+        prohibited = ("Created->Executing", "Pending Validation->Authorized", "Executing->Completed", "Completed->Executing", "Archived->Executing", "Failed->Executing", "Terminated->Any State", "Replay->Production Execution", "Recovery->Created")
+        boundaries = ("Validation Complete", "Authorization Granted", "Execution Start", "Analysis Complete", "Output Complete", "Output Validation Complete", "Delivery Ready", "Completion", "Archival", "Replay Start", "Recovery Checkpoint", "Failure", "Termination")
+        audit = ("execution identifier", "previous state", "new state", "transition timestamp", "transition authority", "validation result", "persistence checkpoint", "replay status", "recovery status")
+        invariants = ("Exactly one execution state exists at any moment", "Every transition is deterministic", "Every transition is explicitly authorized", "Validation precedes execution", "Configuration becomes immutable after initialization", "Outputs are never delivered before validation", "Replay preserves execution semantics", "Recovery preserves committed state", "Failures terminate execution safely", "Terminated executions never restart", "Every transition is auditable", "State history is immutable")
+        missing = tuple(state for state in states if state in missing_states)
+        passed = not missing and not illegal_transition_findings and not unauthorized_transition_findings and not validation_failures and not persistence_failures and not replay_divergence_findings and not recovery_violations and not audit_gaps
+        record = AnalystOfficeStateMachineSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-014-STATE-{_digest((states, transitions))[:12].upper()}",
+            execution_states=states,
+            legal_transitions=transitions,
+            special_transitions=special,
+            prohibited_transitions=prohibited,
+            persistence_boundaries=boundaries,
+            audit_fields=audit,
+            invariants=invariants,
+            missing_states=missing,
+            illegal_transition_findings=illegal_transition_findings,
+            unauthorized_transition_findings=unauthorized_transition_findings,
+            validation_failures=validation_failures,
+            persistence_failures=persistence_failures,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_violations=recovery_violations,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_persistent_state_specification(
+        self,
+        *,
+        missing_persistent_categories: tuple[str, ...] = (),
+        missing_transient_categories: tuple[str, ...] = (),
+        dual_classification_findings: tuple[str, ...] = (),
+        implicit_persistence_findings: tuple[str, ...] = (),
+        atomic_commit_failures: tuple[str, ...] = (),
+        durability_failures: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_divergence_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystPersistentStateSpecificationRecord:
+        persistent = MappingProxyType(
+            {
+                "Mission State": ("Mission Identifier", "Mission Revision", "Authority", "Ownership", "Scope", "Objective", "Lifecycle State"),
+                "Planning State": ("Analysis Plan", "execution constraints", "dependency ordering", "completion criteria", "scheduling metadata"),
+                "Evidence State": ("Evidence Identifiers", "Provenance", "Admissibility", "Normalization", "Validation", "Freshness", "Integrity"),
+                "Reasoning State": ("Reasoning Graph", "Inference Nodes", "Dependency Graph", "Reasoning Relationships", "Supporting Logic"),
+                "Assumption State": ("Assumption Registry", "Validation Status", "Justification", "Dependency References"),
+                "Hypothesis State": ("Accepted Hypothesis", "Rejected Hypotheses", "Alternative Hypotheses", "Comparison History"),
+                "Contradiction State": ("Contradiction Registry", "Conflict Relationships", "Resolution Status", "Outstanding Contradictions"),
+                "Confidence State": ("Confidence Values", "Confidence Derivation", "Probability Objects", "Uncertainty Metadata"),
+                "Belief State": ("Organizational Belief State", "Version History", "Supersession Chain", "Supporting Findings"),
+                "Recommendation State": ("Recommendation Objects", "Supporting Findings", "Delivery Status", "Acceptance Status"),
+                "Validation State": ("Validation Results", "Validation History", "Rejection Records", "Invariant Verification"),
+                "Lifecycle State": ("Current Lifecycle", "Transition History", "Supersession History", "Authority Changes"),
+                "Configuration State": ("Configuration Object", "Configuration Version", "Constitutional Version", "Compatibility Metadata"),
+                "Audit State": ("Audit Records", "Certification History", "Persistence History", "Replay History", "Recovery History"),
+            }
+        )
+        transient = MappingProxyType(
+            {
+                "Runtime Execution Context": ("thread identifiers", "execution handles", "scheduler allocations", "runtime pointers"),
+                "Temporary Memory Structures": ("caches", "temporary indexes", "lookup tables", "temporary queues"),
+                "Performance Optimizations": ("memoization caches", "execution pipelines", "optimization buffers", "implementation-specific acceleration structures"),
+                "Temporary Validation Workspace": ("intermediate calculations", "temporary comparisons", "provisional sorting", "temporary ranking"),
+            }
+        )
+        rules = MappingProxyType(
+            {
+                "Constitutional Identity": "Persistent",
+                "Constitutional Ownership": "Persistent",
+                "Constitutional Evidence": "Persistent",
+                "Constitutional Reasoning": "Persistent",
+                "Lifecycle Status": "Persistent",
+                "Configuration": "Persistent",
+                "Runtime Memory": "Transient",
+                "Scheduler State": "Transient",
+                "Cache Structures": "Transient",
+                "Optimization Structures": "Transient",
+            }
+        )
+        lifecycle = ("Created", "Validated", "Prepared", "Atomically Committed", "Integrity Verified", "Immutable", "Archived", "Certified")
+        durability = ("process termination", "operating system restart", "application restart", "replay", "recovery", "disaster recovery", "certification replay")
+        replay = ("identical persistent identities", "equivalent analytical state", "identical reasoning relationships", "equivalent belief states", "identical lifecycle status", "equivalent recommendations")
+        recovery = ("committed constitutional state", "lifecycle state", "reasoning graph", "evidence relationships", "validation state", "configuration", "audit history")
+        invariants = ("every state element possesses exactly one persistence classification", "every persistent object possesses one constitutional owner", "committed constitutional state is immutable", "transient state possesses no constitutional meaning", "replay restores only committed constitutional state", "recovery restores only committed constitutional state", "persistent state survives interruption", "historical revisions are never modified", "persistence is deterministic", "persistence remains completely auditable")
+        missing_persistent = tuple(category for category in persistent if category in missing_persistent_categories)
+        missing_transient = tuple(category for category in transient if category in missing_transient_categories)
+        passed = not missing_persistent and not missing_transient and not dual_classification_findings and not implicit_persistence_findings and not atomic_commit_failures and not durability_failures and not replay_divergence_findings and not recovery_divergence_findings and not audit_gaps
+        record = AnalystPersistentStateSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-015-PERSIST-{_digest((persistent, transient))[:12].upper()}",
+            persistent_inventory=persistent,
+            transient_inventory=transient,
+            classification_rules=rules,
+            persistence_lifecycle=lifecycle,
+            durability_events=durability,
+            replay_restoration_fields=replay,
+            recovery_restoration_fields=recovery,
+            invariants=invariants,
+            missing_persistent_categories=missing_persistent,
+            missing_transient_categories=missing_transient,
+            dual_classification_findings=dual_classification_findings,
+            implicit_persistence_findings=implicit_persistence_findings,
+            atomic_commit_failures=atomic_commit_failures,
+            durability_failures=durability_failures,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_divergence_findings=recovery_divergence_findings,
+            audit_gaps=audit_gaps,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
