@@ -219,6 +219,15 @@ from .completion import (
     RiskRm002ReplayRecoveryReviewEvidencePackage,
     RiskValidationCompletionRecord,
 )
+from .certification_completion import (
+    RiskCandidateClassRegistryRecord,
+    RiskCertificationTestRegistryRecord,
+    RiskCertificationThresholdDoctrineRecord,
+    RiskEvaluationRuleRegistryRecord,
+    RiskIdentityNormalizationTablesRecord,
+    RiskOfficeCertificationCompletionSupport,
+    RiskRm004FoundationCertificationPackage,
+)
 from .specification import (
     EnterpriseRiskStateConstitutionSpecificationRecord,
     RiskCommitBoundarySpecificationRecord,
@@ -468,6 +477,13 @@ __all__ = [
     "RiskRm002CompletionEvidencePackage",
     "RiskRm002ReplayRecoveryReviewEvidencePackage",
     "RiskValidationCompletionRecord",
+    "RiskCandidateClassRegistryRecord",
+    "RiskCertificationTestRegistryRecord",
+    "RiskCertificationThresholdDoctrineRecord",
+    "RiskEvaluationRuleRegistryRecord",
+    "RiskIdentityNormalizationTablesRecord",
+    "RiskOfficeCertificationCompletionSupport",
+    "RiskRm004FoundationCertificationPackage",
     "RiskOfficeSpecificationSupport",
     "EnterpriseRiskStateConstitutionSpecificationRecord",
     "RiskCommitBoundarySpecificationRecord",
