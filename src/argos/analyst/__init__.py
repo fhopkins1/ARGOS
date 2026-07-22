@@ -231,7 +231,10 @@ from .office_completion import (
     AnalystValidationCompletionRecord,
 )
 from .office_specification import (
+    AnalystCommitBoundarySpecificationRecord,
+    AnalystConfigurationObjectSpecificationRecord,
     AnalystEvidenceConstitutionSpecificationRecord,
+    AnalystErrorTaxonomySpecificationRecord,
     AnalystEquivalenceSpecificationRecord,
     AnalystFreshnessSpecificationRecord,
     AnalystMissionCanonicalSpecificationRecord,
@@ -243,9 +246,12 @@ from .office_specification import (
     AnalystProvenanceArchitectureSpecificationRecord,
     AnalystRejectionTaxonomySpecificationRecord,
     AnalystRm003ConstitutionalArchitectureEvidencePackage,
+    AnalystRm003ExecutionGovernanceEvidencePackage,
     AnalystRm003MissionDoctrineEvidencePackage,
     AnalystRm003SpecificationEvidencePackage,
+    AnalystReplaySemanticEquivalenceSpecificationRecord,
     AnalystSufficiencySpecificationRecord,
+    AnalystValidationFrameworkSpecificationRecord,
 )
 
 __all__ = [
@@ -453,7 +459,10 @@ __all__ = [
     "AnalystValidationCompletionRecord",
     "AnalystMissionCanonicalSpecificationRecord",
     "AnalystMissionLifecycleSpecificationRecord",
+    "AnalystCommitBoundarySpecificationRecord",
+    "AnalystConfigurationObjectSpecificationRecord",
     "AnalystEvidenceConstitutionSpecificationRecord",
+    "AnalystErrorTaxonomySpecificationRecord",
     "AnalystEquivalenceSpecificationRecord",
     "AnalystFreshnessSpecificationRecord",
     "AnalystOfficeStateMachineSpecificationRecord",
@@ -463,7 +472,10 @@ __all__ = [
     "AnalystProvenanceArchitectureSpecificationRecord",
     "AnalystRejectionTaxonomySpecificationRecord",
     "AnalystRm003ConstitutionalArchitectureEvidencePackage",
+    "AnalystRm003ExecutionGovernanceEvidencePackage",
     "AnalystRm003MissionDoctrineEvidencePackage",
     "AnalystRm003SpecificationEvidencePackage",
+    "AnalystReplaySemanticEquivalenceSpecificationRecord",
     "AnalystSufficiencySpecificationRecord",
+    "AnalystValidationFrameworkSpecificationRecord",
 ]

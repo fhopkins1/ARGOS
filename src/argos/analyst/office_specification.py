@@ -297,6 +297,135 @@ class AnalystRm003ConstitutionalArchitectureEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystValidationFrameworkSpecificationRecord:
+    specification_identifier: str
+    validation_scope: tuple[str, ...]
+    validation_stages: Mapping[str, str]
+    dependency_order: tuple[str, ...]
+    validation_record_fields: tuple[str, ...]
+    persisted_state: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_stages: tuple[str, ...]
+    illegal_ordering_findings: tuple[str, ...]
+    duplicate_record_findings: tuple[str, ...]
+    invalid_authority_findings: tuple[str, ...]
+    inconsistent_outcome_findings: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    replay_inconsistencies: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystCommitBoundarySpecificationRecord:
+    specification_identifier: str
+    commit_boundaries: Mapping[str, tuple[str, ...]]
+    commit_ordering: tuple[str, ...]
+    preconditions: tuple[str, ...]
+    postconditions: tuple[str, ...]
+    rollback_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_boundaries: tuple[str, ...]
+    partial_commit_findings: tuple[str, ...]
+    ordering_violations: tuple[str, ...]
+    ownership_violations: tuple[str, ...]
+    precondition_failures: tuple[str, ...]
+    postcondition_failures: tuple[str, ...]
+    rollback_violations: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_boundary_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystReplaySemanticEquivalenceSpecificationRecord:
+    specification_identifier: str
+    replay_scope: tuple[str, ...]
+    replay_object_fields: tuple[str, ...]
+    replay_preconditions: tuple[str, ...]
+    replay_inputs: tuple[str, ...]
+    semantic_criteria: Mapping[str, tuple[str, ...]]
+    admissible_runtime_differences: tuple[str, ...]
+    prohibited_differences: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_scope: tuple[str, ...]
+    missing_preconditions: tuple[str, ...]
+    substituted_input_findings: tuple[str, ...]
+    environment_drift_findings: tuple[str, ...]
+    semantic_divergence_findings: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    persistence_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystConfigurationObjectSpecificationRecord:
+    specification_identifier: str
+    identity_fields: tuple[str, ...]
+    configuration_classes: tuple[str, ...]
+    schema_sections: Mapping[str, tuple[str, ...]]
+    activation_requirements: tuple[str, ...]
+    compatibility_targets: tuple[str, ...]
+    persistent_elements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_identity_fields: tuple[str, ...]
+    unapproved_class_findings: tuple[str, ...]
+    missing_schema_sections: tuple[str, ...]
+    activation_failures: tuple[str, ...]
+    compatibility_gaps: tuple[str, ...]
+    runtime_mutation_findings: tuple[str, ...]
+    replay_substitution_findings: tuple[str, ...]
+    recovery_substitution_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystErrorTaxonomySpecificationRecord:
+    specification_identifier: str
+    error_classes: Mapping[str, tuple[str, str, str]]
+    severity_levels: tuple[str, ...]
+    recovery_classes: tuple[str, ...]
+    lifecycle_effects: tuple[str, ...]
+    persisted_fields: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_error_classes: tuple[str, ...]
+    invalid_severity_findings: tuple[str, ...]
+    invalid_recovery_findings: tuple[str, ...]
+    unclassified_failure_findings: tuple[str, ...]
+    mutation_findings: tuple[str, ...]
+    retry_violations: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_history_violations: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm003ExecutionGovernanceEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    specification_order_coverage: tuple[str, ...]
+    validation_framework: AnalystValidationFrameworkSpecificationRecord
+    commit_boundaries: AnalystCommitBoundarySpecificationRecord
+    replay_semantic_equivalence: AnalystReplaySemanticEquivalenceSpecificationRecord
+    configuration_object: AnalystConfigurationObjectSpecificationRecord
+    error_taxonomy: AnalystErrorTaxonomySpecificationRecord
+    final_execution_governance_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeSpecificationSupport:
     """Build deterministic certification-support records for ANALYST-RM-003."""
 
@@ -316,6 +445,14 @@ class AnalystOfficeSpecificationSupport:
         "ANALYST-RM-003-013",
         "ANALYST-RM-003-014",
         "ANALYST-RM-003-015",
+    )
+
+    execution_governance_order_coverage = (
+        "ANALYST-RM-003-016",
+        "ANALYST-RM-003-017",
+        "ANALYST-RM-003-018",
+        "ANALYST-RM-003-019",
+        "ANALYST-RM-003-020",
     )
 
     def build_package(self) -> AnalystRm003SpecificationEvidencePackage:
@@ -667,6 +804,37 @@ class AnalystOfficeSpecificationSupport:
                 provenance.specification_identifier,
                 state_machine.specification_identifier,
                 persistent_state.specification_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def build_execution_governance_package(self) -> AnalystRm003ExecutionGovernanceEvidencePackage:
+        validation = self.evaluate_validation_framework_specification()
+        commits = self.evaluate_commit_boundary_specification()
+        replay = self.evaluate_replay_semantic_equivalence_specification()
+        configuration = self.evaluate_configuration_object_specification()
+        errors = self.evaluate_error_taxonomy_specification()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (validation, commits, replay, configuration, errors)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm003ExecutionGovernanceEvidencePackage(
+            package_identifier=f"ANALYST-RM-003-EXEC-GOV-{_digest((validation, commits, replay, configuration, errors))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-003-016-TO-020/1.0.0",
+            specification_order_coverage=self.execution_governance_order_coverage,
+            validation_framework=validation,
+            commit_boundaries=commits,
+            replay_semantic_equivalence=replay,
+            configuration_object=configuration,
+            error_taxonomy=errors,
+            final_execution_governance_readiness=final,
+            immutable_audit_references=(
+                validation.specification_identifier,
+                commits.specification_identifier,
+                replay.specification_identifier,
+                configuration.specification_identifier,
+                errors.specification_identifier,
             ),
             deterministic_digest="",
         )
@@ -1215,6 +1383,299 @@ class AnalystOfficeSpecificationSupport:
             durability_failures=durability_failures,
             replay_divergence_findings=replay_divergence_findings,
             recovery_divergence_findings=recovery_divergence_findings,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_validation_framework_specification(
+        self,
+        *,
+        missing_stages: tuple[str, ...] = (),
+        illegal_ordering_findings: tuple[str, ...] = (),
+        duplicate_record_findings: tuple[str, ...] = (),
+        invalid_authority_findings: tuple[str, ...] = (),
+        inconsistent_outcome_findings: tuple[str, ...] = (),
+        provenance_gaps: tuple[str, ...] = (),
+        replay_inconsistencies: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> AnalystValidationFrameworkSpecificationRecord:
+        scope = ("Analytical Missions", "Analysis Plans", "Analytical Packages", "Evidence Objects", "Reasoning Graphs", "Hypothesis Objects", "Confidence Assessments", "Analytical Conclusions", "Traceability Objects", "Configuration Objects", "Persistent State", "Certification Artifacts")
+        stages = MappingProxyType(
+            {
+                "AV-001 Identity Validation": "globally unique identifier, object type, version, and schema identifier",
+                "AV-002 Schema Validation": "required attributes, field types, mandatory relationships, and schema compatibility",
+                "AV-003 Ownership Validation": "constitutional owner, authority chain, ownership uniqueness, and ownership integrity",
+                "AV-004 Authority Validation": "execution authority, mission authorization, lifecycle legality, and execution eligibility",
+                "AV-005 Evidence Validation": "admissibility, provenance, integrity, freshness, and constitutional acceptance",
+                "AV-006 Reasoning Validation": "deterministic reasoning, logical consistency, supported inference, and non-circular reasoning",
+                "AV-007 Hypothesis Validation": "constitutional representation, supporting evidence, competing hypothesis preservation, and contradiction recording",
+                "AV-008 Confidence Validation": "explicit confidence, uncertainty representation, inheritance, and provenance",
+                "AV-009 Conclusion Validation": "analytical completeness, evidence support, reasoning support, confidence support, and admissibility",
+                "AV-010 Provenance Validation": "complete lineage, references, relationships, and certification traceability",
+                "AV-011 Configuration Validation": "active configuration, schema compatibility, integrity, and version compatibility",
+                "AV-012 Persistence Validation": "durable storage, checkpoint integrity, atomic commit completion, and persistence completeness",
+                "AV-013 Replay Validation": "semantic equivalence, object identity, lifecycle ordering, and deterministic outputs",
+                "AV-014 Recovery Validation": "checkpoint restoration, object continuity, lifecycle continuity, and invariant preservation",
+                "AV-015 Certification Validation": "required evidence, audit completeness, invariant compliance, and readiness",
+            }
+        )
+        order = tuple(stages)
+        record_fields = ("Validation Identifier", "Validated Object Identifier", "Validation Stage", "Validator Authority", "Validation Timestamp", "Validation Result", "Rule Set Version", "Violated Rules", "Supporting Evidence", "Certification References")
+        persisted = ("completed stages", "validation records", "failure records", "validator authority", "timestamps", "rule versions", "certification references")
+        invariants = ("AVF-001 every constitutional object completes validation before use", "AVF-002 validation ordering is immutable", "AVF-003 validation outcomes are deterministic", "AVF-004 validation failures terminate execution", "AVF-005 every validation generates immutable evidence", "AVF-006 validation authority is unique", "AVF-007 replay reproduces identical validation behavior", "AVF-008 recovery restores validation continuity", "AVF-009 validation preserves complete provenance", "AVF-010 certification relies exclusively upon validated constitutional objects")
+        missing = tuple(stage for stage in stages if stage in missing_stages)
+        passed = not missing and not illegal_ordering_findings and not duplicate_record_findings and not invalid_authority_findings and not inconsistent_outcome_findings and not provenance_gaps and not replay_inconsistencies and not recovery_gaps and not invariant_violations
+        record = AnalystValidationFrameworkSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-016-VALID-{_digest((stages, order))[:12].upper()}",
+            validation_scope=scope,
+            validation_stages=stages,
+            dependency_order=order,
+            validation_record_fields=record_fields,
+            persisted_state=persisted,
+            invariants=invariants,
+            missing_stages=missing,
+            illegal_ordering_findings=illegal_ordering_findings,
+            duplicate_record_findings=duplicate_record_findings,
+            invalid_authority_findings=invalid_authority_findings,
+            inconsistent_outcome_findings=inconsistent_outcome_findings,
+            provenance_gaps=provenance_gaps,
+            replay_inconsistencies=replay_inconsistencies,
+            recovery_gaps=recovery_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_commit_boundary_specification(
+        self,
+        *,
+        missing_boundaries: tuple[str, ...] = (),
+        partial_commit_findings: tuple[str, ...] = (),
+        ordering_violations: tuple[str, ...] = (),
+        ownership_violations: tuple[str, ...] = (),
+        precondition_failures: tuple[str, ...] = (),
+        postcondition_failures: tuple[str, ...] = (),
+        rollback_violations: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_boundary_findings: tuple[str, ...] = (),
+    ) -> AnalystCommitBoundarySpecificationRecord:
+        boundaries = MappingProxyType(
+            {
+                "CB-001 Analytical Mission Acceptance": ("Analytical Mission", "ownership transfer", "authority acquisition", "mission audit record"),
+                "CB-002 Input Acceptance": ("accepted analytical inputs", "normalization state", "admissibility state", "validation records"),
+                "CB-003 Evidence Constitution": ("Analytical Evidence", "provenance records", "integrity verification", "evidence traceability"),
+                "CB-004 Reasoning Graph Completion": ("reasoning graph", "inference nodes", "reasoning relationships", "intermediate reasoning records"),
+                "CB-005 Competing Hypothesis Constitution": ("hypothesis set", "comparison relationships", "contradiction records", "evaluation status"),
+                "CB-006 Confidence Constitution": ("confidence objects", "uncertainty objects", "supporting calculations", "confidence provenance"),
+                "CB-007 Validation Completion": ("validation records", "validation outcomes", "invariant verification", "validation audit"),
+                "CB-008 Analytical Conclusion Constitution": ("analytical conclusions", "supporting evidence references", "reasoning references", "confidence references"),
+                "CB-009 Analytical Output Constitution": ("output package", "completion metadata", "publication readiness", "delivery authorization"),
+                "CB-010 Mission Completion": ("mission completion state", "terminal lifecycle state", "completion audit", "trace closure"),
+                "CB-011 Replay Completion": ("replay validation", "replay audit", "equivalence verification"),
+                "CB-012 Recovery Completion": ("restored execution state", "recovery validation", "recovery audit", "checkpoint advancement"),
+            }
+        )
+        ordering = ("Mission Acceptance", "Input Acceptance", "Evidence Constitution", "Reasoning Completion", "Hypothesis Constitution", "Confidence Constitution", "Validation Completion", "Analytical Conclusion Constitution", "Output Constitution", "Mission Completion")
+        preconditions = ("object identity integrity", "ownership legitimacy", "schema validity", "lifecycle legality", "configuration compatibility", "traceability completeness", "invariant satisfaction", "validation completion")
+        postconditions = ("committed objects immutable", "audit records immutable", "provenance immutable", "lifecycle transitions effective", "replay state reproducible", "recovery checkpoints valid")
+        rollback = ("discard transient state", "preserve committed state", "preserve audit history", "preserve previous checkpoints")
+        audit = ("commit identifier", "commit boundary", "committed objects", "commit timestamp", "precondition verification", "postcondition verification", "configuration version", "replay identifier", "recovery identifier", "invariant verification")
+        invariants = ("immutable object identity", "immutable ownership", "immutable provenance", "deterministic ordering", "deterministic persistence", "deterministic replay", "deterministic recovery", "complete auditability", "complete traceability", "constitutional consistency")
+        missing = tuple(boundary for boundary in boundaries if boundary in missing_boundaries)
+        passed = not missing and not partial_commit_findings and not ordering_violations and not ownership_violations and not precondition_failures and not postcondition_failures and not rollback_violations and not replay_divergence_findings and not recovery_boundary_findings
+        record = AnalystCommitBoundarySpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-017-COMMIT-{_digest((boundaries, ordering))[:12].upper()}",
+            commit_boundaries=boundaries,
+            commit_ordering=ordering,
+            preconditions=preconditions,
+            postconditions=postconditions,
+            rollback_requirements=rollback,
+            audit_fields=audit,
+            invariants=invariants,
+            missing_boundaries=missing,
+            partial_commit_findings=partial_commit_findings,
+            ordering_violations=ordering_violations,
+            ownership_violations=ownership_violations,
+            precondition_failures=precondition_failures,
+            postcondition_failures=postcondition_failures,
+            rollback_violations=rollback_violations,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_boundary_findings=recovery_boundary_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_replay_semantic_equivalence_specification(
+        self,
+        *,
+        missing_scope: tuple[str, ...] = (),
+        missing_preconditions: tuple[str, ...] = (),
+        substituted_input_findings: tuple[str, ...] = (),
+        environment_drift_findings: tuple[str, ...] = (),
+        semantic_divergence_findings: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        persistence_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystReplaySemanticEquivalenceSpecificationRecord:
+        scope = ("Analytical Missions", "Analysis Plans", "Candidate Packages", "Evidence Objects", "Reasoning Graphs", "Intermediate Conclusions", "Confidence Objects", "Competing Hypotheses", "Organizational Belief States", "Analytical Packages", "Recommendations", "Validation Results", "Audit Records", "Certification Evidence")
+        fields_required = ("Replay Identifier", "Original Mission Identifier", "Replay Version", "Replay Purpose", "Replay Authority", "Replay Configuration Reference", "Replay Timestamp", "Replay Outcome", "Validation Results")
+        preconditions = ("original mission existence", "immutable mission version", "complete provenance", "configuration availability", "schema compatibility", "replay authority", "integrity verification")
+        inputs = ("original Analytical Mission", "original Analysis Plan", "original Candidate Packages", "original Evidence Objects", "original Configuration Objects", "original Organizational Belief State", "original Validation Rules", "original Constitutional Doctrine", "original Replay Metadata")
+        criteria = MappingProxyType(
+            {
+                "Mission Semantics": ("authority", "scope", "objectives", "execution constraints"),
+                "Evidence Semantics": ("admissibility", "provenance", "normalization", "evidence relationships"),
+                "Reasoning Semantics": ("reasoning graph", "intermediate conclusions", "dependency ordering"),
+                "Confidence Semantics": ("confidence class", "uncertainty", "supporting rationale"),
+                "Conclusion Semantics": ("analytical findings", "recommendations", "contradiction preservation", "consensus determination"),
+                "Provenance Semantics": ("provenance graph", "node relationships", "transformation lineage"),
+                "Validation Semantics": ("validation outcomes", "validation ordering", "validation evidence"),
+                "Audit Semantics": ("equivalent audit evidence", "distinct replay audit record"),
+            }
+        )
+        admissible = ("execution timestamps", "processor scheduling", "memory addresses", "storage locations", "internal optimization", "execution duration", "thread scheduling", "resource allocation")
+        prohibited = ("conclusions", "reasoning", "evidence admissibility", "confidence", "provenance", "ownership", "lifecycle transitions", "validation outcomes", "recommendations")
+        invariants = ("replay consumes identical constitutional inputs", "replay utilizes identical constitutional configuration", "replay produces identical analytical conclusions", "replay preserves identical reasoning", "replay preserves identical confidence", "replay preserves identical provenance", "replay preserves identical validation outcomes", "replay preserves identical recommendations", "replay preserves all constitutional invariants", "replay generates immutable replay audit evidence", "implementation shall not influence replay semantics")
+        missing_objects = tuple(item for item in scope if item in missing_scope)
+        missing_required = tuple(item for item in preconditions if item in missing_preconditions)
+        passed = not missing_objects and not missing_required and not substituted_input_findings and not environment_drift_findings and not semantic_divergence_findings and not validation_failures and not persistence_gaps and not audit_gaps
+        record = AnalystReplaySemanticEquivalenceSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-018-REPLAY-{_digest((scope, criteria))[:12].upper()}",
+            replay_scope=scope,
+            replay_object_fields=fields_required,
+            replay_preconditions=preconditions,
+            replay_inputs=inputs,
+            semantic_criteria=criteria,
+            admissible_runtime_differences=admissible,
+            prohibited_differences=prohibited,
+            invariants=invariants,
+            missing_scope=missing_objects,
+            missing_preconditions=missing_required,
+            substituted_input_findings=substituted_input_findings,
+            environment_drift_findings=environment_drift_findings,
+            semantic_divergence_findings=semantic_divergence_findings,
+            validation_failures=validation_failures,
+            persistence_gaps=persistence_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_configuration_object_specification(
+        self,
+        *,
+        missing_identity_fields: tuple[str, ...] = (),
+        unapproved_class_findings: tuple[str, ...] = (),
+        missing_schema_sections: tuple[str, ...] = (),
+        activation_failures: tuple[str, ...] = (),
+        compatibility_gaps: tuple[str, ...] = (),
+        runtime_mutation_findings: tuple[str, ...] = (),
+        replay_substitution_findings: tuple[str, ...] = (),
+        recovery_substitution_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystConfigurationObjectSpecificationRecord:
+        identity = ("Configuration Identifier", "Configuration Version", "Schema Version", "Office Identifier", "Configuration Class", "Creation Timestamp", "Certification Version", "Constitutional Owner", "Integrity Identifier")
+        classes = ("Runtime Configuration", "Validation Configuration", "Replay Configuration", "Recovery Configuration", "Certification Configuration", "Analytical Rules Configuration", "Confidence Configuration", "Logging Configuration", "Performance Limits Configuration")
+        schema = MappingProxyType(
+            {
+                "Configuration Header": ("Configuration Identifier", "Version", "Schema Version", "Creation Timestamp", "Constitutional Owner", "Certification Status"),
+                "Configuration Authority": ("authorizing doctrine", "configuration owner", "activation authority", "retirement authority", "certification authority"),
+                "Behavioral Parameters": ("validation behavior", "reasoning behavior", "confidence evaluation", "replay settings", "recovery settings", "persistence settings", "lifecycle settings"),
+                "Compatibility Rules": ("supported schema versions", "supported doctrine versions", "supported object versions", "compatibility matrix", "incompatibility rules"),
+                "Integrity Metadata": ("integrity hash", "digital signature", "validation history", "certification evidence", "audit references"),
+                "Lifecycle Metadata": ("activation timestamp", "supersession reference", "retirement reference", "archival status", "lifecycle history"),
+            }
+        )
+        activation = ("schema validation", "integrity verification", "certification approval", "compatibility verification", "ownership verification")
+        compatibility = ("Mission Objects", "Analysis Plans", "Evidence Packages", "Reasoning Graphs", "Validation Frameworks", "Replay Engine", "Recovery Engine", "Certification Framework")
+        persistent = ("identity", "schema", "version", "behavioral parameters", "compatibility matrix", "integrity metadata", "lifecycle history", "certification evidence", "audit history")
+        invariants = ("Every execution uses exactly one Configuration Object", "Configuration identity is immutable", "Runtime configuration is immutable", "Configuration ownership is unique", "Compatibility is explicit", "Validation precedes activation", "Integrity verification precedes execution", "Replay preserves configuration equivalence", "Recovery preserves identical configuration", "Version history is immutable", "Certification evidence is preserved", "Configuration audit history is permanent")
+        missing_identity = tuple(item for item in identity if item in missing_identity_fields)
+        missing_sections = tuple(section for section in schema if section in missing_schema_sections)
+        passed = not missing_identity and not unapproved_class_findings and not missing_sections and not activation_failures and not compatibility_gaps and not runtime_mutation_findings and not replay_substitution_findings and not recovery_substitution_findings and not audit_gaps
+        record = AnalystConfigurationObjectSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-019-CONFIG-{_digest((identity, schema))[:12].upper()}",
+            identity_fields=identity,
+            configuration_classes=classes,
+            schema_sections=schema,
+            activation_requirements=activation,
+            compatibility_targets=compatibility,
+            persistent_elements=persistent,
+            invariants=invariants,
+            missing_identity_fields=missing_identity,
+            unapproved_class_findings=unapproved_class_findings,
+            missing_schema_sections=missing_sections,
+            activation_failures=activation_failures,
+            compatibility_gaps=compatibility_gaps,
+            runtime_mutation_findings=runtime_mutation_findings,
+            replay_substitution_findings=replay_substitution_findings,
+            recovery_substitution_findings=recovery_substitution_findings,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_error_taxonomy_specification(
+        self,
+        *,
+        missing_error_classes: tuple[str, ...] = (),
+        invalid_severity_findings: tuple[str, ...] = (),
+        invalid_recovery_findings: tuple[str, ...] = (),
+        unclassified_failure_findings: tuple[str, ...] = (),
+        mutation_findings: tuple[str, ...] = (),
+        retry_violations: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_history_violations: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystErrorTaxonomySpecificationRecord:
+        errors = MappingProxyType(
+            {
+                "Class A Authority Errors": ("Violation of constitutional authority", "Critical", "Not Recoverable"),
+                "Class B Identity Errors": ("Failure involving constitutional identity", "Critical", "Manual constitutional remediation"),
+                "Class C Input Admissibility Errors": ("Incoming constitutional inputs violate admissibility doctrine", "Major", "Correct input then restart"),
+                "Class D Validation Errors": ("Failure during constitutional validation", "Major", "Conditional"),
+                "Class E Reasoning Errors": ("Reasoning cannot produce constitutionally valid conclusions", "Major", "Restart after correction"),
+                "Class F Confidence Errors": ("Confidence determination violates constitutional doctrine", "Major", "Re-analysis required"),
+                "Class G Persistence Errors": ("Failure involving constitutional persistence", "Critical", "Restore from previous valid checkpoint"),
+                "Class H Replay Errors": ("Replay cannot reproduce constitutionally equivalent behavior", "Critical", "Investigation required"),
+                "Class I Recovery Errors": ("Checkpoint restoration violates constitutional doctrine", "Critical", "Earlier checkpoint or manual remediation"),
+                "Class J Configuration Errors": ("Configuration violates constitutional governance", "Critical", "Correct configuration"),
+                "Class K Traceability Errors": ("Constitutional provenance cannot be established", "Critical", "Reconstruction prohibited"),
+                "Class L Certification Errors": ("Failure preventing independent certification", "Major", "Certification remediation required"),
+            }
+        )
+        severities = ("Informational", "Warning", "Major", "Critical", "Fatal")
+        recoveries = ("Automatically Recoverable", "Restart Required", "Manual Remediation Required", "Permanently Terminal")
+        lifecycle = ("Validation Failed", "Rejected", "Suspended", "Awaiting Recovery", "Permanently Failed", "Archived")
+        persisted = ("error identifier", "error class", "severity", "originating object", "originating mission", "recovery classification", "validation evidence", "timestamp", "constitutional version", "execution identifier")
+        audit = ("Error Identifier", "Error Class", "Severity", "Failure Cause", "Affected Object", "Mission Identifier", "Recovery Classification", "Timestamp", "Constitutional Version", "Execution Identifier")
+        invariants = ("every constitutional failure has exactly one primary error class", "every error has exactly one severity", "every error has exactly one recovery classification", "every error possesses immutable identity", "error history is never modified", "replay reproduces identical errors", "recovery never alters historical failures", "audit records are complete", "constitutional integrity is preserved through fail-closed behavior", "certification evaluates every recorded constitutional error")
+        missing = tuple(error_class for error_class in errors if error_class in missing_error_classes)
+        passed = not missing and not invalid_severity_findings and not invalid_recovery_findings and not unclassified_failure_findings and not mutation_findings and not retry_violations and not replay_divergence_findings and not recovery_history_violations and not audit_gaps
+        record = AnalystErrorTaxonomySpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-020-ERROR-{_digest(errors)[:12].upper()}",
+            error_classes=errors,
+            severity_levels=severities,
+            recovery_classes=recoveries,
+            lifecycle_effects=lifecycle,
+            persisted_fields=persisted,
+            audit_fields=audit,
+            invariants=invariants,
+            missing_error_classes=missing,
+            invalid_severity_findings=invalid_severity_findings,
+            invalid_recovery_findings=invalid_recovery_findings,
+            unclassified_failure_findings=unclassified_failure_findings,
+            mutation_findings=mutation_findings,
+            retry_violations=retry_violations,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_history_violations=recovery_history_violations,
             audit_gaps=audit_gaps,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",

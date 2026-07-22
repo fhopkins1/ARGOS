@@ -256,6 +256,107 @@ class AnalystRm003OfficeSpecificationTests(unittest.TestCase):
         self.assertIn("Belief State", persistent.missing_persistent_categories)
         self.assertIn("Temporary Validation Workspace", persistent.missing_transient_categories)
 
+    def test_rm003_execution_governance_package_covers_validation_commits_replay_configuration_and_errors(self) -> None:
+        package = AnalystOfficeSpecificationSupport().build_execution_governance_package()
+
+        self.assertEqual(package.final_execution_governance_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.specification_order_coverage,
+            (
+                "ANALYST-RM-003-016",
+                "ANALYST-RM-003-017",
+                "ANALYST-RM-003-018",
+                "ANALYST-RM-003-019",
+                "ANALYST-RM-003-020",
+            ),
+        )
+        self.assertIn("AV-015 Certification Validation", package.validation_framework.validation_stages)
+        self.assertIn("Validation Identifier", package.validation_framework.validation_record_fields)
+        self.assertIn("CB-012 Recovery Completion", package.commit_boundaries.commit_boundaries)
+        self.assertIn("Mission Acceptance", package.commit_boundaries.commit_ordering)
+        self.assertIn("Recommendations", package.replay_semantic_equivalence.replay_scope)
+        self.assertIn("Conclusion Semantics", package.replay_semantic_equivalence.semantic_criteria)
+        self.assertIn("Runtime Configuration", package.configuration_object.configuration_classes)
+        self.assertIn("Configuration Header", package.configuration_object.schema_sections)
+        self.assertIn("Class L Certification Errors", package.error_taxonomy.error_classes)
+        self.assertIn("Fatal", package.error_taxonomy.severity_levels)
+        self.assertIn("Permanently Failed", package.error_taxonomy.lifecycle_effects)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_execution_governance_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeSpecificationSupport()
+
+        validation = support.evaluate_validation_framework_specification(
+            missing_stages=("AV-013 Replay Validation",),
+            illegal_ordering_findings=("confidence before hypotheses",),
+            duplicate_record_findings=("AV-001 duplicated",),
+            invalid_authority_findings=("external validator authority",),
+            inconsistent_outcome_findings=("same input produced pass and fail",),
+            provenance_gaps=("validation evidence missing mission",),
+            replay_inconsistencies=("validation order changed",),
+            recovery_gaps=("pending stage lost",),
+            invariant_violations=("invalid object used after failed validation",),
+        )
+        commits = support.evaluate_commit_boundary_specification(
+            missing_boundaries=("CB-007 Validation Completion",),
+            partial_commit_findings=("evidence committed without provenance",),
+            ordering_violations=("Output before Conclusion",),
+            ownership_violations=("Infrastructure redefined commit",),
+            precondition_failures=("schema validity not checked",),
+            postcondition_failures=("audit not immutable",),
+            rollback_violations=("committed state discarded",),
+            replay_divergence_findings=("commit sequence changed",),
+            recovery_boundary_findings=("resumed from partial commit",),
+        )
+        replay = support.evaluate_replay_semantic_equivalence_specification(
+            missing_scope=("Organizational Belief States",),
+            missing_preconditions=("complete provenance",),
+            substituted_input_findings=("replacement evidence object used",),
+            environment_drift_findings=("configuration version drift",),
+            semantic_divergence_findings=("confidence changed",),
+            validation_failures=("semantic equivalence failed"),
+            persistence_gaps=("replay audit not persisted",),
+            audit_gaps=("replay purpose missing",),
+        )
+        configuration = support.evaluate_configuration_object_specification(
+            missing_identity_fields=("Integrity Identifier",),
+            unapproved_class_findings=("Experimental Configuration",),
+            missing_schema_sections=("Compatibility Rules",),
+            activation_failures=("certification approval missing",),
+            compatibility_gaps=("Replay Engine absent",),
+            runtime_mutation_findings=("parameter changed during execution",),
+            replay_substitution_findings=("alternate config used in replay",),
+            recovery_substitution_findings=("upgraded config during recovery",),
+            audit_gaps=("supersession unaudited",),
+        )
+        errors = support.evaluate_error_taxonomy_specification(
+            missing_error_classes=("Class K Traceability Errors",),
+            invalid_severity_findings=("Mutable severity",),
+            invalid_recovery_findings=("implementation decided recovery",),
+            unclassified_failure_findings=("dependency failure unclassified",),
+            mutation_findings=("error record edited",),
+            retry_violations=("committed work retried",),
+            replay_divergence_findings=("error suppressed during replay",),
+            recovery_history_violations=("historical severity downgraded",),
+            audit_gaps=("failure cause omitted",),
+        )
+
+        self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("AV-013 Replay Validation", validation.missing_stages)
+        self.assertIn("external validator authority", validation.invalid_authority_findings)
+        self.assertEqual(commits.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("CB-007 Validation Completion", commits.missing_boundaries)
+        self.assertIn("evidence committed without provenance", commits.partial_commit_findings)
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Organizational Belief States", replay.missing_scope)
+        self.assertIn("replacement evidence object used", replay.substituted_input_findings)
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Integrity Identifier", configuration.missing_identity_fields)
+        self.assertIn("Compatibility Rules", configuration.missing_schema_sections)
+        self.assertEqual(errors.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Class K Traceability Errors", errors.missing_error_classes)
+        self.assertIn("error record edited", errors.mutation_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
