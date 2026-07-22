@@ -110,6 +110,102 @@ class RiskRm004CertificationCompletionTests(unittest.TestCase):
         self.assertEqual(tests.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("confidence requirement untested", tests.missing_requirement_coverage)
 
+    def test_rm004_registry_governance_package_covers_collision_metrics_manifest_identifiers_and_versions(self) -> None:
+        package = RiskOfficeCertificationCompletionSupport().build_registry_governance_package()
+
+        self.assertEqual(package.final_registry_governance_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-004-006",
+                "RISK-RM-004-007",
+                "RISK-RM-004-008",
+                "RISK-RM-004-009",
+                "RISK-RM-004-010",
+            ),
+        )
+        self.assertIn("IC-004 Ownership Conflict", package.identity_collision_resolution.collision_classes)
+        self.assertEqual(package.identity_collision_resolution.resolution_sequence[0], "Verify canonical identity")
+        self.assertEqual(package.identity_collision_resolution.resolution_outcomes, ("Resolved", "Rejected"))
+        self.assertIn("CM-007 Replay Metrics", package.metrics_registry.metric_categories)
+        self.assertIn("Coverage Index", package.metrics_registry.metric_units)
+        self.assertIn("Certification Manifests", package.metrics_registry.admissible_sources)
+        self.assertIn("Compatibility Declaration", package.certification_manifest_schema.schema_sections)
+        self.assertIn("Certification Evidence Package", package.certification_manifest_schema.mandatory_artifacts)
+        self.assertEqual(package.certification_manifest_schema.lifecycle_states[0], "Draft")
+        self.assertEqual(package.certification_manifest_schema.lifecycle_states[-1], "Archived")
+        self.assertIn("Risk Assessment Identifier", package.identifier_registry.namespaces)
+        self.assertIn("Manifest Identifier", package.identifier_registry.namespaces)
+        self.assertIn("constitutional testing", package.identifier_registry.reserved_ranges)
+        self.assertIn("Evidence Package Version", package.version_compatibility_matrix.version_categories)
+        self.assertIn("Migration Required", package.version_compatibility_matrix.classifications)
+        self.assertIn("unknown compatibility prohibited", package.version_compatibility_matrix.invariants)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm004_registry_governance_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeCertificationCompletionSupport()
+
+        collisions = support.evaluate_identity_collision_resolution(
+            duplicate_identifier_findings=("RA-1 duplicated",),
+            conflicting_ownership_findings=("same identity owned by Analyst",),
+            unresolved_collision_findings=("alias collision unresolved",),
+            namespace_allocation_findings=("namespace reused",),
+            replay_identity_findings=("replay identity changed",),
+            recovery_identity_findings=("recovery restored conflict",),
+            traceability_gaps=("collision lacks lineage",),
+            audit_gaps=("collision unaudited",),
+        )
+        metrics = support.evaluate_metrics_registry(
+            duplicate_metric_findings=("MET-1 duplicated",),
+            missing_metric_class_findings=("Replay Metrics",),
+            ownership_findings=("metric owned by runtime",),
+            inadmissible_input_findings=("implementation counter admitted",),
+            dependency_cycle_findings=("metric dependency cycle",),
+            reproducibility_findings=("metric value changed",),
+            traceability_gaps=("metric lacks source evidence",),
+            audit_gaps=("metric unaudited",),
+        )
+        manifest = support.evaluate_certification_manifest_schema(
+            missing_schema_sections=("Compatibility Declaration",),
+            missing_artifact_findings=("Audit Records",),
+            evidence_linkage_findings=("evidence inventory broken",),
+            compatibility_findings=("registry version incompatible",),
+            validation_failures=("manifest validation failed",),
+            replay_divergence_findings=("manifest replay changed",),
+            recovery_gaps=("manifest not restored",),
+            audit_gaps=("manifest approval unaudited",),
+        )
+        identifiers = support.evaluate_identifier_registry(
+            duplicate_namespace_findings=("Risk Assessment Identifier duplicated",),
+            missing_namespace_findings=("Manifest Identifier",),
+            allocation_findings=("partial allocation committed",),
+            uniqueness_findings=("identifier reused",),
+            replay_identifier_findings=("replay generated new identifier",),
+            recovery_identifier_findings=("recovery inferred allocation",),
+            traceability_gaps=("identifier lacks provenance",),
+            audit_gaps=("allocation unaudited",),
+        )
+        versions = support.evaluate_version_compatibility_matrix(
+            missing_compatibility_entries=("Manifest->Evidence",),
+            unknown_compatibility_findings=("unknown compatibility assumed",),
+            incompatible_artifact_findings=("incompatible manifest accepted",),
+            supersession_findings=("historical compatibility overwritten",),
+            replay_divergence_findings=("compatibility replay changed",),
+            recovery_gaps=("matrix not restored",),
+            audit_gaps=("compatibility unaudited",),
+        )
+
+        self.assertEqual(collisions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("alias collision unresolved", collisions.unresolved_collision_findings)
+        self.assertEqual(metrics.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("implementation counter admitted", metrics.inadmissible_input_findings)
+        self.assertEqual(manifest.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Compatibility Declaration", manifest.missing_schema_sections)
+        self.assertEqual(identifiers.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("identifier reused", identifiers.uniqueness_findings)
+        self.assertEqual(versions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unknown compatibility assumed", versions.unknown_compatibility_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

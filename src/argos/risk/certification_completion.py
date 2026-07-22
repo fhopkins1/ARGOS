@@ -165,6 +165,156 @@ class RiskRm004FoundationCertificationPackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class RiskIdentityCollisionResolutionRecord:
+    record_identifier: str
+    collision_scope: tuple[str, ...]
+    collision_classes: tuple[str, ...]
+    detection_requirements: tuple[str, ...]
+    resolution_sequence: tuple[str, ...]
+    admissibility_requirements: tuple[str, ...]
+    resolution_outcomes: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    constraints: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_identifier_findings: tuple[str, ...]
+    conflicting_ownership_findings: tuple[str, ...]
+    unresolved_collision_findings: tuple[str, ...]
+    namespace_allocation_findings: tuple[str, ...]
+    replay_identity_findings: tuple[str, ...]
+    recovery_identity_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskMetricsRegistryRecord:
+    record_identifier: str
+    metric_scope: tuple[str, ...]
+    metric_record_fields: tuple[str, ...]
+    metric_categories: tuple[str, ...]
+    metric_units: tuple[str, ...]
+    calculation_requirements: tuple[str, ...]
+    admissible_sources: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    relationship_requirements: tuple[str, ...]
+    version_fields: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_metric_findings: tuple[str, ...]
+    missing_metric_class_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    inadmissible_input_findings: tuple[str, ...]
+    dependency_cycle_findings: tuple[str, ...]
+    reproducibility_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskCertificationManifestSchemaRecord:
+    record_identifier: str
+    schema_sections: Mapping[str, tuple[str, ...]]
+    mandatory_artifacts: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    dependency_fields: tuple[str, ...]
+    compatibility_declarations: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_schema_sections: tuple[str, ...]
+    missing_artifact_findings: tuple[str, ...]
+    evidence_linkage_findings: tuple[str, ...]
+    compatibility_findings: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskIdentifierRegistryRecord:
+    record_identifier: str
+    namespaces: tuple[str, ...]
+    registry_entry_fields: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    allocation_requirements: tuple[str, ...]
+    reserved_ranges: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    compatibility_requirements: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_namespace_findings: tuple[str, ...]
+    missing_namespace_findings: tuple[str, ...]
+    allocation_findings: tuple[str, ...]
+    uniqueness_findings: tuple[str, ...]
+    replay_identifier_findings: tuple[str, ...]
+    recovery_identifier_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskVersionCompatibilityMatrixRecord:
+    record_identifier: str
+    compatibility_scope: tuple[str, ...]
+    version_categories: tuple[str, ...]
+    classifications: tuple[str, ...]
+    matrix_entry_fields: tuple[str, ...]
+    evaluation_requirements: tuple[str, ...]
+    dependency_requirements: tuple[str, ...]
+    schema_requirements: tuple[str, ...]
+    registry_requirements: tuple[str, ...]
+    certification_requirements: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_compatibility_entries: tuple[str, ...]
+    unknown_compatibility_findings: tuple[str, ...]
+    incompatible_artifact_findings: tuple[str, ...]
+    supersession_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskRm004RegistryGovernancePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    identity_collision_resolution: RiskIdentityCollisionResolutionRecord
+    metrics_registry: RiskMetricsRegistryRecord
+    certification_manifest_schema: RiskCertificationManifestSchemaRecord
+    identifier_registry: RiskIdentifierRegistryRecord
+    version_compatibility_matrix: RiskVersionCompatibilityMatrixRecord
+    final_registry_governance_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class RiskOfficeCertificationCompletionSupport:
     """Build deterministic RISK-RM-004 certification-completion evidence."""
 
@@ -174,6 +324,13 @@ class RiskOfficeCertificationCompletionSupport:
         "RISK-RM-004-003",
         "RISK-RM-004-004",
         "RISK-RM-004-005",
+    )
+    registry_governance_order_coverage = (
+        "RISK-RM-004-006",
+        "RISK-RM-004-007",
+        "RISK-RM-004-008",
+        "RISK-RM-004-009",
+        "RISK-RM-004-010",
     )
 
     def build_foundation_package(self) -> RiskRm004FoundationCertificationPackage:
@@ -206,6 +363,308 @@ class RiskOfficeCertificationCompletionSupport:
             deterministic_digest="",
         )
         return replace(package, deterministic_digest=_digest(package))
+
+    def build_registry_governance_package(self) -> RiskRm004RegistryGovernancePackage:
+        collisions = self.evaluate_identity_collision_resolution()
+        metrics = self.evaluate_metrics_registry()
+        manifest = self.evaluate_certification_manifest_schema()
+        identifiers = self.evaluate_identifier_registry()
+        versions = self.evaluate_version_compatibility_matrix()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (collisions, metrics, manifest, identifiers, versions)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = RiskRm004RegistryGovernancePackage(
+            package_identifier=f"RISK-RM-004-REGISTRY-GOVERNANCE-{_digest((collisions, metrics, manifest, identifiers, versions))[:12].upper()}",
+            governing_doctrine="RISK-RM-004-006-TO-010/1.0.0",
+            order_coverage=self.registry_governance_order_coverage,
+            identity_collision_resolution=collisions,
+            metrics_registry=metrics,
+            certification_manifest_schema=manifest,
+            identifier_registry=identifiers,
+            version_compatibility_matrix=versions,
+            final_registry_governance_readiness=final,
+            immutable_audit_references=(
+                collisions.record_identifier,
+                metrics.record_identifier,
+                manifest.record_identifier,
+                identifiers.record_identifier,
+                versions.record_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_identity_collision_resolution(
+        self,
+        *,
+        duplicate_identifier_findings: tuple[str, ...] = (),
+        conflicting_ownership_findings: tuple[str, ...] = (),
+        unresolved_collision_findings: tuple[str, ...] = (),
+        namespace_allocation_findings: tuple[str, ...] = (),
+        replay_identity_findings: tuple[str, ...] = (),
+        recovery_identity_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskIdentityCollisionResolutionRecord:
+        scope = ("Risk Assessments", "Risk Evaluation Plans", "Risk Evaluation Packages", "Risk Evidence", "Confidence Assessments", "Exposure Assessments", "Risk Decisions", "Mitigation Plans", "Recovery Plans", "Validation Records", "Replay Records", "Recovery Records", "Certification Artifacts", "Registry Entries", "Configuration Objects", "Audit Records")
+        classes = ("IC-001 Duplicate Identifier", "IC-002 Alias Collision", "IC-003 Normalization Conflict", "IC-004 Ownership Conflict", "IC-005 Namespace Collision", "IC-006 Version Identity Conflict", "IC-007 Registry Conflict")
+        detection = ("canonical identifier uniqueness", "namespace uniqueness", "ownership uniqueness", "registry consistency", "normalization consistency", "version uniqueness")
+        resolution = ("Verify canonical identity", "Validate identifier namespace", "Verify constitutional ownership", "Apply canonical normalization rules", "Verify registry consistency", "Resolve version precedence", "Produce immutable collision determination", "Record audit evidence")
+        admissibility = ("no unresolved identity collision exists", "canonical identity is unique", "ownership is verified", "registry references are consistent", "normalization succeeds")
+        outcomes = ("Resolved", "Rejected")
+        audit = ("Collision Identifier", "Collision Class", "Affected Object Identifiers", "Resolution Outcome", "Governing Rule", "Owner Verification", "Timestamp", "Registry References", "Validator Version")
+        persistence = ("collision identity", "collision class", "affected artifacts", "resolution history", "ownership verification", "registry references", "audit records", "integrity metadata")
+        replay = ("collision detection", "collision classification", "normalization results", "ownership verification", "resolution outcome", "audit evidence")
+        recovery = ("unresolved collision state", "completed resolutions", "registry consistency", "ownership verification", "audit continuity")
+        constraints = ("never modify canonical identifiers", "never overwrite registry history", "never alter ownership", "never suppress evidence", "never bypass normalization", "never conceal registry inconsistencies")
+        invariants = ("one canonical identity per artifact", "unique canonical identifier within namespace", "exactly one collision class", "deterministic resolution procedure", "ownership preserved", "normalization preserves meaning", "immutable audit evidence", "replay identical outcomes", "recovery preserves history", "independently auditable", "no certification with unresolved collisions", "no implementation discretion")
+        passed = not duplicate_identifier_findings and not conflicting_ownership_findings and not unresolved_collision_findings and not namespace_allocation_findings and not replay_identity_findings and not recovery_identity_findings and not traceability_gaps and not audit_gaps
+        record = RiskIdentityCollisionResolutionRecord(
+            record_identifier=f"RISK-RM-004-006-COLLISION-{_digest((scope, classes, resolution))[:12].upper()}",
+            collision_scope=scope,
+            collision_classes=classes,
+            detection_requirements=detection,
+            resolution_sequence=resolution,
+            admissibility_requirements=admissibility,
+            resolution_outcomes=outcomes,
+            audit_fields=audit,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            constraints=constraints,
+            invariants=invariants,
+            duplicate_identifier_findings=duplicate_identifier_findings,
+            conflicting_ownership_findings=conflicting_ownership_findings,
+            unresolved_collision_findings=unresolved_collision_findings,
+            namespace_allocation_findings=namespace_allocation_findings,
+            replay_identity_findings=replay_identity_findings,
+            recovery_identity_findings=recovery_identity_findings,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_metrics_registry(
+        self,
+        *,
+        duplicate_metric_findings: tuple[str, ...] = (),
+        missing_metric_class_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        inadmissible_input_findings: tuple[str, ...] = (),
+        dependency_cycle_findings: tuple[str, ...] = (),
+        reproducibility_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskMetricsRegistryRecord:
+        scope = ("constitutional completeness", "object integrity", "lifecycle compliance", "validation performance", "persistence correctness", "replay equivalence", "recovery correctness", "traceability completeness", "configuration integrity", "certification readiness")
+        fields_required = ("Metric Identifier", "Canonical Name", "Constitutional Purpose", "Metric Category", "Constitutional Owner", "Calculation Specification", "Units", "Acceptable Range", "Threshold Reference", "Data Sources", "Validation Requirements", "Audit Requirements", "Version", "Integrity Hash")
+        categories = ("CM-001 Identity Metrics", "CM-002 Object Metrics", "CM-003 Validation Metrics", "CM-004 Evaluation Metrics", "CM-005 Evidence Metrics", "CM-006 Persistence Metrics", "CM-007 Replay Metrics", "CM-008 Recovery Metrics", "CM-009 Traceability Metrics", "CM-010 Configuration Metrics", "CM-011 Certification Metrics")
+        units = ("Boolean", "Integer Count", "Decimal Ratio", "Percentage", "Enumeration", "Version Identifier", "Integrity Status", "Coverage Index")
+        calculation = ("required inputs", "calculation procedure", "deterministic ordering", "precision requirements", "admissible data sources", "validation procedure")
+        sources = ("Risk Objects", "Evaluation Packages", "Validation Records", "Evidence Packages", "Traceability Records", "Audit Records", "Configuration Objects", "Replay Records", "Recovery Records", "Certification Manifests")
+        validation = ("source validation", "completeness validation", "integrity validation", "version validation", "calculation validation", "reproducibility verification")
+        relationships = ("governing constitutional doctrine", "associated certification tests", "associated evaluation rules", "supporting evidence", "associated certification threshold")
+        versions = ("Metric Version", "Calculation Version", "Schema Version", "Threshold Version")
+        replay = ("identical metric inputs", "identical calculations", "identical values", "identical certification outcomes")
+        recovery = ("calculated metrics", "calculation context", "supporting evidence", "validation state", "threshold associations", "never recompute previously certified values")
+        audit = ("Metric Identifier", "Calculation Identifier", "Source References", "Input Values", "Calculated Value", "Threshold Reference", "Validation Results", "Timestamp", "Integrity Hash")
+        invariants = tuple(f"CI-{index:03d}" for index in range(1, 11)) + ("no discretionary metric may influence certification",)
+        passed = not duplicate_metric_findings and not missing_metric_class_findings and not ownership_findings and not inadmissible_input_findings and not dependency_cycle_findings and not reproducibility_findings and not traceability_gaps and not audit_gaps
+        record = RiskMetricsRegistryRecord(
+            record_identifier=f"RISK-RM-004-007-METRICS-{_digest((fields_required, categories, units))[:12].upper()}",
+            metric_scope=scope,
+            metric_record_fields=fields_required,
+            metric_categories=categories,
+            metric_units=units,
+            calculation_requirements=calculation,
+            admissible_sources=sources,
+            validation_requirements=validation,
+            relationship_requirements=relationships,
+            version_fields=versions,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            duplicate_metric_findings=duplicate_metric_findings,
+            missing_metric_class_findings=missing_metric_class_findings,
+            ownership_findings=ownership_findings,
+            inadmissible_input_findings=inadmissible_input_findings,
+            dependency_cycle_findings=dependency_cycle_findings,
+            reproducibility_findings=reproducibility_findings,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_manifest_schema(
+        self,
+        *,
+        missing_schema_sections: tuple[str, ...] = (),
+        missing_artifact_findings: tuple[str, ...] = (),
+        evidence_linkage_findings: tuple[str, ...] = (),
+        compatibility_findings: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskCertificationManifestSchemaRecord:
+        sections = MappingProxyType({
+            "Manifest Header": ("Manifest Identifier", "Manifest Version", "Manifest Revision", "Schema Version", "Certification Identifier", "Certification Candidate", "Creation Timestamp"),
+            "Candidate Information": ("Candidate Class", "Certification Scope", "Office Identifier", "Certification Authority"),
+            "Artifact Inventory": ("Artifact Identifier", "Artifact Type", "Version", "Owner", "Integrity Hash"),
+            "Evidence Inventory": ("Evidence Identifier", "Evidence Type", "Supporting Rule", "Validation Status"),
+            "Registry References": ("Candidate Registry", "Rule Registry", "Schema Registry", "Identifier Registry", "Metrics Registry", "Evidence Registry"),
+            "Dependency Manifest": ("Registry Dependencies", "Artifact Dependencies", "Schema Dependencies", "Version Dependencies"),
+            "Compatibility Declaration": ("Constitutional Version", "Schema Version", "Registry Versions", "Certification Standards"),
+            "Validation Summary": ("Validation Status", "Manifest Completeness", "Validation Timestamp", "Validation Authority"),
+            "Traceability Summary": ("doctrine", "remediation", "implementation", "testing", "evidence", "certification"),
+            "Integrity Metadata": ("Manifest Hash", "Digital Signature", "Verification Timestamp", "Integrity Status"),
+        })
+        artifacts = ("Certification Package", "Certification Evidence Package", "Rule Evaluation Results", "Registry Snapshots", "Validation Reports", "Traceability Matrix", "Certification Decision", "Audit Records")
+        validation = ("schema compliance", "identifier uniqueness", "artifact completeness", "evidence completeness", "dependency completeness", "compatibility declarations", "traceability completeness", "integrity verification")
+        dependency = ("dependent artifact", "prerequisite artifact", "dependency type", "dependency version", "dependency owner")
+        compatibility = ("RISK Constitution Version", "Certification Standards Version", "Registry Versions", "Manifest Schema Version", "Evaluation Rule Version", "Evidence Package Version")
+        persistence = ("complete schema", "artifact inventory", "dependency graph", "validation history", "compatibility declarations", "integrity metadata")
+        replay = ("identical Certification Manifest used during original certification", "manifest substitution prohibited")
+        recovery = ("Manifest contents", "artifact inventory", "dependency graph", "validation status", "compatibility declarations")
+        states = ("Draft", "Validated", "Approved", "Persisted", "Referenced", "Superseded", "Archived")
+        invariants = tuple(f"CI-{index:03d}" for index in range(1, 11)) + ("single manifest authority", "manifest before evaluation")
+        passed = not missing_schema_sections and not missing_artifact_findings and not evidence_linkage_findings and not compatibility_findings and not validation_failures and not replay_divergence_findings and not recovery_gaps and not audit_gaps
+        record = RiskCertificationManifestSchemaRecord(
+            record_identifier=f"RISK-RM-004-008-MANIFEST-{_digest((sections, artifacts))[:12].upper()}",
+            schema_sections=sections,
+            mandatory_artifacts=artifacts,
+            validation_requirements=validation,
+            dependency_fields=dependency,
+            compatibility_declarations=compatibility,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            lifecycle_states=states,
+            invariants=invariants,
+            missing_schema_sections=missing_schema_sections,
+            missing_artifact_findings=missing_artifact_findings,
+            evidence_linkage_findings=evidence_linkage_findings,
+            compatibility_findings=compatibility_findings,
+            validation_failures=validation_failures,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_identifier_registry(
+        self,
+        *,
+        duplicate_namespace_findings: tuple[str, ...] = (),
+        missing_namespace_findings: tuple[str, ...] = (),
+        allocation_findings: tuple[str, ...] = (),
+        uniqueness_findings: tuple[str, ...] = (),
+        replay_identifier_findings: tuple[str, ...] = (),
+        recovery_identifier_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskIdentifierRegistryRecord:
+        namespaces = ("Risk Assessment Identifier", "Risk Evaluation Identifier", "Risk Evaluation Plan Identifier", "Risk Evaluation Package Identifier", "Risk Evaluation Graph Identifier", "Risk Decision Identifier", "Risk Evidence Identifier", "Risk Confidence Identifier", "Risk Exposure Identifier", "Risk Mitigation Identifier", "Risk Recovery Identifier", "Enterprise Risk State Identifier", "Configuration Identifier", "Validation Identifier", "Replay Identifier", "Recovery Identifier", "Audit Identifier", "Certification Identifier", "Registry Identifier", "Manifest Identifier")
+        fields_required = ("Identifier", "Namespace", "Object Type", "Constitutional Owner", "Object Version", "Allocation Timestamp", "Status", "Allocation Authority", "Compatibility Version", "Integrity Hash", "Retirement Status", "Audit Reference")
+        states = ("Allocated", "Assigned", "Active", "Superseded", "Archived")
+        allocation = ("namespace verification", "uniqueness verification", "owner verification", "compatibility verification", "registry persistence", "atomic allocation")
+        reserved = ("constitutional testing", "replay operations", "certification artifacts", "registry infrastructure", "future constitutional expansion")
+        validation = ("namespace validity", "uniqueness", "syntax", "owner consistency", "version compatibility", "registry existence", "integrity verification")
+        compatibility = ("doctrine version", "schema version", "registry version", "namespace version", "object version")
+        persistence = ("identifier records", "namespace metadata", "ownership metadata", "version metadata", "audit references", "integrity metadata")
+        replay = ("identical identifiers", "identical namespace assignments", "identical ownership", "identical registry ordering", "identical allocation history", "never generate new identifiers")
+        recovery = ("registry contents", "allocation history", "namespace assignments", "ownership", "version metadata", "integrity metadata")
+        audit = ("Identifier", "Namespace", "Allocation Authority", "Allocation Timestamp", "Validation Results", "Compatibility Results", "Lifecycle State", "Registry Version")
+        invariants = ("unique within namespace", "exactly one owner", "immutable identifiers", "reuse prohibited", "entries preserved", "namespace stable", "deterministic allocation", "validation before activation", "compatibility before use", "replay identical identifiers", "recovery identical registry state", "complete provenance", "independently auditable", "append-only history", "one canonical identifier per object")
+        passed = not duplicate_namespace_findings and not missing_namespace_findings and not allocation_findings and not uniqueness_findings and not replay_identifier_findings and not recovery_identifier_findings and not traceability_gaps and not audit_gaps
+        record = RiskIdentifierRegistryRecord(
+            record_identifier=f"RISK-RM-004-009-IDENTIFIERS-{_digest((namespaces, fields_required))[:12].upper()}",
+            namespaces=namespaces,
+            registry_entry_fields=fields_required,
+            lifecycle_states=states,
+            allocation_requirements=allocation,
+            reserved_ranges=reserved,
+            validation_requirements=validation,
+            compatibility_requirements=compatibility,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            duplicate_namespace_findings=duplicate_namespace_findings,
+            missing_namespace_findings=missing_namespace_findings,
+            allocation_findings=allocation_findings,
+            uniqueness_findings=uniqueness_findings,
+            replay_identifier_findings=replay_identifier_findings,
+            recovery_identifier_findings=recovery_identifier_findings,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_version_compatibility_matrix(
+        self,
+        *,
+        missing_compatibility_entries: tuple[str, ...] = (),
+        unknown_compatibility_findings: tuple[str, ...] = (),
+        incompatible_artifact_findings: tuple[str, ...] = (),
+        supersession_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskVersionCompatibilityMatrixRecord:
+        scope = ("constitutional doctrine versions", "object schemas", "registry schemas", "certification manifests", "certification evidence packages", "evaluation rules", "configuration objects", "identifier registries", "traceability artifacts", "certification artifacts")
+        categories = ("Doctrine Version", "Schema Version", "Registry Version", "Configuration Version", "Manifest Version", "Evidence Package Version", "Evaluation Rule Version", "Certification Version", "Object Specification Version", "Validation Rule Version")
+        classifications = ("Fully Compatible", "Forward Compatible", "Backward Compatible", "Conditionally Compatible", "Migration Required", "Incompatible")
+        entry = ("Compatibility Identifier", "Source Version", "Target Version", "Artifact Category", "Compatibility Classification", "Governing Doctrine", "Compatibility Constraints", "Required Validation", "Migration Requirement", "Certification Impact", "Approval Authority")
+        evaluation = ("version identifiers", "artifact categories", "governing doctrine", "schema compatibility", "registry compatibility", "validation compatibility", "replay compatibility", "recovery compatibility", "certification compatibility")
+        dependencies = ("compatible versions", "mixed-version dependency chains prohibited unless explicitly authorized")
+        schema = ("required fields", "field semantics", "identifier preservation", "ownership preservation", "object relationships", "validation rules")
+        registry = ("registry identifiers", "registry schemas", "registry ownership", "registry versions", "cross-reference integrity")
+        certification = ("certification manifests", "certification evidence", "evaluation rules", "doctrine versions", "object schemas", "configuration versions")
+        persistence = ("compatibility entries", "version identifiers", "classification history", "governing doctrine references", "audit evidence", "atomic persistence")
+        replay = ("identical compatibility evaluations", "identical classifications", "identical validation outcomes", "identical certification decisions")
+        recovery = ("matrix contents", "version identifiers", "compatibility relationships", "validation history", "audit history")
+        audit = ("evaluated versions", "compatibility classification", "governing doctrine", "validation outcome", "certification impact", "audit completion")
+        invariants = ("one immutable version identifier", "explicit compatibility", "unknown compatibility prohibited", "deterministic evaluation", "exactly one classification", "incompatible artifacts excluded", "constitutional behavior preserved", "validation before certification", "replay identical compatibility", "recovery preserves relationships", "independently auditable", "immutable history", "manifest compatible artifacts only", "evidence compatible artifacts only", "matrix is sole compatibility authority")
+        passed = not missing_compatibility_entries and not unknown_compatibility_findings and not incompatible_artifact_findings and not supersession_findings and not replay_divergence_findings and not recovery_gaps and not audit_gaps
+        record = RiskVersionCompatibilityMatrixRecord(
+            record_identifier=f"RISK-RM-004-010-VERSION-{_digest((scope, categories, classifications))[:12].upper()}",
+            compatibility_scope=scope,
+            version_categories=categories,
+            classifications=classifications,
+            matrix_entry_fields=entry,
+            evaluation_requirements=evaluation,
+            dependency_requirements=dependencies,
+            schema_requirements=schema,
+            registry_requirements=registry,
+            certification_requirements=certification,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            missing_compatibility_entries=missing_compatibility_entries,
+            unknown_compatibility_findings=unknown_compatibility_findings,
+            incompatible_artifact_findings=incompatible_artifact_findings,
+            supersession_findings=supersession_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
 
     def evaluate_candidate_class_registry(
         self,
