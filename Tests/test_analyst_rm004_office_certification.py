@@ -302,6 +302,111 @@ class AnalystRm004OfficeCertificationTests(unittest.TestCase):
         self.assertIn("Certification", decisions.missing_category_findings)
         self.assertIn("self-certification attempted", decisions.authority_findings)
 
+    def test_mo001_certification_completion_package_covers_schema_traceability_procedure_exceptions_and_closure(self) -> None:
+        package = AnalystOfficeCertificationSupport().build_mo001_certification_completion_package()
+
+        self.assertEqual(package.final_certification_completion_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "ANALYST-MO-001-001",
+                "ANALYST-MO-001-002",
+                "ANALYST-MO-001-003",
+                "ANALYST-MO-001-004",
+                "ANALYST-MO-001-005",
+            ),
+        )
+        self.assertEqual(len(package.certification_package_schema.package_sections), 12)
+        self.assertIn("Digital Integrity Package", package.certification_package_schema.package_sections)
+        self.assertIn("Dependency List", package.certification_package_schema.manifest_fields)
+        self.assertEqual(len(package.traceability_matrix.traceability_domains), 20)
+        self.assertIn("Certification Decision", package.traceability_matrix.canonical_chain)
+        self.assertEqual(package.traceability_matrix.completeness_criteria["evidence"], "100%")
+        self.assertIn("Certification Closed", package.certification_procedure.state_machine)
+        self.assertEqual(package.certification_procedure.certification_decisions, ("PASS", "CONDITIONAL PASS", "FAIL"))
+        self.assertIn("Historical Preservation Exception", package.exception_registry.exception_categories)
+        self.assertIn("Constitutional rule waiver", package.exception_registry.non_permissible_exceptions)
+        self.assertEqual(len(package.independent_closure.lifecycle_states), 14)
+        self.assertIn("CERTIFICATION_REVOKED", package.independent_closure.lifecycle_states)
+        self.assertEqual(len(package.independent_closure.required_engineering_artifacts), 30)
+        self.assertIn("Recertification Tests", package.independent_closure.required_test_classes)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_mo001_certification_completion_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeCertificationSupport()
+
+        schema = support.evaluate_mo001_certification_package_schema(
+            missing_artifact_findings=("Manifest",),
+            checksum_findings=("package checksum mismatch",),
+            schema_findings=("invalid package schema",),
+            evidence_gaps=("replay evidence missing",),
+            traceability_gaps=("trace matrix broken",),
+            dependency_findings=("undeclared dependency",),
+            integrity_findings=("unsigned package",),
+        )
+        traceability = support.evaluate_mo001_traceability_matrix(
+            doctrine_mapping_gaps=("doctrine unmapped",),
+            requirement_mapping_gaps=("requirement unmapped",),
+            implementation_mapping_gaps=("implementation unmapped",),
+            validation_mapping_gaps=("validation unmapped",),
+            test_mapping_gaps=("test unmapped",),
+            evidence_mapping_gaps=("evidence unmapped",),
+            registry_mapping_gaps=("registry unmapped",),
+            remediation_mapping_gaps=("remediation unmapped",),
+            certification_mapping_gaps=("decision unsupported",),
+            replay_recovery_gaps=("trace replay changed",),
+        )
+        procedure = support.evaluate_mo001_certification_procedure(
+            missing_input_findings=("manifest absent",),
+            package_validation_findings=("manifest incomplete",),
+            evidence_validation_findings=("evidence inadmissible",),
+            registry_validation_findings=("registry inconsistent",),
+            dependency_validation_findings=("dependency unresolved",),
+            traceability_validation_findings=("claim untraceable",),
+            ordering_findings=("stage skipped",),
+            decision_findings=("unsupported decision",),
+            archival_findings=("archive incomplete",),
+        )
+        exceptions = support.evaluate_mo001_exception_registry(
+            duplicate_identifier_findings=("EX-1 duplicated",),
+            invalid_category_findings=("Rule Waiver",),
+            ownership_findings=("shared owner",),
+            approval_findings=("delegated approval",),
+            evidence_gaps=("exception evidence missing",),
+            lifecycle_findings=("backward transition",),
+            retirement_findings=("permanent active exception",),
+            replay_recovery_gaps=("exception replay changed",),
+            audit_gaps=("exception unaudited",),
+        )
+        closure = support.evaluate_mo001_independent_closure(
+            completion_findings=("required test unexecuted",),
+            eligibility_findings=("independent review missing",),
+            transition_findings=("closure state skipped",),
+            sealing_findings=("package unsealed",),
+            issuance_findings=("issued before sealing",),
+            archival_findings=("custody absent",),
+            integrity_findings=("artifact mutation undetected",),
+            recertification_findings=("material change ignored",),
+            representation_findings=("revoked certification represented active",),
+            audit_findings=("closure audit failed",),
+        )
+
+        self.assertEqual(schema.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Manifest", schema.missing_artifact_findings)
+        self.assertIn("undeclared dependency", schema.dependency_findings)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("evidence unmapped", traceability.evidence_mapping_gaps)
+        self.assertIn("decision unsupported", traceability.certification_mapping_gaps)
+        self.assertEqual(procedure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("stage skipped", procedure.ordering_findings)
+        self.assertIn("unsupported decision", procedure.decision_findings)
+        self.assertEqual(exceptions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Rule Waiver", exceptions.invalid_category_findings)
+        self.assertIn("permanent active exception", exceptions.retirement_findings)
+        self.assertEqual(closure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("closure state skipped", closure.transition_findings)
+        self.assertIn("material change ignored", closure.recertification_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

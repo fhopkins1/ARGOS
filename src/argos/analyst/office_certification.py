@@ -487,6 +487,137 @@ class AnalystRm004GovernanceRegistryEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystMo001CertificationPackageSchemaRecord:
+    schema_identifier: str
+    package_sections: tuple[str, ...]
+    mandatory_artifacts: tuple[str, ...]
+    manifest_fields: tuple[str, ...]
+    dependency_fields: tuple[str, ...]
+    validation_rules: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_artifact_findings: tuple[str, ...]
+    checksum_findings: tuple[str, ...]
+    schema_findings: tuple[str, ...]
+    evidence_gaps: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    dependency_findings: tuple[str, ...]
+    integrity_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystMo001TraceabilityMatrixRecord:
+    matrix_identifier: str
+    traceability_domains: tuple[str, ...]
+    canonical_chain: tuple[str, ...]
+    required_fields: tuple[str, ...]
+    integrity_rules: tuple[str, ...]
+    completeness_criteria: Mapping[str, str]
+    produced_reports: tuple[str, ...]
+    invariants: tuple[str, ...]
+    doctrine_mapping_gaps: tuple[str, ...]
+    requirement_mapping_gaps: tuple[str, ...]
+    implementation_mapping_gaps: tuple[str, ...]
+    validation_mapping_gaps: tuple[str, ...]
+    test_mapping_gaps: tuple[str, ...]
+    evidence_mapping_gaps: tuple[str, ...]
+    registry_mapping_gaps: tuple[str, ...]
+    remediation_mapping_gaps: tuple[str, ...]
+    certification_mapping_gaps: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystMo001CertificationProcedureRecord:
+    procedure_identifier: str
+    state_machine: tuple[str, ...]
+    stages: Mapping[str, tuple[str, ...]]
+    evaluation_outcomes: tuple[str, ...]
+    certification_decisions: tuple[str, ...]
+    produced_evidence: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_input_findings: tuple[str, ...]
+    package_validation_findings: tuple[str, ...]
+    evidence_validation_findings: tuple[str, ...]
+    registry_validation_findings: tuple[str, ...]
+    dependency_validation_findings: tuple[str, ...]
+    traceability_validation_findings: tuple[str, ...]
+    ordering_findings: tuple[str, ...]
+    decision_findings: tuple[str, ...]
+    archival_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystMo001CertificationExceptionRegistryRecord:
+    registry_identifier: str
+    required_fields: tuple[str, ...]
+    exception_categories: tuple[str, ...]
+    non_permissible_exceptions: tuple[str, ...]
+    permitted_owners: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    audit_verifications: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_identifier_findings: tuple[str, ...]
+    invalid_category_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    approval_findings: tuple[str, ...]
+    evidence_gaps: tuple[str, ...]
+    lifecycle_findings: tuple[str, ...]
+    retirement_findings: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystMo001IndependentClosureRecord:
+    closure_identifier: str
+    lifecycle_states: tuple[str, ...]
+    permitted_transitions: Mapping[str, tuple[str, ...]]
+    completion_conditions: tuple[str, ...]
+    eligibility_conditions: tuple[str, ...]
+    blocking_conditions: tuple[str, ...]
+    required_engineering_artifacts: tuple[str, ...]
+    required_test_classes: tuple[str, ...]
+    closure_audit_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    completion_findings: tuple[str, ...]
+    eligibility_findings: tuple[str, ...]
+    transition_findings: tuple[str, ...]
+    sealing_findings: tuple[str, ...]
+    issuance_findings: tuple[str, ...]
+    archival_findings: tuple[str, ...]
+    integrity_findings: tuple[str, ...]
+    recertification_findings: tuple[str, ...]
+    representation_findings: tuple[str, ...]
+    audit_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystMo001CertificationCompletionEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    certification_package_schema: AnalystMo001CertificationPackageSchemaRecord
+    traceability_matrix: AnalystMo001TraceabilityMatrixRecord
+    certification_procedure: AnalystMo001CertificationProcedureRecord
+    exception_registry: AnalystMo001CertificationExceptionRegistryRecord
+    independent_closure: AnalystMo001IndependentClosureRecord
+    final_certification_completion_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeCertificationSupport:
     """Build deterministic ANALYST-RM-004 certification registry evidence."""
 
@@ -512,6 +643,14 @@ class AnalystOfficeCertificationSupport:
         "ANALYST-RM-004-013",
         "ANALYST-RM-004-014",
         "ANALYST-RM-004-015",
+    )
+
+    mo001_order_coverage = (
+        "ANALYST-MO-001-001",
+        "ANALYST-MO-001-002",
+        "ANALYST-MO-001-003",
+        "ANALYST-MO-001-004",
+        "ANALYST-MO-001-005",
     )
 
     def build_foundation_package(self) -> AnalystRm004CertificationFoundationEvidencePackage:
@@ -602,6 +741,37 @@ class AnalystOfficeCertificationSupport:
                 cross_refs.matrix_identifier,
                 evidence.registry_identifier,
                 decisions.registry_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def build_mo001_certification_completion_package(self) -> AnalystMo001CertificationCompletionEvidencePackage:
+        schema = self.evaluate_mo001_certification_package_schema()
+        traceability = self.evaluate_mo001_traceability_matrix()
+        procedure = self.evaluate_mo001_certification_procedure()
+        exceptions = self.evaluate_mo001_exception_registry()
+        closure = self.evaluate_mo001_independent_closure()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (schema, traceability, procedure, exceptions, closure)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystMo001CertificationCompletionEvidencePackage(
+            package_identifier=f"ANALYST-MO-001-CERT-COMPLETE-{_digest((schema, traceability, procedure, exceptions, closure))[:12].upper()}",
+            governing_doctrine="ANALYST-MO-001-001-TO-005/1.0.0",
+            order_coverage=self.mo001_order_coverage,
+            certification_package_schema=schema,
+            traceability_matrix=traceability,
+            certification_procedure=procedure,
+            exception_registry=exceptions,
+            independent_closure=closure,
+            final_certification_completion_readiness=final,
+            immutable_audit_references=(
+                schema.schema_identifier,
+                traceability.matrix_identifier,
+                procedure.procedure_identifier,
+                exceptions.registry_identifier,
+                closure.closure_identifier,
             ),
             deterministic_digest="",
         )
@@ -1309,6 +1479,251 @@ class AnalystOfficeCertificationSupport:
             traceability_gaps=traceability_gaps,
             replay_recovery_gaps=replay_recovery_gaps,
             audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_mo001_certification_package_schema(
+        self,
+        *,
+        missing_artifact_findings: tuple[str, ...] = (),
+        checksum_findings: tuple[str, ...] = (),
+        schema_findings: tuple[str, ...] = (),
+        evidence_gaps: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        dependency_findings: tuple[str, ...] = (),
+        integrity_findings: tuple[str, ...] = (),
+    ) -> AnalystMo001CertificationPackageSchemaRecord:
+        sections = ("Certification Manifest", "Constitutional Doctrine Index", "Constitutional Registry Snapshot", "Constitutional Object Definitions", "Configuration Snapshot", "Implementation Inventory", "Test Suite Inventory", "Certification Evidence Repository", "Traceability Matrix", "Remediation History", "Certification Decision Record", "Digital Integrity Package")
+        artifacts = ("Manifest", "Doctrine Index", "Registry Snapshot", "Object Schemas", "Configuration Snapshot", "Implementation Inventory", "Test Inventory", "Evidence Repository", "Traceability Matrix", "Remediation History", "Certification Decision", "Integrity Package")
+        manifest_fields = ("Certification Package ID", "Office ID", "Office Version", "Constitution Version", "Certification Version", "Certification Scope", "Build Identifier", "Repository Revision", "Evidence Version", "Package Timestamp", "Auditor Identifier", "Package Hash", "Digital Signature", "Dependency List")
+        dependency_fields = ("identifier", "version", "checksum", "compatibility status", "certification status")
+        validation_rules = ("missing artifact", "checksum mismatch", "invalid schema", "missing evidence", "broken traceability", "orphaned registry entry", "invalid dependency", "version conflict", "incomplete manifest", "unsigned package")
+        lifecycle = ("Draft", "Construction", "Validation", "Evidence Verification", "Integrity Verification", "Submission Ready", "Submitted", "Certification Review", "Approved", "Rejected", "Archived", "Permanent Record")
+        invariants = ("Every constitutional claim has supporting evidence", "Every artifact is version controlled", "Every dependency is declared", "Every registry snapshot is immutable", "Every checksum validates successfully", "Every evidence artifact is traceable", "Every implementation artifact is uniquely identified", "Every certification package is uniquely identifiable", "Every package is reproducible", "Every package is independently auditable", "Every package preserves deterministic certification outcomes", "No runtime state is modified", "No constitutional doctrine is altered", "No certification evidence may exist outside the package")
+        missing = tuple(artifact for artifact in artifacts if artifact in missing_artifact_findings)
+        passed = not missing and not checksum_findings and not schema_findings and not evidence_gaps and not traceability_gaps and not dependency_findings and not integrity_findings
+        record = AnalystMo001CertificationPackageSchemaRecord(
+            schema_identifier=f"ANALYST-MO-001-001-PACKAGE-{_digest((sections, manifest_fields))[:12].upper()}",
+            package_sections=sections,
+            mandatory_artifacts=artifacts,
+            manifest_fields=manifest_fields,
+            dependency_fields=dependency_fields,
+            validation_rules=validation_rules,
+            lifecycle_states=lifecycle,
+            invariants=invariants,
+            missing_artifact_findings=missing,
+            checksum_findings=checksum_findings,
+            schema_findings=schema_findings,
+            evidence_gaps=evidence_gaps,
+            traceability_gaps=traceability_gaps,
+            dependency_findings=dependency_findings,
+            integrity_findings=integrity_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_mo001_traceability_matrix(
+        self,
+        *,
+        doctrine_mapping_gaps: tuple[str, ...] = (),
+        requirement_mapping_gaps: tuple[str, ...] = (),
+        implementation_mapping_gaps: tuple[str, ...] = (),
+        validation_mapping_gaps: tuple[str, ...] = (),
+        test_mapping_gaps: tuple[str, ...] = (),
+        evidence_mapping_gaps: tuple[str, ...] = (),
+        registry_mapping_gaps: tuple[str, ...] = (),
+        remediation_mapping_gaps: tuple[str, ...] = (),
+        certification_mapping_gaps: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+    ) -> AnalystMo001TraceabilityMatrixRecord:
+        domains = ("Constitutional Doctrine", "Constitutional Requirements", "Constitutional Invariants", "Constitutional Objects", "Constitutional Registries", "Constitutional Decisions", "Configuration Objects", "Implementation Components", "Validation Rules", "Test Suites", "Test Cases", "Test Evidence", "Runtime Evidence", "Replay Evidence", "Recovery Evidence", "Certification Evidence", "Audit Findings", "Remediation Work Orders", "Certification Packages", "Certification Results")
+        chain = ("Doctrine", "Requirement", "Constitutional Rule", "Constitutional Invariant", "Object Definition", "Implementation Component", "Configuration", "Validation Rule", "Test Suite", "Test Case", "Execution Evidence", "Evaluation Result", "Certification Evidence", "Certification Decision")
+        fields_required = ("Trace Identifier", "Requirement Identifier", "Doctrine Identifier", "Doctrine Version", "Constitutional Rule Identifier", "Invariant Identifier", "Registry Identifier", "Object Identifier", "Configuration Identifier", "Implementation Identifier", "Validation Identifier", "Test Suite Identifier", "Test Case Identifier", "Evidence Identifier", "Replay Identifier", "Recovery Identifier", "Certification Package Identifier", "Audit Finding Identifier", "Remediation Identifier", "Certification Decision Identifier", "Status", "Timestamp", "Version", "Cryptographic Hash")
+        integrity = ("immutable identity", "immutable ownership", "immutable parent linkage", "immutable child linkage", "deterministic ordering", "hash verification", "version compatibility", "replay reproducibility")
+        completeness = MappingProxyType({domain: "100%" for domain in ("doctrine", "requirement", "implementation", "validation", "test", "evidence", "remediation", "certification")})
+        reports = ("Certification Traceability Matrix", "Requirement Coverage Report", "Doctrine Coverage Report", "Implementation Coverage Report", "Validation Coverage Report", "Test Coverage Report", "Evidence Coverage Report", "Registry Coverage Report", "Audit Finding Resolution Matrix", "Remediation Traceability Report", "Certification Dependency Graph", "Bidirectional Traceability Verification Report", "Replay Traceability Verification Report", "Recovery Traceability Verification Report", "Traceability Integrity Report", "Constitutional Compliance Report")
+        invariants = tuple(f"CI-{index:03d}" for index in range(1, 11))
+        passed = not doctrine_mapping_gaps and not requirement_mapping_gaps and not implementation_mapping_gaps and not validation_mapping_gaps and not test_mapping_gaps and not evidence_mapping_gaps and not registry_mapping_gaps and not remediation_mapping_gaps and not certification_mapping_gaps and not replay_recovery_gaps
+        record = AnalystMo001TraceabilityMatrixRecord(
+            matrix_identifier=f"ANALYST-MO-001-002-TRACE-{_digest((domains, chain))[:12].upper()}",
+            traceability_domains=domains,
+            canonical_chain=chain,
+            required_fields=fields_required,
+            integrity_rules=integrity,
+            completeness_criteria=completeness,
+            produced_reports=reports,
+            invariants=invariants,
+            doctrine_mapping_gaps=doctrine_mapping_gaps,
+            requirement_mapping_gaps=requirement_mapping_gaps,
+            implementation_mapping_gaps=implementation_mapping_gaps,
+            validation_mapping_gaps=validation_mapping_gaps,
+            test_mapping_gaps=test_mapping_gaps,
+            evidence_mapping_gaps=evidence_mapping_gaps,
+            registry_mapping_gaps=registry_mapping_gaps,
+            remediation_mapping_gaps=remediation_mapping_gaps,
+            certification_mapping_gaps=certification_mapping_gaps,
+            replay_recovery_gaps=replay_recovery_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_mo001_certification_procedure(
+        self,
+        *,
+        missing_input_findings: tuple[str, ...] = (),
+        package_validation_findings: tuple[str, ...] = (),
+        evidence_validation_findings: tuple[str, ...] = (),
+        registry_validation_findings: tuple[str, ...] = (),
+        dependency_validation_findings: tuple[str, ...] = (),
+        traceability_validation_findings: tuple[str, ...] = (),
+        ordering_findings: tuple[str, ...] = (),
+        decision_findings: tuple[str, ...] = (),
+        archival_findings: tuple[str, ...] = (),
+    ) -> AnalystMo001CertificationProcedureRecord:
+        states = ("Requested", "Package Submitted", "Package Validation", "Evidence Validation", "Registry Validation", "Dependency Validation", "Traceability Validation", "Rule Evaluation", "Finding Consolidation", "Certification Decision", "Certificate Issued", "Certification Rejected", "Evidence Archived", "Certification Closed")
+        stages = MappingProxyType({
+            "Certification Request": ("Certification Manifest", "Required evidence", "Registry snapshots", "Traceability matrix", "Version declarations", "Dependency declarations"),
+            "Package Validation": ("schema compliance", "required artifacts present", "identifier validity", "version compatibility", "checksum validation", "manifest integrity"),
+            "Evidence Validation": ("authenticity", "completeness", "admissibility", "cryptographic integrity", "timestamp validity", "ownership verification"),
+            "Registry Validation": ("Rule Registry", "Metric Registry", "Identifier Registry", "Version Registry", "Dependency Registry", "Configuration Registry", "Certification Registry"),
+            "Dependency Validation": ("constitutional dependencies", "doctrine dependencies", "registry dependencies", "object dependencies", "version dependencies"),
+            "Traceability Validation": ("Doctrine", "Requirement", "Implementation", "Verification", "Evidence", "Finding", "Certification Result"),
+            "Constitutional Rule Evaluation": ("Constitutional Rule Registry order",),
+            "Finding Consolidation": ("Identifier", "Requirement", "Severity", "Evidence", "Traceability", "Supporting artifacts", "Evaluation timestamp"),
+            "Certification Decision": ("PASS", "CONDITIONAL PASS", "FAIL"),
+        })
+        outcomes = ("PASS", "FAIL", "NOT APPLICABLE")
+        decisions = ("PASS", "CONDITIONAL PASS", "FAIL")
+        produced = ("Certification Procedure Execution Record", "Certification State Transition Log", "Evidence Validation Report", "Registry Validation Report", "Dependency Validation Report", "Traceability Validation Report", "Constitutional Rule Evaluation Report", "Finding Consolidation Report", "Certification Decision Record", "Certificate or Rejection Report", "Evidence Archive Manifest", "Certification Closure Record")
+        invariants = tuple(f"CI-{index:03d}" for index in range(1, 11))
+        passed = not missing_input_findings and not package_validation_findings and not evidence_validation_findings and not registry_validation_findings and not dependency_validation_findings and not traceability_validation_findings and not ordering_findings and not decision_findings and not archival_findings
+        record = AnalystMo001CertificationProcedureRecord(
+            procedure_identifier=f"ANALYST-MO-001-003-PROCEDURE-{_digest((states, stages))[:12].upper()}",
+            state_machine=states,
+            stages=stages,
+            evaluation_outcomes=outcomes,
+            certification_decisions=decisions,
+            produced_evidence=produced,
+            invariants=invariants,
+            missing_input_findings=missing_input_findings,
+            package_validation_findings=package_validation_findings,
+            evidence_validation_findings=evidence_validation_findings,
+            registry_validation_findings=registry_validation_findings,
+            dependency_validation_findings=dependency_validation_findings,
+            traceability_validation_findings=traceability_validation_findings,
+            ordering_findings=ordering_findings,
+            decision_findings=decision_findings,
+            archival_findings=archival_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_mo001_exception_registry(
+        self,
+        *,
+        duplicate_identifier_findings: tuple[str, ...] = (),
+        invalid_category_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        approval_findings: tuple[str, ...] = (),
+        evidence_gaps: tuple[str, ...] = (),
+        lifecycle_findings: tuple[str, ...] = (),
+        retirement_findings: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystMo001CertificationExceptionRegistryRecord:
+        fields_required = ("Exception Identifier", "Exception Name", "Exception Category", "Constitutional Justification", "Related Constitutional Requirement", "Approval Authority", "Exception Owner", "Creation Timestamp", "Approval Timestamp", "Effective Timestamp", "Expiration Condition", "Current Status", "Required Evidence", "Audit Obligations", "Retirement Criteria", "Retirement Timestamp", "Historical Revision Identifier")
+        categories = ("Administrative Exception", "Documentation Exception", "Evidence Packaging Exception", "Certification Scheduling Exception", "Audit Coordination Exception", "Historical Preservation Exception")
+        non_permissible = ("Constitutional rule waiver", "Validation bypass", "Authority reassignment", "Ownership modification", "Object mutation", "Lifecycle alteration", "Replay modification", "Recovery modification", "Deterministic execution modification", "Persistence modification", "Registry omission", "Evidence destruction", "Certification result manipulation", "Implementation substitution", "Constitutional interpretation override")
+        owners = ("Certification Authority", "Independent Certification Auditor", "Constitutional Governance Authority")
+        lifecycle = ("Draft", "Submitted", "Under Review", "Approved", "Active", "Resolved", "Retired", "Archived")
+        audit = ("identity", "ownership", "approval authority", "constitutional legitimacy", "traceability completeness", "supporting evidence", "retirement status", "historical integrity")
+        invariants = ("Every exception possesses exactly one identifier", "Every exception possesses exactly one owner", "Every exception possesses one approval authority", "Every exception is fully traceable", "Every exception is independently auditable", "Every exception has complete evidence", "Every exception possesses deterministic lifecycle progression", "Every exception eventually retires", "Retired exceptions remain permanently preserved", "Certification exceptions never alter constitutional behavior", "Certification exceptions never waive constitutional requirements", "Registry history is immutable", "Replay reproduces identical registry state", "Recovery reproduces identical registry state", "Certification decisions remain fully deterministic")
+        passed = not duplicate_identifier_findings and not invalid_category_findings and not ownership_findings and not approval_findings and not evidence_gaps and not lifecycle_findings and not retirement_findings and not replay_recovery_gaps and not audit_gaps
+        record = AnalystMo001CertificationExceptionRegistryRecord(
+            registry_identifier=f"ANALYST-MO-001-004-EXCEPTION-{_digest((fields_required, categories))[:12].upper()}",
+            required_fields=fields_required,
+            exception_categories=categories,
+            non_permissible_exceptions=non_permissible,
+            permitted_owners=owners,
+            lifecycle_states=lifecycle,
+            audit_verifications=audit,
+            invariants=invariants,
+            duplicate_identifier_findings=duplicate_identifier_findings,
+            invalid_category_findings=invalid_category_findings,
+            ownership_findings=ownership_findings,
+            approval_findings=approval_findings,
+            evidence_gaps=evidence_gaps,
+            lifecycle_findings=lifecycle_findings,
+            retirement_findings=retirement_findings,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_mo001_independent_closure(
+        self,
+        *,
+        completion_findings: tuple[str, ...] = (),
+        eligibility_findings: tuple[str, ...] = (),
+        transition_findings: tuple[str, ...] = (),
+        sealing_findings: tuple[str, ...] = (),
+        issuance_findings: tuple[str, ...] = (),
+        archival_findings: tuple[str, ...] = (),
+        integrity_findings: tuple[str, ...] = (),
+        recertification_findings: tuple[str, ...] = (),
+        representation_findings: tuple[str, ...] = (),
+        audit_findings: tuple[str, ...] = (),
+    ) -> AnalystMo001IndependentClosureRecord:
+        states = ("EVALUATION_IN_PROGRESS", "EVALUATION_COMPLETE", "CLOSURE_REVIEW_PENDING", "CLOSURE_ELIGIBLE", "CLOSURE_BLOCKED", "CERTIFICATION_DECISION_CONFIRMED", "CERTIFICATION_PACKAGE_SEALED", "CERTIFICATION_ISSUED", "CERTIFICATION_ACTIVE", "CERTIFICATION_SUSPENDED", "CERTIFICATION_REVOKED", "CERTIFICATION_SUPERSEDED", "CERTIFICATION_EXPIRED", "RECERTIFICATION_REQUIRED")
+        transitions = MappingProxyType({
+            "EVALUATION_IN_PROGRESS": ("EVALUATION_COMPLETE",),
+            "EVALUATION_COMPLETE": ("CLOSURE_REVIEW_PENDING",),
+            "CLOSURE_REVIEW_PENDING": ("CLOSURE_ELIGIBLE", "CLOSURE_BLOCKED"),
+            "CLOSURE_BLOCKED": ("CLOSURE_REVIEW_PENDING",),
+            "CLOSURE_ELIGIBLE": ("CERTIFICATION_DECISION_CONFIRMED",),
+            "CERTIFICATION_DECISION_CONFIRMED": ("CERTIFICATION_PACKAGE_SEALED",),
+            "CERTIFICATION_PACKAGE_SEALED": ("CERTIFICATION_ISSUED",),
+            "CERTIFICATION_ISSUED": ("CERTIFICATION_ACTIVE",),
+            "CERTIFICATION_ACTIVE": ("CERTIFICATION_SUSPENDED", "CERTIFICATION_REVOKED", "CERTIFICATION_SUPERSEDED", "CERTIFICATION_EXPIRED", "RECERTIFICATION_REQUIRED"),
+            "CERTIFICATION_SUSPENDED": ("CERTIFICATION_ACTIVE", "CERTIFICATION_REVOKED", "RECERTIFICATION_REQUIRED", "CERTIFICATION_SUPERSEDED"),
+            "RECERTIFICATION_REQUIRED": ("CERTIFICATION_SUPERSEDED", "CERTIFICATION_REVOKED"),
+        })
+        completion = tuple(f"completion condition {index}" for index in range(1, 21))
+        eligibility = ("deterministic result calculable", "complete evidence package", "no mandatory traceability gap", "no unresolved schema violation", "authoritative version-resolved registries", "admissible active exceptions", "no blocking finding", "threshold compliant", "unambiguous office identity", "fixed implementation and configuration", "identified closure authority", "completed independent review", "machine-verifiable prerequisites")
+        blocking = tuple(f"blocking condition {index}" for index in range(1, 26))
+        artifacts = ("Certification Closure Lifecycle Specification", "Certification Closure State Transition Registry", "Certification Completion Validation Rules", "Certification Closure Eligibility Record Schema", "Certification Blocking Condition Registry", "Certification Decision Record Schema", "Certification Package Seal Record Schema", "Certification Certificate Schema", "Certification Issuance Record Schema", "Certification Closure Record Schema", "Certification Evidence Archive Record Schema", "Post-Certification Integrity Baseline Schema", "Certification Integrity Verification Record Schema", "Material Change Rule Registry", "Certification Status Registry", "Certification Activation Record Schema", "Certification Suspension Record Schema", "Certification Restoration Record Schema", "Certification Revocation Record Schema", "Certification Supersession Record Schema", "Certification Expiration Record Schema", "Recertification Trigger Registry", "Recertification Requirement Record Schema", "Certification Lineage Record Schema", "Certification Closure Failure Record Schema", "Closure Authority Matrix", "Closure Independent Review Checklist", "Closure Audit Test Suite", "Certification Representation Validation Rules", "Certification Closure Evidence Manifest")
+        test_classes = ("Completion Tests", "Eligibility Tests", "State Transition Tests", "Sealing Tests", "Issuance Tests", "Archival Tests", "Permanence Tests", "Integrity Tests", "Suspension and Restoration Tests", "Revocation Tests", "Supersession Tests", "Recertification Tests", "Representation Tests")
+        audit = ("closure state sequence", "immutable transition records", "closure eligibility", "blocking condition resolution", "decision matches evaluation", "package sealing", "certificate matches sealed package", "archival custody", "closure record completeness", "certification registry accuracy", "integrity baseline", "lineage", "status history", "no silent alteration", "recertification triggers", "evidence accessibility")
+        invariants = tuple(f"INVARIANT {index}" for index in range(1, 16))
+        passed = not completion_findings and not eligibility_findings and not transition_findings and not sealing_findings and not issuance_findings and not archival_findings and not integrity_findings and not recertification_findings and not representation_findings and not audit_findings
+        record = AnalystMo001IndependentClosureRecord(
+            closure_identifier=f"ANALYST-MO-001-005-CLOSURE-{_digest((states, transitions, artifacts))[:12].upper()}",
+            lifecycle_states=states,
+            permitted_transitions=transitions,
+            completion_conditions=completion,
+            eligibility_conditions=eligibility,
+            blocking_conditions=blocking,
+            required_engineering_artifacts=artifacts,
+            required_test_classes=test_classes,
+            closure_audit_requirements=audit,
+            invariants=invariants,
+            completion_findings=completion_findings,
+            eligibility_findings=eligibility_findings,
+            transition_findings=transition_findings,
+            sealing_findings=sealing_findings,
+            issuance_findings=issuance_findings,
+            archival_findings=archival_findings,
+            integrity_findings=integrity_findings,
+            recertification_findings=recertification_findings,
+            representation_findings=representation_findings,
+            audit_findings=audit_findings,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
