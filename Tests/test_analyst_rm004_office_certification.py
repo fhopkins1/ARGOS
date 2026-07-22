@@ -106,6 +106,101 @@ class AnalystRm004OfficeCertificationTests(unittest.TestCase):
         self.assertIn("Category I Replay Certification", tests.missing_category_findings)
         self.assertIn("confidence requirement untested", tests.missing_requirement_coverage)
 
+    def test_rm004_registry_governance_package_covers_collision_metrics_manifest_identifiers_and_versions(self) -> None:
+        package = AnalystOfficeCertificationSupport().build_registry_governance_package()
+
+        self.assertEqual(package.final_registry_governance_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "ANALYST-RM-004-006",
+                "ANALYST-RM-004-007",
+                "ANALYST-RM-004-008",
+                "ANALYST-RM-004-009",
+                "ANALYST-RM-004-010",
+            ),
+        )
+        self.assertIn("ICR-005 Ownership Collision", package.identity_collision_resolution.collision_classes)
+        self.assertIn("registry update", package.identity_collision_resolution.detection_procedure)
+        self.assertEqual(len(package.metrics_registry.entries), 12)
+        self.assertIn("Replay Metrics", package.metrics_registry.metric_classes)
+        self.assertIn("Certification Outcome", package.certification_manifest_schema.schema_sections)
+        self.assertIn("certification evidence", package.certification_manifest_schema.mandatory_artifacts)
+        self.assertEqual(len(package.identifier_registry.namespaces), 20)
+        self.assertIn("AM", {entry.namespace for entry in package.identifier_registry.namespaces})
+        self.assertIn("Doctrine->Engineering Specification", package.version_compatibility_matrix.compatibility_matrix)
+        self.assertIn("Validate certification package compatibility", package.version_compatibility_matrix.evaluation_sequence)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm004_registry_governance_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeCertificationSupport()
+
+        collisions = support.evaluate_identity_collision_resolution(
+            duplicate_identifier_findings=("AM-1 duplicated",),
+            conflicting_ownership_findings=("same identity owned by Risk",),
+            unresolved_collision_findings=("alias collision unresolved",),
+            namespace_allocation_findings=("reserved namespace violated",),
+            replay_identity_findings=("replay identity changed",),
+            recovery_identity_findings=("recovery restored conflict",),
+            traceability_gaps=("resolution lacks lineage",),
+            audit_gaps=("collision unaudited",),
+        )
+        metrics = support.evaluate_metrics_registry(
+            duplicate_metric_findings=("M-ID duplicated",),
+            missing_metric_class_findings=("Replay Metrics",),
+            ownership_findings=("metric owned by Enterprise",),
+            inadmissible_input_findings=("metric used implementation counter",),
+            dependency_cycle_findings=("metric dependency cycle",),
+            reproducibility_findings=("metric value changed",),
+            traceability_gaps=("metric lacks source evidence",),
+            audit_gaps=("metric calculation unaudited",),
+        )
+        manifest = support.evaluate_certification_manifest_schema(
+            missing_schema_sections=("Compatibility Declaration",),
+            missing_artifact_findings=("audit evidence missing",),
+            evidence_linkage_findings=("evidence lacks integrity",),
+            compatibility_findings=("registry version incompatible",),
+            validation_failures=("manifest validation failed",),
+            replay_divergence_findings=("manifest replay changed outcome",),
+            recovery_gaps=("manifest version not restored",),
+            audit_gaps=("publication unaudited",),
+        )
+        identifiers = support.evaluate_identifier_registry(
+            duplicate_namespace_findings=("AM duplicated",),
+            missing_namespace_findings=("SC",),
+            allocation_findings=("identifier allocated twice",),
+            uniqueness_findings=("identifier reused",),
+            replay_identifier_findings=("replay allocated new identifier",),
+            recovery_identifier_findings=("recovery remapped identifier",),
+            traceability_gaps=("allocation lacks lineage",),
+            audit_gaps=("lifecycle transition unaudited",),
+        )
+        versions = support.evaluate_version_compatibility_matrix(
+            missing_compatibility_entries=("Registry->Schema",),
+            unknown_compatibility_findings=("unknown schema compatibility assumed",),
+            incompatible_artifact_findings=("incompatible evidence package supplied",),
+            supersession_findings=("historical compatibility overwritten",),
+            replay_divergence_findings=("compatibility replay changed",),
+            recovery_gaps=("supersession chain not restored",),
+            audit_gaps=("compatibility evaluation unaudited",),
+        )
+
+        self.assertEqual(collisions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("AM-1 duplicated", collisions.duplicate_identifier_findings)
+        self.assertIn("alias collision unresolved", collisions.unresolved_collision_findings)
+        self.assertEqual(metrics.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Replay Metrics", metrics.missing_metric_class_findings)
+        self.assertIn("metric used implementation counter", metrics.inadmissible_input_findings)
+        self.assertEqual(manifest.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Compatibility Declaration", manifest.missing_schema_sections)
+        self.assertIn("registry version incompatible", manifest.compatibility_findings)
+        self.assertEqual(identifiers.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("SC", identifiers.missing_namespace_findings)
+        self.assertIn("identifier reused", identifiers.uniqueness_findings)
+        self.assertEqual(versions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Registry->Schema", versions.missing_compatibility_entries)
+        self.assertIn("unknown schema compatibility assumed", versions.unknown_compatibility_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -168,6 +168,142 @@ class AnalystRm004CertificationFoundationEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystRm004IdentityCollisionResolutionRecord:
+    registry_identifier: str
+    collision_classes: Mapping[str, tuple[str, str]]
+    detection_procedure: tuple[str, ...]
+    resolution_record_fields: tuple[str, ...]
+    registry_updates: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_identifier_findings: tuple[str, ...]
+    conflicting_ownership_findings: tuple[str, ...]
+    unresolved_collision_findings: tuple[str, ...]
+    namespace_allocation_findings: tuple[str, ...]
+    replay_identity_findings: tuple[str, ...]
+    recovery_identity_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004MetricRegistryEntry:
+    metric_identifier: str
+    metric_name: str
+    metric_class: str
+    constitutional_owner: str
+    calculation_rule_identifier: str
+    input_objects: tuple[str, ...]
+    validation_rules: tuple[str, ...]
+    dependency_references: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class AnalystRm004MetricsRegistryRecord:
+    registry_identifier: str
+    entries: tuple[AnalystRm004MetricRegistryEntry, ...]
+    metric_classes: tuple[str, ...]
+    calculation_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_metric_findings: tuple[str, ...]
+    missing_metric_class_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    inadmissible_input_findings: tuple[str, ...]
+    dependency_cycle_findings: tuple[str, ...]
+    reproducibility_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004CertificationManifestSchemaRecord:
+    registry_identifier: str
+    identity_fields: tuple[str, ...]
+    schema_sections: Mapping[str, tuple[str, ...]]
+    mandatory_artifacts: tuple[str, ...]
+    outcome_values: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_schema_sections: tuple[str, ...]
+    missing_artifact_findings: tuple[str, ...]
+    evidence_linkage_findings: tuple[str, ...]
+    compatibility_findings: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004IdentifierNamespaceEntry:
+    namespace: str
+    purpose: str
+    constitutional_owner: str
+    allocation_authority: str
+    lifecycle_authority: str
+    reserved_ranges: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class AnalystRm004IdentifierRegistryRecord:
+    registry_identifier: str
+    namespaces: tuple[AnalystRm004IdentifierNamespaceEntry, ...]
+    identifier_structure: tuple[str, ...]
+    allocation_rules: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_namespace_findings: tuple[str, ...]
+    missing_namespace_findings: tuple[str, ...]
+    allocation_findings: tuple[str, ...]
+    uniqueness_findings: tuple[str, ...]
+    replay_identifier_findings: tuple[str, ...]
+    recovery_identifier_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004VersionCompatibilityRecord:
+    registry_identifier: str
+    version_classes: tuple[str, ...]
+    compatibility_matrix: Mapping[str, tuple[str, str]]
+    evaluation_sequence: tuple[str, ...]
+    prohibited_combinations: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_compatibility_entries: tuple[str, ...]
+    unknown_compatibility_findings: tuple[str, ...]
+    incompatible_artifact_findings: tuple[str, ...]
+    supersession_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004RegistryGovernanceEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    identity_collision_resolution: AnalystRm004IdentityCollisionResolutionRecord
+    metrics_registry: AnalystRm004MetricsRegistryRecord
+    certification_manifest_schema: AnalystRm004CertificationManifestSchemaRecord
+    identifier_registry: AnalystRm004IdentifierRegistryRecord
+    version_compatibility_matrix: AnalystRm004VersionCompatibilityRecord
+    final_registry_governance_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeCertificationSupport:
     """Build deterministic ANALYST-RM-004 certification registry evidence."""
 
@@ -177,6 +313,14 @@ class AnalystOfficeCertificationSupport:
         "ANALYST-RM-004-003",
         "ANALYST-RM-004-004",
         "ANALYST-RM-004-005",
+    )
+
+    registry_governance_order_coverage = (
+        "ANALYST-RM-004-006",
+        "ANALYST-RM-004-007",
+        "ANALYST-RM-004-008",
+        "ANALYST-RM-004-009",
+        "ANALYST-RM-004-010",
     )
 
     def build_foundation_package(self) -> AnalystRm004CertificationFoundationEvidencePackage:
@@ -205,6 +349,37 @@ class AnalystOfficeCertificationSupport:
                 rules.registry_identifier,
                 thresholds.registry_identifier,
                 tests.registry_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def build_registry_governance_package(self) -> AnalystRm004RegistryGovernanceEvidencePackage:
+        collisions = self.evaluate_identity_collision_resolution()
+        metrics = self.evaluate_metrics_registry()
+        manifest = self.evaluate_certification_manifest_schema()
+        identifiers = self.evaluate_identifier_registry()
+        versions = self.evaluate_version_compatibility_matrix()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (collisions, metrics, manifest, identifiers, versions)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm004RegistryGovernanceEvidencePackage(
+            package_identifier=f"ANALYST-RM-004-REGISTRY-GOV-{_digest((collisions, metrics, manifest, identifiers, versions))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-004-006-TO-010/1.0.0",
+            order_coverage=self.registry_governance_order_coverage,
+            identity_collision_resolution=collisions,
+            metrics_registry=metrics,
+            certification_manifest_schema=manifest,
+            identifier_registry=identifiers,
+            version_compatibility_matrix=versions,
+            final_registry_governance_readiness=final,
+            immutable_audit_references=(
+                collisions.registry_identifier,
+                metrics.registry_identifier,
+                manifest.registry_identifier,
+                identifiers.registry_identifier,
+                versions.registry_identifier,
             ),
             deterministic_digest="",
         )
@@ -438,6 +613,241 @@ class AnalystOfficeCertificationSupport:
         )
         return replace(record, deterministic_digest=_digest(record))
 
+    def evaluate_identity_collision_resolution(
+        self,
+        *,
+        duplicate_identifier_findings: tuple[str, ...] = (),
+        conflicting_ownership_findings: tuple[str, ...] = (),
+        unresolved_collision_findings: tuple[str, ...] = (),
+        namespace_allocation_findings: tuple[str, ...] = (),
+        replay_identity_findings: tuple[str, ...] = (),
+        recovery_identity_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004IdentityCollisionResolutionRecord:
+        classes = MappingProxyType(
+            {
+                "ICR-001 Duplicate Identifier Collision": ("two objects possess the same canonical identifier", "Reject newest object"),
+                "ICR-002 Alias Collision": ("multiple aliases normalize to different canonical identities", "Use Canonical Identity Normalization Tables"),
+                "ICR-003 Namespace Collision": ("identifiers violate reserved namespace allocation", "Reject violating identifier"),
+                "ICR-004 Version Collision": ("multiple objects claim identical identity and version", "Reject newer publication"),
+                "ICR-005 Ownership Collision": ("same identity with different owners", "Immediate constitutional failure"),
+                "ICR-006 Replay Collision": ("replay identities differ from historical execution", "Replay fails immediately"),
+                "ICR-007 Recovery Collision": ("recovery restores conflicting identities", "Recovery terminates"),
+                "ICR-008 Traceability Collision": ("lineage chains reference incompatible identities", "Traceability integrity failure"),
+            }
+        )
+        procedure = ("canonical identifier validation", "namespace verification", "alias normalization", "version verification", "ownership verification", "traceability verification", "collision classification", "resolution execution", "audit evidence generation", "registry update")
+        fields_required = ("Resolution Identifier", "Collision Class", "Original Object Identifier", "Conflicting Object Identifier", "Resolution Outcome", "Constitutional Rule Applied", "Ownership Verification", "Timestamp", "Validator Authority", "Certification References")
+        updates = ("Identity Collision Registry", "Resolution Registry", "Certification Audit Registry")
+        invariants = ("ICRI-001 every object has exactly one canonical identity", "ICRI-002 canonical identities never change", "ICRI-003 every collision produces exactly one resolution outcome", "ICRI-004 ownership is preserved", "ICRI-005 duplicate canonical identifiers cannot coexist", "ICRI-006 replay reproduces identical identity resolution", "ICRI-007 recovery restores identical identity state", "ICRI-008 every resolution generates immutable evidence", "ICRI-009 identity normalization never alters ownership", "ICRI-010 every collision is independently auditable")
+        passed = not duplicate_identifier_findings and not conflicting_ownership_findings and not unresolved_collision_findings and not namespace_allocation_findings and not replay_identity_findings and not recovery_identity_findings and not traceability_gaps and not audit_gaps
+        record = AnalystRm004IdentityCollisionResolutionRecord(
+            registry_identifier=f"ANALYST-RM-004-006-COLLISION-{_digest(classes)[:12].upper()}",
+            collision_classes=classes,
+            detection_procedure=procedure,
+            resolution_record_fields=fields_required,
+            registry_updates=updates,
+            invariants=invariants,
+            duplicate_identifier_findings=duplicate_identifier_findings,
+            conflicting_ownership_findings=conflicting_ownership_findings,
+            unresolved_collision_findings=unresolved_collision_findings,
+            namespace_allocation_findings=namespace_allocation_findings,
+            replay_identity_findings=replay_identity_findings,
+            recovery_identity_findings=recovery_identity_findings,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_metrics_registry(
+        self,
+        *,
+        duplicate_metric_findings: tuple[str, ...] = (),
+        missing_metric_class_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        inadmissible_input_findings: tuple[str, ...] = (),
+        dependency_cycle_findings: tuple[str, ...] = (),
+        reproducibility_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004MetricsRegistryRecord:
+        entries = self._metric_registry_entries()
+        classes = ("Identity Metrics", "Ownership Metrics", "Evidence Metrics", "Reasoning Metrics", "Hypothesis Metrics", "Confidence Metrics", "Validation Metrics", "Persistence Metrics", "Replay Metrics", "Recovery Metrics", "Traceability Metrics", "Certification Metrics")
+        requirements = ("deterministic inputs", "calculation procedure", "admissible evidence sources", "expected output type", "units where applicable", "precision rules", "rounding rules", "dependency ordering")
+        invariants = ("immutable definition", "deterministic calculation", "exactly one owner", "complete provenance", "complete traceability", "reproducibility", "auditability", "version compatibility")
+        ids = tuple(entry.metric_identifier for entry in entries)
+        duplicate_ids = tuple(identifier for identifier in sorted(set(ids)) if ids.count(identifier) > 1)
+        present_classes = tuple(entry.metric_class for entry in entries)
+        missing_classes = tuple(metric_class for metric_class in classes if metric_class not in present_classes)
+        bad_owner = tuple(entry.metric_identifier for entry in entries if entry.constitutional_owner != "Analyst Office")
+        passed = not duplicate_ids and not missing_classes and not bad_owner and not duplicate_metric_findings and not missing_metric_class_findings and not ownership_findings and not inadmissible_input_findings and not dependency_cycle_findings and not reproducibility_findings and not traceability_gaps and not audit_gaps
+        record = AnalystRm004MetricsRegistryRecord(
+            registry_identifier=f"ANALYST-RM-004-007-METRIC-{_digest(entries)[:12].upper()}",
+            entries=entries,
+            metric_classes=classes,
+            calculation_requirements=requirements,
+            invariants=invariants,
+            duplicate_metric_findings=duplicate_ids + duplicate_metric_findings,
+            missing_metric_class_findings=missing_classes + missing_metric_class_findings,
+            ownership_findings=bad_owner + ownership_findings,
+            inadmissible_input_findings=inadmissible_input_findings,
+            dependency_cycle_findings=dependency_cycle_findings,
+            reproducibility_findings=reproducibility_findings,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_manifest_schema(
+        self,
+        *,
+        missing_schema_sections: tuple[str, ...] = (),
+        missing_artifact_findings: tuple[str, ...] = (),
+        evidence_linkage_findings: tuple[str, ...] = (),
+        compatibility_findings: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004CertificationManifestSchemaRecord:
+        identity = ("Manifest Identifier", "Manifest Version", "Certification Identifier", "Candidate Identifier", "Constitutional Version", "Schema Version", "Registry Version", "Creation Timestamp", "Effective Timestamp", "Integrity Metadata")
+        sections = MappingProxyType(
+            {
+                "Manifest Header": ("manifest identifier", "manifest version", "certification identifier", "schema version", "constitutional version"),
+                "Candidate Section": ("certification candidate", "candidate class", "ownership", "evaluation scope", "certification applicability"),
+                "Certification Scope": ("evaluated constitutional objects", "evaluated doctrine", "excluded scope", "certification boundaries"),
+                "Registry References": ("Candidate Class Registry", "Evaluation Rule Registry", "Metrics Registry", "Identifier Registry", "Rule Registry", "Schema Registry", "Compatibility Matrix"),
+                "Constitutional Doctrine References": ("doctrine identifier", "version", "applicability"),
+                "Evidence Package References": ("identifier", "version", "provenance", "integrity verification"),
+                "Evaluation Summary": ("executed evaluation rules", "passed evaluations", "failed evaluations", "skipped evaluations", "evaluation timestamps"),
+                "Metrics Summary": ("metric identifier", "measured value", "threshold", "evaluation result"),
+                "Compatibility Declaration": ("doctrine versions", "schema versions", "registry versions", "evidence versions", "certification versions"),
+                "Validation Summary": ("validation status", "validation evidence", "validation authority", "validation timestamps"),
+                "Certification Outcome": ("Pass", "Conditional Pass", "Fail"),
+                "Certification Closure": ("certification completion timestamp", "certification authority", "closure references", "archival references"),
+            }
+        )
+        mandatory = ("certification evidence", "evaluation results", "registry versions", "doctrine versions", "compatibility declarations", "audit evidence")
+        outcomes = ("Pass", "Conditional Pass", "Fail")
+        invariants = ("exactly one manifest per certification execution", "exactly one constitutional owner", "manifest identity is immutable", "every mandatory artifact is referenced", "evidence packages possess complete linkage", "compatibility declarations are explicit", "replay reproduces equivalent manifests", "recovery restores identical manifest state", "audit evidence accompanies every manifest", "implementation does not influence manifest generation")
+        missing = tuple(section for section in sections if section in missing_schema_sections)
+        passed = not missing and not missing_artifact_findings and not evidence_linkage_findings and not compatibility_findings and not validation_failures and not replay_divergence_findings and not recovery_gaps and not audit_gaps
+        record = AnalystRm004CertificationManifestSchemaRecord(
+            registry_identifier=f"ANALYST-RM-004-008-MANIFEST-{_digest((identity, sections))[:12].upper()}",
+            identity_fields=identity,
+            schema_sections=sections,
+            mandatory_artifacts=mandatory,
+            outcome_values=outcomes,
+            invariants=invariants,
+            missing_schema_sections=missing,
+            missing_artifact_findings=missing_artifact_findings,
+            evidence_linkage_findings=evidence_linkage_findings,
+            compatibility_findings=compatibility_findings,
+            validation_failures=validation_failures,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_identifier_registry(
+        self,
+        *,
+        duplicate_namespace_findings: tuple[str, ...] = (),
+        missing_namespace_findings: tuple[str, ...] = (),
+        allocation_findings: tuple[str, ...] = (),
+        uniqueness_findings: tuple[str, ...] = (),
+        replay_identifier_findings: tuple[str, ...] = (),
+        recovery_identifier_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004IdentifierRegistryRecord:
+        namespaces = self._identifier_namespaces()
+        structure = ("Namespace", "Sequential Identifier", "Version Identifier", "Schema Version", "Integrity Check Component", "Certification Generation")
+        allocation = ("allocated once", "allocated atomically", "allocated by constitutional authority", "allocated before object creation", "never reused")
+        lifecycle = ("Allocated", "Active", "Referenced", "Archived", "Historical", "Permanent")
+        validation = ("namespace validity", "uniqueness", "format correctness", "ownership", "compatibility", "version consistency", "integrity component", "certification applicability")
+        invariants = ("one identifier per artifact", "global uniqueness", "immutability", "explicit ownership", "allocation exactly once", "identifiers never reused", "unique namespace ownership", "replay preserves identifiers", "recovery preserves identifiers", "permanent lineage", "validation precedes use", "immutable audit history")
+        ns_values = tuple(entry.namespace for entry in namespaces)
+        duplicate_ns = tuple(namespace for namespace in sorted(set(ns_values)) if ns_values.count(namespace) > 1)
+        required_ns = ("AM", "AP", "PK", "EV", "RG", "CF", "HY", "CS", "CT", "VL", "LC", "RP", "RC", "CO", "AR", "CE", "CM", "CP", "CR", "SC")
+        missing_ns = tuple(namespace for namespace in required_ns if namespace not in ns_values)
+        passed = not duplicate_ns and not missing_ns and not duplicate_namespace_findings and not missing_namespace_findings and not allocation_findings and not uniqueness_findings and not replay_identifier_findings and not recovery_identifier_findings and not traceability_gaps and not audit_gaps
+        record = AnalystRm004IdentifierRegistryRecord(
+            registry_identifier=f"ANALYST-RM-004-009-IDREG-{_digest(namespaces)[:12].upper()}",
+            namespaces=namespaces,
+            identifier_structure=structure,
+            allocation_rules=allocation,
+            lifecycle_states=lifecycle,
+            validation_requirements=validation,
+            invariants=invariants,
+            duplicate_namespace_findings=duplicate_ns + duplicate_namespace_findings,
+            missing_namespace_findings=missing_ns + missing_namespace_findings,
+            allocation_findings=allocation_findings,
+            uniqueness_findings=uniqueness_findings,
+            replay_identifier_findings=replay_identifier_findings,
+            recovery_identifier_findings=recovery_identifier_findings,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_version_compatibility_matrix(
+        self,
+        *,
+        missing_compatibility_entries: tuple[str, ...] = (),
+        unknown_compatibility_findings: tuple[str, ...] = (),
+        incompatible_artifact_findings: tuple[str, ...] = (),
+        supersession_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004VersionCompatibilityRecord:
+        classes = ("Constitutional Doctrine Version", "Engineering Specification Version", "Schema Version", "Registry Version", "Certification Version", "Configuration Version", "Evidence Version")
+        matrix = MappingProxyType(
+            {
+                "Doctrine->Engineering Specification": ("Engineering Specification", "Matching Constitutional Version"),
+                "Specification->Registry": ("Registry", "Matching Registry Version"),
+                "Registry->Schema": ("Schema", "Approved Schema Version"),
+                "Schema->Evidence": ("Evidence", "Compatible Schema Revision"),
+                "Evidence->Certification Package": ("Certification Package", "Matching Evidence Version"),
+                "Certification Package->Certification Procedure": ("Certification Procedure", "Matching Certification Version"),
+                "Configuration->Doctrine": ("Doctrine", "Approved Constitutional Version"),
+            }
+        )
+        sequence = ("Validate artifact identity", "Validate constitutional version", "Validate schema version", "Validate registry version", "Validate configuration compatibility", "Validate evidence compatibility", "Validate certification package compatibility", "Produce immutable compatibility result")
+        prohibited = ("incompatible doctrine versions coexist", "schema versions conflict", "registry revisions conflict", "incompatible evidence packages supplied", "configuration references unsupported doctrine", "certification artifacts from incompatible revisions")
+        invariants = ("explicit version on every artifact", "explicit version relationships", "deterministic compatibility", "incompatible artifacts never certified together", "supersession preserves historical compatibility", "mandatory compatibility validation", "replay reproduces compatibility decisions", "recovery preserves compatibility history", "immutable audit history", "certification never assumes undefined compatibility")
+        missing = tuple(entry for entry in matrix if entry in missing_compatibility_entries)
+        passed = not missing and not unknown_compatibility_findings and not incompatible_artifact_findings and not supersession_findings and not replay_divergence_findings and not recovery_gaps and not audit_gaps
+        record = AnalystRm004VersionCompatibilityRecord(
+            registry_identifier=f"ANALYST-RM-004-010-VERSION-{_digest(matrix)[:12].upper()}",
+            version_classes=classes,
+            compatibility_matrix=matrix,
+            evaluation_sequence=sequence,
+            prohibited_combinations=prohibited,
+            invariants=invariants,
+            missing_compatibility_entries=missing,
+            unknown_compatibility_findings=unknown_compatibility_findings,
+            incompatible_artifact_findings=incompatible_artifact_findings,
+            supersession_findings=supersession_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
     def _candidate_class_entries(self) -> tuple[AnalystRm004CandidateClassEntry, ...]:
         rows = (
             ("ACC-001", "Analytical Mission", "Mission Object", ("mission identity", "authority", "lifecycle", "validation", "persistence", "replay", "recovery")),
@@ -474,6 +884,70 @@ class AnalystOfficeCertificationSupport:
                 audit_references=(f"{identifier}-AUDIT",),
             )
             for identifier, name, category, scope in rows
+        )
+
+    def _metric_registry_entries(self) -> tuple[AnalystRm004MetricRegistryEntry, ...]:
+        rows = (
+            ("M-ID", "Identifier Uniqueness", "Identity Metrics", ("Evidence Object",), ("identity uniqueness",)),
+            ("M-OWN", "Ownership Completeness", "Ownership Metrics", ("Candidate Class",), ("ownership validation",)),
+            ("M-EVID", "Evidence Admissibility Ratio", "Evidence Metrics", ("Evidence Object",), ("admissibility validation",)),
+            ("M-REAS", "Reasoning Graph Completeness", "Reasoning Metrics", ("Reasoning Graph",), ("reasoning validation",)),
+            ("M-HYP", "Hypothesis Preservation", "Hypothesis Metrics", ("Hypothesis Object",), ("hypothesis validation",)),
+            ("M-CONF", "Confidence Traceability", "Confidence Metrics", ("Confidence Assessment",), ("confidence validation",)),
+            ("M-VAL", "Validation Completion", "Validation Metrics", ("Validation Record",), ("validation completion",)),
+            ("M-PERS", "Persistence Integrity", "Persistence Metrics", ("Persistent State",), ("persistence validation",)),
+            ("M-REP", "Replay Equivalence", "Replay Metrics", ("Replay Artifact",), ("replay validation",)),
+            ("M-REC", "Recovery Correctness", "Recovery Metrics", ("Recovery Artifact",), ("recovery validation",)),
+            ("M-TRACE", "Trace Chain Completeness", "Traceability Metrics", ("Traceability Record",), ("traceability validation",)),
+            ("M-CERT", "Certification Evidence Completeness", "Certification Metrics", ("Certification Artifact",), ("certification validation",)),
+        )
+        return tuple(
+            AnalystRm004MetricRegistryEntry(
+                metric_identifier=identifier,
+                metric_name=name,
+                metric_class=metric_class,
+                constitutional_owner="Analyst Office",
+                calculation_rule_identifier=f"{identifier}-RULE",
+                input_objects=inputs,
+                validation_rules=rules,
+                dependency_references=("Constitutional Metrics Registry", "Evaluation Rule Registry"),
+            )
+            for identifier, name, metric_class, inputs, rules in rows
+        )
+
+    def _identifier_namespaces(self) -> tuple[AnalystRm004IdentifierNamespaceEntry, ...]:
+        rows = (
+            ("AM", "Analytical Missions"),
+            ("AP", "Analysis Plans"),
+            ("PK", "Analytical Packages"),
+            ("EV", "Evidence"),
+            ("RG", "Reasoning Graphs"),
+            ("CF", "Confidence Objects"),
+            ("HY", "Hypotheses"),
+            ("CS", "Consensus Objects"),
+            ("CT", "Contradictions"),
+            ("VL", "Validation Records"),
+            ("LC", "Lifecycle Records"),
+            ("RP", "Replay Records"),
+            ("RC", "Recovery Records"),
+            ("CO", "Configuration Objects"),
+            ("AR", "Audit Records"),
+            ("CE", "Certification Evidence"),
+            ("CM", "Certification Manifests"),
+            ("CP", "Certification Packages"),
+            ("CR", "Constitutional Registries"),
+            ("SC", "Constitutional Schemas"),
+        )
+        return tuple(
+            AnalystRm004IdentifierNamespaceEntry(
+                namespace=namespace,
+                purpose=purpose,
+                constitutional_owner="Analyst Office",
+                allocation_authority="Constitutional Identifier Registry",
+                lifecycle_authority="Analyst Office",
+                reserved_ranges=("examples", "certification references", "historical compatibility", "deprecated references", "future expansion"),
+            )
+            for namespace, purpose in rows
         )
 
     def _evaluation_rule_entries(self) -> tuple[AnalystRm004EvaluationRuleEntry, ...]:
