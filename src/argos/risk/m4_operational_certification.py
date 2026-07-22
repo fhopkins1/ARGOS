@@ -563,7 +563,7 @@ class RiskM4OperationalCertificationEngine:
         artifacts = []
         for name, payload in payloads.items():
             path = evidence_root / name
-            path.write_text(json.dumps(_jsonable(payload), indent=2, sort_keys=True), encoding="utf-8")
+            path.write_text(json.dumps(_jsonable_public(payload), indent=2, sort_keys=True), encoding="utf-8")
             artifacts.append(RiskM4EvidenceArtifact(
                 evidence_identifier=f"M4-EVIDENCE-{_slug(name)}",
                 evidence_type=name.removesuffix(".json"),
@@ -665,4 +665,21 @@ def _jsonable(value: Any) -> Any:
         return {str(key): _jsonable(item) for key, item in sorted(value.items(), key=lambda item: str(item[0]))}
     if isinstance(value, (tuple, list, set)):
         return [_jsonable(item) for item in value]
+    return value
+
+
+def _jsonable_public(value: Any) -> Any:
+    if isinstance(value, Enum):
+        return value.value
+    if isinstance(value, MappingProxyType):
+        return {key: _jsonable_public(item) for key, item in value.items()}
+    if is_dataclass(value):
+        return {
+            field_info.name: _jsonable_public(getattr(value, field_info.name))
+            for field_info in fields(value)
+        }
+    if isinstance(value, Mapping):
+        return {str(key): _jsonable_public(item) for key, item in sorted(value.items(), key=lambda item: str(item[0]))}
+    if isinstance(value, (tuple, list, set)):
+        return [_jsonable_public(item) for item in value]
     return value

@@ -53,6 +53,7 @@ class RiskM4OperationalCertificationTests(unittest.TestCase):
 
         self.assertIn(package.package_identifier, persisted)
         self.assertIn("final_certification_result", persisted)
+        self.assertIn(package.deterministic_digest, persisted)
 
     def test_m4_operational_certification_fails_closed_when_candidate_artifact_is_missing(self) -> None:
         required_paths = RiskM4OperationalCertificationEngine.required_candidate_paths + (
