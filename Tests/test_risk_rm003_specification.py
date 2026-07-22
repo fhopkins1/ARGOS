@@ -338,6 +338,80 @@ class RiskRm003SpecificationProgramTests(unittest.TestCase):
         self.assertEqual(errors.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("unclassified constitutional violation", errors.class_findings)
 
+    def test_rm003_certification_closure_package_covers_orders_twenty_one_through_twenty_five(self) -> None:
+        package = RiskOfficeSpecificationSupport().build_certification_closure_specification_package()
+
+        self.assertEqual(package.final_specification_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-003-021",
+                "RISK-RM-003-022",
+                "RISK-RM-003-023",
+                "RISK-RM-003-024",
+                "RISK-RM-003-025",
+            ),
+        )
+        self.assertEqual(len(package.complete_rm003_order_coverage), 25)
+        self.assertEqual(package.complete_rm003_order_coverage[0], "RISK-RM-003-001")
+        self.assertEqual(package.complete_rm003_order_coverage[-1], "RISK-RM-003-025")
+        self.assertIn("Certification", package.traceability_architecture.schema_sections)
+        self.assertIn("cycles prohibited", package.traceability_architecture.graph_requirements)
+        self.assertIn("CE-005 Exposure Aggregation Record", package.confidence_exposure.canonical_objects)
+        self.assertIn("Enterprise Aggregate Exposure", package.confidence_exposure.exposure_categories)
+        self.assertIn("Indeterminate", package.confidence_exposure.confidence_categories)
+        self.assertEqual(package.mitigation_constitution.readiness_classifications, ("READY", "READY WITH DEPENDENCIES", "DEFERRED", "NOT RECOMMENDED"))
+        self.assertEqual(package.mitigation_constitution.evaluation_sequence[0], "Risk Assessment Complete")
+        self.assertEqual(package.mitigation_constitution.evaluation_sequence[-1], "Mitigation Plan Finalized")
+        self.assertIn("Risk Fusion", package.certification_suite.certification_domains)
+        self.assertIn("Conflict Resolution", package.fusion_doctrine.fusion_sequence)
+        self.assertIn("Enterprise Risk Assessment", package.fusion_doctrine.persistence_requirements)
+        self.assertIn("Invariant Test", package.certification_suite.certification_categories)
+        self.assertEqual(package.certification_suite.execution_order[0], "Environment Verification")
+        self.assertEqual(package.certification_suite.execution_order[-1], "Certification Summary")
+        self.assertIn("every mandatory certification test passes", package.certification_suite.pass_decision_requirements)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_certification_closure_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeSpecificationSupport()
+
+        traceability = support.evaluate_traceability_architecture_specification(
+            relationship_findings=("implicit dependency admitted",),
+            graph_findings=("cycle allowed",),
+            invariant_violations=("certification artifact lacks doctrine link",),
+        )
+        confidence_exposure = support.evaluate_confidence_exposure_constitution_specification(
+            category_findings=("custom exposure category added",),
+            uncertainty_findings=("implicit uncertainty accepted",),
+            propagation_aggregation_findings=("confidence propagation nondeterministic",),
+        )
+        mitigation = support.evaluate_mitigation_constitution_specification(
+            strategy_findings=("implementation-defined strategy category",),
+            readiness_findings=("custom readiness state added",),
+            preservation_findings=("alternative strategy discarded",),
+        )
+        fusion = support.evaluate_fusion_doctrine_specification(
+            input_findings=("incomplete Risk object fused",),
+            conflict_findings=("manual conflict resolution allowed",),
+            invariant_violations=("fusion modified source evidence",),
+        )
+        certification = support.evaluate_independent_certification_suite_specification(
+            coverage_findings=("constitutional requirement lacks test",),
+            evidence_findings=("certification result lacks evidence",),
+            replay_recovery_findings=("certification replay diverged",),
+        )
+
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("implicit dependency admitted", traceability.relationship_findings)
+        self.assertEqual(confidence_exposure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("implicit uncertainty accepted", confidence_exposure.uncertainty_findings)
+        self.assertEqual(mitigation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("custom readiness state added", mitigation.readiness_findings)
+        self.assertEqual(fusion.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("manual conflict resolution allowed", fusion.conflict_findings)
+        self.assertEqual(certification.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("constitutional requirement lacks test", certification.coverage_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
