@@ -146,6 +146,75 @@ class RiskRm002CompletionTests(unittest.TestCase):
         self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("schema failure allowed evaluation", validation.failure_findings)
 
+    def test_rm002_replay_recovery_review_package_covers_final_completion_tranche(self) -> None:
+        package = RiskOfficeCompletionSupport().build_replay_recovery_review_package()
+
+        self.assertEqual(package.final_completion_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.independent_review_result, "CONSTITUTIONALLY_COMPLETE_FOR_RISK_RM_003")
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-002-011",
+                "RISK-RM-002-012",
+                "RISK-RM-002-013",
+                "RISK-RM-002-014",
+                "RISK-RM-002-015",
+            ),
+        )
+        self.assertIn("Risk Decisions", package.replay_completion.replay_scope)
+        self.assertIn("constitutional decisions", package.replay_completion.semantic_equivalence_requirements)
+        self.assertEqual(package.replay_completion.acceptable_differences, ("replay execution timestamp", "replay session identifier", "replay operator identifier", "replay infrastructure identifier"))
+        self.assertEqual(len(package.recovery_completion.recovery_objects), 6)
+        self.assertIn("Recovery Certification", package.recovery_completion.recovery_sequence)
+        self.assertIn("Evaluation Configuration", package.configuration_completion.configuration_objects)
+        self.assertEqual(package.configuration_completion.state_machine, ("Draft", "Validated", "Approved", "Persisted", "Active", "Superseded", "Archived"))
+        self.assertEqual(package.traceability_completion.provenance_graph[0], "Input Evidence")
+        self.assertEqual(package.traceability_completion.provenance_graph[-1], "Historical Archive")
+        self.assertEqual(len(package.independent_completion_review.mandatory_work_orders), 15)
+        self.assertIn("RISK-RM-002-010", package.independent_completion_review.mandatory_work_orders)
+        self.assertIn("CONSTITUTIONALLY_COMPLETE_FOR_RISK_RM_003", package.independent_completion_review.review_states)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm002_replay_recovery_review_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeCompletionSupport()
+
+        replay = support.evaluate_replay_completion(
+            precondition_findings=("transient artifact consumed",),
+            equivalence_findings=("decision equivalence failed",),
+            evidence_gaps=("replay completion status missing",),
+        )
+        recovery = support.evaluate_recovery_completion(
+            checkpoint_findings=("invalid checkpoint admitted",),
+            idempotency_findings=("duplicate decision generated",),
+            provenance_gaps=("originating checkpoint absent",),
+        )
+        configuration = support.evaluate_configuration_completion(
+            ownership_findings=("shared configuration owner",),
+            activation_findings=("partial activation accepted",),
+            replay_recovery_findings=("replay substituted configuration",),
+        )
+        traceability = support.evaluate_traceability_completion(
+            graph_findings=("Decision provenance omitted",),
+            relationship_findings=("relationship identifier missing",),
+            audit_gaps=("certification provenance unauditable",),
+        )
+        review = support.evaluate_independent_completion_review(
+            missing_work_order_findings=("RISK-RM-002-010 absent",),
+            discretion_findings=("reasonable implementation fallback remains",),
+            evidence_gaps=("completion package missing",),
+        )
+
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("decision equivalence failed", replay.equivalence_findings)
+        self.assertEqual(recovery.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("duplicate decision generated", recovery.idempotency_findings)
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("partial activation accepted", configuration.activation_findings)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("relationship identifier missing", traceability.relationship_findings)
+        self.assertEqual(review.result, "NOT_CONSTITUTIONALLY_COMPLETE_FOR_RISK_RM_003")
+        self.assertIn("RISK-RM-002-010 absent", review.missing_work_order_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
