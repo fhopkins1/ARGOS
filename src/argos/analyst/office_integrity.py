@@ -244,6 +244,107 @@ class AnalystRm001ArchitectureEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystConfigurationGovernanceRecord:
+    configuration_identifier: str
+    configuration_classes: tuple[str, ...]
+    mandatory_schema_fields: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    required_registries: tuple[str, ...]
+    missing_schema_fields: tuple[str, ...]
+    ownership_violations: tuple[str, ...]
+    lifecycle_violations: tuple[str, ...]
+    compatibility_violations: tuple[str, ...]
+    integrity_failures: tuple[str, ...]
+    replay_restores_exact_version: bool
+    recovery_restores_integrity_state: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystTraceabilityArchitectureRecord:
+    traceability_identifier: str
+    traced_objects: tuple[str, ...]
+    required_relationships: tuple[str, ...]
+    trace_record_fields: tuple[str, ...]
+    orphaned_objects: tuple[str, ...]
+    broken_trace_chains: tuple[str, ...]
+    missing_relationships: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    replay_trace_gaps: tuple[str, ...]
+    recovery_trace_gaps: tuple[str, ...]
+    deterministic_reconstruction_supported: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRegistryRequirementsRecord:
+    registry_identifier: str
+    required_registries: tuple[str, ...]
+    registry_identity_fields: tuple[str, ...]
+    lookup_semantics: tuple[str, ...]
+    missing_registries: tuple[str, ...]
+    ambiguous_ownership: tuple[str, ...]
+    schema_violations: tuple[str, ...]
+    identifier_collisions: tuple[str, ...]
+    circular_registry_dependencies: tuple[str, ...]
+    replay_version_substitutions: tuple[str, ...]
+    recovery_corruption_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystInvariantRemediationRecord:
+    invariant_identifier: str
+    invariant_categories: tuple[str, ...]
+    registry_fields: tuple[str, ...]
+    missing_categories: tuple[str, ...]
+    unenforced_invariants: tuple[str, ...]
+    implementation_dependent_invariants: tuple[str, ...]
+    replay_violations: tuple[str, ...]
+    recovery_violations: tuple[str, ...]
+    configuration_violations: tuple[str, ...]
+    audit_evidence_gaps: tuple[str, ...]
+    fail_closed_on_violation: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystCertificationReadinessRecord:
+    readiness_identifier: str
+    required_work_orders: tuple[str, ...]
+    completed_work_orders: tuple[str, ...]
+    evaluation_criteria: tuple[str, ...]
+    missing_work_orders: tuple[str, ...]
+    unresolved_constitutional_ambiguities: tuple[str, ...]
+    implementation_discretion_findings: tuple[str, ...]
+    missing_evidence: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    progression_authorized: bool
+    certification_outcome: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm001GovernanceReadinessPackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    configuration_governance: AnalystConfigurationGovernanceRecord
+    traceability_architecture: AnalystTraceabilityArchitectureRecord
+    registry_requirements: AnalystRegistryRequirementsRecord
+    invariant_remediation: AnalystInvariantRemediationRecord
+    certification_readiness: AnalystCertificationReadinessRecord
+    final_rm001_governance_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeIntegritySupport:
     """Build deterministic certification-support records for ANALYST-RM-001."""
 
@@ -261,6 +362,14 @@ class AnalystOfficeIntegritySupport:
         "ANALYST-RM-001-008",
         "ANALYST-RM-001-009",
         "ANALYST-RM-001-010",
+    )
+
+    governance_order_coverage = (
+        "ANALYST-RM-001-011",
+        "ANALYST-RM-001-012",
+        "ANALYST-RM-001-013",
+        "ANALYST-RM-001-014",
+        "ANALYST-RM-001-015",
     )
 
     def build_package(
@@ -936,6 +1045,385 @@ class AnalystOfficeIntegritySupport:
             partial_recovery_findings=partial_recovery_findings,
             idempotent_recovery=idempotent_recovery,
             restart_authorized=restart_authorized,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_governance_readiness_package(self) -> AnalystRm001GovernanceReadinessPackage:
+        configuration = self.evaluate_configuration_governance()
+        traceability = self.evaluate_traceability_architecture()
+        registries = self.evaluate_registry_requirements()
+        invariants = self.evaluate_invariant_remediation()
+        readiness = self.evaluate_certification_readiness(
+            completed_work_orders=self.remediation_order_coverage
+            + self.architecture_order_coverage
+            + self.governance_order_coverage
+        )
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (configuration, traceability, registries, invariants, readiness)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm001GovernanceReadinessPackage(
+            package_identifier=f"ANALYST-RM-001-GOV-{_digest((configuration, traceability, registries, invariants, readiness))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-001-011-TO-015/1.0.0",
+            remediation_order_coverage=self.governance_order_coverage,
+            configuration_governance=configuration,
+            traceability_architecture=traceability,
+            registry_requirements=registries,
+            invariant_remediation=invariants,
+            certification_readiness=readiness,
+            final_rm001_governance_readiness=final,
+            immutable_audit_references=(
+                configuration.configuration_identifier,
+                traceability.traceability_identifier,
+                registries.registry_identifier,
+                invariants.invariant_identifier,
+                readiness.readiness_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_configuration_governance(
+        self,
+        *,
+        missing_schema_fields: tuple[str, ...] = (),
+        ownership_violations: tuple[str, ...] = (),
+        lifecycle_violations: tuple[str, ...] = (),
+        compatibility_violations: tuple[str, ...] = (),
+        integrity_failures: tuple[str, ...] = (),
+        replay_restores_exact_version: bool = True,
+        recovery_restores_integrity_state: bool = True,
+    ) -> AnalystConfigurationGovernanceRecord:
+        classes = (
+            "Analytical Rules",
+            "Validation Rules",
+            "Normalization Rules",
+            "Compatibility Rules",
+            "Threshold Configuration",
+            "Metrics Configuration",
+            "Default Operational Parameters",
+        )
+        fields_required = (
+            "Configuration Identifier",
+            "Configuration Name",
+            "Configuration Class",
+            "Constitutional Owner",
+            "Version Identifier",
+            "Schema Version",
+            "Effective Date",
+            "Activation Status",
+            "Compatibility Range",
+            "Integrity Hash",
+            "Creation Authority",
+            "Approval Authority",
+            "Constitutional References",
+            "Validation Status",
+            "Retirement Status",
+        )
+        lifecycle = ("Proposed", "Draft", "Validated", "Approved", "Published", "Active", "Deprecated", "Retired", "Archived")
+        registries = (
+            "Configuration Registry",
+            "Version Registry",
+            "Compatibility Registry",
+            "Activation Registry",
+            "Retirement Registry",
+            "Integrity Registry",
+            "Approval Registry",
+            "Validation Registry",
+            "Audit Registry",
+        )
+        missing = tuple(field for field in fields_required if field in missing_schema_fields)
+        passed = (
+            not missing
+            and not ownership_violations
+            and not lifecycle_violations
+            and not compatibility_violations
+            and not integrity_failures
+            and replay_restores_exact_version
+            and recovery_restores_integrity_state
+        )
+        record = AnalystConfigurationGovernanceRecord(
+            configuration_identifier=f"ANALYST-RM-001-011-CONFIG-{_digest((classes, fields_required))[:12].upper()}",
+            configuration_classes=classes,
+            mandatory_schema_fields=fields_required,
+            lifecycle_states=lifecycle,
+            required_registries=registries,
+            missing_schema_fields=missing,
+            ownership_violations=ownership_violations,
+            lifecycle_violations=lifecycle_violations,
+            compatibility_violations=compatibility_violations,
+            integrity_failures=integrity_failures,
+            replay_restores_exact_version=replay_restores_exact_version,
+            recovery_restores_integrity_state=recovery_restores_integrity_state,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_traceability_architecture(
+        self,
+        *,
+        orphaned_objects: tuple[str, ...] = (),
+        broken_trace_chains: tuple[str, ...] = (),
+        missing_relationships: tuple[str, ...] = (),
+        provenance_gaps: tuple[str, ...] = (),
+        replay_trace_gaps: tuple[str, ...] = (),
+        recovery_trace_gaps: tuple[str, ...] = (),
+        deterministic_reconstruction_supported: bool = True,
+    ) -> AnalystTraceabilityArchitectureRecord:
+        objects = (
+            "Analysis Mission",
+            "Analytical Inputs",
+            "Validation Results",
+            "Evidence Sets",
+            "Evidence Normalization",
+            "Analytical Models",
+            "Findings",
+            "Decisions",
+            "Recommendations",
+            "Assessments",
+            "Output Packages",
+            "Configuration Snapshots",
+            "Audit Records",
+            "Replay Records",
+            "Recovery Events",
+        )
+        relationships = (
+            "Mission->Inputs",
+            "Inputs->Validation",
+            "Validation->Evidence",
+            "Evidence->Analytical Model",
+            "Evidence->Findings",
+            "Findings->Recommendations",
+            "Findings->Assessment",
+            "Assessment->Output Package",
+            "Decisions->Governing Doctrine",
+            "Configuration->Decisions",
+            "Replay->Original Execution",
+            "Recovery->Interrupted Execution",
+        )
+        fields_required = (
+            "Trace Identifier",
+            "Parent Identifier",
+            "Child Identifier",
+            "Relationship Type",
+            "Object Types",
+            "Governing Doctrine Reference",
+            "Lifecycle Event",
+            "Timestamp",
+            "Configuration Version",
+            "Office Identifier",
+            "Execution Identifier",
+            "Replay Identifier",
+            "Recovery Identifier",
+        )
+        missing = tuple(relationship for relationship in relationships if relationship in missing_relationships)
+        passed = (
+            not orphaned_objects
+            and not broken_trace_chains
+            and not missing
+            and not provenance_gaps
+            and not replay_trace_gaps
+            and not recovery_trace_gaps
+            and deterministic_reconstruction_supported
+        )
+        record = AnalystTraceabilityArchitectureRecord(
+            traceability_identifier=f"ANALYST-RM-001-012-TRACE-{_digest((objects, relationships))[:12].upper()}",
+            traced_objects=objects,
+            required_relationships=relationships,
+            trace_record_fields=fields_required,
+            orphaned_objects=orphaned_objects,
+            broken_trace_chains=broken_trace_chains,
+            missing_relationships=missing,
+            provenance_gaps=provenance_gaps,
+            replay_trace_gaps=replay_trace_gaps,
+            recovery_trace_gaps=recovery_trace_gaps,
+            deterministic_reconstruction_supported=deterministic_reconstruction_supported,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_registry_requirements(
+        self,
+        *,
+        missing_registries: tuple[str, ...] = (),
+        ambiguous_ownership: tuple[str, ...] = (),
+        schema_violations: tuple[str, ...] = (),
+        identifier_collisions: tuple[str, ...] = (),
+        circular_registry_dependencies: tuple[str, ...] = (),
+        replay_version_substitutions: tuple[str, ...] = (),
+        recovery_corruption_findings: tuple[str, ...] = (),
+    ) -> AnalystRegistryRequirementsRecord:
+        registries = (
+            "Constitutional Identifier Registry",
+            "Analytical Object Registry",
+            "Schema Registry",
+            "Validation Rule Registry",
+            "Decision Rule Registry",
+            "Analytical Model Registry",
+            "Confidence Classification Registry",
+            "Metrics Registry",
+            "Configuration Registry",
+            "Lifecycle Registry",
+            "State Transition Registry",
+            "Version Registry",
+            "Compatibility Registry",
+            "Error Classification Registry",
+            "Audit Event Registry",
+            "Certification Registry",
+            "Constitutional Invariant Registry",
+        )
+        identity = ("canonical registry identifier", "registry version", "constitutional owner", "schema version", "integrity metadata", "compatibility metadata")
+        semantics = ("deterministic", "side-effect free", "immutable", "version aware", "auditable")
+        missing = tuple(registry for registry in registries if registry in missing_registries)
+        passed = (
+            not missing
+            and not ambiguous_ownership
+            and not schema_violations
+            and not identifier_collisions
+            and not circular_registry_dependencies
+            and not replay_version_substitutions
+            and not recovery_corruption_findings
+        )
+        record = AnalystRegistryRequirementsRecord(
+            registry_identifier=f"ANALYST-RM-001-013-REG-{_digest(registries)[:12].upper()}",
+            required_registries=registries,
+            registry_identity_fields=identity,
+            lookup_semantics=semantics,
+            missing_registries=missing,
+            ambiguous_ownership=ambiguous_ownership,
+            schema_violations=schema_violations,
+            identifier_collisions=identifier_collisions,
+            circular_registry_dependencies=circular_registry_dependencies,
+            replay_version_substitutions=replay_version_substitutions,
+            recovery_corruption_findings=recovery_corruption_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_invariant_remediation(
+        self,
+        *,
+        missing_categories: tuple[str, ...] = (),
+        unenforced_invariants: tuple[str, ...] = (),
+        implementation_dependent_invariants: tuple[str, ...] = (),
+        replay_violations: tuple[str, ...] = (),
+        recovery_violations: tuple[str, ...] = (),
+        configuration_violations: tuple[str, ...] = (),
+        audit_evidence_gaps: tuple[str, ...] = (),
+        fail_closed_on_violation: bool = True,
+    ) -> AnalystInvariantRemediationRecord:
+        categories = (
+            "Ownership",
+            "Authority",
+            "Identity",
+            "Lifecycle",
+            "Validation",
+            "Analytical Correctness",
+            "Evidence",
+            "Provenance",
+            "Determinism",
+            "Persistence",
+            "Replay",
+            "Recovery",
+            "Configuration",
+            "Traceability",
+            "Audit",
+            "Safety",
+            "Certification",
+        )
+        registry_fields = (
+            "invariant identifier",
+            "invariant description",
+            "governing doctrine",
+            "constitutional owner",
+            "enforcement point",
+            "validation method",
+            "certification requirement",
+            "audit evidence requirements",
+        )
+        missing = tuple(category for category in categories if category in missing_categories)
+        passed = (
+            not missing
+            and not unenforced_invariants
+            and not implementation_dependent_invariants
+            and not replay_violations
+            and not recovery_violations
+            and not configuration_violations
+            and not audit_evidence_gaps
+            and fail_closed_on_violation
+        )
+        record = AnalystInvariantRemediationRecord(
+            invariant_identifier=f"ANALYST-RM-001-014-INV-{_digest(categories)[:12].upper()}",
+            invariant_categories=categories,
+            registry_fields=registry_fields,
+            missing_categories=missing,
+            unenforced_invariants=unenforced_invariants,
+            implementation_dependent_invariants=implementation_dependent_invariants,
+            replay_violations=replay_violations,
+            recovery_violations=recovery_violations,
+            configuration_violations=configuration_violations,
+            audit_evidence_gaps=audit_evidence_gaps,
+            fail_closed_on_violation=fail_closed_on_violation,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_readiness(
+        self,
+        *,
+        completed_work_orders: tuple[str, ...],
+        unresolved_constitutional_ambiguities: tuple[str, ...] = (),
+        implementation_discretion_findings: tuple[str, ...] = (),
+        missing_evidence: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> AnalystCertificationReadinessRecord:
+        required = (
+            self.remediation_order_coverage
+            + self.architecture_order_coverage
+            + self.governance_order_coverage
+        )
+        criteria = (
+            "constitutional completeness",
+            "ownership completeness",
+            "lifecycle completeness",
+            "deterministic execution",
+            "deterministic decision making",
+            "validation completeness",
+            "persistence correctness",
+            "replay equivalence",
+            "recovery correctness",
+            "configuration governance",
+            "traceability completeness",
+            "registry completeness",
+            "invariant preservation",
+            "audit completeness",
+        )
+        missing = tuple(order for order in required if order not in completed_work_orders)
+        passed = (
+            not missing
+            and not unresolved_constitutional_ambiguities
+            and not implementation_discretion_findings
+            and not missing_evidence
+            and not invariant_violations
+        )
+        record = AnalystCertificationReadinessRecord(
+            readiness_identifier=f"ANALYST-RM-001-015-READY-{_digest((required, completed_work_orders))[:12].upper()}",
+            required_work_orders=required,
+            completed_work_orders=completed_work_orders,
+            evaluation_criteria=criteria,
+            missing_work_orders=missing,
+            unresolved_constitutional_ambiguities=unresolved_constitutional_ambiguities,
+            implementation_discretion_findings=implementation_discretion_findings,
+            missing_evidence=missing_evidence,
+            invariant_violations=invariant_violations,
+            progression_authorized=passed,
+            certification_outcome="Unconditional PASS" if passed else "FAIL",
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )

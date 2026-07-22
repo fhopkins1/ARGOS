@@ -233,6 +233,98 @@ class AnalystRm001OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("Risk Office selected checkpoint", recovery.unauthorized_recovery_attempts)
         self.assertFalse(recovery.restart_authorized)
 
+    def test_rm001_governance_readiness_package_covers_configuration_trace_registry_invariants_and_readiness(self) -> None:
+        package = AnalystOfficeIntegritySupport().build_governance_readiness_package()
+
+        self.assertEqual(package.final_rm001_governance_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "ANALYST-RM-001-011",
+                "ANALYST-RM-001-012",
+                "ANALYST-RM-001-013",
+                "ANALYST-RM-001-014",
+                "ANALYST-RM-001-015",
+            ),
+        )
+        self.assertIn("Analytical Rules", package.configuration_governance.configuration_classes)
+        self.assertIn("Integrity Hash", package.configuration_governance.mandatory_schema_fields)
+        self.assertTrue(package.configuration_governance.replay_restores_exact_version)
+        self.assertIn("Mission->Inputs", package.traceability_architecture.required_relationships)
+        self.assertTrue(package.traceability_architecture.deterministic_reconstruction_supported)
+        self.assertEqual(len(package.registry_requirements.required_registries), 17)
+        self.assertIn("version aware", package.registry_requirements.lookup_semantics)
+        self.assertIn("Traceability", package.invariant_remediation.invariant_categories)
+        self.assertTrue(package.invariant_remediation.fail_closed_on_violation)
+        self.assertEqual(package.certification_readiness.certification_outcome, "Unconditional PASS")
+        self.assertTrue(package.certification_readiness.progression_authorized)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm001_governance_readiness_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeIntegritySupport()
+
+        configuration = support.evaluate_configuration_governance(
+            missing_schema_fields=("Integrity Hash",),
+            ownership_violations=("shared threshold configuration",),
+            lifecycle_violations=("Draft->Active"),
+            compatibility_violations=("undeclared schema version"),
+            integrity_failures=("checksum mismatch"),
+            replay_restores_exact_version=False,
+            recovery_restores_integrity_state=False,
+        )
+        traceability = support.evaluate_traceability_architecture(
+            orphaned_objects=("Analytical Finding",),
+            broken_trace_chains=("Finding->Evidence missing"),
+            missing_relationships=("Evidence->Findings",),
+            provenance_gaps=("normalization provenance missing"),
+            replay_trace_gaps=("replay original execution missing"),
+            recovery_trace_gaps=("checkpoint trace missing"),
+            deterministic_reconstruction_supported=False,
+        )
+        registries = support.evaluate_registry_requirements(
+            missing_registries=("Constitutional Invariant Registry",),
+            ambiguous_ownership=("Metrics Registry"),
+            schema_violations=("Audit Event Registry missing retention"),
+            identifier_collisions=("AN-OBJ-0001"),
+            circular_registry_dependencies=("Schema Registry->Version Registry->Schema Registry"),
+            replay_version_substitutions=("Configuration Registry v2 used for v1 replay"),
+            recovery_corruption_findings=("Lifecycle Registry checksum mismatch"),
+        )
+        invariants = support.evaluate_invariant_remediation(
+            missing_categories=("Safety",),
+            unenforced_invariants=("validation before use"),
+            implementation_dependent_invariants=("confidence calculation"),
+            replay_violations=("output changed"),
+            recovery_violations=("ownership changed"),
+            configuration_violations=("active config mutated"),
+            audit_evidence_gaps=("violation audit missing"),
+            fail_closed_on_violation=False,
+        )
+        readiness = support.evaluate_certification_readiness(
+            completed_work_orders=support.remediation_order_coverage + support.architecture_order_coverage,
+            unresolved_constitutional_ambiguities=("conditional pass authority",),
+            implementation_discretion_findings=("trace graph format selected by runtime"),
+            missing_evidence=("Invariant Verification Test Suite",),
+            invariant_violations=("audit invariant not preserved"),
+        )
+
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Integrity Hash", configuration.missing_schema_fields)
+        self.assertFalse(configuration.replay_restores_exact_version)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Evidence->Findings", traceability.missing_relationships)
+        self.assertFalse(traceability.deterministic_reconstruction_supported)
+        self.assertEqual(registries.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Constitutional Invariant Registry", registries.missing_registries)
+        self.assertIn("AN-OBJ-0001", registries.identifier_collisions)
+        self.assertEqual(invariants.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Safety", invariants.missing_categories)
+        self.assertFalse(invariants.fail_closed_on_violation)
+        self.assertEqual(readiness.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("ANALYST-RM-001-015", readiness.missing_work_orders)
+        self.assertEqual(readiness.certification_outcome, "FAIL")
+        self.assertFalse(readiness.progression_authorized)
+
 
 if __name__ == "__main__":
     unittest.main()
