@@ -231,9 +231,15 @@ from .office_completion import (
     AnalystValidationCompletionRecord,
 )
 from .office_specification import (
+    AnalystEquivalenceSpecificationRecord,
+    AnalystFreshnessSpecificationRecord,
     AnalystMissionCanonicalSpecificationRecord,
+    AnalystMissionLifecycleSpecificationRecord,
     AnalystOfficeSpecificationSupport,
+    AnalystOrganizationalBeliefStateSpecificationRecord,
+    AnalystRm003MissionDoctrineEvidencePackage,
     AnalystRm003SpecificationEvidencePackage,
+    AnalystSufficiencySpecificationRecord,
 )
 
 __all__ = [
@@ -440,6 +446,12 @@ __all__ = [
     "AnalystTraceabilityCompletionRecord",
     "AnalystValidationCompletionRecord",
     "AnalystMissionCanonicalSpecificationRecord",
+    "AnalystMissionLifecycleSpecificationRecord",
+    "AnalystEquivalenceSpecificationRecord",
+    "AnalystFreshnessSpecificationRecord",
     "AnalystOfficeSpecificationSupport",
+    "AnalystOrganizationalBeliefStateSpecificationRecord",
+    "AnalystRm003MissionDoctrineEvidencePackage",
     "AnalystRm003SpecificationEvidencePackage",
+    "AnalystSufficiencySpecificationRecord",
 ]
