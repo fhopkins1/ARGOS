@@ -222,6 +222,109 @@ class AnalystRm002AdvancedCompletionEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystReplayCompletionRecord:
+    completion_identifier: str
+    replay_scope: tuple[str, ...]
+    historical_inputs: tuple[str, ...]
+    semantic_comparison_fields: tuple[str, ...]
+    admissible_runtime_differences: tuple[str, ...]
+    prohibited_differences: tuple[str, ...]
+    failure_classes: tuple[str, ...]
+    missing_scope: tuple[str, ...]
+    current_state_substitutions: tuple[str, ...]
+    prohibited_difference_findings: tuple[str, ...]
+    validation_gaps: tuple[str, ...]
+    history_mutation_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRecoveryCompletionRecord:
+    completion_identifier: str
+    recovery_scope: tuple[str, ...]
+    recovery_checkpoints: tuple[str, ...]
+    checkpoint_fields: tuple[str, ...]
+    recovery_sequence: tuple[str, ...]
+    missing_recovery_state: tuple[str, ...]
+    arbitrary_checkpoint_findings: tuple[str, ...]
+    partial_restore_findings: tuple[str, ...]
+    idempotency_violations: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    fail_closed: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystConfigurationCompletionRecord:
+    completion_identifier: str
+    configuration_classes: tuple[str, ...]
+    identity_fields: tuple[str, ...]
+    compatibility_targets: tuple[str, ...]
+    missing_configuration_classes: tuple[str, ...]
+    ownership_violations: tuple[str, ...]
+    hidden_configuration_findings: tuple[str, ...]
+    implicit_default_findings: tuple[str, ...]
+    compatibility_gaps: tuple[str, ...]
+    integrity_failures: tuple[str, ...]
+    replay_substitution_findings: tuple[str, ...]
+    recovery_drift_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystTraceabilityCompletionRecord:
+    completion_identifier: str
+    artifact_scope: tuple[str, ...]
+    canonical_chain: tuple[str, ...]
+    relationship_types: tuple[str, ...]
+    trace_identity_fields: tuple[str, ...]
+    orphaned_artifacts: tuple[str, ...]
+    implicit_lineage_findings: tuple[str, ...]
+    undefined_relationships: tuple[str, ...]
+    broken_lineage_findings: tuple[str, ...]
+    replay_trace_gaps: tuple[str, ...]
+    recovery_trace_gaps: tuple[str, ...]
+    certification_trace_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystIndependentCompletionReviewRecord:
+    completion_identifier: str
+    required_work_orders: tuple[str, ...]
+    completed_work_orders: tuple[str, ...]
+    review_domains: tuple[str, ...]
+    missing_work_orders: tuple[str, ...]
+    constitutional_inconsistencies: tuple[str, ...]
+    implementation_discretion_findings: tuple[str, ...]
+    missing_certification_evidence: tuple[str, ...]
+    missing_audit_evidence: tuple[str, ...]
+    progression_authorized: bool
+    completion_outcome: str
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm002FinalCompletionEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    replay_completion: AnalystReplayCompletionRecord
+    recovery_completion: AnalystRecoveryCompletionRecord
+    configuration_completion: AnalystConfigurationCompletionRecord
+    traceability_completion: AnalystTraceabilityCompletionRecord
+    independent_completion_review: AnalystIndependentCompletionReviewRecord
+    final_rm002_completion_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeCompletionSupport:
     """Build deterministic certification-support records for ANALYST-RM-002."""
 
@@ -239,6 +342,14 @@ class AnalystOfficeCompletionSupport:
         "ANALYST-RM-002-008",
         "ANALYST-RM-002-009",
         "ANALYST-RM-002-010",
+    )
+
+    final_order_coverage = (
+        "ANALYST-RM-002-011",
+        "ANALYST-RM-002-012",
+        "ANALYST-RM-002-013",
+        "ANALYST-RM-002-014",
+        "ANALYST-RM-002-015",
     )
 
     def build_package(
@@ -868,6 +979,209 @@ class AnalystOfficeCompletionSupport:
             integrity_failures=integrity_failures,
             replay_regeneration_findings=replay_regeneration_findings,
             recovery_mutation_findings=recovery_mutation_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_final_completion_package(self) -> AnalystRm002FinalCompletionEvidencePackage:
+        replay = self.evaluate_replay_completion()
+        recovery = self.evaluate_recovery_completion()
+        configuration = self.evaluate_configuration_completion()
+        traceability = self.evaluate_traceability_completion()
+        review = self.evaluate_independent_completion_review(
+            completed_work_orders=self.remediation_order_coverage
+            + self.advanced_order_coverage
+            + self.final_order_coverage
+        )
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (replay, recovery, configuration, traceability, review)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm002FinalCompletionEvidencePackage(
+            package_identifier=f"ANALYST-RM-002-FINAL-{_digest((replay, recovery, configuration, traceability, review))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-002-011-TO-015/1.0.0",
+            remediation_order_coverage=self.final_order_coverage,
+            replay_completion=replay,
+            recovery_completion=recovery,
+            configuration_completion=configuration,
+            traceability_completion=traceability,
+            independent_completion_review=review,
+            final_rm002_completion_readiness=final,
+            immutable_audit_references=(
+                replay.completion_identifier,
+                recovery.completion_identifier,
+                configuration.completion_identifier,
+                traceability.completion_identifier,
+                review.completion_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_replay_completion(
+        self,
+        *,
+        missing_scope: tuple[str, ...] = (),
+        current_state_substitutions: tuple[str, ...] = (),
+        prohibited_difference_findings: tuple[str, ...] = (),
+        validation_gaps: tuple[str, ...] = (),
+        history_mutation_findings: tuple[str, ...] = (),
+    ) -> AnalystReplayCompletionRecord:
+        scope = ("Analytical Mission", "Analytical Plan", "Evidence Package", "Reasoning Graph", "Hypotheses", "Confidence Assessment", "Analytical Conclusion", "Validation Records", "Configuration Snapshot", "Provenance", "Metrics")
+        inputs = ("evidence", "configuration", "constitutional rules", "schemas", "registries", "object versions", "analytical parameters")
+        comparison = ("analytical conclusions", "confidence assessments", "evidence utilization", "reasoning structure", "competing hypotheses", "validation outcomes", "provenance", "object relationships")
+        admissible = ("execution duration", "processor allocation", "memory layout", "storage location", "internal optimization", "scheduling", "thread execution", "resource utilization")
+        prohibited = ("analytical conclusions", "evidence admissibility", "confidence values", "hypothesis ranking", "validation outcomes", "ownership", "provenance", "object identity", "lifecycle transitions", "constitutional decisions")
+        failures = ("Input inconsistency", "Configuration inconsistency", "Reasoning inconsistency", "Validation inconsistency", "Conclusion inconsistency", "Provenance inconsistency", "Lifecycle inconsistency", "Constitutional invariant violation")
+        missing = tuple(item for item in scope if item in missing_scope)
+        passed = not missing and not current_state_substitutions and not prohibited_difference_findings and not validation_gaps and not history_mutation_findings
+        record = AnalystReplayCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-011-REPLAY-{_digest(scope)[:12].upper()}",
+            replay_scope=scope,
+            historical_inputs=inputs,
+            semantic_comparison_fields=comparison,
+            admissible_runtime_differences=admissible,
+            prohibited_differences=prohibited,
+            failure_classes=failures,
+            missing_scope=missing,
+            current_state_substitutions=current_state_substitutions,
+            prohibited_difference_findings=prohibited_difference_findings,
+            validation_gaps=validation_gaps,
+            history_mutation_findings=history_mutation_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_recovery_completion(
+        self,
+        *,
+        missing_recovery_state: tuple[str, ...] = (),
+        arbitrary_checkpoint_findings: tuple[str, ...] = (),
+        partial_restore_findings: tuple[str, ...] = (),
+        idempotency_violations: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+        fail_closed: bool = True,
+    ) -> AnalystRecoveryCompletionRecord:
+        scope = ("Analysis Missions", "Analytical Packages", "Analytical Context", "Evidence Sets", "Reasoning Models", "Hypothesis Sets", "Validation Results", "Confidence Determinations", "Decision Records", "Configuration Snapshots", "Trace Records", "Persistent State", "Execution State")
+        checkpoints = ("Mission Acceptance Checkpoint", "Input Validation Checkpoint", "Evidence Completion Checkpoint", "Reasoning Completion Checkpoint", "Hypothesis Evaluation Checkpoint", "Confidence Assignment Checkpoint", "Decision Completion Checkpoint", "Output Preparation Checkpoint", "Output Publication Checkpoint")
+        fields_required = ("execution identifier", "checkpoint identifier", "lifecycle state", "mission identity", "configuration version", "reasoning state", "validation state", "hypothesis state", "decision state", "traceability references", "persistent object references")
+        sequence = ("Detect interruption", "Verify checkpoint integrity", "Restore checkpoint state", "Validate restored state", "Verify constitutional invariants", "Resume execution", "Record immutable recovery evidence")
+        missing = tuple(item for item in scope if item in missing_recovery_state)
+        passed = not missing and not arbitrary_checkpoint_findings and not partial_restore_findings and not idempotency_violations and not invariant_violations and fail_closed
+        record = AnalystRecoveryCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-012-RECOVERY-{_digest((scope, checkpoints))[:12].upper()}",
+            recovery_scope=scope,
+            recovery_checkpoints=checkpoints,
+            checkpoint_fields=fields_required,
+            recovery_sequence=sequence,
+            missing_recovery_state=missing,
+            arbitrary_checkpoint_findings=arbitrary_checkpoint_findings,
+            partial_restore_findings=partial_restore_findings,
+            idempotency_violations=idempotency_violations,
+            invariant_violations=invariant_violations,
+            fail_closed=fail_closed,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_configuration_completion(
+        self,
+        *,
+        missing_configuration_classes: tuple[str, ...] = (),
+        ownership_violations: tuple[str, ...] = (),
+        hidden_configuration_findings: tuple[str, ...] = (),
+        implicit_default_findings: tuple[str, ...] = (),
+        compatibility_gaps: tuple[str, ...] = (),
+        integrity_failures: tuple[str, ...] = (),
+        replay_substitution_findings: tuple[str, ...] = (),
+        recovery_drift_findings: tuple[str, ...] = (),
+    ) -> AnalystConfigurationCompletionRecord:
+        classes = ("Analytical Model Configuration", "Evidence Evaluation Configuration", "Confidence Configuration", "Hypothesis Evaluation Configuration", "Decision Threshold Configuration", "Validation Configuration", "Normalization Configuration", "Replay Configuration", "Recovery Configuration", "Persistence Configuration", "Audit Configuration", "Metrics Configuration", "Registry Configuration", "Version Compatibility Configuration", "Certification Configuration")
+        identity = ("configuration identifier", "configuration class", "constitutional owner", "schema version", "configuration version", "integrity metadata", "effective version metadata")
+        compatibility = ("schema versions", "analytical models", "replay environments", "recovery checkpoints", "certification environments")
+        missing = tuple(item for item in classes if item in missing_configuration_classes)
+        passed = not missing and not ownership_violations and not hidden_configuration_findings and not implicit_default_findings and not compatibility_gaps and not integrity_failures and not replay_substitution_findings and not recovery_drift_findings
+        record = AnalystConfigurationCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-013-CONFIG-{_digest(classes)[:12].upper()}",
+            configuration_classes=classes,
+            identity_fields=identity,
+            compatibility_targets=compatibility,
+            missing_configuration_classes=missing,
+            ownership_violations=ownership_violations,
+            hidden_configuration_findings=hidden_configuration_findings,
+            implicit_default_findings=implicit_default_findings,
+            compatibility_gaps=compatibility_gaps,
+            integrity_failures=integrity_failures,
+            replay_substitution_findings=replay_substitution_findings,
+            recovery_drift_findings=recovery_drift_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_traceability_completion(
+        self,
+        *,
+        orphaned_artifacts: tuple[str, ...] = (),
+        implicit_lineage_findings: tuple[str, ...] = (),
+        undefined_relationships: tuple[str, ...] = (),
+        broken_lineage_findings: tuple[str, ...] = (),
+        replay_trace_gaps: tuple[str, ...] = (),
+        recovery_trace_gaps: tuple[str, ...] = (),
+        certification_trace_gaps: tuple[str, ...] = (),
+    ) -> AnalystTraceabilityCompletionRecord:
+        artifacts = ("Analytical Missions", "Analytical Plans", "Analytical Packages", "Evidence Packages", "Evidence Items", "Reasoning Graphs", "Confidence Assessments", "Competing Hypotheses", "Contradiction Records", "Consensus Records", "Decision Objects", "Analytical Outputs", "Validation Records", "Lifecycle Records", "Replay Records", "Recovery Records", "Audit Records", "Certification Evidence")
+        chain = ("Mission Authorization", "Analytical Mission", "Analytical Plan", "Input Acquisition", "Evidence Normalization", "Evidence Validation", "Reasoning Construction", "Hypothesis Evaluation", "Confidence Determination", "Contradiction Resolution", "Consensus Formation", "Decision Generation", "Output Construction", "Output Validation", "Delivery Eligibility", "Audit Record", "Certification Evidence")
+        relationships = ("Created From", "Derived From", "Validated By", "Supported By", "Contradicted By", "Supersedes", "Superseded By", "Depends Upon", "Produced By", "Delivered By", "Certified By", "Audited By", "Replayed From", "Recovered From")
+        identity = ("Trace Identifier", "Parent Identifier", "Child Identifier", "Relationship Type", "Relationship Authority", "Creation Timestamp", "Schema Version", "Validation State")
+        undefined = tuple(item for item in undefined_relationships if item not in relationships)
+        passed = not orphaned_artifacts and not implicit_lineage_findings and not undefined and not broken_lineage_findings and not replay_trace_gaps and not recovery_trace_gaps and not certification_trace_gaps
+        record = AnalystTraceabilityCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-014-TRACE-{_digest((artifacts, chain))[:12].upper()}",
+            artifact_scope=artifacts,
+            canonical_chain=chain,
+            relationship_types=relationships,
+            trace_identity_fields=identity,
+            orphaned_artifacts=orphaned_artifacts,
+            implicit_lineage_findings=implicit_lineage_findings,
+            undefined_relationships=undefined,
+            broken_lineage_findings=broken_lineage_findings,
+            replay_trace_gaps=replay_trace_gaps,
+            recovery_trace_gaps=recovery_trace_gaps,
+            certification_trace_gaps=certification_trace_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_independent_completion_review(
+        self,
+        *,
+        completed_work_orders: tuple[str, ...],
+        constitutional_inconsistencies: tuple[str, ...] = (),
+        implementation_discretion_findings: tuple[str, ...] = (),
+        missing_certification_evidence: tuple[str, ...] = (),
+        missing_audit_evidence: tuple[str, ...] = (),
+    ) -> AnalystIndependentCompletionReviewRecord:
+        required = self.remediation_order_coverage + self.advanced_order_coverage + self.final_order_coverage
+        domains = ("analytical objects", "analytical inputs", "analytical outputs", "lifecycle behavior", "reasoning architecture", "confidence architecture", "competing hypotheses", "deterministic decisions", "validation", "persistence", "replay", "recovery", "configuration governance", "traceability", "constitutional invariants")
+        missing = tuple(order for order in required if order not in completed_work_orders)
+        passed = not missing and not constitutional_inconsistencies and not implementation_discretion_findings and not missing_certification_evidence and not missing_audit_evidence
+        record = AnalystIndependentCompletionReviewRecord(
+            completion_identifier=f"ANALYST-RM-002-015-REVIEW-{_digest((required, completed_work_orders))[:12].upper()}",
+            required_work_orders=required,
+            completed_work_orders=completed_work_orders,
+            review_domains=domains,
+            missing_work_orders=missing,
+            constitutional_inconsistencies=constitutional_inconsistencies,
+            implementation_discretion_findings=implementation_discretion_findings,
+            missing_certification_evidence=missing_certification_evidence,
+            missing_audit_evidence=missing_audit_evidence,
+            progression_authorized=passed,
+            completion_outcome="COMPLETE" if passed else "INCOMPLETE",
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )

@@ -191,6 +191,94 @@ class AnalystRm002OfficeCompletionTests(unittest.TestCase):
         self.assertIn("Reasoning State", persistence.missing_persistent_state)
         self.assertIn("committed state regenerated", persistence.replay_regeneration_findings)
 
+    def test_rm002_final_package_covers_replay_recovery_configuration_traceability_and_review(self) -> None:
+        package = AnalystOfficeCompletionSupport().build_final_completion_package()
+
+        self.assertEqual(package.final_rm002_completion_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "ANALYST-RM-002-011",
+                "ANALYST-RM-002-012",
+                "ANALYST-RM-002-013",
+                "ANALYST-RM-002-014",
+                "ANALYST-RM-002-015",
+            ),
+        )
+        self.assertIn("Reasoning Graph", package.replay_completion.replay_scope)
+        self.assertIn("memory layout", package.replay_completion.admissible_runtime_differences)
+        self.assertIn("Output Publication Checkpoint", package.recovery_completion.recovery_checkpoints)
+        self.assertTrue(package.recovery_completion.fail_closed)
+        self.assertIn("Certification Configuration", package.configuration_completion.configuration_classes)
+        self.assertIn("recovery checkpoints", package.configuration_completion.compatibility_targets)
+        self.assertIn("Recovered From", package.traceability_completion.relationship_types)
+        self.assertIn("Certification Evidence", package.traceability_completion.canonical_chain)
+        self.assertEqual(package.independent_completion_review.completion_outcome, "COMPLETE")
+        self.assertTrue(package.independent_completion_review.progression_authorized)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm002_final_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeCompletionSupport()
+
+        replay = support.evaluate_replay_completion(
+            missing_scope=("Reasoning Graph",),
+            current_state_substitutions=("configuration v2 substituted"),
+            prohibited_difference_findings=("confidence values changed"),
+            validation_gaps=("semantic comparison missing"),
+            history_mutation_findings=("historical validation overwritten"),
+        )
+        recovery = support.evaluate_recovery_completion(
+            missing_recovery_state=("Reasoning Models",),
+            arbitrary_checkpoint_findings=("runtime-created checkpoint"),
+            partial_restore_findings=("hypothesis state omitted"),
+            idempotency_violations=("output published twice"),
+            invariant_violations=("object identity changed"),
+            fail_closed=False,
+        )
+        configuration = support.evaluate_configuration_completion(
+            missing_configuration_classes=("Certification Configuration",),
+            ownership_violations=("shared confidence config"),
+            hidden_configuration_findings=("runtime env toggled behavior"),
+            implicit_default_findings=("fallback threshold"),
+            compatibility_gaps=("replay environment undeclared"),
+            integrity_failures=("hash mismatch"),
+            replay_substitution_findings=("new config used in replay"),
+            recovery_drift_findings=("config version drifted"),
+        )
+        traceability = support.evaluate_traceability_completion(
+            orphaned_artifacts=("Decision Object",),
+            implicit_lineage_findings=("reasoning hidden in implementation"),
+            undefined_relationships=("Guessed From",),
+            broken_lineage_findings=("evidence chain broken"),
+            replay_trace_gaps=("original artifact missing"),
+            recovery_trace_gaps=("checkpoint link missing"),
+            certification_trace_gaps=("test evidence unlinked"),
+        )
+        review = support.evaluate_independent_completion_review(
+            completed_work_orders=support.remediation_order_coverage + support.advanced_order_coverage,
+            constitutional_inconsistencies=("configuration vs replay conflict",),
+            implementation_discretion_findings=("confidence interpretation left to code"),
+            missing_certification_evidence=("traceability certification suite",),
+            missing_audit_evidence=("completion review audit",),
+        )
+
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Reasoning Graph", replay.missing_scope)
+        self.assertIn("confidence values changed", replay.prohibited_difference_findings)
+        self.assertEqual(recovery.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Reasoning Models", recovery.missing_recovery_state)
+        self.assertFalse(recovery.fail_closed)
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Certification Configuration", configuration.missing_configuration_classes)
+        self.assertIn("fallback threshold", configuration.implicit_default_findings)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Guessed From", traceability.undefined_relationships)
+        self.assertIn("Decision Object", traceability.orphaned_artifacts)
+        self.assertEqual(review.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("ANALYST-RM-002-015", review.missing_work_orders)
+        self.assertEqual(review.completion_outcome, "INCOMPLETE")
+        self.assertFalse(review.progression_authorized)
+
 
 if __name__ == "__main__":
     unittest.main()
