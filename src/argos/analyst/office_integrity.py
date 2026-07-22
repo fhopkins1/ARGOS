@@ -141,6 +141,109 @@ class AnalystRm001EvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystValidationArchitectureRecord:
+    validation_identifier: str
+    validation_categories: tuple[str, ...]
+    validation_sequence: tuple[str, ...]
+    ownership_matrix: Mapping[str, str]
+    missing_categories: tuple[str, ...]
+    ordering_violations: tuple[str, ...]
+    failed_validation_stages: tuple[str, ...]
+    contradiction_reports: tuple[str, ...]
+    missing_information_findings: tuple[str, ...]
+    reasoning_integrity_findings: tuple[str, ...]
+    downstream_reasoning_blocked: bool
+    immutable_validation_evidence: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystDecisionArchitectureRecord:
+    decision_identifier: str
+    decision_registry: Mapping[str, tuple[str, ...]]
+    authority_matrix: Mapping[str, str]
+    dependency_graph: Mapping[str, tuple[str, ...]]
+    missing_decisions: tuple[str, ...]
+    ambiguous_authority: tuple[str, ...]
+    circular_dependencies: tuple[str, ...]
+    undocumented_inputs: tuple[str, ...]
+    unsupported_assumptions: tuple[str, ...]
+    deterministic_replay_supported: bool
+    fail_closed_decisions: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystPersistenceArchitectureRecord:
+    persistence_identifier: str
+    persistent_state_registry: tuple[str, ...]
+    transient_state_registry: tuple[str, ...]
+    atomic_commit_boundaries: tuple[str, ...]
+    missing_persistent_state: tuple[str, ...]
+    transient_evidence_violations: tuple[str, ...]
+    missing_commit_boundaries: tuple[str, ...]
+    partial_commit_findings: tuple[str, ...]
+    durability_failures: tuple[str, ...]
+    integrity_verification_failures: tuple[str, ...]
+    replay_compatible: bool
+    recovery_compatible: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystReplayArchitectureRecord:
+    replay_identifier: str
+    replay_scope: tuple[str, ...]
+    replay_prerequisites: tuple[str, ...]
+    admissible_runtime_variations: tuple[str, ...]
+    non_admissible_variations: tuple[str, ...]
+    missing_prerequisites: tuple[str, ...]
+    production_mutation_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    replay_outcome: str
+    immutable_replay_evidence: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRecoveryArchitectureRecord:
+    recovery_identifier: str
+    recovery_phases: tuple[str, ...]
+    checkpoint_requirements: tuple[str, ...]
+    restored_state_elements: tuple[str, ...]
+    missing_checkpoint_fields: tuple[str, ...]
+    unauthorized_recovery_attempts: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    duplicate_recovery_effects: tuple[str, ...]
+    partial_recovery_findings: tuple[str, ...]
+    idempotent_recovery: bool
+    restart_authorized: bool
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm001ArchitectureEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    validation_architecture: AnalystValidationArchitectureRecord
+    decision_architecture: AnalystDecisionArchitectureRecord
+    persistence_architecture: AnalystPersistenceArchitectureRecord
+    replay_architecture: AnalystReplayArchitectureRecord
+    recovery_architecture: AnalystRecoveryArchitectureRecord
+    final_architecture_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeIntegritySupport:
     """Build deterministic certification-support records for ANALYST-RM-001."""
 
@@ -150,6 +253,14 @@ class AnalystOfficeIntegritySupport:
         "ANALYST-RM-001-003",
         "ANALYST-RM-001-004",
         "ANALYST-RM-001-005",
+    )
+
+    architecture_order_coverage = (
+        "ANALYST-RM-001-006",
+        "ANALYST-RM-001-007",
+        "ANALYST-RM-001-008",
+        "ANALYST-RM-001-009",
+        "ANALYST-RM-001-010",
     )
 
     def build_package(
@@ -522,6 +633,309 @@ class AnalystOfficeIntegritySupport:
             replay_equivalent=replay_equivalent,
             recovery_preserves_lifecycle=recovery_preserves_lifecycle,
             final_state=final_state,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_architecture_package(self) -> AnalystRm001ArchitectureEvidencePackage:
+        validation = self.evaluate_validation_architecture()
+        decision = self.evaluate_decision_architecture()
+        persistence = self.evaluate_persistence_architecture()
+        replay = self.evaluate_replay_architecture()
+        recovery = self.evaluate_recovery_architecture()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (validation, decision, persistence, replay, recovery)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm001ArchitectureEvidencePackage(
+            package_identifier=f"ANALYST-RM-001-ARCH-{_digest((validation, decision, persistence, replay, recovery))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-001-006-TO-010/1.0.0",
+            remediation_order_coverage=self.architecture_order_coverage,
+            validation_architecture=validation,
+            decision_architecture=decision,
+            persistence_architecture=persistence,
+            replay_architecture=replay,
+            recovery_architecture=recovery,
+            final_architecture_readiness=final,
+            immutable_audit_references=(
+                validation.validation_identifier,
+                decision.decision_identifier,
+                persistence.persistence_identifier,
+                replay.replay_identifier,
+                recovery.recovery_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_validation_architecture(
+        self,
+        *,
+        observed_sequence: tuple[str, ...] | None = None,
+        failed_validation_stages: tuple[str, ...] = (),
+        contradiction_reports: tuple[str, ...] = (),
+        missing_information_findings: tuple[str, ...] = (),
+        reasoning_integrity_findings: tuple[str, ...] = (),
+    ) -> AnalystValidationArchitectureRecord:
+        categories = (
+            "Identity Validation",
+            "Schema Validation",
+            "Ownership Validation",
+            "Admissibility Validation",
+            "Dependency Validation",
+            "Evidence Integrity Validation",
+            "Rule Compliance Validation",
+            "Analytical Consistency Validation",
+            "Provenance Validation",
+            "Completion Validation",
+        )
+        sequence = observed_sequence or categories
+        missing = tuple(category for category in categories if category not in sequence)
+        expected_index = {stage: index for index, stage in enumerate(categories)}
+        ordering = tuple(
+            f"{left}->{right}"
+            for left, right in zip(sequence, sequence[1:])
+            if left in expected_index and right in expected_index and expected_index[left] > expected_index[right]
+        )
+        ownership = MappingProxyType({category: "Analyst Office" for category in categories})
+        blocked = bool(failed_validation_stages or missing or ordering or reasoning_integrity_findings)
+        passed = not missing and not ordering and not failed_validation_stages and not reasoning_integrity_findings
+        evidence = tuple(f"VAL-EVID-{_digest((stage, index))[:12].upper()}" for index, stage in enumerate(sequence, start=1))
+        record = AnalystValidationArchitectureRecord(
+            validation_identifier=f"ANALYST-RM-001-006-VAL-{_digest((sequence, failed_validation_stages))[:12].upper()}",
+            validation_categories=categories,
+            validation_sequence=sequence,
+            ownership_matrix=ownership,
+            missing_categories=missing,
+            ordering_violations=ordering,
+            failed_validation_stages=failed_validation_stages,
+            contradiction_reports=contradiction_reports,
+            missing_information_findings=missing_information_findings,
+            reasoning_integrity_findings=reasoning_integrity_findings,
+            downstream_reasoning_blocked=blocked,
+            immutable_validation_evidence=evidence,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_decision_architecture(
+        self,
+        *,
+        missing_decisions: tuple[str, ...] = (),
+        ambiguous_authority: tuple[str, ...] = (),
+        circular_dependencies: tuple[str, ...] = (),
+        undocumented_inputs: tuple[str, ...] = (),
+        unsupported_assumptions: tuple[str, ...] = (),
+        deterministic_replay_supported: bool = True,
+    ) -> AnalystDecisionArchitectureRecord:
+        decisions = MappingProxyType(
+            {
+                "Input Admissibility Decision": ("Accepted", "Rejected", "Deferred Pending Validation"),
+                "Evidence Sufficiency Decision": ("Sufficient", "Insufficient"),
+                "Evidence Consistency Decision": ("Consistent", "Inconsistent", "Requires Resolution"),
+                "Analytical Completeness Decision": ("Complete", "Incomplete"),
+                "Finding Acceptance Decision": ("Accepted", "Rejected"),
+                "Recommendation Authorization Decision": ("Authorized", "Rejected"),
+                "Output Readiness Decision": ("Ready", "Not Ready"),
+                "Constitutional Validation Decision": ("Valid", "Invalid"),
+                "Replay Equivalence Decision": ("Equivalent", "Divergent"),
+                "Recovery Integrity Decision": ("Preserved", "Invalid"),
+            }
+        )
+        authority = MappingProxyType({name: "Analyst Office" for name in decisions})
+        dependency = MappingProxyType(
+            {
+                "Input Admissibility Decision": (),
+                "Evidence Sufficiency Decision": ("Input Admissibility Decision",),
+                "Evidence Consistency Decision": ("Evidence Sufficiency Decision",),
+                "Analytical Completeness Decision": ("Evidence Consistency Decision",),
+                "Finding Acceptance Decision": ("Analytical Completeness Decision",),
+                "Recommendation Authorization Decision": ("Finding Acceptance Decision",),
+                "Output Readiness Decision": ("Recommendation Authorization Decision",),
+                "Constitutional Validation Decision": ("Output Readiness Decision",),
+                "Replay Equivalence Decision": ("Constitutional Validation Decision",),
+                "Recovery Integrity Decision": ("Constitutional Validation Decision",),
+            }
+        )
+        fail_closed = missing_decisions + ambiguous_authority + circular_dependencies + undocumented_inputs + unsupported_assumptions
+        passed = not fail_closed and deterministic_replay_supported
+        record = AnalystDecisionArchitectureRecord(
+            decision_identifier=f"ANALYST-RM-001-007-DEC-{_digest(decisions)[:12].upper()}",
+            decision_registry=decisions,
+            authority_matrix=authority,
+            dependency_graph=dependency,
+            missing_decisions=missing_decisions,
+            ambiguous_authority=ambiguous_authority,
+            circular_dependencies=circular_dependencies,
+            undocumented_inputs=undocumented_inputs,
+            unsupported_assumptions=unsupported_assumptions,
+            deterministic_replay_supported=deterministic_replay_supported,
+            fail_closed_decisions=fail_closed,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_persistence_architecture(
+        self,
+        *,
+        missing_persistent_state: tuple[str, ...] = (),
+        transient_evidence_violations: tuple[str, ...] = (),
+        missing_commit_boundaries: tuple[str, ...] = (),
+        partial_commit_findings: tuple[str, ...] = (),
+        durability_failures: tuple[str, ...] = (),
+        integrity_verification_failures: tuple[str, ...] = (),
+        replay_compatible: bool = True,
+        recovery_compatible: bool = True,
+    ) -> AnalystPersistenceArchitectureRecord:
+        persistent = (
+            "Analysis Objects",
+            "Analytical Decisions",
+            "Reasoning Artifacts",
+            "Decision Evidence",
+            "Validation Results",
+            "Candidate Evaluations",
+            "Provenance Records",
+            "Configuration Snapshots",
+            "Audit Records",
+            "Replay Metadata",
+            "Recovery Metadata",
+            "Certification Evidence",
+        )
+        transient = (
+            "temporary calculations",
+            "execution stacks",
+            "temporary caches",
+            "optimization structures",
+            "runtime indexes",
+            "temporary scheduling queues",
+            "ephemeral execution variables",
+            "temporary serialization buffers",
+            "intermediate parsing structures",
+            "temporary memory allocations",
+        )
+        commits = (
+            "Analysis Object creation",
+            "analysis completion",
+            "decision publication",
+            "evidence publication",
+            "validation completion",
+            "configuration commitment",
+            "checkpoint creation",
+            "audit commitment",
+            "certification evidence creation",
+        )
+        missing = tuple(item for item in persistent if item in missing_persistent_state) + tuple(item for item in missing_commit_boundaries if item in commits)
+        passed = (
+            not missing
+            and not transient_evidence_violations
+            and not partial_commit_findings
+            and not durability_failures
+            and not integrity_verification_failures
+            and replay_compatible
+            and recovery_compatible
+        )
+        record = AnalystPersistenceArchitectureRecord(
+            persistence_identifier=f"ANALYST-RM-001-008-PERSIST-{_digest((persistent, commits))[:12].upper()}",
+            persistent_state_registry=persistent,
+            transient_state_registry=transient,
+            atomic_commit_boundaries=commits,
+            missing_persistent_state=tuple(item for item in persistent if item in missing_persistent_state),
+            transient_evidence_violations=transient_evidence_violations,
+            missing_commit_boundaries=tuple(item for item in missing_commit_boundaries if item in commits),
+            partial_commit_findings=partial_commit_findings,
+            durability_failures=durability_failures,
+            integrity_verification_failures=integrity_verification_failures,
+            replay_compatible=replay_compatible,
+            recovery_compatible=recovery_compatible,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_replay_architecture(
+        self,
+        *,
+        missing_prerequisites: tuple[str, ...] = (),
+        production_mutation_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        provenance_gaps: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+    ) -> AnalystReplayArchitectureRecord:
+        scope = (
+            "Analytical Inputs",
+            "Normalized Evidence",
+            "Evidence Packages",
+            "Analytical Objects",
+            "Analytical Reasoning",
+            "Decision Objects",
+            "Confidence Assessments",
+            "Alternative Evaluations",
+            "Contradiction Analysis",
+            "Analytical Outputs",
+            "Validation Results",
+            "Delivery Records",
+            "Audit Records",
+        )
+        prerequisites = ("complete constitutional inputs", "preserved immutable evidence", "required schemas", "compatible configuration", "valid ownership", "replay authorization")
+        admissible = ("execution timing", "processor architecture", "operating system", "thread scheduling", "memory layout", "storage implementation", "network latency", "internal optimization")
+        non_admissible = ("analytical conclusions", "ownership", "object identity", "confidence calculation", "evidence relationships", "contradiction resolution", "validation outcome", "certification state", "audit meaning", "provenance")
+        passed = not missing_prerequisites and not production_mutation_findings and not replay_divergence_findings and not provenance_gaps and not validation_failures
+        record = AnalystReplayArchitectureRecord(
+            replay_identifier=f"ANALYST-RM-001-009-REPLAY-{_digest(scope)[:12].upper()}",
+            replay_scope=scope,
+            replay_prerequisites=prerequisites,
+            admissible_runtime_variations=admissible,
+            non_admissible_variations=non_admissible,
+            missing_prerequisites=missing_prerequisites,
+            production_mutation_findings=production_mutation_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            provenance_gaps=provenance_gaps,
+            validation_failures=validation_failures,
+            replay_outcome="Equivalent" if passed else "Failed",
+            immutable_replay_evidence=tuple(f"REPLAY-EVID-{_digest((item, index))[:12].upper()}" for index, item in enumerate(scope, start=1)),
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_recovery_architecture(
+        self,
+        *,
+        missing_checkpoint_fields: tuple[str, ...] = (),
+        unauthorized_recovery_attempts: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+        duplicate_recovery_effects: tuple[str, ...] = (),
+        partial_recovery_findings: tuple[str, ...] = (),
+        idempotent_recovery: bool = True,
+        restart_authorized: bool = True,
+    ) -> AnalystRecoveryArchitectureRecord:
+        phases = ("Environment Verification", "Checkpoint Validation", "State Restoration", "Invariant Verification", "Restart Authorization")
+        checkpoint = ("checkpoint identifier", "execution identifier", "object identities", "lifecycle states", "ownership information", "committed analytical outputs", "validation status", "dependency references", "configuration version", "constitutional version", "persistence metadata", "integrity verification data")
+        restored = ("persistent office state", "lifecycle states", "object identities", "dependency relationships", "validation status", "execution metadata")
+        passed = (
+            not missing_checkpoint_fields
+            and not unauthorized_recovery_attempts
+            and not invariant_violations
+            and not duplicate_recovery_effects
+            and not partial_recovery_findings
+            and idempotent_recovery
+            and restart_authorized
+        )
+        record = AnalystRecoveryArchitectureRecord(
+            recovery_identifier=f"ANALYST-RM-001-010-RECOVERY-{_digest((phases, checkpoint))[:12].upper()}",
+            recovery_phases=phases,
+            checkpoint_requirements=checkpoint,
+            restored_state_elements=restored,
+            missing_checkpoint_fields=missing_checkpoint_fields,
+            unauthorized_recovery_attempts=unauthorized_recovery_attempts,
+            invariant_violations=invariant_violations,
+            duplicate_recovery_effects=duplicate_recovery_effects,
+            partial_recovery_findings=partial_recovery_findings,
+            idempotent_recovery=idempotent_recovery,
+            restart_authorized=restart_authorized,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )

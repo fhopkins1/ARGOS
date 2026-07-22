@@ -189,13 +189,19 @@ from .verification_search import (
 )
 from .office_integrity import (
     AnalystAuthorityBoundaryRecord,
+    AnalystDecisionArchitectureRecord,
     AnalystInputAdmissibilityRecord,
     AnalystLifecycleRemediationRecord,
     AnalystLifecycleState,
     AnalystObjectInventoryRecord,
     AnalystOfficeIntegritySupport,
     AnalystOutputContractRecord,
+    AnalystPersistenceArchitectureRecord,
+    AnalystRecoveryArchitectureRecord,
+    AnalystReplayArchitectureRecord,
+    AnalystRm001ArchitectureEvidencePackage,
     AnalystRm001EvidencePackage,
+    AnalystValidationArchitectureRecord,
 )
 
 __all__ = [
@@ -363,11 +369,17 @@ __all__ = [
     "independent_originating_source_count",
     "verification_question_registry",
     "AnalystAuthorityBoundaryRecord",
+    "AnalystDecisionArchitectureRecord",
     "AnalystInputAdmissibilityRecord",
     "AnalystLifecycleRemediationRecord",
     "AnalystLifecycleState",
     "AnalystObjectInventoryRecord",
     "AnalystOfficeIntegritySupport",
     "AnalystOutputContractRecord",
+    "AnalystPersistenceArchitectureRecord",
+    "AnalystRecoveryArchitectureRecord",
+    "AnalystReplayArchitectureRecord",
+    "AnalystRm001ArchitectureEvidencePackage",
     "AnalystRm001EvidencePackage",
+    "AnalystValidationArchitectureRecord",
 ]

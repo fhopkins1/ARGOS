@@ -145,6 +145,94 @@ class AnalystRm001OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("Created+Processing", lifecycle.multiple_active_state_findings)
         self.assertFalse(lifecycle.replay_equivalent)
 
+    def test_rm001_architecture_package_covers_validation_decision_persistence_replay_and_recovery(self) -> None:
+        package = AnalystOfficeIntegritySupport().build_architecture_package()
+
+        self.assertEqual(package.final_architecture_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "ANALYST-RM-001-006",
+                "ANALYST-RM-001-007",
+                "ANALYST-RM-001-008",
+                "ANALYST-RM-001-009",
+                "ANALYST-RM-001-010",
+            ),
+        )
+        self.assertEqual(package.validation_architecture.validation_sequence[0], "Identity Validation")
+        self.assertEqual(package.validation_architecture.ordering_violations, ())
+        self.assertIn("Output Readiness Decision", package.decision_architecture.decision_registry)
+        self.assertEqual(package.decision_architecture.fail_closed_decisions, ())
+        self.assertIn("Analytical Decisions", package.persistence_architecture.persistent_state_registry)
+        self.assertIn("temporary caches", package.persistence_architecture.transient_state_registry)
+        self.assertEqual(package.persistence_architecture.partial_commit_findings, ())
+        self.assertEqual(package.replay_architecture.replay_outcome, "Equivalent")
+        self.assertIn("analytical conclusions", package.replay_architecture.non_admissible_variations)
+        self.assertTrue(package.recovery_architecture.idempotent_recovery)
+        self.assertTrue(package.recovery_architecture.restart_authorized)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm001_architecture_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeIntegritySupport()
+
+        validation = support.evaluate_validation_architecture(
+            observed_sequence=("Schema Validation", "Identity Validation"),
+            failed_validation_stages=("Ownership Validation",),
+            contradiction_reports=("evidence_conflict_preserved",),
+            missing_information_findings=("missing_source_lineage",),
+            reasoning_integrity_findings=("unsupported_assumption",),
+        )
+        decision = support.evaluate_decision_architecture(
+            missing_decisions=("Replay Equivalence Decision",),
+            ambiguous_authority=("Risk Office overlap on uncertainty",),
+            circular_dependencies=("Output Readiness Decision->Input Admissibility Decision",),
+            undocumented_inputs=("runtime_cache",),
+            unsupported_assumptions=("estimated_evidence",),
+            deterministic_replay_supported=False,
+        )
+        persistence = support.evaluate_persistence_architecture(
+            missing_persistent_state=("Analytical Decisions",),
+            transient_evidence_violations=("temporary cache committed"),
+            missing_commit_boundaries=("decision publication",),
+            partial_commit_findings=("validation_result_without_audit"),
+            durability_failures=("restart_lost_decision"),
+            integrity_verification_failures=("checksum_missing"),
+            replay_compatible=False,
+            recovery_compatible=False,
+        )
+        replay = support.evaluate_replay_architecture(
+            missing_prerequisites=("required schemas",),
+            production_mutation_findings=("production_output_overwritten"),
+            replay_divergence_findings=("confidence calculation changed"),
+            provenance_gaps=("replay input missing source trace"),
+            validation_failures=("schema compatibility failed"),
+        )
+        recovery = support.evaluate_recovery_architecture(
+            missing_checkpoint_fields=("integrity verification data",),
+            unauthorized_recovery_attempts=("Risk Office selected checkpoint"),
+            invariant_violations=("ownership changed"),
+            duplicate_recovery_effects=("decision replayed twice"),
+            partial_recovery_findings=("uncommitted finding restored"),
+            idempotent_recovery=False,
+            restart_authorized=False,
+        )
+
+        self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Schema Validation->Identity Validation", validation.ordering_violations)
+        self.assertTrue(validation.downstream_reasoning_blocked)
+        self.assertEqual(decision.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("runtime_cache", decision.undocumented_inputs)
+        self.assertIn("Replay Equivalence Decision", decision.fail_closed_decisions)
+        self.assertEqual(persistence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Analytical Decisions", persistence.missing_persistent_state)
+        self.assertIn("temporary cache committed", persistence.transient_evidence_violations)
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertEqual(replay.replay_outcome, "Failed")
+        self.assertIn("confidence calculation changed", replay.replay_divergence_findings)
+        self.assertEqual(recovery.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Risk Office selected checkpoint", recovery.unauthorized_recovery_attempts)
+        self.assertFalse(recovery.restart_authorized)
+
 
 if __name__ == "__main__":
     unittest.main()
