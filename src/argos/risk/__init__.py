@@ -291,6 +291,15 @@ from .rm005_execution_operational import (
     RiskRm005SchemaValidationRecord,
     RiskRm005TestExecutionRecord,
 )
+from .rm005_registry_operational import (
+    RiskRm005CertificationManifestRecord,
+    RiskRm005CompatibilityRecord,
+    RiskRm005CrossReferenceEdge,
+    RiskRm005EvidenceRegistryRecord,
+    RiskRm005MetricRecord,
+    RiskRm005RegistryOperationalPackage,
+    RiskRm005RegistryOperationalSupport,
+)
 from .m4_operational_certification import (
     RiskM4CandidateIdentity,
     RiskM4CertificationDecision,
@@ -608,6 +617,13 @@ __all__ = [
     "RiskRm005RuleEvaluationRecord",
     "RiskRm005SchemaValidationRecord",
     "RiskRm005TestExecutionRecord",
+    "RiskRm005CertificationManifestRecord",
+    "RiskRm005CompatibilityRecord",
+    "RiskRm005CrossReferenceEdge",
+    "RiskRm005EvidenceRegistryRecord",
+    "RiskRm005MetricRecord",
+    "RiskRm005RegistryOperationalPackage",
+    "RiskRm005RegistryOperationalSupport",
     "RiskM4CandidateIdentity",
     "RiskM4CertificationDecision",
     "RiskM4CertificationTestResult",
