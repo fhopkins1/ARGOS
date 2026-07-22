@@ -206,6 +206,102 @@ class RiskRm004CertificationCompletionTests(unittest.TestCase):
         self.assertEqual(versions.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("unknown compatibility assumed", versions.unknown_compatibility_findings)
 
+    def test_rm004_governance_registry_package_covers_rules_schemas_cross_references_evidence_and_decisions(self) -> None:
+        package = RiskOfficeCertificationCompletionSupport().build_governance_registry_package()
+
+        self.assertEqual(package.final_governance_registry_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-004-011",
+                "RISK-RM-004-012",
+                "RISK-RM-004-013",
+                "RISK-RM-004-014",
+                "RISK-RM-004-015",
+            ),
+        )
+        self.assertIn("CR-006 Certification Rules", package.constitutional_rule_registry.rule_categories)
+        self.assertEqual(package.constitutional_rule_registry.evaluation_outcomes, ("Pass", "Fail", "Not Evaluated"))
+        self.assertIn("CS-008 Audit Schemas", package.schema_registry.schema_categories)
+        self.assertIn("Relationship Definitions", package.schema_registry.schema_record_fields)
+        self.assertIn("Decision Registry", package.registry_cross_reference_matrix.registry_inventory)
+        self.assertIn("TRACES", package.registry_cross_reference_matrix.relationship_types)
+        self.assertIn("Compatibility Matrix->Every Registry", package.registry_cross_reference_matrix.canonical_matrix)
+        self.assertIn("Replay Evidence", package.certification_evidence_registry.evidence_classes)
+        self.assertIn("Certification Package Evidence", package.certification_evidence_registry.evidence_classes)
+        self.assertEqual(package.certification_evidence_registry.lifecycle_states[0], "Draft")
+        self.assertIn("Certification Approval Decision", package.decision_registry.decision_categories)
+        self.assertIn("Independent Certification Auditor", package.decision_registry.decision_authorities)
+        self.assertIn("Compatible", package.decision_registry.decision_results)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm004_governance_registry_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeCertificationCompletionSupport()
+
+        rules = support.evaluate_constitutional_rule_registry(
+            duplicate_rule_findings=("CR-1 duplicated",),
+            ambiguous_ownership_findings=("rule owned by runtime",),
+            missing_dependency_findings=("evidence registry absent",),
+            invalid_applicability_findings=("candidate class unknown",),
+            traceability_gaps=("rule trace absent",),
+            replay_recovery_findings=("rule replay diverged",),
+            audit_gaps=("rule unaudited",),
+            invariant_violations=("published rule mutable",),
+        )
+        schemas = support.evaluate_schema_registry(
+            duplicate_schema_findings=("schema duplicated",),
+            missing_schema_class_findings=("Audit Schemas",),
+            ownership_findings=("schema owner ambiguous",),
+            compatibility_gaps=("schema compatibility undefined",),
+            relationship_cycle_findings=("schema relationship cycle",),
+            validation_failures=("schema validation failed",),
+            replay_recovery_gaps=("schema recovery changed version",),
+            audit_gaps=("schema approval unaudited",),
+        )
+        cross_refs = support.evaluate_registry_cross_reference_matrix(
+            duplicate_registry_findings=("Decision Registry duplicated",),
+            missing_registry_findings=("Evidence Registry",),
+            illegal_relationship_findings=("RELATES_TO used",),
+            broken_reference_findings=("manifest references missing registry",),
+            dependency_cycle_findings=("registry dependency cycle",),
+            compatibility_gaps=("version compatibility absent",),
+            replay_recovery_gaps=("cross reference replay changed",),
+            audit_gaps=("matrix unaudited",),
+        )
+        evidence = support.evaluate_certification_evidence_registry(
+            duplicate_evidence_findings=("EV-1 duplicated",),
+            missing_class_findings=("Replay Evidence",),
+            ownership_findings=("evidence owner runtime",),
+            inadmissible_evidence_findings=("unverifiable evidence admitted",),
+            integrity_failures=("hash mismatch",),
+            provenance_gaps=("provenance missing",),
+            traceability_gaps=("evidence orphaned",),
+            replay_recovery_gaps=("evidence replay changed",),
+            audit_gaps=("evidence unaudited",),
+        )
+        decisions = support.evaluate_decision_registry(
+            duplicate_decision_findings=("DEC-1 duplicated",),
+            missing_category_findings=("Certification Closure Decision",),
+            invalid_outcome_findings=("MAYBE result",),
+            authority_findings=("self-certification authority used",),
+            evidence_gaps=("decision evidence absent",),
+            dependency_cycle_findings=("decision dependency cycle",),
+            traceability_gaps=("decision orphaned",),
+            replay_recovery_gaps=("decision replay changed",),
+            audit_gaps=("decision unaudited",),
+        )
+
+        self.assertEqual(rules.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("evidence registry absent", rules.missing_dependency_findings)
+        self.assertEqual(schemas.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("schema relationship cycle", schemas.relationship_cycle_findings)
+        self.assertEqual(cross_refs.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("RELATES_TO used", cross_refs.illegal_relationship_findings)
+        self.assertEqual(evidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unverifiable evidence admitted", evidence.inadmissible_evidence_findings)
+        self.assertEqual(decisions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("self-certification authority used", decisions.authority_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
