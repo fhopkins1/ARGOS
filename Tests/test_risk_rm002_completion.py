@@ -83,6 +83,69 @@ class RiskRm002CompletionTests(unittest.TestCase):
         self.assertEqual(evaluation.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("hidden evaluation affected conclusion", evaluation.invariant_violations)
 
+    def test_rm002_decision_validation_package_covers_confidence_mitigation_decisions_and_validation(self) -> None:
+        package = RiskOfficeCompletionSupport().build_decision_validation_package()
+
+        self.assertEqual(package.final_completion_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-002-006",
+                "RISK-RM-002-007",
+                "RISK-RM-002-008",
+                "RISK-RM-002-009",
+            ),
+        )
+        self.assertIn("unresolved uncertainty", package.confidence_exposure.confidence_factors)
+        self.assertIn("systemic exposure", package.confidence_exposure.exposure_factors)
+        self.assertIn("one Confidence Assessment per Risk Assessment", package.confidence_exposure.invariants)
+        self.assertEqual(len(package.mitigation_recovery.planning_objects), 7)
+        self.assertEqual(package.mitigation_recovery.planning_objects["RM-005"], "Escalation Recommendation")
+        self.assertIn("CI-003", package.mitigation_recovery.invariants)
+        self.assertIn("residual risk exceeds tolerance", package.mitigation_recovery.escalation_triggers)
+        self.assertEqual(len(package.deterministic_decisions.decision_inventory), 12)
+        self.assertEqual(package.deterministic_decisions.decision_inventory["Final Risk Decision"], ("ACCEPTABLE", "ACCEPTABLE WITH MITIGATION", "UNACCEPTABLE"))
+        self.assertEqual(package.deterministic_decisions.evaluation_sequence[0], "Input Admission")
+        self.assertEqual(package.deterministic_decisions.evaluation_sequence[-1], "Final Risk Decision")
+        self.assertEqual(len(package.validation_completion.validation_pipeline), 17)
+        self.assertEqual(package.validation_completion.validation_pipeline[0], "Identity Validation")
+        self.assertEqual(package.validation_completion.validation_pipeline[-1], "Validation Completion")
+        self.assertIn("Traceability Validation", package.validation_completion.validation_pipeline)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm002_decision_validation_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeCompletionSupport()
+
+        confidence = support.evaluate_confidence_exposure(
+            confidence_findings=("confidence adjusted by implementation preference",),
+            uncertainty_findings=("unknown uncertainty hidden",),
+            inheritance_findings=("implicit exposure inheritance",),
+        )
+        mitigation = support.evaluate_mitigation_recovery(
+            planning_findings=("actionable risk lacks mitigation",),
+            alternative_findings=("admissible alternative discarded",),
+            escalation_findings=("limit breach did not escalate",),
+        )
+        decisions = support.evaluate_decisions(
+            precondition_findings=("decision executed before validation",),
+            sequence_findings=("Final Risk Decision issued before Recovery Requirement",),
+            traceability_gaps=("decision lacks originating input provenance",),
+        )
+        validation = support.evaluate_validation_completion(
+            sequence_findings=("validation order varied",),
+            failure_findings=("schema failure allowed evaluation",),
+            audit_gaps=("validation failure unaudited",),
+        )
+
+        self.assertEqual(confidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unknown uncertainty hidden", confidence.uncertainty_findings)
+        self.assertEqual(mitigation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("admissible alternative discarded", mitigation.alternative_findings)
+        self.assertEqual(decisions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Final Risk Decision issued before Recovery Requirement", decisions.sequence_findings)
+        self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("schema failure allowed evaluation", validation.failure_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -201,12 +201,22 @@ from .office_integrity import (
 )
 from .completion import (
     RiskCanonicalObjectCompletionRecord,
+    RiskConfidenceExposureCompletionRecord,
+    RiskDecisionCompletionRecord,
+    RiskMitigationRecoveryCompletionRecord,
     RiskEvaluationArchitectureCompletionRecord,
     RiskInputCompletionRecord,
     RiskLifecycleCompletionRecord,
     RiskOfficeCompletionSupport,
     RiskOutputCompletionRecord,
+    RiskRm002DecisionValidationEvidencePackage,
     RiskRm002CompletionEvidencePackage,
+    RiskValidationCompletionRecord,
+)
+from .specification import (
+    RiskOfficeSpecificationSupport,
+    RiskRm003SpecificationProgramRecord,
+    RiskSpecificationWorkOrder,
 )
 from .adversarial_search import (
     ExposureTier,
@@ -405,12 +415,20 @@ __all__ = [
     "RiskTraceabilityArchitectureRecord",
     "RiskValidationArchitectureRecord",
     "RiskCanonicalObjectCompletionRecord",
+    "RiskConfidenceExposureCompletionRecord",
+    "RiskDecisionCompletionRecord",
+    "RiskMitigationRecoveryCompletionRecord",
     "RiskEvaluationArchitectureCompletionRecord",
     "RiskInputCompletionRecord",
     "RiskLifecycleCompletionRecord",
     "RiskOfficeCompletionSupport",
     "RiskOutputCompletionRecord",
+    "RiskRm002DecisionValidationEvidencePackage",
     "RiskRm002CompletionEvidencePackage",
+    "RiskValidationCompletionRecord",
+    "RiskOfficeSpecificationSupport",
+    "RiskRm003SpecificationProgramRecord",
+    "RiskSpecificationWorkOrder",
     "risk_office_templates",
     "ExposureTier",
     "HoldingPeriodClass",
