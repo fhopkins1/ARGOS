@@ -357,6 +357,104 @@ class AnalystRm003OfficeSpecificationTests(unittest.TestCase):
         self.assertIn("Class K Traceability Errors", errors.missing_error_classes)
         self.assertIn("error record edited", errors.mutation_findings)
 
+    def test_rm003_certification_closure_package_covers_traceability_confidence_hypotheses_consensus_and_suite(self) -> None:
+        package = AnalystOfficeSpecificationSupport().build_certification_closure_package()
+
+        self.assertEqual(package.final_certification_closure_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.specification_order_coverage,
+            (
+                "ANALYST-RM-003-021",
+                "ANALYST-RM-003-022",
+                "ANALYST-RM-003-023",
+                "ANALYST-RM-003-024",
+                "ANALYST-RM-003-025",
+            ),
+        )
+        self.assertIn("CT-010 Audits", package.traceability_architecture.relationship_types)
+        self.assertIn("Audit Archive", package.traceability_architecture.traceability_chain)
+        self.assertIn("High Confidence", package.confidence_probability.confidence_classifications)
+        self.assertIn("Uncertainty Representation", package.confidence_probability.schema_sections["Confidence Representation"])
+        self.assertIn("Competing Hypothesis", package.competing_hypotheses.hypothesis_classes)
+        self.assertIn("contradiction analysis", package.competing_hypotheses.evaluation_sequence)
+        self.assertIn("Policy Contradiction", package.consensus_contradiction.contradiction_classes)
+        self.assertIn("Certification Blocking", package.consensus_contradiction.resolution_states)
+        self.assertIn("Layer E Office Certification", package.independent_certification_suite.architecture_layers)
+        self.assertIn("100% Work Order coverage", package.independent_certification_suite.coverage_requirements)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_certification_closure_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeSpecificationSupport()
+
+        traceability = support.evaluate_constitutional_traceability_specification(
+            missing_relationships=("CT-007 Replays",),
+            orphaned_artifact_findings=("runtime object lacks mission lineage",),
+            duplicate_relationship_findings=("duplicate CT-003 edge",),
+            illegal_relationship_findings=("audit governs doctrine",),
+            version_chain_findings=("configuration version omitted",),
+            replay_inconsistencies=("trace graph regenerated differently",),
+            recovery_gaps=("relationship graph not restored",),
+            audit_gaps=("relationship event unaudited",),
+        )
+        confidence = support.evaluate_confidence_probability_specification(
+            missing_schema_fields=("Uncertainty Representation",),
+            invalid_classification_findings=("Very Sure",),
+            hidden_uncertainty_findings=("model limitation omitted",),
+            unsupported_confidence_findings=("confidence lacks evidence",),
+            orphaned_relationship_findings=("conclusion reference absent",),
+            replay_divergence_findings=("confidence class changed",),
+            recovery_recalculation_findings=("accepted confidence recalculated",),
+            audit_gaps=("publication unaudited",),
+        )
+        hypotheses = support.evaluate_competing_hypothesis_specification(
+            missing_classes=("Contradictory Hypothesis",),
+            missing_identity_fields=("Integrity Metadata",),
+            admissibility_failures=("supporting evidence unverified",),
+            discarded_hypothesis_findings=("lower ranked hypothesis removed",),
+            contradiction_preservation_findings=("contradiction omitted",),
+            ranking_nondeterminism_findings=("runtime timing affected rank",),
+            replay_divergence_findings=("hypothesis inventory changed",),
+            recovery_gaps=("relationship graph lost",),
+            audit_gaps=("confidence change unaudited",),
+        )
+        consensus = support.evaluate_consensus_contradiction_specification(
+            missing_contradiction_classes=("Policy Contradiction",),
+            invalid_severity_findings=("Catastrophic",),
+            invalid_resolution_findings=("Silently Ignored",),
+            suppressed_contradiction_findings=("conflicting evidence hidden",),
+            undocumented_reconciliation_findings=("heuristic reconciliation used",),
+            validation_failures=("consensus accepted before validation"),
+            replay_divergence_findings=("resolution state changed",),
+            recovery_duplication_findings=("contradiction evaluated twice",),
+            audit_gaps=("reconciliation action missing",),
+        )
+        certification = support.evaluate_independent_certification_suite_specification(
+            missing_categories=("Traceability Certification",),
+            missing_coverage=("100% recovery coverage",),
+            nondeterministic_execution_findings=("test order changed outcome",),
+            suppressed_failure_findings=("failed invariant hidden",),
+            missing_evidence_findings=("coverage report absent",),
+            replay_divergence_findings=("cert replay changed result",),
+            recovery_gaps=("completed test result not restored",),
+            audit_gaps=("failure classification omitted",),
+        )
+
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("CT-007 Replays", traceability.missing_relationships)
+        self.assertIn("runtime object lacks mission lineage", traceability.orphaned_artifact_findings)
+        self.assertEqual(confidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Uncertainty Representation", confidence.missing_schema_fields)
+        self.assertIn("confidence lacks evidence", confidence.unsupported_confidence_findings)
+        self.assertEqual(hypotheses.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Contradictory Hypothesis", hypotheses.missing_classes)
+        self.assertIn("lower ranked hypothesis removed", hypotheses.discarded_hypothesis_findings)
+        self.assertEqual(consensus.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Policy Contradiction", consensus.missing_contradiction_classes)
+        self.assertIn("Catastrophic", consensus.invalid_severity_findings)
+        self.assertEqual(certification.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Traceability Certification", certification.missing_categories)
+        self.assertIn("100% recovery coverage", certification.missing_coverage)
+
 
 if __name__ == "__main__":
     unittest.main()

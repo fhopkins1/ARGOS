@@ -426,6 +426,135 @@ class AnalystRm003ExecutionGovernanceEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystConstitutionalTraceabilitySpecificationRecord:
+    specification_identifier: str
+    traceability_chain: tuple[str, ...]
+    traceability_record_fields: tuple[str, ...]
+    relationship_types: Mapping[str, str]
+    required_coverage: tuple[str, ...]
+    runtime_references: tuple[str, ...]
+    version_references: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_relationships: tuple[str, ...]
+    orphaned_artifact_findings: tuple[str, ...]
+    duplicate_relationship_findings: tuple[str, ...]
+    illegal_relationship_findings: tuple[str, ...]
+    version_chain_findings: tuple[str, ...]
+    replay_inconsistencies: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystConfidenceProbabilitySpecificationRecord:
+    specification_identifier: str
+    schema_sections: Mapping[str, tuple[str, ...]]
+    confidence_classifications: tuple[str, ...]
+    derivation_inputs: tuple[str, ...]
+    prohibited_inputs: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    relationship_targets: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_schema_fields: tuple[str, ...]
+    invalid_classification_findings: tuple[str, ...]
+    hidden_uncertainty_findings: tuple[str, ...]
+    unsupported_confidence_findings: tuple[str, ...]
+    orphaned_relationship_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_recalculation_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystCompetingHypothesisSpecificationRecord:
+    specification_identifier: str
+    hypothesis_scope: tuple[str, ...]
+    identity_fields: tuple[str, ...]
+    schema_sections: Mapping[str, tuple[str, ...]]
+    hypothesis_classes: tuple[str, ...]
+    admissibility_requirements: tuple[str, ...]
+    evaluation_sequence: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_classes: tuple[str, ...]
+    missing_identity_fields: tuple[str, ...]
+    admissibility_failures: tuple[str, ...]
+    discarded_hypothesis_findings: tuple[str, ...]
+    contradiction_preservation_findings: tuple[str, ...]
+    ranking_nondeterminism_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystConsensusContradictionSpecificationRecord:
+    specification_identifier: str
+    contradiction_identity_fields: tuple[str, ...]
+    consensus_identity_fields: tuple[str, ...]
+    contradiction_classes: tuple[str, ...]
+    severity_levels: tuple[str, ...]
+    contradiction_lifecycle: tuple[str, ...]
+    consensus_lifecycle: tuple[str, ...]
+    resolution_states: tuple[str, ...]
+    consensus_prerequisites: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_contradiction_classes: tuple[str, ...]
+    invalid_severity_findings: tuple[str, ...]
+    invalid_resolution_findings: tuple[str, ...]
+    suppressed_contradiction_findings: tuple[str, ...]
+    undocumented_reconciliation_findings: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_duplication_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystIndependentCertificationSuiteSpecificationRecord:
+    specification_identifier: str
+    certification_scope: tuple[str, ...]
+    architecture_layers: Mapping[str, tuple[str, ...]]
+    test_record_fields: tuple[str, ...]
+    mandatory_categories: tuple[str, ...]
+    coverage_requirements: tuple[str, ...]
+    evidence_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_categories: tuple[str, ...]
+    missing_coverage: tuple[str, ...]
+    nondeterministic_execution_findings: tuple[str, ...]
+    suppressed_failure_findings: tuple[str, ...]
+    missing_evidence_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm003CertificationClosureEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    specification_order_coverage: tuple[str, ...]
+    traceability_architecture: AnalystConstitutionalTraceabilitySpecificationRecord
+    confidence_probability: AnalystConfidenceProbabilitySpecificationRecord
+    competing_hypotheses: AnalystCompetingHypothesisSpecificationRecord
+    consensus_contradiction: AnalystConsensusContradictionSpecificationRecord
+    independent_certification_suite: AnalystIndependentCertificationSuiteSpecificationRecord
+    final_certification_closure_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeSpecificationSupport:
     """Build deterministic certification-support records for ANALYST-RM-003."""
 
@@ -453,6 +582,14 @@ class AnalystOfficeSpecificationSupport:
         "ANALYST-RM-003-018",
         "ANALYST-RM-003-019",
         "ANALYST-RM-003-020",
+    )
+
+    certification_closure_order_coverage = (
+        "ANALYST-RM-003-021",
+        "ANALYST-RM-003-022",
+        "ANALYST-RM-003-023",
+        "ANALYST-RM-003-024",
+        "ANALYST-RM-003-025",
     )
 
     def build_package(self) -> AnalystRm003SpecificationEvidencePackage:
@@ -835,6 +972,37 @@ class AnalystOfficeSpecificationSupport:
                 replay.specification_identifier,
                 configuration.specification_identifier,
                 errors.specification_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def build_certification_closure_package(self) -> AnalystRm003CertificationClosureEvidencePackage:
+        traceability = self.evaluate_constitutional_traceability_specification()
+        confidence = self.evaluate_confidence_probability_specification()
+        hypotheses = self.evaluate_competing_hypothesis_specification()
+        consensus = self.evaluate_consensus_contradiction_specification()
+        certification = self.evaluate_independent_certification_suite_specification()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (traceability, confidence, hypotheses, consensus, certification)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm003CertificationClosureEvidencePackage(
+            package_identifier=f"ANALYST-RM-003-CERT-CLOSURE-{_digest((traceability, confidence, hypotheses, consensus, certification))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-003-021-TO-025/1.0.0",
+            specification_order_coverage=self.certification_closure_order_coverage,
+            traceability_architecture=traceability,
+            confidence_probability=confidence,
+            competing_hypotheses=hypotheses,
+            consensus_contradiction=consensus,
+            independent_certification_suite=certification,
+            final_certification_closure_readiness=final,
+            immutable_audit_references=(
+                traceability.specification_identifier,
+                confidence.specification_identifier,
+                hypotheses.specification_identifier,
+                consensus.specification_identifier,
+                certification.specification_identifier,
             ),
             deterministic_digest="",
         )
@@ -1676,6 +1844,275 @@ class AnalystOfficeSpecificationSupport:
             retry_violations=retry_violations,
             replay_divergence_findings=replay_divergence_findings,
             recovery_history_violations=recovery_history_violations,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_constitutional_traceability_specification(
+        self,
+        *,
+        missing_relationships: tuple[str, ...] = (),
+        orphaned_artifact_findings: tuple[str, ...] = (),
+        duplicate_relationship_findings: tuple[str, ...] = (),
+        illegal_relationship_findings: tuple[str, ...] = (),
+        version_chain_findings: tuple[str, ...] = (),
+        replay_inconsistencies: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystConstitutionalTraceabilitySpecificationRecord:
+        chain = ("Enterprise Constitutional Law", "Analyst Office Constitution", "RM-001 Remediation Doctrine", "RM-002 Completion Doctrine", "RM-003 Engineering Specification", "Implementation Component", "Runtime Object", "Validation Evidence", "Test Evidence", "Replay Evidence", "Recovery Evidence", "Certification Evidence", "Audit Archive")
+        fields_required = ("Traceability Identifier", "Source Artifact Identifier", "Source Artifact Type", "Destination Artifact Identifier", "Destination Artifact Type", "Relationship Type", "Constitutional Authority", "Version References", "Creation Timestamp", "Integrity Verification", "Validation Status", "Certification References")
+        relationships = MappingProxyType(
+            {
+                "CT-001 Governs": "constitutional doctrine governs an engineering specification",
+                "CT-002 Specifies": "engineering specification defines an implementation component",
+                "CT-003 Implements": "implementation satisfies a constitutional specification",
+                "CT-004 Produces": "runtime activity produces constitutional objects",
+                "CT-005 Validates": "validation activity validates constitutional behavior",
+                "CT-006 Tests": "certification test demonstrates constitutional compliance",
+                "CT-007 Replays": "replay evidence verifies deterministic execution",
+                "CT-008 Recovers": "recovery evidence demonstrates constitutional restoration",
+                "CT-009 Certifies": "certification evidence demonstrates constitutional completeness",
+                "CT-010 Audits": "audit evidence permanently preserves constitutional history",
+            }
+        )
+        coverage = ("engineering specification", "implementation artifact", "runtime execution", "validation rule", "certification test", "replay verification", "recovery verification", "audit evidence")
+        runtime = ("originating mission", "originating configuration", "governing specification", "validation records", "evidence sources", "reasoning graph", "confidence assessment", "analytical conclusion")
+        versions = ("doctrine version", "specification version", "schema version", "implementation version", "configuration version", "certification version")
+        invariants = ("CTA-001 every constitutional artifact has at least one traceability relationship", "CTA-002 every implementation artifact traces to constitutional doctrine", "CTA-003 every runtime object traces to its originating mission", "CTA-004 every certification artifact traces to validated execution", "CTA-005 every replay reproduces identical traceability", "CTA-006 recovery restores identical traceability", "CTA-007 traceability relationships are immutable", "CTA-008 every relationship is independently auditable", "CTA-009 no orphaned constitutional artifacts exist", "CTA-010 traceability graph remains complete throughout lifecycle")
+        missing = tuple(item for item in relationships if item in missing_relationships)
+        passed = not missing and not orphaned_artifact_findings and not duplicate_relationship_findings and not illegal_relationship_findings and not version_chain_findings and not replay_inconsistencies and not recovery_gaps and not audit_gaps
+        record = AnalystConstitutionalTraceabilitySpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-021-TRACE-{_digest((chain, relationships))[:12].upper()}",
+            traceability_chain=chain,
+            traceability_record_fields=fields_required,
+            relationship_types=relationships,
+            required_coverage=coverage,
+            runtime_references=runtime,
+            version_references=versions,
+            invariants=invariants,
+            missing_relationships=missing,
+            orphaned_artifact_findings=orphaned_artifact_findings,
+            duplicate_relationship_findings=duplicate_relationship_findings,
+            illegal_relationship_findings=illegal_relationship_findings,
+            version_chain_findings=version_chain_findings,
+            replay_inconsistencies=replay_inconsistencies,
+            recovery_gaps=recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_confidence_probability_specification(
+        self,
+        *,
+        missing_schema_fields: tuple[str, ...] = (),
+        invalid_classification_findings: tuple[str, ...] = (),
+        hidden_uncertainty_findings: tuple[str, ...] = (),
+        unsupported_confidence_findings: tuple[str, ...] = (),
+        orphaned_relationship_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_recalculation_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystConfidenceProbabilitySpecificationRecord:
+        schema = MappingProxyType(
+            {
+                "Constitutional Identity": ("Confidence Identifier", "Confidence Version", "Object Type Identifier", "Schema Version"),
+                "Ownership": ("Analytical Mission Identifier", "Analytical Conclusion Identifier", "Analyst Office Identifier"),
+                "Confidence Representation": ("Confidence Classification", "Confidence Value", "Confidence Scale", "Probability Representation", "Uncertainty Representation", "Evaluation Method Identifier"),
+                "Supporting Basis": ("Supporting Evidence References", "Reasoning References", "Hypothesis References", "Validation References"),
+                "Provenance": ("Evaluation Timestamp", "Configuration Version", "Governing Doctrine Version", "Traceability References"),
+                "Audit": ("Audit Identifier", "Replay Identifier", "Recovery Identifier"),
+            }
+        )
+        classifications = ("Confirmed", "High Confidence", "Moderate Confidence", "Low Confidence", "Indeterminate", "Inconclusive")
+        derivation = ("validated evidence", "reasoning graph", "competing hypothesis evaluation", "contradiction analysis", "validation results")
+        prohibited = ("execution timing", "implementation heuristics", "hidden runtime state", "undocumented assumptions")
+        lifecycle = ("Proposed", "Calculated", "Validated", "Accepted", "Published", "Superseded", "Archived")
+        relationships = ("Analytical Mission", "Analytical Package", "Reasoning Graph", "Evidence Set", "Competing Hypotheses", "Validation Record", "Analytical Conclusion", "Audit Record")
+        invariants = ("exactly one immutable identity", "exactly one constitutional owner", "deterministic confidence representation", "deterministic uncertainty representation", "complete supporting evidence", "complete reasoning references", "complete hypothesis references", "deterministic persistence", "deterministic replay", "deterministic recovery", "complete provenance", "complete auditability")
+        all_fields = tuple(field for section in schema.values() for field in section)
+        missing = tuple(field for field in all_fields if field in missing_schema_fields)
+        passed = not missing and not invalid_classification_findings and not hidden_uncertainty_findings and not unsupported_confidence_findings and not orphaned_relationship_findings and not replay_divergence_findings and not recovery_recalculation_findings and not audit_gaps
+        record = AnalystConfidenceProbabilitySpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-022-CONF-{_digest((schema, classifications))[:12].upper()}",
+            schema_sections=schema,
+            confidence_classifications=classifications,
+            derivation_inputs=derivation,
+            prohibited_inputs=prohibited,
+            lifecycle_states=lifecycle,
+            relationship_targets=relationships,
+            invariants=invariants,
+            missing_schema_fields=missing,
+            invalid_classification_findings=invalid_classification_findings,
+            hidden_uncertainty_findings=hidden_uncertainty_findings,
+            unsupported_confidence_findings=unsupported_confidence_findings,
+            orphaned_relationship_findings=orphaned_relationship_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_recalculation_findings=recovery_recalculation_findings,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_competing_hypothesis_specification(
+        self,
+        *,
+        missing_classes: tuple[str, ...] = (),
+        missing_identity_fields: tuple[str, ...] = (),
+        admissibility_failures: tuple[str, ...] = (),
+        discarded_hypothesis_findings: tuple[str, ...] = (),
+        contradiction_preservation_findings: tuple[str, ...] = (),
+        ranking_nondeterminism_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystCompetingHypothesisSpecificationRecord:
+        scope = ("primary hypotheses", "competing hypotheses", "supporting hypotheses", "contradictory hypotheses", "superseded hypotheses", "unresolved hypotheses", "rejected hypotheses", "archived hypotheses", "hypothesis relationships", "hypothesis evidence mappings")
+        identity = ("Hypothesis Identifier", "Hypothesis Version", "Mission Identifier", "Analysis Identifier", "Constitutional Version", "Schema Version", "Creation Timestamp", "Owner", "Integrity Metadata")
+        schema = MappingProxyType(
+            {
+                "Identity Section": ("hypothesis identifier", "hypothesis class", "version", "ownership"),
+                "Statement Section": ("explicit analytical proposition",),
+                "Supporting Evidence": ("supporting evidence references",),
+                "Contradictory Evidence": ("contradictory evidence references",),
+                "Confidence Assessment": ("confidence classification", "uncertainty", "rationale", "governing confidence doctrine"),
+                "Relationship Section": ("parent hypotheses", "competing hypotheses", "derived hypotheses", "superseded hypotheses"),
+                "Validation Metadata": ("validation status", "validation history", "admissibility status"),
+                "Provenance Metadata": ("mission", "reasoning graph", "evidence", "conclusions"),
+            }
+        )
+        classes = ("Primary Hypothesis", "Competing Hypothesis", "Supporting Hypothesis", "Derived Hypothesis", "Contradictory Hypothesis", "Superseded Hypothesis", "Rejected Hypothesis", "Archived Hypothesis")
+        admissibility = ("mission authorization", "schema validation", "identity validation", "provenance verification", "supporting evidence verification", "ownership verification")
+        sequence = ("evidence sufficiency", "evidence quality", "corroboration", "contradiction analysis", "reasoning consistency", "confidence determination")
+        invariants = ("every hypothesis possesses exactly one constitutional owner", "every hypothesis possesses immutable identity", "every admissible hypothesis is preserved until constitutionally resolved", "every hypothesis possesses complete supporting evidence", "every contradiction is permanently preserved", "confidence is traceable to evidence", "supersession preserves immutable history", "replay reproduces identical hypothesis relationships", "recovery restores identical hypothesis state", "implementation shall not influence hypothesis evaluation")
+        missing_class_values = tuple(item for item in classes if item in missing_classes)
+        missing_identity = tuple(item for item in identity if item in missing_identity_fields)
+        passed = not missing_class_values and not missing_identity and not admissibility_failures and not discarded_hypothesis_findings and not contradiction_preservation_findings and not ranking_nondeterminism_findings and not replay_divergence_findings and not recovery_gaps and not audit_gaps
+        record = AnalystCompetingHypothesisSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-023-HYP-{_digest((schema, classes))[:12].upper()}",
+            hypothesis_scope=scope,
+            identity_fields=identity,
+            schema_sections=schema,
+            hypothesis_classes=classes,
+            admissibility_requirements=admissibility,
+            evaluation_sequence=sequence,
+            invariants=invariants,
+            missing_classes=missing_class_values,
+            missing_identity_fields=missing_identity,
+            admissibility_failures=admissibility_failures,
+            discarded_hypothesis_findings=discarded_hypothesis_findings,
+            contradiction_preservation_findings=contradiction_preservation_findings,
+            ranking_nondeterminism_findings=ranking_nondeterminism_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_consensus_contradiction_specification(
+        self,
+        *,
+        missing_contradiction_classes: tuple[str, ...] = (),
+        invalid_severity_findings: tuple[str, ...] = (),
+        invalid_resolution_findings: tuple[str, ...] = (),
+        suppressed_contradiction_findings: tuple[str, ...] = (),
+        undocumented_reconciliation_findings: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_duplication_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystConsensusContradictionSpecificationRecord:
+        contradiction_identity = ("Contradiction Identifier", "Contradiction Version", "Schema Version", "Office Identifier", "Creation Timestamp", "Constitutional Owner", "Severity Classification", "Resolution State")
+        consensus_identity = ("Consensus Identifier", "Consensus Version", "Schema Version", "Governing Mission", "Creation Timestamp", "Constitutional Owner", "Confidence Level", "Resolution Authority")
+        classes = ("Evidence Contradiction", "Source Contradiction", "Reasoning Contradiction", "Logical Contradiction", "Confidence Contradiction", "Temporal Contradiction", "Scope Contradiction", "Assumption Contradiction", "Configuration Contradiction", "Policy Contradiction")
+        severities = ("Informational", "Minor", "Moderate", "Major", "Critical", "Certification Blocking")
+        contradiction_lifecycle = ("Created", "Validated", "Active", "Under Evaluation", "Resolved or Preserved", "Archived", "Terminal")
+        consensus_lifecycle = ("Created", "Evidence Complete", "Reasoning Complete", "Confidence Complete", "Validated", "Accepted", "Archived", "Terminal")
+        resolution = ("Unresolved", "Resolved by Evidence", "Resolved by Reasoning", "Resolved by Temporal Update", "Preserved Without Resolution", "Escalated", "Certification Blocking")
+        prerequisites = ("all admissible evidence evaluated", "all competing hypotheses considered", "all reasoning completed", "confidence computed", "contradictions classified", "validation succeeded")
+        invariants = ("Every contradiction is explicitly represented", "Every contradiction has exactly one constitutional owner", "Contradictions are never silently discarded", "Consensus is derived only from validated analytical reasoning", "Consensus never destroys contradiction history", "Contradiction identity is immutable", "Consensus identity is immutable", "Replay preserves contradiction semantics", "Recovery preserves contradiction state", "Validation precedes consensus acceptance", "Audit history is immutable", "Provenance remains complete")
+        missing = tuple(item for item in classes if item in missing_contradiction_classes)
+        invalid_severities = tuple(item for item in invalid_severity_findings if item not in severities)
+        invalid_resolutions = tuple(item for item in invalid_resolution_findings if item not in resolution)
+        passed = not missing and not invalid_severities and not invalid_resolutions and not suppressed_contradiction_findings and not undocumented_reconciliation_findings and not validation_failures and not replay_divergence_findings and not recovery_duplication_findings and not audit_gaps
+        record = AnalystConsensusContradictionSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-024-CONSENSUS-{_digest((classes, resolution))[:12].upper()}",
+            contradiction_identity_fields=contradiction_identity,
+            consensus_identity_fields=consensus_identity,
+            contradiction_classes=classes,
+            severity_levels=severities,
+            contradiction_lifecycle=contradiction_lifecycle,
+            consensus_lifecycle=consensus_lifecycle,
+            resolution_states=resolution,
+            consensus_prerequisites=prerequisites,
+            invariants=invariants,
+            missing_contradiction_classes=missing,
+            invalid_severity_findings=invalid_severities,
+            invalid_resolution_findings=invalid_resolutions,
+            suppressed_contradiction_findings=suppressed_contradiction_findings,
+            undocumented_reconciliation_findings=undocumented_reconciliation_findings,
+            validation_failures=validation_failures,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_duplication_findings=recovery_duplication_findings,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_independent_certification_suite_specification(
+        self,
+        *,
+        missing_categories: tuple[str, ...] = (),
+        missing_coverage: tuple[str, ...] = (),
+        nondeterministic_execution_findings: tuple[str, ...] = (),
+        suppressed_failure_findings: tuple[str, ...] = (),
+        missing_evidence_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystIndependentCertificationSuiteSpecificationRecord:
+        scope = ("authority", "ownership", "identity", "object schemas", "lifecycle behavior", "reasoning architecture", "evidence handling", "confidence determination", "hypothesis management", "contradiction preservation", "validation", "persistence", "replay", "recovery", "configuration", "traceability", "error handling", "auditability")
+        layers = MappingProxyType(
+            {
+                "Layer A Object Certification": ("object identity", "schema", "ownership", "invariants", "versioning"),
+                "Layer B Behavioral Certification": ("lifecycle execution", "reasoning behavior", "validation", "confidence determination", "hypothesis evaluation"),
+                "Layer C State Certification": ("persistence", "replay", "recovery", "configuration", "deterministic execution"),
+                "Layer D Integrity Certification": ("invariants", "traceability", "provenance", "audit completeness", "error taxonomy"),
+                "Layer E Office Certification": ("complete constitutional compliance across the Analyst Office",),
+            }
+        )
+        test_fields = ("Test Identifier", "Test Name", "Constitutional Requirement", "Work Order Reference", "Test Owner", "Required Inputs", "Expected Outputs", "Deterministic Acceptance Criteria", "Evidence Requirements", "Failure Classification")
+        categories = ("Mission Certification", "Analysis Plan Certification", "Analytical Package Certification", "Reasoning Certification", "Evidence Certification", "Confidence Certification", "Hypothesis Certification", "Validation Certification", "Persistence Certification", "Replay Certification", "Recovery Certification", "Configuration Certification", "Traceability Certification", "Error Certification")
+        coverage = ("100% Work Order coverage", "100% object coverage", "100% invariant coverage", "100% lifecycle coverage", "100% validation coverage", "100% persistence coverage", "100% replay coverage", "100% recovery coverage", "100% traceability coverage")
+        evidence = ("Certification Run Identifier", "Suite Version", "Constitutional Version", "Test Results", "Pass/Fail Status", "Evidence Manifest", "Audit References", "Coverage Report", "Timestamp")
+        invariants = ("every constitutional requirement possesses at least one certification test", "every certification test has exactly one owner", "certification execution is deterministic", "certification evidence is immutable", "certification replay is deterministic", "certification recovery preserves evidence", "certification failures are never suppressed", "certification coverage is complete", "certification audit history is immutable", "certification decisions derive solely from constitutional doctrine")
+        missing_category_values = tuple(item for item in categories if item in missing_categories)
+        missing_coverage_values = tuple(item for item in coverage if item in missing_coverage)
+        passed = not missing_category_values and not missing_coverage_values and not nondeterministic_execution_findings and not suppressed_failure_findings and not missing_evidence_findings and not replay_divergence_findings and not recovery_gaps and not audit_gaps
+        record = AnalystIndependentCertificationSuiteSpecificationRecord(
+            specification_identifier=f"ANALYST-RM-003-025-CERT-{_digest((layers, categories))[:12].upper()}",
+            certification_scope=scope,
+            architecture_layers=layers,
+            test_record_fields=test_fields,
+            mandatory_categories=categories,
+            coverage_requirements=coverage,
+            evidence_fields=evidence,
+            invariants=invariants,
+            missing_categories=missing_category_values,
+            missing_coverage=missing_coverage_values,
+            nondeterministic_execution_findings=nondeterministic_execution_findings,
+            suppressed_failure_findings=suppressed_failure_findings,
+            missing_evidence_findings=missing_evidence_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_gaps=recovery_gaps,
             audit_gaps=audit_gaps,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
