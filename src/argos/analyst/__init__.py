@@ -209,6 +209,15 @@ from .office_integrity import (
     AnalystTraceabilityArchitectureRecord,
     AnalystValidationArchitectureRecord,
 )
+from .office_completion import (
+    AnalystCanonicalObjectCompletionRecord,
+    AnalystInputCompletionRecord,
+    AnalystLifecycleCompletionRecord,
+    AnalystOfficeCompletionSupport,
+    AnalystOutputCompletionRecord,
+    AnalystReasoningArchitectureCompletionRecord,
+    AnalystRm002CompletionEvidencePackage,
+)
 
 __all__ = [
     "ANALYST_GROUP_ID",
@@ -394,4 +403,11 @@ __all__ = [
     "AnalystRm001GovernanceReadinessPackage",
     "AnalystTraceabilityArchitectureRecord",
     "AnalystValidationArchitectureRecord",
+    "AnalystCanonicalObjectCompletionRecord",
+    "AnalystInputCompletionRecord",
+    "AnalystLifecycleCompletionRecord",
+    "AnalystOfficeCompletionSupport",
+    "AnalystOutputCompletionRecord",
+    "AnalystReasoningArchitectureCompletionRecord",
+    "AnalystRm002CompletionEvidencePackage",
 ]
