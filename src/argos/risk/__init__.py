@@ -177,6 +177,16 @@ from .readiness import (
     RiskReadinessResult,
     RiskReadinessVerifier,
 )
+from .office_integrity import (
+    RiskAuthorityBoundaryRecord,
+    RiskInputAdmissibilityRecord,
+    RiskLifecycleRecord,
+    RiskObjectDefinition,
+    RiskObjectInventoryRecord,
+    RiskOfficeIntegritySupport,
+    RiskOutputContractRecord,
+    RiskRm001IntegrityEvidencePackage,
+)
 from .adversarial_search import (
     ExposureTier,
     HoldingPeriodClass,
@@ -353,6 +363,14 @@ __all__ = [
     "RiskReadinessReportGenerator",
     "RiskReadinessResult",
     "RiskReadinessVerifier",
+    "RiskAuthorityBoundaryRecord",
+    "RiskInputAdmissibilityRecord",
+    "RiskLifecycleRecord",
+    "RiskObjectDefinition",
+    "RiskObjectInventoryRecord",
+    "RiskOfficeIntegritySupport",
+    "RiskOutputContractRecord",
+    "RiskRm001IntegrityEvidencePackage",
     "risk_office_templates",
     "ExposureTier",
     "HoldingPeriodClass",
