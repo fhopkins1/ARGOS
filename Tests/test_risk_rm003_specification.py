@@ -189,6 +189,80 @@ class RiskRm003SpecificationProgramTests(unittest.TestCase):
         self.assertEqual(state.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("two current states for identical scope", state.invariant_violations)
 
+    def test_rm003_execution_state_package_covers_orders_eleven_through_fifteen(self) -> None:
+        package = RiskOfficeSpecificationSupport().build_execution_state_specification_package()
+
+        self.assertEqual(package.final_specification_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-003-011",
+                "RISK-RM-003-012",
+                "RISK-RM-003-013",
+                "RISK-RM-003-014",
+                "RISK-RM-003-015",
+            ),
+        )
+        self.assertIn("RJ-010 Invariant Rejection", package.rejection_taxonomy.rejection_classes)
+        self.assertEqual(package.rejection_taxonomy.recovery_statuses, ("Recoverable", "Non-Recoverable"))
+        self.assertIn("Validator Version", package.rejection_taxonomy.audit_fields)
+        self.assertIn("Evidence Identifier", package.evidence_constitution.identity_fields)
+        self.assertIn("Traceability References", package.evidence_constitution.schema_sections)
+        self.assertIn("Configuration Evidence", package.evidence_constitution.evidence_classes)
+        self.assertEqual(package.evidence_constitution.lifecycle_states, ("Created", "Normalized", "Validated", "Accepted", "Referenced", "Archived", "Retired"))
+        self.assertIn("DERIVED_FROM", package.provenance_architecture.relationship_types)
+        self.assertIn("Enterprise Risk State", package.provenance_architecture.graph_structure)
+        self.assertIn("Final Risk Assessment", package.provenance_architecture.lineage_requirements)
+        self.assertEqual(package.office_state_machine.execution_states[0], "Dormant")
+        self.assertEqual(package.office_state_machine.execution_states[-1], "Completed")
+        self.assertIn(("Authority Relinquishment", "Completed"), package.office_state_machine.legal_transitions)
+        self.assertIn(("Any Active State", "Interrupted"), package.office_state_machine.failure_transitions)
+        self.assertIn("Risk Evaluation Graphs", package.persistent_state.persistent_inventory)
+        self.assertIn("temporary graph traversal state", package.persistent_state.transient_inventory)
+        self.assertIn("Checkpoint Identifier", package.persistent_state.schema_fields)
+        self.assertIn("software replacement", package.persistent_state.durability_requirements)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_execution_state_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeSpecificationSupport()
+
+        rejection = support.evaluate_rejection_taxonomy_specification(
+            class_findings=("unregistered rejection class admitted",),
+            terminal_behavior_findings=("rejected object advanced",),
+            invariant_violations=("rejection history mutable",),
+        )
+        evidence = support.evaluate_evidence_constitution_specification(
+            schema_findings=("classification section omitted",),
+            admissibility_findings=("evidence used before admissibility",),
+            provenance_gaps=("Risk Decision unsupported by evidence",),
+        )
+        provenance = support.evaluate_provenance_architecture_specification(
+            relationship_findings=("implementation-defined relation added",),
+            graph_findings=("cycle allowed",),
+            lineage_gaps=("confidence object lacks evidence lineage",),
+        )
+        state_machine = support.evaluate_office_state_machine_specification(
+            state_findings=("custom execution state added",),
+            transition_findings=("Publication bypassed Output Validation",),
+            recovery_findings=("recovery inferred progress",),
+        )
+        persistence = support.evaluate_persistent_state_specification(
+            inventory_findings=("unregistered persistent state exists",),
+            commit_findings=("commit allowed before validation",),
+            replay_recovery_findings=("partial state restored",),
+        )
+
+        self.assertEqual(rejection.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unregistered rejection class admitted", rejection.class_findings)
+        self.assertEqual(evidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("evidence used before admissibility", evidence.admissibility_findings)
+        self.assertEqual(provenance.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("implementation-defined relation added", provenance.relationship_findings)
+        self.assertEqual(state_machine.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Publication bypassed Output Validation", state_machine.transition_findings)
+        self.assertEqual(persistence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("partial state restored", persistence.replay_recovery_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
