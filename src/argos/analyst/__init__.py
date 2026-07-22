@@ -187,6 +187,16 @@ from .verification_search import (
     independent_originating_source_count,
     verification_question_registry,
 )
+from .office_integrity import (
+    AnalystAuthorityBoundaryRecord,
+    AnalystInputAdmissibilityRecord,
+    AnalystLifecycleRemediationRecord,
+    AnalystLifecycleState,
+    AnalystObjectInventoryRecord,
+    AnalystOfficeIntegritySupport,
+    AnalystOutputContractRecord,
+    AnalystRm001EvidencePackage,
+)
 
 __all__ = [
     "ANALYST_GROUP_ID",
@@ -352,4 +362,12 @@ __all__ = [
     "VerificationReport",
     "independent_originating_source_count",
     "verification_question_registry",
+    "AnalystAuthorityBoundaryRecord",
+    "AnalystInputAdmissibilityRecord",
+    "AnalystLifecycleRemediationRecord",
+    "AnalystLifecycleState",
+    "AnalystObjectInventoryRecord",
+    "AnalystOfficeIntegritySupport",
+    "AnalystOutputContractRecord",
+    "AnalystRm001EvidencePackage",
 ]
