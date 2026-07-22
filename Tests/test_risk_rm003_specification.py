@@ -263,6 +263,81 @@ class RiskRm003SpecificationProgramTests(unittest.TestCase):
         self.assertEqual(persistence.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("partial state restored", persistence.replay_recovery_findings)
 
+    def test_rm003_validation_commit_package_covers_orders_sixteen_through_twenty(self) -> None:
+        package = RiskOfficeSpecificationSupport().build_validation_commit_specification_package()
+
+        self.assertEqual(package.final_specification_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-003-016",
+                "RISK-RM-003-017",
+                "RISK-RM-003-018",
+                "RISK-RM-003-019",
+                "RISK-RM-003-020",
+            ),
+        )
+        self.assertEqual(package.validation_framework.validation_sequence[0], "Identity Validation")
+        self.assertEqual(package.validation_framework.validation_sequence[-1], "Invariant Validation")
+        self.assertEqual(package.validation_framework.outcomes, ("Valid", "Invalid", "Incomplete"))
+        self.assertIn("VF-010 Invariant Validation", package.validation_framework.validation_categories)
+        self.assertIn("CB-012 Completion Commit", package.commit_boundaries.commit_boundaries)
+        self.assertEqual(package.commit_boundaries.commit_order[0], "Mission Initialization")
+        self.assertEqual(package.commit_boundaries.commit_order[-1], "Mission Completion")
+        self.assertIn("Persistence Failure", package.commit_boundaries.failure_classes)
+        self.assertIn("Original Workflow Execution Token", package.replay_semantic_equivalence.canonical_inputs)
+        self.assertIn("Class II Semantically Equivalent Replay", package.replay_semantic_equivalence.classifications)
+        self.assertIn("processor scheduling", package.replay_semantic_equivalence.acceptable_runtime_differences)
+        self.assertIn("constitutional decisions", package.replay_semantic_equivalence.prohibited_differences)
+        self.assertIn("Rule Registry References", package.configuration_object.schema_sections)
+        self.assertIn("Audit Configuration", package.configuration_object.parameter_categories)
+        self.assertIn("Digital Integrity Hash", package.configuration_object.version_fields)
+        self.assertIn("Critical Constitutional Failure", package.error_taxonomy.severities)
+        self.assertIn("Traceability Error", package.error_taxonomy.error_classes)
+        self.assertEqual(package.error_taxonomy.lifecycle_states[0], "Detected")
+        self.assertEqual(package.error_taxonomy.lifecycle_states[-1], "Archived")
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_validation_commit_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeSpecificationSupport()
+
+        validation = support.evaluate_validation_framework_specification(
+            category_findings=("custom validation category admitted",),
+            sequence_findings=("ownership validation skipped",),
+            invariant_violations=("validation modified object",),
+        )
+        commits = support.evaluate_commit_boundary_specification(
+            boundary_findings=("state transition outside commit boundary",),
+            atomicity_findings=("partial commit persisted",),
+            rollback_findings=("rollback modified committed state",),
+        )
+        replay = support.evaluate_replay_semantic_equivalence_specification(
+            input_findings=("substitute replay input admitted",),
+            equivalence_findings=("confidence divergence accepted",),
+            classification_findings=("custom replay classification added",),
+        )
+        configuration = support.evaluate_configuration_object_specification(
+            schema_findings=("mandatory audit parameters omitted",),
+            activation_findings=("partial activation accepted",),
+            replay_recovery_findings=("newer config substituted during replay",),
+        )
+        errors = support.evaluate_error_taxonomy_specification(
+            class_findings=("unclassified constitutional violation",),
+            severity_findings=("multiple severities assigned",),
+            escalation_findings=("operator discretion used",),
+        )
+
+        self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("ownership validation skipped", validation.sequence_findings)
+        self.assertEqual(commits.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("partial commit persisted", commits.atomicity_findings)
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("confidence divergence accepted", replay.equivalence_findings)
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("partial activation accepted", configuration.activation_findings)
+        self.assertEqual(errors.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("unclassified constitutional violation", errors.class_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
