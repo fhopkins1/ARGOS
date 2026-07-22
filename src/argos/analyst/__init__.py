@@ -210,13 +210,19 @@ from .office_integrity import (
     AnalystValidationArchitectureRecord,
 )
 from .office_completion import (
+    AnalystCompetingHypothesisCompletionRecord,
     AnalystCanonicalObjectCompletionRecord,
+    AnalystConfidenceProbabilityCompletionRecord,
+    AnalystDeterministicDecisionCompletionRecord,
     AnalystInputCompletionRecord,
     AnalystLifecycleCompletionRecord,
     AnalystOfficeCompletionSupport,
     AnalystOutputCompletionRecord,
+    AnalystPersistenceCompletionRecord,
     AnalystReasoningArchitectureCompletionRecord,
+    AnalystRm002AdvancedCompletionEvidencePackage,
     AnalystRm002CompletionEvidencePackage,
+    AnalystValidationCompletionRecord,
 )
 
 __all__ = [
@@ -404,10 +410,16 @@ __all__ = [
     "AnalystTraceabilityArchitectureRecord",
     "AnalystValidationArchitectureRecord",
     "AnalystCanonicalObjectCompletionRecord",
+    "AnalystCompetingHypothesisCompletionRecord",
+    "AnalystConfidenceProbabilityCompletionRecord",
+    "AnalystDeterministicDecisionCompletionRecord",
     "AnalystInputCompletionRecord",
     "AnalystLifecycleCompletionRecord",
     "AnalystOfficeCompletionSupport",
     "AnalystOutputCompletionRecord",
+    "AnalystPersistenceCompletionRecord",
     "AnalystReasoningArchitectureCompletionRecord",
+    "AnalystRm002AdvancedCompletionEvidencePackage",
     "AnalystRm002CompletionEvidencePackage",
+    "AnalystValidationCompletionRecord",
 ]

@@ -102,6 +102,95 @@ class AnalystRm002OfficeCompletionTests(unittest.TestCase):
         self.assertIn("Evidence Classification", reasoning.missing_stages)
         self.assertFalse(reasoning.fail_closed_on_incomplete_reasoning)
 
+    def test_rm002_advanced_package_covers_confidence_hypotheses_decisions_validation_and_persistence(self) -> None:
+        package = AnalystOfficeCompletionSupport().build_advanced_completion_package()
+
+        self.assertEqual(package.final_advanced_completion_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.remediation_order_coverage,
+            (
+                "ANALYST-RM-002-006",
+                "ANALYST-RM-002-007",
+                "ANALYST-RM-002-008",
+                "ANALYST-RM-002-009",
+                "ANALYST-RM-002-010",
+            ),
+        )
+        self.assertIn("Uncertainty Representation", package.confidence_probability.confidence_object_fields)
+        self.assertIn("Confidence Traceability Registry", package.confidence_probability.required_registries)
+        self.assertIn("Mutually Exclusive Hypothesis", package.competing_hypotheses.relationship_types)
+        self.assertIn("contradiction severity", package.competing_hypotheses.evaluation_criteria)
+        self.assertIn("Publication Authorization", package.deterministic_decisions.decision_classes)
+        self.assertEqual(package.deterministic_decisions.default_approval_findings, ())
+        self.assertEqual(package.validation_completion.validation_sequence[0], "Structure")
+        self.assertEqual(package.validation_completion.ordering_violations, ())
+        self.assertIn("Reasoning State", package.persistence_completion.persistent_state_classes)
+        self.assertIn("runtime caches", package.persistence_completion.transient_state_classes)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm002_advanced_records_fail_closed_on_defects(self) -> None:
+        support = AnalystOfficeCompletionSupport()
+
+        confidence = support.evaluate_confidence_probability_completion(
+            missing_object_fields=("Uncertainty Representation",),
+            inadmissible_inputs=("operator preference",),
+            uncertainty_gaps=("known unknowns omitted"),
+            implicit_inheritance_findings=("conclusion inherited confidence implicitly"),
+            contradiction_suppression_findings=("low-confidence contradiction dropped"),
+            replay_drift_findings=("confidence changed during replay"),
+            recovery_recompute_findings=("confidence recomputed from inference"),
+        )
+        hypotheses = support.evaluate_competing_hypothesis_completion(
+            unsupported_hypotheses=("HYP-unsupported",),
+            duplicate_hypotheses=("HYP-duplicate"),
+            missing_contradiction_records=("HYP-no-contradictions"),
+            nondeterministic_order_findings=("runtime ordering"),
+            suppressed_non_selected_hypotheses=("HYP-rejected-disappeared"),
+            lifecycle_violations=("Proposed->Selected"),
+        )
+        decisions = support.evaluate_deterministic_decision_completion(
+            missing_decision_classes=("Publication Authorization",),
+            shared_authority_findings=("Risk shared confidence decision"),
+            undefined_inputs=("runtime cache"),
+            circular_dependencies=("Publication Authorization->Evidence Admissibility Decision"),
+            default_approval_findings=("missing evidence approved"),
+            replay_divergence_findings=("recommendation outcome changed"),
+            recovery_history_findings=("decision duplicated"),
+        )
+        validation = support.evaluate_validation_completion(
+            observed_sequence=("Identity", "Structure"),
+            bypass_findings=("Reasoning bypassed"),
+            invalid_outcomes=("Maybe",),
+            evidence_gaps=("validation input missing"),
+            replay_validation_gaps=("replay validation decision missing"),
+            recovery_validation_gaps=("checkpoint validation skipped"),
+        )
+        persistence = support.evaluate_persistence_completion(
+            missing_persistent_state=("Reasoning State",),
+            transient_state_violations=("runtime cache influenced output"),
+            lifecycle_bypass_findings=("Created->Committed"),
+            partial_commit_findings=("audit missing from commit"),
+            durability_failures=("restart lost confidence"),
+            integrity_failures=("checksum invalid"),
+            replay_regeneration_findings=("committed state regenerated"),
+            recovery_mutation_findings=("history rewritten"),
+        )
+
+        self.assertEqual(confidence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Uncertainty Representation", confidence.missing_object_fields)
+        self.assertIn("operator preference", confidence.inadmissible_inputs)
+        self.assertEqual(hypotheses.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("HYP-rejected-disappeared", hypotheses.suppressed_non_selected_hypotheses)
+        self.assertEqual(decisions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Publication Authorization", decisions.missing_decision_classes)
+        self.assertIn("missing evidence approved", decisions.default_approval_findings)
+        self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Identity->Structure", validation.ordering_violations)
+        self.assertIn("Maybe", validation.invalid_outcomes)
+        self.assertEqual(persistence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Reasoning State", persistence.missing_persistent_state)
+        self.assertIn("committed state regenerated", persistence.replay_regeneration_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

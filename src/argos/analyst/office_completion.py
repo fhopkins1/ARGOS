@@ -118,6 +118,110 @@ class AnalystRm002CompletionEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystConfidenceProbabilityCompletionRecord:
+    completion_identifier: str
+    confidence_object_fields: tuple[str, ...]
+    admissible_confidence_inputs: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    required_registries: tuple[str, ...]
+    missing_object_fields: tuple[str, ...]
+    inadmissible_inputs: tuple[str, ...]
+    uncertainty_gaps: tuple[str, ...]
+    implicit_inheritance_findings: tuple[str, ...]
+    contradiction_suppression_findings: tuple[str, ...]
+    replay_drift_findings: tuple[str, ...]
+    recovery_recompute_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystCompetingHypothesisCompletionRecord:
+    completion_identifier: str
+    hypothesis_identity_fields: tuple[str, ...]
+    relationship_types: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    evaluation_criteria: tuple[str, ...]
+    unsupported_hypotheses: tuple[str, ...]
+    duplicate_hypotheses: tuple[str, ...]
+    missing_contradiction_records: tuple[str, ...]
+    nondeterministic_order_findings: tuple[str, ...]
+    suppressed_non_selected_hypotheses: tuple[str, ...]
+    lifecycle_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystDeterministicDecisionCompletionRecord:
+    completion_identifier: str
+    decision_classes: tuple[str, ...]
+    required_outputs: tuple[str, ...]
+    dependency_rules: tuple[str, ...]
+    missing_decision_classes: tuple[str, ...]
+    shared_authority_findings: tuple[str, ...]
+    undefined_inputs: tuple[str, ...]
+    circular_dependencies: tuple[str, ...]
+    default_approval_findings: tuple[str, ...]
+    replay_divergence_findings: tuple[str, ...]
+    recovery_history_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystValidationCompletionRecord:
+    completion_identifier: str
+    validation_lifecycle: tuple[str, ...]
+    validation_classes: tuple[str, ...]
+    validation_sequence: tuple[str, ...]
+    validation_outcomes: tuple[str, ...]
+    missing_stages: tuple[str, ...]
+    ordering_violations: tuple[str, ...]
+    bypass_findings: tuple[str, ...]
+    invalid_outcomes: tuple[str, ...]
+    evidence_gaps: tuple[str, ...]
+    replay_validation_gaps: tuple[str, ...]
+    recovery_validation_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystPersistenceCompletionRecord:
+    completion_identifier: str
+    persistent_state_classes: tuple[str, ...]
+    transient_state_classes: tuple[str, ...]
+    persistence_lifecycle: tuple[str, ...]
+    commit_fields: tuple[str, ...]
+    missing_persistent_state: tuple[str, ...]
+    transient_state_violations: tuple[str, ...]
+    lifecycle_bypass_findings: tuple[str, ...]
+    partial_commit_findings: tuple[str, ...]
+    durability_failures: tuple[str, ...]
+    integrity_failures: tuple[str, ...]
+    replay_regeneration_findings: tuple[str, ...]
+    recovery_mutation_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm002AdvancedCompletionEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    remediation_order_coverage: tuple[str, ...]
+    confidence_probability: AnalystConfidenceProbabilityCompletionRecord
+    competing_hypotheses: AnalystCompetingHypothesisCompletionRecord
+    deterministic_decisions: AnalystDeterministicDecisionCompletionRecord
+    validation_completion: AnalystValidationCompletionRecord
+    persistence_completion: AnalystPersistenceCompletionRecord
+    final_advanced_completion_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeCompletionSupport:
     """Build deterministic certification-support records for ANALYST-RM-002."""
 
@@ -127,6 +231,14 @@ class AnalystOfficeCompletionSupport:
         "ANALYST-RM-002-003",
         "ANALYST-RM-002-004",
         "ANALYST-RM-002-005",
+    )
+
+    advanced_order_coverage = (
+        "ANALYST-RM-002-006",
+        "ANALYST-RM-002-007",
+        "ANALYST-RM-002-008",
+        "ANALYST-RM-002-009",
+        "ANALYST-RM-002-010",
     )
 
     def build_package(
@@ -469,6 +581,293 @@ class AnalystOfficeCompletionSupport:
             replay_reasoning_violations=replay_reasoning_violations,
             recovery_reasoning_violations=recovery_reasoning_violations,
             fail_closed_on_incomplete_reasoning=fail_closed_on_incomplete_reasoning,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_advanced_completion_package(self) -> AnalystRm002AdvancedCompletionEvidencePackage:
+        confidence = self.evaluate_confidence_probability_completion()
+        hypotheses = self.evaluate_competing_hypothesis_completion()
+        decisions = self.evaluate_deterministic_decision_completion()
+        validation = self.evaluate_validation_completion()
+        persistence = self.evaluate_persistence_completion()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (confidence, hypotheses, decisions, validation, persistence)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm002AdvancedCompletionEvidencePackage(
+            package_identifier=f"ANALYST-RM-002-ADV-{_digest((confidence, hypotheses, decisions, validation, persistence))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-002-006-TO-010/1.0.0",
+            remediation_order_coverage=self.advanced_order_coverage,
+            confidence_probability=confidence,
+            competing_hypotheses=hypotheses,
+            deterministic_decisions=decisions,
+            validation_completion=validation,
+            persistence_completion=persistence,
+            final_advanced_completion_readiness=final,
+            immutable_audit_references=(
+                confidence.completion_identifier,
+                hypotheses.completion_identifier,
+                decisions.completion_identifier,
+                validation.completion_identifier,
+                persistence.completion_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_confidence_probability_completion(
+        self,
+        *,
+        missing_object_fields: tuple[str, ...] = (),
+        inadmissible_inputs: tuple[str, ...] = (),
+        uncertainty_gaps: tuple[str, ...] = (),
+        implicit_inheritance_findings: tuple[str, ...] = (),
+        contradiction_suppression_findings: tuple[str, ...] = (),
+        replay_drift_findings: tuple[str, ...] = (),
+        recovery_recompute_findings: tuple[str, ...] = (),
+    ) -> AnalystConfidenceProbabilityCompletionRecord:
+        fields_required = (
+            "Confidence Identifier",
+            "Associated Conclusion",
+            "Supported Hypothesis",
+            "Evidence References",
+            "Reasoning References",
+            "Confidence Representation",
+            "Uncertainty Representation",
+            "Confidence Contributors",
+            "Confidence Inheritance",
+            "Validation Status",
+            "Version",
+            "Provenance",
+            "Certification Metadata",
+        )
+        inputs = ("validated evidence", "validated reasoning", "competing hypotheses", "contradiction analysis", "analytical completeness", "validation outcomes", "provenance integrity")
+        lifecycle = ("Proposed", "Draft", "Under Evaluation", "Validated", "Approved", "Published", "Superseded", "Archived")
+        registries = ("Confidence Registry", "Probability Representation Registry", "Uncertainty Registry", "Confidence Version Registry", "Confidence Validation Registry", "Confidence Traceability Registry")
+        missing = tuple(field for field in fields_required if field in missing_object_fields)
+        passed = (
+            not missing
+            and not inadmissible_inputs
+            and not uncertainty_gaps
+            and not implicit_inheritance_findings
+            and not contradiction_suppression_findings
+            and not replay_drift_findings
+            and not recovery_recompute_findings
+        )
+        record = AnalystConfidenceProbabilityCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-006-CONF-{_digest((fields_required, inputs))[:12].upper()}",
+            confidence_object_fields=fields_required,
+            admissible_confidence_inputs=inputs,
+            lifecycle_states=lifecycle,
+            required_registries=registries,
+            missing_object_fields=missing,
+            inadmissible_inputs=inadmissible_inputs,
+            uncertainty_gaps=uncertainty_gaps,
+            implicit_inheritance_findings=implicit_inheritance_findings,
+            contradiction_suppression_findings=contradiction_suppression_findings,
+            replay_drift_findings=replay_drift_findings,
+            recovery_recompute_findings=recovery_recompute_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_competing_hypothesis_completion(
+        self,
+        *,
+        unsupported_hypotheses: tuple[str, ...] = (),
+        duplicate_hypotheses: tuple[str, ...] = (),
+        missing_contradiction_records: tuple[str, ...] = (),
+        nondeterministic_order_findings: tuple[str, ...] = (),
+        suppressed_non_selected_hypotheses: tuple[str, ...] = (),
+        lifecycle_violations: tuple[str, ...] = (),
+    ) -> AnalystCompetingHypothesisCompletionRecord:
+        identity = (
+            "Hypothesis Identifier",
+            "Analysis Mission Identifier",
+            "Parent Analytical Context",
+            "Supporting Evidence References",
+            "Contradicting Evidence References",
+            "Assumptions",
+            "Confidence Assessment",
+            "Evaluation Status",
+            "Lifecycle State",
+            "Version Identifier",
+        )
+        relationships = ("Independent Hypothesis", "Competing Hypothesis", "Complementary Hypothesis", "Derived Hypothesis", "Refined Hypothesis", "Superseding Hypothesis", "Mutually Exclusive Hypothesis")
+        lifecycle = ("Proposed", "Accepted for Evaluation", "Evidence Collection", "Evaluation", "Confidence Assignment", "Comparison", "Selected", "Rejected", "Superseded", "Archived")
+        criteria = ("evidence completeness", "evidence quality", "contradiction severity", "logical consistency", "constitutional admissibility", "dependency satisfaction", "validation status", "confidence determination")
+        passed = (
+            not unsupported_hypotheses
+            and not duplicate_hypotheses
+            and not missing_contradiction_records
+            and not nondeterministic_order_findings
+            and not suppressed_non_selected_hypotheses
+            and not lifecycle_violations
+        )
+        record = AnalystCompetingHypothesisCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-007-HYP-{_digest((identity, relationships))[:12].upper()}",
+            hypothesis_identity_fields=identity,
+            relationship_types=relationships,
+            lifecycle_states=lifecycle,
+            evaluation_criteria=criteria,
+            unsupported_hypotheses=unsupported_hypotheses,
+            duplicate_hypotheses=duplicate_hypotheses,
+            missing_contradiction_records=missing_contradiction_records,
+            nondeterministic_order_findings=nondeterministic_order_findings,
+            suppressed_non_selected_hypotheses=suppressed_non_selected_hypotheses,
+            lifecycle_violations=lifecycle_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_deterministic_decision_completion(
+        self,
+        *,
+        missing_decision_classes: tuple[str, ...] = (),
+        shared_authority_findings: tuple[str, ...] = (),
+        undefined_inputs: tuple[str, ...] = (),
+        circular_dependencies: tuple[str, ...] = (),
+        default_approval_findings: tuple[str, ...] = (),
+        replay_divergence_findings: tuple[str, ...] = (),
+        recovery_history_findings: tuple[str, ...] = (),
+    ) -> AnalystDeterministicDecisionCompletionRecord:
+        decisions = (
+            "Evidence Admissibility Decision",
+            "Evidence Sufficiency Decision",
+            "Analytical Completeness Decision",
+            "Confidence Classification Decision",
+            "Hypothesis Acceptance Decision",
+            "Hypothesis Rejection Decision",
+            "Contradiction Resolution Decision",
+            "Competing Hypothesis Ranking",
+            "Consensus Decision",
+            "Conclusion Approval Decision",
+            "Recommendation Authorization",
+            "Validation Decision",
+            "Publication Authorization",
+            "Revision Authorization",
+            "Certification Evidence Acceptance",
+        )
+        outputs = ("decision identifier", "decision class", "outcome", "reasoning references", "confidence", "supporting evidence", "audit metadata")
+        dependencies = ("deterministic dependency order", "incomplete dependencies prohibit execution", "dependency cycles prohibited", "conflicts preserve contradictory evidence")
+        missing = tuple(decision for decision in decisions if decision in missing_decision_classes)
+        passed = (
+            not missing
+            and not shared_authority_findings
+            and not undefined_inputs
+            and not circular_dependencies
+            and not default_approval_findings
+            and not replay_divergence_findings
+            and not recovery_history_findings
+        )
+        record = AnalystDeterministicDecisionCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-008-DEC-{_digest(decisions)[:12].upper()}",
+            decision_classes=decisions,
+            required_outputs=outputs,
+            dependency_rules=dependencies,
+            missing_decision_classes=missing,
+            shared_authority_findings=shared_authority_findings,
+            undefined_inputs=undefined_inputs,
+            circular_dependencies=circular_dependencies,
+            default_approval_findings=default_approval_findings,
+            replay_divergence_findings=replay_divergence_findings,
+            recovery_history_findings=recovery_history_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_validation_completion(
+        self,
+        *,
+        observed_sequence: tuple[str, ...] | None = None,
+        bypass_findings: tuple[str, ...] = (),
+        invalid_outcomes: tuple[str, ...] = (),
+        evidence_gaps: tuple[str, ...] = (),
+        replay_validation_gaps: tuple[str, ...] = (),
+        recovery_validation_gaps: tuple[str, ...] = (),
+    ) -> AnalystValidationCompletionRecord:
+        lifecycle = ("Validation Request", "Input Verification", "Schema Validation", "Identity Validation", "Ownership Validation", "Integrity Validation", "Semantic Validation", "Dependency Validation", "Invariant Validation", "Certification Validation", "Validation Decision", "Validation Audit Recording")
+        classes = ("Structural Validation", "Identity Validation", "Ownership Validation", "Evidence Validation", "Reasoning Validation", "Confidence Validation", "Hypothesis Validation", "Configuration Validation", "Lifecycle Validation", "Output Validation")
+        sequence = ("Structure", "Identity", "Ownership", "Evidence", "Reasoning", "Confidence", "Hypotheses", "Configuration", "Lifecycle", "Output", "Certification")
+        observed = observed_sequence or sequence
+        outcomes = ("Pass", "Conditional Pass", "Reject", "Deferred", "Invalid")
+        missing = tuple(stage for stage in sequence if stage not in observed)
+        index = {stage: position for position, stage in enumerate(sequence)}
+        ordering = tuple(f"{left}->{right}" for left, right in zip(observed, observed[1:]) if left in index and right in index and index[left] > index[right])
+        invalid = tuple(outcome for outcome in invalid_outcomes if outcome not in outcomes)
+        passed = (
+            not missing
+            and not ordering
+            and not bypass_findings
+            and not invalid
+            and not evidence_gaps
+            and not replay_validation_gaps
+            and not recovery_validation_gaps
+        )
+        record = AnalystValidationCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-009-VAL-{_digest((lifecycle, sequence))[:12].upper()}",
+            validation_lifecycle=lifecycle,
+            validation_classes=classes,
+            validation_sequence=sequence,
+            validation_outcomes=outcomes,
+            missing_stages=missing,
+            ordering_violations=ordering,
+            bypass_findings=bypass_findings,
+            invalid_outcomes=invalid,
+            evidence_gaps=evidence_gaps,
+            replay_validation_gaps=replay_validation_gaps,
+            recovery_validation_gaps=recovery_validation_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_persistence_completion(
+        self,
+        *,
+        missing_persistent_state: tuple[str, ...] = (),
+        transient_state_violations: tuple[str, ...] = (),
+        lifecycle_bypass_findings: tuple[str, ...] = (),
+        partial_commit_findings: tuple[str, ...] = (),
+        durability_failures: tuple[str, ...] = (),
+        integrity_failures: tuple[str, ...] = (),
+        replay_regeneration_findings: tuple[str, ...] = (),
+        recovery_mutation_findings: tuple[str, ...] = (),
+    ) -> AnalystPersistenceCompletionRecord:
+        persistent = ("Mission State", "Evidence State", "Reasoning State", "Confidence State", "Recommendation State", "Validation State", "Lifecycle State", "Audit State", "Configuration State")
+        transient = ("runtime caches", "temporary indexes", "scheduling queues", "execution buffers", "memory optimizations", "thread-local execution state", "implementation-specific optimization structures")
+        lifecycle = ("Created", "Validated", "Prepared", "Committed", "Verified", "Immutable", "Archived", "Certified")
+        commit_fields = ("object identity", "object revision", "lifecycle state", "dependency references", "validation results", "configuration version", "constitutional version", "timestamp", "integrity verification")
+        missing = tuple(state for state in persistent if state in missing_persistent_state)
+        passed = (
+            not missing
+            and not transient_state_violations
+            and not lifecycle_bypass_findings
+            and not partial_commit_findings
+            and not durability_failures
+            and not integrity_failures
+            and not replay_regeneration_findings
+            and not recovery_mutation_findings
+        )
+        record = AnalystPersistenceCompletionRecord(
+            completion_identifier=f"ANALYST-RM-002-010-PERSIST-{_digest((persistent, lifecycle))[:12].upper()}",
+            persistent_state_classes=persistent,
+            transient_state_classes=transient,
+            persistence_lifecycle=lifecycle,
+            commit_fields=commit_fields,
+            missing_persistent_state=missing,
+            transient_state_violations=transient_state_violations,
+            lifecycle_bypass_findings=lifecycle_bypass_findings,
+            partial_commit_findings=partial_commit_findings,
+            durability_failures=durability_failures,
+            integrity_failures=integrity_failures,
+            replay_regeneration_findings=replay_regeneration_findings,
+            recovery_mutation_findings=recovery_mutation_findings,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
             deterministic_digest="",
         )
