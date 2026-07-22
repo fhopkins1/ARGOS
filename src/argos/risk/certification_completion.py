@@ -456,6 +456,161 @@ class RiskRm004GovernanceRegistryPackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class RiskCertificationPackageSchemaRecord:
+    record_identifier: str
+    package_sections: Mapping[str, tuple[str, ...]]
+    mandatory_artifacts: tuple[str, ...]
+    evidence_inclusion_requirements: tuple[str, ...]
+    manifest_dependencies: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    submission_requirements: tuple[str, ...]
+    integrity_requirements: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_section_findings: tuple[str, ...]
+    missing_artifact_findings: tuple[str, ...]
+    unsupported_claim_findings: tuple[str, ...]
+    undeclared_dependency_findings: tuple[str, ...]
+    integrity_failures: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskCertificationTraceabilityMatrixRecord:
+    record_identifier: str
+    traceability_chain: tuple[str, ...]
+    traceability_domains: Mapping[str, tuple[str, ...]]
+    relationship_types: tuple[str, ...]
+    record_fields: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    graph_requirements: tuple[str, ...]
+    version_fields: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    orphan_artifact_findings: tuple[str, ...]
+    missing_domain_findings: tuple[str, ...]
+    illegal_relationship_findings: tuple[str, ...]
+    cycle_findings: tuple[str, ...]
+    mixed_version_findings: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskCertificationProcedureRecord:
+    record_identifier: str
+    procedure_stages: tuple[str, ...]
+    initiation_requirements: tuple[str, ...]
+    package_validation_requirements: tuple[str, ...]
+    evidence_validation_requirements: tuple[str, ...]
+    registry_verification_requirements: tuple[str, ...]
+    dependency_verification_requirements: tuple[str, ...]
+    traceability_chain: tuple[str, ...]
+    rule_outcomes: tuple[str, ...]
+    decision_outcomes: tuple[str, ...]
+    state_machine: tuple[str, ...]
+    evidence_outputs: tuple[str, ...]
+    invariants: tuple[str, ...]
+    incomplete_submission_findings: tuple[str, ...]
+    invalid_evidence_findings: tuple[str, ...]
+    registry_failure_findings: tuple[str, ...]
+    dependency_failure_findings: tuple[str, ...]
+    traceability_failure_findings: tuple[str, ...]
+    rule_execution_findings: tuple[str, ...]
+    closure_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskCertificationExceptionRegistryRecord:
+    record_identifier: str
+    authorized_exception_classes: tuple[str, ...]
+    prohibited_exception_classes: tuple[str, ...]
+    registry_entry_fields: tuple[str, ...]
+    admissibility_requirements: tuple[str, ...]
+    approval_requirements: tuple[str, ...]
+    documentation_requirements: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    terminal_states: tuple[str, ...]
+    retirement_requirements: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    traceability_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    unauthorized_class_findings: tuple[str, ...]
+    missing_documentation_findings: tuple[str, ...]
+    approval_authority_findings: tuple[str, ...]
+    inadmissible_exception_findings: tuple[str, ...]
+    lifecycle_findings: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskIndependentCertificationClosureRecord:
+    record_identifier: str
+    closure_preconditions: tuple[str, ...]
+    permitted_outcomes: tuple[str, ...]
+    certification_record_fields: tuple[str, ...]
+    archival_artifacts: tuple[str, ...]
+    permanence_requirements: tuple[str, ...]
+    post_certification_integrity_checks: tuple[str, ...]
+    revocation_conditions: tuple[str, ...]
+    recertification_requirements: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    traceability_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    unmet_precondition_findings: tuple[str, ...]
+    invalid_outcome_findings: tuple[str, ...]
+    archival_gap_findings: tuple[str, ...]
+    integrity_failure_findings: tuple[str, ...]
+    revocation_authority_findings: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskRm004CertificationClosurePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    certification_package_schema: RiskCertificationPackageSchemaRecord
+    certification_traceability_matrix: RiskCertificationTraceabilityMatrixRecord
+    certification_procedure: RiskCertificationProcedureRecord
+    certification_exception_registry: RiskCertificationExceptionRegistryRecord
+    independent_certification_closure: RiskIndependentCertificationClosureRecord
+    final_certification_closure_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class RiskOfficeCertificationCompletionSupport:
     """Build deterministic RISK-RM-004 certification-completion evidence."""
 
@@ -479,6 +634,13 @@ class RiskOfficeCertificationCompletionSupport:
         "RISK-RM-004-013",
         "RISK-RM-004-014",
         "RISK-RM-004-015",
+    )
+    certification_closure_order_coverage = (
+        "RISK-RM-004-016",
+        "RISK-RM-004-017",
+        "RISK-RM-004-018",
+        "RISK-RM-004-019",
+        "RISK-RM-004-020",
     )
 
     def build_foundation_package(self) -> RiskRm004FoundationCertificationPackage:
@@ -573,6 +735,329 @@ class RiskOfficeCertificationCompletionSupport:
             deterministic_digest="",
         )
         return replace(package, deterministic_digest=_digest(package))
+
+    def build_certification_closure_package(self) -> RiskRm004CertificationClosurePackage:
+        package_schema = self.evaluate_certification_package_schema()
+        traceability = self.evaluate_certification_traceability_matrix()
+        procedure = self.evaluate_certification_procedure()
+        exceptions = self.evaluate_certification_exception_registry()
+        closure = self.evaluate_independent_certification_closure()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (package_schema, traceability, procedure, exceptions, closure)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = RiskRm004CertificationClosurePackage(
+            package_identifier=f"RISK-RM-004-CERTIFICATION-CLOSURE-{_digest((package_schema, traceability, procedure, exceptions, closure))[:12].upper()}",
+            governing_doctrine="RISK-RM-004-016-TO-020/1.0.0",
+            order_coverage=self.certification_closure_order_coverage,
+            certification_package_schema=package_schema,
+            certification_traceability_matrix=traceability,
+            certification_procedure=procedure,
+            certification_exception_registry=exceptions,
+            independent_certification_closure=closure,
+            final_certification_closure_readiness=final,
+            immutable_audit_references=(
+                package_schema.record_identifier,
+                traceability.record_identifier,
+                procedure.record_identifier,
+                exceptions.record_identifier,
+                closure.record_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_certification_package_schema(
+        self,
+        *,
+        missing_section_findings: tuple[str, ...] = (),
+        missing_artifact_findings: tuple[str, ...] = (),
+        unsupported_claim_findings: tuple[str, ...] = (),
+        undeclared_dependency_findings: tuple[str, ...] = (),
+        integrity_failures: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> RiskCertificationPackageSchemaRecord:
+        sections = MappingProxyType({
+            "Section A - Certification Manifest": ("Certification Package Identifier", "Office Identifier", "Constitution Version", "Certification Version", "Manifest Version", "Submission Timestamp"),
+            "Section B - Constitutional Doctrine": ("Governing Doctrine Index", "Work Order References", "Constitutional Law References", "Engineering Specification References"),
+            "Section C - Registry Snapshot": ("Candidate Class Registry", "Rule Registry", "Schema Registry", "Identifier Registry", "Metrics Registry", "Evidence Registry", "Decision Registry", "Cross-Reference Registry"),
+            "Section D - Constitutional Objects": ("Canonical Object Definitions", "Schema Definitions", "Ownership Definitions", "Lifecycle Definitions"),
+            "Section E - Configuration": ("Configuration Objects", "Compatibility Declarations", "Configuration Validation Evidence"),
+            "Section F - Validation": ("Validation Results", "Validation Evidence", "Invariant Verification"),
+            "Section G - Testing": ("Certification Test Results", "Test Evidence", "Test Traceability"),
+            "Section H - Evidence Package": ("Certification Evidence", "Provenance Records", "Audit References", "Integrity Verification"),
+            "Section I - Certification Decision": ("Evaluation Summary", "Findings", "Certification Recommendation", "Certification Outcome"),
+            "Section J - Integrity Package": ("Package Hash", "Artifact Hashes", "Digital Signatures", "Integrity Verification Records"),
+        })
+        artifacts = ("Certification Manifest", "Constitutional Doctrine Index", "Registry Snapshot", "Canonical Object Definitions", "Configuration Snapshot", "Validation Results", "Certification Test Results", "Certification Evidence Package", "Certification Decision Record", "Integrity Package")
+        evidence = ("provenance", "validation", "testing", "registry references", "audit references", "integrity verification", "traceability references")
+        dependencies = ("Constitution Version", "Registry Versions", "Schema Versions", "Rule Registry Version", "Configuration Version", "Evidence Package Version", "Test Suite Version", "Certification Procedure Version")
+        validation = ("mandatory sections exist", "required artifacts present", "dependencies declared", "evidence complete", "schema validation succeeds", "integrity verification succeeds")
+        submission = ("completed package validation", "completed integrity verification", "immutable package version", "complete audit references", "complete traceability", "approval for certification submission")
+        integrity = ("canonical serialization", "deterministic hashing", "package integrity verification", "artifact integrity verification", "digital signatures")
+        persistence = ("package identity", "artifact inventory", "manifest contents", "evidence references", "validation history", "certification history", "audit references", "integrity metadata")
+        replay = ("identical package contents", "identical artifact ordering", "identical manifest dependencies", "identical validation evidence", "identical certification evidence", "identical integrity verification")
+        recovery = ("package identity", "package contents", "dependency declarations", "integrity metadata", "audit continuity", "published packages unmodified")
+        audit = ("Package Identifier", "Package Version", "Event Type", "Timestamp", "Submission Authority", "Integrity Verification Result")
+        invariants = ("unique canonical identity", "mandatory sections present", "claims supported by admissible evidence", "dependencies explicitly declared", "artifacts traceable", "published packages immutable", "integrity verified before submission", "replay identical package semantics", "recovery preserves package integrity", "independently auditable", "artifacts trace to doctrine", "no construction discretion")
+        passed = not missing_section_findings and not missing_artifact_findings and not unsupported_claim_findings and not undeclared_dependency_findings and not integrity_failures and not replay_recovery_gaps and not audit_gaps and not invariant_violations
+        record = RiskCertificationPackageSchemaRecord(
+            record_identifier=f"RISK-RM-004-016-PACKAGE-SCHEMA-{_digest((sections, artifacts, dependencies))[:12].upper()}",
+            package_sections=sections,
+            mandatory_artifacts=artifacts,
+            evidence_inclusion_requirements=evidence,
+            manifest_dependencies=dependencies,
+            validation_requirements=validation,
+            submission_requirements=submission,
+            integrity_requirements=integrity,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            missing_section_findings=missing_section_findings,
+            missing_artifact_findings=missing_artifact_findings,
+            unsupported_claim_findings=unsupported_claim_findings,
+            undeclared_dependency_findings=undeclared_dependency_findings,
+            integrity_failures=integrity_failures,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_traceability_matrix(
+        self,
+        *,
+        orphan_artifact_findings: tuple[str, ...] = (),
+        missing_domain_findings: tuple[str, ...] = (),
+        illegal_relationship_findings: tuple[str, ...] = (),
+        cycle_findings: tuple[str, ...] = (),
+        mixed_version_findings: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskCertificationTraceabilityMatrixRecord:
+        chain = ("Constitutional Doctrine", "Constitutional Requirement", "Risk Office Specification", "Constitutional Object", "Validation Rule", "Certification Test", "Certification Evidence", "Certification Metric", "Certification Evaluation", "Certification Decision", "Certification Result")
+        domains = MappingProxyType({
+            "CT-001 Doctrine Traceability": ("ECS-002", "Enterprise Constitutional Laws", "Risk Constitution", "RISK-RM-001", "RISK-RM-002", "RISK-RM-003", "RISK-RM-004"),
+            "CT-002 Requirement Traceability": ("governing doctrine", "governing work order", "governing specification"),
+            "CT-003 Specification Traceability": ("constitutional requirement", "governing object", "validation rules"),
+            "CT-004 Object Traceability": ("constitutional objects", "object schemas", "object lifecycles", "object ownership"),
+            "CT-005 Validation Traceability": ("validation rules", "validation evidence", "validation results"),
+            "CT-006 Test Traceability": ("certification tests", "expected behavior", "observed behavior", "supporting evidence"),
+            "CT-007 Evidence Traceability": ("evidence packages", "provenance", "validation", "certification"),
+            "CT-008 Metrics Traceability": ("constitutional metrics", "thresholds", "evaluation rules", "certification decisions"),
+            "CT-009 Remediation Traceability": ("audit findings", "remediation work orders", "verification evidence", "certification closure"),
+            "CT-010 Certification Decision Traceability": ("certification evaluation", "evidence package", "metrics", "thresholds", "final certification decision"),
+        })
+        relationships = ("Governs", "Defines", "Owns", "Produces", "Consumes", "Validates", "Verifies", "Supports", "References", "Depends Upon", "Implements", "Certifies", "Remediates", "Closes")
+        fields_required = ("Traceability Identifier", "Parent Traceability Identifier", "Artifact Identifier", "Artifact Type", "Constitutional Owner", "Source Reference", "Destination Reference", "Relationship Type", "Constitutional Version", "Timestamp", "Integrity Hash")
+        validation = ("complete doctrine coverage", "complete requirement coverage", "complete specification coverage", "complete object coverage", "complete validation coverage", "complete test coverage", "complete evidence coverage", "complete metrics coverage", "complete remediation coverage", "complete certification coverage")
+        graph = ("directed acyclic graph", "unique node identity", "immutable edges", "deterministic traversal", "complete provenance")
+        versions = ("Doctrine Version", "Specification Version", "Schema Version", "Registry Version", "Evidence Version", "Certification Version")
+        replay = ("identical traceability graph", "identical relationships", "identical dependency ordering", "identical certification conclusions")
+        recovery = ("traceability graph", "node identities", "relationship integrity", "provenance references", "certification linkage")
+        audit = ("Traceability Identifier", "Source Artifact", "Destination Artifact", "Relationship Type", "Validation Status", "Timestamp", "Integrity Hash")
+        invariants = ("one complete graph per artifact", "bidirectionally navigable", "immutable relationships", "decisions trace to doctrine", "tests reference requirements", "metrics reference evidence", "replay identical traceability", "recovery complete", "no orphaned artifacts", "incomplete traceability fails certification")
+        passed = not orphan_artifact_findings and not missing_domain_findings and not illegal_relationship_findings and not cycle_findings and not mixed_version_findings and not replay_recovery_gaps and not audit_gaps
+        record = RiskCertificationTraceabilityMatrixRecord(
+            record_identifier=f"RISK-RM-004-017-TRACEABILITY-{_digest((chain, domains, relationships))[:12].upper()}",
+            traceability_chain=chain,
+            traceability_domains=domains,
+            relationship_types=relationships,
+            record_fields=fields_required,
+            validation_requirements=validation,
+            graph_requirements=graph,
+            version_fields=versions,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            orphan_artifact_findings=orphan_artifact_findings,
+            missing_domain_findings=missing_domain_findings,
+            illegal_relationship_findings=illegal_relationship_findings,
+            cycle_findings=cycle_findings,
+            mixed_version_findings=mixed_version_findings,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_procedure(
+        self,
+        *,
+        incomplete_submission_findings: tuple[str, ...] = (),
+        invalid_evidence_findings: tuple[str, ...] = (),
+        registry_failure_findings: tuple[str, ...] = (),
+        dependency_failure_findings: tuple[str, ...] = (),
+        traceability_failure_findings: tuple[str, ...] = (),
+        rule_execution_findings: tuple[str, ...] = (),
+        closure_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskCertificationProcedureRecord:
+        stages = ("Certification Requested", "Certification Package Validation", "Evidence Validation", "Registry Verification", "Dependency Verification", "Traceability Verification", "Evaluation Rule Execution", "Finding Consolidation", "Certification Decision", "Certificate Issuance or Certification Rejection", "Evidence Preservation", "Certification Closure")
+        initiation = ("Certification Manifest", "Certification Evidence Package", "Registry Snapshots", "Rule Registry", "Traceability Matrix", "Version Compatibility Matrix", "Required Certification Artifacts")
+        package_validation = ("schema compliance", "artifact completeness", "identifier integrity", "version compatibility", "manifest integrity", "dependency completeness")
+        evidence_validation = ("authenticity", "admissibility", "completeness", "provenance", "integrity", "ownership")
+        registry_verification = ("Candidate Registry", "Rule Registry", "Identifier Registry", "Schema Registry", "Metrics Registry", "Evidence Registry", "Decision Registry")
+        dependency_verification = ("doctrine dependencies", "artifact dependencies", "registry dependencies", "schema dependencies", "version dependencies")
+        traceability = ("Doctrine", "Requirement", "Implementation", "Verification", "Evidence", "Finding", "Certification Decision")
+        rule_outcomes = ("PASS", "FAIL", "NOT APPLICABLE")
+        decisions = ("PASS", "CONDITIONAL PASS", "FAIL")
+        states = ("Requested", "Submitted", "Validated", "Evaluated", "Findings Generated", "Decision Recorded", "Certificate Issued or Rejected", "Archived", "Closed")
+        evidence_outputs = ("Certification Procedure Specification", "Certification State Transition Log", "Certification Package Validation Report", "Evidence Validation Report", "Registry Verification Report", "Dependency Verification Report", "Traceability Verification Report", "Constitutional Rule Evaluation Report", "Finding Consolidation Report", "Certification Decision Record", "Certificate or Rejection Record", "Evidence Preservation Report", "Certification Closure Report", "Constitutional Certification Compliance Report")
+        invariants = ("immutable execution order", "evidence before evaluation", "registry verification before rules", "decisions reference evidence", "rules execute once", "findings immutable after consolidation", "deterministic results", "evidence preserved", "traceability complete", "no closure with unresolved Critical Rule failures")
+        passed = not incomplete_submission_findings and not invalid_evidence_findings and not registry_failure_findings and not dependency_failure_findings and not traceability_failure_findings and not rule_execution_findings and not closure_gaps and not audit_gaps
+        record = RiskCertificationProcedureRecord(
+            record_identifier=f"RISK-RM-004-018-PROCEDURE-{_digest((stages, rule_outcomes, decisions))[:12].upper()}",
+            procedure_stages=stages,
+            initiation_requirements=initiation,
+            package_validation_requirements=package_validation,
+            evidence_validation_requirements=evidence_validation,
+            registry_verification_requirements=registry_verification,
+            dependency_verification_requirements=dependency_verification,
+            traceability_chain=traceability,
+            rule_outcomes=rule_outcomes,
+            decision_outcomes=decisions,
+            state_machine=states,
+            evidence_outputs=evidence_outputs,
+            invariants=invariants,
+            incomplete_submission_findings=incomplete_submission_findings,
+            invalid_evidence_findings=invalid_evidence_findings,
+            registry_failure_findings=registry_failure_findings,
+            dependency_failure_findings=dependency_failure_findings,
+            traceability_failure_findings=traceability_failure_findings,
+            rule_execution_findings=rule_execution_findings,
+            closure_gaps=closure_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_exception_registry(
+        self,
+        *,
+        unauthorized_class_findings: tuple[str, ...] = (),
+        missing_documentation_findings: tuple[str, ...] = (),
+        approval_authority_findings: tuple[str, ...] = (),
+        inadmissible_exception_findings: tuple[str, ...] = (),
+        lifecycle_findings: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskCertificationExceptionRegistryRecord:
+        authorized = ("Administrative Processing Exception", "Documentation Packaging Exception", "Certification Scheduling Exception", "Audit Coordination Exception", "Historical Preservation Exception", "Certification Evidence Packaging Exception", "Registry Synchronization Exception", "Certification Metadata Exception")
+        prohibited = ("Constitutional Rule Waiver", "Constitutional Invariant Suspension", "Ownership Override", "Authority Override", "Validation Bypass", "Replay Bypass", "Recovery Bypass", "Traceability Waiver", "Audit Waiver", "Determinism Waiver", "Evidence Fabrication", "Certification Result Modification")
+        fields_required = ("Exception Identifier", "Exception Class", "Exception Name", "Constitutional Justification", "Related Constitutional Requirement", "Approval Authority", "Constitutional Owner", "Creation Timestamp", "Approval Timestamp", "Effective Timestamp", "Expiration Condition", "Current Status", "Required Evidence", "Audit Reference", "Retirement Status", "Retirement Timestamp", "Historical Revision Reference")
+        admissibility = ("constitutional correctness unaffected", "deterministic certification preserved", "complete supporting evidence", "approval authority verified", "documentation complete", "auditability preserved")
+        approval = ("constitutional review", "evidence verification", "documentation verification", "audit registration", "approval timestamp")
+        documentation = ("constitutional rationale", "affected certification activity", "governing doctrine reference", "supporting evidence", "approval record", "audit references", "retirement criteria")
+        states = ("Draft", "Submitted", "Under Constitutional Review", "Approved", "Active", "Resolved", "Retired", "Archived")
+        terminals = ("Rejected", "Archived")
+        retirement = ("resolution verification", "Certification Authority approval", "audit confirmation", "permanent historical preservation")
+        validation = ("identifier uniqueness", "class validity", "approval authority", "supporting evidence", "documentation completeness", "constitutional admissibility", "lifecycle correctness")
+        replay = ("identical registry entries", "identical approval decisions", "identical lifecycle progression", "identical retirement decisions", "identical audit history")
+        recovery = ("registry contents", "approval history", "lifecycle state", "retirement status", "audit history")
+        audit = ("Exception Identifier", "Exception Class", "Approval Authority", "Supporting Evidence", "Validation Results", "Lifecycle Transition", "Retirement Decision", "Timestamp")
+        traceability = ("governing constitutional doctrine", "affected certification requirement", "supporting evidence", "approval authority", "audit records", "certification decision", "retirement evidence")
+        invariants = ("one immutable identifier", "one constitutional owner", "one approval authority", "never modify doctrine", "never waive requirements", "complete documentation", "complete supporting evidence", "deterministic lifecycle", "retired exceptions preserved", "replay identical history", "recovery identical state", "append-only history", "independently auditable", "complete traceability", "deterministic outcomes despite exceptions")
+        passed = not unauthorized_class_findings and not missing_documentation_findings and not approval_authority_findings and not inadmissible_exception_findings and not lifecycle_findings and not replay_recovery_gaps and not traceability_gaps and not audit_gaps
+        record = RiskCertificationExceptionRegistryRecord(
+            record_identifier=f"RISK-RM-004-019-EXCEPTIONS-{_digest((authorized, prohibited, states))[:12].upper()}",
+            authorized_exception_classes=authorized,
+            prohibited_exception_classes=prohibited,
+            registry_entry_fields=fields_required,
+            admissibility_requirements=admissibility,
+            approval_requirements=approval,
+            documentation_requirements=documentation,
+            lifecycle_states=states,
+            terminal_states=terminals,
+            retirement_requirements=retirement,
+            validation_requirements=validation,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            traceability_requirements=traceability,
+            invariants=invariants,
+            unauthorized_class_findings=unauthorized_class_findings,
+            missing_documentation_findings=missing_documentation_findings,
+            approval_authority_findings=approval_authority_findings,
+            inadmissible_exception_findings=inadmissible_exception_findings,
+            lifecycle_findings=lifecycle_findings,
+            replay_recovery_gaps=replay_recovery_gaps,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_independent_certification_closure(
+        self,
+        *,
+        unmet_precondition_findings: tuple[str, ...] = (),
+        invalid_outcome_findings: tuple[str, ...] = (),
+        archival_gap_findings: tuple[str, ...] = (),
+        integrity_failure_findings: tuple[str, ...] = (),
+        revocation_authority_findings: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskIndependentCertificationClosureRecord:
+        preconditions = ("mandatory certification tests passed", "constitutional registries validated", "certification manifest complete", "required evidence package present", "constitutional invariants passed", "replay verification succeeded", "recovery verification succeeded", "certification traceability complete", "no unresolved constitutional findings")
+        outcomes = ("Unconditional Independent Risk Office Certification PASS", "Independent Risk Office Certification FAIL")
+        fields_required = ("Certification Identifier", "Office Identifier", "Certification Result", "Certification Authority", "Certification Timestamp", "Constitutional Version", "Registry Versions", "Manifest Identifier", "Evidence Package Identifier", "Certification Scope", "Certification Status")
+        archival = ("certification package", "certification manifests", "certification evidence packages", "registry snapshots", "schema versions", "doctrine versions", "evaluation results", "audit records", "replay evidence", "recovery evidence", "traceability records", "certification decision records")
+        permanence = ("certification records immutable", "certification identifiers permanent", "certification evidence read-only", "certification audit history permanent", "certification manifests immutable", "deletion prohibited")
+        integrity = ("certification identifiers", "certification evidence", "registry versions", "manifest integrity", "audit integrity", "traceability integrity", "doctrine references", "compatibility references")
+        revocation = ("fraudulent evidence", "material doctrine violation", "artifact corruption", "invalid certification authority", "certification integrity compromised")
+        recertification = ("new certification identifier", "complete certification package", "complete certification evidence", "current constitutional doctrine", "current certification registries", "full independent certification execution")
+        states = ("Certification Initiated", "Evidence Verified", "Evaluation Completed", "Certification Approved or Failed", "Certification Issued", "Certification Archived", "Certification Closed", "Revocation Review", "Revoked")
+        validation = ("certification completeness", "certification thresholds", "registry integrity", "manifest completeness", "evidence admissibility", "replay equivalence", "recovery verification", "traceability completeness", "constitutional invariant preservation")
+        persistence = ("certification record", "certification result", "certification manifests", "evidence packages", "registry references", "audit records", "traceability records", "closure metadata")
+        replay = ("identical certification outcome", "identical certification record", "identical certification package", "identical closure decision", "identical audit history")
+        recovery = ("certification records", "certification identifiers", "certification evidence", "manifests", "registry references", "audit history", "certification status")
+        audit = ("certification authority", "certification decision", "certification evidence", "closure validation", "issuance", "archival", "integrity verification", "certification completion")
+        traceability = ("governing doctrine", "certification package", "certification manifest", "certification evidence", "evaluation rules", "registry versions", "schema versions", "audit records", "remediation history", "certification decision")
+        invariants = ("one immutable Certification Identifier", "one constitutional outcome", "closure after prerequisites", "records immutable", "evidence preserved", "manifests immutable", "traceability complete", "history auditable", "replay identical closure", "recovery restores history", "revocation requires authority", "recertification creates new record", "closure never alters history", "independently reproducible", "permanent constitutional conclusion")
+        passed = not unmet_precondition_findings and not invalid_outcome_findings and not archival_gap_findings and not integrity_failure_findings and not revocation_authority_findings and not replay_recovery_gaps and not traceability_gaps and not audit_gaps
+        record = RiskIndependentCertificationClosureRecord(
+            record_identifier=f"RISK-RM-004-020-CLOSURE-{_digest((preconditions, outcomes, fields_required))[:12].upper()}",
+            closure_preconditions=preconditions,
+            permitted_outcomes=outcomes,
+            certification_record_fields=fields_required,
+            archival_artifacts=archival,
+            permanence_requirements=permanence,
+            post_certification_integrity_checks=integrity,
+            revocation_conditions=revocation,
+            recertification_requirements=recertification,
+            lifecycle_states=states,
+            validation_requirements=validation,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            traceability_requirements=traceability,
+            invariants=invariants,
+            unmet_precondition_findings=unmet_precondition_findings,
+            invalid_outcome_findings=invalid_outcome_findings,
+            archival_gap_findings=archival_gap_findings,
+            integrity_failure_findings=integrity_failure_findings,
+            revocation_authority_findings=revocation_authority_findings,
+            replay_recovery_gaps=replay_recovery_gaps,
+            traceability_gaps=traceability_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
 
     def evaluate_constitutional_rule_registry(
         self,

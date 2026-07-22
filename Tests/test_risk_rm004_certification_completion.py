@@ -302,6 +302,108 @@ class RiskRm004CertificationCompletionTests(unittest.TestCase):
         self.assertEqual(decisions.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("self-certification authority used", decisions.authority_findings)
 
+    def test_rm004_certification_closure_package_covers_schema_traceability_procedure_exceptions_and_closure(self) -> None:
+        package = RiskOfficeCertificationCompletionSupport().build_certification_closure_package()
+
+        self.assertEqual(package.final_certification_closure_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-004-016",
+                "RISK-RM-004-017",
+                "RISK-RM-004-018",
+                "RISK-RM-004-019",
+                "RISK-RM-004-020",
+            ),
+        )
+        self.assertIn("Section J - Integrity Package", package.certification_package_schema.package_sections)
+        self.assertIn("Certification Decision Record", package.certification_package_schema.mandatory_artifacts)
+        self.assertIn("Certification Procedure Version", package.certification_package_schema.manifest_dependencies)
+        self.assertEqual(package.certification_traceability_matrix.traceability_chain[0], "Constitutional Doctrine")
+        self.assertEqual(package.certification_traceability_matrix.traceability_chain[-1], "Certification Result")
+        self.assertIn("CT-010 Certification Decision Traceability", package.certification_traceability_matrix.traceability_domains)
+        self.assertIn("Remediates", package.certification_traceability_matrix.relationship_types)
+        self.assertEqual(package.certification_procedure.rule_outcomes, ("PASS", "FAIL", "NOT APPLICABLE"))
+        self.assertEqual(package.certification_procedure.decision_outcomes, ("PASS", "CONDITIONAL PASS", "FAIL"))
+        self.assertIn("Evidence Preservation", package.certification_procedure.procedure_stages)
+        self.assertIn("Certification Evidence Packaging Exception", package.certification_exception_registry.authorized_exception_classes)
+        self.assertIn("Constitutional Rule Waiver", package.certification_exception_registry.prohibited_exception_classes)
+        self.assertEqual(package.certification_exception_registry.lifecycle_states[0], "Draft")
+        self.assertEqual(
+            package.independent_certification_closure.permitted_outcomes,
+            (
+                "Unconditional Independent Risk Office Certification PASS",
+                "Independent Risk Office Certification FAIL",
+            ),
+        )
+        self.assertIn("certification package", package.independent_certification_closure.archival_artifacts)
+        self.assertIn("revocation requires authority", package.independent_certification_closure.invariants)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm004_certification_closure_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeCertificationCompletionSupport()
+
+        package_schema = support.evaluate_certification_package_schema(
+            missing_section_findings=("Section J omitted",),
+            missing_artifact_findings=("Integrity Package absent",),
+            unsupported_claim_findings=("claim lacks evidence",),
+            undeclared_dependency_findings=("Test Suite Version implicit",),
+            integrity_failures=("package hash mismatch",),
+            replay_recovery_gaps=("package replay changed ordering",),
+            audit_gaps=("submission unaudited",),
+            invariant_violations=("published package mutable",),
+        )
+        traceability = support.evaluate_certification_traceability_matrix(
+            orphan_artifact_findings=("evidence artifact orphaned",),
+            missing_domain_findings=("CT-009 absent",),
+            illegal_relationship_findings=("RELATES_TO used",),
+            cycle_findings=("traceability cycle",),
+            mixed_version_findings=("mixed schema version unauthorized",),
+            replay_recovery_gaps=("trace graph replay diverged",),
+            audit_gaps=("trace edge unaudited",),
+        )
+        procedure = support.evaluate_certification_procedure(
+            incomplete_submission_findings=("manifest missing",),
+            invalid_evidence_findings=("inadmissible evidence evaluated",),
+            registry_failure_findings=("Decision Registry invalid",),
+            dependency_failure_findings=("schema dependency unresolved",),
+            traceability_failure_findings=("broken doctrine chain",),
+            rule_execution_findings=("rule executed twice",),
+            closure_gaps=("evidence not archived",),
+            audit_gaps=("decision unaudited",),
+        )
+        exceptions = support.evaluate_certification_exception_registry(
+            unauthorized_class_findings=("Constitutional Rule Waiver admitted",),
+            missing_documentation_findings=("exception rationale absent",),
+            approval_authority_findings=("runtime approved exception",),
+            inadmissible_exception_findings=("determinism affected",),
+            lifecycle_findings=("backward transition",),
+            replay_recovery_gaps=("exception replay generated new state",),
+            traceability_gaps=("exception orphaned",),
+            audit_gaps=("exception approval unaudited",),
+        )
+        closure = support.evaluate_independent_certification_closure(
+            unmet_precondition_findings=("replay verification absent",),
+            invalid_outcome_findings=("CONDITIONAL PASS used",),
+            archival_gap_findings=("registry snapshot omitted",),
+            integrity_failure_findings=("manifest integrity failed",),
+            revocation_authority_findings=("revocation without authority",),
+            replay_recovery_gaps=("closure replay diverged",),
+            traceability_gaps=("closure lacks doctrine link",),
+            audit_gaps=("closure unaudited",),
+        )
+
+        self.assertEqual(package_schema.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Integrity Package absent", package_schema.missing_artifact_findings)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("traceability cycle", traceability.cycle_findings)
+        self.assertEqual(procedure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("rule executed twice", procedure.rule_execution_findings)
+        self.assertEqual(exceptions.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("runtime approved exception", exceptions.approval_authority_findings)
+        self.assertEqual(closure.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("CONDITIONAL PASS used", closure.invalid_outcome_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
