@@ -257,6 +257,11 @@ from .rm003_object_foundation import (
     RiskRm003ObjectFoundationOperationalPackage,
     RiskRm003ObjectFoundationSupport,
 )
+from .rm003_state_operational import (
+    RiskRm003StateOperationalPackage,
+    RiskRm003StateOperationalRecord,
+    RiskRm003StateOperationalSupport,
+)
 from .m4_operational_certification import (
     RiskM4CandidateIdentity,
     RiskM4CertificationDecision,
@@ -552,6 +557,9 @@ __all__ = [
     "RiskObjectLifecycleProfile",
     "RiskRm003ObjectFoundationOperationalPackage",
     "RiskRm003ObjectFoundationSupport",
+    "RiskRm003StateOperationalPackage",
+    "RiskRm003StateOperationalRecord",
+    "RiskRm003StateOperationalSupport",
     "RiskM4CandidateIdentity",
     "RiskM4CertificationDecision",
     "RiskM4CertificationTestResult",
