@@ -179,6 +179,154 @@ class RiskObjectLifecycleSpecificationRecord:
 
 
 @dataclass(frozen=True)
+class RiskEvaluationMissionLifecycleSpecificationRecord:
+    record_identifier: str
+    identity_attributes: tuple[str, ...]
+    authority_permissions: tuple[str, ...]
+    creation_preconditions: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    legal_transitions: tuple[tuple[str, str], ...]
+    completion_contract: tuple[str, ...]
+    authority_relinquishment_requirements: tuple[str, ...]
+    failure_conditions: tuple[str, ...]
+    relationships: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    identity_findings: tuple[str, ...]
+    authority_findings: tuple[str, ...]
+    lifecycle_findings: tuple[str, ...]
+    completion_findings: tuple[str, ...]
+    persistence_replay_recovery_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskSufficiencyDoctrineSpecificationRecord:
+    record_identifier: str
+    sufficiency_components: tuple[str, ...]
+    sufficiency_record_fields: tuple[str, ...]
+    mandatory_evaluations: tuple[str, ...]
+    sufficiency_states: tuple[str, ...]
+    failure_classes: tuple[str, ...]
+    traceability_chain: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    component_findings: tuple[str, ...]
+    evaluation_findings: tuple[str, ...]
+    state_findings: tuple[str, ...]
+    failure_classification_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    replay_recovery_findings: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskEquivalenceDoctrineSpecificationRecord:
+    record_identifier: str
+    governed_objects: tuple[str, ...]
+    normalization_rules: tuple[str, ...]
+    evaluation_sequence: tuple[str, ...]
+    equivalence_classes: tuple[str, ...]
+    duplicate_classes: tuple[str, ...]
+    consolidation_rules: Mapping[str, str]
+    state_machine: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    persistence_requirements: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    normalization_findings: tuple[str, ...]
+    classification_findings: tuple[str, ...]
+    consolidation_findings: tuple[str, ...]
+    supersession_findings: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    replay_recovery_findings: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskFreshnessDoctrineSpecificationRecord:
+    record_identifier: str
+    freshness_states: tuple[str, ...]
+    metadata_fields: tuple[str, ...]
+    freshness_categories: tuple[str, ...]
+    evaluation_inputs: tuple[str, ...]
+    expiration_conditions: tuple[str, ...]
+    renewal_requirements: tuple[str, ...]
+    inheritance_rules: tuple[str, ...]
+    replay_requirements: tuple[str, ...]
+    recovery_requirements: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    invariants: tuple[str, ...]
+    state_findings: tuple[str, ...]
+    metadata_findings: tuple[str, ...]
+    expiration_findings: tuple[str, ...]
+    renewal_findings: tuple[str, ...]
+    replay_recovery_findings: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class EnterpriseRiskStateConstitutionSpecificationRecord:
+    record_identifier: str
+    identity_fields: tuple[str, ...]
+    required_state_fields: Mapping[str, tuple[str, ...]]
+    component_categories: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    exceptional_states: tuple[str, ...]
+    update_triggers: tuple[str, ...]
+    construction_sequence: tuple[str, ...]
+    required_registries: tuple[str, ...]
+    required_object_specifications: tuple[str, ...]
+    replay_equivalence_fields: tuple[str, ...]
+    recovery_sequence: tuple[str, ...]
+    invariants: tuple[str, ...]
+    identity_findings: tuple[str, ...]
+    scope_findings: tuple[str, ...]
+    source_manifest_findings: tuple[str, ...]
+    lifecycle_findings: tuple[str, ...]
+    update_findings: tuple[str, ...]
+    construction_findings: tuple[str, ...]
+    atomicity_findings: tuple[str, ...]
+    replay_recovery_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskRm003StateDoctrineSpecificationPackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    mission_lifecycle: RiskEvaluationMissionLifecycleSpecificationRecord
+    sufficiency_doctrine: RiskSufficiencyDoctrineSpecificationRecord
+    equivalence_doctrine: RiskEquivalenceDoctrineSpecificationRecord
+    freshness_doctrine: RiskFreshnessDoctrineSpecificationRecord
+    enterprise_risk_state: EnterpriseRiskStateConstitutionSpecificationRecord
+    final_specification_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class RiskRm003ObjectFoundationSpecificationPackage:
     package_identifier: str
     governing_doctrine: str
@@ -202,6 +350,13 @@ class RiskOfficeSpecificationSupport:
         "RISK-RM-003-003",
         "RISK-RM-003-004",
         "RISK-RM-003-005",
+    )
+    state_doctrine_order_coverage = (
+        "RISK-RM-003-006",
+        "RISK-RM-003-007",
+        "RISK-RM-003-008",
+        "RISK-RM-003-009",
+        "RISK-RM-003-010",
     )
 
     def build_specification_program_record(
@@ -278,6 +433,310 @@ class RiskOfficeSpecificationSupport:
             deterministic_digest="",
         )
         return replace(package, deterministic_digest=_digest(package))
+
+    def build_state_doctrine_specification_package(self) -> RiskRm003StateDoctrineSpecificationPackage:
+        mission = self.evaluate_mission_lifecycle_specification()
+        sufficiency = self.evaluate_sufficiency_doctrine_specification()
+        equivalence = self.evaluate_equivalence_doctrine_specification()
+        freshness = self.evaluate_freshness_doctrine_specification()
+        state = self.evaluate_enterprise_risk_state_specification()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (mission, sufficiency, equivalence, freshness, state)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = RiskRm003StateDoctrineSpecificationPackage(
+            package_identifier=f"RISK-RM-003-STATE-DOCTRINE-{_digest((mission, sufficiency, equivalence, freshness, state))[:12].upper()}",
+            governing_doctrine="RISK-RM-003-006-TO-010/1.0.0",
+            order_coverage=self.state_doctrine_order_coverage,
+            mission_lifecycle=mission,
+            sufficiency_doctrine=sufficiency,
+            equivalence_doctrine=equivalence,
+            freshness_doctrine=freshness,
+            enterprise_risk_state=state,
+            final_specification_readiness=final,
+            immutable_audit_references=(
+                mission.record_identifier,
+                sufficiency.record_identifier,
+                equivalence.record_identifier,
+                freshness.record_identifier,
+                state.record_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def evaluate_mission_lifecycle_specification(
+        self,
+        *,
+        identity_findings: tuple[str, ...] = (),
+        authority_findings: tuple[str, ...] = (),
+        lifecycle_findings: tuple[str, ...] = (),
+        completion_findings: tuple[str, ...] = (),
+        persistence_replay_recovery_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> RiskEvaluationMissionLifecycleSpecificationRecord:
+        identity = ("Mission Identifier", "Mission Version", "Constitutional Owner", "Workflow Execution Identifier", "Mission Creation Timestamp", "Constitution Version", "Schema Version", "Current Lifecycle State")
+        authority = ("receive admissible inputs", "construct Risk objects", "evaluate evidence", "calculate confidence", "calculate exposure", "construct mitigation and recovery recommendations", "produce a Risk Assessment", "issue a Risk Decision")
+        preconditions = ("execution authority is valid", "workflow authorization exists", "required inputs are admissible", "constitutional configuration is active", "required dependencies are available", "ownership has been established")
+        states = ("Authorized", "Initialized", "Inputs Accepted", "Evidence Validated", "Evaluation Executing", "Confidence Calculated", "Exposure Calculated", "Mitigation Evaluated", "Risk Assessment Produced", "Risk Decision Issued", "Validation Complete", "Authority Relinquished", "Mission Closed", "Archived")
+        transitions = tuple(zip(states, states[1:]))
+        completion = ("all admissible inputs processed", "every required Risk object finalized", "validation succeeded", "replay information recorded", "persistence obligations completed", "audit evidence generated", "authority relinquished")
+        relinquishment = ("successful completion", "terminal cancellation", "constitutional rejection", "terminate mission execution authority", "prohibit further object modification", "preserve immutable audit history", "finalize persistent state")
+        failures = ("admissibility failure exists", "validation failure occurs", "invariant violation occurs", "integrity verification fails", "unrecoverable dependency failure exists", "constitutional execution becomes impossible")
+        relationships = ("one Risk Evaluation Plan", "one or more Risk Evidence objects", "one Risk Assessment", "one Risk Decision", "one Confidence Assessment", "one Exposure Assessment", "zero or more Mitigation Plans", "zero or more Recovery Plans", "one Audit Record set")
+        persistence = ("identity", "lifecycle history", "authority transitions", "object relationships", "validation history", "replay metadata", "recovery checkpoints", "audit references")
+        replay = ("lifecycle progression", "authority transitions", "evaluation ordering", "Risk Assessment generation", "Risk Decision issuance", "completion behavior")
+        recovery = ("current lifecycle state", "mission authority status", "persistent objects", "dependency relationships", "validation progress", "replay metadata", "audit continuity")
+        audit = ("mission identifier", "previous state", "new state", "transition timestamp", "authorizing event", "validation status", "integrity verification result")
+        invariants = ("unique canonical identity", "exactly one constitutional owner", "exactly one deterministic evaluation", "every lifecycle transition is legal and auditable", "mission authority exists only during authorized lifecycle states", "completed mission produces exactly one Risk Assessment", "completed mission produces exactly one Risk Decision", "authority relinquishment occurs exactly once", "closed missions are immutable", "replay reproduces identical lifecycle semantics", "recovery preserves lifecycle integrity", "no engineering interpretation")
+        passed = not identity_findings and not authority_findings and not lifecycle_findings and not completion_findings and not persistence_replay_recovery_findings and not audit_gaps and not invariant_violations
+        record = RiskEvaluationMissionLifecycleSpecificationRecord(
+            record_identifier=f"RISK-RM-003-006-MISSION-{_digest((identity, states))[:12].upper()}",
+            identity_attributes=identity,
+            authority_permissions=authority,
+            creation_preconditions=preconditions,
+            lifecycle_states=states,
+            legal_transitions=transitions,
+            completion_contract=completion,
+            authority_relinquishment_requirements=relinquishment,
+            failure_conditions=failures,
+            relationships=relationships,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            identity_findings=identity_findings,
+            authority_findings=authority_findings,
+            lifecycle_findings=lifecycle_findings,
+            completion_findings=completion_findings,
+            persistence_replay_recovery_findings=persistence_replay_recovery_findings,
+            audit_gaps=audit_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_sufficiency_doctrine_specification(
+        self,
+        *,
+        component_findings: tuple[str, ...] = (),
+        evaluation_findings: tuple[str, ...] = (),
+        state_findings: tuple[str, ...] = (),
+        failure_classification_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        replay_recovery_findings: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> RiskSufficiencyDoctrineSpecificationRecord:
+        components = ("Input Sufficiency", "Evidence Sufficiency", "Validation Sufficiency", "Evaluation Sufficiency", "Coverage Sufficiency", "Confidence Sufficiency", "Mitigation Sufficiency", "Traceability Sufficiency", "Invariant Sufficiency", "Completion Sufficiency")
+        fields_required = ("Sufficiency Identifier", "Evaluation Identifier", "Risk Assessment Identifier", "Sufficiency Status", "Evaluation Timestamp", "Constitutional Version", "Evidence References", "Validation References", "Completion References", "Integrity Hash")
+        evaluations = ("Position Risk Evaluation", "Portfolio Risk Evaluation", "Liquidity Risk Evaluation", "Volatility Risk Evaluation", "Tail Risk Evaluation", "Bubble Detection", "Systemic Risk Evaluation", "Risk Fusion", "Confidence Evaluation", "Mitigation Evaluation", "Recovery Evaluation")
+        states = ("SUFFICIENT", "INSUFFICIENT", "REJECTED", "TERMINATED")
+        failures = ("Missing Input", "Invalid Input", "Missing Evidence", "Invalid Evidence", "Validation Failure", "Coverage Failure", "Confidence Failure", "Mitigation Failure", "Traceability Failure", "Invariant Violation", "Completion Failure")
+        traceability = ("Doctrine", "Rule", "Evidence", "Evaluation", "Finding", "Risk Assessment", "Risk Decision")
+        replay = ("identical sufficiency evaluation", "identical failure classifications", "identical completion status", "identical certification outcome")
+        recovery = ("evaluation progress", "completed validations", "completed sufficiency checks", "failure state", "certification status")
+        audit = ("Sufficiency Identifier", "Risk Assessment Identifier", "Evaluation Identifier", "Validation Results", "Coverage Results", "Evidence Summary", "Failure Classifications", "Final Sufficiency Status", "Timestamp", "Integrity Hash")
+        invariants = tuple(f"CI-{index:03d}" for index in range(1, 11)) + ("No Risk Decision without sufficiency", "deterministic sufficiency", "complete traceability", "explicit confidence")
+        passed = not component_findings and not evaluation_findings and not state_findings and not failure_classification_findings and not traceability_gaps and not replay_recovery_findings and not invariant_violations
+        record = RiskSufficiencyDoctrineSpecificationRecord(
+            record_identifier=f"RISK-RM-003-007-SUFFICIENCY-{_digest((components, evaluations, states))[:12].upper()}",
+            sufficiency_components=components,
+            sufficiency_record_fields=fields_required,
+            mandatory_evaluations=evaluations,
+            sufficiency_states=states,
+            failure_classes=failures,
+            traceability_chain=traceability,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            audit_fields=audit,
+            invariants=invariants,
+            component_findings=component_findings,
+            evaluation_findings=evaluation_findings,
+            state_findings=state_findings,
+            failure_classification_findings=failure_classification_findings,
+            traceability_gaps=traceability_gaps,
+            replay_recovery_findings=replay_recovery_findings,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_equivalence_doctrine_specification(
+        self,
+        *,
+        normalization_findings: tuple[str, ...] = (),
+        classification_findings: tuple[str, ...] = (),
+        consolidation_findings: tuple[str, ...] = (),
+        supersession_findings: tuple[str, ...] = (),
+        provenance_gaps: tuple[str, ...] = (),
+        replay_recovery_findings: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> RiskEquivalenceDoctrineSpecificationRecord:
+        objects = ("Risk Assessment", "Risk Evaluation Package", "Risk Evaluation Plan", "Risk Evidence", "Risk Decision Record", "Mitigation Plan", "Recovery Plan", "Confidence Object", "Exposure Object", "Enterprise Risk State", "Validation Record", "Audit Record")
+        normalization = ("identifier normalization", "timestamp normalization", "enumeration normalization", "schema normalization", "unit normalization", "version normalization", "ordering normalization", "reference normalization")
+        sequence = ("Object Admission", "Canonical Normalization", "Identity Comparison", "Schema Comparison", "Semantic Comparison", "Dependency Comparison", "Provenance Comparison", "Equivalence Classification", "Consolidation Decision")
+        classes = ("Identical", "Structurally Equivalent", "Semantically Equivalent", "Revision", "Distinct")
+        duplicate_classes = ("Exact Duplicate", "Structural Duplicate", "Semantic Duplicate", "Superseding Revision", "Distinct Object")
+        consolidation = MappingProxyType({
+            "Exact Duplicate": "Reject duplicate, preserve original",
+            "Structural Duplicate": "Consolidate with original",
+            "Semantic Duplicate": "Consolidate with original",
+            "Superseding Revision": "Preserve prior version, register new revision",
+            "Distinct Object": "Preserve independently",
+        })
+        state_machine = ("Submitted", "Normalized", "Compared", "Classified", "Validated", "Persisted", "Consolidated", "Archived")
+        validation = ("object identity", "schema compatibility", "canonical normalization", "dependency integrity", "provenance integrity", "semantic consistency", "revision authority")
+        persistence = ("compared object identifiers", "normalization results", "comparison results", "equivalence classification", "consolidation decision", "validation evidence", "timestamps", "integrity metadata")
+        replay = ("identical normalization", "identical comparisons", "identical classifications", "identical consolidation decisions")
+        recovery = ("resume from most recently committed equivalence decision", "partial comparison state never recovered")
+        invariants = tuple(f"CI-{index:03d}" for index in range(1, 11)) + ("semantic equality takes precedence over representation", "historical revisions are never destroyed")
+        passed = not normalization_findings and not classification_findings and not consolidation_findings and not supersession_findings and not provenance_gaps and not replay_recovery_findings and not invariant_violations
+        record = RiskEquivalenceDoctrineSpecificationRecord(
+            record_identifier=f"RISK-RM-003-008-EQUIVALENCE-{_digest((objects, normalization, classes))[:12].upper()}",
+            governed_objects=objects,
+            normalization_rules=normalization,
+            evaluation_sequence=sequence,
+            equivalence_classes=classes,
+            duplicate_classes=duplicate_classes,
+            consolidation_rules=consolidation,
+            state_machine=state_machine,
+            validation_requirements=validation,
+            persistence_requirements=persistence,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            invariants=invariants,
+            normalization_findings=normalization_findings,
+            classification_findings=classification_findings,
+            consolidation_findings=consolidation_findings,
+            supersession_findings=supersession_findings,
+            provenance_gaps=provenance_gaps,
+            replay_recovery_findings=replay_recovery_findings,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_freshness_doctrine_specification(
+        self,
+        *,
+        state_findings: tuple[str, ...] = (),
+        metadata_findings: tuple[str, ...] = (),
+        expiration_findings: tuple[str, ...] = (),
+        renewal_findings: tuple[str, ...] = (),
+        replay_recovery_findings: tuple[str, ...] = (),
+        provenance_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> RiskFreshnessDoctrineSpecificationRecord:
+        states = ("Fresh", "Aging", "Expired", "Historical", "Superseded", "Indeterminate")
+        metadata = ("Evidence Identifier", "Collection Timestamp", "Validation Timestamp", "Freshness Timestamp", "Freshness State", "Expiration Timestamp", "Version Identifier", "Source Clock Reference", "Freshness Authority", "Renewal History")
+        categories = ("Real-Time", "Near Real-Time", "Session-Based", "Intraday", "Daily", "Persistent", "Historical", "Immutable Reference")
+        inputs = ("collection time", "constitutional evaluation time", "evidence class", "governing freshness rules", "supersession state", "expiration criteria")
+        expiration = ("constitutional validity period ends", "superseded evidence exists", "governing doctrine declares expiration", "integrity verification fails")
+        renewal = ("acquisition of new evidence", "complete validation", "assignment of a new identifier", "preservation of historical versions", "updated provenance")
+        inheritance = ("derived object freshness never exceeds least-fresh dependency", "composite freshness equals minimum required dependency freshness", "freshness promotion prohibited", "indeterminate freshness is inadmissible")
+        replay = ("preserve historical freshness exactly as originally recorded", "never recompute freshness using current time", "evaluate temporal validity using historical timestamps")
+        recovery = ("freshness state", "timestamps", "expiration metadata", "renewal history", "temporal provenance")
+        validation = ("timestamp integrity", "constitutional time authority", "expiration status", "supersession status", "category compatibility", "renewal consistency")
+        audit = ("evaluated object", "timestamps", "freshness state", "expiration decision", "renewal decision", "validation result", "governing doctrine")
+        invariants = ("exactly one freshness state", "deterministic freshness", "freshness never alters historical evidence", "expired evidence excluded from live Risk evaluation", "historical evidence permanently preserved", "renewal creates a new constitutional object", "replay preserves historical freshness", "recovery preserves freshness metadata", "composite freshness equals minimum dependency freshness", "indeterminate freshness inadmissible", "freshness never inferred from implementation behavior")
+        passed = not state_findings and not metadata_findings and not expiration_findings and not renewal_findings and not replay_recovery_findings and not provenance_gaps and not invariant_violations
+        record = RiskFreshnessDoctrineSpecificationRecord(
+            record_identifier=f"RISK-RM-003-009-FRESHNESS-{_digest((states, metadata, categories))[:12].upper()}",
+            freshness_states=states,
+            metadata_fields=metadata,
+            freshness_categories=categories,
+            evaluation_inputs=inputs,
+            expiration_conditions=expiration,
+            renewal_requirements=renewal,
+            inheritance_rules=inheritance,
+            replay_requirements=replay,
+            recovery_requirements=recovery,
+            validation_requirements=validation,
+            audit_fields=audit,
+            invariants=invariants,
+            state_findings=state_findings,
+            metadata_findings=metadata_findings,
+            expiration_findings=expiration_findings,
+            renewal_findings=renewal_findings,
+            replay_recovery_findings=replay_recovery_findings,
+            provenance_gaps=provenance_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_enterprise_risk_state_specification(
+        self,
+        *,
+        identity_findings: tuple[str, ...] = (),
+        scope_findings: tuple[str, ...] = (),
+        source_manifest_findings: tuple[str, ...] = (),
+        lifecycle_findings: tuple[str, ...] = (),
+        update_findings: tuple[str, ...] = (),
+        construction_findings: tuple[str, ...] = (),
+        atomicity_findings: tuple[str, ...] = (),
+        replay_recovery_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> EnterpriseRiskStateConstitutionSpecificationRecord:
+        identity = ("state-family identity", "state-version identity", "monotonic version number", "predecessor version reference", "effective timestamp", "creation timestamp", "Risk Office owner identity")
+        fields_required = MappingProxyType({
+            "Identity and Authority": ("state-family identity", "state-version identity", "version number", "predecessor version", "constitutional owner", "state creation authority", "state update authority", "schema version"),
+            "Scope": ("enterprise-scope identity", "included portfolios", "included positions", "included workflows", "excluded scope", "evaluation horizon", "state effective time"),
+            "Source Manifest": ("object identity", "object class", "object version", "constitutional owner", "lifecycle state", "freshness status", "validation status", "contribution type", "dependency relationship", "integrity digest"),
+            "Risk Assessments": ("current Risk Assessment identities", "domain Risk Result identities", "Enterprise Risk Assessment identity", "Risk Fusion result", "Risk classification"),
+            "Exposure": ("gross exposure", "net exposure", "directional exposure", "concentrated exposure", "contingent exposure", "liquidity-sensitive exposure", "volatility-sensitive exposure", "tail exposure", "systemic exposure", "recovery exposure"),
+            "Confidence and Uncertainty": ("aggregate confidence identity", "domain confidence identities", "uncertainty objects", "evidence conflicts", "unresolved uncertainty", "confidence limitations"),
+            "Limits and Constraints": ("active limit definitions", "limit-consumption state", "limit violations", "active constraints", "constraint violations", "exception references"),
+            "Mitigation and Recovery": ("active mitigation plans", "mitigation completion state", "mitigation failures", "recovery plans", "recovery feasibility state", "recovery triggers", "contingency requirements"),
+            "Restrictions and Actions": ("active restrictions", "active prohibitions", "required escalations", "required reevaluations", "required suspensions", "required state notifications"),
+            "Provenance and Integrity": ("source-object manifest", "evaluation-package references", "configuration identity", "registry-version identities", "provenance record", "traceability record", "integrity digest", "persistence commit record"),
+        })
+        categories = ("DIRECT_SOURCE", "DERIVED_COMPONENT", "AGGREGATED_COMPONENT", "CONSTRAINT_COMPONENT", "MITIGATION_COMPONENT", "RECOVERY_COMPONENT", "STATE_METADATA")
+        states = ("STATE_CREATION_REQUESTED", "STATE_CANDIDATE_CREATED", "SCOPE_VALIDATION_PENDING", "SCOPE_VALIDATED", "SOURCE_COLLECTION_PENDING", "SOURCE_COLLECTION_COMPLETE", "SOURCE_VALIDATION_PENDING", "SOURCES_VALIDATED", "STATE_CONSTRUCTION_PENDING", "STATE_CONSTRUCTED", "STATE_VALIDATION_PENDING", "STATE_VALIDATED", "STATE_COMMIT_PENDING", "STATE_COMMITTED", "STATE_CURRENT", "STATE_SUPERSEDED", "STATE_INVALIDATED", "STATE_ARCHIVED", "STATE_RETIRED", "STATE_QUARANTINED")
+        exceptional = ("STATE_CREATION_REJECTED", "SCOPE_REJECTED", "SOURCE_VALIDATION_REJECTED", "STATE_CONSTRUCTION_FAILED", "STATE_VALIDATION_REJECTED", "STATE_COMMIT_FAILED")
+        triggers = ("position inventory", "position quantity", "position direction", "valuation basis", "portfolio membership", "portfolio concentration", "liquidity condition", "volatility regime", "tail-risk condition", "bubble classification", "systemic-risk condition", "Risk Assessment", "confidence", "uncertainty", "exposure", "limit consumption", "limit breach", "active constraint", "mitigation status", "recovery feasibility", "active restriction", "active prohibition", "source-object validity", "governing configuration", "governing registry")
+        construction = ("validate scope", "collect source objects", "validate source identities", "validate source ownership", "validate source lifecycle states", "validate freshness", "validate configuration and registries", "construct position-risk state", "construct portfolio-risk state", "construct liquidity state", "construct volatility state", "construct tail-risk state", "construct bubble and systemic state", "construct exposure state", "construct confidence and uncertainty state", "construct limit and constraint state", "construct mitigation state", "construct recovery state", "perform Risk fusion", "determine aggregate classification", "determine restrictions and prohibitions", "validate complete state", "commit candidate state")
+        registries = ("Enterprise Risk State Schema Registry", "Enterprise Risk State Scope Registry", "Enterprise Risk State Component Registry", "Enterprise Risk State Lifecycle Registry", "Enterprise Risk State Update Trigger Registry", "Enterprise Risk State Update Authority Registry", "Enterprise Risk State Validation Registry", "Enterprise Risk State Aggregation Registry", "Enterprise Risk State Restriction Registry", "Enterprise Risk State Prohibition Registry", "Enterprise Risk State Invalidation Registry", "Enterprise Risk State Current-Version Registry", "Enterprise Risk State Retention Registry", "Enterprise Risk State Certification Evidence Registry")
+        objects = ("Enterprise Risk State", "Enterprise Risk State Scope", "Enterprise Risk State Source Manifest", "Enterprise Risk State Component", "Enterprise Risk State Exposure Component", "Enterprise Risk State Confidence Component", "Enterprise Risk State Limit Component", "Enterprise Risk State Constraint Component", "Enterprise Risk State Mitigation Component", "Enterprise Risk State Recovery Component", "Enterprise Risk State Restriction Component", "Enterprise Risk State Prohibition Component", "Enterprise Risk State Validation Record", "Enterprise Risk State Commit Record", "Enterprise Risk State Supersession Record", "Enterprise Risk State Invalidation Record", "Enterprise Risk State Archival Record", "Enterprise Risk State Retirement Record", "Enterprise Risk State Provenance Record", "Enterprise Risk State Manifest")
+        replay_fields = ("state scope", "included objects", "Risk classifications", "exposures", "confidence", "uncertainty", "limits", "constraints", "mitigation requirements", "recovery requirements", "restrictions", "prohibitions", "aggregate classification")
+        recovery = ("identify state family", "validate state-version lineage", "identify last valid committed version", "validate state integrity", "validate source-manifest integrity", "restore state", "restore registry authority", "reconcile predecessor-successor status", "validate configuration and registries", "confirm constitutional invariants", "authorize renewed use")
+        invariants = tuple(f"INVARIANT {index}" for index in range(1, 21)) + ("Single Current Version", "Immutable Version", "Complete Source Manifest", "No Unsupported Netting", "No Averaging Away Blocking Risk", "Atomic Update", "Independent Reconstructability")
+        passed = not identity_findings and not scope_findings and not source_manifest_findings and not lifecycle_findings and not update_findings and not construction_findings and not atomicity_findings and not replay_recovery_findings and not traceability_gaps and not invariant_violations
+        record = EnterpriseRiskStateConstitutionSpecificationRecord(
+            record_identifier=f"RISK-RM-003-010-STATE-{_digest((identity, fields_required, states, registries))[:12].upper()}",
+            identity_fields=identity,
+            required_state_fields=fields_required,
+            component_categories=categories,
+            lifecycle_states=states,
+            exceptional_states=exceptional,
+            update_triggers=triggers,
+            construction_sequence=construction,
+            required_registries=registries,
+            required_object_specifications=objects,
+            replay_equivalence_fields=replay_fields,
+            recovery_sequence=recovery,
+            invariants=invariants,
+            identity_findings=identity_findings,
+            scope_findings=scope_findings,
+            source_manifest_findings=source_manifest_findings,
+            lifecycle_findings=lifecycle_findings,
+            update_findings=update_findings,
+            construction_findings=construction_findings,
+            atomicity_findings=atomicity_findings,
+            replay_recovery_findings=replay_recovery_findings,
+            traceability_gaps=traceability_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
 
     def evaluate_risk_assessment_object_specification(
         self,

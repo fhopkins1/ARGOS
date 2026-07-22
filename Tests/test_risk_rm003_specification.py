@@ -114,6 +114,81 @@ class RiskRm003SpecificationProgramTests(unittest.TestCase):
         self.assertEqual(lifecycle.result, EnterpriseCertificationDecision.FAIL)
         self.assertIn("history overwritten", lifecycle.invariant_violations)
 
+    def test_rm003_state_doctrine_package_covers_orders_six_through_ten(self) -> None:
+        package = RiskOfficeSpecificationSupport().build_state_doctrine_specification_package()
+
+        self.assertEqual(package.final_specification_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-003-006",
+                "RISK-RM-003-007",
+                "RISK-RM-003-008",
+                "RISK-RM-003-009",
+                "RISK-RM-003-010",
+            ),
+        )
+        self.assertEqual(package.mission_lifecycle.lifecycle_states[0], "Authorized")
+        self.assertEqual(package.mission_lifecycle.lifecycle_states[-1], "Archived")
+        self.assertIn(("Validation Complete", "Authority Relinquished"), package.mission_lifecycle.legal_transitions)
+        self.assertIn("Authority Relinquished", package.mission_lifecycle.lifecycle_states)
+        self.assertIn("Input Sufficiency", package.sufficiency_doctrine.sufficiency_components)
+        self.assertEqual(package.sufficiency_doctrine.sufficiency_states, ("SUFFICIENT", "INSUFFICIENT", "REJECTED", "TERMINATED"))
+        self.assertIn("Risk Fusion", package.sufficiency_doctrine.mandatory_evaluations)
+        self.assertEqual(package.equivalence_doctrine.evaluation_sequence[0], "Object Admission")
+        self.assertEqual(package.equivalence_doctrine.evaluation_sequence[-1], "Consolidation Decision")
+        self.assertIn("Semantically Equivalent", package.equivalence_doctrine.equivalence_classes)
+        self.assertEqual(package.equivalence_doctrine.consolidation_rules["Superseding Revision"], "Preserve prior version, register new revision")
+        self.assertEqual(package.freshness_doctrine.freshness_states, ("Fresh", "Aging", "Expired", "Historical", "Superseded", "Indeterminate"))
+        self.assertIn("Immutable Reference", package.freshness_doctrine.freshness_categories)
+        self.assertIn("freshness promotion prohibited", package.freshness_doctrine.inheritance_rules)
+        self.assertIn("state-family identity", package.enterprise_risk_state.identity_fields)
+        self.assertIn("Source Manifest", package.enterprise_risk_state.required_state_fields)
+        self.assertIn("STATE_CURRENT", package.enterprise_risk_state.lifecycle_states)
+        self.assertIn("Enterprise Risk State Current-Version Registry", package.enterprise_risk_state.required_registries)
+        self.assertIn("No Averaging Away Blocking Risk", package.enterprise_risk_state.invariants)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_state_doctrine_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeSpecificationSupport()
+
+        mission = support.evaluate_mission_lifecycle_specification(
+            authority_findings=("mission authority delegated",),
+            lifecycle_findings=("state skipped",),
+            invariant_violations=("closed mission reopened",),
+        )
+        sufficiency = support.evaluate_sufficiency_doctrine_specification(
+            component_findings=("evidence sufficiency omitted",),
+            failure_classification_findings=("missing evidence unclassified",),
+            traceability_gaps=("Risk Decision provenance broken",),
+        )
+        equivalence = support.evaluate_equivalence_doctrine_specification(
+            normalization_findings=("raw objects compared directly",),
+            consolidation_findings=("manual consolidation allowed",),
+            provenance_gaps=("superseded revision erased",),
+        )
+        freshness = support.evaluate_freshness_doctrine_specification(
+            state_findings=("custom stale state introduced",),
+            expiration_findings=("expired evidence admitted live",),
+            invariant_violations=("freshness inferred from runtime behavior",),
+        )
+        state = support.evaluate_enterprise_risk_state_specification(
+            scope_findings=("ambiguous scope accepted",),
+            atomicity_findings=("predecessor supersession non-atomic",),
+            invariant_violations=("two current states for identical scope",),
+        )
+
+        self.assertEqual(mission.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("mission authority delegated", mission.authority_findings)
+        self.assertEqual(sufficiency.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("missing evidence unclassified", sufficiency.failure_classification_findings)
+        self.assertEqual(equivalence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("raw objects compared directly", equivalence.normalization_findings)
+        self.assertEqual(freshness.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("expired evidence admitted live", freshness.expiration_findings)
+        self.assertEqual(state.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("two current states for identical scope", state.invariant_violations)
+
 
 if __name__ == "__main__":
     unittest.main()
