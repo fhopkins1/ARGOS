@@ -304,6 +304,189 @@ class AnalystRm004RegistryGovernanceEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class AnalystRm004ConstitutionalRuleEntry:
+    rule_identifier: str
+    rule_name: str
+    rule_category: str
+    constitutional_owner: str
+    evaluation_intent: str
+    evaluation_procedure_reference: str
+    dependency_references: tuple[str, ...]
+    applicable_candidate_classes: tuple[str, ...]
+    required_evidence: tuple[str, ...]
+    certification_severity: str
+    version: str
+    publication_status: str
+    traceability_references: tuple[str, ...]
+    audit_references: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class AnalystRm004ConstitutionalRuleRegistryRecord:
+    registry_identifier: str
+    entries: tuple[AnalystRm004ConstitutionalRuleEntry, ...]
+    registry_fields: tuple[str, ...]
+    rule_categories: tuple[str, ...]
+    severity_levels: tuple[str, ...]
+    dependency_requirements: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_rule_findings: tuple[str, ...]
+    ambiguous_ownership_findings: tuple[str, ...]
+    missing_dependency_findings: tuple[str, ...]
+    invalid_applicability_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    replay_recovery_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004SchemaRegistryEntry:
+    schema_identifier: str
+    schema_name: str
+    schema_version: str
+    schema_class: str
+    canonical_namespace: str
+    constitutional_owner: str
+    approval_authority: str
+    certification_authority: str
+    parent_schema: str | None
+    compatible_schemas: tuple[str, ...]
+    dependent_schemas: tuple[str, ...]
+    referenced_registries: tuple[str, ...]
+    certification_status: str
+    validation_status: str
+    effective_version: str
+    deprecation_status: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004SchemaRegistryRecord:
+    registry_identifier: str
+    entries: tuple[AnalystRm004SchemaRegistryEntry, ...]
+    schema_identity_fields: tuple[str, ...]
+    schema_classes: Mapping[str, tuple[str, ...]]
+    lifecycle_states: tuple[str, ...]
+    duplicate_schema_findings: tuple[str, ...]
+    missing_schema_class_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    compatibility_gaps: tuple[str, ...]
+    relationship_cycle_findings: tuple[str, ...]
+    validation_failures: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004RegistryCrossReferenceRecord:
+    matrix_identifier: str
+    matrix_version: str
+    constitutional_version: str
+    schema_version: str
+    registry_version: str
+    owner: str
+    integrity_metadata: str
+    registry_inventory: tuple[str, ...]
+    matrix_sections: Mapping[str, tuple[str, ...]]
+    relationship_types: tuple[str, ...]
+    invariants: tuple[str, ...]
+    duplicate_registry_findings: tuple[str, ...]
+    missing_registry_findings: tuple[str, ...]
+    illegal_relationship_findings: tuple[str, ...]
+    broken_reference_findings: tuple[str, ...]
+    dependency_cycle_findings: tuple[str, ...]
+    compatibility_gaps: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004CertificationEvidenceRegistryRecord:
+    registry_identifier: str
+    evidence_classes: tuple[str, ...]
+    identity_fields: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    registry_fields: tuple[str, ...]
+    admissibility_requirements: tuple[str, ...]
+    duplicate_evidence_findings: tuple[str, ...]
+    missing_class_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    inadmissible_evidence_findings: tuple[str, ...]
+    integrity_failures: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004DecisionRegistryEntry:
+    decision_identifier: str
+    decision_revision_identifier: str
+    decision_name: str
+    decision_category: str
+    owning_office: str
+    decision_authority: str
+    evaluation_authority: str
+    governing_work_order: str
+    constitutional_requirement: str
+    trigger_conditions: tuple[str, ...]
+    required_inputs: tuple[str, ...]
+    required_evidence: tuple[str, ...]
+    required_dependencies: tuple[str, ...]
+    evaluation_rules: tuple[str, ...]
+    required_validation: tuple[str, ...]
+    required_invariants: tuple[str, ...]
+    expected_result: str
+    outcomes: tuple[str, ...]
+    traceability_references: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class AnalystRm004DecisionRegistryRecord:
+    registry_identifier: str
+    entries: tuple[AnalystRm004DecisionRegistryEntry, ...]
+    decision_object_fields: tuple[str, ...]
+    decision_categories: tuple[str, ...]
+    evaluation_sequence: tuple[str, ...]
+    outcome_values: tuple[str, ...]
+    duplicate_decision_findings: tuple[str, ...]
+    missing_category_findings: tuple[str, ...]
+    invalid_outcome_findings: tuple[str, ...]
+    authority_findings: tuple[str, ...]
+    evidence_gaps: tuple[str, ...]
+    dependency_cycle_findings: tuple[str, ...]
+    traceability_gaps: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AnalystRm004GovernanceRegistryEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    constitutional_rule_registry: AnalystRm004ConstitutionalRuleRegistryRecord
+    schema_registry: AnalystRm004SchemaRegistryRecord
+    registry_cross_reference_matrix: AnalystRm004RegistryCrossReferenceRecord
+    certification_evidence_registry: AnalystRm004CertificationEvidenceRegistryRecord
+    decision_registry: AnalystRm004DecisionRegistryRecord
+    final_governance_registry_readiness: EnterpriseCertificationDecision
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class AnalystOfficeCertificationSupport:
     """Build deterministic ANALYST-RM-004 certification registry evidence."""
 
@@ -321,6 +504,14 @@ class AnalystOfficeCertificationSupport:
         "ANALYST-RM-004-008",
         "ANALYST-RM-004-009",
         "ANALYST-RM-004-010",
+    )
+
+    governance_registry_order_coverage = (
+        "ANALYST-RM-004-011",
+        "ANALYST-RM-004-012",
+        "ANALYST-RM-004-013",
+        "ANALYST-RM-004-014",
+        "ANALYST-RM-004-015",
     )
 
     def build_foundation_package(self) -> AnalystRm004CertificationFoundationEvidencePackage:
@@ -380,6 +571,37 @@ class AnalystOfficeCertificationSupport:
                 manifest.registry_identifier,
                 identifiers.registry_identifier,
                 versions.registry_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def build_governance_registry_package(self) -> AnalystRm004GovernanceRegistryEvidencePackage:
+        rules = self.evaluate_constitutional_rule_registry()
+        schemas = self.evaluate_schema_registry()
+        cross_refs = self.evaluate_registry_cross_reference_matrix()
+        evidence = self.evaluate_certification_evidence_registry()
+        decisions = self.evaluate_decision_registry()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (rules, schemas, cross_refs, evidence, decisions)
+        ) else EnterpriseCertificationDecision.FAIL
+        package = AnalystRm004GovernanceRegistryEvidencePackage(
+            package_identifier=f"ANALYST-RM-004-GOV-REG-{_digest((rules, schemas, cross_refs, evidence, decisions))[:12].upper()}",
+            governing_doctrine="ANALYST-RM-004-011-TO-015/1.0.0",
+            order_coverage=self.governance_registry_order_coverage,
+            constitutional_rule_registry=rules,
+            schema_registry=schemas,
+            registry_cross_reference_matrix=cross_refs,
+            certification_evidence_registry=evidence,
+            decision_registry=decisions,
+            final_governance_registry_readiness=final,
+            immutable_audit_references=(
+                rules.registry_identifier,
+                schemas.registry_identifier,
+                cross_refs.matrix_identifier,
+                evidence.registry_identifier,
+                decisions.registry_identifier,
             ),
             deterministic_digest="",
         )
@@ -848,6 +1070,250 @@ class AnalystOfficeCertificationSupport:
         )
         return replace(record, deterministic_digest=_digest(record))
 
+    def evaluate_constitutional_rule_registry(
+        self,
+        *,
+        duplicate_rule_findings: tuple[str, ...] = (),
+        ambiguous_ownership_findings: tuple[str, ...] = (),
+        missing_dependency_findings: tuple[str, ...] = (),
+        invalid_applicability_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        replay_recovery_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> AnalystRm004ConstitutionalRuleRegistryRecord:
+        entries = self._constitutional_rule_entries()
+        fields_required = ("Rule Identifier", "Rule Name", "Rule Category", "Constitutional Owner", "Rule Description", "Evaluation Intent", "Evaluation Procedure Reference", "Dependency References", "Applicable Candidate Classes", "Required Evidence", "Certification Severity", "Version", "Publication Status", "Traceability References", "Audit References")
+        categories = ("CRR-001 Identity Rules", "CRR-002 Ownership Rules", "CRR-003 Lifecycle Rules", "CRR-004 Validation Rules", "CRR-005 Reasoning Rules", "CRR-006 Confidence Rules", "CRR-007 Persistence Rules", "CRR-008 Replay Rules", "CRR-009 Recovery Rules", "CRR-010 Traceability Rules", "CRR-011 Configuration Rules", "CRR-012 Certification Rules")
+        severities = ("Critical", "Mandatory", "Required", "Advisory")
+        dependencies = ("prerequisite rules", "dependent rules", "governing doctrine", "required schemas", "required registries", "acyclic dependency graph")
+        invariants = tuple(f"CRRI-{index:03d}" for index in range(1, 11))
+        ids = tuple(entry.rule_identifier for entry in entries)
+        duplicate_ids = tuple(identifier for identifier in sorted(set(ids)) if ids.count(identifier) > 1)
+        category_values = tuple(entry.rule_category for entry in entries)
+        missing_categories = tuple(category for category in categories if category not in category_values)
+        bad_owner = tuple(entry.rule_identifier for entry in entries if entry.constitutional_owner != "Analyst Office")
+        bad_severity = tuple(entry.rule_identifier for entry in entries if entry.certification_severity not in severities)
+        bad_applicability = tuple(entry.rule_identifier for entry in entries if not entry.applicable_candidate_classes)
+        passed = not duplicate_ids and not missing_categories and not bad_owner and not bad_severity and not bad_applicability and not duplicate_rule_findings and not ambiguous_ownership_findings and not missing_dependency_findings and not invalid_applicability_findings and not traceability_gaps and not replay_recovery_findings and not audit_gaps and not invariant_violations
+        record = AnalystRm004ConstitutionalRuleRegistryRecord(
+            registry_identifier=f"ANALYST-RM-004-011-CRR-{_digest(entries)[:12].upper()}",
+            entries=entries,
+            registry_fields=fields_required,
+            rule_categories=categories,
+            severity_levels=severities,
+            dependency_requirements=dependencies,
+            invariants=invariants,
+            duplicate_rule_findings=duplicate_ids + duplicate_rule_findings,
+            ambiguous_ownership_findings=bad_owner + ambiguous_ownership_findings,
+            missing_dependency_findings=missing_categories + missing_dependency_findings,
+            invalid_applicability_findings=bad_severity + bad_applicability + invalid_applicability_findings,
+            traceability_gaps=traceability_gaps,
+            replay_recovery_findings=replay_recovery_findings,
+            audit_gaps=audit_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_schema_registry(
+        self,
+        *,
+        duplicate_schema_findings: tuple[str, ...] = (),
+        missing_schema_class_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        compatibility_gaps: tuple[str, ...] = (),
+        relationship_cycle_findings: tuple[str, ...] = (),
+        validation_failures: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004SchemaRegistryRecord:
+        entries = self._schema_registry_entries()
+        identity_fields = ("Schema Identifier", "Schema Name", "Schema Version", "Schema Class", "Canonical Namespace", "Constitutional Owner", "Approval Authority", "Certification Authority", "Parent Schema", "Compatible Schemas", "Dependent Schemas", "Referenced Registries", "Certification Status", "Validation Status", "Effective Version", "Deprecation Status")
+        schema_classes = MappingProxyType(
+            {
+                "Mission Schemas": ("Analytical Mission", "Analysis Plan", "Analytical Package"),
+                "Evidence Schemas": ("Analytical Evidence", "Evidence Provenance", "Evidence Validation"),
+                "Reasoning Schemas": ("Reasoning Graph", "Reasoning Node", "Reasoning Edge"),
+                "Analytical Schemas": ("Hypothesis", "Confidence Object", "Analytical Conclusion", "Recommendation", "Organizational Belief State"),
+                "Lifecycle Schemas": ("Lifecycle State", "Commit Boundary", "Replay State", "Recovery State"),
+                "Validation Schemas": ("Validation Record", "Validation Result", "Invariant Evaluation"),
+                "Traceability Schemas": ("Trace Record", "Dependency Record", "Audit Record"),
+                "Configuration Schemas": ("Configuration Object", "Configuration Version", "Compatibility Definition"),
+                "Certification Schemas": ("Certification Manifest", "Certification Evidence Package", "Certification Test", "Certification Decision", "Certification Closure"),
+            }
+        )
+        lifecycle = ("Proposed", "Under Review", "Approved", "Active", "Superseded", "Deprecated", "Archived")
+        ids = tuple(entry.schema_identifier for entry in entries)
+        duplicate_ids = tuple(identifier for identifier in sorted(set(ids)) if ids.count(identifier) > 1)
+        class_values = tuple(entry.schema_name for entry in entries)
+        missing_classes = tuple(schema for names in schema_classes.values() for schema in names if schema not in class_values)
+        bad_owner = tuple(entry.schema_identifier for entry in entries if entry.constitutional_owner != "Analyst Office")
+        invalid_status = tuple(entry.schema_identifier for entry in entries if entry.validation_status != "Validated")
+        passed = not duplicate_ids and not missing_classes and not bad_owner and not invalid_status and not duplicate_schema_findings and not missing_schema_class_findings and not ownership_findings and not compatibility_gaps and not relationship_cycle_findings and not validation_failures and not replay_recovery_gaps and not audit_gaps
+        record = AnalystRm004SchemaRegistryRecord(
+            registry_identifier=f"ANALYST-RM-004-012-SCHEMA-{_digest(entries)[:12].upper()}",
+            entries=entries,
+            schema_identity_fields=identity_fields,
+            schema_classes=schema_classes,
+            lifecycle_states=lifecycle,
+            duplicate_schema_findings=duplicate_ids + duplicate_schema_findings,
+            missing_schema_class_findings=missing_classes + missing_schema_class_findings,
+            ownership_findings=bad_owner + ownership_findings,
+            compatibility_gaps=compatibility_gaps,
+            relationship_cycle_findings=relationship_cycle_findings,
+            validation_failures=invalid_status + validation_failures,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_registry_cross_reference_matrix(
+        self,
+        *,
+        duplicate_registry_findings: tuple[str, ...] = (),
+        missing_registry_findings: tuple[str, ...] = (),
+        illegal_relationship_findings: tuple[str, ...] = (),
+        broken_reference_findings: tuple[str, ...] = (),
+        dependency_cycle_findings: tuple[str, ...] = (),
+        compatibility_gaps: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004RegistryCrossReferenceRecord:
+        inventory = ("Candidate Class Registry", "Canonical Identity Normalization Tables", "Constitutional Evaluation Rule Registry", "Certification Threshold Doctrine", "Constitutional Certification Test Registry", "Identity Collision Resolution Registry", "Constitutional Metrics Registry", "Certification Manifest Schema", "Constitutional Identifier Registry", "Version Compatibility Matrix", "Constitutional Rule Registry", "Constitutional Schema Registry", "Certification Evidence Registry", "Constitutional Decision Registry", "Certification Package Schema", "Certification Traceability Matrix", "Certification Procedure Registry", "Certification Exception Registry", "Certification Closure Registry")
+        sections = MappingProxyType(
+            {
+                "Matrix Header": ("Matrix Identifier", "Matrix Version", "Constitutional Version", "Schema Version", "Registry Version", "Owner", "Creation Timestamp", "Effective Timestamp", "Integrity Metadata"),
+                "Registry Inventory": inventory,
+                "Dependency Matrix": ("source registry", "target registry", "relationship type", "version compatibility"),
+                "Identifier Relationships": ("identifier owner", "namespace", "canonical object", "registry reference"),
+                "Schema Relationships": ("schema owner", "compatible schema", "dependent schema", "validation status"),
+                "Rule Relationships": ("rule registry", "governed candidate class", "required evidence"),
+                "Metrics Relationships": ("metric registry", "rule registry", "threshold registry"),
+                "Evidence Relationships": ("evidence registry", "manifest schema", "traceability matrix"),
+                "Compatibility Relationships": ("version matrix", "schema registry", "identifier registry"),
+                "Certification Relationships": ("test registry", "procedure registry", "decision registry", "closure registry"),
+            }
+        )
+        relationship_types = ("Depends Upon", "References", "Validates", "Governs", "Supersedes", "Contains", "Produces", "Consumes", "Certifies", "Audits")
+        invariants = ("every registry appears exactly once", "relationships are explicit", "dependencies are acyclic", "references are valid", "compatibility is explicit", "replay relationships are preserved", "recovery relationships are preserved", "historical versions remain linked", "audit lineage is complete", "implementation independence")
+        duplicate_inventory = tuple(registry for registry in sorted(set(inventory)) if inventory.count(registry) > 1)
+        passed = not duplicate_inventory and not duplicate_registry_findings and not missing_registry_findings and not illegal_relationship_findings and not broken_reference_findings and not dependency_cycle_findings and not compatibility_gaps and not replay_recovery_gaps and not audit_gaps
+        record = AnalystRm004RegistryCrossReferenceRecord(
+            matrix_identifier=f"ANALYST-RM-004-013-XREF-{_digest((inventory, sections))[:12].upper()}",
+            matrix_version="1.0.0",
+            constitutional_version="ANALYST-RM-004",
+            schema_version="1.0.0",
+            registry_version="1.0.0",
+            owner="Analyst Office",
+            integrity_metadata=_digest((inventory, relationship_types))[:24],
+            registry_inventory=inventory,
+            matrix_sections=sections,
+            relationship_types=relationship_types,
+            invariants=invariants,
+            duplicate_registry_findings=duplicate_inventory + duplicate_registry_findings,
+            missing_registry_findings=missing_registry_findings,
+            illegal_relationship_findings=illegal_relationship_findings,
+            broken_reference_findings=broken_reference_findings,
+            dependency_cycle_findings=dependency_cycle_findings,
+            compatibility_gaps=compatibility_gaps,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_evidence_registry(
+        self,
+        *,
+        duplicate_evidence_findings: tuple[str, ...] = (),
+        missing_class_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        inadmissible_evidence_findings: tuple[str, ...] = (),
+        integrity_failures: tuple[str, ...] = (),
+        provenance_gaps: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004CertificationEvidenceRegistryRecord:
+        classes = ("Identity Evidence", "Ownership Evidence", "Schema Evidence", "Lifecycle Evidence", "Validation Evidence", "Replay Evidence", "Recovery Evidence", "Traceability Evidence", "Persistence Evidence", "Configuration Evidence", "Audit Evidence", "Metrics Evidence", "Test Evidence", "Certification Decision Evidence", "Compliance Evidence")
+        identity = ("Evidence Identifier", "Evidence Class", "Evidence Version", "Schema Version", "Constitutional Owner", "Creation Timestamp", "Certification Version", "Integrity Identifier", "Provenance Identifier")
+        lifecycle = ("Created", "Validated", "Accepted", "Referenced", "Archived", "Historical", "Permanent")
+        fields_required = ("Evidence Identifier", "Evidence Class", "Constitutional Owner", "Schema Version", "Object Reference", "Doctrine Reference", "Validation Status", "Integrity Status", "Provenance Reference", "Audit Reference", "Certification Reference")
+        admissibility = ("constitutionally generated", "constitutionally owned", "schema compliant", "integrity verified", "provenance complete", "traceability complete", "validation complete", "version compatible")
+        missing = tuple(item for item in classes if item in missing_class_findings)
+        passed = not missing and not duplicate_evidence_findings and not ownership_findings and not inadmissible_evidence_findings and not integrity_failures and not provenance_gaps and not traceability_gaps and not replay_recovery_gaps and not audit_gaps
+        record = AnalystRm004CertificationEvidenceRegistryRecord(
+            registry_identifier=f"ANALYST-RM-004-014-EVIDENCE-{_digest((classes, fields_required))[:12].upper()}",
+            evidence_classes=classes,
+            identity_fields=identity,
+            lifecycle_states=lifecycle,
+            registry_fields=fields_required,
+            admissibility_requirements=admissibility,
+            duplicate_evidence_findings=duplicate_evidence_findings,
+            missing_class_findings=missing,
+            ownership_findings=ownership_findings,
+            inadmissible_evidence_findings=inadmissible_evidence_findings,
+            integrity_failures=integrity_failures,
+            provenance_gaps=provenance_gaps,
+            traceability_gaps=traceability_gaps,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_decision_registry(
+        self,
+        *,
+        duplicate_decision_findings: tuple[str, ...] = (),
+        missing_category_findings: tuple[str, ...] = (),
+        invalid_outcome_findings: tuple[str, ...] = (),
+        authority_findings: tuple[str, ...] = (),
+        evidence_gaps: tuple[str, ...] = (),
+        dependency_cycle_findings: tuple[str, ...] = (),
+        traceability_gaps: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> AnalystRm004DecisionRegistryRecord:
+        entries = self._decision_registry_entries()
+        fields_required = ("Decision Identifier", "Decision Revision Identifier", "Constitutional Version", "Registry Version", "Owning Office", "Decision Authority", "Evaluation Authority", "Decision Name", "Decision Category", "Governing Work Order", "Constitutional Requirement", "Decision Description", "Trigger Conditions", "Required Inputs", "Required Evidence", "Required Dependencies", "Evaluation Trigger", "Evaluation Rules", "Required Validation", "Required Invariants", "Expected Result", "Outcomes", "Doctrine References", "Specification References", "Rule References", "Evidence References", "Audit References")
+        categories = ("Authority", "Identity", "Object", "Reasoning", "Evidence", "Confidence", "Validation", "Persistence", "Replay", "Recovery", "Configuration", "Certification")
+        sequence = ("Validate decision authority", "Validate required evidence", "Validate prerequisite decisions", "Evaluate rules", "Verify invariants", "Produce deterministic outcome", "Record audit")
+        outcomes = ("PASS", "FAIL", "REJECT", "NOT APPLICABLE")
+        ids = tuple(entry.decision_identifier for entry in entries)
+        duplicate_ids = tuple(identifier for identifier in sorted(set(ids)) if ids.count(identifier) > 1)
+        category_values = tuple(entry.decision_category for entry in entries)
+        missing_categories = tuple(category for category in categories if category not in category_values)
+        bad_outcomes = tuple(entry.decision_identifier for entry in entries if entry.outcomes != outcomes)
+        bad_authority = tuple(entry.decision_identifier for entry in entries if entry.decision_authority != "Independent Enterprise Certification")
+        passed = not duplicate_ids and not missing_categories and not bad_outcomes and not bad_authority and not duplicate_decision_findings and not missing_category_findings and not invalid_outcome_findings and not authority_findings and not evidence_gaps and not dependency_cycle_findings and not traceability_gaps and not replay_recovery_gaps and not audit_gaps
+        record = AnalystRm004DecisionRegistryRecord(
+            registry_identifier=f"ANALYST-RM-004-015-DECISION-{_digest(entries)[:12].upper()}",
+            entries=entries,
+            decision_object_fields=fields_required,
+            decision_categories=categories,
+            evaluation_sequence=sequence,
+            outcome_values=outcomes,
+            duplicate_decision_findings=duplicate_ids + duplicate_decision_findings,
+            missing_category_findings=missing_categories + missing_category_findings,
+            invalid_outcome_findings=bad_outcomes + invalid_outcome_findings,
+            authority_findings=bad_authority + authority_findings,
+            evidence_gaps=evidence_gaps,
+            dependency_cycle_findings=dependency_cycle_findings,
+            traceability_gaps=traceability_gaps,
+            replay_recovery_gaps=replay_recovery_gaps,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
     def _candidate_class_entries(self) -> tuple[AnalystRm004CandidateClassEntry, ...]:
         rows = (
             ("ACC-001", "Analytical Mission", "Mission Object", ("mission identity", "authority", "lifecycle", "validation", "persistence", "replay", "recovery")),
@@ -1014,6 +1480,139 @@ class AnalystOfficeCertificationSupport:
                 dependencies=("ANALYST-RM-004-001", "ANALYST-RM-004-002", "ANALYST-RM-004-003", "ANALYST-RM-004-004"),
             )
             for identifier, category, requirement in rows
+        )
+
+    def _constitutional_rule_entries(self) -> tuple[AnalystRm004ConstitutionalRuleEntry, ...]:
+        rows = (
+            ("CRR-001", "Identity Rule", "CRR-001 Identity Rules", "Critical", ("ACC-001", "ACC-002", "ACC-003")),
+            ("CRR-002", "Ownership Rule", "CRR-002 Ownership Rules", "Critical", ("ACC-001", "ACC-005", "ACC-015")),
+            ("CRR-003", "Lifecycle Rule", "CRR-003 Lifecycle Rules", "Mandatory", ("ACC-001", "ACC-011", "ACC-012")),
+            ("CRR-004", "Validation Rule", "CRR-004 Validation Rules", "Critical", ("ACC-003", "ACC-009", "ACC-015")),
+            ("CRR-005", "Reasoning Rule", "CRR-005 Reasoning Rules", "Mandatory", ("ACC-004", "ACC-006", "ACC-008")),
+            ("CRR-006", "Confidence Rule", "CRR-006 Confidence Rules", "Mandatory", ("ACC-007", "ACC-008")),
+            ("CRR-007", "Persistence Rule", "CRR-007 Persistence Rules", "Critical", ("ACC-011", "ACC-012")),
+            ("CRR-008", "Replay Rule", "CRR-008 Replay Rules", "Critical", ("ACC-013",)),
+            ("CRR-009", "Recovery Rule", "CRR-009 Recovery Rules", "Critical", ("ACC-014",)),
+            ("CRR-010", "Traceability Rule", "CRR-010 Traceability Rules", "Mandatory", ("ACC-010", "ACC-015")),
+            ("CRR-011", "Configuration Rule", "CRR-011 Configuration Rules", "Required", ("ACC-011",)),
+            ("CRR-012", "Certification Rule", "CRR-012 Certification Rules", "Critical", ("ACC-015",)),
+        )
+        return tuple(
+            AnalystRm004ConstitutionalRuleEntry(
+                rule_identifier=identifier,
+                rule_name=name,
+                rule_category=category,
+                constitutional_owner="Analyst Office",
+                evaluation_intent=f"Determine deterministic compliance for {name.lower()}",
+                evaluation_procedure_reference=f"{identifier}-PROCEDURE",
+                dependency_references=("Constitutional Schema Registry", "Certification Evidence Registry", "Version Compatibility Matrix"),
+                applicable_candidate_classes=classes,
+                required_evidence=("validation evidence", "traceability evidence", "audit evidence"),
+                certification_severity=severity,
+                version="1.0.0",
+                publication_status="Active",
+                traceability_references=(f"{identifier}-TRACE",),
+                audit_references=(f"{identifier}-AUDIT",),
+            )
+            for identifier, name, category, severity, classes in rows
+        )
+
+    def _schema_registry_entries(self) -> tuple[AnalystRm004SchemaRegistryEntry, ...]:
+        rows = (
+            ("AS-MIS", "Analytical Mission", "Mission Schemas"),
+            ("AS-PLAN", "Analysis Plan", "Mission Schemas"),
+            ("AS-PKG", "Analytical Package", "Mission Schemas"),
+            ("AS-EVID", "Analytical Evidence", "Evidence Schemas"),
+            ("AS-PROV", "Evidence Provenance", "Evidence Schemas"),
+            ("AS-EVAL", "Evidence Validation", "Evidence Schemas"),
+            ("AS-RG", "Reasoning Graph", "Reasoning Schemas"),
+            ("AS-RNODE", "Reasoning Node", "Reasoning Schemas"),
+            ("AS-REDGE", "Reasoning Edge", "Reasoning Schemas"),
+            ("AS-HYP", "Hypothesis", "Analytical Schemas"),
+            ("AS-CONF", "Confidence Object", "Analytical Schemas"),
+            ("AS-CONC", "Analytical Conclusion", "Analytical Schemas"),
+            ("AS-REC", "Recommendation", "Analytical Schemas"),
+            ("AS-OBS", "Organizational Belief State", "Analytical Schemas"),
+            ("AS-LIFE", "Lifecycle State", "Lifecycle Schemas"),
+            ("AS-COMMIT", "Commit Boundary", "Lifecycle Schemas"),
+            ("AS-REPLAY", "Replay State", "Lifecycle Schemas"),
+            ("AS-RECOVERY", "Recovery State", "Lifecycle Schemas"),
+            ("AS-VREC", "Validation Record", "Validation Schemas"),
+            ("AS-VRES", "Validation Result", "Validation Schemas"),
+            ("AS-INV", "Invariant Evaluation", "Validation Schemas"),
+            ("AS-TRACE", "Trace Record", "Traceability Schemas"),
+            ("AS-DEP", "Dependency Record", "Traceability Schemas"),
+            ("AS-AUD", "Audit Record", "Traceability Schemas"),
+            ("AS-CONFIG", "Configuration Object", "Configuration Schemas"),
+            ("AS-CVER", "Configuration Version", "Configuration Schemas"),
+            ("AS-COMPAT", "Compatibility Definition", "Configuration Schemas"),
+            ("AS-MANIFEST", "Certification Manifest", "Certification Schemas"),
+            ("AS-CEPKG", "Certification Evidence Package", "Certification Schemas"),
+            ("AS-CTEST", "Certification Test", "Certification Schemas"),
+            ("AS-CDEC", "Certification Decision", "Certification Schemas"),
+            ("AS-CLOSE", "Certification Closure", "Certification Schemas"),
+        )
+        return tuple(
+            AnalystRm004SchemaRegistryEntry(
+                schema_identifier=identifier,
+                schema_name=name,
+                schema_version="1.0.0",
+                schema_class=schema_class,
+                canonical_namespace="ANALYST",
+                constitutional_owner="Analyst Office",
+                approval_authority="Constitutional Governance",
+                certification_authority="Independent Enterprise Certification",
+                parent_schema=None,
+                compatible_schemas=("1.0.0",),
+                dependent_schemas=(),
+                referenced_registries=("Constitutional Identifier Registry", "Version Compatibility Matrix"),
+                certification_status="Specified",
+                validation_status="Validated",
+                effective_version="1.0.0",
+                deprecation_status="Active",
+            )
+            for identifier, name, schema_class in rows
+        )
+
+    def _decision_registry_entries(self) -> tuple[AnalystRm004DecisionRegistryEntry, ...]:
+        rows = (
+            ("ADR-001", "Authority Certification Decision", "Authority"),
+            ("ADR-002", "Identity Certification Decision", "Identity"),
+            ("ADR-003", "Object Certification Decision", "Object"),
+            ("ADR-004", "Reasoning Certification Decision", "Reasoning"),
+            ("ADR-005", "Evidence Certification Decision", "Evidence"),
+            ("ADR-006", "Confidence Certification Decision", "Confidence"),
+            ("ADR-007", "Validation Certification Decision", "Validation"),
+            ("ADR-008", "Persistence Certification Decision", "Persistence"),
+            ("ADR-009", "Replay Certification Decision", "Replay"),
+            ("ADR-010", "Recovery Certification Decision", "Recovery"),
+            ("ADR-011", "Configuration Certification Decision", "Configuration"),
+            ("ADR-012", "Certification Closure Decision", "Certification"),
+        )
+        outcomes = ("PASS", "FAIL", "REJECT", "NOT APPLICABLE")
+        return tuple(
+            AnalystRm004DecisionRegistryEntry(
+                decision_identifier=identifier,
+                decision_revision_identifier=f"{identifier}-REV-1",
+                decision_name=name,
+                decision_category=category,
+                owning_office="Analyst Office",
+                decision_authority="Independent Enterprise Certification",
+                evaluation_authority="Independent Enterprise Certification",
+                governing_work_order="ANALYST-RM-004-015",
+                constitutional_requirement=f"{category} registry decision",
+                trigger_conditions=("certification evaluation requested", "required evidence available"),
+                required_inputs=("candidate class", "schema reference", "rule reference", "evidence reference", "version compatibility"),
+                required_evidence=("validation evidence", "traceability evidence", "audit evidence"),
+                required_dependencies=("Constitutional Rule Registry", "Constitutional Schema Registry", "Certification Evidence Registry"),
+                evaluation_rules=(f"CRR-{int(identifier.removeprefix('ADR-')):03d}",),
+                required_validation=("authority validation", "evidence validation", "invariant validation"),
+                required_invariants=("deterministic outcome", "complete evidence", "complete audit"),
+                expected_result="deterministic outcome",
+                outcomes=outcomes,
+                traceability_references=(f"{identifier}-TRACE", f"{identifier}-AUDIT"),
+            )
+            for identifier, name, category in rows
         )
 
 
