@@ -230,6 +230,11 @@ from .office_completion import (
     AnalystTraceabilityCompletionRecord,
     AnalystValidationCompletionRecord,
 )
+from .office_specification import (
+    AnalystMissionCanonicalSpecificationRecord,
+    AnalystOfficeSpecificationSupport,
+    AnalystRm003SpecificationEvidencePackage,
+)
 
 __all__ = [
     "ANALYST_GROUP_ID",
@@ -434,4 +439,7 @@ __all__ = [
     "AnalystRm002FinalCompletionEvidencePackage",
     "AnalystTraceabilityCompletionRecord",
     "AnalystValidationCompletionRecord",
+    "AnalystMissionCanonicalSpecificationRecord",
+    "AnalystOfficeSpecificationSupport",
+    "AnalystRm003SpecificationEvidencePackage",
 ]
