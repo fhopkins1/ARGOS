@@ -246,6 +246,17 @@ from .certification_completion import (
     RiskSchemaRegistryRecord,
     RiskVersionCompatibilityMatrixRecord,
 )
+from .rm003_object_foundation import (
+    RiskAssessmentCanonicalObject,
+    RiskEvaluationGraphEdge,
+    RiskEvaluationGraphNode,
+    RiskEvaluationGraphObject,
+    RiskEvaluationMissionObject,
+    RiskEvaluationPackageObject,
+    RiskObjectLifecycleProfile,
+    RiskRm003ObjectFoundationOperationalPackage,
+    RiskRm003ObjectFoundationSupport,
+)
 from .m4_operational_certification import (
     RiskM4CandidateIdentity,
     RiskM4CertificationDecision,
@@ -532,6 +543,15 @@ __all__ = [
     "RiskRm004RegistryGovernancePackage",
     "RiskSchemaRegistryRecord",
     "RiskVersionCompatibilityMatrixRecord",
+    "RiskAssessmentCanonicalObject",
+    "RiskEvaluationGraphEdge",
+    "RiskEvaluationGraphNode",
+    "RiskEvaluationGraphObject",
+    "RiskEvaluationMissionObject",
+    "RiskEvaluationPackageObject",
+    "RiskObjectLifecycleProfile",
+    "RiskRm003ObjectFoundationOperationalPackage",
+    "RiskRm003ObjectFoundationSupport",
     "RiskM4CandidateIdentity",
     "RiskM4CertificationDecision",
     "RiskM4CertificationTestResult",
