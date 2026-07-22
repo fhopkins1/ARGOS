@@ -203,6 +203,94 @@ class RiskRm001OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("ambiguous commit retried", recovery.commit_classification_findings)
         self.assertIn("duplicate Risk Decision", recovery.idempotency_findings)
 
+    def test_rm001_governance_readiness_package_covers_configuration_traceability_registries_invariants_and_certification(self) -> None:
+        package = RiskOfficeIntegritySupport().build_governance_readiness_package()
+
+        self.assertEqual(package.final_governance_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(package.remediation_progression_result, "READY_FOR_RISK_RM_002")
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-001-011",
+                "RISK-RM-001-012",
+                "RISK-RM-001-013",
+                "RISK-RM-001-014",
+                "RISK-RM-001-015",
+            ),
+        )
+        self.assertEqual(len(package.configuration_governance.classifications), 7)
+        self.assertIn("C7 Certification Configuration", package.configuration_governance.classifications)
+        self.assertIn("Active", package.configuration_governance.lifecycle_states)
+        self.assertEqual(package.traceability_architecture.canonical_chain[0], "Authorized Input")
+        self.assertEqual(package.traceability_architecture.canonical_chain[-1], "Certification Evidence")
+        self.assertIn("Recovery Trace Record", package.traceability_architecture.required_trace_records)
+        self.assertEqual(len(package.registry_requirements.mandatory_registries), 10)
+        self.assertEqual(
+            package.registry_requirements.mandatory_registries["Certification Registry"],
+            "Risk Office Certification Authority",
+        )
+        self.assertIn("Archived", package.registry_requirements.state_machine)
+        self.assertIn("Recovery Invariants", package.invariant_remediation.invariant_categories)
+        self.assertIn("Certification Invariants", package.invariant_remediation.invariant_categories)
+        self.assertEqual(len(package.certification_readiness.mandatory_work_orders), 14)
+        self.assertIn("READY_FOR_RISK_RM_002", package.certification_readiness.lifecycle_states)
+        self.assertIn("Negative Readiness Tests", package.certification_readiness.test_classes)
+        self.assertIn("Implementation Discretion Elimination", package.certification_readiness.expected_pass_domains)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm001_governance_readiness_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeIntegritySupport()
+
+        configuration = support.evaluate_configuration_governance(
+            ownership_findings=("configuration owner undefined",),
+            validation_findings=("active configuration bypassed validation",),
+            compatibility_findings=("missing schema compatibility",),
+            integrity_findings=("published digest mismatch",),
+            audit_gaps=("activation event unaudited",),
+        )
+        traceability = support.evaluate_traceability_architecture(
+            provenance_gaps=("input lineage missing",),
+            bidirectional_gaps=("output lacks parent link",),
+            orphan_findings=("Risk Finding orphaned",),
+            replay_recovery_gaps=("recovery checkpoint untraceable",),
+            certification_traceability_gaps=("certification evidence lacks source trace",),
+        )
+        registries = support.evaluate_registry_requirements(
+            missing_registry_findings=("Metrics Registry absent",),
+            ownership_findings=("Certification Registry owned by Risk Office",),
+            update_findings=("previous revision overwritten",),
+            validation_findings=("duplicate identifier admitted",),
+            compatibility_findings=("workflow version omitted",),
+        )
+        invariants = support.evaluate_invariant_remediation(
+            missing_category_findings=("Failure Invariants absent",),
+            verification_findings=("claimed guarantee lacks test method",),
+            evidence_gaps=("supporting evidence absent",),
+            certification_mapping_gaps=("invariant lacks certification mapping",),
+            invariant_violations=("recovery concealed original failure",),
+        )
+        readiness = support.evaluate_certification_readiness(
+            missing_work_order_findings=("RISK-RM-001-014 absent",),
+            artifact_findings=("artifact integrity digest missing",),
+            finding_closure_findings=("assigned finding unresolved",),
+            dependency_findings=("dependency validation absent",),
+            consistency_findings=("cross-order ownership contradiction",),
+            evidence_gaps=("implementation discretion audit absent",),
+            implementation_discretion_findings=("sufficiency left to implementation",),
+            independent_review_findings=("independent review did not PASS",),
+        )
+
+        self.assertEqual(configuration.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("active configuration bypassed validation", configuration.validation_findings)
+        self.assertEqual(traceability.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("Risk Finding orphaned", traceability.orphan_findings)
+        self.assertEqual(registries.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("previous revision overwritten", registries.update_findings)
+        self.assertEqual(invariants.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("recovery concealed original failure", invariants.invariant_violations)
+        self.assertEqual(readiness.result, "NOT_READY_FOR_RISK_RM_002")
+        self.assertIn("sufficiency left to implementation", readiness.implementation_discretion_findings)
+
 
 if __name__ == "__main__":
     unittest.main()

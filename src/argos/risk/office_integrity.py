@@ -287,6 +287,138 @@ class RiskRm001ArchitectureEvidencePackage:
     deterministic_digest: str
 
 
+@dataclass(frozen=True)
+class RiskConfigurationGovernanceRecord:
+    record_identifier: str
+    configuration_scope: tuple[str, ...]
+    identity_fields: tuple[str, ...]
+    classifications: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    compatibility_declarations: tuple[str, ...]
+    version_fields: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    audit_fields: tuple[str, ...]
+    rejection_conditions: tuple[str, ...]
+    invariants: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    identity_findings: tuple[str, ...]
+    classification_findings: tuple[str, ...]
+    validation_findings: tuple[str, ...]
+    compatibility_findings: tuple[str, ...]
+    version_findings: tuple[str, ...]
+    integrity_findings: tuple[str, ...]
+    lifecycle_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskTraceabilityArchitectureRecord:
+    record_identifier: str
+    canonical_chain: tuple[str, ...]
+    traceability_domains: tuple[str, ...]
+    required_trace_records: tuple[str, ...]
+    record_fields: tuple[str, ...]
+    validation_coverage: tuple[str, ...]
+    invariants: tuple[str, ...]
+    provenance_gaps: tuple[str, ...]
+    bidirectional_gaps: tuple[str, ...]
+    orphan_findings: tuple[str, ...]
+    replay_recovery_gaps: tuple[str, ...]
+    decision_reconstruction_findings: tuple[str, ...]
+    certification_traceability_gaps: tuple[str, ...]
+    integrity_findings: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskRegistryRequirementsRecord:
+    record_identifier: str
+    mandatory_registries: Mapping[str, str]
+    update_requirements: tuple[str, ...]
+    validation_requirements: tuple[str, ...]
+    version_metadata: tuple[str, ...]
+    compatibility_declarations: tuple[str, ...]
+    state_machine: tuple[str, ...]
+    invariants: tuple[str, ...]
+    missing_registry_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    update_findings: tuple[str, ...]
+    validation_findings: tuple[str, ...]
+    version_findings: tuple[str, ...]
+    compatibility_findings: tuple[str, ...]
+    persistence_findings: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskInvariantRemediationRecord:
+    record_identifier: str
+    invariant_categories: tuple[str, ...]
+    category_invariants: Mapping[str, tuple[str, ...]]
+    failure_behaviors: tuple[str, ...]
+    verification_fields: tuple[str, ...]
+    registry_fields: tuple[str, ...]
+    verification_requirements: tuple[str, ...]
+    missing_category_findings: tuple[str, ...]
+    verification_findings: tuple[str, ...]
+    ownership_findings: tuple[str, ...]
+    evidence_gaps: tuple[str, ...]
+    audit_gaps: tuple[str, ...]
+    certification_mapping_gaps: tuple[str, ...]
+    invariant_violations: tuple[str, ...]
+    result: EnterpriseCertificationDecision
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskCertificationReadinessRecord:
+    record_identifier: str
+    readiness_results: tuple[str, ...]
+    lifecycle_states: tuple[str, ...]
+    exceptional_states: tuple[str, ...]
+    mandatory_work_orders: tuple[str, ...]
+    artifact_requirements: tuple[str, ...]
+    domain_readiness_gates: tuple[str, ...]
+    required_readiness_evidence: tuple[str, ...]
+    required_registries: tuple[str, ...]
+    required_deliverables: tuple[str, ...]
+    test_classes: tuple[str, ...]
+    immutable_invariants: tuple[str, ...]
+    completion_standard: tuple[str, ...]
+    expected_pass_domains: tuple[str, ...]
+    missing_work_order_findings: tuple[str, ...]
+    artifact_findings: tuple[str, ...]
+    finding_closure_findings: tuple[str, ...]
+    dependency_findings: tuple[str, ...]
+    consistency_findings: tuple[str, ...]
+    evidence_gaps: tuple[str, ...]
+    implementation_discretion_findings: tuple[str, ...]
+    independent_review_findings: tuple[str, ...]
+    result: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class RiskRm001GovernanceReadinessEvidencePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    configuration_governance: RiskConfigurationGovernanceRecord
+    traceability_architecture: RiskTraceabilityArchitectureRecord
+    registry_requirements: RiskRegistryRequirementsRecord
+    invariant_remediation: RiskInvariantRemediationRecord
+    certification_readiness: RiskCertificationReadinessRecord
+    final_governance_readiness: EnterpriseCertificationDecision
+    remediation_progression_result: str
+    immutable_audit_references: tuple[str, ...]
+    deterministic_digest: str
+
+
 class RiskOfficeIntegritySupport:
     """Build deterministic RISK-RM-001 office integrity evidence."""
 
@@ -304,6 +436,14 @@ class RiskOfficeIntegritySupport:
         "RISK-RM-001-008",
         "RISK-RM-001-009",
         "RISK-RM-001-010",
+    )
+
+    governance_order_coverage = (
+        "RISK-RM-001-011",
+        "RISK-RM-001-012",
+        "RISK-RM-001-013",
+        "RISK-RM-001-014",
+        "RISK-RM-001-015",
     )
 
     def build_integrity_package(self) -> RiskRm001IntegrityEvidencePackage:
@@ -363,6 +503,38 @@ class RiskOfficeIntegritySupport:
                 persistence.record_identifier,
                 replay.record_identifier,
                 recovery.record_identifier,
+            ),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def build_governance_readiness_package(self) -> RiskRm001GovernanceReadinessEvidencePackage:
+        configuration = self.evaluate_configuration_governance()
+        traceability = self.evaluate_traceability_architecture()
+        registries = self.evaluate_registry_requirements()
+        invariants = self.evaluate_invariant_remediation()
+        readiness = self.evaluate_certification_readiness()
+        final = EnterpriseCertificationDecision.PASS if all(
+            record.result == EnterpriseCertificationDecision.PASS
+            for record in (configuration, traceability, registries, invariants)
+        ) and readiness.result == "READY_FOR_RISK_RM_002" else EnterpriseCertificationDecision.FAIL
+        package = RiskRm001GovernanceReadinessEvidencePackage(
+            package_identifier=f"RISK-RM-001-GOV-READY-{_digest((configuration, traceability, registries, invariants, readiness))[:12].upper()}",
+            governing_doctrine="RISK-RM-001-011-TO-015/1.0.0",
+            order_coverage=self.governance_order_coverage,
+            configuration_governance=configuration,
+            traceability_architecture=traceability,
+            registry_requirements=registries,
+            invariant_remediation=invariants,
+            certification_readiness=readiness,
+            final_governance_readiness=final,
+            remediation_progression_result=readiness.result,
+            immutable_audit_references=(
+                configuration.record_identifier,
+                traceability.record_identifier,
+                registries.record_identifier,
+                invariants.record_identifier,
+                readiness.record_identifier,
             ),
             deterministic_digest="",
         )
@@ -841,6 +1013,258 @@ class RiskOfficeIntegritySupport:
             invariant_violations=invariant_violations,
             evidence_gaps=evidence_gaps,
             result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_configuration_governance(
+        self,
+        *,
+        ownership_findings: tuple[str, ...] = (),
+        identity_findings: tuple[str, ...] = (),
+        classification_findings: tuple[str, ...] = (),
+        validation_findings: tuple[str, ...] = (),
+        compatibility_findings: tuple[str, ...] = (),
+        version_findings: tuple[str, ...] = (),
+        integrity_findings: tuple[str, ...] = (),
+        lifecycle_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskConfigurationGovernanceRecord:
+        scope = ("evaluation parameters", "risk thresholds", "validation configuration", "compatibility configuration", "replay configuration", "recovery configuration", "persistence configuration", "registry references", "certification configuration", "schema version references")
+        identity = ("Configuration Identifier", "Configuration Class", "Constitutional Version", "Configuration Version", "Owner Identifier", "Effective Date", "Compatibility Declaration", "Integrity Hash", "Lifecycle State")
+        classifications = ("C1 Operational Configuration", "C2 Validation Configuration", "C3 Compatibility Configuration", "C4 Persistence Configuration", "C5 Replay Configuration", "C6 Recovery Configuration", "C7 Certification Configuration")
+        validation = ("schema correctness", "required fields", "canonical identity", "ownership", "version integrity", "compatibility", "constitutional authorization", "integrity hash")
+        compatibility = ("minimum constitutional version", "maximum constitutional version", "supported registry versions", "supported schema versions", "dependency compatibility")
+        version_fields = ("major", "minor", "revision identifier", "constitutional baseline reference", "approval identifier")
+        lifecycle = ("Draft", "Validated", "Approved", "Published", "Active", "Superseded", "Retired", "Archived")
+        audit = ("configuration identifier", "version", "owner", "event type", "timestamp", "approving authority", "integrity verification result", "compatibility verification result")
+        rejection = ("schema validation failure", "undefined ownership", "missing compatibility declaration", "integrity failure", "version conflict", "lifecycle activation prohibited", "approval absent")
+        invariants = ("single owner", "canonical identity", "active configuration validated", "integrity verified", "compatibility declared", "published immutable", "modifications create new version", "every event auditable", "configuration never changes authority", "configuration never bypasses validation", "deterministic resolution", "no implementation discretion")
+        passed = not ownership_findings and not identity_findings and not classification_findings and not validation_findings and not compatibility_findings and not version_findings and not integrity_findings and not lifecycle_findings and not audit_gaps
+        record = RiskConfigurationGovernanceRecord(
+            record_identifier=f"RISK-RM-001-011-CONFIG-{_digest((scope, classifications, lifecycle))[:12].upper()}",
+            configuration_scope=scope,
+            identity_fields=identity,
+            classifications=classifications,
+            validation_requirements=validation,
+            compatibility_declarations=compatibility,
+            version_fields=version_fields,
+            lifecycle_states=lifecycle,
+            audit_fields=audit,
+            rejection_conditions=rejection,
+            invariants=invariants,
+            ownership_findings=ownership_findings,
+            identity_findings=identity_findings,
+            classification_findings=classification_findings,
+            validation_findings=validation_findings,
+            compatibility_findings=compatibility_findings,
+            version_findings=version_findings,
+            integrity_findings=integrity_findings,
+            lifecycle_findings=lifecycle_findings,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_traceability_architecture(
+        self,
+        *,
+        provenance_gaps: tuple[str, ...] = (),
+        bidirectional_gaps: tuple[str, ...] = (),
+        orphan_findings: tuple[str, ...] = (),
+        replay_recovery_gaps: tuple[str, ...] = (),
+        decision_reconstruction_findings: tuple[str, ...] = (),
+        certification_traceability_gaps: tuple[str, ...] = (),
+        integrity_findings: tuple[str, ...] = (),
+    ) -> RiskTraceabilityArchitectureRecord:
+        chain = ("Authorized Input", "Input Validation", "Normalized Evaluation Context", "Applicable Configuration", "Applicable Rule Set", "Risk Evaluation", "Risk Findings", "Risk Decision", "Decision Justification", "Evidence Package", "Risk Output Contract", "Audit Record", "Replay Record", "Recovery Checkpoint", "Certification Evidence")
+        domains = ("constitutional inputs", "object identities", "lifecycle transitions", "validation activities", "normalization", "configuration", "rule selection", "rule execution", "decision evaluation", "evidence production", "output generation", "persistence", "replay", "recovery", "certification")
+        records = ("Input Trace Record", "Validation Trace Record", "Normalization Trace Record", "Configuration Trace Record", "Rule Trace Record", "Evaluation Trace Record", "Finding Trace Record", "Decision Trace Record", "Justification Trace Record", "Evidence Trace Record", "Output Trace Record", "Persistence Trace Record", "Replay Trace Record", "Recovery Trace Record", "Certification Trace Record")
+        fields_required = ("Trace Identifier", "Parent Trace Identifier", "Object Identifier", "Object Type", "Constitutional Owner", "Lifecycle State", "Input References", "Output References", "Validation References", "Rule References", "Configuration Identifier", "Evaluation Identifier", "Evidence Identifier", "Audit Identifier", "Replay Identifier", "Recovery Identifier", "Certification Identifier", "Timestamp", "Version", "Cryptographic Integrity Hash")
+        coverage = ("object", "input", "rule", "evidence", "decision", "replay", "recovery", "certification")
+        invariants = ("CI-001 immutable provenance", "CI-002 complete chain", "CI-003 bidirectional traceability", "CI-004 decision reconstructability", "CI-005 replay preserves provenance", "CI-006 recovery preserves provenance", "CI-007 no orphaned artifact", "CI-008 immutable trace records", "CI-009 every object has trace record", "CI-010 certification evidence traceable")
+        passed = not provenance_gaps and not bidirectional_gaps and not orphan_findings and not replay_recovery_gaps and not decision_reconstruction_findings and not certification_traceability_gaps and not integrity_findings
+        record = RiskTraceabilityArchitectureRecord(
+            record_identifier=f"RISK-RM-001-012-TRACE-{_digest((chain, records))[:12].upper()}",
+            canonical_chain=chain,
+            traceability_domains=domains,
+            required_trace_records=records,
+            record_fields=fields_required,
+            validation_coverage=coverage,
+            invariants=invariants,
+            provenance_gaps=provenance_gaps,
+            bidirectional_gaps=bidirectional_gaps,
+            orphan_findings=orphan_findings,
+            replay_recovery_gaps=replay_recovery_gaps,
+            decision_reconstruction_findings=decision_reconstruction_findings,
+            certification_traceability_gaps=certification_traceability_gaps,
+            integrity_findings=integrity_findings,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_registry_requirements(
+        self,
+        *,
+        missing_registry_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        update_findings: tuple[str, ...] = (),
+        validation_findings: tuple[str, ...] = (),
+        version_findings: tuple[str, ...] = (),
+        compatibility_findings: tuple[str, ...] = (),
+        persistence_findings: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+    ) -> RiskRegistryRequirementsRecord:
+        registries = MappingProxyType({
+            "Risk Identifier Registry": "Risk Office",
+            "Risk Rule Registry": "Risk Office",
+            "Schema Registry": "Risk Office",
+            "Configuration Registry": "Risk Office",
+            "Metrics Registry": "Risk Office",
+            "Version Compatibility Registry": "Risk Office",
+            "Validation Registry": "Risk Office",
+            "Replay Registry": "Risk Office",
+            "Recovery Registry": "Risk Office",
+            "Certification Registry": "Risk Office Certification Authority",
+        })
+        updates = ("modifying authority", "timestamp", "previous revision preserved", "immutable audit evidence", "new registry version", "no overwrite")
+        validation = ("schema correctness", "identifier uniqueness", "referential integrity", "version consistency", "ownership correctness", "constitutional completeness")
+        metadata = ("Registry Identifier", "Registry Version", "Creation Timestamp", "Effective Timestamp", "Superseded Version", "Integrity Hash", "Constitutional Owner")
+        compatibility = ("constitutional version", "schema version", "rule version", "configuration version", "workflow version")
+        states = ("Draft", "Validated", "Approved", "Active", "Superseded", "Archived")
+        invariants = ("CI-001 single owner", "CI-002 versioned registry", "CI-003 immutable history", "CI-004 integrity metadata", "CI-005 deterministic lookup", "CI-006 explicit compatibility", "CI-007 updates preserve revisions", "CI-008 replay and recovery persistence", "CI-009 traceable entries", "CI-010 validation before use")
+        passed = not missing_registry_findings and not ownership_findings and not update_findings and not validation_findings and not version_findings and not compatibility_findings and not persistence_findings and not audit_gaps
+        record = RiskRegistryRequirementsRecord(
+            record_identifier=f"RISK-RM-001-013-REGISTRY-{_digest(registries)[:12].upper()}",
+            mandatory_registries=registries,
+            update_requirements=updates,
+            validation_requirements=validation,
+            version_metadata=metadata,
+            compatibility_declarations=compatibility,
+            state_machine=states,
+            invariants=invariants,
+            missing_registry_findings=missing_registry_findings,
+            ownership_findings=ownership_findings,
+            update_findings=update_findings,
+            validation_findings=validation_findings,
+            version_findings=version_findings,
+            compatibility_findings=compatibility_findings,
+            persistence_findings=persistence_findings,
+            audit_gaps=audit_gaps,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_invariant_remediation(
+        self,
+        *,
+        missing_category_findings: tuple[str, ...] = (),
+        verification_findings: tuple[str, ...] = (),
+        ownership_findings: tuple[str, ...] = (),
+        evidence_gaps: tuple[str, ...] = (),
+        audit_gaps: tuple[str, ...] = (),
+        certification_mapping_gaps: tuple[str, ...] = (),
+        invariant_violations: tuple[str, ...] = (),
+    ) -> RiskInvariantRemediationRecord:
+        categories = ("Ownership Invariants", "Authority Invariants", "Identity Invariants", "Input Invariants", "Output Invariants", "Validation Invariants", "Decision Invariants", "Lifecycle Invariants", "Persistence Invariants", "Replay Invariants", "Recovery Invariants", "Configuration Invariants", "Traceability Invariants", "Registry Invariants", "Audit Invariants", "Security Invariants", "Certification Invariants", "Failure Invariants")
+        category_invariants = MappingProxyType({
+            "Ownership Invariants": ("single owner", "no shared ownership", "transfers only through authority", "ownership history preserved"),
+            "Authority Invariants": ("authorized work only", "no inferred authority", "unauthorized execution prohibited", "every action authorized"),
+            "Identity Invariants": ("one immutable identifier", "no duplicate identifiers", "no reuse", "permanent identity history"),
+            "Input Invariants": ("admissible before use", "validated before use", "rejected input never evaluated", "deterministic normalization"),
+            "Output Invariants": ("one owner", "completed immutable", "delivered after completion", "traceable output history"),
+            "Validation Invariants": ("validation precedes evaluation", "deterministic rules", "failure prevents evaluation", "validation evidence preserved"),
+            "Decision Invariants": ("deterministic decision", "evidence supported", "rule referenced", "immutable decision history"),
+            "Lifecycle Invariants": ("authorized transitions", "terminal states final", "state history immutable", "deterministic lifecycle"),
+            "Persistence Invariants": ("truth survives volatile loss", "atomic commit", "integrity verified", "persistent history immutable"),
+            "Replay Invariants": ("historical inputs preserved", "semantic equivalence", "no production mutation", "replay evidence immutable"),
+            "Recovery Invariants": ("checkpoint validation", "history preserved", "original failure visible", "no assumed recovery truth"),
+            "Configuration Invariants": ("validated active configuration", "published immutable", "compatibility declared", "deterministic resolution"),
+            "Traceability Invariants": ("complete provenance", "bidirectional links", "no orphaned artifact", "certification traceable"),
+            "Registry Invariants": ("versioned entries", "immutable history", "deterministic lookup", "validation before use"),
+            "Audit Invariants": ("every significant event audited", "audit immutable", "audit traceable", "audit replayable"),
+            "Security Invariants": ("authority verified", "unauthorized mutation rejected", "identity protected", "access audited"),
+            "Certification Invariants": ("evidence before certification", "independent certification", "no self-certification", "certification traceable"),
+            "Failure Invariants": ("fail closed", "violation recorded", "audit evidence generated", "recovery never conceals original failure"),
+        })
+        failure_behaviors = ("execution fails deterministically", "violation recorded", "audit evidence generated", "recovery preserves history", "history unchanged", "recovery never conceals original failure")
+        verification = ("Invariant Identifier", "Verification Timestamp", "Verification Authority", "Verification Method", "Evaluated Objects", "Verification Result", "Supporting Evidence", "Audit References", "Certification References")
+        registry_fields = ("Invariant Identifier", "Invariant Name", "Constitutional Category", "Formal Definition", "Governing Doctrine", "Verification Method", "Evidence Requirements", "Failure Classification", "Certification Mapping", "Current Status")
+        requirements = ("deterministic verification criteria", "ownership mapping", "evidence mapping", "audit mapping", "certification mapping", "no implementation discretion")
+        passed = not missing_category_findings and not verification_findings and not ownership_findings and not evidence_gaps and not audit_gaps and not certification_mapping_gaps and not invariant_violations
+        record = RiskInvariantRemediationRecord(
+            record_identifier=f"RISK-RM-001-014-INVARIANT-{_digest((categories, verification))[:12].upper()}",
+            invariant_categories=categories,
+            category_invariants=category_invariants,
+            failure_behaviors=failure_behaviors,
+            verification_fields=verification,
+            registry_fields=registry_fields,
+            verification_requirements=requirements,
+            missing_category_findings=missing_category_findings,
+            verification_findings=verification_findings,
+            ownership_findings=ownership_findings,
+            evidence_gaps=evidence_gaps,
+            audit_gaps=audit_gaps,
+            certification_mapping_gaps=certification_mapping_gaps,
+            invariant_violations=invariant_violations,
+            result=EnterpriseCertificationDecision.PASS if passed else EnterpriseCertificationDecision.FAIL,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def evaluate_certification_readiness(
+        self,
+        *,
+        missing_work_order_findings: tuple[str, ...] = (),
+        artifact_findings: tuple[str, ...] = (),
+        finding_closure_findings: tuple[str, ...] = (),
+        dependency_findings: tuple[str, ...] = (),
+        consistency_findings: tuple[str, ...] = (),
+        evidence_gaps: tuple[str, ...] = (),
+        implementation_discretion_findings: tuple[str, ...] = (),
+        independent_review_findings: tuple[str, ...] = (),
+    ) -> RiskCertificationReadinessRecord:
+        results = ("READY_FOR_RISK_RM_002", "NOT_READY_FOR_RISK_RM_002")
+        states = ("READINESS_NOT_INITIATED", "READINESS_INITIATED", "WORK_ORDER_COLLECTION_PENDING", "WORK_ORDER_COLLECTION_COMPLETE", "ARTIFACT_VALIDATION_PENDING", "ARTIFACT_VALIDATION_COMPLETE", "FINDING_RECONCILIATION_PENDING", "FINDING_RECONCILIATION_COMPLETE", "DEPENDENCY_VALIDATION_PENDING", "DEPENDENCY_VALIDATION_COMPLETE", "CROSS_ORDER_CONSISTENCY_PENDING", "CROSS_ORDER_CONSISTENCY_COMPLETE", "EVIDENCE_SUFFICIENCY_PENDING", "EVIDENCE_SUFFICIENCY_COMPLETE", "READINESS_DECISION_PENDING", "READY_FOR_RISK_RM_002", "NOT_READY_FOR_RISK_RM_002", "READINESS_ARCHIVED")
+        exceptional = ("READINESS_BLOCKED", "READINESS_EVIDENCE_INVALID", "READINESS_CONFLICT_DETECTED", "READINESS_REOPENED")
+        orders = tuple(f"RISK-RM-001-{index:03d}" for index in range(1, 15))
+        artifacts = ("authoritative work-order identifier", "authoritative title", "constitutional purpose", "assigned audit domain", "assigned findings", "governing authorities", "scope", "exclusions", "immutable requirements", "required objects", "required registries", "required schemas", "required procedures", "constitutional invariants", "required tests", "required evidence", "completion criteria", "failure conditions", "expected remediation outcome", "approval status", "version", "integrity digest")
+        domains = ("Office Authority and Boundaries", "Canonical Risk Object Inventory", "Risk Input Admissibility", "Risk Output Contracts", "Risk Object Lifecycles", "Validation Architecture", "Deterministic Risk Decisions", "Persistence Architecture", "Replay Architecture", "Recovery Architecture", "Configuration Governance", "Traceability Architecture", "Constitutional Registries", "Constitutional Invariants")
+        evidence = ("work-order completion records", "remediation finding inventory", "artifact validation results", "dependency validation", "cross-order consistency analysis", "object inventory completeness", "ownership completeness", "lifecycle completeness", "input and output contract completeness", "validation completeness", "decision completeness", "persistence readiness", "replay readiness", "recovery readiness", "configuration readiness", "traceability readiness", "registry readiness", "invariant readiness", "implementation discretion audit", "independent review")
+        registries = ("Readiness Artifact Registry", "Remediation Finding Registry", "Work-Order Dependency Registry", "Readiness Validation Rule Registry", "Readiness Failure Registry", "Readiness Evidence Registry", "Readiness Authorization Registry")
+        deliverables = ("Risk Remediation Readiness Procedure", "Risk Remediation Readiness State Registry", "Risk Readiness Transition Registry", "Risk Readiness Authority Matrix", "Risk Work-Order Artifact Registry", "Risk Remediation Finding Registry", "Risk Work-Order Completion Record Schema", "Risk Evidence Sufficiency Rules", "Risk Readiness Validation Rule Registry", "Risk Readiness Failure Registry", "Risk Readiness Decision Record Schema", "Risk Readiness Reopening Procedure", "Risk Remediation Readiness Package Schema", "Risk Remediation Readiness Package Manifest Schema", "Risk Independent Readiness Review Procedure", "Risk Readiness Test Suite", "Risk Readiness Evidence Package")
+        tests = ("Work-Order Completion Tests", "Finding Closure Tests", "Dependency Tests", "Cross-Order Consistency Tests", "Evidence Sufficiency Tests", "Negative Readiness Tests", "Implementation Discretion Tests", "Independent Review Tests")
+        invariants = ("preceding work orders complete", "deterministic readiness", "no deferred RM001 blocker", "fail closed readiness", "single readiness authority", "complete dependency verification", "cross-order consistency", "evidence before readiness", "no conditional readiness", "no implementation discretion", "readiness is not certification", "immutable readiness package")
+        standard = ("zero unresolved blockers", "all mandatory work orders present", "all artifacts valid", "all findings closed", "all dependencies valid", "cross-order consistency passed", "evidence sufficiency passed", "implementation discretion eliminated", "independent review PASS")
+        expected = domains + ("Remediation Evidence Sufficiency", "Cross-Order Consistency", "Implementation Discretion Elimination", "RISK-RM-001 Completion")
+        passed = not missing_work_order_findings and not artifact_findings and not finding_closure_findings and not dependency_findings and not consistency_findings and not evidence_gaps and not implementation_discretion_findings and not independent_review_findings
+        record = RiskCertificationReadinessRecord(
+            record_identifier=f"RISK-RM-001-015-READY-{_digest((states, orders, domains))[:12].upper()}",
+            readiness_results=results,
+            lifecycle_states=states,
+            exceptional_states=exceptional,
+            mandatory_work_orders=orders,
+            artifact_requirements=artifacts,
+            domain_readiness_gates=domains,
+            required_readiness_evidence=evidence,
+            required_registries=registries,
+            required_deliverables=deliverables,
+            test_classes=tests,
+            immutable_invariants=invariants,
+            completion_standard=standard,
+            expected_pass_domains=expected,
+            missing_work_order_findings=missing_work_order_findings,
+            artifact_findings=artifact_findings,
+            finding_closure_findings=finding_closure_findings,
+            dependency_findings=dependency_findings,
+            consistency_findings=consistency_findings,
+            evidence_gaps=evidence_gaps,
+            implementation_discretion_findings=implementation_discretion_findings,
+            independent_review_findings=independent_review_findings,
+            result="READY_FOR_RISK_RM_002" if passed else "NOT_READY_FOR_RISK_RM_002",
             deterministic_digest="",
         )
         return replace(record, deterministic_digest=_digest(record))
