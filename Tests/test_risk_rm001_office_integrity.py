@@ -108,6 +108,101 @@ class RiskRm001OfficeIntegrityTests(unittest.TestCase):
         self.assertIn("unregistered transition", lifecycle.transition_findings)
         self.assertIn("terminal object reactivated", lifecycle.terminal_disposition_findings)
 
+    def test_rm001_architecture_package_covers_validation_decision_persistence_replay_and_recovery(self) -> None:
+        package = RiskOfficeIntegritySupport().build_architecture_package()
+
+        self.assertEqual(package.final_architecture_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-001-006",
+                "RISK-RM-001-007",
+                "RISK-RM-001-008",
+                "RISK-RM-001-009",
+                "RISK-RM-001-010",
+            ),
+        )
+        self.assertEqual(len(package.validation_architecture.validation_categories), 10)
+        self.assertEqual(package.validation_architecture.validation_outcomes, ("Valid", "Invalid", "Incomplete"))
+        self.assertIn("RD-006 Risk Acceptance Decision", package.decision_architecture.canonical_decisions)
+        self.assertEqual(package.decision_architecture.authority_matrix["RD-001 Input Admissibility Decision"], "Risk Office")
+        self.assertIn("Risk Decision Record", package.persistence_architecture.persistent_state_inventory)
+        self.assertIn("Checkpoint Persisted", package.persistence_architecture.persistence_ordering)
+        self.assertIn("Independent Certification", package.replay_architecture.authorized_replay_authorities)
+        self.assertIn("decision mismatch", package.replay_architecture.failure_conditions)
+        self.assertIn("UNKNOWN_INTERRUPTION", package.recovery_architecture.interruption_classes)
+        self.assertIn("COMMIT_STATUS_AMBIGUOUS", package.recovery_architecture.commit_ambiguity_classes)
+        self.assertIn("Idempotency Tests", package.recovery_architecture.required_test_classes)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm001_architecture_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeIntegritySupport()
+
+        validation = support.evaluate_validation_architecture(
+            ownership_findings=("shared validation owner",),
+            sequence_findings=("validation stage skipped",),
+            precondition_findings=("configuration unverified",),
+            outcome_findings=("Maybe outcome",),
+            rejection_findings=("invalid artifact progressed",),
+            evidence_gaps=("validation evidence missing",),
+            invariant_violations=("validation modified evidence",),
+        )
+        decision = support.evaluate_decision_architecture(
+            missing_decision_findings=("RD-006 absent",),
+            ownership_findings=("delegated Risk decision",),
+            hidden_input_findings=("hidden runtime heuristic",),
+            precondition_findings=("decision before evidence",),
+            sequence_findings=("Risk Acceptance before Rule Validation",),
+            unsupported_outcome_findings=("DEFERRED",),
+            evidence_gaps=("justification absent",),
+            replay_recovery_gaps=("decision replay changed",),
+        )
+        persistence = support.evaluate_persistence_architecture(
+            missing_persistent_state_findings=("Risk Decision Record missing",),
+            transient_state_findings=("cache required for correctness",),
+            ownership_findings=("Audit Record co-owned",),
+            atomicity_findings=("partial commit survived",),
+            ordering_findings=("decision persisted before evidence",),
+            integrity_findings=("hash absent",),
+            recovery_sufficiency_findings=("cannot restore from persisted state",),
+            audit_gaps=("persistence failure unaudited",),
+        )
+        replay = support.evaluate_replay_architecture(
+            authority_findings=("production workflow initiated replay",),
+            input_findings=("inferred replay input",),
+            lifecycle_findings=("backward replay transition",),
+            equivalence_findings=("decision mismatch",),
+            side_effect_findings=("production history mutated",),
+            evidence_gaps=("replay evidence absent",),
+            traceability_gaps=("replay lacks source evaluation",),
+        )
+        recovery = support.evaluate_recovery_architecture(
+            authority_findings=("Infrastructure selected Risk truth",),
+            checkpoint_findings=("corrupted checkpoint admitted",),
+            commit_classification_findings=("ambiguous commit retried",),
+            idempotency_findings=("duplicate Risk Decision",),
+            reconciliation_findings=("output delivery ambiguous",),
+            corruption_quarantine_findings=("corruption silently repaired",),
+            invariant_violations=("normal processing resumed early",),
+            evidence_gaps=("recovery manifest missing",),
+        )
+
+        self.assertEqual(validation.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("validation stage skipped", validation.sequence_findings)
+        self.assertIn("validation modified evidence", validation.invariant_violations)
+        self.assertEqual(decision.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("hidden runtime heuristic", decision.hidden_input_findings)
+        self.assertIn("DEFERRED", decision.unsupported_outcome_findings)
+        self.assertEqual(persistence.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("partial commit survived", persistence.atomicity_findings)
+        self.assertIn("decision persisted before evidence", persistence.ordering_findings)
+        self.assertEqual(replay.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("production history mutated", replay.side_effect_findings)
+        self.assertIn("decision mismatch", replay.equivalence_findings)
+        self.assertEqual(recovery.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("ambiguous commit retried", recovery.commit_classification_findings)
+        self.assertIn("duplicate Risk Decision", recovery.idempotency_findings)
+
 
 if __name__ == "__main__":
     unittest.main()
