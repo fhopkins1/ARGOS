@@ -44,6 +44,76 @@ class RiskRm003SpecificationProgramTests(unittest.TestCase):
         self.assertIn("implementation chooses freshness rule", record.interpretation_findings)
         self.assertIn("traceability evidence missing", record.evidence_gaps)
 
+    def test_rm003_object_foundation_package_covers_first_five_specifications(self) -> None:
+        package = RiskOfficeSpecificationSupport().build_object_foundation_specification_package()
+
+        self.assertEqual(package.final_specification_readiness, EnterpriseCertificationDecision.PASS)
+        self.assertEqual(
+            package.order_coverage,
+            (
+                "RISK-RM-003-001",
+                "RISK-RM-003-002",
+                "RISK-RM-003-003",
+                "RISK-RM-003-004",
+                "RISK-RM-003-005",
+            ),
+        )
+        self.assertIn("Risk Assessment Identifier", package.risk_assessment_object.identity_attributes)
+        self.assertIn("Risk Results", package.risk_assessment_object.schema_sections)
+        self.assertEqual(package.risk_assessment_object.lifecycle_states[0], "Created")
+        self.assertEqual(package.evaluation_plan.execution_sequence[0], "Mission Authorization")
+        self.assertEqual(package.evaluation_plan.execution_sequence[-1], "Completion Verification")
+        self.assertIn("Evaluation Dependency Graph", package.evaluation_plan.plan_sections)
+        self.assertIn("Workflow Execution Token", package.evaluation_package.identity_attributes)
+        self.assertEqual(package.evaluation_package.lifecycle_states, ("Created", "Normalized", "Validated", "Accepted", "Evaluation Active", "Evaluation Complete", "Archived"))
+        self.assertIn("Risk Assessment Node", package.evaluation_graph.node_classes)
+        self.assertIn("produces", package.evaluation_graph.edge_relationships)
+        self.assertIn("cycles prohibited", package.evaluation_graph.invariants)
+        self.assertIn("CREATION_REQUESTED", package.object_lifecycle.universal_states)
+        self.assertIn("TERMINATED", package.object_lifecycle.terminal_states)
+        self.assertIn("Risk Certification Evidence Object", package.object_lifecycle.covered_objects)
+        self.assertNotEqual(package.deterministic_digest, "")
+
+    def test_rm003_object_foundation_records_fail_closed_on_defects(self) -> None:
+        support = RiskOfficeSpecificationSupport()
+
+        assessment = support.evaluate_risk_assessment_object_specification(
+            schema_findings=("mandatory Confidence section omitted",),
+            relationship_findings=("Risk Decision relationship implicit",),
+            invariant_violations=("published assessment mutable",),
+        )
+        plan = support.evaluate_evaluation_plan_specification(
+            sequence_findings=("dynamic evaluation ordering allowed",),
+            completion_findings=("partial completion accepted",),
+            audit_gaps=("dependency graph hash absent",),
+        )
+        package_record = support.evaluate_evaluation_package_specification(
+            admissibility_findings=("package accepted with missing dependency",),
+            validation_findings=("integrity validation skipped",),
+            replay_recovery_findings=("replay inferred missing package data",),
+        )
+        graph = support.evaluate_evaluation_graph_specification(
+            node_findings=("unsupported node class registered",),
+            cycle_findings=("cycle detection absent",),
+            provenance_gaps=("orphan node admitted",),
+        )
+        lifecycle = support.evaluate_object_lifecycle_specification(
+            state_findings=("object occupied two authoritative states",),
+            creation_findings=("unregistered trigger created object",),
+            invariant_violations=("history overwritten",),
+        )
+
+        self.assertEqual(assessment.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("published assessment mutable", assessment.invariant_violations)
+        self.assertEqual(plan.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("partial completion accepted", plan.completion_findings)
+        self.assertEqual(package_record.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("integrity validation skipped", package_record.validation_findings)
+        self.assertEqual(graph.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("cycle detection absent", graph.cycle_findings)
+        self.assertEqual(lifecycle.result, EnterpriseCertificationDecision.FAIL)
+        self.assertIn("history overwritten", lifecycle.invariant_violations)
+
 
 if __name__ == "__main__":
     unittest.main()

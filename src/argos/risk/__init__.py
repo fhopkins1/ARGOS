@@ -221,6 +221,12 @@ from .completion import (
 )
 from .specification import (
     RiskOfficeSpecificationSupport,
+    RiskAssessmentObjectSpecificationRecord,
+    RiskEvaluationGraphSpecificationRecord,
+    RiskEvaluationPackageSpecificationRecord,
+    RiskEvaluationPlanSpecificationRecord,
+    RiskObjectLifecycleSpecificationRecord,
+    RiskRm003ObjectFoundationSpecificationPackage,
     RiskRm003SpecificationProgramRecord,
     RiskSpecificationWorkOrder,
 )
@@ -439,6 +445,12 @@ __all__ = [
     "RiskRm002ReplayRecoveryReviewEvidencePackage",
     "RiskValidationCompletionRecord",
     "RiskOfficeSpecificationSupport",
+    "RiskAssessmentObjectSpecificationRecord",
+    "RiskEvaluationGraphSpecificationRecord",
+    "RiskEvaluationPackageSpecificationRecord",
+    "RiskEvaluationPlanSpecificationRecord",
+    "RiskObjectLifecycleSpecificationRecord",
+    "RiskRm003ObjectFoundationSpecificationPackage",
     "RiskRm003SpecificationProgramRecord",
     "RiskSpecificationWorkOrder",
     "risk_office_templates",
