@@ -267,6 +267,11 @@ from .rm003_closure_operational import (
     RiskRm003ClosureOperationalRecord,
     RiskRm003ClosureOperationalSupport,
 )
+from .rm004_foundation_operational import (
+    RiskRm004FoundationOperationalPackage,
+    RiskRm004FoundationOperationalRecord,
+    RiskRm004FoundationOperationalSupport,
+)
 from .m4_operational_certification import (
     RiskM4CandidateIdentity,
     RiskM4CertificationDecision,
@@ -568,6 +573,9 @@ __all__ = [
     "RiskRm003ClosureOperationalPackage",
     "RiskRm003ClosureOperationalRecord",
     "RiskRm003ClosureOperationalSupport",
+    "RiskRm004FoundationOperationalPackage",
+    "RiskRm004FoundationOperationalRecord",
+    "RiskRm004FoundationOperationalSupport",
     "RiskM4CandidateIdentity",
     "RiskM4CertificationDecision",
     "RiskM4CertificationTestResult",
