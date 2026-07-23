@@ -354,6 +354,23 @@ from .requirement_proof import (
     validate_proof_system,
     execute_requirement_proof_system,
 )
+from .requirement_verifier import (
+    TRADER_RM_002A_014_VERSION,
+    ExecutionDisposition,
+    EvidenceValidationState,
+    VerifierRecord,
+    ControlledFixture,
+    ActualExecutionRecord,
+    ValidatedEvidenceRecord,
+    BehavioralProofPackage,
+    build_behavioral_proof_package,
+    dispatch_verifier,
+    produce_and_validate_evidence,
+    validate_raw_evidence,
+    recalculate_proofs,
+    demonstrate_fail_closed_behavior,
+    execute_behavioral_verification_system,
+)
 
 __all__ = [
     "TRADER_GROUP_ID",
@@ -676,4 +693,19 @@ __all__ = [
     "calculate_coverage",
     "validate_proof_system",
     "execute_requirement_proof_system",
+    "TRADER_RM_002A_014_VERSION",
+    "ExecutionDisposition",
+    "EvidenceValidationState",
+    "VerifierRecord",
+    "ControlledFixture",
+    "ActualExecutionRecord",
+    "ValidatedEvidenceRecord",
+    "BehavioralProofPackage",
+    "build_behavioral_proof_package",
+    "dispatch_verifier",
+    "produce_and_validate_evidence",
+    "validate_raw_evidence",
+    "recalculate_proofs",
+    "demonstrate_fail_closed_behavior",
+    "execute_behavioral_verification_system",
 ]

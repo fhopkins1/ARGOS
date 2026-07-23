@@ -165,6 +165,7 @@ def run_trader_audit(candidate_zip: Path, output_root: Path, *, run_id: str = "p
         "Tests.test_trader_rm002_constitution",
         "Tests.test_trader_rm002a_publication",
         "Tests.test_trader_requirement_proof",
+        "Tests.test_trader_requirement_verifier",
         "Tests.test_trader_readiness",
         "Tests.test_trader_group_framework",
         "Tests.test_trade_execution_office",
@@ -295,8 +296,8 @@ def _readiness_probe(extraction_root: Path, env: Mapping[str, str]) -> Mapping[s
 def _proof_system_probe(extraction_root: Path, env: Mapping[str, str], candidate_digest: str) -> Mapping[str, Any]:
     code = (
         "import json;"
-        "from argos.trader.requirement_proof import execute_requirement_proof_system;"
-        f"package=execute_requirement_proof_system({candidate_digest!r});"
+        "from argos.trader.requirement_verifier import execute_behavioral_verification_system;"
+        f"package=execute_behavioral_verification_system({candidate_digest!r});"
         "print(json.dumps(package, sort_keys=True))"
     )
     completed = subprocess.run([sys.executable, "-c", code], cwd=str(extraction_root), env=dict(env), text=True, capture_output=True, timeout=120)
@@ -304,9 +305,13 @@ def _proof_system_probe(extraction_root: Path, env: Mapping[str, str], candidate
         return {"status": "FAIL", "stderr": completed.stderr, "stdout_sha256": hashlib.sha256(completed.stdout.encode("utf-8")).hexdigest()}
     payload = json.loads(completed.stdout)
     verdict = payload.get("final_verdict", {}).get("verdict")
-    validation_status = payload.get("validation", {}).get("status")
-    coverage = payload.get("coverage", {})
-    status = "PASS" if verdict == "UNCONDITIONAL PASS" and validation_status == "PASS" and coverage.get("requirements_failed") == 0 else "FAIL"
+    failure_demos = payload.get("failure_demonstrations", {})
+    demo_status = (
+        failure_demos.get("missing_verifier", {}).get("final_verdict") == "FAIL"
+        and failure_demos.get("synthetic_evidence", {}).get("validation_state") == "INVALID"
+        and failure_demos.get("timeout", {}).get("execution_disposition") == "TIMEOUT"
+    )
+    status = "PASS" if verdict == "UNCONDITIONAL PASS" and demo_status else "FAIL"
     return {
         "status": status,
         "candidate_digest": candidate_digest,
@@ -339,6 +344,7 @@ def _traceability(manifest: Mapping[str, Any]) -> Mapping[str, Any]:
         "TRADER-RM-002-001-016": "src/argos/trader/rm002_constitution.py",
         "TRADER-RM-002A-001-012": "src/argos/trader/rm002a_publication.py",
         "TRADER-RM-002A-013": "src/argos/trader/requirement_proof.py",
+        "TRADER-RM-002A-014": "src/argos/trader/requirement_verifier.py",
         "TRADER-IC-000-006": "src/argos/trader/readiness.py",
         "TRADER-IC-000-007": "src/argos/trader_audit.py",
         "TRADER-IC-000-009": "TRADER_AUDITOR_README.md",
