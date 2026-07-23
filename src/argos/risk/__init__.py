@@ -319,6 +319,15 @@ from .rm005a_operational import (
     RiskRm005aOperationalSupport,
     RiskRm005aRuleRegistryRecord,
 )
+from .rm006_independent_certification import (
+    RiskRm006CandidateAcceptanceRecord,
+    RiskRm006CertificationDeterminationRecord,
+    RiskRm006ClosureRecord,
+    RiskRm006ExecutionRecord,
+    RiskRm006FindingAdjudicationRecord,
+    RiskRm006IndependentCertificationPackage,
+    RiskRm006IndependentCertificationSupport,
+)
 from .m4_operational_certification import (
     RiskM4CandidateIdentity,
     RiskM4CertificationDecision,
@@ -658,6 +667,13 @@ __all__ = [
     "RiskRm005aOperationalCompletionPackage",
     "RiskRm005aOperationalSupport",
     "RiskRm005aRuleRegistryRecord",
+    "RiskRm006CandidateAcceptanceRecord",
+    "RiskRm006CertificationDeterminationRecord",
+    "RiskRm006ClosureRecord",
+    "RiskRm006ExecutionRecord",
+    "RiskRm006FindingAdjudicationRecord",
+    "RiskRm006IndependentCertificationPackage",
+    "RiskRm006IndependentCertificationSupport",
     "RiskM4CandidateIdentity",
     "RiskM4CertificationDecision",
     "RiskM4CertificationTestResult",
