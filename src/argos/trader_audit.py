@@ -164,6 +164,7 @@ def run_trader_audit(candidate_zip: Path, output_root: Path, *, run_id: str = "p
         "Tests.test_trader_constitutional_governance",
         "Tests.test_trader_rm002_constitution",
         "Tests.test_trader_rm002a_publication",
+        "Tests.test_trader_requirement_proof",
         "Tests.test_trader_readiness",
         "Tests.test_trader_group_framework",
         "Tests.test_trade_execution_office",
@@ -174,9 +175,10 @@ def run_trader_audit(candidate_zip: Path, output_root: Path, *, run_id: str = "p
     test_result = subprocess.run(test_command, cwd=str(extraction_root), env=env, text=True, capture_output=True, timeout=240)
     compile_record = _compile_candidate(extraction_root, output_root, manifest)
     readiness = _readiness_probe(extraction_root, env)
+    proof_system = _proof_system_probe(extraction_root, env, manifest["candidate_digest"])
     closure = _closure_inventory(manifest)
     traceability = _traceability(manifest)
-    rule_results = _rule_results(manifest, closure, traceability, readiness, test_result.returncode == 0, compile_record["status"] == "PASS")
+    rule_results = _rule_results(manifest, closure, traceability, readiness, proof_system, test_result.returncode == 0, compile_record["status"] == "PASS")
     _write_text(output_root, "runner.log", test_result.stdout + "\n--- STDERR ---\n" + test_result.stderr)
     result = {
         "schema_version": "TRADER-IC-000-audit-result/v1",
@@ -191,6 +193,7 @@ def run_trader_audit(candidate_zip: Path, output_root: Path, *, run_id: str = "p
         "traceability": traceability,
         "rule_results": rule_results,
         "operational_verification": readiness,
+        "requirement_level_proof": proof_system,
         "test_results": {
             "command": test_command,
             "exit_code": test_result.returncode,
@@ -289,6 +292,30 @@ def _readiness_probe(extraction_root: Path, env: Mapping[str, str]) -> Mapping[s
     return {"status": "PASS" if completed.returncode == 0 and payload.get("certified") else "FAIL", "probe": payload, "stderr": completed.stderr}
 
 
+def _proof_system_probe(extraction_root: Path, env: Mapping[str, str], candidate_digest: str) -> Mapping[str, Any]:
+    code = (
+        "import json;"
+        "from argos.trader.requirement_proof import execute_requirement_proof_system;"
+        f"package=execute_requirement_proof_system({candidate_digest!r});"
+        "print(json.dumps(package, sort_keys=True))"
+    )
+    completed = subprocess.run([sys.executable, "-c", code], cwd=str(extraction_root), env=dict(env), text=True, capture_output=True, timeout=120)
+    if completed.returncode != 0:
+        return {"status": "FAIL", "stderr": completed.stderr, "stdout_sha256": hashlib.sha256(completed.stdout.encode("utf-8")).hexdigest()}
+    payload = json.loads(completed.stdout)
+    verdict = payload.get("final_verdict", {}).get("verdict")
+    validation_status = payload.get("validation", {}).get("status")
+    coverage = payload.get("coverage", {})
+    status = "PASS" if verdict == "UNCONDITIONAL PASS" and validation_status == "PASS" and coverage.get("requirements_failed") == 0 else "FAIL"
+    return {
+        "status": status,
+        "candidate_digest": candidate_digest,
+        "proof_package": payload,
+        "stdout_sha256": hashlib.sha256(completed.stdout.encode("utf-8")).hexdigest(),
+        "stderr_sha256": hashlib.sha256(completed.stderr.encode("utf-8")).hexdigest(),
+    }
+
+
 def _closure_inventory(manifest: Mapping[str, Any]) -> Mapping[str, Any]:
     dispositions = []
     unresolved = 0
@@ -311,6 +338,7 @@ def _traceability(manifest: Mapping[str, Any]) -> Mapping[str, Any]:
         "TRADER-GOV-001-012": "src/argos/trader/constitutional_governance.py",
         "TRADER-RM-002-001-016": "src/argos/trader/rm002_constitution.py",
         "TRADER-RM-002A-001-012": "src/argos/trader/rm002a_publication.py",
+        "TRADER-RM-002A-013": "src/argos/trader/requirement_proof.py",
         "TRADER-IC-000-006": "src/argos/trader/readiness.py",
         "TRADER-IC-000-007": "src/argos/trader_audit.py",
         "TRADER-IC-000-009": "TRADER_AUDITOR_README.md",
@@ -326,12 +354,13 @@ def _traceability(manifest: Mapping[str, Any]) -> Mapping[str, Any]:
     return {"status": "PASS" if not findings else "FAIL", "traces": traces, "findings": findings}
 
 
-def _rule_results(manifest: Mapping[str, Any], closure: Mapping[str, Any], traceability: Mapping[str, Any], readiness: Mapping[str, Any], tests_pass: bool, compile_pass: bool) -> Mapping[str, Any]:
+def _rule_results(manifest: Mapping[str, Any], closure: Mapping[str, Any], traceability: Mapping[str, Any], readiness: Mapping[str, Any], proof_system: Mapping[str, Any], tests_pass: bool, compile_pass: bool) -> Mapping[str, Any]:
     rules = [
         ("TRADER-RULE-CANDIDATE-MANIFEST", not manifest["findings"]),
         ("TRADER-RULE-CLOSURE", closure["unresolved_artifacts"] == 0),
         ("TRADER-RULE-TRACEABILITY", traceability["status"] == "PASS"),
         ("TRADER-RULE-OPERATIONAL", readiness["status"] == "PASS"),
+        ("TRADER-RULE-REQUIREMENT-PROOF", proof_system["status"] == "PASS"),
         ("TRADER-RULE-TESTS", tests_pass),
         ("TRADER-RULE-COMPILE", compile_pass),
     ]
@@ -369,6 +398,7 @@ def _write_evidence(output_root: Path, result: Mapping[str, Any]) -> None:
     _write_json(output_root, "traceability.json", result["traceability"])
     _write_json(output_root, "rule_results.json", result["rule_results"])
     _write_json(output_root, "operational_verification.json", result["operational_verification"])
+    _write_json(output_root, "requirement_level_proof.json", result["requirement_level_proof"])
     _write_json(output_root, "test_results.json", result["test_results"])
     _write_json(output_root, "compileall.json", result["compilation"])
 
@@ -421,6 +451,7 @@ def _is_pass(result: Mapping[str, Any]) -> bool:
         and result["traceability"]["status"] == "PASS"
         and result["rule_results"]["status"] == "PASS"
         and result["operational_verification"]["status"] == "PASS"
+        and result["requirement_level_proof"]["status"] == "PASS"
         and result["test_results"]["status"] == "PASS"
         and result["compilation"]["status"] == "PASS"
     )
