@@ -1,7 +1,8 @@
 # AUTH-IOC-001 Auditor Reproduction Guide
 
 This package is reproduced with one package-bound command. No Git repository,
-development checkout, network access, or prior evidence directory is required.
+development checkout, package installation, manual `PYTHONPATH`, network access,
+or prior evidence directory is required.
 
 ## Supported Environment
 
@@ -13,6 +14,13 @@ development checkout, network access, or prior evidence directory is required.
 
 ```bash
 python -m argos.authorization_independent_certify --validate-environment --output auditor_environment
+```
+
+When validating from a freshly extracted candidate, this equivalent wrapper also
+works without any environment-variable setup:
+
+```bash
+python audit_reproduce.py --validate-environment --output auditor_environment
 ```
 
 ## Candidate Hash Verification
@@ -45,6 +53,11 @@ python -m argos.authorization_independent_certify --candidate "/path/to/final_re
   `06_final/independent_certification_decision.json`
 - Expected decision:
   `UNCONDITIONAL_INDEPENDENT_AUTHORIZATIONS_OFFICE_CERTIFICATION_PASS`
+- Primary execution output:
+  `01_primary_execution/certification_result.json`
+- Clean-room output:
+  `02_clean_room/run_001/certification_result.json`
+  `02_clean_room/run_002/certification_result.json`
 
 Troubleshooting is limited to installing a supported Python runtime and ensuring
 the candidate path and output path are valid.
