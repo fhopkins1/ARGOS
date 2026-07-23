@@ -39,6 +39,7 @@ from .constitutional_certification_series import CS_VERSION, CSCertificationRepo
 from .trace_equivalence import TC_001_VERSION, CanonicalRuntimeIdentity, ExecutionOrigin, TraceAuthenticityRecord, TraceClaimType, TraceCoverageAssessment, TraceEligibilityResult, TraceEligibilityStatus, TraceEquivalenceAuthority, TraceEquivalenceCertification, TraceEquivalenceLevel, TraceRejectionCode, execute_tc001_certification
 from .authority_promotion_closure import TC_002_VERSION, ArtifactProvenanceRecord, AuthorityActivationRecord, AuthorityClassification, AuthorityIdentity, AuthorityPromotionAuthority, AuthorityPromotionRejectionCode, AuthorityRegistryStatus, ConstitutionalAuthorityRegistry, ConstitutionalPromotionDecision, CoreBridgeAuthorityResult, DelegationRecord, PromotionResult as TC002PromotionResult, execute_tc002_certification
 from .authorization_authority import AUTH_RM_001_VERSION, AuthorizationArtifactRecord, AuthorizationCandidateComplianceRecord, AuthorizationCandidateRecord, AuthorizationCertificationInfrastructureRecord, AuthorizationCertificationRecord, AuthorizationCertificationTestExecutionRecord, AuthorizationCertificationTestRecord, AuthorizationCompliancePackage, AuthorizationComplianceStatus, AuthorizationContractRecord, AuthorizationDecisionRecord, AuthorizationDecisionStatus, AuthorizationLifecycleRecord, AuthorizationLifecycleState, AuthorizationObjectRecord, AuthorizationOperationalEvidenceRecord, AuthorizationPersistenceRecord, AuthorizationPersistenceVerificationRecord, AuthorizationReadiness, AuthorizationReadinessReview, AuthorizationRegistryRecord, AuthorizationRemediationPackage, AuthorizationRequirementRecord, AuthorizationTraceabilityRecord, AuthorizationsOfficeComplianceSupport, AuthorizationsOfficeRemediationSupport
+from .authorization_operational_readiness import AUTH_RM_002_VERSION, AuthorizationCandidateGovernanceRecord, AuthorizationCandidateState, AuthorizationEvidenceTraceabilityRecord, AuthorizationExecutableRequirementRecord, AuthorizationIndependentCertificationTest, AuthorizationOperationalReadinessPackage, AuthorizationOperationalStateVerification, AuthorizationReadinessDecision, AuthorizationTestCategory, AuthorizationsOfficeOperationalReadinessSupport
 from .canonical_bridge_dynamic_coverage import TC_003_VERSION, BridgeCertificationGateStatus, BridgeCoverageSummary, BridgeExecutionPlanRow, CanonicalBridgeCoverageRow, DynamicCoverageStatus, execute_tc003_certification
 from .orphan_office_closure import TC_004_VERSION, OfficeCertificationMatrixStatus, OfficeClosureRejectionCode, OfficeDisposition, OfficeDispositionRecord, execute_tc004_certification
 from .trace_closure_final import TC_005_VERSION, TC_006_VERSION, TC_007_VERSION, TC_008_VERSION, AuthoritativeTruthClass, ProofDomainAttack, ResidualFindingClosure, SyntheticTruthTaxonomy, TCRejectionCode, UnsafeFallbackClosure, execute_tc005_certification, execute_tc006_certification, execute_tc007_certification, execute_tc008_certification
@@ -305,6 +306,17 @@ __all__ = [
     "AuthorizationTraceabilityRecord",
     "AuthorizationsOfficeComplianceSupport",
     "AuthorizationsOfficeRemediationSupport",
+    "AUTH_RM_002_VERSION",
+    "AuthorizationCandidateGovernanceRecord",
+    "AuthorizationCandidateState",
+    "AuthorizationEvidenceTraceabilityRecord",
+    "AuthorizationExecutableRequirementRecord",
+    "AuthorizationIndependentCertificationTest",
+    "AuthorizationOperationalReadinessPackage",
+    "AuthorizationOperationalStateVerification",
+    "AuthorizationReadinessDecision",
+    "AuthorizationTestCategory",
+    "AuthorizationsOfficeOperationalReadinessSupport",
     "TC_003_VERSION",
     "BridgeCertificationGateStatus",
     "BridgeCoverageSummary",
