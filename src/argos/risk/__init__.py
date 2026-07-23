@@ -310,6 +310,15 @@ from .rm005_closure_operational import (
     RiskRm005ReplayRecoveryRecord,
     RiskRm005TraceabilityRecord,
 )
+from .rm005a_operational import (
+    RiskRm005aAuthoritySeparationRecord,
+    RiskRm005aCandidateGovernanceRecord,
+    RiskRm005aConditionalPassGovernanceRecord,
+    RiskRm005aEvidenceCompletionReviewRecord,
+    RiskRm005aOperationalCompletionPackage,
+    RiskRm005aOperationalSupport,
+    RiskRm005aRuleRegistryRecord,
+)
 from .m4_operational_certification import (
     RiskM4CandidateIdentity,
     RiskM4CertificationDecision,
@@ -642,6 +651,13 @@ __all__ = [
     "RiskRm005ProcedureStageRecord",
     "RiskRm005ReplayRecoveryRecord",
     "RiskRm005TraceabilityRecord",
+    "RiskRm005aAuthoritySeparationRecord",
+    "RiskRm005aCandidateGovernanceRecord",
+    "RiskRm005aConditionalPassGovernanceRecord",
+    "RiskRm005aEvidenceCompletionReviewRecord",
+    "RiskRm005aOperationalCompletionPackage",
+    "RiskRm005aOperationalSupport",
+    "RiskRm005aRuleRegistryRecord",
     "RiskM4CandidateIdentity",
     "RiskM4CertificationDecision",
     "RiskM4CertificationTestResult",
