@@ -1,0 +1,23 @@
+{
+  "architecture": "64-bit Python runtime",
+  "encoding": "utf-8",
+  "environment_variables": [],
+  "filesystem_assumptions": [
+    "case-preserving paths",
+    "ZIP forward-slash entries"
+  ],
+  "locale": "UTF-8 capable",
+  "network_access_policy": "not required",
+  "python_dependencies": [],
+  "python_version": ">=3.11",
+  "required_tools": [
+    "python"
+  ],
+  "schema_version": "AUTH-IOC-001-environment-lock/v1",
+  "supported_operating_systems": [
+    "Windows",
+    "Linux",
+    "Darwin"
+  ],
+  "timezone_handling": "UTC timestamps in evidence"
+}
