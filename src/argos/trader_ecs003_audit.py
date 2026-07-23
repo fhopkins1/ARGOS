@@ -331,6 +331,8 @@ def run_final_ecs003(candidate_zip: Path, output_root: Path) -> Mapping[str, Any
 
 
 def _run_clean_room_ecs003(candidate_zip: Path, output_root: Path, run_id: str) -> Mapping[str, Any]:
+    output_root.parent.mkdir(parents=True, exist_ok=True)
+    output_root.mkdir(parents=True, exist_ok=True)
     command = [sys.executable, "-m", "argos.trader_ecs003_audit", "--candidate", str(candidate_zip), "--output", str(output_root), "--single-run", "--run-id", run_id]
     env = os.environ.copy()
     env["PYTHONPATH"] = str(Path(__file__).resolve().parents[1])
