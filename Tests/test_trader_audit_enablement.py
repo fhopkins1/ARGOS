@@ -24,6 +24,7 @@ def _write_candidate(zip_path: Path) -> None:
     )
     files.update([
         "audit_trader_reproduce.py",
+        "audit_trader_ecs003.py",
         "TRADER_AUDITOR_README.md",
         "Tests/test_trader_readiness.py",
         "Tests/test_trader_group_framework.py",
@@ -35,6 +36,7 @@ def _write_candidate(zip_path: Path) -> None:
         "Tests/test_trader_rm002a_publication.py",
         "Tests/test_trader_requirement_proof.py",
         "Tests/test_trader_requirement_verifier.py",
+        "Tests/test_trader_ecs003_audit.py",
     ])
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for relative in files:
