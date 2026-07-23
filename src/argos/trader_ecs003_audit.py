@@ -176,6 +176,9 @@ def run_test_module(module_name: str) -> Mapping[str, Any]:
 
 def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mapping[str, str]) -> Mapping[str, Any]:
     inventory = build_test_inventory(extraction_root / "Tests")
+    records_by_module: dict[str, list[Mapping[str, Any]]] = {}
+    for record in inventory["records"]:
+        records_by_module.setdefault(record["test_module"], []).append(record)
     segment_dir = output_root / "02_full_repository_suite" / "segments"
     segment_dir.mkdir(parents=True, exist_ok=True)
     all_records = []
@@ -216,6 +219,24 @@ def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mappin
                 "disposition_counts": _count_dispositions(records),
                 "records": records,
                 "runner_output": completed.stdout,
+            }
+        elif len(payload["records"]) == 0 and row["tests"] > 0:
+            records = [
+                {
+                    "test_identifier": item["test_identifier"],
+                    "disposition": "ERROR",
+                    "start_timestamp": started_at,
+                    "finish_timestamp": _utc_now(),
+                    "duration_seconds": 0.0,
+                    "details": "discovery produced a failed-test placeholder that cannot be executed as a normal module",
+                }
+                for item in records_by_module.get(module, ())
+            ]
+            payload = {
+                **payload,
+                "successful": False,
+                "records": records,
+                "disposition_counts": _count_dispositions(records),
             }
         all_records.extend(payload["records"])
         segments.append(
