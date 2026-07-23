@@ -31,6 +31,7 @@ def _write_candidate(zip_path: Path) -> None:
         "Tests/test_trade_monitoring_office.py",
         "Tests/test_trader_fusion_office.py",
         "Tests/test_trader_constitutional_governance.py",
+        "Tests/test_trader_rm002_constitution.py",
     ])
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for relative in files:
