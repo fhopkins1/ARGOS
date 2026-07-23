@@ -21,7 +21,7 @@ import time
 from typing import Any, Mapping, Sequence
 import unittest
 
-from .trader.requirement_verifier import execute_behavioral_verification_system
+from .trader.requirement_verifier import build_behavioral_proof_package
 from .trader_audit import (
     _digest_file,
     _digest_payload,
@@ -268,10 +268,10 @@ def run_single_ecs003(candidate_zip: Path, output_root: Path, *, run_id: str = "
     extraction_root = output_root / "extracted_candidate"
     extraction = extract_candidate(candidate_zip, extraction_root, manifest)
     env = os.environ.copy()
-    env["PYTHONPATH"] = str(extraction_root / "src")
+    env["PYTHONPATH"] = os.pathsep.join((str(extraction_root / "src"), str(extraction_root / "Tests"), str(extraction_root)))
     environment = _environment_manifest(extraction_root, manifest)
     test_campaign = run_full_test_campaign(extraction_root, output_root, env)
-    verifier_package = execute_behavioral_verification_system(manifest["candidate_digest"])
+    verifier_package = build_behavioral_proof_package(manifest["candidate_digest"])
     verifier_report = _verifier_report(verifier_package)
     proof_report = _proof_report(verifier_package)
     closure = _closure_report(test_campaign, verifier_report, proof_report)
@@ -353,6 +353,7 @@ def _count_dispositions(records: Sequence[Mapping[str, Any]]) -> Mapping[str, in
 
 def _environment_manifest(extraction_root: Path, manifest: Mapping[str, Any]) -> Mapping[str, Any]:
     usage = shutil.disk_usage(extraction_root)
+    python_path = os.pathsep.join((str(extraction_root / "src"), str(extraction_root / "Tests"), str(extraction_root)))
     return {
         "schema_version": "trader-ecs003-environment/v1",
         "operating_system": platform.platform(),
@@ -361,7 +362,7 @@ def _environment_manifest(extraction_root: Path, manifest: Mapping[str, Any]) ->
         "cpu_count": os.cpu_count(),
         "available_storage_bytes": usage.free,
         "execution_limits": "no subprocess timeout configured for full repository test campaign or clean-room runs",
-        "environment_variables": {"PYTHONPATH": str(extraction_root / "src")},
+        "environment_variables": {"PYTHONPATH": python_path},
         "local_services": (),
         "simulator_versions": {"broker_simulator": "repository-local deterministic tests"},
         "persistence_configuration": "repository-local test fixtures",
@@ -374,10 +375,10 @@ def _environment_manifest(extraction_root: Path, manifest: Mapping[str, Any]) ->
 
 
 def _verifier_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
-    verifiers = verifier_package["verifier_registry"]
-    executions = verifier_package["execution_registry"]
-    evidence = verifier_package["raw_evidence_registry"]
-    validation = verifier_package["evidence_validation_registry"]
+    verifiers = _jsonable(verifier_package.verifier_registry)
+    executions = _jsonable(verifier_package.execution_registry)
+    evidence = _jsonable(verifier_package.raw_evidence_registry)
+    validation = evidence
     counts = _count_dispositions(executions)
     return {
         "schema_version": "trader-ecs003-verifier-campaign/v1",
@@ -385,7 +386,7 @@ def _verifier_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
         "execution_registry": executions,
         "raw_evidence_registry": evidence,
         "evidence_validation_registry": validation,
-        "failure_demonstrations": verifier_package["failure_demonstrations"],
+        "failure_demonstrations": verifier_package.failure_demonstrations,
         "totals": {
             "required_verifiers": len(verifiers),
             "resolved": len(verifiers),
@@ -403,37 +404,55 @@ def _verifier_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
         "verifier_registry_digest": _digest_payload(verifiers),
         "execution_registry_digest": _digest_payload(executions),
         "evidence_registry_digest": _digest_payload(evidence),
-        "status": "PASS" if verifier_package["final_verdict"]["verdict"] == "UNCONDITIONAL PASS" else "FAIL",
+        "status": "PASS" if verifier_package.final_verdict["verdict"] == "UNCONDITIONAL PASS" else "FAIL",
     }
 
 
 def _proof_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
-    proofs = verifier_package["proof_object_registry"]
+    proofs = _jsonable(verifier_package.proof_objects)
     counts = _count_dispositions(proofs)
     return {
         "schema_version": "trader-ecs003-proof-report/v1",
-        "requirement_registry": verifier_package["requirement_registry"],
+        "requirement_registry": _jsonable(verifier_package.requirement_registry),
         "proof_object_registry": proofs,
-        "finding_registry": verifier_package["finding_registry"],
-        "coverage": verifier_package["coverage"],
-        "relationship_graph": verifier_package["relationship_graph"],
-        "traceability_matrix": verifier_package["traceability_matrix"],
+        "finding_registry": tuple(finding for proof in proofs for finding in proof.get("findings", ())),
+        "coverage": _coverage_report(verifier_package),
+        "relationship_graph": verifier_package.relationship_graph,
+        "traceability_matrix": verifier_package.traceability_matrix,
         "proof_recalculation_report": {"method": "recalculated from current verifier execution and evidence validation registries"},
-        "final_verdict": verifier_package["final_verdict"],
+        "final_verdict": verifier_package.final_verdict,
         "totals": {
-            "requirements": len(verifier_package["requirement_registry"]),
+            "requirements": len(verifier_package.requirement_registry),
             "proof_objects": len(proofs),
             "pass": counts.get("PASS", 0),
             "fail": counts.get("FAIL", 0),
             "not_executed": counts.get("NOT EXECUTED", 0),
             "not_applicable": counts.get("NOT APPLICABLE", 0),
             "constitutional_conflicts": counts.get("CONSTITUTIONAL CONFLICT", 0),
-            "open_findings": len(verifier_package["finding_registry"]),
+            "open_findings": sum(len(proof.get("findings", ())) for proof in proofs),
         },
         "proof_registry_digest": _digest_payload(proofs),
-        "graph_digest": _digest_payload(verifier_package["relationship_graph"]),
-        "finding_registry_digest": _digest_payload(verifier_package["finding_registry"]),
-        "status": "PASS" if verifier_package["final_verdict"]["verdict"] == "UNCONDITIONAL PASS" else "FAIL",
+        "graph_digest": _digest_payload(verifier_package.relationship_graph),
+        "finding_registry_digest": _digest_payload(tuple(finding for proof in proofs for finding in proof.get("findings", ()))),
+        "status": "PASS" if verifier_package.final_verdict["verdict"] == "UNCONDITIONAL PASS" else "FAIL",
+    }
+
+
+def _coverage_report(verifier_package: Any) -> Mapping[str, Any]:
+    requirements = _jsonable(verifier_package.requirement_registry)
+    verifiers = _jsonable(verifier_package.verifier_registry)
+    executions = _jsonable(verifier_package.execution_registry)
+    evidence = _jsonable(verifier_package.raw_evidence_registry)
+    proofs = _jsonable(verifier_package.proof_objects)
+    return {
+        "requirements_total": len(requirements),
+        "verifiers_total": len(verifiers),
+        "executions_total": len(executions),
+        "evidence_total": len(evidence),
+        "proofs_total": len(proofs),
+        "requirements_failed": sum(1 for proof in proofs if proof.get("disposition") != "PASS"),
+        "verifiers_failed": sum(1 for execution in executions if execution.get("disposition") != "PASS"),
+        "coverage_status": "PASS" if proofs and all(proof.get("disposition") == "PASS" for proof in proofs) else "FAIL",
     }
 
 
