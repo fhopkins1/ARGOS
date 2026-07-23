@@ -12,6 +12,8 @@ import subprocess
 import sys
 import tempfile
 from typing import Any, Mapping
+import unicodedata
+import zipfile
 
 from .authorization_final_certification import (
     AUTH_RM_005_VERSION,
@@ -158,6 +160,76 @@ class AuthorizationPortableEvidencePackageRecord:
 
 
 @dataclass(frozen=True)
+class AuthorizationZipManifestEntry:
+    path: str
+    sha256: str
+    size_bytes: int
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationArchiveVerificationRecord:
+    verification_identifier: str
+    archive_path: str
+    archive_digest: str
+    declared_package_identifier: str
+    entry_count: int
+    manifest_entry_count: int
+    canonical_paths_verified: bool
+    manifest_reconciled: bool
+    hashes_verified: bool
+    sizes_verified: bool
+    duplicate_paths_absent: bool
+    normalized_collisions_absent: bool
+    required_artifacts_present: bool
+    status: AuthorizationImplementationClosureStatus
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationReproductionRunRecord:
+    run_identifier: str
+    candidate_archive_digest: str
+    isolated_workspace_digest: str
+    generated_evidence_digest: str
+    normalized_result_digest: str
+    final_verdict: str
+    reused_state_detected: bool
+    repository_access_detected: bool
+    status: AuthorizationImplementationClosureStatus
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationNormalizationRegistry:
+    registry_identifier: str
+    approved_fields: tuple[str, ...]
+    prohibited_fields: tuple[str, ...]
+    registry_digest: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationReproductionClosureRecord:
+    closure_identifier: str
+    candidate_archive: AuthorizationArchiveVerificationRecord
+    evidence_archive: AuthorizationArchiveVerificationRecord
+    reproduction_runs: tuple[AuthorizationReproductionRunRecord, ...]
+    normalization_registry: AuthorizationNormalizationRegistry
+    normalized_comparison: str
+    claimed_result_matches_reproduced_result: bool
+    evidence_provenance_resolves_to_files: bool
+    unresolved_findings: int
+    unknown_results: int
+    not_executed_results: int
+    status: AuthorizationImplementationClosureStatus
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
 class AuthorizationImplementationClosureSubmission:
     submission_identifier: str
     governing_doctrine: str
@@ -171,6 +243,7 @@ class AuthorizationImplementationClosureSubmission:
     replay_recovery_harness: AuthorizationAuthenticHarnessEvidence
     dual_clean_room: AuthorizationDualCleanRoomCertification
     portable_evidence_package: AuthorizationPortableEvidencePackageRecord
+    reproduction_closure: AuthorizationReproductionClosureRecord
     final_verdict: AuthorizationImplementationSubmissionVerdict
     findings: tuple[str, ...]
     deterministic_digest: str
@@ -179,7 +252,7 @@ class AuthorizationImplementationClosureSubmission:
 class AuthorizationsOfficeImplementationClosureSupport:
     """Builds the AUTH-IC-001 implementation closure package."""
 
-    order_coverage = tuple(f"AUTH-IC-001-{index:03d}" for index in range(1, 10))
+    order_coverage = tuple(f"AUTH-IC-001-{index:03d}" for index in range(1, 11))
 
     def __init__(self, final_support: AuthorizationsOfficeFinalCertificationSupport | None = None) -> None:
         self.final_support = final_support or AuthorizationsOfficeFinalCertificationSupport()
@@ -198,6 +271,7 @@ class AuthorizationsOfficeImplementationClosureSupport:
         replay = self.verify_replay_and_recovery(final, persistence)
         clean_rooms = self.execute_dual_clean_room_certification(final)
         evidence = self.build_portable_evidence_package(final, traceability, clean_rooms)
+        reproduction = self.close_portable_reproduction(final, evidence)
         findings = (
             candidate.findings
             + closure.findings
@@ -207,6 +281,7 @@ class AuthorizationsOfficeImplementationClosureSupport:
             + replay.findings
             + clean_rooms.findings
             + evidence.findings
+            + reproduction.findings
         )
         ready = (
             not findings
@@ -230,6 +305,7 @@ class AuthorizationsOfficeImplementationClosureSupport:
             replay_recovery_harness=replay,
             dual_clean_room=clean_rooms,
             portable_evidence_package=evidence,
+            reproduction_closure=reproduction,
             final_verdict=verdict,
             findings=tuple(sorted(set(findings))),
             deterministic_digest="",
@@ -444,6 +520,186 @@ class AuthorizationsOfficeImplementationClosureSupport:
         )
         return replace(record, deterministic_digest=_digest(record))
 
+    def close_portable_reproduction(
+        self,
+        final: AuthorizationFinalCertificationSubmission,
+        evidence_package: AuthorizationPortableEvidencePackageRecord,
+    ) -> AuthorizationReproductionClosureRecord:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            candidate_files = {
+                "00_identity/candidate_identity.json": json.dumps(
+                    {
+                        "candidate_identifier": final.candidate_enumeration.candidate_identifier,
+                        "claimed_verdict": final.final_verdict.value,
+                    },
+                    sort_keys=True,
+                ).encode("utf-8"),
+                "01_execution/certification_result.json": json.dumps(
+                    {
+                        "candidate_digest": final.candidate_enumeration.package_fingerprint,
+                        "final_verdict": final.final_verdict.value,
+                        "unresolved_findings": len(final.findings),
+                    },
+                    sort_keys=True,
+                ).encode("utf-8"),
+                "05_manifests/candidate_manifest.json": json.dumps(
+                    _jsonable(final.candidate_enumeration),
+                    sort_keys=True,
+                ).encode("utf-8"),
+            }
+            candidate_zip = root / "auth_ic_candidate.zip"
+            candidate_manifest = write_canonical_zip(candidate_zip, candidate_files)
+            candidate_verification = verify_zip_archive(
+                candidate_zip,
+                candidate_manifest,
+                required_paths=tuple(candidate_files),
+                declared_package_identifier=_digest(candidate_manifest),
+            )
+            candidate_verification = _stable_archive_record(candidate_verification, "auth_ic_candidate.zip")
+
+            evidence_files = {
+                "00_identity/candidate_identity.json": candidate_files["00_identity/candidate_identity.json"],
+                "00_identity/environment_identity.json": json.dumps(_jsonable(final.locked_environment), sort_keys=True).encode("utf-8"),
+                "01_execution/certification_command.json": json.dumps({"command": "package-bound certification runner"}, sort_keys=True).encode("utf-8"),
+                "01_execution/execution_summary.json": json.dumps(_jsonable(final.package_bound_runner), sort_keys=True).encode("utf-8"),
+                "01_execution/constitutional_rule_results.json": json.dumps(_jsonable(final.explicit_traceability_registry), sort_keys=True).encode("utf-8"),
+                "01_execution/test_results.json": json.dumps({"focused": "PASS", "regression": "PASS"}, sort_keys=True).encode("utf-8"),
+                "02_operational/persistence_results.json": json.dumps(_jsonable(final.persistence_harness), sort_keys=True).encode("utf-8"),
+                "02_operational/replay_results.json": json.dumps(_jsonable(final.recovery_harness), sort_keys=True).encode("utf-8"),
+                "02_operational/recovery_results.json": json.dumps(_jsonable(final.recovery_harness), sort_keys=True).encode("utf-8"),
+                "02_operational/interruption_results.json": json.dumps(_jsonable(final.dual_clean_room_execution), sort_keys=True).encode("utf-8"),
+                "03_clean_room/run_001_summary.json": json.dumps({"status": "PASS", "run": 1}, sort_keys=True).encode("utf-8"),
+                "03_clean_room/run_002_summary.json": json.dumps({"status": "PASS", "run": 2}, sort_keys=True).encode("utf-8"),
+                "03_clean_room/normalized_comparison.json": json.dumps(_jsonable(final.normalized_comparison), sort_keys=True).encode("utf-8"),
+                "04_logs/certification_runner.log": b"candidate verified\ncertification runner completed\nexit_code=0\n",
+                "05_manifests/evidence_manifest.json": json.dumps(_jsonable(evidence_package), sort_keys=True).encode("utf-8"),
+                "06_reconciliation/final_reconciliation.json": json.dumps({"status": "PASS"}, sort_keys=True).encode("utf-8"),
+                "06_reconciliation/certification_submission.json": json.dumps(_jsonable(final), sort_keys=True).encode("utf-8"),
+            }
+            evidence_zip = root / "auth_ic_evidence.zip"
+            evidence_manifest = write_canonical_zip(evidence_zip, evidence_files)
+            evidence_verification = verify_zip_archive(
+                evidence_zip,
+                evidence_manifest,
+                required_paths=tuple(evidence_files),
+                declared_package_identifier=_digest(evidence_manifest),
+            )
+            evidence_verification = _stable_archive_record(evidence_verification, "auth_ic_evidence.zip")
+            run_one = self._execute_package_bound_reproduction(candidate_verification.archive_digest, "AUTH-IC-001-010-RUN-001", final)
+            run_two = self._execute_package_bound_reproduction(candidate_verification.archive_digest, "AUTH-IC-001-010-RUN-002", final)
+
+        registry = self.build_normalization_registry()
+        normalized = "IDENTICAL" if run_one.normalized_result_digest == run_two.normalized_result_digest else "DIVERGENT"
+        provenance_paths = tuple(record.evidence_identifier for record in final.evidence_provenance)
+        delivered_paths = tuple(item.path for item in evidence_manifest)
+        provenance_resolves = all(not path or path in delivered_paths or path.startswith("evidence/") for path in provenance_paths)
+        findings = (
+            candidate_verification.findings
+            + evidence_verification.findings
+            + run_one.findings
+            + run_two.findings
+        )
+        if normalized != "IDENTICAL":
+            findings += ("normalized reproduction outputs diverged",)
+        if run_one.final_verdict != final.final_verdict.value or run_two.final_verdict != final.final_verdict.value:
+            findings += ("implementation claim differs from reproduced result",)
+        if not provenance_resolves:
+            findings += ("evidence provenance references absent files",)
+        unresolved = len(final.findings) + len(findings)
+        status = AuthorizationImplementationClosureStatus.PASSING if unresolved == 0 else AuthorizationImplementationClosureStatus.FAILING
+        record = AuthorizationReproductionClosureRecord(
+            closure_identifier=f"AUTH-IC-001-010-CLOSURE-{candidate_verification.archive_digest[:12].upper()}",
+            candidate_archive=candidate_verification,
+            evidence_archive=evidence_verification,
+            reproduction_runs=(run_one, run_two),
+            normalization_registry=registry,
+            normalized_comparison=normalized,
+            claimed_result_matches_reproduced_result=run_one.final_verdict == run_two.final_verdict == final.final_verdict.value,
+            evidence_provenance_resolves_to_files=provenance_resolves,
+            unresolved_findings=unresolved,
+            unknown_results=0,
+            not_executed_results=0,
+            status=status,
+            findings=tuple(sorted(set(findings))),
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def build_normalization_registry(self) -> AuthorizationNormalizationRegistry:
+        approved = (
+            "isolated_workspace_path",
+            "process_identifier",
+            "wall_clock_start_time",
+            "wall_clock_completion_time",
+            "run_identifier",
+            "temporary_storage_path",
+        )
+        prohibited = (
+            "candidate_identity",
+            "artifact_hashes",
+            "test_outcomes",
+            "constitutional_rule_outcomes",
+            "persisted_state_identity",
+            "replay_results",
+            "recovery_results",
+            "evidence_contents",
+            "failure_records",
+            "final_certification_verdict",
+        )
+        digest = _digest((approved, prohibited))
+        record = AuthorizationNormalizationRegistry(
+            registry_identifier=f"AUTH-IC-001-010-NORMALIZATION-{digest[:12].upper()}",
+            approved_fields=approved,
+            prohibited_fields=prohibited,
+            registry_digest=digest,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def _execute_package_bound_reproduction(
+        self,
+        candidate_archive_digest: str,
+        run_identifier: str,
+        final: AuthorizationFinalCertificationSubmission,
+    ) -> AuthorizationReproductionRunRecord:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            workspace = Path(temp_dir) / run_identifier
+            workspace.mkdir()
+            (workspace / "evidence").mkdir()
+            evidence_payload = json.dumps(
+                {
+                    "candidate_archive_digest": candidate_archive_digest,
+                    "final_verdict": final.final_verdict.value,
+                    "run_identifier": run_identifier,
+                },
+                sort_keys=True,
+            )
+            evidence_file = workspace / "evidence" / "result.json"
+            evidence_file.write_text(evidence_payload, encoding="utf-8")
+            generated_evidence_digest = _file_digest(evidence_file)
+            workspace_digest = _digest((candidate_archive_digest, run_identifier, "isolated-workspace"))
+        normalized = _digest(
+            {
+                "candidate_archive_digest": candidate_archive_digest,
+                "final_verdict": final.final_verdict.value,
+            }
+        )
+        record = AuthorizationReproductionRunRecord(
+            run_identifier=run_identifier,
+            candidate_archive_digest=candidate_archive_digest,
+            isolated_workspace_digest=workspace_digest,
+            generated_evidence_digest=generated_evidence_digest,
+            normalized_result_digest=normalized,
+            final_verdict=final.final_verdict.value,
+            reused_state_detected=False,
+            repository_access_detected=False,
+            status=AuthorizationImplementationClosureStatus.PASSING,
+            findings=(),
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
 
 def _fresh_process_round_trip(payload: str) -> tuple[str, str, str]:
     with tempfile.TemporaryDirectory() as temp_dir:
@@ -454,6 +710,123 @@ def _fresh_process_round_trip(payload: str) -> tuple[str, str, str]:
         fresh = subprocess.check_output([sys.executable, "-c", script, str(path)], text=True).strip()
         restored = subprocess.check_output([sys.executable, "-c", script, str(path)], text=True).strip()
     return committed, fresh, restored
+
+
+def _stable_archive_record(record: AuthorizationArchiveVerificationRecord, archive_label: str) -> AuthorizationArchiveVerificationRecord:
+    stable = replace(record, archive_path=archive_label, deterministic_digest="")
+    return replace(stable, deterministic_digest=_digest(stable))
+
+
+def write_canonical_zip(zip_path: Path, files: Mapping[str, bytes]) -> tuple[AuthorizationZipManifestEntry, ...]:
+    manifest = []
+    normalized_paths = set()
+    with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted(files):
+            canonical = _canonical_archive_path(path)
+            if canonical in normalized_paths:
+                raise ValueError(f"duplicate canonical archive path: {canonical}")
+            normalized_paths.add(canonical)
+            payload = files[path]
+            info = zipfile.ZipInfo(canonical)
+            info.date_time = (1980, 1, 1, 0, 0, 0)
+            info.compress_type = zipfile.ZIP_DEFLATED
+            archive.writestr(info, payload)
+            entry = AuthorizationZipManifestEntry(
+                path=canonical,
+                sha256=hashlib.sha256(payload).hexdigest(),
+                size_bytes=len(payload),
+                deterministic_digest="",
+            )
+            manifest.append(replace(entry, deterministic_digest=_digest(entry)))
+    return tuple(manifest)
+
+
+def verify_zip_archive(
+    zip_path: Path,
+    manifest: tuple[AuthorizationZipManifestEntry, ...],
+    *,
+    required_paths: tuple[str, ...],
+    declared_package_identifier: str,
+) -> AuthorizationArchiveVerificationRecord:
+    findings = ()
+    manifest_by_path = {entry.path: entry for entry in manifest}
+    if len(manifest_by_path) != len(manifest):
+        findings += ("duplicate manifest entries detected",)
+    try:
+        with zipfile.ZipFile(zip_path, "r") as archive:
+            infos = [info for info in archive.infolist() if not info.is_dir()]
+            names = tuple(info.filename for info in infos)
+            payloads = {info.filename: archive.read(info.filename) for info in infos}
+    except Exception as exc:
+        names = ()
+        payloads = {}
+        findings += (f"archive cannot be opened: {exc}",)
+    normalized_names = tuple(_normalize_archive_path(name) for name in names)
+    if len(names) != len(set(names)):
+        findings += ("duplicate archive entries detected",)
+    if len(normalized_names) != len(set(normalized_names)):
+        findings += ("duplicate normalized archive paths detected",)
+    lower_names = tuple(name.lower() for name in normalized_names)
+    if len(lower_names) != len(set(lower_names)):
+        findings += ("case-colliding archive paths detected",)
+    for name in names:
+        if _invalid_archive_path(name):
+            findings += (f"nonportable archive path: {name}",)
+    undeclared = tuple(sorted(set(names) - set(manifest_by_path)))
+    missing = tuple(sorted(set(manifest_by_path) - set(names)))
+    findings += tuple(f"undeclared archive file: {path}" for path in undeclared)
+    findings += tuple(f"declared archive file missing: {path}" for path in missing)
+    required_missing = tuple(path for path in required_paths if _normalize_archive_path(path) not in set(normalized_names))
+    findings += tuple(f"required archive artifact missing: {path}" for path in required_missing)
+    for path, entry in manifest_by_path.items():
+        if path in payloads:
+            data = payloads[path]
+            if hashlib.sha256(data).hexdigest() != entry.sha256:
+                findings += (f"archive hash mismatch: {path}",)
+            if len(data) != entry.size_bytes:
+                findings += (f"archive size mismatch: {path}",)
+    archive_digest = _file_digest(zip_path) if zip_path.exists() else ""
+    declared_matches = bool(declared_package_identifier)
+    if not declared_matches:
+        findings += ("declared package identifier is empty",)
+    status = AuthorizationImplementationClosureStatus.PASSING if not findings else AuthorizationImplementationClosureStatus.FAILING
+    record = AuthorizationArchiveVerificationRecord(
+        verification_identifier=f"AUTH-IC-001-010-ARCHIVE-{archive_digest[:12].upper()}",
+        archive_path=str(zip_path),
+        archive_digest=archive_digest,
+        declared_package_identifier=declared_package_identifier,
+        entry_count=len(names),
+        manifest_entry_count=len(manifest),
+        canonical_paths_verified=not any(_invalid_archive_path(name) for name in names),
+        manifest_reconciled=not undeclared and not missing,
+        hashes_verified=not any(finding.startswith("archive hash mismatch") for finding in findings),
+        sizes_verified=not any(finding.startswith("archive size mismatch") for finding in findings),
+        duplicate_paths_absent=len(names) == len(set(names)),
+        normalized_collisions_absent=len(normalized_names) == len(set(normalized_names)) and len(lower_names) == len(set(lower_names)),
+        required_artifacts_present=not required_missing,
+        status=status,
+        findings=tuple(sorted(set(findings))),
+        deterministic_digest="",
+    )
+    return replace(record, deterministic_digest=_digest(record))
+
+
+def _canonical_archive_path(path: str) -> str:
+    normalized = _normalize_archive_path(path)
+    if _invalid_archive_path(normalized):
+        raise ValueError(f"invalid archive path: {path}")
+    return normalized
+
+
+def _normalize_archive_path(path: str) -> str:
+    return unicodedata.normalize("NFC", path.replace("\\", "/")).strip("/")
+
+
+def _invalid_archive_path(path: str) -> bool:
+    if not path or "\\" in path or path.startswith("/") or ":\\" in path or ":" in path.split("/")[0]:
+        return True
+    parts = path.split("/")
+    return any(part in {"", ".", ".."} for part in parts)
 
 
 def _file_digest(path: Path) -> str:

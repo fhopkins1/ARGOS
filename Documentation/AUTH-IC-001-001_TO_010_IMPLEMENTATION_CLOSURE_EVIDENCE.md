@@ -1,4 +1,4 @@
-# AUTH-IC-001-001 to AUTH-IC-001-009 Implementation Closure Evidence
+# AUTH-IC-001-001 to AUTH-IC-001-010 Implementation Closure Evidence
 
 ## Scope
 
@@ -13,6 +13,7 @@ This evidence note covers the Authorizations Office implementation closure packa
 - AUTH-IC-001-007 Dual Clean-Room Certification
 - AUTH-IC-001-008 Portable Evidence Package
 - AUTH-IC-001-009 Final Certification Reconciliation
+- AUTH-IC-001-010 Portable Evidence and Independent Reproduction Closure
 
 ## Implementation
 
@@ -27,6 +28,10 @@ The executable implementation is in `src/argos/control_panel/authorization_imple
 - authentic persistence and replay/recovery harness evidence using fresh process verification;
 - dual clean-room certification evidence;
 - self-contained portable evidence package metadata;
+- canonical ZIP archive writing and central-directory validation;
+- immutable candidate-freeze and package-bound reproduction closure evidence;
+- approved normalization registry and deterministic reproduction comparison;
+- evidence archive verification and provenance-to-file closure;
 - final implementation closure verdict.
 
 ## Verification
@@ -44,7 +49,9 @@ They verify:
 - isolated dual clean-room equivalence;
 - portable evidence package completeness;
 - deterministic final closure reproduction.
+- canonical ZIP path acceptance;
+- deterministic rejection of backslash, absolute, traversal, case-colliding, undeclared, missing, and hash-mismatched archive entries.
 
 ## Certification Boundary
 
-AUTH-IC-001 is the implementation closure gate following AUTH-RM-005. It prepares the Authorizations Office for independent office certification without redefining constitutional doctrine or altering authorization semantics.
+AUTH-IC-001 is the implementation closure gate following AUTH-RM-005. AUTH-IC-001-010 closes the portable evidence and independent reproduction findings without redefining constitutional doctrine or altering authorization semantics.
