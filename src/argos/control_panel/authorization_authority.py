@@ -41,6 +41,11 @@ class AuthorizationReadiness(str, Enum):
     NOT_READY = "NOT_READY"
 
 
+class AuthorizationComplianceStatus(str, Enum):
+    PASSING = "PASSING"
+    FAILING = "FAILING"
+
+
 def _jsonable(value: Any) -> Any:
     if isinstance(value, Enum):
         return value.value
@@ -255,6 +260,95 @@ class AuthorizationRemediationPackage:
     traceability: tuple[AuthorizationTraceabilityRecord, ...]
     operational_evidence: tuple[AuthorizationOperationalEvidenceRecord, ...]
     readiness_review: AuthorizationReadinessReview
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationCandidateComplianceRecord:
+    compliance_identifier: str
+    candidate_identifier: str
+    commit_identifier: str
+    auth_scope_status: str
+    immutable_commit_bound: bool
+    artifact_inventory_bound: bool
+    evidence_candidate_aligned: bool
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationCertificationTestRecord:
+    test_identifier: str
+    governing_requirement: str
+    governing_work_order: str
+    candidate_scope: str
+    required_evidence: tuple[str, ...]
+    execution_procedure: str
+    expected_result: str
+    failure_conditions: tuple[str, ...]
+    generated_evidence: str
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationCertificationTestExecutionRecord:
+    execution_identifier: str
+    test_identifier: str
+    candidate_identifier: str
+    status: AuthorizationComplianceStatus
+    inspected_artifacts: tuple[str, ...]
+    evidence_identifier: str
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationPersistenceVerificationRecord:
+    verification_identifier: str
+    candidate_identifier: str
+    committed_state_digest: str
+    replay_state_digest: str
+    recovery_state_digest: str
+    replay_semantically_equivalent: bool
+    recovery_semantically_equivalent: bool
+    interruption_boundary_verified: bool
+    idempotency_verified: bool
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationCertificationInfrastructureRecord:
+    infrastructure_identifier: str
+    candidate_identifier: str
+    manifest_digest: str
+    package_digest: str
+    registry_count: int
+    test_count: int
+    evidence_count: int
+    metric_count: int
+    decision: AuthorizationComplianceStatus
+    closure_controls: tuple[str, ...]
+    findings: tuple[str, ...]
+    deterministic_digest: str
+
+
+@dataclass(frozen=True)
+class AuthorizationCompliancePackage:
+    package_identifier: str
+    governing_doctrine: str
+    order_coverage: tuple[str, ...]
+    candidate_compliance: AuthorizationCandidateComplianceRecord
+    remediation_package_digest: str
+    canonical_artifacts: tuple[AuthorizationArtifactRecord, ...]
+    requirements: tuple[AuthorizationRequirementRecord, ...]
+    certification_tests: tuple[AuthorizationCertificationTestRecord, ...]
+    certification_test_executions: tuple[AuthorizationCertificationTestExecutionRecord, ...]
+    operational_evidence: tuple[AuthorizationOperationalEvidenceRecord, ...]
+    persistence_verification: AuthorizationPersistenceVerificationRecord
+    certification_infrastructure: AuthorizationCertificationInfrastructureRecord
+    final_status: AuthorizationComplianceStatus
+    findings: tuple[str, ...]
     deterministic_digest: str
 
 
@@ -687,6 +781,323 @@ class AuthorizationsOfficeRemediationSupport:
         return replace(record, deterministic_digest=_digest(record))
 
 
+class AuthorizationsOfficeComplianceSupport:
+    """Executable support for the revised AUTH-RM-001-001 through 001-008 set."""
+
+    order_coverage = tuple(f"AUTH-RM-001-{index:03d}" for index in range(1, 9))
+
+    audit_domains = (
+        "Office Authority",
+        "Constitutional Objects",
+        "Inputs",
+        "Outputs",
+        "Lifecycles",
+        "Validation",
+        "Deterministic Decisions",
+        "Persistence",
+        "Replay",
+        "Recovery",
+        "Configuration",
+        "Registries",
+        "Traceability",
+        "Certification Infrastructure",
+        "Constitutional Invariants",
+    )
+
+    def __init__(self, remediation_support: AuthorizationsOfficeRemediationSupport | None = None) -> None:
+        self.remediation_support = remediation_support or AuthorizationsOfficeRemediationSupport()
+
+    def build_compliance_package(self, repository_root: str | Path | None = None) -> AuthorizationCompliancePackage:
+        root = Path(repository_root).resolve() if repository_root is not None else Path(__file__).resolve().parents[3]
+        remediation = self.remediation_support.build_remediation_package(root)
+        candidate_compliance = self.validate_candidate_compliance(root, remediation)
+        canonical_artifacts = self.reconcile_canonical_implementation(remediation)
+        requirements = self.materialize_compliance_requirements(remediation)
+        certification_tests = self.materialize_certification_tests(requirements)
+        test_executions = self.execute_certification_tests(
+            remediation,
+            candidate_compliance,
+            canonical_artifacts,
+            requirements,
+            certification_tests,
+        )
+        persistence = self.verify_persistence_replay_recovery(remediation)
+        infrastructure = self.assemble_certification_infrastructure(
+            remediation,
+            requirements,
+            certification_tests,
+            test_executions,
+            persistence,
+        )
+        findings = (
+            candidate_compliance.findings
+            + tuple(finding for record in canonical_artifacts for finding in record.findings)
+            + tuple(finding for record in requirements for finding in record.findings)
+            + tuple(finding for record in test_executions for finding in record.findings)
+            + persistence.findings
+            + infrastructure.findings
+        )
+        status = AuthorizationComplianceStatus.PASSING if not findings else AuthorizationComplianceStatus.FAILING
+        package = AuthorizationCompliancePackage(
+            package_identifier=f"AUTH-RM-001-COMPLIANCE-{remediation.candidate.source_tree_digest[:12].upper()}",
+            governing_doctrine=AUTH_RM_001_VERSION,
+            order_coverage=self.order_coverage,
+            candidate_compliance=candidate_compliance,
+            remediation_package_digest=remediation.deterministic_digest,
+            canonical_artifacts=canonical_artifacts,
+            requirements=requirements,
+            certification_tests=certification_tests,
+            certification_test_executions=test_executions,
+            operational_evidence=tuple(
+                record for record in remediation.operational_evidence if record.producing_work_order in self.order_coverage
+            ),
+            persistence_verification=persistence,
+            certification_infrastructure=infrastructure,
+            final_status=status,
+            findings=tuple(sorted(set(findings))),
+            deterministic_digest="",
+        )
+        return replace(package, deterministic_digest=_digest(package))
+
+    def validate_candidate_compliance(
+        self,
+        root: Path,
+        remediation: AuthorizationRemediationPackage,
+    ) -> AuthorizationCandidateComplianceRecord:
+        auth_scope_status = _auth_scope_status(root)
+        artifact_findings = tuple(finding for artifact in remediation.artifacts for finding in artifact.findings)
+        evidence_ids = {record.candidate_identifier for record in remediation.operational_evidence}
+        findings = ()
+        if not remediation.candidate.admissible_snapshot:
+            findings += remediation.candidate.findings
+        if artifact_findings:
+            findings += artifact_findings
+        if evidence_ids != {remediation.candidate.candidate_identifier}:
+            findings += ("operational evidence is not bound to exactly one immutable candidate",)
+        record = AuthorizationCandidateComplianceRecord(
+            compliance_identifier=f"AUTH-CANDIDATE-COMPLIANCE-{remediation.candidate.source_tree_digest[:12].upper()}",
+            candidate_identifier=remediation.candidate.candidate_identifier,
+            commit_identifier=remediation.candidate.commit_identifier,
+            auth_scope_status=auth_scope_status or "clean",
+            immutable_commit_bound=remediation.candidate.admissible_snapshot,
+            artifact_inventory_bound=not artifact_findings and bool(remediation.artifacts),
+            evidence_candidate_aligned=evidence_ids == {remediation.candidate.candidate_identifier},
+            findings=tuple(sorted(set(findings))),
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def reconcile_canonical_implementation(
+        self,
+        remediation: AuthorizationRemediationPackage,
+    ) -> tuple[AuthorizationArtifactRecord, ...]:
+        canonical = tuple(record for record in remediation.artifacts if record.operational_status == "canonical_required")
+        paths = {record.canonical_path for record in canonical}
+        duplicate_paths = tuple(sorted(path for path in paths if sum(1 for record in canonical if record.canonical_path == path) > 1))
+        rows = []
+        for record in canonical:
+            findings = record.findings
+            if duplicate_paths:
+                findings += tuple(f"duplicate canonical artifact: {path}" for path in duplicate_paths)
+            rows.append(replace(record, findings=tuple(sorted(set(findings))), deterministic_digest=""))
+        return tuple(replace(record, deterministic_digest=_digest(record)) for record in rows)
+
+    def materialize_compliance_requirements(
+        self,
+        remediation: AuthorizationRemediationPackage,
+    ) -> tuple[AuthorizationRequirementRecord, ...]:
+        requirements_by_order = {record.governing_work_order: record for record in remediation.requirements}
+        records = []
+        for order in self.order_coverage:
+            source = requirements_by_order[order]
+            findings = source.findings
+            if not all(
+                (
+                    source.implementation_artifact,
+                    source.executable_schema,
+                    source.evaluation_rule,
+                    source.executable_test,
+                    source.evidence_reference,
+                    source.metric_identifier,
+                )
+            ):
+                findings += ("constitutional requirement lacks complete operational linkage",)
+            records.append(replace(source, findings=tuple(sorted(set(findings))), deterministic_digest=""))
+        return tuple(replace(record, deterministic_digest=_digest(record)) for record in records)
+
+    def materialize_certification_tests(
+        self,
+        requirements: tuple[AuthorizationRequirementRecord, ...],
+    ) -> tuple[AuthorizationCertificationTestRecord, ...]:
+        records = []
+        for requirement in requirements:
+            record = AuthorizationCertificationTestRecord(
+                test_identifier=requirement.executable_test,
+                governing_requirement=requirement.requirement_identifier,
+                governing_work_order=requirement.governing_work_order,
+                candidate_scope="immutable_authorizations_office_candidate",
+                required_evidence=(
+                    requirement.evidence_reference,
+                    requirement.implementation_artifact,
+                    requirement.executable_schema,
+                    requirement.evaluation_rule,
+                ),
+                execution_procedure=f"execute deterministic compliance verification for {requirement.governing_work_order}",
+                expected_result="PASS with no unresolved constitutional findings",
+                failure_conditions=(
+                    "missing immutable candidate binding",
+                    "missing canonical artifact",
+                    "missing executable evidence",
+                    "nondeterministic replay or recovery",
+                    "open traceability orphan",
+                ),
+                generated_evidence=requirement.evidence_reference,
+                deterministic_digest="",
+            )
+            records.append(replace(record, deterministic_digest=_digest(record)))
+        return tuple(records)
+
+    def execute_certification_tests(
+        self,
+        remediation: AuthorizationRemediationPackage,
+        candidate_compliance: AuthorizationCandidateComplianceRecord,
+        artifacts: tuple[AuthorizationArtifactRecord, ...],
+        requirements: tuple[AuthorizationRequirementRecord, ...],
+        tests: tuple[AuthorizationCertificationTestRecord, ...],
+    ) -> tuple[AuthorizationCertificationTestExecutionRecord, ...]:
+        artifact_paths = tuple(sorted(record.canonical_path for record in artifacts))
+        traceability_by_requirement = {
+            record.requirement_identifier: record for record in remediation.traceability
+        }
+        evidence_by_requirement = {
+            record.producing_work_order: record for record in remediation.operational_evidence
+        }
+        records = []
+        for test in tests:
+            requirement = next(record for record in requirements if record.requirement_identifier == test.governing_requirement)
+            trace = traceability_by_requirement.get(requirement.requirement_identifier)
+            evidence = evidence_by_requirement.get(requirement.governing_work_order)
+            findings = candidate_compliance.findings + requirement.findings
+            if trace is None or trace.zero_orphan_status != "closed":
+                findings += ("traceability is not closed for certification test",)
+            if evidence is None:
+                findings += ("required operational evidence is missing",)
+            elif not (
+                evidence.positive_path_verified
+                and evidence.negative_path_verified
+                and evidence.replay_verified
+                and evidence.recovery_verified
+            ):
+                findings += ("operational evidence does not cover positive, negative, replay, and recovery paths",)
+            status = AuthorizationComplianceStatus.PASSING if not findings else AuthorizationComplianceStatus.FAILING
+            record = AuthorizationCertificationTestExecutionRecord(
+                execution_identifier=f"AUTH-TEST-EXEC-{test.test_identifier[-3:]}",
+                test_identifier=test.test_identifier,
+                candidate_identifier=remediation.candidate.candidate_identifier,
+                status=status,
+                inspected_artifacts=artifact_paths,
+                evidence_identifier=test.generated_evidence,
+                findings=tuple(sorted(set(findings))),
+                deterministic_digest="",
+            )
+            records.append(replace(record, deterministic_digest=_digest(record)))
+        return tuple(records)
+
+    def verify_persistence_replay_recovery(
+        self,
+        remediation: AuthorizationRemediationPackage,
+    ) -> AuthorizationPersistenceVerificationRecord:
+        persistence = remediation.persistence
+        interruption_boundary = bool(persistence.committed_records) and persistence.checkpoint_digest == persistence.recovery_digest
+        idempotency = len(persistence.committed_records) == len(tuple(dict.fromkeys(persistence.committed_records)))
+        findings = ()
+        if not persistence.replay_equivalent:
+            findings += ("replay is not semantically equivalent",)
+        if not persistence.recovery_equivalent:
+            findings += ("recovery is not semantically equivalent",)
+        if not interruption_boundary:
+            findings += ("interruption boundary is not durably recoverable",)
+        if not idempotency:
+            findings += ("committed authorization state is not idempotent",)
+        record = AuthorizationPersistenceVerificationRecord(
+            verification_identifier=f"AUTH-PRR-{remediation.candidate.source_tree_digest[:12].upper()}",
+            candidate_identifier=remediation.candidate.candidate_identifier,
+            committed_state_digest=persistence.checkpoint_digest,
+            replay_state_digest=persistence.replay_digest,
+            recovery_state_digest=persistence.recovery_digest,
+            replay_semantically_equivalent=persistence.replay_equivalent,
+            recovery_semantically_equivalent=persistence.recovery_equivalent,
+            interruption_boundary_verified=interruption_boundary,
+            idempotency_verified=idempotency,
+            findings=findings,
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def assemble_certification_infrastructure(
+        self,
+        remediation: AuthorizationRemediationPackage,
+        requirements: tuple[AuthorizationRequirementRecord, ...],
+        tests: tuple[AuthorizationCertificationTestRecord, ...],
+        test_executions: tuple[AuthorizationCertificationTestExecutionRecord, ...],
+        persistence: AuthorizationPersistenceVerificationRecord,
+    ) -> AuthorizationCertificationInfrastructureRecord:
+        findings = (
+            tuple(finding for record in requirements for finding in record.findings)
+            + tuple(finding for record in test_executions for finding in record.findings)
+            + persistence.findings
+        )
+        missing_domains = tuple(
+            domain for domain in self.audit_domains if not self._domain_is_covered(domain, remediation, tests, test_executions)
+        )
+        findings += tuple(f"certification domain not covered: {domain}" for domain in missing_domains)
+        manifest = _digest((remediation.candidate, remediation.artifacts, requirements, tests, test_executions))
+        package = _digest((manifest, remediation.operational_evidence, persistence, remediation.traceability))
+        decision = AuthorizationComplianceStatus.PASSING if not findings else AuthorizationComplianceStatus.FAILING
+        record = AuthorizationCertificationInfrastructureRecord(
+            infrastructure_identifier=f"AUTH-CERT-INFRA-{remediation.candidate.source_tree_digest[:12].upper()}",
+            candidate_identifier=remediation.candidate.candidate_identifier,
+            manifest_digest=manifest,
+            package_digest=package,
+            registry_count=len(remediation.registries),
+            test_count=len(tests),
+            evidence_count=len(remediation.operational_evidence),
+            metric_count=len(requirements),
+            decision=decision,
+            closure_controls=("fail_closed_on_missing_candidate", "fail_closed_on_missing_evidence", "zero_orphan_traceability_required"),
+            findings=tuple(sorted(set(findings))),
+            deterministic_digest="",
+        )
+        return replace(record, deterministic_digest=_digest(record))
+
+    def _domain_is_covered(
+        self,
+        domain: str,
+        remediation: AuthorizationRemediationPackage,
+        tests: tuple[AuthorizationCertificationTestRecord, ...],
+        test_executions: tuple[AuthorizationCertificationTestExecutionRecord, ...],
+    ) -> bool:
+        if domain == "Office Authority":
+            return any(record.decision == AuthorizationDecisionStatus.AUTHORIZED for record in remediation.sample_decisions)
+        if domain in {"Constitutional Objects", "Inputs", "Outputs", "Lifecycles", "Validation"}:
+            return bool(remediation.objects and remediation.contracts and remediation.lifecycle)
+        if domain == "Deterministic Decisions":
+            return len({record.deterministic_digest for record in remediation.sample_decisions}) == len(remediation.sample_decisions)
+        if domain in {"Persistence", "Replay", "Recovery"}:
+            return remediation.persistence.replay_equivalent and remediation.persistence.recovery_equivalent
+        if domain in {"Configuration", "Registries"}:
+            return bool(remediation.registries)
+        if domain == "Traceability":
+            return all(record.zero_orphan_status == "closed" for record in remediation.traceability)
+        if domain == "Certification Infrastructure":
+            return bool(tests and test_executions) and all(
+                record.status == AuthorizationComplianceStatus.PASSING for record in test_executions
+            )
+        if domain == "Constitutional Invariants":
+            return all(not record.findings for record in remediation.operational_evidence)
+        return False
+
+
 def _git(root: Path, *args: str) -> str:
     try:
         return subprocess.check_output(["git", "-C", str(root), *args], text=True, stderr=subprocess.DEVNULL).strip()
@@ -710,3 +1121,19 @@ def _file_digest(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def _auth_scope_status(root: Path) -> str:
+    paths = (
+        "src/argos/control_panel/authorization_authority.py",
+        "src/argos/control_panel/__init__.py",
+        "Tests/test_authorization_authority.py",
+        "Tests/test_authorization_authority_compliance.py",
+        "Documentation/AUTH-RM-001-001_TO_013_REMEDIATION_EVIDENCE.md",
+        "Documentation/AUTH-RM-001-001_TO_008_COMPLIANCE_EVIDENCE.md",
+    )
+    status_lines = []
+    for line in (_git(root, "status", "--short", "--", *paths) or "").splitlines():
+        if line.strip():
+            status_lines.append(line.strip())
+    return "; ".join(sorted(status_lines))
