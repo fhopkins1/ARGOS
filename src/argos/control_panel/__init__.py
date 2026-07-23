@@ -41,6 +41,7 @@ from .authority_promotion_closure import TC_002_VERSION, ArtifactProvenanceRecor
 from .authorization_authority import AUTH_RM_001_VERSION, AuthorizationArtifactRecord, AuthorizationCandidateComplianceRecord, AuthorizationCandidateRecord, AuthorizationCertificationInfrastructureRecord, AuthorizationCertificationRecord, AuthorizationCertificationTestExecutionRecord, AuthorizationCertificationTestRecord, AuthorizationCompliancePackage, AuthorizationComplianceStatus, AuthorizationContractRecord, AuthorizationDecisionRecord, AuthorizationDecisionStatus, AuthorizationLifecycleRecord, AuthorizationLifecycleState, AuthorizationObjectRecord, AuthorizationOperationalEvidenceRecord, AuthorizationPersistenceRecord, AuthorizationPersistenceVerificationRecord, AuthorizationReadiness, AuthorizationReadinessReview, AuthorizationRegistryRecord, AuthorizationRemediationPackage, AuthorizationRequirementRecord, AuthorizationTraceabilityRecord, AuthorizationsOfficeComplianceSupport, AuthorizationsOfficeRemediationSupport
 from .authorization_operational_readiness import AUTH_RM_002_VERSION, AuthorizationCandidateGovernanceRecord, AuthorizationCandidateState, AuthorizationEvidenceTraceabilityRecord, AuthorizationExecutableRequirementRecord, AuthorizationIndependentCertificationTest, AuthorizationOperationalReadinessPackage, AuthorizationOperationalStateVerification, AuthorizationReadinessDecision, AuthorizationTestCategory, AuthorizationsOfficeOperationalReadinessSupport
 from .authorization_independent_certification import AUTH_RM_003_VERSION, AuthorizationArtifactFingerprint, AuthorizationAuthenticStateRecord, AuthorizationCertificationDecision, AuthorizationImmutableCandidatePackage, AuthorizationIndependentCertificationPackage, AuthorizationRepositoryTraceabilityNode, AuthorizationReproducibilityRecord, AuthorizationVerificationResult, AuthorizationVerificationRule, AuthorizationVerificationVerdict, AuthorizationsOfficeIndependentCertificationSupport
+from .authorization_portable_certification import AUTH_RM_004_VERSION, AuthorizationBidirectionalTraceabilityRecord, AuthorizationCandidateIntegrityRecord, AuthorizationCleanRoomRunRecord, AuthorizationClosureDiscoveryRecord, AuthorizationDurablePersistenceRecord, AuthorizationEnvironmentLockRecord, AuthorizationEvidenceLifecycleState, AuthorizationEvidenceProvenanceRecord, AuthorizationPortableCertificationPackage, AuthorizationPortableManifest, AuthorizationPortableManifestEntry, AuthorizationPortableRuleExecutionRecord, AuthorizationPortableStatus, AuthorizationReplayRecoveryRecord, AuthorizationsOfficePortableCertificationSupport
 from .canonical_bridge_dynamic_coverage import TC_003_VERSION, BridgeCertificationGateStatus, BridgeCoverageSummary, BridgeExecutionPlanRow, CanonicalBridgeCoverageRow, DynamicCoverageStatus, execute_tc003_certification
 from .orphan_office_closure import TC_004_VERSION, OfficeCertificationMatrixStatus, OfficeClosureRejectionCode, OfficeDisposition, OfficeDispositionRecord, execute_tc004_certification
 from .trace_closure_final import TC_005_VERSION, TC_006_VERSION, TC_007_VERSION, TC_008_VERSION, AuthoritativeTruthClass, ProofDomainAttack, ResidualFindingClosure, SyntheticTruthTaxonomy, TCRejectionCode, UnsafeFallbackClosure, execute_tc005_certification, execute_tc006_certification, execute_tc007_certification, execute_tc008_certification
@@ -330,6 +331,22 @@ __all__ = [
     "AuthorizationVerificationRule",
     "AuthorizationVerificationVerdict",
     "AuthorizationsOfficeIndependentCertificationSupport",
+    "AUTH_RM_004_VERSION",
+    "AuthorizationBidirectionalTraceabilityRecord",
+    "AuthorizationCandidateIntegrityRecord",
+    "AuthorizationCleanRoomRunRecord",
+    "AuthorizationClosureDiscoveryRecord",
+    "AuthorizationDurablePersistenceRecord",
+    "AuthorizationEnvironmentLockRecord",
+    "AuthorizationEvidenceLifecycleState",
+    "AuthorizationEvidenceProvenanceRecord",
+    "AuthorizationPortableCertificationPackage",
+    "AuthorizationPortableManifest",
+    "AuthorizationPortableManifestEntry",
+    "AuthorizationPortableRuleExecutionRecord",
+    "AuthorizationPortableStatus",
+    "AuthorizationReplayRecoveryRecord",
+    "AuthorizationsOfficePortableCertificationSupport",
     "TC_003_VERSION",
     "BridgeCertificationGateStatus",
     "BridgeCoverageSummary",
