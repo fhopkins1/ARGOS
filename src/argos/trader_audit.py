@@ -163,6 +163,7 @@ def run_trader_audit(candidate_zip: Path, output_root: Path, *, run_id: str = "p
     tests = (
         "Tests.test_trader_constitutional_governance",
         "Tests.test_trader_rm002_constitution",
+        "Tests.test_trader_rm002a_publication",
         "Tests.test_trader_readiness",
         "Tests.test_trader_group_framework",
         "Tests.test_trade_execution_office",
@@ -309,6 +310,7 @@ def _traceability(manifest: Mapping[str, Any]) -> Mapping[str, Any]:
         "TRADER-IC-000-002": "src/argos/trader_audit.py",
         "TRADER-GOV-001-012": "src/argos/trader/constitutional_governance.py",
         "TRADER-RM-002-001-016": "src/argos/trader/rm002_constitution.py",
+        "TRADER-RM-002A-001-012": "src/argos/trader/rm002a_publication.py",
         "TRADER-IC-000-006": "src/argos/trader/readiness.py",
         "TRADER-IC-000-007": "src/argos/trader_audit.py",
         "TRADER-IC-000-009": "TRADER_AUDITOR_README.md",
