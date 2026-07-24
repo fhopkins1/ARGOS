@@ -1,0 +1,899 @@
+[
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-002",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "implementation_obligation": "PR-S04-OBL-001",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S01",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "7ed3f4322fc97e031c78a97b85499224dc5b74dc5362b67d3aafe659cf9bbac1",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-001",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-002",
+    "requirement_id": "PR-S03-REQ-BASE-001",
+    "requirement_identity": "governance_constitutional_baseline",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-003",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-6334CAA6A9DC"
+    ],
+    "implementation_obligation": "PR-S04-OBL-002",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S02",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8174a2d8207ee4f860ca4e2266fadaa88350f1f9879804af7f1714af090efdaa",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-002",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-003",
+    "requirement_id": "PR-S03-REQ-BASE-002",
+    "requirement_identity": "object_lifecycle_constitutional_baseline",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-004",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-1E58B4A8B021"
+    ],
+    "implementation_obligation": "PR-S04-OBL-003",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8cda3eb5df898222aaa8d5f44c778e7db9423c15fbffff09f900de9fce4d7ad6",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-003",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-004",
+    "requirement_id": "PR-S03-REQ-BASE-003",
+    "requirement_identity": "interface_evidence_traceability_constitutional_baseline",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-006",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-06AD430811F6"
+    ],
+    "implementation_obligation": "PR-S04-OBL-004",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "69f6a1cb271d96632fde0f7eeaa5f455a8c78d48c70bb807aa34c867fa6e898e",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-004",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-006",
+    "requirement_id": "PR-S03-IF-001-REQ",
+    "requirement_identity": "trader_execution_fill_intake_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-008",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-5F574EC5C56D"
+    ],
+    "implementation_obligation": "PR-S04-OBL-005",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "12a472ac428988dbed07c84703b2bcb0e453b4a581fffe17e4ba9b7ccafd4bba",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-005",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-008",
+    "requirement_id": "PR-S03-IF-002-REQ",
+    "requirement_identity": "broker_position_truth_intake_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-003-003",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "implementation_obligation": "PR-S04-OBL-006",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "38c0d8844647993bd1d1b92f5f17dd46ed428338b2b60b5dc739a3e14718d779",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-006",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-011",
+    "requirement_id": "PR-S03-IF-003-REQ",
+    "requirement_identity": "authorization_reference_intake_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-UNIT-Tests-test_or004_position_lifecycle",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-24DC358F970D"
+    ],
+    "implementation_obligation": "PR-S04-OBL-007",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "bf36f30bf9a6dec90e1026e0d53d3119f8340fbe4f405df3647dbf5d076e22f9",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-007",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-012",
+    "requirement_id": "PR-S03-IF-004-REQ",
+    "requirement_identity": "risk_reference_intake_interface_requirement",
+    "verifier_identity": "Tests.test_or004_position_lifecycle"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-UNIT-Tests-test_position_management_office",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "implementation_obligation": "PR-S04-OBL-008",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "c7898f18dd249b374a1833944d38eeddf70146cd940bf3f3e855c78d64db67d1",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-008",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-013",
+    "requirement_id": "PR-S03-IF-005-REQ",
+    "requirement_identity": "monitoring_observation_intake_interface_requirement",
+    "verifier_identity": "Tests.test_position_management_office"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-001",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-290227A442CE"
+    ],
+    "implementation_obligation": "PR-S04-OBL-009",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8f09cd05bd42d9af1a30c1632c9ec4b6fc8afabd271a0bb45b17913e9a4b8e4e",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-009",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-001",
+    "requirement_id": "PR-S03-IF-006-REQ",
+    "requirement_identity": "exit_decision_intake_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-002",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-3C010EAEC4A4"
+    ],
+    "implementation_obligation": "PR-S04-OBL-010",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "7ed3f4322fc97e031c78a97b85499224dc5b74dc5362b67d3aafe659cf9bbac1",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-010",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-002",
+    "requirement_id": "PR-S03-IF-007-REQ",
+    "requirement_identity": "closed_position_truth_publication_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-003",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-A97C990C556F"
+    ],
+    "implementation_obligation": "PR-S04-OBL-011",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8174a2d8207ee4f860ca4e2266fadaa88350f1f9879804af7f1714af090efdaa",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-011",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-003",
+    "requirement_id": "PR-S03-IF-008-REQ",
+    "requirement_identity": "performance_truth_publication_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-004",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-A4D0A1741D58"
+    ],
+    "implementation_obligation": "PR-S04-OBL-012",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8cda3eb5df898222aaa8d5f44c778e7db9423c15fbffff09f900de9fce4d7ad6",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-012",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-004",
+    "requirement_id": "PR-S03-IF-009-REQ",
+    "requirement_identity": "historian_custody_transfer_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-006",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-88A06A01B4BF"
+    ],
+    "implementation_obligation": "PR-S04-OBL-013",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "69f6a1cb271d96632fde0f7eeaa5f455a8c78d48c70bb807aa34c867fa6e898e",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-013",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-006",
+    "requirement_id": "PR-S03-IF-010-REQ",
+    "requirement_identity": "commander_escalation_notice_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-002-008",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-B80BFF0A11B6"
+    ],
+    "implementation_obligation": "PR-S04-OBL-014",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "12a472ac428988dbed07c84703b2bcb0e453b4a581fffe17e4ba9b7ccafd4bba",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-014",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-008",
+    "requirement_id": "PR-S03-IF-011-REQ",
+    "requirement_identity": "infrastructure_persistence_contract_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "SUPPORTED_BY_EXECUTED_PASS_EVIDENCE",
+    "execution_identity": "PR-S05-EXEC-003-003",
+    "finding_identity": [],
+    "implementation_artifact": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "implementation_obligation": "PR-S04-OBL-015",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "38c0d8844647993bd1d1b92f5f17dd46ed428338b2b60b5dc739a3e14718d779",
+    "proof_completeness": "COMPLETE",
+    "proof_disposition": "PASS",
+    "proof_id": "PR-S06-PROOF-015",
+    "proof_sufficiency": "SUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-011",
+    "requirement_id": "PR-S03-IF-012-REQ",
+    "requirement_identity": "sentinel_observation_reference_interface_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-UNIT-Tests-test_or004_position_lifecycle",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-6334CAA6A9DC"
+    ],
+    "implementation_obligation": "PR-S04-OBL-016",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "bf36f30bf9a6dec90e1026e0d53d3119f8340fbe4f405df3647dbf5d076e22f9",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-016",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-012",
+    "requirement_id": "PR-S03-REC-001-REQ",
+    "requirement_identity": "broker_position_truth_reconciliation_requirement",
+    "verifier_identity": "Tests.test_or004_position_lifecycle"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-UNIT-Tests-test_position_management_office",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-1E58B4A8B021"
+    ],
+    "implementation_obligation": "PR-S04-OBL-017",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "c7898f18dd249b374a1833944d38eeddf70146cd940bf3f3e855c78d64db67d1",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-017",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-013",
+    "requirement_id": "PR-S03-REC-002-REQ",
+    "requirement_identity": "trader_position_truth_reconciliation_requirement",
+    "verifier_identity": "Tests.test_position_management_office"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-001",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-06AD430811F6"
+    ],
+    "implementation_obligation": "PR-S04-OBL-018",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8f09cd05bd42d9af1a30c1632c9ec4b6fc8afabd271a0bb45b17913e9a4b8e4e",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-018",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-001",
+    "requirement_id": "PR-S03-REC-003-REQ",
+    "requirement_identity": "fill_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-002",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-5F574EC5C56D"
+    ],
+    "implementation_obligation": "PR-S04-OBL-019",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "7ed3f4322fc97e031c78a97b85499224dc5b74dc5362b67d3aafe659cf9bbac1",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-019",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-002",
+    "requirement_id": "PR-S03-REC-004-REQ",
+    "requirement_identity": "account_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-003",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "implementation_obligation": "PR-S04-OBL-020",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8174a2d8207ee4f860ca4e2266fadaa88350f1f9879804af7f1714af090efdaa",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-020",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-003",
+    "requirement_id": "PR-S03-REC-005-REQ",
+    "requirement_identity": "authorization_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-004",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-24DC358F970D"
+    ],
+    "implementation_obligation": "PR-S04-OBL-021",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8cda3eb5df898222aaa8d5f44c778e7db9423c15fbffff09f900de9fce4d7ad6",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-021",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-004",
+    "requirement_id": "PR-S03-REC-006-REQ",
+    "requirement_identity": "monitoring_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-006",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "implementation_obligation": "PR-S04-OBL-022",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "69f6a1cb271d96632fde0f7eeaa5f455a8c78d48c70bb807aa34c867fa6e898e",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-022",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-006",
+    "requirement_id": "PR-S03-REC-007-REQ",
+    "requirement_identity": "exit_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-008",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-290227A442CE"
+    ],
+    "implementation_obligation": "PR-S04-OBL-023",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "12a472ac428988dbed07c84703b2bcb0e453b4a581fffe17e4ba9b7ccafd4bba",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-023",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-008",
+    "requirement_id": "PR-S03-REC-008-REQ",
+    "requirement_identity": "closed_position_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-003-003",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-3C010EAEC4A4"
+    ],
+    "implementation_obligation": "PR-S04-OBL-024",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "38c0d8844647993bd1d1b92f5f17dd46ed428338b2b60b5dc739a3e14718d779",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-024",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-011",
+    "requirement_id": "PR-S03-REC-009-REQ",
+    "requirement_identity": "historical_truth_reconciliation_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-UNIT-Tests-test_or004_position_lifecycle",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-A97C990C556F"
+    ],
+    "implementation_obligation": "PR-S04-OBL-025",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "bf36f30bf9a6dec90e1026e0d53d3119f8340fbe4f405df3647dbf5d076e22f9",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-025",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-012",
+    "requirement_id": "PR-S03-REQ-EVD-001",
+    "requirement_identity": "position_creation_evidence_requirement",
+    "verifier_identity": "Tests.test_or004_position_lifecycle"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-UNIT-Tests-test_position_management_office",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-A4D0A1741D58"
+    ],
+    "implementation_obligation": "PR-S04-OBL-026",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "c7898f18dd249b374a1833944d38eeddf70146cd940bf3f3e855c78d64db67d1",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-026",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-013",
+    "requirement_id": "PR-S03-REQ-EVD-002",
+    "requirement_identity": "lifecycle_transition_evidence_requirement",
+    "verifier_identity": "Tests.test_position_management_office"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-001",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-88A06A01B4BF"
+    ],
+    "implementation_obligation": "PR-S04-OBL-027",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8f09cd05bd42d9af1a30c1632c9ec4b6fc8afabd271a0bb45b17913e9a4b8e4e",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-027",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-001",
+    "requirement_id": "PR-S03-REQ-EVD-003",
+    "requirement_identity": "quantity_mutation_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-002",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-B80BFF0A11B6"
+    ],
+    "implementation_obligation": "PR-S04-OBL-028",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "7ed3f4322fc97e031c78a97b85499224dc5b74dc5362b67d3aafe659cf9bbac1",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-028",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-002",
+    "requirement_id": "PR-S03-REQ-EVD-004",
+    "requirement_identity": "cost_basis_mutation_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-003",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "implementation_obligation": "PR-S04-OBL-029",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8174a2d8207ee4f860ca4e2266fadaa88350f1f9879804af7f1714af090efdaa",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-029",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-003",
+    "requirement_id": "PR-S03-REQ-EVD-005",
+    "requirement_identity": "reconciliation_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-004",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-6334CAA6A9DC"
+    ],
+    "implementation_obligation": "PR-S04-OBL-030",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "8cda3eb5df898222aaa8d5f44c778e7db9423c15fbffff09f900de9fce4d7ad6",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-030",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-004",
+    "requirement_id": "PR-S03-REQ-EVD-006",
+    "requirement_identity": "correction_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-006",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-1E58B4A8B021"
+    ],
+    "implementation_obligation": "PR-S04-OBL-031",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "69f6a1cb271d96632fde0f7eeaa5f455a8c78d48c70bb807aa34c867fa6e898e",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-031",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-006",
+    "requirement_id": "PR-S03-REQ-EVD-007",
+    "requirement_identity": "anomaly_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-002-008",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-06AD430811F6"
+    ],
+    "implementation_obligation": "PR-S04-OBL-032",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "12a472ac428988dbed07c84703b2bcb0e453b4a581fffe17e4ba9b7ccafd4bba",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-032",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-008",
+    "requirement_id": "PR-S03-REQ-EVD-008",
+    "requirement_identity": "supersession_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "behavioral_disposition": "BLOCKED_BY_OPEN_FINDINGS",
+    "execution_identity": "PR-S05-EXEC-003-003",
+    "finding_identity": [
+      "PR-S05-FIND-005",
+      "PR-S05-FIND-007",
+      "PR-S05-FIND-009",
+      "PR-S05-FIND-010"
+    ],
+    "implementation_artifact": [
+      "PR-S04-IMPL-5F574EC5C56D"
+    ],
+    "implementation_obligation": "PR-S04-OBL-033",
+    "lineage": {
+      "authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "regeneration_authority": "POSITION-REGISTRY-RM-001-S06-B06-001",
+      "source_behavioral_baseline": "POSITION-REGISTRY-RM-001-S05",
+      "superseded_proof_identity": "prior Position Registry ECS003 proof where present"
+    },
+    "normalized_evidence_identity": "38c0d8844647993bd1d1b92f5f17dd46ed428338b2b60b5dc739a3e14718d779",
+    "proof_completeness": "INCOMPLETE",
+    "proof_disposition": "FAIL",
+    "proof_id": "PR-S06-PROOF-033",
+    "proof_sufficiency": "INSUFFICIENT",
+    "raw_evidence_identity": "PR-S06-EVD-011",
+    "requirement_id": "PR-S03-REQ-EVD-009",
+    "requirement_identity": "archival_evidence_requirement",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  }
+]
