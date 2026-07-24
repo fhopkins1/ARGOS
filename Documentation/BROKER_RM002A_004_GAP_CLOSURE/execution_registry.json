@@ -1,0 +1,267 @@
+[
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "fills": 0,
+      "rejection_code": "INVALID_QUANTITY"
+    },
+    "execution_id": "BROKER-RM002A-004-001",
+    "finding": "",
+    "obligation": "malformed request rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "expected": "INVALID_ORDER_TYPE",
+      "rejection_code": "INVALID_ORDER_TYPE"
+    },
+    "execution_id": "BROKER-RM002A-004-002",
+    "finding": "",
+    "obligation": "unsupported request rejection"
+  },
+  {
+    "disposition": "VERIFIED_FAIL",
+    "evidence": {
+      "exception": "duplicate broker order: ORD-GAP-003",
+      "first_accepted": true
+    },
+    "execution_id": "BROKER-RM002A-004-003",
+    "finding": "duplicate request detection raises during rejected-order recording instead of returning a deterministic rejection",
+    "obligation": "duplicate request detection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "filled_quantity": 0.1,
+      "remaining_quantity": 0.9,
+      "status": "partially_filled",
+      "truth_records": 1
+    },
+    "execution_id": "BROKER-RM002A-004-004",
+    "finding": "",
+    "obligation": "partial-fill processing"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "cancelled_status": "cancelled",
+      "queued_status": "working",
+      "terminal_advance_events": 0,
+      "terminal_status": "cancelled"
+    },
+    "execution_id": "BROKER-RM002A-004-005",
+    "finding": "",
+    "obligation": "cancellation request processing"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "new_events": 0,
+      "status_after_advance": "cancelled",
+      "status_before_advance": "cancelled"
+    },
+    "execution_id": "BROKER-RM002A-004-006",
+    "finding": "",
+    "obligation": "terminal-state mutation rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "exception": "unknown broker order: ORD-MISSING"
+    },
+    "execution_id": "BROKER-RM002A-004-007",
+    "finding": "",
+    "obligation": "missing-state detection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "fills": 0,
+      "status": "queued",
+      "truth_records": 0
+    },
+    "execution_id": "BROKER-RM002A-004-008",
+    "finding": "",
+    "obligation": "prohibition against fabricated acknowledgement or fill truth"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-009",
+    "finding": "",
+    "obligation": "request timeout handling"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-010",
+    "finding": "",
+    "obligation": "acknowledgement after timeout"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-011",
+    "finding": "",
+    "obligation": "retry initiation"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-012",
+    "finding": "",
+    "obligation": "retry exhaustion"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-013",
+    "finding": "",
+    "obligation": "replay after restart"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-014",
+    "finding": "",
+    "obligation": "durable restart recovery"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-015",
+    "finding": "",
+    "obligation": "late fill processing"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-016",
+    "finding": "",
+    "obligation": "correction-event processing"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-017",
+    "finding": "",
+    "obligation": "contradictory broker-event reconciliation"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-018",
+    "finding": "",
+    "obligation": "modification uncertainty handling"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-019",
+    "finding": "",
+    "obligation": "partial-write recovery"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-020",
+    "finding": "",
+    "obligation": "corrupted-state recovery"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-021",
+    "finding": "",
+    "obligation": "persistence restoration"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "evidence": {
+      "implemented_harness": false,
+      "reason": "no executable implementation path in authoritative Broker inventory"
+    },
+    "execution_id": "BROKER-RM002A-004-022",
+    "finding": "",
+    "obligation": "unresolved anomaly escalation"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "evidence": {
+      "fixture_available": false,
+      "reason": "no bounded broker-event sequencing fixture in current verifier population"
+    },
+    "execution_id": "BROKER-RM002A-004-023",
+    "finding": "",
+    "obligation": "delayed acknowledgement processing"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "evidence": {
+      "fixture_available": false,
+      "reason": "no bounded broker-event sequencing fixture in current verifier population"
+    },
+    "execution_id": "BROKER-RM002A-004-024",
+    "finding": "",
+    "obligation": "duplicate broker-event handling"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "evidence": {
+      "fixture_available": false,
+      "reason": "no bounded broker-event sequencing fixture in current verifier population"
+    },
+    "execution_id": "BROKER-RM002A-004-025",
+    "finding": "",
+    "obligation": "out-of-order event processing"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "evidence": {
+      "fixture_available": false,
+      "reason": "no bounded broker-event sequencing fixture in current verifier population"
+    },
+    "execution_id": "BROKER-RM002A-004-026",
+    "finding": "",
+    "obligation": "cancellation uncertainty handling"
+  }
+]

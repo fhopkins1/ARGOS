@@ -1,0 +1,184 @@
+[
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-001",
+    "obligation": "malformed request rejection"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-002",
+    "obligation": "unsupported request rejection"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_FAIL",
+    "execution_id": "BROKER-RM002A-004-003",
+    "obligation": "duplicate request detection"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-004",
+    "obligation": "partial-fill processing"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-005",
+    "obligation": "cancellation request processing"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-006",
+    "obligation": "terminal-state mutation rejection"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-007",
+    "obligation": "missing-state detection"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-008",
+    "obligation": "prohibition against fabricated acknowledgement or fill truth"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-009",
+    "obligation": "request timeout handling"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-010",
+    "obligation": "acknowledgement after timeout"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-011",
+    "obligation": "retry initiation"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-012",
+    "obligation": "retry exhaustion"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-013",
+    "obligation": "replay after restart"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-014",
+    "obligation": "durable restart recovery"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-015",
+    "obligation": "late fill processing"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-016",
+    "obligation": "correction-event processing"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-017",
+    "obligation": "contradictory broker-event reconciliation"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-018",
+    "obligation": "modification uncertainty handling"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-019",
+    "obligation": "partial-write recovery"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-020",
+    "obligation": "corrupted-state recovery"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-021",
+    "obligation": "persistence restoration"
+  },
+  {
+    "dependency_classification": "BROKER_IMPLEMENTATION",
+    "dependency_honored": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-022",
+    "obligation": "unresolved anomaly escalation"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-023",
+    "obligation": "delayed acknowledgement processing"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-024",
+    "obligation": "duplicate broker-event handling"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-025",
+    "obligation": "out-of-order event processing"
+  },
+  {
+    "dependency_classification": "BOUNDED_VERIFIER_EXECUTION",
+    "dependency_honored": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-026",
+    "obligation": "cancellation uncertainty handling"
+  }
+]

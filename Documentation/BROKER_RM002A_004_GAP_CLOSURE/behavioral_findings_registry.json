@@ -1,0 +1,154 @@
+[
+  {
+    "blocking": true,
+    "disposition": "VERIFIED_FAIL",
+    "execution_id": "BROKER-RM002A-004-003",
+    "finding": "duplicate request detection raises during rejected-order recording instead of returning a deterministic rejection",
+    "finding_id": "BROKER-RM002A-004-FINDING-003",
+    "obligation": "duplicate request detection"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-009",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-009",
+    "obligation": "request timeout handling"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-010",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-010",
+    "obligation": "acknowledgement after timeout"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-011",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-011",
+    "obligation": "retry initiation"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-012",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-012",
+    "obligation": "retry exhaustion"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-013",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-013",
+    "obligation": "replay after restart"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-014",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-014",
+    "obligation": "durable restart recovery"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-015",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-015",
+    "obligation": "late fill processing"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-016",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-016",
+    "obligation": "correction-event processing"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-017",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-017",
+    "obligation": "contradictory broker-event reconciliation"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-018",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-018",
+    "obligation": "modification uncertainty handling"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-019",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-019",
+    "obligation": "partial-write recovery"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-020",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-020",
+    "obligation": "corrupted-state recovery"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-021",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-021",
+    "obligation": "persistence restoration"
+  },
+  {
+    "blocking": true,
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-022",
+    "finding": "no executable implementation path in authoritative Broker inventory",
+    "finding_id": "BROKER-RM002A-004-FINDING-022",
+    "obligation": "unresolved anomaly escalation"
+  },
+  {
+    "blocking": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-023",
+    "finding": "no bounded broker-event sequencing fixture in current verifier population",
+    "finding_id": "BROKER-RM002A-004-FINDING-023",
+    "obligation": "delayed acknowledgement processing"
+  },
+  {
+    "blocking": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-024",
+    "finding": "no bounded broker-event sequencing fixture in current verifier population",
+    "finding_id": "BROKER-RM002A-004-FINDING-024",
+    "obligation": "duplicate broker-event handling"
+  },
+  {
+    "blocking": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-025",
+    "finding": "no bounded broker-event sequencing fixture in current verifier population",
+    "finding_id": "BROKER-RM002A-004-FINDING-025",
+    "obligation": "out-of-order event processing"
+  },
+  {
+    "blocking": true,
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-026",
+    "finding": "no bounded broker-event sequencing fixture in current verifier population",
+    "finding_id": "BROKER-RM002A-004-FINDING-026",
+    "obligation": "cancellation uncertainty handling"
+  }
+]

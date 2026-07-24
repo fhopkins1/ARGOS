@@ -1,0 +1,158 @@
+[
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-001",
+    "governing_requirement": "BROKER-RM-002A-004::malformed_request_rejection",
+    "obligation": "malformed request rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-002",
+    "governing_requirement": "BROKER-RM-002A-004::unsupported_request_rejection",
+    "obligation": "unsupported request rejection"
+  },
+  {
+    "disposition": "VERIFIED_FAIL",
+    "execution_id": "BROKER-RM002A-004-003",
+    "governing_requirement": "BROKER-RM-002A-004::duplicate_request_detection",
+    "obligation": "duplicate request detection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-004",
+    "governing_requirement": "BROKER-RM-002A-004::partial_fill_processing",
+    "obligation": "partial-fill processing"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-005",
+    "governing_requirement": "BROKER-RM-002A-004::cancellation_request_processing",
+    "obligation": "cancellation request processing"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-006",
+    "governing_requirement": "BROKER-RM-002A-004::terminal_state_mutation_rejection",
+    "obligation": "terminal-state mutation rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-007",
+    "governing_requirement": "BROKER-RM-002A-004::missing_state_detection",
+    "obligation": "missing-state detection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "execution_id": "BROKER-RM002A-004-008",
+    "governing_requirement": "BROKER-RM-002A-004::prohibition_against_fabricated_acknowledgement_or_fill_truth",
+    "obligation": "prohibition against fabricated acknowledgement or fill truth"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-009",
+    "governing_requirement": "BROKER-RM-002A-004::request_timeout_handling",
+    "obligation": "request timeout handling"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-010",
+    "governing_requirement": "BROKER-RM-002A-004::acknowledgement_after_timeout",
+    "obligation": "acknowledgement after timeout"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-011",
+    "governing_requirement": "BROKER-RM-002A-004::retry_initiation",
+    "obligation": "retry initiation"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-012",
+    "governing_requirement": "BROKER-RM-002A-004::retry_exhaustion",
+    "obligation": "retry exhaustion"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-013",
+    "governing_requirement": "BROKER-RM-002A-004::replay_after_restart",
+    "obligation": "replay after restart"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-014",
+    "governing_requirement": "BROKER-RM-002A-004::durable_restart_recovery",
+    "obligation": "durable restart recovery"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-015",
+    "governing_requirement": "BROKER-RM-002A-004::late_fill_processing",
+    "obligation": "late fill processing"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-016",
+    "governing_requirement": "BROKER-RM-002A-004::correction_event_processing",
+    "obligation": "correction-event processing"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-017",
+    "governing_requirement": "BROKER-RM-002A-004::contradictory_broker_event_reconciliation",
+    "obligation": "contradictory broker-event reconciliation"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-018",
+    "governing_requirement": "BROKER-RM-002A-004::modification_uncertainty_handling",
+    "obligation": "modification uncertainty handling"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-019",
+    "governing_requirement": "BROKER-RM-002A-004::partial_write_recovery",
+    "obligation": "partial-write recovery"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-020",
+    "governing_requirement": "BROKER-RM-002A-004::corrupted_state_recovery",
+    "obligation": "corrupted-state recovery"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-021",
+    "governing_requirement": "BROKER-RM-002A-004::persistence_restoration",
+    "obligation": "persistence restoration"
+  },
+  {
+    "disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "execution_id": "BROKER-RM002A-004-022",
+    "governing_requirement": "BROKER-RM-002A-004::unresolved_anomaly_escalation",
+    "obligation": "unresolved anomaly escalation"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-023",
+    "governing_requirement": "BROKER-RM-002A-004::delayed_acknowledgement_processing",
+    "obligation": "delayed acknowledgement processing"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-024",
+    "governing_requirement": "BROKER-RM-002A-004::duplicate_broker_event_handling",
+    "obligation": "duplicate broker-event handling"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-025",
+    "governing_requirement": "BROKER-RM-002A-004::out_of_order_event_processing",
+    "obligation": "out-of-order event processing"
+  },
+  {
+    "disposition": "VERIFIER_ERROR",
+    "execution_id": "BROKER-RM002A-004-026",
+    "governing_requirement": "BROKER-RM-002A-004::cancellation_uncertainty_handling",
+    "obligation": "cancellation uncertainty handling"
+  }
+]
