@@ -1,0 +1,97 @@
+[
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "partial consumption enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-D-001.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-6207FCFB37953945",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-D-001",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "exhausted Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-D-002.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-E5C8085ECB782E96",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-D-002",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "replay rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-D-003.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-3B6BA09C34F368D8",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:replay verification class"
+    ],
+    "item_id": "B04-D-003",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "Existing proof registry contains restart/recovery verification classes for Authorization consumption.",
+    "disposition": "PASS",
+    "domain": "restart reconstruction valid",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-D-004.json",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:restart verification class"
+    ],
+    "item_id": "B04-D-004",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "Existing proof registry contains restart/recovery verification classes for Authorization consumption.",
+    "disposition": "PASS",
+    "domain": "recovery reconstruction valid",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-D-005.json",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:recovery verification class"
+    ],
+    "item_id": "B04-D-005",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  }
+]

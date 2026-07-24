@@ -1,0 +1,135 @@
+[
+  {
+    "detail": "",
+    "disposition": "PASS",
+    "domain": "valid fresh Authorization accepted",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-001.json",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-001",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "required Trader evidence is stale",
+    "disposition": "PASS",
+    "domain": "stale Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-002.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-002",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "authority is not effective or has expired",
+    "disposition": "PASS",
+    "domain": "expired Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-003.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-003",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "revoked Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-004.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-F4832EBD62ECE639",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-C-004",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "invalidated Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-005.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-FDE2039473E6299F",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-C-005",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "superseded Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-006.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-5E3DCDA72A1616E2",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-C-006",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "authority is not effective or has expired",
+    "disposition": "PASS",
+    "domain": "in-flight expiry handled correctly",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-C-007.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-007",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  }
+]

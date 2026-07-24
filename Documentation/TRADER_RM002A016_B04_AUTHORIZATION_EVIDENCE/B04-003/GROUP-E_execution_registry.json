@@ -1,0 +1,116 @@
+[
+  {
+    "detail": "materially conflicting controlling authority",
+    "disposition": "PASS",
+    "domain": "conflicting Authorization versions fail closed",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-E-001.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-001",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "missing required authority: risk_certification",
+    "disposition": "PASS",
+    "domain": "Risk conflict handled correctly",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-E-002.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-002",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "missing required authority: operating_mode_authority",
+    "disposition": "PASS",
+    "domain": "mode conflict handled correctly",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-E-003.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-003",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "materially conflicting controlling authority",
+    "disposition": "PASS",
+    "domain": "Live Execution conflict handled correctly",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-E-004.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-004",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "materially conflicting controlling authority",
+    "disposition": "PASS",
+    "domain": "Emergency conflict handled correctly",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-E-005.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-005",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "No Trader-owned executable verifier for this Authorizations dependency was located in the frozen population.",
+    "disposition": "FAIL",
+    "domain": "recertification triggers correctly",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-003/raw_evidence/B04-E-006.json",
+    "expected": "REJECTED",
+    "finding_id": "B04-FINDING-E07BDCE1A9D9EE0C",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:DOCTRINE_SUPERSESSION_REGISTER"
+    ],
+    "item_id": "B04-E-006",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "ENTERPRISE_PRECONDITION"
+  }
+]

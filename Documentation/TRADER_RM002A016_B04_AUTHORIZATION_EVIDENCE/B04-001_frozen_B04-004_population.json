@@ -1,0 +1,546 @@
+[
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "valid Authorization accepted",
+    "expected": "ACCEPTED",
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-A-001",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "valid Authorization accepted shall be deterministically verified under GROUP-A.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "valid_execution_authorization"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "invalid issuer rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:ExecutiveAuthorizationValidator"
+    ],
+    "item_id": "B04-A-002",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "invalid issuer rejected shall be deterministically verified under GROUP-A.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "invalid_issuer_contract"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "malformed Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-A-003",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "malformed Authorization rejected shall be deterministically verified under GROUP-A.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "malformed_authorization"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "altered Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:ExecutiveAuthorizationValidator"
+    ],
+    "item_id": "B04-A-004",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "altered Authorization rejected shall be deterministically verified under GROUP-A.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "altered_authorization_payload"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "wrong account rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-B-001",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "wrong account rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "wrong_account"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "wrong portfolio rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "item_id": "B04-B-002",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "wrong portfolio rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "wrong_portfolio"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "wrong workflow rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "item_id": "B04-B-003",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "wrong workflow rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "wrong_workflow"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "wrong instrument rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "item_id": "B04-B-004",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "wrong instrument rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "wrong_instrument"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "prohibited side rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/order_management.py:OrderConstructionValidationEngine"
+    ],
+    "item_id": "B04-B-005",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "prohibited side rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "prohibited_side"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "exceeded quantity rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-B-006",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "exceeded quantity rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "exceeded_quantity"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "exceeded notional rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authorization consumption"
+    ],
+    "item_id": "B04-B-007",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "exceeded notional rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "exceeded price tolerance rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-B-008",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "exceeded price tolerance rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "exceeded_price_tolerance"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "prohibited order type rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "item_id": "B04-B-009",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "prohibited order type rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "prohibited_order_type"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "prohibited venue rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-B",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:VenueSelectionEngine"
+    ],
+    "item_id": "B04-B-010",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "prohibited venue rejected shall be deterministically verified under GROUP-B.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "valid fresh Authorization accepted",
+    "expected": "ACCEPTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-001",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "valid fresh Authorization accepted shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "fresh_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "stale Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-002",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "stale Authorization rejected shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "stale_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "expired Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-003",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "expired Authorization rejected shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "expired_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "revoked Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-C-004",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "revoked Authorization rejected shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "invalidated Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-C-005",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "invalidated Authorization rejected shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "superseded Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-C-006",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "superseded Authorization rejected shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "in-flight expiry handled correctly",
+    "expected": "REJECTED",
+    "group": "GROUP-C",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B04-C-007",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "in-flight expiry handled correctly shall be deterministically verified under GROUP-C.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "expired_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "partial consumption enforced",
+    "expected": "REJECTED",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-D-001",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "partial consumption enforced shall be deterministically verified under GROUP-D.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "exhausted Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:Authority Consumption Lifecycle"
+    ],
+    "item_id": "B04-D-002",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "exhausted Authorization rejected shall be deterministically verified under GROUP-D.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "replay rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:replay verification class"
+    ],
+    "item_id": "B04-D-003",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "replay rejected shall be deterministically verified under GROUP-D.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "unsupported_dependency_gap"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "restart reconstruction valid",
+    "expected": "ACCEPTED",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:restart verification class"
+    ],
+    "item_id": "B04-D-004",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "restart reconstruction valid shall be deterministically verified under GROUP-D.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "proof_registry_positive"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "recovery reconstruction valid",
+    "expected": "ACCEPTED",
+    "group": "GROUP-D",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:recovery verification class"
+    ],
+    "item_id": "B04-D-005",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "recovery reconstruction valid shall be deterministically verified under GROUP-D.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "proof_registry_positive"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "conflicting Authorization versions fail closed",
+    "expected": "REJECTED",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-001",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "conflicting Authorization versions fail closed shall be deterministically verified under GROUP-E.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "conflicting_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "Risk conflict handled correctly",
+    "expected": "REJECTED",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-002",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "Risk conflict handled correctly shall be deterministically verified under GROUP-E.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "risk_conflict"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "mode conflict handled correctly",
+    "expected": "REJECTED",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-003",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "mode conflict handled correctly shall be deterministically verified under GROUP-E.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "mode_conflict"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "Live Execution conflict handled correctly",
+    "expected": "REJECTED",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-004",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "Live Execution conflict handled correctly shall be deterministically verified under GROUP-E.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "conflicting_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "Emergency conflict handled correctly",
+    "expected": "REJECTED",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B04-E-005",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "Emergency conflict handled correctly shall be deterministically verified under GROUP-E.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "conflicting_authority"
+  },
+  {
+    "batch_id": "TRADER-RM-002A-016-B04",
+    "classification_frozen": true,
+    "domain": "recertification triggers correctly",
+    "expected": "REJECTED",
+    "group": "GROUP-E",
+    "implementation_artifacts": [
+      "src/argos/trader/rm002_constitution.py:DOCTRINE_SUPERSESSION_REGISTER"
+    ],
+    "item_id": "B04-E-006",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "proof_recalculated": false,
+    "requirement": "recertification triggers correctly shall be deterministically verified under GROUP-E.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "ENTERPRISE_PRECONDITION",
+    "verification_method": "unsupported_dependency_gap"
+  }
+]

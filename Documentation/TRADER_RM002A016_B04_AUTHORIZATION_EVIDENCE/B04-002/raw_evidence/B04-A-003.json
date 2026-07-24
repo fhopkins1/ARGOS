@@ -1,0 +1,36 @@
+{
+  "batch_id": "TRADER-RM-002A-016-B04",
+  "detail": "execution requires a CDR document reference",
+  "disposition": "PASS",
+  "duration_ms": 0,
+  "expected": "REJECTED",
+  "forbidden_disposition_used": false,
+  "manifest": {
+    "authorizations_implementation_digest": "9cb19d870439a0943d8e74e59d92df626553f0819764a79bd6e8537abd8bfad2",
+    "batch_identifier": "TRADER-RM-002A-016-B04",
+    "candidate_digest": "1a52ac85146d912f5287ea51b6a190415ebc610c",
+    "code_modified_after_execution_start": false,
+    "fixture_digest": "511ab72784ec18a2dd62e9e6ab6474c9f7d3142492911aced0b639640c406ad4",
+    "generated_at_utc": "2026-07-24T02:18:39.997369Z",
+    "trader_authorization_consumption_digest": "05372a8f57f1044dd626377ffbf36f101e713f89f72edfa9e011ba3bb6971ebd",
+    "version": "TRADER-RM-002A-016-B04/1.0.0",
+    "working_tree_clean_for_b04_paths": true,
+    "working_tree_digest": "44022160182b203d17db8edddc76640ab0276cd9"
+  },
+  "observed": "REJECTED",
+  "scenario": {
+    "domain": "malformed Authorization rejected",
+    "expected": "REJECTED",
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-A-003",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement": "malformed Authorization rejected shall be deterministically verified under GROUP-A.",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "malformed_authorization"
+  },
+  "terminal_disposition": true
+}

@@ -1,0 +1,78 @@
+[
+  {
+    "detail": "ExecutionAuthorizationVerifier accepted valid DOC-bound authorization.",
+    "disposition": "PASS",
+    "domain": "valid Authorization accepted",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-002/raw_evidence/B04-A-001.json",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-A-001",
+    "observed": "ACCEPTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "Trader Group requires a Command Decision Record",
+    "disposition": "PASS",
+    "domain": "invalid issuer rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-002/raw_evidence/B04-A-002.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:ExecutiveAuthorizationValidator"
+    ],
+    "item_id": "B04-A-002",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  },
+  {
+    "detail": "execution requires a CDR document reference",
+    "disposition": "PASS",
+    "domain": "malformed Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-002/raw_evidence/B04-A-003.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/trade_execution.py:ExecutionAuthorizationVerifier"
+    ],
+    "item_id": "B04-A-003",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DIRECT"
+  },
+  {
+    "detail": "Trader Group requires an approved Executive authorization",
+    "disposition": "PASS",
+    "domain": "altered Authorization rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B04_AUTHORIZATION_EVIDENCE/B04-002/raw_evidence/B04-A-004.json",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "GROUP-A",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:ExecutiveAuthorizationValidator"
+    ],
+    "item_id": "B04-A-004",
+    "observed": "REJECTED",
+    "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0003",
+    "scope_changed": false,
+    "scope_classification": "TRADER_DEPENDENCY"
+  }
+]

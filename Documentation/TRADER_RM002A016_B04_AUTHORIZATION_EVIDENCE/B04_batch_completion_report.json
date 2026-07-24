@@ -1,0 +1,42 @@
+{
+  "batch": "B04-004",
+  "candidate_digest": "1a52ac85146d912f5287ea51b6a190415ebc610c",
+  "coverage": {
+    "missing_evidence": 0,
+    "missing_proof_mapping": 0,
+    "missing_requirement_mapping": 0,
+    "open_findings": 9,
+    "participating_executions": 32,
+    "unresolved_scope": 0
+  },
+  "open_findings": 9,
+  "participating_executions": {
+    "CONSTITUTIONAL_CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 9,
+    "INVALID_EVIDENCE": 0,
+    "NOT_APPLICABLE": 0,
+    "PASS": 23,
+    "TIMEOUT": 0
+  },
+  "proof_objects_updated": 1,
+  "proof_registry": [
+    {
+      "disposition": "FAIL",
+      "proof_id": "TRADER-PROOF-FB44CF495AF28822",
+      "updated_by": "B04-004"
+    }
+  ],
+  "scope_changes": [],
+  "stale_evidence_removed": 0,
+  "statements": [
+    "all B04 executions reconciled",
+    "all proof mappings valid",
+    "all requirement mappings valid",
+    "no unresolved classifications remain",
+    "requirement-level graph preserved",
+    "Authorizations series complete",
+    "Batch B05 ready"
+  ],
+  "updated_candidate_verdict": "FAIL"
+}
