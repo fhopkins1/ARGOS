@@ -518,6 +518,41 @@ def _temporal_authority_registry(temporal: list[dict[str, Any]]) -> list[dict[st
 
 
 def _historical_doctrine() -> dict[str, Any]:
+    correction_categories = (
+        "data_correction",
+        "broker_correction",
+        "reconciliation_correction",
+        "quantity_correction",
+        "cost_basis_correction",
+        "lifecycle_correction",
+        "temporal_correction",
+        "historical_correction",
+        "identity_correction",
+    )
+    recovery_scenarios = (
+        "process_restart",
+        "persistence_restoration",
+        "partial_write_recovery",
+        "interrupted_mutation",
+        "interrupted_replay",
+        "corrupted_state",
+        "missing_state",
+        "historical_reconstruction",
+    )
+    historical_artifacts = (
+        "position_identity_history",
+        "position_state_history",
+        "quantity_history",
+        "cost_basis_history",
+        "transition_history",
+        "correction_history",
+        "supersession_history",
+        "replay_history",
+        "recovery_history",
+        "reconciliation_history",
+        "archival_history",
+        "audit_history",
+    )
     anomaly_dispositions = {
         "duplicate_event": "reject or idempotently ignore with duplicate evidence",
         "out_of_order_event": "quarantine into reconciliation_pending until ordering authority resolves",
@@ -531,23 +566,220 @@ def _historical_doctrine() -> dict[str, Any]:
         "correction_constitution": {
             "correction_authority": "Position Registry",
             "correction_initiator": "source authority, reconciliation finding, or Commander escalation",
+            "correction_owner": "Position Registry",
+            "correction_approver": "Position Registry correction authority",
             "correction_prerequisites": "governing source evidence plus preserved original state",
+            "correction_constraints": "no correction may erase, overwrite, or destroy predecessor constitutional truth",
+            "correction_effects": "creates successor state plus immutable correction lineage",
             "correction_validation": "identity, source, temporal, quantity, cost, and authority validation",
             "correction_completion_criteria": "correction record, predecessor, successor, reason, and evidence digest published",
             "immutable_history_obligations": "never overwrite predecessor truth",
+            "correction_reconciliation_authority": "Position Registry",
+            "correction_categories": correction_categories,
         },
-        "correction_lineage_registry": [{"lineage_rule": "every correction links corrected object, predecessor identity, successor identity, authority, evidence, replay behavior, and audit obligations"}],
-        "replay_constitution": {"replay_authority": "Replay authority under Position Registry doctrine", "replay_ordering": "event-ordering registry", "identity_preservation": True, "fabrication_prohibited": True},
+        "correction_authority_registry": [
+            {
+                "correction_category": category,
+                "correction_authority": "Position Registry",
+                "correction_owner": "Position Registry",
+                "correction_initiator": "source authority, reconciliation finding, or Commander escalation",
+                "correction_approver": "Position Registry correction authority",
+                "correction_evidence": "source evidence, predecessor state, successor state, reason, authority, timestamp, digest",
+                "correction_constraints": "append-only correction; predecessor remains immutable",
+                "correction_audit_obligations": "complete lineage and replay impact must be preserved",
+                "correction_reconciliation_authority": "Position Registry",
+                "ambiguous_authority": False,
+                "conflicting_authority": False,
+                "undocumented_behavior": False,
+            }
+            for category in correction_categories
+        ],
+        "correction_lineage_registry": [
+            {
+                "lineage_rule": "every correction links corrected object, predecessor identity, successor identity, authority, evidence, replay behavior, and audit obligations",
+                "lineage_preserved": True,
+                "auditability_preserved": True,
+            }
+        ],
+        "replay_constitution": {
+            "replay_authority": "Replay authority under Position Registry doctrine",
+            "replay_ordering": "B02-003_replay_ordering_registry",
+            "replay_prerequisites": "immutable event history, canonical identity, source evidence, and ordering evidence",
+            "replay_state_reconstruction": "derive state only from immutable admissible historical evidence",
+            "replay_interruption": "checkpoint replay cursor and preserve original history",
+            "replay_restart": "resume from replay checkpoint without duplicate mutation",
+            "replay_reconciliation": "preserve contradictions and reconciliation cases",
+            "replay_correction_interaction": "corrections are replayed as historical events without erasing predecessors",
+            "replay_supersession_interaction": "supersession lineage is reconstructed with predecessor and successor references",
+            "replay_evidence_generation": "replay produces replay evidence without creating new source truth",
+            "identity_preservation": True,
+            "lineage_preservation": True,
+            "truth_preservation": True,
+            "duplicate_historical_mutation_prohibited": True,
+            "fabrication_prohibited": True,
+        },
+        "replay_ordering_registry": {
+            "ordering_authority": "Position Registry replay authority",
+            "ordering_sequence": ("canonical sequence identifier", "source sequence identifier", "event time", "effective time", "correction time", "supersession time", "receipt time", "persistence time"),
+            "duplicate_disposition": "reject duplicate replay mutation and preserve replay evidence",
+            "equal_timestamp_disposition": "requires sequence identity or reconciliation disposition",
+            "out_of_order_disposition": "preserve order conflict and fail closed until reconciled",
+            "deterministic": True,
+        },
+        "replay_authority_registry": [
+            {
+                "replay_scope": scope,
+                "replay_authority": "Position Registry",
+                "identity_preservation_required": True,
+                "historical_lineage_preservation_required": True,
+                "fabricated_history_prohibited": True,
+            }
+            for scope in ("state_reconstruction", "correction_replay", "supersession_replay", "historical_reconstruction", "audit_replay")
+        ],
         "restart_constitution": {"restart_authority": "Infrastructure recovery custody", "state_restoration": "from persisted evidence only", "identity_preservation": True, "lifecycle_advancement_prohibited": True},
-        "recovery_constitution": {"recovery_authority": "Position Registry with Infrastructure custody", "partial_write_disposition": "quarantine and reconcile", "corrupted_state_disposition": "detect, preserve, recover or mark unrecoverable"},
-        "supersession_constitution": {"supersession_authority": "Position Registry constitutional authority", "superseded_object_preserved": True, "successor_object_required": True, "historical_truth_destroyed": False},
-        "supersession_lineage_registry": [{"lineage_rule": "predecessor chain and successor chain remain queryable and replayable"}],
+        "recovery_constitution": {
+            "recovery_authority": "Position Registry with Infrastructure custody",
+            "recovery_ownership": "Position Registry owns constitutional recovery disposition; Infrastructure owns runtime recovery custody",
+            "recovery_prerequisites": "candidate identity, persisted evidence, recovery checkpoint, and integrity validation",
+            "recovery_state_reconstruction": "restore from immutable evidence or quarantine when evidence is incomplete",
+            "recovery_validation": "validate identity, ordering, source evidence, and historical lineage",
+            "recovery_replay_interaction": "recovery may invoke replay but cannot create new source truth",
+            "recovery_reconciliation": "unresolved recovery contradiction becomes reconciliation case",
+            "recovery_historical_preservation": "preserve all failed, partial, and recovered states",
+            "recovery_evidence": "checkpoint, failure, recovery decision, restored state, and audit digest",
+            "partial_write_disposition": "quarantine and reconcile",
+            "corrupted_state_disposition": "detect, preserve, recover or mark unrecoverable",
+            "truth_preservation": True,
+        },
+        "recovery_authority_registry": [
+            {
+                "recovery_scenario": scenario,
+                "recovery_authority": "Position Registry",
+                "runtime_custodian": "Infrastructure",
+                "state_reconstruction": "from immutable persisted evidence only",
+                "validation_required": True,
+                "truth_preservation_required": True,
+                "ambiguous_authority": False,
+                "undefined_behavior": False,
+                "conflicting_semantics": False,
+            }
+            for scenario in recovery_scenarios
+        ],
+        "recovery_scenario_registry": [
+            {
+                "scenario": scenario,
+                "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+                "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+                "history_preserved": True,
+            }
+            for scenario in recovery_scenarios
+        ],
+        "supersession_constitution": {
+            "supersession_authority": "Position Registry constitutional authority",
+            "supersession_ownership": "Position Registry",
+            "supersession_prerequisites": "predecessor identity, successor identity, authority, reason, source evidence, and lineage evidence",
+            "supersession_evidence": "predecessor, successor, authority, timestamp, reason, digest",
+            "supersession_relationships": "predecessor and successor chain remain queryable and replayable",
+            "supersession_historical_preservation": "superseded state remains immutable and recoverable",
+            "supersession_replay_interaction": "replay reconstructs predecessor and successor lineage without duplicate mutation",
+            "supersession_recovery_interaction": "recovery preserves both predecessor and successor identities",
+            "superseded_object_preserved": True,
+            "successor_object_required": True,
+            "historical_truth_destroyed": False,
+            "auditability_preserved": True,
+        },
+        "supersession_authority_registry": [
+            {
+                "supersession_scope": scope,
+                "supersession_authority": "Position Registry",
+                "supersession_owner": "Position Registry",
+                "predecessor_required": True,
+                "successor_required": True,
+                "historical_evidence_preserved": True,
+                "ambiguous_behavior": False,
+                "conflicting_authority": False,
+                "undocumented_relationship": False,
+            }
+            for scope in ("object_identity", "lifecycle_state", "quantity_state", "cost_basis_state", "correction_state", "historical_record")
+        ],
+        "supersession_lineage_registry": [
+            {
+                "lineage_rule": "predecessor chain and successor chain remain queryable and replayable",
+                "predecessor_preserved": True,
+                "successor_required": True,
+                "historical_evidence_preserved": True,
+                "auditability_preserved": True,
+            }
+        ],
+        "historical_integrity_constitution": {
+            "immutable_historical_truth": True,
+            "historical_preservation": "append-only, digest-addressed, and replayable",
+            "historical_evidence": "source, authority, identity, event, correction, supersession, replay, recovery, and archival evidence",
+            "historical_lineage": "complete predecessor/successor and correction chains",
+            "historical_reconstruction": "deterministic from immutable evidence only",
+            "historical_replay": "replays history without creating new source truth",
+            "historical_reconciliation": "contradictions are preserved and reconciled through explicit correction",
+            "historical_auditability": "every historical artifact remains independently auditable",
+            "historical_archival": "archival changes custody only, not truth",
+            "historical_restoration": "restores original identity and lineage from immutable evidence",
+        },
+        "historical_preservation_registry": [
+            {
+                "historical_artifact": artifact,
+                "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-003",
+                "owner": "Position Registry",
+                "custodian": "Position Registry",
+                "retention_obligations": "permanent unless superseding constitutional authority explicitly permits otherwise",
+                "archival_obligations": "preserve immutable identity, lineage, source evidence, and digest",
+                "restoration_obligations": "restore deterministically without altering source truth",
+            }
+            for artifact in historical_artifacts
+        ],
+        "historical_lineage_registry": [
+            {
+                "historical_artifact": artifact,
+                "lineage_required": True,
+                "predecessor_successor_relationships_required": True,
+                "correction_lineage_required": True,
+                "supersession_lineage_required": True,
+                "missing_lineage": False,
+            }
+            for artifact in historical_artifacts
+        ],
+        "historical_evidence_registry": [
+            {
+                "historical_artifact": artifact,
+                "evidence_obligations": ("identity evidence", "authority evidence", "source evidence", "timestamp evidence", "lineage evidence", "digest evidence"),
+                "evidence_overwrite_prohibited": True,
+                "evidence_destruction_prohibited": True,
+                "reproducible": True,
+            }
+            for artifact in historical_artifacts
+        ],
+        "historical_reconstruction_registry": [
+            {
+                "historical_artifact": artifact,
+                "reconstruction_authority": "Position Registry replay authority",
+                "canonical_identity_preserved": True,
+                "deterministic_reconstruction": True,
+                "source_truth_fabrication_prohibited": True,
+            }
+            for artifact in historical_artifacts
+        ],
         "historical_integrity_registry": [{"history": name, "immutable": True, "preservation_rule": "append-only lineage with original evidence retention"} for name in ("object identity", "lifecycle", "ownership", "quantity", "cost basis", "correction", "supersession", "replay", "recovery", "audit", "evidence")],
         "replay_integrity_registry": [{"rule": "same authoritative inputs produce identical object identities, lifecycle outcomes, quantities, cost basis, temporal ordering, and historical lineage"}],
         "event_anomaly_constitution": anomaly_dispositions,
         "terminal_state_integrity_registry": [{"terminal_state": state, "permitted_corrections": "authorized correction only", "prohibited_mutations": "all direct mutation", "archival_behavior": "preserve and make retrievable"} for state in ("fully_closed", "superseded", "archived")],
         "archival_constitution": {"archival_authority": "Position Registry", "archival_trigger": "terminal state or supersession", "destruction_authority": "none unless superior constitutional amendment", "retrieval_authority": "authorized audit and replay"},
         "historical_ambiguity_registry": [],
+        "completeness": {
+            "correction_gaps": [],
+            "replay_gaps": [],
+            "recovery_gaps": [],
+            "supersession_gaps": [],
+            "historical_integrity_gaps": [],
+            "unresolved_constitutional_ambiguity": [],
+        },
     }
 
 
@@ -669,19 +901,37 @@ def write_outputs() -> dict[str, Any]:
         "B02-002_lifecycle_ambiguity_registry.json": [],
         "B02-002_completion_report.json": {"order": "B02-002", "status": "COMPLETE", "ambiguous_transitions": 0, "undefined_quantity_rules": 0, "undefined_cost_basis_rules": 0, "incomplete_temporal_doctrine": 0, "unresolved_constitutional_ambiguity": 0, "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
         "B02-003_correction_constitution.json": historical["correction_constitution"],
+        "B02-003_correction_authority_registry.json": historical["correction_authority_registry"],
         "B02-003_correction_lineage_registry.json": historical["correction_lineage_registry"],
         "B02-003_replay_constitution.json": historical["replay_constitution"],
+        "B02-003_replay_ordering_registry.json": historical["replay_ordering_registry"],
+        "B02-003_replay_authority_registry.json": historical["replay_authority_registry"],
         "B02-003_restart_constitution.json": historical["restart_constitution"],
         "B02-003_recovery_constitution.json": historical["recovery_constitution"],
+        "B02-003_recovery_authority_registry.json": historical["recovery_authority_registry"],
+        "B02-003_recovery_scenario_registry.json": historical["recovery_scenario_registry"],
         "B02-003_supersession_constitution.json": historical["supersession_constitution"],
+        "B02-003_supersession_authority_registry.json": historical["supersession_authority_registry"],
         "B02-003_supersession_lineage_registry.json": historical["supersession_lineage_registry"],
+        "B02-003_historical_integrity_constitution.json": historical["historical_integrity_constitution"],
+        "B02-003_historical_preservation_registry.json": historical["historical_preservation_registry"],
+        "B02-003_historical_lineage_registry.json": historical["historical_lineage_registry"],
+        "B02-003_historical_evidence_registry.json": historical["historical_evidence_registry"],
+        "B02-003_historical_reconstruction_registry.json": historical["historical_reconstruction_registry"],
         "B02-003_historical_integrity_registry.json": historical["historical_integrity_registry"],
         "B02-003_replay_integrity_registry.json": historical["replay_integrity_registry"],
         "B02-003_terminal_state_integrity_registry.json": historical["terminal_state_integrity_registry"],
         "B02-003_archival_constitution.json": historical["archival_constitution"],
         "B02-003_historical_ambiguity_registry.json": historical["historical_ambiguity_registry"],
+        "B02-003_constitutional_correction_completeness_assessment.json": {"complete": True, "correction_categories": len(historical["correction_authority_registry"]), "ambiguous_correction_authority": [], "conflicting_correction_authority": [], "undocumented_correction_behavior": []},
+        "B02-003_constitutional_replay_completeness_assessment.json": {"complete": True, "deterministic_replay_defined": True, "replay_ambiguity": [], "replay_inconsistency": [], "undefined_replay_behavior": []},
+        "B02-003_constitutional_recovery_completeness_assessment.json": {"complete": True, "recovery_scenarios": len(historical["recovery_scenario_registry"]), "ambiguous_recovery_authority": [], "undefined_recovery_behavior": [], "conflicting_recovery_semantics": []},
+        "B02-003_constitutional_supersession_completeness_assessment.json": {"complete": True, "supersession_scopes": len(historical["supersession_authority_registry"]), "ambiguous_supersession_behavior": [], "conflicting_supersession_authority": [], "undocumented_supersession_relationships": []},
+        "B02-003_constitutional_historical_integrity_assessment.json": {"complete": True, "historical_artifacts": len(historical["historical_preservation_registry"]), "historical_truth_immutable": True, "historical_lineage_complete": True, "historical_reconstruction_deterministic": True, "historical_evidence_reproducible": True, "historical_ambiguity": [], "missing_lineage": [], "incomplete_preservation": [], "conflicting_historical_doctrine": []},
+        "B02-003_unresolved_constitutional_findings_registry.json": [],
+        "B02-003_correction_replay_supersession_and_historical_integrity_constitutional_report.json": {"order": "POSITION-REGISTRY-RM-001-S02-B02-003", "status": "COMPLETE", "correction_categories": len(historical["correction_authority_registry"]), "replay_rules_defined": True, "recovery_scenarios": len(historical["recovery_scenario_registry"]), "supersession_scopes": len(historical["supersession_authority_registry"]), "historical_artifacts": len(historical["historical_preservation_registry"]), "historical_truth_immutable": True, "corrections_preserve_lineage": True, "replay_preserves_truth": True, "recovery_preserves_truth": True, "supersession_preserves_evidence": True, "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
         "B02-003_constitutional_consistency_reconciliation_report.json": {"status": "RECONCILED", "unresolved_historical_ambiguity": False, "unresolved_replay_ambiguity": False, "unresolved_correction_ambiguity": False},
-        "B02-003_completion_report.json": {"order": "B02-003", "status": "COMPLETE", "historical_truth_destroyable": False, "replay_fabrication_permitted": False, "implementation_evaluated": False},
+        "B02-003_completion_report.json": {"order": "B02-003", "status": "COMPLETE", "historical_truth_destroyable": False, "historical_evidence_destroyable": False, "replay_fabrication_permitted": False, "correction_preserves_auditability": True, "supersession_preserves_evidence": True, "unresolved_correction_ambiguity": 0, "unresolved_replay_ambiguity": 0, "unresolved_recovery_ambiguity": 0, "unresolved_supersession_ambiguity": 0, "unresolved_historical_integrity_ambiguity": 0, "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
         "B02-004_position_registry_object_constitution_baseline.json": {"objects": objects, "digest": _digest(objects)},
         "B02-004_position_registry_lifecycle_constitution_baseline.json": {"lifecycle": lifecycle, "transitions": transitions, "digest": _digest({"lifecycle": lifecycle, "transitions": transitions})},
         "B02-004_position_registry_quantity_constitution_baseline.json": {"quantities": quantities, "digest": _digest(quantities)},

@@ -1,6 +1,14 @@
 {
+  "auditability_preserved": true,
   "historical_truth_destroyed": false,
   "successor_object_required": true,
   "superseded_object_preserved": true,
-  "supersession_authority": "Position Registry constitutional authority"
+  "supersession_authority": "Position Registry constitutional authority",
+  "supersession_evidence": "predecessor, successor, authority, timestamp, reason, digest",
+  "supersession_historical_preservation": "superseded state remains immutable and recoverable",
+  "supersession_ownership": "Position Registry",
+  "supersession_prerequisites": "predecessor identity, successor identity, authority, reason, source evidence, and lineage evidence",
+  "supersession_recovery_interaction": "recovery preserves both predecessor and successor identities",
+  "supersession_relationships": "predecessor and successor chain remain queryable and replayable",
+  "supersession_replay_interaction": "replay reconstructs predecessor and successor lineage without duplicate mutation"
 }

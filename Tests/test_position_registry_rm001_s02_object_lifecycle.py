@@ -186,6 +186,71 @@ class PositionRegistryRM001S02ObjectLifecycleTests(unittest.TestCase):
         self.assertTrue(replay["fabrication_prohibited"])
         self.assertTrue(supersession["superseded_object_preserved"])
 
+    def test_b02_003_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B02-003_correction_constitution.json",
+            "B02-003_correction_authority_registry.json",
+            "B02-003_correction_lineage_registry.json",
+            "B02-003_replay_constitution.json",
+            "B02-003_replay_ordering_registry.json",
+            "B02-003_replay_authority_registry.json",
+            "B02-003_recovery_constitution.json",
+            "B02-003_recovery_authority_registry.json",
+            "B02-003_recovery_scenario_registry.json",
+            "B02-003_supersession_constitution.json",
+            "B02-003_supersession_authority_registry.json",
+            "B02-003_supersession_lineage_registry.json",
+            "B02-003_historical_integrity_constitution.json",
+            "B02-003_historical_preservation_registry.json",
+            "B02-003_historical_lineage_registry.json",
+            "B02-003_historical_evidence_registry.json",
+            "B02-003_historical_reconstruction_registry.json",
+            "B02-003_constitutional_correction_completeness_assessment.json",
+            "B02-003_constitutional_replay_completeness_assessment.json",
+            "B02-003_constitutional_recovery_completeness_assessment.json",
+            "B02-003_constitutional_supersession_completeness_assessment.json",
+            "B02-003_constitutional_historical_integrity_assessment.json",
+            "B02-003_unresolved_constitutional_findings_registry.json",
+            "B02-003_correction_replay_supersession_and_historical_integrity_constitutional_report.json",
+            "B02-003_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b02_003_correction_replay_recovery_supersession_are_complete(self) -> None:
+        corrections = json.loads((EVIDENCE_ROOT / "B02-003_correction_authority_registry.json").read_text(encoding="utf-8"))
+        replay = json.loads((EVIDENCE_ROOT / "B02-003_replay_constitution.json").read_text(encoding="utf-8"))
+        recovery = json.loads((EVIDENCE_ROOT / "B02-003_recovery_scenario_registry.json").read_text(encoding="utf-8"))
+        supersession = json.loads((EVIDENCE_ROOT / "B02-003_supersession_authority_registry.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B02-003_unresolved_constitutional_findings_registry.json").read_text(encoding="utf-8"))
+
+        self.assertTrue({"data_correction", "broker_correction", "reconciliation_correction", "quantity_correction", "cost_basis_correction", "lifecycle_correction", "temporal_correction", "historical_correction", "identity_correction"}.issubset({item["correction_category"] for item in corrections}))
+        self.assertTrue(all(not item["ambiguous_authority"] for item in corrections))
+        self.assertTrue(replay["duplicate_historical_mutation_prohibited"])
+        self.assertTrue(replay["truth_preservation"])
+        self.assertTrue({"process_restart", "persistence_restoration", "partial_write_recovery", "interrupted_mutation", "interrupted_replay", "corrupted_state", "missing_state", "historical_reconstruction"}.issubset({item["scenario"] for item in recovery}))
+        self.assertTrue(all(item["historical_evidence_preserved"] for item in supersession))
+        self.assertEqual(unresolved, [])
+
+    def test_b02_003_historical_artifacts_are_immutable_and_reconstructable(self) -> None:
+        integrity = json.loads((EVIDENCE_ROOT / "B02-003_historical_integrity_constitution.json").read_text(encoding="utf-8"))
+        preservation = json.loads((EVIDENCE_ROOT / "B02-003_historical_preservation_registry.json").read_text(encoding="utf-8"))
+        lineage = json.loads((EVIDENCE_ROOT / "B02-003_historical_lineage_registry.json").read_text(encoding="utf-8"))
+        evidence = json.loads((EVIDENCE_ROOT / "B02-003_historical_evidence_registry.json").read_text(encoding="utf-8"))
+        reconstruction = json.loads((EVIDENCE_ROOT / "B02-003_historical_reconstruction_registry.json").read_text(encoding="utf-8"))
+        completion = json.loads((EVIDENCE_ROOT / "B02-003_completion_report.json").read_text(encoding="utf-8"))
+
+        self.assertTrue(integrity["immutable_historical_truth"])
+        self.assertTrue(all(item["retention_obligations"].startswith("permanent") for item in preservation))
+        self.assertTrue(all(item["lineage_required"] for item in lineage))
+        self.assertTrue(all(item["evidence_overwrite_prohibited"] and item["evidence_destruction_prohibited"] for item in evidence))
+        self.assertTrue(all(item["canonical_identity_preserved"] and item["deterministic_reconstruction"] for item in reconstruction))
+        self.assertFalse(completion["implementation_evaluated"])
+        self.assertFalse(completion["implementation_modified"])
+        self.assertFalse(completion["behavioral_verification_executed"])
+        self.assertFalse(completion["implementation_proof_generated"])
+        self.assertFalse(completion["certification_activity_executed"])
+
     def test_b02_004_baseline_has_no_unresolved_findings_or_certification(self) -> None:
         baseline = json.loads((EVIDENCE_ROOT / "B02-004_authoritative_position_registry_object_and_lifecycle_baseline.json").read_text(encoding="utf-8"))
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))

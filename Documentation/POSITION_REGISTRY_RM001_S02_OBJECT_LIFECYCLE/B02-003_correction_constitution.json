@@ -1,8 +1,24 @@
 {
+  "correction_approver": "Position Registry correction authority",
   "correction_authority": "Position Registry",
+  "correction_categories": [
+    "data_correction",
+    "broker_correction",
+    "reconciliation_correction",
+    "quantity_correction",
+    "cost_basis_correction",
+    "lifecycle_correction",
+    "temporal_correction",
+    "historical_correction",
+    "identity_correction"
+  ],
   "correction_completion_criteria": "correction record, predecessor, successor, reason, and evidence digest published",
+  "correction_constraints": "no correction may erase, overwrite, or destroy predecessor constitutional truth",
+  "correction_effects": "creates successor state plus immutable correction lineage",
   "correction_initiator": "source authority, reconciliation finding, or Commander escalation",
+  "correction_owner": "Position Registry",
   "correction_prerequisites": "governing source evidence plus preserved original state",
+  "correction_reconciliation_authority": "Position Registry",
   "correction_validation": "identity, source, temporal, quantity, cost, and authority validation",
   "immutable_history_obligations": "never overwrite predecessor truth"
 }

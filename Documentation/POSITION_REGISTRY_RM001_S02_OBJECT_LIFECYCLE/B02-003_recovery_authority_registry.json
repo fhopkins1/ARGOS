@@ -1,0 +1,90 @@
+[
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "process_restart",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "persistence_restoration",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "partial_write_recovery",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "interrupted_mutation",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "interrupted_replay",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "corrupted_state",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "missing_state",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  },
+  {
+    "ambiguous_authority": false,
+    "conflicting_semantics": false,
+    "recovery_authority": "Position Registry",
+    "recovery_scenario": "historical_reconstruction",
+    "runtime_custodian": "Infrastructure",
+    "state_reconstruction": "from immutable persisted evidence only",
+    "truth_preservation_required": true,
+    "undefined_behavior": false,
+    "validation_required": true
+  }
+]

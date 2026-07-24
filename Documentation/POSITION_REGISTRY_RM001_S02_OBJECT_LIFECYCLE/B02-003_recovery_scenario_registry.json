@@ -1,0 +1,50 @@
+[
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "process_restart"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "persistence_restoration"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "partial_write_recovery"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "interrupted_mutation"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "interrupted_replay"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "corrupted_state"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "missing_state"
+  },
+  {
+    "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+    "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+    "history_preserved": true,
+    "scenario": "historical_reconstruction"
+  }
+]

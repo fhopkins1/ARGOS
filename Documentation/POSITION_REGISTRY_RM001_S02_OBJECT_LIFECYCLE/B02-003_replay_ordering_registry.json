@@ -1,0 +1,17 @@
+{
+  "deterministic": true,
+  "duplicate_disposition": "reject duplicate replay mutation and preserve replay evidence",
+  "equal_timestamp_disposition": "requires sequence identity or reconciliation disposition",
+  "ordering_authority": "Position Registry replay authority",
+  "ordering_sequence": [
+    "canonical sequence identifier",
+    "source sequence identifier",
+    "event time",
+    "effective time",
+    "correction time",
+    "supersession time",
+    "receipt time",
+    "persistence time"
+  ],
+  "out_of_order_disposition": "preserve order conflict and fail closed until reconciled"
+}

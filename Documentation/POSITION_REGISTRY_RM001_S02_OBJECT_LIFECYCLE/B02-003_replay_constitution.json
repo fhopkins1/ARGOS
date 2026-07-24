@@ -1,6 +1,17 @@
 {
+  "duplicate_historical_mutation_prohibited": true,
   "fabrication_prohibited": true,
   "identity_preservation": true,
+  "lineage_preservation": true,
   "replay_authority": "Replay authority under Position Registry doctrine",
-  "replay_ordering": "event-ordering registry"
+  "replay_correction_interaction": "corrections are replayed as historical events without erasing predecessors",
+  "replay_evidence_generation": "replay produces replay evidence without creating new source truth",
+  "replay_interruption": "checkpoint replay cursor and preserve original history",
+  "replay_ordering": "B02-003_replay_ordering_registry",
+  "replay_prerequisites": "immutable event history, canonical identity, source evidence, and ordering evidence",
+  "replay_reconciliation": "preserve contradictions and reconciliation cases",
+  "replay_restart": "resume from replay checkpoint without duplicate mutation",
+  "replay_state_reconstruction": "derive state only from immutable admissible historical evidence",
+  "replay_supersession_interaction": "supersession lineage is reconstructed with predecessor and successor references",
+  "truth_preservation": true
 }
