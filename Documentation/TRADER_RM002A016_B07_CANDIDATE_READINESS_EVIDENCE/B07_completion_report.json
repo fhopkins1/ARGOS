@@ -1,0 +1,190 @@
+{
+  "B07-001": {
+    "batch_count": 3,
+    "candidate_digest_consistent": false,
+    "completion": "PASS",
+    "duplicate_execution_count": 78,
+    "missing_output_count": 0,
+    "order": "B07-001",
+    "sealed_candidate": false,
+    "stale_evidence_count": 3,
+    "unresolved_candidate_inconsistencies": 1
+  },
+  "B07-002": {
+    "affected_records": 81,
+    "candidate_digest": "63e2d30ae78fb7ed9a47d9e93cb167c470836018",
+    "candidate_verdict_recalculated": false,
+    "completion": "PASS",
+    "constitutional_closure_recalculated": false,
+    "constitutional_coverage_recalculated": false,
+    "open_findings": 21,
+    "order": "B07-002",
+    "ready_for": "B07-003",
+    "terminal_failures": 0
+  },
+  "B07-003": {
+    "candidate_digest": "63e2d30ae78fb7ed9a47d9e93cb167c470836018",
+    "completion": "PASS",
+    "constitutional_doctrine_modified": false,
+    "final_verdict": "NOT_READY",
+    "implementation_modified": false,
+    "order": "B07-003",
+    "readiness_decision": "NOT_READY",
+    "repository_tests_executed": false,
+    "unresolved_items": 2
+  },
+  "archive_manifest": {
+    "archive_root": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE",
+    "file_count": 29,
+    "files": [
+      {
+        "bytes": 1315,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_batch_inventory.json",
+        "sha256": "d9c8224352b13a81ee02fdd05dcd7e1e034282369f9033cdfdae7fac8596507b"
+      },
+      {
+        "bytes": 304,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_candidate_consistency_report.json",
+        "sha256": "8d1393b0abff471349383838822b81972458d56df73cccb0916cfb0804e93ee7"
+      },
+      {
+        "bytes": 1750,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_candidate_manifest.json",
+        "sha256": "baa0e6112ea47a27db4912b4883eb8e169a2c3a349744a85f5d028b2c6963263"
+      },
+      {
+        "bytes": 1037,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_candidate_reconciliation_registry.json",
+        "sha256": "85676ea349f01bfb2788aea99508873da5474b1efce0ca6f74b73cc72de59914"
+      },
+      {
+        "bytes": 287,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_completion_report.json",
+        "sha256": "a07cd6db70c107e1525626016dfd5cb2b94bb2c67653af70adefb8608136f857"
+      },
+      {
+        "bytes": 10864,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_duplicate_execution_registry.json",
+        "sha256": "c4389c450a7d1d283a135d21b8564fc15f2a66b63821fb2c3e6120b28385cc90"
+      },
+      {
+        "bytes": 4,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_missing_output_registry.json",
+        "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+      },
+      {
+        "bytes": 866,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_stale_evidence_registry.json",
+        "sha256": "2d5318a2cbf18ca29c57181569157632b8cb292f563f0a945427addaa50cc114"
+      },
+      {
+        "bytes": 684,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-001_supersession_registry.json",
+        "sha256": "b06555973783f47cf4e4eebccffa0ceb40b8a7ae858a5dd4cfa2e8d604be4982"
+      },
+      {
+        "bytes": 88,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_checkpoint_registry.json",
+        "sha256": "77b92d013a6b6b953b47bad8fb4034a98cff0b924908b2f1cc77a4b5803d52bb"
+      },
+      {
+        "bytes": 368,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_completion_report.json",
+        "sha256": "8534d1508f869786fa6b9efb7f0b7d97331d0f90a97b6c7a2754382b452f88ed"
+      },
+      {
+        "bytes": 350,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_coverage_registry.json",
+        "sha256": "1cafc7f87a8ef3878a510078c82084e4d3d956472c3885dba1fae0fa82289a8c"
+      },
+      {
+        "bytes": 40744,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_reconciliation_registry.json",
+        "sha256": "ba97bcae12d95abd65fc885af02aa0a49c68a553bd2586a9701788da53be4b78"
+      },
+      {
+        "bytes": 474,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_stale_evidence_registry.json",
+        "sha256": "b03d8457005ede32572c09638473b91add34b7fd4d2f5052f919fff8a80d2f98"
+      },
+      {
+        "bytes": 32300,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_updated_bidirectional_execution_traceability.json",
+        "sha256": "ea2c162ece5a2cba2652cbeac718a140a84c0d49bf3f8a1097130640010addeb"
+      },
+      {
+        "bytes": 9586,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_updated_findings_registry.json",
+        "sha256": "b6dc22d04d448c55a21daae30fb372f152967565ece72ac2e08c729d0b150264"
+      },
+      {
+        "bytes": 70933,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_updated_proof_graph.json",
+        "sha256": "ba5123993e19312f432dd2dbdfbf0b81c2ae82573dc9f7dd3ca99c3b40c282e2"
+      },
+      {
+        "bytes": 440,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_updated_proof_registry.json",
+        "sha256": "cb746b17d9c05a14083a2bf68493b7623fb201d829170841c1adc36f8840b51f"
+      },
+      {
+        "bytes": 32300,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-002_updated_requirement_level_traceability.json",
+        "sha256": "ea2c162ece5a2cba2652cbeac718a140a84c0d49bf3f8a1097130640010addeb"
+      },
+      {
+        "bytes": 32300,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_bidirectional_traceability_registry.json",
+        "sha256": "ea2c162ece5a2cba2652cbeac718a140a84c0d49bf3f8a1097130640010addeb"
+      },
+      {
+        "bytes": 97,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_checkpoint_registry.json",
+        "sha256": "3deb2f55b09780be7b2d358f3d4e03fd3ed5e6470e7241c86e0c1b5588260ed2"
+      },
+      {
+        "bytes": 339,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_completion_report.json",
+        "sha256": "7fc206a6319deb0ae2a647071f9ed79dad047d0ba14fe9450dcb8e46e6fdd6ce"
+      },
+      {
+        "bytes": 507,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_final_candidate_verdict.json",
+        "sha256": "fe4c5053f5c5fb35d27764adfa00d89806b9a883ab3cf1e353291dc7790b56fe"
+      },
+      {
+        "bytes": 253,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_final_closure_report.json",
+        "sha256": "c10730cbf84aac33bd6119320859f84ba47a0ed18fc5cde5fe615f8987430e4e"
+      },
+      {
+        "bytes": 142,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_final_coverage_report.json",
+        "sha256": "c152fbdf3575e8026d09e23e5c858308d4f47fb961d27801d297ca282e9e4279"
+      },
+      {
+        "bytes": 264,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_final_execution_plan_for_ECS-003.json",
+        "sha256": "f417dee2f0f2208a5ffe15bf860e025339953c64dae95a63f12a92ca403533d6"
+      },
+      {
+        "bytes": 437,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_final_proof_registry.json",
+        "sha256": "2b44cbfefcff8277ea81bb00a62c2570b5ee47baba2e9004de80f5ff5d98f62f"
+      },
+      {
+        "bytes": 507,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_final_readiness_decision.json",
+        "sha256": "fe4c5053f5c5fb35d27764adfa00d89806b9a883ab3cf1e353291dc7790b56fe"
+      },
+      {
+        "bytes": 100,
+        "path": "Documentation/TRADER_RM002A016_B07_CANDIDATE_READINESS_EVIDENCE/B07-003_graph_integrity_registry.json",
+        "sha256": "f69551b99d837a84d476f50d7418b5773a02da08ee322260575fea6ddbbbc9cb"
+      }
+    ]
+  },
+  "batch": "TRADER-RM-002A-016-S07-B07",
+  "candidate_digest": "63e2d30ae78fb7ed9a47d9e93cb167c470836018",
+  "version": "TRADER-RM-002A-016-S07-B07/1.0.0"
+}
