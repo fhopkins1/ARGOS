@@ -1,0 +1,15 @@
+{
+  "modified_artifacts": [
+    "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage.submit_order"
+  ],
+  "preserved_inventory_identity": true,
+  "unmodified_behavioral_pass_obligations": [
+    "malformed request rejection",
+    "unsupported request rejection",
+    "partial-fill processing",
+    "cancellation request processing",
+    "terminal-state mutation rejection",
+    "missing-state detection",
+    "prohibition against fabricated acknowledgement or fill truth"
+  ]
+}

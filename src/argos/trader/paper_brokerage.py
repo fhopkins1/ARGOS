@@ -304,6 +304,14 @@ class DeterministicPaperBrokerage:
         market = self.market_data.market_state(ticket.symbol, now, ticket.workflow_id, ticket.decision_object_id)
         rejection = self._validate(ticket, workflow_token, market)
         if rejection:
+            existing_order = self.order_book.get(ticket.order_id)
+            if rejection == PaperBrokerRejectionCode.DUPLICATE_ORDER and existing_order is not None:
+                event = self._event(existing_order, "Broker Reject", {"rejectionCode": rejection.value})
+                updated = replace(existing_order, events=(*existing_order.events, event), updated_at=event.timestamp_utc)
+                self.order_book.replace(updated)
+                self._publish(event)
+                self._record_order_management_message(updated, event, case_file_id, trade_cycle_id, document_sequence)
+                return BrokerSubmissionResult(False, updated, (event,), rejection.value)
             order = self._new_order(ticket, now, market, "rejected", rejection.value)
             event = self._event(order, "Broker Reject", {"rejectionCode": rejection.value})
             order = replace(order, events=(event,))

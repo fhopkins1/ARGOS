@@ -1,6 +1,14 @@
 [
   {
     "blocking": true,
+    "disposition": "VERIFIED_FAIL",
+    "execution_id": "BROKER-RM002A-004-003",
+    "finding": "duplicate request detection raises during rejected-order recording instead of returning a deterministic rejection",
+    "finding_id": "BROKER-RM002A-004-FINDING-003",
+    "obligation": "duplicate request detection"
+  },
+  {
+    "blocking": true,
     "disposition": "BLOCKED_BY_IMPLEMENTATION",
     "execution_id": "BROKER-RM002A-004-009",
     "finding": "no executable implementation path in authoritative Broker inventory",

@@ -1,0 +1,154 @@
+[
+  {
+    "current_disposition": "REMEDIATED",
+    "obligation": "duplicate request detection",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-003",
+    "prior_disposition": "VERIFIED_FAIL",
+    "remediation_id": "BROKER-RM002A-005-IMPL-003",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "request timeout handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-009",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-009",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "acknowledgement after timeout",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-010",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-010",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "retry initiation",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-011",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-011",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "retry exhaustion",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-012",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-012",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "replay after restart",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-013",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-013",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "durable restart recovery",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-014",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-014",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "late fill processing",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-015",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-015",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "correction-event processing",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-016",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-016",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "contradictory broker-event reconciliation",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-017",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-017",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "modification uncertainty handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-018",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-018",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "partial-write recovery",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-019",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-019",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "corrupted-state recovery",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-020",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-020",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "persistence restoration",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-021",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-021",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "FORMALLY_DISPOSITIONED",
+    "obligation": "unresolved anomaly escalation",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-022",
+    "prior_disposition": "BLOCKED_BY_IMPLEMENTATION",
+    "remediation_id": "BROKER-RM002A-005-FORMAL-022",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "REMEDIATED",
+    "obligation": "delayed acknowledgement processing",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+    "prior_disposition": "VERIFIER_ERROR",
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-023",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "REMEDIATED",
+    "obligation": "duplicate broker-event handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+    "prior_disposition": "VERIFIER_ERROR",
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-024",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "REMEDIATED",
+    "obligation": "out-of-order event processing",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+    "prior_disposition": "VERIFIER_ERROR",
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-025",
+    "traceability_preserved": true
+  },
+  {
+    "current_disposition": "REMEDIATED",
+    "obligation": "cancellation uncertainty handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+    "prior_disposition": "VERIFIER_ERROR",
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-026",
+    "traceability_preserved": true
+  }
+]

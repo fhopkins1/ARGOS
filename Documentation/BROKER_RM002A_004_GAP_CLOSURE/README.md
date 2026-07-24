@@ -4,4 +4,4 @@ This package records the bounded gap-closure execution for BROKER-RM-002A-004. I
 
 Status: COMPLETE_WITH_FINDINGS
 
-Summary: {"blocked_by_implementation": 14, "total": 26, "verified_fail": 1, "verified_pass": 7, "verifier_error": 4}
+Summary: {"blocked_by_implementation": 14, "total": 26, "verified_fail": 0, "verified_pass": 8, "verifier_error": 4}

@@ -1,0 +1,20 @@
+[
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage.submit_order",
+    "modification": "duplicate-order rejection now appends a rejection event to the existing order and returns a deterministic BrokerSubmissionResult",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-003",
+    "regression_disposition": "REGRESSION_PASS",
+    "regression_evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "first_accepted": true,
+        "second_accepted": false,
+        "second_rejection": "DUPLICATE_ORDER"
+      },
+      "execution_id": "BROKER-RM002A-004-003",
+      "finding": "",
+      "obligation": "duplicate request detection"
+    },
+    "remediation_id": "BROKER-RM002A-005-IMPL-003"
+  }
+]

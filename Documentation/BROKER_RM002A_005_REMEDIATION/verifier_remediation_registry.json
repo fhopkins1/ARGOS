@@ -1,0 +1,67 @@
+[
+  {
+    "modification": "added bounded deterministic event sequencing verifier fixture for affected broker-event ordering obligations",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+    "regression_disposition": "REGRESSION_PASS",
+    "regression_evidence": {
+      "evidence": {
+        "expected": "DELAYED_ACKNOWLEDGEMENT_RECORDED",
+        "fixture_result": "DELAYED_ACKNOWLEDGEMENT_RECORDED"
+      },
+      "obligation": "delayed acknowledgement processing",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-023",
+    "verifier_artifact": "Scripts/broker_rm002a_005_remediation.py::BrokerEventSequencingVerifier"
+  },
+  {
+    "modification": "added bounded deterministic event sequencing verifier fixture for affected broker-event ordering obligations",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+    "regression_disposition": "REGRESSION_PASS",
+    "regression_evidence": {
+      "evidence": {
+        "expected_second": "DUPLICATE_EVENT_REJECTED",
+        "first_result": "EVENT_ACCEPTED",
+        "second_result": "DUPLICATE_EVENT_REJECTED"
+      },
+      "obligation": "duplicate broker-event handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-024",
+    "verifier_artifact": "Scripts/broker_rm002a_005_remediation.py::BrokerEventSequencingVerifier"
+  },
+  {
+    "modification": "added bounded deterministic event sequencing verifier fixture for affected broker-event ordering obligations",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+    "regression_disposition": "REGRESSION_PASS",
+    "regression_evidence": {
+      "evidence": {
+        "expected": "OUT_OF_ORDER_EVENT_QUARANTINED",
+        "fixture_result": "OUT_OF_ORDER_EVENT_QUARANTINED"
+      },
+      "obligation": "out-of-order event processing",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-025",
+    "verifier_artifact": "Scripts/broker_rm002a_005_remediation.py::BrokerEventSequencingVerifier"
+  },
+  {
+    "modification": "added bounded deterministic event sequencing verifier fixture for affected broker-event ordering obligations",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+    "regression_disposition": "REGRESSION_PASS",
+    "regression_evidence": {
+      "evidence": {
+        "expected": "CANCELLATION_UNCERTAINTY_ESCALATED",
+        "fixture_result": "CANCELLATION_UNCERTAINTY_ESCALATED"
+      },
+      "obligation": "cancellation uncertainty handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "remediation_id": "BROKER-RM002A-005-VERIFIER-026",
+    "verifier_artifact": "Scripts/broker_rm002a_005_remediation.py::BrokerEventSequencingVerifier"
+  }
+]

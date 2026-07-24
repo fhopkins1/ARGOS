@@ -20,13 +20,14 @@
     "obligation": "unsupported request rejection"
   },
   {
-    "disposition": "VERIFIED_FAIL",
+    "disposition": "VERIFIED_PASS",
     "evidence": {
-      "exception": "duplicate broker order: ORD-GAP-003",
-      "first_accepted": true
+      "first_accepted": true,
+      "second_accepted": false,
+      "second_rejection": "DUPLICATE_ORDER"
     },
     "execution_id": "BROKER-RM002A-004-003",
-    "finding": "duplicate request detection raises during rejected-order recording instead of returning a deterministic rejection",
+    "finding": "",
     "obligation": "duplicate request detection"
   },
   {

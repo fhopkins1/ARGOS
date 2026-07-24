@@ -1,0 +1,197 @@
+[
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "first_accepted": true,
+        "second_accepted": false,
+        "second_rejection": "DUPLICATE_ORDER"
+      },
+      "execution_id": "BROKER-RM002A-004-003",
+      "finding": "",
+      "obligation": "duplicate request detection"
+    },
+    "obligation": "duplicate request detection",
+    "regression_id": "BROKER-RM002A-005-REG-001",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "fills": 0,
+        "rejection_code": "INVALID_QUANTITY"
+      },
+      "execution_id": "BROKER-RM002A-004-001",
+      "finding": "",
+      "obligation": "malformed request rejection"
+    },
+    "obligation": "malformed request rejection",
+    "regression_id": "BROKER-RM002A-005-REG-002",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "expected": "INVALID_ORDER_TYPE",
+        "rejection_code": "INVALID_ORDER_TYPE"
+      },
+      "execution_id": "BROKER-RM002A-004-002",
+      "finding": "",
+      "obligation": "unsupported request rejection"
+    },
+    "obligation": "unsupported request rejection",
+    "regression_id": "BROKER-RM002A-005-REG-003",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "filled_quantity": 0.1,
+        "remaining_quantity": 0.9,
+        "status": "partially_filled",
+        "truth_records": 1
+      },
+      "execution_id": "BROKER-RM002A-004-004",
+      "finding": "",
+      "obligation": "partial-fill processing"
+    },
+    "obligation": "partial-fill processing",
+    "regression_id": "BROKER-RM002A-005-REG-004",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "cancelled_status": "cancelled",
+        "queued_status": "working",
+        "terminal_advance_events": 0,
+        "terminal_status": "cancelled"
+      },
+      "execution_id": "BROKER-RM002A-004-005",
+      "finding": "",
+      "obligation": "cancellation request processing"
+    },
+    "obligation": "cancellation request processing",
+    "regression_id": "BROKER-RM002A-005-REG-005",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "new_events": 0,
+        "status_after_advance": "cancelled",
+        "status_before_advance": "cancelled"
+      },
+      "execution_id": "BROKER-RM002A-004-006",
+      "finding": "",
+      "obligation": "terminal-state mutation rejection"
+    },
+    "obligation": "terminal-state mutation rejection",
+    "regression_id": "BROKER-RM002A-005-REG-006",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "exception": "unknown broker order: ORD-MISSING"
+      },
+      "execution_id": "BROKER-RM002A-004-007",
+      "finding": "",
+      "obligation": "missing-state detection"
+    },
+    "obligation": "missing-state detection",
+    "regression_id": "BROKER-RM002A-005-REG-007",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "fills": 0,
+        "status": "queued",
+        "truth_records": 0
+      },
+      "execution_id": "BROKER-RM002A-004-008",
+      "finding": "",
+      "obligation": "prohibition against fabricated acknowledgement or fill truth"
+    },
+    "obligation": "prohibition against fabricated acknowledgement or fill truth",
+    "regression_id": "BROKER-RM002A-005-REG-008",
+    "source": "BROKER-RM002A-004 bounded verifier"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "evidence": {
+        "expected": "DELAYED_ACKNOWLEDGEMENT_RECORDED",
+        "fixture_result": "DELAYED_ACKNOWLEDGEMENT_RECORDED"
+      },
+      "obligation": "delayed acknowledgement processing",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "obligation": "delayed acknowledgement processing",
+    "regression_id": "BROKER-RM002A-005-REG-009",
+    "source": "BROKER-RM002A-005 bounded verifier fixture"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "evidence": {
+        "expected_second": "DUPLICATE_EVENT_REJECTED",
+        "first_result": "EVENT_ACCEPTED",
+        "second_result": "DUPLICATE_EVENT_REJECTED"
+      },
+      "obligation": "duplicate broker-event handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "obligation": "duplicate broker-event handling",
+    "regression_id": "BROKER-RM002A-005-REG-010",
+    "source": "BROKER-RM002A-005 bounded verifier fixture"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "evidence": {
+        "expected": "OUT_OF_ORDER_EVENT_QUARANTINED",
+        "fixture_result": "OUT_OF_ORDER_EVENT_QUARANTINED"
+      },
+      "obligation": "out-of-order event processing",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "obligation": "out-of-order event processing",
+    "regression_id": "BROKER-RM002A-005-REG-011",
+    "source": "BROKER-RM002A-005 bounded verifier fixture"
+  },
+  {
+    "disposition": "REGRESSION_PASS",
+    "evidence": {
+      "evidence": {
+        "expected": "CANCELLATION_UNCERTAINTY_ESCALATED",
+        "fixture_result": "CANCELLATION_UNCERTAINTY_ESCALATED"
+      },
+      "obligation": "cancellation uncertainty handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+      "regression_disposition": "REGRESSION_PASS"
+    },
+    "obligation": "cancellation uncertainty handling",
+    "regression_id": "BROKER-RM002A-005-REG-012",
+    "source": "BROKER-RM002A-005 bounded verifier fixture"
+  }
+]
