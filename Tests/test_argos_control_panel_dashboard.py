@@ -54,6 +54,18 @@ def _exit_snapshot(position, *, current_price: float, events: tuple[str, ...], s
     }
 
 
+def _authoritative_fill_fixture(order: dict) -> tuple[dict, ...]:
+    order_id = str(order.get("order_id") or f"{order.get('workflow_id', 'WF')}-{order.get('decision_object_id', 'DO')}")
+    return (
+        {
+            "fill_id": f"AUTH-FILL-{order_id}",
+            "order_id": order_id,
+            "source": "unit_test_authoritative_fill_fixture",
+            "constitutional_role": "authoritative_position_mutation_lineage",
+        },
+    )
+
+
 def _closed_truth_fixture():
     from argos.control_panel.performance_truth_engine import PerformanceTruthEngine
 
@@ -1763,6 +1775,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
             "mid_price": 100.0,
             "timestamp": "2026-07-09T14:30:00Z",
         }
+        order["fills"] = _authoritative_fill_fixture(order)
         decision = {"recommendation": "BUY", "stopLoss": 95.0, "targetPrice": 110.0, "riskScore": 0.31, "confidence": 0.72}
 
         position = registry.create_from_execution(order, decision)
@@ -1828,6 +1841,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "average_fill_price": 50.0,
                 "mid_price": 50.0,
                 "timestamp": "2026-07-09T14:30:00Z",
+                "fills": _authoritative_fill_fixture({"order_id": "BRP-ORD-VALID"}),
             },
             {"recommendation": "BUY", "confidence": 0.7},
         )
@@ -1852,6 +1866,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "average_fill_price": 90.0,
                 "mid_price": 90.0,
                 "timestamp": "2026-07-09T14:30:00Z",
+                "fills": _authoritative_fill_fixture({"order_id": "BRP-ORD-CLOSE"}),
             },
             {"recommendation": "BUY"},
         )
@@ -1879,6 +1894,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "workflow_id": "WF-EOXB",
                 "decision_object_id": "DO-EOXB",
                 "timestamp": "2026-07-09T14:00:00+00:00",
+                "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXB", "decision_object_id": "DO-EOXB"}),
             },
             {"targetPrice": 110.0, "stopLoss": 95.0, "confidence": 0.7, "riskScore": 0.2},
         )
@@ -1926,6 +1942,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "status": "FILLED",
                 "workflow_id": "WF-EOXB-MISSING",
                 "decision_object_id": "DO-EOXB-MISSING",
+                "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXB-MISSING", "decision_object_id": "DO-EOXB-MISSING"}),
             },
             {"targetPrice": 220.0, "stopLoss": 190.0},
         )
@@ -1961,6 +1978,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "status": "FILLED",
                 "workflow_id": "WF-EOXB-EVENTS",
                 "decision_object_id": "DO-EOXB-EVENTS",
+                "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXB-EVENTS", "decision_object_id": "DO-EOXB-EVENTS"}),
             },
             {"targetPrice": 105.0, "stopLoss": 96.0, "confidence": 0.7, "riskScore": 0.2},
         )
@@ -1996,6 +2014,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
                 "status": "FILLED",
                 "workflow_id": "WF-EOXB-APPEND",
                 "decision_object_id": "DO-EOXB-APPEND",
+                "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXB-APPEND", "decision_object_id": "DO-EOXB-APPEND"}),
             },
             {"targetPrice": 110.0, "stopLoss": 95.0},
         )
@@ -2046,7 +2065,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
 
         registry = PositionRegistry()
         position = registry.create_from_execution(
-            {"symbol": "SPY", "asset_type": "ETF", "side": "BUY", "filled_quantity": 10, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-STOP", "decision_object_id": "DO-EOXC-STOP"},
+            {"symbol": "SPY", "asset_type": "ETF", "side": "BUY", "filled_quantity": 10, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-STOP", "decision_object_id": "DO-EOXC-STOP", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-STOP", "decision_object_id": "DO-EOXC-STOP"})},
             {"targetPrice": 110.0, "stopLoss": 95.0, "confidence": 0.7, "riskScore": 0.2},
         )
         surveillance = {"latestSnapshots": (_exit_snapshot(position, current_price=94.5, events=("stop_loss_reached",)),), "latestEscalations": ()}
@@ -2070,7 +2089,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
 
         registry = PositionRegistry()
         position = registry.create_from_execution(
-            {"symbol": "SPY", "asset_type": "ETF", "side": "BUY", "filled_quantity": 20, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-TARGET", "decision_object_id": "DO-EOXC-TARGET"},
+            {"symbol": "SPY", "asset_type": "ETF", "side": "BUY", "filled_quantity": 20, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-TARGET", "decision_object_id": "DO-EOXC-TARGET", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-TARGET", "decision_object_id": "DO-EOXC-TARGET"})},
             {"targetPrice": 105.0, "stopLoss": 95.0},
         )
         surveillance = {"latestSnapshots": (_exit_snapshot(position, current_price=106.0, events=("profit_target_reached",)),), "latestEscalations": ()}
@@ -2093,15 +2112,15 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
 
         registry = PositionRegistry()
         trailing = registry.create_from_execution(
-            {"symbol": "TLT", "asset_type": "ETF", "side": "BUY", "filled_quantity": 4, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-TRAIL", "decision_object_id": "DO-EOXC-TRAIL"},
+            {"symbol": "TLT", "asset_type": "ETF", "side": "BUY", "filled_quantity": 4, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-TRAIL", "decision_object_id": "DO-EOXC-TRAIL", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-TRAIL", "decision_object_id": "DO-EOXC-TRAIL"})},
             {"targetPrice": 110.0, "stopLoss": 95.0},
         )
         large_loss = registry.create_from_execution(
-            {"symbol": "GLD", "asset_type": "ETF", "side": "BUY", "filled_quantity": 4, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-LOSS", "decision_object_id": "DO-EOXC-LOSS"},
+            {"symbol": "GLD", "asset_type": "ETF", "side": "BUY", "filled_quantity": 4, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-LOSS", "decision_object_id": "DO-EOXC-LOSS", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-LOSS", "decision_object_id": "DO-EOXC-LOSS"})},
             {"targetPrice": 110.0, "stopLoss": 90.0},
         )
         degraded = registry.create_from_execution(
-            {"symbol": "MSFT", "asset_type": "STOCK", "side": "BUY", "filled_quantity": 4, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-DEG", "decision_object_id": "DO-EOXC-DEG"},
+            {"symbol": "MSFT", "asset_type": "STOCK", "side": "BUY", "filled_quantity": 4, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-DEG", "decision_object_id": "DO-EOXC-DEG", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-DEG", "decision_object_id": "DO-EOXC-DEG"})},
             {"targetPrice": 110.0, "stopLoss": 90.0},
         )
         snapshots = (
@@ -2126,7 +2145,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
 
         registry = PositionRegistry()
         position = registry.create_from_execution(
-            {"symbol": "AAPL", "asset_type": "STOCK", "side": "BUY", "filled_quantity": 3, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-HOLD", "decision_object_id": "DO-EOXC-HOLD"},
+            {"symbol": "AAPL", "asset_type": "STOCK", "side": "BUY", "filled_quantity": 3, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-HOLD", "decision_object_id": "DO-EOXC-HOLD", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-HOLD", "decision_object_id": "DO-EOXC-HOLD"})},
             {"targetPrice": 110.0, "stopLoss": 90.0},
         )
         engine = ExitDecisionEngine()
@@ -2148,11 +2167,11 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
 
         registry = PositionRegistry()
         commander = registry.create_from_execution(
-            {"symbol": "SPY", "asset_type": "ETF", "side": "BUY", "filled_quantity": 8, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-CMD", "decision_object_id": "DO-EOXC-CMD"},
+            {"symbol": "SPY", "asset_type": "ETF", "side": "BUY", "filled_quantity": 8, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-CMD", "decision_object_id": "DO-EOXC-CMD", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-CMD", "decision_object_id": "DO-EOXC-CMD"})},
             {"targetPrice": 110.0, "stopLoss": 90.0},
         )
         risk = registry.create_from_execution(
-            {"symbol": "TLT", "asset_type": "ETF", "side": "BUY", "filled_quantity": 8, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-RISK", "decision_object_id": "DO-EOXC-RISK"},
+            {"symbol": "TLT", "asset_type": "ETF", "side": "BUY", "filled_quantity": 8, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-RISK", "decision_object_id": "DO-EOXC-RISK", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-RISK", "decision_object_id": "DO-EOXC-RISK"})},
             {"targetPrice": 110.0, "stopLoss": 90.0},
         )
         snapshots = (_exit_snapshot(commander, current_price=100.0, events=()), _exit_snapshot(risk, current_price=100.0, events=()))
@@ -2181,7 +2200,7 @@ class ARGOSControlPanelDashboardTests(unittest.TestCase):
 
         registry = PositionRegistry()
         position = registry.create_from_execution(
-            {"symbol": "QQQ", "asset_type": "ETF", "side": "BUY", "filled_quantity": 6, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-AI", "decision_object_id": "DO-EOXC-AI"},
+            {"symbol": "QQQ", "asset_type": "ETF", "side": "BUY", "filled_quantity": 6, "average_fill_price": 100.0, "mid_price": 100.0, "status": "FILLED", "workflow_id": "WF-EOXC-AI", "decision_object_id": "DO-EOXC-AI", "fills": _authoritative_fill_fixture({"workflow_id": "WF-EOXC-AI", "decision_object_id": "DO-EOXC-AI"})},
             {"targetPrice": 110.0, "stopLoss": 90.0, "marketContext": {"strategyInvalidation": True}},
         )
 

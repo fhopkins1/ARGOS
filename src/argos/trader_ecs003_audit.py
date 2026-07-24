@@ -34,6 +34,8 @@ from .trader_audit import (
 
 
 TRADER_ECS003_VERSION = "TRADER-ECS003-FINAL/1.0.0"
+TRADER_ECS003_RUNNER_SCHEMA_VERSION = "trader-ecs003-module-execution-record/v1"
+TRADER_ECS003_RESULT_MARKER = "TRADER_ECS003_MODULE_RESULT="
 
 
 def _utc_now() -> str:
@@ -42,6 +44,19 @@ def _utc_now() -> str:
 
 def _safe_name(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9_.-]+", "_", value)
+
+
+def _digest_text(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def _runner_digest() -> str:
+    return _digest_file(Path(__file__))
+
+
+def _environment_digest(env: Mapping[str, str]) -> str:
+    filtered = {key: env[key] for key in sorted(env) if key in {"PYTHONPATH", "TRADER_ECS003_CANDIDATE_DIGEST"} or key.startswith("ARGOS_")}
+    return _digest_payload(filtered)
 
 
 def _walk_tests(suite: unittest.TestSuite) -> list[unittest.TestCase]:
@@ -151,7 +166,7 @@ class _JsonRunner(unittest.TextTestRunner):
     resultclass = _JsonResult
 
 
-def run_test_module(module_name: str) -> Mapping[str, Any]:
+def run_test_module(module_name: str, *, execution_id: str | None = None, candidate_digest: str = "") -> Mapping[str, Any]:
     suite = unittest.defaultTestLoader.loadTestsFromName(module_name)
     stream = io.StringIO()
     start = time.perf_counter()
@@ -161,6 +176,9 @@ def run_test_module(module_name: str) -> Mapping[str, Any]:
     counts = _count_dispositions(records)
     return {
         "schema_version": "trader-ecs003-test-module-result/v1",
+        "execution_id": execution_id or f"manual-{_safe_name(module_name)}",
+        "candidate_digest": candidate_digest,
+        "runner_version": TRADER_ECS003_VERSION,
         "module": module_name,
         "source_file": _module_source(module_name),
         "start_timestamp": records[0]["start_timestamp"] if records else _utc_now(),
@@ -174,6 +192,139 @@ def run_test_module(module_name: str) -> Mapping[str, Any]:
     }
 
 
+def _parse_structured_module_result(
+    *,
+    module: str,
+    stdout: str,
+    result_file: Path,
+    expected_execution_id: str,
+) -> tuple[Mapping[str, Any] | None, str, str]:
+    if result_file.exists():
+        try:
+            payload = json.loads(result_file.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            return None, "MALFORMED", "result file contained malformed JSON"
+        if payload.get("execution_id") != expected_execution_id:
+            return None, "STALE_OR_WRONG_EXECUTION_ID", "result file execution identifier did not match invocation"
+        return payload, "VALID", "result file"
+
+    marker_payload = None
+    for line in reversed(stdout.splitlines()):
+        if line.startswith(TRADER_ECS003_RESULT_MARKER):
+            marker_payload = line[len(TRADER_ECS003_RESULT_MARKER) :]
+            break
+    if marker_payload is None:
+        return None, "MISSING", "no result file or framed stdout JSON was produced"
+    try:
+        payload = json.loads(marker_payload)
+    except json.JSONDecodeError:
+        return None, "MALFORMED", "framed stdout JSON was malformed"
+    if payload.get("execution_id") not in {"", expected_execution_id}:
+        return None, "STALE_OR_WRONG_EXECUTION_ID", "framed stdout execution identifier did not match invocation"
+    return payload, "VALID", "framed stdout"
+
+
+def _module_execution_record(
+    *,
+    module: str,
+    expected_tests: int,
+    inventory_records: Sequence[Mapping[str, Any]],
+    candidate_digest: str,
+    command: Sequence[str],
+    cwd: Path,
+    env: Mapping[str, str],
+    execution_id: str,
+    started_at: str,
+    completed_at: str,
+    elapsed_seconds: float,
+    return_code: int,
+    stdout_path: Path,
+    stderr_path: Path,
+    structured_path: Path,
+    output_root: Path,
+    stdout: str,
+    stderr: str,
+    payload: Mapping[str, Any] | None,
+    parser_result: str,
+    parser_detail: str,
+) -> tuple[Mapping[str, Any], list[Mapping[str, Any]]]:
+    if payload is None:
+        records = [
+            {
+                "test_identifier": item["test_identifier"],
+                "disposition": "ERROR",
+                "start_timestamp": started_at,
+                "finish_timestamp": completed_at,
+                "duration_seconds": 0.0,
+                "details": f"module runner structured result {parser_result}: {parser_detail}",
+            }
+            for item in inventory_records
+        ]
+        schema_result = "VALID_OUTER_RECORD_WITH_RUNNER_ERROR"
+        disposition = "RUNNER_ERROR"
+        counts = _count_dispositions(records)
+        module_path = ""
+    else:
+        records = list(payload.get("records", ()))
+        if not records and expected_tests > 0:
+            records = [
+                {
+                    "test_identifier": item["test_identifier"],
+                    "disposition": "ERROR",
+                    "start_timestamp": started_at,
+                    "finish_timestamp": completed_at,
+                    "duration_seconds": 0.0,
+                    "details": "discovery produced a failed-test placeholder that cannot be executed as a normal module",
+                }
+                for item in inventory_records
+            ]
+        counts = _count_dispositions(records)
+        module_path = str(payload.get("source_file", ""))
+        schema_result = "VALID" if isinstance(payload.get("records", ()), list) else "INVALID"
+        disposition = "PASS" if return_code == 0 and payload.get("successful") and len(records) == expected_tests else "FAIL"
+
+    evidence_material = {
+        "execution_id": execution_id,
+        "module": module,
+        "stdout_sha256": _digest_text(stdout),
+        "stderr_sha256": _digest_text(stderr),
+        "structured_sha256": _digest_file(structured_path) if structured_path.exists() else "",
+        "records_digest": _digest_payload(records),
+    }
+    record = {
+        "schema_version": TRADER_ECS003_RUNNER_SCHEMA_VERSION,
+        "execution_identifier": execution_id,
+        "module_identifier": module,
+        "module_path": module_path,
+        "participating_test_identifiers": tuple(item["test_identifier"] for item in inventory_records),
+        "candidate_digest": candidate_digest,
+        "runner_version": TRADER_ECS003_VERSION,
+        "runner_digest": _runner_digest(),
+        "command": tuple(command),
+        "working_directory": str(cwd),
+        "environment_digest": _environment_digest(env),
+        "start_timestamp": started_at,
+        "completion_timestamp": completed_at,
+        "elapsed_duration_seconds": round(elapsed_seconds, 6),
+        "return_code": return_code,
+        "process_signal": "",
+        "stdout_reference": stdout_path.relative_to(output_root).as_posix(),
+        "stderr_reference": stderr_path.relative_to(output_root).as_posix(),
+        "structured_result_reference": structured_path.relative_to(output_root).as_posix() if structured_path.exists() else "",
+        "parser_result": parser_result,
+        "parser_detail": parser_detail,
+        "schema_validation_result": schema_result,
+        "test_totals": len(records),
+        "pass_count": counts.get("PASS", 0),
+        "fail_count": counts.get("FAIL", 0),
+        "error_count": counts.get("ERROR", 0),
+        "skip_or_not_applicable_count": counts.get("NOT APPLICABLE", 0),
+        "execution_disposition": disposition,
+        "evidence_digest": _digest_payload(evidence_material),
+    }
+    return record, records
+
+
 def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mapping[str, str]) -> Mapping[str, Any]:
     inventory = build_test_inventory(extraction_root / "Tests")
     records_by_module: dict[str, list[Mapping[str, Any]]] = {}
@@ -185,60 +336,51 @@ def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mappin
     segments = []
     for row in inventory["modules"]:
         module = row["module"]
+        execution_id = f"ECS003-{_safe_name(module)}-{_digest_text(module)[:12]}"
         command = [sys.executable, "-m", "argos.trader_ecs003_audit", "--run-test-module", module]
         started_at = _utc_now()
-        completed = subprocess.run(command, cwd=str(extraction_root), env=dict(env), text=True, capture_output=True)
+        started_perf = time.perf_counter()
+        module_env = dict(env)
+        structured_path = segment_dir / f"{_safe_name(module)}.result.json"
+        module_env["TRADER_ECS003_RESULT_FILE"] = str(structured_path)
+        module_env["TRADER_ECS003_EXECUTION_ID"] = execution_id
+        completed = subprocess.run(command, cwd=str(extraction_root), env=module_env, text=True, capture_output=True)
+        completed_at = _utc_now()
+        elapsed = time.perf_counter() - started_perf
         stdout_path = segment_dir / f"{_safe_name(module)}.stdout.log"
         stderr_path = segment_dir / f"{_safe_name(module)}.stderr.log"
         stdout_path.write_text(completed.stdout, encoding="utf-8")
         stderr_path.write_text(completed.stderr, encoding="utf-8")
-        marker = "TRADER_ECS003_MODULE_RESULT="
-        payload = None
-        for line in reversed(completed.stdout.splitlines()):
-            if line.startswith(marker):
-                payload = json.loads(line[len(marker) :])
-                break
-        if payload is None:
-            records = [
-                {
-                    "test_identifier": item["test_identifier"],
-                    "disposition": "ERROR",
-                    "start_timestamp": started_at,
-                    "finish_timestamp": _utc_now(),
-                    "duration_seconds": 0.0,
-                    "details": "module runner did not produce a JSON execution record",
-                }
-                for item in inventory["records"]
-                if item["test_module"] == module
-            ]
-            payload = {
-                "module": module,
-                "source_file": "",
-                "tests_run": 0,
-                "successful": False,
-                "disposition_counts": _count_dispositions(records),
-                "records": records,
-                "runner_output": completed.stdout,
-            }
-        elif len(payload["records"]) == 0 and row["tests"] > 0:
-            records = [
-                {
-                    "test_identifier": item["test_identifier"],
-                    "disposition": "ERROR",
-                    "start_timestamp": started_at,
-                    "finish_timestamp": _utc_now(),
-                    "duration_seconds": 0.0,
-                    "details": "discovery produced a failed-test placeholder that cannot be executed as a normal module",
-                }
-                for item in records_by_module.get(module, ())
-            ]
-            payload = {
-                **payload,
-                "successful": False,
-                "records": records,
-                "disposition_counts": _count_dispositions(records),
-            }
-        all_records.extend(payload["records"])
+        payload, parser_result, parser_detail = _parse_structured_module_result(
+            module=module,
+            stdout=completed.stdout,
+            result_file=structured_path,
+            expected_execution_id=execution_id,
+        )
+        execution_record, payload_records = _module_execution_record(
+            module=module,
+            expected_tests=row["tests"],
+            inventory_records=records_by_module.get(module, ()),
+            candidate_digest=str(env.get("TRADER_ECS003_CANDIDATE_DIGEST", "")),
+            command=command,
+            cwd=extraction_root,
+            env=module_env,
+            execution_id=execution_id,
+            started_at=started_at,
+            completed_at=completed_at,
+            elapsed_seconds=elapsed,
+            return_code=completed.returncode,
+            stdout_path=stdout_path,
+            stderr_path=stderr_path,
+            structured_path=structured_path,
+            output_root=output_root,
+            stdout=completed.stdout,
+            stderr=completed.stderr,
+            payload=payload,
+            parser_result=parser_result,
+            parser_detail=parser_detail,
+        )
+        all_records.extend(payload_records)
         segments.append(
             {
                 "module": module,
@@ -249,9 +391,11 @@ def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mappin
                 "stdout_sha256": hashlib.sha256(completed.stdout.encode("utf-8")).hexdigest(),
                 "stderr_sha256": hashlib.sha256(completed.stderr.encode("utf-8")).hexdigest(),
                 "tests_expected": row["tests"],
-                "tests_recorded": len(payload["records"]),
-                "disposition_counts": payload["disposition_counts"],
-                "status": "PASS" if completed.returncode == 0 and payload.get("successful") and len(payload["records"]) == row["tests"] else "FAIL",
+                "structured_result": structured_path.relative_to(output_root).as_posix() if structured_path.exists() else "",
+                "module_execution_record": execution_record,
+                "tests_recorded": len(payload_records),
+                "disposition_counts": _count_dispositions(payload_records),
+                "status": execution_record["execution_disposition"],
             }
         )
     expected = {item["test_identifier"] for item in inventory["records"]}
@@ -265,6 +409,7 @@ def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mappin
         "schema_version": "trader-ecs003-full-test-campaign/v1",
         "inventory": inventory,
         "segment_manifest": segments,
+        "module_execution_records": tuple(segment["module_execution_record"] for segment in segments),
         "execution_records": sorted(all_records, key=lambda item: item["test_identifier"]),
         "disposition_counts": counts,
         "total_repository_tests": inventory["total_tests"],
@@ -290,11 +435,12 @@ def run_single_ecs003(candidate_zip: Path, output_root: Path, *, run_id: str = "
     extraction = extract_candidate(candidate_zip, extraction_root, manifest)
     env = os.environ.copy()
     env["PYTHONPATH"] = os.pathsep.join((str(extraction_root / "src"), str(extraction_root / "Tests"), str(extraction_root)))
+    env["TRADER_ECS003_CANDIDATE_DIGEST"] = str(manifest["candidate_digest"])
     environment = _environment_manifest(extraction_root, manifest)
     test_campaign = run_full_test_campaign(extraction_root, output_root, env)
     verifier_package = build_behavioral_proof_package(manifest["candidate_digest"])
     verifier_report = _verifier_report(verifier_package)
-    proof_report = _proof_report(verifier_package)
+    proof_report = _proof_report(verifier_package, test_campaign)
     closure = _closure_report(test_campaign, verifier_report, proof_report)
     package = {
         "schema_version": "trader-ecs003-single-run/v1",
@@ -366,7 +512,7 @@ def _run_clean_room_ecs003(candidate_zip: Path, output_root: Path, run_id: str) 
 
 
 def _count_dispositions(records: Sequence[Mapping[str, Any]]) -> Mapping[str, int]:
-    keys = ("PASS", "FAIL", "ERROR", "TIMEOUT", "NOT APPLICABLE", "INVALID EVIDENCE", "CONSTITUTIONAL CONFLICT", "NOT EXECUTED", "INTERRUPTED", "UNKNOWN")
+    keys = ("PASS", "FAIL", "ERROR", "RUNNER_ERROR", "TIMEOUT", "NOT APPLICABLE", "INVALID EVIDENCE", "CONSTITUTIONAL CONFLICT", "NOT EXECUTED", "INTERRUPTED", "UNKNOWN")
     counts = {key: 0 for key in keys}
     for record in records:
         disposition = str(record.get("disposition", "UNKNOWN"))
@@ -431,9 +577,106 @@ def _verifier_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
     }
 
 
-def _proof_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
+def _classify_repository_finding(record: Mapping[str, Any]) -> Mapping[str, Any]:
+    test_id = str(record.get("test_identifier", ""))
+    module = test_id.split(".", 1)[0]
+    details = str(record.get("details", ""))
+    lower = f"{module} {details}".lower()
+    if "module runner structured result" in lower or "failed-test placeholder" in lower:
+        scope = "RUNNER_REPAIR_SCOPE"
+        owner = "Trader ECS-003 runner"
+    elif module == "test_argos_control_panel_dashboard" and ("authoritative fill" in lower or "position" in lower):
+        scope = "TRADER_DIRECT_FIXTURE_SCOPE"
+        owner = "Trader dashboard position fixture"
+    elif "authorization" in module:
+        scope = "TRADER_DEPENDENCY_DERIVED_AUTHORIZATIONS_SCOPE"
+        owner = "Authorizations Office dependency"
+    elif "risk" in module:
+        scope = "TRADER_DEPENDENCY_DERIVED_RISK_SCOPE"
+        owner = "Risk Office dependency"
+    elif module.startswith(("test_cic", "test_cr", "test_css", "test_tc", "test_eodj")):
+        scope = "ENTERPRISE_CERTIFICATION_DEPENDENCY_SCOPE"
+        owner = "Enterprise certification dependency"
+    else:
+        scope = "TRADER_REPOSITORY_PARTICIPATION_SCOPE"
+        owner = "Repository verification population"
+    return {
+        "test_identifier": test_id,
+        "module": module,
+        "observed_disposition": record.get("disposition", "UNKNOWN"),
+        "scope_classification": scope,
+        "classification_owner": owner,
+        "certification_effect": "BLOCKS_UNCONDITIONAL_PASS",
+        "proof_object": "TRADER-PROOF-ECS003-REPOSITORY-EXECUTION-FINDINGS",
+    }
+
+
+def _repository_scope_classification(test_campaign: Mapping[str, Any]) -> Mapping[str, Any]:
+    nonpassing = [
+        record
+        for record in test_campaign.get("execution_records", ())
+        if record.get("disposition") not in {"PASS", "NOT APPLICABLE"}
+    ]
+    classifications = [_classify_repository_finding(record) for record in nonpassing]
+    return {
+        "schema_version": "trader-rm002a015-scope-classification/v1",
+        "total_nonpassing_records": len(nonpassing),
+        "classifications": classifications,
+        "unresolved": tuple(item for item in classifications if item["scope_classification"] == "UNRESOLVED"),
+        "classification_digest": _digest_payload(classifications),
+    }
+
+
+def _repository_execution_proof(test_campaign: Mapping[str, Any], scope_report: Mapping[str, Any]) -> Mapping[str, Any]:
+    findings = []
+    for item in scope_report["classifications"]:
+        findings.append(
+            {
+                "finding_id": f"TRADER-ECS003-FINDING-{_digest_text(item['test_identifier'])[:16]}",
+                "proof_id": "TRADER-PROOF-ECS003-REPOSITORY-EXECUTION-FINDINGS",
+                "requirement_id": "TRADER-RM-002A-015-REPOSITORY-EXECUTION-FINDINGS",
+                "classification": item["scope_classification"],
+                "severity": "CERTIFICATION_BLOCKING",
+                "observed": f"{item['test_identifier']} ended as {item['observed_disposition']}",
+                "expected": "Repository execution finding classified and reflected in proof verdict",
+                "consequence": "Final Trader candidate cannot receive unconditional PASS while finding remains open",
+                "remediation_owner": item["classification_owner"],
+                "disposition": "OPEN",
+                "closure_evidence": (),
+            }
+        )
+    disposition = "PASS" if not findings else "FAIL"
+    return {
+        "proof_id": "TRADER-PROOF-ECS003-REPOSITORY-EXECUTION-FINDINGS",
+        "requirement_id": "TRADER-RM-002A-015-REPOSITORY-EXECUTION-FINDINGS",
+        "governing_authority": "TRADER-RM-002A-015",
+        "statement": "Repository execution findings must be classified against Trader scope and reintegrated into requirement-level proof verdicts.",
+        "classification": "repository_execution_reconciliation",
+        "implementation_obligation": "Nonpassing repository test outcomes produce open findings and block unconditional certification until remediated or constitutionally classified.",
+        "implementation_artifacts": ("src/argos/trader_ecs003_audit.py",),
+        "constitutional_objects": ("Trader Certification Evidence",),
+        "lifecycles": ("certification reconciliation",),
+        "interfaces": ("ECS-003 repository test campaign",),
+        "verification_plan": ("scope classification", "proof reintegration", "final verdict reconciliation"),
+        "verification_executions": (),
+        "raw_evidence": (),
+        "evidence_validation_status": "VALID",
+        "contradiction_status": "NONE",
+        "findings": tuple(findings),
+        "disposition": disposition,
+        "reproducibility_digest": _digest_payload({"campaign": test_campaign.get("campaign_digest"), "scope": scope_report.get("classification_digest")}),
+    }
+
+
+def _proof_report(verifier_package: Mapping[str, Any], test_campaign: Mapping[str, Any] | None = None) -> Mapping[str, Any]:
     proofs = _jsonable(verifier_package.proof_objects)
+    scope_report = _repository_scope_classification(test_campaign) if test_campaign is not None else {"classifications": (), "unresolved": (), "total_nonpassing_records": 0}
+    if test_campaign is not None:
+        proofs = tuple(proofs) + (_repository_execution_proof(test_campaign, scope_report),)
     counts = _count_dispositions(proofs)
+    final_verdict = verifier_package.final_verdict
+    if any(proof.get("disposition") != "PASS" for proof in proofs):
+        final_verdict = {**_jsonable(final_verdict), "verdict": "FAIL", "basis": "repository execution findings remain open"}
     return {
         "schema_version": "trader-ecs003-proof-report/v1",
         "requirement_registry": _jsonable(verifier_package.requirement_registry),
@@ -442,8 +685,9 @@ def _proof_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
         "coverage": _coverage_report(verifier_package),
         "relationship_graph": verifier_package.relationship_graph,
         "traceability_matrix": verifier_package.traceability_matrix,
+        "repository_scope_classification": scope_report,
         "proof_recalculation_report": {"method": "recalculated from current verifier execution and evidence validation registries"},
-        "final_verdict": verifier_package.final_verdict,
+        "final_verdict": final_verdict,
         "totals": {
             "requirements": len(verifier_package.requirement_registry),
             "proof_objects": len(proofs),
@@ -457,7 +701,7 @@ def _proof_report(verifier_package: Mapping[str, Any]) -> Mapping[str, Any]:
         "proof_registry_digest": _digest_payload(proofs),
         "graph_digest": _digest_payload(verifier_package.relationship_graph),
         "finding_registry_digest": _digest_payload(tuple(finding for proof in proofs for finding in proof.get("findings", ()))),
-        "status": "PASS" if verifier_package.final_verdict["verdict"] == "UNCONDITIONAL PASS" else "FAIL",
+        "status": "PASS" if final_verdict["verdict"] == "UNCONDITIONAL PASS" else "FAIL",
     }
 
 
@@ -610,8 +854,15 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--run-test-module")
     args = parser.parse_args(argv)
     if args.run_test_module:
-        result = run_test_module(args.run_test_module)
-        print("TRADER_ECS003_MODULE_RESULT=" + json.dumps(_jsonable(result), sort_keys=True))
+        result = run_test_module(
+            args.run_test_module,
+            execution_id=os.environ.get("TRADER_ECS003_EXECUTION_ID"),
+            candidate_digest=os.environ.get("TRADER_ECS003_CANDIDATE_DIGEST", ""),
+        )
+        result_file = os.environ.get("TRADER_ECS003_RESULT_FILE")
+        if result_file:
+            Path(result_file).write_text(json.dumps(_jsonable(result), sort_keys=True, indent=2), encoding="utf-8")
+        print(TRADER_ECS003_RESULT_MARKER + json.dumps(_jsonable(result), sort_keys=True))
         return 0 if result["successful"] else 1
     if not args.candidate or not args.output:
         parser.error("--candidate and --output are required unless --run-test-module is used")

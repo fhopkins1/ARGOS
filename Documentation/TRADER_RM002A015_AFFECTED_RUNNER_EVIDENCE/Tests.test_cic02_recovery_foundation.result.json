@@ -1,0 +1,109 @@
+{
+  "candidate_digest": "working-tree-affected-run",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 10,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 174.120876,
+  "execution_id": "AFFECTED-Tests.test_cic02_recovery_foundation",
+  "finish_timestamp": "2026-07-24T00:35:44.947779Z",
+  "module": "Tests.test_cic02_recovery_foundation",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 11.567247,
+      "finish_timestamp": "2026-07-24T00:33:59.887033Z",
+      "start_timestamp": "2026-07-24T00:33:48.319662Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_package_validation_rejects_mixed_candidate_package"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 53.824276,
+      "finish_timestamp": "2026-07-24T00:34:53.712096Z",
+      "start_timestamp": "2026-07-24T00:33:59.887176Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.103499,
+      "finish_timestamp": "2026-07-24T00:34:53.815885Z",
+      "start_timestamp": "2026-07-24T00:34:53.712430Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_complete_pass_execution_can_produce_cr7_pass_envelope"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 9.263342,
+      "finish_timestamp": "2026-07-24T00:35:03.079481Z",
+      "start_timestamp": "2026-07-24T00:34:53.816017Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cr10_qualification_rejects_failed_or_mismatched_cr7_evidence"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 19.765467,
+      "finish_timestamp": "2026-07-24T00:35:22.845316Z",
+      "start_timestamp": "2026-07-24T00:35:03.079560Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_css_prerequisite_publication_is_immutable_and_fail_closed"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.092427,
+      "finish_timestamp": "2026-07-24T00:35:22.937847Z",
+      "start_timestamp": "2026-07-24T00:35:22.845467Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_denominator_ledger_accounts_for_not_executed_tests_as_failure"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 10.455763,
+      "finish_timestamp": "2026-07-24T00:35:33.393878Z",
+      "start_timestamp": "2026-07-24T00:35:22.937973Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_discovery_builds_deterministic_canonical_manifest"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 8.783276,
+      "finish_timestamp": "2026-07-24T00:35:42.177345Z",
+      "start_timestamp": "2026-07-24T00:35:33.393946Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_publication_detects_cr7_cr10_candidate_mismatch"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 2.417663,
+      "finish_timestamp": "2026-07-24T00:35:44.595079Z",
+      "start_timestamp": "2026-07-24T00:35:42.177437Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_summary_cannot_override_authoritative_cr7_verdict"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.35211,
+      "finish_timestamp": "2026-07-24T00:35:44.947271Z",
+      "start_timestamp": "2026-07-24T00:35:44.595225Z",
+      "test_identifier": "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_timeout_interrupted_error_and_unknown_states_fail_closed"
+    }
+  ],
+  "runner_output": "test_cic02_package_validation_rejects_mixed_candidate_package (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_package_validation_rejects_mixed_candidate_package) ... ok\ntest_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution) ... ok\ntest_complete_pass_execution_can_produce_cr7_pass_envelope (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_complete_pass_execution_can_produce_cr7_pass_envelope) ... ok\ntest_cr10_qualification_rejects_failed_or_mismatched_cr7_evidence (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cr10_qualification_rejects_failed_or_mismatched_cr7_evidence) ... ok\ntest_css_prerequisite_publication_is_immutable_and_fail_closed (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_css_prerequisite_publication_is_immutable_and_fail_closed) ... ok\ntest_denominator_ledger_accounts_for_not_executed_tests_as_failure (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_denominator_ledger_accounts_for_not_executed_tests_as_failure) ... ok\ntest_discovery_builds_deterministic_canonical_manifest (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_discovery_builds_deterministic_canonical_manifest) ... ok\ntest_publication_detects_cr7_cr10_candidate_mismatch (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_publication_detects_cr7_cr10_candidate_mismatch) ... ok\ntest_summary_cannot_override_authoritative_cr7_verdict (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_summary_cannot_override_authoritative_cr7_verdict) ... ok\ntest_timeout_interrupted_error_and_unknown_states_fail_closed (Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_timeout_interrupted_error_and_unknown_states_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 174.120s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic02_recovery_foundation.py",
+  "start_timestamp": "2026-07-24T00:33:48.319662Z",
+  "successful": true,
+  "tests_run": 10
+}

@@ -1,0 +1,85 @@
+{
+  "candidate_digest": "working-tree-affected-run",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 7,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 12.035229,
+  "execution_id": "AFFECTED-Tests.test_trader_requirement_verifier",
+  "finish_timestamp": "2026-07-24T00:36:38.596318Z",
+  "module": "Tests.test_trader_requirement_verifier",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.344134,
+      "finish_timestamp": "2026-07-24T00:36:27.905357Z",
+      "start_timestamp": "2026-07-24T00:36:26.561249Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_actual_verifier_execution_creates_execution_and_valid_evidence"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.450051,
+      "finish_timestamp": "2026-07-24T00:36:29.355541Z",
+      "start_timestamp": "2026-07-24T00:36:27.905505Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_all_proofs_recalculate_from_current_executions"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 2.622382,
+      "finish_timestamp": "2026-07-24T00:36:31.978028Z",
+      "start_timestamp": "2026-07-24T00:36:29.355654Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_behavioral_system_summary_is_clean_room_reproducible"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.751396,
+      "finish_timestamp": "2026-07-24T00:36:33.729538Z",
+      "start_timestamp": "2026-07-24T00:36:31.978144Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_defect_changes_observed_result_and_fails_evidence_validation"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 2.231434,
+      "finish_timestamp": "2026-07-24T00:36:35.961502Z",
+      "start_timestamp": "2026-07-24T00:36:33.730085Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_evidence_rejects_candidate_summary_metadata_and_digest_mismatch"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.013184,
+      "finish_timestamp": "2026-07-24T00:36:35.974833Z",
+      "start_timestamp": "2026-07-24T00:36:35.961713Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_missing_verifier_forces_not_executed_and_fail_verdict"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 2.620892,
+      "finish_timestamp": "2026-07-24T00:36:38.595858Z",
+      "start_timestamp": "2026-07-24T00:36:35.974956Z",
+      "test_identifier": "Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_timeout_and_contradiction_demonstrations_fail_closed"
+    }
+  ],
+  "runner_output": "test_actual_verifier_execution_creates_execution_and_valid_evidence (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_actual_verifier_execution_creates_execution_and_valid_evidence) ... ok\ntest_all_proofs_recalculate_from_current_executions (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_all_proofs_recalculate_from_current_executions) ... ok\ntest_behavioral_system_summary_is_clean_room_reproducible (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_behavioral_system_summary_is_clean_room_reproducible) ... ok\ntest_defect_changes_observed_result_and_fails_evidence_validation (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_defect_changes_observed_result_and_fails_evidence_validation) ... ok\ntest_evidence_rejects_candidate_summary_metadata_and_digest_mismatch (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_evidence_rejects_candidate_summary_metadata_and_digest_mismatch) ... ok\ntest_missing_verifier_forces_not_executed_and_fail_verdict (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_missing_verifier_forces_not_executed_and_fail_verdict) ... ok\ntest_timeout_and_contradiction_demonstrations_fail_closed (Tests.test_trader_requirement_verifier.TraderRequirementVerifierTests.test_timeout_and_contradiction_demonstrations_fail_closed) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 12.035s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_trader_requirement_verifier.py",
+  "start_timestamp": "2026-07-24T00:36:26.561249Z",
+  "successful": true,
+  "tests_run": 7
+}
