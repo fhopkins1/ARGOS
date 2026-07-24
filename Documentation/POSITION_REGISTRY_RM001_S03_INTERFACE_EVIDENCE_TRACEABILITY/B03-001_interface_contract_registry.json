@@ -1,0 +1,578 @@
+[
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-001-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-001",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-002-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-002",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-003-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-003",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-004-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-004",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-005-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-005",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-006-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-006",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-007-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-007",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-008-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-008",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-009-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-009",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-010-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-010",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-011-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-011",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  },
+  {
+    "acknowledgement_rules": "acknowledgement records delivery only; it does not fabricate external truth",
+    "admissibility_requirements": "authority, provenance, freshness, integrity, and ownership boundary validation",
+    "canonical_schema": "constitutional contract only; implementation schema not specified",
+    "completeness_requirements": "all required identities, timestamps, and source references present",
+    "completion_criteria": "all required validations have terminal disposition and evidence has been persisted",
+    "consumer_obligations": [
+      "authority validation",
+      "identity validation",
+      "freshness validation",
+      "immutable evidence recording"
+    ],
+    "contract_id": "PR-S03-IF-012-CONTRACT",
+    "correction_rules": "no correction without correction authority and predecessor preservation",
+    "duplicate_rules": "duplicate delivery is recorded without duplicate constitutional mutation",
+    "evidence_obligations": [
+      "interface identity evidence",
+      "authority evidence",
+      "source provenance evidence",
+      "integrity digest"
+    ],
+    "failure_rules": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
+    "freshness_requirements": "source-specific freshness rule and temporal doctrine must be available",
+    "identity_requirements": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "interface_id": "PR-S03-IF-012",
+    "ordering_requirements": "event ordering uses source event time plus explicit sequence; equal timestamps require deterministic disposition",
+    "producer_obligations": [
+      "canonical identity",
+      "source provenance",
+      "integrity metadata",
+      "timestamp metadata"
+    ],
+    "reconciliation_rules": "Position Registry records reconciliation cases; source owner retains source-truth authority",
+    "replay_rules": "replay reproduces original constitutional effect and never creates new external action",
+    "required_inputs": [
+      "message identity",
+      "source identity",
+      "payload identity",
+      "authority reference"
+    ],
+    "required_outputs": [
+      "admission disposition",
+      "evidence reference",
+      "finding reference when rejected"
+    ],
+    "retry_rules": "retry preserves originating identity and cannot create duplicate mutation",
+    "timeout_rules": "timeout becomes anomaly evidence and unresolved disposition"
+  }
+]

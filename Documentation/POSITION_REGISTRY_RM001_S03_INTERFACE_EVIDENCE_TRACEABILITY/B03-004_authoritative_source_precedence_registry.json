@@ -1,0 +1,38 @@
+[
+  {
+    "reconciliation_id": "PR-S03-REC-001",
+    "source_precedence": "broker-reported position truth precedes internal values for broker facts; internal state preserves constitutional lineage"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-002",
+    "source_precedence": "Trader intent is admissible execution context but never overrides broker fill truth"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-003",
+    "source_precedence": "Broker-confirmed fills precede Trader expectation and Monitoring observation"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-004",
+    "source_precedence": "account identity and balance truth remain externally governed dependencies"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-005",
+    "source_precedence": "authorization identity, scope, freshness, and revocation truth remain externally governed"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-006",
+    "source_precedence": "monitoring observations are evidence-only unless another authority authorizes mutation"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-007",
+    "source_precedence": "exit decisions govern closure intent but do not establish fill completion"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-008",
+    "source_precedence": "closed-position publication follows Position Registry terminal evidence"
+  },
+  {
+    "reconciliation_id": "PR-S03-REC-009",
+    "source_precedence": "Historian preserves custody but does not rewrite Position Registry authority"
+  }
+]

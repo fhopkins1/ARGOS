@@ -1,0 +1,338 @@
+[
+  {
+    "authority_id": "PR-S03-IF-001-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "execution and fill intent admitted as non-authoritative broker truth",
+    "authorized_producer": "Trader",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-001",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-002-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "broker-reported position and fill truth",
+    "authorized_producer": "Broker",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-002",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-003-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "authorization identity, scope, and workflow lineage",
+    "authorized_producer": "Authorizations",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-003",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-004-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "risk disposition and exposure boundary reference",
+    "authorized_producer": "Risk",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-004",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-005-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "monitoring observations without mutation authority",
+    "authorized_producer": "Monitoring",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-005",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-006-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "exit decision references and closure intent",
+    "authorized_producer": "Exit Decision",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-006",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-007-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Closed Position Truth",
+    "authorized_direction": "outbound",
+    "authorized_information": "closed-position facts after terminal lifecycle evidence",
+    "authorized_producer": "Position Registry",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-007",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-008-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Performance Truth",
+    "authorized_direction": "outbound",
+    "authorized_information": "position-derived performance inputs without performance ownership",
+    "authorized_producer": "Position Registry",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-008",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-009-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Historian",
+    "authorized_direction": "outbound",
+    "authorized_information": "immutable historical record custody",
+    "authorized_producer": "Position Registry",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-009",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-010-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Commander",
+    "authorized_direction": "outbound",
+    "authorized_information": "constitutionally significant unresolved contradiction notice",
+    "authorized_producer": "Position Registry",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-010",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-011-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Infrastructure",
+    "authorized_direction": "outbound",
+    "authorized_information": "durable persistence and replay custody",
+    "authorized_producer": "Position Registry",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-011",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  },
+  {
+    "authority_id": "PR-S03-IF-012-AUTH",
+    "authority_owner": "Position Registry",
+    "authorized_actions": [
+      "produce",
+      "consume",
+      "validate",
+      "record evidence"
+    ],
+    "authorized_consumer": "Position Registry",
+    "authorized_direction": "inbound",
+    "authorized_information": "observation reference without position mutation authority",
+    "authorized_producer": "Sentinel",
+    "conflict_resolution_authority": "Position Registry reconciliation doctrine with superior office truth precedence",
+    "correction_limits": "correction requires Series 2 correction authority and preserved lineage",
+    "escalation_authority": "Commander for constitutionally significant unresolved contradictions",
+    "governing_constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "interface_id": "PR-S03-IF-012",
+    "mutation_limits": "Position Registry only where Series 2 authorizes position mutation; otherwise none",
+    "prohibited_actions": [
+      "implied ownership transfer",
+      "unauthorized mutation",
+      "fabricated truth",
+      "silent overwrite"
+    ],
+    "replay_limits": "replay never authorizes new external action",
+    "retry_limits": "retry never authorizes duplicate mutation"
+  }
+]
