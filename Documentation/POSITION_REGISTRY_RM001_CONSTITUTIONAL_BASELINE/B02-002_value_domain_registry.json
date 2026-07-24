@@ -1,0 +1,94 @@
+[
+  {
+    "allowed_value_domain": "immutable",
+    "field_id": "position_id"
+  },
+  {
+    "allowed_value_domain": "immutable_reference",
+    "field_id": "instrument_id"
+  },
+  {
+    "allowed_value_domain": "immutable_reference",
+    "field_id": "account_id"
+  },
+  {
+    "allowed_value_domain": "immutable_reference",
+    "field_id": "workflow_id"
+  },
+  {
+    "allowed_value_domain": "immutable_reference",
+    "field_id": "authorization_id"
+  },
+  {
+    "allowed_value_domain": "immutable_reference",
+    "field_id": "risk_id"
+  },
+  {
+    "allowed_value_domain": "append_only",
+    "field_id": "broker_order_ids"
+  },
+  {
+    "allowed_value_domain": "append_only",
+    "field_id": "fill_ids"
+  },
+  {
+    "allowed_value_domain": "mutable_with_fill_evidence",
+    "field_id": "current_quantity"
+  },
+  {
+    "allowed_value_domain": "mutable_with_authorization",
+    "field_id": "available_quantity"
+  },
+  {
+    "allowed_value_domain": "mutable_with_authorization",
+    "field_id": "pending_quantity"
+  },
+  {
+    "allowed_value_domain": "append_only",
+    "field_id": "closed_quantity"
+  },
+  {
+    "allowed_value_domain": "mutable_with_fill_evidence",
+    "field_id": "average_entry_cost"
+  },
+  {
+    "allowed_value_domain": "mutable_with_correction",
+    "field_id": "adjusted_cost_basis"
+  },
+  {
+    "allowed_value_domain": "read_only_reference",
+    "field_id": "realized_value_reference"
+  },
+  {
+    "allowed_value_domain": "derived_projection",
+    "field_id": "unrealized_value"
+  },
+  {
+    "allowed_value_domain": "mutable_with_transition_evidence",
+    "field_id": "lifecycle_state"
+  },
+  {
+    "allowed_value_domain": "mutable_with_reconciliation_evidence",
+    "field_id": "reconciliation_state"
+  },
+  {
+    "allowed_value_domain": "mutable_with_correction_evidence",
+    "field_id": "correction_state"
+  },
+  {
+    "allowed_value_domain": "mutable_with_anomaly_evidence",
+    "field_id": "anomaly_state"
+  },
+  {
+    "allowed_value_domain": "immutable",
+    "field_id": "created_at"
+  },
+  {
+    "allowed_value_domain": "append_only_history",
+    "field_id": "updated_at"
+  },
+  {
+    "allowed_value_domain": "append_only",
+    "field_id": "history"
+  }
+]

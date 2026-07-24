@@ -1,0 +1,28 @@
+{
+  "history_rule": "correction and reconciliation never destroy prior state",
+  "lifecycle_owner": "Position Registry",
+  "states": [
+    "proposed",
+    "pending_authorization",
+    "authorized",
+    "pending_opening_execution",
+    "partially_opened",
+    "open",
+    "increasing",
+    "reducing",
+    "partially_closed",
+    "pending_closure",
+    "closed",
+    "pending_reconciliation",
+    "reconciled",
+    "correction_pending",
+    "corrected",
+    "disputed",
+    "suspended",
+    "anomalous",
+    "unrecoverable",
+    "archived",
+    "retired"
+  ],
+  "transition_count": 16
+}

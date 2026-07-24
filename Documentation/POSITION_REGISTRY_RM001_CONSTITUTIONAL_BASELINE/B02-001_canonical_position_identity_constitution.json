@@ -1,0 +1,9 @@
+{
+  "collision_handling": "fail closed and create identity conflict record",
+  "correction_restrictions": "identity correction requires supersession",
+  "creation_conditions": "authorized position creation from admissible source evidence",
+  "duplicate_handling": "idempotent reference or rejected duplicate",
+  "identity": "position_id",
+  "persistence": "stable through archive and retirement",
+  "uniqueness_rule": "one active canonical position identity per account, instrument, strategy/workflow, and decision lineage unless split explicitly authorized"
+}

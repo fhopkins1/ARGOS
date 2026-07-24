@@ -1,0 +1,42 @@
+[
+  {
+    "position_identity": "position_id",
+    "related_identity": "position_id",
+    "relationship": "owned field"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "instrument_id",
+    "relationship": "reference only"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "account_id",
+    "relationship": "reference only"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "workflow_id",
+    "relationship": "reference only"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "authorization_id",
+    "relationship": "reference only"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "risk_id",
+    "relationship": "reference only"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "broker_order_ids",
+    "relationship": "reference only"
+  },
+  {
+    "position_identity": "position_id",
+    "related_identity": "fill_ids",
+    "relationship": "reference only"
+  }
+]

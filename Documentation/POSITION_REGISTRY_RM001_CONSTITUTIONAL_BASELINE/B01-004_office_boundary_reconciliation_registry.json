@@ -1,0 +1,110 @@
+[
+  {
+    "boundary": "Consumes authorized position references; does not own position state.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Trader",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-001"
+  },
+  {
+    "boundary": "Provides order and fill evidence; does not mutate position state directly.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Broker",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-002"
+  },
+  {
+    "boundary": "Owns authorization issuance; Position Registry stores references only.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Authorizations",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-003"
+  },
+  {
+    "boundary": "Owns risk decisions and limits; Position Registry stores references only.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Risk",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-004"
+  },
+  {
+    "boundary": "Observes positions; read access does not confer mutation authority.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Monitoring",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-005"
+  },
+  {
+    "boundary": "Recommends exits; does not close positions.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Exit Decision",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-006"
+  },
+  {
+    "boundary": "Owns closed-position truth; Position Registry owns open/active position state and closure lineage.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Closed Position Truth",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-007"
+  },
+  {
+    "boundary": "Owns performance truth; Position Registry owns open-position state and references realized truth.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Performance Truth",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-008"
+  },
+  {
+    "boundary": "Preserves history; does not own active mutation authority.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Historian",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-009"
+  },
+  {
+    "boundary": "Receives reports and may assign missions; does not directly mutate position state.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Commander",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-010"
+  },
+  {
+    "boundary": "Provides persistence and replay services; custody does not confer ownership.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Infrastructure",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-011"
+  },
+  {
+    "boundary": "May observe or notify; does not mutate position state.",
+    "conflict_resolution_authority": "constitutional precedence registry",
+    "object_ownership": "Position Registry owns position state only",
+    "office": "Sentinel",
+    "permitted_reads": "as authorized by read registry",
+    "permitted_writes": "only through Position Registry mutation authority",
+    "relationship_id": "PR-BOUNDARY-012"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "available_alternatives": [
+      "Trader owns positions",
+      "Position Registry owns active position state"
+    ],
+    "constitutional_rationale": "separates execution from position truth",
+    "decision_id": "PR-DEC-001",
+    "effective_status": "AUTHORITATIVE",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S01",
+    "governing_issue": "Position object ownership",
+    "selected_disposition": "Position Registry owns active position state"
+  },
+  {
+    "available_alternatives": [
+      "Position Registry owns all PnL truth",
+      "Performance/Closed Truth own their records"
+    ],
+    "constitutional_rationale": "preserves office single ownership",
+    "decision_id": "PR-DEC-002",
+    "effective_status": "AUTHORITATIVE",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S01",
+    "governing_issue": "Performance and closed truth boundary",
+    "selected_disposition": "Position Registry stores references only"
+  },
+  {
+    "available_alternatives": [
+      "overwrite prior state",
+      "append correction/supersession"
+    ],
+    "constitutional_rationale": "immutable history",
+    "decision_id": "PR-DEC-003",
+    "effective_status": "AUTHORITATIVE",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+    "governing_issue": "Correction semantics",
+    "selected_disposition": "append correction/supersession"
+  }
+]

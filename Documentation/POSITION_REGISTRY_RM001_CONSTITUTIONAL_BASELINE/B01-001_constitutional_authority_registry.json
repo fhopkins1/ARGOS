@@ -1,0 +1,68 @@
+[
+  {
+    "authority_id": "PR-AUTH-001",
+    "authority_limitations": "does not supersede external source ownership",
+    "authority_scope": "position identity",
+    "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
+    "delegated_authority": "none unless explicitly listed",
+    "description": "Create canonical position identity",
+    "governing_constitutional_law": "Enterprise single ownership, immutable evidence, fail-closed authority",
+    "prerequisite_authority": "admissible source evidence",
+    "retained_authority": "Position Registry"
+  },
+  {
+    "authority_id": "PR-AUTH-002",
+    "authority_limitations": "does not supersede external source ownership",
+    "authority_scope": "position mutation evidence",
+    "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
+    "delegated_authority": "none unless explicitly listed",
+    "description": "Admit authorized broker fill references",
+    "governing_constitutional_law": "Enterprise single ownership, immutable evidence, fail-closed authority",
+    "prerequisite_authority": "admissible source evidence",
+    "retained_authority": "Position Registry"
+  },
+  {
+    "authority_id": "PR-AUTH-003",
+    "authority_limitations": "does not supersede external source ownership",
+    "authority_scope": "position-owned fields",
+    "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
+    "delegated_authority": "none unless explicitly listed",
+    "description": "Mutate position-owned quantity and lifecycle state",
+    "governing_constitutional_law": "Enterprise single ownership, immutable evidence, fail-closed authority",
+    "prerequisite_authority": "admissible source evidence",
+    "retained_authority": "Position Registry"
+  },
+  {
+    "authority_id": "PR-AUTH-004",
+    "authority_limitations": "does not supersede external source ownership",
+    "authority_scope": "reconciliation records",
+    "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
+    "delegated_authority": "none unless explicitly listed",
+    "description": "Reconcile position state against authoritative sources",
+    "governing_constitutional_law": "Enterprise single ownership, immutable evidence, fail-closed authority",
+    "prerequisite_authority": "admissible source evidence",
+    "retained_authority": "Position Registry"
+  },
+  {
+    "authority_id": "PR-AUTH-005",
+    "authority_limitations": "does not supersede external source ownership",
+    "authority_scope": "correction records",
+    "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
+    "delegated_authority": "none unless explicitly listed",
+    "description": "Correct position-owned records while preserving history",
+    "governing_constitutional_law": "Enterprise single ownership, immutable evidence, fail-closed authority",
+    "prerequisite_authority": "admissible source evidence",
+    "retained_authority": "Position Registry"
+  },
+  {
+    "authority_id": "PR-AUTH-006",
+    "authority_limitations": "does not supersede external source ownership",
+    "authority_scope": "archival records",
+    "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
+    "delegated_authority": "none unless explicitly listed",
+    "description": "Archive and retire terminal position records",
+    "governing_constitutional_law": "Enterprise single ownership, immutable evidence, fail-closed authority",
+    "prerequisite_authority": "admissible source evidence",
+    "retained_authority": "Position Registry"
+  }
+]
