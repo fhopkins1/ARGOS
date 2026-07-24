@@ -758,19 +758,11 @@ class PerformanceTruthEngine:
         existing = _latest_position_for_symbol(self._position_ledger, order.symbol, order.execution_environment)
         order_payload = asdict(order)
         if broker_fills:
-            order_payload["fills"] = tuple(broker_fills)
-            order_payload["fill_ids"] = tuple(str(item.get("fill_id", item.get("fillId", ""))) for item in broker_fills)
+            enriched_fills = tuple(_position_fill_evidence(order, dict(item)) for item in broker_fills)
+            order_payload["fills"] = enriched_fills
+            order_payload["fill_ids"] = tuple(str(item.get("fill_id", item.get("fillId", ""))) for item in enriched_fills)
         elif order.filled_quantity > 0:
-            order_payload["fills"] = (
-                {
-                    "fill_id": f"{order.order_id}-FILL-001",
-                    "order_id": order.order_id,
-                    "quantity": order.filled_quantity,
-                    "price": order.average_fill_price,
-                    "timestamp": order.timestamp,
-                    "source": "PerformanceTruthEngine.PaperBrokerModel",
-                },
-            )
+            order_payload["fills"] = (_position_fill_evidence(order, {"fill_id": f"{order.order_id}-FILL-001"}),)
             order_payload["fill_ids"] = (f"{order.order_id}-FILL-001",)
         order_payload["mission_id"] = order.intended_order.get("missionId", "")
         order_payload["trader_identity"] = order.intended_order.get("traderIdentity", "")
@@ -1055,6 +1047,27 @@ def _record(record_type: Any, **kwargs: Any) -> Any:
 def _hash_payload(payload: dict[str, Any]) -> str:
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), default=str).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
+
+
+def _position_fill_evidence(order: BrokerRealisticOrderRecord, fill: dict[str, Any]) -> dict[str, Any]:
+    payload = {
+        "fill_id": str(fill.get("fill_id", fill.get("fillId", f"{order.order_id}-FILL-001"))),
+        "order_id": order.order_id,
+        "broker_event_id": str(fill.get("broker_event_id", fill.get("event_id", f"{order.order_id}-EVENT-001"))),
+        "workflow_id": order.workflow_id,
+        "account_id": str(order.intended_order.get("accountId", "")),
+        "portfolio_id": str(order.intended_order.get("portfolioId", "")),
+        "symbol": order.symbol,
+        "side": order.side,
+        "quantity": round(float(fill.get("quantity", order.filled_quantity) or 0.0), 4),
+        "price": round(float(fill.get("price", order.average_fill_price) or 0.0), 4),
+        "timestamp": str(fill.get("timestamp", fill.get("timestamp_utc", order.timestamp))),
+        "source": str(fill.get("source", "PerformanceTruthEngine.PaperBrokerModel")),
+        "producer": str(fill.get("producer", "PerformanceTruthEngine")),
+        "provenance": str(fill.get("provenance", "broker_fill_event")),
+    }
+    payload["evidence_digest"] = hashlib.sha256(json.dumps(payload, sort_keys=True).encode("utf-8")).hexdigest()
+    return payload
 
 
 def _latest_decision_object(workflow: Any) -> dict[str, Any]:

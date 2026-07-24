@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, replace
 from enum import Enum
+import hashlib
+import json
 from typing import Any
 
 from argos.foundation.contracts import utc_timestamp
@@ -228,7 +230,7 @@ class PositionRegistry:
         position_id = self._position_id(order)
         existing = self._positions.get(position_id)
         filled = float(order.get("filled_quantity", 0.0) or 0.0)
-        fill_ids = _fill_ids(order)
+        fill_ids = _validated_fill_ids(order, existing_fill_ids=existing.fill_ids if existing else (), expected_side="BUY")
         if filled > 0 and not fill_ids:
             self._audit("position_create_rejected", position_id, ("missing authoritative fill id",), str(order.get("workflow_id", "")))
             raise ValueError("authoritative fill id required for position mutation")
@@ -316,7 +318,11 @@ class PositionRegistry:
             self._audit("position_sell_rejected", position_id, ("unknown position",), str(order.get("workflow_id", "")))
             raise ValueError(f"unknown position: {position_id}")
         sold = float(order.get("filled_quantity", 0.0) or 0.0)
-        fill_ids = _fill_ids(order)
+        terminal = existing.lifecycle_status in {PositionLifecycleStatus.CLOSED.value, PositionLifecycleStatus.ARCHIVED.value, PositionLifecycleStatus.CANCELLED.value, PositionLifecycleStatus.REJECTED.value}
+        if terminal and sold > 0:
+            self._audit("position_sell_rejected", position_id, ("terminal position cannot be mutated by fill",), str(order.get("workflow_id", "")))
+            raise ValueError("terminal position cannot be mutated by fill")
+        fill_ids = _validated_fill_ids(order, existing_fill_ids=existing.fill_ids, expected_side="SELL")
         if sold > 0 and not fill_ids:
             self._audit("position_sell_rejected", position_id, ("missing authoritative fill id",), str(order.get("workflow_id", "")))
             raise ValueError("authoritative fill id required for position mutation")
@@ -563,3 +569,73 @@ def _fill_ids(order: dict[str, Any]) -> tuple[str, ...]:
                 values.append(str(item))
         return tuple(item for item in values if item)
     return ()
+
+
+def _validated_fill_ids(order: dict[str, Any], *, existing_fill_ids: tuple[str, ...], expected_side: str) -> tuple[str, ...]:
+    fills = order.get("fills", ()) or ()
+    fill_ids = _fill_ids(order)
+    if float(order.get("filled_quantity", 0.0) or 0.0) <= 0:
+        return fill_ids
+    if not fills:
+        raise ValueError("authoritative fill object required for position mutation")
+    if not isinstance(fills, (tuple, list)):
+        raise ValueError("authoritative fill evidence must be a sequence")
+    validated = []
+    for fill in fills:
+        if not isinstance(fill, dict):
+            raise ValueError("authoritative fill evidence must be object-backed")
+        fill_id = str(fill.get("fill_id", fill.get("fillId", "")))
+        if not fill_id:
+            raise ValueError("authoritative fill id required for position mutation")
+        if fill_id in existing_fill_ids:
+            raise ValueError("duplicate authoritative fill id rejected")
+        _validate_fill_identity(fill_id)
+        _validate_fill_matches_order(fill, order, expected_side=expected_side)
+        validated.append(fill_id)
+    return tuple(dict.fromkeys(validated))
+
+
+def _validate_fill_identity(fill_id: str) -> None:
+    upper = fill_id.upper()
+    if len(fill_id) < 6 or any(ch.isspace() for ch in fill_id) or upper in {"UNKNOWN", "PLACEHOLDER", "FABRICATED"} or upper.startswith(("UNKNOWN", "PLACEHOLDER", "FABRICATED")):
+        raise ValueError("malformed authoritative fill id")
+
+
+def _validate_fill_matches_order(fill: dict[str, Any], order: dict[str, Any], *, expected_side: str) -> None:
+    required = ("order_id", "quantity", "price", "timestamp", "source")
+    missing = tuple(key for key in required if fill.get(key) in (None, ""))
+    if missing:
+        raise ValueError(f"authoritative fill missing required provenance: {', '.join(missing)}")
+    if str(fill.get("order_id", "")) != str(order.get("order_id", "")):
+        raise ValueError("authoritative fill order mismatch")
+    if str(fill.get("symbol", order.get("symbol", ""))).upper() != str(order.get("symbol", "")).upper():
+        raise ValueError("authoritative fill instrument mismatch")
+    if str(fill.get("workflow_id", order.get("workflow_id", ""))) != str(order.get("workflow_id", "")):
+        raise ValueError("authoritative fill workflow mismatch")
+    if str(fill.get("account_id", order.get("account_id", ""))) != str(order.get("account_id", "")):
+        raise ValueError("authoritative fill account mismatch")
+    if str(fill.get("portfolio_id", order.get("portfolio_id", ""))) != str(order.get("portfolio_id", "")):
+        raise ValueError("authoritative fill portfolio mismatch")
+    if str(fill.get("side", expected_side)).upper() != expected_side:
+        raise ValueError("authoritative fill side mismatch")
+    if float(fill.get("quantity", 0.0) or 0.0) <= 0 or round(float(fill.get("quantity", 0.0) or 0.0), 4) > round(float(order.get("filled_quantity", 0.0) or 0.0), 4):
+        raise ValueError("authoritative fill quantity invalid")
+    if float(fill.get("price", 0.0) or 0.0) <= 0:
+        raise ValueError("authoritative fill price invalid")
+    if not str(fill.get("timestamp", "")):
+        raise ValueError("authoritative fill timestamp invalid")
+    if str(fill.get("source", "")).upper() in {"", "PLACEHOLDER", "SYNTHETIC_LABEL"}:
+        raise ValueError("authoritative fill provenance invalid")
+    if fill.get("candidate_digest") and order.get("candidate_digest") and str(fill.get("candidate_digest")) != str(order.get("candidate_digest")):
+        raise ValueError("authoritative fill candidate digest mismatch")
+    evidence_digest = str(fill.get("evidence_digest", ""))
+    if evidence_digest:
+        expected = _fill_evidence_digest(fill)
+        if evidence_digest != expected:
+            raise ValueError("authoritative fill evidence digest invalid")
+
+
+def _fill_evidence_digest(fill: dict[str, Any]) -> str:
+    payload = {key: value for key, value in fill.items() if key != "evidence_digest"}
+    encoded = json.dumps(payload, sort_keys=True, default=str).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
