@@ -1,0 +1,37 @@
+{
+  "detail": "proofs=236",
+  "disposition": "PASS",
+  "duration_ms": 175,
+  "execution_id": "B06-EXEC-C79682F2E9FB8714",
+  "expected": "ACCEPTED",
+  "manifest": {
+    "batch_identifier": "TRADER-RM-002A-016-S06-B06",
+    "candidate_digest": "c22886f2e1cbbf2417f2b67cdab702a6b3ed93fa",
+    "code_modified_after_execution_start": false,
+    "enterprise_digest": "db8cd03c587ddbe1958438357d0b0bd9351d36bb0f01006ef673aaa8ad59313a",
+    "fixture_digest": "5d62dcd11e2f318fee31b737f60331099dde8ba812002eb4d4e72631abff3e43",
+    "generated_at_utc": "2026-07-24T02:34:30.979564Z",
+    "trader_verifier_digest": "c353b291e6093d07b46f1e4c9e4aa2924a086b5efbf260de05a2bfd66fc0a53d",
+    "version": "TRADER-RM-002A-016-S06-B06/1.0.0",
+    "working_tree_digest": "e5fd0fa53e0978c4187f448c0274c55ab5a8fe24"
+  },
+  "observed": "ACCEPTED",
+  "scenario": {
+    "dependency_status": "AVAILABLE",
+    "domain": "candidate identity behavior",
+    "expected": "ACCEPTED",
+    "group": "BOUNDARY",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:build_proof_population"
+    ],
+    "item_id": "B06-002-BOUND-002",
+    "order": "B06-002",
+    "proof_id": "TRADER-PROOF-8D05F954C5A2BD4F",
+    "repository_test_id": "Tests/test_trader_requirement_proof.py",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-012-0035",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "proof_registry_positive",
+    "verifier_id": "TraderRequirementProof.identity"
+  },
+  "terminal": true
+}

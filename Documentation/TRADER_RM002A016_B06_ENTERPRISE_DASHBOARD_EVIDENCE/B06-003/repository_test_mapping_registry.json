@@ -1,0 +1,41 @@
+[
+  {
+    "disposition": "VERIFIED_MATCH",
+    "evidence_status": "PRESENT",
+    "finding_id": null,
+    "group": "REPOSITORY_TEST_RECONCILIATION",
+    "item_id": "B06-003-TEST-001",
+    "proof_id": "TRADER-PROOF-8D05F954C5A2BD4F",
+    "reconciliation_id": "B06-REC-C13CA891A4123213",
+    "repository_test_id": "Tests/test_executive_dashboard.py",
+    "required_action": "retain mapping",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-012-0035",
+    "verifier_id": "ExecutiveDashboard.refresh"
+  },
+  {
+    "disposition": "VERIFIED_MATCH",
+    "evidence_status": "PRESENT",
+    "finding_id": null,
+    "group": "REPOSITORY_TEST_RECONCILIATION",
+    "item_id": "B06-003-TEST-002",
+    "proof_id": "TRADER-PROOF-8D05F954C5A2BD4F",
+    "reconciliation_id": "B06-REC-4515CE868F64932F",
+    "repository_test_id": "Tests/test_eodk_bridge_fabric.py",
+    "required_action": "retain mapping",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-012-0035",
+    "verifier_id": "CanonicalBridgeExecutor.execute"
+  },
+  {
+    "disposition": "VERIFIED_STALE_EVIDENCE",
+    "evidence_status": "STALE",
+    "finding_id": "B06-FINDING-B837A1B3499676C1",
+    "group": "REPOSITORY_TEST_RECONCILIATION",
+    "item_id": "B06-003-TEST-003",
+    "proof_id": "TRADER-PROOF-8D05F954C5A2BD4F",
+    "reconciliation_id": "B06-REC-79A1F6F15F28C4C8",
+    "repository_test_id": "Tests/test_argos_control_panel_dashboard.py",
+    "required_action": "invalidate stale evidence without regeneration",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-012-0035",
+    "verifier_id": "DashboardVerifier"
+  }
+]

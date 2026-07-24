@@ -1,0 +1,172 @@
+{
+  "ApiExecutionGateway.boundary": [
+    "B06-EXEC-18B93EE6757B1B6A",
+    "B06-EXEC-DCDDEB554F068F85",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "B06-002-ASYNC-001": [
+    "B06-EXEC-CBFB3D44A2F0E2D9"
+  ],
+  "B06-002-ASYNC-002": [
+    "B06-EXEC-EC06FF9FF0BBACBC"
+  ],
+  "B06-002-BOUND-001": [
+    "B06-EXEC-DCDDEB554F068F85"
+  ],
+  "B06-002-BOUND-002": [
+    "B06-EXEC-C79682F2E9FB8714"
+  ],
+  "B06-002-BRIDGE-001": [
+    "B06-EXEC-40336AC607404544"
+  ],
+  "B06-002-BRIDGE-002": [
+    "B06-EXEC-E46029505A22ECA3"
+  ],
+  "B06-002-DASH-001": [
+    "B06-EXEC-520A91A1F2126A00"
+  ],
+  "B06-002-DASH-002": [
+    "B06-EXEC-F0070618034E1993"
+  ],
+  "B06-002-DEP-001": [
+    "B06-EXEC-3D4B852099405DC5"
+  ],
+  "B06-002-DEP-002": [
+    "B06-EXEC-18B93EE6757B1B6A"
+  ],
+  "B06-EXEC-18B93EE6757B1B6A": [
+    "ApiExecutionGateway.boundary",
+    "B06-002-DEP-002"
+  ],
+  "B06-EXEC-3D4B852099405DC5": [
+    "B06-002-DEP-001",
+    "EnterpriseWorkflowOrchestrator.snapshot"
+  ],
+  "B06-EXEC-40336AC607404544": [
+    "B06-002-BRIDGE-001",
+    "CanonicalBridgeExecutor.execute"
+  ],
+  "B06-EXEC-520A91A1F2126A00": [
+    "B06-002-DASH-001",
+    "ExecutiveDashboard.refresh"
+  ],
+  "B06-EXEC-C79682F2E9FB8714": [
+    "B06-002-BOUND-002",
+    "TraderRequirementProof.identity"
+  ],
+  "B06-EXEC-CBFB3D44A2F0E2D9": [
+    "B06-002-ASYNC-001",
+    "ExecutiveDashboard.auto_refresh"
+  ],
+  "B06-EXEC-DCDDEB554F068F85": [
+    "ApiExecutionGateway.boundary",
+    "B06-002-BOUND-001"
+  ],
+  "B06-EXEC-E46029505A22ECA3": [
+    "B06-002-BRIDGE-002",
+    "CanonicalBridgeExecutor.reject"
+  ],
+  "B06-EXEC-EC06FF9FF0BBACBC": [
+    "B06-002-ASYNC-002",
+    "EnterpriseWorkflowOrchestrator.timeout"
+  ],
+  "B06-EXEC-F0070618034E1993": [
+    "B06-002-DASH-002",
+    "EnterpriseWorkflowOrchestrator.lifecycle"
+  ],
+  "B06-FINDING-ADDE9C0641A04829": [
+    "B06-REC-9D358C9955E21444"
+  ],
+  "B06-FINDING-B837A1B3499676C1": [
+    "B06-REC-79A1F6F15F28C4C8"
+  ],
+  "B06-REC-4515CE868F64932F": [
+    "TRADER-PROOF-8D05F954C5A2BD4F",
+    "Tests/test_eodk_bridge_fabric.py"
+  ],
+  "B06-REC-79A1F6F15F28C4C8": [
+    "B06-FINDING-B837A1B3499676C1",
+    "TRADER-PROOF-8D05F954C5A2BD4F",
+    "Tests/test_argos_control_panel_dashboard.py"
+  ],
+  "B06-REC-9D358C9955E21444": [
+    "B06-FINDING-ADDE9C0641A04829",
+    "EnterpriseCertificationVerifier",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "B06-REC-C13CA891A4123213": [
+    "TRADER-PROOF-8D05F954C5A2BD4F",
+    "Tests/test_executive_dashboard.py"
+  ],
+  "B06-REC-CEBA8222CF8B9584": [
+    "TRADER-PROOF-8D05F954C5A2BD4F",
+    "Tests/test_trader_requirement_verifier.py"
+  ],
+  "CanonicalBridgeExecutor.execute": [
+    "B06-EXEC-40336AC607404544",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "CanonicalBridgeExecutor.reject": [
+    "B06-EXEC-E46029505A22ECA3",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "EnterpriseCertificationVerifier": [
+    "B06-REC-9D358C9955E21444"
+  ],
+  "EnterpriseWorkflowOrchestrator.lifecycle": [
+    "B06-EXEC-F0070618034E1993",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "EnterpriseWorkflowOrchestrator.snapshot": [
+    "B06-EXEC-3D4B852099405DC5",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "EnterpriseWorkflowOrchestrator.timeout": [
+    "B06-EXEC-EC06FF9FF0BBACBC",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "ExecutiveDashboard.auto_refresh": [
+    "B06-EXEC-CBFB3D44A2F0E2D9",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "ExecutiveDashboard.refresh": [
+    "B06-EXEC-520A91A1F2126A00",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "TRADER-PROOF-8D05F954C5A2BD4F": [
+    "ApiExecutionGateway.boundary",
+    "B06-REC-4515CE868F64932F",
+    "B06-REC-79A1F6F15F28C4C8",
+    "B06-REC-9D358C9955E21444",
+    "B06-REC-C13CA891A4123213",
+    "B06-REC-CEBA8222CF8B9584",
+    "CanonicalBridgeExecutor.execute",
+    "CanonicalBridgeExecutor.reject",
+    "EnterpriseWorkflowOrchestrator.lifecycle",
+    "EnterpriseWorkflowOrchestrator.snapshot",
+    "EnterpriseWorkflowOrchestrator.timeout",
+    "ExecutiveDashboard.auto_refresh",
+    "ExecutiveDashboard.refresh",
+    "TRADER-REQ-TRADER-RM-002-012-0035",
+    "TraderRequirementProof.identity"
+  ],
+  "TRADER-REQ-TRADER-RM-002-012-0035": [
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ],
+  "Tests/test_argos_control_panel_dashboard.py": [
+    "B06-REC-79A1F6F15F28C4C8"
+  ],
+  "Tests/test_eodk_bridge_fabric.py": [
+    "B06-REC-4515CE868F64932F"
+  ],
+  "Tests/test_executive_dashboard.py": [
+    "B06-REC-C13CA891A4123213"
+  ],
+  "Tests/test_trader_requirement_verifier.py": [
+    "B06-REC-CEBA8222CF8B9584"
+  ],
+  "TraderRequirementProof.identity": [
+    "B06-EXEC-C79682F2E9FB8714",
+    "TRADER-PROOF-8D05F954C5A2BD4F"
+  ]
+}
