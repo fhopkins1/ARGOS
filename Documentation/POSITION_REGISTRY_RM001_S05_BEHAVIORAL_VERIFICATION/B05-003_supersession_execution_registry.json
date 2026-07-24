@@ -1,0 +1,27 @@
+[
+  {
+    "completed_at": "2026-07-24T18:17:43.414882Z",
+    "description": "reconciliation, missing state, correction, supersession, and history",
+    "disposition": "FAIL",
+    "evidence_digest": "7e2b7f85df4ef5f9eacb116d3509b3c1d701258eec38413ab3da3c1896889465",
+    "execution_id": "PR-S05-EXEC-003-002",
+    "finding": "correction/supersession executable processing APIs not present on PositionManagementOffice",
+    "fixture_identity": "fixture-reconciliation-history",
+    "group": "B05-003",
+    "observed": {
+      "correction_api_present": false,
+      "mismatch_classes": [
+        "quantity_error",
+        "cost_basis_error",
+        "position_mismatch"
+      ],
+      "missing_classes": [
+        "missing_execution"
+      ],
+      "supersession_api_present": false
+    },
+    "scenario_id": "003-002",
+    "started_at": "2026-07-24T18:17:43.413106Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  }
+]

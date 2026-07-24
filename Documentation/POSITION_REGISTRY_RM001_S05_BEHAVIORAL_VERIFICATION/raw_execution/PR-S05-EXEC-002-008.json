@@ -1,0 +1,68 @@
+{
+  "completed_at": "2026-07-24T18:17:43.405182Z",
+  "description": "anomaly generation",
+  "disposition": "PASS",
+  "evidence_digest": "12a472ac428988dbed07c84703b2bcb0e453b4a581fffe17e4ba9b7ccafd4bba",
+  "execution_id": "PR-S05-EXEC-002-008",
+  "finding": "",
+  "fixture_identity": "fixture-anomaly",
+  "group": "B05-002",
+  "observed": {
+    "case_file": {
+      "case_file_id": "CF-005",
+      "contract_id": "DOC-5142",
+      "contract_type": "POSITION_CASE_FILE",
+      "contract_version": "1.0.0",
+      "created_timestamp_utc": "2026-07-24T18:17:43.404579Z",
+      "human_summary": "Position Management Case File.",
+      "intended_consumer_group_id": "DEP-006",
+      "machine_payload": {
+        "case_file": {
+          "anomalies": [
+            {
+              "anomaly_id": "PMA-CAC065C1",
+              "classification": "unexpected_exposure",
+              "evidence": [
+                "exposure:2000000.0"
+              ],
+              "severity": "high"
+            }
+          ],
+          "case_file_id": "PMCF-005142",
+          "position_id": "POS-S05",
+          "reconstructable": true
+        },
+        "history_overwritten": false,
+        "office_id": "TRADER-OFFICE-005",
+        "office_name": "Position Management Office",
+        "state_transition_loss_detected": false,
+        "synchronization_sources": [
+          "Executions",
+          "Orders",
+          "Positions",
+          "Portfolios",
+          "Risk Office",
+          "Trader Group",
+          "Historian Group",
+          "Audit Records"
+        ]
+      },
+      "parent_contract_ids": [],
+      "produced_by_group_id": "DEP-006",
+      "produced_by_staff_id": "STF-065",
+      "schema_version": "1.0.0",
+      "signature_hash": "2925bcb2a4c206a853ce0bf7338dfde10bd80206a31c88e94166385ff71faf1c",
+      "source_reference_ids": [],
+      "trade_cycle_id": "TC-005",
+      "updated_timestamp_utc": "2026-07-24T18:17:43.404579Z",
+      "validation_errors": [],
+      "validation_status": "valid"
+    },
+    "classifications": [
+      "unexpected_exposure"
+    ]
+  },
+  "scenario_id": "002-008",
+  "started_at": "2026-07-24T18:17:43.402397Z",
+  "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+}

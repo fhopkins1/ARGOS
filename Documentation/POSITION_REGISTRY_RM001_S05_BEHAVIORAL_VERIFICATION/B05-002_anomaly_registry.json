@@ -1,0 +1,345 @@
+[
+  {
+    "completed_at": "2026-07-24T18:17:43.392007Z",
+    "description": "position reversal",
+    "disposition": "FAIL",
+    "evidence_digest": "919c1aa667471023c0c90aec07c2f064d86d6af7a0fcdcf24678cb9974ce8723",
+    "execution_id": "PR-S05-EXEC-002-005",
+    "finding": "reversal leaves original long direction/status instead of establishing short lifecycle identity",
+    "fixture_identity": "fixture-reversal",
+    "group": "B05-002",
+    "observed": {
+      "position": {
+        "asset_class": "equity",
+        "asset_identifier": "AAPL",
+        "audit_identifier": "DOC-501",
+        "average_cost_basis": 100.0,
+        "creation_timestamp_utc": "2026-07-24T18:17:43.390113Z",
+        "direction": "long",
+        "executive_decision_id": "DOC-S05",
+        "exposure": 4500.0,
+        "history": [
+          {
+            "audit_id": "DOC-501",
+            "from_state": "created",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.390152Z",
+            "to_state": "created",
+            "transition_id": "PST-000001",
+            "triggering_event": "EXEC-S05-001"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "reducing",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.391208Z",
+            "to_state": "reducing",
+            "transition_id": "PST-000002",
+            "triggering_event": "EXEC-S05-REV"
+          }
+        ],
+        "last_update_timestamp_utc": "2026-07-24T18:17:43.391208Z",
+        "market_value": -4500.0,
+        "portfolio_id": "PORT-S05",
+        "position_id": "POS-S05",
+        "position_status": "reducing",
+        "quantity": -50.0,
+        "realized_pnl": -1000.0,
+        "strategy_id": "STRAT-S05",
+        "unrealized_pnl": 500.0
+      }
+    },
+    "scenario_id": "002-005",
+    "started_at": "2026-07-24T18:17:43.389966Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "completed_at": "2026-07-24T18:17:43.399782Z",
+    "description": "invalid transition rejection and authority enforcement",
+    "disposition": "FAIL",
+    "evidence_digest": "2dd40b38b631eed1818f1dacbfffdc1179d6520331e6f478500c5c3201cf817c",
+    "execution_id": "PR-S05-EXEC-002-007",
+    "finding": "observed result did not satisfy expected behavior",
+    "fixture_identity": "fixture-invalid-transition",
+    "group": "B05-002",
+    "observed": {
+      "audit_events": [],
+      "authority_rejected": true,
+      "error": "",
+      "invalid_transition_rejected": false
+    },
+    "scenario_id": "002-007",
+    "started_at": "2026-07-24T18:17:43.396313Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "completed_at": "2026-07-24T18:17:43.405182Z",
+    "description": "anomaly generation",
+    "disposition": "PASS",
+    "evidence_digest": "12a472ac428988dbed07c84703b2bcb0e453b4a581fffe17e4ba9b7ccafd4bba",
+    "execution_id": "PR-S05-EXEC-002-008",
+    "finding": "",
+    "fixture_identity": "fixture-anomaly",
+    "group": "B05-002",
+    "observed": {
+      "case_file": {
+        "case_file_id": "CF-005",
+        "contract_id": "DOC-5142",
+        "contract_type": "POSITION_CASE_FILE",
+        "contract_version": "1.0.0",
+        "created_timestamp_utc": "2026-07-24T18:17:43.404579Z",
+        "human_summary": "Position Management Case File.",
+        "intended_consumer_group_id": "DEP-006",
+        "machine_payload": {
+          "case_file": {
+            "anomalies": [
+              {
+                "anomaly_id": "PMA-CAC065C1",
+                "classification": "unexpected_exposure",
+                "evidence": [
+                  "exposure:2000000.0"
+                ],
+                "severity": "high"
+              }
+            ],
+            "case_file_id": "PMCF-005142",
+            "position_id": "POS-S05",
+            "reconstructable": true
+          },
+          "history_overwritten": false,
+          "office_id": "TRADER-OFFICE-005",
+          "office_name": "Position Management Office",
+          "state_transition_loss_detected": false,
+          "synchronization_sources": [
+            "Executions",
+            "Orders",
+            "Positions",
+            "Portfolios",
+            "Risk Office",
+            "Trader Group",
+            "Historian Group",
+            "Audit Records"
+          ]
+        },
+        "parent_contract_ids": [],
+        "produced_by_group_id": "DEP-006",
+        "produced_by_staff_id": "STF-065",
+        "schema_version": "1.0.0",
+        "signature_hash": "2925bcb2a4c206a853ce0bf7338dfde10bd80206a31c88e94166385ff71faf1c",
+        "source_reference_ids": [],
+        "trade_cycle_id": "TC-005",
+        "updated_timestamp_utc": "2026-07-24T18:17:43.404579Z",
+        "validation_errors": [],
+        "validation_status": "valid"
+      },
+      "classifications": [
+        "unexpected_exposure"
+      ]
+    },
+    "scenario_id": "002-008",
+    "started_at": "2026-07-24T18:17:43.402397Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "completed_at": "2026-07-24T18:17:43.411426Z",
+    "description": "persistence restoration and replay duplicate mutation protection",
+    "disposition": "FAIL",
+    "evidence_digest": "4025d21fc97f86be01d25a9798f4c8fdb2dc7fda644f455643e0860e15a899fc",
+    "execution_id": "PR-S05-EXEC-003-001",
+    "finding": "replay of identical execution event mutates quantity a second time",
+    "fixture_identity": "fixture-persistence-replay",
+    "group": "B05-003",
+    "observed": {
+      "persisted_contract": {
+        "case_file_id": "CF-005",
+        "contract_family": "operational",
+        "contract_id": "DOC-5201",
+        "contract_type": "POSITION_RECORD",
+        "contract_version": "1.0.0",
+        "created_timestamp_utc": "2026-07-24T18:17:43.407224Z",
+        "human_summary": "Authoritative position record.",
+        "intended_consumer_group_id": "DEP-006",
+        "machine_payload": {
+          "history_overwritten": false,
+          "office_id": "TRADER-OFFICE-005",
+          "office_name": "Position Management Office",
+          "portfolio_state": {
+            "portfolio_id": "PORT-S05",
+            "positions": [
+              {
+                "asset_class": "equity",
+                "asset_identifier": "AAPL",
+                "audit_identifier": "DOC-501",
+                "average_cost_basis": 100.0,
+                "creation_timestamp_utc": "2026-07-24T18:17:43.407135Z",
+                "direction": "long",
+                "executive_decision_id": "DOC-S05",
+                "exposure": 10100.0,
+                "history": [
+                  {
+                    "audit_id": "DOC-501",
+                    "from_state": "created",
+                    "metadata": {
+                      "responsible_office": "TRADER-OFFICE-005"
+                    },
+                    "position_id": "POS-S05",
+                    "timestamp_utc": "2026-07-24T18:17:43.407175Z",
+                    "to_state": "created",
+                    "transition_id": "PST-000001",
+                    "triggering_event": "EXEC-S05-001"
+                  }
+                ],
+                "last_update_timestamp_utc": "2026-07-24T18:17:43.407175Z",
+                "market_value": 10100.0,
+                "portfolio_id": "PORT-S05",
+                "position_id": "POS-S05",
+                "position_status": "created",
+                "quantity": 100.0,
+                "realized_pnl": 0.0,
+                "strategy_id": "STRAT-S05",
+                "unrealized_pnl": 100.0
+              }
+            ],
+            "total_exposure": 10100.0,
+            "total_market_value": 10100.0,
+            "total_realized_pnl": 0.0,
+            "total_unrealized_pnl": 100.0
+          },
+          "position": {
+            "asset_class": "equity",
+            "asset_identifier": "AAPL",
+            "audit_identifier": "DOC-501",
+            "average_cost_basis": 100.0,
+            "creation_timestamp_utc": "2026-07-24T18:17:43.407135Z",
+            "direction": "long",
+            "executive_decision_id": "DOC-S05",
+            "exposure": 10100.0,
+            "history": [
+              {
+                "audit_id": "DOC-501",
+                "from_state": "created",
+                "metadata": {
+                  "responsible_office": "TRADER-OFFICE-005"
+                },
+                "position_id": "POS-S05",
+                "timestamp_utc": "2026-07-24T18:17:43.407175Z",
+                "to_state": "created",
+                "transition_id": "PST-000001",
+                "triggering_event": "EXEC-S05-001"
+              }
+            ],
+            "last_update_timestamp_utc": "2026-07-24T18:17:43.407175Z",
+            "market_value": 10100.0,
+            "portfolio_id": "PORT-S05",
+            "position_id": "POS-S05",
+            "position_status": "created",
+            "quantity": 100.0,
+            "realized_pnl": 0.0,
+            "strategy_id": "STRAT-S05",
+            "unrealized_pnl": 100.0
+          },
+          "position_management_system_prompt": {
+            "prompt_id": "PROMPT-PMO-057",
+            "prompt_text": "You are the Position Management Office (PMO) of ARGOS. Maintain the authoritative record of every financial position throughout its lifecycle. Do not determine what should be traded, execute trades, or perform investment analysis. Construct, maintain, reconcile, monitor, and archive every enterprise position while preserving complete history, deterministic synchronization, and permanent traceability.",
+            "version": "1.0.0"
+          },
+          "position_reconstructable": true
+        },
+        "parent_contract_ids": [
+          "DOC-501"
+        ],
+        "produced_by_group_id": "DEP-006",
+        "produced_by_staff_id": "STF-065",
+        "schema_version": "1.0.0",
+        "signature_hash": "911bb46d6709eb2b99f51e914a208253a296c6afe5e960006d8f1bc94183c446",
+        "source_reference_ids": [
+          "DOC-501"
+        ],
+        "trade_cycle_id": "TC-005",
+        "updated_timestamp_utc": "2026-07-24T18:17:43.407224Z",
+        "validation_errors": [],
+        "validation_status": "valid"
+      },
+      "replay_position": {
+        "asset_class": "equity",
+        "asset_identifier": "AAPL",
+        "audit_identifier": "DOC-501",
+        "average_cost_basis": 100.0,
+        "creation_timestamp_utc": "2026-07-24T18:17:43.408489Z",
+        "direction": "long",
+        "executive_decision_id": "DOC-S05",
+        "exposure": 20200.0,
+        "history": [
+          {
+            "audit_id": "DOC-501",
+            "from_state": "created",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.408511Z",
+            "to_state": "created",
+            "transition_id": "PST-000001",
+            "triggering_event": "EXEC-S05-001"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "accumulating",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.409255Z",
+            "to_state": "accumulating",
+            "transition_id": "PST-000002",
+            "triggering_event": "EXEC-S05-001"
+          }
+        ],
+        "last_update_timestamp_utc": "2026-07-24T18:17:43.409255Z",
+        "market_value": 20200.0,
+        "portfolio_id": "PORT-S05",
+        "position_id": "POS-S05",
+        "position_status": "accumulating",
+        "quantity": 200.0,
+        "realized_pnl": 0.0,
+        "strategy_id": "STRAT-S05",
+        "unrealized_pnl": 200.0
+      },
+      "restored_from_persistence": true
+    },
+    "scenario_id": "003-001",
+    "started_at": "2026-07-24T18:17:43.407013Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "completed_at": "2026-07-24T18:17:43.414882Z",
+    "description": "reconciliation, missing state, correction, supersession, and history",
+    "disposition": "FAIL",
+    "evidence_digest": "7e2b7f85df4ef5f9eacb116d3509b3c1d701258eec38413ab3da3c1896889465",
+    "execution_id": "PR-S05-EXEC-003-002",
+    "finding": "correction/supersession executable processing APIs not present on PositionManagementOffice",
+    "fixture_identity": "fixture-reconciliation-history",
+    "group": "B05-003",
+    "observed": {
+      "correction_api_present": false,
+      "mismatch_classes": [
+        "quantity_error",
+        "cost_basis_error",
+        "position_mismatch"
+      ],
+      "missing_classes": [
+        "missing_execution"
+      ],
+      "supersession_api_present": false
+    },
+    "scenario_id": "003-002",
+    "started_at": "2026-07-24T18:17:43.413106Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  }
+]

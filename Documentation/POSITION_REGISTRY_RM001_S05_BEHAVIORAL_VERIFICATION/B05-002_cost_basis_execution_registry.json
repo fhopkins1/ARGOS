@@ -1,0 +1,191 @@
+[
+  {
+    "completed_at": "2026-07-24T18:17:43.388475Z",
+    "description": "increase, reduction, partial closure, complete closure, cost basis, realized/unrealized quantity",
+    "disposition": "PASS",
+    "evidence_digest": "8cda3eb5df898222aaa8d5f44c778e7db9423c15fbffff09f900de9fce4d7ad6",
+    "execution_id": "PR-S05-EXEC-002-004",
+    "finding": "",
+    "fixture_identity": "fixture-increase-reduce-close",
+    "group": "B05-002",
+    "observed": {
+      "closed": {
+        "asset_class": "equity",
+        "asset_identifier": "AAPL",
+        "audit_identifier": "DOC-501",
+        "average_cost_basis": 0.0,
+        "creation_timestamp_utc": "2026-07-24T18:17:43.384745Z",
+        "direction": "long",
+        "executive_decision_id": "DOC-S05",
+        "exposure": 0.0,
+        "history": [
+          {
+            "audit_id": "DOC-501",
+            "from_state": "created",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.384787Z",
+            "to_state": "created",
+            "transition_id": "PST-000001",
+            "triggering_event": "EXEC-S05-001"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "accumulating",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.385856Z",
+            "to_state": "accumulating",
+            "transition_id": "PST-000002",
+            "triggering_event": "EXEC-S05-INC"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "reducing",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.386698Z",
+            "to_state": "reducing",
+            "transition_id": "PST-000003",
+            "triggering_event": "EXEC-S05-RED"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "closed",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.387535Z",
+            "to_state": "closed",
+            "transition_id": "PST-000004",
+            "triggering_event": "EXEC-S05-CLOSE"
+          }
+        ],
+        "last_update_timestamp_utc": "2026-07-24T18:17:43.387535Z",
+        "market_value": 0.0,
+        "portfolio_id": "PORT-S05",
+        "position_id": "POS-S05",
+        "position_status": "closed",
+        "quantity": 0.0,
+        "realized_pnl": 3750.0,
+        "strategy_id": "STRAT-S05",
+        "unrealized_pnl": 0.0
+      },
+      "partial": {
+        "asset_class": "equity",
+        "asset_identifier": "AAPL",
+        "audit_identifier": "DOC-501",
+        "average_cost_basis": 105.0,
+        "creation_timestamp_utc": "2026-07-24T18:17:43.384745Z",
+        "direction": "long",
+        "executive_decision_id": "DOC-S05",
+        "exposure": 18000.0,
+        "history": [
+          {
+            "audit_id": "DOC-501",
+            "from_state": "created",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.384787Z",
+            "to_state": "created",
+            "transition_id": "PST-000001",
+            "triggering_event": "EXEC-S05-001"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "accumulating",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.385856Z",
+            "to_state": "accumulating",
+            "transition_id": "PST-000002",
+            "triggering_event": "EXEC-S05-INC"
+          },
+          {
+            "audit_id": "DOC-501",
+            "from_state": "reducing",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.386698Z",
+            "to_state": "reducing",
+            "transition_id": "PST-000003",
+            "triggering_event": "EXEC-S05-RED"
+          }
+        ],
+        "last_update_timestamp_utc": "2026-07-24T18:17:43.386698Z",
+        "market_value": 18000.0,
+        "portfolio_id": "PORT-S05",
+        "position_id": "POS-S05",
+        "position_status": "reducing",
+        "quantity": 150.0,
+        "realized_pnl": 750.0,
+        "strategy_id": "STRAT-S05",
+        "unrealized_pnl": 2250.0
+      }
+    },
+    "scenario_id": "002-004",
+    "started_at": "2026-07-24T18:17:43.384634Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  },
+  {
+    "completed_at": "2026-07-24T18:17:43.394746Z",
+    "description": "fractional quantity precision and rounding",
+    "disposition": "PASS",
+    "evidence_digest": "69f6a1cb271d96632fde0f7eeaa5f455a8c78d48c70bb807aa34c867fa6e898e",
+    "execution_id": "PR-S05-EXEC-002-006",
+    "finding": "",
+    "fixture_identity": "fixture-fractional",
+    "group": "B05-002",
+    "observed": {
+      "position": {
+        "asset_class": "equity",
+        "asset_identifier": "AAPL",
+        "audit_identifier": "DOC-501",
+        "average_cost_basis": 10.1235,
+        "creation_timestamp_utc": "2026-07-24T18:17:43.393375Z",
+        "direction": "long",
+        "executive_decision_id": "DOC-S05",
+        "exposure": 13.5649,
+        "history": [
+          {
+            "audit_id": "DOC-501",
+            "from_state": "created",
+            "metadata": {
+              "responsible_office": "TRADER-OFFICE-005"
+            },
+            "position_id": "POS-S05",
+            "timestamp_utc": "2026-07-24T18:17:43.393401Z",
+            "to_state": "created",
+            "transition_id": "PST-000001",
+            "triggering_event": "EXEC-S05-001"
+          }
+        ],
+        "last_update_timestamp_utc": "2026-07-24T18:17:43.393401Z",
+        "market_value": 13.5649,
+        "portfolio_id": "PORT-S05",
+        "position_id": "POS-S05",
+        "position_status": "created",
+        "quantity": 1.2346,
+        "realized_pnl": 0.0,
+        "strategy_id": "STRAT-S05",
+        "unrealized_pnl": 1.0669
+      }
+    },
+    "scenario_id": "002-006",
+    "started_at": "2026-07-24T18:17:43.393276Z",
+    "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+  }
+]

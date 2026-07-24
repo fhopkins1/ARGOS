@@ -1,0 +1,50 @@
+{
+  "completed_at": "2026-07-24T18:17:43.376959Z",
+  "description": "position creation and canonical identity assignment",
+  "disposition": "PASS",
+  "evidence_digest": "8f09cd05bd42d9af1a30c1632c9ec4b6fc8afabd271a0bb45b17913e9a4b8e4e",
+  "execution_id": "PR-S05-EXEC-002-001",
+  "finding": "",
+  "fixture_identity": "fixture-position-creation",
+  "group": "B05-002",
+  "observed": {
+    "contract_id": "DOC-5101",
+    "persisted_record_present": true,
+    "position": {
+      "asset_class": "equity",
+      "asset_identifier": "AAPL",
+      "audit_identifier": "DOC-501",
+      "average_cost_basis": 100.0,
+      "creation_timestamp_utc": "2026-07-24T18:17:43.374800Z",
+      "direction": "long",
+      "executive_decision_id": "DOC-S05",
+      "exposure": 10200.0,
+      "history": [
+        {
+          "audit_id": "DOC-501",
+          "from_state": "created",
+          "metadata": {
+            "responsible_office": "TRADER-OFFICE-005"
+          },
+          "position_id": "POS-S05",
+          "timestamp_utc": "2026-07-24T18:17:43.374839Z",
+          "to_state": "created",
+          "transition_id": "PST-000001",
+          "triggering_event": "EXEC-S05-001"
+        }
+      ],
+      "last_update_timestamp_utc": "2026-07-24T18:17:43.374839Z",
+      "market_value": 10200.0,
+      "portfolio_id": "PORT-S05",
+      "position_id": "POS-S05",
+      "position_status": "created",
+      "quantity": 100.0,
+      "realized_pnl": 0.0,
+      "strategy_id": "STRAT-S05",
+      "unrealized_pnl": 200.0
+    }
+  },
+  "scenario_id": "002-001",
+  "started_at": "2026-07-24T18:17:43.374622Z",
+  "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
+}

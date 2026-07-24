@@ -1,0 +1,629 @@
+[
+  {
+    "behavior": "position creation",
+    "behavioral_obligation_id": "PR-S05-BO-001",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-001",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "canonical identity assignment",
+    "behavioral_obligation_id": "PR-S05-BO-002",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-002",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "duplicate creation rejection",
+    "behavioral_obligation_id": "PR-S05-BO-003",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-003",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "long-position establishment",
+    "behavioral_obligation_id": "PR-S05-BO-004",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-004",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "short-position establishment",
+    "behavioral_obligation_id": "PR-S05-BO-005",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-005",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "position increase",
+    "behavioral_obligation_id": "PR-S05-BO-006",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-006",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "position reduction",
+    "behavioral_obligation_id": "PR-S05-BO-007",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-007",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "partial closure",
+    "behavioral_obligation_id": "PR-S05-BO-008",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-008",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "complete closure",
+    "behavioral_obligation_id": "PR-S05-BO-009",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-009",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "position reversal",
+    "behavioral_obligation_id": "PR-S05-BO-010",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-010",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "quantity conservation",
+    "behavioral_obligation_id": "PR-S05-BO-011",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-011",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "average cost-basis calculation",
+    "behavioral_obligation_id": "PR-S05-BO-012",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-012",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "realized quantity calculation",
+    "behavioral_obligation_id": "PR-S05-BO-013",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-013",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "unrealized quantity calculation",
+    "behavioral_obligation_id": "PR-S05-BO-014",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-014",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "fractional quantity handling",
+    "behavioral_obligation_id": "PR-S05-BO-015",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-015",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "precision and rounding",
+    "behavioral_obligation_id": "PR-S05-BO-016",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-016",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "invalid lifecycle transition rejection",
+    "behavioral_obligation_id": "PR-S05-BO-017",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-017",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "authority enforcement",
+    "behavioral_obligation_id": "PR-S05-BO-018",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-018",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "duplicate event handling",
+    "behavioral_obligation_id": "PR-S05-BO-019",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-019",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "stale-event handling",
+    "behavioral_obligation_id": "PR-S05-BO-020",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-020",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "late-event handling",
+    "behavioral_obligation_id": "PR-S05-BO-021",
+    "bounded_execution_group": "B05-002",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-021",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "out-of-order event handling",
+    "behavioral_obligation_id": "PR-S05-BO-022",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-022",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "contradictory-event handling",
+    "behavioral_obligation_id": "PR-S05-BO-023",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-023",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "replay behavior",
+    "behavioral_obligation_id": "PR-S05-BO-024",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-024",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "restart recovery",
+    "behavioral_obligation_id": "PR-S05-BO-025",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-025",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "persistence restoration",
+    "behavioral_obligation_id": "PR-S05-BO-026",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-026",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "partial-write recovery",
+    "behavioral_obligation_id": "PR-S05-BO-027",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-027",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "correction behavior",
+    "behavioral_obligation_id": "PR-S05-BO-028",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-028",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "supersession behavior",
+    "behavioral_obligation_id": "PR-S05-BO-029",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-029",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "reconciliation behavior",
+    "behavioral_obligation_id": "PR-S05-BO-030",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-030",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "anomaly generation",
+    "behavioral_obligation_id": "PR-S05-BO-031",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-031",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "evidence generation",
+    "behavioral_obligation_id": "PR-S05-BO-032",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-032",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  },
+  {
+    "behavior": "terminal-state protection",
+    "behavioral_obligation_id": "PR-S05-BO-033",
+    "bounded_execution_group": "B05-003",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+    "governing_implementation_obligation": "PR-S04-OBL-033",
+    "governing_lifecycle": "bounded B05 execution group",
+    "governing_object": "Position Registry behavioral population",
+    "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
+    "verification_modes": [
+      "positive",
+      "negative",
+      "boundary",
+      "persistence",
+      "replay",
+      "recovery",
+      "reconciliation"
+    ]
+  }
+]
