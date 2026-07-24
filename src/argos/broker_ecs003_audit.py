@@ -423,9 +423,14 @@ def _git_files(base: Path) -> tuple[str, ...]:
 
 
 def _candidate_manifest() -> Mapping[str, Any]:
+    candidate_digest = _git_digest("HEAD")
+    tree_digest = _git_digest("HEAD^{tree}")
+    git_metadata_available = not (candidate_digest.startswith("portable:") or tree_digest.startswith("portable:"))
     return {
-        "candidate_digest": _git_digest("HEAD"),
-        "working_tree_digest": _git_digest("HEAD^{tree}"),
+        "candidate_digest": candidate_digest,
+        "working_tree_digest": tree_digest,
+        "git_metadata_available": git_metadata_available,
+        "repository_identity_source": "git" if git_metadata_available else "portable file manifest",
         "runner_version": BROKER_ECS003_VERSION,
         "generated_at_utc": _now(),
         "candidate_modified": False,
@@ -462,7 +467,24 @@ def _git_digest(rev: str) -> str:
     try:
         return subprocess.check_output(["git", "rev-parse", rev], text=True).strip()
     except Exception:
-        return _digest(rev)
+        return f"portable:{_repository_content_digest(Path('.'))}"
+
+
+def _repository_content_digest(base: Path) -> str:
+    files = []
+    for path in sorted(base.rglob("*")):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(base).as_posix()
+        if rel.startswith(".git/") or rel.startswith("__pycache__/") or "/__pycache__/" in rel:
+            continue
+        if rel.endswith(".pyc"):
+            continue
+        try:
+            files.append({"path": rel, "sha256": _file_digest(path), "bytes": path.stat().st_size})
+        except OSError:
+            continue
+    return hashlib.sha256(json.dumps(files, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
 def _digest(value: Any) -> str:

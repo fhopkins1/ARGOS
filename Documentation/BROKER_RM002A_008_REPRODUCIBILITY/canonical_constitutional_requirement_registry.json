@@ -1,0 +1,142 @@
+[
+  {
+    "atomic_obligations": [
+      "request identity validation",
+      "identifier mapping",
+      "persistence of request identity"
+    ],
+    "canonical_identity": "BROKER-CONST-REQ-001",
+    "governing_authority": "BROKER-RM-001-S02",
+    "remediation_identifier_authoritative": false,
+    "requirement_id": "BROKER-CONST-REQ-001",
+    "requirement_text": "Broker ownership and custody authority is explicit and single-owner.",
+    "source_artifacts": [
+      "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+      "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+      "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+      "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+      "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+      "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+    ]
+  },
+  {
+    "atomic_obligations": [
+      "accepted-order lifecycle progression",
+      "rejected-order lifecycle progression",
+      "pending-order lifecycle progression",
+      "partial-fill processing",
+      "cancellation request processing",
+      "request timeout handling",
+      "retry initiation",
+      "retry exhaustion",
+      "durable restart recovery",
+      "terminal-state mutation rejection"
+    ],
+    "canonical_identity": "BROKER-CONST-REQ-002",
+    "governing_authority": "BROKER-RM-001-S03",
+    "remediation_identifier_authoritative": false,
+    "requirement_id": "BROKER-CONST-REQ-002",
+    "requirement_text": "Broker lifecycle progression is deterministic across accepted, rejected, pending, filled, cancellation, timeout, retry, recovery, and terminal states.",
+    "source_artifacts": [
+      "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+      "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+      "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+      "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+      "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+      "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+    ]
+  },
+  {
+    "atomic_obligations": [
+      "canonical request normalization",
+      "broker-specific translation",
+      "submission dispatch",
+      "acknowledgement receipt",
+      "acknowledgement normalization",
+      "malformed request rejection",
+      "unsupported request rejection",
+      "duplicate request detection",
+      "delayed acknowledgement handling",
+      "acknowledgement after timeout"
+    ],
+    "canonical_identity": "BROKER-CONST-REQ-003",
+    "governing_authority": "BROKER-RM-001-S04",
+    "remediation_identifier_authoritative": false,
+    "requirement_id": "BROKER-CONST-REQ-003",
+    "requirement_text": "Broker interfaces preserve authority, normalize requests and responses, reject unsupported inputs, and handle acknowledgement uncertainty.",
+    "source_artifacts": [
+      "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+      "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+      "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+      "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+      "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+      "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+    ]
+  },
+  {
+    "atomic_obligations": [
+      "prohibition against fabricated acknowledgement or fill truth",
+      "correction-event processing",
+      "persistence restoration",
+      "partial-write recovery",
+      "corrupted-state recovery"
+    ],
+    "canonical_identity": "BROKER-CONST-REQ-004",
+    "governing_authority": "BROKER-RM-001-S05",
+    "remediation_identifier_authoritative": false,
+    "requirement_id": "BROKER-CONST-REQ-004",
+    "requirement_text": "Broker evidence is immutable, execution-derived, non-synthetic, and preserves raw and normalized truth.",
+    "source_artifacts": [
+      "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+      "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+      "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+      "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+      "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+      "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+    ]
+  },
+  {
+    "atomic_obligations": [
+      "late fill handling",
+      "out-of-order event handling",
+      "duplicate broker-event handling",
+      "contradictory broker-event reconciliation",
+      "unresolved anomaly escalation",
+      "cancellation uncertainty handling",
+      "modification uncertainty handling"
+    ],
+    "canonical_identity": "BROKER-CONST-REQ-005",
+    "governing_authority": "BROKER-RM-001-S06",
+    "remediation_identifier_authoritative": false,
+    "requirement_id": "BROKER-CONST-REQ-005",
+    "requirement_text": "Broker reconciliation and anomaly handling preserve contradictions, late events, duplicate events, and unresolved uncertainty without overwriting history.",
+    "source_artifacts": [
+      "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+      "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+      "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+      "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+      "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+      "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+    ]
+  },
+  {
+    "atomic_obligations": [
+      "replay after restart",
+      "persistence restoration",
+      "missing-state detection"
+    ],
+    "canonical_identity": "BROKER-CONST-REQ-006",
+    "governing_authority": "BROKER-RM-001-S07",
+    "remediation_identifier_authoritative": false,
+    "requirement_id": "BROKER-CONST-REQ-006",
+    "requirement_text": "Broker certification is independently reproducible from canonical proof, traceability, evidence, and verifier execution.",
+    "source_artifacts": [
+      "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+      "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+      "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+      "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+      "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+      "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+    ]
+  }
+]

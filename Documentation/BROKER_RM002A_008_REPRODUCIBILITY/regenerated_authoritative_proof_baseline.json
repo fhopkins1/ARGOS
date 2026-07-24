@@ -1,0 +1,1086 @@
+{
+  "proofs": [
+    {
+      "disposition": "PROVEN",
+      "executable_verifier": "dependency-derived Broker verifier population",
+      "execution_records": [
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_duplicate_submission_generates_case_file"
+          },
+          "source": "rm007_tests"
+        }
+      ],
+      "historical_remediation_support_only": true,
+      "implementation_artifact": "dependency-derived Broker implementation population",
+      "implementation_obligation": "Broker ownership and custody authority is explicit and single-owner.",
+      "missing_obligations": [],
+      "proof_id": "PROOF-BROKER-CONST-REQ-001",
+      "proof_reproducible": true,
+      "requirement_id": "BROKER-CONST-REQ-001"
+    },
+    {
+      "disposition": "PROVEN",
+      "executable_verifier": "dependency-derived Broker verifier population",
+      "execution_records": [
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_market_order_fills_and_performance_truth_records_broker_event"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_invalid_workflow_owner_rejects_without_fill"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_non_executable_limit_order_does_not_fabricate_fill"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "filled_quantity": 0.1,
+              "remaining_quantity": 0.9,
+              "status": "partially_filled",
+              "truth_records": 1
+            },
+            "execution_id": "BROKER-RM002A-004-004",
+            "finding": "",
+            "obligation": "partial-fill processing"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "filled_quantity": 0.1,
+                "remaining_quantity": 0.9,
+                "status": "partially_filled",
+                "truth_records": 1
+              },
+              "execution_id": "BROKER-RM002A-004-004",
+              "finding": "",
+              "obligation": "partial-fill processing"
+            },
+            "obligation": "partial-fill processing",
+            "regression_id": "BROKER-RM002A-005-REG-004",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "cancelled_status": "cancelled",
+              "queued_status": "working",
+              "terminal_advance_events": 0,
+              "terminal_status": "cancelled"
+            },
+            "execution_id": "BROKER-RM002A-004-005",
+            "finding": "",
+            "obligation": "cancellation request processing"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "cancelled_status": "cancelled",
+                "queued_status": "working",
+                "terminal_advance_events": 0,
+                "terminal_status": "cancelled"
+              },
+              "execution_id": "BROKER-RM002A-004-005",
+              "finding": "",
+              "obligation": "cancellation request processing"
+            },
+            "obligation": "cancellation request processing",
+            "regression_id": "BROKER-RM002A-005-REG-005",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "last_event": "Order Timeout",
+              "status": "timed_out"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.timeout_order",
+            "obligation": "request timeout handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-009",
+            "verification_id": "BROKER-RM002A-006-VER-001"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "attempts": {
+                "ORD-GAP-001": 1
+              },
+              "status": "retry_pending"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.retry_order",
+            "obligation": "retry initiation",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-011",
+            "verification_id": "BROKER-RM002A-006-VER-003"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "attempts": {
+                "ORD-GAP-001": 2
+              },
+              "rejection_code": "NOT_EXECUTABLE",
+              "status": "rejected"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.retry_order",
+            "obligation": "retry exhaustion",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-012",
+            "verification_id": "BROKER-RM002A-006-VER-004"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "restored_status": "timed_out"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.recover_from_snapshot",
+            "obligation": "durable restart recovery",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-014",
+            "verification_id": "BROKER-RM002A-006-VER-006"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "new_events": 0,
+              "status_after_advance": "cancelled",
+              "status_before_advance": "cancelled"
+            },
+            "execution_id": "BROKER-RM002A-004-006",
+            "finding": "",
+            "obligation": "terminal-state mutation rejection"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "new_events": 0,
+                "status_after_advance": "cancelled",
+                "status_before_advance": "cancelled"
+              },
+              "execution_id": "BROKER-RM002A-004-006",
+              "finding": "",
+              "obligation": "terminal-state mutation rejection"
+            },
+            "obligation": "terminal-state mutation rejection",
+            "regression_id": "BROKER-RM002A-005-REG-006",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        }
+      ],
+      "historical_remediation_support_only": true,
+      "implementation_artifact": "dependency-derived Broker implementation population",
+      "implementation_obligation": "Broker lifecycle progression is deterministic across accepted, rejected, pending, filled, cancellation, timeout, retry, recovery, and terminal states.",
+      "missing_obligations": [],
+      "proof_id": "PROOF-BROKER-CONST-REQ-002",
+      "proof_reproducible": true,
+      "requirement_id": "BROKER-CONST-REQ-002"
+    },
+    {
+      "disposition": "PROVEN",
+      "executable_verifier": "dependency-derived Broker verifier population",
+      "execution_records": [
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "fills": 0,
+              "rejection_code": "INVALID_QUANTITY"
+            },
+            "execution_id": "BROKER-RM002A-004-001",
+            "finding": "",
+            "obligation": "malformed request rejection"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "fills": 0,
+                "rejection_code": "INVALID_QUANTITY"
+              },
+              "execution_id": "BROKER-RM002A-004-001",
+              "finding": "",
+              "obligation": "malformed request rejection"
+            },
+            "obligation": "malformed request rejection",
+            "regression_id": "BROKER-RM002A-005-REG-002",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "expected": "INVALID_ORDER_TYPE",
+              "rejection_code": "INVALID_ORDER_TYPE"
+            },
+            "execution_id": "BROKER-RM002A-004-002",
+            "finding": "",
+            "obligation": "unsupported request rejection"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "expected": "INVALID_ORDER_TYPE",
+                "rejection_code": "INVALID_ORDER_TYPE"
+              },
+              "execution_id": "BROKER-RM002A-004-002",
+              "finding": "",
+              "obligation": "unsupported request rejection"
+            },
+            "obligation": "unsupported request rejection",
+            "regression_id": "BROKER-RM002A-005-REG-003",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "first_accepted": true,
+              "second_accepted": false,
+              "second_rejection": "DUPLICATE_ORDER"
+            },
+            "execution_id": "BROKER-RM002A-004-003",
+            "finding": "",
+            "obligation": "duplicate request detection"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "first_accepted": true,
+                "second_accepted": false,
+                "second_rejection": "DUPLICATE_ORDER"
+              },
+              "execution_id": "BROKER-RM002A-004-003",
+              "finding": "",
+              "obligation": "duplicate request detection"
+            },
+            "obligation": "duplicate request detection",
+            "regression_id": "BROKER-RM002A-005-REG-001",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_duplicate_submission_generates_case_file"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "disposition": "APPLIED",
+              "event_id": "PBE-AAFFD43E1C64",
+              "order_status": "acknowledged"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "delayed acknowledgement handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+            "verification_id": "BROKER-RM002A-006-VER-015"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "evidence": {
+                "expected": "DELAYED_ACKNOWLEDGEMENT_RECORDED",
+                "fixture_result": "DELAYED_ACKNOWLEDGEMENT_RECORDED"
+              },
+              "obligation": "delayed acknowledgement processing",
+              "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+              "regression_disposition": "REGRESSION_PASS"
+            },
+            "obligation": "delayed acknowledgement processing",
+            "regression_id": "BROKER-RM002A-005-REG-009",
+            "source": "BROKER-RM002A-005 bounded verifier fixture"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "disposition": "APPLIED",
+              "event_id": "PBE-AAFFD43E1C64",
+              "order_status": "acknowledged"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "delayed acknowledgement handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+            "verification_id": "BROKER-RM002A-006-VER-015"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "disposition": "APPLIED",
+              "event_id": "PBE-73C75C108D93",
+              "order_status": "acknowledged_after_timeout"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "acknowledgement after timeout",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-010",
+            "verification_id": "BROKER-RM002A-006-VER-002"
+          },
+          "source": "rm006"
+        }
+      ],
+      "historical_remediation_support_only": true,
+      "implementation_artifact": "dependency-derived Broker implementation population",
+      "implementation_obligation": "Broker interfaces preserve authority, normalize requests and responses, reject unsupported inputs, and handle acknowledgement uncertainty.",
+      "missing_obligations": [],
+      "proof_id": "PROOF-BROKER-CONST-REQ-003",
+      "proof_reproducible": true,
+      "requirement_id": "BROKER-CONST-REQ-003"
+    },
+    {
+      "disposition": "PROVEN",
+      "executable_verifier": "dependency-derived Broker verifier population",
+      "execution_records": [
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "fills": 0,
+              "status": "queued",
+              "truth_records": 0
+            },
+            "execution_id": "BROKER-RM002A-004-008",
+            "finding": "",
+            "obligation": "prohibition against fabricated acknowledgement or fill truth"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "fills": 0,
+                "status": "queued",
+                "truth_records": 0
+              },
+              "execution_id": "BROKER-RM002A-004-008",
+              "finding": "",
+              "obligation": "prohibition against fabricated acknowledgement or fill truth"
+            },
+            "obligation": "prohibition against fabricated acknowledgement or fill truth",
+            "regression_id": "BROKER-RM002A-005-REG-008",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "details": "",
+            "disposition": "PASS",
+            "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_non_executable_limit_order_does_not_fabricate_fill"
+          },
+          "source": "rm007_tests"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "last_event": "Correction",
+              "lifecycle": [
+                "Created",
+                "Validated",
+                "Accepted",
+                "Queued",
+                "Working",
+                "Filled",
+                "Settled",
+                "Corrected"
+              ]
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.record_correction",
+            "obligation": "correction-event processing",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-016",
+            "verification_id": "BROKER-RM002A-006-VER-008"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "restored_order": "ORD-GAP-001"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+            "obligation": "persistence restoration",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-021",
+            "verification_id": "BROKER-RM002A-006-VER-013"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "order_count": 1,
+              "valid": true
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.recover_from_snapshot",
+            "obligation": "partial-write recovery",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-019",
+            "verification_id": "BROKER-RM002A-006-VER-011"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "detected": {
+                "findings": [
+                  {
+                    "classification": "CORRUPTED_STATE",
+                    "orderId": "CORRUPTED-KEY"
+                  }
+                ],
+                "valid": false
+              },
+              "recovered": {
+                "findings": [],
+                "valid": true
+              }
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.validate_state_integrity/recover_from_snapshot",
+            "obligation": "corrupted-state recovery",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-020",
+            "verification_id": "BROKER-RM002A-006-VER-012"
+          },
+          "source": "rm006"
+        }
+      ],
+      "historical_remediation_support_only": true,
+      "implementation_artifact": "dependency-derived Broker implementation population",
+      "implementation_obligation": "Broker evidence is immutable, execution-derived, non-synthetic, and preserves raw and normalized truth.",
+      "missing_obligations": [],
+      "proof_id": "PROOF-BROKER-CONST-REQ-004",
+      "proof_reproducible": true,
+      "requirement_id": "BROKER-CONST-REQ-004"
+    },
+    {
+      "disposition": "PROVEN",
+      "executable_verifier": "dependency-derived Broker verifier population",
+      "execution_records": [
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "disposition": "LATE_FILL",
+              "event_id": "PBE-8673BD1C694E",
+              "order_status": "settled"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "late fill processing",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-015",
+            "verification_id": "BROKER-RM002A-006-VER-007"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "first": {
+                "disposition": "APPLIED",
+                "event_id": "PBE-37D974C94D33",
+                "order_status": "working"
+              },
+              "second": {
+                "disposition": "OUT_OF_ORDER_EVENT",
+                "event_id": "PBE-EF384F771DFD",
+                "order_status": "working"
+              }
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "out-of-order event handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+            "verification_id": "BROKER-RM002A-006-VER-017"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "evidence": {
+                "expected": "OUT_OF_ORDER_EVENT_QUARANTINED",
+                "fixture_result": "OUT_OF_ORDER_EVENT_QUARANTINED"
+              },
+              "obligation": "out-of-order event processing",
+              "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+              "regression_disposition": "REGRESSION_PASS"
+            },
+            "obligation": "out-of-order event processing",
+            "regression_id": "BROKER-RM002A-005-REG-011",
+            "source": "BROKER-RM002A-005 bounded verifier fixture"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "first": {
+                "disposition": "APPLIED",
+                "event_id": "PBE-37D974C94D33",
+                "order_status": "working"
+              },
+              "second": {
+                "disposition": "OUT_OF_ORDER_EVENT",
+                "event_id": "PBE-EF384F771DFD",
+                "order_status": "working"
+              }
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "out-of-order event handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+            "verification_id": "BROKER-RM002A-006-VER-017"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "evidence": {
+                "expected_second": "DUPLICATE_EVENT_REJECTED",
+                "first_result": "EVENT_ACCEPTED",
+                "second_result": "DUPLICATE_EVENT_REJECTED"
+              },
+              "obligation": "duplicate broker-event handling",
+              "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+              "regression_disposition": "REGRESSION_PASS"
+            },
+            "obligation": "duplicate broker-event handling",
+            "regression_id": "BROKER-RM002A-005-REG-010",
+            "source": "BROKER-RM002A-005 bounded verifier fixture"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "first": {
+                "disposition": "APPLIED",
+                "event_id": "PBE-37D974C94D33",
+                "order_status": "working"
+              },
+              "second": {
+                "disposition": "DUPLICATE_EVENT",
+                "event_id": "PBE-8B3C3601CF45",
+                "order_status": "working"
+              }
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "duplicate broker-event handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+            "verification_id": "BROKER-RM002A-006-VER-016"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "evidence": {
+                "expected_second": "DUPLICATE_EVENT_REJECTED",
+                "first_result": "EVENT_ACCEPTED",
+                "second_result": "DUPLICATE_EVENT_REJECTED"
+              },
+              "obligation": "duplicate broker-event handling",
+              "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+              "regression_disposition": "REGRESSION_PASS"
+            },
+            "obligation": "duplicate broker-event handling",
+            "regression_id": "BROKER-RM002A-005-REG-010",
+            "source": "BROKER-RM002A-005 bounded verifier fixture"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "first": {
+                "disposition": "APPLIED",
+                "event_id": "PBE-37D974C94D33",
+                "order_status": "working"
+              },
+              "second": {
+                "disposition": "DUPLICATE_EVENT",
+                "event_id": "PBE-8B3C3601CF45",
+                "order_status": "working"
+              }
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "duplicate broker-event handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+            "verification_id": "BROKER-RM002A-006-VER-016"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "broker_status": "working",
+              "canonical_status": "settled",
+              "conflict": true,
+              "event_id": "PBE-0B1358467DA4",
+              "order_id": "ORD-GAP-001"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.reconcile_broker_event",
+            "obligation": "contradictory broker-event reconciliation",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-017",
+            "verification_id": "BROKER-RM002A-006-VER-009"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "broker_status": "working",
+              "canonical_status": "settled",
+              "conflict": true,
+              "event_id": "PBE-0B1358467DA4",
+              "order_id": "ORD-GAP-001"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.reconcile_broker_event",
+            "obligation": "contradictory broker-event reconciliation",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-017",
+            "verification_id": "BROKER-RM002A-006-VER-009"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "disposition": "APPLIED",
+              "event_id": "PBE-68D3DF9E96F8",
+              "order_status": "cancellation_uncertain"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "unresolved anomaly escalation",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-022",
+            "verification_id": "BROKER-RM002A-006-VER-014"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "evidence": {
+                "expected": "CANCELLATION_UNCERTAINTY_ESCALATED",
+                "fixture_result": "CANCELLATION_UNCERTAINTY_ESCALATED"
+              },
+              "obligation": "cancellation uncertainty handling",
+              "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+              "regression_disposition": "REGRESSION_PASS"
+            },
+            "obligation": "cancellation uncertainty handling",
+            "regression_id": "BROKER-RM002A-005-REG-012",
+            "source": "BROKER-RM002A-005 bounded verifier fixture"
+          },
+          "source": "rm005"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "disposition": "APPLIED",
+              "event_id": "PBE-68D3DF9E96F8",
+              "order_status": "cancellation_uncertain"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+            "obligation": "cancellation uncertainty handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+            "verification_id": "BROKER-RM002A-006-VER-018"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "last_event": "Modification Uncertain",
+              "status": "modification_uncertain"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.modify_order_uncertain",
+            "obligation": "modification uncertainty handling",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-018",
+            "verification_id": "BROKER-RM002A-006-VER-010"
+          },
+          "source": "rm006"
+        }
+      ],
+      "historical_remediation_support_only": true,
+      "implementation_artifact": "dependency-derived Broker implementation population",
+      "implementation_obligation": "Broker reconciliation and anomaly handling preserve contradictions, late events, duplicate events, and unresolved uncertainty without overwriting history.",
+      "missing_obligations": [],
+      "proof_id": "PROOF-BROKER-CONST-REQ-005",
+      "proof_reproducible": true,
+      "requirement_id": "BROKER-CONST-REQ-005"
+    },
+    {
+      "disposition": "PROVEN",
+      "executable_verifier": "dependency-derived Broker verifier population",
+      "execution_records": [
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "after_order_count": 1,
+              "before_order_count": 1,
+              "status": "working"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+            "obligation": "replay after restart",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-013",
+            "verification_id": "BROKER-RM002A-006-VER-005"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "restored_order": "ORD-GAP-001"
+            },
+            "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+            "obligation": "persistence restoration",
+            "originating_finding_id": "BROKER-RM002A-004-FINDING-021",
+            "verification_id": "BROKER-RM002A-006-VER-013"
+          },
+          "source": "rm006"
+        },
+        {
+          "record": {
+            "disposition": "VERIFIED_PASS",
+            "evidence": {
+              "exception": "unknown broker order: ORD-MISSING"
+            },
+            "execution_id": "BROKER-RM002A-004-007",
+            "finding": "",
+            "obligation": "missing-state detection"
+          },
+          "source": "rm004"
+        },
+        {
+          "record": {
+            "disposition": "REGRESSION_PASS",
+            "evidence": {
+              "disposition": "VERIFIED_PASS",
+              "evidence": {
+                "exception": "unknown broker order: ORD-MISSING"
+              },
+              "execution_id": "BROKER-RM002A-004-007",
+              "finding": "",
+              "obligation": "missing-state detection"
+            },
+            "obligation": "missing-state detection",
+            "regression_id": "BROKER-RM002A-005-REG-007",
+            "source": "BROKER-RM002A-004 bounded verifier"
+          },
+          "source": "rm005"
+        }
+      ],
+      "historical_remediation_support_only": true,
+      "implementation_artifact": "dependency-derived Broker implementation population",
+      "implementation_obligation": "Broker certification is independently reproducible from canonical proof, traceability, evidence, and verifier execution.",
+      "missing_obligations": [],
+      "proof_id": "PROOF-BROKER-CONST-REQ-006",
+      "proof_reproducible": true,
+      "requirement_id": "BROKER-CONST-REQ-006"
+    }
+  ],
+  "requirements": [
+    {
+      "atomic_obligations": [
+        "request identity validation",
+        "identifier mapping",
+        "persistence of request identity"
+      ],
+      "canonical_identity": "BROKER-CONST-REQ-001",
+      "governing_authority": "BROKER-RM-001-S02",
+      "remediation_identifier_authoritative": false,
+      "requirement_id": "BROKER-CONST-REQ-001",
+      "requirement_text": "Broker ownership and custody authority is explicit and single-owner.",
+      "source_artifacts": [
+        "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+        "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+        "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+        "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+        "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+        "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+      ]
+    },
+    {
+      "atomic_obligations": [
+        "accepted-order lifecycle progression",
+        "rejected-order lifecycle progression",
+        "pending-order lifecycle progression",
+        "partial-fill processing",
+        "cancellation request processing",
+        "request timeout handling",
+        "retry initiation",
+        "retry exhaustion",
+        "durable restart recovery",
+        "terminal-state mutation rejection"
+      ],
+      "canonical_identity": "BROKER-CONST-REQ-002",
+      "governing_authority": "BROKER-RM-001-S03",
+      "remediation_identifier_authoritative": false,
+      "requirement_id": "BROKER-CONST-REQ-002",
+      "requirement_text": "Broker lifecycle progression is deterministic across accepted, rejected, pending, filled, cancellation, timeout, retry, recovery, and terminal states.",
+      "source_artifacts": [
+        "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+        "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+        "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+        "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+        "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+        "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+      ]
+    },
+    {
+      "atomic_obligations": [
+        "canonical request normalization",
+        "broker-specific translation",
+        "submission dispatch",
+        "acknowledgement receipt",
+        "acknowledgement normalization",
+        "malformed request rejection",
+        "unsupported request rejection",
+        "duplicate request detection",
+        "delayed acknowledgement handling",
+        "acknowledgement after timeout"
+      ],
+      "canonical_identity": "BROKER-CONST-REQ-003",
+      "governing_authority": "BROKER-RM-001-S04",
+      "remediation_identifier_authoritative": false,
+      "requirement_id": "BROKER-CONST-REQ-003",
+      "requirement_text": "Broker interfaces preserve authority, normalize requests and responses, reject unsupported inputs, and handle acknowledgement uncertainty.",
+      "source_artifacts": [
+        "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+        "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+        "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+        "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+        "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+        "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+      ]
+    },
+    {
+      "atomic_obligations": [
+        "prohibition against fabricated acknowledgement or fill truth",
+        "correction-event processing",
+        "persistence restoration",
+        "partial-write recovery",
+        "corrupted-state recovery"
+      ],
+      "canonical_identity": "BROKER-CONST-REQ-004",
+      "governing_authority": "BROKER-RM-001-S05",
+      "remediation_identifier_authoritative": false,
+      "requirement_id": "BROKER-CONST-REQ-004",
+      "requirement_text": "Broker evidence is immutable, execution-derived, non-synthetic, and preserves raw and normalized truth.",
+      "source_artifacts": [
+        "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+        "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+        "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+        "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+        "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+        "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+      ]
+    },
+    {
+      "atomic_obligations": [
+        "late fill handling",
+        "out-of-order event handling",
+        "duplicate broker-event handling",
+        "contradictory broker-event reconciliation",
+        "unresolved anomaly escalation",
+        "cancellation uncertainty handling",
+        "modification uncertainty handling"
+      ],
+      "canonical_identity": "BROKER-CONST-REQ-005",
+      "governing_authority": "BROKER-RM-001-S06",
+      "remediation_identifier_authoritative": false,
+      "requirement_id": "BROKER-CONST-REQ-005",
+      "requirement_text": "Broker reconciliation and anomaly handling preserve contradictions, late events, duplicate events, and unresolved uncertainty without overwriting history.",
+      "source_artifacts": [
+        "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+        "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+        "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+        "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+        "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+        "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+      ]
+    },
+    {
+      "atomic_obligations": [
+        "replay after restart",
+        "persistence restoration",
+        "missing-state detection"
+      ],
+      "canonical_identity": "BROKER-CONST-REQ-006",
+      "governing_authority": "BROKER-RM-001-S07",
+      "remediation_identifier_authoritative": false,
+      "requirement_id": "BROKER-CONST-REQ-006",
+      "requirement_text": "Broker certification is independently reproducible from canonical proof, traceability, evidence, and verifier execution.",
+      "source_artifacts": [
+        "Documentation/BROKER_RM001_S02_OWNERSHIP_CUSTODY/broker_rm001_s02_ownership_baseline.json",
+        "Documentation/BROKER_RM001_S03_LIFECYCLE/broker_rm001_s03_lifecycle_baseline.json",
+        "Documentation/BROKER_RM001_S04_INTERFACES/broker_rm001_s04_interface_baseline.json",
+        "Documentation/BROKER_RM001_S05_EVIDENCE_CERTIFICATION/broker_rm001_s05_evidence_baseline.json",
+        "Documentation/BROKER_RM001_S06_TRACEABILITY_READINESS/broker_rm001_s06_traceability_readiness_baseline.json",
+        "Documentation/BROKER_RM001_S07_GOVERNANCE_CLOSURE/broker_rm001_s07_governance_closure_baseline.json"
+      ]
+    }
+  ],
+  "verdict": "UNCONDITIONAL_PASS"
+}

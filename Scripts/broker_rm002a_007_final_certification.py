@@ -46,7 +46,10 @@ def _write_json(path: Path, payload: Any) -> None:
 
 
 def _git_digest(ref: str) -> str:
-    return subprocess.check_output(["git", "rev-parse", ref], cwd=REPOSITORY_ROOT, text=True).strip()
+    try:
+        return subprocess.check_output(["git", "rev-parse", ref], cwd=REPOSITORY_ROOT, text=True).strip()
+    except Exception:
+        return f"portable:{_repository_content_digest(REPOSITORY_ROOT)}"
 
 
 def _file_digest(path: Path) -> str:
@@ -55,6 +58,20 @@ def _file_digest(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def _repository_content_digest(root: Path) -> str:
+    files = []
+    for path in sorted(root.rglob("*")):
+        if not path.is_file():
+            continue
+        rel = path.relative_to(root).as_posix()
+        if rel.startswith(".git/") or rel.startswith("__pycache__/") or "/__pycache__/" in rel:
+            continue
+        if rel.endswith(".pyc"):
+            continue
+        files.append({"path": rel, "sha256": _file_digest(path), "bytes": path.stat().st_size})
+    return hashlib.sha256(json.dumps(files, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
 
 
 def _artifact(path: Path) -> dict[str, Any]:

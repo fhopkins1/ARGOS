@@ -1,0 +1,32 @@
+[
+  {
+    "authority": "BROKER-RM-001-S02",
+    "obligation": "Broker ownership and custody authority is explicit and single-owner.",
+    "requirement_id": "BROKER-CONST-REQ-001"
+  },
+  {
+    "authority": "BROKER-RM-001-S03",
+    "obligation": "Broker lifecycle progression is deterministic across accepted, rejected, pending, filled, cancellation, timeout, retry, recovery, and terminal states.",
+    "requirement_id": "BROKER-CONST-REQ-002"
+  },
+  {
+    "authority": "BROKER-RM-001-S04",
+    "obligation": "Broker interfaces preserve authority, normalize requests and responses, reject unsupported inputs, and handle acknowledgement uncertainty.",
+    "requirement_id": "BROKER-CONST-REQ-003"
+  },
+  {
+    "authority": "BROKER-RM-001-S05",
+    "obligation": "Broker evidence is immutable, execution-derived, non-synthetic, and preserves raw and normalized truth.",
+    "requirement_id": "BROKER-CONST-REQ-004"
+  },
+  {
+    "authority": "BROKER-RM-001-S06",
+    "obligation": "Broker reconciliation and anomaly handling preserve contradictions, late events, duplicate events, and unresolved uncertainty without overwriting history.",
+    "requirement_id": "BROKER-CONST-REQ-005"
+  },
+  {
+    "authority": "BROKER-RM-001-S07",
+    "obligation": "Broker certification is independently reproducible from canonical proof, traceability, evidence, and verifier execution.",
+    "requirement_id": "BROKER-CONST-REQ-006"
+  }
+]
