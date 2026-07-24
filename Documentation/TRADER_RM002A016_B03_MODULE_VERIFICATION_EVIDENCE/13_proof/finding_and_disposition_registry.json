@@ -1,0 +1,80 @@
+[
+  {
+    "classification": "MODULE_TIMEOUT",
+    "disposition": "OPEN",
+    "evidence": [
+      "08_raw_logs/10ea4a54904cd65d/stdout.log",
+      "08_raw_logs/10ea4a54904cd65d/stderr.log",
+      ""
+    ],
+    "execution_identifier": "TRADER-RM-002A-016-B03-10ea4a54904cd65d",
+    "finding_id": "B03-FINDING-10ea4a54904cd65d",
+    "module_identifier": "Tests.test_cic02_recovery_foundation",
+    "observed": "TIMEOUT"
+  },
+  {
+    "classification": "MISSING_CHILD_RESULT",
+    "disposition": "OPEN",
+    "evidence": [
+      "08_raw_logs/e78e50d34a131066/stdout.log",
+      "08_raw_logs/e78e50d34a131066/stderr.log",
+      ""
+    ],
+    "execution_identifier": "TRADER-RM-002A-016-B03-e78e50d34a131066",
+    "finding_id": "B03-FINDING-e78e50d34a131066",
+    "module_identifier": "Tests.test_cic03_css_separation",
+    "observed": "MISSING_RESULT"
+  },
+  {
+    "classification": "MODULE_TIMEOUT",
+    "disposition": "OPEN",
+    "evidence": [
+      "08_raw_logs/21a5773560074c0c/stdout.log",
+      "08_raw_logs/21a5773560074c0c/stderr.log",
+      ""
+    ],
+    "execution_identifier": "TRADER-RM-002A-016-B03-21a5773560074c0c",
+    "finding_id": "B03-FINDING-21a5773560074c0c",
+    "module_identifier": "Tests.test_cic04_proof_based_certification",
+    "observed": "TIMEOUT"
+  },
+  {
+    "classification": "MODULE_TIMEOUT",
+    "disposition": "OPEN",
+    "evidence": [
+      "08_raw_logs/f87af518fc917dbb/stdout.log",
+      "08_raw_logs/f87af518fc917dbb/stderr.log",
+      ""
+    ],
+    "execution_identifier": "TRADER-RM-002A-016-B03-f87af518fc917dbb",
+    "finding_id": "B03-FINDING-f87af518fc917dbb",
+    "module_identifier": "Tests.test_cr5_constitutional_trace_closure",
+    "observed": "TIMEOUT"
+  },
+  {
+    "classification": "MODULE_TIMEOUT",
+    "disposition": "OPEN",
+    "evidence": [
+      "08_raw_logs/299da5522db4d2dd/stdout.log",
+      "08_raw_logs/299da5522db4d2dd/stderr.log",
+      ""
+    ],
+    "execution_identifier": "TRADER-RM-002A-016-B03-299da5522db4d2dd",
+    "finding_id": "B03-FINDING-299da5522db4d2dd",
+    "module_identifier": "Tests.test_cr6_cr7_certification_artifacts",
+    "observed": "TIMEOUT"
+  },
+  {
+    "classification": "MODULE_TIMEOUT",
+    "disposition": "OPEN",
+    "evidence": [
+      "08_raw_logs/4607a1f1e38a7adf/stdout.log",
+      "08_raw_logs/4607a1f1e38a7adf/stderr.log",
+      ""
+    ],
+    "execution_identifier": "TRADER-RM-002A-016-B03-4607a1f1e38a7adf",
+    "finding_id": "B03-FINDING-4607a1f1e38a7adf",
+    "module_identifier": "Tests.test_css_continuous_certification",
+    "observed": "TIMEOUT"
+  }
+]

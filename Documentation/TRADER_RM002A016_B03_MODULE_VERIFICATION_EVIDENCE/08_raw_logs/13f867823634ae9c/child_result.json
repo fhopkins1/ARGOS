@@ -1,0 +1,69 @@
+{
+  "candidate_digest": "519fdd9e158dd8c1bed6ea06a8f8da7c298880134e1224ab16dd93b2aaa22466",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 5,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 15.623443,
+  "execution_id": "TRADER-RM-002A-016-B03-13f867823634ae9c",
+  "finish_timestamp": "2026-07-24T01:42:15.730112Z",
+  "module": "Tests.test_cic05_authoritative_chain",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 2.435147,
+      "finish_timestamp": "2026-07-24T01:42:02.541838Z",
+      "start_timestamp": "2026-07-24T01:42:00.106701Z",
+      "test_identifier": "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_bootstrap_creates_verifiable_fourteen_domain_baseline"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 3.168698,
+      "finish_timestamp": "2026-07-24T01:42:05.710673Z",
+      "start_timestamp": "2026-07-24T01:42:02.541983Z",
+      "test_identifier": "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_rejects_missing_cr7_and_zero_commit"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 5.181603,
+      "finish_timestamp": "2026-07-24T01:42:10.892515Z",
+      "start_timestamp": "2026-07-24T01:42:05.710854Z",
+      "test_identifier": "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_and_cic07_consume_authoritative_cic05_baseline"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.000766,
+      "finish_timestamp": "2026-07-24T01:42:10.893332Z",
+      "start_timestamp": "2026-07-24T01:42:10.892584Z",
+      "test_identifier": "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_production_rejects_empty_unproven_domains"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 4.836393,
+      "finish_timestamp": "2026-07-24T01:42:15.729847Z",
+      "start_timestamp": "2026-07-24T01:42:10.893400Z",
+      "test_identifier": "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic07_rejects_demo_or_missing_cic06_report"
+    }
+  ],
+  "runner_output": "test_cic05_bootstrap_creates_verifiable_fourteen_domain_baseline (Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_bootstrap_creates_verifiable_fourteen_domain_baseline) ... ok\ntest_cic05_rejects_missing_cr7_and_zero_commit (Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_rejects_missing_cr7_and_zero_commit) ... ok\ntest_cic06_and_cic07_consume_authoritative_cic05_baseline (Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_and_cic07_consume_authoritative_cic05_baseline) ... ok\ntest_cic06_production_rejects_empty_unproven_domains (Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_production_rejects_empty_unproven_domains) ... ok\ntest_cic07_rejects_demo_or_missing_cic06_report (Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic07_rejects_demo_or_missing_cic06_report) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 15.623s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic05_authoritative_chain.py",
+  "start_timestamp": "2026-07-24T01:42:00.106701Z",
+  "successful": true,
+  "tests_run": 5
+}

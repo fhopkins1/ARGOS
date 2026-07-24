@@ -1,0 +1,61 @@
+{
+  "candidate_digest": "519fdd9e158dd8c1bed6ea06a8f8da7c298880134e1224ab16dd93b2aaa22466",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 4,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 39.471289,
+  "execution_id": "TRADER-RM-002A-016-B03-b483820d8b0364de",
+  "finish_timestamp": "2026-07-24T01:44:37.281467Z",
+  "module": "Tests.test_cr8_cr10_operational_campaigns",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.000115,
+      "finish_timestamp": "2026-07-24T01:44:37.281155Z",
+      "start_timestamp": "2026-07-24T01:44:37.281052Z",
+      "test_identifier": "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_blocks_without_cr9_and_does_not_claim_paper_candidate"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 4.2e-05,
+      "finish_timestamp": "2026-07-24T01:44:37.281238Z",
+      "start_timestamp": "2026-07-24T01:44:37.281200Z",
+      "test_identifier": "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_contains_required_overnight_phase_and_morning_reconciliation_models"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 3.4e-05,
+      "finish_timestamp": "2026-07-24T01:44:37.281288Z",
+      "start_timestamp": "2026-07-24T01:44:37.281257Z",
+      "test_identifier": "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_defines_level2_campaign_a_without_launching_when_blocked"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.9e-05,
+      "finish_timestamp": "2026-07-24T01:44:37.281320Z",
+      "start_timestamp": "2026-07-24T01:44:37.281304Z",
+      "test_identifier": "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_records_activity_monitoring_and_reconciliation_requirements"
+    }
+  ],
+  "runner_output": "test_cr10_blocks_without_cr9_and_does_not_claim_paper_candidate (Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_blocks_without_cr9_and_does_not_claim_paper_candidate) ... ok\ntest_cr10_contains_required_overnight_phase_and_morning_reconciliation_models (Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_contains_required_overnight_phase_and_morning_reconciliation_models) ... ok\ntest_cr8_defines_level2_campaign_a_without_launching_when_blocked (Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_defines_level2_campaign_a_without_launching_when_blocked) ... ok\ntest_cr8_records_activity_monitoring_and_reconciliation_requirements (Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_records_activity_monitoring_and_reconciliation_requirements) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 39.471s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr8_cr10_operational_campaigns.py",
+  "start_timestamp": "2026-07-24T01:44:37.281052Z",
+  "successful": true,
+  "tests_run": 4
+}

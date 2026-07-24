@@ -1,0 +1,835 @@
+{
+  "batch_identifier": "TRADER-RM-002A-016-B03",
+  "frozen_at": "2026-07-24T01:48:51.034880Z",
+  "inventory_digest": "76733d57885ceedeac16775dc5cd764371f8944bda4ea13a19f3742b2c6ad3f7",
+  "original_missing_json_modules": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_package_validation_rejects_mixed_candidate_package",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_complete_pass_execution_can_produce_cr7_pass_envelope",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cr10_qualification_rejects_failed_or_mismatched_cr7_evidence",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_css_prerequisite_publication_is_immutable_and_fail_closed",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_denominator_ledger_accounts_for_not_executed_tests_as_failure",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_discovery_builds_deterministic_canonical_manifest",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_publication_detects_cr7_cr10_candidate_mismatch",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_summary_cannot_override_authoritative_cr7_verdict",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_timeout_interrupted_error_and_unknown_states_fail_closed"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic02_recovery_foundation",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic02_recovery_foundation.py",
+      "module_source_digest": "dab8758ece5dcb8fe8706c68ca251078978d37cc27576a46e56796aaaa3bec3d",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-10ea4a54904cd65d",
+      "reason_for_inclusion": "original missing-JSON population; CIC-02 recovery foundation",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_contract_validation_rejects_duplicate_or_malformed_contracts",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_coordinator_contracts_reference_physical_subsystem_modules",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_dependency_graph_is_deterministic_and_acyclic",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_each_css_subsystem_has_physical_public_contract_and_independent_execution",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_program_executes_independent_subsystems_with_limited_coordinator",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_program_fails_closed_when_subsystems_report_failures",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_repository_inspection_records_existing_css_surface",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_six_canonical_subsystem_contracts_exist"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic03_css_separation",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic03_css_separation.py",
+      "module_source_digest": "7b20b6d0817049e2535fc23d78638ac9d3862c25eaed07595afb8c16c3497f1c",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e78e50d34a131066",
+      "reason_for_inclusion": "original missing-JSON population; CIC-03 CSS separation",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CR"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_inventory_discovers_runtime_components",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_scanner_returns_trace_review_leads",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_cr5_is_incomplete_when_predecessor_gates_are_unproven",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_final_counts_keep_canonical_runtime_bypass_nonzero_under_entry_blockers",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_scorecard_contains_required_constitutional_domains",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_trace_campaign_records_tc_inputs_without_readiness_claim"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CR",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CR-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cr5_constitutional_trace_closure",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr5_constitutional_trace_closure.py",
+      "module_source_digest": "4e8bef2e8b8cb7d87f0c9f77b4c840e30b1887356f5bc7595b3fcf0fce84335f",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-f87af518fc917dbb",
+      "reason_for_inclusion": "original missing-JSON population; CR-5 constitutional trace closure",
+      "sub_batch_identifier": "B03-SB02-CR5-CR7",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CR"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr6_envelopes_reference_one_candidate_identity",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr6_fails_closed_when_predecessor_gates_are_incomplete",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr6_inventory_quarantines_existing_evidence",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr7_collects_canonical_unittest_denominator",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr7_environment_and_skip_audits_are_machine_readable",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr7_records_unexecuted_repeated_suite_as_incomplete"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CR",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CR-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cr6_cr7_certification_artifacts",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr6_cr7_certification_artifacts.py",
+      "module_source_digest": "416fc27015d5cab03e855b9dda11f630cdd03e75b63c8ab1ed42b51df735e9c0",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-299da5522db4d2dd",
+      "reason_for_inclusion": "original missing-JSON population; CR-6/CR-7 certification artifacts",
+      "sub_batch_identifier": "B03-SB02-CR5-CR7",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CR"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_blocks_without_cr9_and_does_not_claim_paper_candidate",
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_contains_required_overnight_phase_and_morning_reconciliation_models",
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_defines_level2_campaign_a_without_launching_when_blocked",
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_records_activity_monitoring_and_reconciliation_requirements"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CR",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CR-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cr8_cr10_operational_campaigns",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr8_cr10_operational_campaigns.py",
+      "module_source_digest": "969503a3b9dec723755f34e6f1198b948dd6ba1f82e62a40fa72d88979608c81",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-b483820d8b0364de",
+      "reason_for_inclusion": "original missing-JSON population; CR-8/CR-10 operational campaigns",
+      "sub_batch_identifier": "B03-SB03-CR8-CR10",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CSS"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_claim_registry_requires_implementation_and_tests",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_css_pipeline_fails_closed_when_cr10_is_not_pass",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_drift_detection_fails_closed_without_certified_baseline",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_repository_truth_index_discovers_runtime_tests_generators_and_bridges",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_verification_catalog_is_observational_and_fail_closed"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CSS",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CSS-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_css_continuous_certification",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_css_continuous_certification.py",
+      "module_source_digest": "77415ac6f9f3a8acd89c85f516f430fc049059156606991db4ee4561fe5b20d3",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-4607a1f1e38a7adf",
+      "reason_for_inclusion": "original missing-JSON population; CSS continuous constitutional certification",
+      "sub_batch_identifier": "B03-SB05-CSS",
+      "timeout": 180
+    }
+  ],
+  "records": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_package_validation_rejects_mixed_candidate_package",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_complete_pass_execution_can_produce_cr7_pass_envelope",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cr10_qualification_rejects_failed_or_mismatched_cr7_evidence",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_css_prerequisite_publication_is_immutable_and_fail_closed",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_denominator_ledger_accounts_for_not_executed_tests_as_failure",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_discovery_builds_deterministic_canonical_manifest",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_publication_detects_cr7_cr10_candidate_mismatch",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_summary_cannot_override_authoritative_cr7_verdict",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_timeout_interrupted_error_and_unknown_states_fail_closed"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic02_recovery_foundation",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic02_recovery_foundation.py",
+      "module_source_digest": "dab8758ece5dcb8fe8706c68ca251078978d37cc27576a46e56796aaaa3bec3d",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-10ea4a54904cd65d",
+      "reason_for_inclusion": "original missing-JSON population; CIC-02 recovery foundation",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_contract_validation_rejects_duplicate_or_malformed_contracts",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_coordinator_contracts_reference_physical_subsystem_modules",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_dependency_graph_is_deterministic_and_acyclic",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_each_css_subsystem_has_physical_public_contract_and_independent_execution",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_program_executes_independent_subsystems_with_limited_coordinator",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_program_fails_closed_when_subsystems_report_failures",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_repository_inspection_records_existing_css_surface",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_six_canonical_subsystem_contracts_exist"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic03_css_separation",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic03_css_separation.py",
+      "module_source_digest": "7b20b6d0817049e2535fc23d78638ac9d3862c25eaed07595afb8c16c3497f1c",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e78e50d34a131066",
+      "reason_for_inclusion": "original missing-JSON population; CIC-03 CSS separation",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_cic04_evidence_generator_fails_closed_for_dirty_workspace",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_complete_candidate_bound_proof_chain_is_proven",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_css_claim_registry_uses_proof_state_not_presence_status",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_each_canonical_state_is_deterministically_produced",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_execution_trace_evidence_and_verdict_negative_cases_fail_closed",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_only_proven_satisfies_gate",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_presence_only_nodes_cannot_satisfy_claim",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_wrong_candidate_artifact_trace_and_verdict_are_rejected"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic04_proof_based_certification",
+      "inclusion_class": "SHARED_SCHEMA_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic04_proof_based_certification.py",
+      "module_source_digest": "3d84657caae25d32393266e97f3f605282848cffa8fa5e7564b61351b9bb2997",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-21a5773560074c0c",
+      "reason_for_inclusion": "shared CIC certification proof framing",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_bootstrap_creates_verifiable_fourteen_domain_baseline",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_rejects_missing_cr7_and_zero_commit",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_and_cic07_consume_authoritative_cic05_baseline",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_production_rejects_empty_unproven_domains",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic07_rejects_demo_or_missing_cic06_report"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic05_authoritative_chain",
+      "inclusion_class": "SHARED_RUNNER_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic05_authoritative_chain.py",
+      "module_source_digest": "9a707f621f4ae7f7b90c7e4f5b4709549e17b7ea61a0c304610fba19d1506db7",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-13f867823634ae9c",
+      "reason_for_inclusion": "shared CIC authoritative chain and recovery checks",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_all_fourteen_comparators_report_no_drift_for_identical_semantics",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_authorization_does_not_suppress_constitutional_regression",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_classification_precedence_for_required_regressions",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_invalid_and_mixed_identity_fails_closed",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_report_digest_and_evidence_generation_are_deterministic"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic06_semantic_drift_engine",
+      "inclusion_class": "SHARED_SCHEMA_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic06_semantic_drift_engine.py",
+      "module_source_digest": "5b91ab4afe720dfb06e41edbb47e55d29dac3b7ceedb9388c4866a7186025a9e",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-43836ff20623324a",
+      "reason_for_inclusion": "shared CIC continuous drift certification",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_constitutional_failure_blocks_issuance_but_is_recorded",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_drift_blocks_issuance_and_evidence_export_is_written",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_invalid_reactivation_idempotency_and_conflicts_fail_closed",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_revocation_preserves_issuance_history",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_tamper_and_export_digest_detection",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_valid_issuance_appends_entry_and_projection_is_rebuildable"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic07_governance_ledger",
+      "inclusion_class": "SHARED_SCHEMA_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic07_governance_ledger.py",
+      "module_source_digest": "4b323bc3fc9fb7c2acce5c576f2e82499f9f2b7dd0c36c6d3ce86776d89acc2c",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-0123bfc427f12cfa",
+      "reason_for_inclusion": "shared CIC governance certification",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CR"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_inventory_discovers_runtime_components",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_scanner_returns_trace_review_leads",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_cr5_is_incomplete_when_predecessor_gates_are_unproven",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_final_counts_keep_canonical_runtime_bypass_nonzero_under_entry_blockers",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_scorecard_contains_required_constitutional_domains",
+        "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_trace_campaign_records_tc_inputs_without_readiness_claim"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CR",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CR-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cr5_constitutional_trace_closure",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr5_constitutional_trace_closure.py",
+      "module_source_digest": "4e8bef2e8b8cb7d87f0c9f77b4c840e30b1887356f5bc7595b3fcf0fce84335f",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-f87af518fc917dbb",
+      "reason_for_inclusion": "original missing-JSON population; CR-5 constitutional trace closure",
+      "sub_batch_identifier": "B03-SB02-CR5-CR7",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CR"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr6_envelopes_reference_one_candidate_identity",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr6_fails_closed_when_predecessor_gates_are_incomplete",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr6_inventory_quarantines_existing_evidence",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr7_collects_canonical_unittest_denominator",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr7_environment_and_skip_audits_are_machine_readable",
+        "Tests.test_cr6_cr7_certification_artifacts.CR6CR7CertificationArtifactTests.test_cr7_records_unexecuted_repeated_suite_as_incomplete"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CR",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CR-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cr6_cr7_certification_artifacts",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr6_cr7_certification_artifacts.py",
+      "module_source_digest": "416fc27015d5cab03e855b9dda11f630cdd03e75b63c8ab1ed42b51df735e9c0",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-299da5522db4d2dd",
+      "reason_for_inclusion": "original missing-JSON population; CR-6/CR-7 certification artifacts",
+      "sub_batch_identifier": "B03-SB02-CR5-CR7",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CR"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_blocks_without_cr9_and_does_not_claim_paper_candidate",
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr10_contains_required_overnight_phase_and_morning_reconciliation_models",
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_defines_level2_campaign_a_without_launching_when_blocked",
+        "Tests.test_cr8_cr10_operational_campaigns.CR8CR10OperationalCampaignTests.test_cr8_records_activity_monitoring_and_reconciliation_requirements"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CR",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CR-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cr8_cr10_operational_campaigns",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr8_cr10_operational_campaigns.py",
+      "module_source_digest": "969503a3b9dec723755f34e6f1198b948dd6ba1f82e62a40fa72d88979608c81",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-b483820d8b0364de",
+      "reason_for_inclusion": "original missing-JSON population; CR-8/CR-10 operational campaigns",
+      "sub_batch_identifier": "B03-SB03-CR8-CR10",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CSS"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_claim_registry_requires_implementation_and_tests",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_css_pipeline_fails_closed_when_cr10_is_not_pass",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_drift_detection_fails_closed_without_certified_baseline",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_repository_truth_index_discovers_runtime_tests_generators_and_bridges",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_verification_catalog_is_observational_and_fail_closed"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CSS",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CSS-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_css_continuous_certification",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_css_continuous_certification.py",
+      "module_source_digest": "77415ac6f9f3a8acd89c85f516f430fc049059156606991db4ee4561fe5b20d3",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-4607a1f1e38a7adf",
+      "reason_for_inclusion": "original missing-JSON population; CSS continuous constitutional certification",
+      "sub_batch_identifier": "B03-SB05-CSS",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CONTINUOUS_CERTIFICATION"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_inventory_discovers_repository_tests",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_module_runner_assigns_final_dispositions",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_outer_execution_record_survives_missing_child_json",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_parser_accepts_result_file_and_rejects_stale_execution_id",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_repository_findings_are_classified_and_reintegrated_into_proofs"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CONTINUOUS_CERTIFICATION",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CONTINUOUS_CERTIFICATION-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_trader_ecs003_audit",
+      "inclusion_class": "SHARED_PARSER_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_trader_ecs003_audit.py",
+      "module_source_digest": "b887808710bcf65e5208aa661ed80569c9b9c4be84f8bc7d18ba68e3a6c0a434",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e6dc81da30b050a9",
+      "reason_for_inclusion": "shared runner/parser/schema impact and proof-mapping tests",
+      "sub_batch_identifier": "B03-SB06-CONTINUOUS",
+      "timeout": 180
+    }
+  ],
+  "schema_version": "trader-rm002a016-b03-affected-module-inventory/v1",
+  "shared_parser_impact_modules": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CONTINUOUS_CERTIFICATION"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_inventory_discovers_repository_tests",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_module_runner_assigns_final_dispositions",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_outer_execution_record_survives_missing_child_json",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_parser_accepts_result_file_and_rejects_stale_execution_id",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_repository_findings_are_classified_and_reintegrated_into_proofs"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CONTINUOUS_CERTIFICATION",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CONTINUOUS_CERTIFICATION-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_trader_ecs003_audit",
+      "inclusion_class": "SHARED_PARSER_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_trader_ecs003_audit.py",
+      "module_source_digest": "b887808710bcf65e5208aa661ed80569c9b9c4be84f8bc7d18ba68e3a6c0a434",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e6dc81da30b050a9",
+      "reason_for_inclusion": "shared runner/parser/schema impact and proof-mapping tests",
+      "sub_batch_identifier": "B03-SB06-CONTINUOUS",
+      "timeout": 180
+    }
+  ],
+  "shared_runner_impact_modules": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CONTINUOUS_CERTIFICATION"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_inventory_discovers_repository_tests",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_module_runner_assigns_final_dispositions",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_outer_execution_record_survives_missing_child_json",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_parser_accepts_result_file_and_rejects_stale_execution_id",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_repository_findings_are_classified_and_reintegrated_into_proofs"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CONTINUOUS_CERTIFICATION",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CONTINUOUS_CERTIFICATION-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_trader_ecs003_audit",
+      "inclusion_class": "SHARED_PARSER_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_trader_ecs003_audit.py",
+      "module_source_digest": "b887808710bcf65e5208aa661ed80569c9b9c4be84f8bc7d18ba68e3a6c0a434",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e6dc81da30b050a9",
+      "reason_for_inclusion": "shared runner/parser/schema impact and proof-mapping tests",
+      "sub_batch_identifier": "B03-SB06-CONTINUOUS",
+      "timeout": 180
+    }
+  ],
+  "shared_schema_impact_modules": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_package_validation_rejects_mixed_candidate_package",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cic02_requires_cic01_contract_and_rejects_ambient_head_substitution",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_complete_pass_execution_can_produce_cr7_pass_envelope",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_cr10_qualification_rejects_failed_or_mismatched_cr7_evidence",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_css_prerequisite_publication_is_immutable_and_fail_closed",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_denominator_ledger_accounts_for_not_executed_tests_as_failure",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_discovery_builds_deterministic_canonical_manifest",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_publication_detects_cr7_cr10_candidate_mismatch",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_summary_cannot_override_authoritative_cr7_verdict",
+        "Tests.test_cic02_recovery_foundation.CIC02RecoveryFoundationTests.test_timeout_interrupted_error_and_unknown_states_fail_closed"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic02_recovery_foundation",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic02_recovery_foundation.py",
+      "module_source_digest": "dab8758ece5dcb8fe8706c68ca251078978d37cc27576a46e56796aaaa3bec3d",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-10ea4a54904cd65d",
+      "reason_for_inclusion": "original missing-JSON population; CIC-02 recovery foundation",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_contract_validation_rejects_duplicate_or_malformed_contracts",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_coordinator_contracts_reference_physical_subsystem_modules",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_dependency_graph_is_deterministic_and_acyclic",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_each_css_subsystem_has_physical_public_contract_and_independent_execution",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_program_executes_independent_subsystems_with_limited_coordinator",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_program_fails_closed_when_subsystems_report_failures",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_repository_inspection_records_existing_css_surface",
+        "Tests.test_cic03_css_separation.CIC03CSSSeparationTests.test_six_canonical_subsystem_contracts_exist"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic03_css_separation",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic03_css_separation.py",
+      "module_source_digest": "7b20b6d0817049e2535fc23d78638ac9d3862c25eaed07595afb8c16c3497f1c",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e78e50d34a131066",
+      "reason_for_inclusion": "original missing-JSON population; CIC-03 CSS separation",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_cic04_evidence_generator_fails_closed_for_dirty_workspace",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_complete_candidate_bound_proof_chain_is_proven",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_css_claim_registry_uses_proof_state_not_presence_status",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_each_canonical_state_is_deterministically_produced",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_execution_trace_evidence_and_verdict_negative_cases_fail_closed",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_only_proven_satisfies_gate",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_presence_only_nodes_cannot_satisfy_claim",
+        "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_wrong_candidate_artifact_trace_and_verdict_are_rejected"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic04_proof_based_certification",
+      "inclusion_class": "SHARED_SCHEMA_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic04_proof_based_certification.py",
+      "module_source_digest": "3d84657caae25d32393266e97f3f605282848cffa8fa5e7564b61351b9bb2997",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-21a5773560074c0c",
+      "reason_for_inclusion": "shared CIC certification proof framing",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_bootstrap_creates_verifiable_fourteen_domain_baseline",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic05_rejects_missing_cr7_and_zero_commit",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_and_cic07_consume_authoritative_cic05_baseline",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic06_production_rejects_empty_unproven_domains",
+        "Tests.test_cic05_authoritative_chain.CIC05AuthoritativeChainTests.test_cic07_rejects_demo_or_missing_cic06_report"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic05_authoritative_chain",
+      "inclusion_class": "SHARED_RUNNER_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic05_authoritative_chain.py",
+      "module_source_digest": "9a707f621f4ae7f7b90c7e4f5b4709549e17b7ea61a0c304610fba19d1506db7",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-13f867823634ae9c",
+      "reason_for_inclusion": "shared CIC authoritative chain and recovery checks",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_all_fourteen_comparators_report_no_drift_for_identical_semantics",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_authorization_does_not_suppress_constitutional_regression",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_classification_precedence_for_required_regressions",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_invalid_and_mixed_identity_fails_closed",
+        "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_report_digest_and_evidence_generation_are_deterministic"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic06_semantic_drift_engine",
+      "inclusion_class": "SHARED_SCHEMA_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic06_semantic_drift_engine.py",
+      "module_source_digest": "5b91ab4afe720dfb06e41edbb47e55d29dac3b7ceedb9388c4866a7186025a9e",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-43836ff20623324a",
+      "reason_for_inclusion": "shared CIC continuous drift certification",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CIC"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_constitutional_failure_blocks_issuance_but_is_recorded",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_drift_blocks_issuance_and_evidence_export_is_written",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_invalid_reactivation_idempotency_and_conflicts_fail_closed",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_revocation_preserves_issuance_history",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_tamper_and_export_digest_detection",
+        "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_valid_issuance_appends_entry_and_projection_is_rebuildable"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CIC",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CIC-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_cic07_governance_ledger",
+      "inclusion_class": "SHARED_SCHEMA_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic07_governance_ledger.py",
+      "module_source_digest": "4b323bc3fc9fb7c2acce5c576f2e82499f9f2b7dd0c36c6d3ce86776d89acc2c",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-0123bfc427f12cfa",
+      "reason_for_inclusion": "shared CIC governance certification",
+      "sub_batch_identifier": "B03-SB01-CIC",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CSS"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_claim_registry_requires_implementation_and_tests",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_css_pipeline_fails_closed_when_cr10_is_not_pass",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_drift_detection_fails_closed_without_certified_baseline",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_repository_truth_index_discovers_runtime_tests_generators_and_bridges",
+        "Tests.test_css_continuous_certification.ContinuousConstitutionalCertificationTests.test_verification_catalog_is_observational_and_fail_closed"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CSS",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CSS-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_css_continuous_certification",
+      "inclusion_class": "ORIGINAL_MISSING_JSON_POPULATION",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_css_continuous_certification.py",
+      "module_source_digest": "77415ac6f9f3a8acd89c85f516f430fc049059156606991db4ee4561fe5b20d3",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-4607a1f1e38a7adf",
+      "reason_for_inclusion": "original missing-JSON population; CSS continuous constitutional certification",
+      "sub_batch_identifier": "B03-SB05-CSS",
+      "timeout": 180
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B03-CONTINUOUS_CERTIFICATION"
+      ],
+      "contained_test_identifiers": [
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_inventory_discovers_repository_tests",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_module_runner_assigns_final_dispositions",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_outer_execution_record_survives_missing_child_json",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_parser_accepts_result_file_and_rejects_stale_execution_id",
+        "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_repository_findings_are_classified_and_reintegrated_into_proofs"
+      ],
+      "expected_result_output_method": "TRADER_ECS003_RESULT_FILE plus TRADER_ECS003_MODULE_RESULT stdout marker",
+      "family": "CONTINUOUS_CERTIFICATION",
+      "fixture_requirements": [],
+      "governing_constitutional_requirements": [
+        "CONTINUOUS_CERTIFICATION-MODULE-RUNNER-JSON-RECORD",
+        "TRADER-RM-002A-016-B03"
+      ],
+      "immutable_module_identifier": "Tests.test_trader_ecs003_audit",
+      "inclusion_class": "SHARED_PARSER_IMPACT",
+      "module_path": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_trader_ecs003_audit.py",
+      "module_source_digest": "b887808710bcf65e5208aa661ed80569c9b9c4be84f8bc7d18ba68e3a6c0a434",
+      "prior_disposition": "ERROR",
+      "prior_error_message": "module runner did not produce a JSON execution record",
+      "prior_execution_identifier": "PRIOR-MISSING-JSON-e6dc81da30b050a9",
+      "reason_for_inclusion": "shared runner/parser/schema impact and proof-mapping tests",
+      "sub_batch_identifier": "B03-SB06-CONTINUOUS",
+      "timeout": 180
+    }
+  ],
+  "total_modules": 11,
+  "total_tests": 68
+}

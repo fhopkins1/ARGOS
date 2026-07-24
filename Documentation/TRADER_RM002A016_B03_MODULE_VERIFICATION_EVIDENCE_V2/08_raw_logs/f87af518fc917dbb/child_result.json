@@ -1,0 +1,77 @@
+{
+  "candidate_digest": "3139515b239fe8f41509df214220e6b0a1bb25469b3aa03607e21fda440732aa",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 6,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 56.581228,
+  "execution_id": "TRADER-RM-002A-016-B03-f87af518fc917dbb",
+  "finish_timestamp": "2026-07-24T01:53:31.632804Z",
+  "module": "Tests.test_cr5_constitutional_trace_closure",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 3.734055,
+      "finish_timestamp": "2026-07-24T01:53:27.594024Z",
+      "start_timestamp": "2026-07-24T01:53:23.859929Z",
+      "test_identifier": "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_inventory_discovers_runtime_components"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 4.038225,
+      "finish_timestamp": "2026-07-24T01:53:31.632356Z",
+      "start_timestamp": "2026-07-24T01:53:27.594084Z",
+      "test_identifier": "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_scanner_returns_trace_review_leads"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 6.2e-05,
+      "finish_timestamp": "2026-07-24T01:53:31.632473Z",
+      "start_timestamp": "2026-07-24T01:53:31.632419Z",
+      "test_identifier": "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_cr5_is_incomplete_when_predecessor_gates_are_unproven"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 3.4e-05,
+      "finish_timestamp": "2026-07-24T01:53:31.632524Z",
+      "start_timestamp": "2026-07-24T01:53:31.632496Z",
+      "test_identifier": "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_final_counts_keep_canonical_runtime_bypass_nonzero_under_entry_blockers"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 3.7e-05,
+      "finish_timestamp": "2026-07-24T01:53:31.632577Z",
+      "start_timestamp": "2026-07-24T01:53:31.632546Z",
+      "test_identifier": "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_scorecard_contains_required_constitutional_domains"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 4.2e-05,
+      "finish_timestamp": "2026-07-24T01:53:31.632632Z",
+      "start_timestamp": "2026-07-24T01:53:31.632596Z",
+      "test_identifier": "Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_trace_campaign_records_tc_inputs_without_readiness_claim"
+    }
+  ],
+  "runner_output": "test_constitutional_inventory_discovers_runtime_components (Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_inventory_discovers_runtime_components) ... ok\ntest_constitutional_scanner_returns_trace_review_leads (Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_constitutional_scanner_returns_trace_review_leads) ... ok\ntest_cr5_is_incomplete_when_predecessor_gates_are_unproven (Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_cr5_is_incomplete_when_predecessor_gates_are_unproven) ... ok\ntest_final_counts_keep_canonical_runtime_bypass_nonzero_under_entry_blockers (Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_final_counts_keep_canonical_runtime_bypass_nonzero_under_entry_blockers) ... ok\ntest_scorecard_contains_required_constitutional_domains (Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_scorecard_contains_required_constitutional_domains) ... ok\ntest_trace_campaign_records_tc_inputs_without_readiness_claim (Tests.test_cr5_constitutional_trace_closure.CR5ConstitutionalTraceClosureTests.test_trace_campaign_records_tc_inputs_without_readiness_claim) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 56.581s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cr5_constitutional_trace_closure.py",
+  "start_timestamp": "2026-07-24T01:53:23.859929Z",
+  "successful": true,
+  "tests_run": 6
+}

@@ -1,0 +1,69 @@
+{
+  "candidate_digest": "3139515b239fe8f41509df214220e6b0a1bb25469b3aa03607e21fda440732aa",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 5,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 0.188067,
+  "execution_id": "TRADER-RM-002A-016-B03-43836ff20623324a",
+  "finish_timestamp": "2026-07-24T01:52:30.543377Z",
+  "module": "Tests.test_cic06_semantic_drift_engine",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.002698,
+      "finish_timestamp": "2026-07-24T01:52:30.358320Z",
+      "start_timestamp": "2026-07-24T01:52:30.355652Z",
+      "test_identifier": "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_all_fourteen_comparators_report_no_drift_for_identical_semantics"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.001471,
+      "finish_timestamp": "2026-07-24T01:52:30.359858Z",
+      "start_timestamp": "2026-07-24T01:52:30.358406Z",
+      "test_identifier": "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_authorization_does_not_suppress_constitutional_regression"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.007093,
+      "finish_timestamp": "2026-07-24T01:52:30.366977Z",
+      "start_timestamp": "2026-07-24T01:52:30.359916Z",
+      "test_identifier": "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_classification_precedence_for_required_regressions"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.000608,
+      "finish_timestamp": "2026-07-24T01:52:30.367659Z",
+      "start_timestamp": "2026-07-24T01:52:30.367072Z",
+      "test_identifier": "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_invalid_and_mixed_identity_fails_closed"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.175334,
+      "finish_timestamp": "2026-07-24T01:52:30.543032Z",
+      "start_timestamp": "2026-07-24T01:52:30.367724Z",
+      "test_identifier": "Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_report_digest_and_evidence_generation_are_deterministic"
+    }
+  ],
+  "runner_output": "test_all_fourteen_comparators_report_no_drift_for_identical_semantics (Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_all_fourteen_comparators_report_no_drift_for_identical_semantics) ... ok\ntest_authorization_does_not_suppress_constitutional_regression (Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_authorization_does_not_suppress_constitutional_regression) ... ok\ntest_classification_precedence_for_required_regressions (Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_classification_precedence_for_required_regressions) ... ok\ntest_invalid_and_mixed_identity_fails_closed (Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_invalid_and_mixed_identity_fails_closed) ... ok\ntest_report_digest_and_evidence_generation_are_deterministic (Tests.test_cic06_semantic_drift_engine.CIC06SemanticDriftEngineTests.test_report_digest_and_evidence_generation_are_deterministic) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.188s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic06_semantic_drift_engine.py",
+  "start_timestamp": "2026-07-24T01:52:30.355652Z",
+  "successful": true,
+  "tests_run": 5
+}

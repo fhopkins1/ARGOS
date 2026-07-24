@@ -1,0 +1,138 @@
+[
+  {
+    "ERROR": 0,
+    "Executed": 6,
+    "FAIL": 0,
+    "Interrupted": 0,
+    "Modules": 6,
+    "PASS": 3,
+    "Runner errors": 1,
+    "TIMEOUT": 2,
+    "Unexecuted": 0,
+    "disposition_totals": {
+      "MISSING_RESULT": 1,
+      "PASS": 3,
+      "TIMEOUT": 2
+    },
+    "durable_checkpoint": "09_checkpoints/B03-SB01-CIC.json",
+    "finite_per_module_timeout": 45,
+    "finite_sub_batch_timeout": 270,
+    "frozen_module_inventory": [
+      "Tests.test_cic02_recovery_foundation",
+      "Tests.test_cic03_css_separation",
+      "Tests.test_cic04_proof_based_certification",
+      "Tests.test_cic05_authoritative_chain",
+      "Tests.test_cic06_semantic_drift_engine",
+      "Tests.test_cic07_governance_ledger"
+    ],
+    "remaining_population_count": 0,
+    "sub_batch_identifier": "B03-SB01-CIC"
+  },
+  {
+    "ERROR": 0,
+    "Executed": 2,
+    "FAIL": 0,
+    "Interrupted": 0,
+    "Modules": 2,
+    "PASS": 0,
+    "Runner errors": 0,
+    "TIMEOUT": 2,
+    "Unexecuted": 0,
+    "disposition_totals": {
+      "TIMEOUT": 2
+    },
+    "durable_checkpoint": "09_checkpoints/B03-SB02-CR5-CR7.json",
+    "finite_per_module_timeout": 45,
+    "finite_sub_batch_timeout": 90,
+    "frozen_module_inventory": [
+      "Tests.test_cr5_constitutional_trace_closure",
+      "Tests.test_cr6_cr7_certification_artifacts"
+    ],
+    "remaining_population_count": 0,
+    "sub_batch_identifier": "B03-SB02-CR5-CR7"
+  },
+  {
+    "ERROR": 0,
+    "Executed": 1,
+    "FAIL": 0,
+    "Interrupted": 0,
+    "Modules": 1,
+    "PASS": 1,
+    "Runner errors": 0,
+    "TIMEOUT": 0,
+    "Unexecuted": 0,
+    "disposition_totals": {
+      "PASS": 1
+    },
+    "durable_checkpoint": "09_checkpoints/B03-SB03-CR8-CR10.json",
+    "finite_per_module_timeout": 45,
+    "finite_sub_batch_timeout": 45,
+    "frozen_module_inventory": [
+      "Tests.test_cr8_cr10_operational_campaigns"
+    ],
+    "remaining_population_count": 0,
+    "sub_batch_identifier": "B03-SB03-CR8-CR10"
+  },
+  {
+    "ERROR": 0,
+    "Executed": 0,
+    "FAIL": 0,
+    "Interrupted": 0,
+    "Modules": 0,
+    "PASS": 0,
+    "Runner errors": 0,
+    "TIMEOUT": 0,
+    "Unexecuted": 0,
+    "disposition_totals": {},
+    "durable_checkpoint": "09_checkpoints/B03-SB04-CR-CLOSURE.json",
+    "finite_per_module_timeout": 45,
+    "finite_sub_batch_timeout": 45,
+    "frozen_module_inventory": [],
+    "remaining_population_count": 0,
+    "sub_batch_identifier": "B03-SB04-CR-CLOSURE"
+  },
+  {
+    "ERROR": 0,
+    "Executed": 1,
+    "FAIL": 0,
+    "Interrupted": 0,
+    "Modules": 1,
+    "PASS": 0,
+    "Runner errors": 0,
+    "TIMEOUT": 1,
+    "Unexecuted": 0,
+    "disposition_totals": {
+      "TIMEOUT": 1
+    },
+    "durable_checkpoint": "09_checkpoints/B03-SB05-CSS.json",
+    "finite_per_module_timeout": 45,
+    "finite_sub_batch_timeout": 45,
+    "frozen_module_inventory": [
+      "Tests.test_css_continuous_certification"
+    ],
+    "remaining_population_count": 0,
+    "sub_batch_identifier": "B03-SB05-CSS"
+  },
+  {
+    "ERROR": 0,
+    "Executed": 1,
+    "FAIL": 0,
+    "Interrupted": 0,
+    "Modules": 1,
+    "PASS": 1,
+    "Runner errors": 0,
+    "TIMEOUT": 0,
+    "Unexecuted": 0,
+    "disposition_totals": {
+      "PASS": 1
+    },
+    "durable_checkpoint": "09_checkpoints/B03-SB06-CONTINUOUS.json",
+    "finite_per_module_timeout": 45,
+    "finite_sub_batch_timeout": 45,
+    "frozen_module_inventory": [
+      "Tests.test_trader_ecs003_audit"
+    ],
+    "remaining_population_count": 0,
+    "sub_batch_identifier": "B03-SB06-CONTINUOUS"
+  }
+]

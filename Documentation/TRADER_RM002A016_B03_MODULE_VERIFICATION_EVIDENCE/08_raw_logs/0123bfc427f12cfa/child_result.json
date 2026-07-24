@@ -1,0 +1,77 @@
+{
+  "candidate_digest": "519fdd9e158dd8c1bed6ea06a8f8da7c298880134e1224ab16dd93b2aaa22466",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 6,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 0.154176,
+  "execution_id": "TRADER-RM-002A-016-B03-0123bfc427f12cfa",
+  "finish_timestamp": "2026-07-24T01:42:25.037189Z",
+  "module": "Tests.test_cic07_governance_ledger",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.00218,
+      "finish_timestamp": "2026-07-24T01:42:24.885500Z",
+      "start_timestamp": "2026-07-24T01:42:24.883368Z",
+      "test_identifier": "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_constitutional_failure_blocks_issuance_but_is_recorded"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.145504,
+      "finish_timestamp": "2026-07-24T01:42:25.031118Z",
+      "start_timestamp": "2026-07-24T01:42:24.885646Z",
+      "test_identifier": "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_drift_blocks_issuance_and_evidence_export_is_written"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.002121,
+      "finish_timestamp": "2026-07-24T01:42:25.033381Z",
+      "start_timestamp": "2026-07-24T01:42:25.031289Z",
+      "test_identifier": "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_invalid_reactivation_idempotency_and_conflicts_fail_closed"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.001054,
+      "finish_timestamp": "2026-07-24T01:42:25.034492Z",
+      "start_timestamp": "2026-07-24T01:42:25.033465Z",
+      "test_identifier": "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_revocation_preserves_issuance_history"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.001332,
+      "finish_timestamp": "2026-07-24T01:42:25.035878Z",
+      "start_timestamp": "2026-07-24T01:42:25.034571Z",
+      "test_identifier": "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_tamper_and_export_digest_detection"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.000938,
+      "finish_timestamp": "2026-07-24T01:42:25.036865Z",
+      "start_timestamp": "2026-07-24T01:42:25.035952Z",
+      "test_identifier": "Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_valid_issuance_appends_entry_and_projection_is_rebuildable"
+    }
+  ],
+  "runner_output": "test_constitutional_failure_blocks_issuance_but_is_recorded (Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_constitutional_failure_blocks_issuance_but_is_recorded) ... ok\ntest_drift_blocks_issuance_and_evidence_export_is_written (Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_drift_blocks_issuance_and_evidence_export_is_written) ... ok\ntest_invalid_reactivation_idempotency_and_conflicts_fail_closed (Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_invalid_reactivation_idempotency_and_conflicts_fail_closed) ... ok\ntest_revocation_preserves_issuance_history (Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_revocation_preserves_issuance_history) ... ok\ntest_tamper_and_export_digest_detection (Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_tamper_and_export_digest_detection) ... ok\ntest_valid_issuance_appends_entry_and_projection_is_rebuildable (Tests.test_cic07_governance_ledger.CIC07GovernanceLedgerTests.test_valid_issuance_appends_entry_and_projection_is_rebuildable) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.154s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic07_governance_ledger.py",
+  "start_timestamp": "2026-07-24T01:42:24.883368Z",
+  "successful": true,
+  "tests_run": 6
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-10ea4a54904cd65d",
+    "finding": "B03-FINDING-10ea4a54904cd65d",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cic02_recovery_foundation",
+    "raw_evidence": [
+      "08_raw_logs/10ea4a54904cd65d/stdout.log",
+      "08_raw_logs/10ea4a54904cd65d/stderr.log",
+      ""
+    ],
+    "resulting_proof_disposition": "FAIL",
+    "target": "CIC-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-e78e50d34a131066",
+    "finding": "B03-FINDING-e78e50d34a131066",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cic03_css_separation",
+    "raw_evidence": [
+      "08_raw_logs/e78e50d34a131066/stdout.log",
+      "08_raw_logs/e78e50d34a131066/stderr.log",
+      ""
+    ],
+    "resulting_proof_disposition": "FAIL",
+    "target": "CIC-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-21a5773560074c0c",
+    "finding": "B03-FINDING-21a5773560074c0c",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cic04_proof_based_certification",
+    "raw_evidence": [
+      "08_raw_logs/21a5773560074c0c/stdout.log",
+      "08_raw_logs/21a5773560074c0c/stderr.log",
+      ""
+    ],
+    "resulting_proof_disposition": "FAIL",
+    "target": "CIC-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-13f867823634ae9c",
+    "finding": "",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cic05_authoritative_chain",
+    "raw_evidence": [
+      "08_raw_logs/13f867823634ae9c/stdout.log",
+      "08_raw_logs/13f867823634ae9c/stderr.log",
+      "08_raw_logs/13f867823634ae9c/child_result.json"
+    ],
+    "resulting_proof_disposition": "PASS",
+    "target": "CIC-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-43836ff20623324a",
+    "finding": "",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cic06_semantic_drift_engine",
+    "raw_evidence": [
+      "08_raw_logs/43836ff20623324a/stdout.log",
+      "08_raw_logs/43836ff20623324a/stderr.log",
+      "08_raw_logs/43836ff20623324a/child_result.json"
+    ],
+    "resulting_proof_disposition": "PASS",
+    "target": "CIC-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-0123bfc427f12cfa",
+    "finding": "",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cic07_governance_ledger",
+    "raw_evidence": [
+      "08_raw_logs/0123bfc427f12cfa/stdout.log",
+      "08_raw_logs/0123bfc427f12cfa/stderr.log",
+      "08_raw_logs/0123bfc427f12cfa/child_result.json"
+    ],
+    "resulting_proof_disposition": "PASS",
+    "target": "CIC-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-f87af518fc917dbb",
+    "finding": "B03-FINDING-f87af518fc917dbb",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cr5_constitutional_trace_closure",
+    "raw_evidence": [
+      "08_raw_logs/f87af518fc917dbb/stdout.log",
+      "08_raw_logs/f87af518fc917dbb/stderr.log",
+      ""
+    ],
+    "resulting_proof_disposition": "FAIL",
+    "target": "CR-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-299da5522db4d2dd",
+    "finding": "B03-FINDING-299da5522db4d2dd",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cr6_cr7_certification_artifacts",
+    "raw_evidence": [
+      "08_raw_logs/299da5522db4d2dd/stdout.log",
+      "08_raw_logs/299da5522db4d2dd/stderr.log",
+      ""
+    ],
+    "resulting_proof_disposition": "FAIL",
+    "target": "CR-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-b483820d8b0364de",
+    "finding": "",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_cr8_cr10_operational_campaigns",
+    "raw_evidence": [
+      "08_raw_logs/b483820d8b0364de/stdout.log",
+      "08_raw_logs/b483820d8b0364de/stderr.log",
+      "08_raw_logs/b483820d8b0364de/child_result.json"
+    ],
+    "resulting_proof_disposition": "PASS",
+    "target": "CR-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-4607a1f1e38a7adf",
+    "finding": "B03-FINDING-4607a1f1e38a7adf",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_css_continuous_certification",
+    "raw_evidence": [
+      "08_raw_logs/4607a1f1e38a7adf/stdout.log",
+      "08_raw_logs/4607a1f1e38a7adf/stderr.log",
+      ""
+    ],
+    "resulting_proof_disposition": "FAIL",
+    "target": "CSS-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B03-e6dc81da30b050a9",
+    "finding": "",
+    "implementation_artifact": "argos.trader_ecs003_audit module runner",
+    "implementation_obligation": "produce durable outer execution record and actual test-level dispositions",
+    "module_identifier": "Tests.test_trader_ecs003_audit",
+    "raw_evidence": [
+      "08_raw_logs/e6dc81da30b050a9/stdout.log",
+      "08_raw_logs/e6dc81da30b050a9/stderr.log",
+      "08_raw_logs/e6dc81da30b050a9/child_result.json"
+    ],
+    "resulting_proof_disposition": "PASS",
+    "target": "CONTINUOUS_CERTIFICATION-MODULE-RUNNER-JSON-RECORD",
+    "verification_class": "bounded_cic_cr_css_module_execution"
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "candidate_digest": "519fdd9e158dd8c1bed6ea06a8f8da7c298880134e1224ab16dd93b2aaa22466",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 5,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 21.747578,
+  "execution_id": "TRADER-RM-002A-016-B03-e6dc81da30b050a9",
+  "finish_timestamp": "2026-07-24T01:45:44.719908Z",
+  "module": "Tests.test_trader_ecs003_audit",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 7.087455,
+      "finish_timestamp": "2026-07-24T01:45:30.059624Z",
+      "start_timestamp": "2026-07-24T01:45:22.972082Z",
+      "test_identifier": "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_inventory_discovers_repository_tests"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 10.819982,
+      "finish_timestamp": "2026-07-24T01:45:40.879859Z",
+      "start_timestamp": "2026-07-24T01:45:30.059722Z",
+      "test_identifier": "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_module_runner_assigns_final_dispositions"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.025441,
+      "finish_timestamp": "2026-07-24T01:45:40.905519Z",
+      "start_timestamp": "2026-07-24T01:45:40.880108Z",
+      "test_identifier": "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_outer_execution_record_survives_missing_child_json"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 0.051715,
+      "finish_timestamp": "2026-07-24T01:45:40.957279Z",
+      "start_timestamp": "2026-07-24T01:45:40.905594Z",
+      "test_identifier": "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_parser_accepts_result_file_and_rejects_stale_execution_id"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 3.762077,
+      "finish_timestamp": "2026-07-24T01:45:44.719466Z",
+      "start_timestamp": "2026-07-24T01:45:40.957366Z",
+      "test_identifier": "Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_repository_findings_are_classified_and_reintegrated_into_proofs"
+    }
+  ],
+  "runner_output": "test_inventory_discovers_repository_tests (Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_inventory_discovers_repository_tests) ... ok\ntest_module_runner_assigns_final_dispositions (Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_module_runner_assigns_final_dispositions) ... ok\ntest_outer_execution_record_survives_missing_child_json (Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_outer_execution_record_survives_missing_child_json) ... ok\ntest_parser_accepts_result_file_and_rejects_stale_execution_id (Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_parser_accepts_result_file_and_rejects_stale_execution_id) ... ok\ntest_repository_findings_are_classified_and_reintegrated_into_proofs (Tests.test_trader_ecs003_audit.TraderECS003AuditTests.test_repository_findings_are_classified_and_reintegrated_into_proofs) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 21.747s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_trader_ecs003_audit.py",
+  "start_timestamp": "2026-07-24T01:45:22.972082Z",
+  "successful": true,
+  "tests_run": 5
+}

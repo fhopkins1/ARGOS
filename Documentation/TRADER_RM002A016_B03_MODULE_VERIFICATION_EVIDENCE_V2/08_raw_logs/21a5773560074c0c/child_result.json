@@ -1,0 +1,93 @@
+{
+  "candidate_digest": "3139515b239fe8f41509df214220e6b0a1bb25469b3aa03607e21fda440732aa",
+  "disposition_counts": {
+    "CONSTITUTIONAL CONFLICT": 0,
+    "ERROR": 0,
+    "FAIL": 0,
+    "INTERRUPTED": 0,
+    "INVALID EVIDENCE": 0,
+    "NOT APPLICABLE": 0,
+    "NOT EXECUTED": 0,
+    "PASS": 8,
+    "RUNNER_ERROR": 0,
+    "TIMEOUT": 0,
+    "UNKNOWN": 0
+  },
+  "duration_seconds": 35.829896,
+  "execution_id": "TRADER-RM-002A-016-B03-21a5773560074c0c",
+  "finish_timestamp": "2026-07-24T01:52:15.227824Z",
+  "module": "Tests.test_cic04_proof_based_certification",
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.573538,
+      "finish_timestamp": "2026-07-24T01:51:40.971251Z",
+      "start_timestamp": "2026-07-24T01:51:39.397711Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_cic04_evidence_generator_fails_closed_for_dirty_workspace"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.613933,
+      "finish_timestamp": "2026-07-24T01:51:42.585241Z",
+      "start_timestamp": "2026-07-24T01:51:40.971310Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_complete_candidate_bound_proof_chain_is_proven"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 28.202475,
+      "finish_timestamp": "2026-07-24T01:52:10.788253Z",
+      "start_timestamp": "2026-07-24T01:51:42.585335Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_css_claim_registry_uses_proof_state_not_presence_status"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.110412,
+      "finish_timestamp": "2026-07-24T01:52:11.898706Z",
+      "start_timestamp": "2026-07-24T01:52:10.788298Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_each_canonical_state_is_deterministically_produced"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.065183,
+      "finish_timestamp": "2026-07-24T01:52:12.963946Z",
+      "start_timestamp": "2026-07-24T01:52:11.898764Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_execution_trace_evidence_and_verdict_negative_cases_fail_closed"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 8.6e-05,
+      "finish_timestamp": "2026-07-24T01:52:12.964076Z",
+      "start_timestamp": "2026-07-24T01:52:12.963998Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_only_proven_satisfies_gate"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.0528,
+      "finish_timestamp": "2026-07-24T01:52:14.016904Z",
+      "start_timestamp": "2026-07-24T01:52:12.964102Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_presence_only_nodes_cannot_satisfy_claim"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "duration_seconds": 1.210599,
+      "finish_timestamp": "2026-07-24T01:52:15.227550Z",
+      "start_timestamp": "2026-07-24T01:52:14.016955Z",
+      "test_identifier": "Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_wrong_candidate_artifact_trace_and_verdict_are_rejected"
+    }
+  ],
+  "runner_output": "test_cic04_evidence_generator_fails_closed_for_dirty_workspace (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_cic04_evidence_generator_fails_closed_for_dirty_workspace) ... ok\ntest_complete_candidate_bound_proof_chain_is_proven (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_complete_candidate_bound_proof_chain_is_proven) ... ok\ntest_css_claim_registry_uses_proof_state_not_presence_status (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_css_claim_registry_uses_proof_state_not_presence_status) ... ok\ntest_each_canonical_state_is_deterministically_produced (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_each_canonical_state_is_deterministically_produced) ... ok\ntest_execution_trace_evidence_and_verdict_negative_cases_fail_closed (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_execution_trace_evidence_and_verdict_negative_cases_fail_closed) ... ok\ntest_only_proven_satisfies_gate (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_only_proven_satisfies_gate) ... ok\ntest_presence_only_nodes_cannot_satisfy_claim (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_presence_only_nodes_cannot_satisfy_claim) ... ok\ntest_wrong_candidate_artifact_trace_and_verdict_are_rejected (Tests.test_cic04_proof_based_certification.CIC04ProofBasedCertificationTests.test_wrong_candidate_artifact_trace_and_verdict_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 35.829s\n\nOK\n",
+  "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+  "schema_version": "trader-ecs003-test-module-result/v1",
+  "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_cic04_proof_based_certification.py",
+  "start_timestamp": "2026-07-24T01:51:39.397711Z",
+  "successful": true,
+  "tests_run": 8
+}
