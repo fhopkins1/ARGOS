@@ -1,0 +1,174 @@
+[
+  {
+    "disposition": "TRACEABILITY_INCOMPLETE",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [
+      "POS-ECS003-FINDING-001"
+    ],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Position Registry authority, ownership, prohibited responsibilities, amendment, freeze, and certification authority are explicit.",
+    "proof_id": "PROOF-POS-REQ-001",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-001",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "TRACEABILITY_INCOMPLETE",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [
+      "POS-ECS003-FINDING-002"
+    ],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Position object and field ownership, custody, mutation authority, correction authority, and read-only consumption are complete.",
+    "proof_id": "PROOF-POS-REQ-002",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-002",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "NOT_PROVEN",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [
+      "POS-ECS003-FINDING-003"
+    ],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Position lifecycle transitions, terminal states, late events, duplicate events, replay, restart, recovery, correction, and contradiction handling are deterministic.",
+    "proof_id": "PROOF-POS-REQ-003",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-003",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "NOT_PROVEN",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [
+      "POS-ECS003-FINDING-004"
+    ],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Quantity, average cost, long/short behavior, reductions, reversals, precision, fees, settlement, currency, and corporate action treatment are constitutionally governed.",
+    "proof_id": "PROOF-POS-REQ-004",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-004",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "IMPLEMENTATION_UNVERIFIED",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Inbound and outbound Position Registry interfaces have authority contracts, schemas, ordering, retry, replay, acknowledgement, and evidence obligations.",
+    "proof_id": "PROOF-POS-REQ-005",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-005",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "PROVEN",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Reconciliation and correction preserve source precedence, contradiction lineage, supersession, historical truth, and unresolved discrepancy escalation.",
+    "proof_id": "PROOF-POS-REQ-006",
+    "proof_sufficiency": "SUFFICIENT",
+    "requirement_id": "POS-REQ-006",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "NOT_PROVEN",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [
+      "POS-ECS003-FINDING-005"
+    ],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Temporal doctrine covers event, broker, effective, receipt, processing, persistence, reconciliation, correction, terminal, stale, late, and equal-time semantics.",
+    "proof_id": "PROOF-POS-REQ-007",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-007",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  },
+  {
+    "disposition": "TRACEABILITY_INCOMPLETE",
+    "execution_records": [
+      "None",
+      "None"
+    ],
+    "findings": [
+      "POS-ECS003-FINDING-006"
+    ],
+    "implementation_artifacts": [
+      "src/argos/control_panel/position_registry.py",
+      "src/argos/trader/position_management.py"
+    ],
+    "implementation_obligation": "Every position mutation and certification proof is backed by raw execution evidence, immutable provenance, verifier identity, and reproducible proof.",
+    "proof_id": "PROOF-POS-REQ-008",
+    "proof_sufficiency": "INSUFFICIENT",
+    "requirement_id": "POS-REQ-008",
+    "verifiers": [
+      "Tests.test_or004_position_lifecycle",
+      "Tests.test_position_management_office"
+    ]
+  }
+]

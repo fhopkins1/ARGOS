@@ -1,0 +1,23 @@
+{
+  "modules": [
+    "Tests.test_or004_position_lifecycle",
+    "Tests.test_position_management_office"
+  ],
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "None"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "None"
+    }
+  ],
+  "runner_output": "test_broker_fill_creates_supervised_position_with_lineage (Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_broker_fill_creates_supervised_position_with_lineage) ... ok\ntest_exit_recommendation_and_authorization_do_not_close_position (Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_exit_recommendation_and_authorization_do_not_close_position) ... ok\ntest_partial_and_full_closure_require_broker_confirmed_fills (Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_partial_and_full_closure_require_broker_confirmed_fills) ... ok\ntest_close_and_archive_zero_quantity_position (Tests.test_position_management_office.PositionManagementOfficeTests.test_close_and_archive_zero_quantity_position) ... ok\ntest_execution_event_creates_position_and_portfolio_state (Tests.test_position_management_office.PositionManagementOfficeTests.test_execution_event_creates_position_and_portfolio_state) ... ok\ntest_existing_position_updates_cost_basis_and_realized_pnl (Tests.test_position_management_office.PositionManagementOfficeTests.test_existing_position_updates_cost_basis_and_realized_pnl) ... ok\ntest_portfolio_exposure_and_system_prompt_are_available (Tests.test_position_management_office.PositionManagementOfficeTests.test_portfolio_exposure_and_system_prompt_are_available) ... ok\ntest_reconciliation_mismatch_generates_case_file (Tests.test_position_management_office.PositionManagementOfficeTests.test_reconciliation_mismatch_generates_case_file) ... ok\ntest_unexpected_exposure_generates_case_file (Tests.test_position_management_office.PositionManagementOfficeTests.test_unexpected_exposure_generates_case_file) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.040s\n\nOK\n",
+  "schema_version": "position-registry-ecs003-focused-tests/v1",
+  "status": "PASS",
+  "successful": true,
+  "tests_run": 9
+}

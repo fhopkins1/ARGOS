@@ -1,0 +1,13 @@
+{
+  "clean_environment": {
+    "clean_root_git_metadata_present": false,
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe Scripts/position_registry_ecs003_audit.py --no-clean",
+    "portable_candidate_digest": "portable:979389c0ecb3f1e0b42e60cb8d67f9d2ba74815be604b006dce7e41b347a1876",
+    "returncode": 0,
+    "stderr_tail": "",
+    "stdout_tail": "{\n  \"candidate\": \"POSITION-REGISTRY-ECS003-AUDIT-001\",\n  \"candidate_digest\": \"portable:03a34854af264edb48ad4b53c9b7e8564337bc14889ff72404864d0a9d1a9e9e\",\n  \"certification_blockers\": [\n    \"POS-ECS003-FINDING-001\",\n    \"POS-ECS003-FINDING-002\",\n    \"POS-ECS003-FINDING-003\",\n    \"POS-ECS003-FINDING-004\",\n    \"POS-ECS003-FINDING-005\",\n    \"POS-ECS003-FINDING-006\"\n  ],\n  \"final_ecs003_verdict\": \"FAIL\",\n  \"generated_at\": \"2026-07-24T15:50:07.233165Z\",\n  \"phase_i_verdict\": \"FAIL\",\n  \"phase_ii_verdict\": \"FAIL\",\n  \"remediation_basis\": \"Findings span constitutional authority, ownership, lifecycle/recovery verification, quantity/cost doctrine, temporal doctrine, and proof reproducibility.\",\n  \"remediation_recommendation\": \"multiple bounded work-order series\"\n}\n",
+    "succeeded": true
+  },
+  "reason": "Clean runner executes, but proof population remains certification-blocked.",
+  "reproducible": false
+}

@@ -1,0 +1,160 @@
+{
+  "edges": [
+    {
+      "disposition": "TRACEABILITY_INCOMPLETE",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [
+        "POS-ECS003-FINDING-001"
+      ],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-001",
+      "requirement": "POS-REQ-001",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "TRACEABILITY_INCOMPLETE",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [
+        "POS-ECS003-FINDING-002"
+      ],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-002",
+      "requirement": "POS-REQ-002",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "NOT_PROVEN",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [
+        "POS-ECS003-FINDING-003"
+      ],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-003",
+      "requirement": "POS-REQ-003",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "NOT_PROVEN",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [
+        "POS-ECS003-FINDING-004"
+      ],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-004",
+      "requirement": "POS-REQ-004",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "IMPLEMENTATION_UNVERIFIED",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-005",
+      "requirement": "POS-REQ-005",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "PROVEN",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-006",
+      "requirement": "POS-REQ-006",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "NOT_PROVEN",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [
+        "POS-ECS003-FINDING-005"
+      ],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-007",
+      "requirement": "POS-REQ-007",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    },
+    {
+      "disposition": "TRACEABILITY_INCOMPLETE",
+      "execution": [
+        "None",
+        "None"
+      ],
+      "finding": [
+        "POS-ECS003-FINDING-006"
+      ],
+      "implementation": [
+        "src/argos/control_panel/position_registry.py",
+        "src/argos/trader/position_management.py"
+      ],
+      "proof": "PROOF-POS-REQ-008",
+      "requirement": "POS-REQ-008",
+      "verifier": [
+        "Tests.test_or004_position_lifecycle",
+        "Tests.test_position_management_office"
+      ]
+    }
+  ]
+}

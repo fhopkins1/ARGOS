@@ -1,0 +1,62 @@
+[
+  {
+    "affected_artifact": "Position Registry constitutional corpus",
+    "classification": "CONSTITUTIONAL_BLOCKER",
+    "disposition": "OPEN",
+    "evidence": "No standalone Position Registry constitution establishes complete authority, freeze, amendment, and certification authority.",
+    "finding_id": "POS-ECS003-FINDING-001",
+    "governing_requirement": "POS-REQ-001",
+    "remediation_recommendation": "Create bounded constitutional authority series before freeze.",
+    "severity": "CRITICAL"
+  },
+  {
+    "affected_artifact": "src/argos/control_panel/position_registry.py",
+    "classification": "OWNERSHIP_AMBIGUITY",
+    "disposition": "OPEN",
+    "evidence": "Snapshot declares Trader owns Position Objects while audit order requires Position Registry ownership and custody resolution.",
+    "finding_id": "POS-ECS003-FINDING-002",
+    "governing_requirement": "POS-REQ-002",
+    "remediation_recommendation": "Reconcile field-level ownership and custody in doctrine.",
+    "severity": "CRITICAL"
+  },
+  {
+    "affected_artifact": "Position Registry lifecycle evidence",
+    "classification": "IMPLEMENTATION_UNVERIFIED",
+    "disposition": "OPEN",
+    "evidence": "Focused tests cover creation, exit authorization, partial/full closure, and invalid transition rejection, but no complete late, out-of-order, contradiction, restart, or partial-write recovery verification exists.",
+    "finding_id": "POS-ECS003-FINDING-003",
+    "governing_requirement": "POS-REQ-003",
+    "remediation_recommendation": "Add bounded lifecycle/recovery verification after doctrine closure.",
+    "severity": "HIGH"
+  },
+  {
+    "affected_artifact": "Position Registry quantity and cost basis doctrine",
+    "classification": "CONSTITUTIONAL_BLOCKER",
+    "disposition": "OPEN",
+    "evidence": "Repository evidence does not fully govern short positions, reversals, fees, settlement, currency, multipliers, corporate actions, or lot-based treatment.",
+    "finding_id": "POS-ECS003-FINDING-004",
+    "governing_requirement": "POS-REQ-004",
+    "remediation_recommendation": "Create quantity and cost-basis doctrine series.",
+    "severity": "HIGH"
+  },
+  {
+    "affected_artifact": "Position Registry temporal doctrine",
+    "classification": "CONSTITUTIONAL_BLOCKER",
+    "disposition": "OPEN",
+    "evidence": "No complete temporal doctrine covers broker time, effective time, persistence time, equal timestamps, clock skew, and replay ordering semantics.",
+    "finding_id": "POS-ECS003-FINDING-005",
+    "governing_requirement": "POS-REQ-007",
+    "remediation_recommendation": "Create temporal doctrine before certification.",
+    "severity": "HIGH"
+  },
+  {
+    "affected_artifact": "Position Registry proof baseline",
+    "classification": "PROOF_INSUFFICIENT",
+    "disposition": "OPEN",
+    "evidence": "No one-proof-per-canonical-requirement Position Registry proof baseline exists; existing evidence is test and bridge support, not independently reproducible requirement proof.",
+    "finding_id": "POS-ECS003-FINDING-006",
+    "governing_requirement": "POS-REQ-008",
+    "remediation_recommendation": "Create proof construction and clean reproduction series after implementation verification.",
+    "severity": "CRITICAL"
+  }
+]
