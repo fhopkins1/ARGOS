@@ -37,25 +37,33 @@ class TraderECS003AuditTests(unittest.TestCase):
     def test_parser_accepts_result_file_and_rejects_stale_execution_id(self) -> None:
         result_path = REPOSITORY_ROOT / "_tmp_ecs003_result.json"
         try:
-            result_path.write_text('{"execution_id":"expected","records":[]}', encoding="utf-8")
+            result_path.write_text(
+                '{"schema_version":"trader-ecs003-test-module-result/v1","execution_id":"expected","candidate_digest":"candidate","module":"Tests.test_trader_requirement_verifier","successful":true,"disposition_counts":{},"records":[]}',
+                encoding="utf-8",
+            )
             payload, parser_result, detail = _parse_structured_module_result(
                 module="Tests.test_trader_requirement_verifier",
                 stdout="ordinary log output\n",
                 result_file=result_path,
                 expected_execution_id="expected",
+                expected_candidate_digest="candidate",
             )
             self.assertEqual("VALID", parser_result)
             self.assertEqual("expected", payload["execution_id"])
 
-            result_path.write_text('{"execution_id":"stale","records":[]}', encoding="utf-8")
+            result_path.write_text(
+                '{"schema_version":"trader-ecs003-test-module-result/v1","execution_id":"stale","candidate_digest":"candidate","module":"Tests.test_trader_requirement_verifier","successful":true,"disposition_counts":{},"records":[]}',
+                encoding="utf-8",
+            )
             payload, parser_result, detail = _parse_structured_module_result(
                 module="Tests.test_trader_requirement_verifier",
                 stdout="ordinary log output\n",
                 result_file=result_path,
                 expected_execution_id="expected",
+                expected_candidate_digest="candidate",
             )
             self.assertIsNone(payload)
-            self.assertEqual("STALE_OR_WRONG_EXECUTION_ID", parser_result)
+            self.assertEqual("INVALID_EXECUTION_ID", parser_result)
             self.assertIn("execution identifier", detail)
         finally:
             result_path.unlink(missing_ok=True)
@@ -93,7 +101,7 @@ class TraderECS003AuditTests(unittest.TestCase):
                 parser_detail="no json",
             )
             self.assertEqual("trader-ecs003-module-execution-record/v1", execution_record["schema_version"])
-            self.assertEqual("RUNNER_ERROR", execution_record["execution_disposition"])
+            self.assertEqual("MISSING_RESULT", execution_record["execution_disposition"])
             self.assertEqual("ERROR", records[0]["disposition"])
             self.assertIn("MISSING", records[0]["details"])
         finally:

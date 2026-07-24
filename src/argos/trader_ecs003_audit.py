@@ -192,20 +192,48 @@ def run_test_module(module_name: str, *, execution_id: str | None = None, candid
     }
 
 
+def _validate_module_result_schema(payload: Mapping[str, Any], *, expected_execution_id: str, expected_candidate_digest: str = "") -> tuple[str, str]:
+    if payload.get("execution_id") != expected_execution_id:
+        return "INVALID_EXECUTION_ID", "child result execution identifier did not match invocation"
+    if expected_candidate_digest and payload.get("candidate_digest") not in {"", expected_candidate_digest}:
+        return "INVALID_CANDIDATE_DIGEST", "child result candidate digest did not match invocation"
+    required_types = {
+        "schema_version": str,
+        "execution_id": str,
+        "module": str,
+        "records": list,
+        "successful": bool,
+        "disposition_counts": Mapping,
+    }
+    for key, expected_type in required_types.items():
+        if key not in payload:
+            return "INVALID_SCHEMA", f"child result missing required field {key}"
+        if not isinstance(payload[key], expected_type):
+            return "INVALID_SCHEMA", f"child result field {key} has invalid type"
+    for record in payload["records"]:
+        if not isinstance(record, Mapping):
+            return "INVALID_SCHEMA", "child result record has invalid type"
+        if not isinstance(record.get("test_identifier"), str) or not isinstance(record.get("disposition"), str):
+            return "INVALID_SCHEMA", "child result record missing valid identifier or disposition"
+    return "VALID", "schema accepted"
+
+
 def _parse_structured_module_result(
     *,
     module: str,
     stdout: str,
     result_file: Path,
     expected_execution_id: str,
+    expected_candidate_digest: str = "",
 ) -> tuple[Mapping[str, Any] | None, str, str]:
     if result_file.exists():
         try:
             payload = json.loads(result_file.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             return None, "MALFORMED", "result file contained malformed JSON"
-        if payload.get("execution_id") != expected_execution_id:
-            return None, "STALE_OR_WRONG_EXECUTION_ID", "result file execution identifier did not match invocation"
+        status, detail = _validate_module_result_schema(payload, expected_execution_id=expected_execution_id, expected_candidate_digest=expected_candidate_digest)
+        if status != "VALID":
+            return None, status, detail
         return payload, "VALID", "result file"
 
     marker_payload = None
@@ -219,8 +247,9 @@ def _parse_structured_module_result(
         payload = json.loads(marker_payload)
     except json.JSONDecodeError:
         return None, "MALFORMED", "framed stdout JSON was malformed"
-    if payload.get("execution_id") not in {"", expected_execution_id}:
-        return None, "STALE_OR_WRONG_EXECUTION_ID", "framed stdout execution identifier did not match invocation"
+    status, detail = _validate_module_result_schema(payload, expected_execution_id=expected_execution_id, expected_candidate_digest=expected_candidate_digest)
+    if status != "VALID":
+        return None, status, detail
     return payload, "VALID", "framed stdout"
 
 
@@ -261,7 +290,15 @@ def _module_execution_record(
             for item in inventory_records
         ]
         schema_result = "VALID_OUTER_RECORD_WITH_RUNNER_ERROR"
-        disposition = "RUNNER_ERROR"
+        disposition = {
+            "MALFORMED": "MALFORMED_RESULT",
+            "MISSING": "MISSING_RESULT",
+            "INVALID_EXECUTION_ID": "INVALID_EXECUTION_ID",
+            "INVALID_CANDIDATE_DIGEST": "INVALID_CANDIDATE_DIGEST",
+            "INVALID_SCHEMA": "INVALID_SCHEMA",
+            "STALE_RESULT_REJECTED": "STALE_RESULT_REJECTED",
+            "TIMEOUT": "TIMEOUT",
+        }.get(parser_result, "RUNNER_ERROR")
         counts = _count_dispositions(records)
         module_path = ""
     else:
@@ -356,6 +393,7 @@ def run_full_test_campaign(extraction_root: Path, output_root: Path, env: Mappin
             stdout=completed.stdout,
             result_file=structured_path,
             expected_execution_id=execution_id,
+            expected_candidate_digest=str(module_env.get("TRADER_ECS003_CANDIDATE_DIGEST", "")),
         )
         execution_record, payload_records = _module_execution_record(
             module=module,
