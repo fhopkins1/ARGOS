@@ -1,0 +1,205 @@
+{
+  "baseline_id": "PR-B01-002A-S03-004-ENTERPRISE-GOVERNANCE-BASELINE",
+  "boundaries": [
+    {
+      "boundary_id": "PR-B01-002A-S03-001-COMMANDER",
+      "command_authority": "Commander issues enterprise directives and receives escalation evidence",
+      "constitutional_authority": "enterprise governance, command directives, escalation, emergency response, recovery, and shutdown authority",
+      "counterparty_office": "Commander",
+      "dependency_direction": "Position Registry -> Commander for escalation/governance; Commander -> Position Registry for governed status evidence",
+      "escalation_authority": "Commander is terminal enterprise escalation recipient for governance emergencies",
+      "evidence_obligation": "directive, acknowledgement, escalation, emergency, recovery, and shutdown evidence",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-001",
+      "interface_authority": "Commander produces directives; Position Registry acknowledges disposition and evidence",
+      "mutation_authority": "Commander does not directly mutate Position Registry state; directives execute only through constitutional mechanisms",
+      "ownership_boundary": "Commander owns governance directives; Position Registry owns canonical position truth"
+    },
+    {
+      "archival_authority": "Historian archives immutable records and preserves retrieval lineage",
+      "boundary_id": "PR-B01-002A-S03-002-HISTORIAN",
+      "constitutional_authority": "historical custody, archival preservation, replay support, correction lineage, supersession lineage, and restoration evidence",
+      "correction_lineage": "historical corrections preserve predecessor, correction reason, authority, timestamp, and immutable lineage",
+      "counterparty_office": "Historian",
+      "dependency_direction": "Position Registry -> Historian for archival custody; Position Registry replay -> Historian evidence retrieval",
+      "determinations": {
+        "authority_during_historical_correction": "originating truth owner corrects domain truth; Historian preserves correction lineage and custody records",
+        "authority_during_restoration": "Historian restores immutable evidence/custody records; Position Registry restores domain state through replay/recovery authority",
+        "historian_mutates_historical_records": false,
+        "historian_owns_position_registry_truth": false,
+        "position_registry_transfers_historical_custody": true,
+        "replay_consumes_historian_evidence": true
+      },
+      "evidence_custody": "Historian may custody immutable evidence without acquiring ownership or mutation authority",
+      "evidence_obligation": "historical custody receipt, archival manifest, correction lineage, supersession lineage, replay retrieval, and restoration evidence",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-002",
+      "historical_custody": "Historian may receive immutable custody of historical Position Registry records and evidence",
+      "interface_authority": "Position Registry produces historical/evidence custody packages; Historian acknowledges custody receipt",
+      "mutation_authority": "Historian does not mutate Position Registry truth or historical records; corrections are preserved through lineage records",
+      "ownership_boundary": "Historian holds historical custody; Position Registry retains domain truth ownership unless ownership is transferred by explicit doctrine",
+      "reconciliation_authority": "Position Registry reconciles canonical position truth; Historian reconciles custody completeness and lineage integrity",
+      "replay_authority": "replay may consume Historian evidence as immutable historical input; replay does not permit Historian mutation",
+      "supersession_lineage": "supersession preserves predecessor and successor references without destroying historical records"
+    },
+    {
+      "boundary_id": "PR-B01-002A-S03-003-INFRASTRUCTURE",
+      "constitutional_authority": "runtime, persistence, configuration, availability, disaster recovery, deployment, and platform support",
+      "counterparty_office": "Infrastructure",
+      "dependency_direction": "Position Registry -> Infrastructure for runtime, persistence, configuration, and recovery capability",
+      "escalation_authority": "Infrastructure receives runtime, persistence, and disaster-recovery escalations",
+      "evidence_obligation": "runtime availability, persistence, configuration, backup, restore, and failure evidence",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+      "interface_authority": "Infrastructure provides platform service interfaces and receives health/failure evidence",
+      "mutation_authority": "Infrastructure does not mutate Position Registry business state except through authorized enterprise mechanisms",
+      "ownership_boundary": "Infrastructure owns infrastructure capability, not Position Registry business truth"
+    },
+    {
+      "boundary_id": "PR-B01-002A-S03-003-SENTINEL",
+      "constitutional_authority": "enterprise observation, anomaly observation, evidence observation, notification, escalation, and finding generation",
+      "counterparty_office": "Sentinel",
+      "dependency_direction": "Sentinel -> Position Registry for observation access; Position Registry -> Sentinel for observation findings only where constitutionally required",
+      "escalation_authority": "Sentinel escalates anomalies through Commander-first/governed channels",
+      "evidence_obligation": "observation trace, anomaly finding, evidence observation, notification, and escalation evidence",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+      "interface_authority": "Sentinel produces observation findings and escalation notices",
+      "mutation_authority": "Sentinel has no mutation authority over Position Registry state",
+      "observation_authority": "Sentinel observes runtime, anomaly, event, evidence, reconciliation, replay, and recovery behavior",
+      "ownership_boundary": "Sentinel owns observation/findings evidence, never Position Registry state"
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict": "Commander ownership of position truth",
+      "deterministic_disposition": "Commander governs but does not own Position Registry state",
+      "resolution": "rejected"
+    },
+    {
+      "conflict": "Historian ownership through custody",
+      "deterministic_disposition": "Historian custodies immutable history without owning domain truth",
+      "resolution": "rejected"
+    },
+    {
+      "conflict": "Infrastructure ownership of business truth",
+      "deterministic_disposition": "Infrastructure owns platform capability only",
+      "resolution": "rejected"
+    },
+    {
+      "conflict": "Sentinel mutation by observation",
+      "deterministic_disposition": "observation never mutates Position Registry state",
+      "resolution": "rejected"
+    }
+  ],
+  "escalations": [
+    {
+      "escalation": "enterprise_directive_conflict",
+      "initiator": "Position Registry",
+      "recipient": "Commander",
+      "terminal_authority": "Commander under constitutional governance"
+    },
+    {
+      "escalation": "historical_custody_gap",
+      "initiator": "Position Registry or Historian",
+      "recipient": "Historian then Commander if unresolved",
+      "terminal_authority": "Commander"
+    },
+    {
+      "escalation": "infrastructure_failure",
+      "initiator": "Position Registry",
+      "recipient": "Infrastructure",
+      "terminal_authority": "Infrastructure with Commander escalation if governance-impacting"
+    },
+    {
+      "escalation": "sentinel_observation_anomaly",
+      "initiator": "Sentinel",
+      "recipient": "Commander/governed recipient",
+      "terminal_authority": "Commander"
+    }
+  ],
+  "evidence_custody": [
+    {
+      "custodian": "Historian where archived",
+      "evidence_class": "governance_directive",
+      "owner": "Commander"
+    },
+    {
+      "custodian": "Historian",
+      "evidence_class": "historical_position_evidence",
+      "owner": "Position Registry"
+    },
+    {
+      "custodian": "Infrastructure and Historian where archived",
+      "evidence_class": "infrastructure_evidence",
+      "owner": "Infrastructure"
+    },
+    {
+      "custodian": "Sentinel and Historian where archived",
+      "evidence_class": "observation_evidence",
+      "owner": "Sentinel"
+    }
+  ],
+  "governance": [
+    {
+      "authority": "enterprise directive and escalation governance",
+      "governed_office": "Position Registry",
+      "governing_office": "Commander",
+      "mutation_implication": "none",
+      "ownership_implication": "none"
+    },
+    {
+      "authority": "platform capability governance",
+      "governed_office": "Position Registry runtime",
+      "governing_office": "Infrastructure",
+      "mutation_implication": "none",
+      "ownership_implication": "none"
+    },
+    {
+      "authority": "observation and finding generation",
+      "governed_office": "observed Position Registry behavior",
+      "governing_office": "Sentinel",
+      "mutation_implication": "none",
+      "ownership_implication": "none"
+    }
+  ],
+  "historical_custody": [
+    {
+      "artifact": "position_history_record",
+      "custody_implies_ownership": false,
+      "domain_owner": "Position Registry",
+      "historical_custodian": "Historian",
+      "mutation_authority": "Position Registry correction only"
+    },
+    {
+      "artifact": "position_evidence_record",
+      "custody_implies_ownership": false,
+      "domain_owner": "Position Registry",
+      "historical_custodian": "Historian",
+      "mutation_authority": "none; correction lineage only"
+    },
+    {
+      "artifact": "replay_evidence",
+      "custody_implies_ownership": false,
+      "domain_owner": "Position Registry",
+      "historical_custodian": "Historian",
+      "mutation_authority": "none"
+    }
+  ],
+  "observations": [
+    {
+      "mutation_authority": "none",
+      "observation_class": "runtime_observation",
+      "observed_object_owner": "Position Registry",
+      "observer": "Sentinel"
+    },
+    {
+      "mutation_authority": "none",
+      "observation_class": "anomaly_observation",
+      "observed_object_owner": "Position Registry",
+      "observer": "Sentinel"
+    },
+    {
+      "mutation_authority": "none",
+      "observation_class": "historical_observation",
+      "observed_object_owner": "Position Registry",
+      "observer": "Historian"
+    }
+  ]
+}

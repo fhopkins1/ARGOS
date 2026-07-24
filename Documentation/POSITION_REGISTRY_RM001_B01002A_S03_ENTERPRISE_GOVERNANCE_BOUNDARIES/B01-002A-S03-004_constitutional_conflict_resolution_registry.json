@@ -1,0 +1,22 @@
+[
+  {
+    "conflict": "Commander ownership of position truth",
+    "deterministic_disposition": "Commander governs but does not own Position Registry state",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "Historian ownership through custody",
+    "deterministic_disposition": "Historian custodies immutable history without owning domain truth",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "Infrastructure ownership of business truth",
+    "deterministic_disposition": "Infrastructure owns platform capability only",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "Sentinel mutation by observation",
+    "deterministic_disposition": "observation never mutates Position Registry state",
+    "resolution": "rejected"
+  }
+]

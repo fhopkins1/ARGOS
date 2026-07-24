@@ -1,0 +1,13 @@
+{
+  "boundary_id": "PR-B01-002A-S03-003-SENTINEL",
+  "constitutional_authority": "enterprise observation, anomaly observation, evidence observation, notification, escalation, and finding generation",
+  "counterparty_office": "Sentinel",
+  "dependency_direction": "Sentinel -> Position Registry for observation access; Position Registry -> Sentinel for observation findings only where constitutionally required",
+  "escalation_authority": "Sentinel escalates anomalies through Commander-first/governed channels",
+  "evidence_obligation": "observation trace, anomaly finding, evidence observation, notification, and escalation evidence",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+  "interface_authority": "Sentinel produces observation findings and escalation notices",
+  "mutation_authority": "Sentinel has no mutation authority over Position Registry state",
+  "observation_authority": "Sentinel observes runtime, anomaly, event, evidence, reconciliation, replay, and recovery behavior",
+  "ownership_boundary": "Sentinel owns observation/findings evidence, never Position Registry state"
+}

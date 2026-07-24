@@ -1,0 +1,18 @@
+[
+  {
+    "dependency_direction": "Position Registry -> Commander for escalation/governance; Commander -> Position Registry for governed status evidence",
+    "office": "Commander"
+  },
+  {
+    "dependency_direction": "Position Registry -> Historian for archival custody; Position Registry replay -> Historian evidence retrieval",
+    "office": "Historian"
+  },
+  {
+    "dependency_direction": "Position Registry -> Infrastructure for runtime, persistence, configuration, and recovery capability",
+    "office": "Infrastructure"
+  },
+  {
+    "dependency_direction": "Sentinel -> Position Registry for observation access; Position Registry -> Sentinel for observation findings only where constitutionally required",
+    "office": "Sentinel"
+  }
+]

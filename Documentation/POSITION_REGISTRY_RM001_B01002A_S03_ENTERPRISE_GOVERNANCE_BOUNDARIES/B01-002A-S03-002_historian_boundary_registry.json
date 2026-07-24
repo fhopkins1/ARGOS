@@ -1,0 +1,26 @@
+{
+  "archival_authority": "Historian archives immutable records and preserves retrieval lineage",
+  "boundary_id": "PR-B01-002A-S03-002-HISTORIAN",
+  "constitutional_authority": "historical custody, archival preservation, replay support, correction lineage, supersession lineage, and restoration evidence",
+  "correction_lineage": "historical corrections preserve predecessor, correction reason, authority, timestamp, and immutable lineage",
+  "counterparty_office": "Historian",
+  "dependency_direction": "Position Registry -> Historian for archival custody; Position Registry replay -> Historian evidence retrieval",
+  "determinations": {
+    "authority_during_historical_correction": "originating truth owner corrects domain truth; Historian preserves correction lineage and custody records",
+    "authority_during_restoration": "Historian restores immutable evidence/custody records; Position Registry restores domain state through replay/recovery authority",
+    "historian_mutates_historical_records": false,
+    "historian_owns_position_registry_truth": false,
+    "position_registry_transfers_historical_custody": true,
+    "replay_consumes_historian_evidence": true
+  },
+  "evidence_custody": "Historian may custody immutable evidence without acquiring ownership or mutation authority",
+  "evidence_obligation": "historical custody receipt, archival manifest, correction lineage, supersession lineage, replay retrieval, and restoration evidence",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-002",
+  "historical_custody": "Historian may receive immutable custody of historical Position Registry records and evidence",
+  "interface_authority": "Position Registry produces historical/evidence custody packages; Historian acknowledges custody receipt",
+  "mutation_authority": "Historian does not mutate Position Registry truth or historical records; corrections are preserved through lineage records",
+  "ownership_boundary": "Historian holds historical custody; Position Registry retains domain truth ownership unless ownership is transferred by explicit doctrine",
+  "reconciliation_authority": "Position Registry reconciles canonical position truth; Historian reconciles custody completeness and lineage integrity",
+  "replay_authority": "replay may consume Historian evidence as immutable historical input; replay does not permit Historian mutation",
+  "supersession_lineage": "supersession preserves predecessor and successor references without destroying historical records"
+}

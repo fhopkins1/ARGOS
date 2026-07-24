@@ -1,0 +1,46 @@
+[
+  {
+    "counterparty_office": "Commander",
+    "dependency_direction": "Position Registry -> Commander for escalation/governance; Commander -> Position Registry for governed status evidence",
+    "escalation_authority": "Commander is terminal enterprise escalation recipient for governance emergencies",
+    "evidence_obligation": "directive, acknowledgement, escalation, emergency, recovery, and shutdown evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-001",
+    "interaction_id": "PR-GOV-BND-001",
+    "interface_authority": "Commander produces directives; Position Registry acknowledges disposition and evidence",
+    "mutation_authority": "Commander does not directly mutate Position Registry state; directives execute only through constitutional mechanisms",
+    "ownership_boundary": "Commander owns governance directives; Position Registry owns canonical position truth"
+  },
+  {
+    "counterparty_office": "Historian",
+    "dependency_direction": "Position Registry -> Historian for archival custody; Position Registry replay -> Historian evidence retrieval",
+    "escalation_authority": "escalation governed by domain owner and Commander authority",
+    "evidence_obligation": "historical custody receipt, archival manifest, correction lineage, supersession lineage, replay retrieval, and restoration evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-002",
+    "interaction_id": "PR-GOV-BND-002",
+    "interface_authority": "Position Registry produces historical/evidence custody packages; Historian acknowledges custody receipt",
+    "mutation_authority": "Historian does not mutate Position Registry truth or historical records; corrections are preserved through lineage records",
+    "ownership_boundary": "Historian holds historical custody; Position Registry retains domain truth ownership unless ownership is transferred by explicit doctrine"
+  },
+  {
+    "counterparty_office": "Infrastructure",
+    "dependency_direction": "Position Registry -> Infrastructure for runtime, persistence, configuration, and recovery capability",
+    "escalation_authority": "Infrastructure receives runtime, persistence, and disaster-recovery escalations",
+    "evidence_obligation": "runtime availability, persistence, configuration, backup, restore, and failure evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+    "interaction_id": "PR-GOV-BND-003",
+    "interface_authority": "Infrastructure provides platform service interfaces and receives health/failure evidence",
+    "mutation_authority": "Infrastructure does not mutate Position Registry business state except through authorized enterprise mechanisms",
+    "ownership_boundary": "Infrastructure owns infrastructure capability, not Position Registry business truth"
+  },
+  {
+    "counterparty_office": "Sentinel",
+    "dependency_direction": "Sentinel -> Position Registry for observation access; Position Registry -> Sentinel for observation findings only where constitutionally required",
+    "escalation_authority": "Sentinel escalates anomalies through Commander-first/governed channels",
+    "evidence_obligation": "observation trace, anomaly finding, evidence observation, notification, and escalation evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+    "interaction_id": "PR-GOV-BND-004",
+    "interface_authority": "Sentinel produces observation findings and escalation notices",
+    "mutation_authority": "Sentinel has no mutation authority over Position Registry state",
+    "ownership_boundary": "Sentinel owns observation/findings evidence, never Position Registry state"
+  }
+]

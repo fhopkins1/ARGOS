@@ -1,0 +1,24 @@
+[
+  {
+    "counterparty_office": "Infrastructure",
+    "dependency_direction": "Position Registry -> Infrastructure for runtime, persistence, configuration, and recovery capability",
+    "escalation_authority": "Infrastructure receives runtime, persistence, and disaster-recovery escalations",
+    "evidence_obligation": "runtime availability, persistence, configuration, backup, restore, and failure evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+    "interaction_id": "PR-GOV-BND-003",
+    "interface_authority": "Infrastructure provides platform service interfaces and receives health/failure evidence",
+    "mutation_authority": "Infrastructure does not mutate Position Registry business state except through authorized enterprise mechanisms",
+    "ownership_boundary": "Infrastructure owns infrastructure capability, not Position Registry business truth"
+  },
+  {
+    "counterparty_office": "Sentinel",
+    "dependency_direction": "Sentinel -> Position Registry for observation access; Position Registry -> Sentinel for observation findings only where constitutionally required",
+    "escalation_authority": "Sentinel escalates anomalies through Commander-first/governed channels",
+    "evidence_obligation": "observation trace, anomaly finding, evidence observation, notification, and escalation evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+    "interaction_id": "PR-GOV-BND-004",
+    "interface_authority": "Sentinel produces observation findings and escalation notices",
+    "mutation_authority": "Sentinel has no mutation authority over Position Registry state",
+    "ownership_boundary": "Sentinel owns observation/findings evidence, never Position Registry state"
+  }
+]

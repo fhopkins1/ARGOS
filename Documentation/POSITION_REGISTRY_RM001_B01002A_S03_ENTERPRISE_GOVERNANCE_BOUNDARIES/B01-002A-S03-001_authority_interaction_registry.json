@@ -1,0 +1,13 @@
+[
+  {
+    "counterparty_office": "Commander",
+    "dependency_direction": "Position Registry -> Commander for escalation/governance; Commander -> Position Registry for governed status evidence",
+    "escalation_authority": "Commander is terminal enterprise escalation recipient for governance emergencies",
+    "evidence_obligation": "directive, acknowledgement, escalation, emergency, recovery, and shutdown evidence",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-001",
+    "interaction_id": "PR-GOV-BND-001",
+    "interface_authority": "Commander produces directives; Position Registry acknowledges disposition and evidence",
+    "mutation_authority": "Commander does not directly mutate Position Registry state; directives execute only through constitutional mechanisms",
+    "ownership_boundary": "Commander owns governance directives; Position Registry owns canonical position truth"
+  }
+]

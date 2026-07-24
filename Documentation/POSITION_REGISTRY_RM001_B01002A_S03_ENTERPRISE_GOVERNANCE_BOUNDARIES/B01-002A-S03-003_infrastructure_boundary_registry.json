@@ -1,0 +1,12 @@
+{
+  "boundary_id": "PR-B01-002A-S03-003-INFRASTRUCTURE",
+  "constitutional_authority": "runtime, persistence, configuration, availability, disaster recovery, deployment, and platform support",
+  "counterparty_office": "Infrastructure",
+  "dependency_direction": "Position Registry -> Infrastructure for runtime, persistence, configuration, and recovery capability",
+  "escalation_authority": "Infrastructure receives runtime, persistence, and disaster-recovery escalations",
+  "evidence_obligation": "runtime availability, persistence, configuration, backup, restore, and failure evidence",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S03-003",
+  "interface_authority": "Infrastructure provides platform service interfaces and receives health/failure evidence",
+  "mutation_authority": "Infrastructure does not mutate Position Registry business state except through authorized enterprise mechanisms",
+  "ownership_boundary": "Infrastructure owns infrastructure capability, not Position Registry business truth"
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "artifact": "position_history_record",
+    "custody_implies_ownership": false,
+    "domain_owner": "Position Registry",
+    "historical_custodian": "Historian",
+    "mutation_authority": "Position Registry correction only"
+  },
+  {
+    "artifact": "position_evidence_record",
+    "custody_implies_ownership": false,
+    "domain_owner": "Position Registry",
+    "historical_custodian": "Historian",
+    "mutation_authority": "none; correction lineage only"
+  },
+  {
+    "artifact": "replay_evidence",
+    "custody_implies_ownership": false,
+    "domain_owner": "Position Registry",
+    "historical_custodian": "Historian",
+    "mutation_authority": "none"
+  }
+]
