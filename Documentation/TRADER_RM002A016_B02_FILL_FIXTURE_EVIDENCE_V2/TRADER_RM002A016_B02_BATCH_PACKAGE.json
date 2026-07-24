@@ -1,0 +1,2116 @@
+{
+  "affected_execution_registry": [
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+      ],
+      "completion_timestamp": "2026-07-24T01:26:50.676309Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.005s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.643888,
+      "execution_id": "B02-EXEC-10f2a14f92f22c62",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:26:45.026765Z",
+      "stderr_reference": "08_raw_logs/10f2a14f92f22c62.stderr.log",
+      "stderr_sha256": "c3dc4ce80790d0a5a68dcff2d3009be59564c24dfe01144e0f6b50051e539cc3",
+      "stdout_reference": "08_raw_logs/10f2a14f92f22c62.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+      ],
+      "completion_timestamp": "2026-07-24T01:26:56.162029Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.479681,
+      "execution_id": "B02-EXEC-a877d38f1c90bd32",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:26:50.676397Z",
+      "stderr_reference": "08_raw_logs/a877d38f1c90bd32.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/a877d38f1c90bd32.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:00.025769Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.859169,
+      "execution_id": "B02-EXEC-5dbb4b1240fcb437",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:26:56.162123Z",
+      "stderr_reference": "08_raw_logs/5dbb4b1240fcb437.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/5dbb4b1240fcb437.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:05.371147Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.340266,
+      "execution_id": "B02-EXEC-a8b5fde2bba18958",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:00.025824Z",
+      "stderr_reference": "08_raw_logs/a8b5fde2bba18958.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/a8b5fde2bba18958.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:08.551597Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.003s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.175852,
+      "execution_id": "B02-EXEC-8be9011ea1235cf4",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:05.371264Z",
+      "stderr_reference": "08_raw_logs/8be9011ea1235cf4.stderr.log",
+      "stderr_sha256": "24cefc2bc38a1c71e18591075993695fc72546b32ff6b5baab3d98032ce96fb5",
+      "stdout_reference": "08_raw_logs/8be9011ea1235cf4.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:12.391805Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.834647,
+      "execution_id": "B02-EXEC-3b84bda4cb7c9fc0",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:08.551657Z",
+      "stderr_reference": "08_raw_logs/3b84bda4cb7c9fc0.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/3b84bda4cb7c9fc0.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:17.742087Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.345923,
+      "execution_id": "B02-EXEC-e622ddf910beb5df",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:12.391858Z",
+      "stderr_reference": "08_raw_logs/e622ddf910beb5df.stderr.log",
+      "stderr_sha256": "8fc491c33af10c373d8f98a2362fd7e66cdc6c96497aa5aa59d429264ca5ac92",
+      "stdout_reference": "08_raw_logs/e622ddf910beb5df.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:21.936313Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.014s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 4.190025,
+      "execution_id": "B02-EXEC-7256e88912134ec8",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:17.742157Z",
+      "stderr_reference": "08_raw_logs/7256e88912134ec8.stderr.log",
+      "stderr_sha256": "a75d5a91a411eeced9e6131248a85982b358c592dc17ed1f73ccacc7565157fc",
+      "stdout_reference": "08_raw_logs/7256e88912134ec8.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:25.776665Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.832377,
+      "execution_id": "B02-EXEC-34380a4f79826015",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:21.936366Z",
+      "stderr_reference": "08_raw_logs/34380a4f79826015.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/34380a4f79826015.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:30.055868Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 4.274876,
+      "execution_id": "B02-EXEC-00f4adad4831d57c",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:25.776748Z",
+      "stderr_reference": "08_raw_logs/00f4adad4831d57c.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/00f4adad4831d57c.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:33.834849Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.775789,
+      "execution_id": "B02-EXEC-b97d4829cf6b45f1",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:30.055931Z",
+      "stderr_reference": "08_raw_logs/b97d4829cf6b45f1.stderr.log",
+      "stderr_sha256": "a41e08b8782ccff561fc04da1c4aa92b79d00989913c15ae6639e0c2e9b7e03c",
+      "stdout_reference": "08_raw_logs/b97d4829cf6b45f1.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:37.798848Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.959664,
+      "execution_id": "B02-EXEC-1e8bddf6596efe9f",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:33.834904Z",
+      "stderr_reference": "08_raw_logs/1e8bddf6596efe9f.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/1e8bddf6596efe9f.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:41.802605Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.009s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.999643,
+      "execution_id": "B02-EXEC-c588ecf254d314c2",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:37.798913Z",
+      "stderr_reference": "08_raw_logs/c588ecf254d314c2.stderr.log",
+      "stderr_sha256": "d0bbd3fb4fcf80c9cbf5ce59bf4ce44bb927e9e40a6269d0b33dc8c4a94c4755",
+      "stdout_reference": "08_raw_logs/c588ecf254d314c2.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:45.872700Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.005s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 4.066112,
+      "execution_id": "B02-EXEC-f1b968b373ebeea3",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:41.802670Z",
+      "stderr_reference": "08_raw_logs/f1b968b373ebeea3.stderr.log",
+      "stderr_sha256": "c3dc4ce80790d0a5a68dcff2d3009be59564c24dfe01144e0f6b50051e539cc3",
+      "stdout_reference": "08_raw_logs/f1b968b373ebeea3.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:49.831184Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.013s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.95417,
+      "execution_id": "B02-EXEC-080444f53742a689",
+      "fixture_classification": "VALID_REPLAY_RECONSTRUCTION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:45.872769Z",
+      "stderr_reference": "08_raw_logs/080444f53742a689.stderr.log",
+      "stderr_sha256": "a9737d36e97e253c4c5c8c2c01ccfbe550909d17b13e2615aff5689762cb559b",
+      "stdout_reference": "08_raw_logs/080444f53742a689.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:53.772527Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.936836,
+      "execution_id": "B02-EXEC-66ed0d97f4886479",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "remediation_outcome": "INTENTIONAL_REJECTION_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:49.831245Z",
+      "stderr_reference": "08_raw_logs/66ed0d97f4886479.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/66ed0d97f4886479.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:57.373689Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.595419,
+      "execution_id": "B02-EXEC-ad37d919f91e27eb",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "remediation_outcome": "INTENTIONAL_REJECTION_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:53.772598Z",
+      "stderr_reference": "08_raw_logs/ad37d919f91e27eb.stderr.log",
+      "stderr_sha256": "2299339565fdc7c4fedeb54e99b181ba53b821f77194926422cc7df3301ba0ee",
+      "stdout_reference": "08_raw_logs/ad37d919f91e27eb.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+      "timeout_seconds": 30
+    }
+  ],
+  "affected_fixture_inventory": {
+    "created_at": "2026-07-24T01:26:45.024775Z",
+    "freeze_digest": "30925f25c35548415ac97b324a3bed3fc73a26591a13f3068699772c251df452",
+    "intentionally_rejecting_tests": [
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_duplicate_and_terminal_fill_mutations_fail_closed"
+      }
+    ],
+    "previously_failing_tests": [
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1842, in test_eo_xa_position_registry_closes_position_with_zero_quantity\n    position = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\"},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xa_position_registry_closes_position_with_zero_quantity"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1818, in test_eo_xa_position_registry_rejects_invalid_state_and_transitions\n    good = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\", \"confidence\": 0.7},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1768, in test_eo_xa_position_registry_retrieves_and_updates_active_positions\n    position = registry.create_from_execution(order, decision)\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1918, in test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position\n    position = registry.create_from_execution(\n        {\n    ...<10 lines>...\n        {\"targetPrice\": 220.0, \"stopLoss\": 190.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1953, in test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 105.0, \"stopLoss\": 96.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1870, in test_eo_xb_surveillance_engine_updates_active_position_from_market_data\n    position = registry.create_from_execution(\n        {\n    ...<11 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1988, in test_eo_xb_surveillance_snapshots_are_append_only\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_snapshots_are_append_only"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2150, in test_eo_xc_commander_override_and_emergency_risk_override_take_priority\n    commander = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 8, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-CMD\", \"decision_object_id\": \"DO-EOXC-CMD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2128, in test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"AAPL\", \"asset_type\": \"STOCK\", \"side\": \"BUY\", \"filled_quantity\": 3, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-HOLD\", \"decision_object_id\": \"DO-EOXC-HOLD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2072, in test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 20, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TARGET\", \"decision_object_id\": \"DO-EOXC-TARGET\"},\n        {\"targetPrice\": 105.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2048, in test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 10, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-STOP\", \"decision_object_id\": \"DO-EOXC-STOP\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2183, in test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"QQQ\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 6, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-AI\", \"decision_object_id\": \"DO-EOXC-AI\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0, \"marketContext\": {\"strategyInvalidation\": True}},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2095, in test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic\n    trailing = registry.create_from_execution(\n        {\"symbol\": \"TLT\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 4, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TRAIL\", \"decision_object_id\": \"DO-EOXC-TRAIL\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+      }
+    ],
+    "prior_authoritative_fill_errors": 13,
+    "prior_campaign_root": "C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_ECS003_PRIMARY_COMPLETE_AUDIT_EVIDENCE_0118d62da0664f25_20260724-001235",
+    "records": [
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1842, in test_eo_xa_position_registry_closes_position_with_zero_quantity\n    position = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\"},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xa_position_registry_closes_position_with_zero_quantity"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1818, in test_eo_xa_position_registry_rejects_invalid_state_and_transitions\n    good = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\", \"confidence\": 0.7},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1768, in test_eo_xa_position_registry_retrieves_and_updates_active_positions\n    position = registry.create_from_execution(order, decision)\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1918, in test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position\n    position = registry.create_from_execution(\n        {\n    ...<10 lines>...\n        {\"targetPrice\": 220.0, \"stopLoss\": 190.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1953, in test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 105.0, \"stopLoss\": 96.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1870, in test_eo_xb_surveillance_engine_updates_active_position_from_market_data\n    position = registry.create_from_execution(\n        {\n    ...<11 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1988, in test_eo_xb_surveillance_snapshots_are_append_only\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xb_surveillance_snapshots_are_append_only"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2150, in test_eo_xc_commander_override_and_emergency_risk_override_take_priority\n    commander = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 8, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-CMD\", \"decision_object_id\": \"DO-EOXC-CMD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2128, in test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"AAPL\", \"asset_type\": \"STOCK\", \"side\": \"BUY\", \"filled_quantity\": 3, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-HOLD\", \"decision_object_id\": \"DO-EOXC-HOLD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2072, in test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 20, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TARGET\", \"decision_object_id\": \"DO-EOXC-TARGET\"},\n        {\"targetPrice\": 105.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2048, in test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 10, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-STOP\", \"decision_object_id\": \"DO-EOXC-STOP\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2183, in test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"QQQ\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 6, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-AI\", \"decision_object_id\": \"DO-EOXC-AI\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0, \"marketContext\": {\"strategyInvalidation\": True}},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ERROR",
+        "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2095, in test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic\n    trailing = registry.create_from_execution(\n        {\"symbol\": \"TLT\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 4, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TRAIL\", \"decision_object_id\": \"DO-EOXC-TRAIL\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+        "reason_for_inclusion": "previously failing authoritative-fill fixture",
+        "source_module": "Tests.test_argos_control_panel_dashboard",
+        "test_function_or_scenario": "test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_valid_position_creation_mutation_and_lineage"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_REPLAY_RECONSTRUCTION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_duplicate_and_terminal_fill_mutations_fail_closed"
+      }
+    ],
+    "schema_version": "trader-rm002a016-b02-affected-fixture-inventory/v1",
+    "shared_fixture_impact_tests": [
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_FILL_BACKED_POSITION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_valid_position_creation_mutation_and_lineage"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "VALID_REPLAY_RECONSTRUCTION",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+      },
+      {
+        "affected_proof_object_identifiers": [
+          "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+        ],
+        "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+        "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+        "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+        "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+        "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+        "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+        "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+        "prior_failure_message": "",
+        "reason_for_inclusion": "shared helper/runtime invariant impact",
+        "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+        "test_function_or_scenario": "test_duplicate_and_terminal_fill_mutations_fail_closed"
+      }
+    ]
+  },
+  "authoritative_fill_fixture_registry": {
+    "fixture_builder": "Tests.test_trader_rm002a016_b02_fill_fixtures._fill",
+    "required_fields": [
+      "fill_id",
+      "order_id",
+      "broker_event_id",
+      "workflow_id",
+      "symbol",
+      "side",
+      "quantity",
+      "price",
+      "timestamp",
+      "candidate_digest",
+      "fixture_execution_identifier",
+      "owner",
+      "producer",
+      "source",
+      "provenance",
+      "evidence_reference",
+      "evidence_digest"
+    ]
+  },
+  "batch_2_manifest": {
+    "excluded_populations": [
+      "CIC",
+      "CR",
+      "CSS",
+      "Authorizations",
+      "Risk",
+      "enterprise-wide",
+      "proof-reconciliation",
+      "full repository"
+    ],
+    "scope": "authoritative-fill and position fixtures only"
+  },
+  "batch_completion_report": {
+    "Additional shared-impact tests": 4,
+    "Authoritative-fill implementation digest": "30bd4e5b9af125996f71cc0ffa30dc4ab57f00c8a31e114dc72fee1a172a2741",
+    "Batch identifier": "TRADER-RM-002A-016-B02",
+    "CONSTITUTIONAL_CONFLICT": 0,
+    "Candidate digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+    "ENVIRONMENT_DEFECT": 0,
+    "ERROR": 0,
+    "Executed": 17,
+    "FAIL": 0,
+    "FIXTURE_DEFECT_REMAINS": 0,
+    "FIXTURE_REPAIRED_PASS": 15,
+    "Fixture digest": "459c017a9d47543253bc3cdb6511bb5a37486fa81d866396d034547ace957498",
+    "IMPLEMENTATION_DEFECT": 0,
+    "INTENTIONAL_REJECTION_PASS": 2,
+    "INVALID_EVIDENCE": 0,
+    "Interrupted": 0,
+    "NEW_FAILURE_EXPOSED": 0,
+    "NOT_APPLICABLE": 0,
+    "Open findings": 0,
+    "PASS": 17,
+    "Position implementation digest": "30bd4e5b9af125996f71cc0ffa30dc4ab57f00c8a31e114dc72fee1a172a2741",
+    "Prior affected tests": 13,
+    "Remaining mutable fixture state": 0,
+    "TEST_EXPECTATION_DEFECT": 0,
+    "TIMEOUT": 0,
+    "Total affected population": 17,
+    "UNRESOLVED fixture classifications": 0,
+    "Unexecuted": 0,
+    "all_affected_proof_objects_reflect_current_outcomes": true,
+    "all_intentional_rejection_tests_fail_closed_correctly": true,
+    "all_shared_impact_tests_have_current_dispositions": true,
+    "all_thirteen_prior_fill_errors_have_current_dispositions": true,
+    "authoritative_fill_enforcement_remains_intact": true,
+    "batch_2_ready_for_reconciliation": true,
+    "every_successful_position_has_valid_fill_lineage": true,
+    "no_placeholder_fill_identity_was_accepted": true,
+    "no_stale_evidence_contributed_to_proof": true,
+    "status": "PASS"
+  },
+  "batch_identifier": "TRADER-RM-002A-016-B02",
+  "batch_version": "TRADER-RM-002A-016-B02/1.0.0",
+  "controlled_fill_object_schema": {
+    "required": [
+      "fill_id",
+      "order_id",
+      "broker_event_id",
+      "workflow_id",
+      "symbol",
+      "side",
+      "quantity",
+      "price",
+      "timestamp",
+      "candidate_digest",
+      "fixture_execution_identifier",
+      "owner",
+      "producer",
+      "source",
+      "provenance",
+      "evidence_reference",
+      "evidence_digest"
+    ],
+    "schema_version": "controlled-authoritative-fill/v1"
+  },
+  "created_at": "2026-07-24T01:27:57.374184Z",
+  "execution_to_proof_mapping": [
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-10f2a14f92f22c62",
+      "raw_evidence": [
+        "08_raw_logs/10f2a14f92f22c62.stdout.log",
+        "08_raw_logs/10f2a14f92f22c62.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-a877d38f1c90bd32",
+      "raw_evidence": [
+        "08_raw_logs/a877d38f1c90bd32.stdout.log",
+        "08_raw_logs/a877d38f1c90bd32.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-5dbb4b1240fcb437",
+      "raw_evidence": [
+        "08_raw_logs/5dbb4b1240fcb437.stdout.log",
+        "08_raw_logs/5dbb4b1240fcb437.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-a8b5fde2bba18958",
+      "raw_evidence": [
+        "08_raw_logs/a8b5fde2bba18958.stdout.log",
+        "08_raw_logs/a8b5fde2bba18958.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-8be9011ea1235cf4",
+      "raw_evidence": [
+        "08_raw_logs/8be9011ea1235cf4.stdout.log",
+        "08_raw_logs/8be9011ea1235cf4.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-3b84bda4cb7c9fc0",
+      "raw_evidence": [
+        "08_raw_logs/3b84bda4cb7c9fc0.stdout.log",
+        "08_raw_logs/3b84bda4cb7c9fc0.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-e622ddf910beb5df",
+      "raw_evidence": [
+        "08_raw_logs/e622ddf910beb5df.stdout.log",
+        "08_raw_logs/e622ddf910beb5df.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-7256e88912134ec8",
+      "raw_evidence": [
+        "08_raw_logs/7256e88912134ec8.stdout.log",
+        "08_raw_logs/7256e88912134ec8.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-34380a4f79826015",
+      "raw_evidence": [
+        "08_raw_logs/34380a4f79826015.stdout.log",
+        "08_raw_logs/34380a4f79826015.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-00f4adad4831d57c",
+      "raw_evidence": [
+        "08_raw_logs/00f4adad4831d57c.stdout.log",
+        "08_raw_logs/00f4adad4831d57c.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-b97d4829cf6b45f1",
+      "raw_evidence": [
+        "08_raw_logs/b97d4829cf6b45f1.stdout.log",
+        "08_raw_logs/b97d4829cf6b45f1.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-1e8bddf6596efe9f",
+      "raw_evidence": [
+        "08_raw_logs/1e8bddf6596efe9f.stdout.log",
+        "08_raw_logs/1e8bddf6596efe9f.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-c588ecf254d314c2",
+      "raw_evidence": [
+        "08_raw_logs/c588ecf254d314c2.stdout.log",
+        "08_raw_logs/c588ecf254d314c2.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-f1b968b373ebeea3",
+      "raw_evidence": [
+        "08_raw_logs/f1b968b373ebeea3.stdout.log",
+        "08_raw_logs/f1b968b373ebeea3.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-080444f53742a689",
+      "raw_evidence": [
+        "08_raw_logs/080444f53742a689.stdout.log",
+        "08_raw_logs/080444f53742a689.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-66ed0d97f4886479",
+      "raw_evidence": [
+        "08_raw_logs/66ed0d97f4886479.stdout.log",
+        "08_raw_logs/66ed0d97f4886479.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-ad37d919f91e27eb",
+      "raw_evidence": [
+        "08_raw_logs/ad37d919f91e27eb.stdout.log",
+        "08_raw_logs/ad37d919f91e27eb.stderr.log"
+      ],
+      "target": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+    }
+  ],
+  "execution_to_requirement_mapping": [
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-10f2a14f92f22c62",
+      "raw_evidence": [
+        "08_raw_logs/10f2a14f92f22c62.stdout.log",
+        "08_raw_logs/10f2a14f92f22c62.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-a877d38f1c90bd32",
+      "raw_evidence": [
+        "08_raw_logs/a877d38f1c90bd32.stdout.log",
+        "08_raw_logs/a877d38f1c90bd32.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-5dbb4b1240fcb437",
+      "raw_evidence": [
+        "08_raw_logs/5dbb4b1240fcb437.stdout.log",
+        "08_raw_logs/5dbb4b1240fcb437.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-a8b5fde2bba18958",
+      "raw_evidence": [
+        "08_raw_logs/a8b5fde2bba18958.stdout.log",
+        "08_raw_logs/a8b5fde2bba18958.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-8be9011ea1235cf4",
+      "raw_evidence": [
+        "08_raw_logs/8be9011ea1235cf4.stdout.log",
+        "08_raw_logs/8be9011ea1235cf4.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-3b84bda4cb7c9fc0",
+      "raw_evidence": [
+        "08_raw_logs/3b84bda4cb7c9fc0.stdout.log",
+        "08_raw_logs/3b84bda4cb7c9fc0.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-e622ddf910beb5df",
+      "raw_evidence": [
+        "08_raw_logs/e622ddf910beb5df.stdout.log",
+        "08_raw_logs/e622ddf910beb5df.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-7256e88912134ec8",
+      "raw_evidence": [
+        "08_raw_logs/7256e88912134ec8.stdout.log",
+        "08_raw_logs/7256e88912134ec8.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-34380a4f79826015",
+      "raw_evidence": [
+        "08_raw_logs/34380a4f79826015.stdout.log",
+        "08_raw_logs/34380a4f79826015.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-00f4adad4831d57c",
+      "raw_evidence": [
+        "08_raw_logs/00f4adad4831d57c.stdout.log",
+        "08_raw_logs/00f4adad4831d57c.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-b97d4829cf6b45f1",
+      "raw_evidence": [
+        "08_raw_logs/b97d4829cf6b45f1.stdout.log",
+        "08_raw_logs/b97d4829cf6b45f1.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-1e8bddf6596efe9f",
+      "raw_evidence": [
+        "08_raw_logs/1e8bddf6596efe9f.stdout.log",
+        "08_raw_logs/1e8bddf6596efe9f.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-c588ecf254d314c2",
+      "raw_evidence": [
+        "08_raw_logs/c588ecf254d314c2.stdout.log",
+        "08_raw_logs/c588ecf254d314c2.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-f1b968b373ebeea3",
+      "raw_evidence": [
+        "08_raw_logs/f1b968b373ebeea3.stdout.log",
+        "08_raw_logs/f1b968b373ebeea3.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-080444f53742a689",
+      "raw_evidence": [
+        "08_raw_logs/080444f53742a689.stdout.log",
+        "08_raw_logs/080444f53742a689.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-66ed0d97f4886479",
+      "raw_evidence": [
+        "08_raw_logs/66ed0d97f4886479.stdout.log",
+        "08_raw_logs/66ed0d97f4886479.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    },
+    {
+      "disposition": "PASS",
+      "execution_id": "B02-EXEC-ad37d919f91e27eb",
+      "raw_evidence": [
+        "08_raw_logs/ad37d919f91e27eb.stdout.log",
+        "08_raw_logs/ad37d919f91e27eb.stderr.log"
+      ],
+      "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+    }
+  ],
+  "fill_to_position_lineage_registry": [
+    {
+      "execution_id": "B02-EXEC-10f2a14f92f22c62",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/10f2a14f92f22c62.stdout.log",
+        "08_raw_logs/10f2a14f92f22c62.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-a877d38f1c90bd32",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/a877d38f1c90bd32.stdout.log",
+        "08_raw_logs/a877d38f1c90bd32.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-5dbb4b1240fcb437",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/5dbb4b1240fcb437.stdout.log",
+        "08_raw_logs/5dbb4b1240fcb437.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-a8b5fde2bba18958",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/a8b5fde2bba18958.stdout.log",
+        "08_raw_logs/a8b5fde2bba18958.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-8be9011ea1235cf4",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/8be9011ea1235cf4.stdout.log",
+        "08_raw_logs/8be9011ea1235cf4.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-3b84bda4cb7c9fc0",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/3b84bda4cb7c9fc0.stdout.log",
+        "08_raw_logs/3b84bda4cb7c9fc0.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-e622ddf910beb5df",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/e622ddf910beb5df.stdout.log",
+        "08_raw_logs/e622ddf910beb5df.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-7256e88912134ec8",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/7256e88912134ec8.stdout.log",
+        "08_raw_logs/7256e88912134ec8.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-34380a4f79826015",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/34380a4f79826015.stdout.log",
+        "08_raw_logs/34380a4f79826015.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-00f4adad4831d57c",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/00f4adad4831d57c.stdout.log",
+        "08_raw_logs/00f4adad4831d57c.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-b97d4829cf6b45f1",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/b97d4829cf6b45f1.stdout.log",
+        "08_raw_logs/b97d4829cf6b45f1.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-1e8bddf6596efe9f",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/1e8bddf6596efe9f.stdout.log",
+        "08_raw_logs/1e8bddf6596efe9f.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-c588ecf254d314c2",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/c588ecf254d314c2.stdout.log",
+        "08_raw_logs/c588ecf254d314c2.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-f1b968b373ebeea3",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/f1b968b373ebeea3.stdout.log",
+        "08_raw_logs/f1b968b373ebeea3.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-080444f53742a689",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/080444f53742a689.stdout.log",
+        "08_raw_logs/080444f53742a689.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-66ed0d97f4886479",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/66ed0d97f4886479.stdout.log",
+        "08_raw_logs/66ed0d97f4886479.stderr.log"
+      ]
+    },
+    {
+      "execution_id": "B02-EXEC-ad37d919f91e27eb",
+      "lineage_chain": "canonical order -> broker event -> authoritative fill -> position mutation",
+      "lineage_evidence": [
+        "08_raw_logs/ad37d919f91e27eb.stdout.log",
+        "08_raw_logs/ad37d919f91e27eb.stderr.log"
+      ]
+    }
+  ],
+  "finding_and_disposition_registry": [],
+  "fixture_classification_registry": [
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+    },
+    {
+      "classification": "VALID_FILL_BACKED_POSITION",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+    },
+    {
+      "classification": "VALID_REPLAY_RECONSTRUCTION",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+    },
+    {
+      "classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    },
+    {
+      "classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+    }
+  ],
+  "frozen_candidate_manifest": {
+    "authoritative_fill_implementation_digest": "30bd4e5b9af125996f71cc0ffa30dc4ab57f00c8a31e114dc72fee1a172a2741",
+    "batch_identifier": "TRADER-RM-002A-016-B02",
+    "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+    "commit_identifier": "8bcf5e227452e2e6d7fc55e1368b29e7abe03a35",
+    "environment": {
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+      "pythonpath": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\src;C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Tests;C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2"
+    },
+    "environment_digest": "e38ad34b756df6f67bbf11ec3135df6952f0b7cc7dd6bef6c5097a75bd21cbfe",
+    "fixture_source_digest": "459c017a9d47543253bc3cdb6511bb5a37486fa81d866396d034547ace957498",
+    "performance_truth_fill_enrichment_digest": "8a8b9c4ec6224f5a4414997ff5e96ab340420661aa9b58af781f59dc89f707da",
+    "position_implementation_digest": "30bd4e5b9af125996f71cc0ffa30dc4ab57f00c8a31e114dc72fee1a172a2741",
+    "schema_version": "trader-rm002a016-b02-candidate-manifest/v1",
+    "test_population_digest": "a3a39cc923570fecb731be904245962e9d970d1ccef85958c77d6ce70f16373c",
+    "working_tree_status": "M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE.zip\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE.zip.sha256\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/00_identity/00_candidate_commit.txt\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/00_identity/00_git_status.txt\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/00_identity/00_repository_identity.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/00_identity/00_repository_identity.md\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/01_repository_inventory/file_inventory.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/01_repository_inventory/source_module_inventory.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/01_repository_inventory/tracked_and_local_file_inventory.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/04_bridge_inventory/EO-DB_call_edges.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/04_bridge_inventory/EO-DB_certification_report.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/04_bridge_inventory/bridge_certification_report.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/05_authority_and_law_vii/law_vii_and_authority_bridge_model.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/06_truth_domains_and_provenance/truth_domain_and_provenance_report.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/07_synthetic_truth/EO-DH_audit_report.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/07_synthetic_truth/EO-DH_source_to_sink_paths.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/07_synthetic_truth/EO-DH_static_candidates.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/07_synthetic_truth/EO-DH_synthetic_truth_registry.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/07_synthetic_truth/EO-DH_unresolved_findings.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/07_synthetic_truth/synthetic_truth_audit_report.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/08_canonical_runtime_traces/canonical_runtime_trace.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/10_transaction_and_reconciliation/transaction_trace.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/EO-DI_audit_package.zip\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/audit_scorecard.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/audit_scorecard.md\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/bridge_test_matrix.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/eo_acceptance_criteria.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/evidence_hashes.sha256\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/evidence_manifest.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/file_hashes.sha256\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/recovery_boundary_matrix.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/repository_manifest.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/requirement_evidence_matrix.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/requirement_test_matrix.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/skipped_tests.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/synthetic_truth_test_matrix.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/test_inventory.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/EO-DI_embedded_package/verification_defects.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/16_tests_and_coverage/bounded_test_results.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/17_ci_and_static_analysis/compileall.log\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/17_ci_and_static_analysis/static_call_graph.csv\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/17_ci_and_static_analysis/static_call_graph.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/18_known_defects_and_limitations/known_defects.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/19_audit_scorecards/audit_scorecard.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/19_audit_scorecards/audit_scorecard.md\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/20_raw_logs/focused_ifva_support_slice.log\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/20_raw_logs/full_unittest_discover_120s.log\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/21_machine_readable_graphs/runtime_trace_graph.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/21_machine_readable_graphs/transaction_graph.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/22_manifests_and_hashes/evidence_hashes.sha256\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/22_manifests_and_hashes/evidence_manifest.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/22_manifests_and_hashes/generation_manifest.json\n M Documentation/IFVA-001_Evidence/ARGOS_FULL_CONSTITUTIONAL_AUDIT_EVIDENCE/README_AUDIT_PACKAGE.md\n?? Documentation/EOEJ_module_diagnostics.json\n?? Documentation/RISK-M4_Evidence/\n?? Documentation/TRADER_RM002A016_AFFECTED_POPULATION_EVIDENCE/\n?? Documentation/TRADER_RM002A016_B02_FILL_FIXTURE_EVIDENCE/\n?? _tmp_auth_ioc_env_check/"
+  },
+  "negative_scenario_execution_records": [
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:53.772527Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.936836,
+      "execution_id": "B02-EXEC-66ed0d97f4886479",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "remediation_outcome": "INTENTIONAL_REJECTION_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:49.831245Z",
+      "stderr_reference": "08_raw_logs/66ed0d97f4886479.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/66ed0d97f4886479.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:57.373689Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.595419,
+      "execution_id": "B02-EXEC-ad37d919f91e27eb",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "remediation_outcome": "INTENTIONAL_REJECTION_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:53.772598Z",
+      "stderr_reference": "08_raw_logs/ad37d919f91e27eb.stderr.log",
+      "stderr_sha256": "2299339565fdc7c4fedeb54e99b181ba53b821f77194926422cc7df3301ba0ee",
+      "stdout_reference": "08_raw_logs/ad37d919f91e27eb.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+      "timeout_seconds": 30
+    }
+  ],
+  "positive_scenario_execution_records": [
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+      ],
+      "completion_timestamp": "2026-07-24T01:26:50.676309Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.005s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.643888,
+      "execution_id": "B02-EXEC-10f2a14f92f22c62",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:26:45.026765Z",
+      "stderr_reference": "08_raw_logs/10f2a14f92f22c62.stderr.log",
+      "stderr_sha256": "c3dc4ce80790d0a5a68dcff2d3009be59564c24dfe01144e0f6b50051e539cc3",
+      "stdout_reference": "08_raw_logs/10f2a14f92f22c62.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+      ],
+      "completion_timestamp": "2026-07-24T01:26:56.162029Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.479681,
+      "execution_id": "B02-EXEC-a877d38f1c90bd32",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:26:50.676397Z",
+      "stderr_reference": "08_raw_logs/a877d38f1c90bd32.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/a877d38f1c90bd32.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:00.025769Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.859169,
+      "execution_id": "B02-EXEC-5dbb4b1240fcb437",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:26:56.162123Z",
+      "stderr_reference": "08_raw_logs/5dbb4b1240fcb437.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/5dbb4b1240fcb437.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:05.371147Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.340266,
+      "execution_id": "B02-EXEC-a8b5fde2bba18958",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:00.025824Z",
+      "stderr_reference": "08_raw_logs/a8b5fde2bba18958.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/a8b5fde2bba18958.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:08.551597Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.003s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.175852,
+      "execution_id": "B02-EXEC-8be9011ea1235cf4",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:05.371264Z",
+      "stderr_reference": "08_raw_logs/8be9011ea1235cf4.stderr.log",
+      "stderr_sha256": "24cefc2bc38a1c71e18591075993695fc72546b32ff6b5baab3d98032ce96fb5",
+      "stdout_reference": "08_raw_logs/8be9011ea1235cf4.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:12.391805Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.834647,
+      "execution_id": "B02-EXEC-3b84bda4cb7c9fc0",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:08.551657Z",
+      "stderr_reference": "08_raw_logs/3b84bda4cb7c9fc0.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/3b84bda4cb7c9fc0.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:17.742087Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.345923,
+      "execution_id": "B02-EXEC-e622ddf910beb5df",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:12.391858Z",
+      "stderr_reference": "08_raw_logs/e622ddf910beb5df.stderr.log",
+      "stderr_sha256": "8fc491c33af10c373d8f98a2362fd7e66cdc6c96497aa5aa59d429264ca5ac92",
+      "stdout_reference": "08_raw_logs/e622ddf910beb5df.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:21.936313Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.014s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 4.190025,
+      "execution_id": "B02-EXEC-7256e88912134ec8",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:17.742157Z",
+      "stderr_reference": "08_raw_logs/7256e88912134ec8.stderr.log",
+      "stderr_sha256": "a75d5a91a411eeced9e6131248a85982b358c592dc17ed1f73ccacc7565157fc",
+      "stdout_reference": "08_raw_logs/7256e88912134ec8.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:25.776665Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.832377,
+      "execution_id": "B02-EXEC-34380a4f79826015",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:21.936366Z",
+      "stderr_reference": "08_raw_logs/34380a4f79826015.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/34380a4f79826015.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:30.055868Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 4.274876,
+      "execution_id": "B02-EXEC-00f4adad4831d57c",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:25.776748Z",
+      "stderr_reference": "08_raw_logs/00f4adad4831d57c.stderr.log",
+      "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+      "stdout_reference": "08_raw_logs/00f4adad4831d57c.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:33.834849Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.008s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.775789,
+      "execution_id": "B02-EXEC-b97d4829cf6b45f1",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:30.055931Z",
+      "stderr_reference": "08_raw_logs/b97d4829cf6b45f1.stderr.log",
+      "stderr_sha256": "a41e08b8782ccff561fc04da1c4aa92b79d00989913c15ae6639e0c2e9b7e03c",
+      "stdout_reference": "08_raw_logs/b97d4829cf6b45f1.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:37.798848Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.002s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.959664,
+      "execution_id": "B02-EXEC-1e8bddf6596efe9f",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:33.834904Z",
+      "stderr_reference": "08_raw_logs/1e8bddf6596efe9f.stderr.log",
+      "stderr_sha256": "c346f1228fe88f4ab3cb336ffa610dc3a34ec7c7bb7d05df7a1c222f2d928881",
+      "stdout_reference": "08_raw_logs/1e8bddf6596efe9f.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:41.802605Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.009s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.999643,
+      "execution_id": "B02-EXEC-c588ecf254d314c2",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:37.798913Z",
+      "stderr_reference": "08_raw_logs/c588ecf254d314c2.stderr.log",
+      "stderr_sha256": "d0bbd3fb4fcf80c9cbf5ce59bf4ce44bb927e9e40a6269d0b33dc8c4a94c4755",
+      "stdout_reference": "08_raw_logs/c588ecf254d314c2.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:45.872700Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.005s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 4.066112,
+      "execution_id": "B02-EXEC-f1b968b373ebeea3",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:41.802670Z",
+      "stderr_reference": "08_raw_logs/f1b968b373ebeea3.stderr.log",
+      "stderr_sha256": "c3dc4ce80790d0a5a68dcff2d3009be59564c24dfe01144e0f6b50051e539cc3",
+      "stdout_reference": "08_raw_logs/f1b968b373ebeea3.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage",
+      "timeout_seconds": 30
+    },
+    {
+      "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "-m",
+        "unittest",
+        "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+      ],
+      "completion_timestamp": "2026-07-24T01:27:49.831184Z",
+      "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.013s\n\nOK\n",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.95417,
+      "execution_id": "B02-EXEC-080444f53742a689",
+      "fixture_classification": "VALID_REPLAY_RECONSTRUCTION",
+      "remediation_outcome": "FIXTURE_REPAIRED_PASS",
+      "return_code": 0,
+      "start_timestamp": "2026-07-24T01:27:45.872769Z",
+      "stderr_reference": "08_raw_logs/080444f53742a689.stderr.log",
+      "stderr_sha256": "a9737d36e97e253c4c5c8c2c01ccfbe550909d17b13e2615aff5689762cb559b",
+      "stdout_reference": "08_raw_logs/080444f53742a689.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+      "timeout_seconds": 30
+    }
+  ],
+  "process_and_state_cleanup_report": {
+    "remaining_fixture_processes": 0,
+    "remaining_mutable_fixture_state": 0
+  },
+  "raw_fill_evidence": "See Tests/test_trader_rm002a016_b02_fill_fixtures.py controlled fill builder and raw logs.",
+  "raw_position_evidence": "See execution logs and PositionRegistry snapshots exercised by tests.",
+  "schema_version": "trader-rm002a016-b02-package/v1",
+  "shared_fixture_isolation_report": {
+    "cleanup_required": false,
+    "isolated_fixture_state": true,
+    "state_leakage_detected": false
+  },
+  "stale_evidence_invalidation_report": {
+    "authority": "TRADER-RM-002A-016-B02",
+    "invalidated_prior_evidence_count": 13,
+    "reason": "authoritative-fill runtime implementation, fixtures, helper, and candidate digest changed"
+  },
+  "superseded_evidence_registry": {
+    "prior_partial_evidence": "Documentation/TRADER_RM002A016_AFFECTED_POPULATION_EVIDENCE",
+    "status": "SUPERSEDED",
+    "superseding_batch_identifier": "TRADER-RM-002A-016-B02"
+  },
+  "updated_affected_proof_objects": [
+    {
+      "disposition": "PASS",
+      "execution_count": 17,
+      "finding_count": 0,
+      "proof_object_identifier": "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+    }
+  ]
+}

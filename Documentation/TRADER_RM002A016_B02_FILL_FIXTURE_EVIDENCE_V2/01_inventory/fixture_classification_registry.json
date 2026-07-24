@@ -1,0 +1,70 @@
+[
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+  },
+  {
+    "classification": "VALID_FILL_BACKED_POSITION",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+  },
+  {
+    "classification": "VALID_REPLAY_RECONSTRUCTION",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+  },
+  {
+    "classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+  },
+  {
+    "classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+  }
+]

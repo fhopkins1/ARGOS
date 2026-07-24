@@ -1,0 +1,50 @@
+[
+  {
+    "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "unittest",
+      "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    ],
+    "completion_timestamp": "2026-07-24T01:27:53.772527Z",
+    "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nOK\n",
+    "disposition": "PASS",
+    "elapsed_seconds": 3.936836,
+    "execution_id": "B02-EXEC-66ed0d97f4886479",
+    "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+    "remediation_outcome": "INTENTIONAL_REJECTION_PASS",
+    "return_code": 0,
+    "start_timestamp": "2026-07-24T01:27:49.831245Z",
+    "stderr_reference": "08_raw_logs/66ed0d97f4886479.stderr.log",
+    "stderr_sha256": "a626407facf1102b512cc38f00f6e7d889aa6280a5c03d1722ac6d1c4eb08dc5",
+    "stdout_reference": "08_raw_logs/66ed0d97f4886479.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+    "timeout_seconds": 30
+  },
+  {
+    "candidate_digest": "2ec27a07b0c20518016e1da1492fdb42771f9897b8407a65f1be9dee42624b5b",
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "unittest",
+      "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+    ],
+    "completion_timestamp": "2026-07-24T01:27:57.373689Z",
+    "details": "\n.\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nOK\n",
+    "disposition": "PASS",
+    "elapsed_seconds": 3.595419,
+    "execution_id": "B02-EXEC-ad37d919f91e27eb",
+    "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+    "remediation_outcome": "INTENTIONAL_REJECTION_PASS",
+    "return_code": 0,
+    "start_timestamp": "2026-07-24T01:27:53.772598Z",
+    "stderr_reference": "08_raw_logs/ad37d919f91e27eb.stderr.log",
+    "stderr_sha256": "2299339565fdc7c4fedeb54e99b181ba53b821f77194926422cc7df3301ba0ee",
+    "stdout_reference": "08_raw_logs/ad37d919f91e27eb.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+    "timeout_seconds": 30
+  }
+]

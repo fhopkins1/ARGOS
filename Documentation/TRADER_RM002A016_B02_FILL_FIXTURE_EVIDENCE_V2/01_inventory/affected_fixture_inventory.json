@@ -1,0 +1,591 @@
+{
+  "created_at": "2026-07-24T01:26:45.024775Z",
+  "freeze_digest": "30925f25c35548415ac97b324a3bed3fc73a26591a13f3068699772c251df452",
+  "intentionally_rejecting_tests": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_duplicate_and_terminal_fill_mutations_fail_closed"
+    }
+  ],
+  "previously_failing_tests": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1842, in test_eo_xa_position_registry_closes_position_with_zero_quantity\n    position = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\"},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xa_position_registry_closes_position_with_zero_quantity"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1818, in test_eo_xa_position_registry_rejects_invalid_state_and_transitions\n    good = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\", \"confidence\": 0.7},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1768, in test_eo_xa_position_registry_retrieves_and_updates_active_positions\n    position = registry.create_from_execution(order, decision)\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1918, in test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position\n    position = registry.create_from_execution(\n        {\n    ...<10 lines>...\n        {\"targetPrice\": 220.0, \"stopLoss\": 190.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1953, in test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 105.0, \"stopLoss\": 96.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1870, in test_eo_xb_surveillance_engine_updates_active_position_from_market_data\n    position = registry.create_from_execution(\n        {\n    ...<11 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1988, in test_eo_xb_surveillance_snapshots_are_append_only\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_snapshots_are_append_only"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2150, in test_eo_xc_commander_override_and_emergency_risk_override_take_priority\n    commander = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 8, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-CMD\", \"decision_object_id\": \"DO-EOXC-CMD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2128, in test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"AAPL\", \"asset_type\": \"STOCK\", \"side\": \"BUY\", \"filled_quantity\": 3, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-HOLD\", \"decision_object_id\": \"DO-EOXC-HOLD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2072, in test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 20, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TARGET\", \"decision_object_id\": \"DO-EOXC-TARGET\"},\n        {\"targetPrice\": 105.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2048, in test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 10, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-STOP\", \"decision_object_id\": \"DO-EOXC-STOP\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2183, in test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"QQQ\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 6, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-AI\", \"decision_object_id\": \"DO-EOXC-AI\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0, \"marketContext\": {\"strategyInvalidation\": True}},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2095, in test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic\n    trailing = registry.create_from_execution(\n        {\"symbol\": \"TLT\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 4, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TRAIL\", \"decision_object_id\": \"DO-EOXC-TRAIL\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+    }
+  ],
+  "prior_authoritative_fill_errors": 13,
+  "prior_campaign_root": "C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_ECS003_PRIMARY_COMPLETE_AUDIT_EVIDENCE_0118d62da0664f25_20260724-001235",
+  "records": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1842, in test_eo_xa_position_registry_closes_position_with_zero_quantity\n    position = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\"},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xa_position_registry_closes_position_with_zero_quantity"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1818, in test_eo_xa_position_registry_rejects_invalid_state_and_transitions\n    good = registry.create_from_execution(\n        {\n    ...<12 lines>...\n        {\"recommendation\": \"BUY\", \"confidence\": 0.7},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1768, in test_eo_xa_position_registry_retrieves_and_updates_active_positions\n    position = registry.create_from_execution(order, decision)\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1918, in test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position\n    position = registry.create_from_execution(\n        {\n    ...<10 lines>...\n        {\"targetPrice\": 220.0, \"stopLoss\": 190.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1953, in test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 105.0, \"stopLoss\": 96.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1870, in test_eo_xb_surveillance_engine_updates_active_position_from_market_data\n    position = registry.create_from_execution(\n        {\n    ...<11 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 1988, in test_eo_xb_surveillance_snapshots_are_append_only\n    registry.create_from_execution(\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        {\n        ^\n    ...<10 lines>...\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xb_surveillance_snapshots_are_append_only"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2150, in test_eo_xc_commander_override_and_emergency_risk_override_take_priority\n    commander = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 8, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-CMD\", \"decision_object_id\": \"DO-EOXC-CMD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2128, in test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"AAPL\", \"asset_type\": \"STOCK\", \"side\": \"BUY\", \"filled_quantity\": 3, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-HOLD\", \"decision_object_id\": \"DO-EOXC-HOLD\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2072, in test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 20, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TARGET\", \"decision_object_id\": \"DO-EOXC-TARGET\"},\n        {\"targetPrice\": 105.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2048, in test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation\n    position = registry.create_from_execution(\n        {\"symbol\": \"SPY\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 10, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-STOP\", \"decision_object_id\": \"DO-EOXC-STOP\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0, \"confidence\": 0.7, \"riskScore\": 0.2},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2183, in test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai\n    position = registry.create_from_execution(\n        {\"symbol\": \"QQQ\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 6, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-AI\", \"decision_object_id\": \"DO-EOXC-AI\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 90.0, \"marketContext\": {\"strategyInvalidation\": True}},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ERROR",
+      "prior_failure_message": "Traceback (most recent call last):\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\Tests\\test_argos_control_panel_dashboard.py\", line 2095, in test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic\n    trailing = registry.create_from_execution(\n        {\"symbol\": \"TLT\", \"asset_type\": \"ETF\", \"side\": \"BUY\", \"filled_quantity\": 4, \"average_fill_price\": 100.0, \"mid_price\": 100.0, \"status\": \"FILLED\", \"workflow_id\": \"WF-EOXC-TRAIL\", \"decision_object_id\": \"DO-EOXC-TRAIL\"},\n        {\"targetPrice\": 110.0, \"stopLoss\": 95.0},\n    )\n  File \"C:\\Users\\Fletc\\OneDrive\\Desktop\\ARGOS-212fbea3c912eec83aa3c90287bbed974f19f873\\TRADER_FINAL_ECS003_AUDIT_EVIDENCE_0118d62da0664f25_20260723-182702\\01_primary_execution\\extracted_candidate\\src\\argos\\control_panel\\position_registry.py\", line 234, in create_from_execution\n    raise ValueError(\"authoritative fill id required for position mutation\")\nValueError: authoritative fill id required for position mutation\n",
+      "reason_for_inclusion": "previously failing authoritative-fill fixture",
+      "source_module": "Tests.test_argos_control_panel_dashboard",
+      "test_function_or_scenario": "test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_valid_position_creation_mutation_and_lineage"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_REPLAY_RECONSTRUCTION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_duplicate_and_terminal_fill_mutations_fail_closed"
+    }
+  ],
+  "schema_version": "trader-rm002a016-b02-affected-fixture-inventory/v1",
+  "shared_fixture_impact_tests": [
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_FILL_BACKED_POSITION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_valid_position_creation_mutation_and_lineage"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "VALID_REPLAY_RECONSTRUCTION",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+    },
+    {
+      "affected_proof_object_identifiers": [
+        "TRADER-PROOF-RM002A016-B02-FILL-FIXTURES"
+      ],
+      "authoritative_fill_code_path_used": "PositionRegistry._validated_fill_ids",
+      "fixture_classification": "INTENTIONAL_REJECTION_INVALID_FILL",
+      "fixture_or_helper_used": "controlled authoritative fill fixture / dashboard position helper",
+      "governing_constitutional_requirement": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+      "immutable_test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed",
+      "position_code_path_used": "PositionRegistry.create_from_execution / apply_sell_execution",
+      "prior_disposition": "ADDED_BY_SHARED_IMPACT",
+      "prior_failure_message": "",
+      "reason_for_inclusion": "shared helper/runtime invariant impact",
+      "source_module": "Tests.test_trader_rm002a016_b02_fill_fixtures",
+      "test_function_or_scenario": "test_duplicate_and_terminal_fill_mutations_fail_closed"
+    }
+  ]
+}

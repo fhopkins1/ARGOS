@@ -1,0 +1,172 @@
+[
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-10f2a14f92f22c62",
+    "raw_evidence": [
+      "08_raw_logs/10f2a14f92f22c62.stdout.log",
+      "08_raw_logs/10f2a14f92f22c62.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_closes_position_with_zero_quantity"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-a877d38f1c90bd32",
+    "raw_evidence": [
+      "08_raw_logs/a877d38f1c90bd32.stdout.log",
+      "08_raw_logs/a877d38f1c90bd32.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_rejects_invalid_state_and_transitions"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-5dbb4b1240fcb437",
+    "raw_evidence": [
+      "08_raw_logs/5dbb4b1240fcb437.stdout.log",
+      "08_raw_logs/5dbb4b1240fcb437.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xa_position_registry_retrieves_and_updates_active_positions"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-a8b5fde2bba18958",
+    "raw_evidence": [
+      "08_raw_logs/a8b5fde2bba18958.stdout.log",
+      "08_raw_logs/a8b5fde2bba18958.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_degrades_without_market_data_and_does_not_mutate_position"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-8be9011ea1235cf4",
+    "raw_evidence": [
+      "08_raw_logs/8be9011ea1235cf4.stdout.log",
+      "08_raw_logs/8be9011ea1235cf4.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_detects_targets_stops_and_escalates_meaningful_events"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-3b84bda4cb7c9fc0",
+    "raw_evidence": [
+      "08_raw_logs/3b84bda4cb7c9fc0.stdout.log",
+      "08_raw_logs/3b84bda4cb7c9fc0.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_engine_updates_active_position_from_market_data"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-e622ddf910beb5df",
+    "raw_evidence": [
+      "08_raw_logs/e622ddf910beb5df.stdout.log",
+      "08_raw_logs/e622ddf910beb5df.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xb_surveillance_snapshots_are_append_only"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-7256e88912134ec8",
+    "raw_evidence": [
+      "08_raw_logs/7256e88912134ec8.stdout.log",
+      "08_raw_logs/7256e88912134ec8.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-34380a4f79826015",
+    "raw_evidence": [
+      "08_raw_logs/34380a4f79826015.stdout.log",
+      "08_raw_logs/34380a4f79826015.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-00f4adad4831d57c",
+    "raw_evidence": [
+      "08_raw_logs/00f4adad4831d57c.stdout.log",
+      "08_raw_logs/00f4adad4831d57c.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-b97d4829cf6b45f1",
+    "raw_evidence": [
+      "08_raw_logs/b97d4829cf6b45f1.stdout.log",
+      "08_raw_logs/b97d4829cf6b45f1.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-1e8bddf6596efe9f",
+    "raw_evidence": [
+      "08_raw_logs/1e8bddf6596efe9f.stdout.log",
+      "08_raw_logs/1e8bddf6596efe9f.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-c588ecf254d314c2",
+    "raw_evidence": [
+      "08_raw_logs/c588ecf254d314c2.stdout.log",
+      "08_raw_logs/c588ecf254d314c2.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-f1b968b373ebeea3",
+    "raw_evidence": [
+      "08_raw_logs/f1b968b373ebeea3.stdout.log",
+      "08_raw_logs/f1b968b373ebeea3.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_valid_position_creation_mutation_and_lineage"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-080444f53742a689",
+    "raw_evidence": [
+      "08_raw_logs/080444f53742a689.stdout.log",
+      "08_raw_logs/080444f53742a689.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-66ed0d97f4886479",
+    "raw_evidence": [
+      "08_raw_logs/66ed0d97f4886479.stdout.log",
+      "08_raw_logs/66ed0d97f4886479.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_missing_invalid_mismatched_and_stale_fills_fail_closed"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "B02-EXEC-ad37d919f91e27eb",
+    "raw_evidence": [
+      "08_raw_logs/ad37d919f91e27eb.stdout.log",
+      "08_raw_logs/ad37d919f91e27eb.stderr.log"
+    ],
+    "target": "TRADER-RM-002A-016-B02 authoritative fill invariant",
+    "test_identifier": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_duplicate_and_terminal_fill_mutations_fail_closed"
+  }
+]
