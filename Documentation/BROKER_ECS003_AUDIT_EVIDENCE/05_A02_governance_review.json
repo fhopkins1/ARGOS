@@ -1,0 +1,60 @@
+{
+  "evidence_summary": {
+    "broker_objects_observed": [
+      "BrokerAdapter",
+      "BrokerAdapterRegistry",
+      "BrokerAuthenticationContext",
+      "BrokerCapabilityProfile",
+      "BrokerConnectionStatus",
+      "BrokerExecutionRequest",
+      "BrokerHealthMonitor",
+      "BrokerHealthStatus",
+      "BrokerIdentifierMapping",
+      "BrokerIntegrationAnomaly",
+      "BrokerIntegrationCaseFile",
+      "BrokerIntegrationOffice",
+      "BrokerIntegrationSystemPrompt",
+      "BrokerInteractionMonitor",
+      "BrokerMappingRegistry",
+      "BrokerRequestTranslator",
+      "BrokerResponseNormalizer",
+      "BrokerResponseType",
+      "BrokerSpecificRequest",
+      "CanonicalBrokerEvent",
+      "DeterministicPaperBrokerAdapter",
+      "RawBrokerResponse"
+    ],
+    "candidate_pass_reports_accepted_as_primary_evidence": false,
+    "dependency_edges": 30,
+    "focused_tests_run": 8,
+    "lifecycle_terms_observed": [
+      "acknowledgement",
+      "cancellation",
+      "cancelled",
+      "execution_update",
+      "expired",
+      "fill",
+      "partial_fill",
+      "queued",
+      "rejected",
+      "rejection",
+      "settled"
+    ],
+    "participating_artifacts": 19,
+    "phase": "A02_governance_review"
+  },
+  "findings": [
+    {
+      "affected_artifact": "Documentation/broker_integration_office.md",
+      "category": "governance",
+      "constitutional_requirement": "Governance must define complete Broker authority, ownership, conflict resolution, and subordination.",
+      "disposition": "OPEN",
+      "evidence": "No Broker-specific governance series defining conflict resolution and subordinate relationships was located.",
+      "identifier": "A02-001",
+      "remediation_recommendation": "Adopt Broker governance decisions before final freeze.",
+      "severity": "HIGH"
+    }
+  ],
+  "phase": "A02_governance_review",
+  "status": "FAIL"
+}

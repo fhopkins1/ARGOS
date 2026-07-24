@@ -1,0 +1,127 @@
+{
+  "artifact_counts": {
+    "constitutional_artifact": 9,
+    "evidence": 2,
+    "executable_rule": 3,
+    "implementation": 5
+  },
+  "artifacts": [
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DA_Broker_Position_Reconciliation_Invariants.md",
+      "sha256": "b483f5d7bb975469b81bbe2318ac4f37058a6f58f03d2770412de751603c4b6d"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DC_Broker_Position_and_Performance_Truth_Promotion.md",
+      "sha256": "5a6f25c9ffedf7c03657d598d37078e560b019151efd562f301ef2915d15d570"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DD_Broker_to_Position_Transaction.md",
+      "sha256": "151e90e1d9670e09b6dd9701a7dcc1f36fbe5fd34c740a9d11c4a175ce0ddd76"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DF_Broker_and_Position_Drift_Model.md",
+      "sha256": "53194461a74af9475c7d1d9f5fa218e0233b9ca01ace4367463671cb8b9f9e6a"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DG_Broker_and_Position_Read_Boundaries.md",
+      "sha256": "9890513eaca0ce6b7b6dec07836b10d0ce4dc1c471c84fee215b081cdc24d445"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DH_Broker_Audit.md",
+      "sha256": "7585c135c945a2ecc8034b5818900ce0bac0fabddd5005d80ada49a493a1fefb"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-DI_Broker_Position_and_Transaction_Test_Completeness.md",
+      "sha256": "587b12687e66162cb8922f265eae3b0ff83621a14c567b90f54da12337529abc"
+    },
+    {
+      "artifact_type": "evidence",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/EO-EC_Evidence/eoec_paper_broker_truth_validation.json",
+      "sha256": "e2629fabb51188690f2f5a886f4707e2867ee2ee0ebeb9bce9b2c91c6ad8845c"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/OR-003_Broker_Architecture.md",
+      "sha256": "916b62d76831769a11f618295faae4db1b6b181ea66acded5a48636b879c3f64"
+    },
+    {
+      "artifact_type": "evidence",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/TC-005_Evidence/tc005_paper_broker_validation.json",
+      "sha256": "99df01c33b1827e4bdcc8dbd37355bec61f18b2d3eb09a04f1c89fdf0bbfedab"
+    },
+    {
+      "artifact_type": "constitutional_artifact",
+      "participation_basis": "Broker constitutional/evidence reference",
+      "path": "Documentation/broker_integration_office.md",
+      "sha256": "7ce41434fc75d5fbd79fea293b7ed428fe3ba611582c82578dc4417d89f2d558"
+    },
+    {
+      "artifact_type": "executable_rule",
+      "participation_basis": "Broker-focused executable verification",
+      "path": "Tests/test_broker_ecs003_audit.py",
+      "sha256": "b6b91b83d6cc0a4ba2cfdafc10513220f1f22de47cd10dfa9b82c7b23cfef636"
+    },
+    {
+      "artifact_type": "executable_rule",
+      "participation_basis": "Broker-focused executable verification",
+      "path": "Tests/test_broker_integration_office.py",
+      "sha256": "5f0cefcaa27563fcbd1f00742e15970a7ca418644e50468079dfa9b2047f53df"
+    },
+    {
+      "artifact_type": "executable_rule",
+      "participation_basis": "Broker-focused executable verification",
+      "path": "Tests/test_or003_paper_brokerage.py",
+      "sha256": "92adf8021215e3528a62929746046a860aefb90e8d2c045d5166ceb560695141"
+    },
+    {
+      "artifact_type": "implementation",
+      "participation_basis": "Broker implementation dependency",
+      "path": "src/argos/broker_ecs003_audit.py",
+      "sha256": "abe068d6ea380d1bc0ddf161dc1bf5cada4e0ab69fcc4373780a24530606bb03"
+    },
+    {
+      "artifact_type": "implementation",
+      "participation_basis": "Broker implementation dependency",
+      "path": "src/argos/intelligence/broker_reconciliation.py",
+      "sha256": "b5722d9678d7c561ba09fc7333fc2663ebffe753f1242b5f1b17fe3ba5fcddf4"
+    },
+    {
+      "artifact_type": "implementation",
+      "participation_basis": "Broker implementation dependency",
+      "path": "src/argos/trader/broker_integration.py",
+      "sha256": "5b2cfbe6e794df93661e522ba134c865a0caed191efe486588200d09c4943e27"
+    },
+    {
+      "artifact_type": "implementation",
+      "participation_basis": "Broker implementation dependency",
+      "path": "src/argos/trader/broker_search_doctrine.py",
+      "sha256": "2697387573d1dbd5fe364ab5707601654a846bbea88fdcccb0088fa32193e5ed"
+    },
+    {
+      "artifact_type": "implementation",
+      "participation_basis": "Broker implementation dependency",
+      "path": "src/argos/trader/paper_brokerage.py",
+      "sha256": "186787c1a2850b7852bdce1e63f9d9f52a761b5389deae99d0bdf28b07c16921"
+    }
+  ],
+  "generated_at_utc": "2026-07-24T02:54:56.890308Z",
+  "participating_artifact_count": 19,
+  "schema_version": "broker-ecs003-repository-inventory/v1"
+}

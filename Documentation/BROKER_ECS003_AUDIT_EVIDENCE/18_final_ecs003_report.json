@@ -1,0 +1,97 @@
+{
+  "certification_deficiencies": [
+    {
+      "affected_artifact": "Documentation/broker_integration_office.md",
+      "category": "governance",
+      "constitutional_requirement": "Governance must define complete Broker authority, ownership, conflict resolution, and subordination.",
+      "disposition": "OPEN",
+      "evidence": "No Broker-specific governance series defining conflict resolution and subordinate relationships was located.",
+      "identifier": "A02-001",
+      "remediation_recommendation": "Adopt Broker governance decisions before final freeze.",
+      "severity": "HIGH"
+    },
+    {
+      "affected_artifact": "Broker ECS-003 audit dependency map",
+      "category": "traceability",
+      "constitutional_requirement": "Requirement-to-verdict traceability must be bidirectional for every Broker relationship.",
+      "disposition": "OPEN",
+      "evidence": "The audit can derive artifacts and test participation, but no complete bidirectional Requirement->Artifact->Implementation->Rule->Execution->Evidence->Finding->Verdict matrix exists for Broker.",
+      "identifier": "A10-001",
+      "remediation_recommendation": "Publish Broker requirement-level traceability matrix with reciprocal links.",
+      "severity": "HIGH"
+    }
+  ],
+  "constitutional_freeze_decision": "NOT_ELIGIBLE",
+  "constitutional_object_count": 22,
+  "dependency_deficiencies": [],
+  "dependency_edge_count": 30,
+  "evidence_count": 2,
+  "evidence_deficiencies": [],
+  "final_certification_verdict": "FAIL",
+  "findings_by_category": {
+    "governance": 1,
+    "lifecycle": 1,
+    "ownership": 1,
+    "traceability": 1
+  },
+  "implementation_deficiencies": [
+    {
+      "affected_artifact": "src/argos/trader/broker_integration.py",
+      "category": "lifecycle",
+      "constitutional_requirement": "Every Broker lifecycle transition must define recovery, replay, timeout, correction, and terminal disposition.",
+      "disposition": "OPEN",
+      "evidence": "Implementation exposes submission, case-file, and normalization flows, but no complete transition constitution artifact was found.",
+      "identifier": "A04-001",
+      "remediation_recommendation": "Materialize Broker lifecycle transition constitution and map each transition to executable evidence.",
+      "severity": "HIGH"
+    },
+    {
+      "affected_artifact": "Documentation/broker_integration_office.md",
+      "category": "ownership",
+      "constitutional_requirement": "Every Broker object must have exactly one owner and explicit custody/mutation/reconciliation authority.",
+      "disposition": "OPEN",
+      "evidence": "Broker ownership is described operationally, but object-level custody, mutation, reconciliation, transfer, and terminal custody matrix is absent.",
+      "identifier": "A05-001",
+      "remediation_recommendation": "Add Broker ownership and custody matrix for requests, raw responses, canonical events, mappings, case files, capability profiles, health records, and adapter state.",
+      "severity": "HIGH"
+    }
+  ],
+  "lifecycle_count": 11,
+  "participating_artifact_count": 19,
+  "phase_i_verdict": "FAIL",
+  "phase_ii_verdict": "FAIL",
+  "proof_deficiencies": [],
+  "repository_statistics": {
+    "constitutional_artifact": 9,
+    "evidence": 2,
+    "executable_rule": 3,
+    "implementation": 5
+  },
+  "rule_count": 8,
+  "schema_version": "broker-ecs003-final-report/v1",
+  "traceability_deficiencies": [
+    {
+      "affected_artifact": "Broker ECS-003 audit dependency map",
+      "category": "traceability",
+      "constitutional_requirement": "Requirement-to-verdict traceability must be bidirectional for every Broker relationship.",
+      "disposition": "OPEN",
+      "evidence": "The audit can derive artifacts and test participation, but no complete bidirectional Requirement->Artifact->Implementation->Rule->Execution->Evidence->Finding->Verdict matrix exists for Broker.",
+      "identifier": "A10-001",
+      "remediation_recommendation": "Publish Broker requirement-level traceability matrix with reciprocal links.",
+      "severity": "HIGH"
+    }
+  ],
+  "unresolved_governance_decisions": [
+    {
+      "affected_artifact": "Documentation/broker_integration_office.md",
+      "category": "governance",
+      "constitutional_requirement": "Governance must define complete Broker authority, ownership, conflict resolution, and subordination.",
+      "disposition": "OPEN",
+      "evidence": "No Broker-specific governance series defining conflict resolution and subordinate relationships was located.",
+      "identifier": "A02-001",
+      "remediation_recommendation": "Adopt Broker governance decisions before final freeze.",
+      "severity": "HIGH"
+    }
+  ],
+  "verification_count": 8
+}

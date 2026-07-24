@@ -1,0 +1,60 @@
+{
+  "evidence_summary": {
+    "broker_objects_observed": [
+      "BrokerAdapter",
+      "BrokerAdapterRegistry",
+      "BrokerAuthenticationContext",
+      "BrokerCapabilityProfile",
+      "BrokerConnectionStatus",
+      "BrokerExecutionRequest",
+      "BrokerHealthMonitor",
+      "BrokerHealthStatus",
+      "BrokerIdentifierMapping",
+      "BrokerIntegrationAnomaly",
+      "BrokerIntegrationCaseFile",
+      "BrokerIntegrationOffice",
+      "BrokerIntegrationSystemPrompt",
+      "BrokerInteractionMonitor",
+      "BrokerMappingRegistry",
+      "BrokerRequestTranslator",
+      "BrokerResponseNormalizer",
+      "BrokerResponseType",
+      "BrokerSpecificRequest",
+      "CanonicalBrokerEvent",
+      "DeterministicPaperBrokerAdapter",
+      "RawBrokerResponse"
+    ],
+    "candidate_pass_reports_accepted_as_primary_evidence": false,
+    "dependency_edges": 30,
+    "focused_tests_run": 8,
+    "lifecycle_terms_observed": [
+      "acknowledgement",
+      "cancellation",
+      "cancelled",
+      "execution_update",
+      "expired",
+      "fill",
+      "partial_fill",
+      "queued",
+      "rejected",
+      "rejection",
+      "settled"
+    ],
+    "participating_artifacts": 19,
+    "phase": "A05_ownership_review"
+  },
+  "findings": [
+    {
+      "affected_artifact": "Documentation/broker_integration_office.md",
+      "category": "ownership",
+      "constitutional_requirement": "Every Broker object must have exactly one owner and explicit custody/mutation/reconciliation authority.",
+      "disposition": "OPEN",
+      "evidence": "Broker ownership is described operationally, but object-level custody, mutation, reconciliation, transfer, and terminal custody matrix is absent.",
+      "identifier": "A05-001",
+      "remediation_recommendation": "Add Broker ownership and custody matrix for requests, raw responses, canonical events, mappings, case files, capability profiles, health records, and adapter state.",
+      "severity": "HIGH"
+    }
+  ],
+  "phase": "A05_ownership_review",
+  "status": "FAIL"
+}

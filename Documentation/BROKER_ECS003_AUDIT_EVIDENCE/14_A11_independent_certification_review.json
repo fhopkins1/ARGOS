@@ -1,0 +1,49 @@
+{
+  "evidence_summary": {
+    "broker_objects_observed": [
+      "BrokerAdapter",
+      "BrokerAdapterRegistry",
+      "BrokerAuthenticationContext",
+      "BrokerCapabilityProfile",
+      "BrokerConnectionStatus",
+      "BrokerExecutionRequest",
+      "BrokerHealthMonitor",
+      "BrokerHealthStatus",
+      "BrokerIdentifierMapping",
+      "BrokerIntegrationAnomaly",
+      "BrokerIntegrationCaseFile",
+      "BrokerIntegrationOffice",
+      "BrokerIntegrationSystemPrompt",
+      "BrokerInteractionMonitor",
+      "BrokerMappingRegistry",
+      "BrokerRequestTranslator",
+      "BrokerResponseNormalizer",
+      "BrokerResponseType",
+      "BrokerSpecificRequest",
+      "CanonicalBrokerEvent",
+      "DeterministicPaperBrokerAdapter",
+      "RawBrokerResponse"
+    ],
+    "candidate_pass_reports_accepted_as_primary_evidence": false,
+    "dependency_edges": 30,
+    "focused_tests_run": 8,
+    "lifecycle_terms_observed": [
+      "acknowledgement",
+      "cancellation",
+      "cancelled",
+      "execution_update",
+      "expired",
+      "fill",
+      "partial_fill",
+      "queued",
+      "rejected",
+      "rejection",
+      "settled"
+    ],
+    "participating_artifacts": 19,
+    "phase": "A11_independent_certification_review"
+  },
+  "findings": [],
+  "phase": "A11_independent_certification_review",
+  "status": "PASS"
+}

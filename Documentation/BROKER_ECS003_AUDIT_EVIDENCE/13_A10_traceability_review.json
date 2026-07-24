@@ -1,0 +1,60 @@
+{
+  "evidence_summary": {
+    "broker_objects_observed": [
+      "BrokerAdapter",
+      "BrokerAdapterRegistry",
+      "BrokerAuthenticationContext",
+      "BrokerCapabilityProfile",
+      "BrokerConnectionStatus",
+      "BrokerExecutionRequest",
+      "BrokerHealthMonitor",
+      "BrokerHealthStatus",
+      "BrokerIdentifierMapping",
+      "BrokerIntegrationAnomaly",
+      "BrokerIntegrationCaseFile",
+      "BrokerIntegrationOffice",
+      "BrokerIntegrationSystemPrompt",
+      "BrokerInteractionMonitor",
+      "BrokerMappingRegistry",
+      "BrokerRequestTranslator",
+      "BrokerResponseNormalizer",
+      "BrokerResponseType",
+      "BrokerSpecificRequest",
+      "CanonicalBrokerEvent",
+      "DeterministicPaperBrokerAdapter",
+      "RawBrokerResponse"
+    ],
+    "candidate_pass_reports_accepted_as_primary_evidence": false,
+    "dependency_edges": 30,
+    "focused_tests_run": 8,
+    "lifecycle_terms_observed": [
+      "acknowledgement",
+      "cancellation",
+      "cancelled",
+      "execution_update",
+      "expired",
+      "fill",
+      "partial_fill",
+      "queued",
+      "rejected",
+      "rejection",
+      "settled"
+    ],
+    "participating_artifacts": 19,
+    "phase": "A10_traceability_review"
+  },
+  "findings": [
+    {
+      "affected_artifact": "Broker ECS-003 audit dependency map",
+      "category": "traceability",
+      "constitutional_requirement": "Requirement-to-verdict traceability must be bidirectional for every Broker relationship.",
+      "disposition": "OPEN",
+      "evidence": "The audit can derive artifacts and test participation, but no complete bidirectional Requirement->Artifact->Implementation->Rule->Execution->Evidence->Finding->Verdict matrix exists for Broker.",
+      "identifier": "A10-001",
+      "remediation_recommendation": "Publish Broker requirement-level traceability matrix with reciprocal links.",
+      "severity": "HIGH"
+    }
+  ],
+  "phase": "A10_traceability_review",
+  "status": "FAIL"
+}

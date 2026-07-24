@@ -1,0 +1,115 @@
+{
+  "disposition_counts": {
+    "PASS": 8
+  },
+  "modules": [
+    {
+      "disposition_counts": {
+        "PASS": 5
+      },
+      "module": "Tests.test_broker_integration_office",
+      "records": [
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+        },
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_duplicate_submission_generates_case_file"
+        },
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_health_failures_generate_case_file_without_submission"
+        },
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_profiles_health_and_system_prompt_are_available"
+        },
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_response_normalization_preserves_canonical_event_shape"
+        }
+      ],
+      "runner_output": "test_broker_submission_normalizes_event_and_syncs_omo (Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo) ... ok\ntest_duplicate_submission_generates_case_file (Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_duplicate_submission_generates_case_file) ... ok\ntest_health_failures_generate_case_file_without_submission (Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_health_failures_generate_case_file_without_submission) ... ok\ntest_profiles_health_and_system_prompt_are_available (Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_profiles_health_and_system_prompt_are_available) ... ok\ntest_response_normalization_preserves_canonical_event_shape (Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_response_normalization_preserves_canonical_event_shape) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.007s\n\nOK\n",
+      "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_broker_integration_office.py",
+      "successful": true
+    },
+    {
+      "disposition_counts": {
+        "PASS": 3
+      },
+      "module": "Tests.test_or003_paper_brokerage",
+      "records": [
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_invalid_workflow_owner_rejects_without_fill"
+        },
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_market_order_fills_and_performance_truth_records_broker_event"
+        },
+        {
+          "details": "",
+          "disposition": "PASS",
+          "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_non_executable_limit_order_does_not_fabricate_fill"
+        }
+      ],
+      "runner_output": "test_invalid_workflow_owner_rejects_without_fill (Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_invalid_workflow_owner_rejects_without_fill) ... ok\ntest_market_order_fills_and_performance_truth_records_broker_event (Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_market_order_fills_and_performance_truth_records_broker_event) ... ok\ntest_non_executable_limit_order_does_not_fabricate_fill (Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_non_executable_limit_order_does_not_fabricate_fill) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.054s\n\nOK\n",
+      "source_file": "C:/Users/Fletc/OneDrive/Documents/ARGOS 2/Tests/test_or003_paper_brokerage.py",
+      "successful": true
+    }
+  ],
+  "records": [
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_broker_submission_normalizes_event_and_syncs_omo"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_duplicate_submission_generates_case_file"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_health_failures_generate_case_file_without_submission"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_profiles_health_and_system_prompt_are_available"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_broker_integration_office.BrokerIntegrationOfficeTests.test_response_normalization_preserves_canonical_event_shape"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_invalid_workflow_owner_rejects_without_fill"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_market_order_fills_and_performance_truth_records_broker_event"
+    },
+    {
+      "details": "",
+      "disposition": "PASS",
+      "test_identifier": "Tests.test_or003_paper_brokerage.PaperBrokerageTests.test_non_executable_limit_order_does_not_fabricate_fill"
+    }
+  ],
+  "repository_wide_execution_performed": false,
+  "schema_version": "broker-ecs003-focused-test-execution/v1",
+  "status": "PASS",
+  "tests_run": 8
+}
