@@ -1,0 +1,14 @@
+{
+  "equal_timestamp_disposition": "requires sequence or reconciliation",
+  "precedence": [
+    "canonical sequence identifier",
+    "broker sequence identifier",
+    "venue sequence identifier",
+    "broker event time",
+    "receipt time",
+    "processing time",
+    "persistence time",
+    "reconciliation authority",
+    "correction authority"
+  ]
+}

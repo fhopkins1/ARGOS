@@ -1,0 +1,138 @@
+{
+  "constitution_id": "PR-S02-LIFECYCLE-CONSTITUTION",
+  "lifecycle_owner": "Position Registry",
+  "states": [
+    {
+      "constitutional_meaning": "creation",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "creation",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "pending",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "pending",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "open",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "open",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "increasing",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "increasing",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "decreasing",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "decreasing",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "partially closed",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "partially_closed",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "fully closed",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "fully_closed",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "correction pending",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "correction_pending",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "reconciliation pending",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "reconciliation_pending",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "disputed",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "disputed",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "superseded",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "superseded",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    },
+    {
+      "constitutional_meaning": "archived",
+      "correction_authority": "Position Registry correction authority",
+      "entry_authority": "Position Registry with governing source evidence",
+      "exit_authority": "Position Registry with authorized transition evidence",
+      "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+      "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+      "restart_behavior": "restart restores this state from persisted evidence without advancement",
+      "state": "archived",
+      "terminal_behavior": "immutable after terminal entry except authorized correction"
+    }
+  ]
+}

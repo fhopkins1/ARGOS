@@ -1,0 +1,452 @@
+[
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "position_record",
+    "constitutional_description": "Canonical active position state and lineage.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern position record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-001",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "position_identity",
+    "constitutional_description": "Stable identity for one position lifecycle.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern position identity without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-002",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "position_state",
+    "constitutional_description": "Current constitutional lifecycle condition.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern position state without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-003",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "quantity_record",
+    "constitutional_description": "Current, opened, closed, pending, realized, and unrealized quantity facts.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern quantity record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-004",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "average_cost_basis_record",
+    "constitutional_description": "Open-position average cost basis derived from admissible fills and corrections.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern average cost basis record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-005",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "broker_linkage_record",
+    "constitutional_description": "External order, execution, and fill references admitted as read-only evidence.",
+    "constitutional_owner": "Broker",
+    "constitutional_purpose": "Govern broker linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-006",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "account_linkage_record",
+    "constitutional_description": "External account reference admitted as read-only evidence.",
+    "constitutional_owner": "Account Authority",
+    "constitutional_purpose": "Govern account linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-007",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "instrument_linkage_record",
+    "constitutional_description": "External instrument and multiplier reference admitted as read-only evidence.",
+    "constitutional_owner": "Instrument Authority",
+    "constitutional_purpose": "Govern instrument linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-008",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "workflow_linkage_record",
+    "constitutional_description": "External workflow lineage reference admitted as read-only evidence.",
+    "constitutional_owner": "Workflow Authority",
+    "constitutional_purpose": "Govern workflow linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-009",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "authorization_linkage_record",
+    "constitutional_description": "External authorization reference admitted as read-only evidence.",
+    "constitutional_owner": "Authorizations",
+    "constitutional_purpose": "Govern authorization linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-010",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "risk_linkage_record",
+    "constitutional_description": "External risk decision reference admitted as read-only evidence.",
+    "constitutional_owner": "Risk",
+    "constitutional_purpose": "Govern risk linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-011",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "monitoring_linkage_record",
+    "constitutional_description": "Observation and monitoring reference without mutation authority.",
+    "constitutional_owner": "Monitoring",
+    "constitutional_purpose": "Govern monitoring linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-012",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "exit_linkage_record",
+    "constitutional_description": "Exit recommendation and authorization reference without closure truth ownership.",
+    "constitutional_owner": "Exit Decision",
+    "constitutional_purpose": "Govern exit linkage record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-013",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "reconciliation_case",
+    "constitutional_description": "Discrepancy, contradiction, and comparison lifecycle record.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern reconciliation case without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-014",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "correction_record",
+    "constitutional_description": "Authorized correction preserving original and corrected state.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern correction record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-015",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "supersession_record",
+    "constitutional_description": "Predecessor/successor lineage for constitutional replacement.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern supersession record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-016",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "archival_record",
+    "constitutional_description": "Terminal retention and access record.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern archival record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-017",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  },
+  {
+    "approved_aliases": [],
+    "canonical_object_name": "historical_record",
+    "constitutional_description": "Immutable history of every state, value, authority, and evidence mutation.",
+    "constitutional_owner": "Position Registry",
+    "constitutional_purpose": "Govern historical record without transferring ownership from external authorities.",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "governing_lifecycle": "position_object_lifecycle",
+    "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+    "object_id": "PR-S02-OBJ-018",
+    "operational_custodian": "Position Registry",
+    "prohibited_duplicate_identities": [
+      "implementation class names",
+      "broker ids",
+      "workflow ids"
+    ],
+    "terminal_disposition": "archived with immutable historical record",
+    "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+  }
+]

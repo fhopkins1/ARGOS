@@ -1,0 +1,13 @@
+{
+  "recovery": {
+    "corrupted_state_disposition": "detect, preserve, recover or mark unrecoverable",
+    "partial_write_disposition": "quarantine and reconcile",
+    "recovery_authority": "Position Registry with Infrastructure custody"
+  },
+  "restart": {
+    "identity_preservation": true,
+    "lifecycle_advancement_prohibited": true,
+    "restart_authority": "Infrastructure recovery custody",
+    "state_restoration": "from persisted evidence only"
+  }
+}

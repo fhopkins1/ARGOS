@@ -1,0 +1,1532 @@
+{
+  "archival_constitution": {
+    "archival_authority": "Position Registry",
+    "archival_trigger": "terminal state or supersession",
+    "destruction_authority": "none unless superior constitutional amendment",
+    "retrieval_authority": "authorized audit and replay"
+  },
+  "baseline_id": "POSITION-REGISTRY-RM-001-S02-OBJECT-LIFECYCLE-BASELINE",
+  "certification_statement": "Publication is constitutional doctrine only; no implementation verification, proof, certification readiness, or certification is issued.",
+  "constitutional_decision_registry": [
+    {
+      "constitutional_rationale": "prevents silent identity reuse across opposing exposure",
+      "decision_id": "PR-S02-DEC-001",
+      "governing_issue": "reversal through zero",
+      "selected_disposition": "closure of original position plus creation of new reversed position unless future doctrine authorizes identity reuse"
+    },
+    {
+      "constitutional_rationale": "deterministic baseline without implying tax-lot authority",
+      "decision_id": "PR-S02-DEC-002",
+      "governing_issue": "average cost basis",
+      "selected_disposition": "weighted average for open position unless lot doctrine is separately authorized"
+    },
+    {
+      "constitutional_rationale": "prevents discretionary ordering",
+      "decision_id": "PR-S02-DEC-003",
+      "governing_issue": "equal timestamps",
+      "selected_disposition": "equal timestamps require sequence identifier or reconciliation disposition"
+    },
+    {
+      "constitutional_rationale": "terminal history remains immutable",
+      "decision_id": "PR-S02-DEC-004",
+      "governing_issue": "archival semantics",
+      "selected_disposition": "archival changes custody/access only, never truth"
+    }
+  ],
+  "constitutional_precedence_registry": [
+    {
+      "artifact_identifier": "POSITION-REGISTRY-RM-001-S02",
+      "normative_status": "AUTHORITATIVE"
+    },
+    {
+      "artifact_identifier": "implementation runtime states",
+      "normative_status": "NONNORMATIVE_REFERENCE"
+    }
+  ],
+  "correction_constitution": {
+    "correction_authority": "Position Registry",
+    "correction_completion_criteria": "correction record, predecessor, successor, reason, and evidence digest published",
+    "correction_initiator": "source authority, reconciliation finding, or Commander escalation",
+    "correction_prerequisites": "governing source evidence plus preserved original state",
+    "correction_validation": "identity, source, temporal, quantity, cost, and authority validation",
+    "immutable_history_obligations": "never overwrite predecessor truth"
+  },
+  "cost_basis_constitution": [
+    {
+      "authoritative_inputs": "opening fills",
+      "calculation_rule": "sum(price * quantity) / sum(quantity)",
+      "constitutional_meaning": "Weighted average opening fill price before adjustments.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-001",
+      "currency": "source currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "average_entry_price",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    },
+    {
+      "authoritative_inputs": "opening fills and corrections",
+      "calculation_rule": "weighted average with explicit adjustment records",
+      "constitutional_meaning": "Open-position cost basis after authorized adjustments.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-002",
+      "currency": "position currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "average_cost_basis",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    },
+    {
+      "authoritative_inputs": "opening fills",
+      "calculation_rule": "gross fill amount aggregation",
+      "constitutional_meaning": "Cost basis excluding fees and commissions.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-003",
+      "currency": "source currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "gross_cost_basis",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    },
+    {
+      "authoritative_inputs": "opening fills plus fee records",
+      "calculation_rule": "fee treatment requires fee authority",
+      "constitutional_meaning": "Cost basis including constitutionally authorized fees or commissions.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-004",
+      "currency": "position currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "net_cost_basis",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    },
+    {
+      "authoritative_inputs": "closing fills and prior basis",
+      "calculation_rule": "pro-rata average cost unless lot doctrine later authorizes lots",
+      "constitutional_meaning": "Cost basis allocated to closed quantity.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-005",
+      "currency": "position currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "realized_cost_basis",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    },
+    {
+      "authoritative_inputs": "current quantity and basis",
+      "calculation_rule": "average cost multiplied by remaining quantity",
+      "constitutional_meaning": "Cost basis retained by open quantity.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-006",
+      "currency": "position currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "remaining_cost_basis",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    },
+    {
+      "authoritative_inputs": "correction record",
+      "calculation_rule": "preserve predecessor basis and corrected basis",
+      "constitutional_meaning": "Basis after authorized correction or restatement.",
+      "correction_rule": "preserve original and corrected basis",
+      "cost_basis_id": "PR-S02-COST-007",
+      "currency": "position currency",
+      "evidence_obligation": "fill/correction/currency evidence with digest",
+      "field": "corrected_cost_basis",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; calculation precision recorded",
+      "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+      "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+      "temporal_basis": "event-ordering doctrine"
+    }
+  ],
+  "currency_constitution": {
+    "conversion_authority": "external financial authority",
+    "conversion_time": "effective time recorded",
+    "currency_identity": "source and reporting currency retained",
+    "position_registry_owns_conversion": false
+  },
+  "doctrine_supersession_registry": [
+    {
+      "normative_status": "SUPERSEDED_AS_AUTHORITY",
+      "superseded_provision": "implementation-derived lifecycle or arithmetic convention",
+      "superseding_authority": "POSITION-REGISTRY-RM-001-S02"
+    }
+  ],
+  "event_ordering_constitution": {
+    "equal_timestamp_disposition": "requires sequence or reconciliation",
+    "precedence": [
+      "canonical sequence identifier",
+      "broker sequence identifier",
+      "venue sequence identifier",
+      "broker event time",
+      "receipt time",
+      "processing time",
+      "persistence time",
+      "reconciliation authority",
+      "correction authority"
+    ]
+  },
+  "generated_at": "2026-07-24T16:55:21.762517Z",
+  "historical_integrity_constitution": [
+    {
+      "history": "object identity",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "lifecycle",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "ownership",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "quantity",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "cost basis",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "correction",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "supersession",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "replay",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "recovery",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "audit",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    },
+    {
+      "history": "evidence",
+      "immutable": true,
+      "preservation_rule": "append-only lineage with original evidence retention"
+    }
+  ],
+  "identity_constitution": {
+    "canonical_position_identity": "position_id",
+    "collision_disposition": "fail closed and create identity conflict",
+    "identity_stability": "creation through archive"
+  },
+  "lifecycle_constitution": {
+    "constitution_id": "PR-S02-LIFECYCLE-CONSTITUTION",
+    "lifecycle_owner": "Position Registry",
+    "states": [
+      {
+        "constitutional_meaning": "creation",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "creation",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "pending",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "pending",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "open",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "open",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "increasing",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "increasing",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "decreasing",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "decreasing",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "partially closed",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "partially_closed",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "fully closed",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "fully_closed",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "correction pending",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "correction_pending",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "reconciliation pending",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "reconciliation_pending",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "disputed",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "disputed",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "superseded",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "superseded",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      },
+      {
+        "constitutional_meaning": "archived",
+        "correction_authority": "Position Registry correction authority",
+        "entry_authority": "Position Registry with governing source evidence",
+        "exit_authority": "Position Registry with authorized transition evidence",
+        "recovery_behavior": "recovery restores or quarantines; never fabricates state",
+        "replay_behavior": "replay preserves this state when derived from the same authoritative event sequence",
+        "restart_behavior": "restart restores this state from persisted evidence without advancement",
+        "state": "archived",
+        "terminal_behavior": "immutable after terminal entry except authorized correction"
+      }
+    ]
+  },
+  "lifecycle_transition_constitution": [
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "pending",
+      "entry_authority": "Workflow or Commander assignment",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "creation",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "identity and mission evidence",
+      "transition_id": "PR-S02-TRANS-001"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "open",
+      "entry_authority": "Broker-confirmed opening fill admission",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "pending",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "authoritative fill evidence",
+      "transition_id": "PR-S02-TRANS-002"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "increasing",
+      "entry_authority": "Broker-confirmed additional opening fill",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "open",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "fill identity and quantity evidence",
+      "transition_id": "PR-S02-TRANS-003"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "open",
+      "entry_authority": "Position Registry validation",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "increasing",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "updated quantity and cost evidence",
+      "transition_id": "PR-S02-TRANS-004"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "decreasing",
+      "entry_authority": "Broker-confirmed closing fill admission",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "open",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "closing fill evidence",
+      "transition_id": "PR-S02-TRANS-005"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "partially_closed",
+      "entry_authority": "Position Registry validation",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "decreasing",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "remaining quantity evidence",
+      "transition_id": "PR-S02-TRANS-006"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "fully_closed",
+      "entry_authority": "Position Registry validation",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "decreasing",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "zero quantity and closure evidence",
+      "transition_id": "PR-S02-TRANS-007"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "decreasing",
+      "entry_authority": "Broker-confirmed closing fill admission",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "partially_closed",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "closing fill evidence",
+      "transition_id": "PR-S02-TRANS-008"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "reconciliation_pending",
+      "entry_authority": "Reconciliation trigger",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "fully_closed",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "comparison evidence",
+      "transition_id": "PR-S02-TRANS-009"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "disputed",
+      "entry_authority": "Contradiction detection",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "reconciliation_pending",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "preserved conflicting evidence",
+      "transition_id": "PR-S02-TRANS-010"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "correction_pending",
+      "entry_authority": "Correction approval authority",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "disputed",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "correction request and source evidence",
+      "transition_id": "PR-S02-TRANS-011"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "fully_closed",
+      "entry_authority": "Correction authority",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "correction_pending",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "correction record and supersession lineage",
+      "transition_id": "PR-S02-TRANS-012"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "archived",
+      "entry_authority": "Archival authority",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "fully_closed",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "terminal preservation evidence",
+      "transition_id": "PR-S02-TRANS-013"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "superseded",
+      "entry_authority": "Supersession authority",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "open",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "successor identity and supersession evidence",
+      "transition_id": "PR-S02-TRANS-014"
+    },
+    {
+      "correction_authority": "Position Registry correction authority with immutable lineage",
+      "destination_state": "archived",
+      "entry_authority": "Archival authority",
+      "exit_authority": "Position Registry",
+      "prohibited_transitions": "all unlisted source/destination pairs",
+      "recovery_behavior": "failed or partial transition enters reconciliation_pending or disputed",
+      "replay_behavior": "replay may reproduce but not newly authorize this transition",
+      "restart_behavior": "restart must not advance transition state",
+      "source_state": "superseded",
+      "terminal_behavior": "terminal transitions prohibit later mutation except correction/supersession",
+      "transition_evidence": "superseded lineage preservation evidence",
+      "transition_id": "PR-S02-TRANS-015"
+    }
+  ],
+  "object_constitution": [
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "position_record",
+      "constitutional_description": "Canonical active position state and lineage.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern position record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-001",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "position_identity",
+      "constitutional_description": "Stable identity for one position lifecycle.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern position identity without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-002",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "position_state",
+      "constitutional_description": "Current constitutional lifecycle condition.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern position state without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-003",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "quantity_record",
+      "constitutional_description": "Current, opened, closed, pending, realized, and unrealized quantity facts.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern quantity record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-004",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "average_cost_basis_record",
+      "constitutional_description": "Open-position average cost basis derived from admissible fills and corrections.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern average cost basis record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-005",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "broker_linkage_record",
+      "constitutional_description": "External order, execution, and fill references admitted as read-only evidence.",
+      "constitutional_owner": "Broker",
+      "constitutional_purpose": "Govern broker linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-006",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "account_linkage_record",
+      "constitutional_description": "External account reference admitted as read-only evidence.",
+      "constitutional_owner": "Account Authority",
+      "constitutional_purpose": "Govern account linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-007",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "instrument_linkage_record",
+      "constitutional_description": "External instrument and multiplier reference admitted as read-only evidence.",
+      "constitutional_owner": "Instrument Authority",
+      "constitutional_purpose": "Govern instrument linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-008",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "workflow_linkage_record",
+      "constitutional_description": "External workflow lineage reference admitted as read-only evidence.",
+      "constitutional_owner": "Workflow Authority",
+      "constitutional_purpose": "Govern workflow linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-009",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "authorization_linkage_record",
+      "constitutional_description": "External authorization reference admitted as read-only evidence.",
+      "constitutional_owner": "Authorizations",
+      "constitutional_purpose": "Govern authorization linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-010",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "risk_linkage_record",
+      "constitutional_description": "External risk decision reference admitted as read-only evidence.",
+      "constitutional_owner": "Risk",
+      "constitutional_purpose": "Govern risk linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-011",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "monitoring_linkage_record",
+      "constitutional_description": "Observation and monitoring reference without mutation authority.",
+      "constitutional_owner": "Monitoring",
+      "constitutional_purpose": "Govern monitoring linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-012",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "exit_linkage_record",
+      "constitutional_description": "Exit recommendation and authorization reference without closure truth ownership.",
+      "constitutional_owner": "Exit Decision",
+      "constitutional_purpose": "Govern exit linkage record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-013",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "reconciliation_case",
+      "constitutional_description": "Discrepancy, contradiction, and comparison lifecycle record.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern reconciliation case without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-014",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "correction_record",
+      "constitutional_description": "Authorized correction preserving original and corrected state.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern correction record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-015",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "supersession_record",
+      "constitutional_description": "Predecessor/successor lineage for constitutional replacement.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern supersession record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-016",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "archival_record",
+      "constitutional_description": "Terminal retention and access record.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern archival record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-017",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    },
+    {
+      "approved_aliases": [],
+      "canonical_object_name": "historical_record",
+      "constitutional_description": "Immutable history of every state, value, authority, and evidence mutation.",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Govern historical record without transferring ownership from external authorities.",
+      "evidence_obligations": [
+        "identity evidence",
+        "authority evidence",
+        "source evidence",
+        "lineage evidence"
+      ],
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+      "governing_lifecycle": "position_object_lifecycle",
+      "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
+      "object_id": "PR-S02-OBJ-018",
+      "operational_custodian": "Position Registry",
+      "prohibited_duplicate_identities": [
+        "implementation class names",
+        "broker ids",
+        "workflow ids"
+      ],
+      "terminal_disposition": "archived with immutable historical record",
+      "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage"
+    }
+  ],
+  "precision_and_rounding_constitution": {
+    "overflow_disposition": "fail closed",
+    "rounding_method": "explicit rule per field; raw evidence retained",
+    "underflow_disposition": "fail closed",
+    "zero_rule": "zero closes only through authorized transition"
+  },
+  "prohibited_transition_registry": [
+    {
+      "attempted_destination_state": "unlisted",
+      "constitutional_rationale": "only explicit transitions are authorized",
+      "escalation_consequence": "reconciliation or constitutional finding",
+      "evidence_obligation": "attempted transition record",
+      "prohibition_authority": "POSITION-REGISTRY-RM-001-S02",
+      "required_rejection_behavior": "fail closed and preserve attempt evidence",
+      "source_state": "*"
+    }
+  ],
+  "quantity_constitution": [
+    {
+      "admissible_inputs": "source fill quantity and side",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "source fill quantity and side",
+      "constitutional_meaning": "Directional quantity value; positive long, negative short only when short doctrine is authorized.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "decimal source precision retained; comparison tolerance explicit",
+      "quantity_id": "PR-S02-QTY-001",
+      "quantity_name": "signed_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "validated position quantity",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "validated position quantity",
+      "constitutional_meaning": "Magnitude of exposure independent of side.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "non-negative decimal",
+      "quantity_id": "PR-S02-QTY-002",
+      "quantity_name": "absolute_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "authoritative opening fills",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "authoritative opening fills",
+      "constitutional_meaning": "Cumulative admitted opening quantity.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "append-only aggregation",
+      "quantity_id": "PR-S02-QTY-003",
+      "quantity_name": "opened_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "opening and closing fills plus corrections",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "opening and closing fills plus corrections",
+      "constitutional_meaning": "Quantity currently open in the position.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "never silently negative",
+      "quantity_id": "PR-S02-QTY-004",
+      "quantity_name": "current_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "exit authorization or pending execution evidence",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "exit authorization or pending execution evidence",
+      "constitutional_meaning": "Quantity reserved or awaiting broker-confirmed mutation.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "separate from current quantity",
+      "quantity_id": "PR-S02-QTY-005",
+      "quantity_name": "pending_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "closing fill evidence",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "closing fill evidence",
+      "constitutional_meaning": "Quantity that has left open-position state.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "append-only",
+      "quantity_id": "PR-S02-QTY-006",
+      "quantity_name": "realized_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "current quantity",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "current quantity",
+      "constitutional_meaning": "Quantity still open and subject to valuation.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "equals current quantity after validation",
+      "quantity_id": "PR-S02-QTY-007",
+      "quantity_name": "unrealized_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "closing fill evidence",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "closing fill evidence",
+      "constitutional_meaning": "Total quantity closed from the position lifecycle.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "append-only",
+      "quantity_id": "PR-S02-QTY-008",
+      "quantity_name": "closed_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "correction evidence",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "correction evidence",
+      "constitutional_meaning": "Quantity value introduced by authorized correction.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "preserves original value",
+      "quantity_id": "PR-S02-QTY-009",
+      "quantity_name": "correction_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    },
+    {
+      "admissible_inputs": "reconciliation evidence",
+      "aggregation_rule": "idempotent fill/event aggregation with duplicate rejection",
+      "authoritative_source": "reconciliation evidence",
+      "constitutional_meaning": "Quantity compared against external sources.",
+      "correction_rule": "correction preserves predecessor quantity",
+      "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+      "mutation_authority": "Position Registry",
+      "owner": "Position Registry",
+      "precision": "does not mutate without correction authority",
+      "quantity_id": "PR-S02-QTY-010",
+      "quantity_name": "reconciliation_quantity",
+      "reconciliation_rule": "comparison does not mutate without correction authority",
+      "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+      "temporal_interpretation": "ordered by event-ordering doctrine"
+    }
+  ],
+  "relationship_constitution": [
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "position_identity"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "position_state"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "quantity_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "average_cost_basis_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "broker_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "account_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "instrument_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "workflow_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "authorization_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "risk_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "monitoring_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "exit_linkage_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "reconciliation_case"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "correction_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "supersession_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "archival_record"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "historical_record"
+    }
+  ],
+  "replay_constitution": {
+    "fabrication_prohibited": true,
+    "identity_preservation": true,
+    "replay_authority": "Replay authority under Position Registry doctrine",
+    "replay_ordering": "event-ordering registry"
+  },
+  "restart_and_recovery_constitution": {
+    "recovery": {
+      "corrupted_state_disposition": "detect, preserve, recover or mark unrecoverable",
+      "partial_write_disposition": "quarantine and reconcile",
+      "recovery_authority": "Position Registry with Infrastructure custody"
+    },
+    "restart": {
+      "identity_preservation": true,
+      "lifecycle_advancement_prohibited": true,
+      "restart_authority": "Infrastructure recovery custody",
+      "state_restoration": "from persisted evidence only"
+    }
+  },
+  "reversal_constitution": {
+    "constitutional_rationale": "prevents silent identity reuse across opposing exposure",
+    "decision_id": "PR-S02-DEC-001",
+    "governing_issue": "reversal through zero",
+    "selected_disposition": "closure of original position plus creation of new reversed position unless future doctrine authorizes identity reuse"
+  },
+  "supersession_constitution": {
+    "historical_truth_destroyed": false,
+    "successor_object_required": true,
+    "superseded_object_preserved": true,
+    "supersession_authority": "Position Registry constitutional authority"
+  },
+  "temporal_constitution": [
+    {
+      "authoritative_meaning": "Time asserted by source event.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "UTC normalized with source precision retained",
+      "ordering_authority": "event-ordering registry",
+      "owner": "source authority",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "source authority",
+      "timestamp_id": "PR-S02-TIME-001",
+      "timestamp_name": "event_time",
+      "timezone": "UTC",
+      "trust_classification": "source asserted"
+    },
+    {
+      "authoritative_meaning": "Broker-reported order/fill time.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "admissible only with broker evidence",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Broker",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Broker",
+      "timestamp_id": "PR-S02-TIME-002",
+      "timestamp_name": "broker_time",
+      "timezone": "UTC",
+      "trust_classification": "source asserted"
+    },
+    {
+      "authoritative_meaning": "Time Position Registry receives event.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "never sole lifecycle authority",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Position Registry",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Position Registry",
+      "timestamp_id": "PR-S02-TIME-003",
+      "timestamp_name": "receipt_time",
+      "timezone": "UTC",
+      "trust_classification": "registry audit time"
+    },
+    {
+      "authoritative_meaning": "Time validation executes.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "audit only; not source truth",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Position Registry",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Position Registry",
+      "timestamp_id": "PR-S02-TIME-004",
+      "timestamp_name": "processing_time",
+      "timezone": "UTC",
+      "trust_classification": "registry audit time"
+    },
+    {
+      "authoritative_meaning": "Time state or evidence is persisted.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "does not imply lifecycle transition",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Infrastructure custody",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Infrastructure custody",
+      "timestamp_id": "PR-S02-TIME-005",
+      "timestamp_name": "persistence_time",
+      "timezone": "UTC",
+      "trust_classification": "source asserted"
+    },
+    {
+      "authoritative_meaning": "Time reconciliation comparison is performed.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "records comparison, not source mutation",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Position Registry",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Position Registry",
+      "timestamp_id": "PR-S02-TIME-006",
+      "timestamp_name": "reconciliation_time",
+      "timezone": "UTC",
+      "trust_classification": "registry audit time"
+    },
+    {
+      "authoritative_meaning": "Time correction is authorized and recorded.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "separate from effective time",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Position Registry",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Position Registry",
+      "timestamp_id": "PR-S02-TIME-007",
+      "timestamp_name": "correction_time",
+      "timezone": "UTC",
+      "trust_classification": "registry audit time"
+    },
+    {
+      "authoritative_meaning": "Time terminal state is entered.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "requires terminal evidence",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Position Registry",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Position Registry",
+      "timestamp_id": "PR-S02-TIME-008",
+      "timestamp_name": "terminal_time",
+      "timezone": "UTC",
+      "trust_classification": "registry audit time"
+    },
+    {
+      "authoritative_meaning": "Time replay is performed.",
+      "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+      "evidence_requirement": "timestamp source and admissibility evidence",
+      "mutation_authority": "source authority; Position Registry may admit reference only",
+      "normalization_rule": "does not alter original event time",
+      "ordering_authority": "event-ordering registry",
+      "owner": "Replay authority",
+      "required_precision": "ISO-8601 UTC with source precision retained",
+      "source": "Replay authority",
+      "timestamp_id": "PR-S02-TIME-009",
+      "timestamp_name": "replay_time",
+      "timezone": "UTC",
+      "trust_classification": "source asserted"
+    }
+  ],
+  "terminal_state_constitution": [
+    {
+      "archival_behavior": "preserve and make retrievable",
+      "permitted_corrections": "authorized correction only",
+      "prohibited_mutations": "all direct mutation",
+      "terminal_state": "fully_closed"
+    },
+    {
+      "archival_behavior": "preserve and make retrievable",
+      "permitted_corrections": "authorized correction only",
+      "prohibited_mutations": "all direct mutation",
+      "terminal_state": "superseded"
+    },
+    {
+      "archival_behavior": "preserve and make retrievable",
+      "permitted_corrections": "authorized correction only",
+      "prohibited_mutations": "all direct mutation",
+      "terminal_state": "archived"
+    }
+  ],
+  "unresolved_constitutional_finding_registry": []
+}
