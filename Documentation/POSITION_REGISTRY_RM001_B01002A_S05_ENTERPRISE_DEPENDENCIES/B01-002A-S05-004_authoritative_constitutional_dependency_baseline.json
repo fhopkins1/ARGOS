@@ -1,0 +1,1239 @@
+{
+  "baseline_id": "PR-B01-002A-S05-004-CONSTITUTIONAL-DEPENDENCY-BASELINE",
+  "dependencies": [
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "CONSTITUTIONAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "CRITICAL",
+      "constitutional_description": "Trading intent and mutation request dependency",
+      "constitutional_owner": "Trader",
+      "constitutional_purpose": "Trading intent and mutation request dependency",
+      "counterparty_office": "Trader",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Trader",
+      "dependency_direction": "Trader -> Position Registry",
+      "dependency_id": "PR-DEP-001",
+      "dependency_name": "trader_mutation_request",
+      "dependency_producer": "Trader",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Trader",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Trader",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Trader boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Trader"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "RECONCILIATION_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "CRITICAL",
+      "constitutional_description": "Broker fill, acknowledgement, correction, and reconciliation evidence dependency",
+      "constitutional_owner": "Broker",
+      "constitutional_purpose": "Broker fill, acknowledgement, correction, and reconciliation evidence dependency",
+      "counterparty_office": "Broker",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Broker",
+      "dependency_direction": "Broker -> Position Registry",
+      "dependency_id": "PR-DEP-002",
+      "dependency_name": "broker_execution_truth",
+      "dependency_producer": "Broker",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Broker",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Broker",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Broker boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Broker"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "CONSTITUTIONAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "CRITICAL",
+      "constitutional_description": "Authorization validity, revocation, and consumption dependency",
+      "constitutional_owner": "Authorizations",
+      "constitutional_purpose": "Authorization validity, revocation, and consumption dependency",
+      "counterparty_office": "Authorizations",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Authorizations",
+      "dependency_direction": "Authorizations -> Position Registry",
+      "dependency_id": "PR-DEP-003",
+      "dependency_name": "authorization_status",
+      "dependency_producer": "Authorizations",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Authorizations",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Authorizations",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Authorizations boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Authorizations"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "CONSTITUTIONAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "CRITICAL",
+      "constitutional_description": "Risk approval, restriction, conflict, and escalation dependency",
+      "constitutional_owner": "Risk",
+      "constitutional_purpose": "Risk approval, restriction, conflict, and escalation dependency",
+      "counterparty_office": "Risk",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Risk",
+      "dependency_direction": "Risk -> Position Registry",
+      "dependency_id": "PR-DEP-004",
+      "dependency_name": "risk_status",
+      "dependency_producer": "Risk",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Risk",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Risk",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Risk boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Risk"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "OBSERVATION_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "MATERIAL",
+      "constitutional_description": "Active position observation dependency",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Active position observation dependency",
+      "counterparty_office": "Monitoring",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Monitoring",
+      "dependency_creation_authority": "Position Registry",
+      "dependency_direction": "Position Registry -> Monitoring",
+      "dependency_id": "PR-DEP-005",
+      "dependency_name": "monitoring_observation",
+      "dependency_producer": "Position Registry",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Monitoring",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Monitoring",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Monitoring",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Monitoring boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Monitoring",
+      "upstream_participant": "Position Registry"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "CONSTITUTIONAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "CRITICAL",
+      "constitutional_description": "Exit authorization and lifecycle transition dependency",
+      "constitutional_owner": "Exit Decision",
+      "constitutional_purpose": "Exit authorization and lifecycle transition dependency",
+      "counterparty_office": "Exit Decision",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Exit Decision",
+      "dependency_direction": "Exit Decision -> Position Registry",
+      "dependency_id": "PR-DEP-006",
+      "dependency_name": "exit_authorization",
+      "dependency_producer": "Exit Decision",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Exit Decision",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Exit Decision",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Exit Decision boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Exit Decision"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "HISTORICAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "MATERIAL",
+      "constitutional_description": "Immutable closed-position transfer dependency",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Immutable closed-position transfer dependency",
+      "counterparty_office": "Closed Position Truth",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Closed Position Truth",
+      "dependency_creation_authority": "Position Registry",
+      "dependency_direction": "Position Registry -> Closed Position Truth",
+      "dependency_id": "PR-DEP-007",
+      "dependency_name": "closed_position_transfer",
+      "dependency_producer": "Position Registry",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Closed Position Truth",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Closed Position Truth",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Closed Position Truth",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Closed Position Truth boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Closed Position Truth",
+      "upstream_participant": "Position Registry"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "INFORMATIONAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "MATERIAL",
+      "constitutional_description": "Performance analytics source-fact dependency",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Performance analytics source-fact dependency",
+      "counterparty_office": "Performance Truth",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Performance Truth",
+      "dependency_creation_authority": "Position Registry",
+      "dependency_direction": "Position Registry -> Performance Truth",
+      "dependency_id": "PR-DEP-008",
+      "dependency_name": "performance_source_truth",
+      "dependency_producer": "Position Registry",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Performance Truth",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Performance Truth",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Performance Truth",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Performance Truth boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Performance Truth",
+      "upstream_participant": "Position Registry"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "GOVERNANCE_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "MATERIAL",
+      "constitutional_description": "Directive, escalation, emergency, and recovery governance dependency",
+      "constitutional_owner": "Commander",
+      "constitutional_purpose": "Directive, escalation, emergency, and recovery governance dependency",
+      "counterparty_office": "Commander",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Commander",
+      "dependency_direction": "Commander -> Position Registry",
+      "dependency_id": "PR-DEP-009",
+      "dependency_name": "enterprise_governance",
+      "dependency_producer": "Commander",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Commander",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Commander",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Commander boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Commander"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "HISTORICAL_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "MATERIAL",
+      "constitutional_description": "Historical custody, archive, replay, and restoration dependency",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Historical custody, archive, replay, and restoration dependency",
+      "counterparty_office": "Historian",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Historian",
+      "dependency_creation_authority": "Position Registry",
+      "dependency_direction": "Position Registry -> Historian",
+      "dependency_id": "PR-DEP-010",
+      "dependency_name": "historical_custody",
+      "dependency_producer": "Position Registry",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Historian",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Historian",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Historian",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Historian boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Historian",
+      "upstream_participant": "Position Registry"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "INFRASTRUCTURE_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "CRITICAL",
+      "constitutional_description": "Runtime, persistence, configuration, and recovery support dependency",
+      "constitutional_owner": "Infrastructure",
+      "constitutional_purpose": "Runtime, persistence, configuration, and recovery support dependency",
+      "counterparty_office": "Infrastructure",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Position Registry",
+      "dependency_creation_authority": "Infrastructure",
+      "dependency_direction": "Infrastructure -> Position Registry",
+      "dependency_id": "PR-DEP-011",
+      "dependency_name": "runtime_persistence_support",
+      "dependency_producer": "Infrastructure",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Position Registry",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Infrastructure",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Infrastructure",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Infrastructure boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Position Registry",
+      "upstream_participant": "Infrastructure"
+    },
+    {
+      "activation_conditions": "dependency evidence available and admissible",
+      "authority_limitations": "dependency never implies ownership or mutation authority outside the governing boundary",
+      "classification": "OBSERVATION_DEPENDENCY",
+      "constitutional_admissibility": "ADMISSIBLE",
+      "constitutional_criticality": "MATERIAL",
+      "constitutional_description": "Observation access and anomaly/finding dependency",
+      "constitutional_owner": "Position Registry",
+      "constitutional_purpose": "Observation access and anomaly/finding dependency",
+      "counterparty_office": "Sentinel",
+      "dependency_authorization": "explicit boundary-series authority",
+      "dependency_consumer": "Sentinel",
+      "dependency_creation_authority": "Position Registry",
+      "dependency_direction": "Position Registry -> Sentinel",
+      "dependency_id": "PR-DEP-012",
+      "dependency_name": "enterprise_observation",
+      "dependency_producer": "Position Registry",
+      "dependency_scope": "Position Registry enterprise dependency",
+      "dependency_termination_condition": "interaction complete, rejected, superseded, or escalated",
+      "dependency_trigger": "constitutionally authorized interaction requires dependency evidence",
+      "downstream_participant": "Sentinel",
+      "failure_consequence": "fail closed, record evidence, and escalate according to dependency class",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Sentinel",
+      "governing_constitutional_purpose": "Position Registry constitutional boundary and dependency governance",
+      "governing_constitutional_source": "POSITION-REGISTRY-RM-001-B01-002A-S05",
+      "governing_office": "Sentinel",
+      "historical_preservation_obligations": "preserve immutable dependency identity, evidence, and disposition",
+      "operational_lifetime": "active for the governed interaction lifecycle",
+      "operational_significance": "required for bounded Position Registry constitutional accountability",
+      "ownership_authority": "Sentinel boundary doctrine",
+      "supported_constitutional_truth": "canonical position truth and/or governed dependency evidence",
+      "termination_authority": "Sentinel",
+      "upstream_participant": "Position Registry"
+    }
+  ],
+  "direction_model": [
+    {
+      "dependency_id": "PR-DEP-001",
+      "direction": "Trader -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Trader"
+    },
+    {
+      "dependency_id": "PR-DEP-002",
+      "direction": "Broker -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Broker"
+    },
+    {
+      "dependency_id": "PR-DEP-003",
+      "direction": "Authorizations -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Authorizations"
+    },
+    {
+      "dependency_id": "PR-DEP-004",
+      "direction": "Risk -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Risk"
+    },
+    {
+      "dependency_id": "PR-DEP-005",
+      "direction": "Position Registry -> Monitoring",
+      "downstream": "Monitoring",
+      "upstream": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-006",
+      "direction": "Exit Decision -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Exit Decision"
+    },
+    {
+      "dependency_id": "PR-DEP-007",
+      "direction": "Position Registry -> Closed Position Truth",
+      "downstream": "Closed Position Truth",
+      "upstream": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-008",
+      "direction": "Position Registry -> Performance Truth",
+      "downstream": "Performance Truth",
+      "upstream": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-009",
+      "direction": "Commander -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Commander"
+    },
+    {
+      "dependency_id": "PR-DEP-010",
+      "direction": "Position Registry -> Historian",
+      "downstream": "Historian",
+      "upstream": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-011",
+      "direction": "Infrastructure -> Position Registry",
+      "downstream": "Position Registry",
+      "upstream": "Infrastructure"
+    },
+    {
+      "dependency_id": "PR-DEP-012",
+      "direction": "Position Registry -> Sentinel",
+      "downstream": "Sentinel",
+      "upstream": "Position Registry"
+    }
+  ],
+  "failure_replay_recovery_model": [
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Trader",
+      "dependency_id": "PR-DEP-001",
+      "escalation_authority": "Commander",
+      "failure_authority": "Position Registry",
+      "failure_classification": "CONSTITUTIONAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Trader",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Trader",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Broker",
+      "dependency_id": "PR-DEP-002",
+      "escalation_authority": "Commander",
+      "failure_authority": "Position Registry",
+      "failure_classification": "RECONCILIATION_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Broker",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Broker",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Authorizations",
+      "dependency_id": "PR-DEP-003",
+      "escalation_authority": "Commander",
+      "failure_authority": "Position Registry",
+      "failure_classification": "CONSTITUTIONAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Authorizations",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Authorizations",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Risk",
+      "dependency_id": "PR-DEP-004",
+      "escalation_authority": "Commander",
+      "failure_authority": "Position Registry",
+      "failure_classification": "CONSTITUTIONAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Risk",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Risk",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Position Registry",
+      "dependency_id": "PR-DEP-005",
+      "escalation_authority": "Monitoring",
+      "failure_authority": "Monitoring",
+      "failure_classification": "OBSERVATION_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Position Registry",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Monitoring",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Monitoring",
+      "replay_preserves_authority": true,
+      "restart_authority": "Monitoring",
+      "retry_authority": "Monitoring",
+      "supersession_authority": "Position Registry",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Exit Decision",
+      "dependency_id": "PR-DEP-006",
+      "escalation_authority": "Commander",
+      "failure_authority": "Position Registry",
+      "failure_classification": "CONSTITUTIONAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Exit Decision",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Exit Decision",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Position Registry",
+      "dependency_id": "PR-DEP-007",
+      "escalation_authority": "Closed Position Truth",
+      "failure_authority": "Closed Position Truth",
+      "failure_classification": "HISTORICAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Position Registry",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Closed Position Truth",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Closed Position Truth",
+      "replay_preserves_authority": true,
+      "restart_authority": "Closed Position Truth",
+      "retry_authority": "Closed Position Truth",
+      "supersession_authority": "Position Registry",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Position Registry",
+      "dependency_id": "PR-DEP-008",
+      "escalation_authority": "Performance Truth",
+      "failure_authority": "Performance Truth",
+      "failure_classification": "INFORMATIONAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Position Registry",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Performance Truth",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Performance Truth",
+      "replay_preserves_authority": true,
+      "restart_authority": "Performance Truth",
+      "retry_authority": "Performance Truth",
+      "supersession_authority": "Position Registry",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Commander",
+      "dependency_id": "PR-DEP-009",
+      "escalation_authority": "Position Registry",
+      "failure_authority": "Position Registry",
+      "failure_classification": "GOVERNANCE_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Commander",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Commander",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Position Registry",
+      "dependency_id": "PR-DEP-010",
+      "escalation_authority": "Historian",
+      "failure_authority": "Historian",
+      "failure_classification": "HISTORICAL_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Position Registry",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Historian",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Historian",
+      "replay_preserves_authority": true,
+      "restart_authority": "Historian",
+      "retry_authority": "Historian",
+      "supersession_authority": "Position Registry",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Infrastructure",
+      "dependency_id": "PR-DEP-011",
+      "escalation_authority": "Commander",
+      "failure_authority": "Position Registry",
+      "failure_classification": "INFRASTRUCTURE_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Infrastructure",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Position Registry",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Position Registry",
+      "replay_preserves_authority": true,
+      "restart_authority": "Position Registry",
+      "retry_authority": "Position Registry",
+      "supersession_authority": "Infrastructure",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    },
+    {
+      "contradiction_disposition": "PRESERVE_CONTRADICTION_AND_ESCALATE_TO_GOVERNING_AUTHORITY",
+      "correction_authority": "Position Registry",
+      "dependency_id": "PR-DEP-012",
+      "escalation_authority": "Sentinel",
+      "failure_authority": "Sentinel",
+      "failure_classification": "OBSERVATION_DEPENDENCY_FAILURE",
+      "failure_disposition": "FAIL_CLOSED_AND_RECORD_EVIDENCE",
+      "failure_owner": "Position Registry",
+      "interruption_disposition": "PRESERVE_IDENTITY_AND_CHECKPOINT",
+      "lineage_preserved": true,
+      "recovery_authority": "Sentinel",
+      "recovery_preserves_dependency_identity": true,
+      "replay_authority": "Sentinel",
+      "replay_preserves_authority": true,
+      "restart_authority": "Sentinel",
+      "retry_authority": "Sentinel",
+      "supersession_authority": "Position Registry",
+      "timeout_disposition": "TIMEOUT_FAIL_CLOSED_WITH_ESCALATION"
+    }
+  ],
+  "interaction_constitution": [
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-001",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Trader",
+      "producer": "Trader",
+      "purpose": "Trading intent and mutation request dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-002",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Broker",
+      "producer": "Broker",
+      "purpose": "Broker fill, acknowledgement, correction, and reconciliation evidence dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-003",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Authorizations",
+      "producer": "Authorizations",
+      "purpose": "Authorization validity, revocation, and consumption dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-004",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Risk",
+      "producer": "Risk",
+      "purpose": "Risk approval, restriction, conflict, and escalation dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Monitoring",
+      "dependency_id": "PR-DEP-005",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Monitoring",
+      "producer": "Position Registry",
+      "purpose": "Active position observation dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-006",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Exit Decision",
+      "producer": "Exit Decision",
+      "purpose": "Exit authorization and lifecycle transition dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Closed Position Truth",
+      "dependency_id": "PR-DEP-007",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Closed Position Truth",
+      "producer": "Position Registry",
+      "purpose": "Immutable closed-position transfer dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Performance Truth",
+      "dependency_id": "PR-DEP-008",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Performance Truth",
+      "producer": "Position Registry",
+      "purpose": "Performance analytics source-fact dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-009",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Commander",
+      "producer": "Commander",
+      "purpose": "Directive, escalation, emergency, and recovery governance dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Historian",
+      "dependency_id": "PR-DEP-010",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Historian",
+      "producer": "Position Registry",
+      "purpose": "Historical custody, archive, replay, and restoration dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-011",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Infrastructure",
+      "producer": "Infrastructure",
+      "purpose": "Runtime, persistence, configuration, and recovery support dependency"
+    },
+    {
+      "admissibility": "ADMISSIBLE",
+      "completion": "interaction complete, rejected, superseded, or escalated",
+      "consumer": "Sentinel",
+      "dependency_id": "PR-DEP-012",
+      "evidence": "preserve immutable dependency identity, evidence, and disposition",
+      "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Sentinel",
+      "producer": "Position Registry",
+      "purpose": "Observation access and anomaly/finding dependency"
+    }
+  ],
+  "ownership_model": [
+    {
+      "constitutional_owner": "Trader",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-001",
+      "producer": "Trader"
+    },
+    {
+      "constitutional_owner": "Broker",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-002",
+      "producer": "Broker"
+    },
+    {
+      "constitutional_owner": "Authorizations",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-003",
+      "producer": "Authorizations"
+    },
+    {
+      "constitutional_owner": "Risk",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-004",
+      "producer": "Risk"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "consumer": "Monitoring",
+      "dependency_id": "PR-DEP-005",
+      "producer": "Position Registry"
+    },
+    {
+      "constitutional_owner": "Exit Decision",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-006",
+      "producer": "Exit Decision"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "consumer": "Closed Position Truth",
+      "dependency_id": "PR-DEP-007",
+      "producer": "Position Registry"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "consumer": "Performance Truth",
+      "dependency_id": "PR-DEP-008",
+      "producer": "Position Registry"
+    },
+    {
+      "constitutional_owner": "Commander",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-009",
+      "producer": "Commander"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "consumer": "Historian",
+      "dependency_id": "PR-DEP-010",
+      "producer": "Position Registry"
+    },
+    {
+      "constitutional_owner": "Infrastructure",
+      "consumer": "Position Registry",
+      "dependency_id": "PR-DEP-011",
+      "producer": "Infrastructure"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "consumer": "Sentinel",
+      "dependency_id": "PR-DEP-012",
+      "producer": "Position Registry"
+    }
+  ],
+  "precedence_model": [
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-001",
+      "precedence": 1,
+      "source_precedence": "Trader"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-002",
+      "precedence": 2,
+      "source_precedence": "Broker"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-003",
+      "precedence": 3,
+      "source_precedence": "Authorizations"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-004",
+      "precedence": 4,
+      "source_precedence": "Risk"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-005",
+      "precedence": 5,
+      "source_precedence": "Position Registry"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-006",
+      "precedence": 6,
+      "source_precedence": "Exit Decision"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-007",
+      "precedence": 7,
+      "source_precedence": "Position Registry"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-008",
+      "precedence": 8,
+      "source_precedence": "Position Registry"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-009",
+      "precedence": 9,
+      "source_precedence": "Commander"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-010",
+      "precedence": 10,
+      "source_precedence": "Position Registry"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-011",
+      "precedence": 11,
+      "source_precedence": "Infrastructure"
+    },
+    {
+      "contradiction_precedence": "governing constitutional authority",
+      "dependency_id": "PR-DEP-012",
+      "precedence": 12,
+      "source_precedence": "Position Registry"
+    }
+  ],
+  "sequencing_model": [
+    {
+      "dependency_id": "PR-DEP-001",
+      "dependency_ordering": 1,
+      "prerequisites": [],
+      "successors": [
+        "PR-DEP-002"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-002",
+      "dependency_ordering": 2,
+      "prerequisites": [
+        "PR-DEP-001"
+      ],
+      "successors": [
+        "PR-DEP-003"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-003",
+      "dependency_ordering": 3,
+      "prerequisites": [
+        "PR-DEP-002"
+      ],
+      "successors": [
+        "PR-DEP-004"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-004",
+      "dependency_ordering": 4,
+      "prerequisites": [
+        "PR-DEP-003"
+      ],
+      "successors": [
+        "PR-DEP-005"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-005",
+      "dependency_ordering": 5,
+      "prerequisites": [
+        "PR-DEP-004"
+      ],
+      "successors": [
+        "PR-DEP-006"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-006",
+      "dependency_ordering": 6,
+      "prerequisites": [
+        "PR-DEP-005"
+      ],
+      "successors": [
+        "PR-DEP-007"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-007",
+      "dependency_ordering": 7,
+      "prerequisites": [
+        "PR-DEP-006"
+      ],
+      "successors": [
+        "PR-DEP-008"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-008",
+      "dependency_ordering": 8,
+      "prerequisites": [
+        "PR-DEP-007"
+      ],
+      "successors": [
+        "PR-DEP-009"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-009",
+      "dependency_ordering": 9,
+      "prerequisites": [
+        "PR-DEP-008"
+      ],
+      "successors": [
+        "PR-DEP-010"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-010",
+      "dependency_ordering": 10,
+      "prerequisites": [
+        "PR-DEP-009"
+      ],
+      "successors": [
+        "PR-DEP-011"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-011",
+      "dependency_ordering": 11,
+      "prerequisites": [
+        "PR-DEP-010"
+      ],
+      "successors": [
+        "PR-DEP-012"
+      ]
+    },
+    {
+      "dependency_id": "PR-DEP-012",
+      "dependency_ordering": 12,
+      "prerequisites": [
+        "PR-DEP-011"
+      ],
+      "successors": []
+    }
+  ],
+  "traceability": [
+    {
+      "dependency_id": "PR-DEP-001",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Trader",
+      "governing_escalation": "Commander",
+      "governing_interaction": "trader_mutation_request",
+      "governing_interface": "trader_mutation_request_interface",
+      "governing_office": "Trader",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-002",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Broker",
+      "governing_escalation": "Commander",
+      "governing_interaction": "broker_execution_truth",
+      "governing_interface": "broker_execution_truth_interface",
+      "governing_office": "Broker",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-003",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Authorizations",
+      "governing_escalation": "Commander",
+      "governing_interaction": "authorization_status",
+      "governing_interface": "authorization_status_interface",
+      "governing_office": "Authorizations",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-004",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Risk",
+      "governing_escalation": "Commander",
+      "governing_interaction": "risk_status",
+      "governing_interface": "risk_status_interface",
+      "governing_office": "Risk",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-005",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Monitoring",
+      "governing_escalation": "Monitoring",
+      "governing_interaction": "monitoring_observation",
+      "governing_interface": "monitoring_observation_interface",
+      "governing_office": "Monitoring",
+      "governing_recovery": "Monitoring",
+      "governing_replay": "Monitoring"
+    },
+    {
+      "dependency_id": "PR-DEP-006",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Exit Decision",
+      "governing_escalation": "Commander",
+      "governing_interaction": "exit_authorization",
+      "governing_interface": "exit_authorization_interface",
+      "governing_office": "Exit Decision",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-007",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Closed Position Truth",
+      "governing_escalation": "Closed Position Truth",
+      "governing_interaction": "closed_position_transfer",
+      "governing_interface": "closed_position_transfer_interface",
+      "governing_office": "Closed Position Truth",
+      "governing_recovery": "Closed Position Truth",
+      "governing_replay": "Closed Position Truth"
+    },
+    {
+      "dependency_id": "PR-DEP-008",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Performance Truth",
+      "governing_escalation": "Performance Truth",
+      "governing_interaction": "performance_source_truth",
+      "governing_interface": "performance_source_truth_interface",
+      "governing_office": "Performance Truth",
+      "governing_recovery": "Performance Truth",
+      "governing_replay": "Performance Truth"
+    },
+    {
+      "dependency_id": "PR-DEP-009",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Commander",
+      "governing_escalation": "Position Registry",
+      "governing_interaction": "enterprise_governance",
+      "governing_interface": "enterprise_governance_interface",
+      "governing_office": "Commander",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-010",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Historian",
+      "governing_escalation": "Historian",
+      "governing_interaction": "historical_custody",
+      "governing_interface": "historical_custody_interface",
+      "governing_office": "Historian",
+      "governing_recovery": "Historian",
+      "governing_replay": "Historian"
+    },
+    {
+      "dependency_id": "PR-DEP-011",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Infrastructure",
+      "governing_escalation": "Commander",
+      "governing_interaction": "runtime_persistence_support",
+      "governing_interface": "runtime_persistence_support_interface",
+      "governing_office": "Infrastructure",
+      "governing_recovery": "Position Registry",
+      "governing_replay": "Position Registry"
+    },
+    {
+      "dependency_id": "PR-DEP-012",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Sentinel",
+      "governing_escalation": "Sentinel",
+      "governing_interaction": "enterprise_observation",
+      "governing_interface": "enterprise_observation_interface",
+      "governing_office": "Sentinel",
+      "governing_recovery": "Sentinel",
+      "governing_replay": "Sentinel"
+    }
+  ]
+}

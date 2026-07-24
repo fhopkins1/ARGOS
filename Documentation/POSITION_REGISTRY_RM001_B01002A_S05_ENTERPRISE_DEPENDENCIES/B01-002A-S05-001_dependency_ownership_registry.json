@@ -1,0 +1,74 @@
+[
+  {
+    "constitutional_owner": "Trader",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-001",
+    "producer": "Trader"
+  },
+  {
+    "constitutional_owner": "Broker",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-002",
+    "producer": "Broker"
+  },
+  {
+    "constitutional_owner": "Authorizations",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-003",
+    "producer": "Authorizations"
+  },
+  {
+    "constitutional_owner": "Risk",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-004",
+    "producer": "Risk"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "consumer": "Monitoring",
+    "dependency_id": "PR-DEP-005",
+    "producer": "Position Registry"
+  },
+  {
+    "constitutional_owner": "Exit Decision",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-006",
+    "producer": "Exit Decision"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "consumer": "Closed Position Truth",
+    "dependency_id": "PR-DEP-007",
+    "producer": "Position Registry"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "consumer": "Performance Truth",
+    "dependency_id": "PR-DEP-008",
+    "producer": "Position Registry"
+  },
+  {
+    "constitutional_owner": "Commander",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-009",
+    "producer": "Commander"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "consumer": "Historian",
+    "dependency_id": "PR-DEP-010",
+    "producer": "Position Registry"
+  },
+  {
+    "constitutional_owner": "Infrastructure",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-011",
+    "producer": "Infrastructure"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "consumer": "Sentinel",
+    "dependency_id": "PR-DEP-012",
+    "producer": "Position Registry"
+  }
+]

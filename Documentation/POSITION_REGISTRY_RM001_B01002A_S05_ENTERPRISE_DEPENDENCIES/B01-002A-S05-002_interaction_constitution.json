@@ -1,0 +1,122 @@
+[
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-001",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Trader",
+    "producer": "Trader",
+    "purpose": "Trading intent and mutation request dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-002",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Broker",
+    "producer": "Broker",
+    "purpose": "Broker fill, acknowledgement, correction, and reconciliation evidence dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-003",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Authorizations",
+    "producer": "Authorizations",
+    "purpose": "Authorization validity, revocation, and consumption dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-004",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Risk",
+    "producer": "Risk",
+    "purpose": "Risk approval, restriction, conflict, and escalation dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Monitoring",
+    "dependency_id": "PR-DEP-005",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Monitoring",
+    "producer": "Position Registry",
+    "purpose": "Active position observation dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-006",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Exit Decision",
+    "producer": "Exit Decision",
+    "purpose": "Exit authorization and lifecycle transition dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Closed Position Truth",
+    "dependency_id": "PR-DEP-007",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Closed Position Truth",
+    "producer": "Position Registry",
+    "purpose": "Immutable closed-position transfer dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Performance Truth",
+    "dependency_id": "PR-DEP-008",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Performance Truth",
+    "producer": "Position Registry",
+    "purpose": "Performance analytics source-fact dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-009",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Commander",
+    "producer": "Commander",
+    "purpose": "Directive, escalation, emergency, and recovery governance dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Historian",
+    "dependency_id": "PR-DEP-010",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Historian",
+    "producer": "Position Registry",
+    "purpose": "Historical custody, archive, replay, and restoration dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Position Registry",
+    "dependency_id": "PR-DEP-011",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Infrastructure",
+    "producer": "Infrastructure",
+    "purpose": "Runtime, persistence, configuration, and recovery support dependency"
+  },
+  {
+    "admissibility": "ADMISSIBLE",
+    "completion": "interaction complete, rejected, superseded, or escalated",
+    "consumer": "Sentinel",
+    "dependency_id": "PR-DEP-012",
+    "evidence": "preserve immutable dependency identity, evidence, and disposition",
+    "interaction_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Sentinel",
+    "producer": "Position Registry",
+    "purpose": "Observation access and anomaly/finding dependency"
+  }
+]

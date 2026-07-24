@@ -1,0 +1,122 @@
+[
+  {
+    "dependency_id": "PR-DEP-001",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Trader",
+    "governing_escalation": "Commander",
+    "governing_interaction": "trader_mutation_request",
+    "governing_interface": "trader_mutation_request_interface",
+    "governing_office": "Trader",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-002",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Broker",
+    "governing_escalation": "Commander",
+    "governing_interaction": "broker_execution_truth",
+    "governing_interface": "broker_execution_truth_interface",
+    "governing_office": "Broker",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-003",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Authorizations",
+    "governing_escalation": "Commander",
+    "governing_interaction": "authorization_status",
+    "governing_interface": "authorization_status_interface",
+    "governing_office": "Authorizations",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-004",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Risk",
+    "governing_escalation": "Commander",
+    "governing_interaction": "risk_status",
+    "governing_interface": "risk_status_interface",
+    "governing_office": "Risk",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-005",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Monitoring",
+    "governing_escalation": "Monitoring",
+    "governing_interaction": "monitoring_observation",
+    "governing_interface": "monitoring_observation_interface",
+    "governing_office": "Monitoring",
+    "governing_recovery": "Monitoring",
+    "governing_replay": "Monitoring"
+  },
+  {
+    "dependency_id": "PR-DEP-006",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Exit Decision",
+    "governing_escalation": "Commander",
+    "governing_interaction": "exit_authorization",
+    "governing_interface": "exit_authorization_interface",
+    "governing_office": "Exit Decision",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-007",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Closed Position Truth",
+    "governing_escalation": "Closed Position Truth",
+    "governing_interaction": "closed_position_transfer",
+    "governing_interface": "closed_position_transfer_interface",
+    "governing_office": "Closed Position Truth",
+    "governing_recovery": "Closed Position Truth",
+    "governing_replay": "Closed Position Truth"
+  },
+  {
+    "dependency_id": "PR-DEP-008",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Performance Truth",
+    "governing_escalation": "Performance Truth",
+    "governing_interaction": "performance_source_truth",
+    "governing_interface": "performance_source_truth_interface",
+    "governing_office": "Performance Truth",
+    "governing_recovery": "Performance Truth",
+    "governing_replay": "Performance Truth"
+  },
+  {
+    "dependency_id": "PR-DEP-009",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Commander",
+    "governing_escalation": "Position Registry",
+    "governing_interaction": "enterprise_governance",
+    "governing_interface": "enterprise_governance_interface",
+    "governing_office": "Commander",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-010",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Historian",
+    "governing_escalation": "Historian",
+    "governing_interaction": "historical_custody",
+    "governing_interface": "historical_custody_interface",
+    "governing_office": "Historian",
+    "governing_recovery": "Historian",
+    "governing_replay": "Historian"
+  },
+  {
+    "dependency_id": "PR-DEP-011",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Infrastructure",
+    "governing_escalation": "Commander",
+    "governing_interaction": "runtime_persistence_support",
+    "governing_interface": "runtime_persistence_support_interface",
+    "governing_office": "Infrastructure",
+    "governing_recovery": "Position Registry",
+    "governing_replay": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-012",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary for Sentinel",
+    "governing_escalation": "Sentinel",
+    "governing_interaction": "enterprise_observation",
+    "governing_interface": "enterprise_observation_interface",
+    "governing_office": "Sentinel",
+    "governing_recovery": "Sentinel",
+    "governing_replay": "Sentinel"
+  }
+]

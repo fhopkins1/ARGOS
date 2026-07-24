@@ -1,0 +1,74 @@
+[
+  {
+    "dependency_id": "PR-DEP-001",
+    "direction": "Trader -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Trader"
+  },
+  {
+    "dependency_id": "PR-DEP-002",
+    "direction": "Broker -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Broker"
+  },
+  {
+    "dependency_id": "PR-DEP-003",
+    "direction": "Authorizations -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Authorizations"
+  },
+  {
+    "dependency_id": "PR-DEP-004",
+    "direction": "Risk -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Risk"
+  },
+  {
+    "dependency_id": "PR-DEP-005",
+    "direction": "Position Registry -> Monitoring",
+    "downstream": "Monitoring",
+    "upstream": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-006",
+    "direction": "Exit Decision -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Exit Decision"
+  },
+  {
+    "dependency_id": "PR-DEP-007",
+    "direction": "Position Registry -> Closed Position Truth",
+    "downstream": "Closed Position Truth",
+    "upstream": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-008",
+    "direction": "Position Registry -> Performance Truth",
+    "downstream": "Performance Truth",
+    "upstream": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-009",
+    "direction": "Commander -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Commander"
+  },
+  {
+    "dependency_id": "PR-DEP-010",
+    "direction": "Position Registry -> Historian",
+    "downstream": "Historian",
+    "upstream": "Position Registry"
+  },
+  {
+    "dependency_id": "PR-DEP-011",
+    "direction": "Infrastructure -> Position Registry",
+    "downstream": "Position Registry",
+    "upstream": "Infrastructure"
+  },
+  {
+    "dependency_id": "PR-DEP-012",
+    "direction": "Position Registry -> Sentinel",
+    "downstream": "Sentinel",
+    "upstream": "Position Registry"
+  }
+]

@@ -1,0 +1,118 @@
+[
+  {
+    "dependency_id": "PR-DEP-001",
+    "dependency_ordering": 1,
+    "prerequisites": [],
+    "successors": [
+      "PR-DEP-002"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-002",
+    "dependency_ordering": 2,
+    "prerequisites": [
+      "PR-DEP-001"
+    ],
+    "successors": [
+      "PR-DEP-003"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-003",
+    "dependency_ordering": 3,
+    "prerequisites": [
+      "PR-DEP-002"
+    ],
+    "successors": [
+      "PR-DEP-004"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-004",
+    "dependency_ordering": 4,
+    "prerequisites": [
+      "PR-DEP-003"
+    ],
+    "successors": [
+      "PR-DEP-005"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-005",
+    "dependency_ordering": 5,
+    "prerequisites": [
+      "PR-DEP-004"
+    ],
+    "successors": [
+      "PR-DEP-006"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-006",
+    "dependency_ordering": 6,
+    "prerequisites": [
+      "PR-DEP-005"
+    ],
+    "successors": [
+      "PR-DEP-007"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-007",
+    "dependency_ordering": 7,
+    "prerequisites": [
+      "PR-DEP-006"
+    ],
+    "successors": [
+      "PR-DEP-008"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-008",
+    "dependency_ordering": 8,
+    "prerequisites": [
+      "PR-DEP-007"
+    ],
+    "successors": [
+      "PR-DEP-009"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-009",
+    "dependency_ordering": 9,
+    "prerequisites": [
+      "PR-DEP-008"
+    ],
+    "successors": [
+      "PR-DEP-010"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-010",
+    "dependency_ordering": 10,
+    "prerequisites": [
+      "PR-DEP-009"
+    ],
+    "successors": [
+      "PR-DEP-011"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-011",
+    "dependency_ordering": 11,
+    "prerequisites": [
+      "PR-DEP-010"
+    ],
+    "successors": [
+      "PR-DEP-012"
+    ]
+  },
+  {
+    "dependency_id": "PR-DEP-012",
+    "dependency_ordering": 12,
+    "prerequisites": [
+      "PR-DEP-011"
+    ],
+    "successors": []
+  }
+]
