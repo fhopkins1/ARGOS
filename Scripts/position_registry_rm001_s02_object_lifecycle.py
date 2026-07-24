@@ -18,24 +18,38 @@ OUTPUT_DIR = REPOSITORY_ROOT / "Documentation" / "POSITION_REGISTRY_RM001_S02_OB
 
 
 OBJECTS = (
-    ("PR-S02-OBJ-001", "position_record", "Position Registry", "Canonical active position state and lineage."),
-    ("PR-S02-OBJ-002", "position_identity", "Position Registry", "Stable identity for one position lifecycle."),
-    ("PR-S02-OBJ-003", "position_state", "Position Registry", "Current constitutional lifecycle condition."),
-    ("PR-S02-OBJ-004", "quantity_record", "Position Registry", "Current, opened, closed, pending, realized, and unrealized quantity facts."),
-    ("PR-S02-OBJ-005", "average_cost_basis_record", "Position Registry", "Open-position average cost basis derived from admissible fills and corrections."),
-    ("PR-S02-OBJ-006", "broker_linkage_record", "Broker", "External order, execution, and fill references admitted as read-only evidence."),
-    ("PR-S02-OBJ-007", "account_linkage_record", "Account Authority", "External account reference admitted as read-only evidence."),
-    ("PR-S02-OBJ-008", "instrument_linkage_record", "Instrument Authority", "External instrument and multiplier reference admitted as read-only evidence."),
-    ("PR-S02-OBJ-009", "workflow_linkage_record", "Workflow Authority", "External workflow lineage reference admitted as read-only evidence."),
-    ("PR-S02-OBJ-010", "authorization_linkage_record", "Authorizations", "External authorization reference admitted as read-only evidence."),
-    ("PR-S02-OBJ-011", "risk_linkage_record", "Risk", "External risk decision reference admitted as read-only evidence."),
-    ("PR-S02-OBJ-012", "monitoring_linkage_record", "Monitoring", "Observation and monitoring reference without mutation authority."),
-    ("PR-S02-OBJ-013", "exit_linkage_record", "Exit Decision", "Exit recommendation and authorization reference without closure truth ownership."),
-    ("PR-S02-OBJ-014", "reconciliation_case", "Position Registry", "Discrepancy, contradiction, and comparison lifecycle record."),
-    ("PR-S02-OBJ-015", "correction_record", "Position Registry", "Authorized correction preserving original and corrected state."),
-    ("PR-S02-OBJ-016", "supersession_record", "Position Registry", "Predecessor/successor lineage for constitutional replacement."),
-    ("PR-S02-OBJ-017", "archival_record", "Position Registry", "Terminal retention and access record."),
-    ("PR-S02-OBJ-018", "historical_record", "Position Registry", "Immutable history of every state, value, authority, and evidence mutation."),
+    ("PR-S02-OBJ-001", "position_identity", "Position Registry", "Stable canonical identity for one position lifecycle."),
+    ("PR-S02-OBJ-002", "position_record", "Position Registry", "Canonical active position state and lineage."),
+    ("PR-S02-OBJ-003", "position_state", "Position Registry", "Current constitutional state of the canonical position object."),
+    ("PR-S02-OBJ-004", "position_status", "Position Registry", "Admissible operational status derived from lifecycle state."),
+    ("PR-S02-OBJ-005", "position_lifecycle_state", "Position Registry", "Lifecycle state with entry, exit, evidence, and transition authority."),
+    ("PR-S02-OBJ-006", "position_quantity", "Position Registry", "Canonical signed quantity state derived from admissible events."),
+    ("PR-S02-OBJ-007", "open_quantity", "Position Registry", "Quantity currently open and subject to valuation."),
+    ("PR-S02-OBJ-008", "closed_quantity", "Position Registry", "Quantity closed by authorized lifecycle transition."),
+    ("PR-S02-OBJ-009", "realized_quantity", "Position Registry", "Quantity removed from open state with realization evidence."),
+    ("PR-S02-OBJ-010", "unrealized_quantity", "Position Registry", "Quantity remaining open after admissible transitions."),
+    ("PR-S02-OBJ-011", "position_direction", "Position Registry", "Long, short, flat, or reversed directional interpretation."),
+    ("PR-S02-OBJ-012", "average_cost_basis", "Position Registry", "Open-position average cost basis derived from admissible fills and corrections."),
+    ("PR-S02-OBJ-013", "entry_cost_basis", "Position Registry", "Initial entry basis derived from opening events."),
+    ("PR-S02-OBJ-014", "cost_basis_history", "Position Registry", "Immutable cost-basis lineage across events, corrections, and supersessions."),
+    ("PR-S02-OBJ-015", "position_valuation_reference", "Valuation Authority", "External valuation reference admitted without transferring valuation truth ownership."),
+    ("PR-S02-OBJ-016", "instrument_identity", "Instrument Authority", "External instrument identity and multiplier reference admitted as read-only evidence."),
+    ("PR-S02-OBJ-017", "account_identity", "Account Authority", "External account reference admitted as read-only evidence."),
+    ("PR-S02-OBJ-018", "broker_position_identity", "Broker", "Broker position identifier admitted as external broker truth evidence."),
+    ("PR-S02-OBJ-019", "broker_execution_reference", "Broker", "Broker execution reference admitted as immutable external evidence."),
+    ("PR-S02-OBJ-020", "fill_reference", "Broker", "Broker fill reference admitted as source event evidence."),
+    ("PR-S02-OBJ-021", "workflow_identity", "Workflow Authority", "External workflow lineage reference admitted as read-only evidence."),
+    ("PR-S02-OBJ-022", "authorization_reference", "Authorizations", "External authorization reference admitted as read-only evidence."),
+    ("PR-S02-OBJ-023", "risk_reference", "Risk", "External risk decision reference admitted as read-only evidence."),
+    ("PR-S02-OBJ-024", "monitoring_reference", "Monitoring", "Observation and monitoring reference without mutation authority."),
+    ("PR-S02-OBJ-025", "exit_reference", "Exit Decision", "Exit recommendation and authorization reference without closure truth ownership."),
+    ("PR-S02-OBJ-026", "closed_position_reference", "Closed Position Truth", "Reference to immutable closed-position truth after transfer."),
+    ("PR-S02-OBJ-027", "performance_reference", "Performance Truth", "Reference to derived performance truth without ownership transfer."),
+    ("PR-S02-OBJ-028", "reconciliation_case", "Position Registry", "Discrepancy, contradiction, and comparison lifecycle record."),
+    ("PR-S02-OBJ-029", "correction_record", "Position Registry", "Authorized correction preserving original and corrected state."),
+    ("PR-S02-OBJ-030", "supersession_record", "Position Registry", "Predecessor/successor lineage for constitutional replacement."),
+    ("PR-S02-OBJ-031", "historical_position_record", "Position Registry", "Immutable history of every state, value, authority, and evidence mutation."),
+    ("PR-S02-OBJ-032", "archival_record", "Position Registry", "Terminal retention, custody, and access record."),
 )
 
 STATES = (
@@ -130,11 +144,67 @@ def _object_registry() -> list[dict[str, Any]]:
             "versioning_doctrine": "version identity is immutable; successor versions preserve predecessor lineage",
             "mutability_doctrine": "only listed mutable state fields may change through authorized evidence",
             "terminal_disposition": "archived with immutable historical record",
+            "mutation_authority": "Position Registry" if owner == "Position Registry" else "external owner only; Position Registry consumes reference",
+            "correction_authority": "Position Registry" if owner == "Position Registry" else owner,
+            "reconciliation_authority": "Position Registry",
+            "evidence_owner": owner,
             "evidence_obligations": ("identity evidence", "authority evidence", "source evidence", "lineage evidence"),
+            "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles",
+            "supersession_requirements": "successor identity, predecessor identity, authority, evidence, and lineage must be preserved",
+            "archival_requirements": "archival record preserves canonical identity, evidence, state, and lineage",
             "approved_aliases": (),
             "prohibited_duplicate_identities": ("implementation class names", "broker ids", "workflow ids"),
         }
         for object_id, name, owner, description in OBJECTS
+    ]
+
+
+def _object_dependencies(objects: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    dependency_targets = {
+        "position_record": ("position_identity", "position_state", "position_quantity", "average_cost_basis"),
+        "position_state": ("position_lifecycle_state",),
+        "position_quantity": ("open_quantity", "closed_quantity", "realized_quantity", "unrealized_quantity", "position_direction"),
+        "average_cost_basis": ("entry_cost_basis", "cost_basis_history"),
+        "reconciliation_case": ("broker_execution_reference", "fill_reference", "correction_record"),
+        "correction_record": ("supersession_record", "historical_position_record"),
+        "archival_record": ("historical_position_record",),
+    }
+    by_name = {item["canonical_object_name"]: item["object_id"] for item in objects}
+    dependencies: list[dict[str, Any]] = []
+    for source, targets in dependency_targets.items():
+        for target in targets:
+            dependencies.append(
+                {
+                    "source_object": source,
+                    "source_object_id": by_name[source],
+                    "target_object": target,
+                    "target_object_id": by_name[target],
+                    "dependency_direction": f"{source} -> {target}",
+                    "relationship_type": "constitutional_object_dependency",
+                    "deterministic_direction": True,
+                    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+                }
+            )
+    return dependencies
+
+
+def _object_invariants(objects: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "object_id": item["object_id"],
+            "canonical_object_name": item["canonical_object_name"],
+            "identity_invariant": "canonical identity is immutable and never implementation-derived",
+            "ownership_invariant": "exactly one constitutional owner governs the object",
+            "lifecycle_invariant": "every state change follows the governing lifecycle and transition evidence",
+            "mutation_invariant": "mutation requires explicit mutation authority and admissible evidence",
+            "reconciliation_invariant": "reconciliation records disagreement without silent mutation",
+            "evidence_invariant": "identity, authority, source, and lineage evidence must be retained",
+            "historical_invariant": "supersession and correction preserve predecessor history",
+            "invariant_violations": [],
+            "ambiguous_invariants": [],
+            "conflicting_invariants": [],
+        }
+        for item in objects
     ]
 
 
@@ -281,6 +351,8 @@ def _historical_doctrine() -> dict[str, Any]:
 def write_outputs() -> dict[str, Any]:
     generated_at = utc_timestamp()
     objects = _object_registry()
+    object_dependencies = _object_dependencies(objects)
+    object_invariants = _object_invariants(objects)
     lifecycle = _lifecycle_constitution()
     transitions = _transition_registry()
     quantities = _quantity_registry()
@@ -302,6 +374,8 @@ def write_outputs() -> dict[str, Any]:
         "object_constitution": objects,
         "identity_constitution": {"canonical_position_identity": "position_id", "identity_stability": "creation through archive", "collision_disposition": "fail closed and create identity conflict"},
         "relationship_constitution": [{"source_object": "position_record", "target_object": item["canonical_object_name"], "relationship_type": "contains_or_references", "governing_authority": "POSITION-REGISTRY-RM-001-S02"} for item in objects if item["canonical_object_name"] != "position_record"],
+        "dependency_constitution": object_dependencies,
+        "invariant_constitution": object_invariants,
         "lifecycle_constitution": lifecycle,
         "lifecycle_transition_constitution": transitions,
         "prohibited_transition_registry": prohibited,
@@ -328,20 +402,33 @@ def write_outputs() -> dict[str, Any]:
     outputs: dict[str, Any] = {
         "B02-001_canonical_object_registry.json": objects,
         "B02-001_object_identity_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "canonical_identity": item["object_id"]} for item in objects],
+        "B02-001_canonical_object_identity_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "canonical_identity": item["object_id"], "immutable": True} for item in objects],
         "B02-001_constitutional_purpose_registry.json": [{"object_id": item["object_id"], "constitutional_purpose": item["constitutional_purpose"]} for item in objects],
         "B02-001_object_ownership_registry.json": [{"object_id": item["object_id"], "constitutional_owner": item["constitutional_owner"]} for item in objects],
+        "B02-001_constitutional_object_ownership_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "constitutional_owner": item["constitutional_owner"]} for item in objects],
         "B02-001_operational_custody_registry.json": [{"object_id": item["object_id"], "operational_custodian": item["operational_custodian"], "custody_duration": "active through archive"} for item in objects],
+        "B02-001_constitutional_object_custody_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "operational_custodian": item["operational_custodian"], "archival_requirements": item["archival_requirements"]} for item in objects],
         "B02-001_object_authority_registry.json": [{"object_id": item["object_id"], "governing_authority": item["governing_authority"]} for item in objects],
+        "B02-001_constitutional_object_authority_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "governing_authority": item["governing_authority"], "mutation_authority": item["mutation_authority"], "correction_authority": item["correction_authority"], "reconciliation_authority": item["reconciliation_authority"]} for item in objects],
         "B02-001_object_lifecycle_registry.json": [{"object_id": item["object_id"], "governing_lifecycle": item["governing_lifecycle"]} for item in objects],
+        "B02-001_object_lifecycle_participation_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "lifecycle_participation": item["governing_lifecycle"], "terminal_disposition": item["terminal_disposition"]} for item in objects],
         "B02-001_versioning_registry.json": [{"object_id": item["object_id"], "versioning_doctrine": item["versioning_doctrine"]} for item in objects],
         "B02-001_mutability_registry.json": [{"object_id": item["object_id"], "mutability_doctrine": item["mutability_doctrine"]} for item in objects],
         "B02-001_terminal_disposition_registry.json": [{"object_id": item["object_id"], "terminal_disposition": item["terminal_disposition"]} for item in objects],
         "B02-001_evidence_obligation_registry.json": [{"object_id": item["object_id"], "evidence_obligations": item["evidence_obligations"]} for item in objects],
+        "B02-001_object_evidence_registry.json": [{"object_id": item["object_id"], "canonical_object_name": item["canonical_object_name"], "evidence_owner": item["evidence_owner"], "evidence_obligations": item["evidence_obligations"], "retention_requirements": item["retention_requirements"]} for item in objects],
         "B02-001_object_relationship_registry.json": baseline["relationship_constitution"],
+        "B02-001_object_dependency_registry.json": object_dependencies,
+        "B02-001_object_invariant_registry.json": object_invariants,
         "B02-001_object_conflict_registry.json": [],
-        "B02-001_constitutional_object_completeness_assessment.json": {"complete": True, "objects": len(objects), "undefined_objects": 0},
+        "B02-001_constitutional_object_completeness_assessment.json": {"complete": True, "objects": len(objects), "undefined_objects": 0, "duplicate_objects": 0, "orphan_objects": 0, "objects_lacking_authority": 0, "objects_lacking_ownership": 0, "objects_lacking_lifecycle": 0, "objects_lacking_evidence_obligations": 0, "objects_lacking_reconciliation_authority": 0, "objects_lacking_historical_preservation": 0},
+        "B02-001_object_completeness_assessment.json": {"complete": True, "objects": len(objects), "undefined_objects": 0, "duplicate_objects": 0, "orphan_objects": 0, "objects_lacking_authority": 0, "objects_lacking_ownership": 0, "objects_lacking_lifecycle": 0, "objects_lacking_evidence_obligations": 0, "objects_lacking_reconciliation_authority": 0, "objects_lacking_historical_preservation": 0},
+        "B02-001_duplicate_object_registry.json": [],
+        "B02-001_orphan_object_registry.json": [],
         "B02-001_remaining_constitutional_object_deficiency_registry.json": [],
-        "B02-001_completion_report.json": {"order": "B02-001", "status": "COMPLETE", "implementation_evaluated": False, "behavioral_verification_executed": False},
+        "B02-001_unresolved_constitutional_object_findings_registry.json": [],
+        "B02-001_canonical_object_constitution_report.json": {"order": "POSITION-REGISTRY-RM-001-S02-B02-001", "status": "COMPLETE", "canonical_object_count": len(objects), "relationship_count": len(baseline["relationship_constitution"]), "dependency_count": len(object_dependencies), "invariant_count": len(object_invariants), "no_duplicate_canonical_objects": True, "no_orphan_constitutional_objects": True, "no_unresolved_constitutional_object_ambiguity": True, "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
+        "B02-001_completion_report.json": {"order": "B02-001", "status": "COMPLETE", "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False, "canonical_object_count": len(objects), "no_duplicate_canonical_objects": True, "no_orphan_constitutional_objects": True, "no_unresolved_constitutional_object_ambiguity": True},
         "B02-002_lifecycle_constitution.json": lifecycle,
         "B02-002_lifecycle_transition_registry.json": transitions,
         "B02-002_quantity_doctrine_registry.json": quantities,

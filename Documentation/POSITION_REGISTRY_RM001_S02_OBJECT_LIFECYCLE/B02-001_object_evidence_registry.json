@@ -1,0 +1,386 @@
+[
+  {
+    "canonical_object_name": "position_identity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-001",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_record",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-002",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_state",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-003",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_status",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-004",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_lifecycle_state",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-005",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_quantity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-006",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "open_quantity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-007",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "closed_quantity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-008",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "realized_quantity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-009",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "unrealized_quantity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-010",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_direction",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-011",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "average_cost_basis",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-012",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "entry_cost_basis",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-013",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "cost_basis_history",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-014",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "position_valuation_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Valuation Authority",
+    "object_id": "PR-S02-OBJ-015",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "instrument_identity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Instrument Authority",
+    "object_id": "PR-S02-OBJ-016",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "account_identity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Account Authority",
+    "object_id": "PR-S02-OBJ-017",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "broker_position_identity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Broker",
+    "object_id": "PR-S02-OBJ-018",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "broker_execution_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Broker",
+    "object_id": "PR-S02-OBJ-019",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "fill_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Broker",
+    "object_id": "PR-S02-OBJ-020",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "workflow_identity",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Workflow Authority",
+    "object_id": "PR-S02-OBJ-021",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "authorization_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Authorizations",
+    "object_id": "PR-S02-OBJ-022",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "risk_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Risk",
+    "object_id": "PR-S02-OBJ-023",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "monitoring_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Monitoring",
+    "object_id": "PR-S02-OBJ-024",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "exit_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Exit Decision",
+    "object_id": "PR-S02-OBJ-025",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "closed_position_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Closed Position Truth",
+    "object_id": "PR-S02-OBJ-026",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "performance_reference",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Performance Truth",
+    "object_id": "PR-S02-OBJ-027",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "reconciliation_case",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-028",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "correction_record",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-029",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "supersession_record",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-030",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "historical_position_record",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-031",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  },
+  {
+    "canonical_object_name": "archival_record",
+    "evidence_obligations": [
+      "identity evidence",
+      "authority evidence",
+      "source evidence",
+      "lineage evidence"
+    ],
+    "evidence_owner": "Position Registry",
+    "object_id": "PR-S02-OBJ-032",
+    "retention_requirements": "immutable retention through active, terminal, replay, and audit lifecycles"
+  }
+]

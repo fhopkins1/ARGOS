@@ -16,61 +16,145 @@
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "quantity_record"
+      "target_object": "position_status"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "average_cost_basis_record"
+      "target_object": "position_lifecycle_state"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "broker_linkage_record"
+      "target_object": "position_quantity"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "account_linkage_record"
+      "target_object": "open_quantity"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "instrument_linkage_record"
+      "target_object": "closed_quantity"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "workflow_linkage_record"
+      "target_object": "realized_quantity"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "authorization_linkage_record"
+      "target_object": "unrealized_quantity"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "risk_linkage_record"
+      "target_object": "position_direction"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "monitoring_linkage_record"
+      "target_object": "average_cost_basis"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "exit_linkage_record"
+      "target_object": "entry_cost_basis"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "cost_basis_history"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "position_valuation_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "instrument_identity"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "account_identity"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "broker_position_identity"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "broker_execution_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "fill_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "workflow_identity"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "authorization_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "risk_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "monitoring_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "exit_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "closed_position_reference"
+    },
+    {
+      "governing_authority": "POSITION-REGISTRY-RM-001-S02",
+      "relationship_type": "contains_or_references",
+      "source_object": "position_record",
+      "target_object": "performance_reference"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
@@ -94,13 +178,13 @@
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "archival_record"
+      "target_object": "historical_position_record"
     },
     {
       "governing_authority": "POSITION-REGISTRY-RM-001-S02",
       "relationship_type": "contains_or_references",
       "source_object": "position_record",
-      "target_object": "historical_record"
+      "target_object": "archival_record"
     }
   ],
   "status": "RECONCILED"

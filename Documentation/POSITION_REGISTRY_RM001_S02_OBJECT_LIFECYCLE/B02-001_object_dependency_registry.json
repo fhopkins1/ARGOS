@@ -1,0 +1,182 @@
+[
+  {
+    "dependency_direction": "position_record -> position_identity",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_record",
+    "source_object_id": "PR-S02-OBJ-002",
+    "target_object": "position_identity",
+    "target_object_id": "PR-S02-OBJ-001"
+  },
+  {
+    "dependency_direction": "position_record -> position_state",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_record",
+    "source_object_id": "PR-S02-OBJ-002",
+    "target_object": "position_state",
+    "target_object_id": "PR-S02-OBJ-003"
+  },
+  {
+    "dependency_direction": "position_record -> position_quantity",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_record",
+    "source_object_id": "PR-S02-OBJ-002",
+    "target_object": "position_quantity",
+    "target_object_id": "PR-S02-OBJ-006"
+  },
+  {
+    "dependency_direction": "position_record -> average_cost_basis",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_record",
+    "source_object_id": "PR-S02-OBJ-002",
+    "target_object": "average_cost_basis",
+    "target_object_id": "PR-S02-OBJ-012"
+  },
+  {
+    "dependency_direction": "position_state -> position_lifecycle_state",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_state",
+    "source_object_id": "PR-S02-OBJ-003",
+    "target_object": "position_lifecycle_state",
+    "target_object_id": "PR-S02-OBJ-005"
+  },
+  {
+    "dependency_direction": "position_quantity -> open_quantity",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_quantity",
+    "source_object_id": "PR-S02-OBJ-006",
+    "target_object": "open_quantity",
+    "target_object_id": "PR-S02-OBJ-007"
+  },
+  {
+    "dependency_direction": "position_quantity -> closed_quantity",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_quantity",
+    "source_object_id": "PR-S02-OBJ-006",
+    "target_object": "closed_quantity",
+    "target_object_id": "PR-S02-OBJ-008"
+  },
+  {
+    "dependency_direction": "position_quantity -> realized_quantity",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_quantity",
+    "source_object_id": "PR-S02-OBJ-006",
+    "target_object": "realized_quantity",
+    "target_object_id": "PR-S02-OBJ-009"
+  },
+  {
+    "dependency_direction": "position_quantity -> unrealized_quantity",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_quantity",
+    "source_object_id": "PR-S02-OBJ-006",
+    "target_object": "unrealized_quantity",
+    "target_object_id": "PR-S02-OBJ-010"
+  },
+  {
+    "dependency_direction": "position_quantity -> position_direction",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "position_quantity",
+    "source_object_id": "PR-S02-OBJ-006",
+    "target_object": "position_direction",
+    "target_object_id": "PR-S02-OBJ-011"
+  },
+  {
+    "dependency_direction": "average_cost_basis -> entry_cost_basis",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "average_cost_basis",
+    "source_object_id": "PR-S02-OBJ-012",
+    "target_object": "entry_cost_basis",
+    "target_object_id": "PR-S02-OBJ-013"
+  },
+  {
+    "dependency_direction": "average_cost_basis -> cost_basis_history",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "average_cost_basis",
+    "source_object_id": "PR-S02-OBJ-012",
+    "target_object": "cost_basis_history",
+    "target_object_id": "PR-S02-OBJ-014"
+  },
+  {
+    "dependency_direction": "reconciliation_case -> broker_execution_reference",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "reconciliation_case",
+    "source_object_id": "PR-S02-OBJ-028",
+    "target_object": "broker_execution_reference",
+    "target_object_id": "PR-S02-OBJ-019"
+  },
+  {
+    "dependency_direction": "reconciliation_case -> fill_reference",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "reconciliation_case",
+    "source_object_id": "PR-S02-OBJ-028",
+    "target_object": "fill_reference",
+    "target_object_id": "PR-S02-OBJ-020"
+  },
+  {
+    "dependency_direction": "reconciliation_case -> correction_record",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "reconciliation_case",
+    "source_object_id": "PR-S02-OBJ-028",
+    "target_object": "correction_record",
+    "target_object_id": "PR-S02-OBJ-029"
+  },
+  {
+    "dependency_direction": "correction_record -> supersession_record",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "correction_record",
+    "source_object_id": "PR-S02-OBJ-029",
+    "target_object": "supersession_record",
+    "target_object_id": "PR-S02-OBJ-030"
+  },
+  {
+    "dependency_direction": "correction_record -> historical_position_record",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "correction_record",
+    "source_object_id": "PR-S02-OBJ-029",
+    "target_object": "historical_position_record",
+    "target_object_id": "PR-S02-OBJ-031"
+  },
+  {
+    "dependency_direction": "archival_record -> historical_position_record",
+    "deterministic_direction": true,
+    "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-001",
+    "relationship_type": "constitutional_object_dependency",
+    "source_object": "archival_record",
+    "source_object_id": "PR-S02-OBJ-032",
+    "target_object": "historical_position_record",
+    "target_object_id": "PR-S02-OBJ-031"
+  }
+]
