@@ -30,7 +30,8 @@ BATCH_ID = "TRADER-RM-002A-016-B03"
 BATCH_VERSION = "TRADER-RM-002A-016-B03/1.0.0"
 PRIOR_LOCAL_EVIDENCE_ROOT = Path("Documentation/TRADER_RM002A016_AFFECTED_POPULATION_EVIDENCE")
 DECLARED_PRIOR_MISSING_JSON_POPULATION = 44
-MODULE_TIMEOUT_SECONDS = 45
+MODULE_TIMEOUT_SECONDS = 180
+SUPERSEDED_B03_ROOTS = (Path("Documentation/TRADER_RM002A016_B03_MODULE_VERIFICATION_EVIDENCE"),)
 TERMINAL_MODULE_DISPOSITIONS = (
     "PASS",
     "FAIL",
@@ -243,6 +244,19 @@ def prior_supersession_registry(inventory: Mapping[str, Any]) -> Mapping[str, An
                 "preserved_raw_evidence": [item for item in preserved_files if row["immutable_module_identifier"].split(".")[-1] in item["relative_path"]],
             }
         )
+    superseded_b03_files = []
+    for root in SUPERSEDED_B03_ROOTS:
+        if root.exists():
+            for path in sorted(item for item in root.rglob("*") if item.is_file()):
+                superseded_b03_files.append(
+                    {
+                        "path": path.as_posix(),
+                        "relative_path": path.relative_to(root).as_posix(),
+                        "sha256": _digest_file(path),
+                        "bytes": path.stat().st_size,
+                        "superseded_root": root.as_posix(),
+                    }
+                )
     unavailable = max(0, DECLARED_PRIOR_MISSING_JSON_POPULATION - len(prior_raw_tests))
     return {
         "schema_version": "trader-rm002a016-b03-prior-error-supersession-registry/v1",
@@ -251,6 +265,16 @@ def prior_supersession_registry(inventory: Mapping[str, Any]) -> Mapping[str, An
         "locally_preserved_prior_files": preserved_files,
         "prior_records_unavailable_for_direct_raw-evidence_linkage": unavailable,
         "unavailable_record_policy": "No synthetic raw prior records are fabricated; B03 supersedes all frozen current affected modules and records this evidence gap.",
+        "superseded_b03_attempts": [
+            {
+                "prior_campaign_identifier": root.as_posix(),
+                "status": "SUPERSEDED" if root.exists() else "NOT_PRESENT",
+                "superseding_batch_identifier": BATCH_ID,
+                "reason_for_supersession": "Initial B03 finite timeout was below observed CIC/CR/CSS module runtime; V2 preserves the attempt and reruns only B03 scope with a longer finite timeout.",
+            }
+            for root in SUPERSEDED_B03_ROOTS
+        ],
+        "superseded_b03_files": superseded_b03_files,
         "records": records,
     }
 
