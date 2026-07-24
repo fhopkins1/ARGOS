@@ -1,0 +1,35 @@
+{
+  "detail": "missing required authority: account_authority",
+  "disposition": "PASS",
+  "duration_ms": 0,
+  "execution_id": "B05-EXEC-BC553B795E19C2B1",
+  "expected": "REJECTED",
+  "manifest": {
+    "batch_identifier": "TRADER-RM-002A-016-S05-B05",
+    "candidate_digest": "93e0037c55efcf2629b1b718bd30c989e83f8457",
+    "code_modified_after_execution_start": false,
+    "fixture_digest": "362b7a61dd823a38f4088556a2037fd8c258d03f2ceed1ceaef72d784ca15f5b",
+    "generated_at_utc": "2026-07-24T02:26:18.670276Z",
+    "risk_implementation_digest": "dd78cf1daa73081e93196913e8bd360e9e4b2d9d7faebddcc02cc286e9c39e19",
+    "trader_risk_consumption_digest": "cf706ea0ae1299cf2d523e637c16045792527b301c404227a79d30ae35055165",
+    "version": "TRADER-RM-002A-016-S05-B05/1.0.0",
+    "working_tree_digest": "34b8039e9dd3404110045b4e27f64cdff032f7bd"
+  },
+  "observed": "REJECTED",
+  "scenario": {
+    "dependency_status": "AVAILABLE",
+    "domain": "account binding enforced",
+    "expected": "REJECTED",
+    "group": "BINDING",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B05-002-BIND-001",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "missing_account_authority"
+  },
+  "terminal_disposition": true
+}

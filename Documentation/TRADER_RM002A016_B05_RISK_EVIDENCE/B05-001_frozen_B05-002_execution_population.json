@@ -1,0 +1,362 @@
+[
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "valid Risk certification accepted",
+    "expected": "ACCEPTED",
+    "group": "IDENTITY",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-001",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "valid_risk_cert"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "wrong Risk contract type rejected",
+    "expected": "REJECTED",
+    "group": "IDENTITY",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-002",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "wrong_contract_type"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "wrong Risk recipient rejected",
+    "expected": "REJECTED",
+    "group": "IDENTITY",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-003",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "wrong_recipient"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "uncertified Risk object rejected",
+    "expected": "REJECTED",
+    "group": "IDENTITY",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-004",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "uncertified_status"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "missing source risk assessment rejected",
+    "expected": "REJECTED",
+    "group": "IDENTITY",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-005",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "missing_source_assessment"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "account binding enforced",
+    "expected": "REJECTED",
+    "group": "BINDING",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B05-002-BIND-001",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "missing_account_authority"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "portfolio binding enforced",
+    "expected": "REJECTED",
+    "group": "BINDING",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "item_id": "B05-002-BIND-002",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "missing_portfolio"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "workflow binding enforced",
+    "expected": "REJECTED",
+    "group": "BINDING",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "item_id": "B05-002-BIND-003",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "missing_workflow"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "governing authorization binding enforced",
+    "expected": "REJECTED",
+    "group": "BINDING",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-BIND-004",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "missing_source_assessment"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "instrument scope enforced",
+    "expected": "REJECTED",
+    "group": "SCOPE",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "item_id": "B05-002-SCOPE-001",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "bad_instrument"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "side scope enforced",
+    "expected": "REJECTED",
+    "group": "SCOPE",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/order_management.py:OrderConstructionValidationEngine"
+    ],
+    "item_id": "B05-002-SCOPE-002",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "bad_side"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "order type scope enforced",
+    "expected": "REJECTED",
+    "group": "SCOPE",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "item_id": "B05-002-SCOPE-003",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "bad_order_type"
+  },
+  {
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "domain": "venue scope remains Risk dependency",
+    "expected": "REJECTED",
+    "group": "SCOPE",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "item_id": "B05-002-SCOPE-004",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "risk_dependency_gap"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "quantity limits enforced",
+    "expected": "REJECTED",
+    "group": "LIMIT",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/order_management.py:OrderRequestCompletenessVerifier"
+    ],
+    "item_id": "B05-002-LIMIT-001",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "bad_quantity"
+  },
+  {
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "domain": "notional limits remain Risk dependency",
+    "expected": "REJECTED",
+    "group": "LIMIT",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskSufficiencyDoctrineSpecificationRecord"
+    ],
+    "item_id": "B05-002-LIMIT-002",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "risk_dependency_gap"
+  },
+  {
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "domain": "exposure limits remain Risk dependency",
+    "expected": "REJECTED",
+    "group": "LIMIT",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskConfidenceExposureConstitutionSpecificationRecord"
+    ],
+    "item_id": "B05-002-LIMIT-003",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "risk_dependency_gap"
+  },
+  {
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "domain": "price tolerance limits enforced",
+    "expected": "REJECTED",
+    "group": "LIMIT",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "item_id": "B05-002-LIMIT-004",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DEPENDENCY",
+    "verification_method": "risk_dependency_gap"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "fresh Risk authority accepted",
+    "expected": "ACCEPTED",
+    "group": "FRESHNESS",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-001",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "fresh_temporal"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "stale Risk authority rejected",
+    "expected": "REJECTED",
+    "group": "FRESHNESS",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-002",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "stale_temporal"
+  },
+  {
+    "dependency_status": "AVAILABLE",
+    "domain": "expired Risk authority rejected",
+    "expected": "REJECTED",
+    "group": "FRESHNESS",
+    "historical_evidence": "STALE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-003",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "proof_recalculated": false,
+    "reconciliation_disposition": "MATCHED",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005",
+    "scope_classification": "TRADER_DIRECT",
+    "verification_method": "expired_temporal"
+  }
+]

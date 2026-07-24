@@ -1,0 +1,422 @@
+[
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "RiskCertificationValidator accepted certified RAR addressed to Trader.",
+    "disposition": "PASS",
+    "domain": "valid Risk certification accepted",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-ID-001.json",
+    "execution_id": "B05-EXEC-5950EAA1C1A4ED97",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "IDENTITY",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-001",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "Risk certification must be a Risk Assessment Report contract",
+    "disposition": "PASS",
+    "domain": "wrong Risk contract type rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-ID-002.json",
+    "execution_id": "B05-EXEC-784E9813E4956923",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "IDENTITY",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-002",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "Risk certification is not addressed to Trader Group",
+    "disposition": "PASS",
+    "domain": "wrong Risk recipient rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-ID-003.json",
+    "execution_id": "B05-EXEC-F53A85B2A864FD27",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "IDENTITY",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-003",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "Risk Office certification is not certified",
+    "disposition": "PASS",
+    "domain": "uncertified Risk object rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-ID-004.json",
+    "execution_id": "B05-EXEC-DD554EFBD1646DF4",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "IDENTITY",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-004",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "Risk certification must reference an Organizational Risk Assessment",
+    "disposition": "PASS",
+    "domain": "missing source risk assessment rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-ID-005.json",
+    "execution_id": "B05-EXEC-911F3C4C881DEE06",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "IDENTITY",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-ID-005",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "missing required authority: account_authority",
+    "disposition": "PASS",
+    "domain": "account binding enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-BIND-001.json",
+    "execution_id": "B05-EXEC-BC553B795E19C2B1",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "BINDING",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "item_id": "B05-002-BIND-001",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "detail": "missing_evidence",
+    "disposition": "PASS",
+    "domain": "portfolio binding enforced",
+    "duration_ms": 1,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-BIND-002.json",
+    "execution_id": "B05-EXEC-2D0DD4E44B23C525",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "BINDING",
+    "implementation_artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "item_id": "B05-002-BIND-002",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "detail": "missing_evidence",
+    "disposition": "PASS",
+    "domain": "workflow binding enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-BIND-003.json",
+    "execution_id": "B05-EXEC-1644D228B69A2E87",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "BINDING",
+    "implementation_artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "item_id": "B05-002-BIND-003",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "Risk certification must reference an Organizational Risk Assessment",
+    "disposition": "PASS",
+    "domain": "governing authorization binding enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-BIND-004.json",
+    "execution_id": "B05-EXEC-698FE513BD03F8D3",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "BINDING",
+    "implementation_artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "item_id": "B05-002-BIND-004",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "unsupported instrument class: unsupported_derivative",
+    "disposition": "PASS",
+    "domain": "instrument scope enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-SCOPE-001.json",
+    "execution_id": "B05-EXEC-CCEFA9004DC705F4",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "SCOPE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "item_id": "B05-002-SCOPE-001",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "order direction is unsupported",
+    "disposition": "PASS",
+    "domain": "side scope enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-SCOPE-002.json",
+    "execution_id": "B05-EXEC-0AB0F9BB079139DC",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "SCOPE",
+    "implementation_artifacts": [
+      "src/argos/trader/order_management.py:OrderConstructionValidationEngine"
+    ],
+    "item_id": "B05-002-SCOPE-002",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "unsupported order type: stop_limit",
+    "disposition": "PASS",
+    "domain": "order type scope enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-SCOPE-003.json",
+    "execution_id": "B05-EXEC-E4DA2BA639421212",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "SCOPE",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "item_id": "B05-002-SCOPE-003",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "venue scope remains Risk dependency",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-SCOPE-004.json",
+    "execution_id": "B05-EXEC-610D1827741E8436",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-71CF958FA0B16B36",
+    "group": "SCOPE",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "item_id": "B05-002-SCOPE-004",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "order quantity must be positive",
+    "disposition": "PASS",
+    "domain": "quantity limits enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-LIMIT-001.json",
+    "execution_id": "B05-EXEC-CAA950918BFC6649",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "LIMIT",
+    "implementation_artifacts": [
+      "src/argos/trader/order_management.py:OrderRequestCompletenessVerifier"
+    ],
+    "item_id": "B05-002-LIMIT-001",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "notional limits remain Risk dependency",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-LIMIT-002.json",
+    "execution_id": "B05-EXEC-5D4495DAD28C6B56",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-EF968E24E8E35A4A",
+    "group": "LIMIT",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskSufficiencyDoctrineSpecificationRecord"
+    ],
+    "item_id": "B05-002-LIMIT-002",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "exposure limits remain Risk dependency",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-LIMIT-003.json",
+    "execution_id": "B05-EXEC-EF2C7B39184B6ABF",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-22C2D145C54EA54D",
+    "group": "LIMIT",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskConfidenceExposureConstitutionSpecificationRecord"
+    ],
+    "item_id": "B05-002-LIMIT-003",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "price tolerance limits enforced",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-LIMIT-004.json",
+    "execution_id": "B05-EXEC-CFA567ADCEAAA7D2",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-162638D8061A5869",
+    "group": "LIMIT",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "item_id": "B05-002-LIMIT-004",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "",
+    "disposition": "PASS",
+    "domain": "fresh Risk authority accepted",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-FRESH-001.json",
+    "execution_id": "B05-EXEC-8C019223552AF8C7",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "FRESHNESS",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-001",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "required Trader evidence is stale",
+    "disposition": "PASS",
+    "domain": "stale Risk authority rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-FRESH-002.json",
+    "execution_id": "B05-EXEC-18AC943DF170B4AD",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "FRESHNESS",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-002",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "authority is not effective or has expired",
+    "disposition": "PASS",
+    "domain": "expired Risk authority rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-FRESH-003.json",
+    "execution_id": "B05-EXEC-A110A34CB0C8B59A",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "FRESHNESS",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-003",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  }
+]

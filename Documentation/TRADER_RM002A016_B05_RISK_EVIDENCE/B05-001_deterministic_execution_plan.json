@@ -1,0 +1,23 @@
+{
+  "B05-002_count": 20,
+  "B05-003_count": 14,
+  "batches": [
+    "B05-002",
+    "B05-003",
+    "B05-004"
+  ],
+  "checkpoint_boundaries": [
+    "IDENTITY",
+    "BINDING",
+    "SCOPE",
+    "LIMIT",
+    "FRESHNESS",
+    "REVOCATION",
+    "CONFLICT",
+    "REPLAY",
+    "IN_FLIGHT",
+    "RECERTIFICATION"
+  ],
+  "repository_wide_execution": false,
+  "resumability": "checkpoint after each group; do not rerun completed groups unless candidate digest changes"
+}

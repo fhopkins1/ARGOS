@@ -1,0 +1,274 @@
+[
+  {
+    "artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-ID-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-ID-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-ID-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-ID-004"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-ID-005"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-BIND-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-BIND-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/information_eligibility.py:TraderInformationEligibilityEngine"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-BIND-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/group.py:RiskCertificationValidator"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-BIND-004"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-SCOPE-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/order_management.py:OrderConstructionValidationEngine"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-SCOPE-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_scope"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-SCOPE-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-002-SCOPE-004"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/order_management.py:OrderRequestCompletenessVerifier"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-LIMIT-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py:RiskSufficiencyDoctrineSpecificationRecord"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-002-LIMIT-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py:RiskConfidenceExposureConstitutionSpecificationRecord"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-002-LIMIT-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-002-LIMIT-004"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-FRESH-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-FRESH-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-002-FRESH-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py:RiskObjectLifecycleSpecificationRecord"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-003-REV-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py:RiskRejectionTaxonomySpecificationRecord"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-003-REV-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py:RiskReplaySemanticEquivalenceSpecificationRecord"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-003-REPLAY-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/requirement_proof.py:restart verification class"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-REPLAY-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/requirement_proof.py:recovery verification class"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-REPLAY-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-003-REPLAY-004"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "item_id": "B05-003-REPLAY-005"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-CONF-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-CONF-002"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-CONF-003"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-CONF-004"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_execution_authority"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-CONF-005"
+  },
+  {
+    "artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "item_id": "B05-003-FLIGHT-001"
+  },
+  {
+    "artifacts": [
+      "src/argos/risk/certification_completion.py"
+    ],
+    "classification": "ENTERPRISE_PRECONDITION",
+    "dependency_status": "MISSING_ENTERPRISE_RECERTIFICATION_EXECUTION",
+    "item_id": "B05-003-RECERT-001"
+  }
+]

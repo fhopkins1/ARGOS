@@ -1,0 +1,44 @@
+[
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "revoked Risk cannot execute",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REV-001.json",
+    "execution_id": "B05-EXEC-E0A40813FB7D4A1D",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-25FA6035A7C31417",
+    "group": "REVOCATION",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskObjectLifecycleSpecificationRecord"
+    ],
+    "item_id": "B05-003-REV-001",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "invalidated Risk cannot execute",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REV-002.json",
+    "execution_id": "B05-EXEC-751F3884CEAFD393",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-3D336C9544879553",
+    "group": "REVOCATION",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskRejectionTaxonomySpecificationRecord"
+    ],
+    "item_id": "B05-003-REV-002",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  }
+]

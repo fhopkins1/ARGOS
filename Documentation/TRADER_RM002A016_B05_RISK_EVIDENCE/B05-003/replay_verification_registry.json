@@ -1,0 +1,107 @@
+[
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "Risk replay rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REPLAY-001.json",
+    "execution_id": "B05-EXEC-E00F3BC9ED5BA585",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-ADFAF29FDE5195E7",
+    "group": "REPLAY",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py:RiskReplaySemanticEquivalenceSpecificationRecord"
+    ],
+    "item_id": "B05-003-REPLAY-001",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "detail": "Existing Trader proof registry includes restart/recovery coverage for Risk Certificate consumption.",
+    "disposition": "PASS",
+    "domain": "restart preserves Risk state",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REPLAY-002.json",
+    "execution_id": "B05-EXEC-23048CCF82E935A2",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "REPLAY",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:restart verification class"
+    ],
+    "item_id": "B05-003-REPLAY-002",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "AVAILABLE",
+    "detail": "Existing Trader proof registry includes restart/recovery coverage for Risk Certificate consumption.",
+    "disposition": "PASS",
+    "domain": "recovery restores Risk authority",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REPLAY-003.json",
+    "execution_id": "B05-EXEC-F56C17A81648D93C",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "REPLAY",
+    "implementation_artifacts": [
+      "src/argos/trader/requirement_proof.py:recovery verification class"
+    ],
+    "item_id": "B05-003-REPLAY-003",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "partial Risk authority consumption deterministic",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REPLAY-004.json",
+    "execution_id": "B05-EXEC-400825545649DBED",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-E41C82C66952EF29",
+    "group": "REPLAY",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "item_id": "B05-003-REPLAY-004",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DEPENDENCY",
+    "dependency_status": "MISSING_EXECUTABLE_RISK_VERIFIER",
+    "detail": "Frozen population maps this scenario to Risk-owned executable capability not present in Trader execution surface.",
+    "disposition": "FAIL",
+    "domain": "exhausted Risk authority rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-003/execution_evidence/B05-003-REPLAY-005.json",
+    "execution_id": "B05-EXEC-265A7547EF05B5AD",
+    "expected": "REJECTED",
+    "finding_id": "B05-FINDING-CB9E31B772596773",
+    "group": "REPLAY",
+    "implementation_artifacts": [
+      "src/argos/risk/specification.py"
+    ],
+    "item_id": "B05-003-REPLAY-005",
+    "observed": "ACCEPTED",
+    "order": "B05-003",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  }
+]

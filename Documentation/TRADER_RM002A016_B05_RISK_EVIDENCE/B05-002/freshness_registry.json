@@ -1,0 +1,65 @@
+[
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "",
+    "disposition": "PASS",
+    "domain": "fresh Risk authority accepted",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-FRESH-001.json",
+    "execution_id": "B05-EXEC-8C019223552AF8C7",
+    "expected": "ACCEPTED",
+    "finding_id": null,
+    "group": "FRESHNESS",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-001",
+    "observed": "ACCEPTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "required Trader evidence is stale",
+    "disposition": "PASS",
+    "domain": "stale Risk authority rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-FRESH-002.json",
+    "execution_id": "B05-EXEC-18AC943DF170B4AD",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "FRESHNESS",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-002",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  },
+  {
+    "dependency_classification": "TRADER_DIRECT",
+    "dependency_status": "AVAILABLE",
+    "detail": "authority is not effective or has expired",
+    "disposition": "PASS",
+    "domain": "expired Risk authority rejected",
+    "duration_ms": 0,
+    "evidence_path": "Documentation/TRADER_RM002A016_B05_RISK_EVIDENCE/B05-002/execution_evidence/B05-002-FRESH-003.json",
+    "execution_id": "B05-EXEC-A110A34CB0C8B59A",
+    "expected": "REJECTED",
+    "finding_id": null,
+    "group": "FRESHNESS",
+    "implementation_artifacts": [
+      "src/argos/trader/constitutional_governance.py:validate_temporal_context"
+    ],
+    "item_id": "B05-002-FRESH-003",
+    "observed": "REJECTED",
+    "order": "B05-002",
+    "proof_id": "TRADER-PROOF-2774C14480116CE1",
+    "requirement_id": "TRADER-REQ-TRADER-RM-002-007-0005"
+  }
+]
