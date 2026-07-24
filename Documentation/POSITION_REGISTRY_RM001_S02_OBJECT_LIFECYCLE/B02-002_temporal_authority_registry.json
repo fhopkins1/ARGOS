@@ -1,0 +1,155 @@
+[
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "source authority",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "source authority",
+    "timestamp_id": "PR-S02-TIME-001",
+    "timestamp_name": "event_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Broker",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Broker",
+    "timestamp_id": "PR-S02-TIME-002",
+    "timestamp_name": "broker_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-003",
+    "timestamp_name": "receipt_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-004",
+    "timestamp_name": "processing_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Infrastructure custody",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Infrastructure custody",
+    "timestamp_id": "PR-S02-TIME-005",
+    "timestamp_name": "persistence_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-006",
+    "timestamp_name": "reconciliation_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-007",
+    "timestamp_name": "correction_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-008",
+    "timestamp_name": "terminal_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Replay authority",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "event-ordering registry",
+    "temporal_authority": "Replay authority",
+    "timestamp_id": "PR-S02-TIME-009",
+    "timestamp_name": "replay_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "governing source authority",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "governing source authority",
+    "timestamp_id": "PR-S02-TIME-010",
+    "timestamp_name": "effective_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Exchange or Broker",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "Exchange or Broker",
+    "timestamp_id": "PR-S02-TIME-011",
+    "timestamp_name": "exchange_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-012",
+    "timestamp_name": "archival_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "freshness authority",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "freshness authority",
+    "timestamp_id": "PR-S02-TIME-013",
+    "timestamp_name": "stale_event_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "source and receipt authority",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "source and receipt authority",
+    "timestamp_id": "PR-S02-TIME-014",
+    "timestamp_name": "late_event_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-015",
+    "timestamp_name": "identical_timestamp_order"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Infrastructure time authority",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "Infrastructure time authority",
+    "timestamp_id": "PR-S02-TIME-016",
+    "timestamp_name": "clock_skew_time"
+  },
+  {
+    "admission_authority": "Position Registry",
+    "correction_authority": "Position Registry",
+    "implementation_inference_prohibited": true,
+    "ordering_authority": "temporal ordering constitution",
+    "temporal_authority": "Position Registry",
+    "timestamp_id": "PR-S02-TIME-017",
+    "timestamp_name": "historical_correction_order"
+  }
+]

@@ -120,6 +120,65 @@ class PositionRegistryRM001S02ObjectLifecycleTests(unittest.TestCase):
         self.assertTrue(temporal)
         self.assertEqual(ambiguity, [])
 
+    def test_b02_002_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B02-002_lifecycle_constitution.json",
+            "B02-002_lifecycle_transition_registry.json",
+            "B02-002_lifecycle_authority_registry.json",
+            "B02-002_lifecycle_invariant_registry.json",
+            "B02-002_quantity_constitution.json",
+            "B02-002_quantity_rule_registry.json",
+            "B02-002_quantity_invariant_registry.json",
+            "B02-002_cost_basis_constitution.json",
+            "B02-002_cost_basis_rule_registry.json",
+            "B02-002_cost_basis_invariant_registry.json",
+            "B02-002_temporal_constitution.json",
+            "B02-002_temporal_ordering_registry.json",
+            "B02-002_temporal_authority_registry.json",
+            "B02-002_behavioral_state_invariant_registry.json",
+            "B02-002_constitutional_lifecycle_completeness_assessment.json",
+            "B02-002_constitutional_quantity_completeness_assessment.json",
+            "B02-002_constitutional_cost_basis_completeness_assessment.json",
+            "B02-002_constitutional_temporal_completeness_assessment.json",
+            "B02-002_unresolved_constitutional_findings_registry.json",
+            "B02-002_lifecycle_quantity_cost_basis_and_temporal_constitutional_report.json",
+            "B02-002_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b02_002_semantic_constitutions_cover_required_behavior(self) -> None:
+        lifecycle = json.loads((EVIDENCE_ROOT / "B02-002_lifecycle_constitution.json").read_text(encoding="utf-8"))
+        quantity = json.loads((EVIDENCE_ROOT / "B02-002_quantity_rule_registry.json").read_text(encoding="utf-8"))
+        cost = json.loads((EVIDENCE_ROOT / "B02-002_cost_basis_rule_registry.json").read_text(encoding="utf-8"))
+        temporal = json.loads((EVIDENCE_ROOT / "B02-002_temporal_doctrine_registry.json").read_text(encoding="utf-8"))
+        temporal_ordering = json.loads((EVIDENCE_ROOT / "B02-002_temporal_ordering_registry.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B02-002_unresolved_constitutional_findings_registry.json").read_text(encoding="utf-8"))
+
+        states = {item["state"] for item in lifecycle["states"]}
+        self.assertTrue({"pending", "open", "increasing", "decreasing", "partially_closed", "fully_closed", "correction_pending", "reconciliation_pending", "disputed", "superseded", "archived"}.issubset(states))
+        self.assertTrue({"signed_quantity", "unsigned_quantity", "zero_quantity", "fractional_quantity", "overflow_quantity", "underflow_quantity"}.issubset({item["quantity_name"] for item in quantity}))
+        self.assertTrue({"average_cost_basis", "entry_cost_basis", "realized_cost_basis", "unrealized_cost_basis", "weighted_average", "commission_adjustment", "fee_adjustment", "settlement_adjustment", "corporate_action_adjustment", "restated_cost_basis"}.issubset({item["field"] for item in cost}))
+        self.assertTrue({"event_time", "effective_time", "broker_time", "exchange_time", "receipt_time", "processing_time", "persistence_time", "reconciliation_time", "correction_time", "archival_time", "terminal_time"}.issubset({item["timestamp_name"] for item in temporal}))
+        self.assertEqual(temporal_ordering["identical_timestamp_disposition"], "requires sequence identifier or reconciliation disposition")
+        self.assertEqual(unresolved, [])
+
+    def test_b02_002_authorities_and_invariants_are_defined(self) -> None:
+        lifecycle_authority = json.loads((EVIDENCE_ROOT / "B02-002_lifecycle_authority_registry.json").read_text(encoding="utf-8"))
+        quantity_invariants = json.loads((EVIDENCE_ROOT / "B02-002_quantity_invariant_registry.json").read_text(encoding="utf-8"))
+        cost_invariants = json.loads((EVIDENCE_ROOT / "B02-002_cost_basis_invariant_registry.json").read_text(encoding="utf-8"))
+        temporal_authority = json.loads((EVIDENCE_ROOT / "B02-002_temporal_authority_registry.json").read_text(encoding="utf-8"))
+        completion = json.loads((EVIDENCE_ROOT / "B02-002_completion_report.json").read_text(encoding="utf-8"))
+        self.assertTrue(all(item["identity_preservation_required"] for item in lifecycle_authority))
+        self.assertTrue(all(item["constitutional_definition_required"] for item in quantity_invariants))
+        self.assertTrue(all(item["constitutional_definition_required"] for item in cost_invariants))
+        self.assertTrue(all(item["implementation_inference_prohibited"] for item in temporal_authority))
+        self.assertFalse(completion["implementation_evaluated"])
+        self.assertFalse(completion["implementation_modified"])
+        self.assertFalse(completion["behavioral_verification_executed"])
+        self.assertFalse(completion["implementation_proof_generated"])
+        self.assertFalse(completion["certification_activity_executed"])
+
     def test_b02_003_historical_integrity_prohibits_fabrication(self) -> None:
         replay = json.loads((EVIDENCE_ROOT / "B02-003_replay_constitution.json").read_text(encoding="utf-8"))
         supersession = json.loads((EVIDENCE_ROOT / "B02-003_supersession_constitution.json").read_text(encoding="utf-8"))

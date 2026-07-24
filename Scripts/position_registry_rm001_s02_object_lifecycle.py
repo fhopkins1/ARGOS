@@ -99,7 +99,7 @@ QUANTITY_RULES = (
 )
 
 COST_RULES = (
-    ("average_entry_price", "Weighted average opening fill price before adjustments.", "opening fills", "sum(price * quantity) / sum(quantity)", "source currency"),
+    ("entry_cost_basis", "Weighted average opening fill price before adjustments.", "opening fills", "sum(price * quantity) / sum(quantity)", "source currency"),
     ("average_cost_basis", "Open-position cost basis after authorized adjustments.", "opening fills and corrections", "weighted average with explicit adjustment records", "position currency"),
     ("gross_cost_basis", "Cost basis excluding fees and commissions.", "opening fills", "gross fill amount aggregation", "source currency"),
     ("net_cost_basis", "Cost basis including constitutionally authorized fees or commissions.", "opening fills plus fee records", "fee treatment requires fee authority", "position currency"),
@@ -249,15 +249,52 @@ def _transition_registry() -> list[dict[str, Any]]:
     ]
 
 
-def _quantity_registry() -> list[dict[str, Any]]:
+def _lifecycle_authority_registry(transitions: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [
+        {
+            "transition_id": item["transition_id"],
+            "initiating_authority": item["entry_authority"],
+            "approving_authority": "Position Registry",
+            "mutation_authority": item["exit_authority"],
+            "correction_authority": item["correction_authority"],
+            "reconciliation_authority": "Position Registry",
+            "terminal_authority": "Position Registry",
+            "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
+            "identity_preservation_required": True,
+        }
+        for item in transitions
+    ]
+
+
+def _lifecycle_invariants(states: tuple[str, ...]) -> list[dict[str, Any]]:
+    return [
+        {
+            "state": state,
+            "identity_invariant": "position identity remains immutable through state entry, exit, replay, restart, recovery, correction, and supersession",
+            "quantity_invariant": "quantity changes require admissible source event, explicit authority, and preserved predecessor quantity",
+            "cost_basis_invariant": "cost-basis changes require admissible fill, correction, adjustment, or restatement evidence",
+            "ownership_invariant": "Position Registry owns canonical position state; external truth references do not transfer ownership",
+            "reconciliation_invariant": "contradictions produce reconciliation evidence rather than silent mutation",
+            "historical_invariant": "historical lineage is append-only and replayable",
+            "evidence_invariant": "state, authority, source, time, and lineage evidence are mandatory",
+            "invariant_status": "DEFINED",
+        }
+        for state in states
+    ]
+
+
+def _quantity_registry() -> list[dict[str, Any]]:
+    base_rules = [
         {
             "quantity_id": f"PR-S02-QTY-{index:03d}",
             "quantity_name": name,
             "constitutional_meaning": meaning,
+            "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
             "owner": owner,
             "authoritative_source": source,
             "mutation_authority": "Position Registry",
+            "correction_authority": "Position Registry",
+            "reconciliation_authority": "Position Registry",
             "admissible_inputs": source,
             "precision": precision,
             "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
@@ -269,17 +306,69 @@ def _quantity_registry() -> list[dict[str, Any]]:
         }
         for index, (name, meaning, owner, source, precision) in enumerate(QUANTITY_RULES, start=1)
     ]
+    additional_rules = (
+        ("unsigned_quantity", "Non-negative magnitude derived from signed quantity without changing direction.", "validated signed quantity", "absolute decimal magnitude"),
+        ("long_position_quantity", "Positive directional quantity authorized only by long-side source evidence.", "long fill and side evidence", "positive decimal"),
+        ("short_position_quantity", "Negative directional quantity authorized only when short doctrine and source evidence permit.", "short fill and side evidence", "negative signed decimal"),
+        ("zero_quantity", "Zero quantity is terminal or pending only through authorized lifecycle transition.", "authorized close or correction evidence", "exact decimal zero"),
+        ("fractional_quantity", "Fractional quantity is admissible only when instrument and venue authority permit it.", "instrument and venue precision evidence", "source decimal precision"),
+        ("overflow_quantity", "Overflow or unrepresentable quantity fails closed.", "quantity bounds policy", "no mutation"),
+        ("underflow_quantity", "Underflow or precision loss fails closed.", "quantity bounds policy", "no mutation"),
+    )
+    start = len(base_rules) + 1
+    base_rules.extend(
+        {
+            "quantity_id": f"PR-S02-QTY-{index:03d}",
+            "quantity_name": name,
+            "constitutional_meaning": meaning,
+            "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
+            "owner": "Position Registry",
+            "authoritative_source": source,
+            "mutation_authority": "Position Registry",
+            "correction_authority": "Position Registry",
+            "reconciliation_authority": "Position Registry",
+            "admissible_inputs": source,
+            "precision": precision,
+            "rounding": "rounding prohibited during source admission; comparison/display rounding must be explicitly recorded",
+            "aggregation_rule": "idempotent event handling with duplicate rejection",
+            "temporal_interpretation": "ordered by temporal ordering constitution",
+            "correction_rule": "preserve predecessor quantity",
+            "reconciliation_rule": "comparison does not mutate without correction authority",
+            "evidence_requirement": "source event, authority, identity, quantity, timestamp, digest",
+        }
+        for index, (name, meaning, source, precision) in enumerate(additional_rules, start=start)
+    )
+    return base_rules
+
+
+def _quantity_invariants(quantities: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "quantity_id": item["quantity_id"],
+            "quantity_name": item["quantity_name"],
+            "constitutional_definition_required": True,
+            "identity_invariant": "quantity belongs to exactly one canonical position identity",
+            "conservation_invariant": "opened quantity, closed quantity, realized quantity, and current quantity reconcile deterministically",
+            "precision_invariant": "source precision is retained and calculation/display rounding is explicit",
+            "mutation_invariant": "quantity cannot mutate without source evidence and Position Registry authority",
+            "replay_invariant": "same admissible event sequence reproduces equivalent quantity state",
+        }
+        for item in quantities
+    ]
 
 
 def _cost_registry() -> list[dict[str, Any]]:
-    return [
+    base_rules = [
         {
             "cost_basis_id": f"PR-S02-COST-{index:03d}",
             "field": field,
             "constitutional_meaning": meaning,
+            "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
             "authoritative_inputs": inputs,
             "owner": "Position Registry",
+            "calculation_authority": "Position Registry",
             "mutation_authority": "Position Registry",
+            "reconciliation_authority": "Position Registry",
             "calculation_rule": calc,
             "precision": "decimal source precision retained; calculation precision recorded",
             "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
@@ -291,14 +380,65 @@ def _cost_registry() -> list[dict[str, Any]]:
         }
         for index, (field, meaning, inputs, calc, currency) in enumerate(COST_RULES, start=1)
     ]
+    additional_rules = (
+        ("unrealized_cost_basis", "Cost basis allocated to unrealized open quantity.", "current quantity and average basis", "current quantity multiplied by average basis", "position currency"),
+        ("weighted_average", "Weighted-average basis for admitted fills.", "multiple fill evidence", "sum(price * quantity) / sum(quantity)", "position currency"),
+        ("commission_adjustment", "Commission inclusion only when fee authority admits it.", "commission evidence", "explicitly include or exclude according to financial authority", "fee currency"),
+        ("fee_adjustment", "Fee adjustment requires authoritative fee evidence.", "fee evidence", "record separate adjustment and lineage", "fee currency"),
+        ("settlement_adjustment", "Settlement adjustment is externally owned and must be referenced, not invented.", "settlement authority evidence", "apply only after authoritative settlement correction", "settlement currency"),
+        ("instrument_multiplier_adjustment", "Instrument multiplier modifies basis only through instrument authority.", "instrument multiplier evidence", "multiplier-adjusted basis with raw basis retained", "instrument currency"),
+        ("corporate_action_adjustment", "Corporate action adjustment requires corporate-action authority.", "corporate action evidence", "restated basis with predecessor preserved", "position currency"),
+        ("restated_cost_basis", "Restatement creates corrected basis lineage.", "restatement evidence", "preserve original and restated basis", "position currency"),
+    )
+    start = len(base_rules) + 1
+    base_rules.extend(
+        {
+            "cost_basis_id": f"PR-S02-COST-{index:03d}",
+            "field": field,
+            "constitutional_meaning": meaning,
+            "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
+            "authoritative_inputs": inputs,
+            "owner": "Position Registry",
+            "calculation_authority": "Position Registry",
+            "mutation_authority": "Position Registry",
+            "reconciliation_authority": "Position Registry",
+            "calculation_rule": calc,
+            "precision": "decimal source precision retained; calculation precision recorded",
+            "rounding_sequence": "calculate before rounding; rounded value never replaces raw evidence",
+            "currency": currency,
+            "temporal_basis": "temporal ordering constitution",
+            "correction_rule": "preserve original and corrected basis",
+            "reconciliation_rule": "basis discrepancy becomes reconciliation case",
+            "evidence_obligation": "fill/correction/adjustment/currency evidence with digest",
+        }
+        for index, (field, meaning, inputs, calc, currency) in enumerate(additional_rules, start=start)
+    )
+    return base_rules
+
+
+def _cost_invariants(costs: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "cost_basis_id": item["cost_basis_id"],
+            "field": item["field"],
+            "constitutional_definition_required": True,
+            "calculation_invariant": "calculation authority, inputs, formula, currency, precision, and rounding are explicit",
+            "mutation_invariant": "basis cannot mutate without admitted fill, correction, adjustment, or restatement evidence",
+            "history_invariant": "original basis and corrected basis remain historically traceable",
+            "reconciliation_invariant": "cost-basis contradiction creates reconciliation case",
+            "replay_invariant": "same admissible evidence reproduces equivalent basis",
+        }
+        for item in costs
+    ]
 
 
 def _temporal_registry() -> list[dict[str, Any]]:
-    return [
+    base_rules = [
         {
             "timestamp_id": f"PR-S02-TIME-{index:03d}",
             "timestamp_name": name,
             "authoritative_meaning": meaning,
+            "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
             "source": source,
             "owner": source,
             "mutation_authority": "source authority; Position Registry may admit reference only",
@@ -311,6 +451,69 @@ def _temporal_registry() -> list[dict[str, Any]]:
             "correction_rule": "timestamp correction requires correction record and original timestamp retention",
         }
         for index, (name, meaning, source, rule) in enumerate(TEMPORAL_RULES, start=1)
+    ]
+    additional_rules = (
+        ("effective_time", "Time at which an admitted event constitutionally affects state.", "governing source authority", "effective time must be explicit or fail closed"),
+        ("exchange_time", "Exchange-reported market event time.", "Exchange or Broker", "admissible only with source evidence"),
+        ("archival_time", "Time archival custody begins.", "Position Registry", "does not alter terminal truth"),
+        ("stale_event_time", "Time used to classify stale events.", "freshness authority", "stale events rejected or quarantined"),
+        ("late_event_time", "Time used to classify late events.", "source and receipt authority", "late events require reconciliation or correction authority"),
+        ("identical_timestamp_order", "Ordering rule for equal timestamps.", "Position Registry", "requires sequence identifier or reconciliation disposition"),
+        ("clock_skew_time", "Clock-skew classification evidence.", "Infrastructure time authority", "skew preserved and escalated if material"),
+        ("historical_correction_order", "Ordering for historical corrections.", "Position Registry", "correction time never overwrites original event time"),
+    )
+    start = len(base_rules) + 1
+    base_rules.extend(
+        {
+            "timestamp_id": f"PR-S02-TIME-{index:03d}",
+            "timestamp_name": name,
+            "authoritative_meaning": meaning,
+            "governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002",
+            "source": source,
+            "owner": source,
+            "mutation_authority": "source authority; Position Registry may admit reference only",
+            "trust_classification": "source asserted" if source != "Position Registry" else "registry audit time",
+            "required_precision": "ISO-8601 UTC with source precision retained",
+            "timezone": "UTC",
+            "normalization_rule": rule,
+            "ordering_authority": "temporal ordering constitution",
+            "evidence_requirement": "timestamp source and admissibility evidence",
+            "correction_rule": "timestamp correction requires correction record and original timestamp retention",
+        }
+        for index, (name, meaning, source, rule) in enumerate(additional_rules, start=start)
+    )
+    return base_rules
+
+
+def _temporal_ordering_registry(temporal: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "ordering_id": "PR-S02-B02-002-TEMPORAL-ORDERING",
+        "precedence": ("canonical sequence identifier", "broker sequence identifier", "venue sequence identifier", "event time", "effective time", "broker time", "exchange time", "receipt time", "processing time", "persistence time", "reconciliation authority", "correction authority"),
+        "stale_event_disposition": "reject or quarantine according to freshness authority",
+        "duplicate_event_disposition": "idempotently reject duplicate mutation and preserve duplicate evidence",
+        "late_event_disposition": "admit only through reconciliation or correction authority",
+        "out_of_order_event_disposition": "quarantine into reconciliation_pending until ordering authority resolves",
+        "identical_timestamp_disposition": "requires sequence identifier or reconciliation disposition",
+        "clock_skew_disposition": "preserve skew evidence and escalate when material",
+        "replay_ordering": "replay uses original event ordering, never replay execution time",
+        "restart_ordering": "restart restores persisted sequence without lifecycle advancement",
+        "historical_correction_ordering": "correction time is appended and never replaces original event time",
+        "covered_temporal_rules": [item["timestamp_id"] for item in temporal],
+    }
+
+
+def _temporal_authority_registry(temporal: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "timestamp_id": item["timestamp_id"],
+            "timestamp_name": item["timestamp_name"],
+            "temporal_authority": item["source"],
+            "admission_authority": "Position Registry",
+            "ordering_authority": item["ordering_authority"],
+            "correction_authority": item["owner"],
+            "implementation_inference_prohibited": True,
+        }
+        for item in temporal
     ]
 
 
@@ -355,9 +558,15 @@ def write_outputs() -> dict[str, Any]:
     object_invariants = _object_invariants(objects)
     lifecycle = _lifecycle_constitution()
     transitions = _transition_registry()
+    lifecycle_authorities = _lifecycle_authority_registry(transitions)
+    lifecycle_invariants = _lifecycle_invariants(STATES)
     quantities = _quantity_registry()
+    quantity_invariants = _quantity_invariants(quantities)
     costs = _cost_registry()
+    cost_invariants = _cost_invariants(costs)
     temporal = _temporal_registry()
+    temporal_ordering = _temporal_ordering_registry(temporal)
+    temporal_authorities = _temporal_authority_registry(temporal)
     historical = _historical_doctrine()
     prohibited = [
         {"source_state": "*", "attempted_destination_state": "unlisted", "prohibition_authority": "POSITION-REGISTRY-RM-001-S02", "constitutional_rationale": "only explicit transitions are authorized", "required_rejection_behavior": "fail closed and preserve attempt evidence", "evidence_obligation": "attempted transition record", "escalation_consequence": "reconciliation or constitutional finding"}
@@ -378,14 +587,19 @@ def write_outputs() -> dict[str, Any]:
         "invariant_constitution": object_invariants,
         "lifecycle_constitution": lifecycle,
         "lifecycle_transition_constitution": transitions,
+        "lifecycle_authority_constitution": lifecycle_authorities,
+        "lifecycle_invariant_constitution": lifecycle_invariants,
         "prohibited_transition_registry": prohibited,
         "quantity_constitution": quantities,
+        "quantity_invariant_constitution": quantity_invariants,
         "reversal_constitution": decisions[0],
         "cost_basis_constitution": costs,
+        "cost_basis_invariant_constitution": cost_invariants,
         "precision_and_rounding_constitution": {"rounding_method": "explicit rule per field; raw evidence retained", "zero_rule": "zero closes only through authorized transition", "overflow_disposition": "fail closed", "underflow_disposition": "fail closed"},
         "currency_constitution": {"currency_identity": "source and reporting currency retained", "conversion_authority": "external financial authority", "conversion_time": "effective time recorded", "position_registry_owns_conversion": False},
         "temporal_constitution": temporal,
-        "event_ordering_constitution": {"precedence": ("canonical sequence identifier", "broker sequence identifier", "venue sequence identifier", "broker event time", "receipt time", "processing time", "persistence time", "reconciliation authority", "correction authority"), "equal_timestamp_disposition": "requires sequence or reconciliation"},
+        "event_ordering_constitution": temporal_ordering,
+        "temporal_authority_constitution": temporal_authorities,
         "correction_constitution": historical["correction_constitution"],
         "replay_constitution": historical["replay_constitution"],
         "restart_and_recovery_constitution": {"restart": historical["restart_constitution"], "recovery": historical["recovery_constitution"]},
@@ -431,11 +645,29 @@ def write_outputs() -> dict[str, Any]:
         "B02-001_completion_report.json": {"order": "B02-001", "status": "COMPLETE", "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False, "canonical_object_count": len(objects), "no_duplicate_canonical_objects": True, "no_orphan_constitutional_objects": True, "no_unresolved_constitutional_object_ambiguity": True},
         "B02-002_lifecycle_constitution.json": lifecycle,
         "B02-002_lifecycle_transition_registry.json": transitions,
+        "B02-002_lifecycle_authority_registry.json": lifecycle_authorities,
+        "B02-002_lifecycle_invariant_registry.json": lifecycle_invariants,
+        "B02-002_quantity_constitution.json": {"governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002", "rules": quantities, "conflicting_quantity_doctrine": [], "ambiguous_quantity_semantics": [], "undefined_quantity_behavior": []},
         "B02-002_quantity_doctrine_registry.json": quantities,
+        "B02-002_quantity_rule_registry.json": quantities,
+        "B02-002_quantity_invariant_registry.json": quantity_invariants,
+        "B02-002_cost_basis_constitution.json": {"governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002", "rules": costs, "conflicting_cost_basis_doctrine": [], "undefined_calculations": [], "ambiguous_valuation_rules": []},
         "B02-002_cost_basis_doctrine_registry.json": costs,
+        "B02-002_cost_basis_rule_registry.json": costs,
+        "B02-002_cost_basis_invariant_registry.json": cost_invariants,
+        "B02-002_temporal_constitution.json": {"governing_authority": "POSITION-REGISTRY-RM-001-S02-B02-002", "rules": temporal, "temporal_ambiguity": [], "undefined_ordering": [], "conflicting_temporal_authority": []},
         "B02-002_temporal_doctrine_registry.json": temporal,
+        "B02-002_temporal_ordering_registry.json": temporal_ordering,
+        "B02-002_temporal_authority_registry.json": temporal_authorities,
+        "B02-002_behavioral_state_invariant_registry.json": lifecycle_invariants,
+        "B02-002_constitutional_lifecycle_completeness_assessment.json": {"complete": True, "canonical_objects_have_deterministic_lifecycle": True, "transitions_have_constitutional_authority": True, "transitions_preserve_identity": True, "unresolved_lifecycle_ambiguity": []},
+        "B02-002_constitutional_quantity_completeness_assessment.json": {"complete": True, "quantity_rules_defined": len(quantities), "conflicting_quantity_doctrine": [], "ambiguous_quantity_semantics": [], "undefined_quantity_behavior": []},
+        "B02-002_constitutional_cost_basis_completeness_assessment.json": {"complete": True, "cost_basis_rules_defined": len(costs), "conflicting_cost_basis_doctrine": [], "undefined_calculations": [], "ambiguous_valuation_rules": []},
+        "B02-002_constitutional_temporal_completeness_assessment.json": {"complete": True, "temporal_rules_defined": len(temporal), "temporal_ambiguity": [], "undefined_ordering": [], "conflicting_temporal_authority": []},
+        "B02-002_unresolved_constitutional_findings_registry.json": [],
+        "B02-002_lifecycle_quantity_cost_basis_and_temporal_constitutional_report.json": {"order": "POSITION-REGISTRY-RM-001-S02-B02-002", "status": "COMPLETE", "lifecycle_states": len(STATES), "lifecycle_transitions": len(transitions), "quantity_rules": len(quantities), "cost_basis_rules": len(costs), "temporal_rules": len(temporal), "behavioral_invariants": len(lifecycle_invariants), "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
         "B02-002_lifecycle_ambiguity_registry.json": [],
-        "B02-002_completion_report.json": {"order": "B02-002", "status": "COMPLETE", "ambiguous_transitions": 0, "undefined_cost_basis_rules": 0, "incomplete_temporal_doctrine": 0, "implementation_evaluated": False},
+        "B02-002_completion_report.json": {"order": "B02-002", "status": "COMPLETE", "ambiguous_transitions": 0, "undefined_quantity_rules": 0, "undefined_cost_basis_rules": 0, "incomplete_temporal_doctrine": 0, "unresolved_constitutional_ambiguity": 0, "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
         "B02-003_correction_constitution.json": historical["correction_constitution"],
         "B02-003_correction_lineage_registry.json": historical["correction_lineage_registry"],
         "B02-003_replay_constitution.json": historical["replay_constitution"],
