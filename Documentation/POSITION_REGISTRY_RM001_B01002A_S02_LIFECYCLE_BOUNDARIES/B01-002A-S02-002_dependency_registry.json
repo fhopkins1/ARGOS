@@ -1,0 +1,14 @@
+[
+  {
+    "counterparty_office": "Exit Decision",
+    "dependency_direction": "Position Registry depends on Exit Decision only for exit authorization truth; Exit Decision depends on Position Registry for current position state",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-002",
+    "interaction_id": "PR-LIFECYCLE-BND-002",
+    "interface_authority": "Exit Decision produces exit authorization interface; Position Registry consumes and acknowledges disposition",
+    "lifecycle_authority": "Position Registry executes authorized lifecycle transitions and records lifecycle evidence",
+    "mutation_authority": "Exit Decision requests or authorizes; Position Registry accepts, rejects, and mutates canonical lifecycle state",
+    "ownership_boundary": "Exit Decision owns exit recommendations and exit authorization truth; Position Registry owns canonical position state",
+    "reconciliation_authority": "Position Registry reconciles canonical lifecycle effects; Exit Decision owns exit-decision corrections"
+  }
+]

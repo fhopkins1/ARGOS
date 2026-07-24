@@ -1,0 +1,15 @@
+{
+  "completion_criteria": "Closed Position Truth accepts immutable closed-position package and Position Registry records ownership relinquishment",
+  "correction_behavior_after_transfer": "Closed Position Truth governs historical correction with immutable lineage",
+  "receiving_owner": "Closed Position Truth",
+  "relinquishing_owner": "Position Registry",
+  "replay_behavior": "replay preserves transfer record and does not reassign historical ownership",
+  "transfer_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+  "transfer_initiator": "Position Registry",
+  "transfer_prerequisites": [
+    "terminal lifecycle state",
+    "complete closure evidence",
+    "complete reconciliation evidence",
+    "immutable transfer package"
+  ]
+}

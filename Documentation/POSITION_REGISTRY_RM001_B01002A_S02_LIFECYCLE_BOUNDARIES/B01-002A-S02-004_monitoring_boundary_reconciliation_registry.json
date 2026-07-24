@@ -1,0 +1,17 @@
+{
+  "boundary_id": "PR-B01-002A-S02-001-MONITORING",
+  "constitutional_authority": "observe active canonical position state and produce monitoring observations, anomaly records, and monitoring evidence",
+  "counterparty_office": "Monitoring",
+  "dependency_direction": "Monitoring -> Position Registry for active position reads",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-001",
+  "monitoring_authority": "Monitoring observes lifecycle, quantity, cost basis, health, and anomaly conditions",
+  "mutation_authority": "Monitoring may not mutate canonical position state; Position Registry alone mutates canonical positions",
+  "ownership_boundary": "Monitoring owns monitoring observations and anomaly records; Position Registry owns canonical position state",
+  "reconciliation_authority": "Monitoring may initiate anomaly escalation; Position Registry performs canonical reconciliation disposition",
+  "replay_authority": "Monitoring replay reproduces observations; Position Registry replay reproduces canonical state",
+  "truth_ownership": {
+    "anomaly_truth": "Monitoring",
+    "canonical_position_truth": "Position Registry",
+    "monitoring_truth": "Monitoring"
+  }
+}

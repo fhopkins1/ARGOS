@@ -1,0 +1,23 @@
+{
+  "all_dependencies_deterministic": true,
+  "all_lifecycle_transitions_have_authority": true,
+  "all_truth_transfers_have_authority": true,
+  "authority_during_correction": "originating office corrects exit truth; Position Registry corrects canonical lifecycle state only through admitted correction evidence",
+  "authority_during_replay": "Position Registry replays canonical state from immutable accepted exit and mutation evidence",
+  "authority_following_exit_authorization": "Position Registry validates authorization, performs or rejects lifecycle transition, and records evidence",
+  "behavioral_verification_executed": false,
+  "certification_activity_executed": false,
+  "circular_authority_remaining": false,
+  "exit_decision_authorizes_closure": true,
+  "exit_decision_mutates_positions": false,
+  "exit_decision_owns_positions": false,
+  "implementation_evaluated": false,
+  "implementation_modified": false,
+  "implementation_proof_generated": false,
+  "lifecycle_ambiguity_remaining": false,
+  "order": "B01-002A-S02-002",
+  "ownership_ambiguity_remaining": false,
+  "position_registry_executes_authorized_lifecycle_transitions": true,
+  "status": "COMPLETE",
+  "truth_ownership_ambiguity_remaining": false
+}

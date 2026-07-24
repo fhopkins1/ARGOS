@@ -1,0 +1,38 @@
+[
+  {
+    "constitutional_owner": "Position Registry",
+    "custodian": "Position Registry",
+    "lifecycle_stage": "active",
+    "mutation_authority": "Position Registry"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "custodian": "Position Registry and Monitoring observation custody",
+    "lifecycle_stage": "monitored",
+    "mutation_authority": "Position Registry"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "custodian": "Position Registry",
+    "lifecycle_stage": "exit_authorized",
+    "mutation_authority": "Position Registry after Exit Decision authorization"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "custodian": "Position Registry",
+    "lifecycle_stage": "closed_pending_transfer",
+    "mutation_authority": "Position Registry correction/reconciliation authority"
+  },
+  {
+    "constitutional_owner": "Closed Position Truth",
+    "custodian": "Closed Position Truth",
+    "lifecycle_stage": "historical_transferred",
+    "mutation_authority": "historical correction authority only"
+  },
+  {
+    "constitutional_owner": "Performance Truth for analytics only",
+    "custodian": "Performance Truth",
+    "lifecycle_stage": "performance_analyzed",
+    "mutation_authority": "Performance Truth analytics mutation only"
+  }
+]

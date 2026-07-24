@@ -1,0 +1,16 @@
+{
+  "boundary_id": "PR-B01-002A-S02-003-PERFORMANCE-TRUTH",
+  "constitutional_authority": "own realized performance, performance metrics, historical analytics, and performance reporting",
+  "counterparty_office": "Performance Truth",
+  "dependency_direction": "Performance Truth -> Closed Position Truth and Position Registry for source facts",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+  "mutation_authority": "Performance Truth may not mutate canonical or closed position truth",
+  "ownership_boundary": "Performance Truth owns performance analytics; Position Registry does not own performance analytics",
+  "reconciliation_authority": "Performance Truth reconciles performance calculations; source position truth remains owned by its constitutional owner",
+  "replay_authority": "performance replay reproduces analytics from immutable source facts",
+  "truth_ownership": {
+    "canonical_position_truth": "Position Registry",
+    "closed_position_truth": "Closed Position Truth",
+    "performance_truth": "Performance Truth"
+  }
+}

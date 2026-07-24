@@ -1,0 +1,47 @@
+[
+  {
+    "constitutional_owner": "Position Registry",
+    "transfer_authority": "terminal closure transfer only",
+    "truth_class": "canonical_active_position_truth"
+  },
+  {
+    "constitutional_owner": "Monitoring",
+    "transfer_authority": "none",
+    "truth_class": "monitoring_truth"
+  },
+  {
+    "constitutional_owner": "Exit Decision",
+    "transfer_authority": "none",
+    "truth_class": "exit_authorization_truth"
+  },
+  {
+    "constitutional_owner": "Closed Position Truth",
+    "transfer_authority": "accepted closure package",
+    "truth_class": "immutable_closed_position_truth"
+  },
+  {
+    "constitutional_owner": "Performance Truth",
+    "transfer_authority": "none",
+    "truth_class": "historical_performance_truth"
+  },
+  {
+    "constitutional_owner": "Position Registry",
+    "transfer_authority": "none unless historical transfer accepted",
+    "truth_class": "reconciliation_truth"
+  },
+  {
+    "constitutional_owner": "originating truth owner",
+    "transfer_authority": "explicit correction evidence only",
+    "truth_class": "correction_truth"
+  },
+  {
+    "constitutional_owner": "replayed domain owner",
+    "transfer_authority": "none",
+    "truth_class": "replay_truth"
+  },
+  {
+    "constitutional_owner": "Monitoring",
+    "transfer_authority": "none",
+    "truth_class": "anomaly_truth"
+  }
+]

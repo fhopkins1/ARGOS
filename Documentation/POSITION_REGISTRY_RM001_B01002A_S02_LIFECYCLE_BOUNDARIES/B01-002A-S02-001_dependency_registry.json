@@ -1,0 +1,14 @@
+[
+  {
+    "counterparty_office": "Monitoring",
+    "dependency_direction": "Monitoring -> Position Registry for active position reads",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-001",
+    "interaction_id": "PR-LIFECYCLE-BND-001",
+    "interface_authority": "Monitoring produces bounded lifecycle-domain evidence consumed by Position Registry where authorized",
+    "lifecycle_authority": "Position Registry owns canonical lifecycle unless transferred",
+    "mutation_authority": "Monitoring may not mutate canonical position state; Position Registry alone mutates canonical positions",
+    "ownership_boundary": "Monitoring owns monitoring observations and anomaly records; Position Registry owns canonical position state",
+    "reconciliation_authority": "Monitoring may initiate anomaly escalation; Position Registry performs canonical reconciliation disposition"
+  }
+]

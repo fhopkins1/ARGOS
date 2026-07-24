@@ -1,0 +1,14 @@
+[
+  {
+    "counterparty_office": "Performance Truth",
+    "dependency_direction": "Performance Truth -> Closed Position Truth and Position Registry for source facts",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+    "interaction_id": "PR-LIFECYCLE-BND-004",
+    "interface_authority": "Performance Truth produces bounded lifecycle-domain evidence consumed by Position Registry where authorized",
+    "lifecycle_authority": "Position Registry owns canonical lifecycle unless transferred",
+    "mutation_authority": "Performance Truth may not mutate canonical or closed position truth",
+    "ownership_boundary": "Performance Truth owns performance analytics; Position Registry does not own performance analytics",
+    "reconciliation_authority": "Performance Truth reconciles performance calculations; source position truth remains owned by its constitutional owner"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "consumer": "Monitoring",
+    "interface": "active_position_snapshot",
+    "producer": "Position Registry"
+  },
+  {
+    "consumer": "Position Registry",
+    "interface": "anomaly_escalation",
+    "producer": "Monitoring"
+  }
+]

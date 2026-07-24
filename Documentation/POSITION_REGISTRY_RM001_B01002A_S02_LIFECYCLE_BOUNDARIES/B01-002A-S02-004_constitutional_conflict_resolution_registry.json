@@ -1,0 +1,22 @@
+[
+  {
+    "conflict": "Monitoring position ownership",
+    "deterministic_disposition": "Monitoring owns observations only",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "Exit Decision position mutation",
+    "deterministic_disposition": "Exit Decision authorizes closure intent; Position Registry mutates lifecycle",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "Closed Position Truth active-state ownership",
+    "deterministic_disposition": "ownership transfers only after terminal closure package acceptance",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "Performance Truth position mutation",
+    "deterministic_disposition": "Performance Truth owns analytics only",
+    "resolution": "rejected"
+  }
+]

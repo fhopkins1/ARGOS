@@ -1,0 +1,18 @@
+[
+  {
+    "dependency_direction": "Monitoring -> Position Registry for active position reads",
+    "office": "Monitoring"
+  },
+  {
+    "dependency_direction": "Position Registry depends on Exit Decision only for exit authorization truth; Exit Decision depends on Position Registry for current position state",
+    "office": "Exit Decision"
+  },
+  {
+    "dependency_direction": "Closed Position Truth -> Position Registry for transfer package; Position Registry relinquishes after accepted transfer",
+    "office": "Closed Position Truth"
+  },
+  {
+    "dependency_direction": "Performance Truth -> Closed Position Truth and Position Registry for source facts",
+    "office": "Performance Truth"
+  }
+]

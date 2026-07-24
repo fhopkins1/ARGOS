@@ -1,0 +1,50 @@
+[
+  {
+    "counterparty_office": "Monitoring",
+    "dependency_direction": "Monitoring -> Position Registry for active position reads",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-001",
+    "interaction_id": "PR-LIFECYCLE-BND-001",
+    "interface_authority": "Monitoring produces bounded lifecycle-domain evidence consumed by Position Registry where authorized",
+    "lifecycle_authority": "Position Registry owns canonical lifecycle unless transferred",
+    "mutation_authority": "Monitoring may not mutate canonical position state; Position Registry alone mutates canonical positions",
+    "ownership_boundary": "Monitoring owns monitoring observations and anomaly records; Position Registry owns canonical position state",
+    "reconciliation_authority": "Monitoring may initiate anomaly escalation; Position Registry performs canonical reconciliation disposition"
+  },
+  {
+    "counterparty_office": "Exit Decision",
+    "dependency_direction": "Position Registry depends on Exit Decision only for exit authorization truth; Exit Decision depends on Position Registry for current position state",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-002",
+    "interaction_id": "PR-LIFECYCLE-BND-002",
+    "interface_authority": "Exit Decision produces exit authorization interface; Position Registry consumes and acknowledges disposition",
+    "lifecycle_authority": "Position Registry executes authorized lifecycle transitions and records lifecycle evidence",
+    "mutation_authority": "Exit Decision requests or authorizes; Position Registry accepts, rejects, and mutates canonical lifecycle state",
+    "ownership_boundary": "Exit Decision owns exit recommendations and exit authorization truth; Position Registry owns canonical position state",
+    "reconciliation_authority": "Position Registry reconciles canonical lifecycle effects; Exit Decision owns exit-decision corrections"
+  },
+  {
+    "counterparty_office": "Closed Position Truth",
+    "dependency_direction": "Closed Position Truth -> Position Registry for transfer package; Position Registry relinquishes after accepted transfer",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+    "interaction_id": "PR-LIFECYCLE-BND-003",
+    "interface_authority": "Closed Position Truth produces bounded lifecycle-domain evidence consumed by Position Registry where authorized",
+    "lifecycle_authority": "Position Registry owns canonical lifecycle unless transferred",
+    "mutation_authority": "closed historical truth is immutable except explicit correction lineage",
+    "ownership_boundary": "Position Registry owns active state until transfer; Closed Position Truth owns immutable closed-position truth after transfer",
+    "reconciliation_authority": "Closed Position Truth reconciles immutable historical truth after transfer; Position Registry participates for transfer lineage only"
+  },
+  {
+    "counterparty_office": "Performance Truth",
+    "dependency_direction": "Performance Truth -> Closed Position Truth and Position Registry for source facts",
+    "evidence_obligation": "immutable provenance, integrity, custody, replay, and correction references required",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+    "interaction_id": "PR-LIFECYCLE-BND-004",
+    "interface_authority": "Performance Truth produces bounded lifecycle-domain evidence consumed by Position Registry where authorized",
+    "lifecycle_authority": "Position Registry owns canonical lifecycle unless transferred",
+    "mutation_authority": "Performance Truth may not mutate canonical or closed position truth",
+    "ownership_boundary": "Performance Truth owns performance analytics; Position Registry does not own performance analytics",
+    "reconciliation_authority": "Performance Truth reconciles performance calculations; source position truth remains owned by its constitutional owner"
+  }
+]

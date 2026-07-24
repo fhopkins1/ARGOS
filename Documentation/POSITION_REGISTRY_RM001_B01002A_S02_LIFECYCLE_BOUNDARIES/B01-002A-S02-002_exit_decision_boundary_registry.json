@@ -1,0 +1,24 @@
+{
+  "boundary_id": "PR-B01-002A-S02-002-EXIT-DECISION",
+  "constitutional_authority": "determine and authorize exit intent according to Exit Decision doctrine",
+  "correction_authority": "Exit Decision corrects exit decision truth; Position Registry corrects canonical position state when admissible corrected exit evidence requires it",
+  "counterparty_office": "Exit Decision",
+  "dependency_direction": "Position Registry depends on Exit Decision only for exit authorization truth; Exit Decision depends on Position Registry for current position state",
+  "determinations": {
+    "authority_during_correction": "originating office corrects exit truth; Position Registry corrects canonical lifecycle state only through admitted correction evidence",
+    "authority_during_replay": "Position Registry replays canonical state from immutable accepted exit and mutation evidence",
+    "authority_following_exit_authorization": "Position Registry validates authorization, performs or rejects lifecycle transition, and records evidence",
+    "exit_decision_authorizes_closure": true,
+    "exit_decision_mutates_positions": false,
+    "exit_decision_owns_positions": false,
+    "position_registry_executes_authorized_lifecycle_transitions": true
+  },
+  "exit_authority": "Exit Decision may authorize closure intent but does not execute canonical lifecycle transition",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-002",
+  "interface_authority": "Exit Decision produces exit authorization interface; Position Registry consumes and acknowledges disposition",
+  "lifecycle_authority": "Position Registry executes authorized lifecycle transitions and records lifecycle evidence",
+  "mutation_authority": "Exit Decision requests or authorizes; Position Registry accepts, rejects, and mutates canonical lifecycle state",
+  "ownership_boundary": "Exit Decision owns exit recommendations and exit authorization truth; Position Registry owns canonical position state",
+  "reconciliation_authority": "Position Registry reconciles canonical lifecycle effects; Exit Decision owns exit-decision corrections",
+  "replay_authority": "Position Registry replay re-applies authorized lifecycle transitions from immutable exit evidence"
+}

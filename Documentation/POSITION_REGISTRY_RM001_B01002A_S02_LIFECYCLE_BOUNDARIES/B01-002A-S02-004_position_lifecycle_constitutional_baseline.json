@@ -1,0 +1,201 @@
+{
+  "baseline_id": "PR-B01-002A-S02-004-LIFECYCLE-BOUNDARY-BASELINE",
+  "boundaries": [
+    {
+      "boundary_id": "PR-B01-002A-S02-001-MONITORING",
+      "constitutional_authority": "observe active canonical position state and produce monitoring observations, anomaly records, and monitoring evidence",
+      "counterparty_office": "Monitoring",
+      "dependency_direction": "Monitoring -> Position Registry for active position reads",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-001",
+      "monitoring_authority": "Monitoring observes lifecycle, quantity, cost basis, health, and anomaly conditions",
+      "mutation_authority": "Monitoring may not mutate canonical position state; Position Registry alone mutates canonical positions",
+      "ownership_boundary": "Monitoring owns monitoring observations and anomaly records; Position Registry owns canonical position state",
+      "reconciliation_authority": "Monitoring may initiate anomaly escalation; Position Registry performs canonical reconciliation disposition",
+      "replay_authority": "Monitoring replay reproduces observations; Position Registry replay reproduces canonical state",
+      "truth_ownership": {
+        "anomaly_truth": "Monitoring",
+        "canonical_position_truth": "Position Registry",
+        "monitoring_truth": "Monitoring"
+      }
+    },
+    {
+      "boundary_id": "PR-B01-002A-S02-002-EXIT-DECISION",
+      "constitutional_authority": "determine and authorize exit intent according to Exit Decision doctrine",
+      "correction_authority": "Exit Decision corrects exit decision truth; Position Registry corrects canonical position state when admissible corrected exit evidence requires it",
+      "counterparty_office": "Exit Decision",
+      "dependency_direction": "Position Registry depends on Exit Decision only for exit authorization truth; Exit Decision depends on Position Registry for current position state",
+      "determinations": {
+        "authority_during_correction": "originating office corrects exit truth; Position Registry corrects canonical lifecycle state only through admitted correction evidence",
+        "authority_during_replay": "Position Registry replays canonical state from immutable accepted exit and mutation evidence",
+        "authority_following_exit_authorization": "Position Registry validates authorization, performs or rejects lifecycle transition, and records evidence",
+        "exit_decision_authorizes_closure": true,
+        "exit_decision_mutates_positions": false,
+        "exit_decision_owns_positions": false,
+        "position_registry_executes_authorized_lifecycle_transitions": true
+      },
+      "exit_authority": "Exit Decision may authorize closure intent but does not execute canonical lifecycle transition",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-002",
+      "interface_authority": "Exit Decision produces exit authorization interface; Position Registry consumes and acknowledges disposition",
+      "lifecycle_authority": "Position Registry executes authorized lifecycle transitions and records lifecycle evidence",
+      "mutation_authority": "Exit Decision requests or authorizes; Position Registry accepts, rejects, and mutates canonical lifecycle state",
+      "ownership_boundary": "Exit Decision owns exit recommendations and exit authorization truth; Position Registry owns canonical position state",
+      "reconciliation_authority": "Position Registry reconciles canonical lifecycle effects; Exit Decision owns exit-decision corrections",
+      "replay_authority": "Position Registry replay re-applies authorized lifecycle transitions from immutable exit evidence"
+    },
+    {
+      "boundary_id": "PR-B01-002A-S02-003-CLOSED-POSITION-TRUTH",
+      "constitutional_authority": "own immutable historical position truth following constitutional transfer",
+      "correction_authority": "Closed Position Truth governs historical correction after transfer with immutable lineage preserved",
+      "counterparty_office": "Closed Position Truth",
+      "dependency_direction": "Closed Position Truth -> Position Registry for transfer package; Position Registry relinquishes after accepted transfer",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+      "mutation_authority": "closed historical truth is immutable except explicit correction lineage",
+      "ownership_boundary": "Position Registry owns active state until transfer; Closed Position Truth owns immutable closed-position truth after transfer",
+      "reconciliation_authority": "Closed Position Truth reconciles immutable historical truth after transfer; Position Registry participates for transfer lineage only",
+      "replay_authority": "replay after transfer preserves historical truth and transfer record",
+      "truth_ownership": {
+        "active_position_truth": "Position Registry",
+        "immutable_closed_position_truth": "Closed Position Truth"
+      },
+      "truth_transfer_authority": "Position Registry initiates transfer after terminal closure prerequisites; Closed Position Truth acquires historical ownership"
+    },
+    {
+      "boundary_id": "PR-B01-002A-S02-003-PERFORMANCE-TRUTH",
+      "constitutional_authority": "own realized performance, performance metrics, historical analytics, and performance reporting",
+      "counterparty_office": "Performance Truth",
+      "dependency_direction": "Performance Truth -> Closed Position Truth and Position Registry for source facts",
+      "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+      "mutation_authority": "Performance Truth may not mutate canonical or closed position truth",
+      "ownership_boundary": "Performance Truth owns performance analytics; Position Registry does not own performance analytics",
+      "reconciliation_authority": "Performance Truth reconciles performance calculations; source position truth remains owned by its constitutional owner",
+      "replay_authority": "performance replay reproduces analytics from immutable source facts",
+      "truth_ownership": {
+        "canonical_position_truth": "Position Registry",
+        "closed_position_truth": "Closed Position Truth",
+        "performance_truth": "Performance Truth"
+      }
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict": "Monitoring position ownership",
+      "deterministic_disposition": "Monitoring owns observations only",
+      "resolution": "rejected"
+    },
+    {
+      "conflict": "Exit Decision position mutation",
+      "deterministic_disposition": "Exit Decision authorizes closure intent; Position Registry mutates lifecycle",
+      "resolution": "rejected"
+    },
+    {
+      "conflict": "Closed Position Truth active-state ownership",
+      "deterministic_disposition": "ownership transfers only after terminal closure package acceptance",
+      "resolution": "rejected"
+    },
+    {
+      "conflict": "Performance Truth position mutation",
+      "deterministic_disposition": "Performance Truth owns analytics only",
+      "resolution": "rejected"
+    }
+  ],
+  "historical_transfer": {
+    "completion_criteria": "Closed Position Truth accepts immutable closed-position package and Position Registry records ownership relinquishment",
+    "correction_behavior_after_transfer": "Closed Position Truth governs historical correction with immutable lineage",
+    "receiving_owner": "Closed Position Truth",
+    "relinquishing_owner": "Position Registry",
+    "replay_behavior": "replay preserves transfer record and does not reassign historical ownership",
+    "transfer_authority": "POSITION-REGISTRY-RM-001-B01-002A-S02-003",
+    "transfer_initiator": "Position Registry",
+    "transfer_prerequisites": [
+      "terminal lifecycle state",
+      "complete closure evidence",
+      "complete reconciliation evidence",
+      "immutable transfer package"
+    ]
+  },
+  "lifecycle_ownership": [
+    {
+      "constitutional_owner": "Position Registry",
+      "custodian": "Position Registry",
+      "lifecycle_stage": "active",
+      "mutation_authority": "Position Registry"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "custodian": "Position Registry and Monitoring observation custody",
+      "lifecycle_stage": "monitored",
+      "mutation_authority": "Position Registry"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "custodian": "Position Registry",
+      "lifecycle_stage": "exit_authorized",
+      "mutation_authority": "Position Registry after Exit Decision authorization"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "custodian": "Position Registry",
+      "lifecycle_stage": "closed_pending_transfer",
+      "mutation_authority": "Position Registry correction/reconciliation authority"
+    },
+    {
+      "constitutional_owner": "Closed Position Truth",
+      "custodian": "Closed Position Truth",
+      "lifecycle_stage": "historical_transferred",
+      "mutation_authority": "historical correction authority only"
+    },
+    {
+      "constitutional_owner": "Performance Truth for analytics only",
+      "custodian": "Performance Truth",
+      "lifecycle_stage": "performance_analyzed",
+      "mutation_authority": "Performance Truth analytics mutation only"
+    }
+  ],
+  "truth_ownership": [
+    {
+      "constitutional_owner": "Position Registry",
+      "transfer_authority": "terminal closure transfer only",
+      "truth_class": "canonical_active_position_truth"
+    },
+    {
+      "constitutional_owner": "Monitoring",
+      "transfer_authority": "none",
+      "truth_class": "monitoring_truth"
+    },
+    {
+      "constitutional_owner": "Exit Decision",
+      "transfer_authority": "none",
+      "truth_class": "exit_authorization_truth"
+    },
+    {
+      "constitutional_owner": "Closed Position Truth",
+      "transfer_authority": "accepted closure package",
+      "truth_class": "immutable_closed_position_truth"
+    },
+    {
+      "constitutional_owner": "Performance Truth",
+      "transfer_authority": "none",
+      "truth_class": "historical_performance_truth"
+    },
+    {
+      "constitutional_owner": "Position Registry",
+      "transfer_authority": "none unless historical transfer accepted",
+      "truth_class": "reconciliation_truth"
+    },
+    {
+      "constitutional_owner": "originating truth owner",
+      "transfer_authority": "explicit correction evidence only",
+      "truth_class": "correction_truth"
+    },
+    {
+      "constitutional_owner": "replayed domain owner",
+      "transfer_authority": "none",
+      "truth_class": "replay_truth"
+    },
+    {
+      "constitutional_owner": "Monitoring",
+      "transfer_authority": "none",
+      "truth_class": "anomaly_truth"
+    }
+  ]
+}
