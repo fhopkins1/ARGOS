@@ -1,0 +1,483 @@
+{
+  "series": "BROKER-RM-001-S02",
+  "title": "Broker Constitutional Object Ownership and Custody Series",
+  "status": "COMPLETE",
+  "scope": "constitutional ownership and custody doctrine only",
+  "runtime_behavior_modified": false,
+  "repository_wide_verification_executed": false,
+  "governing_authority": [
+    "Enterprise Constitution",
+    "Enterprise Constitutional Laws",
+    "Broker Governance Baseline from BROKER-RM-001-S01",
+    "Broker Office constitutional authority hierarchy"
+  ],
+  "b02_001_object_inventory": [
+    {
+      "object_id": "BROKER-OBJ-001",
+      "canonical_name": "Broker Execution Request",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerExecutionRequest"],
+      "classification": "inbound custody object",
+      "constitutional_owner": "Trader Order Management Office",
+      "broker_role": "temporary constitutional custodian",
+      "ownership_authority": "Trader creates execution intent; Broker may validate, translate, and preserve request evidence only.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-002",
+      "canonical_name": "Broker Authentication Context Reference",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerAuthenticationContext"],
+      "classification": "security reference",
+      "constitutional_owner": "Infrastructure and Security Authority",
+      "broker_role": "reference consumer and evidence custodian",
+      "ownership_authority": "Broker may consume redacted credential references but shall not own or expose secrets.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-003",
+      "canonical_name": "Broker-Specific Request",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerSpecificRequest"],
+      "classification": "Broker-owned translation object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns broker-protocol translation inside the Broker boundary.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-004",
+      "canonical_name": "Raw Broker Response",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:RawBrokerResponse"],
+      "classification": "external observation evidence",
+      "constitutional_owner": "External Broker or Execution Venue",
+      "broker_role": "immutable evidence custodian and normalizer",
+      "ownership_authority": "Broker preserves raw external responses and normalizes them; Broker shall not rewrite external truth.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-005",
+      "canonical_name": "Canonical Broker Event",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:CanonicalBrokerEvent", "src/argos/trader/paper_brokerage.py:BrokerEventRecord"],
+      "classification": "Broker-owned constitutional evidence object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns canonical normalization of broker communication events.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-006",
+      "canonical_name": "Broker Identifier Mapping",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerIdentifierMapping"],
+      "classification": "Broker-owned reconciliation key object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns deterministic mapping between ARGOS and broker identifiers.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-007",
+      "canonical_name": "Broker Integration Case File",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerIntegrationCaseFile"],
+      "classification": "Broker-owned anomaly evidence object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns anomaly classification and case-file generation for Broker communication anomalies.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-008",
+      "canonical_name": "Broker Capability Profile",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerCapabilityProfile"],
+      "classification": "Broker-owned compatibility object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns broker capability registration, compatibility evidence, and supported execution-surface declarations.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-009",
+      "canonical_name": "Broker Health Status",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerHealthStatus"],
+      "classification": "Broker-owned health observation object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns broker health observation, status recording, and anomaly routing.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-010",
+      "canonical_name": "Broker Integration Anomaly",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerIntegrationAnomaly"],
+      "classification": "Broker-owned failure classification object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns communication anomaly classification within the Broker boundary.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-011",
+      "canonical_name": "Broker Adapter Registry",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerAdapterRegistry"],
+      "classification": "Broker-owned adapter governance object",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns adapter registration and compatibility gatekeeping; live adapter approval remains outside initial certification scope.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-012",
+      "canonical_name": "Broker Message History",
+      "implementation_artifacts": ["src/argos/trader/broker_integration.py:BrokerIntegrationOffice.message_history"],
+      "classification": "Broker-owned immutable custody log",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns append-only message custody history for Broker communications.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-013",
+      "canonical_name": "Paper Broker Order Ticket",
+      "implementation_artifacts": ["src/argos/trader/paper_brokerage.py:PaperBrokerOrderTicket"],
+      "classification": "paper execution request custody object",
+      "constitutional_owner": "Trader Office",
+      "broker_role": "execution-bound custodian",
+      "ownership_authority": "Trader owns execution intent; Broker owns translation, admissibility response, and broker event evidence.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-014",
+      "canonical_name": "Paper Broker Order Record",
+      "implementation_artifacts": ["src/argos/trader/paper_brokerage.py:PaperBrokerOrderRecord"],
+      "classification": "Broker-owned paper execution state",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns paper broker order lifecycle state while Performance Truth and Position Registry own downstream truth surfaces.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-015",
+      "canonical_name": "Broker Fill Record",
+      "implementation_artifacts": ["src/argos/trader/paper_brokerage.py:BrokerFillRecord"],
+      "classification": "Broker-owned paper execution event",
+      "constitutional_owner": "Broker Office",
+      "broker_role": "constitutional owner",
+      "ownership_authority": "Broker owns fill event generation for paper broker execution; position mutation remains externally owned.",
+      "externally_owned": false,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-016",
+      "canonical_name": "Paper Broker Account Snapshot",
+      "implementation_artifacts": ["src/argos/trader/paper_brokerage.py:PaperBrokerAccount"],
+      "classification": "financial dependency object",
+      "constitutional_owner": "Enterprise Financial Authority",
+      "broker_role": "bounded dependency consumer",
+      "ownership_authority": "Broker may consume account availability for paper execution but shall not establish authoritative account truth.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-017",
+      "canonical_name": "Market State",
+      "implementation_artifacts": ["src/argos/trader/paper_brokerage.py:MarketState"],
+      "classification": "market data dependency object",
+      "constitutional_owner": "Market Data Authority",
+      "broker_role": "bounded dependency consumer",
+      "ownership_authority": "Broker may consume authoritative market state for execution feasibility but shall not become market-data authority.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    },
+    {
+      "object_id": "BROKER-OBJ-018",
+      "canonical_name": "Performance Truth Broker Ledger Entry",
+      "implementation_artifacts": ["src/argos/control_panel/performance_truth_engine.py"],
+      "classification": "downstream truth dependency object",
+      "constitutional_owner": "Performance Truth Office",
+      "broker_role": "source evidence producer",
+      "ownership_authority": "Broker produces source events; Performance Truth owns the authoritative performance ledger.",
+      "externally_owned": true,
+      "shared_ownership_candidate": false
+    }
+  ],
+  "b02_001_ownership_authority_registry": [
+    {
+      "owner": "Broker Office",
+      "authority": "Owns canonical broker communication, translation, normalization, Broker-owned paper execution state, broker event evidence, anomaly case files, adapter compatibility records, health observations, identifier mappings, and message history."
+    },
+    {
+      "owner": "Trader Office",
+      "authority": "Owns trade intent, execution request authorization, order-management intent objects, and paper order tickets until transferred into Broker custody for execution handling."
+    },
+    {
+      "owner": "External Broker or Execution Venue",
+      "authority": "Owns raw broker facts and external execution venue responses; Broker preserves and normalizes without rewriting external truth."
+    },
+    {
+      "owner": "Enterprise Financial Authority",
+      "authority": "Owns account balances, cash, buying power, settlement truth, collateral, and broker account financial state."
+    },
+    {
+      "owner": "Market Data Authority",
+      "authority": "Owns market observations consumed by Broker execution feasibility checks."
+    },
+    {
+      "owner": "Performance Truth Office",
+      "authority": "Owns authoritative performance truth and broker ledger projection after Broker events are admitted."
+    },
+    {
+      "owner": "Infrastructure and Security Authority",
+      "authority": "Owns credentials and secrets; Broker may hold redacted references only."
+    }
+  ],
+  "b02_002_custody_registry": [
+    {
+      "custodian": "Broker Office",
+      "objects": ["BROKER-OBJ-001", "BROKER-OBJ-003", "BROKER-OBJ-004", "BROKER-OBJ-005", "BROKER-OBJ-006", "BROKER-OBJ-007", "BROKER-OBJ-008", "BROKER-OBJ-009", "BROKER-OBJ-010", "BROKER-OBJ-011", "BROKER-OBJ-012", "BROKER-OBJ-013", "BROKER-OBJ-014", "BROKER-OBJ-015"],
+      "custody_rule": "Broker custody is deterministic, evidence-bearing, and bounded to broker communication and execution-event handling."
+    },
+    {
+      "custodian": "Infrastructure and Security Authority",
+      "objects": ["BROKER-OBJ-002"],
+      "custody_rule": "Credential material remains outside Broker custody; Broker receives reference-only authentication context."
+    },
+    {
+      "custodian": "Enterprise Financial Authority",
+      "objects": ["BROKER-OBJ-016"],
+      "custody_rule": "Financial truth remains outside Broker custody except for immutable dependency evidence references."
+    },
+    {
+      "custodian": "Market Data Authority",
+      "objects": ["BROKER-OBJ-017"],
+      "custody_rule": "Market truth remains outside Broker custody except for immutable dependency evidence references."
+    },
+    {
+      "custodian": "Performance Truth Office",
+      "objects": ["BROKER-OBJ-018"],
+      "custody_rule": "Performance truth projection remains downstream of Broker source-event production."
+    }
+  ],
+  "b02_002_lifecycle_authority_registry": [
+    {
+      "object_scope": "Broker-owned objects",
+      "creation_authority": "Broker Office",
+      "modification_authority": "Broker Office within immutable append-or-replace rules",
+      "approval_authority": "Broker Governance Authority",
+      "activation_authority": "Broker Office after Trader authorization and dependency validation",
+      "suspension_authority": "Broker Office or Enterprise Governance for broker-boundary failures",
+      "retirement_authority": "Broker Governance Authority",
+      "archival_authority": "Historian with Broker custody evidence",
+      "destruction_authority": "Prohibited for constitutional evidence; supersession only"
+    },
+    {
+      "object_scope": "Externally owned dependency objects",
+      "creation_authority": "Constitutional owner",
+      "modification_authority": "Constitutional owner",
+      "approval_authority": "Constitutional owner",
+      "activation_authority": "Constitutional owner",
+      "suspension_authority": "Constitutional owner or Enterprise Governance",
+      "retirement_authority": "Constitutional owner",
+      "archival_authority": "Historian under owning-office policy",
+      "destruction_authority": "Prohibited where immutable evidence is required"
+    }
+  ],
+  "b02_002_custody_transition_registry": [
+    {
+      "transition": "Trader order intent to Broker request custody",
+      "from": "Trader Office",
+      "to": "Broker Office",
+      "object_ids": ["BROKER-OBJ-001", "BROKER-OBJ-013"],
+      "trigger": "authorized execution request submitted to Broker boundary",
+      "evidence_required": "execution request identifier, workflow token, order id, correlation id, authority references",
+      "ownership_transfer": false
+    },
+    {
+      "transition": "External broker response to Broker evidence custody",
+      "from": "External Broker or Execution Venue",
+      "to": "Broker Office",
+      "object_ids": ["BROKER-OBJ-004"],
+      "trigger": "broker communication response observed",
+      "evidence_required": "raw payload hash, broker order id, response type, timestamp",
+      "ownership_transfer": false
+    },
+    {
+      "transition": "Broker event to downstream truth custody",
+      "from": "Broker Office",
+      "to": "Performance Truth Office and Historian",
+      "object_ids": ["BROKER-OBJ-005", "BROKER-OBJ-015", "BROKER-OBJ-018"],
+      "trigger": "canonical broker event admitted downstream",
+      "evidence_required": "event id, order id, fill id if present, content hash, source authority",
+      "ownership_transfer": false
+    }
+  ],
+  "b02_003_ownership_transfer_registry": [
+    {
+      "rule_id": "BROKER-TRANSFER-001",
+      "rule": "Broker custody shall not imply ownership transfer from Trader, Financial Authority, Market Data Authority, external brokers, Performance Truth, Position Registry, or Historian.",
+      "authority": "Broker Governance Baseline"
+    },
+    {
+      "rule_id": "BROKER-TRANSFER-002",
+      "rule": "Permanent transfer of Broker-owned constitutional objects requires Broker Governance Authority and Enterprise Governance approval.",
+      "authority": "Broker Governance Baseline"
+    },
+    {
+      "rule_id": "BROKER-TRANSFER-003",
+      "rule": "Temporary custody may be delegated to Historian for preservation and to certification tooling for read-only audit, without mutation authority.",
+      "authority": "Broker Governance Baseline"
+    }
+  ],
+  "b02_003_custody_delegation_registry": [
+    {
+      "delegate": "Historian",
+      "delegated_custody": "immutable preservation custody",
+      "mutation_authority": false,
+      "duration": "permanent evidence retention",
+      "revocation": "not permitted for immutable evidence already admitted"
+    },
+    {
+      "delegate": "Enterprise Certification",
+      "delegated_custody": "read-only certification inspection",
+      "mutation_authority": false,
+      "duration": "certification campaign only",
+      "revocation": "automatic at campaign close"
+    },
+    {
+      "delegate": "Infrastructure",
+      "delegated_custody": "storage, replay, backup, and recovery substrate",
+      "mutation_authority": false,
+      "duration": "while infrastructure certification remains valid",
+      "revocation": "Enterprise Governance halt or recertification"
+    }
+  ],
+  "b02_003_cross_office_custody_registry": [
+    {
+      "office": "Trader Office",
+      "relationship": "Trader owns order intent and authorized execution request; Broker owns broker communication and event evidence."
+    },
+    {
+      "office": "Risk Office",
+      "relationship": "Risk owns risk approval truth; Broker consumes risk authority references only."
+    },
+    {
+      "office": "Authorizations Office",
+      "relationship": "Authorizations owns execution authorization truth; Broker consumes authorization references only."
+    },
+    {
+      "office": "Performance Truth Office",
+      "relationship": "Broker emits source events; Performance Truth owns admitted performance ledger state."
+    },
+    {
+      "office": "Position Registry",
+      "relationship": "Broker emits fills; Position Registry owns position mutation and position lifecycle state."
+    },
+    {
+      "office": "Historian",
+      "relationship": "Historian preserves immutable Broker evidence after custody transfer."
+    },
+    {
+      "office": "Infrastructure",
+      "relationship": "Infrastructure owns durable storage, replay substrate, backup, and recovery mechanics."
+    }
+  ],
+  "b02_003_custody_conflict_resolution_registry": [
+    {
+      "conflict": "Broker event conflicts with external broker raw response",
+      "winner": "External broker raw response for external fact; Broker canonical event must be corrected or superseded",
+      "evidence_required": "raw response hash, canonical event id, discrepancy record"
+    },
+    {
+      "conflict": "Broker event conflicts with Performance Truth ledger",
+      "winner": "Broker source event for broker fact; Performance Truth owns ledger correction process",
+      "evidence_required": "event id, ledger entry id, reconciliation case"
+    },
+    {
+      "conflict": "Broker account snapshot conflicts with Financial Authority state",
+      "winner": "Enterprise Financial Authority",
+      "evidence_required": "account snapshot reference and financial reconciliation object"
+    },
+    {
+      "conflict": "Broker market state conflicts with Market Data Authority",
+      "winner": "Market Data Authority",
+      "evidence_required": "market state reference and source observation"
+    },
+    {
+      "conflict": "Ownership ambiguity is detected",
+      "winner": "Enterprise Governance until explicit ownership amendment is adopted",
+      "evidence_required": "affected object, competing owners, doctrine references"
+    }
+  ],
+  "b02_004_ownership_reconciliation_report": {
+    "objects_inventoried": 18,
+    "objects_with_exactly_one_owner": 18,
+    "duplicate_ownership_count": 0,
+    "orphaned_object_count": 0,
+    "obsolete_ownership_record_count": 0,
+    "shared_ownership_candidates_remaining": 0,
+    "implementation_executed": false,
+    "runtime_behavior_modified": false,
+    "repository_wide_verification_executed": false
+  },
+  "b02_004_ownership_integrity_registry": [
+    {
+      "check_id": "OWN-INTEGRITY-001",
+      "check": "every object has exactly one constitutional owner",
+      "result": "PASS"
+    },
+    {
+      "check_id": "OWN-INTEGRITY-002",
+      "check": "externally owned objects are explicitly identified",
+      "result": "PASS"
+    },
+    {
+      "check_id": "OWN-INTEGRITY-003",
+      "check": "custody does not imply ownership transfer",
+      "result": "PASS"
+    },
+    {
+      "check_id": "OWN-INTEGRITY-004",
+      "check": "cross-office custody relationships are defined",
+      "result": "PASS"
+    },
+    {
+      "check_id": "OWN-INTEGRITY-005",
+      "check": "ownership precedence is deterministic",
+      "result": "PASS"
+    }
+  ],
+  "b02_004_orphaned_object_registry": [],
+  "b02_004_ownership_precedence_registry": [
+    "Enterprise Constitutional Law",
+    "Enterprise Governance",
+    "Broker Governance Baseline",
+    "Constitutional Object Owner",
+    "Delegated Custodian",
+    "Operational Adapter",
+    "Audit or Reporting Surface"
+  ],
+  "b02_004_final_constitutional_ownership_baseline": {
+    "baseline_id": "BROKER-RM-001-S02-OWNERSHIP-BASELINE",
+    "effective_status": "AUTHORITATIVE",
+    "summary": "Broker owns canonical broker communication, translation, normalization, paper broker execution state, broker event evidence, anomaly evidence, adapter compatibility records, health observations, identifier mappings, and message history. Broker does not own Trader execution intent, credentials, market data truth, financial account truth, Performance Truth ledger state, Position Registry state, or external broker truth.",
+    "ready_for_series_3": true
+  },
+  "series_completion_report": {
+    "B02-001": "COMPLETE",
+    "B02-002": "COMPLETE",
+    "B02-003": "COMPLETE",
+    "B02-004": "COMPLETE",
+    "unresolved_ownership_or_custody_decisions": 0,
+    "ready_for": "BROKER-RM-001-S03 Constitutional Interfaces and Authority Contracts"
+  }
+}
