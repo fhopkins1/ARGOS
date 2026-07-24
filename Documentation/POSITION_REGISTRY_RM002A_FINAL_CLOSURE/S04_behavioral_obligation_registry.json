@@ -1,0 +1,37 @@
+[
+  {
+    "authority": "POSITION-REGISTRY-RM-002A-S01-001",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "requirement_id": "PR-RM002A-REQ-REVERSAL-001",
+    "test_method": "test_reversal_through_zero_resets_direction_and_cost_basis",
+    "title": "Position reversal preserves canonical identity and flips direction through zero quantity"
+  },
+  {
+    "authority": "POSITION-REGISTRY-RM-002A-S02-B02-002",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "requirement_id": "PR-RM002A-REQ-LIFECYCLE-001",
+    "test_method": "test_close_and_archive_zero_quantity_position",
+    "title": "Lifecycle authority rejects invalid mutation and protects terminal state"
+  },
+  {
+    "authority": "POSITION-REGISTRY-RM-002A-S03-003",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "requirement_id": "PR-RM002A-REQ-REPLAY-001",
+    "test_method": "test_duplicate_execution_event_replay_is_idempotent",
+    "title": "Duplicate execution replay is idempotent"
+  },
+  {
+    "authority": "POSITION-REGISTRY-RM-002A-S03-003",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "requirement_id": "PR-RM002A-REQ-CORRECTION-001",
+    "test_method": "test_correction_and_supersession_preserve_historical_lineage",
+    "title": "Correction preserves prior history and emits canonical evidence"
+  },
+  {
+    "authority": "POSITION-REGISTRY-RM-002A-S03-003",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "requirement_id": "PR-RM002A-REQ-SUPERSESSION-001",
+    "test_method": "test_correction_and_supersession_preserve_historical_lineage",
+    "title": "Supersession archives predecessor and preserves successor lineage"
+  }
+]

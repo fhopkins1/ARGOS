@@ -1,0 +1,27 @@
+[
+  {
+    "requirement_id": "PR-RM002A-REQ-REVERSAL-001",
+    "test_method": "test_reversal_through_zero_resets_direction_and_cost_basis",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "requirement_id": "PR-RM002A-REQ-LIFECYCLE-001",
+    "test_method": "test_close_and_archive_zero_quantity_position",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "requirement_id": "PR-RM002A-REQ-REPLAY-001",
+    "test_method": "test_duplicate_execution_event_replay_is_idempotent",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "requirement_id": "PR-RM002A-REQ-CORRECTION-001",
+    "test_method": "test_correction_and_supersession_preserve_historical_lineage",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "requirement_id": "PR-RM002A-REQ-SUPERSESSION-001",
+    "test_method": "test_correction_and_supersession_preserve_historical_lineage",
+    "verifier": "Tests.test_position_management_office"
+  }
+]

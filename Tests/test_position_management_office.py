@@ -132,6 +132,44 @@ class PositionManagementOfficeTests(unittest.TestCase):
         classifications = tuple(item["classification"] for item in artifacts["position_management_case_file"].machine_payload["case_file"]["anomalies"])
         self.assertIn("unexpected_exposure", classifications)
 
+    def test_reversal_through_zero_resets_direction_and_cost_basis(self) -> None:
+        office = PositionManagementOffice(config(), InMemoryPersistenceRepository(canonical_schemas()), AuditService(), PromptRepository())
+
+        office.apply_execution_event(execution_event(quantity=100.0, price=100.0), 100.0, "CF-001", "TC-001", 5760)
+        office.apply_execution_event(execution_event(execution_event_id="EXEC-EVT-REV", quantity=150.0, price=90.0, side="sell"), 90.0, "CF-001", "TC-001", 5761)
+        position = office.position("POS-057")
+
+        self.assertEqual(position.quantity, -50.0)
+        self.assertEqual(position.direction.value, "short")
+        self.assertEqual(position.average_cost_basis, 90.0)
+        self.assertEqual(position.realized_pnl, -1000.0)
+        self.assertEqual(position.position_status, PositionLifecycleState.REDUCING)
+        self.assertGreaterEqual(len(position.history), 2)
+
+    def test_duplicate_execution_event_replay_is_idempotent(self) -> None:
+        office = PositionManagementOffice(config(), InMemoryPersistenceRepository(canonical_schemas()), AuditService(), PromptRepository())
+
+        first = office.apply_execution_event(execution_event(), 101.0, "CF-001", "TC-001", 5770)
+        second = office.apply_execution_event(execution_event(), 101.0, "CF-001", "TC-001", 5771)
+        position = office.position("POS-057")
+
+        self.assertEqual(position.quantity, 100.0)
+        self.assertEqual(position.history[-1].triggering_event, "EXEC-EVT-057")
+        self.assertIs(first["position_record"], second["position_record"])
+
+    def test_correction_and_supersession_preserve_historical_lineage(self) -> None:
+        office = PositionManagementOffice(config(), InMemoryPersistenceRepository(canonical_schemas()), AuditService(), PromptRepository())
+
+        office.apply_execution_event(execution_event(), 101.0, "CF-001", "TC-001", 5780)
+        correction = office.correction("POS-057", {"average_cost_basis": 99.5, "market_value": 10100.0}, "CF-001", "TC-001", 5781, audit_id="DOC-5781", reason="broker correction")
+        supersession = office.supersession("POS-057", "POS-057-SUPERSEDED", "CF-001", "TC-001", 5782, audit_id="DOC-5782", reason="canonical successor")
+
+        self.assertEqual(correction.contract_type, "POSITION_RECORD")
+        self.assertEqual(supersession.contract_type, "POSITION_SUPERSESSION")
+        self.assertEqual(office.position("POS-057").position_status, PositionLifecycleState.ARCHIVED)
+        self.assertEqual(office.position("POS-057-SUPERSEDED").average_cost_basis, 99.5)
+        self.assertTrue(supersession.machine_payload["supersession_preserves_predecessor"])
+
 
 if __name__ == "__main__":
     unittest.main()

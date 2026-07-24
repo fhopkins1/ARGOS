@@ -209,7 +209,7 @@ class PositionAccountingEngine:
             realized = round(position.realized_pnl + realized, 4)
             creation_time = position.creation_timestamp_utc
             history = position.history
-            direction = position.direction
+            direction = PositionDirection.SHORT if quantity < 0 else PositionDirection.LONG
         market_value = round(quantity * market_price, 4)
         unrealized = round((market_price - avg_cost) * quantity, 4)
         exposure = round(abs(market_value), 4)
@@ -245,7 +245,12 @@ class PositionAccountingEngine:
             return new_quantity, total_cost / total_quantity if total_quantity else 0.0, 0.0
         closing_quantity = min(abs(old_quantity), abs(signed_quantity))
         realized = (price - position.average_cost_basis) * closing_quantity * (1 if old_quantity > 0 else -1)
-        avg_cost = position.average_cost_basis if new_quantity != 0 else 0.0
+        if new_quantity == 0:
+            avg_cost = 0.0
+        elif (old_quantity > 0 > new_quantity) or (old_quantity < 0 < new_quantity):
+            avg_cost = price
+        else:
+            avg_cost = position.average_cost_basis
         return new_quantity, avg_cost, realized
 
 
@@ -313,6 +318,8 @@ class PositionManagementOffice:
         self.reconciliation = PositionReconciliationEngine()
         self.monitor = PositionMonitor()
         self._positions: dict[str, PositionRecord] = {}
+        self._execution_events: dict[str, PositionRecord] = {}
+        self._execution_artifacts: dict[str, dict[str, OperationalContract]] = {}
 
     def apply_execution_event(
         self,
@@ -324,6 +331,8 @@ class PositionManagementOffice:
     ) -> dict[str, OperationalContract]:
         """Apply an execution event to a position and emit PMO records."""
         self.configuration_service.validate_startup()
+        if event.execution_event_id in self._execution_artifacts:
+            return self._execution_artifacts[event.execution_event_id]
         existing = self._positions.get(event.position_id)
         updated = self.accounting.apply(existing, event, market_price)
         seen = tuple(position_id for position_id in self._positions if position_id != event.position_id)
@@ -336,6 +345,8 @@ class PositionManagementOffice:
         }
         if anomalies:
             artifacts["position_management_case_file"] = self.generate_case_file(updated.position_id, anomalies, case_file_id, trade_cycle_id, document_sequence + 2)
+        self._execution_events[event.execution_event_id] = updated
+        self._execution_artifacts[event.execution_event_id] = artifacts
         return artifacts
 
     def reconcile_with_broker(
@@ -377,6 +388,111 @@ class PositionManagementOffice:
         archived = PositionLifecycleEngine().transition(position, PositionLifecycleState.ARCHIVED, "position_archive", position.audit_identifier)
         self._positions[position_id] = archived
         return self._position_contract(archived, self.publish_portfolio_state(archived.portfolio_id), case_file_id, trade_cycle_id, document_sequence)
+
+    def correction(
+        self,
+        position_id: str,
+        corrected_fields: dict[str, Any],
+        case_file_id: str,
+        trade_cycle_id: str,
+        document_sequence: int,
+        *,
+        audit_id: str,
+        reason: str,
+    ) -> OperationalContract:
+        """Apply an explicit correction while preserving prior position history."""
+        if position_id not in self._positions:
+            return self.generate_case_file(position_id, (_anomaly("missing_execution", "high", position_id),), case_file_id, trade_cycle_id, document_sequence)
+        previous = self._positions[position_id]
+        allowed = {"average_cost_basis", "quantity", "market_value", "realized_pnl", "unrealized_pnl", "exposure"}
+        unsupported = tuple(sorted(set(corrected_fields) - allowed))
+        if unsupported:
+            return self.generate_case_file(position_id, (_anomaly("unsupported_correction", "high", ",".join(unsupported)),), case_file_id, trade_cycle_id, document_sequence)
+        values = previous.to_payload()
+        values.update({key: corrected_fields[key] for key in corrected_fields})
+        corrected = PositionRecord(
+            previous.position_id,
+            previous.asset_identifier,
+            previous.portfolio_id,
+            previous.strategy_id,
+            previous.executive_decision_id,
+            round(float(values["average_cost_basis"]), 4),
+            round(float(values["quantity"]), 4),
+            round(float(values["market_value"]), 4),
+            round(float(values["realized_pnl"]), 4),
+            round(float(values["unrealized_pnl"]), 4),
+            round(float(values["exposure"]), 4),
+            previous.position_status,
+            previous.creation_timestamp_utc,
+            utc_timestamp(),
+            audit_id,
+            PositionDirection.SHORT if float(values["quantity"]) < 0 else PositionDirection.LONG,
+            previous.asset_class,
+            previous.history,
+        )
+        corrected = PositionLifecycleEngine().transition(corrected, PositionLifecycleState.ADJUSTED, f"correction:{reason}", audit_id)
+        self._positions[position_id] = corrected
+        payload = {
+            "office_id": POSITION_MANAGEMENT_OFFICE_ID,
+            "office_name": "Position Management Office",
+            "position_management_system_prompt": self.system_prompt(),
+            "position": corrected,
+            "portfolio_state": self.publish_portfolio_state(corrected.portfolio_id),
+            "correction_reason": reason,
+            "corrected_fields": tuple(sorted(corrected_fields)),
+            "history_overwritten": False,
+            "position_reconstructable": True,
+        }
+        return self._persist_contract("POSITION_RECORD", case_file_id, trade_cycle_id, document_sequence, (previous.audit_identifier,), "Authoritative position correction record.", payload)
+
+    def supersession(
+        self,
+        position_id: str,
+        successor_position_id: str,
+        case_file_id: str,
+        trade_cycle_id: str,
+        document_sequence: int,
+        *,
+        audit_id: str,
+        reason: str,
+    ) -> OperationalContract:
+        """Record explicit supersession without deleting the predecessor."""
+        if position_id not in self._positions:
+            return self.generate_case_file(position_id, (_anomaly("missing_execution", "high", position_id),), case_file_id, trade_cycle_id, document_sequence)
+        predecessor = self._positions[position_id]
+        archived = PositionLifecycleEngine().transition(predecessor, PositionLifecycleState.ARCHIVED, f"supersession:{reason}", audit_id)
+        successor = PositionRecord(
+            successor_position_id,
+            predecessor.asset_identifier,
+            predecessor.portfolio_id,
+            predecessor.strategy_id,
+            predecessor.executive_decision_id,
+            predecessor.average_cost_basis,
+            predecessor.quantity,
+            predecessor.market_value,
+            predecessor.realized_pnl,
+            predecessor.unrealized_pnl,
+            predecessor.exposure,
+            predecessor.position_status,
+            predecessor.creation_timestamp_utc,
+            utc_timestamp(),
+            audit_id,
+            predecessor.direction,
+            predecessor.asset_class,
+            predecessor.history,
+        )
+        self._positions[position_id] = archived
+        self._positions[successor_position_id] = successor
+        payload = {
+            "office_id": POSITION_MANAGEMENT_OFFICE_ID,
+            "office_name": "Position Management Office",
+            "predecessor_position": archived,
+            "successor_position": successor,
+            "reason": reason,
+            "history_overwritten": False,
+            "supersession_preserves_predecessor": True,
+        }
+        return self._persist_contract("POSITION_SUPERSESSION", case_file_id, trade_cycle_id, document_sequence, (predecessor.audit_identifier,), "Position supersession record.", payload)
 
     def publish_portfolio_state(self, portfolio_id: str) -> PortfolioState:
         """Publish current portfolio state."""
