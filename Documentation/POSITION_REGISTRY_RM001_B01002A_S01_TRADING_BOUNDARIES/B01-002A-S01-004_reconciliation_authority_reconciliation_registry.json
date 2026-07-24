@@ -1,0 +1,32 @@
+[
+  {
+    "authority": "Position Registry",
+    "completion": "position mutation evidence persisted",
+    "domain": "broker_fill_to_position",
+    "source_precedence": "Broker for fill fact; Position Registry for canonical state mutation"
+  },
+  {
+    "authority": "Position Registry",
+    "completion": "correction or contradiction record persisted",
+    "domain": "broker_correction_to_position",
+    "source_precedence": "Broker correction evidence initiates canonical correction review"
+  },
+  {
+    "authority": "Position Registry",
+    "completion": "reconciled or escalated contradiction",
+    "domain": "broker_reconciliation",
+    "source_precedence": "Broker for broker-origin facts; Position Registry for canonical state"
+  },
+  {
+    "authority": "Authorizations",
+    "completion": "dependency status recorded by Position Registry",
+    "domain": "authorization_dependency",
+    "source_precedence": "Authorizations"
+  },
+  {
+    "authority": "Risk",
+    "completion": "dependency status recorded by Position Registry",
+    "domain": "risk_dependency",
+    "source_precedence": "Risk"
+  }
+]

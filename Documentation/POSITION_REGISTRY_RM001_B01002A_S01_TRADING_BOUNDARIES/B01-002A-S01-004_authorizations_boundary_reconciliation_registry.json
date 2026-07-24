@@ -1,0 +1,10 @@
+{
+  "boundary_id": "PR-B01-002A-S01-003-AUTH",
+  "counterparty_office": "Authorizations",
+  "dependency_direction": "Position Registry -> Authorizations",
+  "evidence_obligations": "Authorization identity, validity, revocation, and consumption references must be preserved with position mutation evidence",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S01-003",
+  "mutation_boundary": "Position Registry never mutates authorization state or identity",
+  "ownership_boundary": "Authorizations owns authorization objects; Position Registry consumes authorization status and evidence only",
+  "reconciliation_authority": "Authorization reconciliation remains with Authorizations; Position Registry records dependency status"
+}

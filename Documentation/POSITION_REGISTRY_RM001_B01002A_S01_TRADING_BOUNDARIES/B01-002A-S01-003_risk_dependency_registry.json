@@ -1,0 +1,13 @@
+[
+  {
+    "counterparty_office": "Risk",
+    "dependency_direction": "Position Registry -> Risk",
+    "evidence_authority": "Risk approval, restriction, revocation, and escalation references must be preserved with position mutation evidence",
+    "interaction_id": "PR-TRADE-AUTH-004",
+    "interface_authority": "Risk interface authority bounded by governing doctrine",
+    "mutation_authority": "Position Registry never mutates risk state or risk decision identity",
+    "owner_of_canonical_position_truth": "Position Registry",
+    "owner_of_counterparty_truth": "Risk",
+    "reconciliation_authority": "Risk reconciliation remains with Risk; Position Registry records dependency status and fails closed on unresolved material risk conflict"
+  }
+]

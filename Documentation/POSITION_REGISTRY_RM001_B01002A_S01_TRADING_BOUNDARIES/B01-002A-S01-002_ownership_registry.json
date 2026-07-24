@@ -1,0 +1,19 @@
+[
+  {
+    "constitutional_owner": "Position Registry",
+    "custodians": [
+      "Position Registry"
+    ],
+    "object": "canonical_position_state",
+    "shared_ownership": false
+  },
+  {
+    "constitutional_owner": "Broker",
+    "custodians": [
+      "Broker",
+      "Position Registry evidence custody"
+    ],
+    "object": "broker_execution_truth",
+    "shared_ownership": false
+  }
+]

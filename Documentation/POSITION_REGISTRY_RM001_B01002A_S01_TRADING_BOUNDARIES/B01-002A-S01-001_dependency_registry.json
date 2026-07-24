@@ -1,0 +1,13 @@
+[
+  {
+    "counterparty_office": "Trader",
+    "dependency_direction": "Position Registry <-> Trader bounded interface",
+    "evidence_authority": "Immutable interaction evidence required",
+    "interaction_id": "PR-TRADE-AUTH-001",
+    "interface_authority": "Trader produces execution-intent and mutation-request interfaces; Position Registry owns position-state acceptance interface",
+    "mutation_authority": "Trader requests position mutation; Position Registry accepts, rejects, records, corrects, and reconciles canonical position mutation",
+    "owner_of_canonical_position_truth": "Position Registry",
+    "owner_of_counterparty_truth": "Trader",
+    "reconciliation_authority": "Position Registry reconciles canonical position state while consuming Trader execution context"
+  }
+]

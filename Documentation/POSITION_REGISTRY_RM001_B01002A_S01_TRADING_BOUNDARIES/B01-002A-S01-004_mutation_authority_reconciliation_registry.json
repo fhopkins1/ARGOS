@@ -1,0 +1,18 @@
+[
+  {
+    "mutation_authority": "Trader requests position mutation; Position Registry accepts, rejects, records, corrects, and reconciles canonical position mutation",
+    "office": "Trader"
+  },
+  {
+    "mutation_authority": "none implied",
+    "office": "Broker"
+  },
+  {
+    "mutation_authority": "Position Registry never mutates authorization state or identity",
+    "office": "Authorizations"
+  },
+  {
+    "mutation_authority": "Position Registry never mutates risk state or risk decision identity",
+    "office": "Risk"
+  }
+]

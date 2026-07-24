@@ -1,0 +1,21 @@
+{
+  "boundary_id": "PR-B01-002A-S01-001-TRADER",
+  "counterparty_authority": "owns trading intent, execution intent, and mutation requests authorized by Trader doctrine",
+  "counterparty_office": "Trader",
+  "custody_boundary": "Trader may possess operational custody of mutation requests and position reads; custody never implies ownership",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S01-001",
+  "interface_authority": "Trader produces execution-intent and mutation-request interfaces; Position Registry owns position-state acceptance interface",
+  "mutation_boundary": "Trader requests position mutation; Position Registry accepts, rejects, records, corrects, and reconciles canonical position mutation",
+  "ownership_boundary": "Trader does not own canonical positions; Position Registry does not own trading decisions",
+  "position_registry_authority": "owns canonical position state, lifecycle state, quantity state, cost-basis state, history, reconciliation records, and position evidence",
+  "prohibited_authority": [
+    "Trader may not directly mutate canonical position state",
+    "Position Registry may not decide or authorize trades"
+  ],
+  "reconciliation_authority": "Position Registry reconciles canonical position state while consuming Trader execution context",
+  "truth_ownership": {
+    "canonical_position_truth": "Position Registry",
+    "execution_intent": "Trader",
+    "trading_intent": "Trader"
+  }
+}

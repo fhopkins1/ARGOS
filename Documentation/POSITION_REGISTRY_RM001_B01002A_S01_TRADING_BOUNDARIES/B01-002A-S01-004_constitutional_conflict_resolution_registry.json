@@ -1,0 +1,26 @@
+[
+  {
+    "conflict": "shared_position_ownership",
+    "deterministic_disposition": "Position Registry owns canonical position truth",
+    "governing_authority": "single owner constitutional ownership",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "broker_direct_position_mutation",
+    "deterministic_disposition": "Broker produces evidence; Position Registry mutates canonical state",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S01-002",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "trader_direct_position_mutation",
+    "deterministic_disposition": "Trader requests; Position Registry mutates or rejects",
+    "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S01-001",
+    "resolution": "rejected"
+  },
+  {
+    "conflict": "authorization_or_risk_ownership_by_position_registry",
+    "deterministic_disposition": "Position Registry consumes only",
+    "governing_authority": "B01-002A-S01-003",
+    "resolution": "rejected"
+  }
+]

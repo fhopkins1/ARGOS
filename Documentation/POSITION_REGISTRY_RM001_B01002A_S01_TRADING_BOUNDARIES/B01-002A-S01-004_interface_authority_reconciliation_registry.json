@@ -1,0 +1,32 @@
+[
+  {
+    "acknowledgement_authority": "Position Registry acknowledges admissible processing",
+    "consumer": "Position Registry",
+    "interface": "broker_fill_evidence",
+    "producer": "Broker"
+  },
+  {
+    "acknowledgement_authority": "Position Registry acknowledges correction disposition",
+    "consumer": "Position Registry",
+    "interface": "broker_correction_evidence",
+    "producer": "Broker"
+  },
+  {
+    "acknowledgement_authority": "Position Registry accepts or rejects mutation request",
+    "consumer": "Position Registry",
+    "interface": "trader_mutation_request",
+    "producer": "Trader"
+  },
+  {
+    "acknowledgement_authority": "Position Registry records dependency evidence",
+    "consumer": "Position Registry",
+    "interface": "authorization_status_reference",
+    "producer": "Authorizations"
+  },
+  {
+    "acknowledgement_authority": "Position Registry records dependency evidence",
+    "consumer": "Position Registry",
+    "interface": "risk_status_reference",
+    "producer": "Risk"
+  }
+]

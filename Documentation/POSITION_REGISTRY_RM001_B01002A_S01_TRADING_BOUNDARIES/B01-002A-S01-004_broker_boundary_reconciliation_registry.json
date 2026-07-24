@@ -1,0 +1,23 @@
+{
+  "acknowledgement_authority": "Broker owns broker acknowledgements; Position Registry records acknowledgement-derived position implications",
+  "authoritative_source_precedence": [
+    "Broker execution/fill truth prevails for broker-origin execution facts",
+    "Position Registry canonical state prevails for enterprise position lifecycle, quantity, cost-basis, and history after admissible evidence processing"
+  ],
+  "boundary_id": "PR-B01-002A-S01-002-BROKER",
+  "broker_truth_ownership": "Broker",
+  "constitutional_authority": "Broker owns broker execution truth, broker acknowledgements, broker fill truth, and broker-facing correction evidence",
+  "contradiction_authority": "Contradictions between broker truth and position truth become reconciliation objects owned by Position Registry with Broker evidence precedence for broker-origin facts",
+  "correction_authority": "Broker corrects broker truth; Position Registry corrects canonical position state only through explicit correction evidence",
+  "counterparty_office": "Broker",
+  "execution_authority": "Broker executes or reports execution outcomes under Broker doctrine; Position Registry consumes admitted outcomes",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S01-002",
+  "interface_authority": "Broker is authoritative producer of fill, acknowledgement, correction, and broker-reconciliation evidence consumed by Position Registry",
+  "ownership_boundary": "Broker does not mutate or own canonical Position Registry state; Position Registry does not own broker execution truth",
+  "position_registry_authority": "Position Registry owns canonical position state derived from admissible broker execution evidence",
+  "position_truth_ownership": "Position Registry",
+  "post_correction_interaction": "Broker produces correction evidence; Position Registry applies explicit canonical correction or records contradiction",
+  "post_fill_interaction": "Broker produces fill evidence; Position Registry validates, records, mutates canonical position state, and emits position evidence",
+  "post_reconciliation_interaction": "Broker reconciliation evidence is compared to canonical position state; discrepancies become immutable reconciliation findings",
+  "replay_authority": "Position Registry replays canonical position state from immutable admitted evidence; Broker replay does not mutate positions directly"
+}

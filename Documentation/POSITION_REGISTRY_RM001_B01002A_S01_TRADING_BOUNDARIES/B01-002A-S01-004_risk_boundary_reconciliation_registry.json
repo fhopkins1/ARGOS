@@ -1,0 +1,10 @@
+{
+  "boundary_id": "PR-B01-002A-S01-003-RISK",
+  "counterparty_office": "Risk",
+  "dependency_direction": "Position Registry -> Risk",
+  "evidence_obligations": "Risk approval, restriction, revocation, and escalation references must be preserved with position mutation evidence",
+  "governing_authority": "POSITION-REGISTRY-RM-001-B01-002A-S01-003",
+  "mutation_boundary": "Position Registry never mutates risk state or risk decision identity",
+  "ownership_boundary": "Risk owns risk decisions, restrictions, exposure decisions, and revocations; Position Registry consumes risk status only",
+  "reconciliation_authority": "Risk reconciliation remains with Risk; Position Registry records dependency status and fails closed on unresolved material risk conflict"
+}

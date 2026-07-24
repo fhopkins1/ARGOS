@@ -1,0 +1,24 @@
+[
+  {
+    "counterparty_office": "Authorizations",
+    "dependency_direction": "Position Registry -> Authorizations",
+    "evidence_authority": "Authorization identity, validity, revocation, and consumption references must be preserved with position mutation evidence",
+    "interaction_id": "PR-TRADE-AUTH-003",
+    "interface_authority": "Authorizations interface authority bounded by governing doctrine",
+    "mutation_authority": "Position Registry never mutates authorization state or identity",
+    "owner_of_canonical_position_truth": "Position Registry",
+    "owner_of_counterparty_truth": "Authorizations",
+    "reconciliation_authority": "Authorization reconciliation remains with Authorizations; Position Registry records dependency status"
+  },
+  {
+    "counterparty_office": "Risk",
+    "dependency_direction": "Position Registry -> Risk",
+    "evidence_authority": "Risk approval, restriction, revocation, and escalation references must be preserved with position mutation evidence",
+    "interaction_id": "PR-TRADE-AUTH-004",
+    "interface_authority": "Risk interface authority bounded by governing doctrine",
+    "mutation_authority": "Position Registry never mutates risk state or risk decision identity",
+    "owner_of_canonical_position_truth": "Position Registry",
+    "owner_of_counterparty_truth": "Risk",
+    "reconciliation_authority": "Risk reconciliation remains with Risk; Position Registry records dependency status and fails closed on unresolved material risk conflict"
+  }
+]
