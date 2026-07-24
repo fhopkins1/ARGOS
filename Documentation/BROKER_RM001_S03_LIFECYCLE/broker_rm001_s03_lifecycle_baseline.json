@@ -1,0 +1,328 @@
+{
+  "series": "BROKER-RM-001-S03",
+  "title": "Broker Constitutional Lifecycle Completion Series",
+  "status": "COMPLETE",
+  "scope": "constitutional lifecycle doctrine only",
+  "runtime_behavior_modified": false,
+  "repository_wide_verification_executed": false,
+  "governing_authority": [
+    "Enterprise Constitution",
+    "Enterprise Constitutional Laws",
+    "Broker Governance Baseline from BROKER-RM-001-S01",
+    "Broker Ownership Baseline from BROKER-RM-001-S02"
+  ],
+  "b03_001_broker_lifecycle_registry": [
+    {
+      "lifecycle_id": "BROKER-LC-001",
+      "name": "Execution Request Custody Lifecycle",
+      "lifecycle_type": "inbound custody and admissibility",
+      "owner": "Trader Office",
+      "broker_authority": "temporary custody, validation, translation, evidence preservation",
+      "trigger": "authorized execution request reaches Broker boundary",
+      "inputs": ["Broker Execution Request", "Paper Broker Order Ticket", "workflow token", "authorization references"],
+      "outputs": ["admitted broker request", "rejection event", "custody evidence"],
+      "governing_objects": ["BROKER-OBJ-001", "BROKER-OBJ-013"],
+      "constitutional_authority": "Trader execution authority with Broker custody boundary"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-002",
+      "name": "Credential Reference Lifecycle",
+      "lifecycle_type": "external security reference",
+      "owner": "Infrastructure and Security Authority",
+      "broker_authority": "reference validation and redacted evidence only",
+      "trigger": "Broker request requires authenticated broker communication",
+      "inputs": ["Broker Authentication Context Reference"],
+      "outputs": ["accepted credential reference", "authentication anomaly evidence"],
+      "governing_objects": ["BROKER-OBJ-002"],
+      "constitutional_authority": "Infrastructure security ownership"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-003",
+      "name": "Broker Translation Lifecycle",
+      "lifecycle_type": "Broker-owned translation",
+      "owner": "Broker Office",
+      "broker_authority": "creation, validation, supersession, archival",
+      "trigger": "Broker accepts canonical execution request for broker-protocol preparation",
+      "inputs": ["Broker Execution Request", "Broker Authentication Context Reference"],
+      "outputs": ["Broker-Specific Request", "translation evidence"],
+      "governing_objects": ["BROKER-OBJ-003"],
+      "constitutional_authority": "Broker protocol translation authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-004",
+      "name": "Raw Broker Response Custody Lifecycle",
+      "lifecycle_type": "external fact custody",
+      "owner": "External Broker or Execution Venue",
+      "broker_authority": "immutable custody and normalization",
+      "trigger": "external broker or venue response is observed",
+      "inputs": ["Raw Broker Response"],
+      "outputs": ["raw response evidence", "canonical normalization input", "contradiction trigger if inconsistent"],
+      "governing_objects": ["BROKER-OBJ-004"],
+      "constitutional_authority": "external broker truth with Broker evidence custody"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-005",
+      "name": "Canonical Broker Event Lifecycle",
+      "lifecycle_type": "Broker-owned event evidence",
+      "owner": "Broker Office",
+      "broker_authority": "creation, correction by supersession, downstream custody transfer",
+      "trigger": "raw broker response or paper broker event is normalized",
+      "inputs": ["Raw Broker Response", "Paper Broker Order Record", "Broker Fill Record"],
+      "outputs": ["Canonical Broker Event", "downstream truth reference", "Historian preservation candidate"],
+      "governing_objects": ["BROKER-OBJ-005"],
+      "constitutional_authority": "Broker canonical event authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-006",
+      "name": "Identifier Mapping Lifecycle",
+      "lifecycle_type": "reconciliation key lifecycle",
+      "owner": "Broker Office",
+      "broker_authority": "creation, preservation, corrective annotation, archival",
+      "trigger": "canonical broker event establishes ARGOS-to-broker identity relationship",
+      "inputs": ["Canonical Broker Event"],
+      "outputs": ["Broker Identifier Mapping", "audit id reference"],
+      "governing_objects": ["BROKER-OBJ-006"],
+      "constitutional_authority": "Broker identifier reconciliation authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-007",
+      "name": "Broker Anomaly Case Lifecycle",
+      "lifecycle_type": "failure and exception lifecycle",
+      "owner": "Broker Office",
+      "broker_authority": "classification, creation, escalation, terminal disposition",
+      "trigger": "Broker anomaly, contradiction, timeout, missing acknowledgement, duplicate submission, or health failure is detected",
+      "inputs": ["Broker Integration Anomaly", "message history", "health evidence"],
+      "outputs": ["Broker Integration Case File", "escalation evidence", "terminal anomaly disposition"],
+      "governing_objects": ["BROKER-OBJ-007", "BROKER-OBJ-010"],
+      "constitutional_authority": "Broker anomaly and case-file authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-008",
+      "name": "Capability and Compatibility Lifecycle",
+      "lifecycle_type": "configuration and compatibility",
+      "owner": "Broker Office",
+      "broker_authority": "registration, suspension, retirement, supersession",
+      "trigger": "broker adapter is registered, recertified, suspended, or retired",
+      "inputs": ["Broker Capability Profile", "Broker Adapter Registry"],
+      "outputs": ["active capability record", "compatibility finding", "retired adapter record"],
+      "governing_objects": ["BROKER-OBJ-008", "BROKER-OBJ-011"],
+      "constitutional_authority": "Broker adapter governance authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-009",
+      "name": "Broker Health Observation Lifecycle",
+      "lifecycle_type": "health and monitoring",
+      "owner": "Broker Office",
+      "broker_authority": "observation, classification, escalation, archival",
+      "trigger": "broker health is observed or health-dependent execution is attempted",
+      "inputs": ["Broker Health Status", "broker adapter status"],
+      "outputs": ["health status evidence", "health anomaly case file if needed"],
+      "governing_objects": ["BROKER-OBJ-009"],
+      "constitutional_authority": "Broker health observation authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-010",
+      "name": "Message History Lifecycle",
+      "lifecycle_type": "immutable evidence history",
+      "owner": "Broker Office",
+      "broker_authority": "append-only custody, archival transfer, retrieval support",
+      "trigger": "Broker request, translation, response, event, anomaly, or custody transition occurs",
+      "inputs": ["Broker message event"],
+      "outputs": ["Broker Message History"],
+      "governing_objects": ["BROKER-OBJ-012"],
+      "constitutional_authority": "Broker immutable history authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-011",
+      "name": "Paper Broker Order Lifecycle",
+      "lifecycle_type": "paper execution state",
+      "owner": "Broker Office",
+      "broker_authority": "creation, state transition, cancellation, rejection, settlement event generation, archival",
+      "trigger": "paper order ticket is admitted to deterministic paper broker",
+      "inputs": ["Paper Broker Order Ticket", "Market State", "Paper Broker Account Snapshot"],
+      "outputs": ["Paper Broker Order Record", "Broker Fill Record", "Broker Event Record"],
+      "governing_objects": ["BROKER-OBJ-014", "BROKER-OBJ-015"],
+      "constitutional_authority": "Broker paper execution state authority"
+    },
+    {
+      "lifecycle_id": "BROKER-LC-012",
+      "name": "External Dependency Observation Lifecycle",
+      "lifecycle_type": "external dependency",
+      "owner": "External constitutional owner",
+      "broker_authority": "read-only dependency consumption and discrepancy escalation",
+      "trigger": "Broker execution requires market, financial, or downstream truth dependency",
+      "inputs": ["Paper Broker Account Snapshot", "Market State", "Performance Truth Broker Ledger Entry"],
+      "outputs": ["dependency reference", "discrepancy finding", "reconciliation request"],
+      "governing_objects": ["BROKER-OBJ-016", "BROKER-OBJ-017", "BROKER-OBJ-018"],
+      "constitutional_authority": "owning office authority with Broker dependency boundary"
+    }
+  ],
+  "b03_001_lifecycle_classification_registry": [
+    {"classification": "inbound custody and admissibility", "lifecycle_ids": ["BROKER-LC-001"]},
+    {"classification": "external security reference", "lifecycle_ids": ["BROKER-LC-002"]},
+    {"classification": "Broker-owned translation", "lifecycle_ids": ["BROKER-LC-003"]},
+    {"classification": "external fact custody", "lifecycle_ids": ["BROKER-LC-004"]},
+    {"classification": "Broker-owned event evidence", "lifecycle_ids": ["BROKER-LC-005"]},
+    {"classification": "reconciliation key lifecycle", "lifecycle_ids": ["BROKER-LC-006"]},
+    {"classification": "failure and exception lifecycle", "lifecycle_ids": ["BROKER-LC-007"]},
+    {"classification": "configuration and compatibility", "lifecycle_ids": ["BROKER-LC-008"]},
+    {"classification": "health and monitoring", "lifecycle_ids": ["BROKER-LC-009"]},
+    {"classification": "immutable evidence history", "lifecycle_ids": ["BROKER-LC-010"]},
+    {"classification": "paper execution state", "lifecycle_ids": ["BROKER-LC-011"]},
+    {"classification": "external dependency", "lifecycle_ids": ["BROKER-LC-012"]}
+  ],
+  "b03_001_lifecycle_authority_registry": [
+    {"lifecycle_scope": "Broker-owned lifecycle", "owner": "Broker Office", "authority": "Broker may create, progress, suspend, correct by supersession, terminate, and archive Broker-owned lifecycle records."},
+    {"lifecycle_scope": "Trader-owned inbound lifecycle", "owner": "Trader Office", "authority": "Trader owns execution intent; Broker may accept temporary custody for broker boundary processing."},
+    {"lifecycle_scope": "External dependency lifecycle", "owner": "Constitutional external owner", "authority": "Broker may consume and preserve references but shall not mutate or settle externally owned truth."},
+    {"lifecycle_scope": "Immutable evidence lifecycle", "owner": "Broker Office until archival transfer", "authority": "Broker owns evidence production; Historian owns preservation custody after transfer."}
+  ],
+  "b03_002_lifecycle_state_registry": [
+    {
+      "lifecycle_id": "ALL-BROKER-LIFECYCLES",
+      "initial_state": "DEFINED",
+      "intermediate_states": ["CREATED", "CUSTODY_ACCEPTED", "VALIDATED", "TRANSLATED", "OBSERVED", "NORMALIZED", "RECONCILED"],
+      "waiting_states": ["WAITING_FOR_ACKNOWLEDGEMENT", "WAITING_FOR_EXTERNAL_RESPONSE", "WAITING_FOR_RECONCILIATION", "WAITING_FOR_ARCHIVAL"],
+      "active_states": ["ACTIVE", "SUBMITTED", "WORKING", "PARTIALLY_FILLED", "CORRECTION_IN_PROGRESS", "RECOVERY_IN_PROGRESS"],
+      "suspended_states": ["SUSPENDED", "QUARANTINED", "HALTED"],
+      "retry_states": ["RETRY_ELIGIBLE", "RETRY_IN_PROGRESS"],
+      "failed_states": ["REJECTED", "FAILED", "CONTRADICTED", "INVALID_EVIDENCE"],
+      "cancelled_states": ["CANCELLED", "EXPIRED"],
+      "terminal_states": ["COMPLETED", "SETTLED", "SUPERSEDED", "ARCHIVED", "RETIRED", "FAILED_CLOSED"],
+      "state_ownership": "state owner equals lifecycle owner unless a custody transition record explicitly delegates custody without ownership transfer"
+    }
+  ],
+  "b03_002_transition_authority_matrix": [
+    {"transition": "DEFINED -> CREATED", "entry_authority": "lifecycle owner", "exit_authority": "lifecycle owner", "required_evidence": "object identity and creation authority"},
+    {"transition": "CREATED -> CUSTODY_ACCEPTED", "entry_authority": "receiving custodian", "exit_authority": "originating owner", "required_evidence": "custody transfer record"},
+    {"transition": "CUSTODY_ACCEPTED -> VALIDATED", "entry_authority": "Broker Office", "exit_authority": "Broker Office", "required_evidence": "validation evidence and governing authority"},
+    {"transition": "VALIDATED -> TRANSLATED", "entry_authority": "Broker Office", "exit_authority": "Broker Office", "required_evidence": "translation evidence"},
+    {"transition": "TRANSLATED -> SUBMITTED", "entry_authority": "Broker Office", "exit_authority": "Broker Office", "required_evidence": "broker submission evidence"},
+    {"transition": "SUBMITTED -> WAITING_FOR_ACKNOWLEDGEMENT", "entry_authority": "Broker Office", "exit_authority": "External Broker or Execution Venue", "required_evidence": "submission id and correlation id"},
+    {"transition": "WAITING_FOR_ACKNOWLEDGEMENT -> OBSERVED", "entry_authority": "External Broker or Execution Venue", "exit_authority": "Broker Office", "required_evidence": "raw response hash"},
+    {"transition": "OBSERVED -> NORMALIZED", "entry_authority": "Broker Office", "exit_authority": "Broker Office", "required_evidence": "canonical event id and normalization record"},
+    {"transition": "NORMALIZED -> RECONCILED", "entry_authority": "Broker Office", "exit_authority": "reconciliation authority", "required_evidence": "identifier mapping and downstream acceptance"},
+    {"transition": "RECONCILED -> ARCHIVED", "entry_authority": "Historian", "exit_authority": "Broker Office", "required_evidence": "archive manifest and immutable history digest"},
+    {"transition": "ANY_ACTIVE -> SUSPENDED", "entry_authority": "Broker Office or Enterprise Governance", "exit_authority": "Broker Governance Authority", "required_evidence": "suspension finding"},
+    {"transition": "ANY_ACTIVE -> FAILED_CLOSED", "entry_authority": "Broker Office or Enterprise Governance", "exit_authority": "Broker Governance Authority", "required_evidence": "failure classification and terminal evidence"}
+  ],
+  "b03_002_state_ownership_registry": [
+    {"state_scope": "Broker-owned states", "state_owner": "Broker Office"},
+    {"state_scope": "Trader intent states", "state_owner": "Trader Office"},
+    {"state_scope": "external broker response states", "state_owner": "External Broker or Execution Venue"},
+    {"state_scope": "financial truth states", "state_owner": "Enterprise Financial Authority"},
+    {"state_scope": "market truth states", "state_owner": "Market Data Authority"},
+    {"state_scope": "archived evidence states", "state_owner": "Historian"}
+  ],
+  "b03_002_prohibited_transition_registry": [
+    {"transition": "Broker custody -> Broker ownership of externally owned object", "reason": "custody shall not imply ownership transfer"},
+    {"transition": "Raw Broker Response -> mutated external truth", "reason": "Broker may normalize but shall not rewrite external broker truth"},
+    {"transition": "Broker Event -> authoritative financial account truth", "reason": "Enterprise Financial Authority owns account truth"},
+    {"transition": "Broker Fill -> direct position mutation ownership", "reason": "Position Registry owns position state"},
+    {"transition": "Unresolved contradiction -> completed terminal state", "reason": "contradictions must be dispositioned before completion"},
+    {"transition": "Missing evidence -> certification pass", "reason": "missing evidence fails closed"}
+  ],
+  "b03_003_lifecycle_event_registry": [
+    {"event": "initiation", "authority": "lifecycle owner", "evidence": "object identity, trigger, source authority"},
+    {"event": "progression", "authority": "current state owner", "evidence": "prior state, next state, legal transition, timestamp"},
+    {"event": "completion", "authority": "terminal responsibility authority", "evidence": "terminal state, reconciliation status, archive status"},
+    {"event": "suspension", "authority": "Broker Office or Enterprise Governance", "evidence": "suspension reason and affected object"},
+    {"event": "resumption", "authority": "Broker Governance Authority", "evidence": "resolved suspension finding"},
+    {"event": "timeout", "authority": "Broker Office", "evidence": "deadline, missing response, timeout classification"},
+    {"event": "exception", "authority": "Broker Office", "evidence": "exception classification and case file"},
+    {"event": "contradiction", "authority": "owning constitutional authority", "evidence": "conflicting records and precedence decision"},
+    {"event": "recovery", "authority": "Broker Office with owning-office boundary", "evidence": "checkpoint, recovered state, replay digest"},
+    {"event": "rollback", "authority": "Enterprise Governance when constitutional evidence requires reversal", "evidence": "rollback authorization and preserved original state"},
+    {"event": "abandonment", "authority": "Broker Governance Authority", "evidence": "abandonment rationale and terminal disposition"},
+    {"event": "termination", "authority": "terminal responsibility authority", "evidence": "final state and immutable history"}
+  ],
+  "b03_003_exception_registry": [
+    {"exception": "missing acknowledgement", "disposition": "FAILED_CLOSED or WAITING_FOR_RECONCILIATION according to timeout policy", "authority": "Broker Office"},
+    {"exception": "duplicate submission", "disposition": "FAILED_CLOSED with anomaly case file", "authority": "Broker Office"},
+    {"exception": "external broker contradiction", "disposition": "CONTRADICTED until owning authority resolves", "authority": "External Broker or Execution Venue for raw fact; Broker for canonical correction"},
+    {"exception": "health failure", "disposition": "SUSPENDED or FAILED_CLOSED", "authority": "Broker Office"},
+    {"exception": "invalid evidence", "disposition": "QUARANTINED", "authority": "Broker Office and Enterprise Certification"},
+    {"exception": "missing dependency authority", "disposition": "FAILED_CLOSED", "authority": "Enterprise Governance"}
+  ],
+  "b03_003_recovery_registry": [
+    {"recovery_path": "message history replay", "authority": "Broker Office", "required_evidence": "immutable history digest and replay equivalence"},
+    {"recovery_path": "identifier mapping reconstruction", "authority": "Broker Office", "required_evidence": "canonical event id, raw response hash, mapping digest"},
+    {"recovery_path": "paper order state reconstruction", "authority": "Broker Office", "required_evidence": "order record, fill records, event sequence"},
+    {"recovery_path": "downstream truth reconciliation", "authority": "owning downstream office", "required_evidence": "Broker source event and downstream discrepancy record"},
+    {"recovery_path": "external dependency recovery", "authority": "external constitutional owner", "required_evidence": "dependency owner recovery evidence"}
+  ],
+  "b03_003_termination_registry": [
+    {"terminal_state": "COMPLETED", "criteria": "object completed expected lifecycle with evidence and no unresolved contradiction"},
+    {"terminal_state": "SETTLED", "criteria": "paper broker execution emitted settlement event; financial truth remains externally owned"},
+    {"terminal_state": "SUPERSEDED", "criteria": "object corrected or replaced while immutable history remains"},
+    {"terminal_state": "ARCHIVED", "criteria": "Historian or Infrastructure preservation custody accepted immutable evidence"},
+    {"terminal_state": "RETIRED", "criteria": "capability, adapter, or doctrine retired by governance authority"},
+    {"terminal_state": "FAILED_CLOSED", "criteria": "required authority, evidence, dependency, or contradiction resolution is unavailable"}
+  ],
+  "b03_003_immutable_lifecycle_history_specification": {
+    "identity_history": "immutable",
+    "state_history": "append-only",
+    "custody_history": "append-only",
+    "transition_history": "append-only",
+    "exception_history": "append-only",
+    "recovery_history": "append-only",
+    "correction_history": "supersession only",
+    "archival_history": "immutable",
+    "destruction_history": "destruction prohibited for constitutional evidence unless explicit Enterprise constitutional authority exists"
+  },
+  "b03_004_lifecycle_reconciliation_report": {
+    "object_count_from_s02": 18,
+    "lifecycles_defined": 12,
+    "objects_mapped_to_lifecycle": 18,
+    "undefined_state_count": 0,
+    "unreachable_state_count": 0,
+    "ambiguous_transition_count": 0,
+    "unresolved_lifecycle_authority_count": 0,
+    "implementation_executed": false,
+    "runtime_behavior_modified": false,
+    "repository_wide_verification_executed": false
+  },
+  "b03_004_lifecycle_integrity_registry": [
+    {"check_id": "LC-INTEGRITY-001", "check": "every Broker constitutional object maps to a lifecycle", "result": "PASS"},
+    {"check_id": "LC-INTEGRITY-002", "check": "every lifecycle has one owner", "result": "PASS"},
+    {"check_id": "LC-INTEGRITY-003", "check": "states and terminal states are explicit", "result": "PASS"},
+    {"check_id": "LC-INTEGRITY-004", "check": "transition authority and evidence are explicit", "result": "PASS"},
+    {"check_id": "LC-INTEGRITY-005", "check": "prohibited transitions are explicit", "result": "PASS"},
+    {"check_id": "LC-INTEGRITY-006", "check": "exception, recovery, and termination governance are explicit", "result": "PASS"},
+    {"check_id": "LC-INTEGRITY-007", "check": "immutable lifecycle history is specified", "result": "PASS"}
+  ],
+  "b03_004_canonical_lifecycle_baseline": {
+    "baseline_id": "BROKER-RM-001-S03-LIFECYCLE-BASELINE",
+    "effective_status": "AUTHORITATIVE",
+    "summary": "Every Broker constitutional object possesses an explicit constitutional lifecycle, lifecycle owner, state model, transition authority, transition evidence, prohibited transition set, exception disposition, recovery authority, terminal state, terminal evidence, and immutable lifecycle history rule.",
+    "ready_for_series_4": true
+  },
+  "object_to_lifecycle_map": [
+    {"object_id": "BROKER-OBJ-001", "lifecycle_id": "BROKER-LC-001"},
+    {"object_id": "BROKER-OBJ-002", "lifecycle_id": "BROKER-LC-002"},
+    {"object_id": "BROKER-OBJ-003", "lifecycle_id": "BROKER-LC-003"},
+    {"object_id": "BROKER-OBJ-004", "lifecycle_id": "BROKER-LC-004"},
+    {"object_id": "BROKER-OBJ-005", "lifecycle_id": "BROKER-LC-005"},
+    {"object_id": "BROKER-OBJ-006", "lifecycle_id": "BROKER-LC-006"},
+    {"object_id": "BROKER-OBJ-007", "lifecycle_id": "BROKER-LC-007"},
+    {"object_id": "BROKER-OBJ-008", "lifecycle_id": "BROKER-LC-008"},
+    {"object_id": "BROKER-OBJ-009", "lifecycle_id": "BROKER-LC-009"},
+    {"object_id": "BROKER-OBJ-010", "lifecycle_id": "BROKER-LC-007"},
+    {"object_id": "BROKER-OBJ-011", "lifecycle_id": "BROKER-LC-008"},
+    {"object_id": "BROKER-OBJ-012", "lifecycle_id": "BROKER-LC-010"},
+    {"object_id": "BROKER-OBJ-013", "lifecycle_id": "BROKER-LC-001"},
+    {"object_id": "BROKER-OBJ-014", "lifecycle_id": "BROKER-LC-011"},
+    {"object_id": "BROKER-OBJ-015", "lifecycle_id": "BROKER-LC-011"},
+    {"object_id": "BROKER-OBJ-016", "lifecycle_id": "BROKER-LC-012"},
+    {"object_id": "BROKER-OBJ-017", "lifecycle_id": "BROKER-LC-012"},
+    {"object_id": "BROKER-OBJ-018", "lifecycle_id": "BROKER-LC-012"}
+  ],
+  "series_completion_report": {
+    "B03-001": "COMPLETE",
+    "B03-002": "COMPLETE",
+    "B03-003": "COMPLETE",
+    "B03-004": "COMPLETE",
+    "unresolved_lifecycle_decisions": 0,
+    "ready_for": "BROKER-RM-001-S04 Constitutional Decision Authority and Broker Governance"
+  }
+}
