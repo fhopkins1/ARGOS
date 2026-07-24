@@ -1,0 +1,104 @@
+[
+  {
+    "canonical_identity": "position_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-001",
+      "PR-INT-002",
+      "PR-INT-003",
+      "PR-INT-004",
+      "PR-INT-005",
+      "PR-INT-006",
+      "PR-INT-007",
+      "PR-INT-008",
+      "PR-INT-009",
+      "PR-INT-010",
+      "PR-INT-011",
+      "PR-INT-012"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Position Registry",
+    "identity_id": "PR-ID-001",
+    "identity_owner": "Position Registry",
+    "identity_scope": "canonical position identity and lineage",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  },
+  {
+    "canonical_identity": "workflow_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-001"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Trader",
+    "identity_id": "PR-ID-002",
+    "identity_owner": "Trader",
+    "identity_scope": "workflow context consumed by Position Registry",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  },
+  {
+    "canonical_identity": "broker_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-002"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Broker",
+    "identity_id": "PR-ID-003",
+    "identity_owner": "Broker",
+    "identity_scope": "broker source and adapter identity",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  },
+  {
+    "canonical_identity": "fill_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-002"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Broker",
+    "identity_id": "PR-ID-004",
+    "identity_owner": "Broker",
+    "identity_scope": "broker execution event identity",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  },
+  {
+    "canonical_identity": "authorization_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-003"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Authorizations",
+    "identity_id": "PR-ID-005",
+    "identity_owner": "Authorizations",
+    "identity_scope": "authorization source and scope identity",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  },
+  {
+    "canonical_identity": "risk_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-004"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Risk",
+    "identity_id": "PR-ID-006",
+    "identity_owner": "Risk",
+    "identity_scope": "risk authority and constraint identity",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  },
+  {
+    "canonical_identity": "historical_record_identity",
+    "duplicate_identity_authority": false,
+    "governing_interactions": [
+      "PR-INT-010"
+    ],
+    "historical_lineage": "immutable",
+    "identity_authority": "Historian",
+    "identity_id": "PR-ID-007",
+    "identity_owner": "Historian",
+    "identity_scope": "historical custody identity",
+    "supersession_relationship": "superseded identities remain historically traceable"
+  }
+]

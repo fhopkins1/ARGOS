@@ -1,0 +1,230 @@
+[
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Trader",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Trader -> Position Registry",
+    "escalation_authority": "Commander",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Trader",
+    "governing_interaction_contract": "trading_authority_boundary",
+    "interaction_id": "PR-INT-001",
+    "interaction_purpose": "Trader may request authorized lifecycle mutation; Position Registry owns canonical position state.",
+    "mutation_authority": "Position Registry",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Trader"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Position Registry",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Broker -> Position Registry",
+    "escalation_authority": "Commander",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Broker",
+    "governing_interaction_contract": "broker_truth_boundary",
+    "interaction_id": "PR-INT-002",
+    "interaction_purpose": "Broker owns execution and broker-reported truth; Position Registry consumes fill/correction/reconciliation evidence.",
+    "mutation_authority": "Position Registry",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Broker"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Authorizations",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Authorizations -> Position Registry",
+    "escalation_authority": "Commander",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Authorizations",
+    "governing_interaction_contract": "authorization_truth_boundary",
+    "interaction_id": "PR-INT-003",
+    "interaction_purpose": "Authorizations owns authorization truth; Position Registry consumes authorization evidence for admissibility.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Authorizations"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Risk",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Risk -> Position Registry",
+    "escalation_authority": "Commander",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Risk",
+    "governing_interaction_contract": "risk_truth_boundary",
+    "interaction_id": "PR-INT-004",
+    "interaction_purpose": "Risk owns risk truth; Position Registry consumes risk constraints and conflicts.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Risk"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Monitoring",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Position Registry -> Monitoring",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Monitoring",
+    "governing_interaction_contract": "monitoring_truth_boundary",
+    "interaction_id": "PR-INT-005",
+    "interaction_purpose": "Monitoring observes Position Registry state and owns monitoring observations.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Monitoring"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Exit Decision",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Exit Decision -> Position Registry",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Exit Decision",
+    "governing_interaction_contract": "exit_authority_boundary",
+    "interaction_id": "PR-INT-006",
+    "interaction_purpose": "Exit Decision owns exit authorization; Position Registry executes authorized lifecycle transitions.",
+    "mutation_authority": "Position Registry",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Exit Decision"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Position Registry",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Position Registry -> Closed Position Truth",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Closed Position Truth",
+    "governing_interaction_contract": "closed_position_truth_boundary",
+    "interaction_id": "PR-INT-007",
+    "interaction_purpose": "Closed Position Truth owns immutable closed-position truth after transfer.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Closed Position Truth"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Performance Truth",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Position Registry -> Performance Truth",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Performance Truth",
+    "governing_interaction_contract": "performance_truth_boundary",
+    "interaction_id": "PR-INT-008",
+    "interaction_purpose": "Performance Truth owns derived performance facts and consumes Position Registry source facts.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Performance Truth"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Commander",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Commander -> Position Registry",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Commander",
+    "governing_interaction_contract": "commander_governance_boundary",
+    "interaction_id": "PR-INT-009",
+    "interaction_purpose": "Commander owns command, escalation, emergency, and override authority.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Commander"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Position Registry",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Position Registry -> Historian",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Historian",
+    "governing_interaction_contract": "historian_boundary",
+    "interaction_id": "PR-INT-010",
+    "interaction_purpose": "Historian owns historical custody without mutating Position Registry truth.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Historian"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Infrastructure",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Infrastructure -> Position Registry",
+    "escalation_authority": "Commander",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Infrastructure",
+    "governing_interaction_contract": "infrastructure_dependency_boundary",
+    "interaction_id": "PR-INT-011",
+    "interaction_purpose": "Infrastructure owns runtime, persistence, replay, and recovery support.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Infrastructure"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  },
+  {
+    "canonical_identity_effects": "Position identity remains governed by Position Registry",
+    "correction_authority": "Sentinel",
+    "custody_effects": "Position Registry",
+    "dependency_relationships": "Position Registry -> Sentinel",
+    "escalation_authority": "Position Registry",
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-B01-002A boundary doctrine for Sentinel",
+    "governing_interaction_contract": "sentinel_observation_boundary",
+    "interaction_id": "PR-INT-012",
+    "interaction_purpose": "Sentinel owns observation evidence and never mutates Position Registry truth.",
+    "mutation_authority": "NONE",
+    "ownership_effects": "custody, consumption, or evidence relationship only unless Position Registry mutation authority is explicit",
+    "participating_offices": [
+      "Position Registry",
+      "Sentinel"
+    ],
+    "reconciliation_authority": "Position Registry",
+    "truth_ownership": "NO_OWNERSHIP_TRANSFER_WITHOUT_EXPLICIT_BOUNDARY_AUTHORITY"
+  }
+]

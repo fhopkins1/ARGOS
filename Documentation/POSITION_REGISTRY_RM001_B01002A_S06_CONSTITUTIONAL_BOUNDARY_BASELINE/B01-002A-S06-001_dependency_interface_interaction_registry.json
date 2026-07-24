@@ -1,0 +1,86 @@
+[
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Trader -> Position Registry",
+    "interaction_id": "PR-INT-001",
+    "interface_authority": "Trader boundary interface authority",
+    "producer": "Trader"
+  },
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Broker -> Position Registry",
+    "interaction_id": "PR-INT-002",
+    "interface_authority": "Broker boundary interface authority",
+    "producer": "Broker"
+  },
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Authorizations -> Position Registry",
+    "interaction_id": "PR-INT-003",
+    "interface_authority": "Authorizations boundary interface authority",
+    "producer": "Authorizations"
+  },
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Risk -> Position Registry",
+    "interaction_id": "PR-INT-004",
+    "interface_authority": "Risk boundary interface authority",
+    "producer": "Risk"
+  },
+  {
+    "consumer": "Monitoring",
+    "dependency_direction": "Position Registry -> Monitoring",
+    "interaction_id": "PR-INT-005",
+    "interface_authority": "Monitoring boundary interface authority",
+    "producer": "Position Registry"
+  },
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Exit Decision -> Position Registry",
+    "interaction_id": "PR-INT-006",
+    "interface_authority": "Exit Decision boundary interface authority",
+    "producer": "Exit Decision"
+  },
+  {
+    "consumer": "Closed Position Truth",
+    "dependency_direction": "Position Registry -> Closed Position Truth",
+    "interaction_id": "PR-INT-007",
+    "interface_authority": "Closed Position Truth boundary interface authority",
+    "producer": "Position Registry"
+  },
+  {
+    "consumer": "Performance Truth",
+    "dependency_direction": "Position Registry -> Performance Truth",
+    "interaction_id": "PR-INT-008",
+    "interface_authority": "Performance Truth boundary interface authority",
+    "producer": "Position Registry"
+  },
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Commander -> Position Registry",
+    "interaction_id": "PR-INT-009",
+    "interface_authority": "Commander boundary interface authority",
+    "producer": "Commander"
+  },
+  {
+    "consumer": "Historian",
+    "dependency_direction": "Position Registry -> Historian",
+    "interaction_id": "PR-INT-010",
+    "interface_authority": "Historian boundary interface authority",
+    "producer": "Position Registry"
+  },
+  {
+    "consumer": "Position Registry",
+    "dependency_direction": "Infrastructure -> Position Registry",
+    "interaction_id": "PR-INT-011",
+    "interface_authority": "Infrastructure boundary interface authority",
+    "producer": "Infrastructure"
+  },
+  {
+    "consumer": "Sentinel",
+    "dependency_direction": "Position Registry -> Sentinel",
+    "interaction_id": "PR-INT-012",
+    "interface_authority": "Sentinel boundary interface authority",
+    "producer": "Position Registry"
+  }
+]
