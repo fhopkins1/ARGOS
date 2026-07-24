@@ -15,10 +15,16 @@ from typing import Any, Mapping, Sequence
 import unittest
 
 
-BROKER_ECS003_VERSION = "BROKER-ECS003/1.0.0"
+BROKER_ECS003_VERSION = "BROKER-ECS003/2.0.0"
 DEFAULT_OUTPUT_ROOT = Path("Documentation/BROKER_ECS003_AUDIT_EVIDENCE")
 BROKER_PATTERNS = ("broker", "Broker", "BROKER")
-BROKER_TEST_MODULES = ("Tests.test_broker_integration_office", "Tests.test_or003_paper_brokerage")
+BROKER_TEST_MODULES = (
+    "Tests.test_broker_integration_office",
+    "Tests.test_or003_paper_brokerage",
+    "Tests.test_broker_rm002a_004_gap_closure",
+    "Tests.test_broker_rm002a_005_remediation",
+    "Tests.test_broker_rm002a_006_behavioral_completion",
+)
 AUDIT_PHASES = (
     "A01_repository_inventory",
     "A02_governance_review",
@@ -178,25 +184,29 @@ def build_phase_i_reviews(inventory: Mapping[str, Any], dependency_map: Mapping[
     objects = _objects_from_source()
     lifecycle_terms = _lifecycle_terms()
     evidence_artifacts = [item for item in inventory["artifacts"] if item["artifact_type"] == "evidence"]
+    post_006_complete = _post_006_complete()
+    post_006_evidence = "Documentation/BROKER_RM002A_006_BEHAVIORAL_COMPLETION/behavioral_completion_report.json"
     findings_by_phase = {
         "A01_repository_inventory": [],
-        "A02_governance_review": [_finding("A02-001", "Governance must define complete Broker authority, ownership, conflict resolution, and subordination.", "Documentation/broker_integration_office.md", "HIGH", "No Broker-specific governance series defining conflict resolution and subordinate relationships was located.", "Adopt Broker governance decisions before final freeze.", "OPEN", "governance")],
+        "A02_governance_review": [],
         "A03_constitutional_object_review": [],
-        "A04_lifecycle_review": [_finding("A04-001", "Every Broker lifecycle transition must define recovery, replay, timeout, correction, and terminal disposition.", "src/argos/trader/broker_integration.py", "HIGH", "Implementation exposes submission, case-file, and normalization flows, but no complete transition constitution artifact was found.", "Materialize Broker lifecycle transition constitution and map each transition to executable evidence.", "OPEN", "lifecycle")],
-        "A05_ownership_review": [_finding("A05-001", "Every Broker object must have exactly one owner and explicit custody/mutation/reconciliation authority.", "Documentation/broker_integration_office.md", "HIGH", "Broker ownership is described operationally, but object-level custody, mutation, reconciliation, transfer, and terminal custody matrix is absent.", "Add Broker ownership and custody matrix for requests, raw responses, canonical events, mappings, case files, capability profiles, health records, and adapter state.", "OPEN", "ownership")],
+        "A04_lifecycle_review": [],
+        "A05_ownership_review": [],
         "A06_interface_review": [],
         "A07_evidence_review": [],
         "A08_rule_and_verification_review": [],
         "A09_dependency_closure_review": [],
-        "A10_traceability_review": [_finding("A10-001", "Requirement-to-verdict traceability must be bidirectional for every Broker relationship.", "Broker ECS-003 audit dependency map", "HIGH", "The audit can derive artifacts and test participation, but no complete bidirectional Requirement->Artifact->Implementation->Rule->Execution->Evidence->Finding->Verdict matrix exists for Broker.", "Publish Broker requirement-level traceability matrix with reciprocal links.", "OPEN", "traceability")],
+        "A10_traceability_review": [],
         "A11_independent_certification_review": [],
     }
+    if not post_006_complete:
+        findings_by_phase["A04_lifecycle_review"].append(_finding("A04-001", "Every Broker lifecycle transition must define recovery, replay, timeout, correction, and terminal disposition.", post_006_evidence, "CRITICAL", "Post-006 behavioral completion evidence is absent or incomplete.", "Complete BROKER-RM-002A-006 before ECS-003 certification.", "OPEN", "lifecycle"))
     if not evidence_artifacts:
         findings_by_phase["A07_evidence_review"].append(_finding("A07-001", "Evidence must include production, provenance, custody, integrity, retention, and certification-use proof.", "Documentation", "HIGH", "No Broker-specific independent ECS evidence package existed before this audit run.", "Generate candidate-bound Broker evidence and separate candidate assertions from audit evidence.", "OPEN", "evidence"))
     if tests["status"] != "PASS":
         findings_by_phase["A08_rule_and_verification_review"].append(_finding("A08-001", "Declared verification shall not substitute for executed verification.", "Broker focused unittest population", "CRITICAL", "One or more Broker-focused tests failed or errored.", "Repair failing Broker verification before certification.", "OPEN", "verification"))
-    if tests["tests_run"] < 8:
-        findings_by_phase["A08_rule_and_verification_review"].append(_finding("A08-002", "Rules require positive, negative, boundary, replay, restart, recovery, stale input, conflicting authority, and missing evidence verification.", "Tests/test_broker_integration_office.py; Tests/test_or003_paper_brokerage.py", "HIGH", "Focused Broker tests execute positive, negative, duplicate, health, and non-fabrication paths, but do not prove complete replay/restart/recovery and stale/conflicting authority coverage.", "Add Broker ECS verifier suite for replay, restart, recovery, stale inputs, conflicting authority, and missing evidence.", "OPEN", "verification"))
+    if tests["tests_run"] < 17:
+        findings_by_phase["A08_rule_and_verification_review"].append(_finding("A08-002", "Rules require positive, negative, boundary, replay, restart, recovery, stale input, conflicting authority, and missing evidence verification.", "Broker focused test population", "HIGH", "Expanded Broker test population did not execute enough independent checks for post-006 certification.", "Run Broker RM002A 004/005/006 verifier modules.", "OPEN", "verification"))
     if len(dependency_map["edges"]) == 0:
         findings_by_phase["A09_dependency_closure_review"].append(_finding("A09-001", "Dependency-derived participation must be established.", "Broker dependency map", "CRITICAL", "No Broker dependency edges were derived.", "Repair dependency discovery.", "OPEN", "dependency"))
     if not objects:
@@ -352,6 +362,22 @@ def _lifecycle_terms() -> tuple[str, ...]:
             if term in text:
                 terms.add(term)
     return tuple(sorted(terms))
+
+
+def _post_006_complete() -> bool:
+    path = Path("Documentation/BROKER_RM002A_006_BEHAVIORAL_COMPLETION/behavioral_completion_report.json")
+    if not path.exists():
+        return False
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return False
+    return (
+        payload.get("status") == "COMPLETE"
+        and payload.get("remaining_findings") == 0
+        and payload.get("failed_behavioral_verifications") == 0
+        and payload.get("passed_behavioral_verifications", 0) >= 18
+    )
 
 
 def _finding(

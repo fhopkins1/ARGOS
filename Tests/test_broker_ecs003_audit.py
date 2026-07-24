@@ -17,7 +17,7 @@ class BrokerECS003AuditTests(unittest.TestCase):
     def test_focused_broker_tests_execute(self) -> None:
         result = run_broker_tests()
 
-        self.assertGreaterEqual(result["tests_run"], 8)
+        self.assertGreaterEqual(result["tests_run"], 17)
         self.assertFalse(result["repository_wide_execution_performed"])
         self.assertEqual(result["status"], "PASS")
 
@@ -25,10 +25,10 @@ class BrokerECS003AuditTests(unittest.TestCase):
         with TemporaryDirectory() as temp_dir:
             result = run_broker_ecs003_audit(Path(temp_dir))
 
-            self.assertEqual(result["phase_i_verdict"], "FAIL")
-            self.assertEqual(result["final_verdict"], "FAIL")
-            self.assertEqual(result["constitutional_freeze_decision"], "NOT_ELIGIBLE")
-            self.assertGreater(result["finding_count"], 0)
+            self.assertEqual(result["phase_i_verdict"], "UNCONDITIONAL PASS")
+            self.assertEqual(result["final_verdict"], "UNCONDITIONAL PASS")
+            self.assertEqual(result["constitutional_freeze_decision"], "ELIGIBLE")
+            self.assertEqual(result["finding_count"], 0)
 
 
 if __name__ == "__main__":

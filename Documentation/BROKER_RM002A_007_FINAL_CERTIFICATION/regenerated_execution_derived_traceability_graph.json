@@ -1,0 +1,356 @@
+{
+  "edges": [
+    {
+      "execution": "BROKER-RM002A-004-010",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-001",
+      "requirement": "BROKER-RM-002A-004::acknowledgement_after_timeout",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-005",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-002",
+      "requirement": "BROKER-RM-002A-004::cancellation_request_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-026",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-003",
+      "requirement": "BROKER-RM-002A-004::cancellation_uncertainty_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-017",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-004",
+      "requirement": "BROKER-RM-002A-004::contradictory_broker_event_reconciliation",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-016",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-005",
+      "requirement": "BROKER-RM-002A-004::correction_event_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-020",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-006",
+      "requirement": "BROKER-RM-002A-004::corrupted_state_recovery",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-023",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-007",
+      "requirement": "BROKER-RM-002A-004::delayed_acknowledgement_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-024",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-008",
+      "requirement": "BROKER-RM-002A-004::duplicate_broker_event_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-003",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-009",
+      "requirement": "BROKER-RM-002A-004::duplicate_request_detection",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-014",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-010",
+      "requirement": "BROKER-RM-002A-004::durable_restart_recovery",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-015",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-011",
+      "requirement": "BROKER-RM-002A-004::late_fill_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-001",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-012",
+      "requirement": "BROKER-RM-002A-004::malformed_request_rejection",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-007",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-013",
+      "requirement": "BROKER-RM-002A-004::missing_state_detection",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-018",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-014",
+      "requirement": "BROKER-RM-002A-004::modification_uncertainty_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-025",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-015",
+      "requirement": "BROKER-RM-002A-004::out_of_order_event_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-004",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-016",
+      "requirement": "BROKER-RM-002A-004::partial_fill_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-019",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-017",
+      "requirement": "BROKER-RM-002A-004::partial_write_recovery",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-021",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-018",
+      "requirement": "BROKER-RM-002A-004::persistence_restoration",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-008",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-019",
+      "requirement": "BROKER-RM-002A-004::prohibition_against_fabricated_acknowledgement_or_fill_truth",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-013",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-020",
+      "requirement": "BROKER-RM-002A-004::replay_after_restart",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-009",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-021",
+      "requirement": "BROKER-RM-002A-004::request_timeout_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-012",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-022",
+      "requirement": "BROKER-RM-002A-004::retry_exhaustion",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-011",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-023",
+      "requirement": "BROKER-RM-002A-004::retry_initiation",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-006",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-024",
+      "requirement": "BROKER-RM-002A-004::terminal_state_mutation_rejection",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-022",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-025",
+      "requirement": "BROKER-RM-002A-004::unresolved_anomaly_escalation",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-004-002",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-026",
+      "requirement": "BROKER-RM-002A-004::unsupported_request_rejection",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-002",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-027",
+      "requirement": "BROKER-RM-002A-006::acknowledgement_after_timeout",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-018",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-028",
+      "requirement": "BROKER-RM-002A-006::cancellation_uncertainty_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-009",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-029",
+      "requirement": "BROKER-RM-002A-006::contradictory_broker_event_reconciliation",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-008",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-030",
+      "requirement": "BROKER-RM-002A-006::correction_event_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-012",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-031",
+      "requirement": "BROKER-RM-002A-006::corrupted_state_recovery",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-015",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-032",
+      "requirement": "BROKER-RM-002A-006::delayed_acknowledgement_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-016",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-033",
+      "requirement": "BROKER-RM-002A-006::duplicate_broker_event_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-006",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-034",
+      "requirement": "BROKER-RM-002A-006::durable_restart_recovery",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-007",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-035",
+      "requirement": "BROKER-RM-002A-006::late_fill_processing",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-010",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-036",
+      "requirement": "BROKER-RM-002A-006::modification_uncertainty_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-017",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-037",
+      "requirement": "BROKER-RM-002A-006::out_of_order_event_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-011",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-038",
+      "requirement": "BROKER-RM-002A-006::partial_write_recovery",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-013",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-039",
+      "requirement": "BROKER-RM-002A-006::persistence_restoration",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-005",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-040",
+      "requirement": "BROKER-RM-002A-006::replay_after_restart",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-001",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-041",
+      "requirement": "BROKER-RM-002A-006::request_timeout_handling",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-004",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-042",
+      "requirement": "BROKER-RM-002A-006::retry_exhaustion",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-003",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-043",
+      "requirement": "BROKER-RM-002A-006::retry_initiation",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    },
+    {
+      "execution": "BROKER-RM002A-006-VER-014",
+      "implementation": "src/argos/trader/paper_brokerage.py or src/argos/trader/broker_integration.py",
+      "proof": "BROKER-RM002A-007-PROOF-044",
+      "requirement": "BROKER-RM-002A-006::unresolved_anomaly_escalation",
+      "verdict": "UNCONDITIONAL_PASS",
+      "verifier": "Broker RM002A focused verifier population"
+    }
+  ]
+}
