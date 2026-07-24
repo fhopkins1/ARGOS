@@ -1,0 +1,88 @@
+[
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "fills": 0,
+      "rejection_code": "INVALID_QUANTITY"
+    },
+    "execution_id": "BROKER-RM002A-004-001",
+    "finding": "",
+    "obligation": "malformed request rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "expected": "INVALID_ORDER_TYPE",
+      "rejection_code": "INVALID_ORDER_TYPE"
+    },
+    "execution_id": "BROKER-RM002A-004-002",
+    "finding": "",
+    "obligation": "unsupported request rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "first_accepted": true,
+      "second_accepted": false,
+      "second_rejection": "DUPLICATE_ORDER"
+    },
+    "execution_id": "BROKER-RM002A-004-003",
+    "finding": "",
+    "obligation": "duplicate request detection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "filled_quantity": 0.1,
+      "remaining_quantity": 0.9,
+      "status": "partially_filled",
+      "truth_records": 1
+    },
+    "execution_id": "BROKER-RM002A-004-004",
+    "finding": "",
+    "obligation": "partial-fill processing"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "cancelled_status": "cancelled",
+      "queued_status": "working",
+      "terminal_advance_events": 0,
+      "terminal_status": "cancelled"
+    },
+    "execution_id": "BROKER-RM002A-004-005",
+    "finding": "",
+    "obligation": "cancellation request processing"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "new_events": 0,
+      "status_after_advance": "cancelled",
+      "status_before_advance": "cancelled"
+    },
+    "execution_id": "BROKER-RM002A-004-006",
+    "finding": "",
+    "obligation": "terminal-state mutation rejection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "exception": "unknown broker order: ORD-MISSING"
+    },
+    "execution_id": "BROKER-RM002A-004-007",
+    "finding": "",
+    "obligation": "missing-state detection"
+  },
+  {
+    "disposition": "VERIFIED_PASS",
+    "evidence": {
+      "fills": 0,
+      "status": "queued",
+      "truth_records": 0
+    },
+    "execution_id": "BROKER-RM002A-004-008",
+    "finding": "",
+    "obligation": "prohibition against fabricated acknowledgement or fill truth"
+  }
+]

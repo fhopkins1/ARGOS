@@ -1,8 +1,7 @@
 {
-  "generated_at": "2026-07-24T14:47:21.700225Z",
-  "regression_004": {
+  "rm002a_004_regression": {
     "candidate": "BROKER-RM-002A-004",
-    "generated_at": "2026-07-24T14:47:21.760878Z",
+    "generated_at": "2026-07-24T14:47:23.466070Z",
     "implementation_modified": false,
     "new_behavioral_verifier": "Scripts/broker_rm002a_004_gap_closure.py",
     "results": [
@@ -281,43 +280,252 @@
       "verifier_error": 4
     }
   },
-  "verifier_regressions": [
+  "rm002a_006_verification": [
     {
+      "disposition": "VERIFIED_PASS",
       "evidence": {
-        "expected": "DELAYED_ACKNOWLEDGEMENT_RECORDED",
-        "fixture_result": "DELAYED_ACKNOWLEDGEMENT_RECORDED"
+        "last_event": "Order Timeout",
+        "status": "timed_out"
       },
-      "obligation": "delayed acknowledgement processing",
-      "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
-      "regression_disposition": "REGRESSION_PASS"
+      "implemented_behavior": "DeterministicPaperBrokerage.timeout_order",
+      "obligation": "request timeout handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-009",
+      "verification_id": "BROKER-RM002A-006-VER-001"
     },
     {
+      "disposition": "VERIFIED_PASS",
       "evidence": {
-        "expected_second": "DUPLICATE_EVENT_REJECTED",
-        "first_result": "EVENT_ACCEPTED",
-        "second_result": "DUPLICATE_EVENT_REJECTED"
+        "disposition": "APPLIED",
+        "event_id": "PBE-73C75C108D93",
+        "order_status": "acknowledged_after_timeout"
       },
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+      "obligation": "acknowledgement after timeout",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-010",
+      "verification_id": "BROKER-RM002A-006-VER-002"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "attempts": {
+          "ORD-GAP-001": 1
+        },
+        "status": "retry_pending"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.retry_order",
+      "obligation": "retry initiation",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-011",
+      "verification_id": "BROKER-RM002A-006-VER-003"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "attempts": {
+          "ORD-GAP-001": 2
+        },
+        "rejection_code": "NOT_EXECUTABLE",
+        "status": "rejected"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.retry_order",
+      "obligation": "retry exhaustion",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-012",
+      "verification_id": "BROKER-RM002A-006-VER-004"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "after_order_count": 1,
+        "before_order_count": 1,
+        "status": "working"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+      "obligation": "replay after restart",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-013",
+      "verification_id": "BROKER-RM002A-006-VER-005"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "restored_status": "timed_out"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.recover_from_snapshot",
+      "obligation": "durable restart recovery",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-014",
+      "verification_id": "BROKER-RM002A-006-VER-006"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "disposition": "LATE_FILL",
+        "event_id": "PBE-8673BD1C694E",
+        "order_status": "settled"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+      "obligation": "late fill processing",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-015",
+      "verification_id": "BROKER-RM002A-006-VER-007"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "last_event": "Correction",
+        "lifecycle": [
+          "Created",
+          "Validated",
+          "Accepted",
+          "Queued",
+          "Working",
+          "Filled",
+          "Settled",
+          "Corrected"
+        ]
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.record_correction",
+      "obligation": "correction-event processing",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-016",
+      "verification_id": "BROKER-RM002A-006-VER-008"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "broker_status": "working",
+        "canonical_status": "settled",
+        "conflict": true,
+        "event_id": "PBE-0B1358467DA4",
+        "order_id": "ORD-GAP-001"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.reconcile_broker_event",
+      "obligation": "contradictory broker-event reconciliation",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-017",
+      "verification_id": "BROKER-RM002A-006-VER-009"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "last_event": "Modification Uncertain",
+        "status": "modification_uncertain"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.modify_order_uncertain",
+      "obligation": "modification uncertainty handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-018",
+      "verification_id": "BROKER-RM002A-006-VER-010"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "order_count": 1,
+        "valid": true
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.recover_from_snapshot",
+      "obligation": "partial-write recovery",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-019",
+      "verification_id": "BROKER-RM002A-006-VER-011"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "detected": {
+          "findings": [
+            {
+              "classification": "CORRUPTED_STATE",
+              "orderId": "CORRUPTED-KEY"
+            }
+          ],
+          "valid": false
+        },
+        "recovered": {
+          "findings": [],
+          "valid": true
+        }
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.validate_state_integrity/recover_from_snapshot",
+      "obligation": "corrupted-state recovery",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-020",
+      "verification_id": "BROKER-RM002A-006-VER-012"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "restored_order": "ORD-GAP-001"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+      "obligation": "persistence restoration",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-021",
+      "verification_id": "BROKER-RM002A-006-VER-013"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "disposition": "APPLIED",
+        "event_id": "PBE-68D3DF9E96F8",
+        "order_status": "cancellation_uncertain"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+      "obligation": "unresolved anomaly escalation",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-022",
+      "verification_id": "BROKER-RM002A-006-VER-014"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "disposition": "APPLIED",
+        "event_id": "PBE-AAFFD43E1C64",
+        "order_status": "acknowledged"
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+      "obligation": "delayed acknowledgement handling",
+      "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+      "verification_id": "BROKER-RM002A-006-VER-015"
+    },
+    {
+      "disposition": "VERIFIED_PASS",
+      "evidence": {
+        "first": {
+          "disposition": "APPLIED",
+          "event_id": "PBE-37D974C94D33",
+          "order_status": "working"
+        },
+        "second": {
+          "disposition": "DUPLICATE_EVENT",
+          "event_id": "PBE-8B3C3601CF45",
+          "order_status": "working"
+        }
+      },
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
       "obligation": "duplicate broker-event handling",
       "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
-      "regression_disposition": "REGRESSION_PASS"
+      "verification_id": "BROKER-RM002A-006-VER-016"
     },
     {
+      "disposition": "VERIFIED_PASS",
       "evidence": {
-        "expected": "OUT_OF_ORDER_EVENT_QUARANTINED",
-        "fixture_result": "OUT_OF_ORDER_EVENT_QUARANTINED"
+        "first": {
+          "disposition": "APPLIED",
+          "event_id": "PBE-37D974C94D33",
+          "order_status": "working"
+        },
+        "second": {
+          "disposition": "OUT_OF_ORDER_EVENT",
+          "event_id": "PBE-EF384F771DFD",
+          "order_status": "working"
+        }
       },
-      "obligation": "out-of-order event processing",
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+      "obligation": "out-of-order event handling",
       "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
-      "regression_disposition": "REGRESSION_PASS"
+      "verification_id": "BROKER-RM002A-006-VER-017"
     },
     {
+      "disposition": "VERIFIED_PASS",
       "evidence": {
-        "expected": "CANCELLATION_UNCERTAINTY_ESCALATED",
-        "fixture_result": "CANCELLATION_UNCERTAINTY_ESCALATED"
+        "disposition": "APPLIED",
+        "event_id": "PBE-68D3DF9E96F8",
+        "order_status": "cancellation_uncertain"
       },
+      "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
       "obligation": "cancellation uncertainty handling",
       "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
-      "regression_disposition": "REGRESSION_PASS"
+      "verification_id": "BROKER-RM002A-006-VER-018"
     }
   ]
 }

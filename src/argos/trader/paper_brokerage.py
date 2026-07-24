@@ -290,6 +290,10 @@ class DeterministicPaperBrokerage:
         self.order_book = PaperBrokerOrderBook()
         self.fill_engine = PaperBrokerFillEngine()
         self._sequence = 0
+        self._retry_attempts: dict[str, int] = {}
+        self._broker_event_ids: set[str] = set()
+        self._broker_event_sequences: dict[str, int] = {}
+        self._quarantine: list[BrokerEventRecord] = []
 
     def submit_order(
         self,
@@ -389,6 +393,131 @@ class DeterministicPaperBrokerage:
         self.order_book.replace(updated)
         self._publish(event)
         return updated
+
+    def timeout_order(self, order_id: str, *, reason: str = "broker_acknowledgement_timeout") -> PaperBrokerOrderRecord:
+        """Move a non-terminal order into deterministic timed-out uncertainty."""
+        order = self._require_order(order_id)
+        if order.status in TERMINAL_STATUSES:
+            return order
+        event = self._event(order, "Order Timeout", {"reason": reason})
+        updated = replace(order, status="timed_out", lifecycle=(*order.lifecycle, "Timed Out"), events=(*order.events, event), updated_at=event.timestamp_utc)
+        self.order_book.replace(updated)
+        self._publish(event)
+        return updated
+
+    def retry_order(self, order_id: str, *, max_attempts: int = 2) -> PaperBrokerOrderRecord:
+        """Record deterministic retry initiation or retry exhaustion for a timed-out order."""
+        order = self._require_order(order_id)
+        if order.status in TERMINAL_STATUSES:
+            return order
+        attempt = self._retry_attempts.get(order_id, 0) + 1
+        self._retry_attempts[order_id] = attempt
+        if attempt > max_attempts:
+            event = self._event(order, "Retry Exhausted", {"attempt": attempt, "maxAttempts": max_attempts})
+            updated = replace(order, status="rejected", rejection_code=PaperBrokerRejectionCode.NOT_EXECUTABLE.value, lifecycle=(*order.lifecycle, "Retry Exhausted", "Rejected"), events=(*order.events, event), updated_at=event.timestamp_utc)
+        else:
+            event = self._event(order, "Retry Initiated", {"attempt": attempt, "maxAttempts": max_attempts})
+            updated = replace(order, status="retry_pending", lifecycle=(*order.lifecycle, "Retry Pending"), events=(*order.events, event), updated_at=event.timestamp_utc)
+        self.order_book.replace(updated)
+        self._publish(event)
+        return updated
+
+    def modify_order_uncertain(self, order_id: str, requested_changes: dict[str, Any], *, reason: str = "broker_modification_state_uncertain") -> PaperBrokerOrderRecord:
+        """Record modification uncertainty without mutating the canonical ticket."""
+        order = self._require_order(order_id)
+        if order.status in TERMINAL_STATUSES:
+            return order
+        event = self._event(order, "Modification Uncertain", {"reason": reason, "requestedChanges": dict(sorted(requested_changes.items()))})
+        updated = replace(order, status="modification_uncertain", lifecycle=(*order.lifecycle, "Modification Uncertain"), events=(*order.events, event), updated_at=event.timestamp_utc)
+        self.order_book.replace(updated)
+        self._publish(event)
+        return updated
+
+    def record_correction(self, order_id: str, correction_payload: dict[str, Any]) -> PaperBrokerOrderRecord:
+        """Append a correction event while preserving historical order evidence."""
+        order = self._require_order(order_id)
+        event = self._event(order, "Correction", {"correction": dict(sorted(correction_payload.items()))})
+        updated = replace(order, lifecycle=(*order.lifecycle, "Corrected"), events=(*order.events, event), updated_at=event.timestamp_utc)
+        self.order_book.replace(updated)
+        self._publish(event)
+        return updated
+
+    def reconcile_broker_event(self, order_id: str, broker_status: str, *, evidence_reference: str) -> dict[str, Any]:
+        """Classify broker-state reconciliation without overwriting canonical history."""
+        order = self._require_order(order_id)
+        conflict = order.status in TERMINAL_STATUSES and broker_status != order.status
+        event_type = "Contradictory Reconciliation" if conflict else "Broker Reconciliation"
+        event = self._event(order, event_type, {"brokerStatus": broker_status, "evidenceReference": evidence_reference, "conflict": conflict})
+        updated = replace(order, events=(*order.events, event), updated_at=event.timestamp_utc)
+        self.order_book.replace(updated)
+        self._publish(event)
+        return {"order_id": order_id, "canonical_status": order.status, "broker_status": broker_status, "conflict": conflict, "event_id": event.event_id}
+
+    def process_external_broker_event(self, event_id: str, order_id: str, event_type: str, sequence: int, payload: dict[str, Any]) -> dict[str, Any]:
+        """Apply deterministic sequencing, duplicate, late-event, and uncertainty rules."""
+        order = self._require_order(order_id)
+        if event_id in self._broker_event_ids:
+            return self._quarantine_event(order, "Duplicate Broker Event", {"eventId": event_id, "sequence": sequence, **payload}, "DUPLICATE_EVENT")
+        self._broker_event_ids.add(event_id)
+        highest_sequence = self._broker_event_sequences.get(order_id, 0)
+        if sequence <= highest_sequence:
+            return self._quarantine_event(order, "Out Of Order Broker Event", {"eventId": event_id, "sequence": sequence, "highestSequence": highest_sequence, **payload}, "OUT_OF_ORDER_EVENT")
+        self._broker_event_sequences[order_id] = sequence
+        if order.status in TERMINAL_STATUSES and event_type.lower() == "fill":
+            return self._quarantine_event(order, "Late Fill", {"eventId": event_id, "sequence": sequence, **payload}, "LATE_FILL")
+        if event_type.lower() == "acknowledgement" and payload.get("afterTimeout"):
+            broker_event = self._event(order, "Acknowledgement After Timeout", {"eventId": event_id, "sequence": sequence, **payload})
+            updated = replace(order, status="acknowledged_after_timeout", lifecycle=(*order.lifecycle, "Acknowledgement After Timeout"), events=(*order.events, broker_event), updated_at=broker_event.timestamp_utc)
+        elif event_type.lower() == "acknowledgement" and payload.get("delayed"):
+            broker_event = self._event(order, "Delayed Acknowledgement", {"eventId": event_id, "sequence": sequence, **payload})
+            updated = replace(order, status="acknowledged", lifecycle=(*order.lifecycle, "Delayed Acknowledgement"), events=(*order.events, broker_event), updated_at=broker_event.timestamp_utc)
+        elif event_type.lower() == "cancellation" and payload.get("uncertain"):
+            broker_event = self._event(order, "Cancellation Uncertain", {"eventId": event_id, "sequence": sequence, **payload})
+            updated = replace(order, status="cancellation_uncertain", lifecycle=(*order.lifecycle, "Cancellation Uncertain"), events=(*order.events, broker_event), updated_at=broker_event.timestamp_utc)
+        else:
+            broker_event = self._event(order, "External Broker Event", {"eventId": event_id, "eventType": event_type, "sequence": sequence, **payload})
+            updated = replace(order, events=(*order.events, broker_event), updated_at=broker_event.timestamp_utc)
+        self.order_book.replace(updated)
+        self._publish(broker_event)
+        return {"disposition": "APPLIED", "event_id": broker_event.event_id, "order_status": updated.status}
+
+    def snapshot(self) -> dict[str, Any]:
+        """Return a replayable deterministic paper-broker state snapshot."""
+        return {
+            "orders": tuple(_json_ready(order) for order in self.order_book._orders.values()),
+            "retryAttempts": dict(sorted(self._retry_attempts.items())),
+            "brokerEventIds": tuple(sorted(self._broker_event_ids)),
+            "brokerEventSequences": dict(sorted(self._broker_event_sequences.items())),
+            "quarantine": tuple(_json_ready(event) for event in self._quarantine),
+            "sequence": self._sequence,
+        }
+
+    def recover_from_snapshot(self, snapshot: dict[str, Any]) -> None:
+        """Restore deterministic paper-broker state from a snapshot."""
+        self.order_book = PaperBrokerOrderBook()
+        for order_payload in snapshot.get("orders", ()):
+            self.order_book.add(_order_from_json(order_payload))
+        self._retry_attempts = {str(key): int(value) for key, value in dict(snapshot.get("retryAttempts", {})).items()}
+        self._broker_event_ids = {str(item) for item in snapshot.get("brokerEventIds", ())}
+        self._broker_event_sequences = {str(key): int(value) for key, value in dict(snapshot.get("brokerEventSequences", {})).items()}
+        self._quarantine = [_event_from_json(item) for item in snapshot.get("quarantine", ())]
+        self._sequence = int(snapshot.get("sequence", 0))
+
+    def validate_state_integrity(self) -> dict[str, Any]:
+        """Detect missing or corrupted state without mutating broker history."""
+        findings: list[dict[str, str]] = []
+        for order_id, order in self.order_book._orders.items():
+            if order.order_id != order_id:
+                findings.append({"classification": "CORRUPTED_STATE", "orderId": order_id})
+            if not order.events:
+                findings.append({"classification": "MISSING_STATE", "orderId": order_id})
+        return {"valid": not findings, "findings": tuple(findings)}
+
+    def _quarantine_event(self, order: PaperBrokerOrderRecord, event_type: str, payload: dict[str, Any], disposition: str) -> dict[str, Any]:
+        event = self._event(order, event_type, payload)
+        self._quarantine.append(event)
+        self._publish(event)
+        return {"disposition": disposition, "event_id": event.event_id, "order_status": order.status}
 
     def _validate(self, ticket: PaperBrokerOrderTicket, workflow_token: Any, market: MarketState | None) -> PaperBrokerRejectionCode | None:
         from argos.control_panel.truth_domain import validate_decision_object_for_operational_truth
@@ -585,6 +714,34 @@ def _commission(ticket: PaperBrokerOrderTicket, quantity: float, price: float) -
     if ticket.asset_type.lower() in {"stock", "equity", "etf", "crypto"}:
         return 0.0
     return round(max(0.65, quantity * price * 0.0001), 4)
+
+
+def _ticket_from_json(value: dict[str, Any]) -> PaperBrokerOrderTicket:
+    return PaperBrokerOrderTicket(**{field.name: value.get(field.name) for field in fields(PaperBrokerOrderTicket)})
+
+
+def _market_from_json(value: dict[str, Any] | None) -> MarketState | None:
+    if not value:
+        return None
+    return MarketState(**{field.name: value.get(field.name) for field in fields(MarketState)})
+
+
+def _fill_from_json(value: dict[str, Any]) -> BrokerFillRecord:
+    return BrokerFillRecord(**{field.name: value.get(field.name) for field in fields(BrokerFillRecord)})
+
+
+def _event_from_json(value: dict[str, Any]) -> BrokerEventRecord:
+    return BrokerEventRecord(**{field.name: value.get(field.name) for field in fields(BrokerEventRecord)})
+
+
+def _order_from_json(value: dict[str, Any]) -> PaperBrokerOrderRecord:
+    payload = {field.name: value.get(field.name) for field in fields(PaperBrokerOrderRecord)}
+    payload["ticket"] = _ticket_from_json(value["ticket"])
+    payload["market_state"] = _market_from_json(value.get("market_state"))
+    payload["lifecycle"] = tuple(value.get("lifecycle", ()))
+    payload["fills"] = tuple(_fill_from_json(item) for item in value.get("fills", ()))
+    payload["events"] = tuple(_event_from_json(item) for item in value.get("events", ()))
+    return PaperBrokerOrderRecord(**payload)
 
 
 def _stable_id(prefix: str, *parts: str) -> str:

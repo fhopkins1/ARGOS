@@ -1,0 +1,128 @@
+[
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.timeout_order",
+    "obligation": "request timeout handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-009",
+    "verification_id": "BROKER-RM002A-006-VER-001"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "acknowledgement after timeout",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-010",
+    "verification_id": "BROKER-RM002A-006-VER-002"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.retry_order",
+    "obligation": "retry initiation",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-011",
+    "verification_id": "BROKER-RM002A-006-VER-003"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.retry_order",
+    "obligation": "retry exhaustion",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-012",
+    "verification_id": "BROKER-RM002A-006-VER-004"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+    "obligation": "replay after restart",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-013",
+    "verification_id": "BROKER-RM002A-006-VER-005"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.recover_from_snapshot",
+    "obligation": "durable restart recovery",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-014",
+    "verification_id": "BROKER-RM002A-006-VER-006"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "late fill processing",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-015",
+    "verification_id": "BROKER-RM002A-006-VER-007"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.record_correction",
+    "obligation": "correction-event processing",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-016",
+    "verification_id": "BROKER-RM002A-006-VER-008"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.reconcile_broker_event",
+    "obligation": "contradictory broker-event reconciliation",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-017",
+    "verification_id": "BROKER-RM002A-006-VER-009"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.modify_order_uncertain",
+    "obligation": "modification uncertainty handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-018",
+    "verification_id": "BROKER-RM002A-006-VER-010"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.recover_from_snapshot",
+    "obligation": "partial-write recovery",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-019",
+    "verification_id": "BROKER-RM002A-006-VER-011"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.validate_state_integrity/recover_from_snapshot",
+    "obligation": "corrupted-state recovery",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-020",
+    "verification_id": "BROKER-RM002A-006-VER-012"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.snapshot/recover_from_snapshot",
+    "obligation": "persistence restoration",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-021",
+    "verification_id": "BROKER-RM002A-006-VER-013"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "unresolved anomaly escalation",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-022",
+    "verification_id": "BROKER-RM002A-006-VER-014"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "delayed acknowledgement handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-023",
+    "verification_id": "BROKER-RM002A-006-VER-015"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "duplicate broker-event handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-024",
+    "verification_id": "BROKER-RM002A-006-VER-016"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "out-of-order event handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-025",
+    "verification_id": "BROKER-RM002A-006-VER-017"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/paper_brokerage.py::DeterministicPaperBrokerage",
+    "implemented_behavior": "DeterministicPaperBrokerage.process_external_broker_event",
+    "obligation": "cancellation uncertainty handling",
+    "originating_finding_id": "BROKER-RM002A-004-FINDING-026",
+    "verification_id": "BROKER-RM002A-006-VER-018"
+  }
+]
