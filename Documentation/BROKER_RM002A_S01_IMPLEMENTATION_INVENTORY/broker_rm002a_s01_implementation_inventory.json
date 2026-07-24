@@ -1,0 +1,181 @@
+{
+  "series": "BROKER-RM-002A-S01",
+  "title": "Broker Canonical Implementation Inventory and Boundary Baseline",
+  "status": "COMPLETE",
+  "scope": "implementation inventory and dependency-derived participation only",
+  "runtime_behavior_modified": false,
+  "repository_wide_behavioral_verification_executed": false,
+  "certification_readiness_activity_executed": false,
+  "governing_authority": [
+    "BROKER-RM-001-S02",
+    "BROKER-RM-001-S03",
+    "BROKER-RM-001-S04",
+    "BROKER-RM-001-S05",
+    "BROKER-RM-001-S06",
+    "BROKER-RM-001-S07"
+  ],
+  "canonical_implementation_inventory": [
+    {
+      "artifact_id": "BROKER-IMPL-001",
+      "canonical_name": "Broker Integration Office",
+      "artifact_type": "runtime source",
+      "repository_location": "src/argos/trader/broker_integration.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "Broker-owned integration runtime",
+      "boundary_classification": "runtime implementation",
+      "governing_requirements": ["BROKER-REQ-001", "BROKER-REQ-002", "BROKER-REQ-003", "BROKER-REQ-004"],
+      "objective_dependency_evidence": ["defines BrokerIntegrationOffice", "defines BrokerExecutionRequest", "defines BrokerAdapterRegistry", "referenced by Tests/test_broker_integration_office.py"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-002",
+      "canonical_name": "Deterministic Paper Brokerage",
+      "artifact_type": "runtime source",
+      "repository_location": "src/argos/trader/paper_brokerage.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "Broker-owned paper execution runtime",
+      "boundary_classification": "runtime and persistence implementation",
+      "governing_requirements": ["BROKER-REQ-001", "BROKER-REQ-002", "BROKER-REQ-003", "BROKER-REQ-004"],
+      "objective_dependency_evidence": ["defines DeterministicPaperBrokerage", "defines PaperBrokerOrderTicket", "defines BrokerFillRecord", "imported by canonical_enterprise_runtime.py", "referenced by Tests/test_or003_paper_brokerage.py"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-003",
+      "canonical_name": "Broker Reconciliation Engine",
+      "artifact_type": "runtime source",
+      "repository_location": "src/argos/intelligence/broker_reconciliation.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "reconciliation implementation",
+      "boundary_classification": "reconciliation implementation",
+      "governing_requirements": ["BROKER-REQ-004", "BROKER-REQ-007"],
+      "objective_dependency_evidence": ["defines BrokerReconciliationEngine", "defines BrokerReconciliationLedger", "contains BrokerOrderRecord reconciliation model"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-004",
+      "canonical_name": "Trader Order Management Broker Message",
+      "artifact_type": "cross-office interface source",
+      "repository_location": "src/argos/trader/order_management.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "external consumer interface implementation",
+      "boundary_classification": "interface implementation",
+      "governing_requirements": ["BROKER-REQ-003"],
+      "objective_dependency_evidence": ["defines BrokerOrderMessage", "receives broker event synchronization"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-005",
+      "canonical_name": "Canonical Enterprise Runtime Broker Composition",
+      "artifact_type": "composition source",
+      "repository_location": "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "Enterprise runtime integration",
+      "boundary_classification": "runtime integration implementation",
+      "governing_requirements": ["BROKER-REQ-003", "BROKER-REQ-006"],
+      "objective_dependency_evidence": ["imports DeterministicPaperBrokerage", "constructs PaperBrokerAccount", "constructs PaperBrokerMarketDataAdapter", "records brokerAuthority"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-006",
+      "canonical_name": "Enterprise Persistence Broker State",
+      "artifact_type": "persistence source",
+      "repository_location": "src/argos/control_panel/enterprise_persistence.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "Enterprise persistence implementation",
+      "boundary_classification": "persistence implementation",
+      "governing_requirements": ["BROKER-REQ-004", "BROKER-REQ-006"],
+      "objective_dependency_evidence": ["writes ObjectType.ENTERPRISE_BROKER_STATE", "registers Broker Orders/Fills persistence inventory item"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-007",
+      "canonical_name": "Performance Truth Broker Ledger Ingestion",
+      "artifact_type": "truth ledger source",
+      "repository_location": "src/argos/control_panel/performance_truth_engine.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "external truth consumer implementation",
+      "boundary_classification": "downstream evidence consumer",
+      "governing_requirements": ["BROKER-REQ-003", "BROKER-REQ-004"],
+      "objective_dependency_evidence": ["defines record_broker_authoritative_order", "allows originating authority DeterministicPaperBrokerage"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-008",
+      "canonical_name": "Position Registry Broker Execution Consumer",
+      "artifact_type": "position source",
+      "repository_location": "src/argos/control_panel/position_registry.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "external position consumer implementation",
+      "boundary_classification": "downstream evidence consumer",
+      "governing_requirements": ["BROKER-REQ-003", "BROKER-REQ-004"],
+      "objective_dependency_evidence": ["references PaperBrokerExecution as position mutation source"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-009",
+      "canonical_name": "Runtime Bridge Certification Broker Bridge",
+      "artifact_type": "certification support source",
+      "repository_location": "src/argos/control_panel/runtime_bridge_certification.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "verification support implementation",
+      "boundary_classification": "certification support implementation",
+      "governing_requirements": ["BROKER-REQ-003", "BROKER-REQ-004", "BROKER-REQ-006"],
+      "objective_dependency_evidence": ["defines Trader -> Paper Broker bridge", "references DeterministicPaperBrokerage.submit_order"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-010",
+      "canonical_name": "Broker Integration Office Focused Tests",
+      "artifact_type": "verification source",
+      "repository_location": "Tests/test_broker_integration_office.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "verification support",
+      "boundary_classification": "verification implementation",
+      "governing_requirements": ["BROKER-REQ-003", "BROKER-REQ-004"],
+      "objective_dependency_evidence": ["imports BrokerIntegrationOffice", "imports DeterministicPaperBrokerAdapter", "tests broker integration boundaries"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-011",
+      "canonical_name": "Paper Brokerage Focused Tests",
+      "artifact_type": "verification source",
+      "repository_location": "Tests/test_or003_paper_brokerage.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "verification support",
+      "boundary_classification": "verification implementation",
+      "governing_requirements": ["BROKER-REQ-003", "BROKER-REQ-004"],
+      "objective_dependency_evidence": ["imports DeterministicPaperBrokerage", "imports PaperBrokerOrderTicket", "tests paper broker rejection and fill paths"]
+    },
+    {
+      "artifact_id": "BROKER-IMPL-012",
+      "canonical_name": "Broker ECS-003 Audit Harness",
+      "artifact_type": "audit source",
+      "repository_location": "src/argos/broker_ecs003_audit.py",
+      "participation_status": "PARTICIPATING",
+      "primary_classification": "audit support implementation",
+      "boundary_classification": "certification support implementation",
+      "governing_requirements": ["BROKER-REQ-005", "BROKER-REQ-006", "BROKER-REQ-007", "BROKER-REQ-008"],
+      "objective_dependency_evidence": ["produces Broker ECS-003 audit evidence", "referenced by Tests/test_broker_ecs003_audit.py"]
+    }
+  ],
+  "implementation_boundary_registry": {
+    "broker_owned": ["BROKER-IMPL-001", "BROKER-IMPL-002", "BROKER-IMPL-003"],
+    "externally_owned_consumed_by_broker": ["BROKER-IMPL-004", "BROKER-IMPL-007", "BROKER-IMPL-008"],
+    "enterprise_shared": ["BROKER-IMPL-005", "BROKER-IMPL-006", "BROKER-IMPL-009", "BROKER-IMPL-012"],
+    "verification_support": ["BROKER-IMPL-010", "BROKER-IMPL-011"]
+  },
+  "implementation_obligation_registry": [
+    {"obligation_id": "BROKER-IMPL-OBL-001", "governing_requirement": "BROKER-REQ-001", "affected_artifacts": ["BROKER-IMPL-001", "BROKER-IMPL-002", "BROKER-IMPL-003"], "constitutional_authority": "Broker ownership constitution"},
+    {"obligation_id": "BROKER-IMPL-OBL-002", "governing_requirement": "BROKER-REQ-002", "affected_artifacts": ["BROKER-IMPL-001", "BROKER-IMPL-002"], "constitutional_authority": "Broker lifecycle constitution"},
+    {"obligation_id": "BROKER-IMPL-OBL-003", "governing_requirement": "BROKER-REQ-003", "affected_artifacts": ["BROKER-IMPL-001", "BROKER-IMPL-002", "BROKER-IMPL-004", "BROKER-IMPL-005", "BROKER-IMPL-007", "BROKER-IMPL-008", "BROKER-IMPL-009"], "constitutional_authority": "Broker interface constitution"},
+    {"obligation_id": "BROKER-IMPL-OBL-004", "governing_requirement": "BROKER-REQ-004", "affected_artifacts": ["BROKER-IMPL-001", "BROKER-IMPL-002", "BROKER-IMPL-003", "BROKER-IMPL-006", "BROKER-IMPL-007", "BROKER-IMPL-008", "BROKER-IMPL-010", "BROKER-IMPL-011"], "constitutional_authority": "Broker evidence constitution"},
+    {"obligation_id": "BROKER-IMPL-OBL-005", "governing_requirement": "BROKER-REQ-005", "affected_artifacts": ["BROKER-IMPL-009", "BROKER-IMPL-012"], "constitutional_authority": "Broker traceability constitution"}
+  ],
+  "implementation_inventory_reconciliation": {
+    "participating_artifacts": 12,
+    "excluded_artifacts": 0,
+    "duplicate_participation_paths_reconciled": 0,
+    "ambiguous_boundaries_remaining": 0,
+    "objective_dependency_evidence_required": true,
+    "filename_only_participation_allowed": false,
+    "manual_participation_allowed": false,
+    "canonical_implementation_baseline_published": true
+  },
+  "series_completion_report": {
+    "B01-001": "COMPLETE",
+    "B01-002": "COMPLETE",
+    "B01-003": "COMPLETE",
+    "B01-004": "COMPLETE",
+    "ready_for_structural_verification_series_2": true
+  }
+}
