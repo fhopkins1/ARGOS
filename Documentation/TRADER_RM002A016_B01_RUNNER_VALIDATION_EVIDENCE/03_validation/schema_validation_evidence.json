@@ -1,0 +1,114 @@
+[
+  {
+    "batch_identifier": "TRADER-RM-002A-016-B01",
+    "candidate_digest": "51b0845410f75c39b7c94a8f03c965e342ca88ce3908b464742b6e5ecda53af4",
+    "child_result_status": "INVALID_SCHEMA",
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "controlled.runner_child",
+      "incomplete_schema"
+    ],
+    "completion_timestamp": "2026-07-24T01:09:16.775638Z",
+    "elapsed_duration_seconds": 0.001,
+    "environment_digest": "94fe58af07815caa669b38b7dda83a4335a2456012b329c7a430eab124e38eec",
+    "error_count": 1,
+    "evidence_digest": "0149bd48678f245c6ced32b618a9ca6b6efeeb9b113a1b9f04aff124ca74a8f6",
+    "execution_disposition": "INVALID_SCHEMA",
+    "execution_identifier": "TRADER-RM-002A-016-B01-e3527dd4a20b525b",
+    "expected_disposition": "INVALID_SCHEMA",
+    "fail_count": 0,
+    "module_identifier": "controlled.incomplete_schema",
+    "module_path": "",
+    "parser_detail": "child result missing required field schema_version",
+    "parser_result": "INVALID_SCHEMA",
+    "participating_test_identifiers": [
+      "controlled.incomplete_schema.Case.test_scenario"
+    ],
+    "pass_count": 0,
+    "process_signal": "",
+    "required_condition": "incomplete_schema",
+    "return_code": 0,
+    "runner_digest": "1461aa792fd52a9e180aa0d97f927bc7db1d1b15d23e5d83ccd50171d8eb76a8",
+    "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+    "scenario_identifier": "incomplete_schema",
+    "scenario_status": "PASS",
+    "schema_validation_result": "VALID_OUTER_RECORD_WITH_RUNNER_ERROR",
+    "schema_version": "trader-ecs003-module-execution-record/v1",
+    "skip_or_not_applicable_count": 0,
+    "stale_output_status": "NOT_STALE",
+    "start_timestamp": "2026-07-24T01:09:16.729274Z",
+    "stderr_reference": "02_runner_execution/scenarios/incomplete_schema/stderr.log",
+    "stdout_reference": "02_runner_execution/scenarios/incomplete_schema/stdout.log",
+    "structured_result_reference": "02_runner_execution/scenarios/incomplete_schema/child_result.json",
+    "test_level_dispositions": [
+      {
+        "details": "module runner structured result INVALID_SCHEMA: child result missing required field schema_version",
+        "disposition": "ERROR",
+        "duration_seconds": 0.0,
+        "finish_timestamp": "2026-07-24T01:09:16.775638Z",
+        "start_timestamp": "2026-07-24T01:09:16.729274Z",
+        "test_identifier": "controlled.incomplete_schema.Case.test_scenario"
+      }
+    ],
+    "test_totals": 1,
+    "timeout_state": "NOT_TIMED_OUT",
+    "working_directory": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2"
+  },
+  {
+    "batch_identifier": "TRADER-RM-002A-016-B01",
+    "candidate_digest": "51b0845410f75c39b7c94a8f03c965e342ca88ce3908b464742b6e5ecda53af4",
+    "child_result_status": "INVALID_SCHEMA",
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "controlled.runner_child",
+      "invalid_field_types"
+    ],
+    "completion_timestamp": "2026-07-24T01:09:16.942959Z",
+    "elapsed_duration_seconds": 0.001,
+    "environment_digest": "94fe58af07815caa669b38b7dda83a4335a2456012b329c7a430eab124e38eec",
+    "error_count": 1,
+    "evidence_digest": "3e8f97a2e17099fc5a4e399d5c709370a17f593e8ee9b946bbc66be3c4220538",
+    "execution_disposition": "INVALID_SCHEMA",
+    "execution_identifier": "TRADER-RM-002A-016-B01-6f2171c75df7bde5",
+    "expected_disposition": "INVALID_SCHEMA",
+    "fail_count": 0,
+    "module_identifier": "controlled.invalid_field_types",
+    "module_path": "",
+    "parser_detail": "child result field records has invalid type",
+    "parser_result": "INVALID_SCHEMA",
+    "participating_test_identifiers": [
+      "controlled.invalid_field_types.Case.test_scenario"
+    ],
+    "pass_count": 0,
+    "process_signal": "",
+    "required_condition": "invalid_types",
+    "return_code": 0,
+    "runner_digest": "1461aa792fd52a9e180aa0d97f927bc7db1d1b15d23e5d83ccd50171d8eb76a8",
+    "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+    "scenario_identifier": "invalid_field_types",
+    "scenario_status": "PASS",
+    "schema_validation_result": "VALID_OUTER_RECORD_WITH_RUNNER_ERROR",
+    "schema_version": "trader-ecs003-module-execution-record/v1",
+    "skip_or_not_applicable_count": 0,
+    "stale_output_status": "NOT_STALE",
+    "start_timestamp": "2026-07-24T01:09:16.796421Z",
+    "stderr_reference": "02_runner_execution/scenarios/invalid_field_types/stderr.log",
+    "stdout_reference": "02_runner_execution/scenarios/invalid_field_types/stdout.log",
+    "structured_result_reference": "02_runner_execution/scenarios/invalid_field_types/child_result.json",
+    "test_level_dispositions": [
+      {
+        "details": "module runner structured result INVALID_SCHEMA: child result field records has invalid type",
+        "disposition": "ERROR",
+        "duration_seconds": 0.0,
+        "finish_timestamp": "2026-07-24T01:09:16.942959Z",
+        "start_timestamp": "2026-07-24T01:09:16.796421Z",
+        "test_identifier": "controlled.invalid_field_types.Case.test_scenario"
+      }
+    ],
+    "test_totals": 1,
+    "timeout_state": "NOT_TIMED_OUT",
+    "working_directory": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2"
+  }
+]

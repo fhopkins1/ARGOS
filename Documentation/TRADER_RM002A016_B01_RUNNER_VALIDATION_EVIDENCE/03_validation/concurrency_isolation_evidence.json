@@ -1,0 +1,114 @@
+[
+  {
+    "batch_identifier": "TRADER-RM-002A-016-B01",
+    "candidate_digest": "51b0845410f75c39b7c94a8f03c965e342ca88ce3908b464742b6e5ecda53af4",
+    "child_result_status": "VALID",
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "controlled.runner_child",
+      "concurrency_isolation_a"
+    ],
+    "completion_timestamp": "2026-07-24T01:09:17.175722Z",
+    "elapsed_duration_seconds": 0.001,
+    "environment_digest": "94fe58af07815caa669b38b7dda83a4335a2456012b329c7a430eab124e38eec",
+    "error_count": 0,
+    "evidence_digest": "f79d033cd37204a8a5bf0dddedd783611cc0875c4e196c9430d8b7c3a343a483",
+    "execution_disposition": "PASS",
+    "execution_identifier": "TRADER-RM-002A-016-B01-bb31fdb7a676fb05",
+    "expected_disposition": "PASS",
+    "fail_count": 0,
+    "module_identifier": "controlled.concurrency_isolation_a",
+    "module_path": "controlled/concurrency_isolation_a.py",
+    "parser_detail": "result file",
+    "parser_result": "VALID",
+    "participating_test_identifiers": [
+      "controlled.concurrency_isolation_a.Case.test_scenario"
+    ],
+    "pass_count": 1,
+    "process_signal": "",
+    "required_condition": "file",
+    "return_code": 0,
+    "runner_digest": "1461aa792fd52a9e180aa0d97f927bc7db1d1b15d23e5d83ccd50171d8eb76a8",
+    "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+    "scenario_identifier": "concurrency_isolation_a",
+    "scenario_status": "PASS",
+    "schema_validation_result": "VALID",
+    "schema_version": "trader-ecs003-module-execution-record/v1",
+    "skip_or_not_applicable_count": 0,
+    "stale_output_status": "NOT_STALE",
+    "start_timestamp": "2026-07-24T01:09:17.064484Z",
+    "stderr_reference": "02_runner_execution/scenarios/concurrency_isolation_a/stderr.log",
+    "stdout_reference": "02_runner_execution/scenarios/concurrency_isolation_a/stdout.log",
+    "structured_result_reference": "02_runner_execution/scenarios/concurrency_isolation_a/child_result.json",
+    "test_level_dispositions": [
+      {
+        "details": "",
+        "disposition": "PASS",
+        "duration_seconds": 0.001,
+        "finish_timestamp": "2026-07-24T01:09:17.058162Z",
+        "start_timestamp": "2026-07-24T01:09:17.058131Z",
+        "test_identifier": "controlled.concurrency_isolation_a.Case.test_scenario"
+      }
+    ],
+    "test_totals": 1,
+    "timeout_state": "NOT_TIMED_OUT",
+    "working_directory": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2"
+  },
+  {
+    "batch_identifier": "TRADER-RM-002A-016-B01",
+    "candidate_digest": "51b0845410f75c39b7c94a8f03c965e342ca88ce3908b464742b6e5ecda53af4",
+    "child_result_status": "VALID",
+    "command": [
+      "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "-m",
+      "controlled.runner_child",
+      "concurrency_isolation_b"
+    ],
+    "completion_timestamp": "2026-07-24T01:09:17.161617Z",
+    "elapsed_duration_seconds": 0.001,
+    "environment_digest": "94fe58af07815caa669b38b7dda83a4335a2456012b329c7a430eab124e38eec",
+    "error_count": 0,
+    "evidence_digest": "bb715899f39649c3648a456f6258df8db16f135e7033fab4e89d9eb1c8e1f3a9",
+    "execution_disposition": "PASS",
+    "execution_identifier": "TRADER-RM-002A-016-B01-63f04ce44c03f5b9",
+    "expected_disposition": "PASS",
+    "fail_count": 0,
+    "module_identifier": "controlled.concurrency_isolation_b",
+    "module_path": "controlled/concurrency_isolation_b.py",
+    "parser_detail": "result file",
+    "parser_result": "VALID",
+    "participating_test_identifiers": [
+      "controlled.concurrency_isolation_b.Case.test_scenario"
+    ],
+    "pass_count": 1,
+    "process_signal": "",
+    "required_condition": "file",
+    "return_code": 0,
+    "runner_digest": "1461aa792fd52a9e180aa0d97f927bc7db1d1b15d23e5d83ccd50171d8eb76a8",
+    "runner_version": "TRADER-ECS003-FINAL/1.0.0",
+    "scenario_identifier": "concurrency_isolation_b",
+    "scenario_status": "PASS",
+    "schema_validation_result": "VALID",
+    "schema_version": "trader-ecs003-module-execution-record/v1",
+    "skip_or_not_applicable_count": 0,
+    "stale_output_status": "NOT_STALE",
+    "start_timestamp": "2026-07-24T01:09:17.085791Z",
+    "stderr_reference": "02_runner_execution/scenarios/concurrency_isolation_b/stderr.log",
+    "stdout_reference": "02_runner_execution/scenarios/concurrency_isolation_b/stdout.log",
+    "structured_result_reference": "02_runner_execution/scenarios/concurrency_isolation_b/child_result.json",
+    "test_level_dispositions": [
+      {
+        "details": "",
+        "disposition": "PASS",
+        "duration_seconds": 0.001,
+        "finish_timestamp": "2026-07-24T01:09:17.067211Z",
+        "start_timestamp": "2026-07-24T01:09:17.067181Z",
+        "test_identifier": "controlled.concurrency_isolation_b.Case.test_scenario"
+      }
+    ],
+    "test_totals": 1,
+    "timeout_state": "NOT_TIMED_OUT",
+    "working_directory": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2"
+  }
+]

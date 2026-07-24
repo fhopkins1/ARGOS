@@ -1,0 +1,122 @@
+[
+  {
+    "child_disposition": "PASS",
+    "expected": "PASS",
+    "mode": "file",
+    "name": "pass_valid_json"
+  },
+  {
+    "child_disposition": "FAIL",
+    "expected": "FAIL",
+    "mode": "file",
+    "name": "fail_valid_json"
+  },
+  {
+    "child_disposition": "ERROR",
+    "expected": "FAIL",
+    "mode": "file",
+    "name": "error_valid_json"
+  },
+  {
+    "child_disposition": "PASS",
+    "expected": "PASS",
+    "mode": "stdout_marker_prefix",
+    "name": "logs_before_json"
+  },
+  {
+    "child_disposition": "PASS",
+    "expected": "PASS",
+    "mode": "stdout_marker_suffix",
+    "name": "logs_after_json"
+  },
+  {
+    "child_disposition": "PASS",
+    "expected": "PASS",
+    "mode": "file_pretty",
+    "name": "multiline_json_file"
+  },
+  {
+    "child_disposition": "PASS",
+    "expected": "PASS",
+    "mode": "file",
+    "name": "declared_result_file"
+  },
+  {
+    "child_disposition": "FAIL",
+    "expected": "FAIL",
+    "mode": "file",
+    "name": "nonzero_with_valid_json",
+    "return_code": 1
+  },
+  {
+    "expected": "MALFORMED_RESULT",
+    "mode": "malformed",
+    "name": "malformed_json"
+  },
+  {
+    "expected": "MISSING_RESULT",
+    "mode": "stdout_only",
+    "name": "no_json"
+  },
+  {
+    "expected": "MISSING_RESULT",
+    "mode": "empty",
+    "name": "exits_without_output"
+  },
+  {
+    "expected": "TIMEOUT",
+    "mode": "timeout",
+    "name": "timeout",
+    "return_code": 124
+  },
+  {
+    "expected": "MISSING_RESULT",
+    "mode": "forced_termination",
+    "name": "forced_termination",
+    "return_code": -9
+  },
+  {
+    "expected": "STALE_RESULT_REJECTED",
+    "mode": "stale",
+    "name": "stale_result_file"
+  },
+  {
+    "expected": "INVALID_EXECUTION_ID",
+    "mode": "wrong_execution_id",
+    "name": "wrong_execution_identifier"
+  },
+  {
+    "expected": "INVALID_CANDIDATE_DIGEST",
+    "mode": "wrong_candidate_digest",
+    "name": "wrong_candidate_digest"
+  },
+  {
+    "expected": "INVALID_SCHEMA",
+    "mode": "incomplete_schema",
+    "name": "incomplete_schema"
+  },
+  {
+    "expected": "INVALID_SCHEMA",
+    "mode": "invalid_types",
+    "name": "invalid_field_types"
+  },
+  {
+    "expected": "STALE_RESULT_REJECTED",
+    "mode": "collision",
+    "name": "output_location_collision"
+  },
+  {
+    "child_disposition": "PASS",
+    "concurrency_group": "pair",
+    "expected": "PASS",
+    "mode": "file",
+    "name": "concurrency_isolation_a"
+  },
+  {
+    "child_disposition": "PASS",
+    "concurrency_group": "pair",
+    "expected": "PASS",
+    "mode": "file",
+    "name": "concurrency_isolation_b"
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-bb31fdb7a676fb05",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/concurrency_isolation_a/stdout.log",
+      "02_runner_execution/scenarios/concurrency_isolation_a/stderr.log",
+      "02_runner_execution/scenarios/concurrency_isolation_a/child_result.json"
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "concurrency_isolation_a",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-63f04ce44c03f5b9",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/concurrency_isolation_b/stdout.log",
+      "02_runner_execution/scenarios/concurrency_isolation_b/stderr.log",
+      "02_runner_execution/scenarios/concurrency_isolation_b/child_result.json"
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "concurrency_isolation_b",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-7559ba8fb00ddc79",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/declared_result_file/stdout.log",
+      "02_runner_execution/scenarios/declared_result_file/stderr.log",
+      "02_runner_execution/scenarios/declared_result_file/child_result.json"
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "declared_result_file",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-adb8b7ba5a31c9cd",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/error_valid_json/stdout.log",
+      "02_runner_execution/scenarios/error_valid_json/stderr.log",
+      "02_runner_execution/scenarios/error_valid_json/child_result.json"
+    ],
+    "resulting_disposition": "FAIL",
+    "scenario_identifier": "error_valid_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-7f92e904beb054e1",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/exits_without_output/stdout.log",
+      "02_runner_execution/scenarios/exits_without_output/stderr.log",
+      ""
+    ],
+    "resulting_disposition": "MISSING_RESULT",
+    "scenario_identifier": "exits_without_output",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-28e9412e195a9ecd",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/fail_valid_json/stdout.log",
+      "02_runner_execution/scenarios/fail_valid_json/stderr.log",
+      "02_runner_execution/scenarios/fail_valid_json/child_result.json"
+    ],
+    "resulting_disposition": "FAIL",
+    "scenario_identifier": "fail_valid_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-f16fb4014b73730a",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/forced_termination/stdout.log",
+      "02_runner_execution/scenarios/forced_termination/stderr.log",
+      ""
+    ],
+    "resulting_disposition": "MISSING_RESULT",
+    "scenario_identifier": "forced_termination",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-e3527dd4a20b525b",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/incomplete_schema/stdout.log",
+      "02_runner_execution/scenarios/incomplete_schema/stderr.log",
+      "02_runner_execution/scenarios/incomplete_schema/child_result.json"
+    ],
+    "resulting_disposition": "INVALID_SCHEMA",
+    "scenario_identifier": "incomplete_schema",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-6f2171c75df7bde5",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/invalid_field_types/stdout.log",
+      "02_runner_execution/scenarios/invalid_field_types/stderr.log",
+      "02_runner_execution/scenarios/invalid_field_types/child_result.json"
+    ],
+    "resulting_disposition": "INVALID_SCHEMA",
+    "scenario_identifier": "invalid_field_types",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-c92bed46392e4a03",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/logs_after_json/stdout.log",
+      "02_runner_execution/scenarios/logs_after_json/stderr.log",
+      ""
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "logs_after_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-f3e4f5154253ddfc",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/logs_before_json/stdout.log",
+      "02_runner_execution/scenarios/logs_before_json/stderr.log",
+      ""
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "logs_before_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-e5770fbf7ad051b5",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/malformed_json/stdout.log",
+      "02_runner_execution/scenarios/malformed_json/stderr.log",
+      "02_runner_execution/scenarios/malformed_json/child_result.json"
+    ],
+    "resulting_disposition": "MALFORMED_RESULT",
+    "scenario_identifier": "malformed_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-e8f8e24996afe6ab",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/multiline_json_file/stdout.log",
+      "02_runner_execution/scenarios/multiline_json_file/stderr.log",
+      "02_runner_execution/scenarios/multiline_json_file/child_result.json"
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "multiline_json_file",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-4aa01e9351a93362",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/no_json/stdout.log",
+      "02_runner_execution/scenarios/no_json/stderr.log",
+      ""
+    ],
+    "resulting_disposition": "MISSING_RESULT",
+    "scenario_identifier": "no_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-10cc196d061dfbbe",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/nonzero_with_valid_json/stdout.log",
+      "02_runner_execution/scenarios/nonzero_with_valid_json/stderr.log",
+      "02_runner_execution/scenarios/nonzero_with_valid_json/child_result.json"
+    ],
+    "resulting_disposition": "FAIL",
+    "scenario_identifier": "nonzero_with_valid_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-9c6de5aa73a2fa54",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/output_location_collision/stdout.log",
+      "02_runner_execution/scenarios/output_location_collision/stderr.log",
+      "02_runner_execution/scenarios/output_location_collision/child_result.json"
+    ],
+    "resulting_disposition": "STALE_RESULT_REJECTED",
+    "scenario_identifier": "output_location_collision",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-1d51f33bdd3f6320",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/pass_valid_json/stdout.log",
+      "02_runner_execution/scenarios/pass_valid_json/stderr.log",
+      "02_runner_execution/scenarios/pass_valid_json/child_result.json"
+    ],
+    "resulting_disposition": "PASS",
+    "scenario_identifier": "pass_valid_json",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-dd415d0b4e86c2b0",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/stale_result_file/stdout.log",
+      "02_runner_execution/scenarios/stale_result_file/stderr.log",
+      "02_runner_execution/scenarios/stale_result_file/child_result.json"
+    ],
+    "resulting_disposition": "STALE_RESULT_REJECTED",
+    "scenario_identifier": "stale_result_file",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-f77d1bb58da886e3",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/timeout/stdout.log",
+      "02_runner_execution/scenarios/timeout/stderr.log",
+      ""
+    ],
+    "resulting_disposition": "TIMEOUT",
+    "scenario_identifier": "timeout",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-da21ad118068bd59",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/wrong_candidate_digest/stdout.log",
+      "02_runner_execution/scenarios/wrong_candidate_digest/stderr.log",
+      "02_runner_execution/scenarios/wrong_candidate_digest/child_result.json"
+    ],
+    "resulting_disposition": "INVALID_CANDIDATE_DIGEST",
+    "scenario_identifier": "wrong_candidate_digest",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  },
+  {
+    "execution_identifier": "TRADER-RM-002A-016-B01-e2d2b238770aa0d0",
+    "raw_evidence": [
+      "02_runner_execution/scenarios/wrong_execution_identifier/stdout.log",
+      "02_runner_execution/scenarios/wrong_execution_identifier/stderr.log",
+      "02_runner_execution/scenarios/wrong_execution_identifier/child_result.json"
+    ],
+    "resulting_disposition": "INVALID_EXECUTION_ID",
+    "scenario_identifier": "wrong_execution_identifier",
+    "target": "TRADER-PROOF-RM002A016-B01-RUNNER",
+    "verification_class": "controlled_runner_validation"
+  }
+]
