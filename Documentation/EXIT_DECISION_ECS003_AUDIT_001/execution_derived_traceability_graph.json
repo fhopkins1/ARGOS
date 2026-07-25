@@ -1,0 +1,407 @@
+{
+  "edges": [
+    {
+      "from": "REQ::EXIT-REQ-001",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-001",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-001",
+      "to": "REQ::EXIT-REQ-001",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-002",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-002",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-002",
+      "to": "REQ::EXIT-REQ-002",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-003",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-003",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-003",
+      "to": "REQ::EXIT-REQ-003",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-004",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-004",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-004",
+      "to": "REQ::EXIT-REQ-004",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-005",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-005",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-005",
+      "to": "REQ::EXIT-REQ-005",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-006",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-006",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-006",
+      "to": "REQ::EXIT-REQ-006",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-007",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-007",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-007",
+      "to": "REQ::EXIT-REQ-007",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-008",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-008",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-008",
+      "to": "REQ::EXIT-REQ-008",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-009",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-009",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-009",
+      "to": "REQ::EXIT-REQ-009",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-010",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-010",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-010",
+      "to": "REQ::EXIT-REQ-010",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-011",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-011",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-011",
+      "to": "REQ::EXIT-REQ-011",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-012",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-012",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-012",
+      "to": "REQ::EXIT-REQ-012",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-013",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-013",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-013",
+      "to": "REQ::EXIT-REQ-013",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    },
+    {
+      "from": "REQ::EXIT-REQ-014",
+      "to": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "REQUIRES_IMPLEMENTATION"
+    },
+    {
+      "from": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "to": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIED_BY"
+    },
+    {
+      "from": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "to": "PROOF::EXIT-PROOF-014",
+      "type": "SUPPORTS_PROOF"
+    },
+    {
+      "from": "PROOF::EXIT-PROOF-014",
+      "to": "REQ::EXIT-REQ-014",
+      "type": "DISPOSITIONS_REQUIREMENT"
+    }
+  ],
+  "graph_digest": "415a8ba25330e6f1f5fc942db2f28927e1dc640a5e20106f25309f333143079c",
+  "nodes": [
+    {
+      "node_id": "REQ::EXIT-REQ-001",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-001",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "IMPL::src/argos/control_panel/position_exit_decision_engine.py",
+      "type": "IMPLEMENTATION"
+    },
+    {
+      "node_id": "VERIFIER::Tests/test_argos_control_panel_dashboard.py",
+      "type": "VERIFIER"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-002",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-002",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-003",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-003",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-004",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-004",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-005",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-005",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-006",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-006",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-007",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-007",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-008",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-008",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-009",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-009",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-010",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-010",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-011",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-011",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-012",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-012",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-013",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-013",
+      "type": "PROOF"
+    },
+    {
+      "node_id": "REQ::EXIT-REQ-014",
+      "type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PROOF::EXIT-PROOF-014",
+      "type": "PROOF"
+    }
+  ]
+}

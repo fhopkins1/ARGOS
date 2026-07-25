@@ -1,0 +1,1033 @@
+# EXIT-DECISION-ECS003-AUDIT-001
+
+# Exit Decision Office Independent ECS-003 Constitutional, Implementation, and Proof Audit
+
+## Purpose
+
+Perform the first independent ECS-003 audit of the Exit Decision Office.
+
+Determine whether the Exit Decision Office possesses:
+
+* complete constitutional authority;
+* deterministic office boundaries;
+* complete canonical exit-decision object definitions;
+* complete admissibility and decision doctrine;
+* complete lifecycle governance;
+* complete interface authority;
+* complete evidence obligations;
+* complete requirement-level traceability;
+* dependency-derived implementation participation;
+* executable behavioral verification;
+* sufficient implementation evidence;
+* independently reproducible proof;
+* certification readiness.
+
+The audit shall distinguish constitutional completeness from implementation correctness.
+
+No constitutional doctrine shall be modified.
+
+No implementation behavior shall be modified.
+
+No remediation shall occur under this order.
+
+No PASS shall be inferred from documentation, metadata, source inspection, aggregate test counts, registry declarations, prior completion claims, or self-issued readiness declarations.
+
+---
+
+# Audit Principles
+
+The Exit Decision Office shall be evaluated against the delivered repository and evidence.
+
+Every conclusion shall be independently derived.
+
+Constitutional conclusions shall originate from authoritative constitutional artifacts.
+
+Implementation conclusions shall originate from dependency-derived implementation discovery and executable verification.
+
+Proof conclusions shall originate from raw execution evidence.
+
+Implementation participation shall never be determined exclusively through:
+
+* filenames;
+* directory names;
+* naming conventions;
+* manually curated inventories;
+* historical execution lists;
+* documentation references;
+* keyword or pattern matching.
+
+Every finding shall possess:
+
+* unique identity;
+* governing requirement;
+* affected artifact;
+* objective evidence;
+* severity;
+* classification;
+* disposition;
+* remediation recommendation where applicable.
+
+The audit shall fail closed.
+
+Missing, stale, contradictory, synthetic, circular, non-reproducible, or incomplete evidence shall prevent unconditional certification.
+
+---
+
+# Phase I — Constitutional Completeness Audit
+
+## 1. Constitutional Purpose and Authority
+
+Verify:
+
+* authoritative office purpose;
+* constitutional source of authority;
+* permitted decision responsibilities;
+* prohibited responsibilities;
+* decision authority;
+* recommendation authority;
+* cancellation authority;
+* escalation authority;
+* amendment authority;
+* freeze authority;
+* certification authority;
+* conflict-resolution authority.
+
+Determine whether Exit Decision may:
+
+* evaluate exit conditions;
+* create exit recommendations;
+* create exit decisions;
+* authorize liquidation;
+* authorize partial reduction;
+* authorize hold;
+* authorize cancellation;
+* modify Position Registry truth;
+* modify Risk truth;
+* modify Authorization truth;
+* submit broker instructions;
+* execute trades;
+* close positions directly.
+
+Identify:
+
+* implied authority;
+* duplicated authority;
+* unowned authority;
+* authority conflicts;
+* authority delegated without a governing contract.
+
+---
+
+## 2. Office Boundaries
+
+Verify deterministic constitutional boundaries between Exit Decision and all interacting offices, including where applicable:
+
+* Commander;
+* Monitoring;
+* Sentinel;
+* Seeker;
+* Analyst;
+* Risk;
+* Trader;
+* Broker;
+* Position Registry;
+* Authorizations;
+* Closed Position Truth;
+* Performance Truth;
+* Historian;
+* Infrastructure.
+
+Verify that Exit Decision does not improperly own:
+
+* market-data truth;
+* analysis truth;
+* monitoring truth;
+* risk truth;
+* authorization truth;
+* trade execution;
+* broker acknowledgement;
+* canonical open-position truth;
+* canonical closed-position truth;
+* performance truth;
+* immutable historical custody.
+
+Identify every ambiguous or shared responsibility.
+
+---
+
+## 3. Canonical Exit Decision Object Model
+
+Inventory every Exit Decision-owned or Exit Decision-custodied constitutional object.
+
+Evaluate, where applicable:
+
+* Exit Decision Request;
+* Exit Decision Context;
+* Exit Candidate;
+* Exit Condition;
+* Exit Evaluation;
+* Exit Constraint;
+* Exit Recommendation;
+* Exit Decision;
+* Exit Decision Version;
+* Exit Authorization Binding;
+* Exit Instruction Request;
+* Exit Decision Rejection;
+* Exit Decision Deferral;
+* Exit Decision Cancellation;
+* Exit Decision Correction;
+* Exit Decision Supersession;
+* Exit Decision Evidence Record;
+* Exit Decision Completion Record.
+
+For every object verify:
+
+* canonical identity;
+* constitutional purpose;
+* owner;
+* custodian;
+* creator;
+* mutation authority;
+* correction authority;
+* reconciliation authority;
+* lifecycle;
+* versioning;
+* provenance;
+* retention;
+* terminal disposition.
+
+Identify:
+
+* missing canonical objects;
+* duplicated objects;
+* ownership conflicts;
+* objects without lifecycle authority;
+* objects without correction doctrine;
+* objects containing truth owned by another office.
+
+---
+
+## 4. Ownership and Custody
+
+Verify one authoritative owner for every exit-decision object and field.
+
+Distinguish:
+
+* constitutional ownership;
+* operational custody;
+* mutation authority;
+* correction authority;
+* reconciliation authority;
+* evidence custody;
+* read-only consumption.
+
+Verify ownership for:
+
+* decision identity;
+* decision subject;
+* decision scope;
+* position binding;
+* authorization binding;
+* decision rationale;
+* decision conditions;
+* decision constraints;
+* decision status;
+* cancellation state;
+* correction history;
+* supersession history;
+* completion evidence.
+
+Identify:
+
+* split ownership;
+* circular ownership;
+* implicit ownership;
+* ownership inferred only from implementation behavior.
+
+---
+
+## 5. Exit Decision Lifecycle
+
+Verify the complete constitutional lifecycle from request through terminal disposition.
+
+Evaluate, where applicable:
+
+* created;
+* received;
+* validated;
+* admitted;
+* evaluating;
+* deferred;
+* recommended;
+* decided;
+* authorized;
+* issued;
+* acknowledged;
+* executing;
+* partially executed;
+* completed;
+* cancelled;
+* rejected;
+* expired;
+* corrected;
+* superseded;
+* archived.
+
+Verify:
+
+* entry conditions;
+* transition authority;
+* transition evidence;
+* prohibited transitions;
+* terminal states;
+* replay behavior;
+* restart recovery;
+* duplicate handling;
+* stale-input handling;
+* late-event handling;
+* out-of-order handling;
+* contradiction handling;
+* correction handling;
+* failure disposition.
+
+Identify incomplete, ambiguous, circular, or non-deterministic lifecycle transitions.
+
+---
+
+## 6. Decision Admissibility Doctrine
+
+Verify constitutional admissibility rules for decision inputs.
+
+Evaluate:
+
+* position identity;
+* position status;
+* position quantity;
+* risk state;
+* authorization state;
+* monitoring findings;
+* analytical inputs;
+* market context;
+* temporal validity;
+* freshness;
+* completeness;
+* source authority;
+* source consistency;
+* contradiction;
+* sufficiency;
+* replay eligibility.
+
+Verify that no decision may proceed from:
+
+* missing position truth;
+* stale position truth;
+* expired authorization;
+* revoked authorization;
+* contradictory risk inputs;
+* inadmissible monitoring findings;
+* unsupported analysis;
+* unresolved identity mismatch;
+* incomplete evidence.
+
+---
+
+## 7. Decision Logic and Outcome Doctrine
+
+Verify constitutional rules governing:
+
+* full exit;
+* partial exit;
+* hold;
+* defer;
+* reject;
+* cancel;
+* emergency exit recommendation;
+* forced exit;
+* timeout disposition;
+* insufficient-evidence disposition.
+
+Determine whether decision outcomes are:
+
+* deterministic;
+* reproducible;
+* explainable;
+* evidence-bound;
+* authorization-bound;
+* position-bound;
+* time-bound.
+
+Verify that Exit Decision does not silently transform:
+
+```text
+Evaluation
+→ Recommendation
+→ Decision
+→ Authorization
+→ Execution
+```
+
+into one undifferentiated action.
+
+---
+
+## 8. Authorization and Execution Separation
+
+Verify:
+
+* exit decision authority;
+* authorization authority;
+* Trader authority;
+* Broker authority;
+* Position Registry authority;
+* Closed Position Truth authority.
+
+Determine whether an Exit Decision:
+
+* merely recommends;
+* constitutionally decides;
+* authorizes;
+* requests execution;
+* directly executes.
+
+Verify that no exit decision can cause execution without required independent authority and valid downstream contracts.
+
+Identify:
+
+* self-authorizing exits;
+* implicit execution authority;
+* authorization bypass;
+* position mutation leakage;
+* broker-command leakage.
+
+---
+
+## 9. Temporal and Freshness Doctrine
+
+Verify:
+
+* source event time;
+* request time;
+* evaluation time;
+* decision time;
+* authorization time;
+* issuance time;
+* acknowledgement time;
+* execution time;
+* completion time;
+* correction time;
+* supersession time;
+* archival time.
+
+Verify treatment of:
+
+* stale inputs;
+* expired authorizations;
+* delayed execution;
+* equal timestamps;
+* clock skew;
+* missing timestamps;
+* out-of-order events;
+* replay ordering;
+* restart ordering;
+* decision expiry;
+* supersession effective time.
+
+Identify any decision conclusion dependent on unspecified temporal semantics.
+
+---
+
+## 10. Duplicate, Replay, and Idempotency Governance
+
+Verify doctrine governing:
+
+* duplicate requests;
+* duplicate decisions;
+* duplicate instructions;
+* replayed decisions;
+* duplicate acknowledgements;
+* duplicate completion events;
+* idempotency keys;
+* correlation identity;
+* superseded decisions;
+* stale replays;
+* replay after correction.
+
+Verify that replay cannot:
+
+* duplicate execution;
+* reactivate cancelled decisions;
+* resurrect superseded decisions;
+* overwrite completed history;
+* create conflicting active decisions.
+
+---
+
+## 11. Interface Constitution
+
+Inventory every inbound and outbound Exit Decision interface.
+
+For every interface verify:
+
+* producer;
+* consumer;
+* authority;
+* schema;
+* identity contract;
+* scope contract;
+* freshness requirements;
+* ordering requirements;
+* duplicate rules;
+* retry rules;
+* replay rules;
+* failure behavior;
+* acknowledgement requirements;
+* evidence obligations;
+* reconciliation responsibility.
+
+Evaluate interfaces with every participating office, persistence system, event system, and execution destination.
+
+Identify undocumented, ambiguous, or unauthorized interfaces.
+
+---
+
+## 12. Reconciliation and Correction
+
+Verify constitutional doctrine for reconciliation between:
+
+* Exit Decision state;
+* Position Registry state;
+* Risk state;
+* Authorization state;
+* Trader state;
+* Broker execution state;
+* Closed Position Truth;
+* Historian state.
+
+Verify:
+
+* reconciliation triggers;
+* source precedence;
+* contradiction handling;
+* correction authorization;
+* correction lineage;
+* supersession;
+* unresolved discrepancy escalation;
+* immutable historical preservation.
+
+Identify any mechanism that overwrites prior decision history.
+
+---
+
+## 13. Evidence Doctrine
+
+Verify evidence obligations for:
+
+* decision request;
+* input validation;
+* admissibility;
+* evaluation;
+* recommendation;
+* decision issuance;
+* authorization binding;
+* execution request;
+* acknowledgement;
+* completion;
+* cancellation;
+* rejection;
+* expiration;
+* correction;
+* supersession;
+* archival.
+
+Verify:
+
+* evidence owner;
+* producer;
+* provenance;
+* integrity;
+* custody;
+* retention;
+* immutable history;
+* correction lineage;
+* verifier identity;
+* execution identity;
+* proof eligibility.
+
+Reject:
+
+* metadata-only evidence;
+* self-asserted evidence;
+* synthetic evidence;
+* circular evidence;
+* completion-report-only evidence.
+
+---
+
+## 14. Constitutional Requirement Traceability
+
+Derive the complete atomic Exit Decision constitutional requirement population.
+
+Assign one canonical identity to every requirement.
+
+Verify bidirectional traceability between:
+
+```text
+Constitutional Authority
+↔ Canonical Requirement
+↔ Exit Decision Object
+↔ Lifecycle Obligation
+↔ Admissibility Obligation
+↔ Decision Obligation
+↔ Interface Obligation
+↔ Evidence Obligation
+↔ Certification Obligation
+```
+
+Identify:
+
+* orphan requirements;
+* orphan artifacts;
+* duplicate requirements;
+* aggregate requirements;
+* conflicting requirements;
+* broken traceability.
+
+---
+
+# Phase I Verdict
+
+Issue exactly one Phase I verdict:
+
+* UNCONDITIONAL_PASS;
+* PASS_WITH_REMEDIATION;
+* FAIL.
+
+Do not authorize constitutional freeze unless:
+
+* every constitutional domain is complete;
+* no authority conflict remains;
+* no ownership ambiguity remains;
+* every lifecycle is deterministic;
+* every decision and authorization boundary is constitutionally bounded;
+* every interface possesses one authority contract;
+* every requirement possesses complete constitutional traceability;
+* no certification-blocking constitutional finding remains.
+
+---
+
+# Phase II — Implementation and Behavioral Audit
+
+## 1. Dependency-Derived Implementation Inventory
+
+Derive the complete Exit Decision implementation population from objective dependencies, including:
+
+* imports;
+* runtime invocation;
+* object construction;
+* schema usage;
+* persistence access;
+* event publication;
+* event consumption;
+* configuration;
+* decision engines;
+* validation components;
+* authorization-binding components;
+* execution-request components;
+* evidence production;
+* verifier dependencies;
+* transitive dependencies.
+
+Do not begin with filename, package-name, test-name, or keyword filtering.
+
+Classify each artifact as:
+
+* EXIT_DECISION_DIRECT;
+* EXIT_DECISION_DEPENDENCY;
+* ENTERPRISE_PRECONDITION;
+* SHARED_INFRASTRUCTURE;
+* VALIDATION_COMPONENT;
+* DECISION_COMPONENT;
+* AUTHORIZATION_BINDING_COMPONENT;
+* EXECUTION_REQUEST_COMPONENT;
+* PERSISTENCE_COMPONENT;
+* EVIDENCE_PRODUCER;
+* EVIDENCE_CONSUMER;
+* VERIFIER;
+* FIXTURE;
+* NON_PARTICIPATING.
+
+Produce objective inclusion and exclusion evidence.
+
+---
+
+## 2. Requirement-to-Implementation Mapping
+
+For every atomic constitutional requirement identify:
+
+* implementation obligation;
+* participating implementation artifact;
+* executable verifier;
+* required fixture;
+* required verification mode;
+* expected evidence.
+
+Identify:
+
+* unimplemented requirements;
+* implementation without authority;
+* orphan implementation;
+* implementation mapped only through documentation;
+* implementation mapped only through naming convention.
+
+---
+
+## 3. Behavioral Verification
+
+Execute actual Exit Decision behavior.
+
+Verify, where applicable:
+
+* request creation;
+* request validation;
+* scope enforcement;
+* identity binding;
+* position binding;
+* authorization binding;
+* admissibility;
+* evaluation;
+* recommendation generation;
+* decision generation;
+* full-exit decision;
+* partial-exit decision;
+* hold;
+* defer;
+* reject;
+* cancel;
+* expire;
+* correction;
+* supersession;
+* duplicate handling;
+* idempotency;
+* stale-input rejection;
+* contradiction handling;
+* replay;
+* restart recovery;
+* persistence restoration;
+* delayed acknowledgement;
+* partial execution;
+* failed execution;
+* completion reconciliation;
+* authority enforcement;
+* unauthorized execution prevention.
+
+Execute applicable verification modes:
+
+* positive;
+* negative;
+* boundary;
+* malformed input;
+* duplicate;
+* stale input;
+* late input;
+* out-of-order;
+* contradiction;
+* replay;
+* restart;
+* persistence;
+* recovery;
+* correction;
+* supersession;
+* expiry;
+* cancellation;
+* missing evidence.
+
+Behavior shall not be inferred from source inspection.
+
+---
+
+## 4. Persistence, Replay, and Recovery Audit
+
+Verify durable storage and restoration of:
+
+* request identity;
+* decision identity;
+* decision status;
+* position binding;
+* authorization binding;
+* rationale;
+* constraints;
+* cancellation state;
+* correction history;
+* supersession history;
+* acknowledgement state;
+* completion state.
+
+Execute actual process discontinuity or equivalent clean-state restart.
+
+Verify:
+
+* deterministic reconstruction;
+* no duplicate decisions;
+* no duplicate execution requests;
+* no resurrection of cancelled decisions;
+* no reactivation of superseded decisions;
+* no history mutation;
+* corrupted-state detection;
+* missing-state detection;
+* partial-write recovery.
+
+---
+
+## 5. Evidence Audit
+
+For every executed requirement verify:
+
+* raw input evidence;
+* validation evidence;
+* admissibility evidence;
+* pre-state;
+* post-state;
+* decision rationale;
+* decision evidence;
+* authorization-binding evidence;
+* execution-request evidence;
+* acknowledgement evidence;
+* completion evidence;
+* verifier output;
+* finding;
+* disposition;
+* provenance;
+* integrity;
+* custody;
+* retention;
+* reproducibility.
+
+Reject evidence consisting only of:
+
+* registry declarations;
+* completion reports;
+* aggregate counts;
+* test names;
+* source snippets;
+* manually asserted PASS states.
+
+---
+
+## 6. Proof Audit
+
+Construct or inspect one proof object for every atomic constitutional requirement.
+
+Verify:
+
+```text
+Canonical Requirement
+→ Implementation Obligation
+→ Implementation Artifact
+→ Verifier
+→ Execution
+→ Raw Evidence
+→ Normalized Evidence
+→ Finding
+→ Disposition
+→ Proof Object
+```
+
+Verify:
+
+* one canonical proof identity per requirement;
+* no remediation-order identity substitution;
+* proof reproducibility;
+* proof sufficiency;
+* proof supersession;
+* contradiction handling;
+* complete historical lineage.
+
+---
+
+## 7. Certification Reproducibility
+
+Execute the audit from the delivered repository package in a clean environment.
+
+Verify:
+
+* no dependency on unavailable Git metadata;
+* no dependency on developer-local files;
+* no undocumented external state;
+* deterministic repository identity;
+* deterministic verifier discovery;
+* deterministic execution;
+* deterministic evidence generation;
+* deterministic proof generation;
+* deterministic verdict calculation.
+
+The delivered packages alone shall be sufficient to reproduce the audit.
+
+---
+
+# Phase III — Final Reconciliation
+
+Reconcile:
+
+* candidate identity;
+* requirement identity;
+* implementation inventory;
+* verifier inventory;
+* fixture identity;
+* execution records;
+* raw evidence;
+* proof objects;
+* findings;
+* supersession history;
+* stale evidence;
+* duplicate evidence;
+* contradictory evidence;
+* missing execution;
+* broken traceability;
+* unresolved certification blockers.
+
+Every requirement shall receive exactly one final disposition:
+
+* PROVEN;
+* NOT_PROVEN;
+* IMPLEMENTATION_FAILED;
+* IMPLEMENTATION_UNVERIFIED;
+* VERIFIER_FAILED;
+* VERIFIER_INSUFFICIENT;
+* EVIDENCE_MISSING;
+* EVIDENCE_INSUFFICIENT;
+* EVIDENCE_STALE;
+* TRACEABILITY_INCOMPLETE;
+* UNRESOLVED_CONTRADICTION;
+* NOT_APPLICABLE.
+
+---
+
+# Final ECS-003 Verdict
+
+Issue exactly one final verdict:
+
+## UNCONDITIONAL_PASS
+
+Permitted only when:
+
+* Phase I receives UNCONDITIONAL_PASS;
+* every required constitutional requirement is PROVEN;
+* dependency-derived implementation coverage is complete;
+* behavioral verification is complete;
+* persistence, replay, and recovery are proven;
+* evidence is sufficient;
+* proof is reproducible;
+* bidirectional traceability is complete;
+* no certification blocker remains;
+* clean-environment reproduction succeeds.
+
+## CONDITIONAL_PASS
+
+Permitted only for a bounded exception expressly allowed by ECS-003 that does not affect constitutional completeness, implementation correctness, evidence sufficiency, proof sufficiency, traceability, or reproducibility.
+
+## FAIL
+
+Required when any certification-blocking deficiency remains.
+
+Do not issue PASS_WITH_REMEDIATION as the final implementation-certification verdict.
+
+---
+
+# Required Deliverables
+
+Produce:
+
+* executive audit report;
+* constitutional audit report;
+* constitutional finding registry;
+* canonical constitutional requirement registry;
+* ownership and custody assessment;
+* exit-decision lifecycle assessment;
+* admissibility assessment;
+* decision-authority assessment;
+* authorization and execution separation assessment;
+* temporal and freshness assessment;
+* duplicate, replay, and idempotency assessment;
+* interface assessment;
+* reconciliation assessment;
+* evidence assessment;
+* dependency-derived implementation inventory;
+* participation registry;
+* exclusion registry;
+* requirement-to-implementation matrix;
+* verifier inventory;
+* behavioral execution registry;
+* persistence, replay, and recovery report;
+* execution evidence registry;
+* evidence sufficiency report;
+* requirement proof registry;
+* proof coverage matrix;
+* proof reproducibility report;
+* execution-derived traceability graph;
+* finding reconciliation registry;
+* certification blocker registry;
+* clean-environment reproduction report;
+* final ECS-003 certification report;
+* final ECS-003 verdict;
+* recommended remediation structure if the verdict is not UNCONDITIONAL_PASS.
+
+Do not create remediation doctrine under this order.
+
+Recommend whether remediation should use:
+
+* singular bounded orders;
+* one work-order series;
+* multiple work-order series.
+
+Support that recommendation using the number, severity, and domain distribution of findings.
+
+---
+
+# Required Completion Artifacts
+
+Upon completion, generate and provide both ZIP archives.
+
+## 1. Exit Decision Office Audit Repository Package ZIP
+
+The repository package shall contain:
+
+* the complete audited repository;
+* all Exit Decision Office source code;
+* all participating dependencies;
+* all tests;
+* all verifiers;
+* all fixtures;
+* all audit runners;
+* all manifests;
+* all generated audit-support artifacts;
+* deterministic repository identity;
+* clean-environment reproduction instructions.
+
+## 2. Exit Decision Office Audit Evidence Package ZIP
+
+The evidence package shall contain:
+
+* every required audit deliverable;
+* raw execution logs;
+* normalized execution records;
+* constitutional findings;
+* implementation findings;
+* verifier findings;
+* fixture findings;
+* environment findings;
+* evidence findings;
+* proof findings;
+* traceability findings;
+* canonical requirement registry;
+* implementation inventory;
+* verifier inventory;
+* execution evidence;
+* proof objects;
+* reconciliation records;
+* certification blocker registry;
+* clean-environment reproduction report;
+* final audit report;
+* final ECS-003 verdict;
+* completion report.
+
+Both ZIP archives shall be produced as final deliverables and provided for independent ECS-003 review.

@@ -1,0 +1,126 @@
+[
+  {
+    "domain": "purpose_authority",
+    "final_disposition": "TRACEABILITY_INCOMPLETE",
+    "proof_id": "EXIT-PROOF-001",
+    "requirement": "Exit Decision purpose, authority, permitted responsibilities, and prohibited execution responsibilities are complete.",
+    "requirement_id": "EXIT-REQ-001",
+    "supporting_executions": []
+  },
+  {
+    "domain": "office_boundaries",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-002",
+    "requirement": "Exit Decision office boundaries with Commander, Monitoring, Risk, Trader, Broker, Position Registry, Authorizations, Closed Position Truth, Performance Truth, and Historian are deterministic.",
+    "requirement_id": "EXIT-REQ-002",
+    "supporting_executions": []
+  },
+  {
+    "domain": "object_model",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-003",
+    "requirement": "Canonical Exit Decision objects possess identity, ownership, custody, lifecycle, versioning, provenance, retention, and terminal disposition.",
+    "requirement_id": "EXIT-REQ-003",
+    "supporting_executions": []
+  },
+  {
+    "domain": "ownership_custody",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-004",
+    "requirement": "Every Exit Decision object and field has one owner and explicit mutation, correction, reconciliation, evidence, and read-only consumption authority.",
+    "requirement_id": "EXIT-REQ-004",
+    "supporting_executions": []
+  },
+  {
+    "domain": "lifecycle",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-005",
+    "requirement": "Exit Decision lifecycle transitions, terminal states, replay, restart, duplicate, stale, late, out-of-order, contradiction, correction, and failure dispositions are deterministic.",
+    "requirement_id": "EXIT-REQ-005",
+    "supporting_executions": []
+  },
+  {
+    "domain": "admissibility",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-006",
+    "requirement": "Decision admissibility rejects missing, stale, expired, revoked, contradictory, inadmissible, unsupported, mismatched, and incomplete inputs.",
+    "requirement_id": "EXIT-REQ-006",
+    "supporting_executions": []
+  },
+  {
+    "domain": "decision_logic",
+    "final_disposition": "PROVEN",
+    "proof_id": "EXIT-PROOF-007",
+    "requirement": "Decision outcomes are deterministic, reproducible, explainable, evidence-bound, authorization-bound, position-bound, and time-bound.",
+    "requirement_id": "EXIT-REQ-007",
+    "supporting_executions": [
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+    ]
+  },
+  {
+    "domain": "authorization_execution_separation",
+    "final_disposition": "PROVEN",
+    "proof_id": "EXIT-PROOF-008",
+    "requirement": "Exit Decision cannot self-authorize, execute trades, submit broker commands, or mutate canonical external truth without downstream authority.",
+    "requirement_id": "EXIT-REQ-008",
+    "supporting_executions": [
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution"
+    ]
+  },
+  {
+    "domain": "temporal_freshness",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-009",
+    "requirement": "Temporal and freshness semantics are complete for source, request, evaluation, decision, authorization, issuance, acknowledgement, execution, completion, correction, supersession, archival, replay, restart, expiry, equal-time, and clock-skew cases.",
+    "requirement_id": "EXIT-REQ-009",
+    "supporting_executions": []
+  },
+  {
+    "domain": "duplicate_replay_idempotency",
+    "final_disposition": "PROVEN",
+    "proof_id": "EXIT-PROOF-010",
+    "requirement": "Duplicate, replay, idempotency, correlation, stale replay, cancellation, supersession, and completed-history preservation are governed.",
+    "requirement_id": "EXIT-REQ-010",
+    "supporting_executions": [
+      "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+    ]
+  },
+  {
+    "domain": "interfaces",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-011",
+    "requirement": "Every inbound and outbound interface has producer, consumer, authority, schema, identity, scope, freshness, ordering, duplicate, retry, replay, failure, acknowledgement, evidence, and reconciliation obligations.",
+    "requirement_id": "EXIT-REQ-011",
+    "supporting_executions": []
+  },
+  {
+    "domain": "reconciliation_correction",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-012",
+    "requirement": "Reconciliation and correction among Exit Decision, Position Registry, Risk, Authorizations, Trader, Broker, Closed Position Truth, and Historian preserve precedence, contradiction lineage, correction authority, supersession, escalation, and immutable history.",
+    "requirement_id": "EXIT-REQ-012",
+    "supporting_executions": []
+  },
+  {
+    "domain": "evidence",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-013",
+    "requirement": "Every evidence obligation has owner, producer, provenance, integrity, custody, retention, immutable history, correction lineage, verifier identity, execution identity, and proof eligibility.",
+    "requirement_id": "EXIT-REQ-013",
+    "supporting_executions": []
+  },
+  {
+    "domain": "traceability",
+    "final_disposition": "EVIDENCE_INSUFFICIENT",
+    "proof_id": "EXIT-PROOF-014",
+    "requirement": "Atomic constitutional requirements possess complete bidirectional traceability through objects, lifecycle, admissibility, decision, interface, evidence, and certification obligations.",
+    "requirement_id": "EXIT-REQ-014",
+    "supporting_executions": []
+  }
+]

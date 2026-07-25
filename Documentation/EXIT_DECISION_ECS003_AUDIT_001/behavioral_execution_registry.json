@@ -1,0 +1,72 @@
+[
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-001",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_01.stderr.log",
+    "stderr_sha256": "223e06d17dfb6c32bd67ca7c62b915cb03e0a1189bad193f723662e346b75b55",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_01.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-002",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_02.stderr.log",
+    "stderr_sha256": "223e06d17dfb6c32bd67ca7c62b915cb03e0a1189bad193f723662e346b75b55",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_02.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-003",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_03.stderr.log",
+    "stderr_sha256": "3cf9954ddcf4b68e3854b6eb2c29ca15ab187c8dc51c80627aa402562a82b481",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_03.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-004",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_04.stderr.log",
+    "stderr_sha256": "223e06d17dfb6c32bd67ca7c62b915cb03e0a1189bad193f723662e346b75b55",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_04.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-005",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_05.stderr.log",
+    "stderr_sha256": "00314bcb93032e26b644e3865a18e0f8ea2a564911cc95518a72057ec0a39308",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_05.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-006",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_06.stderr.log",
+    "stderr_sha256": "1a52ff93b2b7c8bc576900f70c9062f5baedb573cf55507ec33070c999cd9b12",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_06.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai"
+  },
+  {
+    "disposition": "PASS",
+    "execution_id": "EXIT-ECS003-EXEC-007",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_07.stderr.log",
+    "stderr_sha256": "2243b5833499180799d61f74a3cf0db8c7251324d90e154a79f646bcd16a9167",
+    "stdout": "Documentation/EXIT_DECISION_ECS003_AUDIT_001/raw_execution_logs/exit_decision_test_07.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution"
+  }
+]
