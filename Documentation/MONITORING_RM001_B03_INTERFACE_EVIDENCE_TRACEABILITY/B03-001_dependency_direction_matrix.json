@@ -1,0 +1,87 @@
+[
+  {
+    "dependency_id": "MON-DEP-001",
+    "deterministic": true,
+    "direction": "Monitoring -> Commander"
+  },
+  {
+    "dependency_id": "MON-DEP-002",
+    "deterministic": true,
+    "direction": "Sentinel -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-003",
+    "deterministic": true,
+    "direction": "Seeker -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-004",
+    "deterministic": true,
+    "direction": "Analyst -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-005",
+    "deterministic": true,
+    "direction": "Risk -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-006",
+    "deterministic": true,
+    "direction": "Trader -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-007",
+    "deterministic": true,
+    "direction": "Broker -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-008",
+    "deterministic": true,
+    "direction": "Position Registry -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-009",
+    "deterministic": true,
+    "direction": "Authorizations -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-010",
+    "deterministic": true,
+    "direction": "Exit Decision -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-011",
+    "deterministic": true,
+    "direction": "Closed Position Truth -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-012",
+    "deterministic": true,
+    "direction": "Performance Truth -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-013",
+    "deterministic": true,
+    "direction": "Monitoring -> Historian"
+  },
+  {
+    "dependency_id": "MON-DEP-014",
+    "deterministic": true,
+    "direction": "Infrastructure -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-015",
+    "deterministic": true,
+    "direction": "External Data Providers -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-016",
+    "deterministic": true,
+    "direction": "Persistence Systems -> Monitoring"
+  },
+  {
+    "dependency_id": "MON-DEP-017",
+    "deterministic": true,
+    "direction": "Monitoring -> Notification Systems"
+  }
+]

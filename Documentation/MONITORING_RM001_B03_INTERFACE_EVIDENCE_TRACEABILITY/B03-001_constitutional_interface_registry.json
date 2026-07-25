@@ -1,0 +1,903 @@
+[
+  {
+    "acknowledgement_authority": "Commander",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Commander",
+    "constitutional_producer": "Monitoring Office",
+    "constitutional_purpose": "Govern Monitoring interaction with Commander.",
+    "dependency_classification": "OUTBOUND_COMMUNICATION",
+    "dependency_direction": "Monitoring -> Commander",
+    "dependency_id": "MON-DEP-001",
+    "dependency_owner": "Monitoring Office",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Monitoring Office",
+    "interface_id": "MON-IFACE-001",
+    "interface_name": "monitoring_commander_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Commander",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Monitoring Office"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Sentinel",
+    "constitutional_purpose": "Govern Monitoring interaction with Sentinel.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Sentinel -> Monitoring",
+    "dependency_id": "MON-DEP-002",
+    "dependency_owner": "Sentinel",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Sentinel",
+    "interface_id": "MON-IFACE-002",
+    "interface_name": "monitoring_sentinel_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Sentinel",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Sentinel"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Seeker",
+    "constitutional_purpose": "Govern Monitoring interaction with Seeker.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Seeker -> Monitoring",
+    "dependency_id": "MON-DEP-003",
+    "dependency_owner": "Seeker",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Seeker",
+    "interface_id": "MON-IFACE-003",
+    "interface_name": "monitoring_seeker_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Seeker",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Seeker"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Analyst",
+    "constitutional_purpose": "Govern Monitoring interaction with Analyst.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Analyst -> Monitoring",
+    "dependency_id": "MON-DEP-004",
+    "dependency_owner": "Analyst",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Analyst",
+    "interface_id": "MON-IFACE-004",
+    "interface_name": "monitoring_analyst_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Analyst",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Analyst"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Risk",
+    "constitutional_purpose": "Govern Monitoring interaction with Risk.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Risk -> Monitoring",
+    "dependency_id": "MON-DEP-005",
+    "dependency_owner": "Risk",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Risk",
+    "interface_id": "MON-IFACE-005",
+    "interface_name": "monitoring_risk_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Risk",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Risk"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Trader",
+    "constitutional_purpose": "Govern Monitoring interaction with Trader.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Trader -> Monitoring",
+    "dependency_id": "MON-DEP-006",
+    "dependency_owner": "Trader",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Trader",
+    "interface_id": "MON-IFACE-006",
+    "interface_name": "monitoring_trader_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Trader",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Trader"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Broker",
+    "constitutional_purpose": "Govern Monitoring interaction with Broker.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Broker -> Monitoring",
+    "dependency_id": "MON-DEP-007",
+    "dependency_owner": "Broker",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Broker",
+    "interface_id": "MON-IFACE-007",
+    "interface_name": "monitoring_broker_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Broker",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Broker"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Position Registry",
+    "constitutional_purpose": "Govern Monitoring interaction with Position Registry.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Position Registry -> Monitoring",
+    "dependency_id": "MON-DEP-008",
+    "dependency_owner": "Position Registry",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Position Registry",
+    "interface_id": "MON-IFACE-008",
+    "interface_name": "monitoring_position_registry_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Position Registry",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Position Registry"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Authorizations",
+    "constitutional_purpose": "Govern Monitoring interaction with Authorizations.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Authorizations -> Monitoring",
+    "dependency_id": "MON-DEP-009",
+    "dependency_owner": "Authorizations",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Authorizations",
+    "interface_id": "MON-IFACE-009",
+    "interface_name": "monitoring_authorizations_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Authorizations",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Authorizations"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Exit Decision",
+    "constitutional_purpose": "Govern Monitoring interaction with Exit Decision.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Exit Decision -> Monitoring",
+    "dependency_id": "MON-DEP-010",
+    "dependency_owner": "Exit Decision",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Exit Decision",
+    "interface_id": "MON-IFACE-010",
+    "interface_name": "monitoring_exit_decision_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Exit Decision",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Exit Decision"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Closed Position Truth",
+    "constitutional_purpose": "Govern Monitoring interaction with Closed Position Truth.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Closed Position Truth -> Monitoring",
+    "dependency_id": "MON-DEP-011",
+    "dependency_owner": "Closed Position Truth",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Closed Position Truth",
+    "interface_id": "MON-IFACE-011",
+    "interface_name": "monitoring_closed_position_truth_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Closed Position Truth",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Closed Position Truth"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Performance Truth",
+    "constitutional_purpose": "Govern Monitoring interaction with Performance Truth.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Performance Truth -> Monitoring",
+    "dependency_id": "MON-DEP-012",
+    "dependency_owner": "Performance Truth",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Performance Truth",
+    "interface_id": "MON-IFACE-012",
+    "interface_name": "monitoring_performance_truth_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Performance Truth",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Performance Truth"
+  },
+  {
+    "acknowledgement_authority": "Historian",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Historian",
+    "constitutional_producer": "Monitoring Office",
+    "constitutional_purpose": "Govern Monitoring interaction with Historian.",
+    "dependency_classification": "OUTBOUND_COMMUNICATION",
+    "dependency_direction": "Monitoring -> Historian",
+    "dependency_id": "MON-DEP-013",
+    "dependency_owner": "Monitoring Office",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Monitoring Office",
+    "interface_id": "MON-IFACE-013",
+    "interface_name": "monitoring_historian_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Historian",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Monitoring Office"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Infrastructure",
+    "constitutional_purpose": "Govern Monitoring interaction with Infrastructure.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Infrastructure -> Monitoring",
+    "dependency_id": "MON-DEP-014",
+    "dependency_owner": "Infrastructure",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Infrastructure",
+    "interface_id": "MON-IFACE-014",
+    "interface_name": "monitoring_infrastructure_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Infrastructure",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Infrastructure"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "External Data Providers",
+    "constitutional_purpose": "Govern Monitoring interaction with External Data Providers.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "External Data Providers -> Monitoring",
+    "dependency_id": "MON-DEP-015",
+    "dependency_owner": "External Data Providers",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "External Data Providers",
+    "interface_id": "MON-IFACE-015",
+    "interface_name": "monitoring_external_data_providers_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "External Data Providers",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "External Data Providers"
+  },
+  {
+    "acknowledgement_authority": "Monitoring Office",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_producer": "Persistence Systems",
+    "constitutional_purpose": "Govern Monitoring interaction with Persistence Systems.",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Persistence Systems -> Monitoring",
+    "dependency_id": "MON-DEP-016",
+    "dependency_owner": "Persistence Systems",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Persistence Systems",
+    "interface_id": "MON-IFACE-016",
+    "interface_name": "monitoring_persistence_systems_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Persistence Systems",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Persistence Systems"
+  },
+  {
+    "acknowledgement_authority": "Notification Systems",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "constitutional_consumer": "Notification Systems",
+    "constitutional_producer": "Monitoring Office",
+    "constitutional_purpose": "Govern Monitoring interaction with Notification Systems.",
+    "dependency_classification": "OUTBOUND_COMMUNICATION",
+    "dependency_direction": "Monitoring -> Notification Systems",
+    "dependency_id": "MON-DEP-017",
+    "dependency_owner": "Monitoring Office",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "failure_owner": "Monitoring Office for interface failure record; source office for source truth",
+    "freshness_authority": "Monitoring Office validates freshness using source-owned timestamp evidence",
+    "governing_constitutional_authority": "MONITORING-RM-001-B03-001",
+    "identity_authority": "Monitoring Office",
+    "interface_id": "MON-IFACE-017",
+    "interface_name": "monitoring_notification_systems_interface",
+    "ordering_authority": "Monitoring Office canonical ordering after receipt",
+    "partner": "Notification Systems",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "reconciliation_authority": "Monitoring Office for Monitoring artifacts only",
+    "replay_authority": "Monitoring Office and certification authority",
+    "retry_authority": "Monitoring Office for Monitoring-owned communication retries",
+    "schema_authority": "Monitoring Office"
+  }
+]

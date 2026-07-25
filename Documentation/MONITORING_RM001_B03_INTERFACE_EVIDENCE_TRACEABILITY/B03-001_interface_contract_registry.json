@@ -1,0 +1,512 @@
+[
+  {
+    "canonical_interface_contract": "monitoring_commander_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-001",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_sentinel_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-002",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_seeker_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-003",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_analyst_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-004",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_risk_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-005",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_trader_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-006",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_broker_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-007",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_position_registry_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-008",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_authorizations_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-009",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_exit_decision_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-010",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_closed_position_truth_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-011",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_performance_truth_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-012",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_historian_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-013",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_infrastructure_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-014",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_external_data_providers_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-015",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_persistence_systems_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-016",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  },
+  {
+    "canonical_interface_contract": "monitoring_notification_systems_interface",
+    "compatibility_requirements": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "interface_id": "MON-IFACE-017",
+    "permitted_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "schema version"
+    ],
+    "permitted_outputs": [
+      "Monitoring evidence",
+      "finding",
+      "alert",
+      "notification",
+      "escalation request"
+    ],
+    "prohibited_inputs": [
+      "unauthorized mutation commands",
+      "unowned enterprise truth claims"
+    ],
+    "prohibited_outputs": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ]
+  }
+]

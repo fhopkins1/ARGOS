@@ -1,0 +1,444 @@
+[
+  {
+    "authoritative_timestamp_source": "originating source",
+    "canonical_definition": "source event time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic source event time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "source event time",
+    "temporal_event_id": "MON-TIME-001"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "observation time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic observation time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "observation time",
+    "temporal_event_id": "MON-TIME-002"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "receipt time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic receipt time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "receipt time",
+    "temporal_event_id": "MON-TIME-003"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "normalization time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic normalization time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "normalization time",
+    "temporal_event_id": "MON-TIME-004"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "evaluation time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic evaluation time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "evaluation time",
+    "temporal_event_id": "MON-TIME-005"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "finding creation time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic finding creation time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "finding creation time",
+    "temporal_event_id": "MON-TIME-006"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "alert creation time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic alert creation time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "alert creation time",
+    "temporal_event_id": "MON-TIME-007"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "escalation creation time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic escalation creation time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "escalation creation time",
+    "temporal_event_id": "MON-TIME-008"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "acknowledgement time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic acknowledgement time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "acknowledgement time",
+    "temporal_event_id": "MON-TIME-009"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "suppression activation time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic suppression activation time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "suppression activation time",
+    "temporal_event_id": "MON-TIME-010"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "suppression expiration time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic suppression expiration time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "suppression expiration time",
+    "temporal_event_id": "MON-TIME-011"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "correction time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic correction time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "correction time",
+    "temporal_event_id": "MON-TIME-012"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "supersession time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic supersession time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "supersession time",
+    "temporal_event_id": "MON-TIME-013"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "persistence time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic persistence time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "persistence time",
+    "temporal_event_id": "MON-TIME-014"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "archival time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic archival time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "archival time",
+    "temporal_event_id": "MON-TIME-015"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "replay execution time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic replay execution time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "replay execution time",
+    "temporal_event_id": "MON-TIME-016"
+  },
+  {
+    "authoritative_timestamp_source": "Monitoring Office",
+    "canonical_definition": "recovery execution time is recorded as a distinct Monitoring temporal attribute and never inferred from another timestamp.",
+    "constitutional_purpose": "Define deterministic recovery execution time semantics.",
+    "lifecycle_applicability": "all Monitoring objects where event occurs",
+    "ownership": "Monitoring Office for Monitoring records; source office for source timestamps",
+    "permitted_origin": [
+      "source evidence",
+      "Monitoring processing clock",
+      "replay harness clock"
+    ],
+    "prohibited_origin": [
+      "operator memory",
+      "documentation",
+      "metadata-only assertion"
+    ],
+    "required_evidence": [
+      "timestamp",
+      "source",
+      "sequence",
+      "evidence digest"
+    ],
+    "required_precision": "ISO-8601 UTC with deterministic sequence tie-breaker",
+    "temporal_event": "recovery execution time",
+    "temporal_event_id": "MON-TIME-017"
+  }
+]

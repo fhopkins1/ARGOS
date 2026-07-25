@@ -1,0 +1,376 @@
+[
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "OUTBOUND_COMMUNICATION",
+    "dependency_direction": "Monitoring -> Commander",
+    "dependency_id": "MON-DEP-001",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Monitoring Office",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Commander.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Sentinel -> Monitoring",
+    "dependency_id": "MON-DEP-002",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Sentinel",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Sentinel.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Seeker -> Monitoring",
+    "dependency_id": "MON-DEP-003",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Seeker",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Seeker.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Analyst -> Monitoring",
+    "dependency_id": "MON-DEP-004",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Analyst",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Analyst.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Risk -> Monitoring",
+    "dependency_id": "MON-DEP-005",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Risk",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Risk.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Trader -> Monitoring",
+    "dependency_id": "MON-DEP-006",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Trader",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Trader.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Broker -> Monitoring",
+    "dependency_id": "MON-DEP-007",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Broker",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Broker.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Position Registry -> Monitoring",
+    "dependency_id": "MON-DEP-008",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Position Registry",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Position Registry.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Authorizations -> Monitoring",
+    "dependency_id": "MON-DEP-009",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Authorizations",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Authorizations.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Exit Decision -> Monitoring",
+    "dependency_id": "MON-DEP-010",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Exit Decision",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Exit Decision.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Closed Position Truth -> Monitoring",
+    "dependency_id": "MON-DEP-011",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Closed Position Truth",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Closed Position Truth.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Performance Truth -> Monitoring",
+    "dependency_id": "MON-DEP-012",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Performance Truth",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Performance Truth.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "OUTBOUND_COMMUNICATION",
+    "dependency_direction": "Monitoring -> Historian",
+    "dependency_id": "MON-DEP-013",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Monitoring Office",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Historian.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Infrastructure -> Monitoring",
+    "dependency_id": "MON-DEP-014",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Infrastructure",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Infrastructure.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "External Data Providers -> Monitoring",
+    "dependency_id": "MON-DEP-015",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "External Data Providers",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with External Data Providers.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "INBOUND_CONSUMPTION",
+    "dependency_direction": "Persistence Systems -> Monitoring",
+    "dependency_id": "MON-DEP-016",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Persistence Systems",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Persistence Systems.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  },
+  {
+    "dependency_authority": "MONITORING-RM-001-B03-001",
+    "dependency_classification": "OUTBOUND_COMMUNICATION",
+    "dependency_direction": "Monitoring -> Notification Systems",
+    "dependency_id": "MON-DEP-017",
+    "dependency_limitations": [
+      "enterprise action authorization",
+      "external truth mutation"
+    ],
+    "dependency_owner": "Monitoring Office",
+    "dependency_prerequisites": [
+      "schema version compatibility",
+      "identity preservation",
+      "timestamp validity"
+    ],
+    "dependency_purpose": "Govern Monitoring interaction with Notification Systems.",
+    "dependency_termination_conditions": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ]
+  }
+]

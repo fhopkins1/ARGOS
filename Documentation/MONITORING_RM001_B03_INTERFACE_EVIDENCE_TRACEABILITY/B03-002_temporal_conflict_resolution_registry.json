@@ -1,0 +1,37 @@
+[
+  {
+    "conflict": "conflicting timestamps",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  },
+  {
+    "conflict": "conflicting event sources",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  },
+  {
+    "conflict": "clock skew",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  },
+  {
+    "conflict": "distributed clock variance",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  },
+  {
+    "conflict": "conflicting freshness determinations",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  },
+  {
+    "conflict": "conflicting ordering",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  },
+  {
+    "conflict": "contradictory replay ordering",
+    "deterministic": true,
+    "resolution": "source precedence chain plus canonical sequence tiebreaker; unresolved conflict remains visible"
+  }
+]

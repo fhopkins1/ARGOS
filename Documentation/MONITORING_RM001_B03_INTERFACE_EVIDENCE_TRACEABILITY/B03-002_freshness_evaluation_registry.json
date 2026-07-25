@@ -1,0 +1,236 @@
+[
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "observation freshness",
+    "freshness_id": "MON-FRESH-001",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "evaluation freshness",
+    "freshness_id": "MON-FRESH-002",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "finding freshness",
+    "freshness_id": "MON-FRESH-003",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "alert freshness",
+    "freshness_id": "MON-FRESH-004",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "escalation freshness",
+    "freshness_id": "MON-FRESH-005",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "acknowledgement freshness",
+    "freshness_id": "MON-FRESH-006",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "correction freshness",
+    "freshness_id": "MON-FRESH-007",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "replay freshness",
+    "freshness_id": "MON-FRESH-008",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  },
+  {
+    "admissibility_rules": [
+      "freshness evidence present",
+      "threshold version present",
+      "timestamp source valid"
+    ],
+    "constitutional_outcomes": [
+      "admissible",
+      "stale",
+      "expired",
+      "quarantined",
+      "fail_closed"
+    ],
+    "expiration_semantics": "expired evidence remains historical but cannot satisfy current obligation",
+    "freshness_class": "recovery freshness",
+    "freshness_id": "MON-FRESH-009",
+    "freshness_measurement": "source event time to evaluation or publication time according to rule version",
+    "freshness_thresholds": "defined by Monitoring Rule or Threshold version",
+    "governing_authority": "Monitoring Office",
+    "required_evidence": [
+      "timestamp chain",
+      "threshold version",
+      "freshness decision"
+    ],
+    "stale_determination": "deterministic comparison against threshold"
+  }
+]

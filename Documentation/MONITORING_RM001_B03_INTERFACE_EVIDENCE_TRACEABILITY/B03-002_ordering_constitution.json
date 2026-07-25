@@ -1,0 +1,10 @@
+{
+  "equal_timestamp_tiebreaker": "canonical sequence identity",
+  "ordering_chain": [
+    "source event time",
+    "receipt time",
+    "processing time",
+    "persistence time",
+    "sequence id"
+  ]
+}
