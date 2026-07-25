@@ -1,0 +1,92 @@
+[
+  {
+    "authority": "Position Registry",
+    "evidence_required": true,
+    "failure_behavior": "reject",
+    "gate": "position_identity",
+    "gate_id": "EXIT-ADM-001",
+    "required_condition": "known active canonical position identity",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Position Registry",
+    "evidence_required": true,
+    "failure_behavior": "reject",
+    "gate": "position_state",
+    "gate_id": "EXIT-ADM-002",
+    "required_condition": "admissible open or exit-eligible lifecycle state",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Position Registry",
+    "evidence_required": true,
+    "failure_behavior": "reject",
+    "gate": "position_quantity",
+    "gate_id": "EXIT-ADM-003",
+    "required_condition": "positive available quantity within requested scope",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Risk Office",
+    "evidence_required": true,
+    "failure_behavior": "defer_or_reject",
+    "gate": "risk_state",
+    "gate_id": "EXIT-ADM-004",
+    "required_condition": "current risk state and no unresolved blocking contradiction",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Authorizations Office",
+    "evidence_required": true,
+    "failure_behavior": "reject",
+    "gate": "authorization_state",
+    "gate_id": "EXIT-ADM-005",
+    "required_condition": "valid non-expired non-revoked authorization where authorization is required",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Monitoring Office",
+    "evidence_required": true,
+    "failure_behavior": "defer",
+    "gate": "monitoring_input",
+    "gate_id": "EXIT-ADM-006",
+    "required_condition": "admissible finding or surveillance context with provenance",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Analyst Office",
+    "evidence_required": true,
+    "failure_behavior": "defer",
+    "gate": "analytical_input",
+    "gate_id": "EXIT-ADM-007",
+    "required_condition": "read-only analysis with provenance; no substituted analytical truth",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Source authorities",
+    "evidence_required": true,
+    "failure_behavior": "reject",
+    "gate": "temporal_validity",
+    "gate_id": "EXIT-ADM-008",
+    "required_condition": "fresh inputs with ordered timestamps and explicit effective time",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Source owner",
+    "evidence_required": true,
+    "failure_behavior": "reject",
+    "gate": "source_authority",
+    "gate_id": "EXIT-ADM-009",
+    "required_condition": "authoritative source and independence where required",
+    "synthetic_completion_prohibited": true
+  },
+  {
+    "authority": "Exit Decision Office",
+    "evidence_required": true,
+    "failure_behavior": "defer_or_reject",
+    "gate": "evidence_sufficiency",
+    "gate_id": "EXIT-ADM-010",
+    "required_condition": "mandatory evidence present and contradiction-free or preserved",
+    "synthetic_completion_prohibited": true
+  }
+]

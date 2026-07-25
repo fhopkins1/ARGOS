@@ -1,0 +1,367 @@
+# EXIT-DECISION-RM-001-B03-001
+
+# Decision Admissibility Constitution Order
+
+## Objective
+
+Establish the authoritative constitutional requirements governing whether information, conditions, and dependencies are admissible for Exit Decision evaluation.
+
+This order shall define the admissibility boundary protecting Exit Decision from invalid, incomplete, stale, contradictory, unauthorized, or insufficient inputs.
+
+This order shall not modify implementation behavior.
+
+This order shall not define executable decision logic.
+
+This order shall not perform behavioral verification.
+
+This order shall not generate implementation proof.
+
+This order shall not execute certification activity.
+
+---
+
+# Constitutional Requirements
+
+## 1. Establish Decision Admissibility Constitution
+
+Create the authoritative constitutional model determining whether Exit Decision may evaluate a potential exit condition.
+
+Establish that:
+
+```text
+Observation
+→ Admissibility
+→ Evaluation
+→ Recommendation
+→ Decision
+```
+
+No evaluation shall occur without successful admissibility determination.
+
+Admissibility shall determine whether required information is:
+
+* available;
+* authoritative;
+* valid;
+* current;
+* complete;
+* internally consistent;
+* constitutionally permitted.
+
+---
+
+# 2. Establish Admissibility Authority
+
+Define the authority responsible for determining Exit Decision input admissibility.
+
+The constitution shall establish:
+
+* admissibility owner;
+* admissibility decision authority;
+* admissibility evidence authority;
+* admissibility reconciliation authority.
+
+Admissibility authority shall not:
+
+* create position truth;
+* create risk truth;
+* create authorization truth;
+* replace source offices.
+
+Admissibility shall validate available truth without becoming the owner of that truth.
+
+---
+
+# 3. Establish Position Identity Admissibility Requirements
+
+Define requirements for position identity inputs.
+
+The registry shall require:
+
+* unique position identity;
+* authoritative Position Registry source;
+* valid ownership reference;
+* valid lifecycle state;
+* absence of unresolved identity conflict.
+
+Exit Decision shall reject evaluation when:
+
+* position identity is missing;
+* position identity is ambiguous;
+* position identity conflicts exist;
+* position ownership cannot be established.
+
+---
+
+# 4. Establish Position State and Quantity Admissibility Requirements
+
+Define requirements for position state information.
+
+The constitution shall establish:
+
+* acceptable position states;
+* acceptable quantity representations;
+* quantity authority;
+* state freshness requirements;
+* reconciliation requirements.
+
+Exit Decision shall not independently calculate or replace position truth.
+
+Position state ownership remains with Position Registry.
+
+---
+
+# 5. Establish Risk State Admissibility Requirements
+
+Define admissibility requirements for Risk inputs.
+
+The registry shall establish:
+
+* approved Risk source;
+* risk-state identity;
+* risk-state validity;
+* risk-state freshness;
+* unresolved risk conflict handling.
+
+Exit Decision shall consume Risk truth.
+
+Exit Decision shall not:
+
+* modify Risk truth;
+* replace Risk evaluation;
+* override Risk ownership.
+
+---
+
+# 6. Establish Authorization State Admissibility Requirements
+
+Define authorization admissibility requirements.
+
+The constitution shall establish:
+
+* authorization identity;
+* authorization source;
+* authorization validity;
+* authorization expiration;
+* authorization revocation state;
+* authorization scope.
+
+Exit Decision shall reject evaluation when:
+
+* authorization is missing;
+* authorization is expired;
+* authorization is revoked;
+* authorization scope is insufficient.
+
+Exit Decision shall not create authorization authority.
+
+---
+
+# 7. Establish Monitoring and Analytical Input Admissibility
+
+Define admissibility requirements for:
+
+* Monitoring findings;
+* Sentinel observations;
+* Analyst outputs;
+* market context;
+* operational constraints.
+
+For each input define:
+
+* source authority;
+* ownership;
+* permitted use;
+* evidence requirement;
+* freshness requirement.
+
+Observation shall not automatically become decision authority.
+
+---
+
+# 8. Establish Temporal Validity Requirements
+
+Define temporal admissibility requirements.
+
+The constitution shall establish:
+
+* timestamp requirements;
+* freshness windows;
+* expiration rules;
+* temporal ordering;
+* stale-data handling.
+
+Exit Decision shall reject inputs that exceed constitutional validity periods.
+
+---
+
+# 9. Establish Completeness Requirements
+
+Define minimum information requirements required before evaluation.
+
+The registry shall define:
+
+* mandatory inputs;
+* optional inputs;
+* conditional inputs;
+* missing-input behavior.
+
+Incomplete information shall result in:
+
+* rejection;
+* deferral;
+* escalation.
+
+Incomplete information shall never silently become a valid decision basis.
+
+---
+
+# 10. Establish Source Authority and Independence Requirements
+
+Define source admissibility requirements.
+
+Every input shall possess:
+
+* one authoritative source;
+* one ownership authority;
+* one custody authority;
+* one evidence lineage.
+
+The constitution shall prohibit:
+
+* duplicate competing truth sources;
+* unauthorized derived truth;
+* circular dependency;
+* self-validation.
+
+---
+
+# 11. Establish Contradiction Handling Constitution
+
+Define handling of conflicting inputs.
+
+The constitution shall establish:
+
+* contradiction detection;
+* contradiction classification;
+* contradiction ownership;
+* reconciliation pathway;
+* escalation requirements.
+
+Exit Decision shall not resolve ownership disputes by assuming authority.
+
+---
+
+# 12. Establish Confidence and Evidence Sufficiency Requirements
+
+Define evidence sufficiency requirements.
+
+Each admissible input shall possess:
+
+* supporting evidence;
+* provenance;
+* confidence classification;
+* integrity validation.
+
+Insufficient evidence shall result in:
+
+* rejection;
+* deferral;
+* escalation.
+
+---
+
+# 13. Establish Mandatory Rejection Registry
+
+Create the admissibility rejection registry.
+
+The registry shall define mandatory rejection conditions:
+
+* missing position truth;
+* stale position truth;
+* invalid authorization;
+* expired authorization;
+* revoked authorization;
+* contradictory risk state;
+* unresolved identity mismatch;
+* insufficient evidence;
+* invalid provenance;
+* unauthorized source;
+* incomplete decision context.
+
+For each rejection condition define:
+
+* rejection authority;
+* rejection evidence;
+* rejection outcome;
+* reconciliation requirement.
+
+---
+
+# 14. Establish Admissibility Evidence Registry
+
+Create the evidence registry defining evidence required for admissibility.
+
+The registry shall include:
+
+* evidence identity;
+* evidence source;
+* evidence owner;
+* evidence custodian;
+* evidence timestamp;
+* retention requirement.
+
+Evidence shall preserve lineage through the complete Exit Decision lifecycle.
+
+---
+
+# 15. Establish Failure Behavior
+
+Define deterministic behavior when admissibility fails.
+
+Failure outcomes shall include:
+
+* rejection;
+* deferral;
+* escalation;
+* request for additional information.
+
+Failure shall not:
+
+* produce an invalid decision;
+* authorize execution;
+* bypass controls;
+* mutate enterprise truth.
+
+---
+
+# 16. Establish Completion Report
+
+Produce a completion report confirming:
+
+* admissibility rules established;
+* admissibility authority established;
+* required inputs defined;
+* rejection conditions defined;
+* evidence requirements defined;
+* failure behavior defined.
+
+---
+
+# Completion Criteria
+
+This order is complete only when:
+
+* every Exit Decision input possesses admissibility requirements;
+* every input source possesses defined authority;
+* every invalid input possesses deterministic rejection behavior;
+* position truth ownership remains with Position Registry;
+* risk truth ownership remains with Risk;
+* authorization truth ownership remains with Authorizations;
+* evidence lineage requirements are established;
+* stale and contradictory information handling is deterministic;
+* no admissibility ambiguity remains.
+
+Successful completion authorizes progression to:
+
+> **EXIT-DECISION-RM-001-B03-002 — Decision Evaluation and Recommendation Constitution**.

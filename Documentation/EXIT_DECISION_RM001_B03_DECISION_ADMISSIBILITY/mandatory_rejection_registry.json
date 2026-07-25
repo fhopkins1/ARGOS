@@ -1,0 +1,56 @@
+[
+  {
+    "condition": "missing position truth",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-001"
+  },
+  {
+    "condition": "stale position truth",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-002"
+  },
+  {
+    "condition": "expired authorization",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-003"
+  },
+  {
+    "condition": "revoked authorization",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-004"
+  },
+  {
+    "condition": "contradictory risk inputs",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-005"
+  },
+  {
+    "condition": "inadmissible monitoring findings",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-006"
+  },
+  {
+    "condition": "unsupported analysis",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-007"
+  },
+  {
+    "condition": "unresolved identity mismatch",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-008"
+  },
+  {
+    "condition": "incomplete evidence",
+    "disposition": "REJECT_OR_FAIL_CLOSED",
+    "evidence_required": "rejection evidence and source authority reference",
+    "rejection_id": "EXIT-REJECT-009"
+  }
+]

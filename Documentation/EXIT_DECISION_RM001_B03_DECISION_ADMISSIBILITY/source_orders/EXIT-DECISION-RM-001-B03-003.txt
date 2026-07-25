@@ -1,0 +1,410 @@
+EXIT-DECISION-RM-001-B03-003
+
+# Authorization Dependency and Execution Separation Constitution
+
+## Objective
+
+Establish the complete constitutional separation between Exit Decision authority, Authorization authority, execution request authority, Trader authority, Broker authority, settlement authority, and closed-position truth authority.
+
+This order shall define the deterministic dependency model governing how an Exit Decision may result in an authorized execution pathway without allowing Exit Decision to assume ownership of authorization, execution, brokerage, settlement, or truth domains.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every authority shall possess one constitutional owner.
+
+Every dependency shall possess one constitutional purpose.
+
+Every execution pathway shall preserve authorization separation.
+
+---
+
+# Constitutional Principles
+
+Exit Decision shall determine whether an exit decision condition has been satisfied.
+
+Authorization shall determine whether execution is permitted.
+
+Trader shall determine how execution is performed.
+
+Broker shall determine external execution interaction.
+
+Position Registry shall determine position truth.
+
+Closed Position Truth shall determine completed position status.
+
+Historian shall preserve historical lineage.
+
+No authority shall collapse these responsibilities.
+
+The authoritative separation shall be:
+
+```text
+Exit Decision
+≠
+Authorization
+≠
+Execution Request
+≠
+Broker Instruction
+≠
+Execution Result
+≠
+Settlement
+≠
+Closed Position Truth
+```
+
+A valid Exit Decision shall not create authorization.
+
+A valid authorization shall not create execution.
+
+An execution request shall not create broker execution.
+
+A broker acknowledgement shall not create position truth.
+
+A settlement event shall not replace reconciliation.
+
+---
+
+# Authorization Dependency Constitution
+
+## Purpose
+
+Define the constitutional dependency relationship between Exit Decision and Authorization.
+
+## Dependency Principle
+
+Exit Decision may depend upon Authorization.
+
+Authorization shall not depend upon Exit Decision ownership.
+
+Exit Decision may request execution consideration.
+
+Exit Decision shall not authorize itself.
+
+---
+
+# Authorization Ownership Registry
+
+| Function                           | Authority Owner               |
+| ---------------------------------- | ----------------------------- |
+| Authorization creation             | Authorizations Office         |
+| Authorization validation           | Authorizations Office         |
+| Authorization scope definition     | Authorizations Office         |
+| Authorization expiration           | Authorizations Office         |
+| Authorization revocation           | Authorizations Office         |
+| Authorization consumption tracking | Authorizations Office         |
+| Exit Decision generation           | Exit Decision Office          |
+| Execution request generation       | Approved requesting authority |
+| Trade execution                    | Trader Office                 |
+| Broker communication               | Broker Office                 |
+| Position mutation                  | Position Registry             |
+| Historical custody                 | Historian                     |
+
+---
+
+# Authorization Validation Constitution
+
+Before any execution pathway may begin, the following conditions shall be satisfied:
+
+* Exit Decision exists;
+* Exit Decision is in an executable lifecycle state;
+* required authorization exists;
+* authorization identity is valid;
+* authorization scope matches requested action;
+* authorization has not expired;
+* authorization has not been revoked;
+* authorization lineage is preserved.
+
+Failure of any authorization condition shall prevent execution progression.
+
+---
+
+# Authorization Consumption Constitution
+
+Authorization consumption shall:
+
+* record the authorization used;
+* preserve authorization identity;
+* preserve authorization scope;
+* preserve consumption timestamp;
+* preserve consuming authority;
+* prevent unauthorized reuse.
+
+Authorization consumption shall not:
+
+* modify Exit Decision rationale;
+* modify Risk truth;
+* modify Position Registry truth;
+* modify Broker state.
+
+---
+
+# Authorization Expiration Constitution
+
+Expired authorization shall:
+
+* become unavailable for execution;
+* remain historically preserved;
+* retain expiration evidence;
+* prevent silent reuse.
+
+Expired authorization shall not:
+
+* automatically renew;
+* inherit new authority;
+* bypass validation.
+
+A new authorization shall require a new authorization lifecycle event.
+
+---
+
+# Authorization Revocation Constitution
+
+Revocation shall:
+
+* invalidate future consumption;
+* preserve prior authorization history;
+* record revocation authority;
+* record revocation rationale.
+
+Revocation shall not:
+
+* alter historical execution records;
+* erase previous authorization use;
+* modify Exit Decision lineage.
+
+---
+
+# Trader Interaction Boundary Constitution
+
+## Trader Authority
+
+Trader shall possess sole authority for:
+
+* execution preparation;
+* execution scheduling;
+* execution method selection;
+* execution management;
+* execution state reporting.
+
+Exit Decision may provide:
+
+* decision reference;
+* approved exit intent;
+* supporting decision evidence.
+
+Exit Decision shall not provide:
+
+* direct broker commands;
+* unauthorized execution instructions;
+* execution overrides.
+
+---
+
+# Execution Request Constitution
+
+An execution request shall represent a controlled transition between authorized decision and execution activity.
+
+An execution request shall contain:
+
+* originating decision identity;
+* authorization reference;
+* requested action;
+* scope;
+* timestamp;
+* requesting authority;
+* evidence lineage.
+
+An execution request shall not represent:
+
+* completed execution;
+* broker acknowledgement;
+* position closure;
+* settlement completion.
+
+---
+
+# Broker Interaction Boundary Constitution
+
+## Broker Authority
+
+Broker shall possess sole authority for:
+
+* external market submission;
+* broker acceptance;
+* broker rejection;
+* broker execution communication;
+* broker execution status.
+
+Exit Decision shall not:
+
+* directly submit broker instructions;
+* interpret broker state as closed-position truth;
+* modify broker records.
+
+Trader shall remain the constitutional intermediary between decision authority and broker execution where applicable.
+
+---
+
+# Execution Result Separation Constitution
+
+Execution results shall remain separate from Exit Decision.
+
+Execution results shall be owned by execution authorities.
+
+Execution results shall include:
+
+* execution identity;
+* execution timestamp;
+* execution status;
+* execution quantity;
+* execution reconciliation data.
+
+Execution results shall not modify:
+
+* Exit Decision ownership;
+* authorization ownership;
+* risk ownership;
+* historical custody ownership.
+
+---
+
+# Closed Position Truth Separation Constitution
+
+Execution completion shall not equal closed-position truth.
+
+Closed Position Truth shall require:
+
+* execution reconciliation;
+* position reconciliation;
+* settlement confirmation;
+* Position Registry confirmation.
+
+Only the appropriate truth authority may declare:
+
+* position closed;
+* position quantity updated;
+* final disposition recorded.
+
+Exit Decision shall consume closed-position truth.
+
+Exit Decision shall not create closed-position truth.
+
+---
+
+# Emergency Execution Pathway Constitution
+
+Emergency pathways may permit accelerated execution processing.
+
+Emergency pathways shall not permit:
+
+* self-authorization;
+* authorization bypass;
+* unrestricted broker access;
+* position mutation outside Position Registry;
+* historical record alteration.
+
+Emergency pathways shall define:
+
+* activation authority;
+* activation criteria;
+* permitted actions;
+* duration;
+* evidence requirements;
+* reconciliation requirements.
+
+Emergency authority shall be temporary and explicitly bounded.
+
+---
+
+# Authority Boundary Registry
+
+| Boundary                           | Producer                 | Consumer          | Separation Requirement                     |
+| ---------------------------------- | ------------------------ | ----------------- | ------------------------------------------ |
+| Exit Decision → Authorization      | Exit Decision            | Authorizations    | Decision requests authorization dependency |
+| Authorization → Execution          | Authorizations           | Trader            | Authorization permits execution            |
+| Trader → Broker                    | Trader                   | Broker            | Execution authority preserved              |
+| Broker → Execution Result          | Broker                   | Trader            | Broker state preserved                     |
+| Execution Result → Position Truth  | Execution/Reconciliation | Position Registry | Truth ownership preserved                  |
+| Position Truth → Historical Record | Position Registry        | Historian         | Historical custody preserved               |
+
+---
+
+# Prohibited Execution Registry
+
+Exit Decision shall be prohibited from:
+
+* directly executing trades;
+* directly submitting broker instructions;
+* creating authorization objects;
+* extending expired authorizations;
+* consuming revoked authorizations;
+* bypassing authorization validation;
+* overriding Trader execution controls;
+* modifying Broker records;
+* mutating Position Registry state;
+* declaring closed-position truth.
+
+---
+
+# Dependency Failure Behavior
+
+If authorization dependency fails:
+
+* execution shall not proceed;
+* failure shall be recorded;
+* decision lineage shall remain intact;
+* responsible authority shall be notified.
+
+If Trader dependency fails:
+
+* execution shall remain incomplete;
+* no false completion state shall be created;
+* reconciliation shall be required.
+
+If Broker dependency fails:
+
+* broker uncertainty shall be preserved;
+* execution state shall remain unresolved until reconciled.
+
+---
+
+# Deliverables
+
+This order shall produce:
+
+* authorization dependency constitution;
+* execution separation constitution;
+* authority boundary registry;
+* prohibited execution registry;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* authorization ownership is uniquely assigned;
+* execution ownership is uniquely assigned;
+* broker authority is uniquely assigned;
+* Exit Decision cannot self-authorize;
+* Exit Decision cannot execute;
+* authorization cannot create execution truth;
+* execution cannot create position truth;
+* broker state cannot replace reconciliation;
+* emergency execution pathways are bounded;
+* prohibited execution authorities are defined;
+* no authorization ambiguity remains;
+* no execution authority ambiguity remains.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B03-004 — Emergency Decision, Override, and Exception Constitution**

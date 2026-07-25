@@ -1,0 +1,38 @@
+[
+  {
+    "condition": "risk_emergency",
+    "emergency_id": "EXIT-EMERG-001",
+    "evidence_required": true,
+    "expiration_required": true,
+    "override_limit": "emergency may prioritize decision handling but never transfers execution, broker, authorization, risk, or position ownership",
+    "owning_authority": "Risk Office",
+    "scope": "Risk-owned emergency condition"
+  },
+  {
+    "condition": "commander_override",
+    "emergency_id": "EXIT-EMERG-002",
+    "evidence_required": true,
+    "expiration_required": true,
+    "override_limit": "emergency may prioritize decision handling but never transfers execution, broker, authorization, risk, or position ownership",
+    "owning_authority": "Commander Office",
+    "scope": "Commander-directed override"
+  },
+  {
+    "condition": "authorization_exception",
+    "emergency_id": "EXIT-EMERG-003",
+    "evidence_required": true,
+    "expiration_required": true,
+    "override_limit": "emergency may prioritize decision handling but never transfers execution, broker, authorization, risk, or position ownership",
+    "owning_authority": "Authorizations Office",
+    "scope": "authorization emergency disposition"
+  },
+  {
+    "condition": "execution_exception",
+    "emergency_id": "EXIT-EMERG-004",
+    "evidence_required": true,
+    "expiration_required": true,
+    "override_limit": "emergency may prioritize decision handling but never transfers execution, broker, authorization, risk, or position ownership",
+    "owning_authority": "Trader/Broker",
+    "scope": "execution pathway exception requiring downstream owner disposition"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "exit_decision_boundary": "Exit Decision consumes read-only authorization state",
+    "office": "Authorizations",
+    "owned_authority": "owns authorization issuance, expiration, revocation, consumption, and validity",
+    "violation_disposition": "fail closed and record authority-boundary finding"
+  },
+  {
+    "exit_decision_boundary": "Exit Decision may not execute or submit orders",
+    "office": "Trader",
+    "owned_authority": "owns authorized execution request handling",
+    "violation_disposition": "fail closed and record authority-boundary finding"
+  },
+  {
+    "exit_decision_boundary": "Exit Decision may not create broker truth",
+    "office": "Broker",
+    "owned_authority": "owns broker submission, acknowledgement, and fill truth",
+    "violation_disposition": "fail closed and record authority-boundary finding"
+  },
+  {
+    "exit_decision_boundary": "Exit Decision may not mutate position truth",
+    "office": "Position Registry",
+    "owned_authority": "owns canonical position state and mutation",
+    "violation_disposition": "fail closed and record authority-boundary finding"
+  },
+  {
+    "exit_decision_boundary": "Exit Decision may not declare closure",
+    "office": "Closed Position Truth",
+    "owned_authority": "owns canonical closed-position truth",
+    "violation_disposition": "fail closed and record authority-boundary finding"
+  }
+]
