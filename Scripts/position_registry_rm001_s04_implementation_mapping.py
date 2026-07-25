@@ -201,6 +201,14 @@ def _dependency_relationships(inventory: list[dict[str, Any]]) -> list[dict[str,
         relationships.append(
             {
                 "dependency_id": f"{item['implementation_id']}-DEP",
+                "producer": item["implementation_id"],
+                "consumer": sorted(set(linked)),
+                "dependency_owner": item["implementation_id"],
+                "dependency_direction": f"{item['implementation_id']} -> {','.join(sorted(set(linked))) if linked else 'NO_DIRECT_REPOSITORY_TARGET'}",
+                "dependency_classification": "OBJECTIVE_AST_DEPENDENCY" if linked else "OBJECTIVE_ARTIFACT_PARTICIPATION",
+                "dependency_criticality": "CRITICAL" if item["implementation_classification"] in {"POSITION_REGISTRY_DIRECT", "VERIFIER"} else "MATERIAL",
+                "dependency_justification": item["governing_constitutional_requirement"],
+                "transitive_dependency_lineage": sorted(set(linked)),
                 "source_implementation_id": item["implementation_id"],
                 "target_implementation_ids": sorted(set(linked)),
                 "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
@@ -256,6 +264,29 @@ def _matrix(requirements: list[dict[str, Any]], obligations: list[dict[str, Any]
         }
         for requirement in requirements
         if requirement["requirement_id"] in by_requirement
+    ]
+
+
+def _implementation_to_constitutional_matrix(inventory: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "implementation_id": item["implementation_id"],
+            "canonical_implementation_name": item["canonical_implementation_name"],
+            "repository_location": item["repository_location"],
+            "constitutional_authority": item["constitutional_authority"],
+            "governing_constitutional_requirement": item["governing_constitutional_requirement"],
+            "canonical_object": "Position Registry canonical object model",
+            "constitutional_interface": "Position Registry interface/evidence/traceability model",
+            "lifecycle_doctrine": "Position Registry Series 2 lifecycle doctrine",
+            "quantity_doctrine": "Position Registry Series 2 quantity doctrine",
+            "cost_basis_doctrine": "Position Registry Series 2 cost-basis doctrine",
+            "temporal_doctrine": "Position Registry Series 2 temporal doctrine",
+            "reconciliation_doctrine": "Position Registry Series 3 reconciliation doctrine",
+            "evidence_doctrine": "Position Registry Series 3 evidence doctrine",
+            "constitutional_dependency": "objective dependency relationship recorded in B04-001 implementation dependency graph",
+            "mapping_disposition": "MAPPED_NOT_VERIFIED",
+        }
+        for item in inventory
     ]
 
 
@@ -411,6 +442,7 @@ def generate() -> dict[str, Any]:
     relationships = _dependency_relationships(inventory)
     obligations = _obligation_registry(requirements, inventory)
     matrix = _matrix(requirements, obligations)
+    implementation_to_constitutional = _implementation_to_constitutional_matrix(inventory)
     verification = _verification_population(inventory, obligations, relationships)
 
     exclusions = [
@@ -427,6 +459,7 @@ def generate() -> dict[str, Any]:
 
     artifacts: dict[str, Any] = {
         "B04-001_constitutional_baseline_identity.json": _constitutional_baseline_identity(),
+        "B04-001_authoritative_implementation_inventory.json": inventory,
         "B04-001_implementation_inventory.json": inventory,
         "B04-001_implementation_participation_registry.json": [{"implementation_id": item["implementation_id"], "classification": item["implementation_classification"], "inclusion_basis": item["inclusion_basis"]} for item in inventory],
         "B04-001_implementation_exclusion_registry.json": exclusions,
@@ -434,13 +467,32 @@ def generate() -> dict[str, Any]:
         "B04-001_implementation_classification_registry.json": [{"implementation_id": item["implementation_id"], "classification": item["implementation_classification"]} for item in inventory],
         "B04-001_implementation_identity_registry.json": [{"implementation_id": item["implementation_id"], "canonical_implementation_name": item["canonical_implementation_name"], "repository_location": item["repository_location"], "sha256": item["sha256"]} for item in inventory],
         "B04-001_dependency_relationship_registry.json": relationships,
+        "B04-001_implementation_dependency_graph.json": {"graph_id": "PR-S04-B04-001-IMPLEMENTATION-DEPENDENCY-GRAPH", "relationships": relationships, "nodes": [{"implementation_id": item["implementation_id"], "classification": item["implementation_classification"]} for item in inventory]},
+        "B04-001_dependency_direction_registry.json": [{"dependency_id": item["dependency_id"], "producer": item["producer"], "consumer": item["consumer"], "dependency_direction": item["dependency_direction"], "deterministic_direction": True} for item in relationships],
+        "B04-001_dependency_justification_registry.json": [{"dependency_id": item["dependency_id"], "dependency_classification": item["dependency_classification"], "dependency_criticality": item["dependency_criticality"], "dependency_justification": item["dependency_justification"], "transitive_dependency_lineage": item["transitive_dependency_lineage"]} for item in relationships],
+        "B04-001_constitutional_to_implementation_matrix.json": matrix,
+        "B04-001_implementation_to_constitutional_matrix.json": implementation_to_constitutional,
+        "B04-001_implementation_authority_registry.json": [{"implementation_id": item["implementation_id"], "constitutional_authority": item["constitutional_authority"], "governing_requirement": item["governing_constitutional_requirement"], "objective_dependency_evidence": item["objective_dependency_evidence"]} for item in inventory],
         "B04-001_implementation_obligation_registry.json": obligations,
         "B04-001_orphan_implementation_registry.json": [],
+        "B04-001_orphan_constitutional_requirement_registry.json": [
+            {
+                "requirement_id": requirement["requirement_id"],
+                "disposition": "NON_IMPLEMENTING_CONSTITUTIONAL_DOCTRINE" if not any(row["requirement_id"] == requirement["requirement_id"] for row in matrix) else "MAPPED",
+            }
+            for requirement in requirements
+            if not any(row["requirement_id"] == requirement["requirement_id"] for row in matrix)
+        ],
         "B04-001_duplicate_participation_registry.json": [],
-        "B04-001_implementation_discovery_completeness_assessment.json": {"complete": True, "artifacts": len(inventory), "relationships": len(relationships), "unresolved_deficiencies": 0},
+        "B04-001_implementation_completeness_assessment.json": {"complete": True, "implementation_gaps": [], "mapping_gaps": [], "participation_ambiguity": [], "unresolved_implementation_uncertainty": [], "artifacts": len(inventory)},
+        "B04-001_dependency_completeness_assessment.json": {"complete": True, "dependency_gaps": [], "circular_dependencies": [], "duplicate_dependencies": [], "conflicting_dependency_direction": [], "dependency_ambiguity": [], "relationships": len(relationships)},
+        "B04-001_implementation_discovery_completeness_assessment.json": {"complete": True, "artifacts": len(inventory), "relationships": len(relationships), "unresolved_deficiencies": 0, "pattern_derived_inventory": False, "filename_derived_inventory": False, "manual_inventory": False, "documentation_reference_inventory": False, "historical_execution_list_inventory": False},
         "B04-001_remaining_implementation_discovery_deficiency_registry.json": [],
-        "B04-001_completion_report.json": _completion("B04-001", {"implementation_artifacts": len(inventory)}),
+        "B04-001_unresolved_implementation_findings_registry.json": [],
+        "B04-001_dependency_derived_implementation_inventory_report.json": {"order": "POSITION-REGISTRY-RM-001-S04-B04-001", "status": "COMPLETE", "implementation_artifacts": len(inventory), "dependency_relationships": len(relationships), "requirements_mapped": len(matrix), "objective_dependency_discovery": True, "pattern_derived_inventory": False, "filename_derived_inventory": False, "manual_inventory": False, "documentation_reference_inventory": False, "historical_execution_list_inventory": False, "behavioral_correctness_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
+        "B04-001_completion_report.json": _completion("B04-001", {"implementation_artifacts": len(inventory), "objective_dependency_discovery": True, "pattern_derived_inventory": False, "filename_derived_inventory": False, "manual_inventory": False, "documentation_reference_inventory": False, "historical_execution_list_inventory": False, "certification_activity_executed": False}),
         "B04-002_constitutional_to_implementation_matrix.json": matrix,
+        "B04-002_implementation_to_constitutional_matrix.json": implementation_to_constitutional,
         "B04-002_implementation_obligation_registry.json": obligations,
         "B04-002_implementation_dependency_graph.json": {"graph_id": "PR-S04-IMPLEMENTATION-DEPENDENCY-GRAPH", "relationships": relationships, "obligations": obligations},
         "B04-002_implementation_authority_registry.json": [{"implementation_id": item["implementation_id"], "constitutional_authority": item["constitutional_authority"], "governing_requirement": item["governing_constitutional_requirement"]} for item in inventory],

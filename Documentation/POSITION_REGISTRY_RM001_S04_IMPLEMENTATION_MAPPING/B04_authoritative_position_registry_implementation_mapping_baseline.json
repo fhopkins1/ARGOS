@@ -9,12 +9,12 @@
     "series_2": {
       "exists": true,
       "path": "Documentation\\POSITION_REGISTRY_RM001_S02_OBJECT_LIFECYCLE\\B02-004_authoritative_position_registry_object_and_lifecycle_baseline.json",
-      "sha256": "c7d6d4859a421242e853804147a84ccbf43f3020fa14b193b4c6aa7a19309ce9"
+      "sha256": "44884d71c50b3caeaf7b9b94f2cbd685967e7cae7be43126be76bea1c96e5fae"
     },
     "series_3": {
       "exists": true,
       "path": "Documentation\\POSITION_REGISTRY_RM001_S03_INTERFACE_EVIDENCE_TRACEABILITY\\B03-004_authoritative_position_registry_interface_evidence_traceability_baseline.json",
-      "sha256": "3b0a49a343a94d6980dea5e9361c4a4826476c2181dd847e4b1b57debf60fc78"
+      "sha256": "c3c9cfe63b28d651180286cd19d9c0276bcff9f02f656e7f1c3e298f08af2e75"
     }
   },
   "constitutional_to_implementation_matrix": [
@@ -383,7 +383,7 @@
       ]
     },
     {
-      "canonical_requirement_name": "reconciliation_evidence_requirement",
+      "canonical_requirement_name": "replay_evidence_requirement",
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "implementation_artifacts": [
         "PR-S04-IMPL-24F37EF64F7F"
@@ -396,7 +396,7 @@
       ]
     },
     {
-      "canonical_requirement_name": "correction_evidence_requirement",
+      "canonical_requirement_name": "recovery_evidence_requirement",
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "implementation_artifacts": [
         "PR-S04-IMPL-6334CAA6A9DC"
@@ -409,7 +409,7 @@
       ]
     },
     {
-      "canonical_requirement_name": "anomaly_evidence_requirement",
+      "canonical_requirement_name": "correction_evidence_requirement",
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "implementation_artifacts": [
         "PR-S04-IMPL-1E58B4A8B021"
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "canonical_requirement_name": "archival_evidence_requirement",
+      "canonical_requirement_name": "reconciliation_evidence_requirement",
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "implementation_artifacts": [
         "PR-S04-IMPL-5F574EC5C56D"
@@ -446,13 +446,43 @@
       "verifier_dependencies": [
         "PR-S04-IMPL-290227A442CE"
       ]
+    },
+    {
+      "canonical_requirement_name": "anomaly_evidence_requirement",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "implementation_artifacts": [
+        "PR-S04-IMPL-BFBFC4E1C67A"
+      ],
+      "implementation_obligation_id": "PR-S04-OBL-034",
+      "mapping_disposition": "MAPPED_NOT_VERIFIED",
+      "requirement_id": "PR-S03-REQ-EVD-010",
+      "verifier_dependencies": [
+        "PR-S04-IMPL-290227A442CE"
+      ]
+    },
+    {
+      "canonical_requirement_name": "archival_evidence_requirement",
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "implementation_artifacts": [
+        "PR-S04-IMPL-24DC358F970D"
+      ],
+      "implementation_obligation_id": "PR-S04-OBL-035",
+      "mapping_disposition": "MAPPED_NOT_VERIFIED",
+      "requirement_id": "PR-S03-REQ-EVD-011",
+      "verifier_dependencies": [
+        "PR-S04-IMPL-290227A442CE"
+      ]
     }
   ],
   "dependency_ambiguity_registry": [],
   "dependency_relationships": [
     {
       "constitutional_justification": "PR-S03-REQ-BASE-001",
+      "consumer": [],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-24F37EF64F7F -> NO_DIRECT_REPOSITORY_TARGET",
       "dependency_evidence": {
         "attributes": [
           "ARCHIVED",
@@ -629,14 +659,22 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-24F37EF64F7F-DEP",
+      "dependency_justification": "PR-S03-REQ-BASE-001",
+      "dependency_owner": "PR-S04-IMPL-24F37EF64F7F",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-24F37EF64F7F",
       "source_implementation_id": "PR-S04-IMPL-24F37EF64F7F",
       "target_implementation_ids": [],
+      "transitive_dependency_lineage": [],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-REQ-BASE-002",
+      "consumer": [],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-6334CAA6A9DC -> NO_DIRECT_REPOSITORY_TARGET",
       "dependency_evidence": {
         "attributes": [
           "ACCUMULATING",
@@ -649,6 +687,8 @@
           "REDUCING",
           "SHORT",
           "_apply_existing",
+          "_execution_artifacts",
+          "_execution_events",
           "_persist_contract",
           "_portfolio_contract",
           "_position_contract",
@@ -677,6 +717,7 @@
           "history",
           "inspect",
           "items",
+          "join",
           "market_value",
           "monitor",
           "name",
@@ -699,9 +740,11 @@
           "system_prompt",
           "timestamp_utc",
           "to_dict",
+          "to_payload",
           "total_exposure",
           "transition",
           "unrealized_pnl",
+          "update",
           "upper",
           "validate_startup",
           "value",
@@ -736,6 +779,7 @@
           "dumps",
           "encode",
           "fields",
+          "float",
           "generate_case_file",
           "generate_document_id",
           "get",
@@ -745,6 +789,7 @@
           "is_dataclass",
           "isinstance",
           "items",
+          "join",
           "len",
           "max",
           "min",
@@ -753,12 +798,16 @@
           "reconcile",
           "record_document_creation",
           "round",
+          "set",
           "sha256",
+          "sorted",
           "sum",
           "system_prompt",
           "to_dict",
+          "to_payload",
           "transition",
           "tuple",
+          "update",
           "upper",
           "utc_timestamp",
           "validate_startup",
@@ -795,12 +844,14 @@
           "apply",
           "apply_execution_event",
           "close_position",
+          "correction",
           "generate_case_file",
           "inspect",
           "position",
           "publish_portfolio_state",
           "reconcile",
           "reconcile_with_broker",
+          "supersession",
           "system_prompt",
           "to_payload",
           "transition"
@@ -822,14 +873,28 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-6334CAA6A9DC-DEP",
+      "dependency_justification": "PR-S03-REQ-BASE-002",
+      "dependency_owner": "PR-S04-IMPL-6334CAA6A9DC",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-6334CAA6A9DC",
       "source_implementation_id": "PR-S04-IMPL-6334CAA6A9DC",
       "target_implementation_ids": [],
+      "transitive_dependency_lineage": [],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-REQ-BASE-003",
+      "consumer": [
+        "PR-S04-IMPL-06AD430811F6",
+        "PR-S04-IMPL-24DC358F970D",
+        "PR-S04-IMPL-24F37EF64F7F",
+        "PR-S04-IMPL-2A5D7C68B387",
+        "PR-S04-IMPL-BFBFC4E1C67A"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-1E58B4A8B021 -> PR-S04-IMPL-06AD430811F6,PR-S04-IMPL-24DC358F970D,PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387,PR-S04-IMPL-BFBFC4E1C67A",
       "dependency_evidence": {
         "attributes": [
           "ACCEPTED",
@@ -1018,9 +1083,19 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-1E58B4A8B021-DEP",
+      "dependency_justification": "PR-S03-REQ-BASE-003",
+      "dependency_owner": "PR-S04-IMPL-1E58B4A8B021",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-1E58B4A8B021",
       "source_implementation_id": "PR-S04-IMPL-1E58B4A8B021",
       "target_implementation_ids": [
+        "PR-S04-IMPL-06AD430811F6",
+        "PR-S04-IMPL-24DC358F970D",
+        "PR-S04-IMPL-24F37EF64F7F",
+        "PR-S04-IMPL-2A5D7C68B387",
+        "PR-S04-IMPL-BFBFC4E1C67A"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-06AD430811F6",
         "PR-S04-IMPL-24DC358F970D",
         "PR-S04-IMPL-24F37EF64F7F",
@@ -1031,7 +1106,11 @@
     },
     {
       "constitutional_justification": "PR-S03-IF-001-REQ",
+      "consumer": [],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-06AD430811F6 -> NO_DIRECT_REPOSITORY_TARGET",
       "dependency_evidence": {
         "attributes": [
           "_build_one",
@@ -1162,14 +1241,25 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-06AD430811F6-DEP",
+      "dependency_justification": "PR-S03-IF-001-REQ",
+      "dependency_owner": "PR-S04-IMPL-06AD430811F6",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-06AD430811F6",
       "source_implementation_id": "PR-S04-IMPL-06AD430811F6",
       "target_implementation_ids": [],
+      "transitive_dependency_lineage": [],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-002-REQ",
+      "consumer": [
+        "PR-S04-IMPL-1E58B4A8B021",
+        "PR-S04-IMPL-2A5D7C68B387"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-5F574EC5C56D -> PR-S04-IMPL-1E58B4A8B021,PR-S04-IMPL-2A5D7C68B387",
       "dependency_evidence": {
         "attributes": [
           "COMPLETE",
@@ -1310,9 +1400,16 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-5F574EC5C56D-DEP",
+      "dependency_justification": "PR-S03-IF-002-REQ",
+      "dependency_owner": "PR-S04-IMPL-5F574EC5C56D",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-5F574EC5C56D",
       "source_implementation_id": "PR-S04-IMPL-5F574EC5C56D",
       "target_implementation_ids": [
+        "PR-S04-IMPL-1E58B4A8B021",
+        "PR-S04-IMPL-2A5D7C68B387"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-1E58B4A8B021",
         "PR-S04-IMPL-2A5D7C68B387"
       ],
@@ -1320,7 +1417,11 @@
     },
     {
       "constitutional_justification": "PR-S03-IF-003-REQ",
+      "consumer": [],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-BFBFC4E1C67A -> NO_DIRECT_REPOSITORY_TARGET",
       "dependency_evidence": {
         "attributes": [
           "BROKER_STATE",
@@ -1482,14 +1583,25 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-BFBFC4E1C67A-DEP",
+      "dependency_justification": "PR-S03-IF-003-REQ",
+      "dependency_owner": "PR-S04-IMPL-BFBFC4E1C67A",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-BFBFC4E1C67A",
       "source_implementation_id": "PR-S04-IMPL-BFBFC4E1C67A",
       "target_implementation_ids": [],
+      "transitive_dependency_lineage": [],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-004-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F",
+        "PR-S04-IMPL-2A5D7C68B387"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-24DC358F970D -> PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387",
       "dependency_evidence": {
         "attributes": [
           "_config",
@@ -1638,9 +1750,16 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-24DC358F970D-DEP",
+      "dependency_justification": "PR-S03-IF-004-REQ",
+      "dependency_owner": "PR-S04-IMPL-24DC358F970D",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-24DC358F970D",
       "source_implementation_id": "PR-S04-IMPL-24DC358F970D",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F",
+        "PR-S04-IMPL-2A5D7C68B387"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F",
         "PR-S04-IMPL-2A5D7C68B387"
       ],
@@ -1648,7 +1767,11 @@
     },
     {
       "constitutional_justification": "PR-S03-IF-005-REQ",
+      "consumer": [],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+      "dependency_criticality": "MATERIAL",
+      "dependency_direction": "PR-S04-IMPL-2A5D7C68B387 -> NO_DIRECT_REPOSITORY_TARGET",
       "dependency_evidence": {
         "attributes": [
           "OPERATIONAL_DOCUMENT",
@@ -1825,14 +1948,24 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-2A5D7C68B387-DEP",
+      "dependency_justification": "PR-S03-IF-005-REQ",
+      "dependency_owner": "PR-S04-IMPL-2A5D7C68B387",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-2A5D7C68B387",
       "source_implementation_id": "PR-S04-IMPL-2A5D7C68B387",
       "target_implementation_ids": [],
+      "transitive_dependency_lineage": [],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-006-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-290227A442CE -> PR-S04-IMPL-24F37EF64F7F",
       "dependency_evidence": {
         "attributes": [
           "TestCase",
@@ -1945,16 +2078,28 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-290227A442CE-DEP",
+      "dependency_justification": "PR-S03-IF-006-REQ",
+      "dependency_owner": "PR-S04-IMPL-290227A442CE",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-290227A442CE",
       "source_implementation_id": "PR-S04-IMPL-290227A442CE",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F"
       ],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-007-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-3C010EAEC4A4 -> PR-S04-IMPL-24F37EF64F7F",
       "dependency_evidence": {
         "attributes": [
           "ARCHIVED",
@@ -1965,7 +2110,9 @@
           "TestCase",
           "apply_execution_event",
           "assertEqual",
+          "assertGreaterEqual",
           "assertIn",
+          "assertIs",
           "assertIsNotNone",
           "assertTrue",
           "audit_id",
@@ -1974,6 +2121,8 @@
           "close_position",
           "contract_id",
           "contract_type",
+          "correction",
+          "direction",
           "event_type",
           "events",
           "exposure",
@@ -1994,11 +2143,14 @@
           "realized_pnl",
           "reconcile_with_broker",
           "resolve",
+          "supersession",
           "system_prompt",
           "total_exposure",
           "total_market_value",
+          "triggering_event",
           "unrealized_pnl",
-          "update"
+          "update",
+          "value"
         ],
         "calls": [
           "AuditService",
@@ -2010,15 +2162,19 @@
           "PromptRepository",
           "apply_execution_event",
           "assertEqual",
+          "assertGreaterEqual",
           "assertIn",
+          "assertIs",
           "assertIsNotNone",
           "assertTrue",
           "canonical_schemas",
           "close_position",
           "config",
+          "correction",
           "execution_event",
           "insert",
           "latest",
+          "len",
           "load",
           "main",
           "position",
@@ -2026,6 +2182,7 @@
           "reconcile_with_broker",
           "resolve",
           "str",
+          "supersession",
           "system_prompt",
           "tuple",
           "update"
@@ -2038,10 +2195,13 @@
           "config",
           "execution_event",
           "test_close_and_archive_zero_quantity_position",
+          "test_correction_and_supersession_preserve_historical_lineage",
+          "test_duplicate_execution_event_replay_is_idempotent",
           "test_execution_event_creates_position_and_portfolio_state",
           "test_existing_position_updates_cost_basis_and_realized_pnl",
           "test_portfolio_exposure_and_system_prompt_are_available",
           "test_reconciliation_mismatch_generates_case_file",
+          "test_reversal_through_zero_resets_direction_and_cost_basis",
           "test_unexpected_exposure_generates_case_file"
         ],
         "imports": [
@@ -2056,16 +2216,28 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-3C010EAEC4A4-DEP",
+      "dependency_justification": "PR-S03-IF-007-REQ",
+      "dependency_owner": "PR-S04-IMPL-3C010EAEC4A4",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-3C010EAEC4A4",
       "source_implementation_id": "PR-S04-IMPL-3C010EAEC4A4",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F"
       ],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-008-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-A97C990C556F -> PR-S04-IMPL-24F37EF64F7F",
       "dependency_evidence": {
         "attributes": [
           "TestCase",
@@ -2120,16 +2292,28 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-A97C990C556F-DEP",
+      "dependency_justification": "PR-S03-IF-008-REQ",
+      "dependency_owner": "PR-S04-IMPL-A97C990C556F",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-A97C990C556F",
       "source_implementation_id": "PR-S04-IMPL-A97C990C556F",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F"
       ],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-009-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-A4D0A1741D58 -> PR-S04-IMPL-24F37EF64F7F",
       "dependency_evidence": {
         "attributes": [
           "TestCase",
@@ -2187,48 +2371,66 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-A4D0A1741D58-DEP",
+      "dependency_justification": "PR-S03-IF-009-REQ",
+      "dependency_owner": "PR-S04-IMPL-A4D0A1741D58",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-A4D0A1741D58",
       "source_implementation_id": "PR-S04-IMPL-A4D0A1741D58",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F"
       ],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-010-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-88A06A01B4BF -> PR-S04-IMPL-24F37EF64F7F",
       "dependency_evidence": {
         "attributes": [
           "TestCase",
           "assertEqual",
           "assertFalse",
-          "assertGreaterEqual",
           "assertTrue",
           "environ",
           "executable",
+          "exists",
+          "issubset",
           "loads",
           "main",
           "parents",
           "pathsep",
           "read_text",
           "resolve",
-          "run"
+          "run",
+          "startswith",
+          "values"
         ],
         "calls": [
           "Path",
           "all",
           "assertEqual",
           "assertFalse",
-          "assertGreaterEqual",
           "assertTrue",
           "dict",
-          "len",
+          "exists",
+          "issubset",
           "loads",
           "main",
           "read_text",
           "resolve",
           "run",
-          "str"
+          "sorted",
+          "startswith",
+          "str",
+          "values"
         ],
         "classes": [
           "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -2236,10 +2438,21 @@
         "dependency_evidence": "AST import, class, function, call, and attribute relationships",
         "functions": [
           "setUpClass",
+          "test_b02_001_exact_audit_deliverables_exist",
+          "test_b02_001_invariants_and_dependencies_are_deterministic",
           "test_b02_001_objects_are_complete",
+          "test_b02_002_authorities_and_invariants_are_defined",
+          "test_b02_002_exact_audit_deliverables_exist",
           "test_b02_002_quantity_cost_and_temporal_rules_exist",
+          "test_b02_002_semantic_constitutions_cover_required_behavior",
+          "test_b02_003_correction_replay_recovery_supersession_are_complete",
+          "test_b02_003_exact_audit_deliverables_exist",
+          "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
           "test_b02_003_historical_integrity_prohibits_fabrication",
-          "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+          "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+          "test_b02_004_completion_is_doctrine_only",
+          "test_b02_004_exact_audit_deliverables_exist",
+          "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
         ],
         "imports": [
           "__future__",
@@ -2252,16 +2465,28 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-88A06A01B4BF-DEP",
+      "dependency_justification": "PR-S03-IF-010-REQ",
+      "dependency_owner": "PR-S04-IMPL-88A06A01B4BF",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-88A06A01B4BF",
       "source_implementation_id": "PR-S04-IMPL-88A06A01B4BF",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F"
       ],
       "transitive_dependency_status": "RECORDED"
     },
     {
       "constitutional_justification": "PR-S03-IF-011-REQ",
+      "consumer": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
       "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+      "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+      "dependency_criticality": "CRITICAL",
+      "dependency_direction": "PR-S04-IMPL-B80BFF0A11B6 -> PR-S04-IMPL-24F37EF64F7F",
       "dependency_evidence": {
         "attributes": [
           "TestCase",
@@ -2271,6 +2496,7 @@
           "assertTrue",
           "environ",
           "executable",
+          "exists",
           "issubset",
           "loads",
           "main",
@@ -2278,16 +2504,19 @@
           "pathsep",
           "read_text",
           "resolve",
-          "run"
+          "run",
+          "values"
         ],
         "calls": [
           "Path",
           "all",
+          "any",
           "assertEqual",
           "assertFalse",
           "assertGreaterEqual",
           "assertTrue",
           "dict",
+          "exists",
           "issubset",
           "len",
           "loads",
@@ -2295,7 +2524,9 @@
           "read_text",
           "resolve",
           "run",
-          "str"
+          "sorted",
+          "str",
+          "values"
         ],
         "classes": [
           "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -2303,10 +2534,21 @@
         "dependency_evidence": "AST import, class, function, call, and attribute relationships",
         "functions": [
           "setUpClass",
+          "test_b03_001_contracts_are_deterministic_and_auditable",
+          "test_b03_001_exact_audit_deliverables_exist",
           "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+          "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+          "test_b03_002_exact_audit_deliverables_exist",
           "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+          "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+          "test_b03_003_exact_audit_deliverables_exist",
+          "test_b03_003_requirements_are_atomic_owned_and_classified",
           "test_b03_003_requirements_have_bidirectional_traceability",
-          "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+          "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+          "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+          "test_b03_004_completion_is_doctrine_only",
+          "test_b03_004_exact_audit_deliverables_exist",
+          "test_b03_004_reconciles_series_3_domains_without_conflicts"
         ],
         "imports": [
           "__future__",
@@ -2319,9 +2561,15 @@
         ]
       },
       "dependency_id": "PR-S04-IMPL-B80BFF0A11B6-DEP",
+      "dependency_justification": "PR-S03-IF-011-REQ",
+      "dependency_owner": "PR-S04-IMPL-B80BFF0A11B6",
       "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+      "producer": "PR-S04-IMPL-B80BFF0A11B6",
       "source_implementation_id": "PR-S04-IMPL-B80BFF0A11B6",
       "target_implementation_ids": [
+        "PR-S04-IMPL-24F37EF64F7F"
+      ],
+      "transitive_dependency_lineage": [
         "PR-S04-IMPL-24F37EF64F7F"
       ],
       "transitive_dependency_status": "RECORDED"
@@ -2550,6 +2798,8 @@
           "REDUCING",
           "SHORT",
           "_apply_existing",
+          "_execution_artifacts",
+          "_execution_events",
           "_persist_contract",
           "_portfolio_contract",
           "_position_contract",
@@ -2578,6 +2828,7 @@
           "history",
           "inspect",
           "items",
+          "join",
           "market_value",
           "monitor",
           "name",
@@ -2600,9 +2851,11 @@
           "system_prompt",
           "timestamp_utc",
           "to_dict",
+          "to_payload",
           "total_exposure",
           "transition",
           "unrealized_pnl",
+          "update",
           "upper",
           "validate_startup",
           "value",
@@ -2637,6 +2890,7 @@
           "dumps",
           "encode",
           "fields",
+          "float",
           "generate_case_file",
           "generate_document_id",
           "get",
@@ -2646,6 +2900,7 @@
           "is_dataclass",
           "isinstance",
           "items",
+          "join",
           "len",
           "max",
           "min",
@@ -2654,12 +2909,16 @@
           "reconcile",
           "record_document_creation",
           "round",
+          "set",
           "sha256",
+          "sorted",
           "sum",
           "system_prompt",
           "to_dict",
+          "to_payload",
           "transition",
           "tuple",
+          "update",
           "upper",
           "utc_timestamp",
           "validate_startup",
@@ -2696,12 +2955,14 @@
           "apply",
           "apply_execution_event",
           "close_position",
+          "correction",
           "generate_case_file",
           "inspect",
           "position",
           "publish_portfolio_state",
           "reconcile",
           "reconcile_with_broker",
+          "supersession",
           "system_prompt",
           "to_payload",
           "transition"
@@ -2727,7 +2988,7 @@
       "reconciliation_participation": false,
       "repository_location": "src/argos/trader/position_management.py",
       "runtime_participation": true,
-      "sha256": "7d241f88037bccd5c1c66238e04ebf66436e79900744d503e1b72c6c1b198518",
+      "sha256": "1901c50dec263459294e72bb6457b6a1fe3be5120299b433ec0174cdb1667322",
       "verifier_participation": false
     },
     {
@@ -3948,7 +4209,9 @@
           "TestCase",
           "apply_execution_event",
           "assertEqual",
+          "assertGreaterEqual",
           "assertIn",
+          "assertIs",
           "assertIsNotNone",
           "assertTrue",
           "audit_id",
@@ -3957,6 +4220,8 @@
           "close_position",
           "contract_id",
           "contract_type",
+          "correction",
+          "direction",
           "event_type",
           "events",
           "exposure",
@@ -3977,11 +4242,14 @@
           "realized_pnl",
           "reconcile_with_broker",
           "resolve",
+          "supersession",
           "system_prompt",
           "total_exposure",
           "total_market_value",
+          "triggering_event",
           "unrealized_pnl",
-          "update"
+          "update",
+          "value"
         ],
         "calls": [
           "AuditService",
@@ -3993,15 +4261,19 @@
           "PromptRepository",
           "apply_execution_event",
           "assertEqual",
+          "assertGreaterEqual",
           "assertIn",
+          "assertIs",
           "assertIsNotNone",
           "assertTrue",
           "canonical_schemas",
           "close_position",
           "config",
+          "correction",
           "execution_event",
           "insert",
           "latest",
+          "len",
           "load",
           "main",
           "position",
@@ -4009,6 +4281,7 @@
           "reconcile_with_broker",
           "resolve",
           "str",
+          "supersession",
           "system_prompt",
           "tuple",
           "update"
@@ -4021,10 +4294,13 @@
           "config",
           "execution_event",
           "test_close_and_archive_zero_quantity_position",
+          "test_correction_and_supersession_preserve_historical_lineage",
+          "test_duplicate_execution_event_replay_is_idempotent",
           "test_execution_event_creates_position_and_portfolio_state",
           "test_existing_position_updates_cost_basis_and_realized_pnl",
           "test_portfolio_exposure_and_system_prompt_are_available",
           "test_reconciliation_mismatch_generates_case_file",
+          "test_reversal_through_zero_resets_direction_and_cost_basis",
           "test_unexpected_exposure_generates_case_file"
         ],
         "imports": [
@@ -4043,7 +4319,7 @@
       "reconciliation_participation": false,
       "repository_location": "Tests/test_position_management_office.py",
       "runtime_participation": false,
-      "sha256": "342ae9e1492d6df288413c329c6ebaa86bebede8a7ebe6e4e8eef6cc57bb1fb6",
+      "sha256": "aa0873a5b8da95becfd99a3c597e7fe815241b95357761ce2f2a4979dff9dd13",
       "verifier_participation": true
     },
     {
@@ -4215,33 +4491,39 @@
           "TestCase",
           "assertEqual",
           "assertFalse",
-          "assertGreaterEqual",
           "assertTrue",
           "environ",
           "executable",
+          "exists",
+          "issubset",
           "loads",
           "main",
           "parents",
           "pathsep",
           "read_text",
           "resolve",
-          "run"
+          "run",
+          "startswith",
+          "values"
         ],
         "calls": [
           "Path",
           "all",
           "assertEqual",
           "assertFalse",
-          "assertGreaterEqual",
           "assertTrue",
           "dict",
-          "len",
+          "exists",
+          "issubset",
           "loads",
           "main",
           "read_text",
           "resolve",
           "run",
-          "str"
+          "sorted",
+          "startswith",
+          "str",
+          "values"
         ],
         "classes": [
           "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -4249,10 +4531,21 @@
         "dependency_evidence": "AST import, class, function, call, and attribute relationships",
         "functions": [
           "setUpClass",
+          "test_b02_001_exact_audit_deliverables_exist",
+          "test_b02_001_invariants_and_dependencies_are_deterministic",
           "test_b02_001_objects_are_complete",
+          "test_b02_002_authorities_and_invariants_are_defined",
+          "test_b02_002_exact_audit_deliverables_exist",
           "test_b02_002_quantity_cost_and_temporal_rules_exist",
+          "test_b02_002_semantic_constitutions_cover_required_behavior",
+          "test_b02_003_correction_replay_recovery_supersession_are_complete",
+          "test_b02_003_exact_audit_deliverables_exist",
+          "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
           "test_b02_003_historical_integrity_prohibits_fabrication",
-          "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+          "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+          "test_b02_004_completion_is_doctrine_only",
+          "test_b02_004_exact_audit_deliverables_exist",
+          "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
         ],
         "imports": [
           "__future__",
@@ -4269,7 +4562,7 @@
       "reconciliation_participation": false,
       "repository_location": "Tests/test_position_registry_rm001_s02_object_lifecycle.py",
       "runtime_participation": false,
-      "sha256": "c11e17525080cc9c79218d3c81f98a9ecb9201f9f5acccad88cce97487beb78b",
+      "sha256": "af4cba3e8914e190eb904ff0fdb32b702b92249d5824d3674a3ee6fa67b33281",
       "verifier_participation": true
     },
     {
@@ -4294,6 +4587,7 @@
           "assertTrue",
           "environ",
           "executable",
+          "exists",
           "issubset",
           "loads",
           "main",
@@ -4301,16 +4595,19 @@
           "pathsep",
           "read_text",
           "resolve",
-          "run"
+          "run",
+          "values"
         ],
         "calls": [
           "Path",
           "all",
+          "any",
           "assertEqual",
           "assertFalse",
           "assertGreaterEqual",
           "assertTrue",
           "dict",
+          "exists",
           "issubset",
           "len",
           "loads",
@@ -4318,7 +4615,9 @@
           "read_text",
           "resolve",
           "run",
-          "str"
+          "sorted",
+          "str",
+          "values"
         ],
         "classes": [
           "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -4326,10 +4625,21 @@
         "dependency_evidence": "AST import, class, function, call, and attribute relationships",
         "functions": [
           "setUpClass",
+          "test_b03_001_contracts_are_deterministic_and_auditable",
+          "test_b03_001_exact_audit_deliverables_exist",
           "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+          "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+          "test_b03_002_exact_audit_deliverables_exist",
           "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+          "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+          "test_b03_003_exact_audit_deliverables_exist",
+          "test_b03_003_requirements_are_atomic_owned_and_classified",
           "test_b03_003_requirements_have_bidirectional_traceability",
-          "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+          "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+          "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+          "test_b03_004_completion_is_doctrine_only",
+          "test_b03_004_exact_audit_deliverables_exist",
+          "test_b03_004_reconciles_series_3_domains_without_conflicts"
         ],
         "imports": [
           "__future__",
@@ -4346,7 +4656,7 @@
       "reconciliation_participation": false,
       "repository_location": "Tests/test_position_registry_rm001_s03_interface_evidence_traceability.py",
       "runtime_participation": false,
-      "sha256": "7109749efd489dba05ee347341ae6b32808184d608ba149f3e1c8393ee8a2d83",
+      "sha256": "4e6c0fe8bd776c939a5ba167ebbd2f858ae2ced30bd886aea1f077d8931d18f8",
       "verifier_participation": true
     }
   ],
@@ -5295,7 +5605,7 @@
     {
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
       "event_dependencies": [
-        "reconciliation"
+        "replay"
       ],
       "evidence_dependencies": [
         "PR-S03-EVD-005"
@@ -5304,7 +5614,7 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-      "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
+      "implementation_obligation": "Implement and preserve replay_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-029",
       "participating_implementation_artifacts": [
         "PR-S04-IMPL-24F37EF64F7F"
@@ -5327,7 +5637,7 @@
     {
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
       "event_dependencies": [
-        "correction"
+        "recovery"
       ],
       "evidence_dependencies": [
         "PR-S03-EVD-006"
@@ -5336,7 +5646,7 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-      "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
+      "implementation_obligation": "Implement and preserve recovery_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-030",
       "participating_implementation_artifacts": [
         "PR-S04-IMPL-6334CAA6A9DC"
@@ -5359,7 +5669,7 @@
     {
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
       "event_dependencies": [
-        "anomaly"
+        "correction"
       ],
       "evidence_dependencies": [
         "PR-S03-EVD-007"
@@ -5368,7 +5678,7 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-      "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
+      "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-031",
       "participating_implementation_artifacts": [
         "PR-S04-IMPL-1E58B4A8B021"
@@ -5423,7 +5733,7 @@
     {
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
       "event_dependencies": [
-        "archival"
+        "reconciliation"
       ],
       "evidence_dependencies": [
         "PR-S03-EVD-009"
@@ -5432,7 +5742,7 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-      "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
+      "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-033",
       "participating_implementation_artifacts": [
         "PR-S04-IMPL-5F574EC5C56D"
@@ -5442,6 +5752,70 @@
         "Position Registry persistence/replay custody"
       ],
       "requirement_id": "PR-S03-REQ-EVD-009",
+      "transitive_dependencies": [
+        "constitutional baseline",
+        "implementation inventory",
+        "verification population"
+      ],
+      "verification_status": "MAPPED_NOT_EXECUTED",
+      "verifier_dependencies": [
+        "PR-S04-IMPL-290227A442CE"
+      ]
+    },
+    {
+      "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "event_dependencies": [
+        "anomaly"
+      ],
+      "evidence_dependencies": [
+        "PR-S03-EVD-010"
+      ],
+      "fixture_dependencies": [
+        "dependency-derived fixture population; no fixture execution in S04"
+      ],
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
+      "obligation_id": "PR-S04-OBL-034",
+      "participating_implementation_artifacts": [
+        "PR-S04-IMPL-BFBFC4E1C67A"
+      ],
+      "participating_interfaces": "applicable evidence-producing interface",
+      "persistence_dependencies": [
+        "Position Registry persistence/replay custody"
+      ],
+      "requirement_id": "PR-S03-REQ-EVD-010",
+      "transitive_dependencies": [
+        "constitutional baseline",
+        "implementation inventory",
+        "verification population"
+      ],
+      "verification_status": "MAPPED_NOT_EXECUTED",
+      "verifier_dependencies": [
+        "PR-S04-IMPL-290227A442CE"
+      ]
+    },
+    {
+      "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "event_dependencies": [
+        "archival"
+      ],
+      "evidence_dependencies": [
+        "PR-S03-EVD-011"
+      ],
+      "fixture_dependencies": [
+        "dependency-derived fixture population; no fixture execution in S04"
+      ],
+      "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
+      "obligation_id": "PR-S04-OBL-035",
+      "participating_implementation_artifacts": [
+        "PR-S04-IMPL-24DC358F970D"
+      ],
+      "participating_interfaces": "applicable evidence-producing interface",
+      "persistence_dependencies": [
+        "Position Registry persistence/replay custody"
+      ],
+      "requirement_id": "PR-S03-REQ-EVD-011",
       "transitive_dependencies": [
         "constitutional baseline",
         "implementation inventory",
@@ -5807,7 +6181,9 @@
             "TestCase",
             "apply_execution_event",
             "assertEqual",
+            "assertGreaterEqual",
             "assertIn",
+            "assertIs",
             "assertIsNotNone",
             "assertTrue",
             "audit_id",
@@ -5816,6 +6192,8 @@
             "close_position",
             "contract_id",
             "contract_type",
+            "correction",
+            "direction",
             "event_type",
             "events",
             "exposure",
@@ -5836,11 +6214,14 @@
             "realized_pnl",
             "reconcile_with_broker",
             "resolve",
+            "supersession",
             "system_prompt",
             "total_exposure",
             "total_market_value",
+            "triggering_event",
             "unrealized_pnl",
-            "update"
+            "update",
+            "value"
           ],
           "calls": [
             "AuditService",
@@ -5852,15 +6233,19 @@
             "PromptRepository",
             "apply_execution_event",
             "assertEqual",
+            "assertGreaterEqual",
             "assertIn",
+            "assertIs",
             "assertIsNotNone",
             "assertTrue",
             "canonical_schemas",
             "close_position",
             "config",
+            "correction",
             "execution_event",
             "insert",
             "latest",
+            "len",
             "load",
             "main",
             "position",
@@ -5868,6 +6253,7 @@
             "reconcile_with_broker",
             "resolve",
             "str",
+            "supersession",
             "system_prompt",
             "tuple",
             "update"
@@ -5880,10 +6266,13 @@
             "config",
             "execution_event",
             "test_close_and_archive_zero_quantity_position",
+            "test_correction_and_supersession_preserve_historical_lineage",
+            "test_duplicate_execution_event_replay_is_idempotent",
             "test_execution_event_creates_position_and_portfolio_state",
             "test_existing_position_updates_cost_basis_and_realized_pnl",
             "test_portfolio_exposure_and_system_prompt_are_available",
             "test_reconciliation_mismatch_generates_case_file",
+            "test_reversal_through_zero_resets_direction_and_cost_basis",
             "test_unexpected_exposure_generates_case_file"
           ],
           "imports": [
@@ -6059,33 +6448,39 @@
             "TestCase",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "environ",
             "executable",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "parents",
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "startswith",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "dict",
-            "len",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "startswith",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -6093,10 +6488,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b02_001_exact_audit_deliverables_exist",
+            "test_b02_001_invariants_and_dependencies_are_deterministic",
             "test_b02_001_objects_are_complete",
+            "test_b02_002_authorities_and_invariants_are_defined",
+            "test_b02_002_exact_audit_deliverables_exist",
             "test_b02_002_quantity_cost_and_temporal_rules_exist",
+            "test_b02_002_semantic_constitutions_cover_required_behavior",
+            "test_b02_003_correction_replay_recovery_supersession_are_complete",
+            "test_b02_003_exact_audit_deliverables_exist",
+            "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
             "test_b02_003_historical_integrity_prohibits_fabrication",
-            "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+            "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+            "test_b02_004_completion_is_doctrine_only",
+            "test_b02_004_exact_audit_deliverables_exist",
+            "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -6133,6 +6539,7 @@
             "assertTrue",
             "environ",
             "executable",
+            "exists",
             "issubset",
             "loads",
             "main",
@@ -6140,16 +6547,19 @@
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
+            "any",
             "assertEqual",
             "assertFalse",
             "assertGreaterEqual",
             "assertTrue",
             "dict",
+            "exists",
             "issubset",
             "len",
             "loads",
@@ -6157,7 +6567,9 @@
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -6165,10 +6577,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b03_001_contracts_are_deterministic_and_auditable",
+            "test_b03_001_exact_audit_deliverables_exist",
             "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+            "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+            "test_b03_002_exact_audit_deliverables_exist",
             "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+            "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+            "test_b03_003_exact_audit_deliverables_exist",
+            "test_b03_003_requirements_are_atomic_owned_and_classified",
             "test_b03_003_requirements_have_bidirectional_traceability",
-            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+            "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+            "test_b03_004_completion_is_doctrine_only",
+            "test_b03_004_exact_audit_deliverables_exist",
+            "test_b03_004_reconciles_series_3_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -6645,33 +7068,39 @@
             "TestCase",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "environ",
             "executable",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "parents",
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "startswith",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "dict",
-            "len",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "startswith",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -6679,10 +7108,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b02_001_exact_audit_deliverables_exist",
+            "test_b02_001_invariants_and_dependencies_are_deterministic",
             "test_b02_001_objects_are_complete",
+            "test_b02_002_authorities_and_invariants_are_defined",
+            "test_b02_002_exact_audit_deliverables_exist",
             "test_b02_002_quantity_cost_and_temporal_rules_exist",
+            "test_b02_002_semantic_constitutions_cover_required_behavior",
+            "test_b02_003_correction_replay_recovery_supersession_are_complete",
+            "test_b02_003_exact_audit_deliverables_exist",
+            "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
             "test_b02_003_historical_integrity_prohibits_fabrication",
-            "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+            "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+            "test_b02_004_completion_is_doctrine_only",
+            "test_b02_004_exact_audit_deliverables_exist",
+            "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -6709,6 +7149,7 @@
             "assertTrue",
             "environ",
             "executable",
+            "exists",
             "issubset",
             "loads",
             "main",
@@ -6716,16 +7157,19 @@
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
+            "any",
             "assertEqual",
             "assertFalse",
             "assertGreaterEqual",
             "assertTrue",
             "dict",
+            "exists",
             "issubset",
             "len",
             "loads",
@@ -6733,7 +7177,9 @@
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -6741,10 +7187,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b03_001_contracts_are_deterministic_and_auditable",
+            "test_b03_001_exact_audit_deliverables_exist",
             "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+            "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+            "test_b03_002_exact_audit_deliverables_exist",
             "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+            "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+            "test_b03_003_exact_audit_deliverables_exist",
+            "test_b03_003_requirements_are_atomic_owned_and_classified",
             "test_b03_003_requirements_have_bidirectional_traceability",
-            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+            "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+            "test_b03_004_completion_is_doctrine_only",
+            "test_b03_004_exact_audit_deliverables_exist",
+            "test_b03_004_reconciles_series_3_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -6972,6 +7429,8 @@
             "REDUCING",
             "SHORT",
             "_apply_existing",
+            "_execution_artifacts",
+            "_execution_events",
             "_persist_contract",
             "_portfolio_contract",
             "_position_contract",
@@ -7000,6 +7459,7 @@
             "history",
             "inspect",
             "items",
+            "join",
             "market_value",
             "monitor",
             "name",
@@ -7022,9 +7482,11 @@
             "system_prompt",
             "timestamp_utc",
             "to_dict",
+            "to_payload",
             "total_exposure",
             "transition",
             "unrealized_pnl",
+            "update",
             "upper",
             "validate_startup",
             "value",
@@ -7059,6 +7521,7 @@
             "dumps",
             "encode",
             "fields",
+            "float",
             "generate_case_file",
             "generate_document_id",
             "get",
@@ -7068,6 +7531,7 @@
             "is_dataclass",
             "isinstance",
             "items",
+            "join",
             "len",
             "max",
             "min",
@@ -7076,12 +7540,16 @@
             "reconcile",
             "record_document_creation",
             "round",
+            "set",
             "sha256",
+            "sorted",
             "sum",
             "system_prompt",
             "to_dict",
+            "to_payload",
             "transition",
             "tuple",
+            "update",
             "upper",
             "utc_timestamp",
             "validate_startup",
@@ -7118,12 +7586,14 @@
             "apply",
             "apply_execution_event",
             "close_position",
+            "correction",
             "generate_case_file",
             "inspect",
             "position",
             "publish_portfolio_state",
             "reconcile",
             "reconcile_with_broker",
+            "supersession",
             "system_prompt",
             "to_payload",
             "transition"
@@ -9069,7 +9539,7 @@
         {
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
           "event_dependencies": [
-            "reconciliation"
+            "replay"
           ],
           "evidence_dependencies": [
             "PR-S03-EVD-005"
@@ -9078,7 +9548,7 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-          "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
+          "implementation_obligation": "Implement and preserve replay_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-029",
           "participating_implementation_artifacts": [
             "PR-S04-IMPL-24F37EF64F7F"
@@ -9101,7 +9571,7 @@
         {
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
           "event_dependencies": [
-            "correction"
+            "recovery"
           ],
           "evidence_dependencies": [
             "PR-S03-EVD-006"
@@ -9110,7 +9580,7 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-          "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
+          "implementation_obligation": "Implement and preserve recovery_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-030",
           "participating_implementation_artifacts": [
             "PR-S04-IMPL-6334CAA6A9DC"
@@ -9133,7 +9603,7 @@
         {
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
           "event_dependencies": [
-            "anomaly"
+            "correction"
           ],
           "evidence_dependencies": [
             "PR-S03-EVD-007"
@@ -9142,7 +9612,7 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-          "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
+          "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-031",
           "participating_implementation_artifacts": [
             "PR-S04-IMPL-1E58B4A8B021"
@@ -9197,7 +9667,7 @@
         {
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
           "event_dependencies": [
-            "archival"
+            "reconciliation"
           ],
           "evidence_dependencies": [
             "PR-S03-EVD-009"
@@ -9206,7 +9676,7 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-          "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
+          "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-033",
           "participating_implementation_artifacts": [
             "PR-S04-IMPL-5F574EC5C56D"
@@ -9225,12 +9695,80 @@
           "verifier_dependencies": [
             "PR-S04-IMPL-290227A442CE"
           ]
+        },
+        {
+          "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "event_dependencies": [
+            "anomaly"
+          ],
+          "evidence_dependencies": [
+            "PR-S03-EVD-010"
+          ],
+          "fixture_dependencies": [
+            "dependency-derived fixture population; no fixture execution in S04"
+          ],
+          "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
+          "obligation_id": "PR-S04-OBL-034",
+          "participating_implementation_artifacts": [
+            "PR-S04-IMPL-BFBFC4E1C67A"
+          ],
+          "participating_interfaces": "applicable evidence-producing interface",
+          "persistence_dependencies": [
+            "Position Registry persistence/replay custody"
+          ],
+          "requirement_id": "PR-S03-REQ-EVD-010",
+          "transitive_dependencies": [
+            "constitutional baseline",
+            "implementation inventory",
+            "verification population"
+          ],
+          "verification_status": "MAPPED_NOT_EXECUTED",
+          "verifier_dependencies": [
+            "PR-S04-IMPL-290227A442CE"
+          ]
+        },
+        {
+          "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "event_dependencies": [
+            "archival"
+          ],
+          "evidence_dependencies": [
+            "PR-S03-EVD-011"
+          ],
+          "fixture_dependencies": [
+            "dependency-derived fixture population; no fixture execution in S04"
+          ],
+          "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
+          "obligation_id": "PR-S04-OBL-035",
+          "participating_implementation_artifacts": [
+            "PR-S04-IMPL-24DC358F970D"
+          ],
+          "participating_interfaces": "applicable evidence-producing interface",
+          "persistence_dependencies": [
+            "Position Registry persistence/replay custody"
+          ],
+          "requirement_id": "PR-S03-REQ-EVD-011",
+          "transitive_dependencies": [
+            "constitutional baseline",
+            "implementation inventory",
+            "verification population"
+          ],
+          "verification_status": "MAPPED_NOT_EXECUTED",
+          "verifier_dependencies": [
+            "PR-S04-IMPL-290227A442CE"
+          ]
         }
       ],
       "relationships": [
         {
           "constitutional_justification": "PR-S03-REQ-BASE-001",
+          "consumer": [],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-24F37EF64F7F -> NO_DIRECT_REPOSITORY_TARGET",
           "dependency_evidence": {
             "attributes": [
               "ARCHIVED",
@@ -9407,14 +9945,22 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-24F37EF64F7F-DEP",
+          "dependency_justification": "PR-S03-REQ-BASE-001",
+          "dependency_owner": "PR-S04-IMPL-24F37EF64F7F",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-24F37EF64F7F",
           "source_implementation_id": "PR-S04-IMPL-24F37EF64F7F",
           "target_implementation_ids": [],
+          "transitive_dependency_lineage": [],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-REQ-BASE-002",
+          "consumer": [],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-6334CAA6A9DC -> NO_DIRECT_REPOSITORY_TARGET",
           "dependency_evidence": {
             "attributes": [
               "ACCUMULATING",
@@ -9427,6 +9973,8 @@
               "REDUCING",
               "SHORT",
               "_apply_existing",
+              "_execution_artifacts",
+              "_execution_events",
               "_persist_contract",
               "_portfolio_contract",
               "_position_contract",
@@ -9455,6 +10003,7 @@
               "history",
               "inspect",
               "items",
+              "join",
               "market_value",
               "monitor",
               "name",
@@ -9477,9 +10026,11 @@
               "system_prompt",
               "timestamp_utc",
               "to_dict",
+              "to_payload",
               "total_exposure",
               "transition",
               "unrealized_pnl",
+              "update",
               "upper",
               "validate_startup",
               "value",
@@ -9514,6 +10065,7 @@
               "dumps",
               "encode",
               "fields",
+              "float",
               "generate_case_file",
               "generate_document_id",
               "get",
@@ -9523,6 +10075,7 @@
               "is_dataclass",
               "isinstance",
               "items",
+              "join",
               "len",
               "max",
               "min",
@@ -9531,12 +10084,16 @@
               "reconcile",
               "record_document_creation",
               "round",
+              "set",
               "sha256",
+              "sorted",
               "sum",
               "system_prompt",
               "to_dict",
+              "to_payload",
               "transition",
               "tuple",
+              "update",
               "upper",
               "utc_timestamp",
               "validate_startup",
@@ -9573,12 +10130,14 @@
               "apply",
               "apply_execution_event",
               "close_position",
+              "correction",
               "generate_case_file",
               "inspect",
               "position",
               "publish_portfolio_state",
               "reconcile",
               "reconcile_with_broker",
+              "supersession",
               "system_prompt",
               "to_payload",
               "transition"
@@ -9600,14 +10159,28 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-6334CAA6A9DC-DEP",
+          "dependency_justification": "PR-S03-REQ-BASE-002",
+          "dependency_owner": "PR-S04-IMPL-6334CAA6A9DC",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-6334CAA6A9DC",
           "source_implementation_id": "PR-S04-IMPL-6334CAA6A9DC",
           "target_implementation_ids": [],
+          "transitive_dependency_lineage": [],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-REQ-BASE-003",
+          "consumer": [
+            "PR-S04-IMPL-06AD430811F6",
+            "PR-S04-IMPL-24DC358F970D",
+            "PR-S04-IMPL-24F37EF64F7F",
+            "PR-S04-IMPL-2A5D7C68B387",
+            "PR-S04-IMPL-BFBFC4E1C67A"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-1E58B4A8B021 -> PR-S04-IMPL-06AD430811F6,PR-S04-IMPL-24DC358F970D,PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387,PR-S04-IMPL-BFBFC4E1C67A",
           "dependency_evidence": {
             "attributes": [
               "ACCEPTED",
@@ -9796,9 +10369,19 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-1E58B4A8B021-DEP",
+          "dependency_justification": "PR-S03-REQ-BASE-003",
+          "dependency_owner": "PR-S04-IMPL-1E58B4A8B021",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-1E58B4A8B021",
           "source_implementation_id": "PR-S04-IMPL-1E58B4A8B021",
           "target_implementation_ids": [
+            "PR-S04-IMPL-06AD430811F6",
+            "PR-S04-IMPL-24DC358F970D",
+            "PR-S04-IMPL-24F37EF64F7F",
+            "PR-S04-IMPL-2A5D7C68B387",
+            "PR-S04-IMPL-BFBFC4E1C67A"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-06AD430811F6",
             "PR-S04-IMPL-24DC358F970D",
             "PR-S04-IMPL-24F37EF64F7F",
@@ -9809,7 +10392,11 @@
         },
         {
           "constitutional_justification": "PR-S03-IF-001-REQ",
+          "consumer": [],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-06AD430811F6 -> NO_DIRECT_REPOSITORY_TARGET",
           "dependency_evidence": {
             "attributes": [
               "_build_one",
@@ -9940,14 +10527,25 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-06AD430811F6-DEP",
+          "dependency_justification": "PR-S03-IF-001-REQ",
+          "dependency_owner": "PR-S04-IMPL-06AD430811F6",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-06AD430811F6",
           "source_implementation_id": "PR-S04-IMPL-06AD430811F6",
           "target_implementation_ids": [],
+          "transitive_dependency_lineage": [],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-002-REQ",
+          "consumer": [
+            "PR-S04-IMPL-1E58B4A8B021",
+            "PR-S04-IMPL-2A5D7C68B387"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-5F574EC5C56D -> PR-S04-IMPL-1E58B4A8B021,PR-S04-IMPL-2A5D7C68B387",
           "dependency_evidence": {
             "attributes": [
               "COMPLETE",
@@ -10088,9 +10686,16 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-5F574EC5C56D-DEP",
+          "dependency_justification": "PR-S03-IF-002-REQ",
+          "dependency_owner": "PR-S04-IMPL-5F574EC5C56D",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-5F574EC5C56D",
           "source_implementation_id": "PR-S04-IMPL-5F574EC5C56D",
           "target_implementation_ids": [
+            "PR-S04-IMPL-1E58B4A8B021",
+            "PR-S04-IMPL-2A5D7C68B387"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-1E58B4A8B021",
             "PR-S04-IMPL-2A5D7C68B387"
           ],
@@ -10098,7 +10703,11 @@
         },
         {
           "constitutional_justification": "PR-S03-IF-003-REQ",
+          "consumer": [],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-BFBFC4E1C67A -> NO_DIRECT_REPOSITORY_TARGET",
           "dependency_evidence": {
             "attributes": [
               "BROKER_STATE",
@@ -10260,14 +10869,25 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-BFBFC4E1C67A-DEP",
+          "dependency_justification": "PR-S03-IF-003-REQ",
+          "dependency_owner": "PR-S04-IMPL-BFBFC4E1C67A",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-BFBFC4E1C67A",
           "source_implementation_id": "PR-S04-IMPL-BFBFC4E1C67A",
           "target_implementation_ids": [],
+          "transitive_dependency_lineage": [],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-004-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F",
+            "PR-S04-IMPL-2A5D7C68B387"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-24DC358F970D -> PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387",
           "dependency_evidence": {
             "attributes": [
               "_config",
@@ -10416,9 +11036,16 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-24DC358F970D-DEP",
+          "dependency_justification": "PR-S03-IF-004-REQ",
+          "dependency_owner": "PR-S04-IMPL-24DC358F970D",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-24DC358F970D",
           "source_implementation_id": "PR-S04-IMPL-24DC358F970D",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F",
+            "PR-S04-IMPL-2A5D7C68B387"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F",
             "PR-S04-IMPL-2A5D7C68B387"
           ],
@@ -10426,7 +11053,11 @@
         },
         {
           "constitutional_justification": "PR-S03-IF-005-REQ",
+          "consumer": [],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_ARTIFACT_PARTICIPATION",
+          "dependency_criticality": "MATERIAL",
+          "dependency_direction": "PR-S04-IMPL-2A5D7C68B387 -> NO_DIRECT_REPOSITORY_TARGET",
           "dependency_evidence": {
             "attributes": [
               "OPERATIONAL_DOCUMENT",
@@ -10603,14 +11234,24 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-2A5D7C68B387-DEP",
+          "dependency_justification": "PR-S03-IF-005-REQ",
+          "dependency_owner": "PR-S04-IMPL-2A5D7C68B387",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-2A5D7C68B387",
           "source_implementation_id": "PR-S04-IMPL-2A5D7C68B387",
           "target_implementation_ids": [],
+          "transitive_dependency_lineage": [],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-006-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-290227A442CE -> PR-S04-IMPL-24F37EF64F7F",
           "dependency_evidence": {
             "attributes": [
               "TestCase",
@@ -10723,16 +11364,28 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-290227A442CE-DEP",
+          "dependency_justification": "PR-S03-IF-006-REQ",
+          "dependency_owner": "PR-S04-IMPL-290227A442CE",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-290227A442CE",
           "source_implementation_id": "PR-S04-IMPL-290227A442CE",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F"
           ],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-007-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-3C010EAEC4A4 -> PR-S04-IMPL-24F37EF64F7F",
           "dependency_evidence": {
             "attributes": [
               "ARCHIVED",
@@ -10743,7 +11396,9 @@
               "TestCase",
               "apply_execution_event",
               "assertEqual",
+              "assertGreaterEqual",
               "assertIn",
+              "assertIs",
               "assertIsNotNone",
               "assertTrue",
               "audit_id",
@@ -10752,6 +11407,8 @@
               "close_position",
               "contract_id",
               "contract_type",
+              "correction",
+              "direction",
               "event_type",
               "events",
               "exposure",
@@ -10772,11 +11429,14 @@
               "realized_pnl",
               "reconcile_with_broker",
               "resolve",
+              "supersession",
               "system_prompt",
               "total_exposure",
               "total_market_value",
+              "triggering_event",
               "unrealized_pnl",
-              "update"
+              "update",
+              "value"
             ],
             "calls": [
               "AuditService",
@@ -10788,15 +11448,19 @@
               "PromptRepository",
               "apply_execution_event",
               "assertEqual",
+              "assertGreaterEqual",
               "assertIn",
+              "assertIs",
               "assertIsNotNone",
               "assertTrue",
               "canonical_schemas",
               "close_position",
               "config",
+              "correction",
               "execution_event",
               "insert",
               "latest",
+              "len",
               "load",
               "main",
               "position",
@@ -10804,6 +11468,7 @@
               "reconcile_with_broker",
               "resolve",
               "str",
+              "supersession",
               "system_prompt",
               "tuple",
               "update"
@@ -10816,10 +11481,13 @@
               "config",
               "execution_event",
               "test_close_and_archive_zero_quantity_position",
+              "test_correction_and_supersession_preserve_historical_lineage",
+              "test_duplicate_execution_event_replay_is_idempotent",
               "test_execution_event_creates_position_and_portfolio_state",
               "test_existing_position_updates_cost_basis_and_realized_pnl",
               "test_portfolio_exposure_and_system_prompt_are_available",
               "test_reconciliation_mismatch_generates_case_file",
+              "test_reversal_through_zero_resets_direction_and_cost_basis",
               "test_unexpected_exposure_generates_case_file"
             ],
             "imports": [
@@ -10834,16 +11502,28 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-3C010EAEC4A4-DEP",
+          "dependency_justification": "PR-S03-IF-007-REQ",
+          "dependency_owner": "PR-S04-IMPL-3C010EAEC4A4",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-3C010EAEC4A4",
           "source_implementation_id": "PR-S04-IMPL-3C010EAEC4A4",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F"
           ],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-008-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-A97C990C556F -> PR-S04-IMPL-24F37EF64F7F",
           "dependency_evidence": {
             "attributes": [
               "TestCase",
@@ -10898,16 +11578,28 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-A97C990C556F-DEP",
+          "dependency_justification": "PR-S03-IF-008-REQ",
+          "dependency_owner": "PR-S04-IMPL-A97C990C556F",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-A97C990C556F",
           "source_implementation_id": "PR-S04-IMPL-A97C990C556F",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F"
           ],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-009-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-A4D0A1741D58 -> PR-S04-IMPL-24F37EF64F7F",
           "dependency_evidence": {
             "attributes": [
               "TestCase",
@@ -10965,48 +11657,66 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-A4D0A1741D58-DEP",
+          "dependency_justification": "PR-S03-IF-009-REQ",
+          "dependency_owner": "PR-S04-IMPL-A4D0A1741D58",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-A4D0A1741D58",
           "source_implementation_id": "PR-S04-IMPL-A4D0A1741D58",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F"
           ],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-010-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-88A06A01B4BF -> PR-S04-IMPL-24F37EF64F7F",
           "dependency_evidence": {
             "attributes": [
               "TestCase",
               "assertEqual",
               "assertFalse",
-              "assertGreaterEqual",
               "assertTrue",
               "environ",
               "executable",
+              "exists",
+              "issubset",
               "loads",
               "main",
               "parents",
               "pathsep",
               "read_text",
               "resolve",
-              "run"
+              "run",
+              "startswith",
+              "values"
             ],
             "calls": [
               "Path",
               "all",
               "assertEqual",
               "assertFalse",
-              "assertGreaterEqual",
               "assertTrue",
               "dict",
-              "len",
+              "exists",
+              "issubset",
               "loads",
               "main",
               "read_text",
               "resolve",
               "run",
-              "str"
+              "sorted",
+              "startswith",
+              "str",
+              "values"
             ],
             "classes": [
               "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -11014,10 +11724,21 @@
             "dependency_evidence": "AST import, class, function, call, and attribute relationships",
             "functions": [
               "setUpClass",
+              "test_b02_001_exact_audit_deliverables_exist",
+              "test_b02_001_invariants_and_dependencies_are_deterministic",
               "test_b02_001_objects_are_complete",
+              "test_b02_002_authorities_and_invariants_are_defined",
+              "test_b02_002_exact_audit_deliverables_exist",
               "test_b02_002_quantity_cost_and_temporal_rules_exist",
+              "test_b02_002_semantic_constitutions_cover_required_behavior",
+              "test_b02_003_correction_replay_recovery_supersession_are_complete",
+              "test_b02_003_exact_audit_deliverables_exist",
+              "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
               "test_b02_003_historical_integrity_prohibits_fabrication",
-              "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+              "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+              "test_b02_004_completion_is_doctrine_only",
+              "test_b02_004_exact_audit_deliverables_exist",
+              "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
             ],
             "imports": [
               "__future__",
@@ -11030,16 +11751,28 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-88A06A01B4BF-DEP",
+          "dependency_justification": "PR-S03-IF-010-REQ",
+          "dependency_owner": "PR-S04-IMPL-88A06A01B4BF",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-88A06A01B4BF",
           "source_implementation_id": "PR-S04-IMPL-88A06A01B4BF",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F"
           ],
           "transitive_dependency_status": "RECORDED"
         },
         {
           "constitutional_justification": "PR-S03-IF-011-REQ",
+          "consumer": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
           "dependency_boundary": "participating only for the mapped constitutional obligation; no behavioral correctness asserted",
+          "dependency_classification": "OBJECTIVE_AST_DEPENDENCY",
+          "dependency_criticality": "CRITICAL",
+          "dependency_direction": "PR-S04-IMPL-B80BFF0A11B6 -> PR-S04-IMPL-24F37EF64F7F",
           "dependency_evidence": {
             "attributes": [
               "TestCase",
@@ -11049,6 +11782,7 @@
               "assertTrue",
               "environ",
               "executable",
+              "exists",
               "issubset",
               "loads",
               "main",
@@ -11056,16 +11790,19 @@
               "pathsep",
               "read_text",
               "resolve",
-              "run"
+              "run",
+              "values"
             ],
             "calls": [
               "Path",
               "all",
+              "any",
               "assertEqual",
               "assertFalse",
               "assertGreaterEqual",
               "assertTrue",
               "dict",
+              "exists",
               "issubset",
               "len",
               "loads",
@@ -11073,7 +11810,9 @@
               "read_text",
               "resolve",
               "run",
-              "str"
+              "sorted",
+              "str",
+              "values"
             ],
             "classes": [
               "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -11081,10 +11820,21 @@
             "dependency_evidence": "AST import, class, function, call, and attribute relationships",
             "functions": [
               "setUpClass",
+              "test_b03_001_contracts_are_deterministic_and_auditable",
+              "test_b03_001_exact_audit_deliverables_exist",
               "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+              "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+              "test_b03_002_exact_audit_deliverables_exist",
               "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+              "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+              "test_b03_003_exact_audit_deliverables_exist",
+              "test_b03_003_requirements_are_atomic_owned_and_classified",
               "test_b03_003_requirements_have_bidirectional_traceability",
-              "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+              "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+              "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+              "test_b03_004_completion_is_doctrine_only",
+              "test_b03_004_exact_audit_deliverables_exist",
+              "test_b03_004_reconciles_series_3_domains_without_conflicts"
             ],
             "imports": [
               "__future__",
@@ -11097,9 +11847,15 @@
             ]
           },
           "dependency_id": "PR-S04-IMPL-B80BFF0A11B6-DEP",
+          "dependency_justification": "PR-S03-IF-011-REQ",
+          "dependency_owner": "PR-S04-IMPL-B80BFF0A11B6",
           "dependency_type": "AST_IMPORT_OR_VERIFIER_TARGET",
+          "producer": "PR-S04-IMPL-B80BFF0A11B6",
           "source_implementation_id": "PR-S04-IMPL-B80BFF0A11B6",
           "target_implementation_ids": [
+            "PR-S04-IMPL-24F37EF64F7F"
+          ],
+          "transitive_dependency_lineage": [
             "PR-S04-IMPL-24F37EF64F7F"
           ],
           "transitive_dependency_status": "RECORDED"
@@ -11390,7 +12146,9 @@
             "TestCase",
             "apply_execution_event",
             "assertEqual",
+            "assertGreaterEqual",
             "assertIn",
+            "assertIs",
             "assertIsNotNone",
             "assertTrue",
             "audit_id",
@@ -11399,6 +12157,8 @@
             "close_position",
             "contract_id",
             "contract_type",
+            "correction",
+            "direction",
             "event_type",
             "events",
             "exposure",
@@ -11419,11 +12179,14 @@
             "realized_pnl",
             "reconcile_with_broker",
             "resolve",
+            "supersession",
             "system_prompt",
             "total_exposure",
             "total_market_value",
+            "triggering_event",
             "unrealized_pnl",
-            "update"
+            "update",
+            "value"
           ],
           "calls": [
             "AuditService",
@@ -11435,15 +12198,19 @@
             "PromptRepository",
             "apply_execution_event",
             "assertEqual",
+            "assertGreaterEqual",
             "assertIn",
+            "assertIs",
             "assertIsNotNone",
             "assertTrue",
             "canonical_schemas",
             "close_position",
             "config",
+            "correction",
             "execution_event",
             "insert",
             "latest",
+            "len",
             "load",
             "main",
             "position",
@@ -11451,6 +12218,7 @@
             "reconcile_with_broker",
             "resolve",
             "str",
+            "supersession",
             "system_prompt",
             "tuple",
             "update"
@@ -11463,10 +12231,13 @@
             "config",
             "execution_event",
             "test_close_and_archive_zero_quantity_position",
+            "test_correction_and_supersession_preserve_historical_lineage",
+            "test_duplicate_execution_event_replay_is_idempotent",
             "test_execution_event_creates_position_and_portfolio_state",
             "test_existing_position_updates_cost_basis_and_realized_pnl",
             "test_portfolio_exposure_and_system_prompt_are_available",
             "test_reconciliation_mismatch_generates_case_file",
+            "test_reversal_through_zero_resets_direction_and_cost_basis",
             "test_unexpected_exposure_generates_case_file"
           ],
           "imports": [
@@ -11485,7 +12256,7 @@
         "reconciliation_participation": false,
         "repository_location": "Tests/test_position_management_office.py",
         "runtime_participation": false,
-        "sha256": "342ae9e1492d6df288413c329c6ebaa86bebede8a7ebe6e4e8eef6cc57bb1fb6",
+        "sha256": "aa0873a5b8da95becfd99a3c597e7fe815241b95357761ce2f2a4979dff9dd13",
         "verifier_participation": true
       },
       {
@@ -11657,33 +12428,39 @@
             "TestCase",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "environ",
             "executable",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "parents",
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "startswith",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "dict",
-            "len",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "startswith",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -11691,10 +12468,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b02_001_exact_audit_deliverables_exist",
+            "test_b02_001_invariants_and_dependencies_are_deterministic",
             "test_b02_001_objects_are_complete",
+            "test_b02_002_authorities_and_invariants_are_defined",
+            "test_b02_002_exact_audit_deliverables_exist",
             "test_b02_002_quantity_cost_and_temporal_rules_exist",
+            "test_b02_002_semantic_constitutions_cover_required_behavior",
+            "test_b02_003_correction_replay_recovery_supersession_are_complete",
+            "test_b02_003_exact_audit_deliverables_exist",
+            "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
             "test_b02_003_historical_integrity_prohibits_fabrication",
-            "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+            "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+            "test_b02_004_completion_is_doctrine_only",
+            "test_b02_004_exact_audit_deliverables_exist",
+            "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -11711,7 +12499,7 @@
         "reconciliation_participation": false,
         "repository_location": "Tests/test_position_registry_rm001_s02_object_lifecycle.py",
         "runtime_participation": false,
-        "sha256": "c11e17525080cc9c79218d3c81f98a9ecb9201f9f5acccad88cce97487beb78b",
+        "sha256": "af4cba3e8914e190eb904ff0fdb32b702b92249d5824d3674a3ee6fa67b33281",
         "verifier_participation": true
       },
       {
@@ -11736,6 +12524,7 @@
             "assertTrue",
             "environ",
             "executable",
+            "exists",
             "issubset",
             "loads",
             "main",
@@ -11743,16 +12532,19 @@
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
+            "any",
             "assertEqual",
             "assertFalse",
             "assertGreaterEqual",
             "assertTrue",
             "dict",
+            "exists",
             "issubset",
             "len",
             "loads",
@@ -11760,7 +12552,9 @@
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -11768,10 +12562,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b03_001_contracts_are_deterministic_and_auditable",
+            "test_b03_001_exact_audit_deliverables_exist",
             "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+            "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+            "test_b03_002_exact_audit_deliverables_exist",
             "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+            "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+            "test_b03_003_exact_audit_deliverables_exist",
+            "test_b03_003_requirements_are_atomic_owned_and_classified",
             "test_b03_003_requirements_have_bidirectional_traceability",
-            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+            "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+            "test_b03_004_completion_is_doctrine_only",
+            "test_b03_004_exact_audit_deliverables_exist",
+            "test_b03_004_reconciles_series_3_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -11788,7 +12593,7 @@
         "reconciliation_participation": false,
         "repository_location": "Tests/test_position_registry_rm001_s03_interface_evidence_traceability.py",
         "runtime_participation": false,
-        "sha256": "7109749efd489dba05ee347341ae6b32808184d608ba149f3e1c8393ee8a2d83",
+        "sha256": "4e6c0fe8bd776c939a5ba167ebbd2f858ae2ced30bd886aea1f077d8931d18f8",
         "verifier_participation": true
       }
     ],
@@ -11943,7 +12748,9 @@
           "PR-S04-OBL-030",
           "PR-S04-OBL-031",
           "PR-S04-OBL-032",
-          "PR-S04-OBL-033"
+          "PR-S04-OBL-033",
+          "PR-S04-OBL-034",
+          "PR-S04-OBL-035"
         ],
         "verifier_id": "PR-S04-IMPL-290227A442CE"
       },
@@ -11958,7 +12765,9 @@
             "TestCase",
             "apply_execution_event",
             "assertEqual",
+            "assertGreaterEqual",
             "assertIn",
+            "assertIs",
             "assertIsNotNone",
             "assertTrue",
             "audit_id",
@@ -11967,6 +12776,8 @@
             "close_position",
             "contract_id",
             "contract_type",
+            "correction",
+            "direction",
             "event_type",
             "events",
             "exposure",
@@ -11987,11 +12798,14 @@
             "realized_pnl",
             "reconcile_with_broker",
             "resolve",
+            "supersession",
             "system_prompt",
             "total_exposure",
             "total_market_value",
+            "triggering_event",
             "unrealized_pnl",
-            "update"
+            "update",
+            "value"
           ],
           "calls": [
             "AuditService",
@@ -12003,15 +12817,19 @@
             "PromptRepository",
             "apply_execution_event",
             "assertEqual",
+            "assertGreaterEqual",
             "assertIn",
+            "assertIs",
             "assertIsNotNone",
             "assertTrue",
             "canonical_schemas",
             "close_position",
             "config",
+            "correction",
             "execution_event",
             "insert",
             "latest",
+            "len",
             "load",
             "main",
             "position",
@@ -12019,6 +12837,7 @@
             "reconcile_with_broker",
             "resolve",
             "str",
+            "supersession",
             "system_prompt",
             "tuple",
             "update"
@@ -12031,10 +12850,13 @@
             "config",
             "execution_event",
             "test_close_and_archive_zero_quantity_position",
+            "test_correction_and_supersession_preserve_historical_lineage",
+            "test_duplicate_execution_event_replay_is_idempotent",
             "test_execution_event_creates_position_and_portfolio_state",
             "test_existing_position_updates_cost_basis_and_realized_pnl",
             "test_portfolio_exposure_and_system_prompt_are_available",
             "test_reconciliation_mismatch_generates_case_file",
+            "test_reversal_through_zero_resets_direction_and_cost_basis",
             "test_unexpected_exposure_generates_case_file"
           ],
           "imports": [
@@ -12189,33 +13011,39 @@
             "TestCase",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "environ",
             "executable",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "parents",
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "startswith",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
             "assertEqual",
             "assertFalse",
-            "assertGreaterEqual",
             "assertTrue",
             "dict",
-            "len",
+            "exists",
+            "issubset",
             "loads",
             "main",
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "startswith",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -12223,10 +13051,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b02_001_exact_audit_deliverables_exist",
+            "test_b02_001_invariants_and_dependencies_are_deterministic",
             "test_b02_001_objects_are_complete",
+            "test_b02_002_authorities_and_invariants_are_defined",
+            "test_b02_002_exact_audit_deliverables_exist",
             "test_b02_002_quantity_cost_and_temporal_rules_exist",
+            "test_b02_002_semantic_constitutions_cover_required_behavior",
+            "test_b02_003_correction_replay_recovery_supersession_are_complete",
+            "test_b02_003_exact_audit_deliverables_exist",
+            "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
             "test_b02_003_historical_integrity_prohibits_fabrication",
-            "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+            "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+            "test_b02_004_completion_is_doctrine_only",
+            "test_b02_004_exact_audit_deliverables_exist",
+            "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
           ],
           "imports": [
             "__future__",
@@ -12256,6 +13095,7 @@
             "assertTrue",
             "environ",
             "executable",
+            "exists",
             "issubset",
             "loads",
             "main",
@@ -12263,16 +13103,19 @@
             "pathsep",
             "read_text",
             "resolve",
-            "run"
+            "run",
+            "values"
           ],
           "calls": [
             "Path",
             "all",
+            "any",
             "assertEqual",
             "assertFalse",
             "assertGreaterEqual",
             "assertTrue",
             "dict",
+            "exists",
             "issubset",
             "len",
             "loads",
@@ -12280,7 +13123,9 @@
             "read_text",
             "resolve",
             "run",
-            "str"
+            "sorted",
+            "str",
+            "values"
           ],
           "classes": [
             "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -12288,10 +13133,21 @@
           "dependency_evidence": "AST import, class, function, call, and attribute relationships",
           "functions": [
             "setUpClass",
+            "test_b03_001_contracts_are_deterministic_and_auditable",
+            "test_b03_001_exact_audit_deliverables_exist",
             "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+            "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+            "test_b03_002_exact_audit_deliverables_exist",
             "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+            "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+            "test_b03_003_exact_audit_deliverables_exist",
+            "test_b03_003_requirements_are_atomic_owned_and_classified",
             "test_b03_003_requirements_have_bidirectional_traceability",
-            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+            "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+            "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+            "test_b03_004_completion_is_doctrine_only",
+            "test_b03_004_exact_audit_deliverables_exist",
+            "test_b03_004_reconciles_series_3_domains_without_conflicts"
           ],
           "imports": [
             "__future__",

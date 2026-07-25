@@ -35,6 +35,71 @@ class PositionRegistryRM001S04ImplementationMappingTests(unittest.TestCase):
         self.assertTrue(all(item["objective_dependency_evidence"] for item in inventory))
         self.assertEqual(deficiencies, [])
 
+    def test_b04_001_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B04-001_authoritative_implementation_inventory.json",
+            "B04-001_implementation_identity_registry.json",
+            "B04-001_implementation_participation_registry.json",
+            "B04-001_implementation_classification_registry.json",
+            "B04-001_implementation_exclusion_registry.json",
+            "B04-001_implementation_dependency_graph.json",
+            "B04-001_dependency_direction_registry.json",
+            "B04-001_dependency_justification_registry.json",
+            "B04-001_constitutional_to_implementation_matrix.json",
+            "B04-001_implementation_to_constitutional_matrix.json",
+            "B04-001_implementation_authority_registry.json",
+            "B04-001_implementation_obligation_registry.json",
+            "B04-001_orphan_implementation_registry.json",
+            "B04-001_orphan_constitutional_requirement_registry.json",
+            "B04-001_duplicate_participation_registry.json",
+            "B04-001_implementation_completeness_assessment.json",
+            "B04-001_dependency_completeness_assessment.json",
+            "B04-001_unresolved_implementation_findings_registry.json",
+            "B04-001_dependency_derived_implementation_inventory_report.json",
+            "B04-001_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b04_001_dependency_graph_and_matrices_are_complete(self) -> None:
+        inventory = json.loads((EVIDENCE_ROOT / "B04-001_authoritative_implementation_inventory.json").read_text(encoding="utf-8"))
+        graph = json.loads((EVIDENCE_ROOT / "B04-001_implementation_dependency_graph.json").read_text(encoding="utf-8"))
+        directions = json.loads((EVIDENCE_ROOT / "B04-001_dependency_direction_registry.json").read_text(encoding="utf-8"))
+        justifications = json.loads((EVIDENCE_ROOT / "B04-001_dependency_justification_registry.json").read_text(encoding="utf-8"))
+        c2i = json.loads((EVIDENCE_ROOT / "B04-001_constitutional_to_implementation_matrix.json").read_text(encoding="utf-8"))
+        i2c = json.loads((EVIDENCE_ROOT / "B04-001_implementation_to_constitutional_matrix.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(graph["nodes"]), len(inventory))
+        self.assertEqual(len(directions), len(graph["relationships"]))
+        self.assertTrue(all(item["deterministic_direction"] for item in directions))
+        self.assertTrue(all(item["dependency_justification"] for item in justifications))
+        self.assertTrue(c2i)
+        self.assertEqual(len(i2c), len(inventory))
+        self.assertTrue(all(item["mapping_disposition"] == "MAPPED_NOT_VERIFIED" for item in i2c))
+
+    def test_b04_001_completeness_and_doctrine_only_constraints(self) -> None:
+        impl = json.loads((EVIDENCE_ROOT / "B04-001_implementation_completeness_assessment.json").read_text(encoding="utf-8"))
+        dep = json.loads((EVIDENCE_ROOT / "B04-001_dependency_completeness_assessment.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B04-001_dependency_derived_implementation_inventory_report.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B04-001_unresolved_implementation_findings_registry.json").read_text(encoding="utf-8"))
+        self.assertTrue(impl["complete"])
+        self.assertEqual(impl["implementation_gaps"], [])
+        self.assertEqual(impl["mapping_gaps"], [])
+        self.assertTrue(dep["complete"])
+        self.assertEqual(dep["circular_dependencies"], [])
+        self.assertEqual(dep["conflicting_dependency_direction"], [])
+        self.assertEqual(unresolved, [])
+        self.assertTrue(report["objective_dependency_discovery"])
+        self.assertFalse(report["pattern_derived_inventory"])
+        self.assertFalse(report["filename_derived_inventory"])
+        self.assertFalse(report["manual_inventory"])
+        self.assertFalse(report["documentation_reference_inventory"])
+        self.assertFalse(report["historical_execution_list_inventory"])
+        self.assertFalse(report["behavioral_correctness_evaluated"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["behavioral_verification_executed"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
+
     def test_b04_002_maps_every_requirement_without_gaps(self) -> None:
         requirements = json.loads((REPOSITORY_ROOT / "Documentation" / "POSITION_REGISTRY_RM001_S03_INTERFACE_EVIDENCE_TRACEABILITY" / "B03-004_canonical_constitutional_requirement_registry.json").read_text(encoding="utf-8"))
         matrix = json.loads((EVIDENCE_ROOT / "B04-002_constitutional_to_implementation_matrix.json").read_text(encoding="utf-8"))

@@ -943,7 +943,7 @@
   {
     "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
     "event_dependencies": [
-      "reconciliation"
+      "replay"
     ],
     "evidence_dependencies": [
       "PR-S03-EVD-005"
@@ -952,7 +952,7 @@
       "dependency-derived fixture population; no fixture execution in S04"
     ],
     "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-    "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
+    "implementation_obligation": "Implement and preserve replay_evidence_requirement within the Position Registry boundary.",
     "obligation_id": "PR-S04-OBL-029",
     "participating_implementation_artifacts": [
       "PR-S04-IMPL-24F37EF64F7F"
@@ -975,7 +975,7 @@
   {
     "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
     "event_dependencies": [
-      "correction"
+      "recovery"
     ],
     "evidence_dependencies": [
       "PR-S03-EVD-006"
@@ -984,7 +984,7 @@
       "dependency-derived fixture population; no fixture execution in S04"
     ],
     "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-    "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
+    "implementation_obligation": "Implement and preserve recovery_evidence_requirement within the Position Registry boundary.",
     "obligation_id": "PR-S04-OBL-030",
     "participating_implementation_artifacts": [
       "PR-S04-IMPL-6334CAA6A9DC"
@@ -1007,7 +1007,7 @@
   {
     "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
     "event_dependencies": [
-      "anomaly"
+      "correction"
     ],
     "evidence_dependencies": [
       "PR-S03-EVD-007"
@@ -1016,7 +1016,7 @@
       "dependency-derived fixture population; no fixture execution in S04"
     ],
     "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-    "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
+    "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
     "obligation_id": "PR-S04-OBL-031",
     "participating_implementation_artifacts": [
       "PR-S04-IMPL-1E58B4A8B021"
@@ -1071,7 +1071,7 @@
   {
     "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
     "event_dependencies": [
-      "archival"
+      "reconciliation"
     ],
     "evidence_dependencies": [
       "PR-S03-EVD-009"
@@ -1080,7 +1080,7 @@
       "dependency-derived fixture population; no fixture execution in S04"
     ],
     "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
-    "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
+    "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
     "obligation_id": "PR-S04-OBL-033",
     "participating_implementation_artifacts": [
       "PR-S04-IMPL-5F574EC5C56D"
@@ -1090,6 +1090,70 @@
       "Position Registry persistence/replay custody"
     ],
     "requirement_id": "PR-S03-REQ-EVD-009",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ],
+    "verification_status": "MAPPED_NOT_EXECUTED",
+    "verifier_dependencies": [
+      "PR-S04-IMPL-290227A442CE"
+    ]
+  },
+  {
+    "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+    "event_dependencies": [
+      "anomaly"
+    ],
+    "evidence_dependencies": [
+      "PR-S03-EVD-010"
+    ],
+    "fixture_dependencies": [
+      "dependency-derived fixture population; no fixture execution in S04"
+    ],
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+    "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
+    "obligation_id": "PR-S04-OBL-034",
+    "participating_implementation_artifacts": [
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "participating_interfaces": "applicable evidence-producing interface",
+    "persistence_dependencies": [
+      "Position Registry persistence/replay custody"
+    ],
+    "requirement_id": "PR-S03-REQ-EVD-010",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ],
+    "verification_status": "MAPPED_NOT_EXECUTED",
+    "verifier_dependencies": [
+      "PR-S04-IMPL-290227A442CE"
+    ]
+  },
+  {
+    "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+    "event_dependencies": [
+      "archival"
+    ],
+    "evidence_dependencies": [
+      "PR-S03-EVD-011"
+    ],
+    "fixture_dependencies": [
+      "dependency-derived fixture population; no fixture execution in S04"
+    ],
+    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+    "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
+    "obligation_id": "PR-S04-OBL-035",
+    "participating_implementation_artifacts": [
+      "PR-S04-IMPL-24DC358F970D"
+    ],
+    "participating_interfaces": "applicable evidence-producing interface",
+    "persistence_dependencies": [
+      "Position Registry persistence/replay custody"
+    ],
+    "requirement_id": "PR-S03-REQ-EVD-011",
     "transitive_dependencies": [
       "constitutional baseline",
       "implementation inventory",

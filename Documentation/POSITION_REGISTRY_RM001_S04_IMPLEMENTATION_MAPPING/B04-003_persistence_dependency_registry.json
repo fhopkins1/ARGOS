@@ -442,33 +442,39 @@
         "TestCase",
         "assertEqual",
         "assertFalse",
-        "assertGreaterEqual",
         "assertTrue",
         "environ",
         "executable",
+        "exists",
+        "issubset",
         "loads",
         "main",
         "parents",
         "pathsep",
         "read_text",
         "resolve",
-        "run"
+        "run",
+        "startswith",
+        "values"
       ],
       "calls": [
         "Path",
         "all",
         "assertEqual",
         "assertFalse",
-        "assertGreaterEqual",
         "assertTrue",
         "dict",
-        "len",
+        "exists",
+        "issubset",
         "loads",
         "main",
         "read_text",
         "resolve",
         "run",
-        "str"
+        "sorted",
+        "startswith",
+        "str",
+        "values"
       ],
       "classes": [
         "PositionRegistryRM001S02ObjectLifecycleTests"
@@ -476,10 +482,21 @@
       "dependency_evidence": "AST import, class, function, call, and attribute relationships",
       "functions": [
         "setUpClass",
+        "test_b02_001_exact_audit_deliverables_exist",
+        "test_b02_001_invariants_and_dependencies_are_deterministic",
         "test_b02_001_objects_are_complete",
+        "test_b02_002_authorities_and_invariants_are_defined",
+        "test_b02_002_exact_audit_deliverables_exist",
         "test_b02_002_quantity_cost_and_temporal_rules_exist",
+        "test_b02_002_semantic_constitutions_cover_required_behavior",
+        "test_b02_003_correction_replay_recovery_supersession_are_complete",
+        "test_b02_003_exact_audit_deliverables_exist",
+        "test_b02_003_historical_artifacts_are_immutable_and_reconstructable",
         "test_b02_003_historical_integrity_prohibits_fabrication",
-        "test_b02_004_baseline_has_no_unresolved_findings_or_certification"
+        "test_b02_004_baseline_has_no_unresolved_findings_or_certification",
+        "test_b02_004_completion_is_doctrine_only",
+        "test_b02_004_exact_audit_deliverables_exist",
+        "test_b02_004_reconciles_all_series_2_domains_without_conflicts"
       ],
       "imports": [
         "__future__",
@@ -506,6 +523,7 @@
         "assertTrue",
         "environ",
         "executable",
+        "exists",
         "issubset",
         "loads",
         "main",
@@ -513,16 +531,19 @@
         "pathsep",
         "read_text",
         "resolve",
-        "run"
+        "run",
+        "values"
       ],
       "calls": [
         "Path",
         "all",
+        "any",
         "assertEqual",
         "assertFalse",
         "assertGreaterEqual",
         "assertTrue",
         "dict",
+        "exists",
         "issubset",
         "len",
         "loads",
@@ -530,7 +551,9 @@
         "read_text",
         "resolve",
         "run",
-        "str"
+        "sorted",
+        "str",
+        "values"
       ],
       "classes": [
         "PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests"
@@ -538,10 +561,21 @@
       "dependency_evidence": "AST import, class, function, call, and attribute relationships",
       "functions": [
         "setUpClass",
+        "test_b03_001_contracts_are_deterministic_and_auditable",
+        "test_b03_001_exact_audit_deliverables_exist",
         "test_b03_001_interfaces_have_unique_authority_producer_consumer_and_contract",
+        "test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention",
+        "test_b03_002_exact_audit_deliverables_exist",
         "test_b03_002_reconciliation_and_evidence_obligations_are_complete",
+        "test_b03_002_truth_ownership_and_precedence_are_unambiguous",
+        "test_b03_003_exact_audit_deliverables_exist",
+        "test_b03_003_requirements_are_atomic_owned_and_classified",
         "test_b03_003_requirements_have_bidirectional_traceability",
-        "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims"
+        "test_b03_003_traceability_domains_are_complete_and_doctrine_only",
+        "test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims",
+        "test_b03_004_completion_is_doctrine_only",
+        "test_b03_004_exact_audit_deliverables_exist",
+        "test_b03_004_reconciles_series_3_domains_without_conflicts"
       ],
       "imports": [
         "__future__",
