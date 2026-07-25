@@ -1,5 +1,5 @@
 # POSITION-REGISTRY-RM-001-S05 Behavioral Verification
 
-This package contains bounded behavioral execution evidence for B05-001 through B05-003.
+This package contains bounded behavioral verification and B05-004 behavioral coverage/finding reconciliation artifacts.
 
-It executes focused Position Registry behavioral scenarios and existing bounded verifier modules. It does not modify implementation behavior, modify doctrine, execute repository-wide verification, or issue certification conclusions.
+B05-004 reconciles existing B05-002 and B05-003 execution evidence only. It does not modify implementation behavior, modify doctrine, execute new behavioral verification, generate proof objects, or issue certification conclusions.

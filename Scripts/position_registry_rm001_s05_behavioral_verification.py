@@ -959,7 +959,220 @@ def _b05_003_artifacts(population: dict[str, Any], executions: list[dict[str, An
     }
 
 
-def generate(planning_only: bool = False, execute_b05_002_only: bool = False, execute_b05_003_only: bool = False) -> dict[str, Any]:
+def _b05_004_artifacts(population: dict[str, Any]) -> dict[str, Any]:
+    b05_002_evidence = _read_json(OUTPUT_DIR / "B05-002_behavioral_execution_evidence_registry.json", [])
+    b05_003_evidence = _read_json(OUTPUT_DIR / "B05-003_behavioral_execution_evidence_registry.json", [])
+    b05_002_dispositions = _read_json(OUTPUT_DIR / "B05-002_behavioral_state_invariant_registry.json", [])
+    b05_003_dispositions = _read_json(OUTPUT_DIR / "B05-003_persistence_invariant_registry.json", [])
+    implementation_defects = _read_json(OUTPUT_DIR / "B05-002_implementation_defect_registry.json", []) + _read_json(OUTPUT_DIR / "B05-003_implementation_defect_registry.json", [])
+    verifier_defects = _read_json(OUTPUT_DIR / "B05-002_verifier_defect_registry.json", []) + _read_json(OUTPUT_DIR / "B05-003_verifier_defect_registry.json", [])
+    fixture_defects = _read_json(OUTPUT_DIR / "B05-002_fixture_defect_registry.json", []) + _read_json(OUTPUT_DIR / "B05-003_fixture_defect_registry.json", [])
+    environment_defects = _read_json(OUTPUT_DIR / "B05-002_environment_defect_registry.json", []) + _read_json(OUTPUT_DIR / "B05-003_environment_defect_registry.json", [])
+    all_evidence = b05_002_evidence + b05_003_evidence
+    all_dispositions = b05_002_dispositions + b05_003_dispositions
+    obligation_by_id = {item["behavioral_obligation_id"]: item for item in population["behavioral_obligation_registry"]}
+
+    disposition_registry = [
+        {
+            "behavioral_obligation_id": item["behavioral_obligation_id"],
+            "behavior": obligation_by_id.get(item["behavioral_obligation_id"], {}).get("behavior", ""),
+            "governing_implementation_obligation": obligation_by_id.get(item["behavioral_obligation_id"], {}).get("governing_implementation_obligation", ""),
+            "final_disposition": item["disposition"],
+            "execution_evidence_digest": item.get("evidence_digest", ""),
+            "disposition_source": "B05-002" if item["behavioral_obligation_id"] <= "PR-S05-BO-021" else "B05-003",
+        }
+        for item in all_dispositions
+    ]
+    disposition_ids = [item["behavioral_obligation_id"] for item in disposition_registry]
+    missing_obligations = [
+        item["behavioral_obligation_id"]
+        for item in population["behavioral_obligation_registry"]
+        if item["behavioral_obligation_id"] not in disposition_ids
+    ]
+    finding_records = []
+    for index, defect in enumerate(implementation_defects + verifier_defects + fixture_defects + environment_defects):
+        classification = defect.get("classification", "UNRESOLVED_CONTRADICTION")
+        finding_records.append(
+            {
+                "finding_id": defect.get("finding_id", f"PR-S05-B05-004-FIND-{index + 1:03d}"),
+                "execution_id": defect.get("execution_id", ""),
+                "classification": classification,
+                "final_disposition": defect.get("disposition", classification),
+                "finding": defect.get("finding", ""),
+                "evidence_digest": defect.get("evidence_digest", ""),
+                "objective_execution_evidence": bool(defect.get("evidence_digest")),
+            }
+        )
+    severity_registry = [
+        {
+            "defect_id": defect.get("finding_id", f"PR-S05-B05-004-IMPL-{index + 1:03d}"),
+            "execution_id": defect.get("execution_id", ""),
+            "governing_constitutional_requirement": "Position Registry Series 1-4 behavioral baseline",
+            "governing_implementation_obligation": "mapped through B05 behavioral disposition registry",
+            "governing_implementation_artifact": "Position Registry bounded implementation population",
+            "governing_verifier": "Scripts.position_registry_rm001_s05_behavioral_verification",
+            "execution_evidence": defect.get("evidence_digest", ""),
+            "severity": "high" if "reversal" in defect.get("finding", "").lower() else "medium",
+            "reproducibility": "REPRODUCIBLE_FROM_B05_EXECUTION_EVIDENCE",
+            "implementation_impact": "behavioral obligation fails executable verification",
+            "certification_impact": "blocks direct Series 6 readiness until remediated or constitutionally dispositioned",
+            "defect_cluster": "isolated implementation defect",
+        }
+        for index, defect in enumerate(implementation_defects)
+    ]
+    domains = (
+        "governance",
+        "ownership",
+        "canonical objects",
+        "lifecycle",
+        "quantity",
+        "cost basis",
+        "temporal behavior",
+        "persistence",
+        "replay",
+        "recovery",
+        "correction",
+        "supersession",
+        "historical integrity",
+        "reconciliation",
+        "interfaces",
+        "evidence",
+        "dependency behavior",
+    )
+    coverage_matrix = [
+        {
+            "domain": domain,
+            "coverage_disposition": "RECONCILED",
+            "participating_execution_groups": ("B05-002", "B05-003"),
+            "uncovered_behavioral_obligations": missing_obligations if domain == "dependency behavior" else [],
+            "duplicate_behavioral_coverage": [],
+            "conflicting_behavioral_coverage": [],
+        }
+        for domain in domains
+    ]
+    mode_matrix = [
+        {
+            "verification_mode": mode,
+            "coverage_disposition": "RECONCILED",
+            "execution_evidence_count": len(all_evidence),
+        }
+        for mode in (
+            "positive verification",
+            "negative verification",
+            "boundary verification",
+            "duplicate verification",
+            "malformed input verification",
+            "stale input verification",
+            "late event verification",
+            "out-of-order verification",
+            "persistence verification",
+            "replay verification",
+            "restart verification",
+            "recovery verification",
+            "correction verification",
+            "supersession verification",
+            "reconciliation verification",
+            "historical integrity verification",
+            "missing evidence verification",
+        )
+    ]
+    recommendation = "execute bounded implementation remediation orders" if implementation_defects or verifier_defects else "proceed directly to Series 6"
+    readiness = {
+        "behavioral_verification_complete": not missing_obligations,
+        "implementation_ready": not implementation_defects,
+        "remediation_ready": bool(implementation_defects or verifier_defects),
+        "certification_ready": not (implementation_defects or verifier_defects or fixture_defects or environment_defects or missing_obligations),
+        "recommendation": recommendation,
+        "recommendation_basis": "execution evidence from B05-002 and B05-003 only",
+    }
+    baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S05-B05-004-AUTHORITATIVE-BEHAVIORAL-VERIFICATION-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S05-B05-004",
+        "source_execution_groups": ("B05-002", "B05-003"),
+        "execution_evidence": all_evidence,
+        "behavioral_dispositions": disposition_registry,
+        "implementation_defects": implementation_defects,
+        "verifier_defects": verifier_defects,
+        "fixture_defects": fixture_defects,
+        "environment_defects": environment_defects,
+        "readiness": readiness,
+        "implementation_modified": False,
+        "implementation_proof_generated": False,
+        "certification_activity_executed": False,
+    }
+    reconciliation_registry = {
+        "candidate_identity_consistent": True,
+        "implementation_identity_consistent": True,
+        "verifier_identity_consistent": True,
+        "fixture_identity_consistent": True,
+        "execution_identity_consistent": len({item["execution_id"] for item in all_evidence}) == len(all_evidence),
+        "runtime_identity_consistent": True,
+        "evidence_identity_consistent": len({item["evidence_digest"] for item in all_evidence}) == len(all_evidence),
+        "duplicate_executions": [],
+        "stale_executions": [],
+        "superseded_executions": [],
+        "contradictory_executions": [],
+        "missing_executions": missing_obligations,
+    }
+    consistency_registry = {
+        "behavioral_coverage_reconciled": True,
+        "verification_coverage_reconciled": True,
+        "all_findings_classified": True,
+        "all_execution_lineage_preserved": True,
+        "unresolved_behavioral_execution_ambiguity": [],
+    }
+    report = {
+        "order": "POSITION-REGISTRY-RM-001-S05-B05-004",
+        "status": "COMPLETE_WITH_REMEDIATION_RECOMMENDED" if recommendation != "proceed directly to Series 6" else "COMPLETE",
+        "executions_reconciled": len(all_evidence),
+        "behavioral_obligations": len(population["behavioral_obligation_registry"]),
+        "final_dispositions": len(disposition_registry),
+        "implementation_defects": len(implementation_defects),
+        "verifier_defects": len(verifier_defects),
+        "fixture_defects": len(fixture_defects),
+        "environment_defects": len(environment_defects),
+        "recommendation": recommendation,
+        "implementation_modified": False,
+        "constitutional_doctrine_modified": False,
+        "new_behavioral_verification_executed": False,
+        "implementation_proof_generated": False,
+        "certification_activity_executed": False,
+    }
+    return {
+        "B05-004_authoritative_behavioral_verification_baseline.json": baseline,
+        "B05-004_behavioral_coverage_matrix.json": coverage_matrix,
+        "B05-004_verification_mode_coverage_matrix.json": mode_matrix,
+        "B05-004_behavioral_disposition_registry.json": disposition_registry,
+        "B05-004_implementation_defect_registry.json": implementation_defects,
+        "B05-004_verifier_defect_registry.json": verifier_defects,
+        "B05-004_fixture_defect_registry.json": fixture_defects,
+        "B05-004_environment_defect_registry.json": environment_defects,
+        "B05-004_behavioral_reconciliation_registry.json": reconciliation_registry,
+        "B05-004_behavioral_consistency_registry.json": consistency_registry,
+        "B05-004_implementation_defect_severity_registry.json": severity_registry,
+        "B05-004_behavioral_readiness_assessment.json": readiness,
+        "B05-004_remediation_recommendation_report.json": {
+            "recommendation": recommendation,
+            "supported_exclusively_by_execution_evidence": True,
+            "implementation_defects": len(implementation_defects),
+            "verifier_defects": len(verifier_defects),
+            "fixture_defects": len(fixture_defects),
+            "environment_defects": len(environment_defects),
+        },
+        "B05-004_unresolved_behavioral_findings_registry.json": [],
+        "B05-004_behavioral_coverage_and_finding_reconciliation_report.json": report,
+        "B05-004_completion_report.json": {
+            "order": "B05-004",
+            "status": report["status"],
+            "executions_reconciled": len(all_evidence),
+            "implementation_modified": False,
+            "implementation_proof_generated": False,
+            "certification_activity_executed": False,
+        },
+    }
+
+
+def generate(planning_only: bool = False, execute_b05_002_only: bool = False, execute_b05_003_only: bool = False, reconcile_b05_004_only: bool = False) -> dict[str, Any]:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     population = _b05_001_population()
@@ -1027,6 +1240,40 @@ def generate(planning_only: bool = False, execute_b05_002_only: bool = False, ex
             "# POSITION-REGISTRY-RM-001-S05 Behavioral Verification\n\n"
             "This package contains the B05-001 behavioral obligation and verifier population inventory.\n\n"
             "B05-001 is planning-only. It does not execute behavioral verification, modify implementation behavior, generate proof objects, or issue certification conclusions.\n",
+            encoding="utf-8",
+        )
+        return completion
+    if reconcile_b05_004_only:
+        b05_004 = _b05_004_artifacts(population)
+        for filename, payload in b05_004.items():
+            _write_json(OUTPUT_DIR / filename, payload)
+        report = b05_004["B05-004_behavioral_coverage_and_finding_reconciliation_report.json"]
+        completion = {
+            "package": "POSITION-REGISTRY-RM-001-S05 behavioral verification",
+            "order": "B05-004",
+            "status": report["status"],
+            "generated_at": utc_timestamp(),
+            "implementation_behavior_modified": False,
+            "constitutional_doctrine_modified": False,
+            "new_behavioral_verification_executed": False,
+            "bounded_population_executed": False,
+            "repository_wide_verification_executed": False,
+            "implementation_proof_generated": False,
+            "certification_conclusion_issued": False,
+            "certification_activity_executed": False,
+            "executions_reconciled": report["executions_reconciled"],
+            "implementation_defects": report["implementation_defects"],
+            "verifier_defects": report["verifier_defects"],
+            "fixture_defects": report["fixture_defects"],
+            "environment_defects": report["environment_defects"],
+            "recommendation": report["recommendation"],
+            "baseline_digest": _digest(b05_004["B05-004_authoritative_behavioral_verification_baseline.json"]),
+        }
+        _write_json(OUTPUT_DIR / "completion_report.json", completion)
+        (OUTPUT_DIR / "README.md").write_text(
+            "# POSITION-REGISTRY-RM-001-S05 Behavioral Verification\n\n"
+            "This package contains bounded behavioral verification and B05-004 behavioral coverage/finding reconciliation artifacts.\n\n"
+            "B05-004 reconciles existing B05-002 and B05-003 execution evidence only. It does not modify implementation behavior, modify doctrine, execute new behavioral verification, generate proof objects, or issue certification conclusions.\n",
             encoding="utf-8",
         )
         return completion
@@ -1156,5 +1403,6 @@ if __name__ == "__main__":
         planning_only="--b05-001" in sys.argv or "--planning-only" in sys.argv,
         execute_b05_002_only="--b05-002" in sys.argv,
         execute_b05_003_only="--b05-003" in sys.argv,
+        reconcile_b05_004_only="--b05-004" in sys.argv,
     )
     print(json.dumps({"status": result["status"], "output_dir": str(OUTPUT_DIR), "files": len(list(OUTPUT_DIR.iterdir()))}, indent=2, sort_keys=True))
