@@ -1,0 +1,31 @@
+[
+  {
+    "behavioral_evidence_id": "MON-BEH-THRESH-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-THRESH-001-REQ",
+    "evidence_sha256": "05f7d7bd138149ae33c4c17b915e840e383e60f7ff3ab514d5b2576200c6ba7f",
+    "execution_id": "MON-BEH-THRESH-001",
+    "execution_inputs": "position exposure threshold activation",
+    "execution_outputs": {
+      "active_alerts": true,
+      "alert_classes": [
+        "position_limit_violations"
+      ],
+      "dashboard_health": "critical"
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "position exposure threshold activation",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "threshold"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "constitutional_purpose": "Bounded Monitoring behavioral verification fixtures",
+    "dependency_relationships": [
+      "in-memory persistence",
+      "audit service",
+      "prompt repository",
+      "order and position fixtures"
+    ],
+    "execution_participation": 25,
+    "fixture_id": "MONITORING-RM-002-B02-FIXTURE",
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "participating_verifiers": [
+      "acknowledgement",
+      "alert",
+      "confidence",
+      "contradiction",
+      "correlation",
+      "duplicate_prevention",
+      "escalation",
+      "evaluation",
+      "failure_scenario",
+      "finding",
+      "historical_preservation",
+      "integrated_response",
+      "mission_activation",
+      "observation_rejection",
+      "persistence",
+      "raw_observation",
+      "reconciliation",
+      "recovery",
+      "replay",
+      "restart",
+      "scope_enforcement",
+      "state_restoration",
+      "suppression",
+      "threshold",
+      "trigger"
+    ],
+    "reconciliation_status": "RECONCILED"
+  }
+]

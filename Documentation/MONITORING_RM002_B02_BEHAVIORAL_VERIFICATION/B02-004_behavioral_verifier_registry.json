@@ -1,0 +1,277 @@
+[
+  {
+    "constitutional_purpose": "mission activation and report generation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-OBS-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-OBS-001"
+    ],
+    "produced_evidence": "MON-BEH-OBS-001-EVIDENCE",
+    "verifier_id": "mission_activation"
+  },
+  {
+    "constitutional_purpose": "boundary prompt scope declaration",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-OBS-002-REQ",
+    "historical_lineage": [
+      "MON-BEH-OBS-002"
+    ],
+    "produced_evidence": "MON-BEH-OBS-002-EVIDENCE",
+    "verifier_id": "scope_enforcement"
+  },
+  {
+    "constitutional_purpose": "healthy observation acceptance",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-OBS-003-REQ",
+    "historical_lineage": [
+      "MON-BEH-OBS-003"
+    ],
+    "produced_evidence": "MON-BEH-OBS-003-EVIDENCE",
+    "verifier_id": "raw_observation"
+  },
+  {
+    "constitutional_purpose": "invalid snapshot fail-closed rejection",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-OBS-004-REQ",
+    "historical_lineage": [
+      "MON-BEH-OBS-004"
+    ],
+    "produced_evidence": "MON-BEH-OBS-004-EVIDENCE",
+    "verifier_id": "observation_rejection"
+  },
+  {
+    "constitutional_purpose": "stalled order evaluation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-EVAL-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-EVAL-001"
+    ],
+    "produced_evidence": "MON-BEH-EVAL-001-EVIDENCE",
+    "verifier_id": "evaluation"
+  },
+  {
+    "constitutional_purpose": "multi-alert correlation from critical snapshot",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-CORR-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-CORR-001"
+    ],
+    "produced_evidence": "MON-BEH-CORR-001-EVIDENCE",
+    "verifier_id": "correlation"
+  },
+  {
+    "constitutional_purpose": "contradictory unhealthy state preservation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-CONTRA-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "produced_evidence": "MON-BEH-CONTRA-001-EVIDENCE",
+    "verifier_id": "contradiction"
+  },
+  {
+    "constitutional_purpose": "deterministic dashboard health confidence",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-CONF-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-CONF-001"
+    ],
+    "produced_evidence": "MON-BEH-CONF-001-EVIDENCE",
+    "verifier_id": "confidence"
+  },
+  {
+    "constitutional_purpose": "case file finding generation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-FIND-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-FIND-001"
+    ],
+    "produced_evidence": "MON-BEH-FIND-001-EVIDENCE",
+    "verifier_id": "finding"
+  },
+  {
+    "constitutional_purpose": "position exposure threshold activation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-THRESH-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-THRESH-001"
+    ],
+    "produced_evidence": "MON-BEH-THRESH-001-EVIDENCE",
+    "verifier_id": "threshold"
+  },
+  {
+    "constitutional_purpose": "stalled order trigger activation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-TRIG-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-TRIG-001"
+    ],
+    "produced_evidence": "MON-BEH-TRIG-001-EVIDENCE",
+    "verifier_id": "trigger"
+  },
+  {
+    "constitutional_purpose": "critical alert generation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-ALERT-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-ALERT-001"
+    ],
+    "produced_evidence": "MON-BEH-ALERT-001-EVIDENCE",
+    "verifier_id": "alert"
+  },
+  {
+    "constitutional_purpose": "executive notification escalation request",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-ESC-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-ESC-001"
+    ],
+    "produced_evidence": "MON-BEH-ESC-001-EVIDENCE",
+    "verifier_id": "escalation"
+  },
+  {
+    "constitutional_purpose": "case file acknowledgement lineage",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-ACK-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-ACK-001"
+    ],
+    "produced_evidence": "MON-BEH-ACK-001-EVIDENCE",
+    "verifier_id": "acknowledgement"
+  },
+  {
+    "constitutional_purpose": "history not suppressed under repeated monitoring",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-SUPP-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-SUPP-001"
+    ],
+    "produced_evidence": "MON-BEH-SUPP-001-EVIDENCE",
+    "verifier_id": "suppression"
+  },
+  {
+    "constitutional_purpose": "observation to suppression integrated response",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-INT-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-INT-001"
+    ],
+    "produced_evidence": "MON-BEH-INT-001-EVIDENCE",
+    "verifier_id": "integrated_response"
+  },
+  {
+    "constitutional_purpose": "contract persistence",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-PERSIST-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "produced_evidence": "MON-BEH-PERSIST-001-EVIDENCE",
+    "verifier_id": "persistence"
+  },
+  {
+    "constitutional_purpose": "new office deterministic restart behavior",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-RESTART-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-RESTART-001"
+    ],
+    "produced_evidence": "MON-BEH-RESTART-001-EVIDENCE",
+    "verifier_id": "restart"
+  },
+  {
+    "constitutional_purpose": "replay semantic equivalence",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-REPLAY-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "produced_evidence": "MON-BEH-REPLAY-001-EVIDENCE",
+    "verifier_id": "replay"
+  },
+  {
+    "constitutional_purpose": "recovery from invalid input produces objective failure",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-RECOVERY-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "produced_evidence": "MON-BEH-RECOVERY-001-EVIDENCE",
+    "verifier_id": "recovery"
+  },
+  {
+    "constitutional_purpose": "duplicate monitoring preserves history",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-DUP-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-DUP-001"
+    ],
+    "produced_evidence": "MON-BEH-DUP-001-EVIDENCE",
+    "verifier_id": "duplicate_prevention"
+  },
+  {
+    "constitutional_purpose": "restored deterministic dashboard state",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-RESTORE-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "produced_evidence": "MON-BEH-RESTORE-001-EVIDENCE",
+    "verifier_id": "state_restoration"
+  },
+  {
+    "constitutional_purpose": "monitoring history preservation",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-HIST-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-HIST-001"
+    ],
+    "produced_evidence": "MON-BEH-HIST-001-EVIDENCE",
+    "verifier_id": "historical_preservation"
+  },
+  {
+    "constitutional_purpose": "critical state reconciliation evidence",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-RECON-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-RECON-001"
+    ],
+    "produced_evidence": "MON-BEH-RECON-001-EVIDENCE",
+    "verifier_id": "reconciliation"
+  },
+  {
+    "constitutional_purpose": "malformed input failure evidence",
+    "execution_outcome": "PASS",
+    "execution_status": "EXECUTED",
+    "governing_requirement": "MON-BEH-FAIL-001-REQ",
+    "historical_lineage": [
+      "MON-BEH-FAIL-001"
+    ],
+    "produced_evidence": "MON-BEH-FAIL-001-EVIDENCE",
+    "verifier_id": "failure_scenario"
+  }
+]

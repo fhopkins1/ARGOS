@@ -1,0 +1,35 @@
+[
+  {
+    "behavioral_evidence_id": "MON-BEH-DUP-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-DUP-001-REQ",
+    "evidence_sha256": "ba886220fe8a5fa31fc642b5aedfd10544087582d0f46899e9df913ad0ba2940",
+    "execution_id": "MON-BEH-DUP-001",
+    "execution_inputs": "duplicate monitoring preserves history",
+    "execution_outputs": {
+      "first_contracts": [
+        "trade_monitoring_dashboard",
+        "trade_monitoring_report"
+      ],
+      "history_events": 10,
+      "second_contracts": [
+        "trade_monitoring_dashboard",
+        "trade_monitoring_report"
+      ]
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "duplicate monitoring preserves history",
+    "lineage_preserved": true,
+    "order": "B02-003",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "duplicate_prevention"
+  }
+]

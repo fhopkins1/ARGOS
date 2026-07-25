@@ -1,0 +1,236 @@
+[
+  {
+    "behavioral_evidence_id": "MON-BEH-THRESH-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-THRESH-001-REQ",
+    "evidence_sha256": "05f7d7bd138149ae33c4c17b915e840e383e60f7ff3ab514d5b2576200c6ba7f",
+    "execution_id": "MON-BEH-THRESH-001",
+    "execution_inputs": "position exposure threshold activation",
+    "execution_outputs": {
+      "active_alerts": true,
+      "alert_classes": [
+        "position_limit_violations"
+      ],
+      "dashboard_health": "critical"
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "position exposure threshold activation",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "threshold"
+  },
+  {
+    "behavioral_evidence_id": "MON-BEH-TRIG-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-TRIG-001-REQ",
+    "evidence_sha256": "a8f583afc2b11738fec938e354f92186155d329cab3e0241cb57100707336fdb",
+    "execution_id": "MON-BEH-TRIG-001",
+    "execution_inputs": "stalled order trigger activation",
+    "execution_outputs": {
+      "alert_classes": [
+        "missing_broker_responses",
+        "stalled_orders"
+      ]
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "stalled order trigger activation",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "trigger"
+  },
+  {
+    "behavioral_evidence_id": "MON-BEH-ALERT-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-ALERT-001-REQ",
+    "evidence_sha256": "f4aa3367f097e0dbc9bb5b4f742d66fb930d856e49e895d65f751cef64a18bfd",
+    "execution_id": "MON-BEH-ALERT-001",
+    "execution_inputs": "critical alert generation",
+    "execution_outputs": {
+      "alert_classes": [
+        "broker_disconnects",
+        "communication_failures",
+        "data_feed_interruptions",
+        "excessive_execution_latency",
+        "execution_failures",
+        "infrastructure_failures",
+        "market_halts",
+        "system_performance_degradation"
+      ],
+      "case_file": true,
+      "executive_group_notified": true
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "critical alert generation",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "alert"
+  },
+  {
+    "behavioral_evidence_id": "MON-BEH-ESC-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-ESC-001-REQ",
+    "evidence_sha256": "f4aa3367f097e0dbc9bb5b4f742d66fb930d856e49e895d65f751cef64a18bfd",
+    "execution_id": "MON-BEH-ESC-001",
+    "execution_inputs": "executive notification escalation request",
+    "execution_outputs": {
+      "alert_classes": [
+        "broker_disconnects",
+        "communication_failures",
+        "data_feed_interruptions",
+        "excessive_execution_latency",
+        "execution_failures",
+        "infrastructure_failures",
+        "market_halts",
+        "system_performance_degradation"
+      ],
+      "case_file": true,
+      "executive_group_notified": true
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "executive notification escalation request",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "escalation"
+  },
+  {
+    "behavioral_evidence_id": "MON-BEH-ACK-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-ACK-001-REQ",
+    "evidence_sha256": "f4aa3367f097e0dbc9bb5b4f742d66fb930d856e49e895d65f751cef64a18bfd",
+    "execution_id": "MON-BEH-ACK-001",
+    "execution_inputs": "case file acknowledgement lineage",
+    "execution_outputs": {
+      "alert_classes": [
+        "broker_disconnects",
+        "communication_failures",
+        "data_feed_interruptions",
+        "excessive_execution_latency",
+        "execution_failures",
+        "infrastructure_failures",
+        "market_halts",
+        "system_performance_degradation"
+      ],
+      "case_file": true,
+      "executive_group_notified": true
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "case file acknowledgement lineage",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "acknowledgement"
+  },
+  {
+    "behavioral_evidence_id": "MON-BEH-SUPP-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-SUPP-001-REQ",
+    "evidence_sha256": "ba886220fe8a5fa31fc642b5aedfd10544087582d0f46899e9df913ad0ba2940",
+    "execution_id": "MON-BEH-SUPP-001",
+    "execution_inputs": "history not suppressed under repeated monitoring",
+    "execution_outputs": {
+      "first_contracts": [
+        "trade_monitoring_dashboard",
+        "trade_monitoring_report"
+      ],
+      "history_events": 10,
+      "second_contracts": [
+        "trade_monitoring_dashboard",
+        "trade_monitoring_report"
+      ]
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "history not suppressed under repeated monitoring",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "suppression"
+  },
+  {
+    "behavioral_evidence_id": "MON-BEH-INT-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-INT-001-REQ",
+    "evidence_sha256": "f4aa3367f097e0dbc9bb5b4f742d66fb930d856e49e895d65f751cef64a18bfd",
+    "execution_id": "MON-BEH-INT-001",
+    "execution_inputs": "observation to suppression integrated response",
+    "execution_outputs": {
+      "alert_classes": [
+        "broker_disconnects",
+        "communication_failures",
+        "data_feed_interruptions",
+        "excessive_execution_latency",
+        "execution_failures",
+        "infrastructure_failures",
+        "market_halts",
+        "system_performance_degradation"
+      ],
+      "case_file": true,
+      "executive_group_notified": true
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "observation to suppression integrated response",
+    "lineage_preserved": true,
+    "order": "B02-002",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "integrated_response"
+  }
+]

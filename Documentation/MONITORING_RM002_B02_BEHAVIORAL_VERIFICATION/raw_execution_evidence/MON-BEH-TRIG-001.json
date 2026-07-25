@@ -1,0 +1,28 @@
+{
+  "behavioral_evidence_id": "MON-BEH-TRIG-001-EVIDENCE",
+  "constitutional_requirement": "MON-BEH-TRIG-001-REQ",
+  "evidence_sha256": "a8f583afc2b11738fec938e354f92186155d329cab3e0241cb57100707336fdb",
+  "execution_id": "MON-BEH-TRIG-001",
+  "execution_inputs": "stalled order trigger activation",
+  "execution_outputs": {
+    "alert_classes": [
+      "missing_broker_responses",
+      "stalled_orders"
+    ]
+  },
+  "execution_timestamp": "deterministic-sequence",
+  "execution_verdict": "PASS",
+  "failure": null,
+  "implementation_obligation": "stalled order trigger activation",
+  "lineage_preserved": true,
+  "order": "B02-002",
+  "participating_fixtures": [
+    "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+  ],
+  "participating_implementation_artifacts": [
+    "src/argos/trader/trade_monitoring.py"
+  ],
+  "reproducible": true,
+  "terminal_disposition": "PASS",
+  "verifier_identity": "trigger"
+}

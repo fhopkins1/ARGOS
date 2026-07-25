@@ -1,0 +1,34 @@
+[
+  {
+    "behavioral_evidence_id": "MON-BEH-RESTORE-001-EVIDENCE",
+    "constitutional_requirement": "MON-BEH-RESTORE-001-REQ",
+    "evidence_sha256": "8cc374b4daf1fef3daae9e18466c699f91c3dce615b84cc9dad4357d0199cca8",
+    "execution_id": "MON-BEH-RESTORE-001",
+    "execution_inputs": "restored deterministic dashboard state",
+    "execution_outputs": {
+      "first_health": "healthy",
+      "first_order_status": {
+        "queued": 1
+      },
+      "second_health": "healthy",
+      "second_order_status": {
+        "queued": 1
+      }
+    },
+    "execution_timestamp": "deterministic-sequence",
+    "execution_verdict": "PASS",
+    "failure": null,
+    "implementation_obligation": "restored deterministic dashboard state",
+    "lineage_preserved": true,
+    "order": "B02-003",
+    "participating_fixtures": [
+      "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+    ],
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "reproducible": true,
+    "terminal_disposition": "PASS",
+    "verifier_identity": "state_restoration"
+  }
+]

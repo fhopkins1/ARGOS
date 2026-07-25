@@ -1,0 +1,86 @@
+[
+  {
+    "behavioral_verifier": "threshold",
+    "constitutional_requirement": "MON-BEH-THRESH-001-REQ",
+    "evidence": "MON-BEH-THRESH-001-EVIDENCE",
+    "execution": "MON-BEH-THRESH-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "position exposure threshold activation",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-THRESH-001-TRACE"
+  },
+  {
+    "behavioral_verifier": "trigger",
+    "constitutional_requirement": "MON-BEH-TRIG-001-REQ",
+    "evidence": "MON-BEH-TRIG-001-EVIDENCE",
+    "execution": "MON-BEH-TRIG-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "stalled order trigger activation",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-TRIG-001-TRACE"
+  },
+  {
+    "behavioral_verifier": "alert",
+    "constitutional_requirement": "MON-BEH-ALERT-001-REQ",
+    "evidence": "MON-BEH-ALERT-001-EVIDENCE",
+    "execution": "MON-BEH-ALERT-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "critical alert generation",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-ALERT-001-TRACE"
+  },
+  {
+    "behavioral_verifier": "escalation",
+    "constitutional_requirement": "MON-BEH-ESC-001-REQ",
+    "evidence": "MON-BEH-ESC-001-EVIDENCE",
+    "execution": "MON-BEH-ESC-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "executive notification escalation request",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-ESC-001-TRACE"
+  },
+  {
+    "behavioral_verifier": "acknowledgement",
+    "constitutional_requirement": "MON-BEH-ACK-001-REQ",
+    "evidence": "MON-BEH-ACK-001-EVIDENCE",
+    "execution": "MON-BEH-ACK-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "case file acknowledgement lineage",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-ACK-001-TRACE"
+  },
+  {
+    "behavioral_verifier": "suppression",
+    "constitutional_requirement": "MON-BEH-SUPP-001-REQ",
+    "evidence": "MON-BEH-SUPP-001-EVIDENCE",
+    "execution": "MON-BEH-SUPP-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "history not suppressed under repeated monitoring",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-SUPP-001-TRACE"
+  },
+  {
+    "behavioral_verifier": "integrated_response",
+    "constitutional_requirement": "MON-BEH-INT-001-REQ",
+    "evidence": "MON-BEH-INT-001-EVIDENCE",
+    "execution": "MON-BEH-INT-001",
+    "fixture": "MONITORING-RM-002-B02-FIXTURE",
+    "forward_traceability_complete": true,
+    "implementation_obligation": "observation to suppression integrated response",
+    "outcome": "PASS",
+    "reverse_traceability_complete": true,
+    "traceability_id": "MON-BEH-INT-001-TRACE"
+  }
+]

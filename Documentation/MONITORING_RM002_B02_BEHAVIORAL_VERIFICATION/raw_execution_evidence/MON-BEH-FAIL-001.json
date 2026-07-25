@@ -1,0 +1,26 @@
+{
+  "behavioral_evidence_id": "MON-BEH-FAIL-001-EVIDENCE",
+  "constitutional_requirement": "MON-BEH-FAIL-001-REQ",
+  "evidence_sha256": "4cf9f78963fa0fd58502b8c6faa7e47db5bd993cde89608863bae3499dbad8d9",
+  "execution_id": "MON-BEH-FAIL-001",
+  "execution_inputs": "malformed input failure evidence",
+  "execution_outputs": {
+    "exception": "AttributeError",
+    "failed_closed": true
+  },
+  "execution_timestamp": "deterministic-sequence",
+  "execution_verdict": "PASS",
+  "failure": null,
+  "implementation_obligation": "malformed input failure evidence",
+  "lineage_preserved": true,
+  "order": "B02-003",
+  "participating_fixtures": [
+    "Scripts/monitoring_rm002_b02_behavioral_verification.py"
+  ],
+  "participating_implementation_artifacts": [
+    "src/argos/trader/trade_monitoring.py"
+  ],
+  "reproducible": true,
+  "terminal_disposition": "PASS",
+  "verifier_identity": "failure_scenario"
+}
