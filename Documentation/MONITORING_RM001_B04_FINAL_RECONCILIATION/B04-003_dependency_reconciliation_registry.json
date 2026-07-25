@@ -1,0 +1,359 @@
+[
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Monitoring -> Commander",
+    "dependency_id": "MON-DEP-001",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "OUTBOUND_COMMUNICATION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Sentinel",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Sentinel -> Monitoring",
+    "dependency_id": "MON-DEP-002",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Seeker",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Seeker -> Monitoring",
+    "dependency_id": "MON-DEP-003",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Analyst",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Analyst -> Monitoring",
+    "dependency_id": "MON-DEP-004",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Risk",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Risk -> Monitoring",
+    "dependency_id": "MON-DEP-005",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Trader",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Trader -> Monitoring",
+    "dependency_id": "MON-DEP-006",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Broker",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Broker -> Monitoring",
+    "dependency_id": "MON-DEP-007",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Position Registry",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Position Registry -> Monitoring",
+    "dependency_id": "MON-DEP-008",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Authorizations",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Authorizations -> Monitoring",
+    "dependency_id": "MON-DEP-009",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Exit Decision",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Exit Decision -> Monitoring",
+    "dependency_id": "MON-DEP-010",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Closed Position Truth",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Closed Position Truth -> Monitoring",
+    "dependency_id": "MON-DEP-011",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Performance Truth",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Performance Truth -> Monitoring",
+    "dependency_id": "MON-DEP-012",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Monitoring -> Historian",
+    "dependency_id": "MON-DEP-013",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "OUTBOUND_COMMUNICATION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Infrastructure",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Infrastructure -> Monitoring",
+    "dependency_id": "MON-DEP-014",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "External Data Providers",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "External Data Providers -> Monitoring",
+    "dependency_id": "MON-DEP-015",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Persistence Systems",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Persistence Systems -> Monitoring",
+    "dependency_id": "MON-DEP-016",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "INBOUND_CONSUMPTION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  },
+  {
+    "authorized_circular_dependency": false,
+    "constitutional_consumer": "Monitoring Office",
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_producer": "Monitoring Office",
+    "dependency_constraints": [
+      "identity continuity",
+      "schema compatibility"
+    ],
+    "dependency_direction": "Monitoring -> Notification Systems",
+    "dependency_id": "MON-DEP-017",
+    "dependency_purpose": "Monitoring constitutional dependency.",
+    "dependency_scope": "OUTBOUND_COMMUNICATION",
+    "dependency_termination": [
+      "mission termination",
+      "scope removal",
+      "dependency unavailable terminal finding"
+    ],
+    "governing_authority": "MONITORING-RM-001-B03-001",
+    "reconciliation_status": "RECONCILED"
+  }
+]
