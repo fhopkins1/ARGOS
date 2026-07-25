@@ -1,0 +1,106 @@
+[
+  {
+    "artifact": "src/argos/trader/trade_monitoring.py",
+    "classification": "MONITORING_DIRECT",
+    "inclusion_evidence": {
+      "imports": [
+        "__future__",
+        "argos.foundation.audit",
+        "argos.foundation.configuration",
+        "argos.foundation.contracts",
+        "argos.foundation.identity",
+        "argos.foundation.persistence",
+        "argos.foundation.prompts",
+        "broker_integration",
+        "dataclasses",
+        "enum",
+        "hashlib",
+        "json",
+        "offices",
+        "order_management",
+        "position_management",
+        "typing"
+      ],
+      "object_construction": [
+        "TradeMonitoringOffice",
+        "TradeMonitoringDetector",
+        "TradeMonitoringSnapshot"
+      ],
+      "sha256": "7e67468b3f6ac4e775bc115c1c0df8aab3f35a264c990f4aca6c508922632b34"
+    }
+  },
+  {
+    "artifact": "Tests/test_trade_monitoring_office.py",
+    "classification": "VERIFIER",
+    "inclusion_evidence": {
+      "imports": [
+        "argos.foundation.audit",
+        "argos.foundation.configuration",
+        "argos.foundation.persistence",
+        "argos.foundation.prompts",
+        "argos.trader",
+        "pathlib",
+        "sys",
+        "unittest"
+      ],
+      "runtime_invocation": "Tests.test_trade_monitoring_office",
+      "sha256": "816a85dd960a89f8fe98c8a657318c2f9678e6713ff3f704e14b184ee0c7a1e2"
+    }
+  },
+  {
+    "artifact": "argos.foundation.audit",
+    "classification": "EVIDENCE_PRODUCER",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  },
+  {
+    "artifact": "argos.foundation.configuration",
+    "classification": "ENTERPRISE_PRECONDITION",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  },
+  {
+    "artifact": "argos.foundation.contracts",
+    "classification": "EVIDENCE_PRODUCER",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  },
+  {
+    "artifact": "argos.foundation.identity",
+    "classification": "SHARED_INFRASTRUCTURE",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  },
+  {
+    "artifact": "argos.foundation.persistence",
+    "classification": "PERSISTENCE_COMPONENT",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  },
+  {
+    "artifact": "argos.foundation.prompts",
+    "classification": "SHARED_INFRASTRUCTURE",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  },
+  {
+    "artifact": "argos.trader",
+    "classification": "FIXTURE",
+    "inclusion_evidence": {
+      "referenced_by_import_graph": true,
+      "source": "AST import dependency discovery"
+    }
+  }
+]

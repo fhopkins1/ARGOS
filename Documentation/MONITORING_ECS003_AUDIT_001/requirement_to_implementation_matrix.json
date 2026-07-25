@@ -1,0 +1,128 @@
+[
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring purpose and authority shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-001",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring office boundaries shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-002",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring canonical monitoring object model shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-003",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring ownership and custody shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-004",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring monitoring lifecycle shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-005",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring observation and evaluation doctrine shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-006",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring trigger threshold alert escalation shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-007",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring temporal and freshness shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-008",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring duplicate suppression noise governance shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-009",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring interface constitution shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-010",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring reconciliation and correction shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-011",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring evidence doctrine shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-012",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "",
+    "implementation_obligation": "Monitoring constitutional requirement traceability shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "mapping_basis": "not implemented with complete proof",
+    "requirement_id": "MON-CONST-013",
+    "verifier": ""
+  },
+  {
+    "implementation_artifact": "src/argos/trader/trade_monitoring.py",
+    "implementation_obligation": "Monitoring report and dashboard generation",
+    "mapping_basis": "executable verifier",
+    "requirement_id": "MON-REQ-001",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/trade_monitoring.py",
+    "implementation_obligation": "Critical alert case-file generation and executive notification",
+    "mapping_basis": "executable verifier",
+    "requirement_id": "MON-REQ-002",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/trade_monitoring.py",
+    "implementation_obligation": "Stalled order and missing broker response detection",
+    "mapping_basis": "executable verifier",
+    "requirement_id": "MON-REQ-003",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/trade_monitoring.py",
+    "implementation_obligation": "Position limit alert and dashboard active-alert behavior",
+    "mapping_basis": "executable verifier",
+    "requirement_id": "MON-REQ-004",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "implementation_artifact": "src/argos/trader/trade_monitoring.py",
+    "implementation_obligation": "Monitoring boundary prompt declaration",
+    "mapping_basis": "executable verifier",
+    "requirement_id": "MON-REQ-005",
+    "verifier": "Tests.test_trade_monitoring_office"
+  }
+]

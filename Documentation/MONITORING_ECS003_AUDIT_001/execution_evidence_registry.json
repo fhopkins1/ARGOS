@@ -1,0 +1,24 @@
+[
+  {
+    "custody": "Documentation/MONITORING_ECS003_AUDIT_001",
+    "evidence_id": "MON-ECS003-EVIDENCE-EXEC-001-STDOUT",
+    "execution": "MON-ECS003-EXEC-001",
+    "integrity": "sha256",
+    "path": "Documentation\\MONITORING_ECS003_AUDIT_001\\raw_execution_logs\\monitoring_unittest.stdout.log",
+    "producer": "Tests.test_trade_monitoring_office",
+    "provenance": "unittest execution",
+    "retention": "permanent audit evidence",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "custody": "Documentation/MONITORING_ECS003_AUDIT_001",
+    "evidence_id": "MON-ECS003-EVIDENCE-EXEC-001-STDERR",
+    "execution": "MON-ECS003-EXEC-001",
+    "integrity": "sha256",
+    "path": "Documentation\\MONITORING_ECS003_AUDIT_001\\raw_execution_logs\\monitoring_unittest.stderr.log",
+    "producer": "Tests.test_trade_monitoring_office",
+    "provenance": "unittest execution",
+    "retention": "permanent audit evidence",
+    "sha256": "064446ed3539c7ecc760dae8d1ef8abb2be29845ec3b83f91d35be927f794192"
+  }
+]

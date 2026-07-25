@@ -1,0 +1,138 @@
+[
+  {
+    "canonical_requirement": "Monitoring purpose and authority shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "purpose_and_authority",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-001",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring office boundaries shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "office_boundaries",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-002",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring canonical monitoring object model shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "canonical_monitoring_object_model",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-003",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring ownership and custody shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "ownership_and_custody",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-004",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring monitoring lifecycle shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "monitoring_lifecycle",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-005",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring observation and evaluation doctrine shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "observation_and_evaluation_doctrine",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-006",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring trigger threshold alert escalation shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "trigger_threshold_alert_escalation",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-007",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring temporal and freshness shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "temporal_and_freshness",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-008",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring duplicate suppression noise governance shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "duplicate_suppression_noise_governance",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-009",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring interface constitution shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "interface_constitution",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-010",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring reconciliation and correction shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "reconciliation_and_correction",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-011",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring evidence doctrine shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "evidence_doctrine",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-012",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring constitutional requirement traceability shall be complete, deterministic, owned, traceable, and independently auditable.",
+    "domain": "constitutional_requirement_traceability",
+    "proof_required": true,
+    "requirement_id": "MON-CONST-013",
+    "requirement_type": "CONSTITUTIONAL"
+  },
+  {
+    "canonical_requirement": "Monitoring report and dashboard generation",
+    "domain": "executable_trade_monitoring_behavior",
+    "proof_required": true,
+    "requirement_id": "MON-REQ-001",
+    "requirement_type": "BEHAVIORAL",
+    "test_method": "test_monitoring_report_and_dashboard_are_generated",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "canonical_requirement": "Critical alert case-file generation and executive notification",
+    "domain": "executable_trade_monitoring_behavior",
+    "proof_required": true,
+    "requirement_id": "MON-REQ-002",
+    "requirement_type": "BEHAVIORAL",
+    "test_method": "test_critical_alerts_generate_case_file_and_notify_executive",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "canonical_requirement": "Stalled order and missing broker response detection",
+    "domain": "executable_trade_monitoring_behavior",
+    "proof_required": true,
+    "requirement_id": "MON-REQ-003",
+    "requirement_type": "BEHAVIORAL",
+    "test_method": "test_stalled_order_and_missing_broker_response_are_detected",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "canonical_requirement": "Position limit alert and dashboard active-alert behavior",
+    "domain": "executable_trade_monitoring_behavior",
+    "proof_required": true,
+    "requirement_id": "MON-REQ-004",
+    "requirement_type": "BEHAVIORAL",
+    "test_method": "test_position_limit_violation_and_dashboard_active_alerts",
+    "verifier": "Tests.test_trade_monitoring_office"
+  },
+  {
+    "canonical_requirement": "Monitoring boundary prompt declaration",
+    "domain": "executable_trade_monitoring_behavior",
+    "proof_required": true,
+    "requirement_id": "MON-REQ-005",
+    "requirement_type": "BEHAVIORAL",
+    "test_method": "test_system_prompt_declares_monitoring_boundary",
+    "verifier": "Tests.test_trade_monitoring_office"
+  }
+]
