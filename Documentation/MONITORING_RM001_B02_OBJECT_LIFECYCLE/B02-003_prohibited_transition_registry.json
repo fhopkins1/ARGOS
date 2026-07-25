@@ -1,0 +1,44 @@
+[
+  {
+    "constitutional_justification": "acknowledgement alone cannot resolve or close externally owned action",
+    "from_state": "Acknowledged",
+    "prohibition_id": "MON-LC-PROHIBIT-001",
+    "to_state": "Completed"
+  },
+  {
+    "constitutional_justification": "suppression cannot delete or archive evidence without completion",
+    "from_state": "Suppressed",
+    "prohibition_id": "MON-LC-PROHIBIT-002",
+    "to_state": "Archived"
+  },
+  {
+    "constitutional_justification": "replay cannot create correction without correction authority",
+    "from_state": "Replay",
+    "prohibition_id": "MON-LC-PROHIBIT-003",
+    "to_state": "Corrected"
+  },
+  {
+    "constitutional_justification": "recovery failure requires explicit terminal evidence",
+    "from_state": "Recovering",
+    "prohibition_id": "MON-LC-PROHIBIT-004",
+    "to_state": "Terminated"
+  },
+  {
+    "constitutional_justification": "correction cannot rewrite identity",
+    "from_state": "Corrected",
+    "prohibition_id": "MON-LC-PROHIBIT-005",
+    "to_state": "Created"
+  },
+  {
+    "constitutional_justification": "archival is terminal unless superseded by formal restoration authority",
+    "from_state": "Archived",
+    "prohibition_id": "MON-LC-PROHIBIT-006",
+    "to_state": "Active"
+  },
+  {
+    "constitutional_justification": "termination cannot be reversed without new constitutionally authorized object",
+    "from_state": "Terminated",
+    "prohibition_id": "MON-LC-PROHIBIT-007",
+    "to_state": "Active"
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "admissible_inputs": [
+    "prior pipeline stage evidence",
+    "authorized monitoring scope"
+  ],
+  "constitutional_owner": "Monitoring Office",
+  "constitutional_purpose": "Raw Observation performs only its named stage in the Monitoring processing pipeline.",
+  "creation_authority": "Monitoring Office",
+  "evidence_requirements": [
+    "raw evidence",
+    "normalization/evaluation record",
+    "lineage digest"
+  ],
+  "lifecycle_entry": "created or received",
+  "lifecycle_exit": "transitioned to next stage or terminally dispositioned",
+  "permitted_outputs": [
+    "next pipeline stage artifact",
+    "immutable stage evidence"
+  ],
+  "prohibited_outputs": [
+    "produce findings",
+    "generate alerts",
+    "request escalations",
+    "execute evaluation",
+    "modify enterprise truth"
+  ],
+  "required_metadata": [
+    "identity",
+    "source",
+    "timestamp",
+    "rule_version",
+    "evidence_digest",
+    "lineage"
+  ],
+  "required_timestamps": [
+    "source_time",
+    "receipt_time",
+    "processing_time",
+    "persistence_time"
+  ],
+  "stage": "Raw Observation"
+}

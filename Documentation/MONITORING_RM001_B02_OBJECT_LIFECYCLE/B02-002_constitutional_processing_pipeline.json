@@ -1,0 +1,32 @@
+[
+  {
+    "from_stage": "Raw Observation",
+    "immutable_sequence": true,
+    "to_stage": "Normalized Observation",
+    "transition_id": "MON-PIPE-TRANS-001"
+  },
+  {
+    "from_stage": "Normalized Observation",
+    "immutable_sequence": true,
+    "to_stage": "Evaluation",
+    "transition_id": "MON-PIPE-TRANS-002"
+  },
+  {
+    "from_stage": "Evaluation",
+    "immutable_sequence": true,
+    "to_stage": "Finding",
+    "transition_id": "MON-PIPE-TRANS-003"
+  },
+  {
+    "from_stage": "Finding",
+    "immutable_sequence": true,
+    "to_stage": "Alert",
+    "transition_id": "MON-PIPE-TRANS-004"
+  },
+  {
+    "from_stage": "Alert",
+    "immutable_sequence": true,
+    "to_stage": "Escalation",
+    "transition_id": "MON-PIPE-TRANS-005"
+  }
+]

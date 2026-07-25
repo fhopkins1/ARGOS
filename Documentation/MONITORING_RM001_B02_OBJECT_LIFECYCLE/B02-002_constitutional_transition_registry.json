@@ -1,0 +1,52 @@
+[
+  {
+    "from_stage": "Raw Observation",
+    "required_evidence": [
+      "lineage",
+      "timestamp",
+      "authority"
+    ],
+    "to_stage": "Normalized Observation",
+    "transition_id": "MON-PIPE-TRANS-001"
+  },
+  {
+    "from_stage": "Normalized Observation",
+    "required_evidence": [
+      "lineage",
+      "timestamp",
+      "authority"
+    ],
+    "to_stage": "Evaluation",
+    "transition_id": "MON-PIPE-TRANS-002"
+  },
+  {
+    "from_stage": "Evaluation",
+    "required_evidence": [
+      "lineage",
+      "timestamp",
+      "authority"
+    ],
+    "to_stage": "Finding",
+    "transition_id": "MON-PIPE-TRANS-003"
+  },
+  {
+    "from_stage": "Finding",
+    "required_evidence": [
+      "lineage",
+      "timestamp",
+      "authority"
+    ],
+    "to_stage": "Alert",
+    "transition_id": "MON-PIPE-TRANS-004"
+  },
+  {
+    "from_stage": "Alert",
+    "required_evidence": [
+      "lineage",
+      "timestamp",
+      "authority"
+    ],
+    "to_stage": "Escalation",
+    "transition_id": "MON-PIPE-TRANS-005"
+  }
+]

@@ -1,0 +1,433 @@
+[
+  {
+    "constitutional_meaning": "Monitoring object is in Created lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [],
+    "permitted_successors": [
+      "Initialized"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Created",
+    "state_id": "MON-LC-STATE-001"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Initialized lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Created"
+    ],
+    "permitted_successors": [
+      "Active"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Initialized",
+    "state_id": "MON-LC-STATE-002"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Active lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Initialized",
+      "Recovering"
+    ],
+    "permitted_successors": [
+      "Observing",
+      "Suspended",
+      "Terminated"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Active",
+    "state_id": "MON-LC-STATE-003"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Observing lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Active"
+    ],
+    "permitted_successors": [
+      "Evaluating"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Observing",
+    "state_id": "MON-LC-STATE-004"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Evaluating lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Observing"
+    ],
+    "permitted_successors": [
+      "Threshold Pending"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Evaluating",
+    "state_id": "MON-LC-STATE-005"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Threshold Pending lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Evaluating"
+    ],
+    "permitted_successors": [
+      "Finding Generated"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Threshold Pending",
+    "state_id": "MON-LC-STATE-006"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Finding Generated lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Threshold Pending"
+    ],
+    "permitted_successors": [
+      "Alert Generated",
+      "Suppressed"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Finding Generated",
+    "state_id": "MON-LC-STATE-007"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Alert Generated lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Finding Generated"
+    ],
+    "permitted_successors": [
+      "Escalation Requested"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Alert Generated",
+    "state_id": "MON-LC-STATE-008"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Escalation Requested lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Alert Generated"
+    ],
+    "permitted_successors": [
+      "Acknowledged"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Escalation Requested",
+    "state_id": "MON-LC-STATE-009"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Acknowledged lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Escalation Requested"
+    ],
+    "permitted_successors": [
+      "Completed"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Acknowledged",
+    "state_id": "MON-LC-STATE-010"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Suppressed lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Finding Generated"
+    ],
+    "permitted_successors": [
+      "Completed"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Suppressed",
+    "state_id": "MON-LC-STATE-011"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Suspended lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Active"
+    ],
+    "permitted_successors": [
+      "Recovering"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Suspended",
+    "state_id": "MON-LC-STATE-012"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Degraded lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [],
+    "permitted_successors": [],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Degraded",
+    "state_id": "MON-LC-STATE-013"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Recovering lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Suspended"
+    ],
+    "permitted_successors": [
+      "Active"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Recovering",
+    "state_id": "MON-LC-STATE-014"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Corrected lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [],
+    "permitted_successors": [
+      "Superseded"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Corrected",
+    "state_id": "MON-LC-STATE-015"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Superseded lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Corrected"
+    ],
+    "permitted_successors": [
+      "Archived"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Superseded",
+    "state_id": "MON-LC-STATE-016"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Completed lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Acknowledged",
+      "Suppressed"
+    ],
+    "permitted_successors": [
+      "Archived"
+    ],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Completed",
+    "state_id": "MON-LC-STATE-017"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Archived lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Completed",
+      "Superseded"
+    ],
+    "permitted_successors": [],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Archived",
+    "state_id": "MON-LC-STATE-018"
+  },
+  {
+    "constitutional_meaning": "Monitoring object is in Terminated lifecycle state.",
+    "entry_authority": "Monitoring Office",
+    "exit_authority": "Monitoring Office",
+    "permitted_predecessors": [
+      "Active"
+    ],
+    "permitted_successors": [],
+    "prohibited_transitions": [
+      "direct mutation of enterprise truth",
+      "history deletion",
+      "identity rewrite"
+    ],
+    "required_evidence": [
+      "state transition evidence",
+      "authority reference",
+      "timestamp"
+    ],
+    "state": "Terminated",
+    "state_id": "MON-LC-STATE-019"
+  }
+]

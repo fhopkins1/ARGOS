@@ -1,0 +1,439 @@
+[
+  {
+    "from_state": "Created",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Initialized",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-001",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Initialized",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Active",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-002",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Active",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Observing",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-003",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Observing",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Evaluating",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-004",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Evaluating",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Threshold Pending",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-005",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Threshold Pending",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Finding Generated",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-006",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Finding Generated",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Alert Generated",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-007",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Alert Generated",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Escalation Requested",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-008",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Escalation Requested",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Acknowledged",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-009",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Acknowledged",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Completed",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-010",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Active",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Suspended",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-011",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Suspended",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Recovering",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-012",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Recovering",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Active",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-013",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Finding Generated",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Suppressed",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-014",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Suppressed",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Completed",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-015",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Completed",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Archived",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-016",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Active",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Terminated",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-017",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Corrected",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Superseded",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-018",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  },
+  {
+    "from_state": "Superseded",
+    "historical_recording_requirements": "append transition record before publication",
+    "mutation_authority": "Monitoring-owned lifecycle state only",
+    "required_evidence": [
+      "pre-state",
+      "post-state",
+      "trigger",
+      "timestamp",
+      "lineage digest"
+    ],
+    "rollback_prohibition": true,
+    "supersession_behavior": "supersede by linked successor; predecessor remains accessible",
+    "to_state": "Archived",
+    "transition_authority": "Monitoring Office",
+    "transition_id": "MON-LC-TRANS-019",
+    "triggering_conditions": "authorized lifecycle event with sufficient Monitoring evidence",
+    "validation_requirements": [
+      "identity unchanged",
+      "permitted transition",
+      "history append-only"
+    ]
+  }
+]

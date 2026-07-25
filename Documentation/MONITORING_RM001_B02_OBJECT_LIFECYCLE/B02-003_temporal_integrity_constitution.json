@@ -1,0 +1,12 @@
+{
+  "freshness_required": true,
+  "future_dated_observations": "quarantine or fail closed",
+  "out_of_order_observations": "preserve and reconcile deterministically",
+  "stale_observations": "record and classify stale, do not overwrite",
+  "timestamp_precedence": [
+    "source_time",
+    "receipt_time",
+    "processing_time",
+    "persistence_time"
+  ]
+}
