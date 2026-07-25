@@ -1,0 +1,26 @@
+[
+  {
+    "authority": "Exit Decision Office",
+    "expiration_scope": "decision",
+    "post_expiration_rule": "no issuance, authorization use, or execution request may proceed",
+    "trigger": "decision validity window elapsed"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "expiration_scope": "recommendation",
+    "post_expiration_rule": "no issuance, authorization use, or execution request may proceed",
+    "trigger": "recommendation freshness elapsed"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "expiration_scope": "authorization_binding",
+    "post_expiration_rule": "no issuance, authorization use, or execution request may proceed",
+    "trigger": "external authorization expired or revoked"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "expiration_scope": "context",
+    "post_expiration_rule": "no issuance, authorization use, or execution request may proceed",
+    "trigger": "input freshness invalidated"
+  }
+]

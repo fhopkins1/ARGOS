@@ -1,0 +1,752 @@
+EXIT-DECISION-RM-001-B02-003
+
+# Exit Decision Lifecycle Constitution
+
+## Objective
+
+Establish the complete constitutional lifecycle governing every Exit Decision object state, transition, authority boundary, evidence requirement, failure behavior, recovery behavior, and reconciliation requirement.
+
+This order shall define the deterministic lifecycle model governing how Exit Decision objects are created, evaluated, decided, authorized, issued, executed, completed, corrected, superseded, cancelled, expired, and archived.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every lifecycle state shall possess one constitutional meaning.
+
+Every transition shall possess one governing authority.
+
+Every lifecycle mutation shall preserve historical lineage.
+
+---
+
+# Constitutional Principles
+
+A lifecycle state shall represent one deterministic condition.
+
+A transition shall represent one authorized movement between states.
+
+No object shall exist in multiple contradictory lifecycle states.
+
+No transition shall occur without:
+
+* authorized initiating authority;
+* satisfied preconditions;
+* required evidence;
+* valid state transition path.
+
+No lifecycle transition shall create ownership over another office's truth domain.
+
+No Exit Decision lifecycle state shall imply ownership of:
+
+* market truth;
+* risk truth;
+* authorization truth;
+* execution truth;
+* position truth;
+* settlement truth;
+* historical truth;
+* performance truth.
+
+A lifecycle record shall preserve:
+
+* predecessor state;
+* successor state;
+* transition authority;
+* transition evidence;
+* transition timestamp;
+* transition rationale.
+
+---
+
+# Canonical Lifecycle Model
+
+The authoritative Exit Decision lifecycle shall be:
+
+```text
+Created
+↓
+Received
+↓
+Validating
+↓
+Admitted
+↓
+Evaluating
+↓
+Recommended
+↓
+Decided
+↓
+Authorized
+↓
+Issued
+↓
+Acknowledged
+↓
+Executing
+↓
+Partially Executed
+↓
+Completed
+```
+
+Exceptional lifecycle branches shall include:
+
+```text
+Validating
+→ Rejected
+
+Evaluating
+→ Deferred
+
+Recommended
+→ Rejected
+
+Decided
+→ Cancelled
+
+Decided
+→ Expired
+
+Decided
+→ Corrected
+
+Decided
+→ Superseded
+
+Completed
+→ Archived
+```
+
+---
+
+# Lifecycle State Registry
+
+## Created
+
+### Purpose
+
+Represents creation of an Exit Decision object.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* valid creation request exists;
+* initiating identity is established;
+* required context is available.
+
+### Required Evidence
+
+* creation event;
+* creator identity;
+* creation timestamp;
+* initial request context.
+
+### Prohibited Conditions
+
+Created shall not represent:
+
+* valid evaluation;
+* recommendation;
+* decision;
+* authorization;
+* execution authority.
+
+---
+
+## Received
+
+### Purpose
+
+Represents receipt of an Exit Decision request or candidate input.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* object identity exists;
+* receipt source is known.
+
+### Required Evidence
+
+* receipt record;
+* source lineage;
+* input reference.
+
+### Prohibited Conditions
+
+Receipt shall not imply admissibility.
+
+---
+
+## Validating
+
+### Purpose
+
+Represents validation of object completeness and admissibility requirements.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* received object exists;
+* validation process initiated.
+
+### Required Evidence
+
+* validation record;
+* validation criteria;
+* validation outcome.
+
+### Failure Behavior
+
+Invalid objects shall transition to:
+
+```text
+Rejected
+```
+
+---
+
+## Admitted
+
+### Purpose
+
+Represents acceptance that the Exit Decision request satisfies minimum entry requirements.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* validation successful;
+* required inputs available.
+
+### Required Evidence
+
+* admissibility record;
+* accepted input inventory.
+
+### Prohibited Conditions
+
+Admission shall not equal approval.
+
+---
+
+## Evaluating
+
+### Purpose
+
+Represents active evaluation of exit conditions.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* object admitted;
+* required evaluation inputs available.
+
+### Required Evidence
+
+* evaluation record;
+* referenced inputs;
+* evaluation methodology.
+
+### Prohibited Conditions
+
+Evaluation shall not create:
+
+* risk truth;
+* position truth;
+* authorization truth.
+
+---
+
+## Recommended
+
+### Purpose
+
+Represents creation of an exit recommendation.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* evaluation completed;
+* recommendation criteria satisfied.
+
+### Required Evidence
+
+* recommendation rationale;
+* supporting evidence;
+* uncertainty assessment.
+
+### Prohibited Conditions
+
+Recommendation shall not compel execution.
+
+---
+
+## Decided
+
+### Purpose
+
+Represents final Exit Decision issuance.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* decision criteria satisfied;
+* decision authority available.
+
+### Required Evidence
+
+* decision record;
+* decision rationale;
+* supporting evidence;
+* decision authority identity.
+
+### Prohibited Conditions
+
+Decision shall not equal:
+
+* authorization;
+* execution;
+* position closure.
+
+---
+
+## Authorized
+
+### Purpose
+
+Represents validation that required authorization exists.
+
+### Authority
+
+Authorizations Office.
+
+### Preconditions
+
+* valid Exit Decision exists;
+* authorization requirements satisfied.
+
+### Required Evidence
+
+* authorization reference;
+* authorization validation record.
+
+### Prohibited Conditions
+
+Authorization shall not modify Exit Decision ownership.
+
+---
+
+## Issued
+
+### Purpose
+
+Represents transmission of an approved decision object to the next authorized consumer.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* decision exists;
+* authorization requirements satisfied where applicable.
+
+### Required Evidence
+
+* issuance record;
+* recipient identity;
+* transmission record.
+
+---
+
+## Acknowledged
+
+### Purpose
+
+Represents confirmation that the receiving authority accepted receipt.
+
+### Authority
+
+Receiving office.
+
+### Preconditions
+
+* issued object received.
+
+### Required Evidence
+
+* acknowledgement record;
+* receiving identity.
+
+---
+
+## Executing
+
+### Purpose
+
+Represents active execution by authorized execution authority.
+
+### Authority
+
+Trader Office.
+
+### Preconditions
+
+* valid authorization exists;
+* execution permitted.
+
+### Required Evidence
+
+* execution state record.
+
+### Prohibited Conditions
+
+Exit Decision shall not control this state.
+
+---
+
+## Partially Executed
+
+### Purpose
+
+Represents incomplete execution where only part of the authorized action occurred.
+
+### Authority
+
+Trader Office.
+
+### Preconditions
+
+* execution initiated;
+* incomplete completion condition exists.
+
+### Required Evidence
+
+* execution reconciliation record.
+
+---
+
+## Completed
+
+### Purpose
+
+Represents completion of authorized execution workflow.
+
+### Authority
+
+Execution and reconciliation authorities.
+
+### Preconditions
+
+* execution completed;
+* reconciliation performed.
+
+### Required Evidence
+
+* completion record;
+* reconciliation evidence.
+
+### Prohibited Conditions
+
+Completion shall not create closed-position truth.
+
+---
+
+# Exceptional Lifecycle States
+
+## Deferred
+
+### Purpose
+
+Represents temporary suspension of decision progression.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* insufficient information;
+* unresolved condition;
+* required dependency unavailable.
+
+### Required Evidence
+
+* deferral rationale;
+* reopening criteria.
+
+### Restrictions
+
+Deferred decisions cannot execute.
+
+---
+
+## Rejected
+
+### Purpose
+
+Represents refusal to advance an Exit Decision object.
+
+### Authority
+
+Exit Decision Office.
+
+### Preconditions
+
+* invalid condition;
+* insufficient admissibility;
+* failed criteria.
+
+### Required Evidence
+
+* rejection reason;
+* rejection evidence.
+
+### Restrictions
+
+Rejected decisions cannot silently reactivate.
+
+---
+
+## Cancelled
+
+### Purpose
+
+Represents termination of an active decision.
+
+### Authority
+
+Exit Decision Office or authorized cancellation authority.
+
+### Required Evidence
+
+* cancellation rationale;
+* cancellation authority.
+
+### Restrictions
+
+Cancellation preserves history.
+
+---
+
+## Expired
+
+### Purpose
+
+Represents a decision whose validity period has ended.
+
+### Authority
+
+Exit Decision lifecycle authority.
+
+### Required Evidence
+
+* expiration condition;
+* expiration timestamp.
+
+### Restrictions
+
+Expired decisions cannot execute.
+
+---
+
+## Corrected
+
+### Purpose
+
+Represents issuance of a corrected decision version.
+
+### Authority
+
+Exit Decision Office.
+
+### Required Evidence
+
+* correction reason;
+* prior version reference;
+* correction lineage.
+
+### Restrictions
+
+Correction shall never overwrite prior decisions.
+
+---
+
+## Superseded
+
+### Purpose
+
+Represents replacement by a newer decision version.
+
+### Authority
+
+Exit Decision Office.
+
+### Required Evidence
+
+* predecessor reference;
+* successor reference;
+* supersession rationale.
+
+### Restrictions
+
+Superseded decisions remain historically accessible.
+
+---
+
+## Archived
+
+### Purpose
+
+Represents final historical retention state.
+
+### Authority
+
+Historian.
+
+### Required Evidence
+
+* archival record;
+* lineage confirmation.
+
+---
+
+# Transition Registry
+
+Every lifecycle transition shall define:
+
+| Transition                     | Initiating Authority  | Required Evidence        |
+| ------------------------------ | --------------------- | ------------------------ |
+| Created → Received             | Exit Decision         | Receipt record           |
+| Received → Validating          | Exit Decision         | Validation initiation    |
+| Validating → Admitted          | Exit Decision         | Admission record         |
+| Validating → Rejected          | Exit Decision         | Rejection evidence       |
+| Admitted → Evaluating          | Exit Decision         | Evaluation initiation    |
+| Evaluating → Recommended       | Exit Decision         | Recommendation record    |
+| Evaluating → Deferred          | Exit Decision         | Deferral record          |
+| Recommended → Decided          | Exit Decision         | Decision record          |
+| Recommended → Rejected         | Exit Decision         | Rejection record         |
+| Decided → Authorized           | Authorizations        | Authorization validation |
+| Authorized → Issued            | Exit Decision         | Issuance record          |
+| Issued → Acknowledged          | Consumer Office       | Receipt acknowledgement  |
+| Acknowledged → Executing       | Trader                | Execution authorization  |
+| Executing → Partially Executed | Trader                | Execution state          |
+| Executing → Completed          | Trader/Reconciliation | Completion evidence      |
+| Decided → Corrected            | Exit Decision         | Correction record        |
+| Decided → Superseded           | Exit Decision         | Supersession record      |
+| Decided → Cancelled            | Authorized Authority  | Cancellation record      |
+| Decided → Expired              | Lifecycle Authority   | Expiration record        |
+| Completed → Archived           | Historian             | Archive record           |
+
+---
+
+# Invalid Transition Registry
+
+The following transitions are constitutionally prohibited:
+
+* Created → Executing;
+* Received → Executed;
+* Evaluating → Authorized;
+* Recommended → Executing;
+* Decided → Executing without authorization;
+* Expired → Executing;
+* Cancelled → Executing;
+* Rejected → Executing;
+* Superseded → Executing;
+* Archived → Active lifecycle state.
+
+No implementation may permit these transitions.
+
+---
+
+# Replay and Recovery Constitution
+
+Lifecycle replay shall preserve:
+
+* original transition order;
+* original authority;
+* original evidence;
+* original timestamps;
+* original lineage.
+
+Recovery shall:
+
+* restore the last valid lifecycle state;
+* reject invalid state mutation;
+* preserve incomplete transitions;
+* require reconciliation after interruption.
+
+No recovery process may erase historical lifecycle states.
+
+---
+
+# Duplicate Transition Constitution
+
+Duplicate transitions shall:
+
+* be detected;
+* preserve original transition;
+* generate reconciliation evidence;
+* prevent unauthorized state mutation.
+
+A repeated transition shall never create a second authoritative lifecycle event.
+
+---
+
+# Deliverables
+
+This order shall produce:
+
+* lifecycle registry;
+* transition registry;
+* invalid-transition registry;
+* lifecycle evidence requirements;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every lifecycle state has deterministic meaning;
+* every transition has one governing authority;
+* every transition has required evidence;
+* invalid transitions are defined;
+* duplicate transitions are governed;
+* replay behavior is deterministic;
+* restart behavior is deterministic;
+* terminal states are defined;
+* lifecycle ownership is preserved;
+* historical integrity is preserved;
+* no lifecycle ambiguity remains.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B02-004 — Decision Correction, Supersession, Expiration, and Historical Integrity Constitution**

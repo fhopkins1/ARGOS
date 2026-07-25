@@ -1,0 +1,481 @@
+# EXIT-DECISION-RM-001-B02-001
+
+# Canonical Exit Decision Object Registry Order
+
+## Objective
+
+Establish the authoritative constitutional object model governing all Exit Decision objects.
+
+This order shall define the canonical Exit Decision object inventory, object purpose, object identity, ownership, custody, mutation authority, correction authority, reconciliation authority, persistence obligations, and evidence obligations.
+
+This order shall not modify implementation behavior.
+
+This order shall not define executable logic.
+
+This order shall not perform behavioral verification.
+
+This order shall not generate implementation proof.
+
+This order shall not execute certification activity.
+
+---
+
+# Constitutional Requirements
+
+## 1. Establish Canonical Exit Decision Object Model
+
+Create the authoritative Exit Decision object registry.
+
+The registry shall define every object required for the complete Exit Decision lifecycle.
+
+Each object shall possess:
+
+* one canonical identity;
+* one constitutional purpose;
+* one owner;
+* one custodian;
+* one creator authority;
+* one mutation authority;
+* one correction authority;
+* one reconciliation authority;
+* one persistence requirement;
+* one evidence requirement.
+
+No Exit Decision object may exist outside the registry.
+
+---
+
+# 2. Establish Canonical Exit Decision Objects
+
+The registry shall define the following canonical objects.
+
+---
+
+## Exit Decision Request Object
+
+### Purpose
+
+Represent an authorized request requiring Exit Decision evaluation.
+
+### Define
+
+* object identity;
+* request origin;
+* requesting authority;
+* admissibility requirements;
+* ownership;
+* custody;
+* lifecycle entry state.
+
+The object shall not contain:
+
+* position truth;
+* risk truth;
+* authorization truth;
+* execution truth.
+
+---
+
+## Exit Decision Context Object
+
+### Purpose
+
+Represent the bounded contextual information available for evaluation.
+
+### Define
+
+* contextual inputs;
+* source references;
+* timestamps;
+* freshness requirements;
+* dependency references.
+
+The object shall contain references to external truth sources rather than replacing their ownership.
+
+---
+
+## Exit Condition Object
+
+### Purpose
+
+Represent the condition requiring evaluation.
+
+### Define:
+
+* condition identity;
+* condition source;
+* evaluation criteria;
+* applicability;
+* validity period.
+
+---
+
+## Exit Evaluation Object
+
+### Purpose
+
+Represent analytical evaluation performed by Exit Decision.
+
+### Define:
+
+* evaluation identity;
+* evaluation inputs;
+* evaluation methodology reference;
+* evaluation result;
+* evaluation evidence.
+
+The object shall not become:
+
+* risk truth;
+* performance truth;
+* market truth.
+
+---
+
+## Exit Constraint Object
+
+### Purpose
+
+Represent constraints applicable to Exit Decision evaluation.
+
+### Define:
+
+* constraint source;
+* constraint owner;
+* constraint validity;
+* constraint enforcement relationship.
+
+---
+
+## Exit Candidate Object
+
+### Purpose
+
+Represent potential exit outcomes considered during evaluation.
+
+### Define:
+
+* candidate identity;
+* candidate basis;
+* candidate relationship to evaluation;
+* candidate disposition.
+
+---
+
+## Exit Recommendation Object
+
+### Purpose
+
+Represent a recommended exit action.
+
+### Define:
+
+* recommendation authority;
+* recommendation rationale;
+* recommendation status;
+* recommendation limitations.
+
+A recommendation shall not equal a decision.
+
+---
+
+## Exit Decision Object
+
+### Purpose
+
+Represent the authoritative Exit Decision outcome.
+
+### Define:
+
+* decision identity;
+* decision owner;
+* decision authority;
+* decision rationale;
+* decision state;
+* decision lineage.
+
+The object shall represent only Exit Decision truth.
+
+It shall not contain:
+
+* authorization truth;
+* execution truth;
+* settlement truth;
+* closed-position truth.
+
+---
+
+## Exit Decision Version Object
+
+### Purpose
+
+Preserve deterministic version lineage for Exit Decision changes.
+
+### Define:
+
+* version identity;
+* predecessor relationship;
+* successor relationship;
+* creation authority;
+* version history.
+
+---
+
+## Exit Authorization Binding Object
+
+### Purpose
+
+Represent the relationship between an Exit Decision and an authorization process.
+
+### Define:
+
+* authorization reference;
+* authorization owner;
+* binding state;
+* validation requirements.
+
+The object shall not create authorization authority.
+
+---
+
+## Exit Instruction Request Object
+
+### Purpose
+
+Represent a request for downstream execution consideration.
+
+### Define:
+
+* originating decision;
+* destination authority;
+* request state;
+* acknowledgement requirements.
+
+The object shall not execute trades.
+
+---
+
+## Exit Decision Rejection Object
+
+### Purpose
+
+Represent rejection of an Exit Decision request, evaluation, or transition.
+
+### Define:
+
+* rejection authority;
+* rejection reason;
+* rejection evidence;
+* rejection timestamp.
+
+---
+
+## Exit Decision Deferral Object
+
+### Purpose
+
+Represent temporary suspension of decision completion.
+
+### Define:
+
+* deferral authority;
+* deferral reason;
+* required resolution;
+* expiration conditions.
+
+---
+
+## Exit Decision Cancellation Object
+
+### Purpose
+
+Represent authorized cancellation of an existing decision or request.
+
+### Define:
+
+* cancellation authority;
+* cancellation reason;
+* affected lineage;
+* historical preservation requirements.
+
+---
+
+## Exit Decision Correction Object
+
+### Purpose
+
+Represent authorized correction activity.
+
+### Define:
+
+* correction authority;
+* correction reason;
+* corrected attributes;
+* preserved prior state;
+* correction evidence.
+
+Correction shall never overwrite historical truth.
+
+---
+
+## Exit Decision Supersession Object
+
+### Purpose
+
+Represent replacement of a prior decision.
+
+### Define:
+
+* predecessor decision;
+* successor decision;
+* supersession authority;
+* supersession rationale;
+* lineage preservation.
+
+---
+
+## Exit Decision Completion Record Object
+
+### Purpose
+
+Represent final lifecycle completion state.
+
+### Define:
+
+* completion authority;
+* completion timestamp;
+* final lifecycle state;
+* reconciliation status.
+
+---
+
+## Exit Decision Evidence Record Object
+
+### Purpose
+
+Represent evidence supporting Exit Decision lifecycle events.
+
+### Define:
+
+* evidence identity;
+* evidence source;
+* evidence custody;
+* evidence integrity requirements;
+* retention obligations.
+
+---
+
+# 3. Establish Object Ownership Registry
+
+Create the authoritative ownership registry.
+
+For every object define:
+
+* constitutional owner;
+* custody owner;
+* creator authority;
+* mutation authority;
+* correction authority;
+* reconciliation authority.
+
+Resolve:
+
+* duplicate ownership;
+* split ownership;
+* implicit ownership;
+* unauthorized ownership.
+
+---
+
+# 4. Establish Object Identity Registry
+
+Define identity requirements for every Exit Decision object.
+
+Each identity shall include:
+
+* uniqueness;
+* persistence;
+* lineage relationship;
+* lifecycle association;
+* reconciliation reference.
+
+No object may be recreated without preserving identity lineage.
+
+---
+
+# 5. Establish Object Custody Registry
+
+Define custody requirements.
+
+The registry shall establish:
+
+* operational custody;
+* evidence custody;
+* historical custody;
+* archival custody.
+
+Custody shall not imply ownership.
+
+---
+
+# 6. Establish Unauthorized Truth Assessment
+
+Review every Exit Decision object for unauthorized truth ownership.
+
+Explicitly prohibit Exit Decision objects from becoming repositories for:
+
+* position truth owned by Position Registry;
+* authorization truth owned by Authorizations;
+* risk truth owned by Risk;
+* execution truth owned by Trader/Broker;
+* historical truth owned by Historian;
+* performance truth owned by Performance Truth.
+
+---
+
+# 7. Establish Duplicate and Missing Object Assessment
+
+Perform constitutional assessment identifying:
+
+* duplicate object definitions;
+* missing lifecycle objects;
+* overlapping authority objects;
+* ambiguous ownership objects.
+
+Resolve all findings before completion.
+
+---
+
+# 8. Establish Completion Report
+
+Produce a completion report confirming:
+
+* canonical object registry established;
+* object identities defined;
+* ownership defined;
+* custody defined;
+* mutation authority defined;
+* correction authority defined;
+* reconciliation authority defined;
+* unauthorized truth ownership eliminated.
+
+---
+
+# Completion Criteria
+
+This order is complete only when:
+
+* every Exit Decision object is canonically defined;
+* every object possesses one identity;
+* every object possesses one owner;
+* every object possesses one custodian;
+* every object possesses one mutation authority;
+* every object possesses one correction authority;
+* every object possesses one reconciliation authority;
+* object boundaries preserve enterprise truth ownership;
+* no duplicate object authority exists;
+* no missing object definition remains.
+
+Successful completion authorizes progression to:
+
+> **EXIT-DECISION-RM-001-B02-002 — Exit Decision Object Ownership and Custody Constitution**.

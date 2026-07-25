@@ -1,0 +1,532 @@
+# EXIT-DECISION-RM-001-B02-002
+
+# Exit Decision Object Ownership and Custody Constitution
+
+## Objective
+
+Establish deterministic constitutional ownership, custody, mutation authority, correction authority, reconciliation authority, and evidence custody for every Exit Decision object and every governed object attribute.
+
+This order exists solely to eliminate ambiguity regarding who owns Exit Decision objects, who maintains custody, who may alter object state, who may correct errors, who reconciles conflicting records, and who preserves historical evidence.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every object shall possess one constitutional owner.
+
+Every object shall possess one constitutional custodian.
+
+Every mutation authority shall have one constitutional source.
+
+Every correction authority shall have one constitutional source.
+
+Every reconciliation authority shall have one constitutional source.
+
+---
+
+# Constitutional Principles
+
+Ownership shall not be inferred from consumption.
+
+Custody shall not be inferred from execution.
+
+Mutation authority shall not be inferred from visibility.
+
+Read authority shall not imply ownership.
+
+Correction authority shall not imply original authorship.
+
+Reconciliation authority shall not imply truth ownership.
+
+Exit Decision shall own only Exit Decision truth.
+
+Exit Decision shall never own:
+
+* market truth;
+* risk truth;
+* authorization truth;
+* broker truth;
+* position truth;
+* settlement truth;
+* performance truth;
+* historical truth.
+
+Every object attribute shall have a defined authority boundary.
+
+Every attribute containing externally owned truth shall remain externally governed.
+
+---
+
+# Required Constitutional Definitions
+
+# 1. Exit Decision Ownership Constitution
+
+Establish the ownership model governing all Exit Decision objects.
+
+For every object define:
+
+* object owner;
+* object creator;
+* object custodian;
+* object consumer;
+* mutation authority;
+* correction authority;
+* reconciliation authority;
+* archival authority;
+* evidence custodian.
+
+The ownership registry shall include:
+
+* Exit Decision Request;
+* Exit Decision Context;
+* Exit Condition;
+* Exit Evaluation;
+* Exit Constraint;
+* Exit Candidate;
+* Exit Recommendation;
+* Exit Decision;
+* Exit Decision Version;
+* Exit Authorization Binding;
+* Exit Instruction Request;
+* Exit Decision Rejection;
+* Exit Decision Deferral;
+* Exit Decision Cancellation;
+* Exit Decision Correction;
+* Exit Decision Supersession;
+* Exit Decision Completion Record;
+* Exit Decision Evidence Record.
+
+---
+
+# 2. Canonical Attribute Ownership Registry
+
+Establish ownership boundaries for all Exit Decision attributes.
+
+The registry shall define ownership for:
+
+## Decision Identity
+
+Define:
+
+* identity creator;
+* identity authority;
+* identity persistence owner;
+* identity reconciliation authority.
+
+Decision identity shall belong exclusively to Exit Decision.
+
+No external office may create conflicting decision identities.
+
+---
+
+## Position Binding
+
+Define:
+
+* position reference ownership;
+* position identity source;
+* validation responsibility;
+* reconciliation authority.
+
+Position identity shall remain owned by Position Registry.
+
+Exit Decision may reference position identity.
+
+Exit Decision shall not create, modify, or replace position truth.
+
+---
+
+## Authorization Binding
+
+Define:
+
+* authorization reference ownership;
+* authorization validity source;
+* authorization lifecycle authority.
+
+Authorization truth shall remain owned by Authorizations.
+
+Exit Decision may reference authorization state.
+
+Exit Decision shall not create, modify, extend, revoke, or override authorization truth.
+
+---
+
+## Rationale
+
+Define:
+
+* rationale ownership;
+* rationale creation authority;
+* rationale correction authority;
+* rationale evidence responsibility.
+
+Decision rationale shall be owned by Exit Decision.
+
+---
+
+## Constraints
+
+Define:
+
+* constraint source;
+* constraint ownership;
+* constraint validation;
+* constraint reconciliation.
+
+Risk-owned constraints shall remain owned by Risk.
+
+Authorization-owned constraints shall remain owned by Authorizations.
+
+Exit Decision shall consume constraints but shall not redefine external constraints.
+
+---
+
+## Evaluation Results
+
+Define:
+
+* evaluation ownership;
+* evaluation creator;
+* evaluation correction authority;
+* evidence responsibility.
+
+Exit Decision shall own Exit Decision evaluation outputs.
+
+Analytical inputs shall remain owned by Analyst.
+
+Risk evaluations shall remain owned by Risk.
+
+---
+
+## Recommendation
+
+Define:
+
+* recommendation ownership;
+* recommendation lifecycle;
+* correction authority;
+* evidence custody.
+
+Exit Decision shall own recommendation records.
+
+A recommendation shall not create execution authority.
+
+---
+
+## Final Decision
+
+Define:
+
+* decision ownership;
+* decision authority;
+* decision mutation authority;
+* decision correction authority;
+* decision reconciliation authority.
+
+Exit Decision shall own final Exit Decision outcomes.
+
+---
+
+## Cancellation State
+
+Define:
+
+* cancellation authority;
+* cancellation evidence;
+* cancellation custody;
+* reconciliation responsibility.
+
+Cancellation shall only occur through authorized Exit Decision lifecycle governance.
+
+---
+
+## Correction History
+
+Define:
+
+* correction record ownership;
+* historical custody;
+* lineage preservation;
+* reconciliation authority.
+
+Correction history shall never overwrite original records.
+
+---
+
+## Supersession History
+
+Define:
+
+* predecessor ownership;
+* successor ownership;
+* lineage authority;
+* historical preservation.
+
+Supersession shall preserve all prior decision states.
+
+---
+
+## Completion State
+
+Define:
+
+* completion authority;
+* completion evidence;
+* reconciliation ownership.
+
+Completion shall not imply settlement ownership.
+
+---
+
+# 3. Custody Constitution
+
+Establish custody boundaries for all Exit Decision information.
+
+Define:
+
+* active object custody;
+* immutable evidence custody;
+* historical custody;
+* archival custody;
+* replay custody.
+
+Custody responsibilities shall be separated from:
+
+* Risk;
+* Authorizations;
+* Trader;
+* Broker;
+* Position Registry;
+* Historian.
+
+Historian shall maintain historical custody.
+
+Exit Decision shall maintain decision-domain custody.
+
+No office shall silently assume custody of another office's records.
+
+---
+
+# 4. Mutation Authority Registry
+
+Establish the authoritative mutation authority model.
+
+For each object define:
+
+* who may create;
+* who may update;
+* who may correct;
+* who may cancel;
+* who may supersede;
+* who may archive.
+
+Explicitly prohibit:
+
+* Risk modifying Exit Decision objects;
+* Trader modifying Exit Decision objects;
+* Broker modifying Exit Decision objects;
+* Position Registry modifying Exit Decision objects;
+* Historian modifying active decision objects.
+
+Historian shall preserve historical records, not modify decision truth.
+
+---
+
+# 5. Correction Authority Registry
+
+Define correction governance.
+
+Every correction shall require:
+
+* authorized correction authority;
+* correction reason;
+* correction evidence;
+* predecessor reference;
+* correction timestamp;
+* reconciliation record.
+
+Corrections shall preserve:
+
+* original state;
+* original identity;
+* original lineage;
+* correction history.
+
+Silent correction shall be prohibited.
+
+---
+
+# 6. Reconciliation Authority Registry
+
+Define reconciliation ownership for conflicts involving:
+
+* duplicate decisions;
+* conflicting decision versions;
+* stale decisions;
+* missing evidence;
+* inconsistent lifecycle states;
+* external reference mismatches.
+
+Reconciliation shall determine:
+
+* conflict owner;
+* resolution authority;
+* evidence requirement;
+* final recorded outcome.
+
+Reconciliation shall not permit unauthorized mutation of external truth domains.
+
+---
+
+# 7. Ownership Separation Verification
+
+Verify separation from:
+
+## Position Registry
+
+Confirm:
+
+* Position Registry owns position truth;
+* Exit Decision owns decision truth.
+
+---
+
+## Risk
+
+Confirm:
+
+* Risk owns risk truth;
+* Exit Decision consumes risk truth.
+
+---
+
+## Authorizations
+
+Confirm:
+
+* Authorizations owns authorization truth;
+* Exit Decision references authorization state.
+
+---
+
+## Trader
+
+Confirm:
+
+* Trader owns execution authority;
+* Exit Decision does not execute.
+
+---
+
+## Broker
+
+Confirm:
+
+* Broker owns broker communication state;
+* Exit Decision does not control broker state.
+
+---
+
+## Historian
+
+Confirm:
+
+* Historian owns historical custody;
+* Exit Decision owns decision-domain authority.
+
+---
+
+# 8. Conflict Identification Registry
+
+Identify and resolve:
+
+## Split Ownership
+
+Identify objects with multiple claimed owners.
+
+Assign:
+
+* one constitutional owner;
+* supporting consumers;
+* evidence responsibilities.
+
+---
+
+## Circular Custody
+
+Identify custody relationships where:
+
+* Office A requires Office B;
+* Office B requires Office A;
+* neither possesses final custody.
+
+Eliminate circular custody.
+
+---
+
+## Implicit Ownership
+
+Identify cases where ownership is assumed through:
+
+* data access;
+* execution participation;
+* reporting responsibility;
+* reconciliation activity.
+
+Convert implicit ownership into explicit constitutional ownership.
+
+---
+
+## Mutation Authority Conflict
+
+Identify conflicting mutation rights.
+
+Assign one authoritative mutation source.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Exit Decision ownership constitution;
+* object ownership registry;
+* object custody registry;
+* attribute ownership registry;
+* mutation authority registry;
+* correction authority registry;
+* reconciliation authority registry;
+* evidence custody registry;
+* ownership conflict assessment;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every Exit Decision object has one owner;
+* every Exit Decision object has one custodian;
+* every attribute has a defined authority boundary;
+* every mutation authority has one source;
+* every correction authority has one source;
+* every reconciliation authority has one source;
+* external truth ownership remains preserved;
+* Position Registry ownership remains preserved;
+* Risk ownership remains preserved;
+* Authorization ownership remains preserved;
+* Historian custody remains preserved;
+* no split ownership remains unresolved;
+* no circular custody remains;
+* no implicit ownership remains;
+* no mutation authority conflict remains.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B02-003 — Exit Decision Lifecycle Constitution**

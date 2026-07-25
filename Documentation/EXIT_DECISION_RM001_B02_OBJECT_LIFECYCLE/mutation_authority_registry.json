@@ -1,0 +1,98 @@
+[
+  {
+    "attribute": "decision_identity",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "immutable",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "position_binding",
+    "constitutional_owner": "Position Registry",
+    "custody_model": "read_only_reference",
+    "exit_decision_may_mutate": false,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Position Registry"
+  },
+  {
+    "attribute": "authorization_binding",
+    "constitutional_owner": "Authorizations",
+    "custody_model": "read_only_reference",
+    "exit_decision_may_mutate": false,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Authorizations"
+  },
+  {
+    "attribute": "rationale",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "constraints",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "evaluation_results",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "recommendation",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "final_decision",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "cancellation_state",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "correction_history",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only_lineage",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "supersession_history",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only_lineage",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  },
+  {
+    "attribute": "completion_state",
+    "constitutional_owner": "Exit Decision Office",
+    "custody_model": "append_only",
+    "exit_decision_may_mutate": true,
+    "external_truth_transfer": "prohibited",
+    "mutation_authority": "Exit Decision Office"
+  }
+]

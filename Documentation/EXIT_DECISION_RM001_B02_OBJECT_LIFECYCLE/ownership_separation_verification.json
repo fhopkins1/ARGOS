@@ -1,0 +1,38 @@
+[
+  {
+    "conflict_disposition": "fail closed and defer to source owner",
+    "exit_decision_ownership": "read-only reference or decision-context reference only",
+    "external_truth_owned": "owns authorization issuance, revocation, and validity",
+    "office": "Authorizations"
+  },
+  {
+    "conflict_disposition": "fail closed and defer to source owner",
+    "exit_decision_ownership": "read-only reference or decision-context reference only",
+    "external_truth_owned": "owns broker submission, acknowledgement, and fill truth",
+    "office": "Broker"
+  },
+  {
+    "conflict_disposition": "fail closed and defer to source owner",
+    "exit_decision_ownership": "read-only reference or decision-context reference only",
+    "external_truth_owned": "owns historical custody and immutable preservation",
+    "office": "Historian"
+  },
+  {
+    "conflict_disposition": "fail closed and defer to source owner",
+    "exit_decision_ownership": "read-only reference or decision-context reference only",
+    "external_truth_owned": "owns canonical position truth and position mutation",
+    "office": "Position Registry"
+  },
+  {
+    "conflict_disposition": "fail closed and defer to source owner",
+    "exit_decision_ownership": "read-only reference or decision-context reference only",
+    "external_truth_owned": "owns risk state and emergency risk constraints",
+    "office": "Risk"
+  },
+  {
+    "conflict_disposition": "fail closed and defer to source owner",
+    "exit_decision_ownership": "read-only reference or decision-context reference only",
+    "external_truth_owned": "owns authorized execution request handling",
+    "office": "Trader"
+  }
+]

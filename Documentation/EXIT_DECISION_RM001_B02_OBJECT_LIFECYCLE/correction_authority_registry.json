@@ -1,0 +1,32 @@
+[
+  {
+    "authority": "Exit Decision Office",
+    "exit_decision_action": "create Exit Decision-owned correction record",
+    "lineage_required": true,
+    "owned_scope": "decision-owned fields, rationale, evaluation, recommendation, cancellation, supersession"
+  },
+  {
+    "authority": "Risk Office",
+    "exit_decision_action": "consume source-owner correction evidence",
+    "lineage_required": true,
+    "owned_scope": "risk state or risk constraints referenced by decision"
+  },
+  {
+    "authority": "Authorizations Office",
+    "exit_decision_action": "consume source-owner correction evidence",
+    "lineage_required": true,
+    "owned_scope": "authorization state or validity referenced by decision"
+  },
+  {
+    "authority": "Position Registry Office",
+    "exit_decision_action": "consume source-owner correction evidence",
+    "lineage_required": true,
+    "owned_scope": "position truth referenced by decision"
+  },
+  {
+    "authority": "Historian Office",
+    "exit_decision_action": "consume source-owner correction evidence",
+    "lineage_required": true,
+    "owned_scope": "historical custody and archival record correction lineage"
+  }
+]

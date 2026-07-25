@@ -1,0 +1,5 @@
+{
+  "duplicate_rule": "duplicate transition attempts fail closed unless idempotent replay is proven",
+  "recovery_rule": "recovery restores latest non-superseded state and preserves predecessor lineage",
+  "replay_rule": "replay reproduces decision state from immutable evidence without issuing duplicate downstream requests"
+}

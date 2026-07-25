@@ -1,0 +1,38 @@
+[
+  {
+    "disposition": "fail closed and preserve attempted transition evidence",
+    "from_state": "completed",
+    "reason": "completed decisions may not reactivate",
+    "to_state": "executing"
+  },
+  {
+    "disposition": "fail closed and preserve attempted transition evidence",
+    "from_state": "cancelled",
+    "reason": "cancelled decisions may not issue instructions",
+    "to_state": "issued"
+  },
+  {
+    "disposition": "fail closed and preserve attempted transition evidence",
+    "from_state": "superseded",
+    "reason": "superseded decisions may not become active",
+    "to_state": "decided"
+  },
+  {
+    "disposition": "fail closed and preserve attempted transition evidence",
+    "from_state": "archived",
+    "reason": "archived records are immutable",
+    "to_state": "validating"
+  },
+  {
+    "disposition": "fail closed and preserve attempted transition evidence",
+    "from_state": "rejected",
+    "reason": "rejected decisions cannot be authorized",
+    "to_state": "authorized"
+  },
+  {
+    "disposition": "fail closed and preserve attempted transition evidence",
+    "from_state": "expired",
+    "reason": "expired decisions cannot issue downstream requests",
+    "to_state": "issued"
+  }
+]

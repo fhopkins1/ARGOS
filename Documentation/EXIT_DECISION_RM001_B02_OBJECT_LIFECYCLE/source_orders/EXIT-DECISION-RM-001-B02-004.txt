@@ -1,0 +1,414 @@
+EXIT-DECISION-RM-001-B02-004
+
+# Decision Correction, Supersession, Expiration, and Historical Integrity Constitution
+
+## Objective
+
+Establish the authoritative constitutional governance model for all Exit Decision modifications, corrections, supersessions, expirations, cancellations, and historical lineage preservation activities.
+
+This order shall define how Exit Decision records may change while preserving immutable historical truth, deterministic lineage, auditability, and constitutional separation of authority.
+
+---
+
+# Constitutional Constraints
+
+This order shall:
+
+* Not modify Exit Decision implementation behavior.
+* Not execute behavioral verification.
+* Not generate implementation proof.
+* Not perform certification activity.
+* Not permit historical records to be overwritten.
+* Not permit corrected decisions to erase prior decisions.
+* Not permit supersession to destroy predecessor lineage.
+* Not permit cancellation to silently reactivate.
+* Not permit expiration to be bypassed.
+* Not permit Exit Decision to mutate truth owned by another office.
+
+---
+
+# Required Constitutional Definitions
+
+# 1. Decision Correction Constitution
+
+Establish correction as:
+
+> A controlled constitutional process that creates a new authoritative decision state while preserving the complete historical record of the prior state.
+
+A correction shall never modify the original decision record.
+
+A correction shall create:
+
+* correction identity;
+* correction reason;
+* correction authority;
+* correction evidence;
+* corrected decision reference;
+* predecessor relationship;
+* correction timestamp;
+* reconciliation record.
+
+---
+
+# 2. Correction Authority Registry
+
+Define:
+
+## Exit Decision Office
+
+Owns:
+
+* correction initiation;
+* correction rationale;
+* correction request;
+* decision-state reconciliation.
+
+Does not own:
+
+* position correction;
+* risk correction;
+* authorization correction;
+* execution correction;
+* historical record mutation.
+
+---
+
+## Risk Office
+
+Owns correction of:
+
+* risk interpretation;
+* risk constraints;
+* risk-state inputs.
+
+Risk corrections shall not automatically modify prior Exit Decisions.
+
+---
+
+## Authorizations Office
+
+Owns correction of:
+
+* authorization validity;
+* authorization lifecycle;
+* authorization expiration;
+* authorization revocation.
+
+Authorization correction shall not rewrite decision history.
+
+---
+
+## Position Registry Office
+
+Owns correction of:
+
+* position identity;
+* position state;
+* position reconciliation.
+
+Position correction shall not alter decision lineage.
+
+---
+
+## Historian Office
+
+Owns:
+
+* historical custody;
+* immutable lineage preservation;
+* audit reconstruction.
+
+Historian shall not alter operational truth.
+
+---
+
+# 3. Correction Lifecycle Constitution
+
+Define correction lifecycle:
+
+```text
+Correction Requested
+        ↓
+Correction Evaluated
+        ↓
+Correction Authorized
+        ↓
+Correction Created
+        ↓
+Correction Reconciled
+        ↓
+Correction Archived
+```
+
+Every correction transition shall require:
+
+* initiating authority;
+* evidence basis;
+* predecessor reference;
+* successor reference;
+* reconciliation confirmation.
+
+---
+
+# 4. Supersession Constitution
+
+Establish supersession as:
+
+> The creation of a new Exit Decision that replaces the operational applicability of a prior decision while preserving the prior decision as historical truth.
+
+A superseded decision:
+
+* remains immutable;
+* remains queryable;
+* remains auditable;
+* remains part of lineage;
+* cannot return to active authority without a new authorized decision.
+
+---
+
+# 5. Supersession Authority Registry
+
+Define:
+
+Exit Decision owns:
+
+* decision supersession creation;
+* supersession rationale;
+* successor decision linkage.
+
+Authorizations owns:
+
+* authorization applicability determination.
+
+Trader owns:
+
+* execution-state handling of superseded execution requests.
+
+Historian owns:
+
+* preservation of supersession lineage.
+
+No office may delete or conceal a superseded decision.
+
+---
+
+# 6. Supersession Lineage Requirements
+
+Every supersession shall contain:
+
+* predecessor decision identity;
+* successor decision identity;
+* supersession reason;
+* initiating authority;
+* effective transition time;
+* evidence supporting replacement;
+* reconciliation status.
+
+The lineage chain shall remain complete:
+
+```text
+Original Decision
+        ↓
+Correction / Supersession Event
+        ↓
+Replacement Decision
+        ↓
+Final Historical Record
+```
+
+---
+
+# 7. Expiration Constitution
+
+Establish expiration as:
+
+> The constitutional termination of decision applicability due to elapsed validity, changed conditions, or invalidated decision context.
+
+Expiration shall:
+
+* preserve the decision record;
+* preserve rationale;
+* preserve evidence;
+* prevent unauthorized execution;
+* create an expiration record.
+
+Expired decisions shall not:
+
+* authorize execution;
+* restart automatically;
+* bypass authorization review.
+
+---
+
+# 8. Expiration Authority Registry
+
+Define:
+
+Exit Decision owns:
+
+* decision validity period;
+* decision expiration determination.
+
+Authorizations owns:
+
+* authorization expiration.
+
+Trader owns:
+
+* execution prevention when expired authority is detected.
+
+Historian owns:
+
+* expiration record custody.
+
+---
+
+# 9. Cancellation Constitution
+
+Establish cancellation as:
+
+> The controlled termination of an Exit Decision before completion due to invalidation, withdrawal, conflict, or changed conditions.
+
+Cancellation shall preserve:
+
+* original decision;
+* cancellation reason;
+* cancellation authority;
+* cancellation timestamp;
+* evidence;
+* lifecycle history.
+
+Cancelled decisions shall never silently return to executable status.
+
+---
+
+# 10. Historical Integrity Constitution
+
+Establish the following principles:
+
+Every Exit Decision historical record shall be:
+
+* immutable;
+* append-only;
+* lineage-preserving;
+* independently traceable;
+* reconstructable.
+
+Historical records shall contain:
+
+* creation event;
+* modification events;
+* correction events;
+* supersession events;
+* expiration events;
+* cancellation events;
+* completion events.
+
+No historical record shall be overwritten.
+
+---
+
+# 11. Predecessor and Successor Registry
+
+Every decision relationship shall define:
+
+## Predecessor
+
+The prior decision record from which a new decision derives.
+
+## Successor
+
+The decision record replacing or extending prior applicability.
+
+Every successor shall reference its predecessor.
+
+Every predecessor shall remain preserved.
+
+No orphan decisions shall exist.
+
+---
+
+# 12. Reconciliation Constitution
+
+After any:
+
+* correction;
+* supersession;
+* expiration;
+* cancellation;
+
+the following reconciliation shall occur:
+
+## Exit Decision
+
+Verify:
+
+* decision lineage;
+* lifecycle state;
+* applicability.
+
+## Authorizations
+
+Verify:
+
+* authorization validity;
+* execution eligibility.
+
+## Trader
+
+Verify:
+
+* execution request alignment.
+
+## Position Registry
+
+Verify:
+
+* position state consistency.
+
+## Historian
+
+Verify:
+
+* historical completeness.
+
+---
+
+# Deliverables
+
+Produce:
+
+* correction registry;
+* supersession registry;
+* expiration registry;
+* cancellation registry;
+* historical lineage registry;
+* predecessor relationship registry;
+* successor relationship registry;
+* reconciliation registry;
+* constitutional completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* correction authority is deterministic;
+* correction history is preserved;
+* supersession lineage is preserved;
+* expiration behavior is deterministic;
+* cancellation behavior is deterministic;
+* historical records cannot be overwritten;
+* predecessor relationships are complete;
+* successor relationships are complete;
+* reconciliation ownership is defined;
+* no historical integrity ambiguity remains.
+
+Successful completion of this order shall complete:
+
+> **EXIT-DECISION-RM-001-B02 — Canonical Exit Decision Objects and Lifecycle Constitution Series**
+
+and authorize progression into:
+
+> **EXIT-DECISION-RM-001-B03 — Admissibility, Decision Logic, and Authorization Separation Constitution**

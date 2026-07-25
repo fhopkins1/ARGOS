@@ -1,0 +1,178 @@
+[
+  {
+    "from_state": "created",
+    "history_mutation": "append_only",
+    "required_evidence": "request identity and receipt evidence",
+    "to_state": "received",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-001"
+  },
+  {
+    "from_state": "received",
+    "history_mutation": "append_only",
+    "required_evidence": "validation start evidence",
+    "to_state": "validating",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-002"
+  },
+  {
+    "from_state": "validating",
+    "history_mutation": "append_only",
+    "required_evidence": "admissibility evidence",
+    "to_state": "admitted",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-003"
+  },
+  {
+    "from_state": "validating",
+    "history_mutation": "append_only",
+    "required_evidence": "rejection evidence",
+    "to_state": "rejected",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-004"
+  },
+  {
+    "from_state": "admitted",
+    "history_mutation": "append_only",
+    "required_evidence": "evaluation start evidence",
+    "to_state": "evaluating",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-005"
+  },
+  {
+    "from_state": "evaluating",
+    "history_mutation": "append_only",
+    "required_evidence": "recommendation rationale evidence",
+    "to_state": "recommended",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-006"
+  },
+  {
+    "from_state": "recommended",
+    "history_mutation": "append_only",
+    "required_evidence": "decision evidence",
+    "to_state": "decided",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-007"
+  },
+  {
+    "from_state": "decided",
+    "history_mutation": "append_only",
+    "required_evidence": "authorization binding evidence",
+    "to_state": "authorized",
+    "transition_authority": "Authorizations",
+    "transition_id": "EXIT-TRANS-008"
+  },
+  {
+    "from_state": "authorized",
+    "history_mutation": "append_only",
+    "required_evidence": "downstream instruction request evidence",
+    "to_state": "issued",
+    "transition_authority": "Trader",
+    "transition_id": "EXIT-TRANS-009"
+  },
+  {
+    "from_state": "issued",
+    "history_mutation": "append_only",
+    "required_evidence": "acknowledgement reference evidence",
+    "to_state": "acknowledged",
+    "transition_authority": "Trader/Broker",
+    "transition_id": "EXIT-TRANS-010"
+  },
+  {
+    "from_state": "acknowledged",
+    "history_mutation": "append_only",
+    "required_evidence": "execution status reference evidence",
+    "to_state": "executing",
+    "transition_authority": "Trader/Broker",
+    "transition_id": "EXIT-TRANS-011"
+  },
+  {
+    "from_state": "executing",
+    "history_mutation": "append_only",
+    "required_evidence": "partial execution reference evidence",
+    "to_state": "partially_executed",
+    "transition_authority": "Broker/Position Registry",
+    "transition_id": "EXIT-TRANS-012"
+  },
+  {
+    "from_state": "partially_executed",
+    "history_mutation": "append_only",
+    "required_evidence": "completion reference evidence",
+    "to_state": "completed",
+    "transition_authority": "Position Registry/Closed Position Truth",
+    "transition_id": "EXIT-TRANS-013"
+  },
+  {
+    "from_state": "executing",
+    "history_mutation": "append_only",
+    "required_evidence": "completion reference evidence",
+    "to_state": "completed",
+    "transition_authority": "Position Registry/Closed Position Truth",
+    "transition_id": "EXIT-TRANS-014"
+  },
+  {
+    "from_state": "created",
+    "history_mutation": "append_only",
+    "required_evidence": "cancellation evidence",
+    "to_state": "cancelled",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-015"
+  },
+  {
+    "from_state": "recommended",
+    "history_mutation": "append_only",
+    "required_evidence": "cancellation evidence",
+    "to_state": "cancelled",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-016"
+  },
+  {
+    "from_state": "decided",
+    "history_mutation": "append_only",
+    "required_evidence": "expiration evidence",
+    "to_state": "expired",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-017"
+  },
+  {
+    "from_state": "decided",
+    "history_mutation": "append_only",
+    "required_evidence": "successor identity evidence",
+    "to_state": "superseded",
+    "transition_authority": "Exit Decision Office",
+    "transition_id": "EXIT-TRANS-018"
+  },
+  {
+    "from_state": "superseded",
+    "history_mutation": "append_only",
+    "required_evidence": "historical custody evidence",
+    "to_state": "archived",
+    "transition_authority": "Historian",
+    "transition_id": "EXIT-TRANS-019"
+  },
+  {
+    "from_state": "completed",
+    "history_mutation": "append_only",
+    "required_evidence": "terminal archival evidence",
+    "to_state": "archived",
+    "transition_authority": "Historian",
+    "transition_id": "EXIT-TRANS-020"
+  },
+  {
+    "from_state": "rejected",
+    "history_mutation": "append_only",
+    "required_evidence": "terminal archival evidence",
+    "to_state": "archived",
+    "transition_authority": "Historian",
+    "transition_id": "EXIT-TRANS-021"
+  },
+  {
+    "from_state": "cancelled",
+    "history_mutation": "append_only",
+    "required_evidence": "terminal archival evidence",
+    "to_state": "archived",
+    "transition_authority": "Historian",
+    "transition_id": "EXIT-TRANS-022"
+  }
+]
