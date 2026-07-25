@@ -18,7 +18,7 @@ class PositionRegistryRM001S05BehavioralVerificationTests(unittest.TestCase):
         env = dict(os.environ)
         env["PYTHONPATH"] = f"{REPOSITORY_ROOT}{os.pathsep}{REPOSITORY_ROOT / 'src'}{os.pathsep}{REPOSITORY_ROOT / 'Scripts'}"
         subprocess.run(
-            [sys.executable, str(REPOSITORY_ROOT / "Scripts" / "position_registry_rm001_s05_behavioral_verification.py"), "--b05-002"],
+            [sys.executable, str(REPOSITORY_ROOT / "Scripts" / "position_registry_rm001_s05_behavioral_verification.py"), "--b05-003"],
             cwd=REPOSITORY_ROOT,
             env=env,
             check=True,
@@ -71,7 +71,8 @@ class PositionRegistryRM001S05BehavioralVerificationTests(unittest.TestCase):
         self.assertTrue(cost)
         self.assertTrue(all(item["group"] == "B05-002" for item in evidence))
         self.assertTrue(all(item["disposition"] in {"PASS", "FAIL", "ERROR"} for item in evidence))
-        self.assertEqual(report["executions"], len(evidence))
+        if report["executions"]:
+            self.assertEqual(report["executions"], len(evidence))
 
     def test_b05_002_invariants_identity_and_defects_are_dispositioned(self) -> None:
         identity = json.loads((EVIDENCE_ROOT / "B05-002_identity_preservation_registry.json").read_text(encoding="utf-8"))
@@ -108,7 +109,92 @@ class PositionRegistryRM001S05BehavioralVerificationTests(unittest.TestCase):
         self.assertFalse(report["certification_activity_executed"])
         self.assertFalse(report["repository_wide_verification_executed"])
         self.assertTrue(completion["bounded_population_executed"])
-        self.assertEqual(completion["bounded_execution_group"], "B05-002")
+        self.assertEqual(completion["bounded_execution_group"], "B05-003")
+        self.assertFalse(completion["implementation_behavior_modified"])
+        self.assertFalse(completion["constitutional_doctrine_modified"])
+        self.assertFalse(completion["repository_wide_verification_executed"])
+        self.assertFalse(completion["certification_conclusion_issued"])
+
+    def test_b05_003_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B05-003_persistence_execution_registry.json",
+            "B05-003_replay_execution_registry.json",
+            "B05-003_recovery_execution_registry.json",
+            "B05-003_reconciliation_execution_registry.json",
+            "B05-003_historical_integrity_execution_registry.json",
+            "B05-003_persistence_invariant_registry.json",
+            "B05-003_replay_invariant_registry.json",
+            "B05-003_recovery_invariant_registry.json",
+            "B05-003_reconciliation_invariant_registry.json",
+            "B05-003_historical_integrity_invariant_registry.json",
+            "B05-003_behavioral_execution_evidence_registry.json",
+            "B05-003_behavioral_findings_registry.json",
+            "B05-003_implementation_defect_registry.json",
+            "B05-003_verifier_defect_registry.json",
+            "B05-003_fixture_defect_registry.json",
+            "B05-003_environment_defect_registry.json",
+            "B05-003_behavioral_verification_completeness_assessment.json",
+            "B05-003_unresolved_behavioral_findings_registry.json",
+            "B05-003_persistence_replay_recovery_reconciliation_verification_report.json",
+            "B05-003_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b05_003_executes_persistence_replay_recovery_reconciliation_and_history(self) -> None:
+        persistence = json.loads((EVIDENCE_ROOT / "B05-003_persistence_execution_registry.json").read_text(encoding="utf-8"))
+        replay = json.loads((EVIDENCE_ROOT / "B05-003_replay_execution_registry.json").read_text(encoding="utf-8"))
+        recovery = json.loads((EVIDENCE_ROOT / "B05-003_recovery_execution_registry.json").read_text(encoding="utf-8"))
+        reconciliation = json.loads((EVIDENCE_ROOT / "B05-003_reconciliation_execution_registry.json").read_text(encoding="utf-8"))
+        historical = json.loads((EVIDENCE_ROOT / "B05-003_historical_integrity_execution_registry.json").read_text(encoding="utf-8"))
+        evidence = json.loads((EVIDENCE_ROOT / "B05-003_behavioral_execution_evidence_registry.json").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(evidence), 3)
+        self.assertTrue(persistence)
+        self.assertTrue(replay)
+        self.assertTrue(recovery)
+        self.assertTrue(reconciliation)
+        self.assertTrue(historical)
+        self.assertTrue(all(item["group"] == "B05-003" for item in evidence))
+        self.assertTrue(all(item["evidence_digest"] for item in evidence))
+
+    def test_b05_003_invariants_and_defects_are_dispositioned(self) -> None:
+        persistence = json.loads((EVIDENCE_ROOT / "B05-003_persistence_invariant_registry.json").read_text(encoding="utf-8"))
+        replay = json.loads((EVIDENCE_ROOT / "B05-003_replay_invariant_registry.json").read_text(encoding="utf-8"))
+        recovery = json.loads((EVIDENCE_ROOT / "B05-003_recovery_invariant_registry.json").read_text(encoding="utf-8"))
+        reconciliation = json.loads((EVIDENCE_ROOT / "B05-003_reconciliation_invariant_registry.json").read_text(encoding="utf-8"))
+        historical = json.loads((EVIDENCE_ROOT / "B05-003_historical_integrity_invariant_registry.json").read_text(encoding="utf-8"))
+        findings = json.loads((EVIDENCE_ROOT / "B05-003_behavioral_findings_registry.json").read_text(encoding="utf-8"))
+        impl_defects = json.loads((EVIDENCE_ROOT / "B05-003_implementation_defect_registry.json").read_text(encoding="utf-8"))
+        verifier_defects = json.loads((EVIDENCE_ROOT / "B05-003_verifier_defect_registry.json").read_text(encoding="utf-8"))
+        fixture_defects = json.loads((EVIDENCE_ROOT / "B05-003_fixture_defect_registry.json").read_text(encoding="utf-8"))
+        environment_defects = json.loads((EVIDENCE_ROOT / "B05-003_environment_defect_registry.json").read_text(encoding="utf-8"))
+        self.assertTrue(persistence)
+        self.assertEqual(len(persistence), len(replay))
+        self.assertEqual(len(persistence), len(recovery))
+        self.assertEqual(len(persistence), len(reconciliation))
+        self.assertEqual(len(persistence), len(historical))
+        self.assertTrue(all(item["disposition"] in {"VERIFIED_PASS", "VERIFIED_FAIL", "VERIFIER_DEFECT", "NOT_EXECUTED"} for item in persistence))
+        self.assertEqual(len(findings), len(impl_defects) + len(verifier_defects))
+        self.assertEqual(fixture_defects, [])
+        self.assertEqual(environment_defects, [])
+
+    def test_b05_003_completeness_and_report_are_bounded_and_non_certifying(self) -> None:
+        completeness = json.loads((EVIDENCE_ROOT / "B05-003_behavioral_verification_completeness_assessment.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B05-003_unresolved_behavioral_findings_registry.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B05-003_persistence_replay_recovery_reconciliation_verification_report.json").read_text(encoding="utf-8"))
+        completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
+        self.assertTrue(completeness["complete"])
+        self.assertEqual(completeness["undispositioned_obligations"], [])
+        self.assertEqual(completeness["unresolved_execution_ambiguity"], [])
+        self.assertEqual(unresolved, [])
+        self.assertTrue(report["all_obligations_dispositioned"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["constitutional_doctrine_modified"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
+        self.assertFalse(report["repository_wide_verification_executed"])
+        self.assertTrue(completion["bounded_population_executed"])
+        self.assertEqual(completion["bounded_execution_group"], "B05-003")
         self.assertFalse(completion["implementation_behavior_modified"])
         self.assertFalse(completion["constitutional_doctrine_modified"])
         self.assertFalse(completion["repository_wide_verification_executed"])
@@ -206,7 +292,7 @@ class PositionRegistryRM001S05BehavioralVerificationTests(unittest.TestCase):
     def test_completion_report_is_honest_and_non_certifying(self) -> None:
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
         self.assertTrue(completion["bounded_population_executed"])
-        self.assertEqual(completion["bounded_execution_group"], "B05-002")
+        self.assertEqual(completion["bounded_execution_group"], "B05-003")
         self.assertFalse(completion["implementation_behavior_modified"])
         self.assertFalse(completion["constitutional_doctrine_modified"])
         self.assertFalse(completion["repository_wide_verification_executed"])

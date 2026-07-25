@@ -1,15 +1,15 @@
 [
   {
-    "completed_at": "2026-07-24T18:17:43.414882Z",
+    "completed_at": "2026-07-25T01:40:46.520515Z",
     "description": "reconciliation, missing state, correction, supersession, and history",
-    "disposition": "FAIL",
-    "evidence_digest": "7e2b7f85df4ef5f9eacb116d3509b3c1d701258eec38413ab3da3c1896889465",
+    "disposition": "PASS",
+    "evidence_digest": "99b8bb1c13ea6a5088b48f0704c62490d5e4ddb68f602e15cd8c613e4fa76983",
     "execution_id": "PR-S05-EXEC-003-002",
-    "finding": "correction/supersession executable processing APIs not present on PositionManagementOffice",
+    "finding": "",
     "fixture_identity": "fixture-reconciliation-history",
     "group": "B05-003",
     "observed": {
-      "correction_api_present": false,
+      "correction_api_present": true,
       "mismatch_classes": [
         "quantity_error",
         "cost_basis_error",
@@ -18,17 +18,17 @@
       "missing_classes": [
         "missing_execution"
       ],
-      "supersession_api_present": false
+      "supersession_api_present": true
     },
     "scenario_id": "003-002",
-    "started_at": "2026-07-24T18:17:43.413106Z",
+    "started_at": "2026-07-25T01:40:46.518305Z",
     "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
   },
   {
-    "completed_at": "2026-07-24T18:17:43.417710Z",
+    "completed_at": "2026-07-25T01:40:46.522845Z",
     "description": "terminal-state integrity",
     "disposition": "PASS",
-    "evidence_digest": "38c0d8844647993bd1d1b92f5f17dd46ed428338b2b60b5dc739a3e14718d779",
+    "evidence_digest": "3c50c2e57c77d9f562847100e126556b9eba8c449a6f9536b7325ac103b3fab4",
     "execution_id": "PR-S05-EXEC-003-003",
     "finding": "",
     "fixture_identity": "fixture-terminal-integrity",
@@ -120,7 +120,7 @@
             "previous_status": "",
             "reason": "buy execution created position",
             "source": "PaperBrokerExecution",
-            "timestamp": "2026-07-24T18:17:43.416379Z",
+            "timestamp": "2026-07-25T01:40:46.521689Z",
             "workflow_id": "WF-S05"
           },
           {
@@ -142,7 +142,7 @@
             "previous_status": "open",
             "reason": "sell execution reduced position",
             "source": "PaperBrokerExecution",
-            "timestamp": "2026-07-24T18:17:43.417599Z",
+            "timestamp": "2026-07-25T01:40:46.522750Z",
             "workflow_id": "WF-S05"
           }
         ],
@@ -170,7 +170,7 @@
       "terminal_rejected": true
     },
     "scenario_id": "003-003",
-    "started_at": "2026-07-24T18:17:43.416150Z",
+    "started_at": "2026-07-25T01:40:46.521480Z",
     "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
   }
 ]

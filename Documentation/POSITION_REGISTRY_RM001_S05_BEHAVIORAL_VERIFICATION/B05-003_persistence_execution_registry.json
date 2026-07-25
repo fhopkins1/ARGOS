@@ -1,11 +1,11 @@
 [
   {
-    "completed_at": "2026-07-24T18:17:43.411426Z",
+    "completed_at": "2026-07-25T01:40:46.515856Z",
     "description": "persistence restoration and replay duplicate mutation protection",
-    "disposition": "FAIL",
-    "evidence_digest": "4025d21fc97f86be01d25a9798f4c8fdb2dc7fda644f455643e0860e15a899fc",
+    "disposition": "PASS",
+    "evidence_digest": "0a96f1995ddb21c9b456beb1e2f50875e873ad29b7f069d4749cc03a3a922802",
     "execution_id": "PR-S05-EXEC-003-001",
-    "finding": "replay of identical execution event mutates quantity a second time",
+    "finding": "",
     "fixture_identity": "fixture-persistence-replay",
     "group": "B05-003",
     "observed": {
@@ -15,7 +15,7 @@
         "contract_id": "DOC-5201",
         "contract_type": "POSITION_RECORD",
         "contract_version": "1.0.0",
-        "created_timestamp_utc": "2026-07-24T18:17:43.407224Z",
+        "created_timestamp_utc": "2026-07-25T01:40:46.514084Z",
         "human_summary": "Authoritative position record.",
         "intended_consumer_group_id": "DEP-006",
         "machine_payload": {
@@ -30,7 +30,7 @@
                 "asset_identifier": "AAPL",
                 "audit_identifier": "DOC-501",
                 "average_cost_basis": 100.0,
-                "creation_timestamp_utc": "2026-07-24T18:17:43.407135Z",
+                "creation_timestamp_utc": "2026-07-25T01:40:46.514011Z",
                 "direction": "long",
                 "executive_decision_id": "DOC-S05",
                 "exposure": 10100.0,
@@ -42,13 +42,13 @@
                       "responsible_office": "TRADER-OFFICE-005"
                     },
                     "position_id": "POS-S05",
-                    "timestamp_utc": "2026-07-24T18:17:43.407175Z",
+                    "timestamp_utc": "2026-07-25T01:40:46.514045Z",
                     "to_state": "created",
                     "transition_id": "PST-000001",
                     "triggering_event": "EXEC-S05-001"
                   }
                 ],
-                "last_update_timestamp_utc": "2026-07-24T18:17:43.407175Z",
+                "last_update_timestamp_utc": "2026-07-25T01:40:46.514045Z",
                 "market_value": 10100.0,
                 "portfolio_id": "PORT-S05",
                 "position_id": "POS-S05",
@@ -69,7 +69,7 @@
             "asset_identifier": "AAPL",
             "audit_identifier": "DOC-501",
             "average_cost_basis": 100.0,
-            "creation_timestamp_utc": "2026-07-24T18:17:43.407135Z",
+            "creation_timestamp_utc": "2026-07-25T01:40:46.514011Z",
             "direction": "long",
             "executive_decision_id": "DOC-S05",
             "exposure": 10100.0,
@@ -81,13 +81,13 @@
                   "responsible_office": "TRADER-OFFICE-005"
                 },
                 "position_id": "POS-S05",
-                "timestamp_utc": "2026-07-24T18:17:43.407175Z",
+                "timestamp_utc": "2026-07-25T01:40:46.514045Z",
                 "to_state": "created",
                 "transition_id": "PST-000001",
                 "triggering_event": "EXEC-S05-001"
               }
             ],
-            "last_update_timestamp_utc": "2026-07-24T18:17:43.407175Z",
+            "last_update_timestamp_utc": "2026-07-25T01:40:46.514045Z",
             "market_value": 10100.0,
             "portfolio_id": "PORT-S05",
             "position_id": "POS-S05",
@@ -110,12 +110,12 @@
         "produced_by_group_id": "DEP-006",
         "produced_by_staff_id": "STF-065",
         "schema_version": "1.0.0",
-        "signature_hash": "911bb46d6709eb2b99f51e914a208253a296c6afe5e960006d8f1bc94183c446",
+        "signature_hash": "6e3ca998e7d9a3074b394d4c5c9710d53b21e8db82c3a3c602855e61318b114c",
         "source_reference_ids": [
           "DOC-501"
         ],
         "trade_cycle_id": "TC-005",
-        "updated_timestamp_utc": "2026-07-24T18:17:43.407224Z",
+        "updated_timestamp_utc": "2026-07-25T01:40:46.514084Z",
         "validation_errors": [],
         "validation_status": "valid"
       },
@@ -124,10 +124,10 @@
         "asset_identifier": "AAPL",
         "audit_identifier": "DOC-501",
         "average_cost_basis": 100.0,
-        "creation_timestamp_utc": "2026-07-24T18:17:43.408489Z",
+        "creation_timestamp_utc": "2026-07-25T01:40:46.515054Z",
         "direction": "long",
         "executive_decision_id": "DOC-S05",
-        "exposure": 20200.0,
+        "exposure": 10100.0,
         "history": [
           {
             "audit_id": "DOC-501",
@@ -136,38 +136,26 @@
               "responsible_office": "TRADER-OFFICE-005"
             },
             "position_id": "POS-S05",
-            "timestamp_utc": "2026-07-24T18:17:43.408511Z",
+            "timestamp_utc": "2026-07-25T01:40:46.515075Z",
             "to_state": "created",
             "transition_id": "PST-000001",
             "triggering_event": "EXEC-S05-001"
-          },
-          {
-            "audit_id": "DOC-501",
-            "from_state": "accumulating",
-            "metadata": {
-              "responsible_office": "TRADER-OFFICE-005"
-            },
-            "position_id": "POS-S05",
-            "timestamp_utc": "2026-07-24T18:17:43.409255Z",
-            "to_state": "accumulating",
-            "transition_id": "PST-000002",
-            "triggering_event": "EXEC-S05-001"
           }
         ],
-        "last_update_timestamp_utc": "2026-07-24T18:17:43.409255Z",
-        "market_value": 20200.0,
+        "last_update_timestamp_utc": "2026-07-25T01:40:46.515075Z",
+        "market_value": 10100.0,
         "portfolio_id": "PORT-S05",
         "position_id": "POS-S05",
-        "position_status": "accumulating",
-        "quantity": 200.0,
+        "position_status": "created",
+        "quantity": 100.0,
         "realized_pnl": 0.0,
         "strategy_id": "STRAT-S05",
-        "unrealized_pnl": 200.0
+        "unrealized_pnl": 100.0
       },
       "restored_from_persistence": true
     },
     "scenario_id": "003-001",
-    "started_at": "2026-07-24T18:17:43.407013Z",
+    "started_at": "2026-07-25T01:40:46.513856Z",
     "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
   }
 ]

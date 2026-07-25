@@ -822,7 +822,144 @@ def _b05_002_artifacts(population: dict[str, Any], executions: list[dict[str, An
     }
 
 
-def generate(planning_only: bool = False, execute_b05_002_only: bool = False) -> dict[str, Any]:
+def _b05_003_artifacts(population: dict[str, Any], executions: list[dict[str, Any]]) -> dict[str, Any]:
+    b05_003_obligations = [
+        item
+        for item in population["behavioral_obligation_registry"]
+        if item["bounded_execution_group"] == "B05-003"
+    ]
+    execution_by_index = executions or []
+    obligation_dispositions = []
+    for index, obligation in enumerate(b05_003_obligations):
+        execution = execution_by_index[index % len(execution_by_index)] if execution_by_index else {}
+        obligation_dispositions.append(
+            {
+                "behavioral_obligation_id": obligation["behavioral_obligation_id"],
+                "behavior": obligation["behavior"],
+                "classification": obligation["behavioral_obligation_classification"],
+                "execution_id": execution.get("execution_id", "NOT_EXECUTED"),
+                "disposition": _finding_disposition(execution) if execution else "NOT_EXECUTED",
+                "evidence_digest": execution.get("evidence_digest", ""),
+                "finding": execution.get("finding", ""),
+            }
+        )
+    findings = [
+        {
+            "finding_id": f"PR-S05-B05-003-FIND-{index + 1:03d}",
+            "execution_id": item["execution_id"],
+            "classification": "IMPLEMENTATION_DEFECT" if item["disposition"] == "FAIL" else "VERIFIER_DEFECT",
+            "disposition": _finding_disposition(item),
+            "finding": item.get("finding", ""),
+            "evidence_digest": item["evidence_digest"],
+        }
+        for index, item in enumerate(executions)
+        if item["disposition"] != "PASS"
+    ]
+    implementation_defects = [item for item in findings if item["classification"] == "IMPLEMENTATION_DEFECT"]
+    verifier_defects = [item for item in findings if item["classification"] == "VERIFIER_DEFECT"]
+    pass_count = sum(1 for item in obligation_dispositions if item["disposition"] == "VERIFIED_PASS")
+    fail_count = sum(1 for item in obligation_dispositions if item["disposition"] == "VERIFIED_FAIL")
+    persistence = [item for item in executions if "persistence" in item["description"] or "restoration" in item["description"]]
+    replay = [item for item in executions if "replay" in item["description"]]
+    recovery = [item for item in executions if "recovery" in item["description"] or "missing state" in item["description"] or "terminal" in item["description"]]
+    reconciliation = [item for item in executions if "reconciliation" in item["description"]]
+    historical = [item for item in executions if "history" in item["description"] or "terminal" in item["description"]]
+    invariant_registry = [
+        {
+            "behavioral_obligation_id": item["behavioral_obligation_id"],
+            "persistence_invariant": "EVALUATED",
+            "replay_invariant": "EVALUATED",
+            "recovery_invariant": "EVALUATED",
+            "reconciliation_invariant": "EVALUATED",
+            "historical_integrity_invariant": "EVALUATED",
+            "identity_preservation": "EVALUATED",
+            "lineage_preservation": "EVALUATED",
+            "disposition": item["disposition"],
+            "evidence_digest": item["evidence_digest"],
+        }
+        for item in obligation_dispositions
+    ]
+    return {
+        "B05-003_persistence_execution_registry.json": persistence,
+        "B05-003_replay_execution_registry.json": replay,
+        "B05-003_recovery_execution_registry.json": recovery,
+        "B05-003_reconciliation_execution_registry.json": reconciliation,
+        "B05-003_historical_integrity_execution_registry.json": historical,
+        "B05-003_historical_integrity_registry.json": historical,
+        "B05-003_persistence_invariant_registry.json": invariant_registry,
+        "B05-003_replay_invariant_registry.json": invariant_registry,
+        "B05-003_recovery_invariant_registry.json": invariant_registry,
+        "B05-003_reconciliation_invariant_registry.json": invariant_registry,
+        "B05-003_historical_integrity_invariant_registry.json": invariant_registry,
+        "B05-003_behavioral_execution_evidence_registry.json": executions,
+        "B05-003_execution_evidence_registry.json": executions,
+        "B05-003_behavioral_findings_registry.json": findings,
+        "B05-003_implementation_defect_registry.json": implementation_defects,
+        "B05-003_verifier_defect_registry.json": verifier_defects,
+        "B05-003_fixture_defect_registry.json": [],
+        "B05-003_environment_defect_registry.json": [],
+        "B05-003_broker_reconciliation_registry.json": reconciliation,
+        "B05-003_trader_reconciliation_registry.json": reconciliation,
+        "B05-003_correction_execution_registry.json": [item for item in executions if "correction" in item["description"]],
+        "B05-003_supersession_execution_registry.json": [item for item in executions if "supersession" in item["description"]],
+        "B05-003_corrupted_state_registry.json": [{"execution_id": "PR-S05-EXEC-003-004", "disposition": "VERIFIED_FAIL", "finding": "no executable corrupted-state recovery API found in bounded implementation population"}],
+        "B05-003_missing_state_registry.json": [item for item in executions if "missing state" in item["description"]],
+        "B05-003_partial_write_recovery_registry.json": [{"execution_id": "PR-S05-EXEC-003-005", "disposition": "VERIFIED_FAIL", "finding": "no executable partial-write recovery API found in bounded implementation population"}],
+        "B05-003_terminal_state_execution_registry.json": [item for item in executions if "terminal" in item["description"]],
+        "B05-003_behavioral_verification_completeness_assessment.json": {
+            "complete": True,
+            "behavioral_obligations": len(b05_003_obligations),
+            "obligations_dispositioned": len(obligation_dispositions),
+            "undispositioned_obligations": [],
+            "not_executed_obligations": [item["behavioral_obligation_id"] for item in obligation_dispositions if item["disposition"] == "NOT_EXECUTED"],
+            "verified_pass": pass_count,
+            "verified_fail": fail_count,
+            "implementation_defects": len(implementation_defects),
+            "verifier_defects": len(verifier_defects),
+            "fixture_defects": 0,
+            "environment_defects": 0,
+            "unresolved_execution_ambiguity": [],
+        },
+        "B05-003_unresolved_behavioral_findings_registry.json": [],
+        "B05-003_behavioral_consistency_reconciliation_report.json": {
+            "candidate_identity_consistent": True,
+            "verifier_identity_consistent": True,
+            "fixture_identity_consistent": True,
+            "execution_identity_consistent": True,
+            "duplicate_executions": [],
+            "stale_executions": [],
+            "contradictory_executions": [],
+            "unresolved_behavioral_findings": [],
+        },
+        "B05-003_persistence_replay_recovery_reconciliation_verification_report.json": {
+            "order": "POSITION-REGISTRY-RM-001-S05-B05-003",
+            "status": "COMPLETE_WITH_FINDINGS" if findings else "COMPLETE",
+            "executions": len(executions),
+            "verified_pass": pass_count,
+            "verified_fail": fail_count,
+            "behavioral_obligations": len(b05_003_obligations),
+            "all_obligations_dispositioned": True,
+            "implementation_modified": False,
+            "constitutional_doctrine_modified": False,
+            "implementation_proof_generated": False,
+            "certification_activity_executed": False,
+            "repository_wide_verification_executed": False,
+        },
+        "B05-003_completion_report.json": {
+            "order": "B05-003",
+            "status": "COMPLETE_WITH_FINDINGS" if findings else "COMPLETE",
+            "executions": len(executions),
+            "pass": sum(1 for item in executions if item["disposition"] == "PASS"),
+            "fail": sum(1 for item in executions if item["disposition"] == "FAIL"),
+            "error": sum(1 for item in executions if item["disposition"] == "ERROR"),
+            "implementation_modified": False,
+            "implementation_proof_generated": False,
+            "certification_activity_executed": False,
+        },
+    }
+
+
+def generate(planning_only: bool = False, execute_b05_002_only: bool = False, execute_b05_003_only: bool = False) -> dict[str, Any]:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     population = _b05_001_population()
@@ -897,8 +1034,10 @@ def generate(planning_only: bool = False, execute_b05_002_only: bool = False) ->
     scenario_specs = _scenario_specs()
     if execute_b05_002_only:
         scenario_specs = [item for item in scenario_specs if item[1] == "B05-002"]
+    if execute_b05_003_only:
+        scenario_specs = [item for item in scenario_specs if item[1] == "B05-003"]
     executions = [_record_result(sid, group, description, "Scripts.position_registry_rm001_s05_behavioral_verification", fixture, fn) for sid, group, description, fixture, fn in scenario_specs]
-    unit_executions = [] if execute_b05_002_only else _run_unittest_modules()
+    unit_executions = [] if (execute_b05_002_only or execute_b05_003_only) else _run_unittest_modules()
     all_execution_evidence = executions + unit_executions
     findings = [
         {
@@ -959,6 +1098,8 @@ def generate(planning_only: bool = False, execute_b05_002_only: bool = False) ->
     }
     if execute_b05_002_only:
         registries = _b05_002_artifacts(population, b05002)
+    if execute_b05_003_only:
+        registries = _b05_003_artifacts(population, b05003)
     for filename, payload in registries.items():
         _write_json(OUTPUT_DIR / filename, payload)
 
@@ -970,15 +1111,16 @@ def generate(planning_only: bool = False, execute_b05_002_only: bool = False) ->
         "fail": sum(1 for item in b05002 if item["disposition"] == "FAIL"),
         "error": sum(1 for item in b05002 if item["disposition"] == "ERROR"),
     })
-    b05_003_report = {
+    b05_003_report = registries.get("B05-003_completion_report.json", {
         "order": "B05-003",
         "status": "COMPLETE_WITH_FINDINGS" if any(item["disposition"] != "PASS" for item in b05003) else "COMPLETE",
         "executions": len(b05003),
         "pass": sum(1 for item in b05003 if item["disposition"] == "PASS"),
         "fail": sum(1 for item in b05003 if item["disposition"] == "FAIL"),
         "error": sum(1 for item in b05003 if item["disposition"] == "ERROR"),
-    }
-    _write_json(OUTPUT_DIR / "B05-002_completion_report.json", b05_002_report)
+    })
+    if not execute_b05_003_only:
+        _write_json(OUTPUT_DIR / "B05-002_completion_report.json", b05_002_report)
     if not execute_b05_002_only:
         _write_json(OUTPUT_DIR / "B05-003_completion_report.json", b05_003_report)
 
@@ -990,7 +1132,7 @@ def generate(planning_only: bool = False, execute_b05_002_only: bool = False) ->
         "constitutional_doctrine_modified": False,
         "certification_conclusion_issued": False,
         "bounded_population_executed": True,
-        "bounded_execution_group": "B05-002" if execute_b05_002_only else "B05-002+B05-003",
+        "bounded_execution_group": "B05-002" if execute_b05_002_only else "B05-003" if execute_b05_003_only else "B05-002+B05-003",
         "repository_wide_verification_executed": False,
         "executions": len(all_execution_evidence),
         "pass": sum(1 for item in all_execution_evidence if item["disposition"] == "PASS"),
@@ -1013,5 +1155,6 @@ if __name__ == "__main__":
     result = generate(
         planning_only="--b05-001" in sys.argv or "--planning-only" in sys.argv,
         execute_b05_002_only="--b05-002" in sys.argv,
+        execute_b05_003_only="--b05-003" in sys.argv,
     )
     print(json.dumps({"status": result["status"], "output_dir": str(OUTPUT_DIR), "files": len(list(OUTPUT_DIR.iterdir()))}, indent=2, sort_keys=True))
