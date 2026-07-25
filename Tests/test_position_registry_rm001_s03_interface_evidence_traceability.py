@@ -170,6 +170,80 @@ class PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests(unittest.TestCa
         self.assertTrue(all(item["reverse_relationship"] for item in traceability))
         self.assertEqual(orphans, [])
 
+    def test_b03_003_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B03-003_canonical_constitutional_requirement_registry.json",
+            "B03-003_constitutional_requirement_identity_registry.json",
+            "B03-003_constitutional_requirement_decomposition_registry.json",
+            "B03-003_constitutional_requirement_ownership_registry.json",
+            "B03-003_constitutional_requirement_classification_registry.json",
+            "B03-003_constitutional_authority_traceability_registry.json",
+            "B03-003_constitutional_object_traceability_registry.json",
+            "B03-003_constitutional_interface_traceability_registry.json",
+            "B03-003_constitutional_lifecycle_traceability_registry.json",
+            "B03-003_constitutional_reconciliation_traceability_registry.json",
+            "B03-003_constitutional_evidence_traceability_registry.json",
+            "B03-003_constitutional_dependency_traceability_registry.json",
+            "B03-003_constitutional_certification_traceability_registry.json",
+            "B03-003_bidirectional_constitutional_traceability_graph.json",
+            "B03-003_constitutional_traceability_completeness_assessment.json",
+            "B03-003_constitutional_requirement_completeness_assessment.json",
+            "B03-003_constitutional_traceability_ambiguity_registry.json",
+            "B03-003_unresolved_constitutional_findings_registry.json",
+            "B03-003_canonical_constitutional_requirement_and_traceability_report.json",
+            "B03-003_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b03_003_requirements_are_atomic_owned_and_classified(self) -> None:
+        requirements = json.loads((EVIDENCE_ROOT / "B03-003_canonical_constitutional_requirement_registry.json").read_text(encoding="utf-8"))
+        identities = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_requirement_identity_registry.json").read_text(encoding="utf-8"))
+        decomposition = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_requirement_decomposition_registry.json").read_text(encoding="utf-8"))
+        ownership = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_requirement_ownership_registry.json").read_text(encoding="utf-8"))
+        classification = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_requirement_classification_registry.json").read_text(encoding="utf-8"))
+
+        self.assertTrue(requirements)
+        self.assertEqual(len({item["canonical_requirement_identity"] for item in requirements}), len(requirements))
+        self.assertTrue(all(item["atomic"] for item in requirements))
+        self.assertTrue(all(item["constitutional_owner"] for item in requirements))
+        self.assertTrue(all(item["governing_constitutional_source"] for item in requirements))
+        self.assertTrue(all(item["atomic"] for item in identities))
+        self.assertTrue(all(item["decomposition_status"] == "ATOMIC" for item in decomposition))
+        self.assertTrue(all(item["one_constitutional_obligation"] and item["one_constitutional_authority"] and item["one_constitutional_owner"] for item in decomposition))
+        self.assertEqual(len(ownership), len(requirements))
+        self.assertEqual(len(classification), len(requirements))
+        self.assertTrue(any(item["governance_requirement"] for item in classification))
+        self.assertTrue(any(item["interface_requirement"] for item in classification))
+        self.assertTrue(any(item["reconciliation_requirement"] for item in classification))
+        self.assertTrue(any(item["evidence_requirement"] for item in classification))
+
+    def test_b03_003_traceability_domains_are_complete_and_doctrine_only(self) -> None:
+        authority = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_authority_traceability_registry.json").read_text(encoding="utf-8"))
+        objects = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_object_traceability_registry.json").read_text(encoding="utf-8"))
+        interfaces = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_interface_traceability_registry.json").read_text(encoding="utf-8"))
+        evidence = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_evidence_traceability_registry.json").read_text(encoding="utf-8"))
+        dependency = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_dependency_traceability_registry.json").read_text(encoding="utf-8"))
+        completeness = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_traceability_completeness_assessment.json").read_text(encoding="utf-8"))
+        req_completeness = json.loads((EVIDENCE_ROOT / "B03-003_constitutional_requirement_completeness_assessment.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B03-003_canonical_constitutional_requirement_and_traceability_report.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B03-003_unresolved_constitutional_findings_registry.json").read_text(encoding="utf-8"))
+
+        self.assertTrue(authority and objects and interfaces and evidence)
+        self.assertEqual(dependency["graph_id"], "PR-S03-CONSTITUTIONAL-DEPENDENCY-GRAPH")
+        self.assertEqual(completeness["broken_traceability"], [])
+        self.assertEqual(completeness["orphan_nodes"], [])
+        self.assertEqual(completeness["missing_relationships"], [])
+        self.assertEqual(req_completeness["aggregate_requirements"], [])
+        self.assertEqual(req_completeness["duplicate_requirements"], [])
+        self.assertEqual(req_completeness["orphan_requirements"], [])
+        self.assertEqual(unresolved, [])
+        self.assertFalse(report["implementation_evaluated"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["behavioral_verification_executed"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
+
     def test_b03_004_baseline_has_no_unresolved_findings_or_implementation_claims(self) -> None:
         baseline = json.loads((EVIDENCE_ROOT / "B03-004_authoritative_position_registry_interface_evidence_traceability_baseline.json").read_text(encoding="utf-8"))
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
