@@ -1,8 +1,8 @@
 {
-  "completed_at": "2026-07-24T18:17:43.383176Z",
+  "completed_at": "2026-07-25T01:34:04.360161Z",
   "description": "long and short position establishment",
   "disposition": "PASS",
-  "evidence_digest": "8174a2d8207ee4f860ca4e2266fadaa88350f1f9879804af7f1714af090efdaa",
+  "evidence_digest": "927bc0edc8c740da18e1a47886cd22a8ae6a9760b8ee6188b8e2fbbba6bc1592",
   "execution_id": "PR-S05-EXEC-002-003",
   "finding": "",
   "fixture_identity": "fixture-long-short",
@@ -13,7 +13,7 @@
       "asset_identifier": "AAPL",
       "audit_identifier": "DOC-501",
       "average_cost_basis": 10.0,
-      "creation_timestamp_utc": "2026-07-24T18:17:43.381165Z",
+      "creation_timestamp_utc": "2026-07-25T01:34:04.357743Z",
       "direction": "long",
       "executive_decision_id": "DOC-S05",
       "exposure": 110.0,
@@ -25,13 +25,13 @@
             "responsible_office": "TRADER-OFFICE-005"
           },
           "position_id": "POS-LONG",
-          "timestamp_utc": "2026-07-24T18:17:43.381194Z",
+          "timestamp_utc": "2026-07-25T01:34:04.357788Z",
           "to_state": "created",
           "transition_id": "PST-000001",
           "triggering_event": "EXEC-S05-001"
         }
       ],
-      "last_update_timestamp_utc": "2026-07-24T18:17:43.381194Z",
+      "last_update_timestamp_utc": "2026-07-25T01:34:04.357788Z",
       "market_value": 110.0,
       "portfolio_id": "PORT-S05",
       "position_id": "POS-LONG",
@@ -46,7 +46,7 @@
       "asset_identifier": "AAPL",
       "audit_identifier": "DOC-501",
       "average_cost_basis": 20.0,
-      "creation_timestamp_utc": "2026-07-24T18:17:43.382249Z",
+      "creation_timestamp_utc": "2026-07-25T01:34:04.359002Z",
       "direction": "short",
       "executive_decision_id": "DOC-S05",
       "exposure": 152.0,
@@ -58,13 +58,13 @@
             "responsible_office": "TRADER-OFFICE-005"
           },
           "position_id": "POS-SHORT",
-          "timestamp_utc": "2026-07-24T18:17:43.382271Z",
+          "timestamp_utc": "2026-07-25T01:34:04.359028Z",
           "to_state": "created",
           "transition_id": "PST-000001",
           "triggering_event": "EXEC-SHORT"
         }
       ],
-      "last_update_timestamp_utc": "2026-07-24T18:17:43.382271Z",
+      "last_update_timestamp_utc": "2026-07-25T01:34:04.359028Z",
       "market_value": -152.0,
       "portfolio_id": "PORT-S05",
       "position_id": "POS-SHORT",
@@ -76,6 +76,6 @@
     }
   },
   "scenario_id": "002-003",
-  "started_at": "2026-07-24T18:17:43.381036Z",
+  "started_at": "2026-07-25T01:34:04.357566Z",
   "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
 }

@@ -1,5 +1,5 @@
 # POSITION-REGISTRY-RM-001-S05 Behavioral Verification
 
-This package contains the B05-001 behavioral obligation and verifier population inventory.
+This package contains bounded behavioral execution evidence for B05-001 through B05-003.
 
-B05-001 is planning-only. It does not execute behavioral verification, modify implementation behavior, generate proof objects, or issue certification conclusions.
+It executes focused Position Registry behavioral scenarios and existing bounded verifier modules. It does not modify implementation behavior, modify doctrine, execute repository-wide verification, or issue certification conclusions.

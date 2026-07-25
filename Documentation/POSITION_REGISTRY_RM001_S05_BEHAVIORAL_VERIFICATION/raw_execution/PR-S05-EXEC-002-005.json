@@ -1,10 +1,10 @@
 {
-  "completed_at": "2026-07-24T18:17:43.392007Z",
+  "completed_at": "2026-07-25T01:34:04.372612Z",
   "description": "position reversal",
-  "disposition": "FAIL",
-  "evidence_digest": "919c1aa667471023c0c90aec07c2f064d86d6af7a0fcdcf24678cb9974ce8723",
+  "disposition": "PASS",
+  "evidence_digest": "7cfa6a5632f85bcfe021eb40c17562ad8e303f071c2bd108833533b112794abf",
   "execution_id": "PR-S05-EXEC-002-005",
-  "finding": "reversal leaves original long direction/status instead of establishing short lifecycle identity",
+  "finding": "",
   "fixture_identity": "fixture-reversal",
   "group": "B05-002",
   "observed": {
@@ -12,9 +12,9 @@
       "asset_class": "equity",
       "asset_identifier": "AAPL",
       "audit_identifier": "DOC-501",
-      "average_cost_basis": 100.0,
-      "creation_timestamp_utc": "2026-07-24T18:17:43.390113Z",
-      "direction": "long",
+      "average_cost_basis": 90.0,
+      "creation_timestamp_utc": "2026-07-25T01:34:04.370359Z",
+      "direction": "short",
       "executive_decision_id": "DOC-S05",
       "exposure": 4500.0,
       "history": [
@@ -25,7 +25,7 @@
             "responsible_office": "TRADER-OFFICE-005"
           },
           "position_id": "POS-S05",
-          "timestamp_utc": "2026-07-24T18:17:43.390152Z",
+          "timestamp_utc": "2026-07-25T01:34:04.370394Z",
           "to_state": "created",
           "transition_id": "PST-000001",
           "triggering_event": "EXEC-S05-001"
@@ -37,13 +37,13 @@
             "responsible_office": "TRADER-OFFICE-005"
           },
           "position_id": "POS-S05",
-          "timestamp_utc": "2026-07-24T18:17:43.391208Z",
+          "timestamp_utc": "2026-07-25T01:34:04.371621Z",
           "to_state": "reducing",
           "transition_id": "PST-000002",
           "triggering_event": "EXEC-S05-REV"
         }
       ],
-      "last_update_timestamp_utc": "2026-07-24T18:17:43.391208Z",
+      "last_update_timestamp_utc": "2026-07-25T01:34:04.371621Z",
       "market_value": -4500.0,
       "portfolio_id": "PORT-S05",
       "position_id": "POS-S05",
@@ -51,10 +51,10 @@
       "quantity": -50.0,
       "realized_pnl": -1000.0,
       "strategy_id": "STRAT-S05",
-      "unrealized_pnl": 500.0
+      "unrealized_pnl": -0.0
     }
   },
   "scenario_id": "002-005",
-  "started_at": "2026-07-24T18:17:43.389966Z",
+  "started_at": "2026-07-25T01:34:04.370226Z",
   "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
 }

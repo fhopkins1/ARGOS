@@ -1,8 +1,8 @@
 {
-  "completed_at": "2026-07-24T18:17:43.376959Z",
+  "completed_at": "2026-07-25T01:34:04.352864Z",
   "description": "position creation and canonical identity assignment",
   "disposition": "PASS",
-  "evidence_digest": "8f09cd05bd42d9af1a30c1632c9ec4b6fc8afabd271a0bb45b17913e9a4b8e4e",
+  "evidence_digest": "4563c8f3152e93a2fe2f8cd33ffd0f4f74bcd84afb1ae06dc0619652597173f9",
   "execution_id": "PR-S05-EXEC-002-001",
   "finding": "",
   "fixture_identity": "fixture-position-creation",
@@ -15,7 +15,7 @@
       "asset_identifier": "AAPL",
       "audit_identifier": "DOC-501",
       "average_cost_basis": 100.0,
-      "creation_timestamp_utc": "2026-07-24T18:17:43.374800Z",
+      "creation_timestamp_utc": "2026-07-25T01:34:04.350770Z",
       "direction": "long",
       "executive_decision_id": "DOC-S05",
       "exposure": 10200.0,
@@ -27,13 +27,13 @@
             "responsible_office": "TRADER-OFFICE-005"
           },
           "position_id": "POS-S05",
-          "timestamp_utc": "2026-07-24T18:17:43.374839Z",
+          "timestamp_utc": "2026-07-25T01:34:04.350830Z",
           "to_state": "created",
           "transition_id": "PST-000001",
           "triggering_event": "EXEC-S05-001"
         }
       ],
-      "last_update_timestamp_utc": "2026-07-24T18:17:43.374839Z",
+      "last_update_timestamp_utc": "2026-07-25T01:34:04.350830Z",
       "market_value": 10200.0,
       "portfolio_id": "PORT-S05",
       "position_id": "POS-S05",
@@ -45,6 +45,6 @@
     }
   },
   "scenario_id": "002-001",
-  "started_at": "2026-07-24T18:17:43.374622Z",
+  "started_at": "2026-07-25T01:34:04.350487Z",
   "verifier_identity": "Scripts.position_registry_rm001_s05_behavioral_verification"
 }
