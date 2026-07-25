@@ -1,0 +1,14 @@
+.F...
+======================================================================
+FAIL: test_monitoring_report_and_dashboard_are_generated (Tests.test_trade_monitoring_office.TradeMonitoringOfficeTests.test_monitoring_report_and_dashboard_are_generated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-SUPP-001\Tests\test_trade_monitoring_office.py", line 85, in test_monitoring_report_and_dashboard_are_generated
+    self.assertFalse(report.machine_payload["history_discarded"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.032s
+
+FAILED (failures=1)

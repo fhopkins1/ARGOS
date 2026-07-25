@@ -43,7 +43,17 @@ def _file_digest(path: Path) -> str:
 
 
 def _git_commit() -> str:
-    return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPOSITORY_ROOT, text=True).strip()
+    try:
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPOSITORY_ROOT, text=True, stderr=subprocess.DEVNULL).strip()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        source_paths = [
+            REPOSITORY_ROOT / "src" / "argos" / "trader" / "trade_monitoring.py",
+            REPOSITORY_ROOT / "Tests" / "test_trade_monitoring_office.py",
+            REPOSITORY_ROOT / "Scripts" / "monitoring_rm002_b02_behavioral_verification.py",
+            REPOSITORY_ROOT / "Scripts" / "monitoring_rm002_b03_implementation_reconciliation.py",
+        ]
+        identity = [{"path": str(path.relative_to(REPOSITORY_ROOT)), "sha256": _file_digest(path)} for path in source_paths if path.exists()]
+        return f"CONTENT-{_digest(identity)}"
 
 
 def _run_verifier(module: str, run_id: str) -> dict[str, Any]:

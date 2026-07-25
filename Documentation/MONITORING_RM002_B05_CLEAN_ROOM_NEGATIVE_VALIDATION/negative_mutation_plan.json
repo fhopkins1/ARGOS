@@ -1,0 +1,62 @@
+[
+  {
+    "affected_requirement": "stalled order detection",
+    "category": "Observation and Evaluation",
+    "description": "Disable stalled order evidence classification.",
+    "expected_failed_verifier": "Tests.test_trade_monitoring_office",
+    "file": "src/argos/trader/trade_monitoring.py",
+    "mutation_id": "MON-B05-NEG-OBS-001",
+    "new": "\"stalled_orders_DISABLED\"",
+    "old": "\"stalled_orders\""
+  },
+  {
+    "affected_requirement": "position limit threshold activation",
+    "category": "Threshold and Alerting",
+    "description": "Raise exposure threshold so position limit alert is not generated.",
+    "expected_failed_verifier": "Tests.test_trade_monitoring_office",
+    "file": "src/argos/trader/trade_monitoring.py",
+    "mutation_id": "MON-B05-NEG-ALERT-001",
+    "new": "abs(position.exposure) > 999_999_999",
+    "old": "abs(position.exposure) > 1_000_000"
+  },
+  {
+    "affected_requirement": "critical alert executive notification",
+    "category": "Escalation and Acknowledgement",
+    "description": "Disable executive notification flag for critical and emergency alerts.",
+    "expected_failed_verifier": "Tests.test_trade_monitoring_office",
+    "file": "src/argos/trader/trade_monitoring.py",
+    "mutation_id": "MON-B05-NEG-ESC-001",
+    "new": "False",
+    "old": "severity in {AlertPriority.CRITICAL, AlertPriority.EMERGENCY}"
+  },
+  {
+    "affected_requirement": "history preservation and suppression prohibition",
+    "category": "Suppression",
+    "description": "Report monitoring history as discarded.",
+    "expected_failed_verifier": "Tests.test_trade_monitoring_office",
+    "file": "src/argos/trader/trade_monitoring.py",
+    "mutation_id": "MON-B05-NEG-SUPP-001",
+    "new": "\"history_discarded\": True",
+    "old": "\"history_discarded\": False"
+  },
+  {
+    "affected_requirement": "contract persistence and replay baseline",
+    "category": "Persistence, Replay, and Recovery",
+    "description": "Disable persistence of Monitoring operational contracts.",
+    "expected_failed_verifier": "Tests.test_trade_monitoring_office",
+    "file": "src/argos/trader/trade_monitoring.py",
+    "mutation_id": "MON-B05-NEG-PERSIST-001",
+    "new": "# negative mutation: persistence disabled",
+    "old": "self.persistence_repository.persist(ObjectType.OPERATIONAL_DOCUMENT, contract.contract_id, contract.to_dict())"
+  },
+  {
+    "affected_requirement": "proof generation from current behavioral evidence",
+    "category": "Evidence and Proof",
+    "description": "Omit required raw behavioral execution evidence from proof generation inputs.",
+    "expected_failed_verifier": "Tests.test_monitoring_rm002_b04_final_certification",
+    "file": "Scripts/monitoring_rm002_b04_final_certification.py",
+    "mutation_id": "MON-B05-NEG-PROOF-001",
+    "new": "behavioral_evidence = []",
+    "old": "behavioral_evidence = _read_json(B02_DIR / \"B02-004_behavioral_evidence_registry.json\", [])"
+  }
+]

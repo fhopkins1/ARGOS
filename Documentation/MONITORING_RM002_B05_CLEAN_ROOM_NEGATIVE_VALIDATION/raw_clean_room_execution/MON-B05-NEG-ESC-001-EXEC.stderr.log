@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\__main__.py", line 18, in <module>
+    main(module=None)
+    ~~~~^^^^^^^^^^^^^
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\main.py", line 103, in __init__
+    self.parseArgs(argv)
+    ~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\main.py", line 142, in parseArgs
+    self.createTests()
+    ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\main.py", line 153, in createTests
+    self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+                                                   self.module)
+                                                   ^^^^^^^^^^^^
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\loader.py", line 207, in loadTestsFromNames
+    suites = [self.loadTestsFromName(name, module) for name in names]
+              ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-ESC-001\Tests\test_trade_monitoring_office.py", line 14, in <module>
+    from argos.trader import (  # noqa: E402
+    ...<11 lines>...
+    )
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-ESC-001\src\argos\trader\__init__.py", line 192, in <module>
+    from .trade_monitoring import (
+    ...<14 lines>...
+    )
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-ESC-001\src\argos\trader\trade_monitoring.py", line 298
+    critical_count = sum(1 for alert in alerts if alert.False)
+                                                        ^^^^^
+SyntaxError: invalid syntax
