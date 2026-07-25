@@ -1,27 +1,17 @@
 [
   {
-    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+    "fixture_id": "PR-S04-FIX-001",
+    "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
     "governing_constitutional_requirements": [
-      "PR-S03-IF-004-REQ",
-      "PR-S03-IF-010-REQ",
-      "PR-S03-REC-004-REQ",
-      "PR-S03-REQ-BASE-001",
-      "PR-S03-REQ-EVD-001",
-      "PR-S03-REQ-EVD-007"
+      "PR-S03-REQ-BASE-001"
     ],
-    "governing_execution_environment": "python_unittest_future_bounded_execution",
-    "governing_fixture_population": [
-      "PR-S04-FIX-001"
+    "governing_execution_environment": [
+      "python_unittest"
     ],
     "governing_implementation_obligations": [
-      "PR-S04-OBL-001",
-      "PR-S04-OBL-007",
-      "PR-S04-OBL-013",
-      "PR-S04-OBL-019",
-      "PR-S04-OBL-025",
-      "PR-S04-OBL-031"
+      "PR-S04-OBL-001"
     ],
-    "objective_dependency_justification": {
+    "objective_dependency_evidence": {
       "attributes": [
         "TestCase",
         "__init__",
@@ -132,32 +122,36 @@
         "unittest"
       ]
     },
-    "participation_status": "DISCOVERED_NOT_EXECUTED",
-    "verifier_id": "PR-S04-IMPL-290227A442CE"
+    "participating_evidence_obligations": [
+      "all applicable evidence obligations"
+    ],
+    "participating_runtime_components": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-6334CAA6A9DC",
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-5F574EC5C56D",
+      "PR-S04-IMPL-BFBFC4E1C67A",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "participating_verifiers": [
+      "PR-S04-IMPL-290227A442CE"
+    ]
   },
   {
-    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+    "fixture_id": "PR-S04-FIX-002",
+    "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
     "governing_constitutional_requirements": [
-      "PR-S03-IF-005-REQ",
-      "PR-S03-IF-011-REQ",
-      "PR-S03-REC-005-REQ",
-      "PR-S03-REQ-BASE-002",
-      "PR-S03-REQ-EVD-002",
-      "PR-S03-REQ-EVD-008"
+      "PR-S03-REQ-BASE-002"
     ],
-    "governing_execution_environment": "python_unittest_future_bounded_execution",
-    "governing_fixture_population": [
-      "PR-S04-FIX-002"
+    "governing_execution_environment": [
+      "python_unittest"
     ],
     "governing_implementation_obligations": [
-      "PR-S04-OBL-002",
-      "PR-S04-OBL-008",
-      "PR-S04-OBL-014",
-      "PR-S04-OBL-020",
-      "PR-S04-OBL-026",
-      "PR-S04-OBL-032"
+      "PR-S04-OBL-002"
     ],
-    "objective_dependency_justification": {
+    "objective_dependency_evidence": {
       "attributes": [
         "ARCHIVED",
         "CREATED",
@@ -272,32 +266,36 @@
         "unittest"
       ]
     },
-    "participation_status": "DISCOVERED_NOT_EXECUTED",
-    "verifier_id": "PR-S04-IMPL-3C010EAEC4A4"
+    "participating_evidence_obligations": [
+      "all applicable evidence obligations"
+    ],
+    "participating_runtime_components": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-6334CAA6A9DC",
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-5F574EC5C56D",
+      "PR-S04-IMPL-BFBFC4E1C67A",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "participating_verifiers": [
+      "PR-S04-IMPL-3C010EAEC4A4"
+    ]
   },
   {
-    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+    "fixture_id": "PR-S04-FIX-003",
+    "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
     "governing_constitutional_requirements": [
-      "PR-S03-IF-006-REQ",
-      "PR-S03-IF-012-REQ",
-      "PR-S03-REC-006-REQ",
-      "PR-S03-REQ-BASE-003",
-      "PR-S03-REQ-EVD-003",
-      "PR-S03-REQ-EVD-009"
+      "PR-S03-REQ-BASE-003"
     ],
-    "governing_execution_environment": "python_unittest_future_bounded_execution",
-    "governing_fixture_population": [
-      "PR-S04-FIX-003"
+    "governing_execution_environment": [
+      "python_unittest"
     ],
     "governing_implementation_obligations": [
-      "PR-S04-OBL-003",
-      "PR-S04-OBL-009",
-      "PR-S04-OBL-015",
-      "PR-S04-OBL-021",
-      "PR-S04-OBL-027",
-      "PR-S04-OBL-033"
+      "PR-S04-OBL-003"
     ],
-    "objective_dependency_justification": {
+    "objective_dependency_evidence": {
       "attributes": [
         "TestCase",
         "assertEqual",
@@ -350,32 +348,36 @@
         "unittest"
       ]
     },
-    "participation_status": "DISCOVERED_NOT_EXECUTED",
-    "verifier_id": "PR-S04-IMPL-A97C990C556F"
+    "participating_evidence_obligations": [
+      "all applicable evidence obligations"
+    ],
+    "participating_runtime_components": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-6334CAA6A9DC",
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-5F574EC5C56D",
+      "PR-S04-IMPL-BFBFC4E1C67A",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "participating_verifiers": [
+      "PR-S04-IMPL-A97C990C556F"
+    ]
   },
   {
-    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+    "fixture_id": "PR-S04-FIX-004",
+    "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
     "governing_constitutional_requirements": [
-      "PR-S03-IF-001-REQ",
-      "PR-S03-IF-007-REQ",
-      "PR-S03-REC-001-REQ",
-      "PR-S03-REC-007-REQ",
-      "PR-S03-REQ-EVD-004",
-      "PR-S03-REQ-EVD-010"
+      "PR-S03-IF-001-REQ"
     ],
-    "governing_execution_environment": "python_unittest_future_bounded_execution",
-    "governing_fixture_population": [
-      "PR-S04-FIX-004"
+    "governing_execution_environment": [
+      "python_unittest"
     ],
     "governing_implementation_obligations": [
-      "PR-S04-OBL-004",
-      "PR-S04-OBL-010",
-      "PR-S04-OBL-016",
-      "PR-S04-OBL-022",
-      "PR-S04-OBL-028",
-      "PR-S04-OBL-034"
+      "PR-S04-OBL-004"
     ],
-    "objective_dependency_justification": {
+    "objective_dependency_evidence": {
       "attributes": [
         "TestCase",
         "assertEqual",
@@ -431,32 +433,36 @@
         "unittest"
       ]
     },
-    "participation_status": "DISCOVERED_NOT_EXECUTED",
-    "verifier_id": "PR-S04-IMPL-A4D0A1741D58"
+    "participating_evidence_obligations": [
+      "interface evidence obligation"
+    ],
+    "participating_runtime_components": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-6334CAA6A9DC",
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-5F574EC5C56D",
+      "PR-S04-IMPL-BFBFC4E1C67A",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "participating_verifiers": [
+      "PR-S04-IMPL-A4D0A1741D58"
+    ]
   },
   {
-    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+    "fixture_id": "PR-S04-FIX-005",
+    "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
     "governing_constitutional_requirements": [
-      "PR-S03-IF-002-REQ",
-      "PR-S03-IF-008-REQ",
-      "PR-S03-REC-002-REQ",
-      "PR-S03-REC-008-REQ",
-      "PR-S03-REQ-EVD-005",
-      "PR-S03-REQ-EVD-011"
+      "PR-S03-IF-002-REQ"
     ],
-    "governing_execution_environment": "python_unittest_future_bounded_execution",
-    "governing_fixture_population": [
-      "PR-S04-FIX-005"
+    "governing_execution_environment": [
+      "python_unittest"
     ],
     "governing_implementation_obligations": [
-      "PR-S04-OBL-005",
-      "PR-S04-OBL-011",
-      "PR-S04-OBL-017",
-      "PR-S04-OBL-023",
-      "PR-S04-OBL-029",
-      "PR-S04-OBL-035"
+      "PR-S04-OBL-005"
     ],
-    "objective_dependency_justification": {
+    "objective_dependency_evidence": {
       "attributes": [
         "TestCase",
         "assertEqual",
@@ -527,30 +533,36 @@
         "unittest"
       ]
     },
-    "participation_status": "DISCOVERED_NOT_EXECUTED",
-    "verifier_id": "PR-S04-IMPL-88A06A01B4BF"
+    "participating_evidence_obligations": [
+      "interface evidence obligation"
+    ],
+    "participating_runtime_components": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-6334CAA6A9DC",
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-5F574EC5C56D",
+      "PR-S04-IMPL-BFBFC4E1C67A",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "participating_verifiers": [
+      "PR-S04-IMPL-88A06A01B4BF"
+    ]
   },
   {
-    "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+    "fixture_id": "PR-S04-FIX-006",
+    "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
     "governing_constitutional_requirements": [
-      "PR-S03-IF-003-REQ",
-      "PR-S03-IF-009-REQ",
-      "PR-S03-REC-003-REQ",
-      "PR-S03-REC-009-REQ",
-      "PR-S03-REQ-EVD-006"
+      "PR-S03-IF-003-REQ"
     ],
-    "governing_execution_environment": "python_unittest_future_bounded_execution",
-    "governing_fixture_population": [
-      "PR-S04-FIX-006"
+    "governing_execution_environment": [
+      "python_unittest"
     ],
     "governing_implementation_obligations": [
-      "PR-S04-OBL-006",
-      "PR-S04-OBL-012",
-      "PR-S04-OBL-018",
-      "PR-S04-OBL-024",
-      "PR-S04-OBL-030"
+      "PR-S04-OBL-006"
     ],
-    "objective_dependency_justification": {
+    "objective_dependency_evidence": {
       "attributes": [
         "TestCase",
         "assertEqual",
@@ -623,7 +635,21 @@
         "unittest"
       ]
     },
-    "participation_status": "DISCOVERED_NOT_EXECUTED",
-    "verifier_id": "PR-S04-IMPL-B80BFF0A11B6"
+    "participating_evidence_obligations": [
+      "interface evidence obligation"
+    ],
+    "participating_runtime_components": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-6334CAA6A9DC",
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-5F574EC5C56D",
+      "PR-S04-IMPL-BFBFC4E1C67A",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "participating_verifiers": [
+      "PR-S04-IMPL-B80BFF0A11B6"
+    ]
   }
 ]

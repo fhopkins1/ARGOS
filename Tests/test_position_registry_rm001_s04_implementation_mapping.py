@@ -178,6 +178,83 @@ class PositionRegistryRM001S04ImplementationMappingTests(unittest.TestCase):
         self.assertEqual(integrity["orphan_verifiers"], [])
         self.assertEqual(integrity["evidence_producers_lacking_constitutional_authority"], [])
 
+    def test_b04_003_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B04-003_verifier_inventory.json",
+            "B04-003_verifier_identity_registry.json",
+            "B04-003_verifier_classification_registry.json",
+            "B04-003_verifier_participation_registry.json",
+            "B04-003_fixture_inventory.json",
+            "B04-003_fixture_participation_registry.json",
+            "B04-003_runtime_participation_registry.json",
+            "B04-003_runtime_classification_registry.json",
+            "B04-003_evidence_producer_registry.json",
+            "B04-003_evidence_consumer_registry.json",
+            "B04-003_verification_dependency_graph.json",
+            "B04-003_dependency_direction_registry.json",
+            "B04-003_dependency_justification_registry.json",
+            "B04-003_verification_planning_registry.json",
+            "B04-003_implementation_obligation_verification_matrix.json",
+            "B04-003_verification_completeness_assessment.json",
+            "B04-003_runtime_completeness_assessment.json",
+            "B04-003_unresolved_verification_findings_registry.json",
+            "B04-003_verifier_fixture_evidence_runtime_participation_report.json",
+            "B04-003_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b04_003_verifiers_fixtures_runtime_and_evidence_are_mapped(self) -> None:
+        verifiers = json.loads((EVIDENCE_ROOT / "B04-003_verifier_inventory.json").read_text(encoding="utf-8"))
+        classifications = json.loads((EVIDENCE_ROOT / "B04-003_verifier_classification_registry.json").read_text(encoding="utf-8"))
+        fixtures = json.loads((EVIDENCE_ROOT / "B04-003_fixture_participation_registry.json").read_text(encoding="utf-8"))
+        runtime = json.loads((EVIDENCE_ROOT / "B04-003_runtime_participation_registry.json").read_text(encoding="utf-8"))
+        producers = json.loads((EVIDENCE_ROOT / "B04-003_evidence_producer_registry.json").read_text(encoding="utf-8"))
+        consumers = json.loads((EVIDENCE_ROOT / "B04-003_evidence_consumer_registry.json").read_text(encoding="utf-8"))
+        self.assertTrue(verifiers)
+        self.assertEqual(len(verifiers), len(classifications))
+        self.assertTrue(all(item["governing_constitutional_authority"] for item in verifiers))
+        self.assertTrue(all(item["governing_implementation_obligations"] for item in verifiers))
+        self.assertTrue(all(item["governing_fixture_population"] for item in verifiers))
+        self.assertTrue(all(item["classification_is_exactly_one"] for item in classifications))
+        self.assertTrue(all(item["fixture_purpose"] for item in fixtures))
+        self.assertTrue(runtime)
+        self.assertTrue(all(item["objective_dependency_evidence"] for item in runtime))
+        self.assertTrue(producers)
+        self.assertTrue(consumers)
+
+    def test_b04_003_dependencies_and_planning_are_complete_without_execution(self) -> None:
+        directions = json.loads((EVIDENCE_ROOT / "B04-003_dependency_direction_registry.json").read_text(encoding="utf-8"))
+        planning = json.loads((EVIDENCE_ROOT / "B04-003_verification_planning_registry.json").read_text(encoding="utf-8"))
+        matrix = json.loads((EVIDENCE_ROOT / "B04-003_implementation_obligation_verification_matrix.json").read_text(encoding="utf-8"))
+        completeness = json.loads((EVIDENCE_ROOT / "B04-003_verification_completeness_assessment.json").read_text(encoding="utf-8"))
+        runtime = json.loads((EVIDENCE_ROOT / "B04-003_runtime_completeness_assessment.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B04-003_unresolved_verification_findings_registry.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B04-003_verifier_fixture_evidence_runtime_participation_report.json").read_text(encoding="utf-8"))
+        self.assertTrue(all(item["deterministic_dependency_direction"] for item in directions))
+        self.assertTrue(all(item["planning_status"] == "COMPLETE_NOT_EXECUTED" for item in planning))
+        self.assertTrue(all(item["verification_disposition"] == "PLANNED_NOT_EXECUTED" for item in matrix))
+        self.assertTrue(completeness["complete"])
+        self.assertEqual(completeness["verifier_gaps"], [])
+        self.assertEqual(completeness["fixture_gaps"], [])
+        self.assertEqual(completeness["runtime_participation_gaps"], [])
+        self.assertEqual(completeness["evidence_participation_gaps"], [])
+        self.assertEqual(completeness["dependency_gaps"], [])
+        self.assertEqual(completeness["unresolved_verification_ambiguity"], [])
+        self.assertTrue(runtime["complete"])
+        self.assertEqual(unresolved, [])
+        self.assertFalse(report["filename_derived_population"])
+        self.assertFalse(report["test_name_derived_population"])
+        self.assertFalse(report["package_name_derived_population"])
+        self.assertFalse(report["manual_inventory"])
+        self.assertFalse(report["documentation_reference_inventory"])
+        self.assertFalse(report["historical_execution_batch_inventory"])
+        self.assertFalse(report["behavioral_correctness_evaluated"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["behavioral_verification_executed"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
+
     def test_completion_report_preserves_no_behavior_or_certification_claims(self) -> None:
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
         self.assertEqual(completion["status"], "COMPLETE")

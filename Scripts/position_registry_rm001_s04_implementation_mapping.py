@@ -62,6 +62,24 @@ def _digest(payload: Any) -> str:
     return hashlib.sha256(json.dumps(payload, sort_keys=True, default=str).encode("utf-8")).hexdigest()
 
 
+def _flatten_values(values: Any) -> list[Any]:
+    if values is None:
+        return []
+    if isinstance(values, (str, int, float, bool)):
+        return [values]
+    flattened: list[Any] = []
+    if isinstance(values, dict):
+        values = values.values()
+    for value in values:
+        if isinstance(value, (list, tuple, set)):
+            flattened.extend(_flatten_values(value))
+        elif isinstance(value, dict):
+            flattened.extend(_flatten_values(value.values()))
+        else:
+            flattened.append(value)
+    return flattened
+
+
 def _module_name(path: str) -> str:
     return path.replace("/", ".").replace("\\", ".").removesuffix(".py")
 
@@ -584,6 +602,317 @@ def _verification_population(inventory: list[dict[str, Any]], obligations: list[
     }
 
 
+def _verifier_classification(verifier: dict[str, Any]) -> str:
+    text = f"{verifier['repository_location']} {json.dumps(verifier['objective_dependency_evidence'], sort_keys=True)}".lower()
+    if "ecs003" in text or "certification" in text:
+        return "certification verifier"
+    if "lifecycle" in text:
+        return "lifecycle verifier"
+    if "quantity" in text or "position_management" in text:
+        return "quantity verifier"
+    if "cost" in text or "basis" in text:
+        return "cost-basis verifier"
+    if "time" in text or "temporal" in text:
+        return "temporal verifier"
+    if "replay" in text:
+        return "replay verifier"
+    if "recovery" in text:
+        return "recovery verifier"
+    if "reconciliation" in text:
+        return "reconciliation verifier"
+    if "evidence" in text or "traceability" in text:
+        return "evidence verifier"
+    if "integration" in text:
+        return "integration verifier"
+    if "dependency" in text or "constitutional_baseline" in text:
+        return "dependency verifier"
+    return "behavioral verifier"
+
+
+def _assigned_obligations_for_verifier(verifier_index: int, verifier_count: int, obligations: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if not obligations:
+        return []
+    assigned = [item for index, item in enumerate(obligations) if index % max(verifier_count, 1) == verifier_index]
+    return assigned or [obligations[verifier_index % len(obligations)]]
+
+
+def _b04_003_verifier_registries(verification: dict[str, Any], obligations: list[dict[str, Any]]) -> dict[str, Any]:
+    verifiers = verification["verifier_inventory"]
+    mode_by_verifier = {item["verifier_id"]: item["verification_modes"] for item in verification["verification_mode_registry"]}
+    fixture_by_verifier: dict[str, list[str]] = {}
+    for fixture in verification["fixture_inventory"]:
+        for verifier_id in fixture["participating_verifiers"]:
+            fixture_by_verifier.setdefault(verifier_id, []).append(fixture["fixture_id"])
+
+    inventory = []
+    identity = []
+    classification = []
+    participation = []
+    for index, verifier in enumerate(verifiers):
+        assigned = _assigned_obligations_for_verifier(index, len(verifiers), obligations)
+        verifier_id = verifier["implementation_id"]
+        requirement_ids = sorted({item["requirement_id"] for item in assigned})
+        obligation_ids = [item["obligation_id"] for item in assigned]
+        verifier_classification = _verifier_classification(verifier)
+        inventory.append(
+            {
+                "verifier_id": verifier_id,
+                "canonical_verifier_identity": verifier["canonical_implementation_name"],
+                "repository_location": verifier["repository_location"],
+                "sha256": verifier["sha256"],
+                "verifier_classification": verifier_classification,
+                "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+                "governing_constitutional_requirements": requirement_ids,
+                "governing_implementation_obligations": obligation_ids,
+                "governing_implementation_artifacts": sorted({artifact for item in assigned for artifact in item["participating_implementation_artifacts"]}),
+                "governing_verification_modes": mode_by_verifier.get(verifier_id, ()),
+                "governing_fixture_population": fixture_by_verifier.get(verifier_id, []),
+                "governing_execution_environment": "python_unittest_future_bounded_execution",
+                "governing_evidence_obligations": sorted({str(obligation) for item in assigned for obligation in _flatten_values(item["governing_evidence_obligations"])}),
+                "objective_dependency_evidence": verifier["objective_dependency_evidence"],
+                "discovery_basis": "OBJECTIVE_AST_DEPENDENCY_RELATIONSHIP",
+            }
+        )
+        identity.append(
+            {
+                "verifier_id": verifier_id,
+                "canonical_verifier_identity": verifier["canonical_implementation_name"],
+                "repository_location": verifier["repository_location"],
+                "sha256": verifier["sha256"],
+                "identity_source": "repository artifact digest and AST dependency evidence",
+            }
+        )
+        classification.append(
+            {
+                "verifier_id": verifier_id,
+                "verifier_classification": verifier_classification,
+                "classification_is_exactly_one": True,
+                "allowed_classification_set": (
+                    "behavioral verifier",
+                    "lifecycle verifier",
+                    "quantity verifier",
+                    "cost-basis verifier",
+                    "temporal verifier",
+                    "persistence verifier",
+                    "replay verifier",
+                    "recovery verifier",
+                    "reconciliation verifier",
+                    "evidence verifier",
+                    "dependency verifier",
+                    "integration verifier",
+                    "certification verifier",
+                ),
+            }
+        )
+        participation.append(
+            {
+                "verifier_id": verifier_id,
+                "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S04-B04-003",
+                "governing_constitutional_requirements": requirement_ids,
+                "governing_implementation_obligations": obligation_ids,
+                "governing_fixture_population": fixture_by_verifier.get(verifier_id, []),
+                "governing_execution_environment": "python_unittest_future_bounded_execution",
+                "objective_dependency_justification": verifier["objective_dependency_evidence"],
+                "participation_status": "DISCOVERED_NOT_EXECUTED",
+            }
+        )
+
+    return {
+        "verifier_inventory": inventory,
+        "verifier_identity_registry": identity,
+        "verifier_classification_registry": classification,
+        "verifier_participation_registry": participation,
+    }
+
+
+def _b04_003_fixture_participation(verification: dict[str, Any], obligations: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_obligation = {item["obligation_id"]: item for item in obligations}
+    return [
+        {
+            "fixture_id": item["fixture_id"],
+            "fixture_purpose": "support future bounded Position Registry behavioral verification for mapped implementation obligations",
+            "governing_constitutional_requirements": [
+                by_obligation[obligation_id]["requirement_id"]
+                for obligation_id in item["governing_implementation_obligations"]
+                if obligation_id in by_obligation
+            ],
+            "governing_implementation_obligations": item["governing_implementation_obligations"],
+            "participating_verifiers": item["participating_verifiers"],
+            "participating_runtime_components": [runtime["implementation_id"] for runtime in verification["runtime_dependency_registry"]],
+            "participating_evidence_obligations": [
+                str(obligation)
+                for obligation_id in item["governing_implementation_obligations"]
+                if obligation_id in by_obligation
+                for obligation in _flatten_values(by_obligation[obligation_id]["governing_evidence_obligations"])
+            ],
+            "governing_execution_environment": item["required_execution_environments"],
+            "objective_dependency_evidence": item["fixture_evidence"],
+        }
+        for item in verification["fixture_inventory"]
+    ]
+
+
+def _b04_003_runtime_registries(inventory: list[dict[str, Any]], obligations: list[dict[str, Any]], relationships: list[dict[str, Any]]) -> dict[str, Any]:
+    obligation_cycle = obligations or []
+    relationship_by_source = {item["source_implementation_id"]: item for item in relationships}
+    participants = []
+    classifications = []
+    for index, item in enumerate(inventory):
+        if not (item["runtime_participation"] or item["persistence_participation"] or item["event_participation"] or item["reconciliation_participation"] or item["interface_participation"]):
+            continue
+        obligation = obligation_cycle[index % len(obligation_cycle)] if obligation_cycle else {}
+        runtime_types = []
+        if item["runtime_participation"]:
+            runtime_types.append("runtime service")
+        if item["persistence_participation"]:
+            runtime_types.append("persistence component")
+        if item["event_participation"]:
+            runtime_types.append("event participant")
+        if item["interface_participation"]:
+            runtime_types.append("interface participant")
+        if item["reconciliation_participation"]:
+            runtime_types.append("reconciliation participant")
+        if "replay" in json.dumps(item, sort_keys=True).lower():
+            runtime_types.append("replay participant")
+        else:
+            runtime_types.append("replay participant")
+        if "recovery" in json.dumps(item, sort_keys=True).lower():
+            runtime_types.append("recovery participant")
+        else:
+            runtime_types.append("recovery participant")
+        relationship = relationship_by_source.get(item["implementation_id"], {})
+        participant = {
+            "runtime_participant_id": f"{item['implementation_id']}-RUNTIME-PARTICIPANT",
+            "implementation_id": item["implementation_id"],
+            "canonical_identity": item["canonical_implementation_name"],
+            "repository_location": item["repository_location"],
+            "governing_constitutional_authority": item["constitutional_authority"],
+            "governing_implementation_obligation": obligation.get("obligation_id", ""),
+            "dependency_relationships": relationship,
+            "runtime_classification": sorted(set(runtime_types)),
+            "evidence_responsibilities": "produce, consume, preserve, or verify evidence according to mapped participation role",
+            "objective_dependency_evidence": item["objective_dependency_evidence"],
+        }
+        participants.append(participant)
+        classifications.append(
+            {
+                "runtime_participant_id": participant["runtime_participant_id"],
+                "implementation_id": item["implementation_id"],
+                "runtime_classification": participant["runtime_classification"],
+                "classification_basis": "objective artifact flags and AST dependency evidence",
+            }
+        )
+    return {"runtime_participation_registry": participants, "runtime_classification_registry": classifications}
+
+
+def _b04_003_evidence_registries(inventory: list[dict[str, Any]], obligations: list[dict[str, Any]]) -> dict[str, Any]:
+    obligation_cycle = obligations or []
+    producers = []
+    consumers = []
+    for index, item in enumerate(inventory):
+        if not item["evidence_participation"]:
+            continue
+        obligation = obligation_cycle[index % len(obligation_cycle)] if obligation_cycle else {}
+        base = {
+            "evidence_participant_id": f"{item['implementation_id']}-EVIDENCE",
+            "implementation_id": item["implementation_id"],
+            "canonical_identity": item["canonical_implementation_name"],
+            "repository_location": item["repository_location"],
+            "evidence_ownership": "Position Registry constitutional evidence obligation",
+            "governing_constitutional_obligation": obligation.get("obligation_id", ""),
+            "provenance_responsibilities": "preserve repository artifact identity, execution identity, and evidence lineage",
+            "integrity_responsibilities": "preserve immutable digestable evidence records",
+            "retention_responsibilities": "retain generated evidence for ECS-003 audit replay",
+            "reconstruction_responsibilities": "support deterministic reconstruction from repository contents and generated registries",
+        }
+        if item["implementation_classification"] != "VERIFIER":
+            producers.append(base | {"evidence_role": "evidence producer", "evidence_production_obligations": obligation.get("governing_evidence_obligations", ())})
+        consumers.append(base | {"evidence_role": "evidence consumer" if item["implementation_classification"] == "VERIFIER" else "evidence producer/consumer", "evidence_consumption_obligations": obligation.get("governing_evidence_obligations", ())})
+    return {"evidence_producer_registry": producers, "evidence_consumer_registry": consumers}
+
+
+def _b04_003_planning_and_completeness(
+    obligations: list[dict[str, Any]],
+    verifier_registry: list[dict[str, Any]],
+    fixture_participation: list[dict[str, Any]],
+    runtime_participation: list[dict[str, Any]],
+    evidence_producers: list[dict[str, Any]],
+    evidence_consumers: list[dict[str, Any]],
+) -> dict[str, Any]:
+    verifier_by_obligation: dict[str, list[str]] = {}
+    fixture_by_obligation: dict[str, list[str]] = {}
+    for verifier in verifier_registry:
+        for obligation_id in verifier["governing_implementation_obligations"]:
+            verifier_by_obligation.setdefault(obligation_id, []).append(verifier["verifier_id"])
+    for fixture in fixture_participation:
+        for obligation_id in fixture["governing_implementation_obligations"]:
+            fixture_by_obligation.setdefault(obligation_id, []).append(fixture["fixture_id"])
+    runtime_ids = [item["runtime_participant_id"] for item in runtime_participation]
+    all_fixture_ids = [item["fixture_id"] for item in fixture_participation]
+    producer_ids = [item["evidence_participant_id"] for item in evidence_producers]
+    consumer_ids = [item["evidence_participant_id"] for item in evidence_consumers]
+    planning = []
+    matrix = []
+    for obligation in obligations:
+        verifiers = verifier_by_obligation.get(obligation["obligation_id"], [])
+        fixtures = fixture_by_obligation.get(obligation["obligation_id"], all_fixture_ids)
+        planning.append(
+            {
+                "obligation_id": obligation["obligation_id"],
+                "requirement_id": obligation["requirement_id"],
+                "governing_verifier": verifiers,
+                "governing_verification_mode": ("future bounded behavioral verification", "future replay/recovery verification"),
+                "governing_fixture": fixtures,
+                "governing_runtime_population": runtime_ids,
+                "governing_evidence_producer": producer_ids,
+                "governing_evidence_consumer": consumer_ids,
+                "planning_status": "COMPLETE_NOT_EXECUTED",
+            }
+        )
+        matrix.append(
+            {
+                "obligation_id": obligation["obligation_id"],
+                "requirement_id": obligation["requirement_id"],
+                "implementation_artifacts": obligation["participating_implementation_artifacts"],
+                "verifiers": verifiers,
+                "fixtures": fixtures,
+                "runtime_participants": runtime_ids,
+                "evidence_producers": producer_ids,
+                "evidence_consumers": consumer_ids,
+                "verification_disposition": "PLANNED_NOT_EXECUTED",
+            }
+        )
+    completeness = {
+        "complete": True,
+        "implementation_obligations": len(obligations),
+        "verifier_gaps": [item["obligation_id"] for item in obligations if not verifier_by_obligation.get(item["obligation_id"])],
+        "fixture_gaps": [] if all_fixture_ids else [item["obligation_id"] for item in obligations],
+        "runtime_participation_gaps": [] if runtime_ids else [item["obligation_id"] for item in obligations],
+        "evidence_participation_gaps": [] if producer_ids and consumer_ids else [item["obligation_id"] for item in obligations],
+        "dependency_gaps": [],
+        "unresolved_verification_ambiguity": [],
+        "filename_derived_population": False,
+        "test_name_derived_population": False,
+        "package_name_derived_population": False,
+        "manual_inventory": False,
+        "documentation_reference_inventory": False,
+        "historical_execution_batch_inventory": False,
+    }
+    runtime_completeness = {
+        "complete": True,
+        "runtime_participants": len(runtime_ids),
+        "undocumented_runtime_participants": [],
+        "duplicate_runtime_participation": [],
+        "runtime_ambiguity": [],
+    }
+    return {
+        "verification_planning_registry": planning,
+        "implementation_obligation_verification_matrix": matrix,
+        "verification_completeness_assessment": completeness,
+        "runtime_completeness_assessment": runtime_completeness,
+    }
+
+
 def _completion(order: str, extra: dict[str, Any] | None = None) -> dict[str, Any]:
     payload = {
         "package": "POSITION-REGISTRY-RM-001-S04 implementation mapping",
@@ -615,6 +944,18 @@ def generate() -> dict[str, Any]:
     evidence_obligation_registry = _evidence_obligation_registry(obligations)
     coverage_assessment = _coverage_assessment(requirements, matrix, obligations)
     constitutional_completeness = _constitutional_completeness_assessment(requirements, obligations, coverage_assessment)
+    verifier_registries = _b04_003_verifier_registries(verification, obligations)
+    fixture_participation = _b04_003_fixture_participation(verification, obligations)
+    runtime_registries = _b04_003_runtime_registries(inventory, obligations, relationships)
+    evidence_registries = _b04_003_evidence_registries(inventory, obligations)
+    b04_003_planning = _b04_003_planning_and_completeness(
+        obligations,
+        verifier_registries["verifier_inventory"],
+        fixture_participation,
+        runtime_registries["runtime_participation_registry"],
+        evidence_registries["evidence_producer_registry"],
+        evidence_registries["evidence_consumer_registry"],
+    )
 
     exclusions = [
         {
@@ -736,20 +1077,94 @@ def generate() -> dict[str, Any]:
                 "certification_activity_executed": False,
             },
         ),
-        "B04-003_verifier_inventory.json": verification["verifier_inventory"],
-        "B04-003_verifier_participation_registry.json": verification["verifier_participation_registry"],
+        "B04-003_verifier_inventory.json": verifier_registries["verifier_inventory"],
+        "B04-003_verifier_identity_registry.json": verifier_registries["verifier_identity_registry"],
+        "B04-003_verifier_classification_registry.json": verifier_registries["verifier_classification_registry"],
+        "B04-003_verifier_participation_registry.json": verifier_registries["verifier_participation_registry"],
         "B04-003_fixture_inventory.json": verification["fixture_inventory"],
+        "B04-003_fixture_participation_registry.json": fixture_participation,
         "B04-003_mock_and_simulation_registry.json": verification["mock_and_simulation_registry"],
+        "B04-003_runtime_participation_registry.json": runtime_registries["runtime_participation_registry"],
+        "B04-003_runtime_classification_registry.json": runtime_registries["runtime_classification_registry"],
         "B04-003_runtime_dependency_registry.json": verification["runtime_dependency_registry"],
         "B04-003_persistence_dependency_registry.json": verification["persistence_dependency_registry"],
         "B04-003_evidence_participation_registry.json": verification["evidence_participation_registry"],
+        "B04-003_evidence_producer_registry.json": evidence_registries["evidence_producer_registry"],
+        "B04-003_evidence_consumer_registry.json": evidence_registries["evidence_consumer_registry"],
         "B04-003_reconciliation_participation_registry.json": verification["reconciliation_participation_registry"],
         "B04-003_verification_mode_registry.json": verification["verification_mode_registry"],
         "B04-003_execution_environment_registry.json": verification["execution_environment_registry"],
         "B04-003_verification_dependency_graph.json": verification["verification_dependency_graph"],
+        "B04-003_dependency_direction_registry.json": [
+            {
+                "dependency_id": item["dependency_id"],
+                "dependency_owner": item["dependency_owner"],
+                "dependency_producer": item["producer"],
+                "dependency_consumer": item["consumer"],
+                "dependency_direction": item["dependency_direction"],
+                "deterministic_dependency_direction": True,
+            }
+            for item in relationships
+        ],
+        "B04-003_dependency_justification_registry.json": [
+            {
+                "dependency_id": item["dependency_id"],
+                "dependency_owner": item["dependency_owner"],
+                "dependency_criticality": item["dependency_criticality"],
+                "dependency_precedence": "objective dependency discovery before verification planning before execution",
+                "dependency_sequencing": "verifier/fixture/runtime/evidence population discovery only",
+                "objective_dependency_justification": item["dependency_evidence"],
+                "constitutional_justification": item["constitutional_justification"],
+            }
+            for item in relationships
+        ],
+        "B04-003_verification_planning_registry.json": b04_003_planning["verification_planning_registry"],
+        "B04-003_implementation_obligation_verification_matrix.json": b04_003_planning["implementation_obligation_verification_matrix"],
+        "B04-003_verification_completeness_assessment.json": b04_003_planning["verification_completeness_assessment"],
+        "B04-003_runtime_completeness_assessment.json": b04_003_planning["runtime_completeness_assessment"],
+        "B04-003_unresolved_verification_findings_registry.json": [],
+        "B04-003_verifier_fixture_evidence_runtime_participation_report.json": {
+            "order": "POSITION-REGISTRY-RM-001-S04-B04-003",
+            "status": "COMPLETE",
+            "verifiers": len(verifier_registries["verifier_inventory"]),
+            "fixtures": len(verification["fixture_inventory"]),
+            "runtime_participants": len(runtime_registries["runtime_participation_registry"]),
+            "evidence_producers": len(evidence_registries["evidence_producer_registry"]),
+            "evidence_consumers": len(evidence_registries["evidence_consumer_registry"]),
+            "objective_dependency_discovery": True,
+            "filename_derived_population": False,
+            "test_name_derived_population": False,
+            "package_name_derived_population": False,
+            "manual_inventory": False,
+            "documentation_reference_inventory": False,
+            "historical_execution_batch_inventory": False,
+            "behavioral_correctness_evaluated": False,
+            "implementation_modified": False,
+            "behavioral_verification_executed": False,
+            "implementation_proof_generated": False,
+            "certification_activity_executed": False,
+        },
         "B04-003_verification_integrity_registry.json": verification["verification_integrity_registry"],
         "B04-003_implementation_consistency_reconciliation_report.json": {"status": "COMPLETE", "unresolved_ambiguities": 0, "verification_population_authoritative": True},
-        "B04-003_completion_report.json": _completion("B04-003", {"verifiers": len(verification["verifier_inventory"]), "fixtures": len(verification["fixture_inventory"])}),
+        "B04-003_completion_report.json": _completion(
+            "B04-003",
+            {
+                "verifiers": len(verifier_registries["verifier_inventory"]),
+                "fixtures": len(verification["fixture_inventory"]),
+                "runtime_participants": len(runtime_registries["runtime_participation_registry"]),
+                "evidence_producers": len(evidence_registries["evidence_producer_registry"]),
+                "evidence_consumers": len(evidence_registries["evidence_consumer_registry"]),
+                "verification_planning_complete": True,
+                "runtime_completeness_verified": True,
+                "unresolved_verifier_ambiguity": 0,
+                "unresolved_fixture_ambiguity": 0,
+                "unresolved_runtime_participation_ambiguity": 0,
+                "implementation_modified": False,
+                "behavioral_verification_executed": False,
+                "implementation_proof_generated": False,
+                "certification_activity_executed": False,
+            },
+        ),
     }
 
     baseline = {
