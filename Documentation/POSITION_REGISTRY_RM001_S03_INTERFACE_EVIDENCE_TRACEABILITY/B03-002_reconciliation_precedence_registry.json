@@ -1,0 +1,56 @@
+[
+  {
+    "authoritative_truth_precedence": "broker-reported position truth precedes internal values for broker facts; internal state preserves constitutional lineage",
+    "reconciliation_id": "PR-S03-REC-001",
+    "reconciliation_name": "broker_position_truth",
+    "source_owner": "Broker"
+  },
+  {
+    "authoritative_truth_precedence": "Trader intent is admissible execution context but never overrides broker fill truth",
+    "reconciliation_id": "PR-S03-REC-002",
+    "reconciliation_name": "trader_position_truth",
+    "source_owner": "Trader"
+  },
+  {
+    "authoritative_truth_precedence": "Broker-confirmed fills precede Trader expectation and Monitoring observation",
+    "reconciliation_id": "PR-S03-REC-003",
+    "reconciliation_name": "fill_truth",
+    "source_owner": "Broker"
+  },
+  {
+    "authoritative_truth_precedence": "account identity and balance truth remain externally governed dependencies",
+    "reconciliation_id": "PR-S03-REC-004",
+    "reconciliation_name": "account_truth",
+    "source_owner": "Account Authority"
+  },
+  {
+    "authoritative_truth_precedence": "authorization identity, scope, freshness, and revocation truth remain externally governed",
+    "reconciliation_id": "PR-S03-REC-005",
+    "reconciliation_name": "authorization_truth",
+    "source_owner": "Authorizations"
+  },
+  {
+    "authoritative_truth_precedence": "monitoring observations are evidence-only unless another authority authorizes mutation",
+    "reconciliation_id": "PR-S03-REC-006",
+    "reconciliation_name": "monitoring_truth",
+    "source_owner": "Monitoring"
+  },
+  {
+    "authoritative_truth_precedence": "exit decisions govern closure intent but do not establish fill completion",
+    "reconciliation_id": "PR-S03-REC-007",
+    "reconciliation_name": "exit_truth",
+    "source_owner": "Exit Decision"
+  },
+  {
+    "authoritative_truth_precedence": "closed-position publication follows Position Registry terminal evidence",
+    "reconciliation_id": "PR-S03-REC-008",
+    "reconciliation_name": "closed_position_truth",
+    "source_owner": "Closed Position Truth"
+  },
+  {
+    "authoritative_truth_precedence": "Historian preserves custody but does not rewrite Position Registry authority",
+    "reconciliation_id": "PR-S03-REC-009",
+    "reconciliation_name": "historical_truth",
+    "source_owner": "Historian"
+  }
+]

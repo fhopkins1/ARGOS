@@ -1,0 +1,72 @@
+[
+  {
+    "canonical_truth_consumer": "authorized consumers",
+    "canonical_truth_owner": "Position Registry",
+    "canonical_truth_producer": "Position Registry",
+    "truth_id": "PR-S03-TRUTH-001",
+    "truth_name": "position_truth"
+  },
+  {
+    "canonical_truth_consumer": "Position Registry",
+    "canonical_truth_owner": "Broker",
+    "canonical_truth_producer": "Broker",
+    "truth_id": "PR-S03-TRUTH-002",
+    "truth_name": "broker_truth"
+  },
+  {
+    "canonical_truth_consumer": "Position Registry",
+    "canonical_truth_owner": "Broker",
+    "canonical_truth_producer": "Broker",
+    "truth_id": "PR-S03-TRUTH-003",
+    "truth_name": "execution_truth"
+  },
+  {
+    "canonical_truth_consumer": "Position Registry",
+    "canonical_truth_owner": "Authorizations",
+    "canonical_truth_producer": "Authorizations",
+    "truth_id": "PR-S03-TRUTH-004",
+    "truth_name": "authorization_truth"
+  },
+  {
+    "canonical_truth_consumer": "Position Registry",
+    "canonical_truth_owner": "Risk",
+    "canonical_truth_producer": "Risk",
+    "truth_id": "PR-S03-TRUTH-005",
+    "truth_name": "risk_truth"
+  },
+  {
+    "canonical_truth_consumer": "Position Registry",
+    "canonical_truth_owner": "Monitoring",
+    "canonical_truth_producer": "Monitoring",
+    "truth_id": "PR-S03-TRUTH-006",
+    "truth_name": "monitoring_truth"
+  },
+  {
+    "canonical_truth_consumer": "Position Registry",
+    "canonical_truth_owner": "Exit Decision",
+    "canonical_truth_producer": "Exit Decision",
+    "truth_id": "PR-S03-TRUTH-007",
+    "truth_name": "exit_truth"
+  },
+  {
+    "canonical_truth_consumer": "authorized consumers",
+    "canonical_truth_owner": "Closed Position Truth",
+    "canonical_truth_producer": "Closed Position Truth",
+    "truth_id": "PR-S03-TRUTH-008",
+    "truth_name": "closed_position_truth"
+  },
+  {
+    "canonical_truth_consumer": "authorized consumers",
+    "canonical_truth_owner": "Performance Truth",
+    "canonical_truth_producer": "Performance Truth",
+    "truth_id": "PR-S03-TRUTH-009",
+    "truth_name": "performance_truth"
+  },
+  {
+    "canonical_truth_consumer": "authorized audit and replay consumers",
+    "canonical_truth_owner": "Historian",
+    "canonical_truth_producer": "Historian",
+    "truth_id": "PR-S03-TRUTH-010",
+    "truth_name": "historical_truth"
+  }
+]

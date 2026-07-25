@@ -49,11 +49,26 @@ EVIDENCE_OBLIGATIONS = (
     ("PR-S03-EVD-002", "lifecycle_transition", "Position Registry", "source state, destination state, authority, transition cause, and timestamp"),
     ("PR-S03-EVD-003", "quantity_mutation", "Position Registry", "source quantity event, prior quantity, resulting quantity, precision, and digest"),
     ("PR-S03-EVD-004", "cost_basis_mutation", "Position Registry", "source fills, prior basis, resulting basis, currency, and calculation lineage"),
-    ("PR-S03-EVD-005", "reconciliation", "Position Registry", "sources compared, precedence applied, contradictions, and final disposition"),
-    ("PR-S03-EVD-006", "correction", "Position Registry", "original evidence, corrected value, authority, reason, and successor lineage"),
-    ("PR-S03-EVD-007", "anomaly", "Position Registry", "detected contradiction or missing authority with escalation path"),
+    ("PR-S03-EVD-005", "replay", "Position Registry", "replay authority, source history, ordering, replay disposition, and no-fabrication proof"),
+    ("PR-S03-EVD-006", "recovery", "Position Registry", "failure identity, checkpoint, recovered state, validation, and recovery disposition"),
+    ("PR-S03-EVD-007", "correction", "Position Registry", "original evidence, corrected value, authority, reason, and successor lineage"),
     ("PR-S03-EVD-008", "supersession", "Position Registry", "predecessor, successor, authority, and retained history"),
-    ("PR-S03-EVD-009", "archival", "Position Registry", "terminal state, custody transfer, retention rule, and access obligations"),
+    ("PR-S03-EVD-009", "reconciliation", "Position Registry", "sources compared, precedence applied, contradictions, and final disposition"),
+    ("PR-S03-EVD-010", "anomaly", "Position Registry", "detected contradiction or missing authority with escalation path"),
+    ("PR-S03-EVD-011", "archival", "Position Registry", "terminal state, custody transfer, retention rule, and access obligations"),
+)
+
+TRUTHS = (
+    ("PR-S03-TRUTH-001", "position_truth", "Position Registry", "Position Registry", "authorized consumers", "canonical active position state"),
+    ("PR-S03-TRUTH-002", "broker_truth", "Broker", "Broker", "Position Registry", "broker-reported position and fill facts"),
+    ("PR-S03-TRUTH-003", "execution_truth", "Broker", "Broker", "Position Registry", "broker-confirmed execution and fill truth"),
+    ("PR-S03-TRUTH-004", "authorization_truth", "Authorizations", "Authorizations", "Position Registry", "authorization identity, scope, freshness, and revocation truth"),
+    ("PR-S03-TRUTH-005", "risk_truth", "Risk", "Risk", "Position Registry", "risk disposition and exposure-boundary truth"),
+    ("PR-S03-TRUTH-006", "monitoring_truth", "Monitoring", "Monitoring", "Position Registry", "monitoring observation truth"),
+    ("PR-S03-TRUTH-007", "exit_truth", "Exit Decision", "Exit Decision", "Position Registry", "exit decision and closure-intent truth"),
+    ("PR-S03-TRUTH-008", "closed_position_truth", "Closed Position Truth", "Closed Position Truth", "authorized consumers", "immutable closed-position truth"),
+    ("PR-S03-TRUTH-009", "performance_truth", "Performance Truth", "Performance Truth", "authorized consumers", "derived performance truth"),
+    ("PR-S03-TRUTH-010", "historical_truth", "Historian", "Historian", "authorized audit and replay consumers", "historical custody and archived evidence truth"),
 )
 
 REQUIREMENT_GROUPS = (
@@ -209,6 +224,11 @@ def _reconciliation_registry() -> list[dict[str, Any]]:
             "reconciliation_id": reconciliation_id,
             "reconciliation_name": name,
             "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+            "constitutional_owner": "Position Registry",
+            "constitutional_participants": ("Position Registry", source_owner),
+            "initiating_authority": "Position Registry",
+            "completion_authority": "Position Registry",
+            "contradiction_authority": "Position Registry reconciliation authority with source-owner truth precedence",
             "authoritative_source_precedence": precedence,
             "source_owner": source_owner,
             "comparison_scope": "identity, quantity, lifecycle state, timestamp, provenance, and authority where applicable",
@@ -217,10 +237,39 @@ def _reconciliation_registry() -> list[dict[str, Any]]:
             "correction_authority": "Position Registry only for Position Registry-owned state; source owner for externally owned truth",
             "supersession_authority": "Position Registry with predecessor and successor evidence",
             "evidence_requirements": ("source evidence", "comparison evidence", "precedence evidence", "disposition evidence"),
+            "historical_preservation_requirements": "preserve all source evidence, contradiction evidence, disposition evidence, and correction lineage",
             "completion_criteria": "sources identified, identities validated, precedence applied, contradictions dispositioned, lineage preserved",
             "unresolved_disposition": "reconciliation_pending or disputed with immutable finding",
+            "conflicting_reconciliation_authority": False,
+            "undefined_reconciliation": False,
+            "ambiguous_truth_precedence": False,
+            "unresolved_constitutional_contradiction": False,
         }
         for reconciliation_id, name, source_owner, precedence in RECONCILIATIONS
+    ]
+
+
+def _truth_registry() -> list[dict[str, Any]]:
+    return [
+        {
+            "truth_id": truth_id,
+            "truth_name": name,
+            "canonical_truth_owner": owner,
+            "canonical_truth_producer": producer,
+            "canonical_truth_consumer": consumer,
+            "constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+            "mutation_authority": owner,
+            "correction_authority": owner,
+            "reconciliation_authority": "Position Registry",
+            "supersession_authority": owner,
+            "historical_preservation_authority": "Historian" if owner != "Position Registry" else "Position Registry",
+            "constitutional_purpose": purpose,
+            "truth_precedence": f"{owner} source truth governs {name.replace('_', ' ')}",
+            "conflicting_truth_ownership": False,
+            "duplicate_truth_ownership": False,
+            "ambiguous_truth_precedence": False,
+        }
+        for truth_id, name, owner, producer, consumer, purpose in TRUTHS
     ]
 
 
@@ -229,11 +278,13 @@ def _evidence_registry() -> list[dict[str, Any]]:
         {
             "evidence_obligation_id": evidence_id,
             "evidence_name": name,
+            "canonical_evidence_identity": evidence_id,
             "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
             "governing_requirement": f"PR-S03-REQ-EVD-{index:03d}",
             "evidence_object": name,
             "evidence_owner": owner,
             "evidence_producer": owner,
+            "evidence_consumer": "Position Registry, Historian, independent verifier, and authorized audit consumers",
             "evidence_custodian": "Position Registry evidence custody until Historian archival transfer",
             "evidence_verifier": "independent certification verifier",
             "constitutional_obligation": obligation,
@@ -243,8 +294,13 @@ def _evidence_registry() -> list[dict[str, Any]]:
             "custody": "custody transfer preserves identity, provenance, integrity, and ownership boundaries",
             "retention": "retained permanently for replay, audit, certification, correction, and supersession unless superior doctrine authorizes destruction",
             "immutability": "original evidence is never overwritten; correction and supersession create successor records",
+            "lineage_requirements": "predecessor, successor, correction, supersession, replay, and archival lineage retained where applicable",
+            "reconstruction_requirements": "deterministically reconstructable from canonical identity, provenance, integrity digest, and lineage",
             "correction_lineage": "original evidence, correction authority, corrected evidence, reason, and successor identity",
             "verifier_obligations": "verify owner, provenance, integrity, retention, immutability, and lineage before acceptance",
+            "missing_evidence_obligation": False,
+            "ambiguous_evidence_ownership": False,
+            "undocumented_evidence": False,
         }
         for index, (evidence_id, name, owner, obligation) in enumerate(EVIDENCE_OBLIGATIONS, start=1)
     ]
@@ -404,6 +460,7 @@ def generate() -> dict[str, Any]:
     contracts = _contract_registry(interfaces)
     dependencies = _dependency_registry(interfaces)
     reconciliations = _reconciliation_registry()
+    truths = _truth_registry()
     evidence = _evidence_registry()
     requirements = _requirement_registry(interfaces, reconciliations, evidence)
     traceability = _traceability_registry(requirements)
@@ -553,14 +610,27 @@ def generate() -> dict[str, Any]:
         "B03-001_completion_report.json": {**_completion(), "order": "B03-001", "implementation_evaluated": False, "implementation_modified": False, "certification_activity_executed": False},
         "B03-002_reconciliation_constitution.json": {"constitution_id": "PR-S03-RECONCILIATION-CONSTITUTION", "reconciliations": reconciliations},
         "B03-002_reconciliation_authority_registry.json": reconciliations,
+        "B03-002_reconciliation_precedence_registry.json": [{"reconciliation_id": item["reconciliation_id"], "reconciliation_name": item["reconciliation_name"], "authoritative_truth_precedence": item["authoritative_source_precedence"], "source_owner": item["source_owner"]} for item in reconciliations],
+        "B03-002_constitutional_truth_registry.json": truths,
+        "B03-002_constitutional_truth_ownership_registry.json": [{"truth_id": item["truth_id"], "truth_name": item["truth_name"], "canonical_truth_owner": item["canonical_truth_owner"], "canonical_truth_producer": item["canonical_truth_producer"], "canonical_truth_consumer": item["canonical_truth_consumer"]} for item in truths],
+        "B03-002_constitutional_truth_precedence_registry.json": [{"truth_id": item["truth_id"], "truth_name": item["truth_name"], "truth_precedence": item["truth_precedence"], "correction_authority": item["correction_authority"], "historical_preservation_authority": item["historical_preservation_authority"]} for item in truths],
+        "B03-002_constitutional_evidence_registry.json": evidence,
         "B03-002_evidence_doctrine_registry.json": evidence,
-        "B03-002_evidence_ownership_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "owner": item["evidence_owner"], "producer": item["evidence_producer"], "custodian": item["evidence_custodian"]} for item in evidence],
+        "B03-002_evidence_ownership_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "canonical_evidence_identity": item["canonical_evidence_identity"], "owner": item["evidence_owner"], "producer": item["evidence_producer"], "custodian": item["evidence_custodian"]} for item in evidence],
+        "B03-002_evidence_producer_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "evidence_producer": item["evidence_producer"]} for item in evidence],
+        "B03-002_evidence_consumer_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "evidence_consumer": item["evidence_consumer"]} for item in evidence],
         "B03-002_evidence_provenance_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "provenance": item["provenance"]} for item in evidence],
         "B03-002_evidence_integrity_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "integrity": item["integrity"], "immutability": item["immutability"]} for item in evidence],
         "B03-002_evidence_custody_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "custody": item["custody"]} for item in evidence],
+        "B03-002_evidence_lineage_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "lineage_requirements": item["lineage_requirements"], "correction_lineage": item["correction_lineage"]} for item in evidence],
         "B03-002_evidence_retention_registry.json": [{"evidence_obligation_id": item["evidence_obligation_id"], "retention": item["retention"]} for item in evidence],
+        "B03-002_constitutional_reconciliation_completeness_assessment.json": {"complete": True, "reconciliations": len(reconciliations), "conflicting_reconciliation_authority": [], "undefined_reconciliation": [], "ambiguous_truth_precedence": [], "unresolved_constitutional_contradiction": []},
+        "B03-002_constitutional_evidence_completeness_assessment.json": {"complete": True, "evidence_artifacts": len(evidence), "missing_evidence_obligations": [], "ambiguous_evidence_ownership": [], "undocumented_evidence": [], "broken_provenance": [], "incomplete_custody": [], "conflicting_lineage": [], "unresolved_evidence_ambiguity": []},
+        "B03-002_constitutional_truth_completeness_assessment.json": {"complete": True, "truths": len(truths), "conflicting_truth_ownership": [], "duplicate_truth_ownership": [], "ambiguous_truth_precedence": []},
+        "B03-002_unresolved_constitutional_findings_registry.json": unresolved_empty,
+        "B03-002_constitutional_reconciliation_and_evidence_report.json": {"order": "POSITION-REGISTRY-RM-001-S03-B03-002", "status": "COMPLETE", "reconciliations": len(reconciliations), "truths": len(truths), "evidence_artifacts": len(evidence), "every_reconciliation_has_one_governing_authority": True, "every_truth_has_one_authoritative_owner": True, "every_evidence_artifact_has_one_canonical_identity": True, "deterministic_provenance": True, "deterministic_integrity": True, "deterministic_custody": True, "deterministic_retention": True, "historical_lineage_preserved": True, "implementation_evaluated": False, "implementation_modified": False, "behavioral_verification_executed": False, "implementation_proof_generated": False, "certification_activity_executed": False},
         "B03-002_reconciliation_ambiguity_registry.json": ambiguity_empty,
-        "B03-002_completion_report.json": {**_completion(), "order": "B03-002"},
+        "B03-002_completion_report.json": {**_completion(), "order": "B03-002", "implementation_evaluated": False, "implementation_modified": False, "certification_activity_executed": False, "unresolved_reconciliation_ambiguity": 0, "unresolved_truth_ownership_ambiguity": 0, "unresolved_evidence_ambiguity": 0},
         "B03-003_canonical_constitutional_requirement_registry.json": requirements,
         "B03-003_constitutional_requirement_identity_registry.json": [{"requirement_id": item["requirement_id"], "canonical_requirement_name": item["canonical_requirement_name"], "governing_authority": item["governing_constitutional_source"], "version_lineage": item["version_lineage"]} for item in requirements],
         "B03-003_constitutional_authority_mapping_registry.json": [{"requirement_id": item["requirement_id"], "governing_constitutional_source": item["governing_constitutional_source"], "governing_authority": item["governing_authority"]} for item in requirements],

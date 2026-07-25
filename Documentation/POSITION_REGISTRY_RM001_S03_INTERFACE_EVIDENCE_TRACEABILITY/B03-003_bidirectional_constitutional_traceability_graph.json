@@ -2221,7 +2221,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "OBJECT-PR-S03-REQ-EVD-005",
       "source_node": "PR-S03-REQ-EVD-005",
-      "target_node": "reconciliation",
+      "target_node": "replay",
       "traceability_id": "PR-S03-REQ-EVD-005-OBJECT"
     },
     {
@@ -2243,7 +2243,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "LIFECYCLE-PR-S03-REQ-EVD-005",
       "source_node": "PR-S03-REQ-EVD-005",
-      "target_node": "reconciliation",
+      "target_node": "replay",
       "traceability_id": "PR-S03-REQ-EVD-005-LIFECYCLE"
     },
     {
@@ -2298,7 +2298,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "OBJECT-PR-S03-REQ-EVD-006",
       "source_node": "PR-S03-REQ-EVD-006",
-      "target_node": "correction",
+      "target_node": "recovery",
       "traceability_id": "PR-S03-REQ-EVD-006-OBJECT"
     },
     {
@@ -2320,7 +2320,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "LIFECYCLE-PR-S03-REQ-EVD-006",
       "source_node": "PR-S03-REQ-EVD-006",
-      "target_node": "correction",
+      "target_node": "recovery",
       "traceability_id": "PR-S03-REQ-EVD-006-LIFECYCLE"
     },
     {
@@ -2375,7 +2375,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "OBJECT-PR-S03-REQ-EVD-007",
       "source_node": "PR-S03-REQ-EVD-007",
-      "target_node": "anomaly",
+      "target_node": "correction",
       "traceability_id": "PR-S03-REQ-EVD-007-OBJECT"
     },
     {
@@ -2397,7 +2397,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "LIFECYCLE-PR-S03-REQ-EVD-007",
       "source_node": "PR-S03-REQ-EVD-007",
-      "target_node": "anomaly",
+      "target_node": "correction",
       "traceability_id": "PR-S03-REQ-EVD-007-LIFECYCLE"
     },
     {
@@ -2529,7 +2529,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "OBJECT-PR-S03-REQ-EVD-009",
       "source_node": "PR-S03-REQ-EVD-009",
-      "target_node": "archival",
+      "target_node": "reconciliation",
       "traceability_id": "PR-S03-REQ-EVD-009-OBJECT"
     },
     {
@@ -2551,7 +2551,7 @@
       "required_direction": "forward_and_reverse",
       "reverse_relationship": "LIFECYCLE-PR-S03-REQ-EVD-009",
       "source_node": "PR-S03-REQ-EVD-009",
-      "target_node": "archival",
+      "target_node": "reconciliation",
       "traceability_id": "PR-S03-REQ-EVD-009-LIFECYCLE"
     },
     {
@@ -2586,6 +2586,160 @@
       "source_node": "PR-S03-REQ-EVD-009",
       "target_node": "verify provenance, integrity, custody, retention, immutability, and lineage",
       "traceability_id": "PR-S03-REQ-EVD-009-CERTIFICATION"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "AUTHORITY",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "AUTHORITY-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "traceability_id": "PR-S03-REQ-EVD-010-AUTHORITY"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "OBJECT",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "OBJECT-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "anomaly",
+      "traceability_id": "PR-S03-REQ-EVD-010-OBJECT"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "INTERFACE",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "INTERFACE-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "applicable evidence-producing interface",
+      "traceability_id": "PR-S03-REQ-EVD-010-INTERFACE"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "LIFECYCLE",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "LIFECYCLE-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "anomaly",
+      "traceability_id": "PR-S03-REQ-EVD-010-LIFECYCLE"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "EVIDENCE",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "EVIDENCE-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "PR-S03-EVD-010",
+      "traceability_id": "PR-S03-REQ-EVD-010-EVIDENCE"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "RECONCILIATION",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "RECONCILIATION-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "evidence reconciliation where contradicted, corrected, or superseded",
+      "traceability_id": "PR-S03-REQ-EVD-010-RECONCILIATION"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "CERTIFICATION",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "CERTIFICATION-PR-S03-REQ-EVD-010",
+      "source_node": "PR-S03-REQ-EVD-010",
+      "target_node": "verify provenance, integrity, custody, retention, immutability, and lineage",
+      "traceability_id": "PR-S03-REQ-EVD-010-CERTIFICATION"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "AUTHORITY",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "AUTHORITY-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "traceability_id": "PR-S03-REQ-EVD-011-AUTHORITY"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "OBJECT",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "OBJECT-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "archival",
+      "traceability_id": "PR-S03-REQ-EVD-011-OBJECT"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "INTERFACE",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "INTERFACE-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "applicable evidence-producing interface",
+      "traceability_id": "PR-S03-REQ-EVD-011-INTERFACE"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "LIFECYCLE",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "LIFECYCLE-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "archival",
+      "traceability_id": "PR-S03-REQ-EVD-011-LIFECYCLE"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "EVIDENCE",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "EVIDENCE-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "PR-S03-EVD-011",
+      "traceability_id": "PR-S03-REQ-EVD-011-EVIDENCE"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "RECONCILIATION",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "RECONCILIATION-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "evidence reconciliation where contradicted, corrected, or superseded",
+      "traceability_id": "PR-S03-REQ-EVD-011-RECONCILIATION"
+    },
+    {
+      "completeness_status": "COMPLETE",
+      "conflict_status": "NO_CONFLICT",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "relationship_type": "CERTIFICATION",
+      "required_direction": "forward_and_reverse",
+      "reverse_relationship": "CERTIFICATION-PR-S03-REQ-EVD-011",
+      "source_node": "PR-S03-REQ-EVD-011",
+      "target_node": "verify provenance, integrity, custody, retention, immutability, and lineage",
+      "traceability_id": "PR-S03-REQ-EVD-011-CERTIFICATION"
     }
   ]
 }

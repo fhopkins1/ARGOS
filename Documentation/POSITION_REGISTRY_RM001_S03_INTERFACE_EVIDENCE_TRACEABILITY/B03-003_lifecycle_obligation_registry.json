@@ -112,15 +112,15 @@
     "requirement_id": "PR-S03-REQ-EVD-004"
   },
   {
-    "governing_lifecycle": "reconciliation",
+    "governing_lifecycle": "replay",
     "requirement_id": "PR-S03-REQ-EVD-005"
   },
   {
-    "governing_lifecycle": "correction",
+    "governing_lifecycle": "recovery",
     "requirement_id": "PR-S03-REQ-EVD-006"
   },
   {
-    "governing_lifecycle": "anomaly",
+    "governing_lifecycle": "correction",
     "requirement_id": "PR-S03-REQ-EVD-007"
   },
   {
@@ -128,7 +128,15 @@
     "requirement_id": "PR-S03-REQ-EVD-008"
   },
   {
-    "governing_lifecycle": "archival",
+    "governing_lifecycle": "reconciliation",
     "requirement_id": "PR-S03-REQ-EVD-009"
+  },
+  {
+    "governing_lifecycle": "anomaly",
+    "requirement_id": "PR-S03-REQ-EVD-010"
+  },
+  {
+    "governing_lifecycle": "archival",
+    "requirement_id": "PR-S03-REQ-EVD-011"
   }
 ]

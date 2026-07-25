@@ -94,10 +94,71 @@ class PositionRegistryRM001S03InterfaceEvidenceTraceabilityTests(unittest.TestCa
         evidence = json.loads((EVIDENCE_ROOT / "B03-002_evidence_doctrine_registry.json").read_text(encoding="utf-8"))
         ambiguity = json.loads((EVIDENCE_ROOT / "B03-002_reconciliation_ambiguity_registry.json").read_text(encoding="utf-8"))
         self.assertEqual(len(reconciliations), 9)
-        self.assertEqual(len(evidence), 9)
+        self.assertEqual(len(evidence), 11)
         self.assertTrue(all(item["authoritative_source_precedence"] for item in reconciliations))
         self.assertTrue(all(item["provenance"] and item["integrity"] and item["retention"] for item in evidence))
         self.assertEqual(ambiguity, [])
+
+    def test_b03_002_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B03-002_reconciliation_constitution.json",
+            "B03-002_reconciliation_authority_registry.json",
+            "B03-002_reconciliation_precedence_registry.json",
+            "B03-002_constitutional_truth_registry.json",
+            "B03-002_constitutional_truth_ownership_registry.json",
+            "B03-002_constitutional_truth_precedence_registry.json",
+            "B03-002_constitutional_evidence_registry.json",
+            "B03-002_evidence_ownership_registry.json",
+            "B03-002_evidence_producer_registry.json",
+            "B03-002_evidence_consumer_registry.json",
+            "B03-002_evidence_custody_registry.json",
+            "B03-002_evidence_provenance_registry.json",
+            "B03-002_evidence_integrity_registry.json",
+            "B03-002_evidence_lineage_registry.json",
+            "B03-002_evidence_retention_registry.json",
+            "B03-002_constitutional_reconciliation_completeness_assessment.json",
+            "B03-002_constitutional_evidence_completeness_assessment.json",
+            "B03-002_constitutional_truth_completeness_assessment.json",
+            "B03-002_unresolved_constitutional_findings_registry.json",
+            "B03-002_constitutional_reconciliation_and_evidence_report.json",
+            "B03-002_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b03_002_truth_ownership_and_precedence_are_unambiguous(self) -> None:
+        truths = json.loads((EVIDENCE_ROOT / "B03-002_constitutional_truth_registry.json").read_text(encoding="utf-8"))
+        ownership = json.loads((EVIDENCE_ROOT / "B03-002_constitutional_truth_ownership_registry.json").read_text(encoding="utf-8"))
+        precedence = json.loads((EVIDENCE_ROOT / "B03-002_constitutional_truth_precedence_registry.json").read_text(encoding="utf-8"))
+        completeness = json.loads((EVIDENCE_ROOT / "B03-002_constitutional_truth_completeness_assessment.json").read_text(encoding="utf-8"))
+        expected_truths = {"position_truth", "broker_truth", "execution_truth", "authorization_truth", "risk_truth", "monitoring_truth", "exit_truth", "closed_position_truth", "performance_truth", "historical_truth"}
+        self.assertEqual({item["truth_name"] for item in truths}, expected_truths)
+        self.assertEqual(len({item["truth_name"] for item in ownership}), len(ownership))
+        self.assertTrue(all(item["canonical_truth_owner"] for item in ownership))
+        self.assertTrue(all(item["truth_precedence"] for item in precedence))
+        self.assertEqual(completeness["conflicting_truth_ownership"], [])
+        self.assertEqual(completeness["duplicate_truth_ownership"], [])
+        self.assertEqual(completeness["ambiguous_truth_precedence"], [])
+
+    def test_b03_002_evidence_has_identity_provenance_integrity_lineage_and_retention(self) -> None:
+        evidence = json.loads((EVIDENCE_ROOT / "B03-002_constitutional_evidence_registry.json").read_text(encoding="utf-8"))
+        lineage = json.loads((EVIDENCE_ROOT / "B03-002_evidence_lineage_registry.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B03-002_constitutional_reconciliation_and_evidence_report.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B03-002_unresolved_constitutional_findings_registry.json").read_text(encoding="utf-8"))
+        self.assertTrue({"position_creation", "lifecycle_transition", "quantity_mutation", "cost_basis_mutation", "replay", "recovery", "correction", "supersession", "reconciliation", "anomaly", "archival"}.issubset({item["evidence_name"] for item in evidence}))
+        self.assertTrue(all(item["canonical_evidence_identity"] for item in evidence))
+        self.assertTrue(all(item["provenance"] and item["integrity"] and item["custody"] and item["retention"] for item in evidence))
+        self.assertTrue(all(item["lineage_requirements"] for item in lineage))
+        self.assertEqual(unresolved, [])
+        self.assertTrue(report["deterministic_provenance"])
+        self.assertTrue(report["deterministic_integrity"])
+        self.assertTrue(report["deterministic_custody"])
+        self.assertTrue(report["deterministic_retention"])
+        self.assertFalse(report["implementation_evaluated"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["behavioral_verification_executed"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
 
     def test_b03_003_requirements_have_bidirectional_traceability(self) -> None:
         requirements = json.loads((EVIDENCE_ROOT / "B03-003_canonical_constitutional_requirement_registry.json").read_text(encoding="utf-8"))

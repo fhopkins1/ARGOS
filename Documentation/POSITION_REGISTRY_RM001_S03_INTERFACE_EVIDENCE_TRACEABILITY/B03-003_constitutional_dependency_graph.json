@@ -296,6 +296,24 @@
       "from": "PR-S03-REQ-EVD-009",
       "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "to": "POSITION-REGISTRY-RM-001-S03-B03-002"
+    },
+    {
+      "dependency_classification": "AUTHORITY_DEPENDENCY",
+      "dependency_impact": "missing authority invalidates requirement traceability",
+      "dependency_rationale": "requirement identity originates from constitutional authority",
+      "edge_id": "PR-S03-REQ-EVD-010-AUTHORITY",
+      "from": "PR-S03-REQ-EVD-010",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "to": "POSITION-REGISTRY-RM-001-S03-B03-002"
+    },
+    {
+      "dependency_classification": "AUTHORITY_DEPENDENCY",
+      "dependency_impact": "missing authority invalidates requirement traceability",
+      "dependency_rationale": "requirement identity originates from constitutional authority",
+      "edge_id": "PR-S03-REQ-EVD-011-AUTHORITY",
+      "from": "PR-S03-REQ-EVD-011",
+      "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "to": "POSITION-REGISTRY-RM-001-S03-B03-002"
     }
   ],
   "graph_id": "PR-S03-CONSTITUTIONAL-DEPENDENCY-GRAPH",
@@ -433,6 +451,14 @@
       "node_type": "REQUIREMENT"
     },
     {
+      "node_id": "PR-S03-REQ-EVD-010",
+      "node_type": "REQUIREMENT"
+    },
+    {
+      "node_id": "PR-S03-REQ-EVD-011",
+      "node_type": "REQUIREMENT"
+    },
+    {
       "node_id": "PR-S03-IF-001",
       "node_type": "INTERFACE"
     },
@@ -514,6 +540,14 @@
     },
     {
       "node_id": "PR-S03-EVD-009",
+      "node_type": "EVIDENCE"
+    },
+    {
+      "node_id": "PR-S03-EVD-010",
+      "node_type": "EVIDENCE"
+    },
+    {
+      "node_id": "PR-S03-EVD-011",
       "node_type": "EVIDENCE"
     }
   ]
