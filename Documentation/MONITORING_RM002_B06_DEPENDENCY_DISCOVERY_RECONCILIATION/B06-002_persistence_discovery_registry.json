@@ -1,0 +1,40 @@
+[
+  {
+    "classification": "PERSISTENCE_COMPONENT",
+    "consuming_verifiers": [
+      "acknowledgement",
+      "alert",
+      "confidence",
+      "contradiction",
+      "correlation",
+      "duplicate_prevention",
+      "escalation",
+      "evaluation",
+      "failure_scenario",
+      "finding",
+      "historical_preservation",
+      "integrated_response",
+      "mission_activation",
+      "observation_rejection",
+      "persistence",
+      "raw_observation",
+      "reconciliation",
+      "recovery",
+      "replay",
+      "restart",
+      "scope_enforcement",
+      "state_restoration",
+      "suppression",
+      "threshold",
+      "trigger"
+    ],
+    "dependency_chain": [
+      "Tests/test_trade_monitoring_office.py",
+      "src/argos/foundation/persistence.py"
+    ],
+    "execution_responsibility": "persist operational documents and support replay/restart checks",
+    "governing_authority": "MONITORING-RM-001",
+    "participant_id": "InMemoryPersistenceRepository",
+    "runtime_role": "deterministic in-memory persistence used for bounded behavioral verification"
+  }
+]

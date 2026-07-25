@@ -1,0 +1,22 @@
+[
+  {
+    "constitutional_purpose": "Deterministic Monitoring behavioral fixtures for snapshots, orders, positions, persistence, audit, and prompt dependencies.",
+    "participant_id": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "constitutional_purpose": "Monitoring office runtime service under test",
+    "participant_id": "TradeMonitoringOffice"
+  },
+  {
+    "constitutional_purpose": "deterministic in-memory persistence used for bounded behavioral verification",
+    "participant_id": "InMemoryPersistenceRepository"
+  },
+  {
+    "constitutional_purpose": "deterministic audit event sink",
+    "participant_id": "AuditService"
+  },
+  {
+    "constitutional_purpose": "deterministic Monitoring behavioral configuration",
+    "participant_id": "MonitoringTestConfiguration"
+  }
+]

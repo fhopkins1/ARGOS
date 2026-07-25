@@ -1,0 +1,43 @@
+[
+  {
+    "classification": "BEHAVIORAL_FIXTURE",
+    "constitutional_purpose": "Deterministic Monitoring behavioral fixtures for snapshots, orders, positions, persistence, audit, and prompt dependencies.",
+    "dependency_derived_discovery_path": [
+      "Tests/test_trade_monitoring_office.py",
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "execution_scope": "Monitoring Office behavioral verification",
+    "governing_behavioral_verifiers": [
+      "acknowledgement",
+      "alert",
+      "confidence",
+      "contradiction",
+      "correlation",
+      "duplicate_prevention",
+      "escalation",
+      "evaluation",
+      "failure_scenario",
+      "finding",
+      "historical_preservation",
+      "integrated_response",
+      "mission_activation",
+      "observation_rejection",
+      "persistence",
+      "raw_observation",
+      "reconciliation",
+      "recovery",
+      "replay",
+      "restart",
+      "scope_enforcement",
+      "state_restoration",
+      "suppression",
+      "threshold",
+      "trigger"
+    ],
+    "lifecycle_participation": "created per execution and discarded after bounded verifier completion",
+    "participant_id": "MONITORING-RM-002-B02-FIXTURE",
+    "participating_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ]
+  }
+]

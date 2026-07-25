@@ -1,0 +1,41 @@
+[
+  {
+    "classification": "CONFIGURATION_COMPONENT",
+    "configuration_authority": "ConfigurationService.load",
+    "constitutional_purpose": "deterministic Monitoring behavioral configuration",
+    "consuming_verifiers": [
+      "acknowledgement",
+      "alert",
+      "confidence",
+      "contradiction",
+      "correlation",
+      "duplicate_prevention",
+      "escalation",
+      "evaluation",
+      "failure_scenario",
+      "finding",
+      "historical_preservation",
+      "integrated_response",
+      "mission_activation",
+      "observation_rejection",
+      "persistence",
+      "raw_observation",
+      "reconciliation",
+      "recovery",
+      "replay",
+      "restart",
+      "scope_enforcement",
+      "state_restoration",
+      "suppression",
+      "threshold",
+      "trigger"
+    ],
+    "dependency_derived_discovery_path": [
+      "Tests/test_trade_monitoring_office.py",
+      "src/argos/foundation/configuration.py"
+    ],
+    "effective_value_source": "literal fixture dictionary in runtime verifier",
+    "missing_value_behavior": "fail closed through ConfigurationService validation",
+    "participant_id": "MonitoringTestConfiguration"
+  }
+]

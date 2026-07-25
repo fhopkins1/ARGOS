@@ -1,0 +1,502 @@
+[
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0001",
+    "target": "mission_activation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0001",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0002",
+    "target": "scope_enforcement"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0002",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0003",
+    "target": "raw_observation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0003",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0004",
+    "target": "observation_rejection"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0004",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0005",
+    "target": "evaluation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0005",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0006",
+    "target": "correlation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0006",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0007",
+    "target": "contradiction"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0007",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0008",
+    "target": "confidence"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0008",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0009",
+    "target": "finding"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0009",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0010",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0010",
+    "target": "threshold"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0011",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0011",
+    "target": "trigger"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0012",
+    "target": "alert"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0012",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0013",
+    "target": "escalation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0013",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0014",
+    "target": "acknowledgement"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0014",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0015",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0015",
+    "target": "suppression"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0016",
+    "target": "integrated_response"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0016",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0017",
+    "target": "persistence"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0017",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0018",
+    "target": "restart"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0018",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0019",
+    "target": "replay"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0019",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0020",
+    "target": "recovery"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0020",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0021",
+    "target": "duplicate_prevention"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0021",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0022",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0022",
+    "target": "state_restoration"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0023",
+    "target": "historical_preservation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0023",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0024",
+    "target": "reconciliation"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0024",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "governed_by",
+    "source": "MON-REQ-0025",
+    "target": "failure_scenario"
+  },
+  {
+    "relationship": "implemented_by",
+    "source": "MON-REQ-0025",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "acknowledgement",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "acknowledgement",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "alert",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "alert",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "confidence",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "confidence",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "contradiction",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "contradiction",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "correlation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "correlation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "duplicate_prevention",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "duplicate_prevention",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "escalation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "escalation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "evaluation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "evaluation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "failure_scenario",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "failure_scenario",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "finding",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "finding",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "historical_preservation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "historical_preservation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "integrated_response",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "integrated_response",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "mission_activation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "mission_activation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "observation_rejection",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "observation_rejection",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "persistence",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "persistence",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "raw_observation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "raw_observation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "reconciliation",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "reconciliation",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "recovery",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "recovery",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "replay",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "replay",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "restart",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "restart",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "scope_enforcement",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "scope_enforcement",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "state_restoration",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "state_restoration",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "suppression",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "suppression",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "threshold",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "threshold",
+    "target": "src/argos/trader/trade_monitoring.py"
+  },
+  {
+    "relationship": "uses_fixture",
+    "source": "trigger",
+    "target": "MONITORING-RM-002-B02-FIXTURE"
+  },
+  {
+    "relationship": "verifies",
+    "source": "trigger",
+    "target": "src/argos/trader/trade_monitoring.py"
+  }
+]

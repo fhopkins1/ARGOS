@@ -1,0 +1,69 @@
+{
+  "candidate": {
+    "candidate_id": "MONITORING-RM002-B06-CANDIDATE-7E67468B3F6AC4E7",
+    "certification_candidate": {
+      "behavioral_evidence_count": 25,
+      "candidate_id": "MON-RM002-B04-CERT-AB35441BBEFE6948",
+      "certification_blockers": 0,
+      "constitutional_doctrine_modified": false,
+      "digest": "6f7141c6f7d8763d89369e08bb90c7f619efaac02525625b36b1372aeb7c9492",
+      "final_verdict": "UNCONDITIONAL_PASS",
+      "implementation_behavior_modified": false,
+      "implementation_evidence_count": 2,
+      "proof_count": 272,
+      "ready_for_enterprise_acceptance": true,
+      "reproducibility_executions": 6,
+      "requirement_count": 272,
+      "series": "MONITORING-RM-002-B04"
+    },
+    "discovery_algorithm_digest": "7a8caff6c6bdbb60b9349ce53754c49164bba615dd7028d9c61c3fbf6f0a8ed2",
+    "implementation_candidate": {
+      "candidate_id": "MON-RM002-B03-CANDIDATE-7E831E6AD36C",
+      "certification_activity_executed": false,
+      "constitutional_doctrine_modified": false,
+      "digest": "2ace393b1383a057989a051de3da5dd4afd5fcd3127cb9a5766ceb79181f81dd",
+      "implementation_behavior_modified": false,
+      "implementation_modifications": 0,
+      "implementation_proof_generated": false,
+      "ready_for": "MONITORING-RM-002-B04",
+      "regression_executions": 2,
+      "regression_pass": true,
+      "series": "MONITORING-RM-002-B03",
+      "unresolved_critical_implementation_defects": 0,
+      "unresolved_implementation_regressions": 0,
+      "verified_implementation_defects": 0
+    },
+    "implementation_digest": "7e67468b3f6ac4e775bc115c1c0df8aab3f35a264c990f4aca6c508922632b34",
+    "independent_reproduction_baseline": {
+      "baseline_verdict": "UNCONDITIONAL_PASS",
+      "certification_system_defects": 0,
+      "confidence": "VERY_HIGH_CONFIDENCE",
+      "independent_verdict": "UNCONDITIONAL_PASS",
+      "negative_mutations": 6,
+      "package": "MONITORING-RM-002-B05-001 independent clean-room reproduction and negative certification validation",
+      "status": "COMPLETE"
+    },
+    "verifier_digest": "816a85dd960a89f8fe98c8a657318c2f9678e6713ff3f704e14b184ee0c7a1e2"
+  },
+  "completion": {
+    "behavioral_readiness": "READY_FOR_PROOF_REGENERATION",
+    "canonical_requirements": 272,
+    "configuration_participants": 1,
+    "covered_requirements": 25,
+    "deterministic_discovery": true,
+    "excluded_artifacts": 343,
+    "fixtures": 1,
+    "included_artifacts": 357,
+    "independently_reproducible": true,
+    "not_applicable_requirements": 247,
+    "orphan_fixtures": 0,
+    "orphan_verifiers": 0,
+    "package": "MONITORING-RM-002-B06 dependency-derived discovery and coverage reconciliation",
+    "persistence_participants": 1,
+    "runtime_participants": 3,
+    "status": "COMPLETE",
+    "unresolved_participation_ambiguities": 0,
+    "verifiers": 25
+  },
+  "digest": "4a4d92d207333feb9b0a1a496d85abdf98ff52f9ffe5bd6cce9265d9a4d57286"
+}
