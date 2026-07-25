@@ -1,0 +1,86 @@
+[
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-001",
+    "time_name": "request_time"
+  },
+  {
+    "authority": "source owner",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-002",
+    "time_name": "observation_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-003",
+    "time_name": "evaluation_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-004",
+    "time_name": "recommendation_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-005",
+    "time_name": "decision_time"
+  },
+  {
+    "authority": "source owner",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-006",
+    "time_name": "authorization_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-007",
+    "time_name": "execution_request_time"
+  },
+  {
+    "authority": "source owner",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-008",
+    "time_name": "acknowledgement_time"
+  },
+  {
+    "authority": "source owner",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-009",
+    "time_name": "completion_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-010",
+    "time_name": "correction_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-011",
+    "time_name": "supersession_time"
+  },
+  {
+    "authority": "Exit Decision Office",
+    "freshness_required": true,
+    "ordering_rule": "monotonic within same lineage unless source-owner evidence explains out-of-order receipt",
+    "time_id": "EXIT-TIME-012",
+    "time_name": "archival_time"
+  }
+]

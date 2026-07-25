@@ -1,0 +1,472 @@
+# EXIT-DECISION-RM-001-B04-002
+
+# Temporal, Freshness, Ordering, and Replay Constitution
+
+## Objective
+
+Establish deterministic constitutional temporal governance for the Exit Decision Office.
+
+This order exists solely to define the authoritative temporal model governing every Exit Decision event, state transition, decision validity period, freshness requirement, ordering rule, replay behavior, duplicate handling rule, and temporal reconciliation obligation.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every temporal event shall possess one defined meaning.
+
+Every timestamp shall possess one defined authority.
+
+Every freshness requirement shall possess one governing owner.
+
+Every replay behavior shall preserve constitutional truth.
+
+---
+
+# Constitutional Principles
+
+Time shall never be inferred.
+
+Freshness shall never be assumed.
+
+Ordering shall never be assumed.
+
+A timestamp shall not imply authority.
+
+A newer record shall not automatically replace an authoritative record.
+
+A delayed event shall not create a new truth state without constitutional authority.
+
+Replay shall reproduce historical decisions without altering historical truth.
+
+Duplicate events shall preserve lineage.
+
+Expired decisions shall not silently reactivate.
+
+Cancelled decisions shall not silently reactivate.
+
+Superseded decisions shall remain historically preserved.
+
+Execution timing shall not alter Exit Decision ownership.
+
+---
+
+# Required Constitutional Definitions
+
+# 1. Temporal Authority Constitution
+
+Establish the authoritative temporal model governing all Exit Decision events.
+
+Define:
+
+* temporal authority owner;
+* timestamp authority;
+* event-time authority;
+* processing-time authority;
+* reconciliation authority;
+* clock-source authority.
+
+The temporal model shall distinguish:
+
+* when an event occurred;
+* when an event was observed;
+* when an event was processed;
+* when an event was reconciled;
+* when an event became authoritative.
+
+No office shall redefine the temporal meaning of another office's events.
+
+---
+
+# 2. Canonical Exit Decision Timeline Registry
+
+Establish the required lifecycle timeline.
+
+Define temporal semantics for:
+
+## Request Time
+
+The moment an Exit Decision request is created or received.
+
+Define:
+
+* request timestamp authority;
+* request identity;
+* request evidence obligation.
+
+---
+
+## Observation Time
+
+The moment source information was generated.
+
+Define:
+
+* observation source;
+* observation timestamp authority;
+* observation freshness requirement.
+
+---
+
+## Evaluation Time
+
+The moment Exit Decision evaluation occurs.
+
+Define:
+
+* evaluator authority;
+* evaluation timestamp;
+* evaluation evidence.
+
+---
+
+## Recommendation Time
+
+The moment a recommendation is created.
+
+Define:
+
+* recommendation timestamp;
+* recommendation ownership;
+* recommendation validity.
+
+---
+
+## Decision Time
+
+The moment final Exit Decision authority issues a decision.
+
+Define:
+
+* decision timestamp;
+* decision authority;
+* decision validity window.
+
+---
+
+## Authorization Time
+
+The moment authorization state is validated or consumed.
+
+Define:
+
+* authorization timestamp authority;
+* validity period;
+* expiration rules.
+
+Authorization timing shall remain owned by Authorizations.
+
+---
+
+## Execution Request Time
+
+The moment execution is requested.
+
+Define:
+
+* execution request timestamp;
+* requesting authority;
+* execution dependency.
+
+Execution timing shall remain separate from decision timing.
+
+---
+
+## Acknowledgement Time
+
+The moment acknowledgement is received.
+
+Define:
+
+* acknowledgement source;
+* acknowledgement authority;
+* reconciliation responsibility.
+
+---
+
+## Completion Time
+
+The moment completion state is recorded.
+
+Define:
+
+* completion authority;
+* completion evidence;
+* completion timestamp.
+
+---
+
+## Correction Time
+
+The moment correction activity occurs.
+
+Define:
+
+* correction authority;
+* correction evidence;
+* predecessor reference.
+
+---
+
+## Supersession Time
+
+The moment one decision replaces another.
+
+Define:
+
+* supersession authority;
+* successor identity;
+* lineage preservation.
+
+---
+
+## Archival Time
+
+The moment historical custody begins.
+
+Define:
+
+* archival authority;
+* retention requirement;
+* historical custody transfer.
+
+---
+
+# 3. Freshness Constitution
+
+Establish deterministic freshness requirements.
+
+For every consumed input define:
+
+* input identity;
+* source authority;
+* acceptable age;
+* expiration condition;
+* rejection behavior;
+* reconciliation behavior.
+
+Freshness rules shall apply to:
+
+* position state;
+* risk state;
+* authorization state;
+* monitoring findings;
+* analytical inputs;
+* market context;
+* operational constraints.
+
+Exit Decision shall reject or defer evaluation when required freshness conditions are not satisfied.
+
+---
+
+# 4. Stale Input Governance
+
+Define handling for stale information.
+
+A stale input shall:
+
+* retain original identity;
+* retain original provenance;
+* retain historical availability;
+* become inadmissible for current evaluation.
+
+Stale inputs shall not:
+
+* silently refresh;
+* silently replace newer truth;
+* create new decisions.
+
+The owning office shall remain responsible for correcting stale source information.
+
+---
+
+# 5. Ordering Constitution
+
+Establish deterministic event ordering rules.
+
+Define ordering precedence for:
+
+* lifecycle transitions;
+* evidence events;
+* corrections;
+* supersessions;
+* cancellations;
+* execution acknowledgements.
+
+The ordering model shall define behavior for:
+
+* equal timestamps;
+* missing timestamps;
+* conflicting timestamps;
+* delayed events;
+* out-of-order events.
+
+No event ordering shall rely solely on arrival order.
+
+---
+
+# 6. Duplicate Governance Constitution
+
+Establish handling of duplicate:
+
+* requests;
+* evaluations;
+* recommendations;
+* decisions;
+* execution requests;
+* acknowledgements;
+* evidence records.
+
+For every duplicate define:
+
+* duplicate detection authority;
+* duplicate identity rules;
+* acceptance behavior;
+* rejection behavior;
+* reconciliation behavior.
+
+Duplicates shall not:
+
+* create multiple decisions;
+* create multiple execution paths;
+* overwrite historical truth.
+
+---
+
+# 7. Replay Constitution
+
+Establish deterministic replay governance.
+
+Replay shall:
+
+* preserve original event ordering;
+* preserve original identities;
+* preserve original evidence;
+* preserve lifecycle lineage;
+* reproduce historical states.
+
+Replay shall never:
+
+* reactivate cancelled decisions;
+* resurrect expired decisions;
+* overwrite completed history;
+* create duplicate execution paths;
+* alter historical truth.
+
+Replay shall remain an observation and reconstruction capability.
+
+Replay shall not become a mutation authority.
+
+---
+
+# 8. Restart and Recovery Ordering Constitution
+
+Define behavior following interruption or recovery.
+
+Establish:
+
+* recovery checkpoint authority;
+* state restoration authority;
+* pending event handling;
+* incomplete transition handling;
+* duplicate prevention;
+* reconciliation requirements.
+
+Recovery shall preserve:
+
+* decision identity;
+* lifecycle state;
+* evidence lineage;
+* ownership boundaries.
+
+---
+
+# 9. Expiration Governance Registry
+
+Define expiration behavior for:
+
+* decisions;
+* recommendations;
+* authorizations;
+* evaluations;
+* evidence.
+
+For each expiration condition define:
+
+* expiration authority;
+* expiration timestamp;
+* resulting lifecycle state;
+* prohibited transitions after expiration;
+* reconciliation requirements.
+
+Expired decisions shall not execute.
+
+Expired authorizations shall not authorize.
+
+---
+
+# 10. Temporal Conflict Resolution Registry
+
+Define resolution for:
+
+* conflicting timestamps;
+* conflicting event order;
+* conflicting lifecycle states;
+* stale authoritative records;
+* delayed authoritative records.
+
+For every temporal conflict define:
+
+* conflict owner;
+* resolution authority;
+* evidence requirement;
+* final reconciliation authority.
+
+Temporal reconciliation shall not permit unauthorized truth mutation.
+
+---
+
+# Deliverables
+
+Produce:
+
+* temporal constitution;
+* temporal authority registry;
+* lifecycle timeline registry;
+* freshness registry;
+* stale-input governance registry;
+* ordering registry;
+* duplicate governance registry;
+* replay constitution;
+* recovery ordering registry;
+* expiration registry;
+* temporal conflict-resolution registry;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every Exit Decision event possesses defined temporal meaning;
+* every timestamp possesses defined authority;
+* every lifecycle event possesses deterministic ordering;
+* every input possesses freshness requirements;
+* stale information handling is deterministic;
+* duplicate handling preserves lineage;
+* replay preserves historical truth;
+* recovery behavior is deterministic;
+* expired decisions cannot execute;
+* cancelled decisions cannot reactivate;
+* superseded decisions preserve history;
+* no temporal ambiguity remains;
+* no ordering ambiguity remains;
+* no replay ambiguity remains.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B04-003 — Evidence and Historical Integrity Constitution**

@@ -1,0 +1,104 @@
+[
+  {
+    "authority": "Trader",
+    "boundary": "no ownership transfer by interface interaction",
+    "consumer": "Trader",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "interface_id": "EXIT-OUT-001",
+    "payload": "authorized execution request handoff after external authorization",
+    "producer": "Exit Decision Office"
+  },
+  {
+    "authority": "Broker",
+    "boundary": "no ownership transfer by interface interaction",
+    "consumer": "Broker",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "interface_id": "EXIT-OUT-002",
+    "payload": "boundary reference only; no direct broker submission authority",
+    "producer": "Exit Decision Office"
+  },
+  {
+    "authority": "Closed Position Truth",
+    "boundary": "no ownership transfer by interface interaction",
+    "consumer": "Closed Position Truth",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "interface_id": "EXIT-OUT-003",
+    "payload": "closure reference consumption without ownership",
+    "producer": "Exit Decision Office"
+  },
+  {
+    "authority": "Performance Truth",
+    "boundary": "no ownership transfer by interface interaction",
+    "consumer": "Performance Truth",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "interface_id": "EXIT-OUT-004",
+    "payload": "performance reference consumption without ownership",
+    "producer": "Exit Decision Office"
+  },
+  {
+    "authority": "Historian",
+    "boundary": "no ownership transfer by interface interaction",
+    "consumer": "Historian",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "interface_id": "EXIT-OUT-005",
+    "payload": "archival custody transfer and historical evidence preservation",
+    "producer": "Exit Decision Office"
+  },
+  {
+    "authority": "Infrastructure",
+    "boundary": "no ownership transfer by interface interaction",
+    "consumer": "Infrastructure",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "interface_id": "EXIT-OUT-006",
+    "payload": "persistence, replay, configuration, and runtime custody services",
+    "producer": "Exit Decision Office"
+  }
+]

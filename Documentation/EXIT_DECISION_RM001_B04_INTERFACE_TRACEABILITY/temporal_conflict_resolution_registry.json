@@ -1,0 +1,26 @@
+[
+  {
+    "conflict": "stale_input",
+    "disposition": "preserve conflict, fail closed for execution path, and escalate to source owner"
+  },
+  {
+    "conflict": "equal_timestamp",
+    "disposition": "preserve conflict, fail closed for execution path, and escalate to source owner"
+  },
+  {
+    "conflict": "clock_skew",
+    "disposition": "preserve conflict, fail closed for execution path, and escalate to source owner"
+  },
+  {
+    "conflict": "out_of_order_event",
+    "disposition": "preserve conflict, fail closed for execution path, and escalate to source owner"
+  },
+  {
+    "conflict": "missing_timestamp",
+    "disposition": "preserve conflict, fail closed for execution path, and escalate to source owner"
+  },
+  {
+    "conflict": "replay_order_conflict",
+    "disposition": "preserve conflict, fail closed for execution path, and escalate to source owner"
+  }
+]

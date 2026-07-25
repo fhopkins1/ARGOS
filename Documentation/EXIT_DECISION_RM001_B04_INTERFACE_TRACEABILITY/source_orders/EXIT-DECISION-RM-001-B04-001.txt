@@ -1,0 +1,446 @@
+# EXIT-DECISION-RM-001-B04-001
+
+# Interface and Dependency Constitution Order
+
+## Objective
+
+Establish the authoritative constitutional governance model for every Exit Decision interface and dependency.
+
+This order shall define all inbound and outbound relationships involving Exit Decision, including authority ownership, dependency direction, interface contracts, failure behavior, reconciliation responsibility, and evidence obligations.
+
+This order shall not modify implementation behavior.
+
+This order shall not define executable interface logic.
+
+This order shall not perform behavioral verification.
+
+This order shall not generate implementation proof.
+
+This order shall not execute certification activity.
+
+---
+
+# Constitutional Requirements
+
+## 1. Establish Interface Constitution
+
+Create the authoritative Exit Decision interface registry.
+
+Every interface shall possess:
+
+* one canonical identity;
+* one producer;
+* one consumer;
+* one authority owner;
+* one schema authority;
+* one identity contract;
+* one scope contract;
+* one freshness contract;
+* one ordering contract;
+* one retry contract;
+* one replay contract;
+* one failure behavior;
+* one evidence obligation.
+
+No interface shall exist without constitutional ownership.
+
+---
+
+# 2. Establish Interface Authority Principles
+
+Define the governing principles for all Exit Decision interactions.
+
+The constitution shall establish:
+
+* interface ownership does not transfer source ownership;
+* data consumption does not transfer truth ownership;
+* dependency does not imply authority;
+* access does not imply mutation authority;
+* observation does not imply decision authority.
+
+Exit Decision shall consume enterprise truth while preserving ownership boundaries.
+
+---
+
+# 3. Establish Inbound Interface Registry
+
+Define all inbound interfaces consumed by Exit Decision.
+
+The registry shall include:
+
+---
+
+## Monitoring Interface
+
+Define:
+
+* producer;
+* consumer;
+* monitoring observation scope;
+* observation identity;
+* freshness requirements;
+* evidence requirements.
+
+Monitoring observations shall remain owned by Monitoring.
+
+Exit Decision shall not become the owner of monitoring truth.
+
+---
+
+## Sentinel Interface
+
+Define:
+
+* producer;
+* consumer;
+* event scope;
+* event identity;
+* temporal requirements;
+* evidence requirements.
+
+Sentinel observations shall remain owned by Sentinel.
+
+---
+
+## Analyst Interface
+
+Define:
+
+* analytical input authority;
+* analytical output authority;
+* evaluation context;
+* evidence requirements.
+
+Analytical outputs shall not become Exit Decision authority.
+
+---
+
+## Risk Interface
+
+Define:
+
+* risk input identity;
+* risk state authority;
+* risk freshness;
+* risk constraint handling;
+* reconciliation pathway.
+
+Risk truth shall remain owned by Risk.
+
+---
+
+## Position Registry Interface
+
+Define:
+
+* position identity exchange;
+* position state exchange;
+* quantity reference;
+* lifecycle state reference;
+* reconciliation responsibility.
+
+Position truth shall remain owned by Position Registry.
+
+---
+
+## Authorization Interface
+
+Define:
+
+* authorization identity;
+* authorization state;
+* validity period;
+* expiration;
+* revocation;
+* evidence obligations.
+
+Authorization truth shall remain owned by Authorizations.
+
+---
+
+## Commander Interface
+
+Define:
+
+* intent transmission;
+* decision context;
+* escalation pathway;
+* authority boundary.
+
+Commander intent shall not eliminate constitutional separation.
+
+---
+
+# 4. Establish Outbound Interface Registry
+
+Define all outbound interfaces produced by Exit Decision.
+
+The registry shall include:
+
+---
+
+## Trader Interface
+
+Define:
+
+* decision output scope;
+* consumer authority;
+* execution separation;
+* acknowledgement requirements.
+
+Exit Decision output shall not equal Trader execution authority.
+
+---
+
+## Broker Interface Boundary
+
+Define:
+
+* permitted interaction;
+* prohibited interaction;
+* execution ownership.
+
+Exit Decision shall not directly replace Broker authority.
+
+---
+
+## Closed Position Truth Interface
+
+Define:
+
+* downstream relationship;
+* truth ownership;
+* reconciliation dependency.
+
+Closed Position Truth shall remain owned by its designated authority.
+
+---
+
+## Performance Truth Interface
+
+Define:
+
+* performance information exchange;
+* ownership boundary;
+* evidence relationship.
+
+Performance Truth shall remain independently owned.
+
+---
+
+## Historian Interface
+
+Define:
+
+* evidence submission;
+* historical custody;
+* retention relationship;
+* lineage preservation.
+
+Historian custody shall not transfer Exit Decision ownership.
+
+---
+
+## Infrastructure Interface
+
+Define:
+
+* availability dependency;
+* operational dependency;
+* failure reporting;
+* recovery relationship.
+
+Infrastructure shall remain operational support, not decision authority.
+
+---
+
+# 5. Establish Dependency Registry
+
+Create the authoritative dependency registry.
+
+Every dependency shall define:
+
+* dependency identity;
+* dependency owner;
+* dependent consumer;
+* dependency direction;
+* dependency purpose;
+* dependency authority;
+* failure behavior;
+* recovery behavior;
+* evidence responsibility.
+
+No dependency shall exist without constitutional justification.
+
+---
+
+# 6. Establish Dependency Direction Matrix
+
+Define deterministic dependency direction.
+
+The matrix shall identify:
+
+* producer;
+* consumer;
+* authority owner;
+* custody owner;
+* mutation authority;
+* reconciliation authority.
+
+The registry shall prohibit:
+
+* circular dependencies;
+* hidden dependencies;
+* unauthorized dependencies;
+* implicit authority transfer.
+
+---
+
+# 7. Establish Interface Contract Registry
+
+For every interface define:
+
+## Identity Contract
+
+Define:
+
+* object identity;
+* uniqueness;
+* lineage requirements.
+
+## Scope Contract
+
+Define:
+
+* permitted information;
+* prohibited information;
+* ownership boundary.
+
+## Freshness Contract
+
+Define:
+
+* validity period;
+* expiration behavior;
+* stale-data handling.
+
+## Ordering Contract
+
+Define:
+
+* event ordering;
+* timestamp requirements;
+* sequence requirements.
+
+## Retry Contract
+
+Define:
+
+* retry authority;
+* retry limits;
+* duplicate prevention.
+
+## Replay Contract
+
+Define:
+
+* replay authority;
+* replay requirements;
+* historical preservation.
+
+## Failure Contract
+
+Define:
+
+* failure classification;
+* escalation;
+* recovery;
+* reconciliation.
+
+---
+
+# 8. Establish Interface Failure Governance
+
+Define deterministic behavior for interface failures.
+
+Failure handling shall include:
+
+* unavailable dependency;
+* stale dependency;
+* invalid payload;
+* conflicting information;
+* duplicate delivery;
+* incomplete delivery.
+
+Failure handling shall not:
+
+* create unauthorized truth;
+* bypass authorization;
+* execute unauthorized actions;
+* alter historical records.
+
+---
+
+# 9. Establish Circular Dependency Assessment
+
+Perform constitutional assessment identifying:
+
+* circular dependencies;
+* ambiguous ownership;
+* duplicated interfaces;
+* missing interfaces;
+* unauthorized data flows.
+
+Resolve all findings before completion.
+
+---
+
+# 10. Establish Interface Evidence Obligations
+
+Define evidence requirements for every interface.
+
+Evidence shall include:
+
+* interface identity;
+* source authority;
+* consumer authority;
+* timestamp;
+* lifecycle relationship;
+* reconciliation record.
+
+Interface evidence shall preserve constitutional lineage.
+
+---
+
+# 11. Establish Completion Report
+
+Produce a completion report confirming:
+
+* all interfaces identified;
+* all dependencies identified;
+* ownership assigned;
+* authority boundaries established;
+* dependency direction established;
+* interface contracts established;
+* failure behavior defined;
+* evidence obligations defined.
+
+---
+
+# Completion Criteria
+
+This order is complete only when:
+
+* every Exit Decision interface possesses one governing authority;
+* every dependency possesses one constitutional owner;
+* every dependency possesses deterministic direction;
+* every interface possesses identity, scope, freshness, and evidence requirements;
+* every output possesses consumer authority;
+* every failure behavior is deterministic;
+* circular dependencies are eliminated;
+* unauthorized authority transfer is prohibited;
+* no interface ambiguity remains.
+
+Successful completion authorizes progression to:
+
+> **EXIT-DECISION-RM-001-B04-002 — Temporal, Freshness, Ordering, and Replay Constitution**.

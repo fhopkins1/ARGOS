@@ -1,0 +1,468 @@
+EXIT-DECISION-RM-001-B04-004
+
+# Canonical Requirement Identity and Traceability Constitution
+
+## Objective
+
+Establish the authoritative constitutional requirement identity, classification, ownership, and traceability model governing the Exit Decision Office.
+
+This order shall create deterministic lineage between constitutional authority, requirements, objects, lifecycle obligations, admissibility obligations, decision obligations, interface obligations, evidence obligations, and future certification obligations.
+
+---
+
+# Constitutional Constraints
+
+This order shall:
+
+* Not modify Exit Decision implementation behavior.
+* Not execute behavioral verification.
+* Not generate implementation proof.
+* Not perform certification activity.
+* Not establish implementation test requirements.
+* Not replace ECS-003 certification governance.
+* Not create requirements without constitutional authority.
+* Not permit duplicate requirement ownership.
+* Not permit orphan constitutional obligations.
+* Not permit aggregate requirements without decomposition.
+
+This order shall establish constitutional traceability only.
+
+---
+
+# Required Constitutional Definitions
+
+# 1. Canonical Requirement Identity Constitution
+
+Establish that every constitutional requirement shall possess:
+
+* one canonical identity;
+* one originating authority;
+* one constitutional source;
+* one owner;
+* one applicability boundary;
+* one lifecycle relationship;
+* one evidence implication;
+* one certification implication.
+
+No requirement shall exist without:
+
+* authoritative origin;
+* defined purpose;
+* ownership;
+* traceability relationship.
+
+---
+
+# 2. Requirement Identity Registry
+
+Create the canonical requirement identity model:
+
+```text
+EXIT-DECISION-REQ-[DOMAIN]-[NUMBER]
+```
+
+Each requirement identity shall define:
+
+* requirement identifier;
+* requirement title;
+* originating doctrine;
+* originating order;
+* requirement statement;
+* requirement owner;
+* affected objects;
+* affected lifecycle states;
+* affected interfaces;
+* evidence obligations;
+* certification disposition.
+
+---
+
+# 3. Requirement Source Lineage Constitution
+
+Every requirement shall trace to:
+
+```text
+Constitutional Authority
+        ↓
+Doctrine Order
+        ↓
+Canonical Requirement
+        ↓
+Operational Obligation
+        ↓
+Evidence Obligation
+        ↓
+Certification Obligation
+```
+
+No requirement may bypass constitutional lineage.
+
+No implementation artifact may become the source of constitutional authority.
+
+---
+
+# 4. Atomic Requirement Constitution
+
+Establish:
+
+A canonical requirement shall represent one independently governed obligation.
+
+Aggregate requirements shall be decomposed into atomic requirements.
+
+Each atomic requirement shall possess:
+
+* unique identity;
+* unique owner;
+* unique authority source;
+* unique applicability;
+* unique traceability path.
+
+Examples of prohibited aggregate requirements:
+
+* "Exit Decision shall be correct."
+* "Exit Decision shall be secure."
+* "Exit Decision shall operate properly."
+
+These shall be decomposed into individually governed requirements.
+
+---
+
+# 5. Requirement Ownership Constitution
+
+Define requirement ownership:
+
+## Exit Decision Office
+
+Owns requirements governing:
+
+* decision generation;
+* decision rationale;
+* decision lifecycle;
+* decision applicability;
+* decision lineage.
+
+---
+
+## Risk Office
+
+Owns requirements governing:
+
+* risk truth;
+* risk constraints;
+* risk evaluation authority.
+
+---
+
+## Authorizations Office
+
+Owns requirements governing:
+
+* authorization validity;
+* authorization lifecycle;
+* authorization authority.
+
+---
+
+## Trader Office
+
+Owns requirements governing:
+
+* execution handling;
+* execution lifecycle;
+* execution reconciliation.
+
+---
+
+## Broker Office
+
+Owns requirements governing:
+
+* external broker interaction;
+* broker communication integrity.
+
+---
+
+## Position Registry Office
+
+Owns requirements governing:
+
+* position identity;
+* position state;
+* position truth.
+
+---
+
+## Historian Office
+
+Owns requirements governing:
+
+* historical custody;
+* historical preservation;
+* replay lineage.
+
+---
+
+# 6. Bidirectional Traceability Constitution
+
+Establish mandatory traceability:
+
+```text
+Constitutional Authority
+        ↔
+Canonical Requirement
+        ↔
+Exit Decision Object
+        ↔
+Lifecycle Obligation
+        ↔
+Admissibility Obligation
+        ↔
+Decision Obligation
+        ↔
+Interface Obligation
+        ↔
+Evidence Obligation
+        ↔
+Certification Obligation
+```
+
+Traceability shall support:
+
+## Forward Traceability
+
+From constitutional authority to:
+
+* requirements;
+* objects;
+* obligations;
+* evidence;
+* certification impact.
+
+## Reverse Traceability
+
+From evidence or certification finding back to:
+
+* requirement;
+* doctrine source;
+* authority owner.
+
+---
+
+# 7. Requirement Classification Registry
+
+Classify every requirement as one of:
+
+## Authority Requirement
+
+Defines:
+
+* ownership;
+* responsibility;
+* decision authority.
+
+---
+
+## Boundary Requirement
+
+Defines:
+
+* permitted interaction;
+* prohibited interaction;
+* dependency limits.
+
+---
+
+## Object Requirement
+
+Defines:
+
+* object identity;
+* object custody;
+* object lifecycle.
+
+---
+
+## Lifecycle Requirement
+
+Defines:
+
+* valid states;
+* transitions;
+* terminal conditions.
+
+---
+
+## Decision Requirement
+
+Defines:
+
+* admissibility;
+* evaluation;
+* recommendation;
+* decision formation.
+
+---
+
+## Interface Requirement
+
+Defines:
+
+* input;
+* output;
+* dependency;
+* communication contract.
+
+---
+
+## Evidence Requirement
+
+Defines:
+
+* provenance;
+* custody;
+* retention;
+* integrity.
+
+---
+
+## Certification Requirement
+
+Defines:
+
+* future verification relationship;
+* proof expectation;
+* audit relevance.
+
+---
+
+# 8. Orphan Requirement Registry
+
+Identify and resolve:
+
+* requirements without authority;
+* requirements without owners;
+* requirements without evidence implications;
+* requirements without applicability;
+* requirements without traceability paths.
+
+No orphan requirement shall remain accepted.
+
+---
+
+# 9. Duplicate Requirement Registry
+
+Identify:
+
+* duplicate requirements;
+* overlapping requirements;
+* conflicting requirements;
+* inconsistent ownership assignments.
+
+Resolution shall:
+
+* preserve authoritative lineage;
+* consolidate duplicates;
+* retain historical references.
+
+---
+
+# 10. Broken Traceability Constitution
+
+Identify failures including:
+
+* authority without requirement;
+* requirement without object impact;
+* object without requirement basis;
+* lifecycle obligation without authority;
+* evidence obligation without requirement source;
+* certification obligation without constitutional basis.
+
+Every broken trace shall possess:
+
+* identified defect;
+* responsible authority;
+* remediation path;
+* reconciliation evidence.
+
+---
+
+# 11. Requirement Reconciliation Constitution
+
+Requirement reconciliation shall verify:
+
+## Authority Alignment
+
+Every requirement possesses:
+
+* governing authority;
+* responsible owner;
+* defined boundary.
+
+## Object Alignment
+
+Every requirement maps to:
+
+* affected object;
+* lifecycle impact.
+
+## Evidence Alignment
+
+Every requirement maps to:
+
+* required evidence;
+* custody owner.
+
+## Certification Alignment
+
+Every requirement maps to:
+
+* future certification relevance.
+
+---
+
+# Deliverables
+
+Produce:
+
+* canonical requirement registry;
+* requirement identity registry;
+* requirement classification registry;
+* constitutional traceability graph;
+* authority-to-requirement matrix;
+* requirement-to-object matrix;
+* requirement-to-lifecycle matrix;
+* requirement-to-evidence matrix;
+* requirement-to-certification matrix;
+* orphan requirement registry;
+* duplicate requirement registry;
+* broken traceability registry;
+* reconciliation registry;
+* constitutional completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every constitutional requirement possesses one canonical identity;
+* every requirement possesses one authority source;
+* every requirement possesses one owner;
+* every requirement possesses defined applicability;
+* every requirement maps to affected objects;
+* every requirement maps to lifecycle obligations;
+* every requirement maps to evidence obligations;
+* every requirement maps to certification implications;
+* orphan requirements are resolved;
+* duplicate requirements are reconciled;
+* broken traceability is eliminated;
+* bidirectional traceability is complete;
+* no constitutional traceability ambiguity remains.
+
+Successful completion of this order shall complete:
+
+> **EXIT-DECISION-RM-001-B04 — Interface, Temporal, Evidence, and Traceability Constitution Series**
+
+and authorize progression into:
+
+> **EXIT-DECISION-RM-001-B05 — Constitutional Reconciliation and Final ECS-003 Constitutional Audit**

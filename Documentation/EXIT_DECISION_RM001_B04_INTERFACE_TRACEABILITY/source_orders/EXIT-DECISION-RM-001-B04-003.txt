@@ -1,0 +1,603 @@
+EXIT-DECISION-RM-001-B04-003
+
+# Evidence and Historical Integrity Constitution
+
+## Objective
+
+Establish the complete constitutional governance model for Exit Decision evidence creation, ownership, custody, provenance, admissibility, retention, correction lineage, supersession lineage, and historical integrity.
+
+This order shall define how Exit Decision evidence is generated, preserved, validated, reconciled, and transferred without allowing evidence ownership to become decision ownership, execution ownership, or truth ownership belonging to another office.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every evidence object shall possess one constitutional owner.
+
+Every historical record shall possess one constitutional custodian.
+
+Every evidence event shall preserve lineage.
+
+---
+
+# Constitutional Principles
+
+Evidence shall originate from constitutional events.
+
+Evidence shall not exist solely as assertion.
+
+Evidence shall not replace source truth.
+
+Evidence shall not create authority.
+
+Evidence shall not transfer ownership.
+
+Evidence shall not modify lifecycle state without authorized transition authority.
+
+Every evidence object shall possess:
+
+* one canonical identity;
+* one producer;
+* one owner;
+* one custodian;
+* one provenance chain;
+* one admissibility basis;
+* one retention obligation.
+
+Evidence shall preserve:
+
+* origin;
+* creation authority;
+* temporal context;
+* relationship to the governed object;
+* lifecycle position;
+* correction history;
+* supersession history.
+
+Historical custody shall remain separate from operational ownership.
+
+Historian shall preserve records.
+
+Historian shall not alter decision authority.
+
+---
+
+# Evidence Authority Constitution
+
+## Evidence Ownership Principle
+
+The producer of an event shall create the evidence record associated with that event.
+
+The owner of the underlying truth domain shall remain the owner of that truth.
+
+Evidence custody shall not transfer truth ownership.
+
+Examples:
+
+* Exit Decision owns decision evidence.
+* Risk owns risk evidence.
+* Authorizations owns authorization evidence.
+* Trader owns execution evidence.
+* Broker owns broker interaction evidence.
+* Position Registry owns position evidence.
+* Historian owns historical custody.
+
+---
+
+# Evidence Object Registry
+
+## Decision Request Evidence
+
+### Purpose
+
+Record the initiation of an Exit Decision request.
+
+### Producer
+
+Exit Decision Office or authorized requesting authority.
+
+### Owner
+
+Request originating authority.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* evidence identity;
+* request identity;
+* source identity;
+* creation timestamp;
+* originating authority;
+* request scope;
+* lineage reference.
+
+---
+
+## Admissibility Evidence
+
+### Purpose
+
+Record whether required inputs satisfied admissibility requirements.
+
+### Producer
+
+Exit Decision Office.
+
+### Owner
+
+Exit Decision Office.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* admissibility evaluation identity;
+* evaluated inputs;
+* source references;
+* validation outcome;
+* rejection reasons where applicable.
+
+---
+
+## Evaluation Evidence
+
+### Purpose
+
+Record the analytical evaluation performed by Exit Decision.
+
+### Producer
+
+Exit Decision Office.
+
+### Owner
+
+Exit Decision Office.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* evaluation identity;
+* evaluated conditions;
+* input references;
+* evaluation methodology;
+* evaluation outcome;
+* uncertainty record.
+
+---
+
+## Recommendation Evidence
+
+### Purpose
+
+Record the basis for an Exit Decision recommendation.
+
+### Producer
+
+Exit Decision Office.
+
+### Owner
+
+Exit Decision Office.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* recommendation identity;
+* rationale;
+* supporting evidence;
+* limitations;
+* recommendation outcome.
+
+---
+
+## Decision Evidence
+
+### Purpose
+
+Record the authoritative issuance of an Exit Decision.
+
+### Producer
+
+Exit Decision Office.
+
+### Owner
+
+Exit Decision Office.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* decision identity;
+* decision version;
+* decision authority;
+* rationale;
+* supporting evidence;
+* decision timestamp;
+* lifecycle state.
+
+---
+
+## Authorization Evidence
+
+### Purpose
+
+Record authorization creation, validation, consumption, expiration, or revocation.
+
+### Producer
+
+Authorizations Office.
+
+### Owner
+
+Authorizations Office.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* authorization identity;
+* authorization scope;
+* authority source;
+* validity period;
+* validation result;
+* consumption history.
+
+---
+
+## Execution Request Evidence
+
+### Purpose
+
+Record the request submitted to execution authority.
+
+### Producer
+
+Authorized requesting authority.
+
+### Owner
+
+Requesting authority.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* execution request identity;
+* decision reference;
+* authorization reference;
+* requested scope;
+* receiving authority;
+* timestamp.
+
+---
+
+## Acknowledgement Evidence
+
+### Purpose
+
+Record receipt by consuming authority.
+
+### Producer
+
+Receiving authority.
+
+### Owner
+
+Receiving authority.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* acknowledgement identity;
+* received object identity;
+* receiving authority;
+* acknowledgement timestamp.
+
+---
+
+## Completion Evidence
+
+### Purpose
+
+Record completion of an authorized lifecycle process.
+
+### Producer
+
+Responsible completion authority.
+
+### Owner
+
+Responsible completion authority.
+
+### Custodian
+
+Historian.
+
+### Required Attributes
+
+* completion identity;
+* completed lifecycle reference;
+* reconciliation status;
+* completion authority;
+* completion timestamp.
+
+---
+
+# Exceptional Evidence Registry
+
+## Rejection Evidence
+
+Shall preserve:
+
+* rejected object identity;
+* rejection authority;
+* rejection rationale;
+* rejection criteria;
+* timestamp.
+
+Rejected evidence shall remain immutable.
+
+---
+
+## Deferral Evidence
+
+Shall preserve:
+
+* deferred object identity;
+* deferral authority;
+* deferral reason;
+* reopening conditions;
+* timestamp.
+
+---
+
+## Cancellation Evidence
+
+Shall preserve:
+
+* cancelled object identity;
+* cancellation authority;
+* cancellation rationale;
+* cancellation timestamp.
+
+Cancellation evidence shall not erase prior decision evidence.
+
+---
+
+## Correction Evidence
+
+Shall preserve:
+
+* corrected object identity;
+* prior version reference;
+* correction authority;
+* correction rationale;
+* corrected version reference.
+
+Correction evidence shall create lineage, not replacement.
+
+---
+
+## Supersession Evidence
+
+Shall preserve:
+
+* predecessor identity;
+* successor identity;
+* supersession authority;
+* supersession rationale;
+* supersession timestamp.
+
+Superseded records shall remain accessible.
+
+---
+
+## Archival Evidence
+
+Shall preserve:
+
+* archived object identity;
+* archival authority;
+* archival timestamp;
+* retention classification;
+* lineage completeness.
+
+---
+
+# Evidence Admissibility Constitution
+
+Evidence shall be admissible only when:
+
+* producer identity is known;
+* ownership is known;
+* provenance is complete;
+* temporal information exists;
+* relationship to governed object is established;
+* integrity requirements are satisfied.
+
+Evidence shall be rejected when:
+
+* origin is unknown;
+* ownership is ambiguous;
+* provenance is incomplete;
+* evidence is manually asserted without source support;
+* evidence duplicates conflicting records without reconciliation;
+* evidence attempts to replace another office's truth.
+
+---
+
+# Prohibited Evidence Registry
+
+The following evidence forms are constitutionally insufficient:
+
+## Metadata-Only Evidence
+
+Evidence containing only identifiers, timestamps, or status fields without supporting event context.
+
+## Completion-Report-Only Evidence
+
+A report claiming completion without underlying event records.
+
+## Manually Asserted Evidence
+
+Evidence created without originating authority or event source.
+
+## Synthetic Evidence
+
+Evidence generated solely to satisfy certification requirements.
+
+## Circular Evidence
+
+Evidence validated only by evidence derived from itself.
+
+---
+
+# Evidence Integrity Constitution
+
+Every evidence object shall preserve:
+
+* immutability after acceptance;
+* identity continuity;
+* provenance continuity;
+* correction lineage;
+* supersession lineage;
+* temporal integrity.
+
+Corrections shall create new evidence records.
+
+Corrections shall never overwrite accepted evidence.
+
+Supersession shall create successor relationships.
+
+Supersession shall never delete predecessor records.
+
+---
+
+# Historical Custody Constitution
+
+Historian shall possess custody authority for:
+
+* accepted evidence records;
+* lifecycle history;
+* decision lineage;
+* correction lineage;
+* supersession lineage;
+* archival records.
+
+Historian shall not:
+
+* create operational truth;
+* modify decision outcomes;
+* authorize execution;
+* alter evidence ownership.
+
+Historical custody shall preserve:
+
+```text
+Event
+→ Evidence
+→ Object
+→ Lifecycle State
+→ Decision Lineage
+→ Final Record
+```
+
+---
+
+# Retention Constitution
+
+Evidence retention shall preserve:
+
+* regulatory requirements where applicable;
+* constitutional lineage;
+* audit requirements;
+* replay requirements;
+* reconciliation requirements.
+
+Evidence shall remain available for:
+
+* audit;
+* reconstruction;
+* dispute resolution;
+* certification review.
+
+---
+
+# Evidence Reconciliation Constitution
+
+Evidence conflicts shall require:
+
+* conflict identification;
+* source authority determination;
+* ownership verification;
+* reconciliation decision;
+* preserved resolution record.
+
+Conflicting evidence shall never be silently merged.
+
+No evidence conflict may result in loss of historical lineage.
+
+---
+
+# Deliverables
+
+This order shall produce:
+
+* evidence constitution;
+* evidence registry;
+* evidence ownership registry;
+* evidence admissibility registry;
+* historical lineage registry;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every evidence object possesses one identity;
+* every evidence object possesses one producer;
+* every evidence object possesses one owner;
+* every evidence object possesses one custodian;
+* evidence provenance is deterministic;
+* evidence admissibility is deterministic;
+* evidence retention is deterministic;
+* correction lineage is preserved;
+* supersession lineage is preserved;
+* Historian custody is preserved;
+* truth ownership remains separated from evidence custody;
+* metadata-only evidence is rejected;
+* synthetic evidence is rejected;
+* circular evidence is rejected;
+* no evidence ambiguity remains;
+* no historical integrity ambiguity remains.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B04-004 — Canonical Requirement Identity and Traceability Constitution**

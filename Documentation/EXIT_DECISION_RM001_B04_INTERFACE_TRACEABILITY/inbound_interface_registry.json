@@ -1,0 +1,121 @@
+[
+  {
+    "authority": "Monitoring",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-001",
+    "payload": "monitoring findings and surveillance context",
+    "producer": "Monitoring"
+  },
+  {
+    "authority": "Sentinel",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-002",
+    "payload": "constitutionally significant observations",
+    "producer": "Sentinel"
+  },
+  {
+    "authority": "Analyst",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-003",
+    "payload": "analytical assessment references",
+    "producer": "Analyst"
+  },
+  {
+    "authority": "Risk",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-004",
+    "payload": "risk state, constraints, and emergency risk context",
+    "producer": "Risk"
+  },
+  {
+    "authority": "Position Registry",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-005",
+    "payload": "canonical position identity, lifecycle, and quantity truth",
+    "producer": "Position Registry"
+  },
+  {
+    "authority": "Authorizations",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-006",
+    "payload": "authorization validity, expiration, revocation, and scope",
+    "producer": "Authorizations"
+  },
+  {
+    "authority": "Commander",
+    "consumer": "Exit Decision Office",
+    "contract_required": [
+      "identity",
+      "scope",
+      "freshness",
+      "ordering",
+      "retry",
+      "replay",
+      "failure"
+    ],
+    "evidence_obligation": "source identity, payload identity, freshness, ordering, admissibility, and failure disposition",
+    "interface_id": "EXIT-IN-007",
+    "payload": "commander-directed review, override, and escalation authority",
+    "producer": "Commander"
+  }
+]

@@ -1,0 +1,93 @@
+[
+  {
+    "circular_dependency": false,
+    "dependency": "Monitoring",
+    "dependency_id": "EXIT-DEP-001",
+    "direction": "inbound",
+    "owner": "Monitoring"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Sentinel",
+    "dependency_id": "EXIT-DEP-002",
+    "direction": "inbound",
+    "owner": "Sentinel"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Analyst",
+    "dependency_id": "EXIT-DEP-003",
+    "direction": "inbound",
+    "owner": "Analyst"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Risk",
+    "dependency_id": "EXIT-DEP-004",
+    "direction": "inbound",
+    "owner": "Risk"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Position Registry",
+    "dependency_id": "EXIT-DEP-005",
+    "direction": "inbound",
+    "owner": "Position Registry"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Authorizations",
+    "dependency_id": "EXIT-DEP-006",
+    "direction": "inbound",
+    "owner": "Authorizations"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Commander",
+    "dependency_id": "EXIT-DEP-007",
+    "direction": "inbound",
+    "owner": "Commander"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Exit Decision Office",
+    "dependency_id": "EXIT-DEP-008",
+    "direction": "outbound",
+    "owner": "Trader"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Exit Decision Office",
+    "dependency_id": "EXIT-DEP-009",
+    "direction": "outbound",
+    "owner": "Broker"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Exit Decision Office",
+    "dependency_id": "EXIT-DEP-010",
+    "direction": "outbound",
+    "owner": "Closed Position Truth"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Exit Decision Office",
+    "dependency_id": "EXIT-DEP-011",
+    "direction": "outbound",
+    "owner": "Performance Truth"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Exit Decision Office",
+    "dependency_id": "EXIT-DEP-012",
+    "direction": "outbound",
+    "owner": "Historian"
+  },
+  {
+    "circular_dependency": false,
+    "dependency": "Exit Decision Office",
+    "dependency_id": "EXIT-DEP-013",
+    "direction": "outbound",
+    "owner": "Infrastructure"
+  }
+]
