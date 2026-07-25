@@ -1,0 +1,97 @@
+[
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "classification": "DIRECT_EXIT_DECISION_IMPLEMENTATION",
+    "imports": [
+      {
+        "artifact": "src/argos/control_panel/position_registry.py",
+        "import_type": "from",
+        "module": "argos.control_panel.position_registry"
+      },
+      {
+        "artifact": "src/argos/foundation/contracts/__init__.py",
+        "import_type": "from",
+        "module": "argos.foundation.contracts"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-001",
+    "sha256": "1f461279b4e44ec2155797430b8ffe33b10a35a6e64dfc0dd5af0dda819a5f88"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_registry.py",
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/contracts/__init__.py",
+        "import_type": "from",
+        "module": "argos.foundation.contracts"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-002",
+    "sha256": "30bd4e5b9af125996f71cc0ffa30dc4ab57f00c8a31e114dc72fee1a172a2741"
+  },
+  {
+    "artifact": "src/argos/foundation/contracts/__init__.py",
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/contracts/base.py",
+        "import_type": "from",
+        "module": "argos.foundation.contracts.base"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-003",
+    "sha256": "a79edf6bed12da1041615d8644563ef8b8d00d6a84137265284ff702e9bcaa8e"
+  },
+  {
+    "artifact": "src/argos/foundation/contracts/base.py",
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/identity/__init__.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-004",
+    "sha256": "e4ca0823122d5bd90ded13b82da9a644a5337d318aea2d7c1d526f0e85fb99de"
+  },
+  {
+    "artifact": "src/argos/foundation/identity/__init__.py",
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/identity/identifiers.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity.identifiers"
+      },
+      {
+        "artifact": "src/argos/foundation/identity/registry.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity.registry"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-005",
+    "sha256": "6b7fd3ce63ea4b2a47b94e314b058dbf62ec3e21ba88cedd760fb6bfdea11844"
+  },
+  {
+    "artifact": "src/argos/foundation/identity/identifiers.py",
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "imports": [],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-006",
+    "sha256": "5b71ef40641f638ea5ccb2d47a939394d29cfb67e0a394126da89e4b0aace5cd"
+  },
+  {
+    "artifact": "src/argos/foundation/identity/registry.py",
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/identity/identifiers.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity.identifiers"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B05-RUNTIME-007",
+    "sha256": "8e249f42ab13c63e6194a5d96a69106d5de91c6f9a8d17d4204a81b5a7c75a50"
+  }
+]

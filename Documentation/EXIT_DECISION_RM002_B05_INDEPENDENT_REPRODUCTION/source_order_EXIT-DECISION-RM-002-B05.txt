@@ -1,0 +1,343 @@
+# EXIT-DECISION-RM-002-B05
+
+# Independent ECS-003 Reproduction Audit Series
+
+## Doctrine Statement
+
+### Purpose
+
+This Independent ECS-003 Reproduction Audit Series establishes the authoritative final validation governing the Exit Decision Office implementation certification candidate.
+
+This series exists solely to determine whether the complete ECS-003 certification pipeline can be independently reproduced from the delivered repository and evidence packages without reliance upon:
+
+* developer knowledge;
+* undocumented environment state;
+* historical certification conclusions;
+* implementation intent;
+* manually maintained assertions;
+* unavailable external dependencies.
+
+The objective is to independently reproduce:
+
+* implementation discovery;
+* verifier discovery;
+* fixture discovery;
+* behavioral verification;
+* behavioral evidence generation;
+* proof generation;
+* execution-derived traceability;
+* certification readiness determination.
+
+The constitutional architecture established under **EXIT-DECISION-RM-001** is accepted as complete and authoritative.
+
+The implementation inventory established under **EXIT-DECISION-RM-002-B01** is accepted as the authoritative implementation baseline.
+
+The behavioral verification baseline established under **EXIT-DECISION-RM-002-B02** is accepted as the authoritative behavioral evidence baseline.
+
+The implementation candidate established under **EXIT-DECISION-RM-002-B03** is accepted as the authoritative implementation candidate.
+
+The proof baseline established under **EXIT-DECISION-RM-002-B04** is accepted as the authoritative certification candidate baseline.
+
+Every work order shall have one objective.
+
+Every work order shall execute against one frozen implementation candidate.
+
+Every work order shall preserve complete historical lineage.
+
+Every work order shall preserve reproduced execution evidence.
+
+Every work order shall preserve reproduced proof artifacts.
+
+Every work order shall preserve reproduced certification artifacts.
+
+No work order shall reinterpret constitutional doctrine.
+
+No work order shall redefine implementation participation.
+
+No implementation modification shall occur under this series.
+
+The purpose of this series is independent validation, not remediation.
+
+---
+
+# Constitutional Principles
+
+Independent reproduction shall originate exclusively from the delivered repository package.
+
+Every reproduced artifact shall possess deterministic identity.
+
+Every reproduced execution shall possess:
+
+* repository identity;
+* environment identity;
+* execution identity;
+* verifier identity;
+* fixture identity;
+* evidence identity.
+
+Independent reproduction shall never depend upon:
+
+* Git history;
+* developer workstation state;
+* undocumented files;
+* undocumented configuration;
+* undocumented environment variables;
+* undocumented caches;
+* undocumented external services;
+* documentation;
+* implementation intent;
+* metadata;
+* prior certification artifacts.
+
+Every reproduced artifact shall preserve lineage to:
+
+```text
+Repository Package
+→ Environment
+→ Implementation Discovery
+→ Behavioral Execution
+→ Evidence Generation
+→ Proof Generation
+→ Traceability Generation
+→ Certification Assessment
+```
+
+Certification confidence shall originate exclusively from independently reproduced execution.
+
+---
+
+# Series Structure
+
+# EXIT-DECISION-RM-002-B05-001
+
+# Independent Repository and Environment Reproduction
+
+## Objective
+
+Reconstruct the Exit Decision certification environment exclusively from the delivered repository package.
+
+## Required
+
+Verify:
+
+* repository identity;
+* repository completeness;
+* extraction integrity;
+* environment identity;
+* dependency installation;
+* runtime availability;
+* configuration availability;
+* execution isolation.
+
+Demonstrate independence from:
+
+* developer-local state;
+* historical outputs;
+* cached artifacts;
+* undocumented dependencies.
+
+## Deliverables
+
+* repository reproduction registry;
+* environment reproduction registry;
+* dependency reproduction registry;
+* clean-room execution report;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B05-002
+
+# Independent Implementation and Verification Reproduction
+
+## Objective
+
+Independently reproduce implementation discovery and behavioral verification.
+
+## Required
+
+Reproduce:
+
+* implementation inventory;
+* implementation participation registry;
+* verifier inventory;
+* fixture inventory;
+* runtime dependencies;
+* behavioral execution population.
+
+Compare against:
+
+* B01 implementation baseline;
+* B02 behavioral verification baseline.
+
+Verify:
+
+* deterministic discovery;
+* equivalent participation;
+* equivalent verifier population;
+* equivalent fixture population.
+
+## Deliverables
+
+* reproduced implementation inventory;
+* reproduced verifier registry;
+* reproduced fixture registry;
+* discovery comparison report;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B05-003
+
+# Independent Behavioral, Evidence, and Proof Reproduction
+
+## Objective
+
+Independently regenerate the behavioral evidence and proof populations.
+
+## Required
+
+Execute:
+
+* admissibility verification;
+* decision verification;
+* authorization separation verification;
+* execution separation verification;
+* lifecycle verification;
+* persistence verification;
+* replay verification;
+* recovery verification.
+
+Regenerate:
+
+* behavioral evidence;
+* behavioral findings;
+* requirement dispositions;
+* proof objects;
+* proof lineage.
+
+Compare against:
+
+* B02 behavioral evidence baseline;
+* B04 proof baseline.
+
+Identify:
+
+* semantic differences;
+* execution differences;
+* evidence differences;
+* proof differences.
+
+## Deliverables
+
+* reproduced behavioral execution registry;
+* reproduced evidence registry;
+* reproduced proof registry;
+* proof comparison report;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B05-004
+
+# Independent Traceability and Certification Reconciliation
+
+## Objective
+
+Determine whether the Exit Decision certification candidate is independently reproducible.
+
+## Required
+
+Reconcile:
+
+* constitutional requirements;
+* implementation artifacts;
+* behavioral executions;
+* evidence;
+* proof;
+* traceability;
+* certification blockers.
+
+Verify:
+
+```text
+Requirement
+→ Implementation
+→ Verifier
+→ Execution
+→ Evidence
+→ Proof
+→ Certification Disposition
+```
+
+Compare reproduced results against the authoritative certification candidate.
+
+Issue exactly one final reproduction assessment:
+
+* REPRODUCIBLE;
+* REPRODUCIBLE_WITH_VARIANCE;
+* NOT_REPRODUCIBLE.
+
+If not reproducible, identify:
+
+* failed component;
+* evidence deficiency;
+* proof deficiency;
+* traceability deficiency;
+* required remediation structure.
+
+## Deliverables
+
+* reproduction reconciliation registry;
+* certification comparison registry;
+* certification blocker registry;
+* independent reproduction report;
+* final reproduction assessment;
+* completion report.
+
+---
+
+# Series Deliverables
+
+Upon successful completion this series shall produce:
+
+* repository reproduction registry;
+* environment reproduction registry;
+* dependency reproduction registry;
+* reproduced implementation inventory;
+* reproduced verifier registry;
+* reproduced fixture registry;
+* reproduced behavioral execution registry;
+* reproduced evidence registry;
+* reproduced proof registry;
+* reproduced traceability graph;
+* certification comparison registry;
+* reproduction findings registry;
+* certification blocker registry;
+* independent ECS-003 reproduction report;
+* final reproduction assessment;
+* series reconciliation report.
+
+---
+
+# Completion Criteria
+
+This series shall complete only when:
+
+* the certification pipeline has been reproduced from the delivered repository package;
+* repository identity has been independently verified;
+* environment identity has been independently verified;
+* implementation discovery has been independently reproduced;
+* verifier discovery has been independently reproduced;
+* fixture discovery has been independently reproduced;
+* behavioral verification has been independently reproduced;
+* evidence has been independently regenerated;
+* proof has been independently regenerated;
+* traceability has been independently regenerated;
+* certification readiness has been independently determined;
+* reproduced artifacts have been objectively compared against the certification candidate;
+* all differences have been classified;
+* no unexplained variance remains;
+* certification confidence is based exclusively on independent execution.
+
+Successful completion of this series shall authorize the final ECS-003 implementation certification verdict for the Exit Decision Office.
