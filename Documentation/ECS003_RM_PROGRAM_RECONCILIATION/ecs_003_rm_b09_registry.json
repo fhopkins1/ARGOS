@@ -1,0 +1,27 @@
+{
+  "constitutional_function": "fail_closed_certification_validation",
+  "evidence_artifact_count": 78,
+  "evidence_manifest_digest": "7f9a9cb6677d6140e92bc3077c4ab3aeac6757f242ea35323a472d630e876e4b",
+  "monitoring_evidence_root": "Documentation/MONITORING_RM002_B09_FAIL_CLOSED_CERTIFICATION",
+  "order_id": "ECS-003-RM-B09",
+  "primary_completion": {
+    "all_mutations_fail_closed": true,
+    "all_restorations_passed": true,
+    "b08_readiness": "READY_FOR_FAIL_CLOSED_CERTIFICATION_VALIDATION",
+    "certification_system_readiness": "READY_FOR_FINAL_INDEPENDENT_ECS003_CERTIFICATION",
+    "confidence": "VERY_HIGH_CONFIDENCE",
+    "controlled_mutations": 6,
+    "false_negative_certifications": 0,
+    "false_positive_certifications": 0,
+    "mutation_runs": 2,
+    "open_blockers": 0,
+    "package": "MONITORING-RM-002-B09 fail-closed certification validation",
+    "repeated_mutation_determinism": true,
+    "status": "COMPLETE"
+  },
+  "primary_completion_report": "Documentation/MONITORING_RM002_B09_FAIL_CLOSED_CERTIFICATION/completion_report.json",
+  "primary_completion_sha256": "9f05586ff1b49adece9bd70aec5d7ee54c6050925b42d02d16b7cdbae23633b0",
+  "source_order_copy": "Documentation/ECS003_RM_PROGRAM_RECONCILIATION/source_orders/ECS-003-RM-B09.txt",
+  "source_order_digest": "6db4a3b0a06f10a56d2e4291e7f56d25577c824d0ae9c5812ebe3ae5a7e16a48",
+  "terminal_disposition": "COMPLETE"
+}

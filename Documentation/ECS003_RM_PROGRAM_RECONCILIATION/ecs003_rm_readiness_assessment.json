@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "all_supplied_programs_complete": true,
+    "b04_unconditional_pass": true,
+    "b05_independent_pass": true,
+    "b06_reproducible_discovery": true,
+    "b08_clean_room_ready": true,
+    "b09_fail_closed_ready": true,
+    "b09_no_open_blockers": true
+  },
+  "constitutional_doctrine_modified": false,
+  "implementation_behavior_modified": false,
+  "omitted_series": {
+    "ECS-003-RM-B03": "NOT_SUPPLIED_IN_CURRENT_EXECUTION_PACKAGE",
+    "ECS-003-RM-B07": "NOT_SUPPLIED_IN_CURRENT_EXECUTION_PACKAGE; B08 records B07 input as formally unavailable"
+  },
+  "package": "ECS-003-RM program reconciliation",
+  "readiness": "READY_FOR_ECS003_REMEDIATION_AUDIT",
+  "repository_wide_certification_executed": false,
+  "status": "COMPLETE",
+  "supplied_program_count": 7
+}
