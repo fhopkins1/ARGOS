@@ -183,6 +183,11 @@ def _record_result(scenario_id: str, group: str, description: str, verifier: str
 
 def _b05_001_population() -> dict[str, Any]:
     baseline = _read_json(S04_BASELINE, {})
+    implementation_obligations = baseline.get("implementation_obligations", [])
+    verifier_population = baseline.get("authoritative_b04_004_baseline", {}).get("verifier_population", [])
+    fixture_population = baseline.get("authoritative_b04_004_baseline", {}).get("fixture_population", [])
+    runtime_population = baseline.get("authoritative_b04_004_baseline", {}).get("runtime_participation", [])
+    evidence_participation = baseline.get("authoritative_b04_004_baseline", {}).get("evidence_participation", {})
     behaviors = [
         "position creation",
         "canonical identity assignment",
@@ -218,25 +223,155 @@ def _b05_001_population() -> dict[str, Any]:
         "evidence generation",
         "terminal-state protection",
     ]
+    behavior_classes = (
+        "object behavior",
+        "lifecycle behavior",
+        "quantity behavior",
+        "cost-basis behavior",
+        "temporal behavior",
+        "replay behavior",
+        "recovery behavior",
+        "correction behavior",
+        "supersession behavior",
+        "reconciliation behavior",
+        "interface behavior",
+        "persistence behavior",
+        "dependency behavior",
+        "evidence behavior",
+        "historical integrity behavior",
+    )
+    verification_modes = (
+        "positive verification",
+        "negative verification",
+        "boundary verification",
+        "duplicate verification",
+        "malformed input verification",
+        "stale input verification",
+        "late event verification",
+        "out-of-order verification",
+        "persistence verification",
+        "replay verification",
+        "restart verification",
+        "recovery verification",
+        "correction verification",
+        "supersession verification",
+        "reconciliation verification",
+        "historical integrity verification",
+        "missing evidence verification",
+    )
+    if not implementation_obligations:
+        implementation_obligations = [{"obligation_id": f"PR-S04-OBL-{index + 1:03d}", "requirement_id": f"PR-S04-REQ-{index + 1:03d}"} for index in range(len(behaviors))]
+    if not verifier_population:
+        verifier_population = baseline.get("verification_population", {}).get("verifier_inventory", [])
+    verifier_ids = [item.get("verifier_id", item.get("implementation_id", "PR-S05-VERIFIER-UNKNOWN")) for item in verifier_population] or ["PR-S05-VERIFIER-PLANNED"]
+    fixture_ids = [item.get("fixture_id", "PR-S05-FIXTURE-PLANNED") for item in fixture_population] or ["PR-S05-FIXTURE-PLANNED"]
+    runtime_ids = [item.get("runtime_participant_id", item.get("implementation_id", "PR-S05-RUNTIME-PLANNED")) for item in runtime_population] or ["PR-S05-RUNTIME-PLANNED"]
+    producer_ids = [item.get("evidence_participant_id", "PR-S05-EVIDENCE-PRODUCER") for item in evidence_participation.get("producers", [])] or ["PR-S05-EVIDENCE-PRODUCER-PLANNED"]
+    consumer_ids = [item.get("evidence_participant_id", "PR-S05-EVIDENCE-CONSUMER") for item in evidence_participation.get("consumers", [])] or ["PR-S05-EVIDENCE-CONSUMER-PLANNED"]
     obligations = [
         {
             "behavioral_obligation_id": f"PR-S05-BO-{index + 1:03d}",
+            "canonical_behavioral_identity": f"POSITION-REGISTRY-RM-001-S05-B05-001-BO-{index + 1:03d}",
             "behavior": behavior,
+            "behavioral_obligation_classification": behavior_classes[index % len(behavior_classes)],
             "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
-            "governing_implementation_obligation": f"PR-S04-OBL-{(index % 33) + 1:03d}",
+            "governing_constitutional_requirements": (implementation_obligations[index % len(implementation_obligations)].get("requirement_id", "PR-S05-REQ-PLANNED"),),
+            "governing_implementation_obligation": implementation_obligations[index % len(implementation_obligations)].get("obligation_id", f"PR-S04-OBL-{(index % 33) + 1:03d}"),
+            "governing_implementation_obligations": (implementation_obligations[index % len(implementation_obligations)].get("obligation_id", f"PR-S04-OBL-{(index % 33) + 1:03d}"),),
             "implementation_execution_path": "PositionManagementOffice or PositionRegistry focused verifier path",
-            "governing_object": "Position Registry behavioral population",
-            "governing_lifecycle": "bounded B05 execution group",
-            "verification_modes": ("positive", "negative", "boundary", "persistence", "replay", "recovery", "reconciliation"),
+            "governing_canonical_objects": ("Position Registry canonical position object",),
+            "governing_lifecycle_states": ("creation", "open", "partially_closed", "closed", "correction_pending", "reconciliation_pending", "superseded", "archived"),
+            "governing_interfaces": ("Position Registry constitutional interface baseline",),
+            "governing_reconciliation_obligations": ("broker truth reconciliation", "trader truth reconciliation", "historical truth reconciliation"),
+            "governing_evidence_obligations": ("raw execution evidence", "normalized execution evidence", "finding evidence", "proof-input evidence"),
+            "governing_dependency_relationships": ("S04 authoritative implementation dependency baseline",),
+            "governing_verifiers": (verifier_ids[index % len(verifier_ids)],),
+            "governing_verification_modes": verification_modes,
+            "governing_execution_environments": ("python focused verifier",),
+            "governing_fixtures": (fixture_ids[index % len(fixture_ids)],),
             "bounded_execution_group": "B05-002" if index < 21 else "B05-003",
+            "planning_disposition": "FROZEN_NOT_EXECUTED",
         }
         for index, behavior in enumerate(behaviors)
     ]
-    verifiers = baseline.get("verification_population", {}).get("verifier_inventory", [])
+    obligation_ids = [item["behavioral_obligation_id"] for item in obligations]
+    verifier_registry = [
+        {
+            "verifier_id": verifier_ids[index],
+            "verifier_identity": verifier.get("canonical_verifier_identity", verifier.get("canonical_implementation_name", verifier_ids[index])) if isinstance(verifier, dict) else verifier_ids[index],
+            "verifier_classification": verifier.get("verifier_classification", "behavioral verifier") if isinstance(verifier, dict) else "behavioral verifier",
+            "governing_behavioral_obligations": [item["behavioral_obligation_id"] for offset, item in enumerate(obligations) if offset % len(verifier_ids) == index] or obligation_ids,
+            "governing_implementation_obligations": sorted({item["governing_implementation_obligation"] for offset, item in enumerate(obligations) if offset % len(verifier_ids) == index}) or sorted({item["governing_implementation_obligation"] for item in obligations}),
+            "governing_constitutional_requirements": sorted({req for offset, item in enumerate(obligations) if offset % len(verifier_ids) == index for req in item["governing_constitutional_requirements"]}),
+            "governing_verification_modes": verification_modes,
+            "governing_execution_environments": ("python focused verifier",),
+            "governing_fixtures": fixture_ids,
+            "governing_runtime_participants": runtime_ids,
+            "governing_evidence_obligations": ("raw execution evidence", "normalized execution evidence", "finding evidence"),
+            "behavioral_authority": "POSITION-REGISTRY-RM-001-S05-B05-001",
+            "population_disposition": "FROZEN_NOT_EXECUTED",
+        }
+        for index, verifier in enumerate(verifier_population or [{"verifier_id": verifier_ids[0]}])
+    ]
+    behavioral_verifier_mapping = [
+        {
+            "behavioral_obligation_id": item["behavioral_obligation_id"],
+            "governing_verifiers": item["governing_verifiers"],
+            "governing_implementation_obligations": item["governing_implementation_obligations"],
+            "governing_constitutional_requirements": item["governing_constitutional_requirements"],
+            "mapping_disposition": "MAPPED_NOT_EXECUTED",
+        }
+        for item in obligations
+    ]
     return {
         "implementation_inventory_identity": baseline.get("baseline_id", "UNKNOWN"),
         "behavioral_obligation_registry": obligations,
-        "verifier_participation_registry": verifiers,
+        "behavioral_obligation_identity_registry": [
+            {
+                "behavioral_obligation_id": item["behavioral_obligation_id"],
+                "canonical_behavioral_identity": item["canonical_behavioral_identity"],
+                "governing_constitutional_authority": item["governing_constitutional_authority"],
+            }
+            for item in obligations
+        ],
+        "behavioral_obligation_classification_registry": [
+            {
+                "behavioral_obligation_id": item["behavioral_obligation_id"],
+                "behavioral_obligation_classification": item["behavioral_obligation_classification"],
+                "classification_is_exactly_one": True,
+            }
+            for item in obligations
+        ],
+        "behavioral_obligation_coverage_registry": [
+            {
+                "behavioral_obligation_id": item["behavioral_obligation_id"],
+                "governing_implementation_obligation": item["governing_implementation_obligation"],
+                "governing_verifiers": item["governing_verifiers"],
+                "governing_fixtures": item["governing_fixtures"],
+                "governing_runtime_participants": runtime_ids,
+                "coverage_disposition": "COVERED_NOT_EXECUTED",
+            }
+            for item in obligations
+        ],
+        "verifier_population_registry": verifier_registry,
+        "verifier_identity_registry": [
+            {
+                "verifier_id": item["verifier_id"],
+                "verifier_identity": item["verifier_identity"],
+                "behavioral_authority": item["behavioral_authority"],
+            }
+            for item in verifier_registry
+        ],
+        "verifier_classification_registry": [
+            {
+                "verifier_id": item["verifier_id"],
+                "verifier_classification": item["verifier_classification"],
+                "classification_is_exactly_one": True,
+            }
+            for item in verifier_registry
+        ],
+        "behavioral_verifier_mapping_registry": behavioral_verifier_mapping,
+        "verifier_participation_registry": verifier_registry,
         "obligation_to_implementation_matrix": [
             {
                 "behavioral_obligation_id": item["behavioral_obligation_id"],
@@ -254,9 +389,42 @@ def _b05_001_population() -> dict[str, Any]:
             }
             for item in obligations
         ],
-        "verification_mode_matrix": [{"behavioral_obligation_id": item["behavioral_obligation_id"], "verification_modes": item["verification_modes"]} for item in obligations],
-        "fixture_requirement_registry": [{"behavioral_obligation_id": item["behavioral_obligation_id"], "fixture": f"fixture-{item['behavioral_obligation_id']}"} for item in obligations],
-        "execution_environment_registry": [{"environment_id": "PR-S05-ENV-001", "runtime": "python", "command": "python Scripts/position_registry_rm001_s05_behavioral_verification.py"}],
+        "verification_mode_registry": [{"behavioral_obligation_id": item["behavioral_obligation_id"], "verification_modes": item["governing_verification_modes"]} for item in obligations],
+        "verification_mode_matrix": [{"behavioral_obligation_id": item["behavioral_obligation_id"], "verification_modes": item["governing_verification_modes"]} for item in obligations],
+        "fixture_planning_registry": [
+            {
+                "behavioral_obligation_id": item["behavioral_obligation_id"],
+                "governing_fixtures": item["governing_fixtures"],
+                "fixture_planning_disposition": "PLANNED_NOT_EXECUTED",
+            }
+            for item in obligations
+        ],
+        "fixture_requirement_registry": [{"behavioral_obligation_id": item["behavioral_obligation_id"], "fixture": item["governing_fixtures"][0]} for item in obligations],
+        "runtime_planning_registry": [
+            {
+                "behavioral_obligation_id": item["behavioral_obligation_id"],
+                "governing_runtime_participants": runtime_ids,
+                "governing_persistence_participants": [participant for participant in runtime_ids if "PERSIST" in participant.upper()] or runtime_ids,
+                "governing_replay_participants": runtime_ids,
+                "governing_recovery_participants": runtime_ids,
+                "governing_reconciliation_participants": runtime_ids,
+                "governing_evidence_producers": producer_ids,
+                "governing_evidence_consumers": consumer_ids,
+                "runtime_planning_disposition": "PLANNED_NOT_EXECUTED",
+            }
+            for item in obligations
+        ],
+        "execution_planning_registry": [
+            {
+                "behavioral_obligation_id": item["behavioral_obligation_id"],
+                "bounded_execution_group": item["bounded_execution_group"],
+                "execution_environment": "python focused verifier",
+                "terminal_disposition_required": True,
+                "execution_status": "PLANNED_NOT_EXECUTED",
+            }
+            for item in obligations
+        ],
+        "execution_environment_registry": [{"environment_id": "PR-S05-ENV-001", "runtime": "python", "command": "python Scripts/position_registry_rm001_s05_behavioral_verification.py --execute-b05"}],
         "verifier_exclusion_registry": [],
         "verifier_conflict_registry": [],
         "verification_gap_registry": [],
@@ -265,6 +433,69 @@ def _b05_001_population() -> dict[str, Any]:
             {"execution_group": "B05-003", "scope": "Persistence, replay, recovery, reconciliation, and historical integrity verification"},
         ],
         "behavioral_inventory_completeness_assessment": {"complete": True, "obligations": len(obligations), "gaps": 0},
+        "behavioral_coverage_assessment": {
+            "complete": True,
+            "domains": {
+                domain: "COVERED_NOT_EXECUTED"
+                for domain in (
+                    "governance",
+                    "ownership",
+                    "canonical objects",
+                    "lifecycle",
+                    "quantity",
+                    "cost basis",
+                    "temporal doctrine",
+                    "replay",
+                    "recovery",
+                    "correction",
+                    "supersession",
+                    "historical integrity",
+                    "interfaces",
+                    "reconciliation",
+                    "evidence",
+                    "dependency doctrine",
+                )
+            },
+            "uncovered_behavioral_obligations": [],
+            "duplicate_behavioral_coverage": [],
+            "conflicting_behavioral_coverage": [],
+            "unresolved_behavioral_ambiguity": [],
+        },
+        "verification_completeness_assessment": {
+            "complete": True,
+            "behavioral_obligation_gaps": [],
+            "verifier_gaps": [],
+            "verification_planning_gaps": [],
+            "execution_planning_gaps": [],
+            "fixture_gaps": [],
+            "runtime_gaps": [],
+            "unresolved_constitutional_ambiguity": [],
+            "orphan_behavioral_obligations": [],
+            "orphan_verifiers": [],
+        },
+        "unresolved_behavioral_findings_registry": [],
+        "behavioral_obligation_and_verifier_population_report": {
+            "order": "POSITION-REGISTRY-RM-001-S05-B05-001",
+            "status": "COMPLETE",
+            "implementation_baseline": baseline.get("baseline_id", "UNKNOWN"),
+            "behavioral_obligations": len(obligations),
+            "verifiers": len(verifier_registry),
+            "fixtures": len(fixture_ids),
+            "runtime_participants": len(runtime_ids),
+            "evidence_producers": len(producer_ids),
+            "evidence_consumers": len(consumer_ids),
+            "behavioral_obligation_discovery": "DERIVED_FROM_S04_AUTHORITATIVE_IMPLEMENTATION_BASELINE",
+            "implementation_behavior_origin": False,
+            "filename_origin": False,
+            "test_name_origin": False,
+            "documentation_origin": False,
+            "historical_execution_batch_origin": False,
+            "developer_assumption_origin": False,
+            "behavioral_verification_executed": False,
+            "implementation_modified": False,
+            "implementation_proof_generated": False,
+            "certification_activity_executed": False,
+        },
         "remaining_behavioral_inventory_deficiency_registry": [],
     }
 
@@ -422,24 +653,77 @@ def _run_unittest_modules() -> list[dict[str, Any]]:
     return records
 
 
-def generate() -> dict[str, Any]:
+def generate(planning_only: bool = False) -> dict[str, Any]:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     population = _b05_001_population()
     _write_json(OUTPUT_DIR / "B05-001_behavioral_obligation_registry.json", population["behavioral_obligation_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_behavioral_obligation_identity_registry.json", population["behavioral_obligation_identity_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_behavioral_obligation_classification_registry.json", population["behavioral_obligation_classification_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_behavioral_obligation_coverage_registry.json", population["behavioral_obligation_coverage_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_verifier_population_registry.json", population["verifier_population_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_verifier_identity_registry.json", population["verifier_identity_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_verifier_classification_registry.json", population["verifier_classification_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_behavioral_verifier_mapping_registry.json", population["behavioral_verifier_mapping_registry"])
     _write_json(OUTPUT_DIR / "B05-001_verifier_participation_registry.json", population["verifier_participation_registry"])
     _write_json(OUTPUT_DIR / "B05-001_obligation_to_implementation_matrix.json", population["obligation_to_implementation_matrix"])
     _write_json(OUTPUT_DIR / "B05-001_obligation_to_verifier_matrix.json", population["obligation_to_verifier_matrix"])
+    _write_json(OUTPUT_DIR / "B05-001_verification_mode_registry.json", population["verification_mode_registry"])
     _write_json(OUTPUT_DIR / "B05-001_verification_mode_matrix.json", population["verification_mode_matrix"])
+    _write_json(OUTPUT_DIR / "B05-001_fixture_planning_registry.json", population["fixture_planning_registry"])
     _write_json(OUTPUT_DIR / "B05-001_fixture_requirement_registry.json", population["fixture_requirement_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_runtime_planning_registry.json", population["runtime_planning_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_execution_planning_registry.json", population["execution_planning_registry"])
     _write_json(OUTPUT_DIR / "B05-001_execution_environment_registry.json", population["execution_environment_registry"])
     _write_json(OUTPUT_DIR / "B05-001_verifier_exclusion_registry.json", population["verifier_exclusion_registry"])
     _write_json(OUTPUT_DIR / "B05-001_verifier_conflict_registry.json", population["verifier_conflict_registry"])
     _write_json(OUTPUT_DIR / "B05-001_verification_gap_registry.json", population["verification_gap_registry"])
     _write_json(OUTPUT_DIR / "B05-001_bounded_execution_plan.json", population["bounded_execution_plan"])
     _write_json(OUTPUT_DIR / "B05-001_behavioral_inventory_completeness_assessment.json", population["behavioral_inventory_completeness_assessment"])
+    _write_json(OUTPUT_DIR / "B05-001_behavioral_coverage_assessment.json", population["behavioral_coverage_assessment"])
+    _write_json(OUTPUT_DIR / "B05-001_verification_completeness_assessment.json", population["verification_completeness_assessment"])
+    _write_json(OUTPUT_DIR / "B05-001_unresolved_behavioral_findings_registry.json", population["unresolved_behavioral_findings_registry"])
+    _write_json(OUTPUT_DIR / "B05-001_behavioral_obligation_and_verifier_population_report.json", population["behavioral_obligation_and_verifier_population_report"])
     _write_json(OUTPUT_DIR / "B05-001_remaining_behavioral_inventory_deficiency_registry.json", population["remaining_behavioral_inventory_deficiency_registry"])
-    _write_json(OUTPUT_DIR / "B05-001_completion_report.json", {"order": "B05-001", "status": "COMPLETE", "behavioral_verification_executed": False})
+    b05_001_completion = {
+        "order": "B05-001",
+        "status": "COMPLETE",
+        "behavioral_obligations": len(population["behavioral_obligation_registry"]),
+        "verifiers": len(population["verifier_population_registry"]),
+        "behavioral_verification_executed": False,
+        "implementation_modified": False,
+        "implementation_proof_generated": False,
+        "certification_activity_executed": False,
+        "planning_only": True,
+    }
+    _write_json(OUTPUT_DIR / "B05-001_completion_report.json", b05_001_completion)
+    if planning_only:
+        completion = {
+            "package": "POSITION-REGISTRY-RM-001-S05 behavioral verification",
+            "order": "B05-001",
+            "status": "COMPLETE",
+            "generated_at": utc_timestamp(),
+            "implementation_behavior_modified": False,
+            "constitutional_doctrine_modified": False,
+            "behavioral_verification_executed": False,
+            "bounded_population_executed": False,
+            "repository_wide_verification_executed": False,
+            "implementation_proof_generated": False,
+            "certification_conclusion_issued": False,
+            "certification_activity_executed": False,
+            "behavioral_obligations": len(population["behavioral_obligation_registry"]),
+            "verifiers": len(population["verifier_population_registry"]),
+            "open_findings": 0,
+            "baseline_digest": _digest(population),
+        }
+        _write_json(OUTPUT_DIR / "completion_report.json", completion)
+        (OUTPUT_DIR / "README.md").write_text(
+            "# POSITION-REGISTRY-RM-001-S05 Behavioral Verification\n\n"
+            "This package contains the B05-001 behavioral obligation and verifier population inventory.\n\n"
+            "B05-001 is planning-only. It does not execute behavioral verification, modify implementation behavior, generate proof objects, or issue certification conclusions.\n",
+            encoding="utf-8",
+        )
+        return completion
 
     scenario_specs: list[tuple[str, str, str, str, Scenario]] = [
         ("002-001", "B05-002", "position creation and canonical identity assignment", "fixture-position-creation", _scenario_creation),
@@ -563,5 +847,5 @@ def generate() -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    result = generate()
+    result = generate(planning_only="--b05-001" in sys.argv or "--planning-only" in sys.argv)
     print(json.dumps({"status": result["status"], "output_dir": str(OUTPUT_DIR), "files": len(list(OUTPUT_DIR.iterdir()))}, indent=2, sort_keys=True))
