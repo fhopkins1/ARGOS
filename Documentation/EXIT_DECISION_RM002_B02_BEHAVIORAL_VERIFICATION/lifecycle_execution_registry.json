@@ -1,0 +1,105 @@
+[
+  {
+    "disposition": "PASS",
+    "domains": [
+      "admissibility",
+      "decision",
+      "evaluation",
+      "evidence",
+      "lifecycle",
+      "recommendation"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-006",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-006.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-006.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+    "test_name": "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "lifecycle",
+      "rejection"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-009",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-009.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-009.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "test_name": "test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "authority_boundary",
+      "execution_separation",
+      "lifecycle"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-014",
+    "fixture_identity": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py::test_exit_decision_boundary_answers_required_questions",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-014.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-014.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.PositionRegistryB01002AS02LifecycleBoundaryTests.test_exit_decision_boundary_answers_required_questions",
+    "test_name": "test_exit_decision_boundary_answers_required_questions",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-004"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "lifecycle",
+      "persistence",
+      "recovery",
+      "replay"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-015",
+    "fixture_identity": "Tests/test_trader_rm002a016_b02_fill_fixtures.py::test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-015.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-015.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "test_name": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_trader_rm002a016_b02_fill_fixtures.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-005"
+  }
+]

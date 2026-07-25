@@ -1,0 +1,383 @@
+# EXIT-DECISION-RM-002-B02
+
+# Behavioral Verification Series
+
+## Doctrine Statement
+
+### Purpose
+
+This Behavioral Verification Series establishes the authoritative behavioral verification campaign governing the Exit Decision Office implementation.
+
+This series exists solely to determine whether the implementation behavior of the Exit Decision Office satisfies the frozen constitutional requirements established under **EXIT-DECISION-RM-001**.
+
+The objective is to establish one authoritative behavioral evidence baseline demonstrating:
+
+* decision admissibility;
+* evaluation behavior;
+* recommendation behavior;
+* decision behavior;
+* authorization separation;
+* execution separation;
+* lifecycle behavior;
+* persistence behavior;
+* replay behavior;
+* recovery behavior;
+* evidence behavior.
+
+The constitutional architecture established under **EXIT-DECISION-RM-001-B05** is accepted as complete and authoritative.
+
+The dependency-derived implementation inventory established under **EXIT-DECISION-RM-002-B01** is accepted as the authoritative implementation baseline.
+
+Every work order shall have one objective.
+
+Every work order shall execute against one frozen implementation candidate.
+
+Every work order shall preserve complete execution lineage.
+
+Every work order shall preserve behavioral evidence.
+
+Every work order shall preserve failed executions.
+
+Every work order shall preserve superseded behavioral results.
+
+No work order shall reinterpret constitutional doctrine.
+
+No work order shall redefine implementation participation.
+
+No implementation modification shall occur under this series except where required to execute deterministic behavioral verification.
+
+---
+
+# Constitutional Principles
+
+Behavior shall be established exclusively through executable verification.
+
+Behavior shall never be inferred from:
+
+* source inspection;
+* documentation;
+* implementation intent;
+* naming conventions;
+* completion reports;
+* historical certification status.
+
+Every constitutional requirement shall possess a behavioral disposition.
+
+Every behavioral verifier shall possess:
+
+* one constitutional requirement;
+* one implementation obligation;
+* one verifier identity;
+* one execution identity;
+* one evidence lineage.
+
+Every behavioral execution shall preserve:
+
+* repository identity;
+* implementation candidate identity;
+* verifier identity;
+* fixture identity;
+* execution identity;
+* environment identity;
+* raw outputs;
+* normalized outputs;
+* findings.
+
+Behavioral verification shall fail closed.
+
+---
+
+# Series Structure
+
+# EXIT-DECISION-RM-002-B02-001
+
+# Decision Admission and Input Validation Verification
+
+## Objective
+
+Verify that Exit Decision only evaluates constitutionally admissible inputs.
+
+## Required
+
+Execute verification covering:
+
+* request creation;
+* request identity;
+* position identity binding;
+* position state validation;
+* position quantity validation;
+* risk input validation;
+* authorization validation;
+* monitoring input validation;
+* analytical input validation;
+* source authority validation;
+* freshness validation;
+* completeness validation;
+* contradiction detection.
+
+Verify rejection behavior for:
+
+* missing position truth;
+* stale position truth;
+* invalid authorization;
+* expired authorization;
+* revoked authorization;
+* identity mismatch;
+* incomplete evidence;
+* contradictory inputs;
+* unsupported inputs.
+
+Produce:
+
+* admissibility execution registry;
+* rejection findings registry;
+* admissibility evidence registry;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B02-002
+
+# Evaluation, Recommendation, and Decision Behavior Verification
+
+## Objective
+
+Verify deterministic Exit Decision logic.
+
+## Required
+
+Execute verification covering:
+
+* exit-condition evaluation;
+* risk-condition evaluation;
+* constraint evaluation;
+* recommendation generation;
+* decision generation;
+* rationale generation;
+* deterministic outputs;
+* precedence rules.
+
+Verify decision outcomes including:
+
+* full exit;
+* partial exit;
+* hold;
+* defer;
+* reject;
+* cancel;
+* emergency decision.
+
+Verify:
+
+* identical inputs produce identical decisions;
+* unsupported conditions do not produce decisions;
+* recommendations do not execute actions;
+* decisions preserve evidence lineage.
+
+Produce:
+
+* evaluation execution registry;
+* recommendation execution registry;
+* decision execution registry;
+* behavioral findings registry;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B02-003
+
+# Authorization, Execution Separation, and Interface Behavior Verification
+
+## Objective
+
+Verify that Exit Decision remains constitutionally separated from authorization and execution systems.
+
+## Required
+
+Execute verification covering interactions with:
+
+* Authorizations;
+* Trader;
+* Broker;
+* Position Registry;
+* Risk;
+* Commander.
+
+Verify:
+
+* authorization dependency enforcement;
+* execution-request behavior;
+* interface contracts;
+* failure handling;
+* acknowledgement behavior;
+* duplicate request handling.
+
+Verify prohibited behaviors:
+
+* unauthorized execution;
+* direct broker execution;
+* position mutation;
+* authorization bypass;
+* risk override.
+
+Produce:
+
+* interface execution registry;
+* authorization behavior registry;
+* execution separation findings registry;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B02-004
+
+# Lifecycle, Persistence, Replay, Recovery, and Reconciliation Verification
+
+## Objective
+
+Verify deterministic Exit Decision state management.
+
+## Required
+
+Execute verification covering:
+
+* lifecycle transitions;
+* cancellation;
+* expiration;
+* correction;
+* supersession;
+* archival;
+* persistence;
+* replay;
+* restart;
+* recovery;
+* reconciliation.
+
+Verify:
+
+* duplicate decision prevention;
+* duplicate execution prevention;
+* cancelled decision protection;
+* expired decision protection;
+* superseded decision protection;
+* historical integrity.
+
+Execute:
+
+* restart verification;
+* replay verification;
+* corrupted-state verification;
+* missing-state verification;
+* partial-write recovery verification.
+
+Produce:
+
+* lifecycle execution registry;
+* persistence verification registry;
+* replay verification registry;
+* recovery verification registry;
+* reconciliation findings registry;
+* completion report.
+
+---
+
+# EXIT-DECISION-RM-002-B02-005
+
+# Evidence Generation and Behavioral Coverage Reconciliation
+
+## Objective
+
+Establish the authoritative Exit Decision behavioral evidence baseline.
+
+## Required
+
+Reconcile:
+
+* constitutional requirements;
+* implementation obligations;
+* verifiers;
+* fixtures;
+* executions;
+* evidence;
+* findings;
+* dispositions.
+
+Verify:
+
+* every requirement has one behavioral disposition;
+* every execution has complete lineage;
+* every finding has objective evidence;
+* every failure is classified.
+
+Classify findings as:
+
+* IMPLEMENTATION_DEFECT;
+* VERIFIER_DEFECT;
+* FIXTURE_DEFECT;
+* ENVIRONMENT_DEFECT;
+* NOT_EXECUTED;
+* NOT_APPLICABLE;
+* VERIFIED_PASS;
+* VERIFIED_FAIL.
+
+Produce:
+
+* behavioral coverage matrix;
+* behavioral evidence registry;
+* behavioral findings registry;
+* behavioral readiness assessment;
+* completion report.
+
+---
+
+# Series Deliverables
+
+Upon successful completion this series shall produce:
+
+* admissibility execution registry;
+* rejection findings registry;
+* admissibility evidence registry;
+* evaluation execution registry;
+* recommendation execution registry;
+* decision execution registry;
+* interface execution registry;
+* authorization behavior registry;
+* execution separation findings registry;
+* lifecycle execution registry;
+* persistence verification registry;
+* replay verification registry;
+* recovery verification registry;
+* reconciliation findings registry;
+* behavioral evidence registry;
+* behavioral findings registry;
+* behavioral coverage matrix;
+* behavioral readiness assessment;
+* series reconciliation report.
+
+---
+
+# Completion Criteria
+
+This series shall complete only when:
+
+* every applicable constitutional requirement possesses a behavioral disposition;
+* every implementation obligation possesses behavioral evidence;
+* admissibility behavior has been verified;
+* decision behavior has been verified;
+* authorization separation has been verified;
+* execution separation has been verified;
+* lifecycle behavior has been verified;
+* persistence behavior has been verified;
+* replay behavior has been verified;
+* recovery behavior has been verified;
+* evidence lineage is complete;
+* every behavioral failure has objective evidence;
+* every finding has deterministic classification;
+* no behavioral coverage ambiguity remains;
+* one authoritative Exit Decision behavioral evidence baseline has been established.
+
+Successful completion of this series shall authorize progression into:
+
+> **EXIT-DECISION-RM-002-B03 — Implementation Remediation**
+
+for elimination of any verified implementation deficiencies discovered during behavioral verification.

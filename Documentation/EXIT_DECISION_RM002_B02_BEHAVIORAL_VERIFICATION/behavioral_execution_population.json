@@ -1,0 +1,214 @@
+[
+  {
+    "domains": [
+      "admissibility",
+      "rejection",
+      "risk_interface"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-001",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+    "test_name": "test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "commander_interface",
+      "decision",
+      "precedence",
+      "risk_interface"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-002",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+    "test_name": "test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "decision",
+      "evidence",
+      "execution_separation",
+      "persistence"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-003",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+    "test_name": "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "decision",
+      "evaluation",
+      "evidence",
+      "recommendation"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-004",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+    "test_name": "test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "execution_separation",
+      "interface"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-005",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+    "test_name": "test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "admissibility",
+      "decision",
+      "evaluation",
+      "evidence",
+      "lifecycle",
+      "recommendation"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-006",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+    "test_name": "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "analytical_input",
+      "evidence",
+      "recommendation"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-007",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+    "test_name": "test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "admissibility",
+      "decision",
+      "evaluation",
+      "freshness",
+      "recommendation"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-008",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+    "test_name": "test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "lifecycle",
+      "rejection"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-009",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "test_name": "test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "evidence",
+      "interface"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-010",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+    "test_name": "test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "execution_separation",
+      "interface"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-011",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism",
+    "test_name": "test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "domains": [
+      "behavioral"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-012",
+    "fixture_identity": "Tests/test_exit_decision_rm001_b01_constitutional_baseline.py::test_exit_decision_authority_excludes_execution_and_truth_mutation",
+    "test_id": "Tests.test_exit_decision_rm001_b01_constitutional_baseline.ExitDecisionRM001B01ConstitutionalBaselineTests.test_exit_decision_authority_excludes_execution_and_truth_mutation",
+    "test_name": "test_exit_decision_authority_excludes_execution_and_truth_mutation",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_exit_decision_rm001_b01_constitutional_baseline.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-002"
+  },
+  {
+    "domains": [
+      "authorization_separation",
+      "execution_separation"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-013",
+    "fixture_identity": "Tests/test_or004_position_lifecycle.py::test_exit_recommendation_and_authorization_do_not_close_position",
+    "test_id": "Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_exit_recommendation_and_authorization_do_not_close_position",
+    "test_name": "test_exit_recommendation_and_authorization_do_not_close_position",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_or004_position_lifecycle.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-003"
+  },
+  {
+    "domains": [
+      "authority_boundary",
+      "execution_separation",
+      "lifecycle"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-014",
+    "fixture_identity": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py::test_exit_decision_boundary_answers_required_questions",
+    "test_id": "Tests.test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.PositionRegistryB01002AS02LifecycleBoundaryTests.test_exit_decision_boundary_answers_required_questions",
+    "test_name": "test_exit_decision_boundary_answers_required_questions",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-004"
+  },
+  {
+    "domains": [
+      "lifecycle",
+      "persistence",
+      "recovery",
+      "replay"
+    ],
+    "execution_id": "EXIT-RM002-B02-EXEC-015",
+    "fixture_identity": "Tests/test_trader_rm002a016_b02_fill_fixtures.py::test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "test_id": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "test_name": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_trader_rm002a016_b02_fill_fixtures.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-005"
+  }
+]

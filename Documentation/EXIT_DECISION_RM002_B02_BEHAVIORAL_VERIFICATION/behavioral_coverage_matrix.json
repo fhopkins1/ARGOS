@@ -1,0 +1,43 @@
+{
+  "covered_domains": [
+    "admissibility",
+    "analytical_input",
+    "authority_boundary",
+    "authorization_separation",
+    "behavioral",
+    "commander_interface",
+    "decision",
+    "evaluation",
+    "evidence",
+    "execution_separation",
+    "freshness",
+    "interface",
+    "lifecycle",
+    "persistence",
+    "precedence",
+    "recommendation",
+    "recovery",
+    "rejection",
+    "replay",
+    "risk_interface"
+  ],
+  "missing_domains": [],
+  "required_domains": [
+    "admissibility",
+    "evaluation",
+    "recommendation",
+    "decision",
+    "authorization_separation",
+    "execution_separation",
+    "interface",
+    "lifecycle",
+    "persistence",
+    "replay",
+    "recovery",
+    "evidence"
+  ],
+  "requirement_dispositions": {
+    "NOT_APPLICABLE": 16,
+    "VERIFIED_PASS": 78
+  }
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "disposition": "PASS",
+    "domains": [
+      "decision",
+      "evidence",
+      "execution_separation",
+      "persistence"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-003",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-003.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-003.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+    "test_name": "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "lifecycle",
+      "persistence",
+      "recovery",
+      "replay"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-015",
+    "fixture_identity": "Tests/test_trader_rm002a016_b02_fill_fixtures.py::test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-015.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-015.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_trader_rm002a016_b02_fill_fixtures.TraderRM002A016B02FillFixturesTests.test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "test_name": "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_trader_rm002a016_b02_fill_fixtures.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-005"
+  }
+]

@@ -1,0 +1,125 @@
+[
+  {
+    "disposition": "PASS",
+    "domains": [
+      "admissibility",
+      "rejection",
+      "risk_interface"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-001",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-001.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-001.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+    "test_name": "test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "commander_interface",
+      "decision",
+      "precedence",
+      "risk_interface"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-002",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-002.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-002.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+    "test_name": "test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "execution_separation",
+      "interface"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-005",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-005.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-005.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+    "test_name": "test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "evidence",
+      "interface"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-010",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-010.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-010.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+    "test_name": "test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "disposition": "PASS",
+    "domains": [
+      "execution_separation",
+      "interface"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-011",
+    "fixture_identity": "Tests/test_argos_control_panel_dashboard.py::test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-011.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-011.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism",
+    "test_name": "test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  }
+]

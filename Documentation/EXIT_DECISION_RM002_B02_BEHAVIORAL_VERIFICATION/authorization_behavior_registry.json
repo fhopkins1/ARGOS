@@ -1,0 +1,26 @@
+[
+  {
+    "disposition": "PASS",
+    "domains": [
+      "authorization_separation",
+      "execution_separation"
+    ],
+    "environment_identity": {
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+      "platform": "win32",
+      "python": "3.14.5"
+    },
+    "execution_id": "EXIT-RM002-B02-EXEC-013",
+    "fixture_identity": "Tests/test_or004_position_lifecycle.py::test_exit_recommendation_and_authorization_do_not_close_position",
+    "returncode": 0,
+    "stderr": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-013.stderr.log",
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout": "Documentation/EXIT_DECISION_RM002_B02_BEHAVIORAL_VERIFICATION/raw_execution_evidence/EXIT-RM002-B02-EXEC-013.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test_id": "Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_exit_recommendation_and_authorization_do_not_close_position",
+    "test_name": "test_exit_recommendation_and_authorization_do_not_close_position",
+    "timeout_seconds": 120,
+    "verifier_artifact": "Tests/test_or004_position_lifecycle.py",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-003"
+  }
+]
