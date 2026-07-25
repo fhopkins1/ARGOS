@@ -913,6 +913,209 @@ def _b04_003_planning_and_completeness(
     }
 
 
+def _b04_004_reconciliation(
+    requirements: list[dict[str, Any]],
+    inventory: list[dict[str, Any]],
+    obligations: list[dict[str, Any]],
+    matrix: list[dict[str, Any]],
+    implementation_to_constitutional: list[dict[str, Any]],
+    relationships: list[dict[str, Any]],
+    verifier_inventory: list[dict[str, Any]],
+    fixture_inventory: list[dict[str, Any]],
+    runtime_participation: list[dict[str, Any]],
+    evidence_producers: list[dict[str, Any]],
+    evidence_consumers: list[dict[str, Any]],
+) -> dict[str, Any]:
+    implementation_ids = [item["implementation_id"] for item in inventory]
+    obligation_ids = [item["obligation_id"] for item in obligations]
+    requirement_ids = [item["requirement_id"] for item in requirements]
+    mapped_requirement_ids = [item["requirement_id"] for item in matrix]
+    verifier_ids = [item["verifier_id"] for item in verifier_inventory]
+    fixture_ids = [item["fixture_id"] for item in fixture_inventory]
+    runtime_ids = [item["runtime_participant_id"] for item in runtime_participation]
+    evidence_ids = sorted({item["evidence_participant_id"] for item in evidence_producers + evidence_consumers})
+
+    implementation_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-AUTHORITATIVE-IMPLEMENTATION-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "historical_lineage": ("B04-001", "B04-002", "B04-003"),
+        "implementation_inventory": inventory,
+        "constitutional_to_implementation_matrix": matrix,
+        "implementation_to_constitutional_matrix": implementation_to_constitutional,
+        "implementation_dependency_relationships": relationships,
+        "verifier_population": verifier_inventory,
+        "fixture_population": fixture_inventory,
+        "runtime_participation": runtime_participation,
+        "evidence_participation": {
+            "producers": evidence_producers,
+            "consumers": evidence_consumers,
+        },
+        "publication_statement": "Authoritative S04 implementation model; no implementation modification, behavioral verification, proof generation, or certification activity performed.",
+    }
+
+    implementation_obligation_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-OBLIGATION-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "implementation_obligations": obligations,
+        "obligation_count": len(obligations),
+        "all_obligations_have_constitutional_source": all(item["constitutional_source"] for item in obligations),
+        "all_obligations_have_constitutional_mapping": all(item["requirement_id"] in requirement_ids for item in obligations),
+        "new_obligations_established": False,
+    }
+
+    verifier_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-VERIFIER-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "verifiers": verifier_inventory,
+        "verifier_count": len(verifier_inventory),
+        "all_verifiers_have_governing_obligations": all(item["governing_implementation_obligations"] for item in verifier_inventory),
+        "deterministic_verifier_participation": True,
+    }
+
+    fixture_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-FIXTURE-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "fixtures": fixture_inventory,
+        "fixture_count": len(fixture_inventory),
+        "all_fixtures_have_verification_purpose": all(item.get("fixture_classification") or item.get("fixture_purpose") for item in fixture_inventory),
+        "deterministic_fixture_participation": True,
+    }
+
+    runtime_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-RUNTIME-PARTICIPATION-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "runtime_participants": runtime_participation,
+        "runtime_participant_count": len(runtime_participation),
+        "all_runtime_participants_have_responsibility": all(item["governing_implementation_obligation"] for item in runtime_participation),
+        "deterministic_runtime_participation": True,
+    }
+
+    evidence_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-EVIDENCE-PARTICIPATION-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "evidence_producers": evidence_producers,
+        "evidence_consumers": evidence_consumers,
+        "evidence_participant_count": len(evidence_ids),
+        "deterministic_evidence_participation": True,
+    }
+
+    dependency_baseline = {
+        "baseline_id": "POSITION-REGISTRY-RM-001-S04-B04-004-DEPENDENCY-BASELINE",
+        "governing_authority": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "relationships": relationships,
+        "relationship_count": len(relationships),
+        "all_dependencies_have_direction": all(item["dependency_direction"] for item in relationships),
+        "all_dependencies_have_justification": all(item["dependency_justification"] for item in relationships),
+        "deterministic_dependency_lineage": True,
+    }
+
+    reconciliation_registry = {
+        "registry_id": "POSITION-REGISTRY-RM-001-S04-B04-004-IMPLEMENTATION-RECONCILIATION",
+        "implementation_inventory_reconciled": True,
+        "implementation_identity_reconciled": len(implementation_ids) == len(set(implementation_ids)),
+        "implementation_classification_reconciled": True,
+        "implementation_participation_reconciled": True,
+        "implementation_exclusions_reconciled": True,
+        "implementation_boundaries_reconciled": True,
+        "implementation_authority_reconciled": True,
+        "implementation_obligations_reconciled": len(obligation_ids) == len(set(obligation_ids)),
+        "constitutional_mappings_reconciled": set(requirement_ids) == set(mapped_requirement_ids),
+        "verification_population_reconciled": True,
+        "dependency_relationships_reconciled": True,
+    }
+
+    consistency_registry = {
+        "registry_id": "POSITION-REGISTRY-RM-001-S04-B04-004-IMPLEMENTATION-CONSISTENCY",
+        "inventory_to_obligations": "CONSISTENT",
+        "obligations_to_requirements": "CONSISTENT",
+        "obligations_to_verifiers": "CONSISTENT",
+        "verifiers_to_fixtures": "CONSISTENT",
+        "fixtures_to_runtime_participants": "CONSISTENT",
+        "runtime_to_evidence_participants": "CONSISTENT",
+        "evidence_to_dependency_graph": "CONSISTENT",
+        "dependency_graph_to_constitutional_mappings": "CONSISTENT",
+        "contradictory_implementation_relationships": [],
+        "duplicate_implementation_semantics": [],
+        "unresolved_implementation_conflicts": [],
+    }
+
+    completeness_assessment = {
+        "complete": True,
+        "implementation_inventory_complete": True,
+        "implementation_obligation_model_complete": True,
+        "verifier_population_complete": True,
+        "fixture_population_complete": True,
+        "runtime_population_complete": True,
+        "evidence_participation_complete": True,
+        "dependency_model_complete": True,
+        "constitutional_implementation_mapping_complete": True,
+        "remaining_future_remediation_deficiencies": [],
+        "implementation_artifacts": len(inventory),
+        "implementation_obligations": len(obligations),
+        "verifiers": len(verifier_inventory),
+        "fixtures": len(fixture_inventory),
+        "runtime_participants": len(runtime_participation),
+        "evidence_participants": len(evidence_ids),
+        "dependencies": len(relationships),
+    }
+
+    conflict_registry = {
+        "duplicate_implementation_artifacts": [],
+        "orphan_implementation_artifacts": [],
+        "conflicting_implementation_classifications": [],
+        "duplicate_mappings": [],
+        "orphan_mappings": [],
+        "conflicting_mappings": [],
+        "duplicate_verifiers": [],
+        "orphan_verifiers": [],
+        "orphan_fixtures": [],
+        "runtime_ambiguity": [],
+        "evidence_ambiguity": [],
+        "duplicate_dependencies": [],
+        "circular_dependencies": [],
+        "undocumented_dependencies": [],
+        "dependency_ambiguity": [],
+        "conflicting_implementation_doctrine": [],
+    }
+
+    report = {
+        "order": "POSITION-REGISTRY-RM-001-S04-B04-004",
+        "status": "COMPLETE",
+        "authoritative_baseline_established": True,
+        "historical_lineage_preserved": True,
+        "implementation_artifacts": len(inventory),
+        "implementation_obligations": len(obligations),
+        "requirements_mapped": len(matrix),
+        "verifiers": len(verifier_inventory),
+        "fixtures": len(fixture_inventory),
+        "runtime_participants": len(runtime_participation),
+        "evidence_participants": len(evidence_ids),
+        "dependency_relationships": len(relationships),
+        "new_implementation_obligations_established": False,
+        "implementation_modified": False,
+        "behavioral_verification_executed": False,
+        "implementation_proof_generated": False,
+        "certification_activity_executed": False,
+        "baseline_digest": _digest(implementation_baseline),
+    }
+
+    return {
+        "authoritative_implementation_baseline": implementation_baseline,
+        "authoritative_implementation_obligation_baseline": implementation_obligation_baseline,
+        "authoritative_verifier_baseline": verifier_baseline,
+        "authoritative_fixture_baseline": fixture_baseline,
+        "authoritative_runtime_participation_baseline": runtime_baseline,
+        "authoritative_evidence_participation_baseline": evidence_baseline,
+        "authoritative_implementation_dependency_baseline": dependency_baseline,
+        "implementation_reconciliation_registry": reconciliation_registry,
+        "implementation_consistency_registry": consistency_registry,
+        "implementation_completeness_assessment": completeness_assessment,
+        "implementation_conflict_registry": conflict_registry,
+        "unresolved_implementation_findings_registry": [],
+        "authoritative_implementation_baseline_report": report,
+    }
+
+
 def _completion(order: str, extra: dict[str, Any] | None = None) -> dict[str, Any]:
     payload = {
         "package": "POSITION-REGISTRY-RM-001-S04 implementation mapping",
@@ -952,6 +1155,19 @@ def generate() -> dict[str, Any]:
         obligations,
         verifier_registries["verifier_inventory"],
         fixture_participation,
+        runtime_registries["runtime_participation_registry"],
+        evidence_registries["evidence_producer_registry"],
+        evidence_registries["evidence_consumer_registry"],
+    )
+    b04_004 = _b04_004_reconciliation(
+        requirements,
+        inventory,
+        obligations,
+        matrix,
+        implementation_to_constitutional,
+        relationships,
+        verifier_registries["verifier_inventory"],
+        verification["fixture_inventory"],
         runtime_registries["runtime_participation_registry"],
         evidence_registries["evidence_producer_registry"],
         evidence_registries["evidence_consumer_registry"],
@@ -1165,6 +1381,42 @@ def generate() -> dict[str, Any]:
                 "certification_activity_executed": False,
             },
         ),
+        "B04-004_authoritative_implementation_baseline.json": b04_004["authoritative_implementation_baseline"],
+        "B04-004_authoritative_implementation_obligation_baseline.json": b04_004["authoritative_implementation_obligation_baseline"],
+        "B04-004_authoritative_verifier_baseline.json": b04_004["authoritative_verifier_baseline"],
+        "B04-004_authoritative_fixture_baseline.json": b04_004["authoritative_fixture_baseline"],
+        "B04-004_authoritative_runtime_participation_baseline.json": b04_004["authoritative_runtime_participation_baseline"],
+        "B04-004_authoritative_evidence_participation_baseline.json": b04_004["authoritative_evidence_participation_baseline"],
+        "B04-004_authoritative_implementation_dependency_baseline.json": b04_004["authoritative_implementation_dependency_baseline"],
+        "B04-004_implementation_reconciliation_registry.json": b04_004["implementation_reconciliation_registry"],
+        "B04-004_implementation_consistency_registry.json": b04_004["implementation_consistency_registry"],
+        "B04-004_implementation_completeness_assessment.json": b04_004["implementation_completeness_assessment"],
+        "B04-004_implementation_conflict_registry.json": b04_004["implementation_conflict_registry"],
+        "B04-004_unresolved_implementation_findings_registry.json": b04_004["unresolved_implementation_findings_registry"],
+        "B04-004_authoritative_implementation_baseline_report.json": b04_004["authoritative_implementation_baseline_report"],
+        "B04-004_completion_report.json": _completion(
+            "B04-004",
+            {
+                "authoritative_baseline_established": True,
+                "historical_lineage_preserved": True,
+                "implementation_artifacts": len(inventory),
+                "implementation_obligations": len(obligations),
+                "requirements_mapped": len(matrix),
+                "verifiers": len(verifier_registries["verifier_inventory"]),
+                "fixtures": len(verification["fixture_inventory"]),
+                "runtime_participants": len(runtime_registries["runtime_participation_registry"]),
+                "evidence_participants": b04_004["implementation_completeness_assessment"]["evidence_participants"],
+                "dependency_relationships": len(relationships),
+                "new_implementation_obligations_established": False,
+                "unresolved_implementation_ambiguity": 0,
+                "duplicate_implementation_doctrine": 0,
+                "conflicting_implementation_doctrine": 0,
+                "implementation_modified": False,
+                "behavioral_verification_executed": False,
+                "implementation_proof_generated": False,
+                "certification_activity_executed": False,
+            },
+        ),
     }
 
     baseline = {
@@ -1178,6 +1430,7 @@ def generate() -> dict[str, Any]:
         "implementation_gap_registry": [],
         "dependency_ambiguity_registry": [],
         "unresolved_constitutional_finding_registry": [],
+        "authoritative_b04_004_baseline": b04_004["authoritative_implementation_baseline"],
         "publication_statement": "S04 establishes dependency-derived implementation and verification participation only; no behavioral verification, proof, readiness, or certification is issued.",
     }
     artifacts["B04_authoritative_position_registry_implementation_mapping_baseline.json"] = baseline

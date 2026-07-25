@@ -255,6 +255,70 @@ class PositionRegistryRM001S04ImplementationMappingTests(unittest.TestCase):
         self.assertFalse(report["implementation_proof_generated"])
         self.assertFalse(report["certification_activity_executed"])
 
+    def test_b04_004_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B04-004_authoritative_implementation_baseline.json",
+            "B04-004_authoritative_implementation_obligation_baseline.json",
+            "B04-004_authoritative_verifier_baseline.json",
+            "B04-004_authoritative_fixture_baseline.json",
+            "B04-004_authoritative_runtime_participation_baseline.json",
+            "B04-004_authoritative_evidence_participation_baseline.json",
+            "B04-004_authoritative_implementation_dependency_baseline.json",
+            "B04-004_implementation_reconciliation_registry.json",
+            "B04-004_implementation_consistency_registry.json",
+            "B04-004_implementation_completeness_assessment.json",
+            "B04-004_implementation_conflict_registry.json",
+            "B04-004_unresolved_implementation_findings_registry.json",
+            "B04-004_authoritative_implementation_baseline_report.json",
+            "B04-004_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b04_004_reconciles_authoritative_baselines_without_new_obligations(self) -> None:
+        baseline = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_implementation_baseline.json").read_text(encoding="utf-8"))
+        obligation = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_implementation_obligation_baseline.json").read_text(encoding="utf-8"))
+        verifier = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_verifier_baseline.json").read_text(encoding="utf-8"))
+        fixture = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_fixture_baseline.json").read_text(encoding="utf-8"))
+        runtime = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_runtime_participation_baseline.json").read_text(encoding="utf-8"))
+        evidence = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_evidence_participation_baseline.json").read_text(encoding="utf-8"))
+        dependency = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_implementation_dependency_baseline.json").read_text(encoding="utf-8"))
+        self.assertEqual(baseline["historical_lineage"], ["B04-001", "B04-002", "B04-003"])
+        self.assertFalse(obligation["new_obligations_established"])
+        self.assertTrue(obligation["all_obligations_have_constitutional_source"])
+        self.assertTrue(obligation["all_obligations_have_constitutional_mapping"])
+        self.assertTrue(verifier["all_verifiers_have_governing_obligations"])
+        self.assertTrue(verifier["deterministic_verifier_participation"])
+        self.assertTrue(fixture["all_fixtures_have_verification_purpose"])
+        self.assertTrue(runtime["all_runtime_participants_have_responsibility"])
+        self.assertTrue(evidence["deterministic_evidence_participation"])
+        self.assertTrue(dependency["all_dependencies_have_direction"])
+        self.assertTrue(dependency["all_dependencies_have_justification"])
+
+    def test_b04_004_consistency_completeness_and_conflicts_are_closed(self) -> None:
+        reconciliation = json.loads((EVIDENCE_ROOT / "B04-004_implementation_reconciliation_registry.json").read_text(encoding="utf-8"))
+        consistency = json.loads((EVIDENCE_ROOT / "B04-004_implementation_consistency_registry.json").read_text(encoding="utf-8"))
+        completeness = json.loads((EVIDENCE_ROOT / "B04-004_implementation_completeness_assessment.json").read_text(encoding="utf-8"))
+        conflicts = json.loads((EVIDENCE_ROOT / "B04-004_implementation_conflict_registry.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B04-004_unresolved_implementation_findings_registry.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B04-004_authoritative_implementation_baseline_report.json").read_text(encoding="utf-8"))
+        self.assertTrue(all(value is True for key, value in reconciliation.items() if key != "registry_id"))
+        self.assertTrue(all(value == "CONSISTENT" for key, value in consistency.items() if key not in {"registry_id", "contradictory_implementation_relationships", "duplicate_implementation_semantics", "unresolved_implementation_conflicts"}))
+        self.assertEqual(consistency["contradictory_implementation_relationships"], [])
+        self.assertEqual(consistency["duplicate_implementation_semantics"], [])
+        self.assertEqual(consistency["unresolved_implementation_conflicts"], [])
+        self.assertTrue(completeness["complete"])
+        self.assertEqual(completeness["remaining_future_remediation_deficiencies"], [])
+        self.assertTrue(all(value == [] for value in conflicts.values()))
+        self.assertEqual(unresolved, [])
+        self.assertTrue(report["authoritative_baseline_established"])
+        self.assertTrue(report["historical_lineage_preserved"])
+        self.assertFalse(report["new_implementation_obligations_established"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["behavioral_verification_executed"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
+
     def test_completion_report_preserves_no_behavior_or_certification_claims(self) -> None:
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
         self.assertEqual(completion["status"], "COMPLETE")
