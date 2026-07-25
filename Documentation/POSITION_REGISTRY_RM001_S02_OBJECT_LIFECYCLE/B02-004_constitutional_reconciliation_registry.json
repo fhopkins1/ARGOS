@@ -1,0 +1,74 @@
+[
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "object_identity_to_lifecycle",
+    "relationship": "canonical objects participate in one deterministic lifecycle",
+    "source_baseline": "B02-001",
+    "target_baseline": "B02-002"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "lifecycle_to_quantity",
+    "relationship": "lifecycle transitions govern admissible quantity mutation",
+    "source_baseline": "B02-002",
+    "target_baseline": "B02-002"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "quantity_to_cost_basis",
+    "relationship": "quantity state provides deterministic cost-basis calculation inputs",
+    "source_baseline": "B02-002",
+    "target_baseline": "B02-002"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "cost_basis_to_temporal",
+    "relationship": "cost-basis events are ordered by temporal doctrine",
+    "source_baseline": "B02-002",
+    "target_baseline": "B02-002"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "temporal_to_replay",
+    "relationship": "replay preserves original temporal ordering and never uses replay execution time as source truth",
+    "source_baseline": "B02-002",
+    "target_baseline": "B02-003"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "replay_to_recovery",
+    "relationship": "recovery may invoke replay while preserving identity and source truth",
+    "source_baseline": "B02-003",
+    "target_baseline": "B02-003"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "recovery_to_correction",
+    "relationship": "recovery findings route to correction only through explicit correction authority",
+    "source_baseline": "B02-003",
+    "target_baseline": "B02-003"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "correction_to_supersession",
+    "relationship": "corrections may create supersession lineage without erasing predecessor truth",
+    "source_baseline": "B02-003",
+    "target_baseline": "B02-003"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "supersession_to_historical_integrity",
+    "relationship": "supersession preserves historical integrity and auditability",
+    "source_baseline": "B02-003",
+    "target_baseline": "B02-003"
+  }
+]

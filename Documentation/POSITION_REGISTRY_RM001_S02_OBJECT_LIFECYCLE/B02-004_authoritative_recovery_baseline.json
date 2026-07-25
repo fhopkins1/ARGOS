@@ -1,0 +1,66 @@
+{
+  "constitution": {
+    "corrupted_state_disposition": "detect, preserve, recover or mark unrecoverable",
+    "partial_write_disposition": "quarantine and reconcile",
+    "recovery_authority": "Position Registry with Infrastructure custody",
+    "recovery_evidence": "checkpoint, failure, recovery decision, restored state, and audit digest",
+    "recovery_historical_preservation": "preserve all failed, partial, and recovered states",
+    "recovery_ownership": "Position Registry owns constitutional recovery disposition; Infrastructure owns runtime recovery custody",
+    "recovery_prerequisites": "candidate identity, persisted evidence, recovery checkpoint, and integrity validation",
+    "recovery_reconciliation": "unresolved recovery contradiction becomes reconciliation case",
+    "recovery_replay_interaction": "recovery may invoke replay but cannot create new source truth",
+    "recovery_state_reconstruction": "restore from immutable evidence or quarantine when evidence is incomplete",
+    "recovery_validation": "validate identity, ordering, source evidence, and historical lineage",
+    "truth_preservation": true
+  },
+  "scenarios": [
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "process_restart"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "persistence_restoration"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "partial_write_recovery"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "interrupted_mutation"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "interrupted_replay"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "corrupted_state"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "missing_state"
+    },
+    {
+      "disposition": "recover deterministically when evidence is complete; otherwise fail closed into reconciliation or quarantine",
+      "evidence_obligation": "scenario identity, checkpoint, source evidence, restored state, and finding",
+      "history_preserved": true,
+      "scenario": "historical_reconstruction"
+    }
+  ]
+}

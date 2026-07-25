@@ -259,6 +259,62 @@ class PositionRegistryRM001S02ObjectLifecycleTests(unittest.TestCase):
         self.assertFalse(completion["behavioral_verification_executed"])
         self.assertFalse(completion["implementation_certification_issued"])
 
+    def test_b02_004_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B02-004_authoritative_constitutional_object_baseline.json",
+            "B02-004_authoritative_lifecycle_baseline.json",
+            "B02-004_authoritative_quantity_baseline.json",
+            "B02-004_authoritative_cost_basis_baseline.json",
+            "B02-004_authoritative_temporal_baseline.json",
+            "B02-004_authoritative_replay_baseline.json",
+            "B02-004_authoritative_recovery_baseline.json",
+            "B02-004_authoritative_correction_baseline.json",
+            "B02-004_authoritative_supersession_baseline.json",
+            "B02-004_authoritative_historical_integrity_baseline.json",
+            "B02-004_constitutional_behavioral_baseline.json",
+            "B02-004_constitutional_reconciliation_registry.json",
+            "B02-004_constitutional_consistency_registry.json",
+            "B02-004_constitutional_completeness_assessment.json",
+            "B02-004_constitutional_conflict_registry.json",
+            "B02-004_unresolved_constitutional_findings_registry.json",
+            "B02-004_authoritative_constitutional_behavioral_report.json",
+            "B02-004_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b02_004_reconciles_all_series_2_domains_without_conflicts(self) -> None:
+        baseline = json.loads((EVIDENCE_ROOT / "B02-004_constitutional_behavioral_baseline.json").read_text(encoding="utf-8"))
+        reconciliation = json.loads((EVIDENCE_ROOT / "B02-004_constitutional_reconciliation_registry.json").read_text(encoding="utf-8"))
+        consistency = json.loads((EVIDENCE_ROOT / "B02-004_constitutional_consistency_registry.json").read_text(encoding="utf-8"))
+        completeness = json.loads((EVIDENCE_ROOT / "B02-004_constitutional_completeness_assessment.json").read_text(encoding="utf-8"))
+        conflicts = json.loads((EVIDENCE_ROOT / "B02-004_constitutional_conflict_registry.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B02-004_unresolved_constitutional_findings_registry.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(baseline["source_orders"], ["B02-001", "B02-002", "B02-003"])
+        self.assertEqual(baseline["normative_status"], "AUTHORITATIVE_SERIES_2_BEHAVIORAL_BASELINE")
+        self.assertTrue(baseline["deterministic_and_reproducible"])
+        self.assertTrue(all(item["disposition"] == "RECONCILED" and not item["conflict"] for item in reconciliation))
+        self.assertEqual(consistency["contradictory_constitutional_rules"], [])
+        self.assertEqual(consistency["duplicate_constitutional_semantics"], [])
+        self.assertEqual(conflicts, [])
+        self.assertEqual(unresolved, [])
+        self.assertTrue(all(value is True or value == [] for value in completeness.values()))
+
+    def test_b02_004_completion_is_doctrine_only(self) -> None:
+        completion = json.loads((EVIDENCE_ROOT / "B02-004_completion_report.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B02-004_authoritative_constitutional_behavioral_report.json").read_text(encoding="utf-8"))
+        self.assertTrue(completion["authoritative_constitutional_behavioral_baseline_established"])
+        self.assertEqual(completion["duplicate_constitutional_doctrine"], 0)
+        self.assertEqual(completion["conflicting_constitutional_doctrine"], 0)
+        self.assertFalse(completion["new_doctrine_introduced"])
+        self.assertFalse(completion["implementation_modified"])
+        self.assertFalse(completion["implementation_participation_evaluated"])
+        self.assertFalse(completion["behavioral_verification_executed"])
+        self.assertFalse(completion["implementation_proof_generated"])
+        self.assertFalse(completion["certification_activity_executed"])
+        self.assertEqual(report["unresolved_findings"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

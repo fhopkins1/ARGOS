@@ -1,0 +1,84 @@
+{
+  "authorities": [
+    {
+      "ambiguous_behavior": false,
+      "conflicting_authority": false,
+      "historical_evidence_preserved": true,
+      "predecessor_required": true,
+      "successor_required": true,
+      "supersession_authority": "Position Registry",
+      "supersession_owner": "Position Registry",
+      "supersession_scope": "object_identity",
+      "undocumented_relationship": false
+    },
+    {
+      "ambiguous_behavior": false,
+      "conflicting_authority": false,
+      "historical_evidence_preserved": true,
+      "predecessor_required": true,
+      "successor_required": true,
+      "supersession_authority": "Position Registry",
+      "supersession_owner": "Position Registry",
+      "supersession_scope": "lifecycle_state",
+      "undocumented_relationship": false
+    },
+    {
+      "ambiguous_behavior": false,
+      "conflicting_authority": false,
+      "historical_evidence_preserved": true,
+      "predecessor_required": true,
+      "successor_required": true,
+      "supersession_authority": "Position Registry",
+      "supersession_owner": "Position Registry",
+      "supersession_scope": "quantity_state",
+      "undocumented_relationship": false
+    },
+    {
+      "ambiguous_behavior": false,
+      "conflicting_authority": false,
+      "historical_evidence_preserved": true,
+      "predecessor_required": true,
+      "successor_required": true,
+      "supersession_authority": "Position Registry",
+      "supersession_owner": "Position Registry",
+      "supersession_scope": "cost_basis_state",
+      "undocumented_relationship": false
+    },
+    {
+      "ambiguous_behavior": false,
+      "conflicting_authority": false,
+      "historical_evidence_preserved": true,
+      "predecessor_required": true,
+      "successor_required": true,
+      "supersession_authority": "Position Registry",
+      "supersession_owner": "Position Registry",
+      "supersession_scope": "correction_state",
+      "undocumented_relationship": false
+    },
+    {
+      "ambiguous_behavior": false,
+      "conflicting_authority": false,
+      "historical_evidence_preserved": true,
+      "predecessor_required": true,
+      "successor_required": true,
+      "supersession_authority": "Position Registry",
+      "supersession_owner": "Position Registry",
+      "supersession_scope": "historical_record",
+      "undocumented_relationship": false
+    }
+  ],
+  "constitution": {
+    "auditability_preserved": true,
+    "historical_truth_destroyed": false,
+    "successor_object_required": true,
+    "superseded_object_preserved": true,
+    "supersession_authority": "Position Registry constitutional authority",
+    "supersession_evidence": "predecessor, successor, authority, timestamp, reason, digest",
+    "supersession_historical_preservation": "superseded state remains immutable and recoverable",
+    "supersession_ownership": "Position Registry",
+    "supersession_prerequisites": "predecessor identity, successor identity, authority, reason, source evidence, and lineage evidence",
+    "supersession_recovery_interaction": "recovery preserves both predecessor and successor identities",
+    "supersession_relationships": "predecessor and successor chain remain queryable and replayable",
+    "supersession_replay_interaction": "replay reconstructs predecessor and successor lineage without duplicate mutation"
+  }
+}
