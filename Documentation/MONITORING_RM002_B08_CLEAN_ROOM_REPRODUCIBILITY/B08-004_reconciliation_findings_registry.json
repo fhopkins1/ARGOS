@@ -1,0 +1,20 @@
+[
+  {
+    "affected_execution_stage": "authoritative input reconciliation",
+    "blocking_status": "NON_BLOCKING",
+    "classification": "NON_BLOCKING_DISCREPANCY",
+    "final_disposition": "RECORDED",
+    "finding_id": "MON-B08-FINDING-B07-UPSTREAM-001",
+    "objective_evidence": "No MONITORING_RM002_B07 documentation package exists in the repository.",
+    "remediation_status": "FORMALLY_UNAVAILABLE_NOT_PROVIDED_TO_REPOSITORY"
+  },
+  {
+    "affected_execution_stage": "complete clean-room pipeline",
+    "blocking_status": "NON_BLOCKING",
+    "classification": "NON_BLOCKING_DISCREPANCY",
+    "final_disposition": "CLOSED",
+    "finding_id": "MON-B08-FINDING-CLEAN-ROOM-001",
+    "objective_evidence": "Two clean-room regeneration runs completed with semantically equivalent summary artifacts.",
+    "remediation_status": "CLOSED"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "mutation_runner": "Scripts/monitoring_rm002_b05_clean_room_negative_validation.py",
+  "reconciliation_runner": "Scripts/monitoring_rm002_b09_fail_closed_certification.py",
+  "restoration_rule": "control execution must PASS after each mutation",
+  "verdict_rule": "any mutation blocker prevents UNCONDITIONAL_PASS"
+}

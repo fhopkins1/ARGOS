@@ -113,6 +113,9 @@ def _copy_clean_repo(destination: Path) -> None:
         "MONITORING_RM002_B03_IMPLEMENTATION_RECONCILIATION",
         "MONITORING_RM002_B04_FINAL_CERTIFICATION",
         "MONITORING_RM002_B05_CLEAN_ROOM_NEGATIVE_VALIDATION",
+        "MONITORING_RM002_B06_DEPENDENCY_DISCOVERY_RECONCILIATION",
+        "MONITORING_RM002_B08_CLEAN_ROOM_REPRODUCIBILITY",
+        "MONITORING_RM002_B09_FAIL_CLOSED_CERTIFICATION",
     }
 
     def ignore(dir_path: str, names: list[str]) -> set[str]:
@@ -143,7 +146,7 @@ def _run_verifier(root: Path, module: str, execution_id: str) -> dict[str, Any]:
         env=env,
         capture_output=True,
         text=True,
-        timeout=240,
+        timeout=600,
     )
     stdout = RAW_DIR / f"{execution_id}.stdout.log"
     stderr = RAW_DIR / f"{execution_id}.stderr.log"

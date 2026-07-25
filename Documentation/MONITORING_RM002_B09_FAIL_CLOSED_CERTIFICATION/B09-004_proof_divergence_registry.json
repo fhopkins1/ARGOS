@@ -1,0 +1,56 @@
+[
+  {
+    "affected_requirement": "stalled order detection",
+    "baseline_artifact": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610",
+    "mutated_artifact": "775dc2570b02b839f05a95507a19cb6d215588048a16b53c7fcb1fb6b72c8d62",
+    "mutation_id": "MON-B05-NEG-OBS-001",
+    "proof_disposition": "BLOCKED",
+    "proof_divergence_detected": true,
+    "source_evidence_divergence": true
+  },
+  {
+    "affected_requirement": "position limit threshold activation",
+    "baseline_artifact": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610",
+    "mutated_artifact": "7eb57c873f9f4fb196a9c88314c6524c10eadb5ea7b9178a0b0dff1f470e46da",
+    "mutation_id": "MON-B05-NEG-ALERT-001",
+    "proof_disposition": "BLOCKED",
+    "proof_divergence_detected": true,
+    "source_evidence_divergence": true
+  },
+  {
+    "affected_requirement": "critical alert executive notification",
+    "baseline_artifact": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610",
+    "mutated_artifact": "8fd05e96aef67e2c7996a78b53af36ab2ed34d694f553da71ec77c6c7751924e",
+    "mutation_id": "MON-B05-NEG-ESC-001",
+    "proof_disposition": "BLOCKED",
+    "proof_divergence_detected": true,
+    "source_evidence_divergence": true
+  },
+  {
+    "affected_requirement": "history preservation and suppression prohibition",
+    "baseline_artifact": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610",
+    "mutated_artifact": "c00fdad21433dcdcb7c0b21176ab554e45e671c070b26a6474e92b6025797137",
+    "mutation_id": "MON-B05-NEG-SUPP-001",
+    "proof_disposition": "BLOCKED",
+    "proof_divergence_detected": true,
+    "source_evidence_divergence": true
+  },
+  {
+    "affected_requirement": "contract persistence and replay baseline",
+    "baseline_artifact": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610",
+    "mutated_artifact": "3f2a0f4a7b9162b096f8b483a899324167792fb43d358a78a2ea919f741e5096",
+    "mutation_id": "MON-B05-NEG-PERSIST-001",
+    "proof_disposition": "BLOCKED",
+    "proof_divergence_detected": true,
+    "source_evidence_divergence": true
+  },
+  {
+    "affected_requirement": "proof generation from current behavioral evidence",
+    "baseline_artifact": "0662f00b69252ed5938f4ac0afc2ae00ae4b57152efed2e8bd67d1ed526687e8",
+    "mutated_artifact": "1c7ebf016bd30cf183cc83e5f43b5c585d1b80b821b9e91e904edc98b8de07cf",
+    "mutation_id": "MON-B05-NEG-PROOF-001",
+    "proof_disposition": "BLOCKED",
+    "proof_divergence_detected": true,
+    "source_evidence_divergence": true
+  }
+]

@@ -20,15 +20,15 @@ Traceback (most recent call last):
               ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
   File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\unittest\loader.py", line 137, in loadTestsFromName
     module = __import__(module_name)
-  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-ESC-001\Tests\test_trade_monitoring_office.py", line 14, in <module>
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_yassww41\MON-B05-NEG-ESC-001\Tests\test_trade_monitoring_office.py", line 14, in <module>
     from argos.trader import (  # noqa: E402
     ...<11 lines>...
     )
-  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-ESC-001\src\argos\trader\__init__.py", line 192, in <module>
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_yassww41\MON-B05-NEG-ESC-001\src\argos\trader\__init__.py", line 192, in <module>
     from .trade_monitoring import (
     ...<14 lines>...
     )
-  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_03ixojci\MON-B05-NEG-ESC-001\src\argos\trader\trade_monitoring.py", line 298
+  File "C:\Users\Fletc\AppData\Local\Temp\argos_monitoring_b05_yassww41\MON-B05-NEG-ESC-001\src\argos\trader\trade_monitoring.py", line 298
     critical_count = sum(1 for alert in alerts if alert.False)
                                                         ^^^^^
 SyntaxError: invalid syntax

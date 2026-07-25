@@ -1,0 +1,12 @@
+{
+  "extraction": "zipfile extract to isolated temp run directory",
+  "failure_handling": "fail closed when any stage fails or repeated semantic summaries differ",
+  "package_construction": "deterministic zip with generated Monitoring RM002 artifacts excluded",
+  "pipeline": [
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06"
+  ]
+}

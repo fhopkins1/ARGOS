@@ -1,0 +1,3113 @@
+[
+  {
+    "artifact": "Scripts/broker_rm002a_004_gap_closure.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "PositionMonitoringNetwork",
+      "argos.control_panel.PositionMonitoringNetwork"
+    ],
+    "digest": "7f3b9d9ce04ab2238268fcdea1fc5fa36106ce2892ddaeab16bec7173c846361",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Scripts/generate_eoed_evidence.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "58be9b2639da11ab5ede3077be0ef691086dc297b065f172531989e2a9309e65",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Scripts/monitoring_rm002_b02_behavioral_verification.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "TradeMonitoringOffice",
+      "TradeMonitoringSnapshot",
+      "argos.trader.TradeMonitoringOffice",
+      "argos.trader.TradeMonitoringSnapshot"
+    ],
+    "digest": "6025545d64b64ec8ce9b506bb94dcca8aebac35e91b351b03c715c453105e854",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Scripts/position_registry_rm001_s05_behavioral_verification.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "8589956c23d817ebd69932e79252b8103ca11fa1f919de33d21c09daad3a215c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_academy_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "71e3b3111310f214771d77c3d37bc167207165e4cff53a79b9ac49bb87594a26",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_academy_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "6cb062db14fef61aa431eb7bce8584504fb589a51dfb230909b2ceef6bc66ebd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_academy_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b7049f02fec04f549d6a1b62822c682b081056ee70695115722664bcdc952648",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_alternative_data_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a239eada1287a05f71e8430f2d9b199208098fb5be13881e06289a258bf14f80",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_department_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "162f5aa7163faff6b2dadc79d57d48bb5d390119340bd794689aab2972ae5f6e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b536a9b20e76d84e68f8dfa94d19f4dbf378379df13cf8e8ccfda1f9530b26db",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_rm001_office_integrity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "27e91770b2dc5a5dc857f6352ab0f9d51fd5f258d8d7c672a80d412363ed8ada",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_rm002_office_completion.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5da472a5ab33856f4a00ab1c93f0c3488c689b0ea9404d058d58d173b12a30b1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_rm003_office_specification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "615a3fdf66afe76dd08c7c6167fcc24e38b1f9b3465bc0bb7029f2270481d510",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_rm004_office_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "433360bf17f948520c1b11285bd4b6caafc3e5fdb050a595d713777eaaa8b98a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analyst_technical_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "c247b2507b7711036af2cc4bbf7a770167f156f0dfbb72c1e53b454c0b017522",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_analytical_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d1452ffd56a4a73f3a3873052a19e5c635d56bf6df96e5addfef5eb8ecb96230",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "ARGOSControlPanelDashboardTests.test_eo_ck_position_monitoring_network_emits_events_only",
+      "MonitoringEventSeverity",
+      "PositionMonitoringNetwork",
+      "argos.control_panel.MonitoringEventSeverity",
+      "argos.control_panel.PositionMonitoringNetwork",
+      "position_monitoring_scan",
+      "test_eo_ck_position_monitoring_network_emits_events_only"
+    ],
+    "digest": "459c017a9d47543253bc3cdb6511bb5a37486fa81d866396d034547ace957498",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_audit_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1541f688f5a113c3c7e6e1578fc0325471e24262a67400f4f9c7465e8742786b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_auditor_entrypoint.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "fefbe5a5c56246663008722177b01e4e23fb182ff408b98493f08e0a011583f3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_authority.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "819209f3025769d91e3ae9726109c7a51f6bd5e4d228384f3ad20fdf18abe060",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_authority_compliance.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b9682127d2f58c4d7397f75d75e563cdc55694518f427781404f204f8a480e7c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_final_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "96d0d58849adf67617f12033690f7c794fad2a081a586b61b94f52f3438d7507",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_implementation_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a97ea88bc195eae331d512943bd38d84620b719bd389dd9ee4ccb757b445005c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_independent_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1d39d938618b62e1e2a0ce3987d9189a39c403d369abdbc8a67849d81c5c26b1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_operational_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d574ee0805995661d2026d46cd6a0e51a0d3ccd59c1bd0876dc8bc67bd601047",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_package_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "82232f28230a84e22ce06c00d3b1db6914ae73b12f255a3605793d9c6f77b3c6",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_authorization_portable_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "be053eba95decfb24e7dedf3c516565a20b5c12b8d27cbd992733c5fe127c1f5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_behavioral_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "4391a27ed0b22b93760b94f7e34fb49179c7d134f245b1fe7b52dc169cfa0af1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_ecs003_audit.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "501beb0322d2bfb46c1b5f4a1046d9bd39c7292f6c6f31531451a89e48d1f0ab",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_integration_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5f0cefcaa27563fcbd1f00742e15970a7ca418644e50468079dfa9b2047f53df",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm001_s02_ownership_custody.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "2061c7198293736f6571565b6baaf5a59a8ba0b932f0612c27c0e0c14dffac55",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm001_s03_lifecycle.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "37d41ed19b39bd187470c31e8417a3ad2cf110adcc8c860a59558f7f7a5f657e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm001_s04_interfaces.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f640eae66db28e9642081fad7c381296bc09f4943d1e3f69ea271f14369f0279",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm001_s05_evidence_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "424e17ee23e545277ad6fc88952affa017cceaeae2706fa9758858533ad9f75b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm001_s06_traceability_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "4109e831837424a0b4b4426b54c0356da9a2bcb9be8267efe4d4884e05c3d47e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm001_s07_governance_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1b1d83acef4867312e546e93f0c7bf24e8f176a6950876e0276e974e166c091e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_004_gap_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "608a7e4804defc61387548f207d7e3c66b220b6c3445d608ee5446214abebaf5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_005_remediation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d790082342b8423b7fe6f5e8550779629f25047338a720100d1e1b1a88d699d9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_006_behavioral_completion.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "cb1e5f03e19473650b885eaa29217543bef9a9b2f32d1fc9b9004a9b595b6db4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_007_final_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "825e829e4ffe06a3f586bc78a2d54c6225cf670822157d264176fa02fb87aab4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_008_reproducibility.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "477646f03a85bbb3b3ca8f4339d2d1979a23a1bf0bec3585bb1f7101ab4e04b9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_s02_behavioral_verification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f170c088fcbc972c96b3260caf1342c94f0bfa9751abad91e8220bfb7986009a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_s02_structural_verification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "79af482aa11e9f3752b0e548c3fb62898c640802ac3d858411852ccf1317c1e5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_broker_rm002a_s03_proof_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "613cbc6efa1f920f2890924076d76aa9401df97fab84272e324dc85f197df3a7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_bubble_detection_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "114c3c6d34213617fda0860502507621b0922ac258f5c43507ae74de9375c05c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_case_study_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "dceb9246301ddae9d91096caf5f44955ce1e2adc9cd453f88640c67f4835c4b7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_chief_of_staff.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "e0c6339f25c9f066b6d2b042bedb82205be23f89e58eab6b7dac447f912dd026",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic01_candidate_integrity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7344ce596cb5cef194cb98743a4bea6285b84bde5ae8c1680ea1250a451f8966",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic02_recovery_foundation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "dab8758ece5dcb8fe8706c68ca251078978d37cc27576a46e56796aaaa3bec3d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic03_css_separation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7b20b6d0817049e2535fc23d78638ac9d3862c25eaed07595afb8c16c3497f1c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic04_proof_based_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "3d84657caae25d32393266e97f3f605282848cffa8fa5e7564b61351b9bb2997",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic05_authoritative_chain.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "9a707f621f4ae7f7b90c7e4f5b4709549e17b7ea61a0c304610fba19d1506db7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic06_semantic_drift_engine.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5b91ab4afe720dfb06e41edbb47e55d29dac3b7ceedb9388c4866a7186025a9e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cic07_governance_ledger.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "4b323bc3fc9fb7c2acce5c576f2e82499f9f2b7dd0c36c6d3ce86776d89acc2c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_command_console.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a1fd6d337bd2a593a99720cff716fb448f7bee0db7478b02eb346f9ab958142e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_commander_decision_engine.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7fb823ca57aab62837fd7aec24249c083138f1ff6edb2e4d64f36a397f182e50",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_commander_notification_alert_center.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "824e82e6955b48a98b17e3a8663ac7ba172d0b048000a52e285e77d0132c80ed",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_communication_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "941f6f206d3e221fc16732b15c25e83712c38fd8d606499f4cee73034ffd1849",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_configuration_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "93699c5f3819567c93cb1368e3b6b900d3beade35f0cb1228bb01bc0dbbf82c6",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_contract_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a8704d38d951902319940418a3f88bc904bbdf4ec7d7e267ec16f56611f6d64d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cr1_candidate_identity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b098891a40ea6feac0e6a26a917afa0ead8db8b686e17260b0053585d61d5ada",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cr5_constitutional_trace_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "4e8bef2e8b8cb7d87f0c9f77b4c840e30b1887356f5bc7595b3fcf0fce84335f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cr6_cr7_certification_artifacts.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "416fc27015d5cab03e855b9dda11f630cdd03e75b63c8ab1ed42b51df735e9c0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cr8_cr10_operational_campaigns.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "CR8CR10OperationalCampaignTests.test_cr8_records_activity_monitoring_and_reconciliation_requirements",
+      "test_cr8_records_activity_monitoring_and_reconciliation_requirements"
+    ],
+    "digest": "969503a3b9dec723755f34e6f1198b948dd6ba1f82e62a40fa72d88979608c81",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cr_series_audit_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "0a6c50b894b96de8e989f5ce0c022eac26f9f99d9a86a37f81ee72b989f7de07",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cross_discipline_review_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5a5caacf239bcc12d498b9bf0fed3c47e96cb307c8a235f85373066dc6c4ee37",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cryptocurrency_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8549785deff4fa6ad13f7480060d1e0dd6017de38510068a6b513590a0164da9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_cs001_to_cs005_certification_series.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a5caee4f769923c236ed4f945dfa7dac3c393b83a99751ff1bbc70c158067d2f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_css_continuous_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "77415ac6f9f3a8acd89c85f516f430fc049059156606991db4ee4561fe5b20d3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_curriculum_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "e8acee8d781611951707492ca4c14a22c563bb81b31376b922c562e0b3fc987d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_decision_evaluation_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "182fb4475f4c66793f72dc8d7470bd394870437a72a1010f11c35a9c4239dabf",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_derivatives_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "37dbe55001a009f8fc4aa8f6cf9b00f2171b9012ea39d27e16edb069dd01f700",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_doctrine_management_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "2e680c5b555bf69a51099fa0b7799faa894b8866cf5a34ead1f4af2b7d903497",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_enterprise_activity_bus.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "43aec369b20d597d873312b7d21cc45af9ab73cd51c7abae547398977c948535",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_enterprise_command_center.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b9abcf76300aec7f8e60662d0ceed40be7eef5ffcd365e5419c3b81d6eee705f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_enterprise_credit_governor.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b5a5ac56c0761eb68317accbb9a88173c3b5278041509598e23a88df7313d64d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoda_constitutional_invariants.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "168de5c8176ac009d8b1521ea27bbdc18493eeb7ddb4f0d350831ab9a329ec6c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodb_runtime_bridge_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "74afebe6335f2a6c73a81efd6e5c14e41bb6d8bdb21ed627811d76342e1e72dd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodc_truth_promotion.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "bedd70cc6e90b3768bb0ddfc8f4b184523012e854e29c298def2dd9a076f14cf",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodd_transaction_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "722a44be0de479f35322efe4e448e3451b6b4b9405747f6ca775cf486ae81a0b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eode_fault_injection_lab.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d1a6bafe45e453c9c667eb1e254dbeef3072b68b149811b27fa7bdd9eaf0f606",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodf_long_duration_operations_lab.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1770b767288184abda8efb7783f23deb8783e69be6f998330107dee34b10d3b5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodg_read_only_integrity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5044798360f28240476bde645b86860c9176b7080b856009192a58a5bc8a5d2c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodh_synthetic_truth_quarantine.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f8f05de9011d44e6b1fa263a9bb14f92cdb6b50151a4f4bb8fa74ba3fcdcda94",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodi_test_evidence_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "6936b4b293fa96ff038045bac86a77c7175dd57ba598e158c7fff8babea913ab",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodj_market_data_boundary.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8287683996aa05ab37495c77511e0a7f05e0f93b56d40683e9d3cde93623ee57",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodk_bridge_fabric.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "cfa61fe94d4b2240d50879f126d617a9d7af718295cce022dbb2f8c93418a4fe",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodl_office_lifecycle.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7b243c8ce98a04405d2e2d062c438cb8087a1d2b92672b81972ca9a64cb2c172",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eodm_to_eodr_constitutional_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "c545846e994f79848f3069b354c0665b3fded1f6c392fc25e045d471ca64f964",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoea_canonical_bridge_denominator_execution.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "c843f11e4aac378ad7f5b946028042e26ba55b0f46f119316c38ce83da3c89c9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoec_production_synthetic_truth_elimination.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a4da6a484cc9374a5eaef4befd8ea4989b6fd9d7b180e47e5bc493d94b8cc110",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoed_deterministic_persistence_recovery.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "720ec30b26eec6711e0f6a5956c5ac080ad2babe79ba0cbe8ac275bcd7538033",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoee_full_suite_failure_timeout_elimination.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "46774da512171391f28d7900048c0cfc84da49aeb3ca1030f5369f3f167e1693",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoef_wall_clock_operational_campaigns.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "cca776cc7cd1ca025317c68a50601d7578d0c9330b39023a09c67fd465bb09be",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoeg_missing_eoeb_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "70a9de431d1c4485591459eb0ffbd81964368f9361fd44964ed07447e22f812f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoeh_remaining_bridge_blocker_elimination.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "362704e33b858cf29b5b3d996a4ad1cf41969fb07de0265c4eebdb22ce4e2378",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoej_full_suite_failure_error_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "024d26efd916b4dc821272daab34c6189cd66cbd973f8cb4b3112f3446de76f9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoek_to_eoeo_preflight.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7c081b845eb9204857abd27b9608bcee0419aa573aa8a222b1c01a41d8d25e9f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_eoint_constitutional_intelligence.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a3322fbff1e6ca75cf59cf6c6face9bf5b6f58226e07b19b96bf2eba0eaf59e8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_event_intelligence_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7f58cee7342eb4ad740bd0db08b242477f53ada2cc5594e61d7f188a6379b1e8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_evidence_evaluation_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "010ed7ddd628438619dcab4ed9fb482d8c5e01cdff5995463a6f6c2dc8285e63",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_execution_quality_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "507b2d522e9bfc394007c6b193c001aef6c0769e707e1f0c3f215921c3784524",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_executive_dashboard.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "bcc1ddfb9eba94ef4877d1bd271dd287797fa042cf110851293a877db01a983f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_executive_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5040f387d5800db586b325dd274a119ffef7ec3b98e73d7c17165d2e2f7c4ff5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_executive_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "aedc8bdd6e5e87c469abd1ad50a43e565bccd08aea5df38939647f26a9bb0399",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_executive_workflow.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "22e030bc7959569b41494d3cd5f0a1d441e1f9154b9d67fdcc6f39a78d3a1590",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_finance_tutor_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1904215ce7ad09d47bde583e36fd37208995affd9ae7f873f7580e9585bf985e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_foundation_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "616c06f7c07ec4aadb393534dde76d1901134b0492a52d9fca568c3f2166d46a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_foundation_testing_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d1aadb1eb6f237f1a9882a5dda74c396707eef0cfbf66b967ef504780b1f4fb3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_fundamental_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f0354d33b3c7248d30f4cd340c87e85ab9d710b22af60ac86146f48f855d5a61",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_fundamental_research_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "e8f0bc128ee97d2a9bbb932951c4bd8c38aa2747092ad11e72b1e88525c57bfa",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8fd72a0153b8ff79387282bc1e3f454d6c9b179e2d7f3d81f87ac15d3629e923",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_historian_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1c179521c1073648410dd3c837af11fcc32bfb2960f533f2ffeb9407eb59aebe",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_historian_group_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5b4e69915e2c0c0bc31b2b9dc7c4737f25b6d5ae100297be26f63d12d9c70feb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_historian_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "2115173ff0d308b82f15a0e0f16d035e0082270d456dfe11530d70dc41e0d875",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_human_override.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "9b1c8a5e5b4ab19d270a23033bc10632b9b43b470a761203279a009636ee73d8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_hypothesis_validation_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "323ed72908bdbcbe7994c7d3fffacecc00f8fe8c3d503428008fd7cdd2a92d97",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_identity_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "156b392f9cebb2521650bc239ac8b11406dd44b53207d450a2f534829c87e7b0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_ifvr001_phase35_truth_envelope.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "fd311645810598e72a2650c91375273a3d93d1f38c59b883a0d10a6f75d2066c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_ifvr001_runtime_convergence.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8c1dd5de9fbe648131e224c9265e95587839d48f29c884d8615962709d6e9e3d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_inf001_infrastructure_boundaries.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d5d0bf07274942fbf7e862ff1c293922a6a7891ebacc9e51a2992920af6e0f55",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_inf002_to_inf005_infrastructure_doctrines.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "542959e47ea4b467c12575e5c56ad58f3445d4ad6c9cfd356c56932b93a95b2a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_inf006_governance_doctrine.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "INF006GovernanceDoctrineTests.test_authority_hierarchy_prevents_runtime_monitoring_or_reporting_override",
+      "test_authority_hierarchy_prevents_runtime_monitoring_or_reporting_override"
+    ],
+    "digest": "168d76630fe1323fcf7f3b5a2e6afddfd101c4cbf285724a048b0951ce777889",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_inf007_governance_additions.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "dc17f300d7d999232254655a185c3a287296a39868e64d1cd67879ce11633fd5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_inf_mo001_to_006_infrastructure_remediation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "42a9a95872e12301f4ec7049efa42f5a2af007e409f7eb65d0e39c4f79e28935",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_inf_mo_revision_certification_execution.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "eaf0454389d2ff9fffe85dde44aa6dd2a672e92129ab8c7e96d5b11d3e787951",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_infrastructure_resource_management.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "13d3f6cf8a92af68ade03dba4bfe39dce9d0c9209b77e4d4e1a6cf7635431f57",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_institutional_knowledge_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "243c2a3545d6f8cf720c66a83f0714c2ed42cf195305271ca60ee69288910646",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_instruction_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "56c8086235c47f184ba58103258d890ccc570e8a96441b9e0a5f11a0cea4d961",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_interactive_organization_explorer.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a97999bff3bc2067b2f755924c914cec25ebfabb779a725d160a278c78dabb04",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_knowledge_assessment_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f94b3d7eb7eef422d6c0b53813a3d24afc65ec74e9786c20734564f4ce59ec69",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_knowledge_graph_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "09f7e19b8cd2f5e91c6d566762b9b020bea67544df633bd3a7d29b7f121812e9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_learning_integration_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a38a34d7f9c4c6bcd5e2bd680dfd88583e86c91c4df6063f3176a22dfbd1f358",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_librarian_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "6c217910fcc1e82c5d329c66950c612fcee6b3554eeae4554dad4d882e57235d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_librarian_group_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "23cfc84253c1972286b4538d8bdcf2946abc5677e1b629e18e974f9efd4e0bf4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_librarian_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "0f023639476ae8103c129f5b523f4230a3858e966c0e61a73163de6e93734bb7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_liquidity_risk_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "ebea8e8a99bfa8adccc1745016ed4599469b7251c62204d1be857da04f663988",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_live_portfolio_performance_console.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "864854f476fa182e6dadde7afe344f73f61fec47efe54ea1912a147ba991c0f3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_macroeconomic_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "00d44c943b30f3cdd41f362e0f4f41187a992776758d410f1f8492584a5ebd8b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_macroeconomic_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1d78c41a503529e2a845e0b53827f97dc293d7c0fee7afdab4b76233d3c4a821",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_model_calibration_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8c745eced8ef50948ccca9d5df86ebdb184842dd41871020f18548525f34bd6b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_ecs003_audit.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringECS003AuditTests",
+      "MonitoringECS003AuditTests.test_behavioral_monitoring_verifier_executed_successfully",
+      "MonitoringECS003AuditTests.test_certification_blockers_are_objective_and_open",
+      "MonitoringECS003AuditTests.test_dependency_inventory_uses_objective_import_evidence",
+      "MonitoringECS003AuditTests.test_final_verdict_fails_closed_without_remediation",
+      "MonitoringECS003AuditTests.test_required_audit_deliverables_exist",
+      "test_behavioral_monitoring_verifier_executed_successfully"
+    ],
+    "digest": "169a35f81f5e24b56eb6abfe3edac68dbd9ec92496a8876f1c156891a0475d05",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm001_b01_constitutional_baseline.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM001B01ConstitutionalBaselineTests",
+      "MonitoringRM001B01ConstitutionalBaselineTests.test_b01_001_purpose_authority_deliverables_are_complete",
+      "MonitoringRM001B01ConstitutionalBaselineTests.test_b01_002_enterprise_boundaries_cover_all_required_offices",
+      "MonitoringRM001B01ConstitutionalBaselineTests.test_b01_003_sentinel_separation_is_non_overlapping",
+      "MonitoringRM001B01ConstitutionalBaselineTests.test_b01_004_escalation_never_authorizes_action",
+      "MonitoringRM001B01ConstitutionalBaselineTests.test_series_completion_preserves_no_implementation_or_certification_activity"
+    ],
+    "digest": "cd3aa865f0fe88705fe1a944677285222e71729cd25b2fd31ff20321cb73a05e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm001_b02_object_lifecycle.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM001B02ObjectLifecycleTests",
+      "MonitoringRM001B02ObjectLifecycleTests.test_b02_001_canonical_objects_are_unique_and_owned",
+      "MonitoringRM001B02ObjectLifecycleTests.test_b02_002_pipeline_is_immutable_and_separated",
+      "MonitoringRM001B02ObjectLifecycleTests.test_b02_003_lifecycle_threshold_replay_and_recovery_are_defined",
+      "MonitoringRM001B02ObjectLifecycleTests.test_b02_004_historical_integrity_preserves_lineage",
+      "MonitoringRM001B02ObjectLifecycleTests.test_series_completion_preserves_constitutional_only_scope"
+    ],
+    "digest": "c14dae6541a1105e75af310253e56e7ef8e5311685d6438fd92e15648fec0211",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm001_b03_interface_evidence_traceability.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM001B03InterfaceEvidenceTraceabilityTests",
+      "MonitoringRM001B03InterfaceEvidenceTraceabilityTests.test_evidence_doctrine_rejects_non_event_evidence",
+      "MonitoringRM001B03InterfaceEvidenceTraceabilityTests.test_interface_and_dependency_registries_are_complete",
+      "MonitoringRM001B03InterfaceEvidenceTraceabilityTests.test_requirement_identity_and_traceability_have_no_orphans",
+      "MonitoringRM001B03InterfaceEvidenceTraceabilityTests.test_series_completion_preserves_execution_boundaries",
+      "MonitoringRM001B03InterfaceEvidenceTraceabilityTests.test_temporal_freshness_and_duplicate_governance_are_deterministic",
+      "Scripts.monitoring_rm001_b03_interface_evidence_traceability",
+      "monitoring_rm001_b03_interface_evidence_traceability"
+    ],
+    "digest": "687eee82693bf19d10b2b2582105c15ea5fa2de25e7795432eeabed851c564f0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm001_b04_final_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM001B04FinalReconciliationTests",
+      "MonitoringRM001B04FinalReconciliationTests.test_completion_report_preserves_execution_boundaries",
+      "MonitoringRM001B04FinalReconciliationTests.test_constitutional_consistency_has_no_open_issues",
+      "MonitoringRM001B04FinalReconciliationTests.test_dependency_and_traceability_are_complete",
+      "MonitoringRM001B04FinalReconciliationTests.test_final_audit_authorizes_freeze_and_transition",
+      "MonitoringRM001B04FinalReconciliationTests.test_requirement_population_is_canonical_and_not_orphaned",
+      "Scripts.monitoring_rm001_b04_final_reconciliation",
+      "monitoring_rm001_b04_final_reconciliation"
+    ],
+    "digest": "3f51470e6f3e318c1b6fe8d9c18ed5fa086afe697e6dc86f2e7dab4becfbc638",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm002_b02_behavioral_verification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM002B02BehavioralVerificationTests",
+      "MonitoringRM002B02BehavioralVerificationTests.test_behavioral_reconciliation_is_ready_for_b03",
+      "MonitoringRM002B02BehavioralVerificationTests.test_bounded_unittest_execution_passed",
+      "MonitoringRM002B02BehavioralVerificationTests.test_completion_report_preserves_order_constraints",
+      "MonitoringRM002B02BehavioralVerificationTests.test_observation_evaluation_and_finding_campaign_complete",
+      "MonitoringRM002B02BehavioralVerificationTests.test_response_and_resilience_campaigns_have_terminal_evidence",
+      "Scripts.monitoring_rm002_b02_behavioral_verification",
+      "monitoring_rm002_b02_behavioral_verification"
+    ],
+    "digest": "ba0a13326ea86818b3ed3675191fcf3fac970f4be3f04dbe6adda1b9d35964ac",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm002_b03_implementation_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM002B03ImplementationReconciliationTests",
+      "MonitoringRM002B03ImplementationReconciliationTests.test_candidate_reconciliation_ready_for_b04",
+      "MonitoringRM002B03ImplementationReconciliationTests.test_completion_report_preserves_constraints",
+      "MonitoringRM002B03ImplementationReconciliationTests.test_defect_inventory_contains_no_verified_implementation_defects",
+      "MonitoringRM002B03ImplementationReconciliationTests.test_remediation_records_no_code_change_required",
+      "MonitoringRM002B03ImplementationReconciliationTests.test_targeted_regression_passed_for_unchanged_candidate",
+      "Scripts.monitoring_rm002_b03_implementation_reconciliation",
+      "monitoring_rm002_b03_implementation_reconciliation"
+    ],
+    "digest": "2b988f1e1a356082642a1e80a942fd5855a58beb9f6cbc30fd14d4fedc144ffe",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm002_b04_final_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM002B04FinalCertificationTests",
+      "MonitoringRM002B04FinalCertificationTests.test_authoritative_proof_baseline_covers_requirements",
+      "MonitoringRM002B04FinalCertificationTests.test_certification_candidate_has_no_blockers",
+      "MonitoringRM002B04FinalCertificationTests.test_completion_report_preserves_constraints",
+      "MonitoringRM002B04FinalCertificationTests.test_final_ecs003_verdict_is_unconditional_pass",
+      "MonitoringRM002B04FinalCertificationTests.test_reproducibility_runs_are_deterministic_and_independent",
+      "Scripts.monitoring_rm002_b04_final_certification",
+      "monitoring_rm002_b04_final_certification"
+    ],
+    "digest": "1d86a19bce71166cf9c0fd65b715f21c454ee76dc53b5d5968445a0180e04cc4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm002_b05_clean_room_negative_validation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRM002B05CleanRoomNegativeValidationTests",
+      "MonitoringRM002B05CleanRoomNegativeValidationTests.test_baseline_reproduction_passes_from_current_execution",
+      "MonitoringRM002B05CleanRoomNegativeValidationTests.test_clean_room_excludes_prior_state_and_git_history",
+      "MonitoringRM002B05CleanRoomNegativeValidationTests.test_false_positive_controls_and_certification_system_are_clean",
+      "MonitoringRM002B05CleanRoomNegativeValidationTests.test_final_verdict_and_confidence_are_authorized",
+      "MonitoringRM002B05CleanRoomNegativeValidationTests.test_negative_mutations_fail_closed",
+      "Scripts.monitoring_rm002_b05_clean_room_negative_validation",
+      "monitoring_rm002_b05_clean_room_negative_validation"
+    ],
+    "digest": "8af576f1a258e61045890ccf3cb5d27aae6d2bf36f77e7e864feeae31f7612df",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm002_b06_dependency_discovery_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRm002B06DependencyDiscoveryTests",
+      "MonitoringRm002B06DependencyDiscoveryTests.test_completion_is_ready_and_reproducible",
+      "MonitoringRm002B06DependencyDiscoveryTests.test_every_requirement_has_terminal_behavioral_disposition",
+      "MonitoringRm002B06DependencyDiscoveryTests.test_fixtures_and_artifacts_are_not_orphaned",
+      "MonitoringRm002B06DependencyDiscoveryTests.test_generation_is_deterministic_in_alternate_output_directory",
+      "MonitoringRm002B06DependencyDiscoveryTests.test_verifiers_have_dependency_lineage_and_requirements",
+      "Scripts.monitoring_rm002_b06_dependency_discovery_reconciliation",
+      "Scripts.monitoring_rm002_b06_dependency_discovery_reconciliation.generate"
+    ],
+    "digest": "ff8cd2d688e2741fe32349fae34c3ceb6555765c8b7e4c4e4714d9c1db98e17d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm002_b08_b09_reproducibility_outputs.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringRm002B08B09EvidenceTests",
+      "MonitoringRm002B08B09EvidenceTests.test_b08_clean_room_reproducibility_is_ready",
+      "MonitoringRm002B08B09EvidenceTests.test_b09_every_mutation_denies_unconditional_pass_and_restores",
+      "MonitoringRm002B08B09EvidenceTests.test_b09_fail_closed_campaign_is_ready"
+    ],
+    "digest": "b32a21d3ae4ad3e1aa6435f7ca94ae6927ad2311fa6e7be837212db7a005f460",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_mosp001_source_registry.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "335df0498a320fa26d8891b721697df662730310d5d939fb912e99dd84a63adc",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_mosp004_seeker_evidence_acquisition.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "0c327202cc06846305c2f5659d2ed1a18dd93c29c039737683c9da754775d684",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_mosp005_to_008_search_doctrine.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b53d9b127bacac16946704bcd9e00d825343b7574681423d1e02904d8803cf1c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_mosp009_to_013_search_governance.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7dc5ab60e102aa301275889c2c589308c47e50f6d4335886bbd0ecce039f704e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_motr001_to_004_truth_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "61b533acca4fbedcb6ae3c2712ca507e549a6c946f72fca8391af572312e529c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_motr005_to_008_domain_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a65dd9cc079c97dea6dface89c1ba4afc24ab0a6528a1952fcab8f597d32d26c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_motr009_to_012_operational_reconciliation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "50637d3f6423f65be31072e9dba8b333ace4ac57b3c2abf353b9f544cba5be3f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_motr013_to_016_office_dispositions.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "466230bf68a8059eb964c385cc4162631a09376e88d51c80921d22dd3b8d7c9e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_motr017_to_019_certification_controls.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "db2b2302a2408efef4acafcd632bed3b07339744dadc01156b2c75c802abcc87",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_news_sentiment_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "47b427989fecc9e5d367a4c40cea1d3b3acfa5ebe1a8f7d0935e63a8c7e23748",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_office_operating_modes_scheduler.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8a312830f67b04f232f76a15fa5de46e226cf5b3d4048c67c5aedd2a97c89aa4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_options_flow_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "ef3f365975d08523c676aaef2a8fcea1fa2a35abce55cf5d6f8c32735fe4bb66",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_or003_paper_brokerage.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "PositionMonitoringNetwork",
+      "argos.control_panel.PositionMonitoringNetwork"
+    ],
+    "digest": "92adf8021215e3528a62929746046a860aefb90e8d2c045d5166ceb560695141",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_or004_position_lifecycle.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "83afdcf920ae9869f9e7ea266362fd7dfcdac702899accde3eb5f90339aac9f3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_or005_canonical_runtime.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b1d143fa9e4ea012bafd16d5b15c3ab197dea1ce757773adb04f89f8ebd27d38",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_or006_enterprise_persistence.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "94f3e683e872d9d0ea435bf2c5a25fc70aa559996af21003e180d478479f8144",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_or007_enterprise_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "36899263d82cc9138d01477b5f80d66a0b97839d8b9d2d182fe173ea4433e874",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_order_management_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5af87b54c29a615336b558dcbeb7f87918e49f759af3579ead05dc8ca392b7ed",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_performance_measurement_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b5efa93c700012cde53defa2dc93fe7e17ea057021864db63e68602a6f42d8eb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_persistence_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8d0abbff0d7fcd3e24dc7bb4af23140fa6b5677a77db841ae298cef3c102936b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_portfolio_risk_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "ce38c6c18b47a7d1b05fe7f68b40715a40d5b8f7030e86c77e89cb6bdf562fa1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_management_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "aa0873a5b8da95becfd99a3c597e7fe815241b95357761ce2f2a4979dff9dd13",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_ecs003_audit.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "e6bd344ece0df57c1f35855b61c42666175cb991d2d2d7ff6f704e6713f1e65d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s01_trading_boundaries.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "40172d2acc3d4e691ed6977e2280f429434320c0aa81700ed775081dc324f916",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8b8088d6c5d328fe1a72d086db88826a6eafeb03a1583cced2ca5c6bc38de64f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s03_enterprise_governance_boundaries.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a03232d9ad2a50f20a8231aa9f27632a1dbeee51093d436784ebf67e17fc5f32",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s05_enterprise_dependencies.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "e04f0fe1ec5d373839577497a13e4b5c99566bcd998cd3c96c456975d5d8c87b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s06_constitutional_boundary_baseline.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f3bc61ed97ac41b468c61f7e9a1088cf618c653fb717fa687106a70140772337",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_constitutional_baseline.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "098260ea9b20a6f26bd8e996f117c61b9e3fdaee03f0e4074a4058567b291332",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s02_object_lifecycle.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "af4cba3e8914e190eb904ff0fdb32b702b92249d5824d3674a3ee6fa67b33281",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s03_interface_evidence_traceability.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "4e6c0fe8bd776c939a5ba167ebbd2f858ae2ced30bd886aea1f077d8931d18f8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s04_implementation_mapping.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7cb82bacc62581082b4dbd5a58c74f89823e6809b1cc38598bc6a21387af2061",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s05_behavioral_verification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1e39bf3f847b3afd0f15c549e4d6b6efcbb62d4380d3614b374e908022f3aa39",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s06_final_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "03c6ce5e91b1906fb6fc31a27d5dd000f8e9958678196b349343364045dfa1ef",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm002a_final_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "edf7554bbb3c0e10e1c6c5e5140e6d21d0c9ec550aa00f377ccf816346dc8ce6",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_position_risk_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "ee7c0d6b7218ac762010f8780966d2624461dce10fc3badbdc8a28f48eeb8552",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_prompt_evaluation_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "306d894d6ffba1904b7f3413212660ead120883dcfa7f92ac022a73500b05849",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_prompt_specification_repository.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a3baea06205d01f55f2c621c19336bccf57ebb94ce0ed16a3622014d6c3c1d9d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_recovery_planning_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "df10e8a5797b87203ba821d096a4745906186a81d475196d7bf8b0423dbbbf56",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_repository_structure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1976b1bb3dc7cf2919d20a5baaef2aa6e0a84f10bd59e0368cedd6ed9ebf72af",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a4519a8ab18d92c5805c7698f6acbc8b62acfa6e15caf901d5362dd1c8cb5bdd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_interaction_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "e6ef789e304f989fb8d1d02416f2de8752c106c36a77020223b395d0b262551c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_m4_operational_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "eac1c9edf508142dccb3d5f782ddb01218991c57d6659cb8e9133ccd13604dd3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_office_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "3479ef44448499c5f6f7e6c580a6ccdb825e3950f4fe34f9bea27dad5dcd5f30",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "1c112439f357c62228aa19690188547940c30c8539c434541cb62e42c7f40c2c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm001_office_integrity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "0954d78a708ee8bdc07fb91514254f9c73537cea8b428a274430dfbed2df4a1c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm002_completion.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "678822a75aed133577f35b39f4d35fb55006a0562ec0de5d9808137994265e99",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm003_closure_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "086b6f6ce3ace737d1a150798331f5b2974809e189214961480277746b4b87b1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm003_object_foundation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f215f4a52e251975cc11bdf4ddcbbeab18bacfd4fc44ebe5266125aa8cbde0c5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm003_specification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "52aa26fa2600fe59eb20c5eb8660ae94814c5f316342941969f14010d9b5dcfc",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm003_state_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "fb21efbb888c418224a7505fd3fdc9ffdfd3cc456f18cd61986a495b0281d9f9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm004_certification_completion.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "71218169430b813c0471f13d30f54cf478f6b37cb014517b6bce866dc5eb154b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm004_closure_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b2e5f450e930fc83d248c02a1e63a545a3df3d41919d8a78fb1265d551772614",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm004_foundation_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "6e36a6a36aaa7f5095ae5d21755c8549b0790481678485a540917f04f9eadde5",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm005_candidate_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "2a8a01f45338bef0114b95b6bacb3ed91fb84a556af1985bd8730ca8da1eaa21",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm005_closure_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f28033c11695511bc3ed7db1c3b233396815cb357a57f4948a3e9b5f5d9234a8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm005_execution_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "0e51aff47ffe1345f31564f3dd12052ad19fbabb8c0b968d5a01f07f13e41fc6",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm005_registry_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7d8b32e3b3e1ba34ad6aa0247891f0c90b3a0c3872a25ae38d53709c7c58a009",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm005a_operational.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "6b061157734b306d7ae691905db11b8f2811bb53bc77fc5efbbd0c478018f610",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_risk_rm006_independent_certification.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "492a38cdd5f8dca67966106f0f1731a41b854e9ae2bbe83fc4dbfc309b3f4ee7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_seek_rm001_to_007_office_integrity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "f08e9f5a5e4e0d3c04b53bf002c1b0a0b1d114145fe179b08db1e1e183e0ee8e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_seeker_department_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "c8ee44241323b276f1fcafb55f36b09355ba552cce65aca078717fab17855e29",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_seeker_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "fb54f44661e8da7152cfe66608f43fa4543b4b55c2398584234402b29cab4c9f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_sent_gov019_to_021_governance.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "8619a50f26a224d4ef97fa02d1899b88e1ba5360f1d8b9d0ca63125cb601af66",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_sent_mo001_002_canonical_runtime.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5196acebad22acae8cc617d4d49f80f042b5428d42365169de64d71c0408ae29",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_sent_mo001_to_005_sentinel_observation.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringObjective",
+      "argos.sentinel.MonitoringObjective"
+    ],
+    "digest": "79d3c66ff0c127f3cdf58d0b8299ed179ffc1595bfd8586a06e1fe42d160a131",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_sent_mo_runtime_certification_revision.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "MonitoringObjective",
+      "argos.sentinel.MonitoringObjective"
+    ],
+    "digest": "fc2b94a5429f0b9dda183fe552000dbb6a4adc7f1f41a61ceb65860cbd80a0e7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_sent_rm002_certification_support.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "55f5faf3cde8fafece39a8280907fd4403172d6dfdf6435c397988dc414358aa",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_sent_rm003_office_integrity.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "33ae5e5fa8535a4791b10485d57edffff64c6ba7d59136dc0f0daa4b12506082",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_specification_repository_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "c07fc900909c20f32db21c3bef5a137fe05610619cdeed1ba9e31a93458f53b2",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_statistical_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "27209987b02568a0b2a369a3255d6fec88af64b7bf666567dd4d939d40f4092e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_tail_risk_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d9582e10d0a02ce92b43cdcf0680eeb98f11b82ed1c6aedd16b4bf4651cc20b0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_tc001_trace_equivalence.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "249e66c0586023eea840e7c690c2a21df73fc251d0689da294dc863f86f5e546",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_tc002_to_tc004_trace_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "0012ef653dd0841a990474beebe935f26c3a6de157007a92cc0208ac4ee3f52f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_tc005_to_tc008_trace_closure.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "49cc603ff825c5c09549204b0a5032fff71a8a8fb9f66c02eb53f6d803047cba",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_technical_analysis_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7a93364b4a536c1392870e95915a58a2e8e16f25c86c4ea3b806c9c8091730d7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trade_execution_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a966efc356e5db68eb4a4d432bec06b05c3bc3d4a1a0481461b9357f2cf8bfbf",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trade_monitoring_office.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": [
+      "TradeMonitoringOffice",
+      "TradeMonitoringOfficeTests",
+      "TradeMonitoringOfficeTests.test_critical_alerts_generate_case_file_and_notify_executive",
+      "TradeMonitoringOfficeTests.test_monitoring_report_and_dashboard_are_generated",
+      "TradeMonitoringOfficeTests.test_position_limit_violation_and_dashboard_active_alerts",
+      "TradeMonitoringOfficeTests.test_stalled_order_and_missing_broker_response_are_detected",
+      "TradeMonitoringOfficeTests.test_system_prompt_declares_monitoring_boundary",
+      "TradeMonitoringSnapshot",
+      "argos.trader.TradeMonitoringOffice",
+      "argos.trader.TradeMonitoringSnapshot",
+      "test_monitoring_report_and_dashboard_are_generated",
+      "test_system_prompt_declares_monitoring_boundary"
+    ],
+    "digest": "816a85dd960a89f8fe98c8a657318c2f9678e6713ff3f704e14b184ee0c7a1e2",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_audit_enablement.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "dcf35883cb892428dc60efef60b5820cc7616fe0f1dd8218f853f24d7f3ac527",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_constitutional_governance.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "dde9c48b891c0215edc677bef29af3e10b02fcc8fcd1c8cf4de396c8778542ee",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_ecs003_audit.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b887808710bcf65e5208aa661ed80569c9b9c4be84f8bc7d18ba68e3a6c0a434",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_fusion_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [
+      "TradeMonitoringAlert",
+      "TraderFusionOfficeTests.test_monitoring_alert_and_broker_degradation_reduce_readiness",
+      "argos.trader.TradeMonitoringAlert",
+      "monitoring_alert",
+      "test_monitoring_alert_and_broker_degradation_reduce_readiness"
+    ],
+    "digest": "b16de51b1a49b5460ff23d4e475d9b1eaf9851d4dd8959de80d2772fb00e9c7f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_group_framework.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "a40a5aa21c5bad46bd6ec925417e8eaa54489c6e615d2b2abfbfe355b396a7ad",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "3e357e62196c4c0861327a1ca5f064a44a55acedfa11e7f4b3d13fa86a584b75",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_requirement_proof.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "b74627f5ca424b5fd5ef14a8b0a83884843792ad495c3ea5ca0fb658f4275819",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_requirement_verifier.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "162093d58d789820bcd77fec12ee05029053338e22e90cae4b43f1196890334f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002_constitution.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "9d1e947434b58dc5922881ffff3e47c7e284ad6006d47fd7aaf83a85f929cd45",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b01_runner.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "dd3fae2545f4f81af7cb15f482109da903e01aef720761b86ede4ca1f1129a5e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b02_fill_fixtures.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5c1007f1916da9342a0c388ab5740e0e8d3e7cfaacf21b2251b3bc392789ee81",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b02_runner.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "9a60a9fad6c75db0f6c5301c9ec09a895e09887c9b3476f9b95465cd65be53fd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b03_runner.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "ef18eb409daca8b25b45c0d0c49279504314fae6903daf37a03b1a83778d3784",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b04_authorization_batch.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "d0b85ea06ab516c053ffae591d9c33f67884ac55c287890cd100f4ab1c009477",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b05_risk_batch.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "5630457f5627cfd537e5d643b9f614cd6cfbaca134c40a123ec8b3571122e046",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b06_enterprise_dashboard_batch.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "ee012c364f5db879f3c75055bbdcb9a4c1c2d2c7af3cd236cfa5b289e160d2dd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b07_candidate_readiness.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "37167cb28011af06a3b9ab09ed2bdcf741a8101f49a9ea5efd9f0e8bb1bdcd76",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a_publication.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "7a5d50b9e56c53b5447ca4ccf995e1d2eba1993148083d875dbab91f9c655c16",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_treasury_trading_control_panel.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "28cfd260f7da502c39ab015dc532f4cf7a3a62e683bacd50ad3c7801d356a3c4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "Tests/test_volatility_risk_office.py",
+    "classification": "SHARED_VERIFIER",
+    "dependency_evidence": [],
+    "digest": "92e3359ec0c4f3fc1605ac6ca44a2ba1b0f1815f8349d526c9ac4f4f973ede66",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/case_study.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "d54ca9a5f3255061d4fc8d6a316e4049e305912012099f5f6e4ca796f6d0ad58",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/curriculum.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "edf90bef1e80745e0e7b37bce46d679094508fa2ec24687092daec369a48bb6a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/finance_tutor.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "0cfb4eb867167c67b8b1ea683b411a4035310f6dca1cbdbe886a62f2b2e9ff5d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/framework.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c4520009d59dbd90c1d11e03b3319b24b9ca74d52bbabc537564cb6de9b36b3a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "8b0777aed534109e641b618ff2e77b7bfc31c78732559811f71030b3d55b435d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/instruction.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "eb8c2d2e7912277e4d76a4b90ba686a0879de3c0715b34336ac7ac227825b326",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/knowledge_assessment.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "defed69b7ba260f6254d5528222e39bc24e780173bfdd81226da493fa5224344",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/academy/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "7a0f8af42dd3686b4c9264b1ce2e7cde36731822ad1e8dec57e81d19934a88c0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "85c7ddf6ee3d2ca279af1c9697fcf6d6b438c2cc145146b7d093945b84170b32",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/analytical_fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5bb5e9d23e7fcc64a38765700c56b11c7f8ab70906a4cf1ec0b0bd1cbbb7142a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/behavioral.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "229b1d1dcde878284c9ae60ee444b62f3422ea4b4abb96a618c268e15c28d584",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/cross_discipline.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "52c76128e1dfd5e58ded6274673a3dc7c9aac5a676c30deac46aa6a788253511",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/department.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "8c60ad81b2a5668b83c89c4a5adc9149dce7346582498370574744de4adf57e3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/derivatives.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "8de442f0e32beac55e26d228c70449eea52984084fa8a7b773090867b9059c2b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/fundamental.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "89d4e872c0ee57fdbd8883a3c97442d14d77a39da96a80cdcff43ff5626977fe",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/macroeconomic.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "beaa1870c24ebebd87a2c867b7d9b626ccc3000599cf8f69ca3edbf2106bf21b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/offices.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "013a47fa83f59432fc8646897d00bac50fab55230985e6dc82e07c2212a00057",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "92238d109cb6333f9d177b805bd86d4fe2a78c6c8987cd4e3d4d734b75077a77",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/risk_interaction.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5acaaf01e2db22a46171e0d2593cf8a2d75ac28a10bfe3303304901c0439d692",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/statistical.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "d024747fb5a5f0c08abffb702514344aa71b8e631e5c8783c946eb8823716815",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/analyst/technical.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "a2ec9b5fb0638f4560821be3e4c1653cb83a5e5d2cef11bbb62bc395b6d2ac54",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "MonitoringEventSeverity",
+      "PositionMonitoringEvent",
+      "PositionMonitoringNetwork",
+      "PositionMonitoringPass",
+      "position_monitoring_network",
+      "position_monitoring_network.MonitoringEventSeverity",
+      "position_monitoring_network.PositionMonitoringEvent",
+      "position_monitoring_network.PositionMonitoringNetwork",
+      "position_monitoring_network.PositionMonitoringPass",
+      "position_monitoring_network.PositionWatcher",
+      "position_monitoring_network.PositionWatcherType",
+      "position_monitoring_network.WatcherStatus"
+    ],
+    "digest": "90d1951f4d3241bcdb33af41b540934bc51cee61208ee6b4be09ce9da173be7a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/canonical_enterprise_runtime.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "PositionMonitoringNetwork",
+      "position_monitoring_network",
+      "position_monitoring_network.PositionMonitoringNetwork"
+    ],
+    "digest": "a26b277b94c79d53f4374a14e8889399bdd2e6f9e38c0dc67d1178c0eef2bd20",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/cr_audit_closure.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "_level2_monitoring_plan",
+      "_level3_monitoring_plan"
+    ],
+    "digest": "71907ddedf8b2a2d8c480ad3bf205152c805fac35c411f4718aa3a00b655a67f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/deterministic_persistence_recovery_closure.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "54a1620b8739742d3beb91520244f835cb335dc6199d6700271f9f7984f67c15",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/eab.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "720ddde9d318a85031dbb6bc939f84ef9d76cad75b3083ba031d73565c66ed17",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/ecc.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "_monitoring_snapshot"
+    ],
+    "digest": "1b42223b2b8c0a711fce8433d469639cdc820ca7a12faacb1a01093f80a77207",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_certification.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "f429873c89165d8e25cf016affabb65479d018802360ad69f1869984bf1e308a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_efficiency_analytics.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "_monitoring_coverage"
+    ],
+    "digest": "1d08bfaf2c3e4d6e443039c2db61e169e1118a9ff239624e62e9ead49f107306",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_persistence.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "301c69796e8f09dc7e30a579db524ed5cf06e7740a6b86e866ef7f10e98ca959",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/full_position_lifecycle_runtime.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "ca78240d1d15ac0a6f0a7050968830140754d683fc1271349b5b5adaa983934a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_lifecycle_manager.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "PositionMonitoringNetwork",
+      "position_monitoring_network",
+      "position_monitoring_network.PositionMonitoringNetwork"
+    ],
+    "digest": "5d139e6fdb260eab28feb374ac78b53b6147ff4b5e0a5a88c495819d3e78210f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_monitoring_network.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "MonitoringEventSeverity",
+      "PositionMonitoringEvent",
+      "PositionMonitoringNetwork",
+      "PositionMonitoringPass"
+    ],
+    "digest": "46436055fadbfb02e887c4b765ba7feee8d283ce172581a7be77430593da2b93",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/runtime.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "PositionMonitoringNetwork",
+      "position_monitoring_network",
+      "position_monitoring_network.PositionMonitoringNetwork"
+    ],
+    "digest": "9cc55307c175601fec3d116574bb1fb90fda1bbe0bda9459c99f96dfb2ba8e21",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/sentinel_bridge_certification_support.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "05bd464b4a705506c0d6f69bc4c2505db93a2c8405ac106407a4cc1fd574d01e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/sentinel_office_integrity.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "12499417023923f692124368e6f592968644831eb14bd10cdd6164913f07d34e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/server.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "position_monitoring_recover",
+      "position_monitoring_replay",
+      "position_monitoring_scan"
+    ],
+    "digest": "294edc497351f74bddd9d049451a43611b95001b28f998ece62f56bd19228a0c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/control_panel/wall_clock_operational_campaigns.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "373a6114dc3b524aeefb38dedaf24eb8b7f926a224dc1394e1b067bb61e2f2db",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/chief_of_staff.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "faa83efec3f5bb4b9787c53d300ef78773bf450f7d1633c0fd9aa68da25130f3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/commander.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "55b0b75536ae3cdb64e5b47b41fb262d796a7751f107985a348a1614df5c6124",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/control_panel.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "52ad944a0425f65b80a33051bff147027d5fdf73b40f605c6256c142de4196da",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/dashboard.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "a084b7fa666af73443ed729bd7d8105ac9e6df53f725608d50eb883a40f01cba",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/override.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "f12c60d643d0febd2f0c99c24eaed11caf5e3e3ab419d9fda91181cc6e605683",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "a5239a1520fba6259a49fe26aa86657f5560d9768e767006120ecd98f1e7f4a2",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/executive/workflow.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c5c06ca1f74c601624049e8f9f25711ce39a65dc7e0340e27d9d79b87fd91eeb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/foundation/configuration/__init__.py",
+    "classification": "CONFIGURATION_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "a1a7b71c545664ecb3d353f30bdf7ab5090a768da146b4d3e4b25186efa0abc3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/foundation/persistence/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "8070573eca5dc4d07b9e20f5dcde6b6ad145ff57792752c468d38760d5b9af39",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/foundation/persistence/backup.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "49f501fe435b71b1151f95ecb7515d47ecee8831ae752fd82cf784781ef4da8e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/foundation/persistence/services.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c72501155ade7a49ef1c4e3f5ea4058ebd347396237ae9d6d5aff476c6dc25d1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/decision_evaluation.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "175ca199bff71b352debb7dec67c19580335267f46b4191f84eeb0f3128b1e3b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/evidence_evaluation.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "b9bf93b095cb49d02dc73a7bd77cffe038df7f1d97351d87ac6a4a355231a2dd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "81246df99c1bdc21d837ab1f1665f64c6bdd0534e6673b0aa03d9d649606d4b8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/group.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "d2f62a2d8e7cb42dc389b572cb31cf4e8599a5828072c0c27e25697eead615ff",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/hypothesis.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "e438eb925956a351218288770367fc7cee1f15b83b87c8c7868f13fab0dc5b49",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/model_calibration.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "1d1c308cda09981256d621f0e8e1d0d6d69b404093c8315355e6c747644d8401",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/performance.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "e1f46f5c4c92536153652d39bd4fb98547dcd9845275d28a8a9da8cd0655e742",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/prompt_evaluation.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "1269d722af2ecb3fbfdaab1fc90b5d6c23181433aee3c64d067a68c58c33dbfd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/historian/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "bd4c61f2f2115353a74bc5eac7a9f0a27201500f49acf684d0c0d086fef27116",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/infrastructure/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "dc0ea84917678a11f2462df72f987349fb37c1228d91f77c08fb459ba25c433d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/intelligence/source_registry.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5ea09e5db4c679d99875d610576df1ea467e7842ed8335767c57ba12e525288f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/doctrine_management.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "49b8052c54cf5df7c4ecb6fb834c80a5eaba3ebbd5b2a0bb76457372da3df7b0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c3765521ceab9a80fc44cfb97ae49d89d3917c59ebb387e6e33b431100f3666c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/group.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5462377f765a006c1294fe760a4125b627f90d045ecf8753258e2f875c210ceb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/institutional_knowledge.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "dc781bc8309df0638c4ab5b0fc6d5b56337f9b701d7b80a77368d80859100de3",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/knowledge_graph.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "bec94c4d4c2777c07c695515a7bb38a050128a7e9f3c75446c1db4684852a84f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/learning_integration.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "ddb1124b89fbaf6f6b2c00011244bbde062116b718a0c3b2b9192aaff034e4e0",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c34ecec4490e80b74e959c65647d1c41f46ab93912ea5e55e7d1f78864e5ef24",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/librarian/specification_repository.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "73e6022b912624e970f1b4b06c1359bf192b4736db3bb24bf8e52e6d6849354d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "99aced6c277d601f15b7ba96c2797ebc2bbf6c18de85ee8a6a69835b2c11871a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/bubble.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "bb319274f619f40199cfe1951fcf5dc7e1abe2f193e8f9589af54df6c35b62f9",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/department.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "d5330f8891af8cfdfd7fe39d3198ee555badabe7fc8bb22d730455cbe663570e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "71491ac0c573b7aaf7c62829531d5d85bf2486ea28a44a6dae6963427943618b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/liquidity.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "eaa5164470ed72250bfc53e4d9803e213edcac0e877befd7c71e3b8d2fadb3a8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/offices.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "0323df49ec45bf66cabd2f5d02feb5797f4d9ee7705ec53a06377edc4eb446a8",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/portfolio.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "971fb54f08f0fc267f792abb79b98e4be882e6ad88ad937954da5321d2db863e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/position.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "fa68d5cb654405b81c69299b815c472ca5d0746560109a98ea4b906603780b74",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "9d273df8f83353d4d3cec874909b8ce28bafd1bde251439382a0050bb12627f7",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/recovery.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "7abc70b6d0b869930c9e856dbf3b344cf70774ee863931f0db4f8102964bf62a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/tail.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "91562a85428b75d42b47a4ff8461724a25d5c7664c781f91986f387ca1eb60a6",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/risk/volatility.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5afad058041cd38e1d0daa0076a4b581fbc88c483081cedd8d3695ad5b4408eb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "f5c0fbb43ef8e02a885030ffab70c72c52a81aeecb98d3993c924029a43b3f7d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/alternative_data.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "f8f6b043ad08fe8514b58fa0a9718034084878c1cb6504858ca383a4ae163144",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/cryptocurrency.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "a6758ff5fe95d29ccfa55cdf3eae5054a669292954a828b216dee30ff594536f",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/department.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "80b85781b25ee054092871ea3876fb39ea44f4b16e9c06960735d0ac0159409a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/event_intelligence.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "3fa65701a83724074afd85de1f01882ccbe39b930fb8bc5a933c7b02050467fb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/fundamental.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "51d8e3076e3e97fc3ac6332daba67c9b2987c874a7696fa7255b8becd5975e13",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "705fa98b009dceffbd50fd263999bf8104a63595f9ed7616b883392871734db2",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/macroeconomic.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "86a3e78f157d9e27b8e1261216ab928565eec2c7eb559d3318153e11a07a81f2",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/news_sentiment.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c8aa6dbfcdc8859d3bb52d228cb7967dbeae68fdeef00c246cf97ce608b9aceb",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/offices.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "f40f765291a4d6c265c9a59a870a8cf1b7500785ed8164672f6fafb6cd769e7d",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/options_flow.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "f799e7224e2e482de7015ea509cd014f801d79aaa719c880a62fb4ed79f5250e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "a9a5894b9824e31e1ebbcd7c7fdb9d9396a8751378e4128646a9214a233ac0bd",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/seeker/technical.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "c9486c55305ae9f977e9218bc7eebe828ec84dfd2fcc367c76c0c5b3289f3fbe",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/sentinel/__init__.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "MonitoringObjective",
+      "constitutional_observation.MonitoringObjective"
+    ],
+    "digest": "4ee4de3ce1e74277ffdfa887c38820ecd23eabcc885375f4ebaa66fa8948f86c",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/sentinel/canonical_runtime.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "MonitoringObjective",
+      "constitutional_observation.MonitoringObjective"
+    ],
+    "digest": "ea3552a28728f9bf8b5aab465d51f349c49d1c8afd7d8d8741952544f60c6a31",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/sentinel/constitutional_observation.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "MonitoringObjective"
+    ],
+    "digest": "bf3e0072257dca3f08b587cf6847c51e380d9b1dd1283304ac6c08480bbc8f78",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/__init__.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "ExecutionMonitoringEngine",
+      "TradeMonitoringAlert",
+      "TradeMonitoringCaseFile",
+      "TradeMonitoringDashboard",
+      "TradeMonitoringDetector",
+      "TradeMonitoringOffice",
+      "TradeMonitoringSnapshot",
+      "TradeMonitoringSystemPrompt",
+      "trade_execution.ExecutionMonitoringEngine",
+      "trade_monitoring",
+      "trade_monitoring.AlertPriority",
+      "trade_monitoring.MarketStatusSnapshot",
+      "trade_monitoring.OperationalTimelineBuilder",
+      "trade_monitoring.OperationalTimelineEvent",
+      "trade_monitoring.SystemHealthSnapshot",
+      "trade_monitoring.TRADE_MONITORING_OFFICE_ID",
+      "trade_monitoring.TRADE_MONITORING_STAFF_ID",
+      "trade_monitoring.TradeMonitoringAlert",
+      "trade_monitoring.TradeMonitoringCaseFile",
+      "trade_monitoring.TradeMonitoringDashboard",
+      "trade_monitoring.TradeMonitoringDetector",
+      "trade_monitoring.TradeMonitoringOffice",
+      "trade_monitoring.TradeMonitoringSnapshot",
+      "trade_monitoring.TradeMonitoringSystemPrompt"
+    ],
+    "digest": "48f89aa0902f834ddbe9901a000120f0c6886f1e23be1daecfc16ef4e5994947",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/broker_integration.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5b2cfbe6e794df93661e522ba134c865a0caed191efe486588200d09c4943e27",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/execution_quality.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "050f97cac86e2da1dad7450e331ad0e153ac2731f876948176ae7fe334dfb7ff",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/fusion.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "TradeMonitoringAlert",
+      "trade_monitoring",
+      "trade_monitoring.AlertPriority",
+      "trade_monitoring.SystemHealthSnapshot",
+      "trade_monitoring.TradeMonitoringAlert"
+    ],
+    "digest": "8dc5f91f457a9e186d79de148c967dd08b1c74a06da14a24a8a8a8f5cef5db46",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/group.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "94d8d24e0d0eb726735c15ba4f2b8554e0cb22e6b9fcefa707718570bc6a542a",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/order_management.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "bc017f9429e67e77f8d4824f90265b2b6e80ebc74190ec1631e74145fa361cf4",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/paper_brokerage.py",
+    "classification": "MONITORING_DEPENDENCY",
+    "dependency_evidence": [
+      "PositionMonitoringNetwork",
+      "_notify_position_monitoring",
+      "argos.control_panel.position_monitoring_network",
+      "argos.control_panel.position_monitoring_network.PositionMonitoringNetwork"
+    ],
+    "digest": "422cc815e7a37c4e8f70379a7b95d39b304e3f36a4e40a23c026b27c9fb1d76e",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/position_management.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "1901c50dec263459294e72bb6457b6a1fe3be5120299b433ec0174cdb1667322",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/readiness.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "TradeMonitoringAlert",
+      "TradeMonitoringOffice",
+      "TradeMonitoringSnapshot",
+      "_check_broker_order_position_quality_monitoring",
+      "trade_monitoring",
+      "trade_monitoring.AlertPriority",
+      "trade_monitoring.MarketStatusSnapshot",
+      "trade_monitoring.SystemHealthSnapshot",
+      "trade_monitoring.TradeMonitoringAlert",
+      "trade_monitoring.TradeMonitoringOffice",
+      "trade_monitoring.TradeMonitoringSnapshot"
+    ],
+    "digest": "c2234ec8823680893b1f1a41ee635c5369b10cba2e4d593c05d4219e682f18b1",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/rm002a016_b06_enterprise_dashboard_batch.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [],
+    "digest": "5a551a9a4fe9d1bea1d07be4c2e57483130e1bfce8aff68b1a89fbb014ae8e4b",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/trade_execution.py",
+    "classification": "PERSISTENCE_COMPONENT",
+    "dependency_evidence": [
+      "ExecutionMonitoringEngine"
+    ],
+    "digest": "ba1b130d0a7ed5f4f946ff04ddc1b11d27ad41bc752c5d5ee25d9cfad79eab98",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  },
+  {
+    "artifact": "src/argos/trader/trade_monitoring.py",
+    "classification": "MONITORING_DIRECT",
+    "dependency_evidence": [
+      "TradeMonitoringAlert",
+      "TradeMonitoringCaseFile",
+      "TradeMonitoringDashboard",
+      "TradeMonitoringDetector",
+      "TradeMonitoringOffice",
+      "TradeMonitoringSnapshot",
+      "TradeMonitoringSystemPrompt"
+    ],
+    "digest": "7e67468b3f6ac4e775bc115c1c0df8aab3f35a264c990f4aca6c508922632b34",
+    "exclusion_reason": null,
+    "participation_disposition": "INCLUDED"
+  }
+]

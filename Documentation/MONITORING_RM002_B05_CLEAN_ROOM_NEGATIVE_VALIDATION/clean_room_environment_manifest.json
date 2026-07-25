@@ -1,6 +1,6 @@
 {
   "developer_state_required": false,
-  "environment_id": "MON-B05-CLEAN-446532ABF267B230",
+  "environment_id": "MON-B05-CLEAN-19963B9FC17591AC",
   "git_history_excluded": true,
   "manifest": [
     {
@@ -20490,8 +20490,23 @@
     },
     {
       "path": "Scripts/monitoring_rm002_b05_clean_room_negative_validation.py",
-      "sha256": "7a6e8384aacb8a9b91dcd3ff6229f45d2b189453752e54af29ab8c27a94ba555",
-      "size": 20680
+      "sha256": "319eabec78a6c3334fb4588e6a2b8a0af0d257b5426bf9840f3f264893d9d2df",
+      "size": 20865
+    },
+    {
+      "path": "Scripts/monitoring_rm002_b06_dependency_discovery_reconciliation.py",
+      "sha256": "7a8caff6c6bdbb60b9349ce53754c49164bba615dd7028d9c61c3fbf6f0a8ed2",
+      "size": 30458
+    },
+    {
+      "path": "Scripts/monitoring_rm002_b08_clean_room_reproducibility.py",
+      "sha256": "e6913ab314735c9a590e37ecaea907986795703d0a5340b81ddad221a6ebfe3b",
+      "size": 26817
+    },
+    {
+      "path": "Scripts/monitoring_rm002_b09_fail_closed_certification.py",
+      "sha256": "cd5962a123e843a2e44e8ccb50676ce6978a2eaed1b574bd863c97bac1ba7ba8",
+      "size": 20703
     },
     {
       "path": "Scripts/position_registry_ecs003_audit.py",
@@ -23257,6 +23272,16 @@
       "path": "Tests/test_monitoring_rm002_b05_clean_room_negative_validation.py",
       "sha256": "8af576f1a258e61045890ccf3cb5d27aae6d2bf36f77e7e864feeae31f7612df",
       "size": 3679
+    },
+    {
+      "path": "Tests/test_monitoring_rm002_b06_dependency_discovery_reconciliation.py",
+      "sha256": "ff8cd2d688e2741fe32349fae34c3ceb6555765c8b7e4c4e4714d9c1db98e17d",
+      "size": 4305
+    },
+    {
+      "path": "Tests/test_monitoring_rm002_b08_b09_reproducibility_outputs.py",
+      "sha256": "b32a21d3ae4ad3e1aa6435f7ca94ae6927ad2311fa6e7be837212db7a005f460",
+      "size": 2985
     },
     {
       "path": "Tests/test_mosp001_source_registry.py",

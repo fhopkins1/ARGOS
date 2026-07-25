@@ -1,0 +1,50 @@
+[
+  {
+    "certification_objective": "Prevent UNCONDITIONAL_PASS for defective Monitoring candidate.",
+    "constitutional_purpose": "Validate fail-closed ECS-003 certification behavior for a constitutionally significant Monitoring defect.",
+    "expected_behavioral_consequence": "Tests.test_trade_monitoring_office",
+    "expected_certification_consequence": "FAIL",
+    "mutation_class": "OBSERVATION_DEFECT",
+    "mutation_id": "MON-B05-NEG-OBS-001"
+  },
+  {
+    "certification_objective": "Prevent UNCONDITIONAL_PASS for defective Monitoring candidate.",
+    "constitutional_purpose": "Validate fail-closed ECS-003 certification behavior for a constitutionally significant Monitoring defect.",
+    "expected_behavioral_consequence": "Tests.test_trade_monitoring_office",
+    "expected_certification_consequence": "FAIL",
+    "mutation_class": "THRESHOLD_ALERT_DEFECT",
+    "mutation_id": "MON-B05-NEG-ALERT-001"
+  },
+  {
+    "certification_objective": "Prevent UNCONDITIONAL_PASS for defective Monitoring candidate.",
+    "constitutional_purpose": "Validate fail-closed ECS-003 certification behavior for a constitutionally significant Monitoring defect.",
+    "expected_behavioral_consequence": "Tests.test_trade_monitoring_office",
+    "expected_certification_consequence": "FAIL",
+    "mutation_class": "ESCALATION_ACKNOWLEDGEMENT_DEFECT",
+    "mutation_id": "MON-B05-NEG-ESC-001"
+  },
+  {
+    "certification_objective": "Prevent UNCONDITIONAL_PASS for defective Monitoring candidate.",
+    "constitutional_purpose": "Validate fail-closed ECS-003 certification behavior for a constitutionally significant Monitoring defect.",
+    "expected_behavioral_consequence": "Tests.test_trade_monitoring_office",
+    "expected_certification_consequence": "FAIL",
+    "mutation_class": "SUPPRESSION_EVIDENCE_DEFECT",
+    "mutation_id": "MON-B05-NEG-SUPP-001"
+  },
+  {
+    "certification_objective": "Prevent UNCONDITIONAL_PASS for defective Monitoring candidate.",
+    "constitutional_purpose": "Validate fail-closed ECS-003 certification behavior for a constitutionally significant Monitoring defect.",
+    "expected_behavioral_consequence": "Tests.test_trade_monitoring_office",
+    "expected_certification_consequence": "FAIL",
+    "mutation_class": "PERSISTENCE_REPLAY_RECOVERY_DEFECT",
+    "mutation_id": "MON-B05-NEG-PERSIST-001"
+  },
+  {
+    "certification_objective": "Prevent UNCONDITIONAL_PASS for defective Monitoring candidate.",
+    "constitutional_purpose": "Validate fail-closed ECS-003 certification behavior for a constitutionally significant Monitoring defect.",
+    "expected_behavioral_consequence": "Tests.test_monitoring_rm002_b04_final_certification",
+    "expected_certification_consequence": "FAIL",
+    "mutation_class": "PROOF_CERTIFICATION_LOGIC_DEFECT",
+    "mutation_id": "MON-B05-NEG-PROOF-001"
+  }
+]

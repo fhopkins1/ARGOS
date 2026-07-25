@@ -1,0 +1,1718 @@
+{
+  "edges": [
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0001",
+      "target": "mission_activation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0001",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0002",
+      "target": "scope_enforcement"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0002",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0003",
+      "target": "raw_observation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0003",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0004",
+      "target": "observation_rejection"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0004",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0005",
+      "target": "evaluation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0005",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0006",
+      "target": "correlation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0006",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0007",
+      "target": "contradiction"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0007",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0008",
+      "target": "confidence"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0008",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0009",
+      "target": "finding"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0009",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0010",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0010",
+      "target": "threshold"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0011",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0011",
+      "target": "trigger"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0012",
+      "target": "alert"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0012",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0013",
+      "target": "escalation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0013",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0014",
+      "target": "acknowledgement"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0014",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0015",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0015",
+      "target": "suppression"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0016",
+      "target": "integrated_response"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0016",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0017",
+      "target": "persistence"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0017",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0018",
+      "target": "restart"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0018",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0019",
+      "target": "replay"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0019",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0020",
+      "target": "recovery"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0020",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0021",
+      "target": "duplicate_prevention"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0021",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0022",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0022",
+      "target": "state_restoration"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0023",
+      "target": "historical_preservation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0023",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0024",
+      "target": "reconciliation"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0024",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "governed_by",
+      "source": "MON-REQ-0025",
+      "target": "failure_scenario"
+    },
+    {
+      "relationship": "implemented_by",
+      "source": "MON-REQ-0025",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "acknowledgement",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "acknowledgement",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "alert",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "alert",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "confidence",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "confidence",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "contradiction",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "contradiction",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "correlation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "correlation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "duplicate_prevention",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "duplicate_prevention",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "escalation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "escalation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "evaluation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "evaluation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "failure_scenario",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "failure_scenario",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "finding",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "finding",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "historical_preservation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "historical_preservation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "integrated_response",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "integrated_response",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "mission_activation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "mission_activation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "observation_rejection",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "observation_rejection",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "persistence",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "persistence",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "raw_observation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "raw_observation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "reconciliation",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "reconciliation",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "recovery",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "recovery",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "replay",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "replay",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "restart",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "restart",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "scope_enforcement",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "scope_enforcement",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "state_restoration",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "state_restoration",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "suppression",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "suppression",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "threshold",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "threshold",
+      "target": "src/argos/trader/trade_monitoring.py"
+    },
+    {
+      "relationship": "uses_fixture",
+      "source": "trigger",
+      "target": "MONITORING-RM-002-B02-FIXTURE"
+    },
+    {
+      "relationship": "verifies",
+      "source": "trigger",
+      "target": "src/argos/trader/trade_monitoring.py"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "acknowledgement",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "alert",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "confidence",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "contradiction",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "correlation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "duplicate_prevention",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "escalation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "evaluation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "failure_scenario",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "finding",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "historical_preservation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "integrated_response",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "mission_activation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "observation_rejection",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "persistence",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "raw_observation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "reconciliation",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "recovery",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "replay",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "restart",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "scope_enforcement",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "state_restoration",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "suppression",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "threshold",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "trigger",
+      "type": "Behavioral Verifier"
+    },
+    {
+      "id": "MON-REQ-0001",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0002",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0003",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0004",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0005",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0006",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0007",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0008",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0009",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0010",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0011",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0012",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0013",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0014",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0015",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0016",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0017",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0018",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0019",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0020",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0021",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0022",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0023",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0024",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0025",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0026",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0027",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0028",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0029",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0030",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0031",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0032",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0033",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0034",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0035",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0036",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0037",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0038",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0039",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0040",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0041",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0042",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0043",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0044",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0045",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0046",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0047",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0048",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0049",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0050",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0051",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0052",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0053",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0054",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0055",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0056",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0057",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0058",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0059",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0060",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0061",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0062",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0063",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0064",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0065",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0066",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0067",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0068",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0069",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0070",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0071",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0072",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0073",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0074",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0075",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0076",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0077",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-0078",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-001",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-002",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-003",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-004",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-005",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-006",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-007",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-008",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-009",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-010",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-011",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-012",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-013",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-014",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-015",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-016",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-017",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-018",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-019",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-020",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-021",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-022",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-023",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-024",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-025",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-026",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-027",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-028",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-029",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-030",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-031",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-032",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-033",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-034",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-035",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-036",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-037",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-038",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-039",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-040",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-041",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-042",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-043",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-044",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-045",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-046",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-047",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-048",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-049",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-050",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-051",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-052",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-053",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-054",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-055",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-056",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-057",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-058",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B01-059",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-001",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-002",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-003",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-004",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-005",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-006",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-007",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-008",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-009",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-010",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-011",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-012",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-013",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-014",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-015",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-016",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-017",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-018",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-019",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-020",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-021",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-022",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-023",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-024",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-025",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-026",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-027",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-028",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-029",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-030",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-031",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-032",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-033",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-034",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-035",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-036",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-037",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-038",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-039",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-040",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-041",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-042",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-043",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-044",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-045",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-046",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-047",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-048",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-049",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-050",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-051",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-052",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-053",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-054",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-055",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-056",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-057",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-058",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-059",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-060",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-061",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-062",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B02-063",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-001",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-002",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-003",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-004",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-005",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-006",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-007",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-008",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-009",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-010",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-011",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-012",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-013",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-014",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-015",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-016",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-017",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-018",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-019",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-020",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-021",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-022",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-023",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-024",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-025",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-026",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-027",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-028",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-029",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-030",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-031",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-032",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-033",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-034",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-035",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-036",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-037",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-038",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-039",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-040",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-041",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-042",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-043",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-044",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-045",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-046",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-047",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-048",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-049",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-050",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-051",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-052",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-053",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-054",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-055",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-056",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-057",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-058",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-059",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-060",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-061",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-062",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-063",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-064",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-065",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-066",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-067",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-068",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-069",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-070",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-071",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MON-REQ-B03-072",
+      "type": "Canonical Constitutional Requirement"
+    },
+    {
+      "id": "MonitoringTestConfiguration",
+      "type": "Configuration Participant"
+    },
+    {
+      "id": "MONITORING-RM-002-B02-FIXTURE",
+      "type": "Fixture"
+    },
+    {
+      "id": "InMemoryPersistenceRepository",
+      "type": "Persistence Participant"
+    },
+    {
+      "id": "AuditService",
+      "type": "Runtime Participant"
+    },
+    {
+      "id": "InMemoryPersistenceRepository",
+      "type": "Runtime Participant"
+    },
+    {
+      "id": "TradeMonitoringOffice",
+      "type": "Runtime Participant"
+    }
+  ]
+}

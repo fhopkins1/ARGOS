@@ -1,0 +1,98 @@
+[
+  {
+    "affected_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "expected_behavioral_impact": "targeted verifier failure",
+    "expected_certification_impact": "FAIL verdict and UNCONDITIONAL_PASS denial",
+    "expected_proof_impact": "affected proof blocked or not proven",
+    "expected_traceability_impact": "mutation lineage appears between failing execution and blocker",
+    "governing_constitutional_requirement": "stalled order detection",
+    "governing_implementation_obligation": "Tests.test_trade_monitoring_office",
+    "mutated_artifact_identity": "775dc2570b02b839f05a95507a19cb6d215588048a16b53c7fcb1fb6b72c8d62",
+    "mutation_class": "OBSERVATION_DEFECT",
+    "mutation_description": "stalled order detection",
+    "mutation_id": "MON-B05-NEG-OBS-001",
+    "original_artifact_identity": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610"
+  },
+  {
+    "affected_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "expected_behavioral_impact": "targeted verifier failure",
+    "expected_certification_impact": "FAIL verdict and UNCONDITIONAL_PASS denial",
+    "expected_proof_impact": "affected proof blocked or not proven",
+    "expected_traceability_impact": "mutation lineage appears between failing execution and blocker",
+    "governing_constitutional_requirement": "position limit threshold activation",
+    "governing_implementation_obligation": "Tests.test_trade_monitoring_office",
+    "mutated_artifact_identity": "7eb57c873f9f4fb196a9c88314c6524c10eadb5ea7b9178a0b0dff1f470e46da",
+    "mutation_class": "THRESHOLD_ALERT_DEFECT",
+    "mutation_description": "position limit threshold activation",
+    "mutation_id": "MON-B05-NEG-ALERT-001",
+    "original_artifact_identity": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610"
+  },
+  {
+    "affected_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "expected_behavioral_impact": "targeted verifier failure",
+    "expected_certification_impact": "FAIL verdict and UNCONDITIONAL_PASS denial",
+    "expected_proof_impact": "affected proof blocked or not proven",
+    "expected_traceability_impact": "mutation lineage appears between failing execution and blocker",
+    "governing_constitutional_requirement": "critical alert executive notification",
+    "governing_implementation_obligation": "Tests.test_trade_monitoring_office",
+    "mutated_artifact_identity": "8fd05e96aef67e2c7996a78b53af36ab2ed34d694f553da71ec77c6c7751924e",
+    "mutation_class": "ESCALATION_ACKNOWLEDGEMENT_DEFECT",
+    "mutation_description": "critical alert executive notification",
+    "mutation_id": "MON-B05-NEG-ESC-001",
+    "original_artifact_identity": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610"
+  },
+  {
+    "affected_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "expected_behavioral_impact": "targeted verifier failure",
+    "expected_certification_impact": "FAIL verdict and UNCONDITIONAL_PASS denial",
+    "expected_proof_impact": "affected proof blocked or not proven",
+    "expected_traceability_impact": "mutation lineage appears between failing execution and blocker",
+    "governing_constitutional_requirement": "history preservation and suppression prohibition",
+    "governing_implementation_obligation": "Tests.test_trade_monitoring_office",
+    "mutated_artifact_identity": "c00fdad21433dcdcb7c0b21176ab554e45e671c070b26a6474e92b6025797137",
+    "mutation_class": "SUPPRESSION_EVIDENCE_DEFECT",
+    "mutation_description": "history preservation and suppression prohibition",
+    "mutation_id": "MON-B05-NEG-SUPP-001",
+    "original_artifact_identity": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610"
+  },
+  {
+    "affected_implementation_artifacts": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "expected_behavioral_impact": "targeted verifier failure",
+    "expected_certification_impact": "FAIL verdict and UNCONDITIONAL_PASS denial",
+    "expected_proof_impact": "affected proof blocked or not proven",
+    "expected_traceability_impact": "mutation lineage appears between failing execution and blocker",
+    "governing_constitutional_requirement": "contract persistence and replay baseline",
+    "governing_implementation_obligation": "Tests.test_trade_monitoring_office",
+    "mutated_artifact_identity": "3f2a0f4a7b9162b096f8b483a899324167792fb43d358a78a2ea919f741e5096",
+    "mutation_class": "PERSISTENCE_REPLAY_RECOVERY_DEFECT",
+    "mutation_description": "contract persistence and replay baseline",
+    "mutation_id": "MON-B05-NEG-PERSIST-001",
+    "original_artifact_identity": "59ee8346a45637ab31fc6763b56f6c8486642e18b008a16b8890c3f3e34a7610"
+  },
+  {
+    "affected_implementation_artifacts": [
+      "Scripts/monitoring_rm002_b04_final_certification.py"
+    ],
+    "expected_behavioral_impact": "targeted verifier failure",
+    "expected_certification_impact": "FAIL verdict and UNCONDITIONAL_PASS denial",
+    "expected_proof_impact": "affected proof blocked or not proven",
+    "expected_traceability_impact": "mutation lineage appears between failing execution and blocker",
+    "governing_constitutional_requirement": "proof generation from current behavioral evidence",
+    "governing_implementation_obligation": "Tests.test_monitoring_rm002_b04_final_certification",
+    "mutated_artifact_identity": "1c7ebf016bd30cf183cc83e5f43b5c585d1b80b821b9e91e904edc98b8de07cf",
+    "mutation_class": "PROOF_CERTIFICATION_LOGIC_DEFECT",
+    "mutation_description": "proof generation from current behavioral evidence",
+    "mutation_id": "MON-B05-NEG-PROOF-001",
+    "original_artifact_identity": "0662f00b69252ed5938f4ac0afc2ae00ae4b57152efed2e8bd67d1ed526687e8"
+  }
+]

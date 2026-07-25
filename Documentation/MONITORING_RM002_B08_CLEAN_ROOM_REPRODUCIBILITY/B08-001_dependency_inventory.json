@@ -1,0 +1,26 @@
+[
+  {
+    "constitutional_justification": "execute deterministic repository scripts",
+    "dependency": "python",
+    "source": "declared runtime",
+    "version": "3.14.5"
+  },
+  {
+    "constitutional_justification": "deterministic package construction and extraction",
+    "dependency": "standard-library: zipfile",
+    "source": "Python standard library",
+    "version": "3.14.5"
+  },
+  {
+    "constitutional_justification": "bounded clean-room script execution",
+    "dependency": "standard-library: subprocess",
+    "source": "Python standard library",
+    "version": "3.14.5"
+  },
+  {
+    "constitutional_justification": "execute behavioral verifier population",
+    "dependency": "unittest",
+    "source": "Python standard library",
+    "version": "3.14.5"
+  }
+]

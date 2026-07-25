@@ -1,0 +1,38 @@
+[
+  {
+    "artifact_class": "json_registry",
+    "authorized_non_semantic_fields": [
+      "absolute clean-room path",
+      "log path"
+    ],
+    "identity_comparison": "canonical JSON semantic digest",
+    "prohibited_ignored_fields": [
+      "disposition",
+      "verdict",
+      "coverage",
+      "proof",
+      "finding"
+    ]
+  },
+  {
+    "artifact_class": "execution_log",
+    "authorized_non_semantic_fields": [
+      "absolute clean-room path"
+    ],
+    "identity_comparison": "terminal disposition and stderr/stdout preservation",
+    "prohibited_ignored_fields": [
+      "returncode"
+    ]
+  },
+  {
+    "artifact_class": "repository_package",
+    "authorized_non_semantic_fields": [
+      "zip container timestamp normalized to 2026-01-01"
+    ],
+    "identity_comparison": "content manifest digest",
+    "prohibited_ignored_fields": [
+      "file content",
+      "path"
+    ]
+  }
+]
