@@ -1,0 +1,74 @@
+[
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "interface_to_authority",
+    "relationship": "every interface possesses one governing constitutional authority",
+    "source_artifact": "B03-001_constitutional_interface_registry.json",
+    "target_artifact": "B03-001_interface_authority_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "authority_to_ownership",
+    "relationship": "authority preserves Position Registry ownership without implying external mutation authority",
+    "source_artifact": "B03-001_interface_authority_registry.json",
+    "target_artifact": "B03-001_canonical_interface_identity_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "ownership_to_evidence",
+    "relationship": "evidence ownership and truth ownership remain distinct and deterministic",
+    "source_artifact": "B03-002_constitutional_truth_ownership_registry.json",
+    "target_artifact": "B03-002_constitutional_evidence_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "evidence_to_reconciliation",
+    "relationship": "reconciliation consumes evidence without substituting evidence for constitutional authority",
+    "source_artifact": "B03-002_constitutional_evidence_registry.json",
+    "target_artifact": "B03-002_reconciliation_constitution.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "reconciliation_to_traceability",
+    "relationship": "every reconciliation obligation participates in bidirectional traceability",
+    "source_artifact": "B03-002_reconciliation_authority_registry.json",
+    "target_artifact": "B03-003_constitutional_reconciliation_traceability_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "traceability_to_canonical_requirements",
+    "relationship": "traceability originates from canonical atomic constitutional requirements",
+    "source_artifact": "B03-003_constitutional_traceability_registry.json",
+    "target_artifact": "B03-003_canonical_constitutional_requirement_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "canonical_requirements_to_certification_obligations",
+    "relationship": "requirements define certification obligations without issuing certification",
+    "source_artifact": "B03-003_canonical_constitutional_requirement_registry.json",
+    "target_artifact": "B03-003_constitutional_certification_traceability_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "dependency_to_interface",
+    "relationship": "dependency direction remains consistent with interface producer and consumer",
+    "source_artifact": "B03-001_interface_dependency_registry.json",
+    "target_artifact": "B03-001_constitutional_interface_registry.json"
+  },
+  {
+    "conflict": false,
+    "disposition": "RECONCILED",
+    "domain": "dependency_to_evidence",
+    "relationship": "dependencies retain evidence obligations and historical preservation",
+    "source_artifact": "B03-001_interface_dependency_registry.json",
+    "target_artifact": "B03-002_constitutional_evidence_registry.json"
+  }
+]
