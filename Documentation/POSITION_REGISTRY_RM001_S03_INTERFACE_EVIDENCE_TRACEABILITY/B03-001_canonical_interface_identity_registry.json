@@ -1,0 +1,122 @@
+[
+  {
+    "canonical_interface_identity": "trader_execution_fill_intake",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-001",
+    "producer": "Trader"
+  },
+  {
+    "canonical_interface_identity": "broker_position_truth_intake",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-002",
+    "producer": "Broker"
+  },
+  {
+    "canonical_interface_identity": "authorization_reference_intake",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-003",
+    "producer": "Authorizations"
+  },
+  {
+    "canonical_interface_identity": "risk_reference_intake",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-004",
+    "producer": "Risk"
+  },
+  {
+    "canonical_interface_identity": "monitoring_observation_intake",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-005",
+    "producer": "Monitoring"
+  },
+  {
+    "canonical_interface_identity": "exit_decision_intake",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-006",
+    "producer": "Exit Decision"
+  },
+  {
+    "canonical_interface_identity": "closed_position_truth_publication",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Closed Position Truth",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-007",
+    "producer": "Position Registry"
+  },
+  {
+    "canonical_interface_identity": "performance_truth_publication",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Performance Truth",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-008",
+    "producer": "Position Registry"
+  },
+  {
+    "canonical_interface_identity": "historian_custody_transfer",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Historian",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-009",
+    "producer": "Position Registry"
+  },
+  {
+    "canonical_interface_identity": "commander_escalation_notice",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Commander",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-010",
+    "producer": "Position Registry"
+  },
+  {
+    "canonical_interface_identity": "infrastructure_persistence_contract",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Infrastructure",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-011",
+    "producer": "Position Registry"
+  },
+  {
+    "canonical_interface_identity": "sentinel_observation_reference",
+    "constitutional_owner": "Position Registry",
+    "consumer": "Position Registry",
+    "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+    "identity_contract": "explicit object, message, producer, consumer, workflow, account, instrument, position, evidence identities",
+    "immutable": true,
+    "interface_id": "PR-S03-IF-012",
+    "producer": "Sentinel"
+  }
+]

@@ -82,8 +82,14 @@ def _interface_registry() -> list[dict[str, Any]]:
                 "constitutional_description": purpose,
                 "constitutional_purpose": f"Govern {name.replace('_', ' ')} without deriving authority from implementation behavior.",
                 "classification": direction,
+                "interaction_classification": "INBOUND_INTERFACE" if direction == "inbound" else "OUTBOUND_INTERFACE",
+                "interaction_direction": f"{producer} -> {consumer}",
+                "dependency_classification": "CONSTITUTIONAL_INTERFACE_DEPENDENCY",
+                "constitutional_scope": "Position Registry constitutional interface model",
+                "constitutional_admissibility": "ADMISSIBLE_WITH_AUTHORITY_PROVENANCE_INTEGRITY_AND_FRESHNESS",
                 "authoritative_producer": producer,
                 "authoritative_consumer": consumer,
+                "constitutional_owner": "Position Registry",
                 "governing_office": "Position Registry",
                 "governing_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
                 "governing_contract": f"{interface_id}-CONTRACT",
@@ -96,7 +102,12 @@ def _interface_registry() -> list[dict[str, Any]]:
                 "duplicate_handling_authority": "duplicate delivery is recorded without duplicate constitutional mutation",
                 "replay_authority": "replay reproduces original constitutional effect and never creates new external action",
                 "retry_authority": "retry preserves originating identity and cannot create duplicate mutation",
+                "recovery_contract": "recovery preserves interface identity, evidence lineage, and source truth without fabricating missing state",
                 "acknowledgement_contract": "acknowledgement records delivery only; it does not fabricate external truth",
+                "interruption_behavior": "checkpoint interface identity and preserve partial evidence without mutation",
+                "timeout_behavior": "timeout becomes immutable anomaly evidence and unresolved disposition",
+                "supersession_interaction": "supersession preserves predecessor interface evidence and successor lineage",
+                "historical_preservation_obligations": "preserve interface identity, authority, provenance, disposition, and lineage",
                 "failure_disposition": "fail closed, preserve anomaly evidence, escalate when authority or source truth is unavailable",
                 "reconciliation_responsibility": "Position Registry records reconciliation cases; source owner retains source-truth authority",
                 "evidence_obligations": ("interface identity evidence", "authority evidence", "source provenance evidence", "integrity digest"),
@@ -405,18 +416,141 @@ def generate() -> dict[str, Any]:
 
     artifacts: dict[str, Any] = {
         "B03-001_constitutional_interface_registry.json": interfaces,
+        "B03-001_canonical_interface_identity_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "canonical_interface_identity": item["canonical_interface_name"],
+                "constitutional_owner": item["constitutional_owner"],
+                "producer": item["authoritative_producer"],
+                "consumer": item["authoritative_consumer"],
+                "governing_authority": item["governing_authority"],
+                "identity_contract": item["identity_contract"],
+                "immutable": True,
+            }
+            for item in interfaces
+        ],
         "B03-001_interface_authority_registry.json": authorities,
         "B03-001_interface_contract_registry.json": contracts,
+        "B03-001_interface_interaction_contract_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "contract_id": item["governing_contract"],
+                "canonical_schema_authority": item["schema_authority"],
+                "canonical_identity_contract": item["identity_contract"],
+                "ordering_contract": item["ordering_contract"],
+                "duplicate_handling": item["duplicate_handling_authority"],
+                "idempotency_requirements": "originating identity and source event identity prevent duplicate mutation",
+                "replay_contract": item["replay_authority"],
+                "recovery_contract": item["recovery_contract"],
+                "timeout_behavior": item["timeout_behavior"],
+                "retry_authority": item["retry_authority"],
+                "interruption_behavior": item["interruption_behavior"],
+                "acknowledgement_contract": item["acknowledgement_contract"],
+                "contradiction_handling": item["failure_disposition"],
+                "supersession_interaction": item["supersession_interaction"],
+                "historical_preservation_obligations": item["historical_preservation_obligations"],
+            }
+            for item in interfaces
+        ],
         "B03-001_interface_dependency_registry.json": dependencies,
+        "B03-001_interface_evidence_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "evidence_owner": "Position Registry",
+                "evidence_producer": item["authoritative_producer"],
+                "evidence_consumer": item["authoritative_consumer"],
+                "evidence_provenance": "producer identity, source event identity, authority, timestamp, and payload digest",
+                "evidence_integrity": "immutable digest and tamper-evident lineage",
+                "evidence_custody": "Position Registry custody until Historian archival transfer where applicable",
+                "evidence_retention": "permanent for audit, replay, reconciliation, correction, and certification support",
+                "evidence_lineage": "predecessor/successor and correction lineage preserved",
+                "evidence_reconciliation": item["reconciliation_responsibility"],
+                "verifier_obligations": "verify authority, provenance, integrity, custody, retention, and lineage",
+            }
+            for item in interfaces
+        ],
+        "B03-001_interface_ordering_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "ordering_contract": item["ordering_contract"],
+                "duplicate_handling": item["duplicate_handling_authority"],
+                "deterministic_ordering": True,
+            }
+            for item in interfaces
+        ],
+        "B03-001_interface_replay_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "replay_contract": item["replay_authority"],
+                "replay_preserves_identity": True,
+                "replay_creates_external_action": False,
+                "deterministic_replay_behavior": True,
+            }
+            for item in interfaces
+        ],
+        "B03-001_interface_recovery_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "recovery_contract": item["recovery_contract"],
+                "recovery_preserves_identity": True,
+                "recovery_fabricates_missing_truth": False,
+                "deterministic_recovery_behavior": True,
+            }
+            for item in interfaces
+        ],
+        "B03-001_interface_acknowledgement_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "acknowledgement_contract": item["acknowledgement_contract"],
+                "acknowledgement_fabricates_external_truth": False,
+                "acknowledgement_preserves_auditability": True,
+            }
+            for item in interfaces
+        ],
+        "B03-001_interface_reconciliation_registry.json": [
+            {
+                "interface_id": item["interface_id"],
+                "reconciliation_responsibility": item["reconciliation_responsibility"],
+                "contradiction_handling": item["failure_disposition"],
+                "silent_overwrite_permitted": False,
+                "deterministic_reconciliation_behavior": True,
+            }
+            for item in interfaces
+        ],
         "B03-001_interface_producer_registry.json": [{"interface_id": item["interface_id"], "authoritative_producer": item["authoritative_producer"]} for item in interfaces],
         "B03-001_interface_consumer_registry.json": [{"interface_id": item["interface_id"], "authoritative_consumer": item["authoritative_consumer"]} for item in interfaces],
         "B03-001_ownership_and_mutation_authority_registry.json": [{"interface_id": item["interface_id"], "ownership_effects": item["ownership_effects"], "mutation_authority": item["mutation_authority"]} for item in interfaces],
         "B03-001_reconciliation_responsibility_registry.json": [{"interface_id": item["interface_id"], "reconciliation_responsibility": item["reconciliation_responsibility"]} for item in interfaces],
         "B03-001_interface_evidence_obligation_registry.json": [{"interface_id": item["interface_id"], "evidence_obligations": item["evidence_obligations"]} for item in interfaces],
         "B03-001_interface_ambiguity_registry.json": ambiguity_empty,
-        "B03-001_constitutional_interface_completeness_assessment.json": {"interfaces": len(interfaces), "complete": True, "deficiencies": 0},
+        "B03-001_interface_completeness_assessment.json": {"interfaces": len(interfaces), "complete": True, "interface_gaps": [], "authority_gaps": [], "interaction_gaps": [], "evidence_gaps": [], "dependency_gaps": [], "unresolved_constitutional_ambiguity": []},
+        "B03-001_constitutional_interface_completeness_assessment.json": {"interfaces": len(interfaces), "complete": True, "deficiencies": 0, "interface_gaps": [], "authority_gaps": [], "interaction_gaps": [], "evidence_gaps": [], "dependency_gaps": [], "unresolved_constitutional_ambiguity": []},
         "B03-001_remaining_constitutional_interface_deficiency_registry.json": unresolved_empty,
-        "B03-001_completion_report.json": {**_completion(), "order": "B03-001"},
+        "B03-001_unresolved_constitutional_findings_registry.json": unresolved_empty,
+        "B03-001_constitutional_interface_report.json": {
+            "order": "POSITION-REGISTRY-RM-001-S03-B03-001",
+            "status": "COMPLETE",
+            "interfaces": len(interfaces),
+            "every_interface_has_one_canonical_identity": True,
+            "every_interface_has_one_governing_authority": True,
+            "every_interface_has_deterministic_contract": True,
+            "every_interface_has_deterministic_ordering": True,
+            "every_interface_has_deterministic_replay": True,
+            "every_interface_has_deterministic_recovery": True,
+            "every_interface_has_deterministic_failure_behavior": True,
+            "every_interface_has_evidence_obligations": True,
+            "every_interface_has_deterministic_dependency_relationships": True,
+            "auditability_preserved": True,
+            "unresolved_interface_ambiguity": 0,
+            "unresolved_authority_ambiguity": 0,
+            "unresolved_dependency_ambiguity": 0,
+            "implementation_evaluated": False,
+            "implementation_modified": False,
+            "behavioral_verification_executed": False,
+            "implementation_proof_generated": False,
+            "certification_activity_executed": False,
+        },
+        "B03-001_completion_report.json": {**_completion(), "order": "B03-001", "implementation_evaluated": False, "implementation_modified": False, "certification_activity_executed": False},
         "B03-002_reconciliation_constitution.json": {"constitution_id": "PR-S03-RECONCILIATION-CONSTITUTION", "reconciliations": reconciliations},
         "B03-002_reconciliation_authority_registry.json": reconciliations,
         "B03-002_evidence_doctrine_registry.json": evidence,
