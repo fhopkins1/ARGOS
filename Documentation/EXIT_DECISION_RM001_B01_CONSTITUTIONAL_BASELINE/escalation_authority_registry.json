@@ -1,0 +1,44 @@
+[
+  {
+    "escalation_id": "EXIT-ESC-001",
+    "evidence_required": "conflict record, source evidence, escalation timestamp, receiving authority, terminal disposition",
+    "owning_authority": "Exit Decision",
+    "required_disposition": "defer and escalate to Commander or governing authority",
+    "trigger": "decision_conflict"
+  },
+  {
+    "escalation_id": "EXIT-ESC-002",
+    "evidence_required": "conflict record, source evidence, escalation timestamp, receiving authority, terminal disposition",
+    "owning_authority": "Risk",
+    "required_disposition": "fail closed until Risk disposition is available",
+    "trigger": "risk_conflict"
+  },
+  {
+    "escalation_id": "EXIT-ESC-003",
+    "evidence_required": "conflict record, source evidence, escalation timestamp, receiving authority, terminal disposition",
+    "owning_authority": "Authorizations",
+    "required_disposition": "fail closed until authorization disposition is available",
+    "trigger": "authorization_conflict"
+  },
+  {
+    "escalation_id": "EXIT-ESC-004",
+    "evidence_required": "conflict record, source evidence, escalation timestamp, receiving authority, terminal disposition",
+    "owning_authority": "Position Registry",
+    "required_disposition": "fail closed until position reconciliation completes",
+    "trigger": "position_truth_conflict"
+  },
+  {
+    "escalation_id": "EXIT-ESC-005",
+    "evidence_required": "conflict record, source evidence, escalation timestamp, receiving authority, terminal disposition",
+    "owning_authority": "Broker",
+    "required_disposition": "fail closed; do not infer acknowledgement or fill truth",
+    "trigger": "broker_truth_conflict"
+  },
+  {
+    "escalation_id": "EXIT-ESC-006",
+    "evidence_required": "conflict record, source evidence, escalation timestamp, receiving authority, terminal disposition",
+    "owning_authority": "Historian",
+    "required_disposition": "preserve both records with supersession/correction lineage",
+    "trigger": "historical_conflict"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "authority_stage": "evaluation",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 1,
+    "constitutional_owner": "Exit Decision",
+    "exit_decision_may_perform": true,
+    "required_evidence": "admissible position/risk/monitoring/authorization context"
+  },
+  {
+    "authority_stage": "recommendation",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 2,
+    "constitutional_owner": "Exit Decision",
+    "exit_decision_may_perform": true,
+    "required_evidence": "evaluation evidence and decision rationale"
+  },
+  {
+    "authority_stage": "authorization",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 3,
+    "constitutional_owner": "Authorizations or Commander-authorized authority",
+    "exit_decision_may_perform": false,
+    "required_evidence": "valid authorization object"
+  },
+  {
+    "authority_stage": "execution_request",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 4,
+    "constitutional_owner": "Trader",
+    "exit_decision_may_perform": false,
+    "required_evidence": "valid authorization and execution contract"
+  },
+  {
+    "authority_stage": "broker_submission",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 5,
+    "constitutional_owner": "Broker/Trader bridge",
+    "exit_decision_may_perform": false,
+    "required_evidence": "authorized broker submission contract"
+  },
+  {
+    "authority_stage": "position_mutation",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 6,
+    "constitutional_owner": "Position Registry",
+    "exit_decision_may_perform": false,
+    "required_evidence": "authoritative broker fill evidence"
+  },
+  {
+    "authority_stage": "historical_custody",
+    "boundary_rule": "Exit Decision stops before authorization, execution, broker submission, position mutation, and history custody unless the stage owner is Exit Decision.",
+    "chain_step": 7,
+    "constitutional_owner": "Historian",
+    "exit_decision_may_perform": false,
+    "required_evidence": "immutable evidence transfer"
+  }
+]

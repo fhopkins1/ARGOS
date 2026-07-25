@@ -1,0 +1,312 @@
+[
+  {
+    "authority_id": "EXIT-AUTH-001",
+    "authority_name": "evaluation_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Evaluate admissible exit conditions for active positions.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-002",
+    "authority_name": "recommendation_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Create evidence-bound exit recommendations.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-003",
+    "authority_name": "decision_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Create bounded Exit Decision records when sufficient authority exists.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-004",
+    "authority_name": "deferral_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Defer decisions when evidence, authority, or freshness is incomplete.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-005",
+    "authority_name": "rejection_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Reject inadmissible or unauthorized exit decision requests.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-006",
+    "authority_name": "cancellation_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Cancel Exit Decision-owned pending recommendations or decisions.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-007",
+    "authority_name": "correction_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Correct Exit Decision-owned records by explicit correction lineage.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-008",
+    "authority_name": "supersession_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Supersede prior Exit Decision-owned records without mutating history.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-009",
+    "authority_name": "escalation_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Escalate unresolved conflict or insufficient authority to the governing office.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "EXIT-AUTH-010",
+    "authority_name": "emergency_decision_authority",
+    "authorized_outputs": [
+      "Exit Decision evaluation",
+      "Exit recommendation",
+      "Exit decision",
+      "deferral",
+      "rejection",
+      "cancellation",
+      "correction",
+      "supersession",
+      "escalation"
+    ],
+    "constitutional_owner": "Exit Decision Office",
+    "constitutional_source": "EXIT-DECISION-RM-001-B01-001",
+    "permitted_scope": "Produce emergency exit decisions or recommendations when governed emergency inputs require action.",
+    "prohibited_outputs": [
+      "broker order",
+      "position mutation",
+      "risk mutation",
+      "authorization mutation",
+      "closed-position truth"
+    ],
+    "required_inputs": [
+      "admissible position context",
+      "authorized risk/monitoring/authorization context where applicable",
+      "immutable evaluation evidence"
+    ],
+    "single_constitutional_source_verified": true
+  }
+]

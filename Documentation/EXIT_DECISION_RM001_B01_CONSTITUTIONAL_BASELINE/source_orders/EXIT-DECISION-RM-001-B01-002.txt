@@ -1,0 +1,446 @@
+# EXIT-DECISION-RM-001-B01-002
+
+# Enterprise Boundary and Responsibility Constitution
+
+## Objective
+
+Establish deterministic constitutional boundaries between the Exit Decision Office and every interacting enterprise office.
+
+This order exists solely to define ownership, custody, authority direction, dependency relationships, mutation authority, correction authority, reconciliation authority, and evidence responsibility across all Exit Decision interactions.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every interaction shall possess one governing constitutional authority.
+
+Every responsibility shall possess one constitutional owner.
+
+Every custody obligation shall possess one constitutional custodian.
+
+Every mutation authority shall possess one constitutional source.
+
+---
+
+# Constitutional Principles
+
+Exit Decision shall never assume ownership of enterprise truth owned by another office.
+
+Exit Decision shall consume authorized enterprise truth.
+
+Exit Decision shall evaluate exit conditions using constitutionally admitted inputs.
+
+Exit Decision shall produce exit decisions within its authorized boundary.
+
+Exit Decision shall not create, alter, replace, or override truth domains owned by other offices.
+
+No dependency shall imply ownership.
+
+No consumption relationship shall imply authority transfer.
+
+No recommendation relationship shall imply execution authority.
+
+No execution relationship shall imply truth ownership.
+
+No reconciliation responsibility shall imply mutation authority.
+
+---
+
+# Required Constitutional Definitions
+
+## 1. Enterprise Boundary Registry
+
+Establish the complete boundary registry defining every Exit Decision interaction.
+
+For each interacting office define:
+
+* purpose of interaction;
+* dependency direction;
+* producing office;
+* consuming office;
+* authority owner;
+* custody owner;
+* mutation authority;
+* correction authority;
+* reconciliation authority;
+* evidence responsibility;
+* prohibited authority transfer.
+
+The registry shall include:
+
+* Commander;
+* Monitoring;
+* Sentinel;
+* Analyst;
+* Risk;
+* Trader;
+* Broker;
+* Position Registry;
+* Authorizations;
+* Closed Position Truth;
+* Performance Truth;
+* Historian;
+* Infrastructure.
+
+---
+
+# 2. Responsibility Ownership Matrix
+
+Establish a deterministic ownership matrix defining:
+
+* who owns the decision;
+* who owns the underlying truth;
+* who owns the lifecycle;
+* who owns correction;
+* who owns reconciliation;
+* who owns evidence preservation.
+
+The matrix shall resolve ownership for:
+
+* exit decisions;
+* market conditions;
+* risk assessments;
+* authorization objects;
+* execution requests;
+* broker acknowledgments;
+* position state;
+* closed-position records;
+* performance records;
+* historical records;
+* infrastructure state.
+
+No responsibility shall remain shared without an explicitly defined constitutional owner.
+
+---
+
+# 3. Office Boundary Definitions
+
+## Commander
+
+Define:
+
+* Commander owns enterprise intent;
+* Commander owns strategic directives;
+* Commander does not own Exit Decision outputs;
+* Commander does not directly perform Exit Decision evaluation.
+
+Exit Decision shall consume Commander intent only through authorized interfaces.
+
+---
+
+## Monitoring
+
+Define:
+
+* Monitoring owns operational observation outputs;
+* Monitoring owns monitoring truth;
+* Monitoring does not own exit decisions;
+* Exit Decision may consume monitoring-derived conditions.
+
+Exit Decision shall not modify monitoring truth.
+
+---
+
+## Sentinel
+
+Define:
+
+* Sentinel owns detection and alerting truth;
+* Sentinel owns event observation;
+* Sentinel does not own exit decisions;
+* Exit Decision may consume sentinel observations.
+
+Exit Decision shall not modify sentinel evidence.
+
+---
+
+## Analyst
+
+Define:
+
+* Analyst owns analytical interpretation;
+* Analyst owns analytical outputs;
+* Analyst does not own exit decisions;
+* Exit Decision may consume analytical evaluations.
+
+Exit Decision shall not replace analytical authority.
+
+---
+
+## Risk
+
+Define:
+
+* Risk owns risk truth;
+* Risk owns risk constraints;
+* Risk owns risk assessments;
+* Exit Decision shall consume risk truth.
+
+Exit Decision shall not:
+
+* modify risk assessments;
+* suppress risk constraints;
+* override risk ownership.
+
+---
+
+## Trader
+
+Define:
+
+* Trader owns trade execution authority;
+* Trader owns execution workflow;
+* Trader owns order submission behavior.
+
+Exit Decision shall not:
+
+* execute trades;
+* submit broker instructions;
+* mutate execution state.
+
+---
+
+## Broker
+
+Define:
+
+* Broker owns external execution communication;
+* Broker owns broker interaction state;
+* Broker owns broker acknowledgments.
+
+Exit Decision shall not:
+
+* communicate directly with brokers;
+* alter broker state;
+* replace broker reconciliation.
+
+---
+
+## Position Registry
+
+Define:
+
+* Position Registry owns position truth;
+* Position Registry owns position lifecycle state;
+* Position Registry owns position mutation authority.
+
+Exit Decision shall not:
+
+* create positions;
+* close positions;
+* alter position state;
+* replace position reconciliation.
+
+---
+
+## Authorizations
+
+Define:
+
+* Authorizations owns authorization truth;
+* Authorizations owns authorization validity;
+* Authorizations owns authorization lifecycle.
+
+Exit Decision shall not:
+
+* create authorization;
+* extend authorization;
+* bypass authorization;
+* override authorization state.
+
+---
+
+## Closed Position Truth
+
+Define:
+
+* Closed Position Truth owns closed-position records;
+* Closed Position Truth owns finalized position outcomes.
+
+Exit Decision shall not:
+
+* create closed-position truth;
+* modify closed-position records;
+* replace settlement reconciliation.
+
+---
+
+## Performance Truth
+
+Define:
+
+* Performance Truth owns performance records;
+* Performance Truth owns performance calculations.
+
+Exit Decision shall not:
+
+* calculate authoritative performance truth;
+* modify performance records.
+
+---
+
+## Historian
+
+Define:
+
+* Historian owns historical custody;
+* Historian owns immutable historical records;
+* Historian owns historical replay authority.
+
+Exit Decision shall not:
+
+* replace Historian custody;
+* modify historical records.
+
+---
+
+## Infrastructure
+
+Define:
+
+* Infrastructure owns technical execution environment;
+* Infrastructure owns system availability;
+* Infrastructure owns operational platform state.
+
+Exit Decision shall not:
+
+* modify infrastructure truth;
+* bypass infrastructure controls.
+
+---
+
+# 4. Prohibited Interaction Registry
+
+Establish prohibited interactions including:
+
+* Exit Decision modifying Risk truth;
+* Exit Decision modifying Authorization truth;
+* Exit Decision modifying Position Registry truth;
+* Exit Decision modifying Historian records;
+* Exit Decision directly communicating execution commands to Broker;
+* Exit Decision bypassing Trader execution authority;
+* Exit Decision replacing Commander authority;
+* any office assuming Exit Decision ownership without constitutional delegation.
+
+---
+
+# 5. Dependency Governance
+
+Define dependency rules:
+
+Every Exit Decision dependency shall identify:
+
+* source authority;
+* consumed artifact;
+* purpose;
+* freshness requirement;
+* validation responsibility;
+* failure behavior;
+* reconciliation authority.
+
+No dependency shall exist without constitutional justification.
+
+No dependency shall create hidden authority transfer.
+
+No dependency shall permit ownership ambiguity.
+
+---
+
+# 6. Boundary Conflict Identification
+
+Identify and resolve:
+
+## Shared Responsibility
+
+Every shared responsibility shall be classified as:
+
+* shared input;
+* shared review;
+* shared escalation;
+* shared evidence;
+* shared reconciliation.
+
+Shared authority shall be prohibited unless explicitly authorized.
+
+---
+
+## Duplicated Authority
+
+Identify any duplicate authority involving:
+
+* exit decision creation;
+* execution approval;
+* risk override;
+* authorization approval;
+* position mutation;
+* historical modification.
+
+Each duplicate authority shall be eliminated or assigned precedence.
+
+---
+
+## Missing Ownership
+
+Identify any responsibility without:
+
+* owner;
+* custodian;
+* correction authority;
+* reconciliation authority.
+
+All missing ownership shall be resolved before completion.
+
+---
+
+## Circular Authority
+
+Identify any circular dependency where:
+
+* one office requires authority from another;
+* the second office requires authority from the first;
+* neither possesses final constitutional ownership.
+
+All circular authority shall be eliminated unless explicitly authorized.
+
+---
+
+# Deliverables
+
+Produce:
+
+* enterprise boundary registry;
+* responsibility ownership matrix;
+* custody matrix;
+* mutation authority registry;
+* correction authority registry;
+* reconciliation authority registry;
+* prohibited interaction registry;
+* dependency governance registry;
+* constitutional boundary assessment;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every Exit Decision interaction has a defined boundary;
+* every enterprise office relationship is deterministic;
+* every responsibility has one constitutional owner;
+* every truth domain has one custodian;
+* every mutation authority has one source;
+* every correction authority has one source;
+* every reconciliation authority has one source;
+* no duplicated authority remains;
+* no missing ownership remains;
+* no circular authority remains;
+* no prohibited interaction remains unresolved.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B01-003 — Decision Authority and Execution Separation Constitution**

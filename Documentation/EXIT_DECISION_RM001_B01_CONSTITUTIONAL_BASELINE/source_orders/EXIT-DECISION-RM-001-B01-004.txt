@@ -1,0 +1,349 @@
+EXIT-DECISION-RM-001-B01-004
+
+# Escalation, Conflict Resolution, and Governance Constitution
+
+## Objective
+
+Establish the authoritative constitutional governance model for conflicts, overrides, escalations, exceptional conditions, and unresolved decision states involving the Exit Decision Office.
+
+This order shall define deterministic escalation authority, conflict resolution authority, precedence rules, exception handling, and final reconciliation ownership.
+
+---
+
+# Constitutional Constraints
+
+This order shall:
+
+* Not modify Exit Decision implementation behavior.
+* Not execute behavioral verification.
+* Not generate implementation proof.
+* Not perform certification activity.
+* Not grant unauthorized execution authority.
+* Not permit Exit Decision to bypass Risk, Authorizations, Trader, Broker, Position Registry, or Historian authority.
+
+This order shall establish only constitutional governance.
+
+---
+
+# Required Constitutional Definitions
+
+## 1. Escalation Authority Constitution
+
+Establish that escalation exists when:
+
+* constitutional authority ownership is ambiguous;
+* decision inputs conflict;
+* required dependencies are unavailable;
+* authorization state is inconsistent;
+* risk constraints conflict with requested exit action;
+* execution state cannot be reconciled;
+* historical truth conflicts with operational records;
+* emergency conditions require elevated review.
+
+Define:
+
+* escalation initiator;
+* escalation recipient;
+* escalation priority;
+* escalation timing;
+* escalation evidence requirements;
+* escalation closure authority.
+
+---
+
+# 2. Escalation Authority Ownership
+
+Establish:
+
+## Exit Decision Office
+
+Owns:
+
+* escalation initiation regarding exit decision ambiguity;
+* escalation of unresolved decision conflicts;
+* escalation of incomplete exit condition evaluation;
+* escalation of decision-object integrity issues.
+
+Does not own:
+
+* risk resolution;
+* authorization issuance;
+* execution resolution;
+* position truth correction;
+* historical truth correction.
+
+---
+
+## Commander Office
+
+Owns:
+
+* enterprise priority conflicts;
+* mission intent conflicts;
+* strategic precedence decisions;
+* final enterprise direction when constitutional authority permits.
+
+Commander shall not:
+
+* directly mutate operational truth;
+* bypass authorization controls;
+* bypass risk controls;
+* execute broker actions.
+
+---
+
+## Risk Office
+
+Owns:
+
+* risk constraint conflicts;
+* risk acceptance decisions;
+* risk-state interpretation;
+* risk truth correction.
+
+Risk shall not:
+
+* issue exit decisions;
+* authorize execution;
+* execute trades.
+
+---
+
+## Authorizations Office
+
+Owns:
+
+* authorization validity conflicts;
+* authorization issuance;
+* authorization revocation;
+* authorization expiry interpretation.
+
+Authorizations shall not:
+
+* determine exit necessity;
+* execute trades;
+* modify risk truth.
+
+---
+
+## Trader Office
+
+Owns:
+
+* execution request handling;
+* trade lifecycle management;
+* execution-state reconciliation.
+
+Trader shall not:
+
+* override Exit Decision authority;
+* create unauthorized exit decisions;
+* bypass authorization requirements.
+
+---
+
+## Broker Office
+
+Owns:
+
+* external broker interaction;
+* broker acknowledgment state;
+* execution communication integrity.
+
+Broker shall not:
+
+* determine enterprise exit intent;
+* create decision authority;
+* modify position truth.
+
+---
+
+## Position Registry Office
+
+Owns:
+
+* position identity;
+* position state;
+* position mutation;
+* reconciliation of position records.
+
+Position Registry shall not:
+
+* determine exit decisions;
+* authorize execution.
+
+---
+
+## Historian Office
+
+Owns:
+
+* immutable historical custody;
+* historical replay;
+* audit reconstruction.
+
+Historian shall not:
+
+* alter operational truth;
+* resolve live operational conflicts.
+
+---
+
+# 3. Conflict Resolution Constitution
+
+## Decision Conflict
+
+When Exit Decision outputs conflict with another office:
+
+Resolution order:
+
+1. Validate constitutional authority ownership.
+2. Validate input provenance.
+3. Validate authorization state.
+4. Validate risk constraints.
+5. Escalate unresolved authority conflicts.
+
+No office may resolve a conflict by assuming another office's authority.
+
+---
+
+# 4. Precedence Matrix
+
+| Domain                    | Authority Owner          | Override Authority       |
+| ------------------------- | ------------------------ | ------------------------ |
+| Enterprise intent         | Commander                | Commander                |
+| Exit condition evaluation | Exit Decision            | Exit Decision            |
+| Risk constraints          | Risk                     | Risk                     |
+| Authorization validity    | Authorizations           | Authorizations           |
+| Trade execution           | Trader                   | Trader                   |
+| Broker communication      | Broker                   | Broker                   |
+| Position truth            | Position Registry        | Position Registry        |
+| Historical truth          | Historian                | Historian                |
+| Performance truth         | Performance Truth Engine | Performance Truth Engine |
+
+No office may override another office's constitutional ownership.
+
+---
+
+# 5. Emergency Governance Constitution
+
+Emergency conditions may permit accelerated decision pathways.
+
+Emergency pathways shall:
+
+* preserve authorization separation;
+* preserve risk ownership;
+* preserve execution ownership;
+* preserve historical custody;
+* require complete post-event reconciliation.
+
+Emergency authority shall not create permanent authority expansion.
+
+---
+
+# 6. Suspension Authority
+
+Define:
+
+The following may suspend progression within their constitutional domain:
+
+* Exit Decision — decision generation when required inputs are invalid;
+* Risk — actions violating risk constraints;
+* Authorizations — actions lacking valid authorization;
+* Trader — execution when execution prerequisites fail;
+* Broker — external communication when broker conditions prevent safe execution.
+
+Suspension shall not equal cancellation.
+
+---
+
+# 7. Cancellation Authority
+
+Define:
+
+Cancellation authority belongs to:
+
+* Exit Decision for pending exit decisions not yet authorized;
+* Authorizations for invalid or revoked authorization;
+* Trader for unexecuted execution requests within Trader custody;
+* Broker for rejected external instructions;
+* Position Registry for invalid position state corrections.
+
+No office may cancel another office's owned truth object without constitutional authority.
+
+---
+
+# 8. Reopening Authority
+
+Define reopening conditions:
+
+* new authoritative evidence;
+* corrected dependency state;
+* invalidated prior decision basis;
+* unresolved reconciliation failure.
+
+Reopening shall require:
+
+* reason capture;
+* authority identification;
+* evidence preservation;
+* historical record.
+
+---
+
+# 9. Final Reconciliation Authority
+
+Establish:
+
+Final reconciliation responsibility shall be distributed by domain:
+
+* Exit Decision reconciles decision-state consistency.
+* Authorizations reconciles authorization-state consistency.
+* Trader reconciles execution-state consistency.
+* Broker reconciles broker communication state.
+* Position Registry reconciles position-state consistency.
+* Historian reconciles historical completeness.
+
+No single office may claim ownership of enterprise-wide truth.
+
+---
+
+# Deliverables
+
+Produce:
+
+* escalation constitution;
+* escalation authority registry;
+* conflict-resolution registry;
+* precedence matrix;
+* exception governance registry;
+* suspension authority registry;
+* cancellation authority registry;
+* reopening authority registry;
+* final reconciliation ownership matrix;
+* constitutional completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* escalation authority is deterministic;
+* conflict ownership is deterministic;
+* precedence rules are deterministic;
+* override authority is explicitly bounded;
+* emergency pathways preserve separation of authority;
+* suspension authority is defined;
+* cancellation authority is defined;
+* reopening authority is defined;
+* final reconciliation ownership is defined;
+* no constitutional conflict ambiguity remains.
+
+Successful completion of this order shall complete:
+
+> **EXIT-DECISION-RM-001-B01 — Exit Decision Constitutional Governance and Authority Series**
+
+and authorize progression into:
+
+> **EXIT-DECISION-RM-001-B02 — Canonical Exit Decision Objects and Lifecycle Constitution**

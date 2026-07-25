@@ -1,0 +1,402 @@
+EXIT-DECISION-RM-001-B01-003
+
+# Decision Authority and Execution Separation Constitution
+
+## Objective
+
+Establish the complete constitutional separation between Exit Decision evaluation authority, recommendation authority, decision authority, authorization authority, execution authority, settlement authority, reconciliation authority, and closed-position truth authority.
+
+This order shall eliminate every ambiguity where a decision could be interpreted as execution authority, where authorization could be interpreted as ownership, or where execution could be interpreted as truth ownership.
+
+No implementation behavior shall be modified under this order.
+
+No behavioral verification shall occur under this order.
+
+No implementation proof shall be generated under this order.
+
+No certification activity shall occur under this order.
+
+Every authority shall have one constitutional owner.
+
+Every transition shall have one governing authority.
+
+Every truth domain shall retain one authoritative custodian.
+
+---
+
+# Constitutional Principles
+
+A decision shall not equal execution.
+
+A recommendation shall not equal authorization.
+
+An authorization shall not equal broker execution.
+
+A broker execution shall not equal settled position truth.
+
+A settled position shall not equal historical truth.
+
+A historical record shall not equal performance truth.
+
+Exit Decision shall determine whether an exit condition satisfies the constitutional criteria for producing an exit decision outcome.
+
+Exit Decision shall not perform actions owned by authorization, trading, brokerage, position custody, settlement, reconciliation, or historical custody authorities.
+
+No office may consume decision authority as a substitute for execution authority.
+
+No office may consume execution authority as a substitute for truth ownership.
+
+---
+
+# Authority Chain Constitution
+
+The authoritative enterprise exit chain shall be:
+
+```text
+Observation
+↓
+Evaluation
+↓
+Recommendation
+↓
+Exit Decision
+↓
+Authorization Validation
+↓
+Trader Execution Request
+↓
+Broker Execution
+↓
+Settlement
+↓
+Position Registry Update
+↓
+Closed Position Truth Generation
+↓
+Historian Custody
+↓
+Performance Truth Evaluation
+```
+
+Each transition shall possess:
+
+* one producing authority;
+* one consuming authority;
+* one validation authority where applicable;
+* one evidence responsibility;
+* one custody responsibility.
+
+No transition shall bypass its governing authority.
+
+---
+
+# Exit Decision Authority Constitution
+
+## Evaluation Authority
+
+Exit Decision shall possess authority to:
+
+* evaluate authorized exit conditions;
+* evaluate decision criteria;
+* evaluate available enterprise truth inputs;
+* determine whether exit criteria are satisfied;
+* determine whether insufficient information prevents a decision.
+
+Exit Decision shall not create:
+
+* market truth;
+* risk truth;
+* authorization truth;
+* position truth;
+* performance truth;
+* historical truth.
+
+---
+
+## Recommendation Authority
+
+Exit Decision shall possess authority to:
+
+* generate exit recommendations;
+* document recommendation rationale;
+* identify supporting evidence;
+* identify uncertainty;
+* defer recommendation when conditions are insufficient.
+
+A recommendation shall not compel execution.
+
+A recommendation shall not create authorization.
+
+A recommendation shall not modify enterprise state.
+
+---
+
+## Decision Authority
+
+Exit Decision shall possess authority to:
+
+* issue constitutionally valid exit decisions;
+* approve or reject exit conditions within assigned scope;
+* defer decisions;
+* cancel previously issued decisions where permitted;
+* request required escalation.
+
+An Exit Decision shall represent an enterprise decision outcome only.
+
+An Exit Decision shall not represent:
+
+* a broker instruction;
+* an executed trade;
+* a closed position;
+* a settlement event.
+
+---
+
+# Exit Decision Non-Authority Constitution
+
+Exit Decision shall not possess authority to:
+
+* execute trades;
+* submit broker orders;
+* directly control Trader execution;
+* directly communicate execution instructions unless through approved constitutional interfaces;
+* create or modify authorizations;
+* override Risk controls;
+* override Authorization restrictions;
+* mutate Position Registry state;
+* modify Closed Position Truth;
+* modify Historian records;
+* modify Performance Truth;
+* replace Commander authority.
+
+---
+
+# Authority Separation Registry
+
+| Authority Domain         | Owner                           | Exit Decision Authority |
+| ------------------------ | ------------------------------- | ----------------------- |
+| Exit evaluation          | Exit Decision                   | Authorized              |
+| Exit recommendation      | Exit Decision                   | Authorized              |
+| Exit decision issuance   | Exit Decision                   | Authorized              |
+| Authorization creation   | Authorizations                  | Prohibited              |
+| Authorization validation | Authorizations                  | Consumer only           |
+| Risk acceptance          | Risk                            | Consumer only           |
+| Trade execution          | Trader                          | Prohibited              |
+| Broker communication     | Broker                          | Prohibited              |
+| Position mutation        | Position Registry               | Prohibited              |
+| Settlement truth         | Broker/Settlement authority     | Prohibited              |
+| Closed-position truth    | Closed Position Truth authority | Prohibited              |
+| Historical custody       | Historian                       | Prohibited              |
+| Performance measurement  | Performance Truth authority     | Prohibited              |
+
+---
+
+# Risk Separation Constitution
+
+Risk shall remain the sole authority for:
+
+* risk calculation;
+* risk constraints;
+* exposure truth;
+* risk acceptance;
+* risk rejection.
+
+Exit Decision may consume Risk outputs.
+
+Exit Decision shall not:
+
+* modify Risk outputs;
+* suppress Risk constraints;
+* reinterpret Risk ownership;
+* create substitute risk truth.
+
+Any disagreement between Exit Decision and Risk shall enter constitutional escalation.
+
+---
+
+# Authorization Separation Constitution
+
+Authorizations shall remain the sole authority for:
+
+* authorization issuance;
+* authorization validation;
+* authorization lifecycle;
+* authorization expiration;
+* authorization revocation.
+
+Exit Decision may request execution only through valid authorization pathways.
+
+Exit Decision shall not:
+
+* self-authorize;
+* extend authorization;
+* consume expired authorization;
+* bypass authorization validation.
+
+---
+
+# Trader Separation Constitution
+
+Trader shall remain the sole authority for:
+
+* execution preparation;
+* execution submission;
+* execution management;
+* trade lifecycle control.
+
+Exit Decision may provide an approved decision object.
+
+Trader shall determine execution behavior within authorized constraints.
+
+Exit Decision shall not:
+
+* submit orders;
+* modify executions;
+* force execution outcomes;
+* assume trader custody.
+
+---
+
+# Broker Separation Constitution
+
+Broker shall remain the sole authority for:
+
+* external market submission;
+* broker acknowledgement;
+* broker execution state;
+* settlement communication.
+
+Exit Decision shall not:
+
+* communicate directly as a broker substitute;
+* interpret broker state as position truth;
+* modify broker records.
+
+---
+
+# Position Registry Separation Constitution
+
+Position Registry shall remain the sole authority for:
+
+* position identity;
+* position state;
+* position ownership;
+* position mutation;
+* position reconciliation.
+
+Exit Decision shall consume position truth.
+
+Exit Decision shall not:
+
+* modify positions;
+* close positions;
+* declare positions closed;
+* replace reconciliation authority.
+
+---
+
+# Historian Separation Constitution
+
+Historian shall remain the sole authority for:
+
+* immutable historical custody;
+* event lineage;
+* historical replay;
+* archival integrity.
+
+Exit Decision shall produce decision evidence.
+
+Exit Decision shall not own historical custody.
+
+---
+
+# Emergency Decision Pathway Constitution
+
+Emergency pathways may permit accelerated decision processing only.
+
+Emergency pathways shall not permit:
+
+* authorization bypass;
+* risk bypass;
+* execution bypass;
+* position mutation bypass;
+* historical custody bypass.
+
+Emergency conditions shall preserve authority ownership.
+
+Emergency authority shall define:
+
+* activation criteria;
+* authorized participants;
+* duration;
+* evidence requirements;
+* reconciliation requirements.
+
+---
+
+# Decision-to-Execution Boundary Registry
+
+The following boundaries shall remain mandatory:
+
+| Boundary                    | Producer          | Consumer          | Separation Requirement            |
+| --------------------------- | ----------------- | ----------------- | --------------------------------- |
+| Evaluation → Recommendation | Exit Decision     | Exit Decision     | Internal decision process         |
+| Recommendation → Decision   | Exit Decision     | Exit Decision     | Decision accountability preserved |
+| Decision → Authorization    | Exit Decision     | Authorizations    | Authorization independent         |
+| Authorization → Execution   | Authorizations    | Trader            | Execution constrained             |
+| Execution → Broker          | Trader            | Broker            | Broker independence preserved     |
+| Broker → Position Truth     | Broker/Settlement | Position Registry | Truth custody preserved           |
+| Position Truth → History    | Position Registry | Historian         | Historical custody preserved      |
+
+---
+
+# Prohibited Authority Registry
+
+The following combinations are constitutionally prohibited:
+
+* Exit Decision + Broker Execution Authority;
+* Exit Decision + Authorization Creation Authority;
+* Exit Decision + Risk Override Authority;
+* Exit Decision + Position Mutation Authority;
+* Exit Decision + Historical Mutation Authority;
+* Exit Decision + Performance Truth Authority.
+
+No future implementation may combine these authorities without constitutional amendment.
+
+---
+
+# Deliverables
+
+This order shall produce:
+
+* authority separation constitution;
+* decision-to-execution boundary registry;
+* authorization dependency registry;
+* prohibited authority registry;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* evaluation authority is uniquely assigned;
+* recommendation authority is uniquely assigned;
+* decision authority is uniquely assigned;
+* authorization authority is uniquely assigned;
+* execution authority is uniquely assigned;
+* settlement authority is uniquely assigned;
+* reconciliation authority is uniquely assigned;
+* decision authority cannot create execution authority;
+* execution authority cannot create truth ownership;
+* authorization authority remains independent;
+* risk authority remains independent;
+* position truth ownership remains preserved;
+* historical custody remains preserved;
+* no prohibited authority combination remains;
+* no constitutional blocker remains.
+
+Successful completion of this order shall authorize progression into:
+
+> **EXIT-DECISION-RM-001-B01-004 — Escalation, Conflict Resolution, and Governance Constitution**

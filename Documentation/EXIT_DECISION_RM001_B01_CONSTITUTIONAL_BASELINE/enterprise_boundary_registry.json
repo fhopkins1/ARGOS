@@ -1,0 +1,106 @@
+[
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not fabricate analysis truth",
+    "external_authority": "provides analytical inputs when authorized",
+    "office": "Analyst",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not self-authorize",
+    "external_authority": "owns execution authorization issuance and revocation",
+    "office": "Authorizations",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not submit broker commands",
+    "external_authority": "owns broker submission/acknowledgement/fill truth",
+    "office": "Broker",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not declare closure truth",
+    "external_authority": "owns canonical closed-position truth",
+    "office": "Closed Position Truth",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not bypass Commander escalation authority",
+    "external_authority": "receives escalation and may supply commander-directed authority",
+    "office": "Commander",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not rewrite historical custody",
+    "external_authority": "owns historical custody and immutable preservation",
+    "office": "Historian",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "custody does not confer Exit Decision ownership",
+    "external_authority": "provides persistence, configuration, and runtime services",
+    "office": "Infrastructure",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not own monitoring truth",
+    "external_authority": "provides monitoring findings and surveillance context",
+    "office": "Monitoring",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not compute authoritative performance truth",
+    "external_authority": "owns performance truth",
+    "office": "Performance Truth",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may recommend but not mutate canonical position truth",
+    "external_authority": "owns canonical open-position state and lifecycle mutation",
+    "office": "Position Registry",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may consume but not mutate Risk truth",
+    "external_authority": "owns risk state, risk constraints, and emergency risk authority",
+    "office": "Risk",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not own Sentinel observation truth",
+    "external_authority": "may originate observations or notifications",
+    "office": "Sentinel",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  },
+  {
+    "conflict_disposition": "fail closed and escalate to governing authority",
+    "exit_decision_boundary": "Exit Decision may not execute trades",
+    "external_authority": "owns execution request handling after valid authority",
+    "office": "Trader",
+    "permitted_interaction": "read/consume authorized evidence, produce decision-context outputs, or escalate as governed",
+    "prohibited_interaction": "ownership transfer or mutation by implication"
+  }
+]
