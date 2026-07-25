@@ -79,9 +79,24 @@ class PositionRegistryRM002AFinalClosureTests(unittest.TestCase):
         self.assertTrue(graph)
         self.assertTrue(all(item["forward_status"] == "COMPLETE" and item["reverse_status"] == "COMPLETE" for item in graph))
 
+    def test_s05_final_proof_and_ecs003_audit_are_complete(self) -> None:
+        proof = json.loads((EVIDENCE_ROOT / "B05-001_authoritative_proof_baseline.json").read_text(encoding="utf-8"))
+        readiness = json.loads((EVIDENCE_ROOT / "B05-002_certification_readiness_assessment.json").read_text(encoding="utf-8"))
+        reproducibility = json.loads((EVIDENCE_ROOT / "B05-003_certification_reproducibility_report.json").read_text(encoding="utf-8"))
+        audit = json.loads((EVIDENCE_ROOT / "B05-004_independent_audit_execution_registry.json").read_text(encoding="utf-8"))
+        verdict = json.loads((EVIDENCE_ROOT / "B05-004_final_ecs003_verdict.json").read_text(encoding="utf-8"))
+        self.assertTrue(proof)
+        self.assertTrue(readiness["ready_for_independent_audit"])
+        self.assertFalse(reproducibility["depends_on_git_history"])
+        self.assertTrue(audit)
+        self.assertTrue(all(item["terminal_disposition"] == "PASS" for item in audit))
+        self.assertEqual(verdict["verdict"], "UNCONDITIONAL_PASS")
+        self.assertTrue(verdict["issued_exactly_one_verdict"])
+
     def test_completion_reports_unconditional_pass_without_doctrine_change(self) -> None:
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
         self.assertEqual(completion["final_verdict"], "UNCONDITIONAL_PASS")
+        self.assertIn("POSITION-REGISTRY-RM-002A-S05", completion["completed_series"])
         self.assertTrue(completion["implementation_modified"])
         self.assertFalse(completion["constitutional_doctrine_modified"])
         self.assertFalse(completion["repository_wide_verification_executed"])
