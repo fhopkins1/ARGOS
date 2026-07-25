@@ -1,0 +1,32 @@
+{
+  "mission_overlap_prohibited": true,
+  "monitoring_mission": "Continuous governed observation, evaluation, finding, alert, notification, and escalation request generation for authorized operational domains.",
+  "monitoring_observation_scope": "Known governed operational conditions assigned to Monitoring.",
+  "monitoring_owned_event_classes": [
+    "governed operational threshold breach",
+    "governed monitoring finding",
+    "governed alert",
+    "governed escalation request"
+  ],
+  "no_circular_dependency": true,
+  "prohibited_transition_mechanisms": [
+    "implementation inference",
+    "alert volume",
+    "operator convenience",
+    "implicit ownership"
+  ],
+  "sentinel_mission": "Enterprise anomaly discovery, reconnaissance of unknown conditions, and Commander-first notification under Sentinel doctrine.",
+  "sentinel_observation_scope": "Commander-assigned Sentinel discovery and observation missions.",
+  "sentinel_owned_event_classes": [
+    "unknown enterprise anomaly",
+    "newly discovered condition",
+    "Sentinel observation package"
+  ],
+  "transition_prerequisites": [
+    "formal governance approval",
+    "event class ownership assignment",
+    "monitoring rule version",
+    "evidence obligation definition"
+  ],
+  "unknown_event_owner": "Sentinel until constitutional governance transitions the event class."
+}

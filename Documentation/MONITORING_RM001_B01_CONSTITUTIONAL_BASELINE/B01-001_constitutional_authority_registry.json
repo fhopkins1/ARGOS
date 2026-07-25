@@ -1,0 +1,272 @@
+[
+  {
+    "authority_id": "MON-AUTH-001",
+    "authority_name": "continuous_observation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Observe constitutionally authorized operational state without ownership transfer.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-002",
+    "authority_name": "operational_state_evaluation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Evaluate observed conditions against approved monitoring rules.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-003",
+    "authority_name": "event_detection",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Detect governed operational event classes from admissible observations.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-004",
+    "authority_name": "finding_generation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Create immutable Monitoring findings from sufficient observation evidence.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-005",
+    "authority_name": "alert_generation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Generate alerts that communicate Monitoring-owned findings.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-006",
+    "authority_name": "notification_generation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Notify authorized recipients of findings, alerts, and escalation requests.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-007",
+    "authority_name": "escalation_request_generation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Request review by constitutionally designated receiving authorities.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-008",
+    "authority_name": "monitoring_health",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Track Monitoring continuity, degradation, and dependency availability.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-009",
+    "authority_name": "configuration_participation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Consume approved monitoring configuration without establishing policy.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  },
+  {
+    "authority_id": "MON-AUTH-010",
+    "authority_name": "dependency_awareness",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Record unavailable or degraded dependencies as Monitoring evidence.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  }
+]

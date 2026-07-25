@@ -1,0 +1,29 @@
+[
+  {
+    "authority_id": "MON-AUTH-005",
+    "authority_name": "alert_generation",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Generate alerts that communicate Monitoring-owned findings.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  }
+]

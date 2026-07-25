@@ -1,0 +1,29 @@
+[
+  {
+    "authority_id": "MON-AUTH-003",
+    "authority_name": "event_detection",
+    "authorized_outputs": [
+      "Monitoring evidence",
+      "Monitoring finding",
+      "Monitoring alert",
+      "Monitoring notification",
+      "Monitoring escalation request"
+    ],
+    "constitutional_owner": "Monitoring Office",
+    "constitutional_source": "MONITORING-RM-001-B01-001",
+    "dependency_relationships": [
+      "Historian custody",
+      "Infrastructure persistence",
+      "source-office truth ownership"
+    ],
+    "governing_limitation": "Observation, evaluation, finding, alert, notification, and escalation request authority only.",
+    "ownership_implications": "No ownership transfer over observed enterprise truth.",
+    "permitted_scope": "Detect governed operational event classes from admissible observations.",
+    "required_inputs": [
+      "authorized monitoring scope",
+      "admissible observation evidence",
+      "approved monitoring rule or threshold where applicable"
+    ],
+    "single_constitutional_source_verified": true
+  }
+]

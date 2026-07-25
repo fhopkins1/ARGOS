@@ -1,0 +1,86 @@
+[
+  {
+    "consumer": "Commander",
+    "deterministic": true,
+    "office": "Commander",
+    "producer": "Monitoring Office"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Sentinel",
+    "producer": "Sentinel"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Seeker",
+    "producer": "Seeker"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Analyst",
+    "producer": "Analyst"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Risk",
+    "producer": "Risk"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Trader",
+    "producer": "Trader"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Broker",
+    "producer": "Broker"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Position Registry",
+    "producer": "Position Registry"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Authorizations",
+    "producer": "Authorizations"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Exit Decision",
+    "producer": "Exit Decision"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Closed Position Truth",
+    "producer": "Closed Position Truth"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Performance Truth",
+    "producer": "Performance Truth"
+  },
+  {
+    "consumer": "Historian",
+    "deterministic": true,
+    "office": "Historian",
+    "producer": "Monitoring Office"
+  },
+  {
+    "consumer": "Monitoring Office",
+    "deterministic": true,
+    "office": "Infrastructure",
+    "producer": "Infrastructure"
+  }
+]
