@@ -1,0 +1,1159 @@
+# ECS-003-LIB-006
+
+# Proof Skeleton Generator
+
+## Doctrine Statement
+
+### Purpose
+
+This work order establishes the authoritative Proof Skeleton Generator governing deterministic creation, identity assignment, structural validation, lineage preparation, coverage reconciliation, and publication of requirement-level proof skeletons under the Enterprise Constitutional Standard (ECS-003).
+
+The Generator shall transform one authoritative canonical constitutional requirement registry into one complete, internally consistent, machine-readable proof skeleton population.
+
+The Generator shall create the required proof structure for every canonical constitutional requirement before execution evidence is attached.
+
+Every proof skeleton shall define the complete lineage required to demonstrate:
+
+```text
+Constitutional Authority
+→ Canonical Requirement
+→ Implementation Obligation
+→ Implementation Artifact
+→ Behavioral Verifier
+→ Behavioral Execution
+→ Raw Evidence
+→ Normalized Evidence
+→ Behavioral Finding
+→ Implementation Disposition
+→ Proof Object
+→ Certification Disposition
+```
+
+The Generator shall establish proof structure without fabricating execution, evidence, findings, dispositions, coverage, or certification conclusions.
+
+The canonical requirement registry established under **ECS-003-LIB-005** shall be accepted as the authoritative requirement baseline.
+
+The requirement registry shall remain immutable during proof skeleton generation.
+
+Proof skeleton generation shall create structural proof obligations without altering, weakening, broadening, narrowing, interpreting away, or inventing constitutional requirements.
+
+Every generated proof skeleton shall preserve deterministic lineage to:
+
+* its canonical constitutional requirement;
+* its governing constitutional authority;
+* its implementation obligation;
+* its required verification classes;
+* its required evidence classes;
+* its required proof fields;
+* its generation execution;
+* its published proof skeleton record.
+
+No completed proof object shall be asserted merely because a proof skeleton exists.
+
+No missing execution evidence shall be replaced by placeholders that imply successful verification.
+
+No unknown implementation mapping shall be silently inferred.
+
+No absent verifier shall be silently invented.
+
+No missing evidence shall be represented as satisfied.
+
+No unresolved proof obligation shall receive a proven disposition.
+
+---
+
+# Constitutional Principles
+
+Every canonical constitutional requirement shall possess exactly one authoritative proof skeleton.
+
+Every proof skeleton shall possess one deterministic identity.
+
+Every proof skeleton shall possess one canonical requirement identity.
+
+Every proof skeleton shall preserve complete requirement lineage.
+
+Every proof skeleton shall define all execution, evidence, implementation, traceability, and certification obligations required for proof completion.
+
+Proof structure shall be deterministic.
+
+Proof identity generation shall be deterministic.
+
+Proof obligation generation shall be deterministic.
+
+Equivalent normalized requirement registries shall produce semantically equivalent proof skeleton populations.
+
+Proof skeletons shall remain incomplete until objective executable evidence satisfies every mandatory proof obligation.
+
+A proof skeleton shall never constitute proof by itself.
+
+A requirement shall never be classified as proven solely because:
+
+* a skeleton exists;
+* an implementation artifact is named;
+* a verifier is declared;
+* a test name exists;
+* a completion report asserts success;
+* metadata indicates execution;
+* prior certification status exists.
+
+Proof completion shall fail closed.
+
+Missing implementation mapping shall prevent proof completion.
+
+Missing verifier mapping shall prevent proof completion.
+
+Missing execution evidence shall prevent proof completion.
+
+Missing evidence integrity shall prevent proof completion.
+
+Missing execution lineage shall prevent proof completion.
+
+Broken traceability shall prevent proof completion.
+
+Historical proof skeletons shall never be overwritten.
+
+Superseded proof skeletons shall remain preserved.
+
+Proof corrections shall occur through explicit versioning and supersession.
+
+---
+
+# Objective
+
+Implement one deterministic engine capable of accepting an authoritative canonical constitutional requirement registry and generating one complete proof skeleton population suitable for:
+
+* implementation obligation mapping;
+* implementation artifact mapping;
+* verifier assignment;
+* fixture assignment;
+* execution planning;
+* evidence collection;
+* finding generation;
+* proof construction;
+* proof coverage calculation;
+* execution-derived traceability;
+* certification blocker determination;
+* independent reproduction;
+* fail-closed certification validation.
+
+---
+
+# Required Inputs
+
+The Generator shall accept one versioned Proof Skeleton Input Package.
+
+At minimum, the package shall contain the following authoritative input domains.
+
+## Requirement Baseline
+
+* canonical requirement registry;
+* historical requirement registry;
+* requirement identity registry;
+* requirement version registry;
+* requirement classification registry;
+* requirement authority registry;
+* requirement ownership registry;
+* requirement applicability registry;
+* requirement verification registry;
+* requirement source traceability registry;
+* requirement supersession registry.
+
+## Constitutional Context
+
+For every requirement:
+
+* constitutional corpus identity;
+* constitutional authority;
+* constitutional owner;
+* obligated subject;
+* governed object;
+* normative operator;
+* triggering condition;
+* scope;
+* constraints;
+* exceptions;
+* required outcome;
+* prohibited outcome;
+* completion condition;
+* failure condition.
+
+## Implementation Context
+
+Where available:
+
+* implementation obligation identity;
+* implementation disposition;
+* participating implementation artifact identities;
+* implementation dependency identities;
+* implementation owner;
+* implementation candidate identity;
+* implementation version;
+* implementation supersession lineage.
+
+Unknown implementation mappings shall remain explicitly unresolved.
+
+## Verification Context
+
+For every requirement:
+
+* required verification class;
+* required execution modes;
+* required positive verification;
+* required negative verification;
+* required boundary verification;
+* required persistence verification;
+* required replay verification;
+* required recovery verification;
+* required evidence verification;
+* required traceability verification;
+* required reproducibility verification;
+* required mutation verification.
+
+## Evidence Context
+
+For every requirement:
+
+* required raw evidence types;
+* required normalized evidence types;
+* evidence producer;
+* evidence owner;
+* evidence custodian;
+* provenance obligations;
+* integrity obligations;
+* admissibility obligations;
+* retention obligations;
+* supersession obligations.
+
+## Proof Context
+
+* proof identifier prefix;
+* proof schema version;
+* proof status taxonomy;
+* proof completeness rules;
+* proof sufficiency rules;
+* proof lineage rules;
+* proof supersession rules;
+* proof coverage rules;
+* certification blocker rules;
+* output format;
+* artifact naming convention;
+* package naming convention.
+
+---
+
+# Input Schema Requirements
+
+The Proof Skeleton Input Package shall:
+
+* use one canonical machine-readable schema;
+* possess one package identity;
+* possess one schema version;
+* possess one package content hash;
+* identify the authoritative requirement baseline;
+* identify every active requirement;
+* identify superseded requirements;
+* define proof-generation configuration;
+* define required proof fields;
+* define required lineage relationships;
+* distinguish known values from unresolved values;
+* reject duplicate active requirement identities;
+* reject missing requirement source lineage;
+* reject unresolved requirement status;
+* reject invalid requirement applicability;
+* reject contradictory verification classes;
+* reject unsupported proof-status taxonomies.
+
+The Generator shall provide:
+
+* a human-readable input specification;
+* a machine-readable validation schema;
+* proof-skeleton generation rules;
+* proof identity rules;
+* proof completeness rules;
+* proof publication rules.
+
+---
+
+# Required Activities
+
+## 1. Requirement Baseline Validation
+
+Validate the complete canonical requirement registry before proof skeleton generation.
+
+Verify:
+
+* registry identity;
+* registry integrity;
+* requirement identity uniqueness;
+* requirement status;
+* requirement applicability;
+* requirement source lineage;
+* requirement authority;
+* requirement ownership;
+* requirement classification;
+* requirement verification disposition;
+* requirement supersession status;
+* registry release status.
+
+Classify every requirement as:
+
+* ACTIVE_APPLICABLE;
+* ACTIVE_CONDITIONALLY_APPLICABLE;
+* ACTIVE_NOT_APPLICABLE;
+* SUPERSEDED;
+* INVALID;
+* UNRESOLVED.
+
+Only active requirements may generate active proof skeletons.
+
+Superseded requirements shall generate or retain historical proof skeletons exclusively for lineage preservation.
+
+Invalid or unresolved requirements shall block proof skeleton publication.
+
+---
+
+## 2. Canonical Proof Skeleton Identity Generation
+
+Assign exactly one deterministic proof skeleton identity to every active canonical constitutional requirement.
+
+Proof skeleton identities shall be:
+
+* deterministic;
+* unique;
+* stable;
+* reproducible;
+* collision-resistant;
+* semantically linked to the requirement identity;
+* independent of workstation state;
+* independent of generation order where feasible;
+* independent of wall-clock time except as non-semantic metadata.
+
+Identity generation shall consider:
+
+* constitutional corpus identity;
+* canonical requirement identity;
+* requirement version;
+* proof schema version;
+* proof obligation class.
+
+A proof skeleton identity shall not change solely because of:
+
+* formatting;
+* whitespace;
+* pagination;
+* file location;
+* output ordering;
+* generation timestamp;
+* non-semantic metadata.
+
+Semantic changes to the governing requirement or proof obligations shall produce a new proof skeleton version or superseding identity according to explicit supersession rules.
+
+---
+
+## 3. Proof Skeleton Structural Generation
+
+Generate one structured proof skeleton for every active requirement.
+
+Every proof skeleton shall include structural fields for:
+
+* proof skeleton identity;
+* proof version;
+* proof status;
+* canonical requirement identity;
+* constitutional authority;
+* constitutional owner;
+* requirement source lineage;
+* implementation obligation identity;
+* implementation artifact identities;
+* implementation candidate identity;
+* behavioral verifier identities;
+* fixture identities;
+* execution plan identities;
+* execution identities;
+* raw evidence identities;
+* normalized evidence identities;
+* evidence provenance;
+* evidence integrity;
+* behavioral finding identity;
+* implementation disposition;
+* proof sufficiency disposition;
+* traceability disposition;
+* certification disposition;
+* certification blocker identities;
+* proof predecessor;
+* proof supersessor;
+* historical lineage.
+
+Unknown values shall be represented using explicit unresolved dispositions and shall never be replaced by invented content.
+
+---
+
+## 4. Implementation Obligation Skeleton Generation
+
+For every requirement, generate the structural implementation obligation needed to satisfy the constitutional requirement.
+
+Define:
+
+* implementation obligation identity;
+* governing requirement identity;
+* obligated implementation behavior;
+* permitted implementation scope;
+* prohibited implementation behavior;
+* expected participating artifact class;
+* expected dependency class;
+* expected runtime role;
+* expected state effect;
+* expected evidence effect.
+
+Where implementation mappings already exist, bind them objectively.
+
+Where implementation mappings do not exist, assign:
+
+* IMPLEMENTATION_MAPPING_REQUIRED;
+* IMPLEMENTATION_ARTIFACT_REQUIRED;
+* IMPLEMENTATION_DISPOSITION_REQUIRED.
+
+No unmapped implementation obligation shall be represented as satisfied.
+
+---
+
+## 5. Verification Obligation Skeleton Generation
+
+For every requirement, generate all required verification obligations.
+
+Verification obligations shall be derived from the requirement verification class established under **ECS-003-LIB-005**.
+
+At minimum support skeletons for:
+
+* structural verification;
+* positive behavioral verification;
+* negative behavioral verification;
+* boundary verification;
+* malformed-input verification;
+* stale-input verification;
+* duplicate verification;
+* ordering verification;
+* temporal verification;
+* persistence verification;
+* replay verification;
+* restart verification;
+* recovery verification;
+* reconciliation verification;
+* correction verification;
+* supersession verification;
+* evidence verification;
+* proof verification;
+* traceability verification;
+* reproducibility verification;
+* controlled mutation verification;
+* manual constitutional review.
+
+For every verification obligation define:
+
+* verifier identity requirement;
+* fixture identity requirement;
+* execution mode;
+* preconditions;
+* inputs;
+* expected behavior;
+* prohibited behavior;
+* expected evidence;
+* failure evidence;
+* completion rule;
+* failure rule.
+
+---
+
+## 6. Evidence Obligation Skeleton Generation
+
+Generate the required evidence structure for every verification obligation.
+
+At minimum define fields for:
+
+* execution manifest;
+* execution environment identity;
+* repository identity;
+* implementation candidate identity;
+* verifier identity;
+* fixture identity;
+* execution identity;
+* execution timestamp;
+* raw input evidence;
+* raw output evidence;
+* pre-state evidence;
+* post-state evidence;
+* state-transition evidence;
+* failure evidence;
+* normalized evidence;
+* content hashes;
+* provenance;
+* custody;
+* admissibility;
+* retention;
+* supersession lineage.
+
+Evidence requirements shall be classified as:
+
+* REQUIRED;
+* CONDITIONALLY_REQUIRED;
+* NOT_APPLICABLE;
+* UNRESOLVED.
+
+Every `NOT_APPLICABLE` evidence disposition shall possess objective constitutional justification.
+
+---
+
+## 7. Proof Completion Rule Generation
+
+Generate deterministic completion rules for every proof skeleton.
+
+A proof skeleton may receive `PROVEN` only when all mandatory conditions are satisfied.
+
+At minimum verify:
+
+* the governing requirement is active and applicable;
+* implementation obligation is mapped;
+* implementation artifacts are identified;
+* required verifiers are identified;
+* required fixtures are identified;
+* required executions have completed;
+* required raw evidence exists;
+* evidence provenance is complete;
+* evidence integrity is verified;
+* evidence is admissible;
+* normalized evidence exists;
+* behavioral findings are reconciled;
+* implementation disposition is final;
+* traceability is complete;
+* no unresolved contradiction remains;
+* no certification blocker remains for the requirement.
+
+Generate fail-closed dispositions including:
+
+* NOT_PROVEN;
+* IMPLEMENTATION_UNMAPPED;
+* IMPLEMENTATION_MISSING;
+* IMPLEMENTATION_FAILED;
+* IMPLEMENTATION_UNVERIFIED;
+* VERIFIER_MISSING;
+* VERIFIER_FAILED;
+* VERIFIER_INSUFFICIENT;
+* FIXTURE_MISSING;
+* EXECUTION_MISSING;
+* EXECUTION_FAILED;
+* EVIDENCE_MISSING;
+* EVIDENCE_INSUFFICIENT;
+* EVIDENCE_INADMISSIBLE;
+* EVIDENCE_INTEGRITY_FAILED;
+* PROVENANCE_INCOMPLETE;
+* TRACEABILITY_INCOMPLETE;
+* REPRODUCIBILITY_FAILED;
+* UNRESOLVED_CONTRADICTION;
+* NOT_APPLICABLE.
+
+No incomplete skeleton shall default to `PROVEN`.
+
+---
+
+## 8. Certification Blocker Skeleton Generation
+
+For every proof obligation capable of preventing certification, generate the corresponding blocker structure.
+
+Every blocker skeleton shall include:
+
+* blocker identity;
+* governing requirement;
+* governing proof skeleton;
+* blocker class;
+* blocker severity;
+* blocker trigger;
+* required executable evidence;
+* constitutional justification;
+* implementation impact;
+* proof impact;
+* certification impact;
+* resolution condition;
+* disposition.
+
+At minimum support blocker classes for:
+
+* missing implementation;
+* failed implementation;
+* missing verifier;
+* insufficient verifier;
+* missing fixture;
+* failed execution;
+* missing evidence;
+* inadmissible evidence;
+* failed evidence integrity;
+* incomplete provenance;
+* incomplete proof;
+* incomplete traceability;
+* failed reproducibility;
+* unresolved contradiction;
+* failed mutation validation.
+
+Certification blocker skeletons shall never assert that a blocker exists until the triggering condition is objectively established.
+
+---
+
+## 9. Proof Lineage Skeleton Generation
+
+Establish the complete required lineage graph for every proof skeleton:
+
+```text
+Constitutional Corpus
+↔ Constitutional Authority
+↔ Canonical Requirement
+↔ Implementation Obligation
+↔ Implementation Artifact
+↔ Behavioral Verifier
+↔ Fixture
+↔ Behavioral Execution
+↔ Raw Evidence
+↔ Normalized Evidence
+↔ Behavioral Finding
+↔ Implementation Disposition
+↔ Proof Object
+↔ Certification Blocker
+↔ Certification Disposition
+```
+
+Every required lineage edge shall be explicitly represented.
+
+Lineage edges shall possess one status:
+
+* SATISFIED;
+* REQUIRED;
+* CONDITIONALLY_REQUIRED;
+* NOT_APPLICABLE;
+* BROKEN;
+* UNRESOLVED.
+
+No proof skeleton with a required `BROKEN` or `UNRESOLVED` lineage edge may receive `PROVEN`.
+
+---
+
+## 10. Proof Skeleton Classification
+
+Classify every proof skeleton by primary proof class.
+
+At minimum support:
+
+* AUTHORITY_PROOF;
+* PROHIBITION_PROOF;
+* OWNERSHIP_PROOF;
+* CUSTODY_PROOF;
+* OBJECT_IDENTITY_PROOF;
+* OBJECT_INTEGRITY_PROOF;
+* LIFECYCLE_PROOF;
+* STATE_TRANSITION_PROOF;
+* INTERFACE_PROOF;
+* DEPENDENCY_PROOF;
+* TEMPORAL_PROOF;
+* FRESHNESS_PROOF;
+* ORDERING_PROOF;
+* DUPLICATE_HANDLING_PROOF;
+* PERSISTENCE_PROOF;
+* REPLAY_PROOF;
+* RECOVERY_PROOF;
+* RECONCILIATION_PROOF;
+* CORRECTION_PROOF;
+* SUPERSESSION_PROOF;
+* HISTORICAL_INTEGRITY_PROOF;
+* EVIDENCE_PROOF;
+* TRACEABILITY_PROOF;
+* REPRODUCIBILITY_PROOF;
+* CERTIFICATION_PROOF;
+* FAIL_CLOSED_PROOF;
+* COMPOSITE_PROOF.
+
+Every proof skeleton shall possess exactly one primary classification.
+
+Secondary classifications may be assigned where objectively justified.
+
+---
+
+## 11. Applicability Reconciliation
+
+Reconcile proof skeleton generation with requirement applicability.
+
+For requirements classified as `APPLICABLE`:
+
+* generate a complete active proof skeleton.
+
+For requirements classified as `CONDITIONALLY_APPLICABLE`:
+
+* generate a conditional proof skeleton;
+* define the activation condition;
+* define the evidence required to determine activation.
+
+For requirements classified as `NOT_APPLICABLE`:
+
+* generate an applicability proof skeleton;
+* require objective constitutional justification;
+* prohibit implementation or behavioral proof requirements unless applicability changes.
+
+No requirement shall be omitted solely because it is classified as `NOT_APPLICABLE`.
+
+---
+
+## 12. Duplicate and Collision Detection
+
+Identify:
+
+* duplicate proof skeleton identities;
+* duplicate proof obligations;
+* overlapping proof obligations;
+* duplicate blocker skeletons;
+* conflicting completion rules;
+* conflicting proof statuses;
+* conflicting lineage relationships.
+
+Classify relationships as:
+
+* EXACT_DUPLICATE;
+* SEMANTIC_DUPLICATE;
+* PARTIAL_OVERLAP;
+* SPECIALIZATION;
+* CONFLICT;
+* INDEPENDENT.
+
+Duplicate proof skeletons for the same active requirement shall be reconciled into exactly one authoritative active skeleton.
+
+Conflicts shall block publication.
+
+---
+
+## 13. Proof Skeleton Versioning and Supersession
+
+Establish deterministic versioning and supersession rules.
+
+For every changed skeleton determine whether the change results from:
+
+* non-semantic formatting;
+* requirement clarification;
+* requirement supersession;
+* implementation-obligation change;
+* verification-obligation change;
+* evidence-obligation change;
+* proof-completion-rule change;
+* certification-blocker-rule change;
+* lineage change;
+* proof schema change.
+
+Preserve:
+
+* prior proof skeleton identity;
+* prior version;
+* supersession reason;
+* superseding proof skeleton identity;
+* effective date;
+* governing requirement change;
+* proof obligation change;
+* historical lineage.
+
+Superseded proof skeletons shall never be deleted.
+
+---
+
+## 14. Proof Coverage Matrix Generation
+
+Generate a proof coverage matrix mapping every active canonical constitutional requirement to:
+
+* proof skeleton identity;
+* implementation obligation status;
+* implementation mapping status;
+* verifier status;
+* fixture status;
+* execution status;
+* evidence status;
+* provenance status;
+* integrity status;
+* traceability status;
+* reproducibility status;
+* proof status;
+* certification blocker status.
+
+Proof coverage shall distinguish structure availability from completed proof.
+
+At minimum support:
+
+* SKELETON_COMPLETE;
+* SKELETON_INCOMPLETE;
+* READY_FOR_EXECUTION;
+* NOT_READY_FOR_EXECUTION;
+* EXECUTION_COMPLETE;
+* EXECUTION_INCOMPLETE;
+* PROVEN;
+* NOT_PROVEN;
+* NOT_APPLICABLE.
+
+Aggregate coverage shall never conceal requirement-level deficiencies.
+
+---
+
+## 15. Proof Skeleton Completeness Analysis
+
+Verify:
+
+* every active requirement possesses exactly one proof skeleton;
+* every proof skeleton maps to exactly one active requirement;
+* every required proof field exists;
+* every required verification obligation exists;
+* every required evidence obligation exists;
+* every required lineage edge exists;
+* every completion rule exists;
+* every failure disposition exists;
+* every potential blocker class is represented;
+* every applicability condition is reconciled;
+* every historical proof skeleton is preserved.
+
+Identify:
+
+* missing skeletons;
+* orphan skeletons;
+* incomplete skeletons;
+* duplicate skeletons;
+* unresolved proof fields;
+* unresolved completion rules;
+* unresolved blocker rules;
+* broken lineage definitions.
+
+---
+
+## 16. Proof Skeleton Reconciliation
+
+Reconcile the complete proof skeleton population.
+
+Verify:
+
+* every active requirement possesses exactly one authoritative active proof skeleton;
+* every proof skeleton possesses one deterministic identity;
+* every proof skeleton possesses complete requirement lineage;
+* every proof skeleton possesses one proof classification;
+* every proof skeleton possesses one applicability disposition;
+* every proof skeleton possesses deterministic completion rules;
+* every proof skeleton possesses deterministic failure dispositions;
+* every required lineage relationship is represented;
+* no active duplicate remains;
+* no active conflict remains;
+* no orphan proof skeleton remains;
+* no requirement lacks proof structure;
+* historical supersession lineage is complete.
+
+Issue exactly one readiness disposition:
+
+* READY_FOR_RELEASE;
+* NOT_READY_FOR_RELEASE.
+
+---
+
+## 17. Proof Skeleton Publication
+
+Publish one authoritative Proof Skeleton Package containing:
+
+* active proof skeleton registry;
+* historical proof skeleton registry;
+* proof obligation registry;
+* implementation obligation skeleton registry;
+* verification obligation registry;
+* evidence obligation registry;
+* certification blocker skeleton registry;
+* proof lineage skeleton registry;
+* proof coverage matrix;
+* proof completeness findings;
+* proof reconciliation results;
+* generation lineage.
+
+The package shall be machine-readable and human-readable.
+
+The package shall be suitable for direct consumption by future proof-generation, traceability, verification, and certification tooling.
+
+---
+
+# Canonical Proof Skeleton Record
+
+Every canonical proof skeleton record shall contain, at minimum:
+
+* proof skeleton identity;
+* proof skeleton version;
+* proof skeleton status;
+* proof classification;
+* canonical requirement identity;
+* requirement version;
+* constitutional corpus identity;
+* constitutional authority;
+* constitutional owner;
+* exact requirement text;
+* normalized requirement text;
+* requirement applicability;
+* implementation obligation identity;
+* implementation mapping status;
+* expected implementation artifact classes;
+* mapped implementation artifact identities;
+* expected dependency classes;
+* verification obligation identities;
+* required verifier identities;
+* required fixture identities;
+* required execution modes;
+* required raw evidence types;
+* required normalized evidence types;
+* provenance requirements;
+* integrity requirements;
+* admissibility requirements;
+* proof completion rules;
+* proof failure rules;
+* certification blocker skeleton identities;
+* required lineage edges;
+* proof readiness status;
+* proof completion status;
+* predecessor proof skeleton;
+* superseding proof skeleton;
+* requirement semantic hash;
+* proof skeleton semantic hash;
+* generation execution identity;
+* lineage references.
+
+---
+
+# Fail-Closed Rules
+
+The Generator shall refuse proof skeleton release when:
+
+* the requirement registry is invalid;
+* the requirement registry is not release-ready;
+* an active requirement lacks a proof skeleton;
+* a proof skeleton lacks a governing requirement;
+* a duplicate active proof skeleton exists;
+* a proof identity collision exists;
+* an active requirement lacks constitutional authority;
+* an active requirement lacks ownership;
+* a proof skeleton lacks implementation obligation structure;
+* a proof skeleton lacks verification obligation structure;
+* a proof skeleton lacks evidence obligation structure;
+* a proof skeleton lacks completion rules;
+* a proof skeleton lacks failure dispositions;
+* a proof skeleton lacks lineage requirements;
+* a cross-reference remains unresolved;
+* a proof classification conflict remains unresolved;
+* an applicability conflict remains unresolved;
+* a blocker-rule conflict remains unresolved;
+* an orphan proof skeleton remains;
+* deterministic regeneration fails;
+* historical supersession lineage is incomplete.
+
+The Generator shall never issue `READY_FOR_RELEASE` merely because proof skeleton files were produced.
+
+The Generator shall never issue a `PROVEN` disposition without complete objective execution-derived evidence.
+
+---
+
+# Required Verification
+
+Implement executable verification covering:
+
+* valid complete requirement registry;
+* missing requirement registry;
+* invalid requirement registry;
+* duplicate requirement identity;
+* missing proof skeleton generation;
+* deterministic proof identity;
+* proof identity collision;
+* active requirement skeleton generation;
+* conditional requirement skeleton generation;
+* not-applicable requirement skeleton generation;
+* implementation obligation skeleton generation;
+* verification obligation generation;
+* evidence obligation generation;
+* certification blocker skeleton generation;
+* proof lineage generation;
+* duplicate skeleton detection;
+* orphan skeleton detection;
+* conflicting completion rules;
+* conflicting applicability;
+* requirement supersession;
+* proof skeleton supersession;
+* non-semantic requirement change;
+* semantic requirement change;
+* proof coverage generation;
+* proof completeness analysis;
+* deterministic repeat generation;
+* clean-room generation;
+* machine-readable publication;
+* human-readable publication;
+* release reconciliation;
+* historical-lineage preservation.
+
+Negative verification shall demonstrate that invalid, incomplete, ambiguous, contradictory, or unreconciled requirement registries fail closed.
+
+Negative verification shall also demonstrate that a proof skeleton cannot be mistaken for completed proof.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Proof Skeleton Generator;
+* proof skeleton input schema;
+* input package validator;
+* requirement baseline validator;
+* canonical proof skeleton identity generator;
+* proof skeleton structural generator;
+* implementation obligation skeleton generator;
+* verification obligation generator;
+* evidence obligation generator;
+* proof completion rule generator;
+* certification blocker skeleton generator;
+* proof lineage skeleton generator;
+* proof classification engine;
+* applicability reconciler;
+* duplicate and collision detector;
+* proof skeleton versioning engine;
+* proof skeleton supersession engine;
+* proof coverage matrix generator;
+* proof completeness analyzer;
+* proof skeleton reconciliation engine;
+* proof skeleton publisher;
+* executable verification suite;
+* negative verification suite;
+* clean-room execution runner;
+* user documentation;
+* example canonical requirement registry;
+* example generated proof skeleton package;
+* implementation report;
+* verification report;
+* completion report.
+
+---
+
+# Required Registries
+
+Produce:
+
+* proof skeleton registry;
+* historical proof skeleton registry;
+* proof classification registry;
+* implementation obligation skeleton registry;
+* verification obligation registry;
+* evidence obligation registry;
+* proof completion rule registry;
+* proof failure disposition registry;
+* certification blocker skeleton registry;
+* proof lineage skeleton registry;
+* proof applicability registry;
+* proof coverage registry;
+* proof coverage matrix;
+* duplicate proof skeleton registry;
+* proof conflict registry;
+* orphan proof skeleton registry;
+* incomplete proof skeleton registry;
+* proof supersession registry;
+* proof generation finding registry;
+* proof generation lineage registry;
+* proof reconciliation registry;
+* proof release registry.
+
+---
+
+# Completion Criteria
+
+This work order shall complete only when:
+
+* the authoritative requirement registry is governed by one canonical input schema;
+* every active canonical constitutional requirement generates exactly one authoritative proof skeleton;
+* every proof skeleton possesses one deterministic identity;
+* every proof skeleton possesses one governing canonical requirement;
+* every proof skeleton possesses one constitutional authority;
+* every proof skeleton possesses one constitutional owner;
+* every proof skeleton possesses one primary proof classification;
+* every proof skeleton possesses one applicability disposition;
+* every proof skeleton possesses implementation obligation structure;
+* every proof skeleton possesses verification obligation structure;
+* every proof skeleton possesses evidence obligation structure;
+* every proof skeleton possesses deterministic completion rules;
+* every proof skeleton possesses deterministic failure dispositions;
+* every proof skeleton possesses complete required lineage;
+* every potential certification-blocking deficiency possesses a blocker skeleton;
+* no active duplicate proof skeleton remains;
+* no active proof conflict remains;
+* no orphan proof skeleton remains;
+* no active requirement lacks proof structure;
+* proof coverage is measured at canonical requirement level;
+* proof skeleton versioning and supersession preserve complete historical lineage;
+* repeated generation from equivalent normalized requirement registries produces semantically equivalent proof skeleton populations;
+* clean-room generation succeeds exclusively from the delivered repository package;
+* invalid, incomplete, ambiguous, or contradictory inputs fail closed;
+* proof skeleton existence cannot be mistaken for completed proof;
+* one authoritative Proof Skeleton Package is produced;
+* the package receives `READY_FOR_RELEASE`;
+* no unresolved critical or high-severity Generator finding remains.
+
+---
+
+# Required Completion Artifacts
+
+Upon successful completion, generate and provide both of the following ZIP archives.
+
+## 1. Repository Package ZIP
+
+The Repository Package ZIP shall contain:
+
+* complete implementation repository;
+* Proof Skeleton Generator source code;
+* schema definitions;
+* requirement validation tooling;
+* proof identity generation tooling;
+* proof skeleton generation tooling;
+* implementation obligation generation tooling;
+* verification obligation generation tooling;
+* evidence obligation generation tooling;
+* completion-rule generation tooling;
+* blocker skeleton generation tooling;
+* lineage generation tooling;
+* coverage generation tooling;
+* reconciliation tooling;
+* publication tooling;
+* clean-room execution tooling;
+* executable verification suite;
+* negative verification suite;
+* example requirement registry;
+* example generated proof skeleton package;
+* all dependencies required for independent execution;
+* deterministic reproduction instructions.
+
+## 2. Evidence Package ZIP
+
+The Evidence Package ZIP shall contain:
+
+* proof skeleton registry;
+* historical proof skeleton registry;
+* proof classification registry;
+* implementation obligation skeleton registry;
+* verification obligation registry;
+* evidence obligation registry;
+* proof completion rule registry;
+* proof failure disposition registry;
+* certification blocker skeleton registry;
+* proof lineage skeleton registry;
+* proof applicability registry;
+* proof coverage registry;
+* proof coverage matrix;
+* duplicate proof skeleton registry;
+* proof conflict registry;
+* orphan proof skeleton registry;
+* incomplete proof skeleton registry;
+* proof supersession registry;
+* proof generation finding registry;
+* proof generation lineage registry;
+* proof reconciliation registry;
+* proof release registry;
+* behavioral verification evidence;
+* negative verification evidence;
+* clean-room execution evidence;
+* implementation report;
+* verification report;
+* completion report.
+
+Both ZIP archives shall be produced as final deliverables and provided for independent ECS-003 re-audit.

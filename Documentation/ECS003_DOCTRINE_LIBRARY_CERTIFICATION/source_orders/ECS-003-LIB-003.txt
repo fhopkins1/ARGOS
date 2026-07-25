@@ -1,0 +1,415 @@
+# ECS-003-LIB-003
+
+# Canonical Terminology Validation
+
+## Doctrine Statement
+
+### Purpose
+
+Implement the authoritative validator governing canonical terminology across ECS-003 doctrine, registries, implementation artifacts, evidence, proof, traceability, and certification artifacts.
+
+The Validator shall detect undefined, duplicated, conflicting, deprecated, ambiguous, or contextually inconsistent terminology.
+
+No artifact shall receive release-ready status while a required canonical term remains unresolved.
+
+---
+
+# Constitutional Principles
+
+Every governed concept shall possess one canonical term.
+
+Every canonical term shall possess:
+
+* one deterministic identity;
+* one authoritative definition;
+* one governing domain;
+* one status;
+* one provenance record;
+* one version and supersession lineage.
+
+Synonyms shall not silently create separate constitutional meanings.
+
+One term shall not possess conflicting active definitions.
+
+Deprecated terminology shall not appear in active normative artifacts unless expressly preserved for historical reference.
+
+Terminology shall never be validated solely by spelling similarity or word frequency.
+
+Historical terminology shall never be overwritten.
+
+---
+
+# Objective
+
+Create one deterministic engine capable of discovering, classifying, validating, reconciling, and publishing canonical ECS-003 terminology.
+
+---
+
+# Required Inputs
+
+Accept authoritative:
+
+* doctrine packages;
+* canonical requirement registries;
+* object registries;
+* authority and ownership registries;
+* lifecycle registries;
+* interface and dependency registries;
+* implementation obligation registries;
+* verifier and fixture registries;
+* evidence and proof registries;
+* traceability graphs;
+* certification artifacts;
+* terminology registries;
+* supersession records.
+
+Every input shall possess:
+
+* canonical identity;
+* schema version;
+* content hash;
+* provenance;
+* authority status;
+* release status.
+
+Invalid or unreconciled authoritative inputs shall block release.
+
+---
+
+# Required Activities
+
+## 1. Terminology Discovery
+
+Discover defined and used terms from:
+
+* explicit definition fields;
+* terminology registries;
+* headings and normative clauses;
+* schemas;
+* registry field names;
+* identifiers;
+* enumerations;
+* traceability nodes and edges;
+* proof and certification artifacts.
+
+Do not rely solely on free-text frequency.
+
+---
+
+## 2. Term Classification
+
+Classify every term as:
+
+* CANONICAL_ACTIVE;
+* CANONICAL_HISTORICAL;
+* AUTHORIZED_SYNONYM;
+* ABBREVIATION;
+* DOMAIN_SPECIALIZATION;
+* DEPRECATED;
+* UNDEFINED;
+* AMBIGUOUS;
+* CONFLICTING;
+* DUPLICATE;
+* NON_NORMATIVE.
+
+---
+
+## 3. Canonical Term Record
+
+For every canonical term define:
+
+* term identity;
+* canonical spelling;
+* definition;
+* governing domain;
+* authority source;
+* permitted contexts;
+* prohibited contexts;
+* authorized synonyms;
+* abbreviations;
+* predecessor term;
+* superseding term;
+* status;
+* version;
+* provenance.
+
+---
+
+## 4. Definition Validation
+
+Verify:
+
+* every active term has one authoritative definition;
+* definitions are non-circular;
+* definitions do not conflict;
+* terms are not defined only through implementation behavior;
+* authority and ownership terms preserve distinct meanings;
+* evidence, proof, traceability, and certification terms remain distinct;
+* office-specific specializations do not alter generic ECS-003 meaning.
+
+Identify:
+
+* missing definitions;
+* circular definitions;
+* conflicting definitions;
+* duplicate definitions;
+* scope ambiguity;
+* unauthorized semantic expansion;
+* unauthorized semantic narrowing.
+
+---
+
+## 5. Usage Validation
+
+Validate every governed term occurrence against:
+
+* canonical spelling;
+* authorized synonym rules;
+* domain;
+* context;
+* status;
+* version;
+* applicability;
+* supersession.
+
+Detect:
+
+* deprecated active usage;
+* unauthorized synonyms;
+* inconsistent capitalization where meaningful;
+* singular/plural identity conflicts;
+* abbreviation collisions;
+* cross-domain misuse;
+* term substitution that changes constitutional meaning.
+
+---
+
+## 6. Critical Distinction Validation
+
+Explicitly validate distinctions including:
+
+```text
+Authority ≠ Ownership
+Ownership ≠ Custody
+Observation ≠ Evaluation
+Finding ≠ Alert
+Alert ≠ Escalation
+Acknowledgement ≠ Closure
+Requirement ≠ Implementation Obligation
+Verifier ≠ Execution
+Evidence ≠ Proof
+Proof ≠ Certification Verdict
+Declared Traceability ≠ Execution-Derived Traceability
+```
+
+Any artifact that collapses a required distinction shall receive a conflicting-terminology finding.
+
+---
+
+## 7. Synonym and Abbreviation Governance
+
+For every synonym or abbreviation verify:
+
+* canonical target;
+* permitted scope;
+* permitted artifact classes;
+* first-use expansion where required;
+* absence of identity collision;
+* absence of semantic drift.
+
+Unauthorized synonyms and ambiguous abbreviations shall block release when they affect normative meaning.
+
+---
+
+## 8. Terminology Supersession
+
+Verify:
+
+* deprecated terms reference successors;
+* successor terms reference predecessors;
+* active artifacts use current terminology;
+* historical artifacts preserve original language;
+* no conflicting active successor exists;
+* supersession chains remain complete.
+
+---
+
+## 9. Cross-Artifact Consistency
+
+Compare terminology across:
+
+* doctrine;
+* requirements;
+* implementation obligations;
+* verifiers;
+* evidence;
+* proof;
+* traceability;
+* certification.
+
+Identify inconsistent definitions or usage across artifact classes.
+
+---
+
+## 10. Reconciliation
+
+Assign every discovered term one disposition:
+
+* VALID_CANONICAL;
+* VALID_SYNONYM;
+* VALID_HISTORICAL;
+* UNDEFINED;
+* AMBIGUOUS;
+* CONFLICTING;
+* DUPLICATE;
+* DEPRECATED_ACTIVE_USE;
+* UNAUTHORIZED_SPECIALIZATION;
+* UNRESOLVED.
+
+Issue exactly one package disposition:
+
+* READY_FOR_RELEASE;
+* NOT_READY_FOR_RELEASE.
+
+---
+
+# Fail-Closed Rules
+
+Refuse release when:
+
+* a required term is undefined;
+* an active term has conflicting definitions;
+* a circular definition remains;
+* a deprecated term controls active normative meaning;
+* an unauthorized synonym changes meaning;
+* an abbreviation collision remains;
+* a critical constitutional distinction is collapsed;
+* cross-artifact semantic inconsistency remains;
+* deterministic validation fails;
+* historical terminology lineage is incomplete.
+
+Term presence alone shall never prove semantic consistency.
+
+---
+
+# Required Verification
+
+Implement executable verification covering:
+
+* valid canonical definitions;
+* authorized synonyms;
+* abbreviations;
+* undefined terms;
+* duplicate terms;
+* conflicting definitions;
+* circular definitions;
+* deprecated usage;
+* cross-domain misuse;
+* unauthorized specialization;
+* semantic narrowing;
+* semantic expansion;
+* critical distinction collapse;
+* supersession chains;
+* deterministic repeat validation;
+* clean-room validation;
+* fail-closed release behavior.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Canonical Terminology Validator;
+* input schema;
+* terminology discovery engine;
+* canonical terminology registry;
+* definition validator;
+* usage validator;
+* synonym and abbreviation validator;
+* critical-distinction validator;
+* supersession validator;
+* cross-artifact consistency validator;
+* reconciliation engine;
+* machine-readable report;
+* human-readable report;
+* executable verification suite;
+* negative verification suite;
+* clean-room runner;
+* implementation report;
+* verification report;
+* completion report.
+
+---
+
+# Required Registries
+
+Produce:
+
+* canonical terminology registry;
+* terminology usage registry;
+* synonym registry;
+* abbreviation registry;
+* undefined terminology registry;
+* ambiguity registry;
+* terminology conflict registry;
+* deprecated terminology registry;
+* critical-distinction registry;
+* supersession registry;
+* cross-artifact consistency registry;
+* reconciliation registry;
+* release registry.
+
+---
+
+# Completion Criteria
+
+This work order shall complete only when:
+
+* every governed concept possesses one canonical term;
+* every active canonical term possesses one authoritative definition;
+* every term usage resolves to one valid canonical meaning;
+* every synonym and abbreviation is governed;
+* no unresolved undefined term remains;
+* no active conflicting definition remains;
+* no circular definition remains;
+* no deprecated term controls active normative meaning;
+* all critical constitutional distinctions remain preserved;
+* terminology is consistent across doctrine, implementation, evidence, proof, traceability, and certification;
+* historical terminology lineage is preserved;
+* repeated validation produces equivalent results;
+* clean-room validation succeeds from the delivered repository package;
+* invalid or inconsistent terminology fails closed;
+* one authoritative terminology package receives `READY_FOR_RELEASE`;
+* no unresolved critical or high-severity finding remains.
+
+---
+
+# Required Completion Artifacts
+
+## 1. Repository Package ZIP
+
+Contain:
+
+* complete implementation repository;
+* Validator source code;
+* schemas;
+* discovery, definition, usage, synonym, distinction, supersession, and reconciliation tooling;
+* verification suites;
+* clean-room tooling;
+* example valid and invalid terminology packages;
+* deterministic reproduction instructions.
+
+## 2. Evidence Package ZIP
+
+Contain:
+
+* all required registries;
+* validation findings;
+* positive and negative verification evidence;
+* clean-room execution evidence;
+* implementation report;
+* verification report;
+* completion report.
+
+Both ZIP archives shall be provided for independent ECS-003 re-audit.

@@ -1,0 +1,811 @@
+# ECS-003-LIB-004
+
+# Generic Office Instantiation Engine
+
+## Doctrine Statement
+
+### Purpose
+
+This work order establishes the authoritative Generic Office Instantiation Engine governing deterministic generation of office-specific ECS-003 remediation doctrine from the certified generic ECS-003 remediation library.
+
+The Engine shall transform one authoritative office-definition package into a complete, internally consistent, office-specific remediation program without manually rewriting generic doctrine.
+
+The Engine shall instantiate:
+
+* office identity;
+* constitutional terminology;
+* canonical object terminology;
+* dependency terminology;
+* interface terminology;
+* behavioral obligation terminology;
+* evidence terminology;
+* proof terminology;
+* certification terminology;
+* office-specific remediation identifiers;
+* office-specific cross-references;
+* office-specific deliverable requirements.
+
+The Engine shall use the generic remediation programs established under:
+
+* **ECS-003-RM-B01** — Dependency-Derived Implementation Discovery;
+* **ECS-003-RM-B02** — Behavioral Verification;
+* **ECS-003-RM-B03** — Implementation Remediation;
+* **ECS-003-RM-B04** — Initial Proof Generation and Certification;
+* **ECS-003-RM-B05** — Independent Reproduction Audit;
+* **ECS-003-RM-B06** — Behavioral Coverage and Dependency-Derived Discovery Remediation;
+* **ECS-003-RM-B07** — Evidence, Proof, and Traceability Remediation;
+* **ECS-003-RM-B08** — Clean-Room Reproducibility Remediation;
+* **ECS-003-RM-B09** — Fail-Closed Certification Validation.
+
+The generic ECS-003 remediation library shall remain immutable during instantiation.
+
+Instantiation shall specialize doctrine without altering its constitutional meaning, certification obligations, fail-closed behavior, evidence requirements, proof requirements, reproducibility requirements, or completion criteria.
+
+Every generated office-specific program shall remain independently auditable.
+
+Every generated artifact shall preserve deterministic lineage to:
+
+* the generic source doctrine;
+* the office-definition package;
+* the instantiation-engine version;
+* the template version;
+* the generation execution;
+* the resulting office-specific artifact.
+
+No office-specific doctrine shall be generated through unrestricted prose synthesis.
+
+No required doctrine shall be silently omitted.
+
+No office-specific constitutional fact shall be invented.
+
+No unresolved office-specific input shall be silently resolved.
+
+---
+
+# Constitutional Principles
+
+The generic ECS-003 remediation library shall constitute the authoritative source doctrine.
+
+Office-specific generation shall constitute deterministic specialization, not doctrinal authorship.
+
+Generic doctrine shall never be mutated during instantiation.
+
+Every substituted value shall originate from one authoritative office-definition field.
+
+Every generated statement shall trace to either:
+
+* immutable generic doctrine; or
+* authoritative office-specific input.
+
+Every office-specific input shall possess one canonical identity.
+
+Every generated office-specific program shall preserve the sequence, scope, purpose, and completion obligations of the generic B01–B09 lifecycle.
+
+No generated program shall weaken:
+
+* dependency-derived discovery;
+* executable behavioral verification;
+* evidence integrity;
+* proof sufficiency;
+* traceability;
+* independent reproduction;
+* clean-room isolation;
+* fail-closed certification.
+
+Missing mandatory input shall cause generation to fail closed.
+
+Ambiguous mandatory input shall cause generation to fail closed.
+
+Contradictory mandatory input shall cause generation to fail closed.
+
+Unknown placeholders shall cause generation to fail closed.
+
+Unresolved cross-references shall cause generation to fail closed.
+
+Unresolved identifiers shall cause generation to fail closed.
+
+Every generation execution shall be deterministic and independently reproducible.
+
+Equivalent normalized inputs shall produce semantically equivalent outputs.
+
+Historical generated artifacts shall never be overwritten.
+
+Superseded generated artifacts shall remain preserved.
+
+---
+
+# Objective
+
+Implement one deterministic engine capable of accepting an authoritative office-definition package and generating a complete office-specific ECS-003 remediation doctrine package covering B01 through B09.
+
+The Engine shall eliminate repetitive manual doctrine rewriting while preserving office-specific accuracy, constitutional authority, internal consistency, historical lineage, and certification integrity.
+
+---
+
+# Required Inputs
+
+The Engine shall accept one versioned Office Instantiation Definition Package.
+
+At minimum, the package shall contain the following authoritative input domains.
+
+## Office Identity
+
+* canonical office name;
+* canonical office identifier;
+* remediation-program prefix;
+* constitutional-program identifier;
+* implementation-program identifier;
+* office description;
+* office purpose;
+* office authority source;
+* office constitutional status;
+* office implementation status.
+
+## Constitutional Context
+
+* governing constitutional corpus;
+* canonical constitutional requirement registry;
+* constitutional authority registry;
+* prohibited authority registry;
+* ownership registry;
+* custody registry;
+* lifecycle registry;
+* correction and supersession doctrine;
+* historical integrity obligations.
+
+## Canonical Object Context
+
+For every relevant object:
+
+* canonical object identity;
+* canonical object name;
+* object purpose;
+* owner;
+* custodian;
+* creator;
+* mutation authority;
+* correction authority;
+* lifecycle;
+* terminal disposition;
+* evidence obligations.
+
+## Dependency Context
+
+For every relevant dependency:
+
+* dependency identity;
+* producer;
+* consumer;
+* dependency direction;
+* governing authority;
+* failure behavior;
+* replay behavior;
+* recovery behavior;
+* evidence obligation.
+
+## Interface Context
+
+For every relevant interface:
+
+* interface identity;
+* producer;
+* consumer;
+* schema authority;
+* identity contract;
+* scope contract;
+* temporal contract;
+* retry contract;
+* replay contract;
+* acknowledgement contract;
+* failure contract;
+* reconciliation responsibility.
+
+## Behavioral Context
+
+* implementation obligations;
+* lifecycle behaviors;
+* positive verification obligations;
+* negative verification obligations;
+* boundary conditions;
+* malformed-input cases;
+* stale-input cases;
+* duplicate cases;
+* replay cases;
+* restart cases;
+* recovery cases;
+* correction cases;
+* failure cases;
+* degraded-operation cases;
+* authority-enforcement cases.
+
+## Evidence and Proof Context
+
+* evidence object types;
+* evidence producers;
+* evidence custodians;
+* admissibility rules;
+* proof identity rules;
+* proof lineage requirements;
+* traceability requirements;
+* certification blocker rules;
+* clean-room requirements;
+* controlled mutation categories.
+
+## Output Configuration
+
+* required program population;
+* required order population;
+* artifact naming convention;
+* output directory;
+* package naming convention;
+* repository ZIP naming convention;
+* evidence ZIP naming convention;
+* document format;
+* schema version;
+* template version.
+
+---
+
+# Input Schema Requirements
+
+The Office Instantiation Definition Package shall:
+
+* use one canonical machine-readable schema;
+* possess one schema version;
+* possess one package identity;
+* possess one content hash;
+* identify every required input field;
+* distinguish required fields from optional fields;
+* define cardinality for every field;
+* define allowed enumerations;
+* define cross-field validation rules;
+* define referential integrity rules;
+* reject unknown critical fields;
+* reject duplicate canonical identities;
+* reject unresolved references;
+* reject contradictory ownership declarations;
+* reject contradictory authority declarations;
+* reject contradictory lifecycle declarations.
+
+The Engine shall provide a human-readable schema specification and a machine-readable validation schema.
+
+---
+
+# Required Activities
+
+## 1. Generic Doctrine Template Registry
+
+Establish one authoritative template registry containing the generic ECS-003 remediation programs B01 through B09.
+
+For every template identify:
+
+* canonical template identity;
+* program identity;
+* program title;
+* program purpose;
+* immutable doctrine sections;
+* substitutable fields;
+* conditional sections;
+* required cross-references;
+* required deliverables;
+* required completion criteria;
+* permitted office-specific extensions;
+* prohibited modifications.
+
+The template registry shall distinguish:
+
+* immutable normative text;
+* office-substitution tokens;
+* enumerated office-specific sections;
+* conditionally included clauses;
+* generated identifiers;
+* generated cross-references.
+
+No template shall rely upon undocumented free-text replacement.
+
+---
+
+## 2. Placeholder and Token Constitution
+
+Define one authoritative placeholder language.
+
+At minimum, support deterministic tokens for:
+
+* office name;
+* office identifier;
+* remediation prefix;
+* canonical object population;
+* dependency population;
+* interface population;
+* behavioral obligation population;
+* evidence population;
+* proof population;
+* mutation population;
+* predecessor program identities;
+* successor program identities;
+* repository-package name;
+* evidence-package name.
+
+Every token shall define:
+
+* canonical token identity;
+* expected data type;
+* source input field;
+* multiplicity;
+* formatting rule;
+* escaping rule;
+* omission behavior;
+* failure behavior.
+
+Unknown tokens shall be prohibited.
+
+Unresolved tokens shall block generation.
+
+---
+
+## 3. Office Input Validation
+
+Validate the complete Office Instantiation Definition Package before generation.
+
+Verify:
+
+* schema validity;
+* package identity;
+* content integrity;
+* required-field completeness;
+* canonical identity uniqueness;
+* cross-reference validity;
+* authority consistency;
+* ownership consistency;
+* lifecycle consistency;
+* dependency consistency;
+* interface consistency;
+* behavioral obligation completeness;
+* evidence obligation completeness;
+* proof obligation completeness;
+* certification obligation completeness.
+
+Classify every validation result as:
+
+* VALID;
+* INVALID;
+* INCOMPLETE;
+* CONTRADICTORY;
+* UNSUPPORTED;
+* NOT_APPLICABLE.
+
+Generation shall proceed only when all mandatory inputs receive `VALID`.
+
+---
+
+## 4. Deterministic Program Instantiation
+
+Generate office-specific versions of:
+
+* B01;
+* B02;
+* B03;
+* B04;
+* B05;
+* B06;
+* B07;
+* B08;
+* B09.
+
+For every generated program:
+
+* substitute canonical office identity;
+* substitute office-specific constitutional terminology;
+* instantiate office-specific object populations;
+* instantiate office-specific dependency populations;
+* instantiate office-specific interface populations;
+* instantiate office-specific behavioral obligations;
+* instantiate office-specific evidence obligations;
+* instantiate office-specific proof obligations;
+* instantiate office-specific mutation classes;
+* generate program identifiers;
+* generate subordinate order identifiers;
+* generate predecessor references;
+* generate successor references;
+* generate package deliverable names;
+* preserve generic completion criteria;
+* preserve fail-closed behavior.
+
+No generated program shall omit a generic obligation unless the template expressly permits conditional omission and objective `NOT_APPLICABLE` evidence exists.
+
+---
+
+## 5. Office-Specific Extension Governance
+
+Permit bounded office-specific extensions only where generic doctrine requires domain specialization.
+
+Every extension shall:
+
+* possess one canonical identity;
+* identify the governing generic clause;
+* identify the office-specific constitutional source;
+* preserve generic doctrine;
+* avoid duplicating generic obligations;
+* avoid weakening completion criteria;
+* avoid expanding office authority;
+* avoid redefining implementation participation.
+
+Classify each extension as:
+
+* REQUIRED_SPECIALIZATION;
+* OPTIONAL_SPECIALIZATION;
+* PROHIBITED_EXTENSION.
+
+Prohibited extensions shall block generation.
+
+---
+
+## 6. Identifier Generation
+
+Generate deterministic identifiers for:
+
+* programs;
+* subordinate orders;
+* templates;
+* input packages;
+* generation executions;
+* output artifacts;
+* validation findings;
+* lineage records;
+* reconciliation records.
+
+Identifier generation shall be:
+
+* deterministic;
+* collision-resistant;
+* reproducible;
+* independent of workstation state;
+* independent of wall-clock time except where time is explicitly a non-semantic audit field.
+
+Semantic identifiers shall not depend solely upon timestamps.
+
+---
+
+## 7. Cross-Reference Generation and Validation
+
+Generate and validate all internal references.
+
+Verify:
+
+* B01 through B09 sequence;
+* predecessor references;
+* successor references;
+* constitutional-baseline references;
+* implementation-baseline references;
+* behavioral-baseline references;
+* proof-baseline references;
+* reproduction-baseline references;
+* final certification references;
+* subordinate-order references;
+* package-deliverable references.
+
+Identify:
+
+* unresolved references;
+* missing references;
+* circular references;
+* invalid predecessor relationships;
+* invalid successor relationships;
+* identifier collisions;
+* references to omitted artifacts.
+
+No output package shall be issued while any required reference remains unresolved.
+
+---
+
+## 8. Semantic Preservation Validation
+
+Validate that office-specific generation preserves the meaning of the generic ECS-003 doctrine.
+
+At minimum verify preservation of:
+
+* program purpose;
+* constitutional constraints;
+* evidence requirements;
+* proof requirements;
+* traceability requirements;
+* clean-room requirements;
+* mutation requirements;
+* fail-closed requirements;
+* completion criteria;
+* final exit criteria.
+
+Compare each generated clause against its generic source clause.
+
+Classify each generated clause as:
+
+* EXACT_INSTANTIATION;
+* AUTHORIZED_SPECIALIZATION;
+* NON_SEMANTIC_FORMATTING_DIFFERENCE;
+* SEMANTIC_DIVERGENCE;
+* MISSING_CLAUSE;
+* UNAUTHORIZED_ADDITION.
+
+Any `SEMANTIC_DIVERGENCE`, `MISSING_CLAUSE`, or `UNAUTHORIZED_ADDITION` shall block release.
+
+---
+
+## 9. Deterministic Output Validation
+
+Execute generation repeatedly from identical normalized inputs.
+
+Verify:
+
+* identical program population;
+* identical order population;
+* identical identifiers;
+* identical cross-references;
+* identical normalized text;
+* identical manifests;
+* identical semantic hashes;
+* identical lineage.
+
+Authorized non-semantic differences shall be explicitly classified and excluded from semantic equivalence calculations.
+
+---
+
+## 10. Instantiation Lineage
+
+For every generated artifact, preserve complete lineage:
+
+```text
+Generic ECS-003 Doctrine
+→ Generic Template Version
+→ Office Definition Package
+→ Validated Normalized Input
+→ Instantiation Engine Version
+→ Generation Execution
+→ Generated Office-Specific Program
+→ Generated Office-Specific Order
+→ Validation Results
+→ Release Package
+```
+
+Every lineage edge shall possess objective evidence.
+
+---
+
+## 11. Generated Doctrine Reconciliation
+
+Reconcile the complete generated B01–B09 package.
+
+Verify:
+
+* exactly nine required programs exist;
+* all required subordinate orders exist;
+* all required sections exist;
+* all required deliverables exist;
+* all required completion criteria exist;
+* all cross-references resolve;
+* all office-specific substitutions are valid;
+* no generic placeholders remain;
+* no template instructions remain;
+* no prohibited authority expansion exists;
+* no doctrinal weakening exists;
+* no duplicate program exists;
+* no orphan order exists.
+
+Issue exactly one reconciliation disposition:
+
+* READY_FOR_RELEASE;
+* NOT_READY_FOR_RELEASE.
+
+---
+
+## 12. Packaging
+
+Generate one office-specific doctrine package containing:
+
+* B01 through B09 programs;
+* subordinate-order manifests;
+* office-definition package;
+* normalized input package;
+* template manifest;
+* instantiation manifest;
+* cross-reference registry;
+* semantic-preservation report;
+* validation report;
+* lineage registry;
+* reconciliation report.
+
+The generated package shall be sufficient for independent reproduction without access to developer-local state.
+
+---
+
+# Fail-Closed Rules
+
+The Engine shall refuse generation or release when:
+
+* the input schema is invalid;
+* a mandatory input is missing;
+* a canonical identity is duplicated;
+* an office authority is contradictory;
+* ownership is contradictory;
+* a lifecycle is contradictory;
+* a dependency is unresolved;
+* an interface is unresolved;
+* a required behavioral obligation is missing;
+* a required evidence obligation is missing;
+* a required proof obligation is missing;
+* a placeholder remains unresolved;
+* a cross-reference remains unresolved;
+* a generated clause semantically diverges from generic doctrine;
+* a required program is absent;
+* a required subordinate order is absent;
+* an unauthorized extension is present;
+* deterministic regeneration fails;
+* lineage is incomplete.
+
+The Engine shall never issue a successful generation status merely because files were produced.
+
+---
+
+# Required Verification
+
+Implement executable verification covering:
+
+* valid complete office package;
+* missing office identity;
+* duplicate object identity;
+* conflicting ownership;
+* conflicting authority;
+* missing lifecycle;
+* missing dependency;
+* missing interface;
+* unresolved placeholder;
+* unknown placeholder;
+* missing B-series template;
+* broken cross-reference;
+* invalid predecessor reference;
+* invalid successor reference;
+* unauthorized doctrine modification;
+* semantic weakening;
+* unauthorized office extension;
+* duplicate generated identifier;
+* deterministic repeat generation;
+* clean-room generation;
+* output-package reconciliation;
+* historical-lineage preservation.
+
+Negative verification shall prove that every invalid or incomplete input fails closed.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Generic Office Instantiation Engine;
+* office instantiation input schema;
+* machine-readable schema validator;
+* generic doctrine template registry;
+* template manifest;
+* placeholder registry;
+* token specification;
+* office-input validation engine;
+* deterministic identifier generator;
+* cross-reference generator;
+* cross-reference validator;
+* semantic-preservation validator;
+* deterministic-output validator;
+* lineage generator;
+* doctrine reconciliation engine;
+* office-specific doctrine packager;
+* executable verification suite;
+* negative verification suite;
+* clean-room execution runner;
+* user documentation;
+* example office-definition package;
+* example generated B01–B09 package;
+* implementation report;
+* verification report;
+* completion report.
+
+---
+
+# Required Registries
+
+Produce:
+
+* template registry;
+* template-version registry;
+* placeholder registry;
+* office-input field registry;
+* validation-rule registry;
+* office-extension registry;
+* generated-program registry;
+* generated-order registry;
+* generated-identifier registry;
+* cross-reference registry;
+* semantic-preservation registry;
+* deterministic-execution registry;
+* generation-finding registry;
+* lineage registry;
+* reconciliation registry;
+* release registry.
+
+---
+
+# Completion Criteria
+
+This work order shall complete only when:
+
+* the generic B01–B09 doctrine library is represented by one authoritative immutable template registry;
+* the Office Instantiation Definition Package is governed by one canonical machine-readable schema;
+* every mandatory office-specific input is validated before generation;
+* every generated statement traces to generic doctrine or authoritative office input;
+* every office-specific B01–B09 program is generated deterministically;
+* every required subordinate order is represented in the generated package;
+* every generated identifier is deterministic and collision-free;
+* every generated cross-reference resolves;
+* no unresolved placeholder remains;
+* no required generic doctrine is omitted;
+* no generated doctrine weakens generic ECS-003 obligations;
+* no generated doctrine expands office authority without constitutional support;
+* repeated generation from equivalent normalized inputs produces semantically equivalent outputs;
+* clean-room generation succeeds exclusively from the delivered repository package;
+* every invalid, incomplete, ambiguous, or contradictory input fails closed;
+* every generated artifact possesses complete lineage;
+* one authoritative office-specific ECS-003 remediation package is produced;
+* the generated package receives `READY_FOR_RELEASE`;
+* no unresolved critical or high-severity engine finding remains.
+
+---
+
+# Required Completion Artifacts
+
+Upon successful completion, generate and provide both of the following ZIP archives.
+
+## 1. Repository Package ZIP
+
+The Repository Package ZIP shall contain:
+
+* complete implementation repository;
+* Generic Office Instantiation Engine source code;
+* generic doctrine templates;
+* schema definitions;
+* validators;
+* generators;
+* reconciliation tooling;
+* packaging tooling;
+* clean-room execution tooling;
+* executable verification suite;
+* negative verification suite;
+* example input package;
+* example generated package;
+* all dependencies required for independent execution;
+* deterministic reproduction instructions.
+
+## 2. Evidence Package ZIP
+
+The Evidence Package ZIP shall contain:
+
+* template registry;
+* template-version registry;
+* placeholder registry;
+* office-input field registry;
+* validation-rule registry;
+* office-extension registry;
+* generated-program registry;
+* generated-order registry;
+* generated-identifier registry;
+* cross-reference registry;
+* semantic-preservation registry;
+* deterministic-execution registry;
+* generation-finding registry;
+* lineage registry;
+* reconciliation registry;
+* release registry;
+* behavioral verification evidence;
+* negative verification evidence;
+* clean-room execution evidence;
+* implementation report;
+* verification report;
+* completion report.
+
+Both ZIP archives shall be produced as final deliverables and provided for independent ECS-003 re-audit.

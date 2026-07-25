@@ -1,0 +1,1031 @@
+# ECS-003-LIB-005
+
+# Requirement Registry Generator
+
+## Doctrine Statement
+
+### Purpose
+
+This work order establishes the authoritative Requirement Registry Generator governing deterministic extraction, normalization, identity assignment, classification, reconciliation, and publication of canonical constitutional requirements under the Enterprise Constitutional Standard (ECS-003).
+
+The Generator shall transform one authoritative constitutional doctrine package into one complete, atomic, internally consistent, machine-readable canonical requirement registry.
+
+The Generator shall identify every normative constitutional obligation governing:
+
+* constitutional authority;
+* office purpose;
+* ownership;
+* custody;
+* prohibited authority;
+* canonical objects;
+* lifecycle behavior;
+* state transitions;
+* interfaces;
+* dependencies;
+* temporal behavior;
+* freshness;
+* ordering;
+* duplicate handling;
+* replay;
+* recovery;
+* reconciliation;
+* correction;
+* supersession;
+* evidence;
+* implementation;
+* behavioral verification;
+* proof;
+* traceability;
+* reproducibility;
+* certification;
+* fail-closed behavior.
+
+The constitutional doctrine package shall remain immutable during requirement generation.
+
+Requirement generation shall extract and structure constitutional meaning without altering, expanding, weakening, interpreting away, or inventing constitutional obligations.
+
+Every generated requirement shall preserve deterministic lineage to:
+
+* its constitutional source artifact;
+* its source section;
+* its source clause;
+* its governing authority;
+* its extraction rule;
+* its normalization rule;
+* its generation execution;
+* its canonical registry entry.
+
+No canonical requirement shall be created through unrestricted prose synthesis.
+
+No normative constitutional clause shall be silently omitted.
+
+No non-normative statement shall be promoted into a constitutional requirement without objective classification evidence.
+
+No ambiguous constitutional clause shall be silently resolved.
+
+No contradictory constitutional clause shall be silently reconciled.
+
+---
+
+# Constitutional Principles
+
+Canonical constitutional requirements shall originate exclusively from authoritative constitutional doctrine.
+
+Every canonical requirement shall possess one deterministic identity.
+
+Every canonical requirement shall possess one authoritative source.
+
+Every canonical requirement shall express one atomic constitutional obligation.
+
+Every canonical requirement shall possess one constitutional owner.
+
+Every canonical requirement shall possess one obligation subject.
+
+Every canonical requirement shall possess one obligation action.
+
+Every canonical requirement shall possess one obligation object or governed condition.
+
+Every canonical requirement shall possess one applicability disposition.
+
+Every canonical requirement shall possess one verification disposition.
+
+Every canonical requirement shall preserve complete source lineage.
+
+Requirement extraction shall be deterministic.
+
+Requirement normalization shall be deterministic.
+
+Requirement identity generation shall be deterministic.
+
+Equivalent normalized doctrine shall produce semantically equivalent requirement registries.
+
+Requirement generation shall fail closed when doctrine is:
+
+* missing;
+* ambiguous;
+* contradictory;
+* structurally invalid;
+* unsupported;
+* incompletely referenced;
+* incapable of atomic decomposition without interpretation.
+
+No documentation, implementation behavior, source code, test result, completion report, metadata, or historical certification status shall create constitutional authority.
+
+Historical requirement registries shall never be overwritten.
+
+Superseded requirement identities shall remain preserved.
+
+Requirement correction shall occur through explicit supersession.
+
+---
+
+# Objective
+
+Implement one deterministic engine capable of accepting an authoritative constitutional doctrine package and generating one complete canonical constitutional requirement registry suitable for:
+
+* implementation obligation generation;
+* dependency-derived implementation discovery;
+* behavioral coverage generation;
+* verifier mapping;
+* evidence generation;
+* proof generation;
+* execution-derived traceability;
+* certification blocker evaluation;
+* clean-room reproduction;
+* fail-closed certification validation.
+
+---
+
+# Required Inputs
+
+The Generator shall accept one versioned Constitutional Doctrine Input Package.
+
+At minimum, the package shall contain the following authoritative input domains.
+
+## Doctrine Identity
+
+* constitutional corpus identity;
+* office or system identity;
+* doctrine version;
+* doctrine status;
+* doctrine effective date;
+* doctrine package identity;
+* doctrine package content hash;
+* constitutional authority source;
+* superseded doctrine references.
+
+## Source Artifact Population
+
+For every constitutional artifact:
+
+* artifact identity;
+* artifact title;
+* artifact type;
+* artifact version;
+* artifact status;
+* artifact content hash;
+* artifact precedence;
+* artifact effective date;
+* artifact supersession status;
+* artifact location;
+* governing constitutional domain.
+
+## Structural Context
+
+For every artifact:
+
+* section identity;
+* subsection identity;
+* clause identity;
+* clause sequence;
+* heading hierarchy;
+* normative marker;
+* cross-references;
+* defined terms;
+* exclusions;
+* exceptions;
+* applicability conditions.
+
+## Constitutional Context
+
+* office purpose;
+* authority registry;
+* responsibility registry;
+* prohibited authority registry;
+* ownership registry;
+* custody registry;
+* canonical object registry;
+* lifecycle registry;
+* interface registry;
+* dependency registry;
+* evidence registry;
+* certification obligations;
+* constitutional terminology registry.
+
+## Generation Configuration
+
+* requirement identifier prefix;
+* registry schema version;
+* atomicity rules;
+* normalization rules;
+* classification rules;
+* source precedence rules;
+* conflict rules;
+* supersession rules;
+* output format;
+* artifact naming convention;
+* package naming convention.
+
+---
+
+# Input Schema Requirements
+
+The Constitutional Doctrine Input Package shall:
+
+* use one canonical machine-readable manifest;
+* possess one package identity;
+* possess one schema version;
+* possess one package content hash;
+* enumerate every authoritative source artifact;
+* identify source precedence;
+* distinguish active, superseded, draft, and non-authoritative artifacts;
+* distinguish normative from non-normative content;
+* define cross-reference relationships;
+* reject duplicate artifact identities;
+* reject unresolved artifact references;
+* reject contradictory active-source precedence;
+* reject missing authoritative-source status;
+* reject unsupported document formats unless explicitly classified.
+
+The Generator shall provide:
+
+* a human-readable input specification;
+* a machine-readable input schema;
+* input validation rules;
+* doctrine parsing rules;
+* source admissibility rules.
+
+---
+
+# Required Activities
+
+## 1. Authoritative Doctrine Source Validation
+
+Validate the complete constitutional doctrine package before requirement extraction.
+
+Verify:
+
+* doctrine package identity;
+* doctrine package integrity;
+* artifact completeness;
+* artifact authority;
+* artifact status;
+* artifact precedence;
+* artifact version;
+* artifact supersession;
+* source cross-references;
+* defined terminology;
+* structural validity.
+
+Classify every source artifact as:
+
+* AUTHORITATIVE_ACTIVE;
+* AUTHORITATIVE_SUPERSEDED;
+* SUPPORTING_NON_NORMATIVE;
+* DRAFT;
+* INVALID;
+* UNRESOLVED.
+
+Only `AUTHORITATIVE_ACTIVE` artifacts may generate active constitutional requirements.
+
+Superseded artifacts shall remain available exclusively for historical lineage.
+
+---
+
+## 2. Normative Clause Discovery
+
+Identify every potentially normative clause through deterministic structural and semantic rules.
+
+Discover normative clauses expressed through terms including, where constitutionally applicable:
+
+* shall;
+* shall not;
+* must;
+* must not;
+* may only;
+* is required to;
+* is prohibited from;
+* is authorized to;
+* exists solely to;
+* completes only when;
+* fails when;
+* permits;
+* prohibits;
+* requires;
+* owns;
+* governs;
+* preserves.
+
+Normative discovery shall not rely solely upon keywords.
+
+The Generator shall also evaluate:
+
+* clause context;
+* heading context;
+* defined terms;
+* exceptions;
+* scope;
+* cross-referenced obligations;
+* completion criteria;
+* constitutional principles;
+* prohibited actions;
+* authority declarations.
+
+Every discovered clause shall receive one classification:
+
+* NORMATIVE_REQUIREMENT;
+* NORMATIVE_PROHIBITION;
+* NORMATIVE_PERMISSION;
+* NORMATIVE_DEFINITION;
+* NORMATIVE_COMPLETION_CONDITION;
+* NORMATIVE_FAILURE_CONDITION;
+* NON_NORMATIVE_CONTEXT;
+* AMBIGUOUS;
+* CONTRADICTORY;
+* DUPLICATE_CANDIDATE.
+
+No `AMBIGUOUS` or `CONTRADICTORY` clause shall be silently converted into an active requirement.
+
+---
+
+## 3. Atomic Requirement Decomposition
+
+Decompose every normative clause into atomic constitutional obligations.
+
+A requirement shall be atomic only when it expresses one independently verifiable obligation.
+
+Split clauses containing multiple independently verifiable obligations.
+
+Preserve combined clauses only when separation would alter constitutional meaning.
+
+For every candidate requirement identify:
+
+* obligation subject;
+* normative operator;
+* obligation action;
+* governed object;
+* triggering condition;
+* scope;
+* constraint;
+* exception;
+* required outcome;
+* prohibited outcome;
+* evidence implication;
+* verification implication.
+
+Identify:
+
+* aggregate requirements;
+* compound requirements;
+* nested requirements;
+* conditional requirements;
+* exception-dependent requirements;
+* cross-reference-dependent requirements.
+
+Every decomposition decision shall preserve source lineage.
+
+---
+
+## 4. Requirement Normalization
+
+Normalize each atomic requirement into one canonical structured representation.
+
+Normalization shall preserve constitutional meaning while standardizing:
+
+* terminology;
+* defined names;
+* normative operators;
+* singular and plural forms;
+* reference syntax;
+* conditional structure;
+* exception structure;
+* scope representation;
+* identity formatting.
+
+Normalization shall not:
+
+* add authority;
+* remove restrictions;
+* broaden applicability;
+* narrow applicability;
+* resolve ambiguity through inference;
+* replace constitutional terminology with implementation terminology.
+
+For every normalized requirement preserve:
+
+* exact source text;
+* normalized text;
+* structured representation;
+* normalization rule;
+* semantic equivalence disposition.
+
+Classify normalization as:
+
+* EXACT_STRUCTURAL_NORMALIZATION;
+* AUTHORIZED_TERMINOLOGY_NORMALIZATION;
+* AUTHORIZED_ATOMIC_DECOMPOSITION;
+* NON_SEMANTIC_FORMATTING_CHANGE;
+* SEMANTIC_DIVERGENCE;
+* UNRESOLVED.
+
+Any `SEMANTIC_DIVERGENCE` or `UNRESOLVED` disposition shall block publication of the affected requirement.
+
+---
+
+## 5. Canonical Requirement Identity Generation
+
+Assign one deterministic canonical identity to every active atomic constitutional requirement.
+
+Requirement identities shall be:
+
+* deterministic;
+* unique;
+* stable;
+* reproducible;
+* collision-resistant;
+* independent of workstation state;
+* independent of generation order where feasible;
+* independent of wall-clock time except as non-semantic metadata.
+
+Identity generation shall consider:
+
+* constitutional corpus identity;
+* governing domain;
+* source artifact identity;
+* semantic requirement identity;
+* source lineage;
+* atomic requirement content.
+
+A requirement identity shall not change solely because of:
+
+* formatting;
+* whitespace;
+* pagination;
+* file location;
+* non-semantic heading changes;
+* generated timestamps.
+
+Semantic requirement changes shall generate a new requirement version or identity according to the supersession rules.
+
+---
+
+## 6. Requirement Classification
+
+Classify every canonical requirement by constitutional domain.
+
+At minimum support:
+
+* PURPOSE;
+* AUTHORITY;
+* RESPONSIBILITY;
+* PROHIBITION;
+* OWNERSHIP;
+* CUSTODY;
+* OBJECT_IDENTITY;
+* OBJECT_INTEGRITY;
+* LIFECYCLE;
+* STATE_TRANSITION;
+* INTERFACE;
+* DEPENDENCY;
+* TEMPORAL;
+* FRESHNESS;
+* ORDERING;
+* DUPLICATE_HANDLING;
+* REPLAY;
+* PERSISTENCE;
+* RECOVERY;
+* RECONCILIATION;
+* CORRECTION;
+* SUPERSESSION;
+* HISTORICAL_INTEGRITY;
+* EVIDENCE;
+* IMPLEMENTATION;
+* BEHAVIORAL_VERIFICATION;
+* PROOF;
+* TRACEABILITY;
+* REPRODUCIBILITY;
+* CERTIFICATION;
+* FAIL_CLOSED_VALIDATION;
+* COMPLETION_CONDITION;
+* FAILURE_CONDITION.
+
+Every requirement shall possess exactly one primary classification.
+
+A requirement may possess secondary classifications where objectively justified.
+
+---
+
+## 7. Requirement Ownership and Authority Mapping
+
+For every canonical requirement identify:
+
+* governing constitutional authority;
+* constitutional owner;
+* obligated subject;
+* affected object;
+* permitted actor;
+* prohibited actor;
+* governing interface;
+* governing dependency;
+* governing lifecycle;
+* evidence owner;
+* certification authority.
+
+Identify:
+
+* missing ownership;
+* conflicting ownership;
+* ambiguous authority;
+* duplicated authority;
+* circular authority;
+* authority unsupported by source doctrine.
+
+No active requirement shall be published without a governing constitutional authority and constitutional owner unless the doctrine explicitly establishes an enterprise-wide obligation with a defined governing authority.
+
+---
+
+## 8. Applicability and Verification Disposition
+
+Assign every canonical requirement one applicability disposition:
+
+* APPLICABLE;
+* CONDITIONALLY_APPLICABLE;
+* NOT_APPLICABLE;
+* UNRESOLVED_APPLICABILITY.
+
+Assign every canonical requirement one verification class:
+
+* STRUCTURAL_VERIFICATION;
+* BEHAVIORAL_VERIFICATION;
+* NEGATIVE_BEHAVIORAL_VERIFICATION;
+* BOUNDARY_VERIFICATION;
+* PERSISTENCE_VERIFICATION;
+* REPLAY_VERIFICATION;
+* RECOVERY_VERIFICATION;
+* EVIDENCE_VERIFICATION;
+* PROOF_VERIFICATION;
+* TRACEABILITY_VERIFICATION;
+* REPRODUCIBILITY_VERIFICATION;
+* MUTATION_VERIFICATION;
+* MANUAL_CONSTITUTIONAL_REVIEW;
+* COMPOSITE_VERIFICATION.
+
+Every `NOT_APPLICABLE` disposition shall possess objective constitutional justification.
+
+No requirement shall remain `UNRESOLVED_APPLICABILITY` in a release-ready registry.
+
+---
+
+## 9. Duplicate and Overlap Detection
+
+Identify requirements with:
+
+* identical normalized meaning;
+* overlapping meaning;
+* conflicting meaning;
+* narrower or broader scope;
+* shared source;
+* duplicate source clauses;
+* superseded meaning.
+
+Classify relationships as:
+
+* EXACT_DUPLICATE;
+* SEMANTIC_DUPLICATE;
+* PARTIAL_OVERLAP;
+* SPECIALIZATION;
+* GENERALIZATION;
+* CONFLICT;
+* INDEPENDENT.
+
+Exact and semantic duplicates shall be reconciled into one authoritative active requirement while preserving all source references.
+
+Specializations and generalizations shall remain separate only where independently verifiable and constitutionally justified.
+
+Conflicts shall block registry release.
+
+---
+
+## 10. Cross-Reference Resolution
+
+Resolve every constitutional cross-reference affecting requirement meaning.
+
+Verify references to:
+
+* constitutional authority;
+* defined terms;
+* other requirements;
+* canonical objects;
+* lifecycle states;
+* interfaces;
+* dependencies;
+* evidence obligations;
+* completion criteria;
+* exceptions;
+* prohibited actions;
+* predecessor doctrine;
+* superseding doctrine.
+
+Identify:
+
+* unresolved references;
+* circular references;
+* missing referenced clauses;
+* references to superseded doctrine;
+* ambiguous reference scope.
+
+No requirement dependent upon an unresolved reference shall receive active release status.
+
+---
+
+## 11. Requirement Versioning and Supersession
+
+Establish deterministic versioning and supersession rules.
+
+For every changed requirement determine whether the change is:
+
+* NON_SEMANTIC;
+* CLARIFICATION;
+* SCOPE_REFINEMENT;
+* AUTHORITY_CHANGE;
+* OWNERSHIP_CHANGE;
+* BEHAVIORAL_CHANGE;
+* EVIDENCE_CHANGE;
+* CERTIFICATION_CHANGE;
+* DELETION;
+* REPLACEMENT.
+
+Preserve:
+
+* prior requirement identity;
+* prior requirement version;
+* supersession reason;
+* superseding requirement identity;
+* effective date;
+* source doctrine change;
+* historical lineage.
+
+Superseded requirements shall never be deleted from historical registries.
+
+---
+
+## 12. Requirement Completeness Analysis
+
+Evaluate whether the generated requirement population covers every authoritative normative doctrine clause.
+
+Verify:
+
+* every active normative clause maps to at least one canonical requirement;
+* every canonical requirement maps to at least one authoritative source clause;
+* every prohibition is represented;
+* every authority grant is represented;
+* every completion condition is represented;
+* every failure condition is represented;
+* every evidence obligation is represented;
+* every certification obligation is represented.
+
+Identify:
+
+* uncovered doctrine clauses;
+* orphan requirements;
+* source clauses mapped only to aggregate requirements;
+* requirements lacking verification disposition;
+* requirements lacking authority;
+* requirements lacking ownership;
+* requirements lacking applicability.
+
+---
+
+## 13. Bidirectional Source Traceability
+
+Establish complete bidirectional traceability:
+
+```text
+Constitutional Corpus
+↔ Source Artifact
+↔ Source Section
+↔ Source Clause
+↔ Atomic Requirement
+↔ Requirement Classification
+↔ Constitutional Authority
+↔ Constitutional Owner
+↔ Verification Class
+↔ Certification Obligation
+```
+
+Every traceability edge shall possess objective evidence.
+
+Traceability shall be machine-readable and independently reproducible.
+
+---
+
+## 14. Requirement Registry Reconciliation
+
+Reconcile the complete generated requirement population.
+
+Verify:
+
+* every active requirement is atomic;
+* every active requirement has one canonical identity;
+* every active requirement has one authoritative source;
+* every active requirement has one constitutional owner;
+* every active requirement has one primary classification;
+* every active requirement has one applicability disposition;
+* every active requirement has one verification disposition;
+* every source reference resolves;
+* no active duplicate remains;
+* no active conflict remains;
+* no orphan requirement remains;
+* no uncovered normative clause remains;
+* historical supersession lineage is complete.
+
+Issue exactly one readiness disposition:
+
+* READY_FOR_RELEASE;
+* NOT_READY_FOR_RELEASE.
+
+---
+
+## 15. Registry Publication
+
+Publish one authoritative requirement package containing:
+
+* active canonical requirement registry;
+* historical requirement registry;
+* source-clause registry;
+* authority mapping;
+* ownership mapping;
+* applicability mapping;
+* verification mapping;
+* duplicate and overlap mapping;
+* supersession mapping;
+* bidirectional source traceability;
+* validation findings;
+* reconciliation results;
+* generation lineage.
+
+The published package shall be machine-readable and human-readable.
+
+---
+
+# Canonical Requirement Record
+
+Every canonical requirement record shall contain, at minimum:
+
+* requirement identity;
+* requirement version;
+* requirement status;
+* exact source text;
+* normalized requirement text;
+* structured requirement expression;
+* constitutional corpus identity;
+* source artifact identity;
+* source section identity;
+* source clause identity;
+* primary classification;
+* secondary classifications;
+* constitutional authority;
+* constitutional owner;
+* obligated subject;
+* governed object;
+* normative operator;
+* triggering condition;
+* scope;
+* constraints;
+* exceptions;
+* required outcome;
+* prohibited outcome;
+* applicability disposition;
+* verification class;
+* evidence implication;
+* proof implication;
+* certification implication;
+* predecessor requirement;
+* superseding requirement;
+* source content hash;
+* requirement semantic hash;
+* generation execution identity;
+* lineage references.
+
+---
+
+# Fail-Closed Rules
+
+The Generator shall refuse registry release when:
+
+* the doctrine package is invalid;
+* an authoritative artifact is missing;
+* source precedence is unresolved;
+* a normative clause remains unclassified;
+* a normative clause remains ambiguous;
+* a normative conflict remains unresolved;
+* an active requirement is not atomic;
+* a requirement identity collision exists;
+* a requirement lacks authoritative source lineage;
+* a requirement lacks constitutional authority;
+* a requirement lacks constitutional ownership;
+* a requirement lacks applicability disposition;
+* a requirement lacks verification disposition;
+* a cross-reference remains unresolved;
+* an active duplicate remains unresolved;
+* an active requirement conflict remains unresolved;
+* a normative source clause lacks requirement coverage;
+* an active requirement lacks source coverage;
+* deterministic regeneration fails;
+* historical supersession lineage is incomplete.
+
+The Generator shall never issue `READY_FOR_RELEASE` merely because a registry file was produced.
+
+---
+
+# Required Verification
+
+Implement executable verification covering:
+
+* valid complete doctrine package;
+* missing authoritative artifact;
+* duplicate artifact identity;
+* invalid artifact precedence;
+* unresolved cross-reference;
+* normative clause discovery;
+* non-normative clause exclusion;
+* compound requirement decomposition;
+* conditional requirement extraction;
+* prohibition extraction;
+* authority extraction;
+* completion-condition extraction;
+* failure-condition extraction;
+* deterministic requirement identity;
+* duplicate requirement detection;
+* semantic overlap detection;
+* conflict detection;
+* ownership conflict detection;
+* authority conflict detection;
+* supersession handling;
+* non-semantic doctrine change;
+* semantic doctrine change;
+* orphan requirement detection;
+* uncovered normative clause detection;
+* deterministic repeat generation;
+* clean-room generation;
+* bidirectional traceability validation;
+* release reconciliation;
+* historical-lineage preservation.
+
+Negative verification shall demonstrate that incomplete, ambiguous, contradictory, or structurally invalid doctrine fails closed.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Requirement Registry Generator;
+* constitutional doctrine input schema;
+* doctrine-package validator;
+* authoritative-source classifier;
+* normative-clause discovery engine;
+* atomic-requirement decomposition engine;
+* requirement normalization engine;
+* canonical requirement identity generator;
+* requirement classification engine;
+* authority and ownership mapper;
+* applicability classifier;
+* verification-class mapper;
+* duplicate and overlap detector;
+* cross-reference resolver;
+* requirement versioning engine;
+* supersession engine;
+* completeness analyzer;
+* source-traceability generator;
+* requirement reconciliation engine;
+* requirement registry publisher;
+* executable verification suite;
+* negative verification suite;
+* clean-room execution runner;
+* user documentation;
+* example doctrine input package;
+* example canonical requirement registry;
+* implementation report;
+* verification report;
+* completion report.
+
+---
+
+# Required Registries
+
+Produce:
+
+* doctrine source registry;
+* source artifact registry;
+* source clause registry;
+* normative clause registry;
+* canonical requirement registry;
+* historical requirement registry;
+* requirement classification registry;
+* requirement authority registry;
+* requirement ownership registry;
+* requirement applicability registry;
+* requirement verification registry;
+* duplicate requirement registry;
+* overlap registry;
+* conflict registry;
+* cross-reference registry;
+* supersession registry;
+* orphan requirement registry;
+* uncovered clause registry;
+* source traceability registry;
+* generation finding registry;
+* generation lineage registry;
+* reconciliation registry;
+* release registry.
+
+---
+
+# Completion Criteria
+
+This work order shall complete only when:
+
+* the constitutional doctrine package is governed by one canonical input schema;
+* every authoritative source artifact is objectively identified;
+* every normative constitutional clause is deterministically discovered;
+* every active normative clause maps to at least one canonical requirement;
+* every canonical requirement maps to at least one authoritative source clause;
+* every canonical requirement is atomic;
+* every canonical requirement possesses one deterministic identity;
+* every canonical requirement possesses one authoritative source;
+* every canonical requirement possesses one constitutional authority;
+* every canonical requirement possesses one constitutional owner;
+* every canonical requirement possesses one primary classification;
+* every canonical requirement possesses one applicability disposition;
+* every canonical requirement possesses one verification disposition;
+* no active duplicate requirement remains;
+* no active requirement conflict remains;
+* no unresolved cross-reference remains;
+* no orphan requirement remains;
+* no uncovered normative clause remains;
+* requirement versioning and supersession preserve complete historical lineage;
+* repeated generation from equivalent normalized doctrine produces semantically equivalent registries;
+* clean-room generation succeeds exclusively from the delivered repository package;
+* invalid, incomplete, ambiguous, or contradictory doctrine fails closed;
+* complete bidirectional source traceability is established;
+* one authoritative canonical constitutional requirement registry is produced;
+* the registry receives `READY_FOR_RELEASE`;
+* no unresolved critical or high-severity Generator finding remains.
+
+---
+
+# Required Completion Artifacts
+
+Upon successful completion, generate and provide both of the following ZIP archives.
+
+## 1. Repository Package ZIP
+
+The Repository Package ZIP shall contain:
+
+* complete implementation repository;
+* Requirement Registry Generator source code;
+* doctrine parsing implementation;
+* schema definitions;
+* source validation tooling;
+* normative-clause discovery tooling;
+* atomic decomposition tooling;
+* normalization tooling;
+* identity generation tooling;
+* classification tooling;
+* traceability tooling;
+* reconciliation tooling;
+* registry publication tooling;
+* clean-room execution tooling;
+* executable verification suite;
+* negative verification suite;
+* example doctrine package;
+* example generated requirement registry;
+* all dependencies required for independent execution;
+* deterministic reproduction instructions.
+
+## 2. Evidence Package ZIP
+
+The Evidence Package ZIP shall contain:
+
+* doctrine source registry;
+* source artifact registry;
+* source clause registry;
+* normative clause registry;
+* canonical requirement registry;
+* historical requirement registry;
+* requirement classification registry;
+* requirement authority registry;
+* requirement ownership registry;
+* requirement applicability registry;
+* requirement verification registry;
+* duplicate requirement registry;
+* overlap registry;
+* conflict registry;
+* cross-reference registry;
+* supersession registry;
+* orphan requirement registry;
+* uncovered clause registry;
+* source traceability registry;
+* generation finding registry;
+* generation lineage registry;
+* reconciliation registry;
+* release registry;
+* behavioral verification evidence;
+* negative verification evidence;
+* clean-room execution evidence;
+* implementation report;
+* verification report;
+* completion report.
+
+Both ZIP archives shall be produced as final deliverables and provided for independent ECS-003 re-audit.

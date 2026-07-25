@@ -1,0 +1,44 @@
+[
+  {
+    "description": "remove one required source order",
+    "expected_disposition": "CERTIFICATION_FAILS_CLOSED",
+    "mutation_class": "MISSING_SOURCE_ORDER",
+    "mutation_id": "ECS003-LIB-MUT-001",
+    "restoration_required": true
+  },
+  {
+    "description": "replace a valid library reference with an unknown identifier",
+    "expected_disposition": "UNRESOLVED_REFERENCE_REPORTED",
+    "mutation_class": "BROKEN_CROSS_REFERENCE",
+    "mutation_id": "ECS003-LIB-MUT-002",
+    "restoration_required": true
+  },
+  {
+    "description": "replace canonical term with unauthorized synonym",
+    "expected_disposition": "TERMINOLOGY_FINDING_REPORTED",
+    "mutation_class": "TERMINOLOGY_DRIFT",
+    "mutation_id": "ECS003-LIB-MUT-003",
+    "restoration_required": true
+  },
+  {
+    "description": "reuse a requirement identifier",
+    "expected_disposition": "COLLISION_REPORTED",
+    "mutation_class": "DUPLICATE_REQUIREMENT_ID",
+    "mutation_id": "ECS003-LIB-MUT-004",
+    "restoration_required": true
+  },
+  {
+    "description": "remove requirement link from a proof skeleton",
+    "expected_disposition": "TRACEABILITY_FAILURE_REPORTED",
+    "mutation_class": "ORPHAN_PROOF",
+    "mutation_id": "ECS003-LIB-MUT-005",
+    "restoration_required": true
+  },
+  {
+    "description": "alter copied source-order text after digest capture",
+    "expected_disposition": "INTEGRITY_FAILURE_REPORTED",
+    "mutation_class": "STALE_EVIDENCE_DIGEST",
+    "mutation_id": "ECS003-LIB-MUT-006",
+    "restoration_required": true
+  }
+]

@@ -1,0 +1,475 @@
+# ECS-003-LIB-007
+
+# Traceability Graph Generator
+
+## Doctrine Statement
+
+### Purpose
+
+Establish the authoritative Traceability Graph Generator governing deterministic construction, validation, reconciliation, and publication of execution-derived ECS-003 traceability.
+
+The Generator shall transform authoritative requirement, implementation, verifier, execution, evidence, proof, and certification registries into one complete bidirectional traceability graph.
+
+The graph shall represent:
+
+```text
+Constitutional Authority
+↔ Canonical Requirement
+↔ Implementation Obligation
+↔ Implementation Artifact
+↔ Behavioral Verifier
+↔ Fixture
+↔ Execution
+↔ Raw Evidence
+↔ Normalized Evidence
+↔ Finding
+↔ Implementation Disposition
+↔ Proof Object
+↔ Certification Blocker
+↔ Certification Verdict
+```
+
+The Generator shall establish traceability relationships without inventing missing participants or treating declared relationships as executed relationships.
+
+Every generated node and edge shall preserve deterministic identity, provenance, status, and historical lineage.
+
+---
+
+# Constitutional Principles
+
+Every traceability node shall possess one canonical identity.
+
+Every traceability edge shall possess one deterministic identity.
+
+Every edge shall possess objective source evidence.
+
+Every canonical requirement shall participate in complete bidirectional traceability.
+
+Declared traceability shall remain distinguishable from execution-derived traceability.
+
+Missing relationships shall remain explicitly unresolved.
+
+Broken traceability shall fail closed.
+
+Traceability shall never be inferred solely from:
+
+* filenames;
+* naming conventions;
+* documentation;
+* completion reports;
+* manually maintained mappings;
+* historical certification status.
+
+Historical nodes and edges shall never be overwritten.
+
+Corrections shall occur through versioning and supersession.
+
+---
+
+# Objective
+
+Implement one deterministic engine capable of generating a complete ECS-003 traceability graph suitable for:
+
+* implementation coverage;
+* behavioral coverage;
+* evidence coverage;
+* proof coverage;
+* certification-blocker analysis;
+* independent reproduction;
+* fail-closed certification.
+
+---
+
+# Required Inputs
+
+Accept one versioned Traceability Input Package containing:
+
+* constitutional authority registry;
+* canonical requirement registry;
+* implementation obligation registry;
+* implementation inventory;
+* verifier registry;
+* fixture registry;
+* execution registry;
+* raw evidence registry;
+* normalized evidence registry;
+* finding registry;
+* implementation disposition registry;
+* proof registry;
+* certification blocker registry;
+* certification verdict registry;
+* supersession registries;
+* candidate and repository identities.
+
+Every input registry shall possess:
+
+* canonical identity;
+* schema version;
+* content hash;
+* authority status;
+* provenance;
+* release status.
+
+Invalid or unreconciled authoritative inputs shall block publication.
+
+---
+
+# Required Activities
+
+## 1. Input Validation
+
+Verify:
+
+* registry identity and integrity;
+* schema compatibility;
+* canonical identity uniqueness;
+* candidate consistency;
+* repository consistency;
+* cross-reference validity;
+* supersession status;
+* authoritative release status.
+
+Classify every input as:
+
+* VALID;
+* INVALID;
+* INCOMPLETE;
+* CONTRADICTORY;
+* UNRESOLVED.
+
+Generation shall proceed only with valid authoritative inputs.
+
+---
+
+## 2. Node Generation
+
+Generate canonical nodes for:
+
+* constitutional authorities;
+* requirements;
+* implementation obligations;
+* implementation artifacts;
+* verifiers;
+* fixtures;
+* executions;
+* evidence objects;
+* findings;
+* dispositions;
+* proof objects;
+* certification blockers;
+* certification verdicts.
+
+Every node shall record:
+
+* identity;
+* type;
+* version;
+* status;
+* source registry;
+* content hash;
+* candidate identity;
+* predecessor and supersessor;
+* provenance.
+
+---
+
+## 3. Edge Generation
+
+Generate deterministic relationships including:
+
+* GOVERNS;
+* REQUIRES;
+* IMPLEMENTS;
+* DEPENDS_ON;
+* VERIFIED_BY;
+* USES_FIXTURE;
+* EXECUTED_AS;
+* PRODUCED_EVIDENCE;
+* NORMALIZED_AS;
+* PRODUCED_FINDING;
+* RECEIVED_DISPOSITION;
+* SUPPORTS_PROOF;
+* CREATED_BLOCKER;
+* CONTRIBUTED_TO_VERDICT;
+* SUPERSEDES.
+
+Every edge shall record:
+
+* edge identity;
+* source node;
+* target node;
+* relationship type;
+* derivation source;
+* provenance;
+* evidence;
+* status;
+* version;
+* historical lineage.
+
+---
+
+## 4. Edge Status Classification
+
+Assign every edge exactly one status:
+
+* EXECUTION_DERIVED;
+* OBJECTIVELY_DECLARED;
+* REQUIRED;
+* CONDITIONALLY_REQUIRED;
+* NOT_APPLICABLE;
+* BROKEN;
+* CONTRADICTORY;
+* UNRESOLVED.
+
+Only `EXECUTION_DERIVED` edges may support completed behavioral or proof claims.
+
+Declared edges may define obligations but shall not prove execution.
+
+---
+
+## 5. Bidirectional Traceability Validation
+
+Verify forward and reverse traversal for every applicable requirement.
+
+Forward traversal:
+
+```text
+Requirement
+→ Implementation
+→ Verifier
+→ Execution
+→ Evidence
+→ Proof
+→ Certification
+```
+
+Reverse traversal:
+
+```text
+Certification
+→ Proof
+→ Evidence
+→ Execution
+→ Verifier
+→ Implementation
+→ Requirement
+→ Authority
+```
+
+Identify:
+
+* missing nodes;
+* missing edges;
+* orphan nodes;
+* dangling edges;
+* circular relationships;
+* contradictory relationships;
+* duplicate relationships;
+* cross-candidate contamination.
+
+---
+
+## 6. Coverage Generation
+
+Calculate requirement-level:
+
+* implementation coverage;
+* verifier coverage;
+* execution coverage;
+* evidence coverage;
+* proof coverage;
+* certification coverage.
+
+Coverage dispositions shall include:
+
+* COMPLETE;
+* INCOMPLETE;
+* NOT_APPLICABLE;
+* CONTRADICTORY;
+* UNRESOLVED.
+
+Aggregate coverage shall never conceal requirement-level gaps.
+
+---
+
+## 7. Historical Lineage
+
+Preserve:
+
+* node versions;
+* edge versions;
+* candidate lineage;
+* evidence supersession;
+* proof supersession;
+* certification supersession;
+* correction history.
+
+No historical node or edge shall be deleted.
+
+---
+
+## 8. Graph Reconciliation
+
+Verify:
+
+* every applicable requirement appears;
+* every requirement links to constitutional authority;
+* every proven requirement links to executed verification;
+* every proof links to admissible evidence;
+* every verdict links to requirement-level proof or blockers;
+* no orphan or contradictory active relationship remains;
+* no unresolved required edge remains.
+
+Issue exactly one disposition:
+
+* READY_FOR_RELEASE;
+* NOT_READY_FOR_RELEASE.
+
+---
+
+# Fail-Closed Rules
+
+The Generator shall refuse release when:
+
+* an authoritative input is invalid;
+* identity collisions exist;
+* required nodes are missing;
+* required edges are missing;
+* cross-references are unresolved;
+* active contradictions remain;
+* a proof lacks execution-derived lineage;
+* a certification verdict lacks proof or blocker lineage;
+* cross-candidate contamination exists;
+* deterministic regeneration fails;
+* historical lineage is incomplete.
+
+The existence of a graph shall never constitute proof of complete traceability.
+
+---
+
+# Required Verification
+
+Implement executable verification covering:
+
+* complete valid graph generation;
+* missing requirement;
+* missing implementation mapping;
+* missing verifier;
+* missing execution;
+* missing evidence;
+* missing proof;
+* missing blocker;
+* orphan nodes;
+* dangling edges;
+* duplicate identities;
+* contradictory edges;
+* circular relationships;
+* cross-candidate contamination;
+* declared-versus-executed distinction;
+* supersession;
+* deterministic repeat generation;
+* clean-room generation;
+* bidirectional traversal;
+* fail-closed release behavior.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Traceability Graph Generator;
+* input schema and validator;
+* node generator;
+* edge generator;
+* relationship taxonomy;
+* edge-status classifier;
+* bidirectional traversal validator;
+* coverage calculator;
+* orphan and contradiction detector;
+* lineage and supersession engine;
+* graph reconciliation engine;
+* machine-readable graph;
+* human-readable graph report;
+* executable verification suite;
+* negative verification suite;
+* clean-room runner;
+* implementation report;
+* verification report;
+* completion report.
+
+---
+
+# Required Registries
+
+Produce:
+
+* traceability node registry;
+* traceability edge registry;
+* relationship taxonomy registry;
+* edge-status registry;
+* orphan node registry;
+* dangling edge registry;
+* contradiction registry;
+* coverage registry;
+* bidirectional traceability registry;
+* historical lineage registry;
+* supersession registry;
+* reconciliation registry;
+* release registry.
+
+---
+
+# Completion Criteria
+
+This work order shall complete only when:
+
+* every node and edge possesses one deterministic identity;
+* every applicable requirement participates in complete bidirectional traceability;
+* every proof possesses execution-derived lineage;
+* every certification verdict possesses complete proof or blocker lineage;
+* declared and executed relationships remain distinguishable;
+* requirement-level coverage is complete and reproducible;
+* no unresolved required edge remains;
+* no orphan active node remains;
+* no active contradiction remains;
+* historical lineage is preserved;
+* repeated generation produces semantically equivalent graphs;
+* clean-room generation succeeds from the delivered repository package;
+* invalid or incomplete inputs fail closed;
+* one authoritative traceability graph receives `READY_FOR_RELEASE`;
+* no unresolved critical or high-severity finding remains.
+
+---
+
+# Required Completion Artifacts
+
+Upon successful completion, provide both ZIP archives.
+
+## 1. Repository Package ZIP
+
+Contain:
+
+* complete implementation repository;
+* Generator source code;
+* schemas;
+* validation, graph, coverage, lineage, and reconciliation tooling;
+* verification suites;
+* clean-room tooling;
+* example inputs and generated graph;
+* reproduction instructions.
+
+## 2. Evidence Package ZIP
+
+Contain:
+
+* all required registries;
+* generated graph;
+* coverage reports;
+* positive and negative verification evidence;
+* clean-room execution evidence;
+* implementation report;
+* verification report;
+* completion report.
+
+Both ZIP archives shall be provided for independent ECS-003 re-audit.

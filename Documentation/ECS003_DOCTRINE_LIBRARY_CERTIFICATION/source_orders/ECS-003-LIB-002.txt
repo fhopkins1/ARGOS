@@ -1,0 +1,370 @@
+# ECS-003-LIB-002
+
+# Cross-Reference Validation
+
+## Doctrine Statement
+
+### Purpose
+
+Implement the authoritative validator governing all internal and external references across ECS-003 doctrine, registries, implementation artifacts, evidence, proof, traceability, and certification artifacts.
+
+The Validator shall detect unresolved, invalid, circular, stale, contradictory, superseded, or cross-candidate references.
+
+No artifact shall receive release-ready status while a required cross-reference remains invalid or unresolved.
+
+---
+
+# Constitutional Principles
+
+Every reference shall possess:
+
+* one source identity;
+* one target identity;
+* one reference type;
+* one governing schema;
+* one validation status;
+* one provenance record.
+
+References shall resolve to authoritative artifacts.
+
+References to superseded artifacts shall be historical only unless expressly authorized.
+
+Cross-candidate references shall be prohibited unless governed by explicit lineage.
+
+Broken references shall fail closed.
+
+Reference validity shall never be inferred from filenames, documentation, proximity, or naming similarity.
+
+Historical references shall never be overwritten.
+
+---
+
+# Objective
+
+Create one deterministic engine capable of validating cross-references throughout the complete ECS-003 lifecycle.
+
+---
+
+# Required Inputs
+
+Accept authoritative registries and artifacts containing references among:
+
+* constitutional authorities;
+* doctrine programs and orders;
+* canonical requirements;
+* objects;
+* interfaces;
+* dependencies;
+* implementation obligations;
+* implementation artifacts;
+* verifiers;
+* fixtures;
+* executions;
+* evidence;
+* findings;
+* proof objects;
+* traceability nodes and edges;
+* certification blockers;
+* certification verdicts;
+* candidates;
+* repository identities;
+* supersession records.
+
+Every source package shall possess:
+
+* canonical identity;
+* schema version;
+* content hash;
+* release status;
+* provenance.
+
+---
+
+# Required Activities
+
+## 1. Reference Discovery
+
+Discover references from:
+
+* explicit identity fields;
+* structured manifests;
+* registries;
+* schemas;
+* traceability edges;
+* predecessor and successor fields;
+* supersession fields;
+* generated artifact links;
+* normative doctrine references.
+
+Do not rely solely on free-text matching.
+
+---
+
+## 2. Reference Classification
+
+Classify every reference as:
+
+* INTERNAL;
+* EXTERNAL_AUTHORIZED;
+* PREDECESSOR;
+* SUCCESSOR;
+* DEPENDENCY;
+* IMPLEMENTATION;
+* VERIFICATION;
+* EVIDENCE;
+* PROOF;
+* TRACEABILITY;
+* CERTIFICATION;
+* SUPERSESSION;
+* HISTORICAL;
+* PACKAGE;
+* CANDIDATE;
+* REPOSITORY.
+
+---
+
+## 3. Resolution Validation
+
+Verify:
+
+* target exists;
+* target identity is unique;
+* target type is valid;
+* source and target schemas are compatible;
+* target is authoritative where required;
+* candidate identity is compatible;
+* repository identity is compatible;
+* version constraints are satisfied;
+* supersession status is valid;
+* reference direction is permitted.
+
+---
+
+## 4. Lifecycle Validation
+
+Verify required sequencing, including:
+
+```text
+B01 → B02 → B03 → B04 → B05 → B06 → B07 → B08 → B09
+```
+
+Validate:
+
+* predecessor relationships;
+* successor relationships;
+* baseline references;
+* remediation dependencies;
+* certification dependencies;
+* final-exit references.
+
+Identify missing, reversed, skipped, or invalid lifecycle references.
+
+---
+
+## 5. Circularity Detection
+
+Detect:
+
+* direct cycles;
+* indirect cycles;
+* self-references;
+* circular authority;
+* circular ownership;
+* circular proof;
+* circular evidence;
+* circular certification;
+* circular supersession.
+
+Authorized cycles shall require explicit constitutional justification.
+
+---
+
+## 6. Supersession Validation
+
+Verify:
+
+* superseded artifacts reference successors;
+* successors reference predecessors;
+* active artifacts do not rely upon obsolete artifacts without authorization;
+* supersession chains are complete;
+* no forked or conflicting active successor exists;
+* historical references remain preserved.
+
+---
+
+## 7. Cross-Candidate and Cross-Repository Validation
+
+Detect references connecting incompatible:
+
+* implementation candidates;
+* repository identities;
+* execution environments;
+* evidence populations;
+* proof baselines;
+* certification baselines.
+
+Cross-candidate contamination shall block release unless explicitly governed by historical lineage.
+
+---
+
+## 8. Reference Reconciliation
+
+Assign every reference one status:
+
+* VALID;
+* VALID_HISTORICAL;
+* CONDITIONALLY_VALID;
+* MISSING_TARGET;
+* INVALID_TARGET_TYPE;
+* INVALID_DIRECTION;
+* VERSION_MISMATCH;
+* SUPERSEDED_TARGET;
+* CIRCULAR;
+* CONTRADICTORY;
+* CROSS_CANDIDATE;
+* CROSS_REPOSITORY;
+* UNRESOLVED.
+
+Issue exactly one package disposition:
+
+* READY_FOR_RELEASE;
+* NOT_READY_FOR_RELEASE.
+
+---
+
+# Fail-Closed Rules
+
+Refuse release when:
+
+* a required target is missing;
+* identities are duplicated;
+* target type is invalid;
+* lifecycle direction is invalid;
+* an unauthorized cycle exists;
+* supersession lineage is incomplete;
+* active artifacts depend improperly upon superseded artifacts;
+* candidate or repository identities conflict;
+* deterministic validation fails;
+* any required reference remains unresolved.
+
+File existence alone shall never prove reference validity.
+
+---
+
+# Required Verification
+
+Implement executable verification covering:
+
+* valid internal references;
+* valid authorized external references;
+* missing targets;
+* duplicate identities;
+* invalid target types;
+* reversed references;
+* missing predecessors;
+* missing successors;
+* skipped lifecycle stages;
+* direct and indirect cycles;
+* self-reference;
+* supersession chains;
+* conflicting successors;
+* cross-candidate contamination;
+* cross-repository contamination;
+* historical references;
+* deterministic repeat validation;
+* clean-room validation;
+* fail-closed release behavior.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Cross-Reference Validator;
+* input schema;
+* reference discovery engine;
+* reference taxonomy;
+* resolution validator;
+* lifecycle validator;
+* cycle detector;
+* supersession validator;
+* candidate and repository consistency validator;
+* reconciliation engine;
+* machine-readable validation report;
+* human-readable report;
+* executable verification suite;
+* negative verification suite;
+* clean-room runner;
+* implementation report;
+* verification report;
+* completion report.
+
+---
+
+# Required Registries
+
+Produce:
+
+* reference registry;
+* reference taxonomy registry;
+* reference-status registry;
+* unresolved-reference registry;
+* circular-reference registry;
+* lifecycle-reference registry;
+* supersession-reference registry;
+* cross-candidate reference registry;
+* cross-repository reference registry;
+* reconciliation registry;
+* release registry.
+
+---
+
+# Completion Criteria
+
+This work order shall complete only when:
+
+* every discovered reference possesses one deterministic identity;
+* every required reference resolves to one valid target;
+* every lifecycle reference is directionally valid;
+* no unauthorized circular reference remains;
+* every supersession chain is complete;
+* no unresolved cross-candidate contamination remains;
+* no unresolved cross-repository contamination remains;
+* historical references remain preserved;
+* repeated validation produces equivalent results;
+* clean-room validation succeeds from the delivered repository package;
+* invalid or incomplete references fail closed;
+* one authoritative validation package receives `READY_FOR_RELEASE`;
+* no unresolved critical or high-severity finding remains.
+
+---
+
+# Required Completion Artifacts
+
+## 1. Repository Package ZIP
+
+Contain:
+
+* complete implementation repository;
+* validator source code;
+* schemas;
+* discovery, resolution, lifecycle, cycle, supersession, and reconciliation tooling;
+* verification suites;
+* clean-room tooling;
+* example valid and invalid packages;
+* deterministic reproduction instructions.
+
+## 2. Evidence Package ZIP
+
+Contain:
+
+* all required registries;
+* validation findings;
+* positive and negative verification evidence;
+* clean-room execution evidence;
+* implementation report;
+* verification report;
+* completion report.
+
+Both ZIP archives shall be provided for independent ECS-003 re-audit.
