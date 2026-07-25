@@ -1,0 +1,4082 @@
+[
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0001",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0001"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-0002",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0002"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-0003",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0003"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-0004",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0004"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0005",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0005"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0006",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0006"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0007",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0007"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0008",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0008"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0009",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0009"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0010",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0010"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0011",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0011"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0012",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0012"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0013",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0013"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0014",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0014"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0015",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0015"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0016",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0016"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0017",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0017"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0018",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0018"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0019",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0019"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0020",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0020"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0021",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0021"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0022",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0022"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0023",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0023"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0024",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0024"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0025",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0025"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0026",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0026"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-0027",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0027"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-0028",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0028"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-0029",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0029"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0030",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0030"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0031",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0031"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0032",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0032"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0033",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0033"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0034",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0034"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0035",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0035"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0036",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0036"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0037",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0037"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0038",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0038"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0039",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0039"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0040",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0040"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0041",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0041"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0042",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0042"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0043",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0043"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0044",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0044"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0045",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0045"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0046",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0046"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0047",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0047"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0048",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0048"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0049",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0049"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0050",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0050"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0051",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0051"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-0052",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0052"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-0053",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0053"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-0054",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0054"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0055",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0055"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0056",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0056"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0057",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0057"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0058",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0058"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0059",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0059"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0060",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0060"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0061",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0061"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0062",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0062"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0063",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0063"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0064",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0064"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0065",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0065"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0066",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0066"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0067",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0067"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0068",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0068"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0069",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0069"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0070",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0070"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0071",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0071"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0072",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0072"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0073",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0073"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0074",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0074"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0075",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0075"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-0076",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0076"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-0077",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0077"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-0078",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0078"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-001",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0079"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-002",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0080"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-003",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0081"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-004",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0082"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-005",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0083"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-006",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0084"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-007",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0085"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-008",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0086"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-009",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0087"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-010",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0088"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-011",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0089"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-012",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0090"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-013",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0091"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-014",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0092"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-015",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0093"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-016",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0094"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-017",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0095"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-018",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0096"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-019",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0097"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-020",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0098"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-021",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0099"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-022",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0100"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-023",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0101"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-024",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0102"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-025",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0103"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-026",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0104"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-027",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0105"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-028",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0106"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-029",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0107"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-030",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0108"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-031",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0109"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-032",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0110"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-033",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0111"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-034",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0112"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-035",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0113"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-036",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0114"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-037",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0115"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-038",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0116"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-039",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0117"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-040",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0118"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-041",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0119"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-042",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0120"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-043",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0121"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-044",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0122"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-045",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0123"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-046",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0124"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-047",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0125"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-048",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0126"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-049",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0127"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-050",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0128"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-051",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0129"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-052",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0130"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-053",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0131"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-054",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0132"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-055",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0133"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-056",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0134"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-057",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0135"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-058",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0136"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B01-059",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0137"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-001",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0138"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-002",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0139"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-003",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0140"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-004",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0141"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-005",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0142"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-006",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0143"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-007",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0144"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-008",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0145"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-009",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0146"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-010",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0147"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-011",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0148"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-012",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0149"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-013",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0150"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-014",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0151"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-015",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0152"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-016",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0153"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-017",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0154"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-018",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0155"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-019",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0156"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-020",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0157"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-021",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0158"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-022",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0159"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-023",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0160"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-024",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0161"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-025",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0162"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-026",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0163"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-027",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0164"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-028",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0165"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-029",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0166"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-030",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0167"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-031",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0168"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-032",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0169"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-033",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0170"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-034",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0171"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-035",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0172"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-036",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0173"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-037",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0174"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-038",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0175"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-039",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0176"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-040",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0177"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-041",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0178"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-042",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0179"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-043",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0180"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-044",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0181"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-045",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0182"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-046",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0183"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-047",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0184"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-048",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0185"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-049",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0186"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-050",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0187"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-051",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0188"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-052",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0189"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-053",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0190"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-054",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0191"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-055",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0192"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-056",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0193"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-057",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0194"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-058",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0195"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-059",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0196"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-060",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0197"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-061",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0198"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-062",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0199"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B02-063",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0200"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-001",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0201"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-002",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0202"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-003",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0203"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-004",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0204"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-005",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0205"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-006",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0206"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-007",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0207"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-008",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0208"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-009",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0209"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-010",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0210"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-011",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0211"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-012",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0212"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-013",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0213"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-014",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0214"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-015",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0215"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-016",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0216"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-017",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0217"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-018",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0218"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-019",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0219"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-020",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0220"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-021",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0221"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-022",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0222"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-023",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0223"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-024",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0224"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-025",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0225"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-026",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0226"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-027",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0227"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-028",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0228"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-029",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0229"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-030",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0230"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-031",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0231"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-032",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0232"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-033",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0233"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-034",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0234"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-035",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0235"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-036",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0236"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-037",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0237"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-038",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0238"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-039",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0239"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-040",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0240"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-041",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0241"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-042",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0242"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-043",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0243"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-044",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0244"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-045",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0245"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-046",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0246"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-047",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0247"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-HIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-HIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-048",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-HIST-001",
+    "proof_object": "MON-B04-PROOF-0248"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECON-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECON-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-049",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECON-001",
+    "proof_object": "MON-B04-PROOF-0249"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FAIL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FAIL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-050",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FAIL-001",
+    "proof_object": "MON-B04-PROOF-0250"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-051",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-001",
+    "proof_object": "MON-B04-PROOF-0251"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-002"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-002"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-052",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-002",
+    "proof_object": "MON-B04-PROOF-0252"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-003"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-003"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-053",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-003",
+    "proof_object": "MON-B04-PROOF-0253"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-OBS-004"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-OBS-004"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-054",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-OBS-004",
+    "proof_object": "MON-B04-PROOF-0254"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-EVAL-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-EVAL-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-055",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-EVAL-001",
+    "proof_object": "MON-B04-PROOF-0255"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CORR-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CORR-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-056",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CORR-001",
+    "proof_object": "MON-B04-PROOF-0256"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONTRA-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-057",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONTRA-001",
+    "proof_object": "MON-B04-PROOF-0257"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-CONF-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-CONF-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-058",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-CONF-001",
+    "proof_object": "MON-B04-PROOF-0258"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-FIND-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-FIND-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-059",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-FIND-001",
+    "proof_object": "MON-B04-PROOF-0259"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-THRESH-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-THRESH-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-060",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-THRESH-001",
+    "proof_object": "MON-B04-PROOF-0260"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-TRIG-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-TRIG-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-061",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-TRIG-001",
+    "proof_object": "MON-B04-PROOF-0261"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ALERT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ALERT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-062",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ALERT-001",
+    "proof_object": "MON-B04-PROOF-0262"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ESC-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ESC-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-063",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ESC-001",
+    "proof_object": "MON-B04-PROOF-0263"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-ACK-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-ACK-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-064",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-ACK-001",
+    "proof_object": "MON-B04-PROOF-0264"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-SUPP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-SUPP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-065",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-SUPP-001",
+    "proof_object": "MON-B04-PROOF-0265"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-INT-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-INT-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-066",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-INT-001",
+    "proof_object": "MON-B04-PROOF-0266"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-PERSIST-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-067",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-PERSIST-001",
+    "proof_object": "MON-B04-PROOF-0267"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTART-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTART-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-068",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTART-001",
+    "proof_object": "MON-B04-PROOF-0268"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-REPLAY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-069",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-REPLAY-001",
+    "proof_object": "MON-B04-PROOF-0269"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RECOVERY-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-070",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RECOVERY-001",
+    "proof_object": "MON-B04-PROOF-0270"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-DUP-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-DUP-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-071",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-DUP-001",
+    "proof_object": "MON-B04-PROOF-0271"
+  },
+  {
+    "behavioral_execution": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "behavioral_verifier": [
+      "MON-BEH-RESTORE-001"
+    ],
+    "constitutional_requirement": "MON-REQ-B03-072",
+    "covered": true,
+    "implementation_artifact": [
+      "src/argos/trader/trade_monitoring.py"
+    ],
+    "implementation_obligation": "MON-BEH-RESTORE-001",
+    "proof_object": "MON-B04-PROOF-0272"
+  }
+]
