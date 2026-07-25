@@ -1,0 +1,63 @@
+[
+  {
+    "artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "discovery_basis": "test artifact contains Exit Decision markers and focused test functions",
+    "execution_status": "NOT_EXECUTED_UNDER_B01",
+    "focused_tests": [
+      "_exit_snapshot",
+      "test_eo_bd_halted_symbol_unexitable_liquidity_collapse_and_spread_explosion",
+      "test_eo_xc_commander_override_and_emergency_risk_override_take_priority",
+      "test_eo_xc_hold_record_is_immutable_and_does_not_execute_orders_or_ai",
+      "test_eo_xc_profit_target_can_produce_configured_partial_exit_quantity",
+      "test_eo_xc_runtime_exposes_exit_decision_engine_without_broker_execution",
+      "test_eo_xc_stop_loss_reached_produces_full_exit_and_registry_recommendation",
+      "test_eo_xc_strategy_invalidation_marks_ai_review_without_calling_ai",
+      "test_eo_xc_trailing_stop_large_adverse_and_degraded_data_are_deterministic",
+      "test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+      "test_eo_xf_position_detail_links_decision_snapshot_exit_decision_and_executions",
+      "test_eo_xf_trader_bridge_displays_exit_recommendations_orders_surveillance_and_realism"
+    ],
+    "sha256": "459c017a9d47543253bc3cdb6511bb5a37486fa81d866396d034547ace957498",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-001"
+  },
+  {
+    "artifact": "Tests/test_exit_decision_rm001_b01_constitutional_baseline.py",
+    "discovery_basis": "test artifact contains Exit Decision markers and focused test functions",
+    "execution_status": "NOT_EXECUTED_UNDER_B01",
+    "focused_tests": [
+      "test_exit_decision_authority_excludes_execution_and_truth_mutation"
+    ],
+    "sha256": "46919120656d3fbcd7bafd4f33073ce0aad0b725215db6ac7021ee586d3d1a3f",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-002"
+  },
+  {
+    "artifact": "Tests/test_or004_position_lifecycle.py",
+    "discovery_basis": "test artifact contains Exit Decision markers and focused test functions",
+    "execution_status": "NOT_EXECUTED_UNDER_B01",
+    "focused_tests": [
+      "test_exit_recommendation_and_authorization_do_not_close_position"
+    ],
+    "sha256": "83afdcf920ae9869f9e7ea266362fd7dfcdac702899accde3eb5f90339aac9f3",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-003"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "discovery_basis": "test artifact contains Exit Decision markers and focused test functions",
+    "execution_status": "NOT_EXECUTED_UNDER_B01",
+    "focused_tests": [
+      "test_exit_decision_boundary_answers_required_questions"
+    ],
+    "sha256": "8b8088d6c5d328fe1a72d086db88826a6eafeb03a1583cced2ca5c6bc38de64f",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-004"
+  },
+  {
+    "artifact": "Tests/test_trader_rm002a016_b02_fill_fixtures.py",
+    "discovery_basis": "test artifact contains Exit Decision markers and focused test functions",
+    "execution_status": "NOT_EXECUTED_UNDER_B01",
+    "focused_tests": [
+      "test_partial_multiple_replay_recovery_surveillance_and_exit_paths_are_fill_backed"
+    ],
+    "sha256": "5c1007f1916da9342a0c388ab5740e0e8d3e7cfaacf21b2251b3bc392789ee81",
+    "verifier_id": "EXIT-RM002-B01-VERIFIER-005"
+  }
+]

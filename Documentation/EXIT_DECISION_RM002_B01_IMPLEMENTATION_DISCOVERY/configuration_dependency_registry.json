@@ -1,0 +1,44 @@
+[
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "classification": "CONFIGURATION_DEPENDENCY",
+    "dependency": "enterprise_configuration_registry",
+    "dependency_id": "EXIT-RM002-B01-CONFIG-001",
+    "discovery_basis": "enterprise configuration registry parameter"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "classification": "CONFIGURATION_DEPENDENCY",
+    "dependency": "ExitDecisionConfig",
+    "dependency_id": "EXIT-RM002-B01-CONFIG-002",
+    "discovery_basis": "ExitDecisionConfig dataclass"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "classification": "CONFIGURATION_DEPENDENCY",
+    "dependency": "utc_timestamp",
+    "dependency_id": "EXIT-RM002-B01-CONFIG-003",
+    "discovery_basis": "enterprise timestamp utility"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_registry.py",
+    "classification": "CONFIGURATION_DEPENDENCY",
+    "dependency": "utc_timestamp",
+    "dependency_id": "EXIT-RM002-B01-CONFIG-004",
+    "discovery_basis": "enterprise timestamp utility"
+  },
+  {
+    "artifact": "src/argos/foundation/contracts/__init__.py",
+    "classification": "CONFIGURATION_DEPENDENCY",
+    "dependency": "utc_timestamp",
+    "dependency_id": "EXIT-RM002-B01-CONFIG-005",
+    "discovery_basis": "enterprise timestamp utility"
+  },
+  {
+    "artifact": "src/argos/foundation/contracts/base.py",
+    "classification": "CONFIGURATION_DEPENDENCY",
+    "dependency": "utc_timestamp",
+    "dependency_id": "EXIT-RM002-B01-CONFIG-006",
+    "discovery_basis": "enterprise timestamp utility"
+  }
+]

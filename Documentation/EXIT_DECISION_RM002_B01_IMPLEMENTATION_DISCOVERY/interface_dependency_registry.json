@@ -1,0 +1,58 @@
+[
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Position Registry",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "inbound read and bounded recommendation gateway",
+    "interface_id": "EXIT-RM002-B01-IFACE-001",
+    "marker": "position_registry"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Monitoring",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "inbound surveillance snapshot feed",
+    "interface_id": "EXIT-RM002-B01-IFACE-002",
+    "marker": "position_surveillance"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Strategy",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "inbound strategy flags",
+    "interface_id": "EXIT-RM002-B01-IFACE-003",
+    "marker": "strategy_package_manager"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Risk",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "inbound risk constraints and emergency state",
+    "interface_id": "EXIT-RM002-B01-IFACE-004",
+    "marker": "risk_context"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Commander",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "inbound commander override constraints",
+    "interface_id": "EXIT-RM002-B01-IFACE-005",
+    "marker": "commander_overrides"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Trader",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "outbound recommendation consumption surface",
+    "interface_id": "EXIT-RM002-B01-IFACE-006",
+    "marker": "latestDecisions"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "authority_owner": "Historian",
+    "discovery_basis": "marker present in direct Exit Decision implementation signature or snapshot contract",
+    "interaction_role": "evidence and historical custody surface",
+    "interface_id": "EXIT-RM002-B01-IFACE-007",
+    "marker": "exitDecisionRecords"
+  }
+]

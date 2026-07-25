@@ -1,0 +1,209 @@
+[
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "classes": [
+      "ExitDecisionConfig",
+      "ExitDecisionEngine",
+      "ExitDecisionRecord"
+    ],
+    "classification": "DIRECT_EXIT_DECISION_IMPLEMENTATION",
+    "discovery_basis": "direct frozen Exit Decision implementation",
+    "functions": [
+      "__init__",
+      "_ai_or_review",
+      "_commander_override_for_position",
+      "_decision_record",
+      "_escalations_by_position",
+      "_latest_snapshot_by_position",
+      "_minutes_in_trade",
+      "_override_decision",
+      "_position_concentration",
+      "_recommended_action",
+      "_recommended_percent",
+      "_resolved_config",
+      "_should_append",
+      "_strategy_flags",
+      "_trigger",
+      "_trigger",
+      "evaluate",
+      "snapshot"
+    ],
+    "imports": [
+      {
+        "artifact": "src/argos/control_panel/position_registry.py",
+        "import_type": "from",
+        "module": "argos.control_panel.position_registry"
+      },
+      {
+        "artifact": "src/argos/foundation/contracts/__init__.py",
+        "import_type": "from",
+        "module": "argos.foundation.contracts"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-001",
+    "sha256": "1f461279b4e44ec2155797430b8ffe33b10a35a6e64dfc0dd5af0dda819a5f88"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_registry.py",
+    "classes": [
+      "PositionHistoryRecord",
+      "PositionLifecycleStatus",
+      "PositionObject",
+      "PositionRegistry",
+      "PositionValidationResult"
+    ],
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "discovery_basis": "AST import dependency from participating implementation",
+    "functions": [
+      "__init__",
+      "_audit",
+      "_fill_evidence_digest",
+      "_fill_ids",
+      "_history_record",
+      "_position_id",
+      "_store_create",
+      "_store_update",
+      "_validate_fill_identity",
+      "_validate_fill_matches_order",
+      "_validate_transition",
+      "_validated_fill_ids",
+      "active_positions",
+      "apply_sell_execution",
+      "archive_position",
+      "close_position",
+      "command_bridge_positions",
+      "create_from_execution",
+      "position",
+      "positions_by_decision_object",
+      "positions_by_workflow",
+      "recommend_exit",
+      "reserve_close_quantity",
+      "snapshot",
+      "update_market_price",
+      "update_surveillance_state",
+      "validate"
+    ],
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/contracts/__init__.py",
+        "import_type": "from",
+        "module": "argos.foundation.contracts"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-002",
+    "sha256": "30bd4e5b9af125996f71cc0ffa30dc4ab57f00c8a31e114dc72fee1a172a2741"
+  },
+  {
+    "artifact": "src/argos/foundation/contracts/__init__.py",
+    "classes": [],
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "discovery_basis": "AST import dependency from participating implementation",
+    "functions": [],
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/contracts/base.py",
+        "import_type": "from",
+        "module": "argos.foundation.contracts.base"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-003",
+    "sha256": "a79edf6bed12da1041615d8644563ef8b8d00d6a84137265284ff702e9bcaa8e"
+  },
+  {
+    "artifact": "src/argos/foundation/contracts/base.py",
+    "classes": [
+      "BaseContract",
+      "ContractValidationError",
+      "InfrastructureContract",
+      "OperationalContract",
+      "ValidationStatus"
+    ],
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "discovery_basis": "AST import dependency from participating implementation",
+    "functions": [
+      "__post_init__",
+      "_validate_identifier",
+      "_validate_identifier_collection",
+      "_validate_timestamp",
+      "from_dict",
+      "from_json",
+      "to_dict",
+      "to_json",
+      "utc_timestamp",
+      "validate"
+    ],
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/identity/__init__.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-004",
+    "sha256": "e4ca0823122d5bd90ded13b82da9a644a5337d318aea2d7c1d526f0e85fb99de"
+  },
+  {
+    "artifact": "src/argos/foundation/identity/__init__.py",
+    "classes": [],
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "discovery_basis": "AST import dependency from participating implementation",
+    "functions": [],
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/identity/identifiers.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity.identifiers"
+      },
+      {
+        "artifact": "src/argos/foundation/identity/registry.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity.registry"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-005",
+    "sha256": "6b7fd3ce63ea4b2a47b94e314b058dbf62ec3e21ba88cedd760fb6bfdea11844"
+  },
+  {
+    "artifact": "src/argos/foundation/identity/identifiers.py",
+    "classes": [
+      "IdentifierKind",
+      "IdentifierValidationResult"
+    ],
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "discovery_basis": "AST import dependency from participating implementation",
+    "functions": [
+      "_kind_for_prefix",
+      "generate_case_file_id",
+      "generate_department_id",
+      "generate_document_id",
+      "generate_identifier",
+      "generate_staff_id",
+      "generate_trade_cycle_id",
+      "parse_identifier",
+      "validate_identifier"
+    ],
+    "imports": [],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-006",
+    "sha256": "5b71ef40641f638ea5ccb2d47a939394d29cfb67e0a394126da89e4b0aace5cd"
+  },
+  {
+    "artifact": "src/argos/foundation/identity/registry.py",
+    "classes": [
+      "DepartmentRecord"
+    ],
+    "classification": "OBJECTIVE_RUNTIME_DEPENDENCY",
+    "discovery_basis": "AST import dependency from participating implementation",
+    "functions": [
+      "get_department_record"
+    ],
+    "imports": [
+      {
+        "artifact": "src/argos/foundation/identity/identifiers.py",
+        "import_type": "from",
+        "module": "argos.foundation.identity.identifiers"
+      }
+    ],
+    "participant_id": "EXIT-RM002-B01-RUNTIME-007",
+    "sha256": "8e249f42ab13c63e6194a5d96a69106d5de91c6f9a8d17d4204a81b5a7c75a50"
+  }
+]

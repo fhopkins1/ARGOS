@@ -1,0 +1,24 @@
+[
+  {
+    "artifact": "src/argos/control_panel/position_exit_decision_engine.py",
+    "behavioral_status": "NOT_VERIFIED_UNDER_B01",
+    "classification": "IN_MEMORY_OR_SNAPSHOT_PARTICIPANT",
+    "markers": [
+      "self._records",
+      "_last_decision_by_position",
+      "snapshot",
+      "recordAppendOnly",
+      "audit_reference"
+    ],
+    "persistence_id": "EXIT-RM002-B01-PERSIST-001"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_registry.py",
+    "behavioral_status": "NOT_VERIFIED_UNDER_B01",
+    "classification": "IN_MEMORY_OR_SNAPSHOT_PARTICIPANT",
+    "markers": [
+      "snapshot"
+    ],
+    "persistence_id": "EXIT-RM002-B01-PERSIST-002"
+  }
+]
