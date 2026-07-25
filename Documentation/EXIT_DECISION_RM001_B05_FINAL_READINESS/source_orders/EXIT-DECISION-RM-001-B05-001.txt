@@ -4,9 +4,9 @@
 
 ## Objective
 
-Reconcile all constitutional doctrine established under **EXIT-DECISION-RM-001-B01 through B04** into one internally consistent constitutional model governing the Exit Decision Office.
+Reconcile every constitutional doctrine established under **EXIT-DECISION-RM-001-B01 through B04** into one internally consistent, deterministic constitutional model governing the Exit Decision Office.
 
-This order shall determine whether all established authority, responsibility, ownership, object, lifecycle, admissibility, decision, authorization, interface, temporal, evidence, and traceability doctrines are mutually consistent.
+This order shall verify that all constitutional authorities, responsibilities, ownership relationships, custody relationships, object definitions, lifecycle definitions, admissibility rules, decision boundaries, authorization boundaries, interface contracts, dependency relationships, temporal rules, evidence obligations, and traceability obligations are mutually consistent.
 
 This order shall not modify implementation behavior.
 
@@ -16,7 +16,7 @@ This order shall not perform behavioral verification.
 
 This order shall not generate implementation proof.
 
-This order shall not execute certification activity.
+This order shall not execute implementation certification activity.
 
 ---
 
@@ -24,95 +24,131 @@ This order shall not execute certification activity.
 
 ## 1. Establish Constitutional Consistency Registry
 
-Create the authoritative registry reconciling every constitutional element established under:
+Create the authoritative constitutional consistency registry.
 
-* EXIT-DECISION-RM-001-B01;
-* EXIT-DECISION-RM-001-B02;
-* EXIT-DECISION-RM-001-B03;
-* EXIT-DECISION-RM-001-B04.
+The registry shall reconcile every constitutional element established under:
 
-The registry shall include:
+* EXIT-DECISION-RM-001-B01 — Constitutional Governance and Authority;
+* EXIT-DECISION-RM-001-B02 — Canonical Exit Decision Objects and Lifecycle;
+* EXIT-DECISION-RM-001-B03 — Admissibility, Decision Logic, and Authorization Separation;
+* EXIT-DECISION-RM-001-B04 — Interface, Temporal, Evidence, and Traceability.
 
-* doctrine identity;
-* source authority;
-* affected constitutional domain;
+For every constitutional element define:
+
+* canonical identity;
+* originating doctrine;
+* source requirement;
+* constitutional owner;
 * dependent doctrines;
-* ownership;
 * reconciliation status;
 * disposition.
 
-The registry shall become the authoritative reconciliation baseline.
-
 ---
 
-# 2. Reconcile Office Purpose and Authority
+# 2. Reconcile Authority Model
 
 Verify consistency between:
 
 * Exit Decision purpose;
 * Exit Decision mission;
-* authority registry;
-* responsibility registry;
-* prohibited authority registry.
+* decision authority;
+* recommendation authority;
+* evaluation authority;
+* escalation authority;
+* prohibited authority.
 
 Confirm:
 
-* decision authority remains bounded;
-* execution authority remains external;
-* authorization authority remains external;
-* risk authority remains external;
-* truth ownership remains with designated offices.
+* Exit Decision authority remains bounded;
+* decision authority does not become execution authority;
+* recommendation authority does not become decision authority;
+* decision authority does not become authorization authority;
+* authorization authority does not become execution authority.
 
 Identify:
 
-* authority expansion;
-* authority overlap;
-* authority omission;
-* authority contradiction.
+* authority conflicts;
+* duplicated authority;
+* missing authority;
+* unauthorized authority expansion.
+
+All authority conflicts shall be resolved before constitutional freeze.
 
 ---
 
-# 3. Reconcile Ownership and Custody Model
+# 3. Reconcile Responsibility Model
+
+Verify that every constitutional responsibility possesses:
+
+* one owner;
+* one authority source;
+* one evidence obligation;
+* one reconciliation pathway.
+
+Reconcile responsibility ownership for:
+
+* decision creation;
+* decision evaluation;
+* decision issuance;
+* authorization validation;
+* execution request handling;
+* execution reconciliation;
+* historical preservation.
+
+Identify:
+
+* duplicated responsibility;
+* unassigned responsibility;
+* conflicting responsibility.
+
+---
+
+# 4. Reconcile Ownership and Custody Model
 
 Verify consistency between:
 
-* office ownership doctrine;
-* object ownership registry;
+* ownership registry;
 * custody registry;
-* evidence custody model;
-* Historian relationship.
+* mutation authority registry;
+* correction authority registry;
+* evidence custody registry.
 
-Confirm separation between:
+Confirm:
 
-* ownership;
+Ownership remains separate from:
+
 * custody;
 * mutation authority;
 * correction authority;
 * reconciliation authority.
 
+Verify ownership preservation for:
+
+* position truth;
+* risk truth;
+* authorization truth;
+* execution truth;
+* closed-position truth;
+* performance truth;
+* historical truth.
+
 Identify:
 
-* duplicate ownership;
-* split ownership;
+* conflicting ownership;
 * implicit ownership;
-* conflicting custody.
+* custody ambiguity;
+* unauthorized mutation authority.
 
 ---
 
-# 4. Reconcile Canonical Object Model
+# 5. Reconcile Canonical Object Model
 
-Verify that all Exit Decision objects established under B02 remain consistent with:
+Verify all canonical Exit Decision objects established under B02.
 
-* authority doctrine;
-* lifecycle doctrine;
-* admissibility doctrine;
-* evidence doctrine;
-* interface doctrine.
+For every object confirm:
 
-Confirm every object possesses:
-
-* one identity;
-* one purpose;
+* one canonical identity;
+* one constitutional purpose;
 * one owner;
 * one custodian;
 * one lifecycle;
@@ -120,53 +156,92 @@ Confirm every object possesses:
 * one correction authority;
 * one reconciliation authority.
 
+Reconcile:
+
+* Exit Decision Request;
+* Exit Decision Context;
+* Exit Condition;
+* Exit Evaluation;
+* Exit Constraint;
+* Exit Candidate;
+* Exit Recommendation;
+* Exit Decision;
+* Exit Decision Version;
+* Exit Authorization Binding;
+* Exit Instruction Request;
+* rejection objects;
+* deferral objects;
+* cancellation objects;
+* correction objects;
+* supersession objects;
+* completion records;
+* evidence records.
+
 Identify:
 
 * duplicate objects;
 * missing objects;
-* unauthorized truth containment;
+* unauthorized truth ownership;
 * object boundary violations.
 
 ---
 
-# 5. Reconcile Lifecycle Model
+# 6. Reconcile Lifecycle Model
 
-Verify lifecycle consistency between:
+Verify consistency between:
 
 * object states;
-* state transitions;
-* authority boundaries;
+* transition authority;
+* lifecycle evidence;
 * correction pathways;
 * supersession pathways;
+* cancellation pathways;
 * expiration pathways.
 
 Confirm:
 
-* every transition has governing authority;
-* every terminal state is deterministic;
-* invalid transitions are prohibited;
+* every lifecycle transition has governing authority;
+* every state has deterministic meaning;
+* terminal states remain terminal unless constitutionally permitted;
 * historical lineage is preserved.
 
 Identify:
 
 * conflicting states;
-* ambiguous transitions;
+* impossible transitions;
 * missing transitions;
-* impossible lifecycle paths.
+* ambiguous transitions.
 
 ---
 
-# 6. Reconcile Admissibility and Decision Model
+# 7. Reconcile Admissibility Model
 
 Verify consistency between:
 
 * admissibility requirements;
-* evaluation authority;
-* recommendation authority;
-* decision authority;
-* evidence requirements.
+* source authority;
+* evidence requirements;
+* rejection conditions;
+* decision eligibility.
 
 Confirm:
+
+* inadmissible information cannot produce decisions;
+* stale information cannot silently become valid;
+* contradictory information cannot silently resolve itself;
+* insufficient evidence cannot produce valid decisions.
+
+Identify:
+
+* missing admissibility criteria;
+* conflicting admissibility rules;
+* unauthorized input sources.
+
+---
+
+# 8. Reconcile Decision Authority Model
+
+Verify separation between:
 
 ```text
 Observation
@@ -176,179 +251,161 @@ Observation
 → Decision
 → Authorization
 → Execution
+→ Settlement
+→ Closed Position Truth
 ```
-
-remains constitutionally enforced.
-
-Identify:
-
-* evaluation authority expansion;
-* recommendation authority expansion;
-* decision authority conflicts;
-* unauthorized decision inputs.
-
----
-
-# 7. Reconcile Authorization and Execution Separation
-
-Verify consistency between:
-
-* Exit Decision authority;
-* Authorization authority;
-* Trader authority;
-* Broker authority;
-* Position Registry authority.
 
 Confirm:
 
-```text
-Exit Decision
-≠ Authorization
-≠ Execution Request
-≠ Broker Instruction
-≠ Execution Result
-≠ Closed Position Truth
-```
+* evaluation does not equal recommendation;
+* recommendation does not equal decision;
+* decision does not equal authorization;
+* authorization does not equal execution.
 
 Identify:
 
+* decision authority leakage;
 * execution authority leakage;
-* authorization bypass;
-* position mutation ambiguity;
-* broker authority ambiguity.
+* authorization ambiguity.
 
 ---
 
-# 8. Reconcile Interface and Dependency Model
+# 9. Reconcile Interface and Dependency Model
 
 Verify all interfaces and dependencies established under B04.
 
-Confirm every dependency possesses:
+For every interface and dependency confirm:
 
-* one owner;
+* one authority owner;
+* one producer;
+* one consumer;
 * one direction;
-* one purpose;
-* one authority boundary;
-* one failure behavior.
+* one scope;
+* one identity contract;
+* one freshness contract;
+* one evidence obligation.
 
 Identify:
 
 * circular dependencies;
 * undocumented dependencies;
 * unauthorized interfaces;
-* duplicated interfaces;
-* missing interfaces.
+* conflicting interface assumptions.
 
 ---
 
-# 9. Reconcile Temporal Model
+# 10. Reconcile Temporal Model
 
 Verify consistency of:
 
-* timestamp definitions;
-* freshness requirements;
+* timestamps;
+* freshness rules;
+* expiration rules;
 * ordering rules;
-* replay behavior;
+* replay rules;
 * duplicate handling.
 
 Confirm:
 
-* stale information cannot silently become valid;
-* replay cannot alter constitutional truth;
-* duplicates cannot create duplicate decisions;
-* historical records cannot be overwritten.
+* replay cannot modify constitutional history;
+* replay cannot reactivate cancelled decisions;
+* replay cannot resurrect expired decisions;
+* duplicate events cannot create duplicate decision authority.
 
 Identify:
 
-* conflicting temporal assumptions;
-* undefined event ordering;
+* temporal ambiguity;
+* ordering ambiguity;
 * replay ambiguity.
 
 ---
 
-# 10. Reconcile Evidence Model
+# 11. Reconcile Evidence Model
 
 Verify consistency between:
 
 * evidence obligations;
 * object lifecycle;
-* interface events;
-* decision events;
-* historical custody.
+* interfaces;
+* decisions;
+* authorizations;
+* execution requests;
+* historical records.
 
-Confirm evidence possesses:
+Confirm every evidence obligation possesses:
 
-* identity;
+* evidence identity;
+* producer;
+* owner;
+* custodian;
 * provenance;
-* ownership;
-* custody;
-* integrity;
-* retention;
-* lineage.
+* integrity requirement;
+* retention requirement;
+* lineage requirement.
 
 Identify:
 
 * unsupported evidence;
 * circular evidence;
-* metadata-only evidence;
-* ownership ambiguity.
+* ownership ambiguity;
+* missing evidence obligations.
 
 ---
 
-# 11. Establish Contradiction Registry
+# 12. Establish Contradiction Registry
 
 Create the authoritative contradiction registry.
 
-Every contradiction shall contain:
+Every contradiction shall include:
 
 * contradiction identity;
-* source doctrines;
-* affected authorities;
+* originating doctrines;
+* affected requirements;
 * affected objects;
+* affected authorities;
 * severity;
 * resolution status;
-* reconciliation decision.
+* reconciliation outcome.
 
-Contradictions shall be classified as:
+Classify contradictions as:
 
 * resolved;
 * deferred;
-* blocking.
+* constitutional blocker.
 
-Any unresolved constitutional contradiction shall prevent constitutional freeze.
+Any unresolved constitutional blocker shall prevent freeze.
 
 ---
 
-# 12. Establish Terminology Reconciliation Registry
+# 13. Establish Terminology Reconciliation Registry
 
-Create a canonical terminology registry.
+Create the authoritative terminology reconciliation registry.
 
-Resolve inconsistent usage of:
+Resolve all conflicting definitions involving:
 
 * decision;
 * recommendation;
 * authorization;
 * execution;
-* position;
 * truth;
-* custody;
 * ownership;
+* custody;
 * evidence;
-* completion;
 * correction;
-* supersession.
+* supersession;
+* completion.
 
-Every term shall possess:
+Each term shall possess:
 
 * canonical definition;
 * authoritative source;
-* prohibited interpretations.
+* prohibited interpretation.
 
 ---
 
-# 13. Establish Authoritative Reconciliation Decisions
+# 14. Produce Authoritative Reconciliation Outcomes
 
-For every identified inconsistency, establish:
+For every identified inconsistency produce:
 
 * reconciliation decision;
 * governing doctrine;
@@ -357,22 +414,29 @@ For every identified inconsistency, establish:
 * rationale;
 * resulting constitutional state.
 
-No reconciliation decision may silently expand authority.
+No reconciliation outcome may:
+
+* expand authority;
+* remove ownership boundaries;
+* bypass evidence requirements;
+* weaken traceability requirements.
 
 ---
 
-# 14. Establish Completion Report
+# 15. Establish Completion Report
 
-Produce a completion report confirming:
+Produce the constitutional consistency reconciliation completion report.
 
-* all B01–B04 doctrines reconciled;
-* contradictions identified;
-* terminology normalized;
-* ownership conflicts resolved;
-* authority conflicts resolved;
-* lifecycle conflicts resolved;
-* interface conflicts resolved;
-* evidence conflicts resolved.
+The report shall confirm:
+
+* all B01–B04 doctrines reviewed;
+* all contradictions identified;
+* all terminology reconciled;
+* all ownership relationships validated;
+* all authority relationships validated;
+* all lifecycle relationships validated;
+* all interface relationships validated;
+* all evidence relationships validated.
 
 ---
 
@@ -380,16 +444,17 @@ Produce a completion report confirming:
 
 This order is complete only when:
 
-* all constitutional doctrines are reconciled;
-* all authorities possess one source;
-* all responsibilities possess one owner;
-* all objects possess deterministic ownership;
-* all lifecycle states are consistent;
-* all decision boundaries remain separated;
-* all authorization boundaries remain separated;
-* all interfaces possess deterministic governance;
-* all dependencies possess deterministic direction;
-* all evidence obligations are consistent;
+* every constitutional doctrine is reconciled;
+* every authority possesses one source;
+* every responsibility possesses one owner;
+* every object possesses deterministic ownership;
+* every lifecycle state possesses deterministic authority;
+* every decision boundary remains separated;
+* every authorization boundary remains separated;
+* every interface possesses deterministic governance;
+* every dependency possesses deterministic direction;
+* every evidence obligation possesses deterministic ownership;
+* all terminology is canonical;
 * no unresolved constitutional contradiction remains.
 
 Successful completion authorizes progression to:

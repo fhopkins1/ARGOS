@@ -3,7 +3,6 @@ from __future__ import annotations
 import hashlib
 import json
 import shutil
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -13,10 +12,10 @@ OUTPUT_DIR = REPOSITORY_ROOT / "Documentation" / "EXIT_DECISION_RM001_B05_FINAL_
 SOURCE_ORDER_DIR = OUTPUT_DIR / "source_orders"
 
 SOURCE_ORDERS = {
-    "EXIT-DECISION-RM-001-B05-001": Path(r"C:\Users\Fletc\.codex\attachments\d0bdf03c-ad12-4ff6-b2fb-31a2d6c33720\pasted-text.txt"),
-    "EXIT-DECISION-RM-001-B05-002": Path(r"C:\Users\Fletc\.codex\attachments\60ca5978-95fe-48d6-b14a-ae5440394930\pasted-text.txt"),
-    "EXIT-DECISION-RM-001-B05-003": Path(r"C:\Users\Fletc\.codex\attachments\4e994959-fb64-4a27-a291-61b13803fff4\pasted-text.txt"),
-    "EXIT-DECISION-RM-001-B05-004": Path(r"C:\Users\Fletc\.codex\attachments\265b056f-0a88-4c93-9535-e31fdfed6ab8\pasted-text.txt"),
+    "EXIT-DECISION-RM-001-B05-001": Path(r"C:\Users\Fletc\.codex\attachments\4fa517e7-922b-4ea4-b0fc-3d76ae2b53e7\pasted-text.txt"),
+    "EXIT-DECISION-RM-001-B05-002": Path(r"C:\Users\Fletc\.codex\attachments\080488a8-b5ed-43cf-8aef-68b2cfbea8fe\pasted-text.txt"),
+    "EXIT-DECISION-RM-001-B05-003": Path(r"C:\Users\Fletc\.codex\attachments\98fd7221-0dbf-44a6-959a-03182879ff69\pasted-text.txt"),
+    "EXIT-DECISION-RM-001-B05-004": Path(r"C:\Users\Fletc\.codex\attachments\61f61983-af74-43a6-a78e-23360d9af2f3\pasted-text.txt"),
 }
 
 BASELINE_DIRS = {
@@ -207,7 +206,7 @@ def main() -> None:
     }
     baseline = {
         "baseline_id": "EXIT-DECISION-RM-001-B05-FINAL-CONSTITUTIONAL-READINESS",
-        "generated_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "generated_at": "DETERMINISTIC_FROM_SOURCE_INPUTS",
         "status": "COMPLETE" if all(completion_checks.values()) else "INCOMPLETE",
         "constitutional_doctrine_modified": False,
         "implementation_behavior_modified": False,

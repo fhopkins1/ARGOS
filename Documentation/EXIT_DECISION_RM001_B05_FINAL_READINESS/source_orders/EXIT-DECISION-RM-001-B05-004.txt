@@ -6,16 +6,16 @@ EXIT-DECISION-RM-001-B05-004
 
 Execute the final independent ECS-003 constitutional audit of the Exit Decision Office.
 
-This order shall determine whether the constitutional architecture established under:
+This order shall determine whether the constitutional foundation established under:
 
 * EXIT-DECISION-RM-001-B01 — Exit Decision Constitutional Governance and Authority Series;
 * EXIT-DECISION-RM-001-B02 — Canonical Exit Decision Objects and Lifecycle Constitution Series;
 * EXIT-DECISION-RM-001-B03 — Admissibility, Decision Logic, and Authorization Separation Constitution Series;
 * EXIT-DECISION-RM-001-B04 — Interface, Temporal, Evidence, and Traceability Constitution Series;
 
-forms one complete, internally consistent, deterministic constitutional model.
+forms one complete, internally consistent, deterministic constitutional model sufficient to authorize transition into implementation discovery and subsequent ECS-003 implementation certification.
 
-This order shall evaluate constitutional sufficiency only.
+This order shall evaluate constitutional completeness only.
 
 ---
 
@@ -23,20 +23,19 @@ This order shall evaluate constitutional sufficiency only.
 
 This order shall:
 
-* Not modify Exit Decision implementation behavior.
+* Not modify implementation behavior.
 * Not execute behavioral verification.
 * Not generate implementation proof.
 * Not perform implementation certification.
 * Not authorize production operation.
 * Not resolve implementation defects.
-* Not accept unsupported constitutional claims.
-* Not permit unresolved constitutional ambiguity to pass.
+* Not accept constitutional completeness by assertion.
+* Not permit unresolved constitutional contradictions to pass.
+* Not permit implementation artifacts to redefine constitutional authority.
 
-Constitutional completeness shall be determined by evidence.
+Constitutional readiness shall be established through objective reconciliation.
 
-Constitutional readiness shall be determined by reconciliation.
-
-Constitutional freeze shall occur only after unconditional approval.
+Constitutional readiness shall not be inferred from implementation maturity.
 
 ---
 
@@ -47,22 +46,24 @@ Constitutional freeze shall occur only after unconditional approval.
 Verify:
 
 * Exit Decision purpose is uniquely defined.
-* Decision authority is uniquely assigned.
+* Exit Decision authority is uniquely defined.
 * Recommendation authority is separated from decision authority.
-* Execution authority remains outside Exit Decision.
+* Decision authority is separated from execution authority.
 * Prohibited authority boundaries are explicit.
 * Escalation authority is deterministic.
 * Conflict resolution authority is deterministic.
+* Override authority is bounded.
 
 Identify:
 
-* authority duplication;
-* authority gaps;
-* unauthorized authority expansion.
+* duplicated authority;
+* missing authority;
+* unauthorized authority expansion;
+* unresolved authority conflicts.
 
 ---
 
-# 2. Ownership and Responsibility Audit
+# 2. Responsibility and Ownership Completeness Audit
 
 Verify:
 
@@ -74,27 +75,29 @@ Every constitutional responsibility possesses:
 * one correction authority;
 * one reconciliation authority.
 
-Audit ownership separation between:
+Reconcile ownership boundaries between:
 
 * Exit Decision;
+* Commander;
 * Risk;
 * Authorizations;
 * Trader;
 * Broker;
 * Position Registry;
 * Historian;
-* Performance Truth.
+* Performance Truth;
+* Infrastructure.
 
 Identify:
 
 * split ownership;
-* implicit ownership;
 * circular ownership;
+* implicit ownership;
 * missing ownership.
 
 ---
 
-# 3. Canonical Object Audit
+# 3. Canonical Object Completeness Audit
 
 Verify:
 
@@ -109,14 +112,14 @@ Every Exit Decision object possesses:
 * correction authority;
 * reconciliation authority.
 
-Verify no Exit Decision object contains truth belonging to:
+Verify that Exit Decision objects do not contain:
 
-* Risk;
-* Position Registry;
-* Authorizations;
-* Broker;
-* Historian;
-* Performance Truth.
+* position truth;
+* risk truth;
+* authorization truth;
+* broker truth;
+* historical truth;
+* performance truth.
 
 Identify:
 
@@ -126,7 +129,7 @@ Identify:
 
 ---
 
-# 4. Lifecycle Determinism Audit
+# 4. Lifecycle Completeness Audit
 
 Verify:
 
@@ -136,20 +139,23 @@ Every lifecycle state possesses:
 * entry conditions;
 * exit conditions;
 * evidence requirements;
-* reconciliation obligations.
+* reconciliation requirements.
 
-Verify lifecycle transitions including:
+Verify lifecycle governance for:
 
 * creation;
+* receipt;
 * validation;
+* admission;
 * evaluation;
 * recommendation;
 * decision;
 * authorization dependency;
 * execution interaction;
+* acknowledgement;
 * completion;
-* rejection;
 * deferral;
+* rejection;
 * cancellation;
 * expiration;
 * correction;
@@ -159,13 +165,13 @@ Verify lifecycle transitions including:
 Identify:
 
 * invalid transitions;
-* ambiguous transitions;
-* orphan states;
-* replay conflicts.
+* undefined transitions;
+* conflicting lifecycle definitions;
+* incomplete terminal-state handling.
 
 ---
 
-# 5. Admissibility and Decision Separation Audit
+# 5. Admissibility and Decision Authority Audit
 
 Verify:
 
@@ -192,16 +198,18 @@ Closed Position Truth
 Verify:
 
 * admissibility precedes evaluation;
-* evaluation does not create execution authority;
-* recommendation does not authorize execution;
+* evaluation does not equal recommendation;
+* recommendation does not equal decision;
 * decision does not equal authorization;
-* authorization does not equal execution.
+* authorization does not equal execution;
+* execution does not equal settlement;
+* settlement does not equal closed-position truth.
 
 Identify:
 
 * decision authority leakage;
-* execution authority leakage;
-* authorization ambiguity.
+* evaluation authority leakage;
+* execution authority leakage.
 
 ---
 
@@ -209,12 +217,13 @@ Identify:
 
 Verify:
 
-Exit Decision cannot:
+Exit Decision shall not:
 
-* authorize itself;
-* bypass authorization requirements;
-* execute trades;
+* issue authorization;
+* consume authorization authority;
+* bypass authorization controls;
 * submit broker instructions;
+* execute trades;
 * mutate positions.
 
 Verify:
@@ -223,15 +232,23 @@ Authorizations owns:
 
 * authorization issuance;
 * authorization validity;
-* authorization lifecycle.
+* authorization expiration;
+* authorization revocation.
+
+Verify:
 
 Trader owns:
 
-* execution handling.
+* execution request handling;
+* execution lifecycle.
+
+Verify:
 
 Broker owns:
 
-* external execution communication.
+* external broker communication.
+
+Verify:
 
 Position Registry owns:
 
@@ -239,11 +256,9 @@ Position Registry owns:
 
 ---
 
-# 7. Interface and Dependency Audit
+# 7. Interface and Dependency Completeness Audit
 
-Verify:
-
-Every interface possesses:
+Verify every interface possesses:
 
 * interface identity;
 * producer;
@@ -252,31 +267,33 @@ Every interface possesses:
 * schema authority;
 * identity contract;
 * scope contract;
-* freshness requirement;
-* ordering requirement;
-* replay behavior;
-* evidence obligation.
+* freshness contract;
+* ordering contract;
+* replay contract;
+* failure behavior;
+* evidence obligation;
+* reconciliation responsibility.
 
 Verify every dependency possesses:
 
 * deterministic direction;
-* constitutional justification;
-* ownership;
+* constitutional owner;
+* justification;
+* failure behavior;
 * reconciliation responsibility.
 
 Identify:
 
 * circular dependencies;
 * unauthorized interfaces;
-* undocumented dependencies.
+* undocumented dependencies;
+* ambiguous ownership.
 
 ---
 
-# 8. Temporal and Replay Audit
+# 8. Temporal and Replay Integrity Audit
 
-Verify:
-
-Temporal definitions exist for:
+Verify temporal governance exists for:
 
 * request time;
 * observation time;
@@ -284,7 +301,7 @@ Temporal definitions exist for:
 * recommendation time;
 * decision time;
 * authorization time;
-* execution request time;
+* execution-request time;
 * acknowledgement time;
 * completion time;
 * correction time;
@@ -297,14 +314,16 @@ Replay cannot:
 
 * reactivate cancelled decisions;
 * resurrect expired decisions;
-* overwrite history;
-* duplicate execution paths.
+* overwrite completed history;
+* create duplicate execution paths;
+* bypass authorization state.
 
 Identify:
 
 * undefined ordering;
 * stale-state ambiguity;
-* duplicate-event ambiguity.
+* duplicate handling ambiguity;
+* timestamp ambiguity.
 
 ---
 
@@ -317,38 +336,39 @@ Verify every evidence obligation possesses:
 * owner;
 * custodian;
 * provenance;
-* integrity requirements;
-* retention requirements;
-* lineage requirements.
+* integrity requirement;
+* retention requirement;
+* lineage requirement.
 
 Reject:
 
 * metadata-only evidence;
+* completion-report-only evidence;
 * unsupported assertions;
 * synthetic evidence;
 * circular evidence.
 
 Verify Historian custody preserves:
 
-* decisions;
-* corrections;
-* supersessions;
-* cancellations;
-* expirations;
-* reconciliations.
+* decision history;
+* correction history;
+* supersession history;
+* cancellation history;
+* expiration history;
+* reconciliation history.
 
 ---
 
 # 10. Requirement Traceability Audit
 
-Verify:
-
-Every constitutional requirement possesses:
+Verify every constitutional requirement possesses:
 
 * canonical identity;
-* source authority;
+* source clause;
+* constitutional authority;
 * owner;
 * applicability;
+* verification classification;
 * evidence implication;
 * certification implication.
 
@@ -357,76 +377,84 @@ Verify bidirectional traceability:
 ```text
 Constitutional Authority
         ↔
-Requirement
+Canonical Requirement
         ↔
-Object
+Exit Decision Object
         ↔
-Lifecycle
+Lifecycle Obligation
         ↔
 Decision Obligation
         ↔
-Interface
+Interface Obligation
         ↔
-Evidence
+Evidence Obligation
         ↔
-Certification
+Certification Obligation
 ```
 
 Identify:
 
 * orphan requirements;
 * duplicate requirements;
+* aggregate requirements;
 * broken traceability;
-* missing obligations.
+* missing obligations;
+* conflicting requirements.
 
 ---
 
-# Final ECS-003 Verdict Rules
+# Final ECS-003 Constitutional Verdict
 
-Issue exactly one verdict:
+The audit shall issue exactly one verdict:
 
 ## UNCONDITIONAL_PASS
 
-When:
+Issued only when:
 
-* no constitutional blockers remain;
-* all ownership is deterministic;
-* all authority boundaries are complete;
-* all requirements are traceable;
-* all evidence obligations are defined;
-* all lifecycle behavior is constitutionally deterministic.
+* all constitutional domains are complete;
+* all authority boundaries are deterministic;
+* all ownership relationships are deterministic;
+* all objects possess defined governance;
+* all lifecycle transitions possess authority;
+* all dependencies possess direction and ownership;
+* all evidence obligations are complete;
+* all requirements possess traceability;
+* no constitutional blocker remains.
 
-Authorize transition into:
+Authorization:
 
-> EXIT-DECISION-RM-002 — Implementation Certification Program
+Transition into:
+
+> **EXIT-DECISION-RM-002 — Dependency-Derived Implementation Discovery and ECS-003 Implementation Certification**
 
 ---
 
 ## PASS_WITH_REMEDIATION
 
-When:
+Issued when:
 
 * constitutional architecture is substantially complete;
-* limited bounded remediation remains;
+* remaining issues are bounded;
 * no fundamental authority ambiguity exists.
 
 Required outputs:
 
-* blocker description;
+* constitutional blocker;
 * affected doctrine;
 * severity;
-* bounded remediation requirement;
+* minimum bounded remediation;
 * re-audit requirement.
 
 ---
 
 ## FAIL
 
-When:
+Issued when:
 
 * authority ownership remains ambiguous;
-* lifecycle governance is incomplete;
+* lifecycle governance remains incomplete;
 * decision and execution separation fails;
+* evidence governance is incomplete;
 * traceability is incomplete;
 * constitutional contradictions remain unresolved.
 
@@ -435,7 +463,7 @@ Required outputs:
 * constitutional blocker;
 * affected doctrine;
 * severity;
-* remediation path.
+* remediation requirement.
 
 ---
 
@@ -446,10 +474,15 @@ Produce:
 * final constitutional audit report;
 * constitutional findings registry;
 * constitutional blocker registry;
+* governance completeness assessment;
 * authority completeness assessment;
 * ownership completeness assessment;
+* object completeness assessment;
 * lifecycle completeness assessment;
+* admissibility completeness assessment;
+* authorization separation assessment;
 * interface completeness assessment;
+* temporal completeness assessment;
 * evidence completeness assessment;
 * traceability completeness assessment;
 * readiness assessment;
@@ -462,20 +495,19 @@ Produce:
 
 This order shall complete only when:
 
-* governance completeness is verified;
-* authority completeness is verified;
-* ownership completeness is verified;
-* object completeness is verified;
-* lifecycle completeness is verified;
-* admissibility completeness is verified;
-* decision separation is verified;
-* authorization separation is verified;
-* interface completeness is verified;
-* temporal completeness is verified;
-* evidence completeness is verified;
-* traceability completeness is verified;
-* all constitutional blockers are resolved or formally identified;
-* one final ECS-003 verdict is issued.
+* every constitutional doctrine is reconciled;
+* every authority possesses one source;
+* every responsibility possesses one owner;
+* every object possesses one owner and lifecycle;
+* every decision boundary is deterministic;
+* every authorization boundary is deterministic;
+* every interface possesses one authority contract;
+* every dependency possesses deterministic direction;
+* every evidence obligation is complete;
+* every requirement possesses canonical identity;
+* every requirement participates in bidirectional traceability;
+* no constitutional ambiguity remains;
+* no unresolved constitutional blocker remains.
 
 Successful completion of this order shall:
 
@@ -483,4 +515,4 @@ Successful completion of this order shall:
 * establish the authoritative constitutional baseline;
 * authorize transition into:
 
-> **EXIT-DECISION-RM-002 — Implementation Certification Program**.
+> **EXIT-DECISION-RM-002 — Dependency-Derived Implementation Discovery and ECS-003 Implementation Certification**.

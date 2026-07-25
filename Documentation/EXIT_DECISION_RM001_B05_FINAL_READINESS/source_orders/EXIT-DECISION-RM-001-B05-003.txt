@@ -4,17 +4,21 @@ EXIT-DECISION-RM-001-B05-003
 
 ## Objective
 
-Establish the complete constitutional dependency reconciliation model verifying that every Exit Decision authority, requirement, object, lifecycle obligation, admissibility obligation, decision obligation, interface obligation, evidence obligation, and certification obligation participates in one deterministic constitutional dependency graph.
+Verify complete constitutional dependency integrity and bidirectional traceability across the entire Exit Decision constitutional architecture established under **EXIT-DECISION-RM-001-B01 through B04**.
 
-This order shall eliminate ambiguity regarding:
+This order shall reconcile every relationship between:
 
-* constitutional dependency ownership;
-* requirement lineage;
-* object participation;
-* lifecycle participation;
-* interface dependency;
-* evidence dependency;
-* certification traceability.
+* constitutional authorities;
+* canonical requirements;
+* Exit Decision objects;
+* lifecycle obligations;
+* admissibility obligations;
+* decision obligations;
+* interface obligations;
+* evidence obligations;
+* certification obligations.
+
+This order shall establish one deterministic constitutional participation model proving that every requirement, object, responsibility, dependency, and evidence obligation possesses authoritative lineage.
 
 No implementation behavior shall be modified under this order.
 
@@ -22,224 +26,409 @@ No behavioral verification shall occur under this order.
 
 No implementation proof shall be generated under this order.
 
-No certification activity beyond constitutional reconciliation shall occur under this order.
+No implementation certification activity shall occur under this order.
 
-Every dependency shall possess one constitutional purpose.
+Every dependency shall have one constitutional purpose.
 
-Every dependency shall possess one governing authority.
+Every traceability relationship shall have one deterministic direction.
 
-Every traceability relationship shall possess one deterministic direction.
+Every artifact shall possess complete constitutional lineage.
 
 ---
 
 # Constitutional Principles
 
-A constitutional dependency shall exist only when justified by authoritative doctrine.
+A dependency shall exist only when justified by constitutional authority.
 
-A dependency shall not imply ownership.
+Dependency shall never imply ownership.
 
-A consumer shall not become the owner of a producer's truth domain.
+Participation shall never imply authority.
 
-A traceability relationship shall preserve lineage from constitutional authority to certification obligation.
+Consumption shall never imply custody.
 
-Every artifact shall have:
+Evidence custody shall never imply truth ownership.
 
-* one source authority;
-* one owner;
-* one applicable scope;
-* one dependency classification;
-* one traceability relationship.
+Certification traceability shall never create constitutional authority.
 
-The authoritative traceability chain shall be:
+Every constitutional artifact shall map to:
 
-```text id="t7h3xq"
+* authoritative source;
+* canonical identity;
+* responsible owner;
+* applicable scope;
+* evidence obligation;
+* certification implication.
+
+The authoritative constitutional traceability chain shall be:
+
+```text
 Constitutional Authority
-↓
+↔
 Canonical Requirement
-↓
+↔
 Exit Decision Object
-↓
+↔
 Lifecycle Obligation
-↓
+↔
 Admissibility Obligation
-↓
+↔
 Decision Obligation
-↓
+↔
 Interface Obligation
-↓
+↔
 Evidence Obligation
-↓
+↔
 Certification Obligation
 ```
 
-No artifact shall exist outside this chain.
+No constitutional requirement shall exist outside this chain.
 
-No artifact shall possess an ambiguous constitutional origin.
+No artifact shall remain without deterministic lineage.
 
 ---
 
 # Constitutional Dependency Registry
 
-## Authority Dependencies
+## Authority Dependency Reconciliation
 
-The following authority dependencies shall be reconciled:
+The following authority relationships shall be reconciled:
 
-| Authority         | Dependency Purpose                         | Owner                 |
-| ----------------- | ------------------------------------------ | --------------------- |
-| Exit Decision     | Decision evaluation and issuance           | Exit Decision Office  |
-| Risk              | Risk truth and constraint authority        | Risk Office           |
-| Authorizations    | Authorization truth and lifecycle          | Authorizations Office |
-| Trader            | Execution authority                        | Trader Office         |
-| Broker            | External execution interaction             | Broker Office         |
-| Position Registry | Position truth                             | Position Registry     |
-| Historian         | Historical custody                         | Historian             |
-| Commander         | Enterprise intent and escalation authority | Commander             |
+| Authority Domain    | Constitutional Owner  | Dependency Relationship         |
+| ------------------- | --------------------- | ------------------------------- |
+| Exit evaluation     | Exit Decision Office  | Produces decision outcomes      |
+| Risk truth          | Risk Office           | Provides risk constraints       |
+| Authorization truth | Authorizations Office | Provides authorization validity |
+| Execution authority | Trader Office         | Executes approved actions       |
+| Broker interaction  | Broker Office         | Interfaces externally           |
+| Position truth      | Position Registry     | Owns position state             |
+| Historical custody  | Historian             | Preserves lineage               |
+| Enterprise intent   | Commander             | Provides governing intent       |
 
 No authority dependency shall transfer ownership.
 
+No consuming authority shall become the owner of consumed truth.
+
 ---
 
-# Requirement Dependency Constitution
+# Requirement Traceability Reconciliation
 
-Every canonical requirement shall map to:
+Every canonical requirement shall possess:
 
+* requirement identity;
 * originating doctrine;
-* responsible authority;
-* affected object;
-* affected lifecycle state;
-* required evidence;
+* constitutional authority;
+* owner;
+* applicability classification;
+* affected artifact;
+* evidence implication;
 * certification implication.
 
-A requirement shall not exist without:
+Requirement categories shall include:
 
-* source clause;
-* ownership;
-* applicability;
-* traceability destination.
+## Authority Requirements
 
-Requirements shall be classified as:
+Derived from:
 
-## Governance Requirements
+* office purpose;
+* authority boundaries;
+* prohibited authority.
 
-Define:
+Traceability target:
 
-* purpose;
-* authority;
-* boundaries;
-* ownership.
+```text
+Authority Doctrine
+→ Requirement
+→ Authority Registry
+→ Evidence Obligation
+```
+
+---
 
 ## Object Requirements
 
-Define:
+Derived from:
 
-* identity;
+* canonical objects;
+* ownership;
 * custody;
-* lifecycle participation.
+* identity.
+
+Traceability target:
+
+```text
+Object Doctrine
+→ Requirement
+→ Object Registry
+→ Lifecycle Obligation
+```
+
+---
 
 ## Lifecycle Requirements
 
-Define:
+Derived from:
 
-* valid states;
+* lifecycle states;
 * transitions;
-* transition authorities.
+* terminal conditions.
+
+Traceability target:
+
+```text
+Lifecycle Doctrine
+→ Requirement
+→ Transition Registry
+→ Evidence Obligation
+```
+
+---
 
 ## Decision Requirements
 
-Define:
+Derived from:
 
 * admissibility;
 * evaluation;
 * recommendation;
-* decision formation.
+* decision issuance.
 
-## Interface Requirements
+Traceability target:
 
-Define:
-
-* dependency;
-* communication;
-* contract.
-
-## Evidence Requirements
-
-Define:
-
-* provenance;
-* custody;
-* retention.
-
-## Certification Requirements
-
-Define:
-
-* auditability;
-* verification expectations.
+```text
+Decision Doctrine
+→ Requirement
+→ Decision Object
+→ Decision Evidence
+```
 
 ---
 
-# Object Dependency Reconciliation
+## Interface Requirements
 
-Every Exit Decision object shall map to its constitutional dependencies.
+Derived from:
 
-| Object                | Primary Dependency      | Ownership Boundary                |
-| --------------------- | ----------------------- | --------------------------------- |
-| Exit Decision Request | Request source          | Request owner                     |
-| Exit Decision Context | Input providers         | Exit Decision consumes            |
-| Exit Evaluation       | Evaluation inputs       | Exit Decision owns evaluation     |
-| Exit Recommendation   | Evaluation output       | Exit Decision owns recommendation |
-| Exit Decision         | Decision authority      | Exit Decision owns decision       |
-| Authorization Binding | Authorization authority | Authorizations owns authorization |
-| Execution Request     | Execution authority     | Trader owns execution pathway     |
-| Completion Record     | Completion authority    | Completion authority owns record  |
-| Evidence Record       | Event source            | Event owner creates evidence      |
+* dependency contracts;
+* authority boundaries;
+* communication obligations.
 
-No Exit Decision object may absorb another office's truth domain.
+Traceability target:
+
+```text
+Interface Doctrine
+→ Requirement
+→ Interface Contract
+→ Evidence Obligation
+```
+
+---
+
+## Certification Requirements
+
+Derived from:
+
+* constitutional completeness;
+* auditability;
+* reconciliation obligations.
+
+Traceability target:
+
+```text
+Certification Doctrine
+→ Requirement
+→ Evidence Obligation
+→ Audit Obligation
+```
+
+---
+
+# Exit Decision Object Dependency Reconciliation
+
+Every canonical Exit Decision object shall participate in the constitutional graph.
+
+## Exit Decision Request
+
+Dependencies:
+
+* request authority;
+* request identity;
+* admissibility requirements.
+
+Ownership:
+
+Exit Decision request owner.
+
+---
+
+## Exit Decision Context
+
+Dependencies:
+
+* Position Registry truth;
+* Risk truth;
+* Authorization truth;
+* analytical inputs;
+* temporal validity.
+
+Ownership:
+
+Source authorities retain ownership of their truth domains.
+
+Exit Decision consumes context.
+
+---
+
+## Exit Evaluation
+
+Dependencies:
+
+* admissible inputs;
+* evaluation criteria;
+* decision factors.
+
+Ownership:
+
+Exit Decision Office.
+
+---
+
+## Exit Recommendation
+
+Dependencies:
+
+* evaluation results;
+* recommendation criteria;
+* evidence lineage.
+
+Ownership:
+
+Exit Decision Office.
+
+---
+
+## Exit Decision
+
+Dependencies:
+
+* admissibility completion;
+* evaluation completion;
+* decision authority.
+
+Ownership:
+
+Exit Decision Office.
+
+---
+
+## Authorization Binding
+
+Dependencies:
+
+* authorization lifecycle;
+* authorization validation;
+* execution eligibility.
+
+Ownership:
+
+Authorizations Office.
+
+---
+
+## Execution Request
+
+Dependencies:
+
+* valid decision;
+* valid authorization;
+* execution pathway.
+
+Ownership:
+
+Requesting execution authority.
+
+---
+
+## Completion Record
+
+Dependencies:
+
+* execution outcome;
+* reconciliation outcome;
+* completion criteria.
+
+Ownership:
+
+Responsible completion authority.
+
+---
+
+## Evidence Record
+
+Dependencies:
+
+* originating event;
+* producing authority;
+* historical custody.
+
+Ownership:
+
+Event-producing authority.
 
 ---
 
 # Lifecycle Dependency Reconciliation
 
-Every lifecycle obligation shall possess:
+Every lifecycle state shall possess:
 
 * governing authority;
-* transition source;
-* transition destination;
-* evidence requirement;
-* reconciliation requirement.
+* valid predecessor states;
+* valid successor states;
+* evidence requirements;
+* reconciliation obligations.
 
-The following lifecycle dependencies are authoritative:
+The lifecycle dependency model shall be:
 
-```text id="p8zq4f"
+```text
 Created
-→ Exit Decision ownership
-
+↓
+Received
+↓
 Validating
-→ Exit Decision admissibility authority
-
+↓
+Admitted
+↓
 Evaluating
-→ Exit Decision evaluation authority
-
+↓
 Recommended
-→ Exit Decision recommendation authority
-
+↓
 Decided
-→ Exit Decision decision authority
-
+↓
 Authorized
-→ Authorizations authority
-
+↓
+Issued
+↓
+Acknowledged
+↓
 Executing
-→ Trader authority
-
+↓
 Completed
-→ Execution/Reconciliation authority
-
+↓
 Archived
-→ Historian custody
 ```
 
-No lifecycle state may bypass its governing authority.
+Exceptional states shall maintain independent lineage:
+
+```text
+Rejected
+Deferred
+Cancelled
+Expired
+Corrected
+Superseded
+```
+
+No exceptional state shall remove predecessor history.
+
+No exceptional state shall create unauthorized authority.
 
 ---
 
@@ -247,47 +436,49 @@ No lifecycle state may bypass its governing authority.
 
 Admissibility obligations shall reconcile against:
 
-* Position Registry truth;
-* Risk truth;
-* Authorization truth;
-* analytical inputs;
-* monitoring inputs;
+* Position Registry;
+* Risk;
+* Authorizations;
+* Monitoring;
+* Sentinel;
+* Analyst;
 * temporal validity;
 * evidence sufficiency.
 
-The dependency relationship shall be:
+The dependency direction shall remain:
 
-```text id="w2m5na"
-Source Truth Owner
+```text
+Truth Owner
 ↓
 Admissibility Evaluation
 ↓
 Exit Decision Determination
 ```
 
-Exit Decision shall evaluate admissibility.
+Exit Decision shall determine admissibility.
 
 Exit Decision shall not become the owner of source truth.
 
 ---
 
-# Decision Dependency Reconciliation
+# Decision Obligation Dependency Reconciliation
 
-Decision obligations shall reconcile:
+Decision obligations shall map each decision factor to its authority source.
 
-| Decision Element     | Source Authority  |
+| Decision Factor      | Authority Owner   |
 | -------------------- | ----------------- |
 | Exit condition       | Exit Decision     |
-| Risk constraints     | Risk              |
-| Authorization state  | Authorizations    |
-| Position state       | Position Registry |
+| Risk constraint      | Risk              |
+| Authorization status | Authorizations    |
+| Position status      | Position Registry |
 | Execution capability | Trader            |
+| Broker status        | Broker            |
 | Historical context   | Historian         |
 | Enterprise intent    | Commander         |
 
 No decision factor shall lack ownership.
 
-No decision factor shall create unauthorized authority.
+No decision factor shall possess duplicate authority.
 
 ---
 
@@ -297,25 +488,27 @@ Every interface shall possess:
 
 * producer;
 * consumer;
-* authority owner;
 * contract owner;
-* evidence obligation.
+* authority owner;
+* evidence responsibility.
 
-The dependency direction shall remain:
+The governing interface model shall be:
 
-```text id="u6x1ba"
-Producer
+```text
+Producer Authority
 ↓
 Interface Contract
 ↓
-Consumer
+Consumer Authority
 ```
 
-Consumers shall not mutate producer-owned truth.
+The following conditions shall constitute interface failure:
 
-Interfaces shall not create circular ownership.
-
-Circular dependencies shall be rejected unless explicitly authorized by constitutional doctrine.
+* undocumented interface;
+* ambiguous producer;
+* ambiguous consumer;
+* conflicting ownership;
+* circular authority.
 
 ---
 
@@ -323,16 +516,17 @@ Circular dependencies shall be rejected unless explicitly authorized by constitu
 
 Every evidence obligation shall map to:
 
+* originating requirement;
 * originating event;
 * producing authority;
 * evidence owner;
 * historical custodian;
-* certification use.
+* certification usage.
 
-The evidence chain shall be:
+The evidence dependency chain shall be:
 
-```text id="6c5btr"
-Constitutional Requirement
+```text
+Requirement
 ↓
 Operational Event
 ↓
@@ -343,91 +537,118 @@ Historical Custody
 Certification Evidence
 ```
 
-Evidence shall not be accepted when:
+Evidence shall not validate itself.
 
-* source authority is unknown;
-* ownership is ambiguous;
-* provenance is incomplete;
-* evidence validates itself.
+Evidence shall not replace missing operational truth.
+
+Evidence shall not create authority.
 
 ---
 
 # Certification Dependency Reconciliation
 
-Certification obligations shall map to:
+Every certification obligation shall possess:
 
-* constitutional requirement;
-* evidence obligation;
-* verification disposition;
-* responsible authority.
+* constitutional requirement reference;
+* evidence obligation reference;
+* responsible owner;
+* verification classification.
 
-Certification shall verify constitutional compliance.
+Certification shall determine compliance status.
 
-Certification shall not create constitutional authority.
+Certification shall not:
 
-Certification shall not replace ownership.
+* modify constitutional authority;
+* alter ownership;
+* create missing doctrine;
+* substitute for reconciliation.
 
 ---
 
-# Traceability Integrity Registry
+# Traceability Failure Registry
 
-The following conditions shall constitute traceability failure:
+The following conditions shall prevent constitutional freeze:
 
 ## Broken Traceability
 
 A requirement cannot identify:
 
 * source authority;
-* owner;
 * affected artifact;
-* evidence obligation.
+* evidence obligation;
+* certification implication.
+
+---
 
 ## Missing Dependency
 
-An artifact requires another artifact but no dependency exists.
+An artifact requires another artifact without a defined constitutional relationship.
+
+---
 
 ## Circular Dependency
 
-An artifact depends upon itself or a downstream artifact without constitutional authorization.
+An artifact depends upon itself or a downstream artifact without explicit constitutional authorization.
+
+---
 
 ## Orphan Artifact
 
-An artifact exists without constitutional lineage.
+An artifact exists without:
 
-## Ownership Conflict
+* source doctrine;
+* requirement identity;
+* ownership.
+
+---
+
+## Unresolved Ownership
 
 Multiple authorities claim ownership of the same constitutional responsibility.
 
 ---
 
+## Unresolved Authority
+
+A responsibility exists without a governing authority.
+
+---
+
 # Constitutional Participation Graph
 
-The authoritative participation model shall be:
+The authoritative participation graph shall be:
 
 ```text
-Exit Decision Constitution
-        |
-        ↓
-Canonical Requirements
-        |
-        ↓
-Objects and Lifecycle
-        |
-        ↓
-Admissibility and Decision Logic
-        |
-        ↓
-Interfaces and Dependencies
-        |
-        ↓
-Evidence and Historical Custody
-        |
-        ↓
-Certification Obligations
+Constitutional Authority
+          |
+          ↓
+Canonical Requirement Registry
+          |
+          ↓
+Exit Decision Object Registry
+          |
+          ↓
+Lifecycle Registry
+          |
+          ↓
+Admissibility Registry
+          |
+          ↓
+Decision Obligation Registry
+          |
+          ↓
+Interface Registry
+          |
+          ↓
+Evidence Registry
+          |
+          ↓
+Certification Registry
 ```
 
 Every node shall possess:
 
+* identity;
 * owner;
 * authority source;
 * dependency relationships;
@@ -437,27 +658,43 @@ Every node shall possess:
 
 # Reconciliation Rules
 
-If duplicate dependencies exist:
+## Duplicate Dependency Resolution
 
-* consolidate under authoritative ownership;
+Where duplicate dependencies exist:
+
+* identify authoritative source;
 * preserve lineage;
 * remove ambiguity.
 
-If conflicting dependencies exist:
+---
 
-* identify governing constitutional source;
-* record reconciliation decision;
-* preserve rejected alternatives.
+## Conflicting Dependency Resolution
 
-If orphan artifacts exist:
+Where dependencies conflict:
 
-* assign constitutional lineage;
+* identify governing constitutional authority;
+* record reconciliation outcome;
+* preserve rejected interpretation.
+
+---
+
+## Orphan Artifact Resolution
+
+Where orphan artifacts exist:
+
+* assign authoritative lineage;
 * remove artifact;
-* or create bounded doctrine.
+* or establish bounded constitutional authority.
 
-If ownership conflicts exist:
+---
 
-* escalate before constitutional freeze.
+## Ownership Conflict Resolution
+
+Where ownership conflicts exist:
+
+* prevent constitutional freeze;
+* identify responsible authority;
+* require reconciliation decision.
 
 ---
 
@@ -466,7 +703,7 @@ If ownership conflicts exist:
 This order shall produce:
 
 * constitutional dependency registry;
-* traceability reconciliation registry;
+* constitutional traceability registry;
 * constitutional participation graph;
 * completion report.
 
@@ -476,21 +713,22 @@ This order shall produce:
 
 This order shall complete only when:
 
-* every authority dependency is identified;
-* every requirement dependency is identified;
-* every object dependency is identified;
-* every lifecycle dependency is identified;
-* every interface dependency is identified;
-* every evidence dependency is identified;
-* every certification dependency is identified;
-* traceability is bidirectional;
-* orphan artifacts are resolved;
+* every constitutional authority is reconciled;
+* every requirement possesses traceability;
+* every object possesses dependency lineage;
+* every lifecycle obligation possesses authority;
+* every admissibility obligation possesses ownership;
+* every decision obligation possesses authority;
+* every interface possesses deterministic direction;
+* every evidence obligation possesses ownership;
+* every certification obligation possesses lineage;
+* broken traceability is resolved;
+* missing dependencies are resolved;
 * circular dependencies are resolved;
-* ownership conflicts are resolved;
-* dependency direction is deterministic;
-* constitutional participation is complete;
-* no traceability ambiguity remains;
-* no dependency ambiguity remains.
+* orphan artifacts are resolved;
+* ownership ambiguity is eliminated;
+* authority ambiguity is eliminated;
+* constitutional participation is complete.
 
 Successful completion of this order shall authorize progression into:
 

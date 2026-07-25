@@ -6,7 +6,7 @@
 
 Establish the complete atomic constitutional requirement population governing the Exit Decision Office.
 
-This order exists solely to derive, classify, identify, and reconcile every constitutional requirement established under **EXIT-DECISION-RM-001-B01 through B04** into one authoritative canonical requirement model.
+This order exists solely to derive, identify, classify, assign ownership, and reconcile every constitutional requirement established under **EXIT-DECISION-RM-001-B01 through B04** into one authoritative canonical requirement model.
 
 No implementation behavior shall be modified under this order.
 
@@ -14,318 +14,369 @@ No behavioral verification shall occur under this order.
 
 No implementation proof shall be generated under this order.
 
-No certification activity beyond constitutional requirement reconciliation shall occur under this order.
+No implementation certification activity shall occur under this order.
 
-Every constitutional requirement shall possess one canonical identity.
+Every constitutional obligation shall possess one canonical requirement identity.
 
-Every constitutional requirement shall possess one authoritative source.
+Every canonical requirement shall possess one authoritative source.
 
-Every constitutional requirement shall possess one constitutional owner.
+Every canonical requirement shall possess one constitutional owner.
 
-Every constitutional requirement shall possess deterministic traceability.
+Every canonical requirement shall possess complete traceability.
 
 ---
 
 # Constitutional Principles
 
-A requirement shall not exist without constitutional authority.
+A constitutional requirement shall exist only through explicit constitutional authority.
 
-A requirement shall not possess multiple authoritative sources.
+A constitutional requirement shall not exist through assumption, implication, or implementation behavior.
 
-A requirement shall not exist only through implication.
+Requirement identity shall remain independent from implementation identity.
 
-A requirement shall not combine multiple independent obligations without explicit decomposition.
+Requirement ownership shall remain independent from implementation ownership.
 
-A requirement shall not remain orphaned from:
+Requirement satisfaction shall remain independent from certification outcome.
 
-* source doctrine;
-* owner;
-* applicability;
-* evidence obligation;
+Every requirement shall define:
+
+* authority source;
+* applicability boundary;
+* ownership;
+* evidence implication;
 * verification classification;
 * certification implication.
 
-Requirement identity shall remain separate from implementation identity.
+No requirement shall remain:
 
-Requirement satisfaction shall remain separate from implementation behavior.
-
-Requirement existence shall not imply certification completion.
+* duplicated;
+* aggregated;
+* orphaned;
+* conflicting;
+* undefined.
 
 ---
 
 # Required Constitutional Definitions
 
-# 1. Canonical Requirement Population Derivation
+# 1. Atomic Requirement Derivation Constitution
 
 Derive the complete atomic requirement population from:
 
-* EXIT-DECISION-RM-001-B01 — Constitutional Governance and Authority Series;
+* EXIT-DECISION-RM-001-B01 — Exit Decision Constitutional Governance and Authority Series;
 * EXIT-DECISION-RM-001-B02 — Canonical Exit Decision Objects and Lifecycle Constitution Series;
 * EXIT-DECISION-RM-001-B03 — Admissibility, Decision Logic, and Authorization Separation Constitution Series;
 * EXIT-DECISION-RM-001-B04 — Interface, Temporal, Evidence, and Traceability Constitution Series.
 
+Every requirement shall represent one independently governed constitutional obligation.
+
 Requirements shall be derived from:
-
-## Governance Requirements
-
-Including:
-
-* office purpose;
-* office authority;
-* prohibited authority;
-* responsibility ownership;
-* enterprise boundaries;
-* escalation governance.
 
 ---
 
-## Object Requirements
+## Governance Doctrine Requirements
 
-Including:
+Derive requirements governing:
 
-* canonical object identity;
+* Exit Decision purpose;
+* Exit Decision authority;
+* permitted authority;
+* prohibited authority;
+* responsibility ownership;
+* escalation authority;
+* conflict resolution;
+* enterprise boundaries.
+
+---
+
+## Ownership and Custody Requirements
+
+Derive requirements governing:
+
 * object ownership;
 * object custody;
 * mutation authority;
 * correction authority;
-* reconciliation authority.
+* reconciliation authority;
+* evidence custody;
+* historical custody.
+
+---
+
+## Object Model Requirements
+
+Derive requirements governing:
+
+* canonical object identity;
+* object purpose;
+* object boundaries;
+* object relationships;
+* object persistence obligations;
+* object evidence obligations.
 
 ---
 
 ## Lifecycle Requirements
 
-Including:
+Derive requirements governing:
 
 * lifecycle states;
 * valid transitions;
 * invalid transitions;
 * transition authority;
-* terminal state governance.
+* lifecycle evidence;
+* terminal states;
+* archival behavior.
 
 ---
 
 ## Admissibility Requirements
 
-Including:
+Derive requirements governing:
 
 * admissible inputs;
 * source authority;
-* freshness requirements;
+* identity validation;
+* scope validation;
+* freshness validation;
 * evidence sufficiency;
 * rejection conditions.
 
 ---
 
-## Decision Requirements
+## Decision Authority Requirements
 
-Including:
+Derive requirements governing:
 
 * evaluation authority;
 * recommendation authority;
 * decision authority;
 * rationale requirements;
-* decision evidence.
+* decision evidence;
+* decision limitations.
 
 ---
 
-## Authorization Requirements
+## Authorization Separation Requirements
 
-Including:
+Derive requirements governing:
 
 * authorization dependency;
 * authorization validation;
 * authorization expiry;
-* execution separation.
+* execution separation;
+* broker separation;
+* Trader separation.
 
 ---
 
 ## Interface Requirements
 
-Including:
+Derive requirements governing:
 
 * interface ownership;
 * dependency direction;
+* interface identity;
 * interface contracts;
 * failure behavior;
+* acknowledgement obligations;
 * reconciliation obligations.
 
 ---
 
 ## Temporal Requirements
 
-Including:
+Derive requirements governing:
 
 * timestamp authority;
+* temporal meaning;
 * freshness;
+* expiration;
 * ordering;
-* replay;
 * duplicate handling;
-* expiration.
+* replay;
+* recovery.
 
 ---
 
 ## Evidence Requirements
 
-Including:
+Derive requirements governing:
 
 * evidence identity;
+* evidence ownership;
 * provenance;
-* custody;
+* admissibility;
+* integrity;
 * retention;
-* historical lineage.
+* lineage preservation.
 
 ---
 
 ## Traceability Requirements
 
-Including:
+Derive requirements governing:
 
-* canonical identity;
-* bidirectional mapping;
-* certification relationship;
-* dependency participation.
+* requirement identity;
+* requirement relationships;
+* object relationships;
+* lifecycle relationships;
+* evidence relationships;
+* certification relationships.
 
 ---
 
 # 2. Canonical Requirement Identity Registry
 
-Assign every requirement:
+Assign every constitutional requirement:
 
 * canonical requirement identifier;
 * requirement title;
-* requirement description;
-* originating doctrine;
-* originating clause;
+* requirement statement;
+* source doctrine;
+* source clause;
+* constitutional authority;
 * constitutional owner;
 * requirement category;
 * applicability boundary.
 
-Each requirement identifier shall be:
+Each requirement identity shall be:
 
 * unique;
 * immutable;
-* traceable;
-* independent of implementation artifacts.
+* deterministic;
+* traceable.
 
-No duplicate requirement identities shall exist.
+No two requirements shall possess the same canonical identity.
+
+No requirement shall exist without identity.
 
 ---
 
 # 3. Requirement Classification Registry
 
-Classify every requirement by constitutional purpose.
+Classify every canonical requirement.
 
 Required classifications:
 
+---
+
 ## Authority Requirements
 
-Define:
+Requirements governing:
 
 * decision authority;
 * ownership authority;
 * mutation authority;
+* correction authority;
 * escalation authority.
 
 ---
 
 ## Boundary Requirements
 
-Define:
+Requirements governing:
 
 * office separation;
-* responsibility boundaries;
-* prohibited interactions.
+* responsibility separation;
+* prohibited interactions;
+* authority limitations.
 
 ---
 
 ## Object Requirements
 
-Define:
+Requirements governing:
 
 * object identity;
 * object ownership;
-* object lifecycle.
+* object custody;
+* object persistence.
 
 ---
 
 ## Lifecycle Requirements
 
-Define:
+Requirements governing:
 
-* state governance;
-* transition governance;
+* state definitions;
+* transition authority;
+* lifecycle integrity;
 * terminal behavior.
 
 ---
 
 ## Admissibility Requirements
 
-Define:
+Requirements governing:
 
 * input qualification;
-* rejection criteria;
-* evidence sufficiency.
+* source validity;
+* freshness;
+* rejection behavior.
 
 ---
 
 ## Decision Requirements
 
-Define:
+Requirements governing:
 
 * evaluation;
 * recommendation;
-* decision formation.
+* decision formation;
+* rationale.
 
 ---
 
 ## Authorization Requirements
 
-Define:
+Requirements governing:
 
 * authorization dependency;
+* authorization validation;
 * execution separation.
 
 ---
 
 ## Interface Requirements
 
-Define:
+Requirements governing:
 
-* dependency direction;
-* communication contracts;
-* interaction governance.
+* dependency relationships;
+* interface contracts;
+* communication boundaries.
 
 ---
 
 ## Temporal Requirements
 
-Define:
+Requirements governing:
 
 * time semantics;
-* freshness;
 * ordering;
-* replay.
+* replay;
+* expiration.
 
 ---
 
 ## Evidence Requirements
 
-Define:
+Requirements governing:
 
-* evidence creation;
-* custody;
-* preservation;
-* lineage.
+* evidence generation;
+* evidence custody;
+* evidence integrity;
+* historical preservation.
 
 ---
 
 ## Traceability Requirements
 
-Define:
+Requirements governing:
 
-* requirement relationships;
-* certification relationships;
-* reconciliation relationships.
+* requirement lineage;
+* relationship mapping;
+* certification lineage.
 
 ---
 
@@ -334,45 +385,39 @@ Define:
 For every requirement define:
 
 * constitutional owner;
-* supporting offices;
+* supporting authority;
 * evidence owner;
 * reconciliation owner;
 * certification owner.
 
-Ownership shall be assigned according to constitutional authority.
+Ownership shall follow constitutional authority established under B01.
 
-No requirement shall have:
+No requirement shall possess:
 
-* multiple owners;
+* multiple constitutional owners;
 * implicit ownership;
-* unassigned ownership.
+* missing ownership.
+
+Supporting offices shall not become requirement owners unless explicitly assigned constitutional authority.
 
 ---
 
 # 5. Verification Classification Registry
 
-Assign each requirement a verification classification.
+Assign every requirement a verification classification.
 
 Required classifications:
+
+---
 
 ## Constitutional Verification
 
 Determines whether:
 
-* authority exists;
-* ownership exists;
-* boundaries exist;
-* doctrine is complete.
-
----
-
-## Behavioral Verification
-
-Determines whether:
-
-* implementation behavior satisfies requirements.
-
-Behavioral verification shall not occur under this order.
+* the requirement exists;
+* the authority exists;
+* ownership is defined;
+* boundaries are deterministic.
 
 ---
 
@@ -380,20 +425,25 @@ Behavioral verification shall not occur under this order.
 
 Determines whether:
 
-* required evidence exists;
+* evidence obligations are defined;
+* evidence ownership exists;
 * evidence lineage is preserved.
+
+---
+
+## Behavioral Verification
+
+Defines future implementation verification obligations.
+
+No behavioral verification shall occur under this order.
 
 ---
 
 ## Certification Verification
 
-Determines whether:
+Defines future ECS-003 implementation certification obligations.
 
-* certification obligations are satisfied.
-
----
-
-Each requirement shall identify its applicable verification class.
+No implementation certification shall occur under this order.
 
 ---
 
@@ -401,16 +451,18 @@ Each requirement shall identify its applicable verification class.
 
 For every requirement define:
 
-* required evidence type;
+* evidence obligation;
+* evidence type;
 * evidence owner;
-* evidence custody;
+* evidence custodian;
+* retention requirement;
 * certification relevance.
 
-Requirements shall identify whether they create obligations for:
+Each requirement shall identify whether it creates obligations for:
 
+* constitutional evidence;
 * implementation evidence;
 * behavioral evidence;
-* audit evidence;
 * certification evidence.
 
 No requirement shall possess undefined evidence implications.
@@ -419,59 +471,63 @@ No requirement shall possess undefined evidence implications.
 
 # 7. Requirement Conflict Reconciliation
 
-Identify:
+Identify and reconcile:
+
+---
 
 ## Duplicate Requirements
 
-Requirements expressing identical obligations.
+Identify requirements representing the same constitutional obligation.
 
-Resolve by:
+Resolve through:
 
-* merging where appropriate;
-* preserving lineage;
-* selecting canonical identity.
+* consolidation;
+* canonical identity selection;
+* lineage preservation.
 
 ---
 
 ## Aggregate Requirements
 
-Requirements containing multiple independent obligations.
+Identify requirements containing multiple independent obligations.
 
-Resolve by:
+Resolve through:
 
-* decomposing into atomic requirements;
-* assigning unique identities.
+* atomic decomposition;
+* separate requirement identities;
+* separate ownership assignments.
 
 ---
 
 ## Orphan Requirements
 
-Requirements lacking:
+Identify requirements lacking:
 
-* source authority;
+* source doctrine;
+* authority;
 * owner;
 * applicability;
 * traceability.
 
-Resolve or remove.
+Resolve or remove orphan requirements.
 
 ---
 
 ## Conflicting Requirements
 
-Requirements containing incompatible obligations.
+Identify requirements with incompatible obligations.
 
-Resolve by:
+Resolve through:
 
-* identifying governing authority;
-* assigning precedence;
-* recording reconciliation decision.
+* governing authority identification;
+* precedence determination;
+* reconciliation record.
 
 ---
 
 ## Missing Requirements
 
-Identify required obligations implied by doctrine but absent from the requirement registry.
+Identify obligations required by B01 through B04 that are not represented.
 
 Create canonical requirements where necessary.
 
@@ -479,20 +535,20 @@ Create canonical requirements where necessary.
 
 # 8. Requirement Traceability Preparation
 
-Establish requirement relationships for future reconciliation.
+Establish requirement relationship mapping.
 
-Every requirement shall map to:
+Every requirement shall participate in:
 
 ```text
 Constitutional Authority
-↔ Requirement Identity
-↔ Requirement Classification
-↔ Object Relationship
-↔ Lifecycle Relationship
-↔ Decision Relationship
-↔ Interface Relationship
-↔ Evidence Relationship
-↔ Certification Relationship
+↔ Canonical Requirement
+↔ Exit Decision Object
+↔ Lifecycle Obligation
+↔ Admissibility Obligation
+↔ Decision Obligation
+↔ Interface Obligation
+↔ Evidence Obligation
+↔ Certification Obligation
 ```
 
 No requirement shall exist outside the constitutional traceability model.
@@ -523,7 +579,7 @@ Produce:
 
 This order shall complete only when:
 
-* every constitutional obligation has been converted into an atomic requirement;
+* every constitutional obligation has been derived into an atomic requirement;
 * every requirement possesses one canonical identity;
 * every requirement possesses one authoritative source;
 * every requirement possesses one constitutional owner;
