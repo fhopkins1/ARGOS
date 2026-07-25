@@ -1,0 +1,752 @@
+[
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-24F37EF64F7F -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-24F37EF64F7F",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-001",
+    "requirement_id": "PR-S03-REQ-BASE-001",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-6334CAA6A9DC -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-6334CAA6A9DC",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-002",
+    "requirement_id": "PR-S03-REQ-BASE-002",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-1E58B4A8B021 -> PR-S04-IMPL-06AD430811F6,PR-S04-IMPL-24DC358F970D,PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387,PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-1E58B4A8B021",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "obligation_id": "PR-S04-OBL-003",
+    "requirement_id": "PR-S03-REQ-BASE-003",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-06AD430811F6 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-06AD430811F6",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-004",
+    "requirement_id": "PR-S03-IF-001-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-5F574EC5C56D -> PR-S04-IMPL-1E58B4A8B021,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-5F574EC5C56D",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "obligation_id": "PR-S04-OBL-005",
+    "requirement_id": "PR-S03-IF-002-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-BFBFC4E1C67A -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-006",
+    "requirement_id": "PR-S03-IF-003-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-24DC358F970D -> PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-24DC358F970D",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "obligation_id": "PR-S04-OBL-007",
+    "requirement_id": "PR-S03-IF-004-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-2A5D7C68B387 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-2A5D7C68B387",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-008",
+    "requirement_id": "PR-S03-IF-005-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-290227A442CE -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-290227A442CE",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-009",
+    "requirement_id": "PR-S03-IF-006-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-3C010EAEC4A4 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-3C010EAEC4A4",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-010",
+    "requirement_id": "PR-S03-IF-007-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-A97C990C556F -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-A97C990C556F",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-011",
+    "requirement_id": "PR-S03-IF-008-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-A4D0A1741D58 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-A4D0A1741D58",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-012",
+    "requirement_id": "PR-S03-IF-009-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-88A06A01B4BF -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-88A06A01B4BF",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-013",
+    "requirement_id": "PR-S03-IF-010-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-B80BFF0A11B6 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-B80BFF0A11B6",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-014",
+    "requirement_id": "PR-S03-IF-011-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-24F37EF64F7F -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-24F37EF64F7F",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-015",
+    "requirement_id": "PR-S03-IF-012-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-6334CAA6A9DC -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-6334CAA6A9DC",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-016",
+    "requirement_id": "PR-S03-REC-001-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-1E58B4A8B021 -> PR-S04-IMPL-06AD430811F6,PR-S04-IMPL-24DC358F970D,PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387,PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-1E58B4A8B021",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "obligation_id": "PR-S04-OBL-017",
+    "requirement_id": "PR-S03-REC-002-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-06AD430811F6 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-06AD430811F6",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-018",
+    "requirement_id": "PR-S03-REC-003-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-5F574EC5C56D -> PR-S04-IMPL-1E58B4A8B021,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-5F574EC5C56D",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "obligation_id": "PR-S04-OBL-019",
+    "requirement_id": "PR-S03-REC-004-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-BFBFC4E1C67A -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-020",
+    "requirement_id": "PR-S03-REC-005-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-24DC358F970D -> PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-24DC358F970D",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "obligation_id": "PR-S04-OBL-021",
+    "requirement_id": "PR-S03-REC-006-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-2A5D7C68B387 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-2A5D7C68B387",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-022",
+    "requirement_id": "PR-S03-REC-007-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-290227A442CE -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-290227A442CE",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-023",
+    "requirement_id": "PR-S03-REC-008-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-3C010EAEC4A4 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-3C010EAEC4A4",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-024",
+    "requirement_id": "PR-S03-REC-009-REQ",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-A97C990C556F -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-A97C990C556F",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-025",
+    "requirement_id": "PR-S03-REQ-EVD-001",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-A4D0A1741D58 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-A4D0A1741D58",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-026",
+    "requirement_id": "PR-S03-REQ-EVD-002",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-88A06A01B4BF -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-88A06A01B4BF",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-027",
+    "requirement_id": "PR-S03-REQ-EVD-003",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-B80BFF0A11B6 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-B80BFF0A11B6",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "obligation_id": "PR-S04-OBL-028",
+    "requirement_id": "PR-S03-REQ-EVD-004",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-24F37EF64F7F -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-24F37EF64F7F",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-029",
+    "requirement_id": "PR-S03-REQ-EVD-005",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-6334CAA6A9DC -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-6334CAA6A9DC",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-030",
+    "requirement_id": "PR-S03-REQ-EVD-006",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-1E58B4A8B021 -> PR-S04-IMPL-06AD430811F6,PR-S04-IMPL-24DC358F970D,PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387,PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-1E58B4A8B021",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "obligation_id": "PR-S04-OBL-031",
+    "requirement_id": "PR-S03-REQ-EVD-007",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-06AD430811F6 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-06AD430811F6",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-032",
+    "requirement_id": "PR-S03-REQ-EVD-008",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-5F574EC5C56D -> PR-S04-IMPL-1E58B4A8B021,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-5F574EC5C56D",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "obligation_id": "PR-S04-OBL-033",
+    "requirement_id": "PR-S03-REQ-EVD-009",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-BFBFC4E1C67A -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [],
+    "obligation_id": "PR-S04-OBL-034",
+    "requirement_id": "PR-S03-REQ-EVD-010",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  },
+  {
+    "dependency_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+    "dependency_consumer": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-24DC358F970D -> PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_precedence": "constitutional requirement before implementation obligation before verification planning",
+    "dependency_producer": "PR-S04-IMPL-24DC358F970D",
+    "dependency_sequencing": "inventory -> obligation mapping -> dependency mapping -> verification mapping",
+    "deterministic_dependency_relationship": true,
+    "direct_dependencies": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "obligation_id": "PR-S04-OBL-035",
+    "requirement_id": "PR-S03-REQ-EVD-011",
+    "transitive_dependencies": [
+      "constitutional baseline",
+      "implementation inventory",
+      "verification population"
+    ]
+  }
+]

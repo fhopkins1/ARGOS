@@ -4662,7 +4662,9 @@
   ],
   "implementation_obligations": [
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-001",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
       "event_dependencies": [
         "all applicable lifecycle obligations"
       ],
@@ -4673,6 +4675,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S01",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "all applicable evidence obligations"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "all applicable interfaces"
+      ],
+      "governing_lifecycle_obligations": [
+        "all applicable lifecycle obligations"
+      ],
+      "governing_objects": [
+        "Position Registry constitutional baseline"
+      ],
+      "governing_reconciliation_obligations": [
+        "all applicable reconciliation obligations"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-BASE-001"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve governance_constitutional_baseline within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-001",
       "participating_implementation_artifacts": [
@@ -4694,7 +4722,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-002",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S02",
       "event_dependencies": [
         "all applicable lifecycle obligations"
       ],
@@ -4705,6 +4735,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S02",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "all applicable evidence obligations"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "all applicable interfaces"
+      ],
+      "governing_lifecycle_obligations": [
+        "all applicable lifecycle obligations"
+      ],
+      "governing_objects": [
+        "Position Registry constitutional baseline"
+      ],
+      "governing_reconciliation_obligations": [
+        "all applicable reconciliation obligations"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-BASE-002"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve object_lifecycle_constitutional_baseline within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-002",
       "participating_implementation_artifacts": [
@@ -4726,7 +4782,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-003",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03",
       "event_dependencies": [
         "all applicable lifecycle obligations"
       ],
@@ -4737,6 +4795,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "all applicable evidence obligations"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "all applicable interfaces"
+      ],
+      "governing_lifecycle_obligations": [
+        "all applicable lifecycle obligations"
+      ],
+      "governing_objects": [
+        "Position Registry constitutional baseline"
+      ],
+      "governing_reconciliation_obligations": [
+        "all applicable reconciliation obligations"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-BASE-003"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve interface_evidence_traceability_constitutional_baseline within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-003",
       "participating_implementation_artifacts": [
@@ -4758,7 +4842,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-004",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4769,6 +4855,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-001"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "trader_execution_fill_intake"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-001-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve trader_execution_fill_intake_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-004",
       "participating_implementation_artifacts": [
@@ -4790,7 +4902,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-005",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4801,6 +4915,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-002"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "broker_position_truth_intake"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-002-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve broker_position_truth_intake_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-005",
       "participating_implementation_artifacts": [
@@ -4822,7 +4962,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-006",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4833,6 +4975,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-003"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "authorization_reference_intake"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-003-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve authorization_reference_intake_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-006",
       "participating_implementation_artifacts": [
@@ -4854,7 +5022,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-007",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4865,6 +5035,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-004"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "risk_reference_intake"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-004-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve risk_reference_intake_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-007",
       "participating_implementation_artifacts": [
@@ -4886,7 +5082,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-008",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4897,6 +5095,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-005"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "monitoring_observation_intake"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-005-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve monitoring_observation_intake_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-008",
       "participating_implementation_artifacts": [
@@ -4918,7 +5142,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-009",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4929,6 +5155,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-006"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "exit_decision_intake"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-006-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve exit_decision_intake_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-009",
       "participating_implementation_artifacts": [
@@ -4950,7 +5202,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-010",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4961,6 +5215,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-007"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "closed_position_truth_publication"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-007-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve closed_position_truth_publication_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-010",
       "participating_implementation_artifacts": [
@@ -4982,7 +5262,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-011",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -4993,6 +5275,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-008"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "performance_truth_publication"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-008-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve performance_truth_publication_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-011",
       "participating_implementation_artifacts": [
@@ -5014,7 +5322,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-012",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -5025,6 +5335,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-009"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "historian_custody_transfer"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-009-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve historian_custody_transfer_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-012",
       "participating_implementation_artifacts": [
@@ -5046,7 +5382,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-013",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -5057,6 +5395,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-010"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "commander_escalation_notice"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-010-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve commander_escalation_notice_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-013",
       "participating_implementation_artifacts": [
@@ -5078,7 +5442,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-014",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -5089,6 +5455,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-011"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "infrastructure_persistence_contract"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-011-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve infrastructure_persistence_contract_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-014",
       "participating_implementation_artifacts": [
@@ -5110,7 +5502,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-015",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
       "event_dependencies": [
         "interface receipt/transmission lifecycle"
       ],
@@ -5121,6 +5515,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "interface evidence obligation"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "PR-S03-IF-012"
+      ],
+      "governing_lifecycle_obligations": [
+        "interface receipt/transmission lifecycle"
+      ],
+      "governing_objects": [
+        "sentinel_observation_reference"
+      ],
+      "governing_reconciliation_obligations": [
+        "Position Registry records reconciliation cases; source owner retains source-truth authority"
+      ],
+      "governing_requirements": [
+        "PR-S03-IF-012-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve sentinel_observation_reference_interface_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-015",
       "participating_implementation_artifacts": [
@@ -5142,7 +5562,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-016",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5158,6 +5580,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "broker_position_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-001"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-001-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve broker_position_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-016",
       "participating_implementation_artifacts": [
@@ -5179,7 +5632,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-017",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5195,6 +5650,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "trader_position_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-002"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-002-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve trader_position_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-017",
       "participating_implementation_artifacts": [
@@ -5216,7 +5702,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-018",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5232,6 +5720,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "fill_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-003"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-003-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve fill_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-018",
       "participating_implementation_artifacts": [
@@ -5253,7 +5772,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-019",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5269,6 +5790,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "account_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-004"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-004-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve account_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-019",
       "participating_implementation_artifacts": [
@@ -5290,7 +5842,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-020",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5306,6 +5860,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "authorization_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-005"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-005-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve authorization_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-020",
       "participating_implementation_artifacts": [
@@ -5327,7 +5912,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-021",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5343,6 +5930,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "monitoring_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-006"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-006-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve monitoring_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-021",
       "participating_implementation_artifacts": [
@@ -5364,7 +5982,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-022",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5380,6 +6000,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "exit_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-007"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-007-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve exit_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-022",
       "participating_implementation_artifacts": [
@@ -5401,7 +6052,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-023",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5417,6 +6070,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "closed_position_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-008"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-008-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve closed_position_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-023",
       "participating_implementation_artifacts": [
@@ -5438,7 +6122,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-024",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation_pending/disputed/correction_pending lifecycle obligations"
       ],
@@ -5454,6 +6140,37 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        [
+          "source evidence",
+          "comparison evidence",
+          "precedence evidence",
+          "disposition evidence"
+        ]
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable source interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+      ],
+      "governing_objects": [
+        "historical_truth"
+      ],
+      "governing_reconciliation_obligations": [
+        "PR-S03-REC-009"
+      ],
+      "governing_requirements": [
+        "PR-S03-REC-009-REQ"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve historical_truth_reconciliation_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-024",
       "participating_implementation_artifacts": [
@@ -5475,7 +6192,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-025",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "position creation"
       ],
@@ -5486,6 +6205,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-001"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "position creation"
+      ],
+      "governing_objects": [
+        "position_creation"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-001"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve position_creation_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-025",
       "participating_implementation_artifacts": [
@@ -5507,7 +6252,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-026",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "lifecycle transition"
       ],
@@ -5518,6 +6265,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-002"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "lifecycle transition"
+      ],
+      "governing_objects": [
+        "lifecycle_transition"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-002"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve lifecycle_transition_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-026",
       "participating_implementation_artifacts": [
@@ -5539,7 +6312,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-027",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "quantity mutation"
       ],
@@ -5550,6 +6325,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-003"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "quantity mutation"
+      ],
+      "governing_objects": [
+        "quantity_mutation"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-003"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve quantity_mutation_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-027",
       "participating_implementation_artifacts": [
@@ -5571,7 +6372,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-028",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "cost basis mutation"
       ],
@@ -5582,6 +6385,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-004"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "cost basis mutation"
+      ],
+      "governing_objects": [
+        "cost_basis_mutation"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-004"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve cost_basis_mutation_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-028",
       "participating_implementation_artifacts": [
@@ -5603,7 +6432,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-029",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "replay"
       ],
@@ -5614,6 +6445,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-005"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "replay"
+      ],
+      "governing_objects": [
+        "replay"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-005"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve replay_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-029",
       "participating_implementation_artifacts": [
@@ -5635,7 +6492,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-030",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "recovery"
       ],
@@ -5646,6 +6505,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-006"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "recovery"
+      ],
+      "governing_objects": [
+        "recovery"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-006"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve recovery_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-030",
       "participating_implementation_artifacts": [
@@ -5667,7 +6552,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-031",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "correction"
       ],
@@ -5678,6 +6565,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-007"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "correction"
+      ],
+      "governing_objects": [
+        "correction"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-007"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-031",
       "participating_implementation_artifacts": [
@@ -5699,7 +6612,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-032",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "supersession"
       ],
@@ -5710,6 +6625,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-008"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "supersession"
+      ],
+      "governing_objects": [
+        "supersession"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-008"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve supersession_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-032",
       "participating_implementation_artifacts": [
@@ -5731,7 +6672,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-033",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "reconciliation"
       ],
@@ -5742,6 +6685,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-009"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "reconciliation"
+      ],
+      "governing_objects": [
+        "reconciliation"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-009"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-033",
       "participating_implementation_artifacts": [
@@ -5763,7 +6732,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-034",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "anomaly"
       ],
@@ -5774,6 +6745,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-010"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "anomaly"
+      ],
+      "governing_objects": [
+        "anomaly"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-010"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-034",
       "participating_implementation_artifacts": [
@@ -5795,7 +6792,9 @@
       ]
     },
     {
+      "canonical_implementation_obligation_identity": "PR-S04-OBL-035",
       "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+      "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
       "event_dependencies": [
         "archival"
       ],
@@ -5806,6 +6805,32 @@
         "dependency-derived fixture population; no fixture execution in S04"
       ],
       "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+      "governing_dependency_obligations": [
+        "objective implementation dependency lineage"
+      ],
+      "governing_evidence_obligations": [
+        "PR-S03-EVD-011"
+      ],
+      "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+      "governing_implementation_owner": "Position Registry",
+      "governing_interfaces": [
+        "applicable evidence-producing interface"
+      ],
+      "governing_lifecycle_obligations": [
+        "archival"
+      ],
+      "governing_objects": [
+        "archival"
+      ],
+      "governing_reconciliation_obligations": [
+        "evidence reconciliation where contradicted, corrected, or superseded"
+      ],
+      "governing_requirements": [
+        "PR-S03-REQ-EVD-011"
+      ],
+      "governing_verification_obligations": [
+        "PR-S04-IMPL-290227A442CE"
+      ],
       "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
       "obligation_id": "PR-S04-OBL-035",
       "participating_implementation_artifacts": [
@@ -8596,7 +9621,9 @@
       "graph_id": "PR-S04-VERIFICATION-DEPENDENCY-GRAPH",
       "obligations": [
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-001",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S01",
           "event_dependencies": [
             "all applicable lifecycle obligations"
           ],
@@ -8607,6 +9634,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S01",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "all applicable evidence obligations"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "all applicable interfaces"
+          ],
+          "governing_lifecycle_obligations": [
+            "all applicable lifecycle obligations"
+          ],
+          "governing_objects": [
+            "Position Registry constitutional baseline"
+          ],
+          "governing_reconciliation_obligations": [
+            "all applicable reconciliation obligations"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-BASE-001"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve governance_constitutional_baseline within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-001",
           "participating_implementation_artifacts": [
@@ -8628,7 +9681,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-002",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S02",
           "event_dependencies": [
             "all applicable lifecycle obligations"
           ],
@@ -8639,6 +9694,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S02",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "all applicable evidence obligations"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "all applicable interfaces"
+          ],
+          "governing_lifecycle_obligations": [
+            "all applicable lifecycle obligations"
+          ],
+          "governing_objects": [
+            "Position Registry constitutional baseline"
+          ],
+          "governing_reconciliation_obligations": [
+            "all applicable reconciliation obligations"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-BASE-002"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve object_lifecycle_constitutional_baseline within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-002",
           "participating_implementation_artifacts": [
@@ -8660,7 +9741,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-003",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03",
           "event_dependencies": [
             "all applicable lifecycle obligations"
           ],
@@ -8671,6 +9754,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "all applicable evidence obligations"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "all applicable interfaces"
+          ],
+          "governing_lifecycle_obligations": [
+            "all applicable lifecycle obligations"
+          ],
+          "governing_objects": [
+            "Position Registry constitutional baseline"
+          ],
+          "governing_reconciliation_obligations": [
+            "all applicable reconciliation obligations"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-BASE-003"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve interface_evidence_traceability_constitutional_baseline within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-003",
           "participating_implementation_artifacts": [
@@ -8692,7 +9801,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-004",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8703,6 +9814,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-001"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "trader_execution_fill_intake"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-001-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve trader_execution_fill_intake_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-004",
           "participating_implementation_artifacts": [
@@ -8724,7 +9861,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-005",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8735,6 +9874,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-002"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "broker_position_truth_intake"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-002-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve broker_position_truth_intake_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-005",
           "participating_implementation_artifacts": [
@@ -8756,7 +9921,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-006",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8767,6 +9934,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-003"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "authorization_reference_intake"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-003-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve authorization_reference_intake_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-006",
           "participating_implementation_artifacts": [
@@ -8788,7 +9981,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-007",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8799,6 +9994,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-004"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "risk_reference_intake"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-004-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve risk_reference_intake_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-007",
           "participating_implementation_artifacts": [
@@ -8820,7 +10041,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-008",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8831,6 +10054,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-005"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "monitoring_observation_intake"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-005-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve monitoring_observation_intake_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-008",
           "participating_implementation_artifacts": [
@@ -8852,7 +10101,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-009",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8863,6 +10114,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-006"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "exit_decision_intake"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-006-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve exit_decision_intake_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-009",
           "participating_implementation_artifacts": [
@@ -8884,7 +10161,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-010",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8895,6 +10174,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-007"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "closed_position_truth_publication"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-007-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve closed_position_truth_publication_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-010",
           "participating_implementation_artifacts": [
@@ -8916,7 +10221,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-011",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8927,6 +10234,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-008"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "performance_truth_publication"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-008-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve performance_truth_publication_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-011",
           "participating_implementation_artifacts": [
@@ -8948,7 +10281,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-012",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8959,6 +10294,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-009"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "historian_custody_transfer"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-009-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve historian_custody_transfer_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-012",
           "participating_implementation_artifacts": [
@@ -8980,7 +10341,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-013",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -8991,6 +10354,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-010"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "commander_escalation_notice"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-010-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve commander_escalation_notice_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-013",
           "participating_implementation_artifacts": [
@@ -9012,7 +10401,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-014",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -9023,6 +10414,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-011"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "infrastructure_persistence_contract"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-011-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve infrastructure_persistence_contract_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-014",
           "participating_implementation_artifacts": [
@@ -9044,7 +10461,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-015",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-001",
           "event_dependencies": [
             "interface receipt/transmission lifecycle"
           ],
@@ -9055,6 +10474,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-001",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "interface evidence obligation"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "PR-S03-IF-012"
+          ],
+          "governing_lifecycle_obligations": [
+            "interface receipt/transmission lifecycle"
+          ],
+          "governing_objects": [
+            "sentinel_observation_reference"
+          ],
+          "governing_reconciliation_obligations": [
+            "Position Registry records reconciliation cases; source owner retains source-truth authority"
+          ],
+          "governing_requirements": [
+            "PR-S03-IF-012-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve sentinel_observation_reference_interface_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-015",
           "participating_implementation_artifacts": [
@@ -9076,7 +10521,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-016",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9092,6 +10539,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "broker_position_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-001"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-001-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve broker_position_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-016",
           "participating_implementation_artifacts": [
@@ -9113,7 +10591,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-017",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9129,6 +10609,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "trader_position_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-002"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-002-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve trader_position_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-017",
           "participating_implementation_artifacts": [
@@ -9150,7 +10661,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-018",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9166,6 +10679,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "fill_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-003"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-003-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve fill_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-018",
           "participating_implementation_artifacts": [
@@ -9187,7 +10731,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-019",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9203,6 +10749,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "account_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-004"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-004-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve account_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-019",
           "participating_implementation_artifacts": [
@@ -9224,7 +10801,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-020",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9240,6 +10819,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "authorization_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-005"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-005-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve authorization_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-020",
           "participating_implementation_artifacts": [
@@ -9261,7 +10871,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-021",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9277,6 +10889,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "monitoring_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-006"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-006-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve monitoring_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-021",
           "participating_implementation_artifacts": [
@@ -9298,7 +10941,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-022",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9314,6 +10959,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "exit_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-007"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-007-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve exit_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-022",
           "participating_implementation_artifacts": [
@@ -9335,7 +11011,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-023",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9351,6 +11029,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "closed_position_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-008"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-008-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve closed_position_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-023",
           "participating_implementation_artifacts": [
@@ -9372,7 +11081,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-024",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation_pending/disputed/correction_pending lifecycle obligations"
           ],
@@ -9388,6 +11099,37 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            [
+              "source evidence",
+              "comparison evidence",
+              "precedence evidence",
+              "disposition evidence"
+            ]
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable source interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation_pending/disputed/correction_pending lifecycle obligations"
+          ],
+          "governing_objects": [
+            "historical_truth"
+          ],
+          "governing_reconciliation_obligations": [
+            "PR-S03-REC-009"
+          ],
+          "governing_requirements": [
+            "PR-S03-REC-009-REQ"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve historical_truth_reconciliation_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-024",
           "participating_implementation_artifacts": [
@@ -9409,7 +11151,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-025",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "position creation"
           ],
@@ -9420,6 +11164,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-001"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "position creation"
+          ],
+          "governing_objects": [
+            "position_creation"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-001"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve position_creation_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-025",
           "participating_implementation_artifacts": [
@@ -9441,7 +11211,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-026",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "lifecycle transition"
           ],
@@ -9452,6 +11224,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-002"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "lifecycle transition"
+          ],
+          "governing_objects": [
+            "lifecycle_transition"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-002"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve lifecycle_transition_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-026",
           "participating_implementation_artifacts": [
@@ -9473,7 +11271,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-027",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "quantity mutation"
           ],
@@ -9484,6 +11284,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-003"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "quantity mutation"
+          ],
+          "governing_objects": [
+            "quantity_mutation"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-003"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve quantity_mutation_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-027",
           "participating_implementation_artifacts": [
@@ -9505,7 +11331,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-028",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "cost basis mutation"
           ],
@@ -9516,6 +11344,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-004"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "cost basis mutation"
+          ],
+          "governing_objects": [
+            "cost_basis_mutation"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-004"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve cost_basis_mutation_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-028",
           "participating_implementation_artifacts": [
@@ -9537,7 +11391,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-029",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "replay"
           ],
@@ -9548,6 +11404,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-005"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "replay"
+          ],
+          "governing_objects": [
+            "replay"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-005"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve replay_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-029",
           "participating_implementation_artifacts": [
@@ -9569,7 +11451,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-030",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "recovery"
           ],
@@ -9580,6 +11464,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-006"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "recovery"
+          ],
+          "governing_objects": [
+            "recovery"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-006"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve recovery_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-030",
           "participating_implementation_artifacts": [
@@ -9601,7 +11511,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-031",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "correction"
           ],
@@ -9612,6 +11524,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-007"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "correction"
+          ],
+          "governing_objects": [
+            "correction"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-007"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve correction_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-031",
           "participating_implementation_artifacts": [
@@ -9633,7 +11571,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-032",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "supersession"
           ],
@@ -9644,6 +11584,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-008"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "supersession"
+          ],
+          "governing_objects": [
+            "supersession"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-008"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve supersession_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-032",
           "participating_implementation_artifacts": [
@@ -9665,7 +11631,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-033",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "reconciliation"
           ],
@@ -9676,6 +11644,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-009"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "reconciliation"
+          ],
+          "governing_objects": [
+            "reconciliation"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-009"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve reconciliation_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-033",
           "participating_implementation_artifacts": [
@@ -9697,7 +11691,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-034",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "anomaly"
           ],
@@ -9708,6 +11704,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-010"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "anomaly"
+          ],
+          "governing_objects": [
+            "anomaly"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-010"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve anomaly_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-034",
           "participating_implementation_artifacts": [
@@ -9729,7 +11751,9 @@
           ]
         },
         {
+          "canonical_implementation_obligation_identity": "PR-S04-OBL-035",
           "constitutional_justification": "B04-002 mapping only; no behavioral verification or proof generated",
+          "constitutional_source": "POSITION-REGISTRY-RM-001-S03-B03-002",
           "event_dependencies": [
             "archival"
           ],
@@ -9740,6 +11764,32 @@
             "dependency-derived fixture population; no fixture execution in S04"
           ],
           "governing_constitutional_authority": "POSITION-REGISTRY-RM-001-S03-B03-002",
+          "governing_dependency_obligations": [
+            "objective implementation dependency lineage"
+          ],
+          "governing_evidence_obligations": [
+            "PR-S03-EVD-011"
+          ],
+          "governing_implementation_authority": "POSITION-REGISTRY-RM-001-S04-B04-002",
+          "governing_implementation_owner": "Position Registry",
+          "governing_interfaces": [
+            "applicable evidence-producing interface"
+          ],
+          "governing_lifecycle_obligations": [
+            "archival"
+          ],
+          "governing_objects": [
+            "archival"
+          ],
+          "governing_reconciliation_obligations": [
+            "evidence reconciliation where contradicted, corrected, or superseded"
+          ],
+          "governing_requirements": [
+            "PR-S03-REQ-EVD-011"
+          ],
+          "governing_verification_obligations": [
+            "PR-S04-IMPL-290227A442CE"
+          ],
           "implementation_obligation": "Implement and preserve archival_evidence_requirement within the Position Registry boundary.",
           "obligation_id": "PR-S04-OBL-035",
           "participating_implementation_artifacts": [

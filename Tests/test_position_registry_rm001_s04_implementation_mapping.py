@@ -108,6 +108,67 @@ class PositionRegistryRM001S04ImplementationMappingTests(unittest.TestCase):
         self.assertTrue(all(item["implementation_artifacts"] for item in matrix))
         self.assertEqual(gaps, [])
 
+    def test_b04_002_exact_audit_deliverables_exist(self) -> None:
+        required = {
+            "B04-002_constitutional_to_implementation_matrix.json",
+            "B04-002_implementation_to_constitutional_matrix.json",
+            "B04-002_implementation_obligation_registry.json",
+            "B04-002_implementation_obligation_identity_registry.json",
+            "B04-002_implementation_obligation_classification_registry.json",
+            "B04-002_implementation_dependency_registry.json",
+            "B04-002_implementation_dependency_graph.json",
+            "B04-002_implementation_dependency_justification_registry.json",
+            "B04-002_implementation_verification_registry.json",
+            "B04-002_implementation_verifier_registry.json",
+            "B04-002_implementation_fixture_registry.json",
+            "B04-002_implementation_evidence_obligation_registry.json",
+            "B04-002_implementation_coverage_assessment.json",
+            "B04-002_constitutional_implementation_completeness_assessment.json",
+            "B04-002_unresolved_implementation_findings_registry.json",
+            "B04-002_implementation_obligation_and_dependency_mapping_report.json",
+            "B04-002_completion_report.json",
+        }
+        missing = [name for name in sorted(required) if not (EVIDENCE_ROOT / name).exists()]
+        self.assertEqual(missing, [])
+
+    def test_b04_002_obligations_have_authority_ownership_verification_and_evidence(self) -> None:
+        obligations = json.loads((EVIDENCE_ROOT / "B04-002_implementation_obligation_registry.json").read_text(encoding="utf-8"))
+        classifications = json.loads((EVIDENCE_ROOT / "B04-002_implementation_obligation_classification_registry.json").read_text(encoding="utf-8"))
+        verification = json.loads((EVIDENCE_ROOT / "B04-002_implementation_verification_registry.json").read_text(encoding="utf-8"))
+        evidence = json.loads((EVIDENCE_ROOT / "B04-002_implementation_evidence_obligation_registry.json").read_text(encoding="utf-8"))
+        self.assertTrue(obligations)
+        self.assertEqual(len(obligations), len(classifications))
+        self.assertEqual(len(obligations), len(verification))
+        self.assertEqual(len(obligations), len(evidence))
+        self.assertTrue(all(item["governing_constitutional_authority"] for item in obligations))
+        self.assertTrue(all(item["governing_implementation_owner"] == "Position Registry" for item in obligations))
+        self.assertTrue(all(item["participating_implementation_artifacts"] for item in obligations))
+        self.assertTrue(all(item["verification_planning_status"] == "PLANNED_NOT_EXECUTED" for item in verification))
+        self.assertTrue(all(item["evidence_generation_status"] == "PLANNED_NOT_EXECUTED" for item in evidence))
+
+    def test_b04_002_dependency_and_completeness_are_deterministic_and_gap_free(self) -> None:
+        dependencies = json.loads((EVIDENCE_ROOT / "B04-002_implementation_dependency_registry.json").read_text(encoding="utf-8"))
+        coverage = json.loads((EVIDENCE_ROOT / "B04-002_implementation_coverage_assessment.json").read_text(encoding="utf-8"))
+        completeness = json.loads((EVIDENCE_ROOT / "B04-002_constitutional_implementation_completeness_assessment.json").read_text(encoding="utf-8"))
+        unresolved = json.loads((EVIDENCE_ROOT / "B04-002_unresolved_implementation_findings_registry.json").read_text(encoding="utf-8"))
+        report = json.loads((EVIDENCE_ROOT / "B04-002_implementation_obligation_and_dependency_mapping_report.json").read_text(encoding="utf-8"))
+        self.assertTrue(all(item["deterministic_dependency_relationship"] for item in dependencies))
+        self.assertTrue(all(value == "COVERED_BY_DEPENDENCY_DERIVED_MAPPING" for value in coverage["domains"].values()))
+        self.assertEqual(coverage["uncovered_constitutional_requirements"], [])
+        self.assertTrue(completeness["complete"])
+        self.assertEqual(completeness["implementation_obligation_gaps"], [])
+        self.assertEqual(completeness["dependency_mapping_gaps"], [])
+        self.assertEqual(completeness["verification_planning_gaps"], [])
+        self.assertEqual(completeness["implementation_traceability_gaps"], [])
+        self.assertEqual(completeness["orphan_implementation_obligations"], [])
+        self.assertEqual(completeness["orphan_constitutional_requirements"], [])
+        self.assertEqual(unresolved, [])
+        self.assertFalse(report["implementation_correctness_evaluated"])
+        self.assertFalse(report["implementation_modified"])
+        self.assertFalse(report["behavioral_verification_executed"])
+        self.assertFalse(report["implementation_proof_generated"])
+        self.assertFalse(report["certification_activity_executed"])
+
     def test_b04_003_verification_population_is_classified_but_not_executed(self) -> None:
         verifiers = json.loads((EVIDENCE_ROOT / "B04-003_verifier_inventory.json").read_text(encoding="utf-8"))
         modes = json.loads((EVIDENCE_ROOT / "B04-003_verification_mode_registry.json").read_text(encoding="utf-8"))

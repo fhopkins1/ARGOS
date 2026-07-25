@@ -1,0 +1,152 @@
+[
+  {
+    "constitutional_lineage": [],
+    "dependency_authority": "PR-S03-REQ-BASE-001",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-24F37EF64F7F -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_id": "PR-S04-IMPL-24F37EF64F7F-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [],
+    "dependency_authority": "PR-S03-REQ-BASE-002",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-6334CAA6A9DC -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_id": "PR-S04-IMPL-6334CAA6A9DC-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-06AD430811F6",
+      "PR-S04-IMPL-24DC358F970D",
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387",
+      "PR-S04-IMPL-BFBFC4E1C67A"
+    ],
+    "dependency_authority": "PR-S03-REQ-BASE-003",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-1E58B4A8B021 -> PR-S04-IMPL-06AD430811F6,PR-S04-IMPL-24DC358F970D,PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387,PR-S04-IMPL-BFBFC4E1C67A",
+    "dependency_id": "PR-S04-IMPL-1E58B4A8B021-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [],
+    "dependency_authority": "PR-S03-IF-001-REQ",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-06AD430811F6 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_id": "PR-S04-IMPL-06AD430811F6-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-1E58B4A8B021",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_authority": "PR-S03-IF-002-REQ",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-5F574EC5C56D -> PR-S04-IMPL-1E58B4A8B021,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_id": "PR-S04-IMPL-5F574EC5C56D-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [],
+    "dependency_authority": "PR-S03-IF-003-REQ",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-BFBFC4E1C67A -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_id": "PR-S04-IMPL-BFBFC4E1C67A-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F",
+      "PR-S04-IMPL-2A5D7C68B387"
+    ],
+    "dependency_authority": "PR-S03-IF-004-REQ",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-24DC358F970D -> PR-S04-IMPL-24F37EF64F7F,PR-S04-IMPL-2A5D7C68B387",
+    "dependency_id": "PR-S04-IMPL-24DC358F970D-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [],
+    "dependency_authority": "PR-S03-IF-005-REQ",
+    "dependency_criticality": "MATERIAL",
+    "dependency_direction": "PR-S04-IMPL-2A5D7C68B387 -> NO_DIRECT_REPOSITORY_TARGET",
+    "dependency_id": "PR-S04-IMPL-2A5D7C68B387-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_authority": "PR-S03-IF-006-REQ",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-290227A442CE -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_id": "PR-S04-IMPL-290227A442CE-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_authority": "PR-S03-IF-007-REQ",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-3C010EAEC4A4 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_id": "PR-S04-IMPL-3C010EAEC4A4-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_authority": "PR-S03-IF-008-REQ",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-A97C990C556F -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_id": "PR-S04-IMPL-A97C990C556F-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_authority": "PR-S03-IF-009-REQ",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-A4D0A1741D58 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_id": "PR-S04-IMPL-A4D0A1741D58-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_authority": "PR-S03-IF-010-REQ",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-88A06A01B4BF -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_id": "PR-S04-IMPL-88A06A01B4BF-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  },
+  {
+    "constitutional_lineage": [
+      "PR-S04-IMPL-24F37EF64F7F"
+    ],
+    "dependency_authority": "PR-S03-IF-011-REQ",
+    "dependency_criticality": "CRITICAL",
+    "dependency_direction": "PR-S04-IMPL-B80BFF0A11B6 -> PR-S04-IMPL-24F37EF64F7F",
+    "dependency_id": "PR-S04-IMPL-B80BFF0A11B6-DEP",
+    "dependency_precedence": "constitutional authority precedes implementation participation",
+    "dependency_sequencing": "objective dependency discovery before behavioral verification"
+  }
+]
