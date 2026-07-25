@@ -1,0 +1,30 @@
+{
+  "candidate_digest": "3cbefc4542b9a6c09dd3ef830cc0f644b567fa35c9ce81eed7166d05c6680f2d",
+  "defects": [
+    {
+      "certification_impact": "blocks ECS-003 implementation certification until regression evidence passes",
+      "classification": "IMPLEMENTATION_DEFECT",
+      "defect_id": "PR-S05-B05-002-FIND-007",
+      "governing_implementation_artifact": "src/argos/trader/position_management.py",
+      "governing_requirement": "PR-RM002A-REQ-REVERSAL-001",
+      "remediation_status": "REMEDIATED",
+      "root_cause": "position reduction accounting allowed the remediated candidate to be uncertified until focused regression evidence was produced",
+      "severity": "CERTIFICATION_BLOCKING",
+      "source_disposition": "VERIFIED_FAIL",
+      "source_execution": "PR-S05-EXEC-002-007"
+    }
+  ],
+  "implementation_inventory": [
+    {
+      "artifact": "src/argos/trader/position_management.py",
+      "participation": "RM-002A bounded remediation",
+      "sha256": "1901c50dec263459294e72bb6457b6a1fe3be5120299b433ec0174cdb1667322"
+    },
+    {
+      "artifact": "Tests/test_position_management_office.py",
+      "participation": "RM-002A bounded remediation",
+      "sha256": "aa0873a5b8da95becfd99a3c597e7fe815241b95357761ce2f2a4979dff9dd13"
+    }
+  ],
+  "regression_disposition": "PASS"
+}

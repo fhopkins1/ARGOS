@@ -1,0 +1,97 @@
+[
+  {
+    "constitutional_requirement": "PR-RM002A-REQ-REVERSAL-001",
+    "execution": [
+      "PR-RM002A-CLEAN-Tests-test_position_management_office"
+    ],
+    "finding": "",
+    "forward_status": "COMPLETE",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "implementation_obligation": "Position reversal preserves canonical identity and flips direction through zero quantity",
+    "normalized_evidence": "PR-RM002A-PROOF-001",
+    "proof_object": "PR-RM002A-PROOF-001",
+    "raw_evidence": [
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stdout.log",
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stderr.log"
+    ],
+    "reverse_status": "COMPLETE",
+    "traceability_id": "PR-RM002A-REQ-REVERSAL-001-TRACE",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "constitutional_requirement": "PR-RM002A-REQ-LIFECYCLE-001",
+    "execution": [
+      "PR-RM002A-CLEAN-Tests-test_position_management_office"
+    ],
+    "finding": "",
+    "forward_status": "COMPLETE",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "implementation_obligation": "Lifecycle authority rejects invalid mutation and protects terminal state",
+    "normalized_evidence": "PR-RM002A-PROOF-002",
+    "proof_object": "PR-RM002A-PROOF-002",
+    "raw_evidence": [
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stdout.log",
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stderr.log"
+    ],
+    "reverse_status": "COMPLETE",
+    "traceability_id": "PR-RM002A-REQ-LIFECYCLE-001-TRACE",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "constitutional_requirement": "PR-RM002A-REQ-REPLAY-001",
+    "execution": [
+      "PR-RM002A-CLEAN-Tests-test_position_management_office"
+    ],
+    "finding": "",
+    "forward_status": "COMPLETE",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "implementation_obligation": "Duplicate execution replay is idempotent",
+    "normalized_evidence": "PR-RM002A-PROOF-003",
+    "proof_object": "PR-RM002A-PROOF-003",
+    "raw_evidence": [
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stdout.log",
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stderr.log"
+    ],
+    "reverse_status": "COMPLETE",
+    "traceability_id": "PR-RM002A-REQ-REPLAY-001-TRACE",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "constitutional_requirement": "PR-RM002A-REQ-CORRECTION-001",
+    "execution": [
+      "PR-RM002A-CLEAN-Tests-test_position_management_office"
+    ],
+    "finding": "",
+    "forward_status": "COMPLETE",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "implementation_obligation": "Correction preserves prior history and emits canonical evidence",
+    "normalized_evidence": "PR-RM002A-PROOF-004",
+    "proof_object": "PR-RM002A-PROOF-004",
+    "raw_evidence": [
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stdout.log",
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stderr.log"
+    ],
+    "reverse_status": "COMPLETE",
+    "traceability_id": "PR-RM002A-REQ-CORRECTION-001-TRACE",
+    "verifier": "Tests.test_position_management_office"
+  },
+  {
+    "constitutional_requirement": "PR-RM002A-REQ-SUPERSESSION-001",
+    "execution": [
+      "PR-RM002A-CLEAN-Tests-test_position_management_office"
+    ],
+    "finding": "",
+    "forward_status": "COMPLETE",
+    "implementation_artifact": "src/argos/trader/position_management.py",
+    "implementation_obligation": "Supersession archives predecessor and preserves successor lineage",
+    "normalized_evidence": "PR-RM002A-PROOF-005",
+    "proof_object": "PR-RM002A-PROOF-005",
+    "raw_evidence": [
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stdout.log",
+      "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stderr.log"
+    ],
+    "reverse_status": "COMPLETE",
+    "traceability_id": "PR-RM002A-REQ-SUPERSESSION-001-TRACE",
+    "verifier": "Tests.test_position_management_office"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "candidate_digest": "3cbefc4542b9a6c09dd3ef830cc0f644b567fa35c9ce81eed7166d05c6680f2d",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_position_management_office",
+    "execution_id": "PR-RM002A-CLEAN-Tests-test_position_management_office",
+    "fixture_identity": "Tests.test_position_management_office deterministic unit fixtures",
+    "implementation_identity": "src/argos/trader/position_management.py",
+    "module": "Tests.test_position_management_office",
+    "preconditions": [
+      "POSITION-REGISTRY-RM-001 baseline",
+      "RM-002A bounded remediation candidate"
+    ],
+    "resulting_state": "PASS",
+    "returncode": 0,
+    "stderr": "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stderr.log",
+    "stderr_sha256": "a912dd14b7ecae35d69f4a2f565f20831ad43b581983dc42e86d469390c70c8d",
+    "stdout": "Documentation\\POSITION_REGISTRY_RM002A_FINAL_CLOSURE\\raw_execution\\PR-RM002A-CLEAN-Tests-test_position_management_office.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "terminal_disposition": "PASS",
+    "verifier_identity": "Tests.test_position_management_office"
+  }
+]

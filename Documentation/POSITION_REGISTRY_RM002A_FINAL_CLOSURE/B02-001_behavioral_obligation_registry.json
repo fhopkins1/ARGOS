@@ -1,0 +1,233 @@
+[
+  {
+    "behavior": "position creation",
+    "behavioral_obligation_id": "PR-S05-BO-001",
+    "governing_implementation_obligation": "PR-S04-OBL-001",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "canonical identity assignment",
+    "behavioral_obligation_id": "PR-S05-BO-002",
+    "governing_implementation_obligation": "PR-S04-OBL-002",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "duplicate creation rejection",
+    "behavioral_obligation_id": "PR-S05-BO-003",
+    "governing_implementation_obligation": "PR-S04-OBL-003",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "long-position establishment",
+    "behavioral_obligation_id": "PR-S05-BO-004",
+    "governing_implementation_obligation": "PR-S04-OBL-004",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "short-position establishment",
+    "behavioral_obligation_id": "PR-S05-BO-005",
+    "governing_implementation_obligation": "PR-S04-OBL-005",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "position increase",
+    "behavioral_obligation_id": "PR-S05-BO-006",
+    "governing_implementation_obligation": "PR-S04-OBL-006",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "position reduction",
+    "behavioral_obligation_id": "PR-S05-BO-007",
+    "governing_implementation_obligation": "PR-S04-OBL-007",
+    "prior_disposition": "VERIFIED_FAIL",
+    "verification_mode": "focused_regression"
+  },
+  {
+    "behavior": "partial closure",
+    "behavioral_obligation_id": "PR-S05-BO-008",
+    "governing_implementation_obligation": "PR-S04-OBL-008",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "complete closure",
+    "behavioral_obligation_id": "PR-S05-BO-009",
+    "governing_implementation_obligation": "PR-S04-OBL-009",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "position reversal",
+    "behavioral_obligation_id": "PR-S05-BO-010",
+    "governing_implementation_obligation": "PR-S04-OBL-010",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "quantity conservation",
+    "behavioral_obligation_id": "PR-S05-BO-011",
+    "governing_implementation_obligation": "PR-S04-OBL-011",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "average cost-basis calculation",
+    "behavioral_obligation_id": "PR-S05-BO-012",
+    "governing_implementation_obligation": "PR-S04-OBL-012",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "realized quantity calculation",
+    "behavioral_obligation_id": "PR-S05-BO-013",
+    "governing_implementation_obligation": "PR-S04-OBL-013",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "unrealized quantity calculation",
+    "behavioral_obligation_id": "PR-S05-BO-014",
+    "governing_implementation_obligation": "PR-S04-OBL-014",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "fractional quantity handling",
+    "behavioral_obligation_id": "PR-S05-BO-015",
+    "governing_implementation_obligation": "PR-S04-OBL-015",
+    "prior_disposition": "VERIFIED_FAIL",
+    "verification_mode": "focused_regression"
+  },
+  {
+    "behavior": "precision and rounding",
+    "behavioral_obligation_id": "PR-S05-BO-016",
+    "governing_implementation_obligation": "PR-S04-OBL-016",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "invalid lifecycle transition rejection",
+    "behavioral_obligation_id": "PR-S05-BO-017",
+    "governing_implementation_obligation": "PR-S04-OBL-017",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "authority enforcement",
+    "behavioral_obligation_id": "PR-S05-BO-018",
+    "governing_implementation_obligation": "PR-S04-OBL-018",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "duplicate event handling",
+    "behavioral_obligation_id": "PR-S05-BO-019",
+    "governing_implementation_obligation": "PR-S04-OBL-019",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "stale-event handling",
+    "behavioral_obligation_id": "PR-S05-BO-020",
+    "governing_implementation_obligation": "PR-S04-OBL-020",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "late-event handling",
+    "behavioral_obligation_id": "PR-S05-BO-021",
+    "governing_implementation_obligation": "PR-S04-OBL-021",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "out-of-order event handling",
+    "behavioral_obligation_id": "PR-S05-BO-022",
+    "governing_implementation_obligation": "PR-S04-OBL-022",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "contradictory-event handling",
+    "behavioral_obligation_id": "PR-S05-BO-023",
+    "governing_implementation_obligation": "PR-S04-OBL-023",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "replay behavior",
+    "behavioral_obligation_id": "PR-S05-BO-024",
+    "governing_implementation_obligation": "PR-S04-OBL-024",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "restart recovery",
+    "behavioral_obligation_id": "PR-S05-BO-025",
+    "governing_implementation_obligation": "PR-S04-OBL-025",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "persistence restoration",
+    "behavioral_obligation_id": "PR-S05-BO-026",
+    "governing_implementation_obligation": "PR-S04-OBL-026",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "partial-write recovery",
+    "behavioral_obligation_id": "PR-S05-BO-027",
+    "governing_implementation_obligation": "PR-S04-OBL-027",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "correction behavior",
+    "behavioral_obligation_id": "PR-S05-BO-028",
+    "governing_implementation_obligation": "PR-S04-OBL-028",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "supersession behavior",
+    "behavioral_obligation_id": "PR-S05-BO-029",
+    "governing_implementation_obligation": "PR-S04-OBL-029",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "reconciliation behavior",
+    "behavioral_obligation_id": "PR-S05-BO-030",
+    "governing_implementation_obligation": "PR-S04-OBL-030",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "anomaly generation",
+    "behavioral_obligation_id": "PR-S05-BO-031",
+    "governing_implementation_obligation": "PR-S04-OBL-031",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "evidence generation",
+    "behavioral_obligation_id": "PR-S05-BO-032",
+    "governing_implementation_obligation": "PR-S04-OBL-032",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  },
+  {
+    "behavior": "terminal-state protection",
+    "behavioral_obligation_id": "PR-S05-BO-033",
+    "governing_implementation_obligation": "PR-S04-OBL-033",
+    "prior_disposition": "VERIFIED_PASS",
+    "verification_mode": "preservation_regression"
+  }
+]

@@ -51,6 +51,34 @@ class PositionRegistryRM002AFinalClosureTests(unittest.TestCase):
         self.assertTrue(all(item["proof_disposition"] == "PASS" for item in proof))
         self.assertTrue(all(item["forward_status"] == "COMPLETE" and item["reverse_status"] == "COMPLETE" for item in traceability))
 
+    def test_s01_through_s04_series_deliverables_are_complete(self) -> None:
+        expected = [
+            "B01-004_implementation_remediation_baseline.json",
+            "B02-004_behavioral_verification_baseline.json",
+            "B03-004_position_registry_proof_baseline.json",
+            "B04-004_behavioral_verification_baseline.json",
+        ]
+        for filename in expected:
+            self.assertTrue((EVIDENCE_ROOT / filename).exists(), filename)
+
+        s01 = json.loads((EVIDENCE_ROOT / "B01-004_implementation_remediation_baseline.json").read_text(encoding="utf-8"))
+        s02 = json.loads((EVIDENCE_ROOT / "B02-004_behavioral_disposition_registry.json").read_text(encoding="utf-8"))
+        s03 = json.loads((EVIDENCE_ROOT / "B03-004_authoritative_proof_disposition_registry.json").read_text(encoding="utf-8"))
+        s04 = json.loads((EVIDENCE_ROOT / "B04-004_behavioral_verification_baseline.json").read_text(encoding="utf-8"))
+        self.assertEqual(s01["regression_disposition"], "PASS")
+        self.assertTrue(s02)
+        self.assertTrue(all(item["final_disposition"] == "VERIFIED_PASS" for item in s02))
+        self.assertTrue(all(item["proof_disposition"] == "PROVEN" for item in s03))
+        self.assertTrue(s04["ready_for_position_registry_rm002a_s05"])
+
+    def test_execution_evidence_is_hash_bound_and_bidirectionally_traceable(self) -> None:
+        evidence = json.loads((EVIDENCE_ROOT / "B03-001_evidence_inventory.json").read_text(encoding="utf-8"))
+        graph = json.loads((EVIDENCE_ROOT / "B03-003_bidirectional_traceability_registry.json").read_text(encoding="utf-8"))
+        self.assertTrue(evidence)
+        self.assertTrue(all(item["sha256"] and item["path"] for item in evidence))
+        self.assertTrue(graph)
+        self.assertTrue(all(item["forward_status"] == "COMPLETE" and item["reverse_status"] == "COMPLETE" for item in graph))
+
     def test_completion_reports_unconditional_pass_without_doctrine_change(self) -> None:
         completion = json.loads((EVIDENCE_ROOT / "completion_report.json").read_text(encoding="utf-8"))
         self.assertEqual(completion["final_verdict"], "UNCONDITIONAL_PASS")
