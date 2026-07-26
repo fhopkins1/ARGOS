@@ -1,0 +1,164 @@
+# CODEX EXECUTION ORDER
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-005
+
+## Final Independent Clean-Room Reproduction and ECS-003 Certification Audit
+
+Perform the complete final ECS-003 implementation certification audit for the Closed Position Truth Office using only the following delivered packages:
+
+* `CLOSED_POSITION_TRUTH_RM002_B07_004_REPOSITORY_FULL_2a23b17f232e67ba_20260726-181918.zip`
+* `CLOSED_POSITION_TRUTH_RM002_B07_004_EVIDENCE_ONLY_2a23b17f232e67ba_20260726-181918.zip`
+
+Treat the Repository Package ZIP as the authoritative implementation input.
+
+Treat the Evidence-Only Package ZIP solely as the submitted certification comparison baseline.
+
+Do not rely upon:
+
+* Git metadata;
+* Git history;
+* external repository state;
+* developer workstation state;
+* undocumented dependencies;
+* undocumented configuration;
+* prior execution state;
+* prior certification conclusions;
+* manually curated inventories;
+* expected execution counts.
+
+Do not modify the implementation.
+
+Do not remediate defects.
+
+Do not suppress failures.
+
+Do not infer PASS.
+
+Execute the audit from a fresh clean-room working directory.
+
+Perform, in order:
+
+1. Validate package identity, extraction integrity, repository completeness, runtime dependencies, configuration dependencies, environment determinism, and repository independence.
+
+2. Independently discover:
+
+   * implementation participants;
+   * runtime participants;
+   * dependency relationships;
+   * verifiers;
+   * fixtures;
+   * persistence components;
+   * evidence components;
+   * proof components;
+   * traceability components.
+
+3. Execute the complete independently discovered behavioral verification population.
+
+4. Preserve raw execution evidence, including:
+
+   * execution identity;
+   * verifier identity;
+   * fixture identity;
+   * environment identity;
+   * stdout;
+   * stderr;
+   * duration;
+   * result;
+   * generated artifacts;
+   * cryptographic hashes.
+
+5. Independently regenerate:
+
+   * evidence;
+   * evidence identity;
+   * evidence provenance;
+   * requirement-level proof;
+   * proof lineage;
+   * forward traceability;
+   * backward traceability.
+
+6. Execute or reproduce the complete fail-closed mutation campaign.
+
+7. Measure:
+
+   * true positives;
+   * true negatives;
+   * false positives;
+   * false negatives;
+   * blocker generation;
+   * mutation rejection behavior.
+
+8. Only after independent reproduction is complete, compare the regenerated campaign against the supplied Evidence-Only Package.
+
+9. Classify every variance as exactly one of:
+
+   * EXPECTED_ENVIRONMENT_VARIANCE;
+   * NON_SEMANTIC_VARIANCE;
+   * EXPLAINED_SEMANTIC_VARIANCE;
+   * UNEXPLAINED_SEMANTIC_VARIANCE;
+   * CERTIFICATION_BLOCKING_VARIANCE.
+
+10. Determine whether every canonical ECS-003 requirement possesses exactly one disposition:
+
+    * PROVEN;
+    * NOT_PROVEN;
+    * NOT_APPLICABLE.
+
+11. Verify that:
+
+    * every PROVEN requirement possesses admissible regenerated evidence;
+    * every NOT_PROVEN requirement possesses objective findings;
+    * every NOT_APPLICABLE requirement possesses explicit constitutional justification;
+    * no orphan requirement, implementation artifact, verifier, fixture, execution, evidence object, proof object, mutation, blocker, or traceability relationship remains.
+
+Issue exactly one reproduction disposition:
+
+* REPRODUCIBLE;
+* REPRODUCIBLE_WITH_VARIANCE;
+* NOT_REPRODUCIBLE.
+
+Issue exactly one certification disposition:
+
+* ECS003_IMPLEMENTATION_CERTIFIED;
+* ECS003_IMPLEMENTATION_CERTIFICATION_DENIED;
+* ECS003_IMPLEMENTATION_REMEDIATION_REQUIRED.
+
+Issue `ECS003_IMPLEMENTATION_CERTIFIED` only if all of the following are true:
+
+* repository validation succeeds;
+* implementation discovery succeeds;
+* behavioral verification succeeds;
+* evidence regeneration succeeds;
+* proof regeneration succeeds;
+* traceability regeneration succeeds;
+* fail-closed mutation validation succeeds;
+* false positives equal zero;
+* false negatives equal zero;
+* certification blockers equal zero;
+* unexplained certification-blocking variances equal zero;
+* reproduction disposition equals `REPRODUCIBLE`.
+
+Produce at minimum:
+
+* Certification Reproduction Registry;
+* Independent Execution Registry;
+* Certification Comparison Registry;
+* Variance Registry;
+* Certification Sufficiency Registry;
+* Certification Findings Registry;
+* Final Certification Registry;
+* Final Certification Findings Registry;
+* ECS-003 Certification Report;
+* Certification Baseline Registry;
+* Certification Freeze Authorization or explicit denial;
+* Enterprise Eligibility Registry;
+* Certification Closure Report;
+* Final Independent Clean-Room Audit Report;
+* Final ECS-003 Implementation Certification Verdict;
+* Series Completion Report.
+
+Preserve all generated artifacts in a deterministic evidence directory.
+
+Create a final ZIP containing the complete regenerated audit and certification package.
+
+Do not declare certification success unless every required condition is objectively demonstrated by clean-room execution evidence.

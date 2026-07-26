@@ -1,0 +1,168 @@
+[
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_ecs003_audit",
+    "fixture_id": "FIXTURE-15bc1dd8898abcb0",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_ecs003_audit",
+    "path": "Tests/test_closed_position_truth_ecs003_audit.py",
+    "test_functions": [
+      "test_audit_is_bounded_and_does_not_claim_remediation",
+      "test_behavioral_executions_are_terminal_and_mapped_to_evidence",
+      "test_dependency_discovery_is_not_filename_only",
+      "test_fail_closed_verdict_has_blocking_evidence",
+      "test_required_audit_deliverables_are_produced"
+    ],
+    "verifier_id": "VERIFIER-65714f7ff84a0656"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b01_baseline",
+    "fixture_id": "FIXTURE-e25460457095ba1f",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm001_b01_baseline",
+    "path": "Tests/test_closed_position_truth_rm001_b01_baseline.py",
+    "test_functions": [
+      "test_all_order_deliverables_are_materialized",
+      "test_boundaries_preserve_authority_and_prevent_shared_responsibility",
+      "test_every_authority_and_responsibility_has_single_owner",
+      "test_series_is_doctrine_only_and_ready_for_b02",
+      "test_truth_ownership_and_dependency_precedence_are_deterministic"
+    ],
+    "verifier_id": "VERIFIER-fe6d857c8342b3e6"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b02_baseline",
+    "fixture_id": "FIXTURE-0afdd89fbadb3feb",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm001_b02_baseline",
+    "path": "Tests/test_closed_position_truth_rm001_b02_baseline.py",
+    "test_functions": [
+      "test_canonical_objects_have_identity_owner_creator_relationships_and_retirement",
+      "test_historical_integrity_preserves_lineage_and_auditability",
+      "test_lifecycle_blocks_bypass_reopen_and_exception_truth",
+      "test_object_authority_matrix_prevents_implicit_transfer_and_finalized_mutation",
+      "test_required_b02_deliverables_exist",
+      "test_series_is_doctrine_only_and_ready_for_b03"
+    ],
+    "verifier_id": "VERIFIER-fb2bf4044f772d0c"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b03_baseline",
+    "fixture_id": "FIXTURE-2a9d4e310e48db8c",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm001_b03_baseline",
+    "path": "Tests/test_closed_position_truth_rm001_b03_baseline.py",
+    "test_functions": [
+      "test_closure_requires_all_mandatory_criteria_and_only_closed_outcome_authorizes_truth",
+      "test_reconciliation_requires_success_and_preserves_source_ownership",
+      "test_required_b03_deliverables_exist",
+      "test_residual_quantity_zero_is_required_but_not_sufficient",
+      "test_series_is_doctrine_only_for_issued_orders",
+      "test_settlement_is_bounded_verified_or_exempt_and_never_sufficient_alone"
+    ],
+    "verifier_id": "VERIFIER-36f2f78d2ce3e0b8"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b05_certification",
+    "fixture_id": "FIXTURE-c30b5cb7aac8e10b",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm001_b05_certification",
+    "path": "Tests/test_closed_position_truth_rm001_b05_certification.py",
+    "test_functions": [
+      "test_b04_requirement_traceability_gap_is_reported_as_blocking_not_concealed",
+      "test_b05_is_constitutional_only_and_does_not_execute_implementation_work",
+      "test_final_verdict_denies_freeze_until_reported_blockers_are_remediated",
+      "test_required_b05_deliverables_exist",
+      "test_requirement_and_traceability_audit_has_terminal_dispositions"
+    ],
+    "verifier_id": "VERIFIER-53496f2a788c6f17"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001a_b01_requirement_architecture",
+    "fixture_id": "FIXTURE-58a0b9e1e870e774",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm001a_b01_requirement_architecture",
+    "path": "Tests/test_closed_position_truth_rm001a_b01_requirement_architecture.py",
+    "test_functions": [
+      "test_every_obligation_maps_to_exactly_one_atomic_requirement",
+      "test_identifier_and_classification_coverage_are_complete",
+      "test_integrity_disposition_is_complete_and_constitutional_only",
+      "test_required_deliverables_exist",
+      "test_traceability_preserves_required_lineage_fields"
+    ],
+    "verifier_id": "VERIFIER-ad9fb42b4d77f12e"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_b07_001_repository_validation",
+    "fixture_id": "FIXTURE-d79115f01039c0c9",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm002_b07_001_repository_validation",
+    "path": "Tests/test_closed_position_truth_rm002_b07_001_repository_validation.py",
+    "test_functions": [
+      "test_dependencies_are_classified_with_acquisition_paths",
+      "test_environment_and_hidden_dependency_discovery_are_recorded",
+      "test_package_validation_is_complete_and_non_behavioral",
+      "test_repository_independence_is_package_only",
+      "test_required_deliverables_are_generated"
+    ],
+    "verifier_id": "VERIFIER-4909d6501851a0d6"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_b07_002_003_independent_reproduction",
+    "fixture_id": "FIXTURE-683a78c1f2887653",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm002_b07_002_003_independent_reproduction",
+    "path": "Tests/test_closed_position_truth_rm002_b07_002_003_independent_reproduction.py",
+    "test_functions": [
+      "test_behavioral_execution_preserves_raw_evidence",
+      "test_completion_is_honest_and_non_certifying",
+      "test_required_b07_002_deliverables_exist",
+      "test_required_b07_003_deliverables_exist",
+      "test_requirement_proof_population_reconciles_to_requirements"
+    ],
+    "verifier_id": "VERIFIER-2a3c8d5a5c19af01"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_b07_004_mutation_accuracy",
+    "fixture_id": "FIXTURE-ec2941cd3e230fb1",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm002_b07_004_mutation_accuracy",
+    "path": "Tests/test_closed_position_truth_rm002_b07_004_mutation_accuracy.py",
+    "test_functions": [
+      "test_accuracy_metrics_have_no_false_positive_or_false_negative",
+      "test_completion_is_non_certifying_and_non_remediating",
+      "test_every_mutation_executed_and_fail_closed",
+      "test_mutation_evidence_files_exist_and_are_hashed",
+      "test_required_mutation_deliverables_exist"
+    ],
+    "verifier_id": "VERIFIER-ccfa4fbcc3a86c7f"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_b07_clean_room_audit",
+    "fixture_id": "FIXTURE-64bc1aa0e5408312",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm002_b07_clean_room_audit",
+    "path": "Tests/test_closed_position_truth_rm002_b07_clean_room_audit.py",
+    "test_functions": [
+      "test_behavioral_and_mutation_campaigns_pass_without_false_results",
+      "test_clean_room_identity_and_package_only_execution_are_recorded",
+      "test_final_reproduction_and_certification_are_clean",
+      "test_required_b07_deliverables_exist",
+      "test_requirement_proof_and_traceability_are_regenerated"
+    ],
+    "verifier_id": "VERIFIER-41570af2438c89ca"
+  },
+  {
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_implementation_certification",
+    "fixture_id": "FIXTURE-b1c50c26f5a2b700",
+    "framework": "unittest",
+    "module": "Tests.test_closed_position_truth_rm002_implementation_certification",
+    "path": "Tests/test_closed_position_truth_rm002_implementation_certification.py",
+    "test_functions": [
+      "test_behavioral_execution_and_mutation_evidence_pass",
+      "test_every_canonical_requirement_has_passing_proof_and_traceability",
+      "test_independent_reproduction_and_final_verdict_certify_candidate",
+      "test_required_program_deliverables_exist"
+    ],
+    "verifier_id": "VERIFIER-5fce819365013052"
+  }
+]

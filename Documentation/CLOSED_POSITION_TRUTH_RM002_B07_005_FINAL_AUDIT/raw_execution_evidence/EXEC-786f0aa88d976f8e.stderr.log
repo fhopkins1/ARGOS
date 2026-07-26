@@ -1,0 +1,21 @@
+E
+======================================================================
+ERROR: setUpClass (Tests.test_closed_position_truth_ecs003_audit.ClosedPositionTruthECS003AuditTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fletc\AppData\Local\Temp\cpt_b07_005_tb8_o_gu\repository_package\Tests\test_closed_position_truth_ecs003_audit.py", line 13, in setUpClass
+    generate_audit()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Fletc\AppData\Local\Temp\cpt_b07_005_tb8_o_gu\repository_package\Scripts\closed_position_truth_ecs003_audit.py", line 471, in generate_audit
+    repo_files = _repo_files()
+  File "C:\Users\Fletc\AppData\Local\Temp\cpt_b07_005_tb8_o_gu\repository_package\Scripts\closed_position_truth_ecs003_audit.py", line 100, in _repo_files
+    result = subprocess.run(["git", "ls-files"], cwd=REPOSITORY_ROOT, text=True, capture_output=True, check=True)
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', 'ls-files']' returned non-zero exit status 128.
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.035s
+
+FAILED (errors=1)

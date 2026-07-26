@@ -1,0 +1,22 @@
+fatal: not a git repository (or any of the parent directories): .git
+E
+======================================================================
+ERROR: setUpClass (Tests.test_closed_position_truth_rm002_b07_clean_room_audit.ClosedPositionTruthRM002B07CleanRoomAuditTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fletc\AppData\Local\Temp\cpt_b07_005_tb8_o_gu\repository_package\Tests\test_closed_position_truth_rm002_b07_clean_room_audit.py", line 13, in setUpClass
+    generate_clean_room_audit()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Fletc\AppData\Local\Temp\cpt_b07_005_tb8_o_gu\repository_package\Scripts\closed_position_truth_rm002_b07_clean_room_audit.py", line 267, in generate_clean_room_audit
+    repo_package = _create_repository_package(work_dir)
+  File "C:\Users\Fletc\AppData\Local\Temp\cpt_b07_005_tb8_o_gu\repository_package\Scripts\closed_position_truth_rm002_b07_clean_room_audit.py", line 105, in _create_repository_package
+    subprocess.check_call(["git", "archive", "--format=zip", f"--output={package}", "HEAD"], cwd=REPOSITORY_ROOT)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fletc\AppData\Local\Python\pythoncore-3.14-64\Lib\subprocess.py", line 420, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['git', 'archive', '--format=zip', '--output=C:\\Users\\Fletc\\AppData\\Local\\Temp\\cpt_rm002_b07_86393llf\\closed_position_truth_rm002_b07_input_repository.zip', 'HEAD']' returned non-zero exit status 128.
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.172s
+
+FAILED (errors=1)
