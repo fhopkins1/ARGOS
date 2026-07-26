@@ -1,0 +1,65 @@
+[
+  {
+    "execution_id": "CPT-BEH-001",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "verification_class": "constitutional_closure",
+    "verifier_id": "CPT-VER-001"
+  },
+  {
+    "execution_id": "CPT-BEH-002",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "verification_class": "exception_handling",
+    "verifier_id": "CPT-VER-002"
+  },
+  {
+    "execution_id": "CPT-BEH-003",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+    "verification_class": "idempotency",
+    "verifier_id": "CPT-VER-003"
+  },
+  {
+    "execution_id": "CPT-BEH-004",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_lifecycle_analytics_calculate_pnl_holding_period_and_surveillance_extremes",
+    "verification_class": "realized_outcome_generation",
+    "verifier_id": "CPT-VER-004"
+  },
+  {
+    "execution_id": "CPT-BEH-005",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "verification_class": "evidence_generation",
+    "verifier_id": "CPT-VER-005"
+  },
+  {
+    "execution_id": "CPT-BEH-006",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_reconciliation_guards_quantity_and_pnl_mismatches",
+    "verification_class": "reconciliation",
+    "verifier_id": "CPT-VER-006"
+  },
+  {
+    "execution_id": "CPT-BEH-007",
+    "source": "Tests/test_argos_control_panel_dashboard.py",
+    "test_target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_positive_quantity_is_rejected_and_no_ai_is_used",
+    "verification_class": "residual_quantity_validation",
+    "verifier_id": "CPT-VER-007"
+  },
+  {
+    "execution_id": "CPT-BEH-008",
+    "source": "Tests/test_ifvr001_phase35_truth_envelope.py",
+    "test_target": "Tests.test_ifvr001_phase35_truth_envelope.IFVR001Phase35TruthEnvelopeTests.test_degraded_closed_position_output_is_analytical_only_and_not_learning_promoted",
+    "verification_class": "degraded_analytical_inputs",
+    "verifier_id": "CPT-VER-008"
+  },
+  {
+    "execution_id": "CPT-BEH-009",
+    "source": "Tests/test_or004_position_lifecycle.py",
+    "test_target": "Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_partial_and_full_closure_require_broker_confirmed_fills",
+    "verification_class": "historical_transfer",
+    "verifier_id": "CPT-VER-009"
+  }
+]

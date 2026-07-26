@@ -1,0 +1,26 @@
+[
+  {
+    "evidence_producer": true,
+    "participant": "ClosedPositionTruthBuilder.build",
+    "participant_id": "CPT-RUN-001",
+    "role": "truth construction"
+  },
+  {
+    "evidence_producer": true,
+    "participant": "ClosedPositionTruthBuilder.snapshot",
+    "participant_id": "CPT-RUN-002",
+    "role": "state and diagnostics publication"
+  },
+  {
+    "evidence_producer": true,
+    "participant": "ClosedPositionTruthBuilder._reconcile",
+    "participant_id": "CPT-RUN-003",
+    "role": "fail-closed reconciliation evidence"
+  },
+  {
+    "evidence_producer": true,
+    "participant": "ClosedPositionTruthBuilder._record_degraded_analytical",
+    "participant_id": "CPT-RUN-004",
+    "role": "degraded analytical-only preservation"
+  }
+]

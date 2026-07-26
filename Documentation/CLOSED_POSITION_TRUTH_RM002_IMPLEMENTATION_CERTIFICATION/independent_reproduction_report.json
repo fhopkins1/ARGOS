@@ -1,0 +1,43 @@
+{
+  "reproduction_disposition": "REPRODUCIBLE",
+  "reproduction_runs": [
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+      "disposition": "PASS",
+      "execution_id": "CPT-BEH-001-REPRO",
+      "returncode": 0,
+      "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/CPT-BEH-001-REPRO.stderr.log",
+      "stderr_sha256": "961791e786972d421d9350e99fcc1645eff73fa9aea5bc1583302ff993330060",
+      "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/CPT-BEH-001-REPRO.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position"
+    },
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+      "disposition": "PASS",
+      "execution_id": "CPT-BEH-002-REPRO",
+      "returncode": 0,
+      "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/CPT-BEH-002-REPRO.stderr.log",
+      "stderr_sha256": "2e79c339ac192d7d710d7e5b8afe77787ee343e6c7f7923c66c9b2db7f973fc7",
+      "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/CPT-BEH-002-REPRO.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution"
+    },
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+      "disposition": "PASS",
+      "execution_id": "CPT-BEH-003-REPRO",
+      "returncode": 0,
+      "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/CPT-BEH-003-REPRO.stderr.log",
+      "stderr_sha256": "646bdba2ee0cd599e4fc4319f3ab66a3b4ec3b248d9a850e83cdc4eab48811c0",
+      "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/CPT-BEH-003-REPRO.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record"
+    }
+  ],
+  "reproduction_scope": [
+    "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record"
+  ]
+}

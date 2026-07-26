@@ -1,0 +1,41 @@
+[
+  {
+    "artifact_id": "CPT-IMPL-001",
+    "classes": [
+      "ClosedPositionTruthConfig",
+      "ClosedPositionTruthRecord",
+      "DegradedClosedPositionAnalyticalRecord",
+      "ClosedPositionTruthBuilder"
+    ],
+    "evidence_producer": true,
+    "functions": [
+      "_weighted_average",
+      "_surveillance_for_position",
+      "_exit_decision_for_position",
+      "_benchmark_payload",
+      "_attribution_payload",
+      "_learning_payload",
+      "_learning_event",
+      "_max_unrealized",
+      "_min_unrealized",
+      "_max_drawdown",
+      "_execution_quality",
+      "_exit_timing_quality",
+      "_holding_period",
+      "_minutes_between",
+      "_hash_payload",
+      "__init__",
+      "build",
+      "snapshot",
+      "_build_one",
+      "_reconcile",
+      "_record_degraded_analytical",
+      "_resolved_config"
+    ],
+    "participation_basis": "dependency-derived module containing ClosedPositionTruthBuilder and immutable record/config dataclasses",
+    "path": "src/argos/control_panel/closed_position_truth.py",
+    "persistence_participant": false,
+    "runtime_participant": true,
+    "sha256": "a1f77379095a7dbda47aadd88ec432bda05b815f73166735fd8d9e1eb025abc3"
+  }
+]

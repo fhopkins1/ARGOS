@@ -1,0 +1,61 @@
+{
+  "disposition": "PASS",
+  "mutations": [
+    {
+      "assertion": "authority violation must not be present in valid build",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "c3994d3318d7e46edc05782c27c0b3052a7635af0ad79d0d09677f279293c18d",
+      "mutation": "authority_no_trading_or_ai",
+      "mutation_id": "CPT-MUT-001"
+    },
+    {
+      "assertion": "open position rejected",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "49bea0267bdeef181e3587235a2e167fb8e05bfc4b0caa0f8917a6c763e36182",
+      "mutation": "closure_violation_open_position",
+      "mutation_id": "CPT-MUT-002"
+    },
+    {
+      "assertion": "closed positive quantity rejected",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "22d83fe85d5ed58198fb0d7c64c83f4645146b729ccfcae9555dcdda7eb275e8",
+      "mutation": "closure_violation_positive_quantity",
+      "mutation_id": "CPT-MUT-003"
+    },
+    {
+      "assertion": "quantity mismatch rejected",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "76d122677ae697a127ec1f51db9d030e434b27c77e31024764ecc12aeb30dbf9",
+      "mutation": "reconciliation_violation_quantity_mismatch",
+      "mutation_id": "CPT-MUT-004"
+    },
+    {
+      "assertion": "pnl mismatch rejected",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "b54fc730aa8232b8125a49a9f1bf3e561b309f383f39ecd5afd58b7c3368b956",
+      "mutation": "reconciliation_violation_pnl_mismatch",
+      "mutation_id": "CPT-MUT-005"
+    },
+    {
+      "assertion": "degraded benchmark remains analytical-only",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "94d5ab3b56b71f7ffdd154eb3341ba613c6d679fcc2d2ad08322d2444039e403",
+      "mutation": "evidence_deficiency_degraded_analytical_only",
+      "mutation_id": "CPT-MUT-006"
+    },
+    {
+      "assertion": "duplicate build does not create duplicate truth",
+      "deterministic_rejection": true,
+      "disposition": "PASS",
+      "evidence_digest": "953192a93f2bdbd8ec06efea94ca9cebfd58d82a301bf514bb82310ea441e6f7",
+      "mutation": "idempotency_duplicate_build",
+      "mutation_id": "CPT-MUT-007"
+    }
+  ]
+}

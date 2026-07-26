@@ -1,0 +1,26 @@
+[
+  {
+    "fixture": "_closed_truth_fixture",
+    "fixture_id": "CPT-FIX-001",
+    "purpose": "complete closed position with entry, exit, surveillance, exit decision, and benchmark evidence",
+    "source": "Tests/test_argos_control_panel_dashboard.py"
+  },
+  {
+    "fixture": "_closed_position_payloads",
+    "fixture_id": "CPT-FIX-002",
+    "purpose": "degraded analytical-only evidence",
+    "source": "Tests/test_ifvr001_phase35_truth_envelope.py"
+  },
+  {
+    "fixture": "PositionLifecycleManager fixture",
+    "fixture_id": "CPT-FIX-003",
+    "purpose": "partial/full exit lifecycle transfer evidence",
+    "source": "Tests/test_or004_position_lifecycle.py"
+  },
+  {
+    "fixture": "controlled mutation inputs",
+    "fixture_id": "CPT-FIX-004",
+    "purpose": "fail-closed mutation validation",
+    "source": "Scripts/closed_position_truth_rm002_implementation_certification.py"
+  }
+]
