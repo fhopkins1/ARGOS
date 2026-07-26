@@ -1,0 +1,629 @@
+# CLOSED-POSITION-TRUTH-RM-001-B03-001
+
+# Constitutional Closure Doctrine Order
+
+## Objective
+
+Establish the authoritative constitutional doctrine governing when a trading position becomes constitutionally closed and when authoritative Closed Position Truth may be created. 
+
+This order shall define constitutional closure, closure prerequisites, closure authority, closure admissibility, closure evidence, closure determination, closure finality, prohibited closure conditions, and deterministic failure behavior.
+
+This order shall not modify constitutional authority established under **CLOSED-POSITION-TRUTH-RM-001-B01**.
+
+This order shall not modify the canonical object or lifecycle model established under **CLOSED-POSITION-TRUTH-RM-001-B02**.
+
+This order shall not modify implementation behavior.
+
+This order shall not perform behavioral verification.
+
+This order shall not generate implementation proof.
+
+This order shall not execute implementation certification activity.
+
+---
+
+# Constitutional Requirements
+
+## 1. Establish Constitutional Closure Definition
+
+Define constitutional closure as the authoritative determination that a trading position has permanently satisfied every constitutional condition required for recognition as closed.
+
+A position shall become constitutionally closed only when all required closure conditions have been affirmatively established through constitutionally admissible evidence.
+
+Constitutional closure shall not be inferred from:
+
+* execution submission;
+* execution acknowledgement;
+* one or more fills;
+* apparent zero quantity;
+* settlement alone;
+* broker classification alone;
+* analytical estimation;
+* elapsed time;
+* operational convenience.
+
+Authoritative Closed Position Truth shall not exist before constitutional closure.
+
+---
+
+## 2. Establish Mandatory Closure Criteria
+
+Define the complete mandatory criteria for constitutional closure.
+
+At minimum, constitutional closure shall require:
+
+* authoritative position identity;
+* execution completion;
+* complete fill reconciliation;
+* residual position quantity equal to zero;
+* successful execution reconciliation;
+* successful position reconciliation;
+* settlement verified or constitutionally exempt;
+* mandatory closure evidence present;
+* closure evidence constitutionally admissible;
+* no unresolved contradiction;
+* no unresolved closure exception;
+* closure determination issued by the constitutional authority.
+
+Failure of any mandatory condition shall prohibit constitutional closure.
+
+No criterion may be silently waived, inferred, or replaced.
+
+---
+
+## 3. Establish Closure Authority Registry
+
+Create the authoritative Closure Authority Registry.
+
+Define:
+
+* closure determination authority;
+* closure validation authority;
+* closure admissibility authority;
+* closure rejection authority;
+* closure deferral authority;
+* closure exception authority;
+* correction authority;
+* supersession authority;
+* archival authority.
+
+Confirm that the Closed Position Truth Office possesses exclusive authority to establish enterprise Closed Position Truth.
+
+This authority shall not permit the Office to:
+
+* create broker truth;
+* modify broker-originated facts;
+* create execution truth;
+* modify Position Registry truth;
+* create settlement truth;
+* issue trading decisions;
+* issue exit decisions;
+* authorize execution;
+* reopen closed positions.
+
+---
+
+## 4. Establish Closure Prerequisite Registry
+
+Create the complete Closure Prerequisite Registry.
+
+For every prerequisite define:
+
+* prerequisite identity;
+* constitutional source;
+* responsible upstream office;
+* authoritative evidence source;
+* admissibility requirements;
+* satisfaction criteria;
+* failure disposition;
+* reconciliation obligation.
+
+Prerequisites shall include, where applicable:
+
+* valid originating position identity;
+* valid Exit Decision lineage;
+* valid authorization lineage;
+* complete Trader execution state;
+* complete Broker fill evidence;
+* reconciled execution quantities;
+* reconciled position quantity;
+* settlement verification or exemption;
+* realized outcome derivation eligibility;
+* complete historical provenance.
+
+Dependency participation shall not transfer ownership of upstream truth.
+
+---
+
+## 5. Establish Execution Completion Requirement
+
+Define execution completion as a mandatory but independently insufficient condition for constitutional closure.
+
+Execution completion shall require:
+
+* all authorized execution instructions possess final disposition;
+* all acknowledged broker instructions possess reconciled status;
+* all fills possess authoritative broker evidence;
+* no unresolved execution path remains;
+* no pending executable quantity remains;
+* no uncertain execution state remains.
+
+Execution completion alone shall never create authoritative Closed Position Truth.
+
+---
+
+## 6. Establish Fill Reconciliation Requirement
+
+Define complete fill reconciliation.
+
+Fill reconciliation shall establish deterministic agreement among:
+
+* execution instructions;
+* broker acknowledgements;
+* broker fills;
+* cancellations;
+* rejections;
+* corrections;
+* cumulative executed quantity;
+* expected position effect.
+
+Reconciliation shall account for:
+
+* partial fills;
+* multiple fills;
+* duplicate fill reports;
+* corrected fill reports;
+* late fill reports;
+* rejected instructions;
+* cancelled residual instructions.
+
+Any unresolved fill discrepancy shall prohibit constitutional closure.
+
+---
+
+## 7. Establish Zero-Residual Requirement
+
+Define residual position quantity equal to zero as a mandatory closure condition.
+
+Zero-residual verification shall require:
+
+* authoritative opening quantity reference;
+* all constitutionally relevant position changes;
+* reconciled executed quantity;
+* authoritative current position state;
+* deterministic quantity calculation;
+* absence of unresolved quantity discrepancy.
+
+Residual quantity greater than zero shall prohibit constitutional closure.
+
+Residual quantity less than zero shall constitute a constitutional inconsistency and shall prohibit closure.
+
+Apparent zero quantity unsupported by reconciliation shall not satisfy the requirement.
+
+---
+
+## 8. Establish Reconciliation Success Requirement
+
+Define successful reconciliation as a mandatory closure condition.
+
+Reconciliation shall establish agreement among:
+
+* Position Registry truth;
+* Trader execution records;
+* Broker-originated facts;
+* fill quantities;
+* residual quantity;
+* settlement disposition;
+* closure evidence;
+* realized outcome inputs.
+
+Reconciliation success shall require:
+
+* complete source participation;
+* deterministic source precedence;
+* no unresolved contradiction;
+* no unresolved identity mismatch;
+* no unresolved quantity mismatch;
+* no unresolved temporal conflict.
+
+Reconciliation failure shall prohibit authoritative Closed Position Truth creation.
+
+---
+
+## 9. Establish Settlement Participation Requirement
+
+Define settlement participation in constitutional closure.
+
+Settlement shall possess exactly one constitutionally acceptable disposition:
+
+* **Verified**; or
+* **Constitutionally Exempt**.
+
+A settlement exemption shall require:
+
+* explicit constitutional authority;
+* defined applicability;
+* documented rationale;
+* supporting evidence;
+* preserved lineage.
+
+Settlement shall not independently establish closure.
+
+Settlement verification or exemption shall not override:
+
+* execution incompleteness;
+* residual quantity;
+* reconciliation failure;
+* missing evidence;
+* identity conflict.
+
+---
+
+## 10. Establish Closure Admissibility Constitution
+
+Create the authoritative Closure Admissibility Registry.
+
+For every closure determination, admissibility shall require:
+
+* authoritative source identity;
+* complete provenance;
+* applicable scope;
+* valid temporal context;
+* sufficient freshness;
+* source integrity;
+* evidence completeness;
+* identity consistency;
+* quantity consistency;
+* absence of unresolved contradiction.
+
+Admissibility shall precede closure determination.
+
+Inadmissible evidence shall not participate in authoritative truth creation.
+
+---
+
+## 11. Establish Mandatory Closure Evidence
+
+Define the evidence required to establish constitutional closure.
+
+Mandatory evidence shall include, where applicable:
+
+* originating position identity;
+* authoritative position state;
+* execution instruction lineage;
+* broker acknowledgement evidence;
+* broker fill evidence;
+* execution completion evidence;
+* fill reconciliation evidence;
+* residual quantity verification;
+* settlement verification or exemption evidence;
+* reconciliation result;
+* closure validation result;
+* closure determination record;
+* provenance and temporal lineage.
+
+Every evidence item shall possess:
+
+* canonical identity;
+* producer;
+* owner;
+* custodian;
+* source time;
+* receipt time;
+* integrity status;
+* admissibility status;
+* relationship to the closure determination.
+
+Missing mandatory evidence shall prohibit constitutional closure.
+
+---
+
+## 12. Establish Closure Determination Doctrine
+
+Define the constitutional process and object governing closure determination.
+
+Every Closure Determination shall identify:
+
+* subject position;
+* evaluated prerequisites;
+* evidence population;
+* admissibility result;
+* reconciliation result;
+* settlement disposition;
+* residual quantity result;
+* exception state;
+* determination authority;
+* determination timestamp;
+* final outcome.
+
+Permitted outcomes shall include:
+
+* **CONSTITUTIONALLY_CLOSED**;
+* **NOT_CLOSED**;
+* **DEFERRED**;
+* **REJECTED**;
+* **EXCEPTION**.
+
+Only **CONSTITUTIONALLY_CLOSED** shall authorize creation of an authoritative Closed Position Record.
+
+---
+
+## 13. Establish Prohibited Closure Conditions
+
+Create the Prohibited Closure Registry.
+
+Constitutional closure shall be prohibited when any of the following exists:
+
+* incomplete execution;
+* unresolved execution status;
+* incomplete fill reconciliation;
+* residual quantity greater than zero;
+* residual quantity less than zero;
+* reconciliation failure;
+* unresolved identity mismatch;
+* settlement neither verified nor constitutionally exempt;
+* missing mandatory evidence;
+* stale evidence;
+* inadmissible evidence;
+* contradictory upstream evidence;
+* unresolved duplicate execution;
+* unresolved closure exception;
+* analytical degradation used as substitute evidence;
+* attempted reliance on manually asserted completion;
+* attempted historical overwrite.
+
+Every prohibited condition shall possess deterministic rejection, deferral, exception, or escalation behavior.
+
+---
+
+## 14. Establish Closure Failure Behavior
+
+Define deterministic behavior when closure requirements are not satisfied.
+
+Permitted failure dispositions shall include:
+
+* rejection;
+* deferral;
+* exception creation;
+* reconciliation request;
+* evidence request;
+* escalation.
+
+Closure failure shall not:
+
+* create degraded authoritative truth;
+* create provisional authoritative truth;
+* silently waive requirements;
+* mutate upstream truth;
+* overwrite historical records;
+* permit downstream treatment as constitutionally closed.
+
+Authoritative Closed Position Truth shall either exist or not exist.
+
+---
+
+## 15. Establish Closure Exception Doctrine
+
+Define the role of closure exceptions.
+
+A Closure Exception Record shall document a condition preventing normal closure determination.
+
+Every exception shall identify:
+
+* exception identity;
+* affected position;
+* triggering condition;
+* responsible authority;
+* required resolution;
+* evidence;
+* escalation pathway;
+* disposition.
+
+An exception record shall remain constitutionally distinct from authoritative Closed Position Truth.
+
+An exception shall never constitute degraded closure.
+
+---
+
+## 16. Establish Closure Finality Doctrine
+
+Define constitutional closure as irreversible.
+
+Once a position becomes constitutionally closed:
+
+* the position shall not reopen;
+* the authoritative Closed Position Record shall not be mutated;
+* prior truth shall remain accessible;
+* correction shall occur only through successor records;
+* supersession shall preserve complete lineage;
+* archival shall preserve authority and auditability.
+
+A later-discovered error shall not reverse historical closure through mutation.
+
+It shall initiate the constitutionally governed correction and supersession process.
+
+---
+
+## 17. Establish Duplicate Closure Prevention
+
+Define deterministic prevention of duplicate closure.
+
+The doctrine shall establish:
+
+* one authoritative closure identity per constitutional closure event;
+* deterministic identity binding;
+* duplicate-request detection;
+* duplicate-determination handling;
+* idempotent repeated processing;
+* replay-safe truth creation.
+
+Duplicate requests shall not create duplicate Closed Position Records.
+
+Replay shall not create a second authoritative closure event.
+
+---
+
+## 18. Establish Closure Provenance Requirements
+
+Define complete provenance for every constitutional closure.
+
+Provenance shall connect:
+
+```text
+Position Identity
+→ Exit Authority Lineage
+→ Execution Instructions
+→ Broker Evidence
+→ Fill Reconciliation
+→ Residual Quantity Verification
+→ Settlement Disposition
+→ Closure Validation
+→ Closure Determination
+→ Closed Position Record
+```
+
+Every provenance relationship shall possess:
+
+* source identity;
+* target identity;
+* governing authority;
+* temporal meaning;
+* evidence reference;
+* integrity requirement.
+
+No closure shall exist without complete provenance.
+
+---
+
+## 19. Establish Source Ownership Boundaries
+
+Confirm ownership boundaries for all closure inputs.
+
+The Closed Position Truth Office shall not own:
+
+* broker-originated facts;
+* open-position truth;
+* execution intent;
+* execution authority;
+* authorization truth;
+* market data;
+* risk truth;
+* analytical estimates.
+
+The Office shall own:
+
+* constitutional closure determination;
+* authoritative Closed Position Record;
+* constitutionally assigned realized outcome truth;
+* correction lineage;
+* supersession lineage;
+* archival eligibility.
+
+Truth derivation shall not transfer upstream truth ownership.
+
+---
+
+## 20. Establish Constitutional Closure Registry
+
+Create the authoritative Constitutional Closure Registry.
+
+For every closure requirement define:
+
+* requirement identity;
+* constitutional source;
+* authority owner;
+* required object;
+* required evidence;
+* admissibility rule;
+* satisfaction condition;
+* failure condition;
+* resulting closure effect.
+
+The registry shall provide the complete deterministic definition of constitutional closure.
+
+---
+
+## 21. Establish Constitutional Findings Registry
+
+Create the Constitutional Findings Registry for this order.
+
+Every finding shall include:
+
+* finding identity;
+* affected closure requirement;
+* affected object;
+* affected authority;
+* severity;
+* constitutional impact;
+* required disposition;
+* resolution status.
+
+Classify findings as:
+
+* resolved;
+* non-blocking;
+* constitutional blocker.
+
+No unresolved constitutional closure blocker may remain at completion.
+
+---
+
+## 22. Produce Completion Report
+
+Produce the Constitutional Closure Doctrine Completion Report confirming:
+
+* constitutional closure defined;
+* mandatory closure criteria established;
+* closure authority assigned;
+* closure prerequisites established;
+* closure admissibility established;
+* mandatory evidence established;
+* closure determination outcomes established;
+* prohibited closure conditions established;
+* deterministic failure behavior established;
+* exception doctrine established;
+* finality doctrine established;
+* duplicate prevention established;
+* provenance established;
+* ownership boundaries preserved.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Constitutional Closure Registry;
+* Closure Admissibility Registry;
+* Closure Authority Registry;
+* Prohibited Closure Registry;
+* Constitutional Findings Registry;
+* Constitutional Closure Doctrine Completion Report.
+
+---
+
+# Completion Criteria
+
+This order is complete only when:
+
+* constitutional closure possesses one deterministic definition;
+* every mandatory closure prerequisite is defined;
+* every closure prerequisite possesses governing authority;
+* closure admissibility is deterministic;
+* closure evidence requirements are complete;
+* execution completion is necessary but independently insufficient;
+* settlement is constitutionally bounded;
+* residual quantity must equal zero;
+* reconciliation must complete successfully;
+* every prohibited closure condition has deterministic handling;
+* authoritative truth cannot exist in degraded form;
+* closure finality is irreversible;
+* corrections require successor records;
+* duplicate closure is constitutionally prevented;
+* provenance is complete;
+* no unresolved closure ambiguity remains;
+* no unresolved constitutional blocker remains.
+
+Successful completion authorizes progression to:
+
+**CLOSED-POSITION-TRUTH-RM-001-B03-002 — Settlement Constitution.**

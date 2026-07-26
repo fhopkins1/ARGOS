@@ -1,0 +1,749 @@
+CLOSED-POSITION-TRUTH-RM-001-B03-003
+
+# Residual Quantity Constitution
+
+## Objective
+
+Establish deterministic constitutional doctrine governing residual position quantity, zero-quantity verification, negative residual handling, partial closure, quantity reconciliation, duplicate execution handling, and the relationship between residual quantity and authoritative Closed Position Truth. 
+
+This order shall define the complete constitutional model determining whether the enterprise position quantity has reached zero and whether the position is eligible to proceed toward constitutional closure.
+
+No implementation shall be modified.
+
+No behavioral verification shall occur.
+
+No implementation certification shall occur.
+
+This order governs constitutional doctrine only.
+
+Every residual quantity determination shall possess one authoritative source population.
+
+Every residual quantity determination shall possess one governing authority.
+
+Every quantity calculation shall be reproducible from constitutionally admissible evidence.
+
+No authoritative Closed Position Truth shall exist while unresolved residual quantity remains.
+
+---
+
+# Constitutional Principles
+
+Residual quantity shall represent the authoritative unresolved position quantity remaining after reconciliation of all constitutionally admissible position and execution evidence.
+
+Residual quantity shall be deterministically derived.
+
+Residual quantity shall never be assumed.
+
+Residual quantity shall never be inferred solely from:
+
+* execution intent;
+* submitted order quantity;
+* broker acknowledgement;
+* analytical estimation;
+* expected fills;
+* settlement initiation;
+* trader completion assertion.
+
+Residual quantity equal to zero shall be required for constitutional closure.
+
+Residual quantity greater than zero shall prohibit constitutional closure.
+
+Residual quantity less than zero shall constitute a constitutional inconsistency.
+
+A zero residual quantity shall not independently establish constitutional closure.
+
+Zero quantity shall remain one mandatory closure condition among all conditions established under **CLOSED-POSITION-TRUTH-RM-001-B03**.
+
+---
+
+# Residual Quantity Definition
+
+Residual quantity shall be defined as the authoritative position quantity remaining after reconciliation of:
+
+* authoritative opening quantity;
+* constitutionally admitted executions;
+* execution corrections;
+* execution cancellations;
+* execution reversals;
+* position adjustments;
+* corporate actions where applicable;
+* duplicate suppression;
+* quantity-unit normalization.
+
+The canonical relationship shall be:
+
+```text
+Residual Quantity
+=
+Authoritative Position Quantity
+−
+Net Constitutionally Admissible Closing Quantity
+±
+Authorized Quantity Adjustments
+```
+
+The calculation shall preserve:
+
+* position identity;
+* instrument identity;
+* quantity unit;
+* direction;
+* execution lineage;
+* adjustment lineage;
+* calculation time;
+* doctrine version.
+
+No calculation may combine quantities possessing incompatible identity, unit, scope, or provenance.
+
+---
+
+# Residual Quantity Ownership Constitution
+
+## Position Registry Authority
+
+Position Registry shall retain ownership of authoritative current position quantity and position-state truth.
+
+Position Registry shall possess authority over:
+
+* open-position quantity;
+* position quantity mutation;
+* position identity;
+* active position state;
+* authoritative quantity corrections within its domain.
+
+## Closed Position Truth Authority
+
+Closed Position Truth shall possess authority to:
+
+* consume authoritative Position Registry quantity;
+* reconcile position quantity against execution evidence;
+* determine whether zero residual quantity has been constitutionally demonstrated;
+* record the residual quantity determination supporting closure;
+* reject closure when quantity evidence is insufficient or contradictory.
+
+Closed Position Truth shall not:
+
+* mutate Position Registry quantity;
+* create open-position truth;
+* alter broker fills;
+* create execution facts;
+* silently correct upstream quantity records.
+
+## Broker Authority
+
+Broker shall retain ownership of broker-originated fill quantities, cancellations, corrections, reversals, and execution facts.
+
+## Trader Authority
+
+Trader shall retain ownership of execution workflow and execution-management records.
+
+Consumption of Broker or Trader evidence shall not transfer ownership to Closed Position Truth.
+
+---
+
+# Quantity Evidence Constitution
+
+Residual quantity determination shall require constitutionally admissible evidence sufficient to establish:
+
+* canonical position identity;
+* authoritative starting quantity;
+* complete relevant execution population;
+* execution-side direction;
+* fill quantity;
+* fill status;
+* cancellation status;
+* correction status;
+* reversal status;
+* quantity unit;
+* quantity precision;
+* source provenance;
+* evidence freshness;
+* reconciliation completeness.
+
+Evidence shall be inadmissible when:
+
+* position identity is unresolved;
+* execution identity is missing;
+* source authority is unknown;
+* quantity unit is ambiguous;
+* direction is ambiguous;
+* duplicate status is unresolved;
+* correction lineage is incomplete;
+* execution population is incomplete;
+* evidence is stale beyond its constitutional validity;
+* material contradictions remain unresolved.
+
+---
+
+# Residual Quantity Registry
+
+Every Residual Quantity Record shall contain:
+
+* residual quantity record identity;
+* position identity;
+* instrument identity;
+* authoritative starting quantity;
+* gross closing quantity;
+* excluded execution quantity;
+* corrected execution quantity;
+* reversed execution quantity;
+* authorized adjustment quantity;
+* net closing quantity;
+* calculated residual quantity;
+* quantity unit;
+* quantity precision;
+* source evidence references;
+* reconciliation identity;
+* calculation authority;
+* calculation timestamp;
+* doctrine version;
+* admissibility outcome;
+* exception references where applicable.
+
+A Residual Quantity Record shall not become authoritative unless its complete evidence population is constitutionally admissible.
+
+---
+
+# Zero-Quantity Verification Constitution
+
+Zero residual quantity shall be verified only when:
+
+* authoritative starting quantity is established;
+* all relevant executions are identified;
+* all admitted executions are reconciled;
+* duplicates are excluded;
+* cancellations are excluded where no execution occurred;
+* corrections are incorporated;
+* reversals are incorporated;
+* authorized adjustments are incorporated;
+* quantity units are normalized;
+* calculated residual quantity equals exactly zero under the governing precision doctrine;
+* Position Registry truth does not contradict the calculated result;
+* no unresolved quantity exception remains.
+
+Zero-quantity verification shall produce:
+
+* calculation evidence;
+* source evidence inventory;
+* reconciliation result;
+* precision determination;
+* verification authority;
+* verification timestamp.
+
+A zero value without supporting lineage shall not constitute zero-quantity verification.
+
+---
+
+# Quantity Precision Constitution
+
+Every quantity calculation shall use the constitutionally authorized precision for the governed instrument.
+
+Precision doctrine shall define:
+
+* canonical quantity unit;
+* minimum quantity increment;
+* permissible decimal precision;
+* rounding prohibition or authorized rounding rule;
+* comparison method;
+* normalization method.
+
+Rounding shall not conceal a nonzero residual quantity.
+
+A quantity may be treated as zero only when it equals zero under the instrument's authoritative quantity representation.
+
+An immateriality threshold shall not be used unless separately established by explicit constitutional doctrine.
+
+---
+
+# Positive Residual Quantity Constitution
+
+Residual quantity greater than zero shall mean the position remains constitutionally open in whole or in part.
+
+Positive residual quantity shall:
+
+* prohibit constitutional closure;
+* prohibit creation of authoritative Closed Position Truth;
+* create or preserve an unresolved residual condition;
+* require continued reconciliation or authorized resolution;
+* preserve all supporting evidence.
+
+Positive residual quantity shall not be reclassified as closed because:
+
+* the remaining quantity is economically small;
+* the remaining quantity is operationally inconvenient;
+* liquidation is expected;
+* settlement is complete for executed quantity;
+* analytical systems treat the position as closed;
+* execution intent covered the full position.
+
+---
+
+# Negative Residual Quantity Constitution
+
+Residual quantity less than zero shall constitute a constitutional inconsistency.
+
+Negative residual quantity may indicate:
+
+* over-execution;
+* duplicated execution evidence;
+* incorrect opening quantity;
+* incorrect position identity;
+* incorrect direction;
+* missing reversal;
+* missing correction;
+* unit-conversion failure;
+* unauthorized short exposure;
+* upstream data corruption.
+
+Negative residual quantity shall:
+
+* prohibit constitutional closure;
+* produce a Closure Exception Record;
+* require source reconciliation;
+* preserve conflicting evidence;
+* identify the responsible upstream authority;
+* require escalation when ownership or authority is disputed.
+
+Negative residual quantity shall never be normalized to zero without authoritative correcting evidence.
+
+---
+
+# Partial Closure Constitution
+
+Partial closure shall mean that a valid portion of an open position has been executed while a nonzero quantity remains.
+
+Partial closure shall not create authoritative Closed Position Truth for the original position unless the position model constitutionally supports partition into independently governed position identities.
+
+Where constitutional partition is authorized:
+
+* each resulting position identity shall be unique;
+* quantity allocation shall be deterministic;
+* predecessor lineage shall be preserved;
+* Position Registry shall govern the partition;
+* no quantity may be duplicated or omitted;
+* each resulting position shall satisfy closure independently.
+
+Where constitutional partition is not authorized, the position shall remain open until residual quantity equals zero.
+
+---
+
+# Residual Position Resolution Constitution
+
+A Residual Position Resolution object shall govern unresolved nonzero quantity.
+
+It shall contain:
+
+* position identity;
+* residual quantity;
+* cause classification;
+* responsible authority;
+* required corrective action;
+* source evidence;
+* escalation status;
+* resolution conditions;
+* resolution timestamp when completed.
+
+Residual resolution may include constitutionally authorized:
+
+* additional execution;
+* execution correction;
+* execution reversal;
+* Position Registry correction;
+* identity correction;
+* quantity-unit correction;
+* corporate-action reconciliation.
+
+Closed Position Truth shall record resolution status but shall not perform actions owned by Trader, Broker, Position Registry, or another upstream authority.
+
+---
+
+# Quantity Reconciliation Constitution
+
+Quantity reconciliation shall compare:
+
+* Position Registry quantity;
+* Broker execution quantity;
+* Trader execution records;
+* execution corrections;
+* execution reversals;
+* authorized adjustments;
+* prior reconciliation records.
+
+Reconciliation shall determine whether these sources produce one consistent residual quantity.
+
+A reconciliation shall succeed only when:
+
+* all required sources are present;
+* identities align;
+* quantities align;
+* directions align;
+* units align;
+* duplicates are resolved;
+* corrections are resolved;
+* reversals are resolved;
+* no material contradiction remains.
+
+Reconciliation failure shall prohibit zero-quantity verification.
+
+---
+
+# Source Precedence for Quantity Determination
+
+Source precedence shall preserve domain ownership.
+
+## Position Identity and Current Quantity
+
+Authoritative source:
+
+* Position Registry.
+
+## Broker Fill Facts
+
+Authoritative source:
+
+* Broker.
+
+## Execution Workflow and Intended Scope
+
+Authoritative source:
+
+* Trader.
+
+## Exit Intent
+
+Authoritative source:
+
+* Exit Decision.
+
+## Closed-Position Quantity Determination
+
+Authoritative deriving authority:
+
+* Closed Position Truth.
+
+No downstream deriving authority may modify upstream facts.
+
+Where authoritative sources conflict, the conflict shall remain unresolved until corrected or reconciled by the owning authority.
+
+---
+
+# Duplicate Execution Constitution
+
+Duplicate execution evidence shall not be counted more than once.
+
+Duplicate detection shall use constitutionally sufficient identifiers, including where applicable:
+
+* broker execution identity;
+* order identity;
+* fill identity;
+* position identity;
+* instrument identity;
+* execution time;
+* quantity;
+* price;
+* correction or reversal relationship.
+
+Duplicate handling shall:
+
+* preserve every received record;
+* identify the authoritative execution event;
+* exclude duplicate quantity from net calculation;
+* preserve duplicate-detection evidence;
+* prevent creation of parallel execution lineage.
+
+A repeated message concerning one execution shall not create additional executed quantity.
+
+---
+
+# Corrected Execution Constitution
+
+Where Broker or another authoritative source corrects an execution:
+
+* the original execution record shall remain preserved;
+* the correction relationship shall be explicit;
+* only the currently authoritative execution quantity shall participate in residual calculation;
+* correction lineage shall remain complete;
+* prior residual calculations affected by the correction shall become superseded, not overwritten.
+
+Closed Position Truth shall not create execution corrections.
+
+It shall consume corrections from the authoritative source.
+
+---
+
+# Reversed Execution Constitution
+
+A reversed execution shall be incorporated only when:
+
+* reversal authority is established;
+* the original execution is identified;
+* reversal scope is explicit;
+* reversal evidence is admissible;
+* quantity effect is deterministic.
+
+A reversal shall not erase the original execution event.
+
+The residual calculation shall include the net constitutional effect of the execution and reversal.
+
+---
+
+# Duplicate Closure Request Constitution
+
+Duplicate closure requests shall not create duplicate Residual Quantity Records or duplicate Closed Position Truth.
+
+A duplicate closure request shall:
+
+* reference the existing closure process;
+* preserve request evidence;
+* produce a deterministic no-op, acknowledgement, or reconciliation action;
+* never restart completed constitutional closure;
+* never generate a second authoritative closure identity.
+
+---
+
+# Stale Quantity Evidence Constitution
+
+Quantity evidence shall possess explicit temporal validity.
+
+Stale evidence shall not establish residual quantity when newer authoritative evidence may exist.
+
+Where quantity evidence is stale:
+
+* zero-quantity verification shall fail;
+* constitutional closure shall be prohibited;
+* a quantity evidence exception shall be recorded;
+* fresh evidence shall be required from the authoritative owner.
+
+Freshness shall never be inferred from successful transmission or recent receipt.
+
+---
+
+# Quantity Conflict Constitution
+
+Where sources produce conflicting quantity values:
+
+* the conflict shall be preserved;
+* source ownership shall be identified;
+* precedence shall be applied only within each source's authority domain;
+* the responsible source owner shall correct its own truth;
+* Closed Position Truth shall not select a convenient value;
+* closure shall remain prohibited until reconciliation succeeds.
+
+No majority vote, confidence score, or analytical estimate shall resolve authoritative quantity conflict.
+
+---
+
+# Replay and Idempotency Constitution
+
+Reprocessing the same authoritative quantity evidence under the same doctrine version shall produce the same residual quantity.
+
+Replay shall preserve:
+
+* source population;
+* identity relationships;
+* duplicate dispositions;
+* correction lineage;
+* reversal lineage;
+* quantity precision;
+* calculation result.
+
+Replay shall not:
+
+* count duplicate executions;
+* alter zero-quantity status;
+* create a second authoritative record;
+* reactivate resolved exceptions;
+* alter historical calculations without a new correction or supersession event.
+
+---
+
+# Correction and Supersession Constitution
+
+If authoritative quantity evidence changes after a Residual Quantity Record has been established:
+
+* the prior Residual Quantity Record shall remain immutable;
+* a new Residual Quantity Record shall be created;
+* predecessor-successor lineage shall be explicit;
+* the correction source shall be identified;
+* affected closure determinations shall be re-evaluated;
+* no authoritative Closed Position Truth shall be overwritten.
+
+Where an authoritative Closed Position Record is affected, correction shall proceed through the successor and supersession doctrine established under **CLOSED-POSITION-TRUTH-RM-001-B02**.
+
+A closed position shall not reopen through mutation of historical truth.
+
+---
+
+# Quantity Exception Registry
+
+The following conditions shall constitute quantity exceptions:
+
+* missing authoritative starting quantity;
+* unresolved position identity;
+* incomplete execution population;
+* positive residual quantity;
+* negative residual quantity;
+* conflicting quantity evidence;
+* duplicate execution unresolved;
+* missing correction lineage;
+* missing reversal lineage;
+* ambiguous quantity direction;
+* incompatible quantity units;
+* stale quantity evidence;
+* unsupported precision or rounding;
+* unauthorized position partition;
+* Position Registry contradiction.
+
+Every quantity exception shall identify:
+
+* exception identity;
+* affected position;
+* affected calculation;
+* source evidence;
+* responsible authority;
+* required resolution;
+* escalation condition;
+* recovery condition.
+
+Exception records shall remain constitutionally distinct from authoritative Closed Position Truth.
+
+---
+
+# Prohibited Quantity Determinations
+
+The Closed Position Truth Office shall not:
+
+* assume zero quantity from execution intent;
+* treat order quantity as executed quantity;
+* count unacknowledged or inadmissible fills;
+* ignore positive residual quantity;
+* normalize negative quantity to zero;
+* round nonzero quantity to zero without explicit authority;
+* silently discard conflicting evidence;
+* mutate Position Registry quantity;
+* alter Broker execution facts;
+* create unauthorized position partitions;
+* produce degraded or provisional Closed Position Truth;
+* declare closure while quantity reconciliation remains unresolved.
+
+---
+
+# Residual Quantity Registry Requirements
+
+The Residual Quantity Registry shall record for every governed position:
+
+* canonical position identity;
+* quantity source population;
+* starting quantity;
+* net executed quantity;
+* authorized adjustments;
+* residual quantity;
+* quantity unit;
+* quantity precision;
+* reconciliation status;
+* duplicate disposition;
+* correction disposition;
+* reversal disposition;
+* verification status;
+* exception status;
+* evidence lineage;
+* current authoritative record;
+* predecessor and successor references.
+
+---
+
+# Quantity Verification Registry Requirements
+
+The Quantity Verification Registry shall identify:
+
+* verification identity;
+* residual quantity record;
+* verification authority;
+* verification criteria;
+* evidence completeness;
+* calculation reproducibility;
+* zero-quantity outcome;
+* contradiction status;
+* verification timestamp;
+* doctrine version.
+
+Exactly one outcome shall be issued:
+
+* **ZERO_VERIFIED**
+* **NONZERO_CONFIRMED**
+* **INCONSISTENT**
+* **INSUFFICIENT_EVIDENCE**
+
+Only **ZERO_VERIFIED** may satisfy the residual-quantity condition for constitutional closure.
+
+---
+
+# Quantity Reconciliation Registry Requirements
+
+The Quantity Reconciliation Registry shall contain:
+
+* reconciliation identity;
+* position identity;
+* participating source identities;
+* source authorities;
+* quantity values;
+* unit normalization;
+* duplicate dispositions;
+* correction dispositions;
+* reversal dispositions;
+* conflict findings;
+* reconciliation outcome;
+* exception references;
+* responsible authority;
+* completion timestamp.
+
+Exactly one reconciliation outcome shall be issued:
+
+* **RECONCILED**
+* **UNRESOLVED**
+* **FAILED**
+
+Only **RECONCILED** may support zero-quantity verification.
+
+---
+
+# Deliverables
+
+This order shall produce:
+
+* Residual Quantity Registry;
+* Quantity Verification Registry;
+* Quantity Reconciliation Registry;
+* residual quantity ownership matrix;
+* quantity source-precedence matrix;
+* duplicate execution registry;
+* quantity exception registry;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* residual quantity is deterministically defined;
+* residual quantity ownership is deterministic;
+* authoritative quantity sources are identified;
+* quantity evidence admissibility is defined;
+* zero-quantity verification is deterministic;
+* positive residual handling is deterministic;
+* negative residual handling is deterministic;
+* partial closure doctrine is deterministic;
+* residual resolution authority is deterministic;
+* quantity reconciliation is deterministic;
+* duplicate execution handling is deterministic;
+* correction and reversal handling are deterministic;
+* quantity precision is constitutionally governed;
+* replay and idempotency behavior are deterministic;
+* stale and conflicting evidence behavior is deterministic;
+* no authoritative Closed Position Truth may exist with unresolved residual quantity;
+* no unresolved quantity-governance ambiguity remains.
+
+Successful completion of this order shall authorize progression to:
+
+**CLOSED-POSITION-TRUTH-RM-001-B03-004 — Reconciliation Constitution**

@@ -1,0 +1,29 @@
+{
+  "definition": "authoritative unresolved position quantity remaining after reconciliation of all constitutionally admissible position and execution evidence",
+  "formula": "Authoritative Position Quantity - Net Constitutionally Admissible Closing Quantity +/- Authorized Quantity Adjustments",
+  "required_fields": [
+    "record identity",
+    "position identity",
+    "instrument identity",
+    "starting quantity",
+    "gross closing quantity",
+    "excluded execution quantity",
+    "corrected execution quantity",
+    "reversed execution quantity",
+    "authorized adjustment quantity",
+    "net closing quantity",
+    "calculated residual quantity",
+    "quantity unit",
+    "quantity precision",
+    "source evidence references",
+    "reconciliation identity",
+    "calculation authority",
+    "calculation timestamp",
+    "doctrine version",
+    "admissibility outcome",
+    "exception references"
+  ],
+  "source_order": "CLOSED-POSITION-TRUTH-RM-001-B03-003",
+  "zero_independently_establishes_closure": false,
+  "zero_required_for_closure": true
+}

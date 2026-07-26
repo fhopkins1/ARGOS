@@ -1,0 +1,22 @@
+[
+  {
+    "may_satisfy_closure_quantity_condition": true,
+    "outcome": "ZERO_VERIFIED",
+    "terminal_effect": "supports residual-quantity prerequisite"
+  },
+  {
+    "may_satisfy_closure_quantity_condition": false,
+    "outcome": "NONZERO_CONFIRMED",
+    "terminal_effect": "prohibits closure until resolved"
+  },
+  {
+    "may_satisfy_closure_quantity_condition": false,
+    "outcome": "INCONSISTENT",
+    "terminal_effect": "prohibits closure until resolved"
+  },
+  {
+    "may_satisfy_closure_quantity_condition": false,
+    "outcome": "INSUFFICIENT_EVIDENCE",
+    "terminal_effect": "prohibits closure until resolved"
+  }
+]

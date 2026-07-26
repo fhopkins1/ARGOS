@@ -1,0 +1,44 @@
+[
+  {
+    "closed_position_truth_may_modify_owned_truth": false,
+    "owned_truth": "position truth",
+    "participant": "Position Registry",
+    "provides_or_consumes": "position identity, remaining quantity, position state",
+    "role": "PROVIDER"
+  },
+  {
+    "closed_position_truth_may_modify_owned_truth": false,
+    "owned_truth": "broker-originated facts",
+    "participant": "Broker",
+    "provides_or_consumes": "execution records, acknowledgements, fills, settlement evidence",
+    "role": "PROVIDER"
+  },
+  {
+    "closed_position_truth_may_modify_owned_truth": false,
+    "owned_truth": "execution workflow",
+    "participant": "Trader",
+    "provides_or_consumes": "execution lifecycle, request history, reconciliation participation",
+    "role": "PROVIDER"
+  },
+  {
+    "closed_position_truth_may_modify_owned_truth": false,
+    "owned_truth": "exit decision truth",
+    "participant": "Exit Decision",
+    "provides_or_consumes": "exit decision identity, authority, lineage",
+    "role": "PROVIDER"
+  },
+  {
+    "closed_position_truth_may_modify_owned_truth": false,
+    "owned_truth": "performance analytics",
+    "participant": "Performance Truth",
+    "provides_or_consumes": "realized outcomes",
+    "role": "CONSUMER"
+  },
+  {
+    "closed_position_truth_may_modify_owned_truth": false,
+    "owned_truth": "historical custody",
+    "participant": "Historian",
+    "provides_or_consumes": "finalized reconciliation history and lineage",
+    "role": "CONSUMER"
+  }
+]

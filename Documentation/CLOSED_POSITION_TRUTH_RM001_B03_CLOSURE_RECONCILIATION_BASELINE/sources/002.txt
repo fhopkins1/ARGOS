@@ -1,0 +1,505 @@
+# CLOSED-POSITION-TRUTH-RM-001-B03-002
+
+# Settlement Constitution
+
+## Objective
+
+Establish deterministic constitutional governance for settlement participation in the creation of authoritative Closed Position Truth. 
+
+This order exists solely to define settlement purpose, ownership, authority, admissibility, verification, exemption, failure behavior, evidence obligations, and constitutional interaction with closure determination.
+
+No implementation shall be modified.
+
+No behavioral verification shall occur.
+
+No implementation certification shall occur.
+
+This order governs constitutional doctrine only.
+
+---
+
+# Constitutional Principles
+
+Settlement shall verify financial completion associated with an executed position.
+
+Settlement shall not independently create authoritative Closed Position Truth.
+
+Settlement shall not independently establish constitutional closure.
+
+Settlement shall not override:
+
+* incomplete execution;
+* unresolved fill reconciliation;
+* nonzero residual quantity;
+* reconciliation failure;
+* missing mandatory closure evidence;
+* failed closure admissibility.
+
+Settlement shall satisfy exactly one constitutionally admissible disposition:
+
+* **Verified**
+* **Constitutionally Exempt**
+
+Any other settlement condition shall prevent constitutional closure when settlement participation is required.
+
+Settlement evidence shall remain distinct from:
+
+* broker execution truth;
+* position truth;
+* reconciliation truth;
+* closure truth;
+* performance truth.
+
+---
+
+# Required Constitutional Definitions
+
+# 1. Settlement Purpose Constitution
+
+Define settlement as the constitutional verification of financial completion following execution.
+
+Settlement participation shall determine whether required financial obligations associated with the position have been:
+
+* completed;
+* verified;
+* reconciled where required;
+* constitutionally exempted.
+
+Settlement shall serve as one closure prerequisite where applicable.
+
+Settlement shall not become:
+
+* execution authority;
+* reconciliation authority;
+* residual-quantity authority;
+* closure authority;
+* truth-creation authority.
+
+---
+
+# 2. Settlement Ownership Constitution
+
+Establish deterministic ownership for:
+
+* settlement status;
+* settlement evidence;
+* settlement verification;
+* settlement exemption;
+* settlement failure;
+* settlement discrepancy;
+* settlement correction history.
+
+For every settlement element define:
+
+* constitutional owner;
+* creator;
+* custodian;
+* evidence owner;
+* verification authority;
+* correction authority;
+* supersession authority;
+* reconciliation authority.
+
+Closed Position Truth shall consume constitutionally admissible settlement results.
+
+Closed Position Truth shall not assume ownership of externally owned settlement facts.
+
+---
+
+# 3. Settlement Authority Registry
+
+Define every authority participating in settlement governance.
+
+Establish:
+
+* settlement fact authority;
+* settlement verification authority;
+* settlement exemption authority;
+* settlement discrepancy authority;
+* settlement correction authority;
+* settlement escalation authority;
+* settlement reconciliation authority.
+
+No authority shall be inferred from:
+
+* evidence possession;
+* system access;
+* downstream consumption;
+* storage custody;
+* execution participation.
+
+Every settlement authority shall possess one constitutional source.
+
+---
+
+# 4. Settlement State Constitution
+
+Establish the complete constitutional settlement state model.
+
+Permitted states shall include where applicable:
+
+* Pending;
+* Submitted;
+* Acknowledged;
+* Under Verification;
+* Verified;
+* Constitutionally Exempt;
+* Failed;
+* Disputed;
+* Corrected;
+* Superseded;
+* Archived.
+
+For every state define:
+
+* constitutional meaning;
+* governing authority;
+* admissibility;
+* required evidence;
+* permitted successor states;
+* prohibited successor states;
+* closure consequence.
+
+Only **Verified** or **Constitutionally Exempt** shall satisfy settlement participation for constitutional closure.
+
+---
+
+# 5. Settlement Verification Constitution
+
+Define the requirements for settlement verification.
+
+Settlement verification shall establish that:
+
+* the settlement identity is valid;
+* the settlement scope matches the position;
+* the settlement quantity matches reconciled execution;
+* the settlement amount is supported by authoritative evidence;
+* the settlement status is final for closure purposes;
+* the settlement evidence possesses valid provenance;
+* no unresolved settlement discrepancy remains.
+
+For every verification define:
+
+* verifier;
+* source evidence;
+* verification timestamp;
+* verification result;
+* verification rationale;
+* reconciliation obligation;
+* historical preservation obligation.
+
+Verification shall fail closed.
+
+Missing or insufficient evidence shall not produce a Verified state.
+
+---
+
+# 6. Settlement Evidence Constitution
+
+Define mandatory settlement evidence, including where applicable:
+
+* settlement confirmation;
+* clearing confirmation;
+* broker settlement record;
+* cash movement evidence;
+* asset-delivery evidence;
+* fee and charge evidence;
+* settlement-date evidence;
+* exemption evidence;
+* correction evidence;
+* supersession evidence.
+
+For every evidence class define:
+
+* evidence identity;
+* producer;
+* owner;
+* custodian;
+* provenance;
+* admissibility;
+* integrity requirement;
+* freshness requirement;
+* retention requirement;
+* correction lineage.
+
+Settlement evidence shall not be accepted solely through:
+
+* manual assertion;
+* completion report;
+* metadata without underlying evidence;
+* synthetic reconstruction;
+* analytical inference.
+
+---
+
+# 7. Settlement Exemption Constitution
+
+Establish deterministic governance for constitutionally exempt settlement.
+
+A settlement exemption shall be permitted only when:
+
+* the position or instrument is constitutionally exempt from ordinary settlement;
+* the exemption authority is explicitly defined;
+* the exemption scope matches the position;
+* the exemption remains temporally valid;
+* complete exemption evidence exists;
+* no reconciliation conflict exists.
+
+For every exemption define:
+
+* exemption identity;
+* exemption authority;
+* governing doctrine;
+* applicability;
+* effective time;
+* expiration;
+* evidence;
+* revocation conditions;
+* reconciliation requirements.
+
+An exemption shall not:
+
+* waive execution completion;
+* waive zero-residual verification;
+* waive reconciliation success;
+* waive closure evidence;
+* authorize degraded truth.
+
+---
+
+# 8. Settlement Failure Constitution
+
+Define settlement failure conditions, including:
+
+* missing settlement evidence;
+* failed settlement;
+* rejected settlement;
+* reversed settlement;
+* disputed settlement;
+* partial settlement;
+* stale settlement evidence;
+* identity mismatch;
+* amount mismatch;
+* quantity mismatch;
+* timing mismatch;
+* unresolved settlement discrepancy.
+
+Settlement failure shall:
+
+* prevent constitutional closure where settlement is required;
+* produce a constitutionally distinct failure or exception record;
+* preserve all evidence;
+* trigger reconciliation or escalation;
+* prohibit creation of authoritative Closed Position Truth.
+
+Settlement failure shall never be silently converted into an exemption.
+
+---
+
+# 9. Settlement and Closure Interaction Constitution
+
+Establish the constitutional relationship:
+
+```text
+Execution Completion
+        │
+        ▼
+Fill Reconciliation
+        │
+        ▼
+Zero Residual Quantity
+        │
+        ▼
+Reconciliation Success
+        │
+        ▼
+Settlement Verified
+        or
+Settlement Constitutionally Exempt
+        │
+        ▼
+Closure Admissibility
+        │
+        ▼
+Constitutional Closure
+```
+
+Settlement participation shall be necessary where constitutionally required.
+
+Settlement participation shall never be sufficient by itself.
+
+A settlement result shall not cure failure of any other closure prerequisite.
+
+---
+
+# 10. Settlement and Reconciliation Constitution
+
+Define reconciliation between settlement evidence and:
+
+* execution evidence;
+* fill records;
+* position quantity;
+* broker facts;
+* fees and charges;
+* realized outcome;
+* closure evidence.
+
+For every reconciliation define:
+
+* governing authority;
+* source precedence;
+* admissible evidence;
+* success criteria;
+* failure criteria;
+* exception behavior;
+* correction behavior;
+* supersession behavior.
+
+Settlement verification shall not override enterprise reconciliation failure.
+
+---
+
+# 11. Settlement Correction and Supersession Constitution
+
+Define constitutional correction of settlement-related records.
+
+Corrections shall:
+
+* preserve the original record;
+* identify the error;
+* identify the correcting authority;
+* provide admissible evidence;
+* create a successor record;
+* preserve predecessor-successor lineage;
+* trigger closure reassessment where required.
+
+Supersession shall never:
+
+* overwrite prior settlement history;
+* reuse prior identity;
+* erase failed or disputed states;
+* silently alter prior closure evidence.
+
+Where previously accepted settlement evidence is invalidated, the resulting Closed Position Truth shall be reviewed under the governing correction and supersession doctrine.
+
+---
+
+# 12. Temporal Settlement Constitution
+
+Define temporal rules governing:
+
+* contractual settlement date;
+* actual settlement date;
+* verification time;
+* exemption effective time;
+* exemption expiration;
+* correction time;
+* supersession time;
+* archival time.
+
+Define behavior for:
+
+* delayed settlement;
+* early settlement;
+* late evidence;
+* out-of-order evidence;
+* missing timestamps;
+* conflicting timestamps;
+* reopened settlement disputes.
+
+Settlement timing shall never be inferred.
+
+---
+
+# 13. Prohibited Settlement Authority Registry
+
+Explicitly prohibit:
+
+* settlement independently creating closure truth;
+* settlement overriding reconciliation failure;
+* settlement overriding nonzero residual quantity;
+* settlement overriding incomplete execution;
+* settlement exemption without governing authority;
+* settlement verification without evidence;
+* silent conversion of failure into exemption;
+* historical settlement overwrite;
+* analytical settlement estimates becoming authoritative truth;
+* Closed Position Truth modifying broker-owned settlement facts.
+
+---
+
+# 14. Settlement Conflict Resolution
+
+Identify and resolve:
+
+* conflicting settlement statuses;
+* conflicting settlement amounts;
+* conflicting quantities;
+* conflicting settlement dates;
+* conflicting exemption claims;
+* duplicate settlement records;
+* corrected settlement evidence;
+* reversed settlement evidence.
+
+For every conflict define:
+
+* conflict owner;
+* governing authority;
+* source precedence;
+* required evidence;
+* resolution outcome;
+* closure consequence;
+* escalation requirement.
+
+Unresolved conflict shall prevent constitutional closure.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Settlement Constitution;
+* Settlement Registry;
+* Settlement Ownership Registry;
+* Settlement Authority Registry;
+* Settlement State Registry;
+* Settlement Verification Registry;
+* Settlement Evidence Registry;
+* Settlement Exemption Registry;
+* Settlement Failure Registry;
+* Settlement Reconciliation Registry;
+* Settlement Correction Registry;
+* Settlement Supersession Registry;
+* Settlement Temporal Registry;
+* Prohibited Settlement Authority Registry;
+* Settlement Conflict Registry;
+* Settlement Authority Matrix;
+* Constitutional Findings Registry;
+* Completion Report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* settlement purpose is constitutionally defined;
+* settlement ownership is deterministic;
+* every settlement authority possesses one source;
+* settlement states are deterministic;
+* settlement verification requirements are complete;
+* settlement evidence obligations are complete;
+* settlement exemption doctrine is bounded and deterministic;
+* settlement failure behavior is fail-closed;
+* settlement participation is constitutionally separated from closure authority;
+* settlement cannot override reconciliation failure;
+* settlement cannot override nonzero residual quantity;
+* correction and supersession preserve immutable history;
+* temporal settlement governance is complete;
+* every settlement conflict possesses deterministic resolution;
+* no unresolved settlement authority, verification, exemption, failure, evidence, or reconciliation ambiguity remains.
+
+Successful completion of this order shall authorize progression to:
+
+> **CLOSED-POSITION-TRUTH-RM-001-B03-003 — Residual Quantity Constitution**

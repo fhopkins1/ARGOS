@@ -1,0 +1,189 @@
+[
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "incomplete execution",
+    "condition_id": "CPT-PROHIBIT-CLOSE-001",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "unresolved execution status",
+    "condition_id": "CPT-PROHIBIT-CLOSE-002",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "incomplete fill reconciliation",
+    "condition_id": "CPT-PROHIBIT-CLOSE-003",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "residual quantity greater than zero",
+    "condition_id": "CPT-PROHIBIT-CLOSE-004",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "residual quantity less than zero",
+    "condition_id": "CPT-PROHIBIT-CLOSE-005",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "reconciliation failure",
+    "condition_id": "CPT-PROHIBIT-CLOSE-006",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "unresolved identity mismatch",
+    "condition_id": "CPT-PROHIBIT-CLOSE-007",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "settlement neither verified nor constitutionally exempt",
+    "condition_id": "CPT-PROHIBIT-CLOSE-008",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "missing mandatory evidence",
+    "condition_id": "CPT-PROHIBIT-CLOSE-009",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "stale evidence",
+    "condition_id": "CPT-PROHIBIT-CLOSE-010",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "inadmissible evidence",
+    "condition_id": "CPT-PROHIBIT-CLOSE-011",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "contradictory upstream evidence",
+    "condition_id": "CPT-PROHIBIT-CLOSE-012",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "unresolved duplicate execution",
+    "condition_id": "CPT-PROHIBIT-CLOSE-013",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "unresolved closure exception",
+    "condition_id": "CPT-PROHIBIT-CLOSE-014",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "analytical degradation used as substitute evidence",
+    "condition_id": "CPT-PROHIBIT-CLOSE-015",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "manual completion assertion",
+    "condition_id": "CPT-PROHIBIT-CLOSE-016",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  },
+  {
+    "closure_effect": "PROHIBITED",
+    "condition": "attempted historical overwrite",
+    "condition_id": "CPT-PROHIBIT-CLOSE-017",
+    "deterministic_handling": [
+      "REJECTED",
+      "DEFERRED",
+      "EXCEPTION",
+      "ESCALATION"
+    ]
+  }
+]

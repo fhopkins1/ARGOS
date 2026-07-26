@@ -1,0 +1,21 @@
+{
+  "duplicate_detection_identifiers": [
+    "broker execution identity",
+    "order identity",
+    "fill identity",
+    "position identity",
+    "instrument identity",
+    "execution time",
+    "quantity",
+    "price",
+    "correction or reversal relationship"
+  ],
+  "handling": [
+    "preserve every received record",
+    "identify authoritative execution event",
+    "exclude duplicate quantity",
+    "preserve duplicate-detection evidence",
+    "prevent parallel execution lineage"
+  ],
+  "repeated_message_creates_quantity": false
+}

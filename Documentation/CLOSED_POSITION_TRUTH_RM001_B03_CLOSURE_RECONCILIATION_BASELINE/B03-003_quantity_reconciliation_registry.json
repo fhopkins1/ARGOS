@@ -1,0 +1,17 @@
+[
+  {
+    "may_support_zero_quantity_verification": true,
+    "outcome": "RECONCILED",
+    "terminal_effect": "eligible for zero verification"
+  },
+  {
+    "may_support_zero_quantity_verification": false,
+    "outcome": "UNRESOLVED",
+    "terminal_effect": "prohibits zero verification"
+  },
+  {
+    "may_support_zero_quantity_verification": false,
+    "outcome": "FAILED",
+    "terminal_effect": "prohibits zero verification"
+  }
+]

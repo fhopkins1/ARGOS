@@ -1,0 +1,27 @@
+[
+  {
+    "authoritative_source": "Position Registry",
+    "domain": "Position identity and current quantity",
+    "downstream_deriver_may_modify_source_facts": false
+  },
+  {
+    "authoritative_source": "Broker",
+    "domain": "Broker fill facts",
+    "downstream_deriver_may_modify_source_facts": false
+  },
+  {
+    "authoritative_source": "Trader",
+    "domain": "Execution workflow and intended scope",
+    "downstream_deriver_may_modify_source_facts": false
+  },
+  {
+    "authoritative_source": "Exit Decision",
+    "domain": "Exit intent",
+    "downstream_deriver_may_modify_source_facts": false
+  },
+  {
+    "authoritative_source": "Closed Position Truth",
+    "domain": "Closed-position quantity determination",
+    "downstream_deriver_may_modify_source_facts": false
+  }
+]
