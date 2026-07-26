@@ -1,0 +1,375 @@
+[
+  {
+    "behavioral_domains": [
+      "canonical-object ownership enforcement",
+      "conflicting evidence rejection",
+      "constitutional closure",
+      "duplicate evidence rejection",
+      "evidence-preservation behavior",
+      "execution completion",
+      "fill reconciliation",
+      "insufficient evidence rejection",
+      "position reconciliation",
+      "reconciliation failure",
+      "reconciliation success",
+      "settlement verification",
+      "stale evidence rejection",
+      "unauthorized lifecycle transition rejection"
+    ],
+    "classification": "REQUIRED_BEHAVIORAL_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_ecs003_audit",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_ecs003_audit",
+    "mutation_capability": false,
+    "source_artifact": "Tests/test_closed_position_truth_ecs003_audit.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_audit_is_bounded_and_does_not_claim_remediation",
+      "test_behavioral_executions_are_terminal_and_mapped_to_evidence",
+      "test_dependency_discovery_is_not_filename_only",
+      "test_fail_closed_verdict_has_blocking_evidence",
+      "test_required_audit_deliverables_are_produced"
+    ],
+    "verifier_id": "VERIFIER-65714f7ff84a0656"
+  },
+  {
+    "behavioral_domains": [
+      "canonical-object ownership enforcement",
+      "closed-position reopening rejection",
+      "constitutional closure",
+      "correction-object creation",
+      "evidence-preservation behavior",
+      "execution completion",
+      "position reconciliation",
+      "reconciliation failure",
+      "reconciliation success",
+      "settlement verification",
+      "supersession-object creation",
+      "unauthorized mutation rejection"
+    ],
+    "classification": "SUPPORTING_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b01_baseline",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm001_b01_baseline",
+    "mutation_capability": true,
+    "source_artifact": "Tests/test_closed_position_truth_rm001_b01_baseline.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_all_order_deliverables_are_materialized",
+      "test_boundaries_preserve_authority_and_prevent_shared_responsibility",
+      "test_every_authority_and_responsibility_has_single_owner",
+      "test_series_is_doctrine_only_and_ready_for_b02",
+      "test_truth_ownership_and_dependency_precedence_are_deterministic"
+    ],
+    "verifier_id": "VERIFIER-fe6d857c8342b3e6"
+  },
+  {
+    "behavioral_domains": [
+      "archival eligibility",
+      "canonical-object ownership enforcement",
+      "closed-position reopening rejection",
+      "constitutional closure",
+      "correction-object creation",
+      "duplicate evidence rejection",
+      "duplicate prevention",
+      "evidence-preservation behavior",
+      "execution completion",
+      "historical reconstruction",
+      "immutable historical preservation",
+      "persistence recovery",
+      "position reconciliation",
+      "process recovery",
+      "replay equivalence",
+      "restart recovery",
+      "settlement verification",
+      "supersession-object creation",
+      "unauthorized lifecycle transition rejection",
+      "unauthorized mutation rejection"
+    ],
+    "classification": "SUPPORTING_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b02_baseline",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm001_b02_baseline",
+    "mutation_capability": true,
+    "source_artifact": "Tests/test_closed_position_truth_rm001_b02_baseline.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_canonical_objects_have_identity_owner_creator_relationships_and_retirement",
+      "test_historical_integrity_preserves_lineage_and_auditability",
+      "test_lifecycle_blocks_bypass_reopen_and_exception_truth",
+      "test_object_authority_matrix_prevents_implicit_transfer_and_finalized_mutation",
+      "test_required_b02_deliverables_exist",
+      "test_series_is_doctrine_only_and_ready_for_b03"
+    ],
+    "verifier_id": "VERIFIER-fb2bf4044f772d0c"
+  },
+  {
+    "behavioral_domains": [
+      "canonical-object ownership enforcement",
+      "conflicting evidence rejection",
+      "constitutional closure",
+      "degraded analytical input handling",
+      "duplicate evidence rejection",
+      "duplicate prevention",
+      "evidence-preservation behavior",
+      "execution completion",
+      "fill reconciliation",
+      "insufficient evidence rejection",
+      "negative residual rejection",
+      "position reconciliation",
+      "positive residual rejection",
+      "realized outcome correction",
+      "realized outcome creation",
+      "realized outcome validation",
+      "reconciliation failure",
+      "reconciliation success",
+      "residual quantity calculation",
+      "settlement exemption",
+      "settlement finality",
+      "settlement verification",
+      "stale evidence rejection"
+    ],
+    "classification": "SUPPORTING_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b03_baseline",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm001_b03_baseline",
+    "mutation_capability": false,
+    "source_artifact": "Tests/test_closed_position_truth_rm001_b03_baseline.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_closure_requires_all_mandatory_criteria_and_only_closed_outcome_authorizes_truth",
+      "test_reconciliation_requires_success_and_preserves_source_ownership",
+      "test_required_b03_deliverables_exist",
+      "test_residual_quantity_zero_is_required_but_not_sufficient",
+      "test_series_is_doctrine_only_for_issued_orders",
+      "test_settlement_is_bounded_verified_or_exempt_and_never_sufficient_alone"
+    ],
+    "verifier_id": "VERIFIER-36f2f78d2ce3e0b8"
+  },
+  {
+    "behavioral_domains": [
+      "canonical-object ownership enforcement",
+      "conflicting evidence rejection",
+      "constitutional closure",
+      "duplicate evidence rejection",
+      "duplicate prevention",
+      "evidence-preservation behavior",
+      "execution completion",
+      "fill reconciliation",
+      "historical reconstruction",
+      "immutable historical preservation",
+      "insufficient evidence rejection",
+      "negative residual rejection",
+      "position reconciliation",
+      "positive residual rejection",
+      "realized outcome correction",
+      "realized outcome creation",
+      "realized outcome validation",
+      "reconciliation failure",
+      "reconciliation success",
+      "residual quantity calculation",
+      "settlement exemption",
+      "settlement finality",
+      "settlement verification",
+      "stale evidence rejection",
+      "unauthorized lifecycle transition rejection"
+    ],
+    "classification": "SUPPORTING_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001_b05_certification",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm001_b05_certification",
+    "mutation_capability": false,
+    "source_artifact": "Tests/test_closed_position_truth_rm001_b05_certification.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_b04_requirement_traceability_gap_is_reported_as_blocking_not_concealed",
+      "test_b05_is_constitutional_only_and_does_not_execute_implementation_work",
+      "test_final_verdict_denies_freeze_until_reported_blockers_are_remediated",
+      "test_required_b05_deliverables_exist",
+      "test_requirement_and_traceability_audit_has_terminal_dispositions"
+    ],
+    "verifier_id": "VERIFIER-53496f2a788c6f17"
+  },
+  {
+    "behavioral_domains": [
+      "conflicting evidence rejection",
+      "constitutional closure",
+      "duplicate evidence rejection",
+      "duplicate prevention",
+      "evidence-preservation behavior",
+      "execution completion",
+      "insufficient evidence rejection",
+      "position reconciliation",
+      "settlement verification",
+      "stale evidence rejection",
+      "unauthorized lifecycle transition rejection"
+    ],
+    "classification": "SUPPORTING_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm001a_b01_requirement_architecture",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm001a_b01_requirement_architecture",
+    "mutation_capability": false,
+    "source_artifact": "Tests/test_closed_position_truth_rm001a_b01_requirement_architecture.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_every_obligation_maps_to_exactly_one_atomic_requirement",
+      "test_identifier_and_classification_coverage_are_complete",
+      "test_integrity_disposition_is_complete_and_constitutional_only",
+      "test_required_deliverables_exist",
+      "test_traceability_preserves_required_lineage_fields"
+    ],
+    "verifier_id": "VERIFIER-ad9fb42b4d77f12e"
+  },
+  {
+    "behavioral_domains": [
+      "conflicting evidence rejection",
+      "duplicate evidence rejection",
+      "evidence-preservation behavior",
+      "execution completion",
+      "insufficient evidence rejection",
+      "negative residual rejection",
+      "position reconciliation",
+      "positive residual rejection",
+      "stale evidence rejection",
+      "unauthorized mutation rejection"
+    ],
+    "classification": "REQUIRED_BEHAVIORAL_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_b07_clean_room_audit",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm002_b07_clean_room_audit",
+    "mutation_capability": true,
+    "source_artifact": "Tests/test_closed_position_truth_rm002_b07_clean_room_audit.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_behavioral_and_mutation_campaigns_pass_without_false_results",
+      "test_clean_room_identity_and_package_only_execution_are_recorded",
+      "test_final_reproduction_and_certification_are_clean",
+      "test_required_b07_deliverables_exist",
+      "test_requirement_proof_and_traceability_are_regenerated"
+    ],
+    "verifier_id": "VERIFIER-41570af2438c89ca"
+  },
+  {
+    "behavioral_domains": [
+      "conflicting evidence rejection",
+      "duplicate evidence rejection",
+      "evidence-preservation behavior",
+      "execution completion",
+      "insufficient evidence rejection",
+      "position reconciliation",
+      "settlement verification",
+      "stale evidence rejection",
+      "unauthorized mutation rejection"
+    ],
+    "classification": "REQUIRED_BEHAVIORAL_VERIFIER",
+    "collection_mechanism": "repository_native_unittest_module_discovery",
+    "entry_point": "python -m unittest Tests.test_closed_position_truth_rm002_implementation_certification",
+    "expected_result_vocabulary": [
+      "PASS",
+      "FAIL",
+      "ERROR",
+      "SKIP"
+    ],
+    "framework": "unittest",
+    "identity_basis": [
+      "repository package hash",
+      "module path",
+      "source hash"
+    ],
+    "module": "Tests.test_closed_position_truth_rm002_implementation_certification",
+    "mutation_capability": true,
+    "source_artifact": "Tests/test_closed_position_truth_rm002_implementation_certification.py",
+    "status": "enabled",
+    "test_functions": [
+      "test_behavioral_execution_and_mutation_evidence_pass",
+      "test_every_canonical_requirement_has_passing_proof_and_traceability",
+      "test_independent_reproduction_and_final_verdict_certify_candidate",
+      "test_required_program_deliverables_exist"
+    ],
+    "verifier_id": "VERIFIER-5fce819365013052"
+  }
+]

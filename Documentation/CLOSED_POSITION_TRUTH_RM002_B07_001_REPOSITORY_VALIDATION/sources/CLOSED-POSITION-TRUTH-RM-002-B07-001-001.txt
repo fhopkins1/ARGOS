@@ -1,0 +1,324 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-001-001
+
+# Repository Package Validation
+
+## Doctrine Statement
+
+### Purpose
+
+This Repository Package Validation Order establishes the authoritative validation procedure governing verification of the delivered Repository Package ZIP prior to initiation of any independent implementation certification activities.
+
+This order exists solely to determine whether the delivered Repository Package ZIP constitutes a complete, internally consistent, deterministic, and self-contained implementation package suitable for clean-room certification preparation.
+
+This order shall validate repository integrity only.
+
+This order shall not evaluate implementation behavior.
+
+This order shall not execute certification logic.
+
+This order shall not generate certification evidence beyond repository validation artifacts.
+
+No implementation source shall be modified.
+
+No generated artifact shall be introduced into the repository.
+
+No repository repair shall occur.
+
+No behavioral execution shall occur.
+
+No certification verdict shall be issued.
+
+---
+
+# Constitutional Authority
+
+This order derives its authority from:
+
+* CLOSED-POSITION-TRUTH-RM-001
+* CLOSED-POSITION-TRUTH-RM-002
+* CLOSED-POSITION-TRUTH-RM-002-B07-001
+
+If repository integrity cannot be objectively demonstrated, the clean-room certification campaign shall fail closed.
+
+---
+
+# Objectives
+
+The implementation team shall independently validate the delivered Repository Package ZIP.
+
+Validation shall demonstrate:
+
+* package identity;
+* extraction success;
+* repository integrity;
+* repository completeness;
+* directory structure integrity;
+* source population integrity;
+* executable artifact inventory;
+* manifest completeness;
+* deterministic repository identity.
+
+No assumption regarding repository contents shall be accepted without objective evidence.
+
+---
+
+# Required Validation Activities
+
+## Phase 1 — Package Identification
+
+Record:
+
+* package filename;
+* package size;
+* package creation timestamp (if available);
+* package modification timestamp;
+* delivery method;
+* package version identifier;
+* package UUID or equivalent identity (if present).
+
+Assign a deterministic Repository Package Identifier.
+
+---
+
+## Phase 2 — Cryptographic Verification
+
+Generate cryptographic hashes for:
+
+* Repository Package ZIP;
+* extracted repository directory;
+* every executable source file;
+* every configuration file;
+* every build script;
+* every dependency manifest;
+* every lock file.
+
+Approved algorithms:
+
+* SHA-256 (required)
+* SHA-512 (optional)
+
+Any hash failure constitutes a validation blocker.
+
+---
+
+## Phase 3 — Extraction Validation
+
+Extract the Repository Package ZIP into an empty clean-room working directory.
+
+Verify:
+
+* extraction completed successfully;
+* no extraction errors occurred;
+* no filename conflicts occurred;
+* no path traversal occurred;
+* no corrupted archive entries exist;
+* no unreadable files exist.
+
+Record total:
+
+* directories;
+* files;
+* executable files;
+* symbolic links;
+* hidden files.
+
+---
+
+## Phase 4 — Repository Inventory
+
+Construct a complete repository inventory.
+
+Inventory shall include every repository object including:
+
+* source files;
+* configuration files;
+* documentation;
+* build scripts;
+* runtime scripts;
+* dependency manifests;
+* lock files;
+* schemas;
+* templates;
+* test assets;
+* generated artifacts included within the package.
+
+Each inventory record shall include:
+
+* canonical path;
+* filename;
+* extension;
+* size;
+* hash;
+* classification;
+* executable status.
+
+---
+
+## Phase 5 — Repository Structure Validation
+
+Verify that required repository structure exists.
+
+Validate:
+
+* source directories;
+* configuration directories;
+* documentation directories;
+* test directories;
+* build directories;
+* runtime directories;
+* asset directories;
+* manifest locations.
+
+Identify:
+
+* missing directories;
+* duplicate structures;
+* inconsistent layouts;
+* unexpected executable locations.
+
+---
+
+## Phase 6 — Executable Artifact Discovery
+
+Identify every executable artifact contained within the repository.
+
+Executable artifacts include, but are not limited to:
+
+* applications;
+* scripts;
+* command-line tools;
+* services;
+* runners;
+* build scripts;
+* installers;
+* startup scripts;
+* automation workflows.
+
+For every executable artifact record:
+
+* canonical identity;
+* location;
+* entry point;
+* executable type;
+* required interpreter;
+* invocation mechanism.
+
+No executable artifact may remain unidentified.
+
+---
+
+## Phase 7 — Manifest Validation
+
+Identify every repository manifest including:
+
+* dependency manifests;
+* package manifests;
+* build manifests;
+* workspace manifests;
+* module manifests;
+* runtime manifests;
+* configuration manifests.
+
+Verify:
+
+* manifest readability;
+* manifest integrity;
+* manifest uniqueness;
+* manifest consistency.
+
+Identify:
+
+* missing manifests;
+* duplicate manifests;
+* conflicting manifests;
+* orphaned manifests.
+
+---
+
+## Phase 8 — Repository Completeness Assessment
+
+Determine whether the delivered package appears complete based solely upon repository evidence.
+
+Identify:
+
+* missing referenced files;
+* broken internal references;
+* unresolved imports;
+* absent documentation referenced by source;
+* absent configuration referenced by manifests;
+* orphaned executables;
+* orphaned configuration.
+
+No assumptions shall be made regarding omitted files.
+
+Only objective evidence shall be accepted.
+
+---
+
+# Required Deliverables
+
+This order shall produce:
+
+* Repository Manifest;
+* Repository Identity Registry;
+* Repository Hash Registry;
+* Repository Inventory;
+* Executable Artifact Registry;
+* Manifest Registry;
+* Repository Structure Report;
+* Repository Completeness Report;
+* Validation Findings Registry.
+
+---
+
+# Acceptance Criteria
+
+This order shall pass only if:
+
+* the Repository Package ZIP is readable;
+* extraction succeeds without error;
+* repository identity is established;
+* cryptographic hashes are successfully generated;
+* repository inventory is complete;
+* executable artifacts are completely identified;
+* repository structure is internally consistent;
+* required manifests are present and readable;
+* no unexplained repository corruption exists;
+* repository completeness can be objectively demonstrated.
+
+---
+
+# Failure Conditions
+
+This order shall fail immediately upon discovery of any of the following:
+
+* unreadable package;
+* extraction failure;
+* archive corruption;
+* cryptographic verification failure;
+* missing executable artifact;
+* missing required manifest;
+* unexplained repository inconsistency;
+* missing repository content referenced internally;
+* indeterminate repository identity.
+
+Upon failure, all findings shall be documented and the clean-room certification campaign shall remain blocked pending remediation.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* Repository Package identity has been established;
+* repository extraction has been independently verified;
+* repository inventory has been completed;
+* repository hashes have been generated;
+* executable artifacts have been fully cataloged;
+* manifests have been validated;
+* repository completeness has been assessed;
+* all required deliverables have been produced.
+
+Successful completion of this order authorizes progression to:
+
+**CLOSED-POSITION-TRUTH-RM-002-B07-001-002 — Runtime Dependency Discovery.**

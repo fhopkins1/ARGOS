@@ -1,0 +1,566 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-002-003
+
+# Independent Behavioral Verification
+
+## Objective
+
+Independently execute the complete behavioral-verification population discovered under **CLOSED-POSITION-TRUTH-RM-002-B07-002-002** and generate deterministic raw behavioral evidence for every constitutionally applicable Closed Position Truth Office behavior.
+
+Execution shall originate exclusively from:
+
+* the validated Repository Package ZIP;
+* the independently discovered implementation inventory;
+* the independently discovered verifier registry;
+* the independently discovered fixture registry;
+* documented clean-room prerequisites;
+* documented deterministic configuration.
+
+No implementation artifact shall be modified.
+
+No verifier shall be rewritten.
+
+No fixture shall be manually substituted.
+
+No mutation campaign shall occur.
+
+No proof or traceability artifact shall be generated.
+
+No implementation-certification verdict shall be issued.
+
+---
+
+## Authoritative Inputs
+
+Accept as authoritative inputs:
+
+* the constitutional baseline established under **CLOSED-POSITION-TRUTH-RM-001**;
+* the implementation candidate established under **CLOSED-POSITION-TRUTH-RM-002**;
+* the clean-room repository and environment validated under **CLOSED-POSITION-TRUTH-RM-002-B07-001**;
+* the Implementation Inventory;
+* the Runtime Participation Registry;
+* the Verifier Registry;
+* the Fixture Registry;
+* the Discovery Findings Registry.
+
+Previously generated behavioral results, certification reports, evidence packages, expected pass counts, manually curated execution lists, and historical execution logs shall not control verifier selection or execution disposition.
+
+---
+
+## Independent Execution Harness
+
+Implement or configure a deterministic clean-room behavioral execution harness without modifying the implementation candidate.
+
+The harness shall:
+
+* consume the independently discovered verifier population;
+* consume the independently discovered fixture population;
+* execute every applicable verifier;
+* assign deterministic execution identities;
+* isolate verifier executions where technically feasible;
+* preserve raw stdout and stderr;
+* preserve exit status and exception information;
+* measure execution duration;
+* record environment identity;
+* record implementation identity;
+* record verifier and fixture identities;
+* prevent prior execution artifacts from influencing later executions;
+* distinguish execution failure from behavioral failure;
+* preserve partial evidence when execution terminates unexpectedly.
+
+Harness support files may be created only within the certification workspace and shall not modify or become part of the implementation candidate.
+
+---
+
+## Deterministic Execution Identity
+
+Assign every behavioral execution a deterministic identity derived from, at minimum:
+
+* repository package identity;
+* extracted repository identity;
+* implementation artifact identity;
+* verifier identity;
+* fixture identity or fixture-set identity;
+* requirement identity;
+* behavioral domain;
+* environment identity;
+* configuration identity;
+* execution-attempt ordinal where retries are constitutionally authorized.
+
+The identity derivation procedure shall be documented and reproducible.
+
+Execution timestamps, random process identifiers, temporary paths, and machine-specific values shall not independently determine canonical execution identity.
+
+---
+
+## Required Behavioral Domains
+
+Execute every discovered verifier applicable to the Closed Position Truth Office, including verification of the following domains where constitutionally and technically applicable:
+
+* constitutional closure;
+* execution completion;
+* fill aggregation;
+* fill reconciliation;
+* position reconciliation;
+* settlement verification;
+* settlement exemption;
+* settlement finality;
+* residual quantity calculation;
+* zero-residual confirmation;
+* positive residual rejection;
+* negative residual rejection;
+* reconciliation success;
+* reconciliation failure;
+* duplicate prevention;
+* idempotent processing;
+* duplicate evidence rejection;
+* stale evidence rejection;
+* conflicting evidence rejection;
+* insufficient evidence rejection;
+* degraded analytical input handling;
+* realized outcome creation;
+* realized outcome validation;
+* realized outcome correction;
+* correction-object creation;
+* supersession-object creation;
+* immutable historical preservation;
+* archival eligibility;
+* replay equivalence;
+* restart recovery;
+* process recovery;
+* persistence recovery;
+* historical reconstruction;
+* unauthorized mutation rejection;
+* unauthorized lifecycle transition rejection;
+* closed-position reopening rejection;
+* canonical-object ownership enforcement;
+* custody-transfer enforcement;
+* evidence-preservation behavior.
+
+Absence of a verifier for an applicable domain shall be recorded as a behavioral coverage finding and shall not be interpreted as successful verification.
+
+---
+
+## Verifier Execution Rules
+
+For every verifier:
+
+1. Confirm that its identity exists in the authoritative Verifier Registry.
+2. Confirm that all required fixtures exist in the authoritative Fixture Registry.
+3. Confirm that required dependencies are available.
+4. Confirm that the execution environment matches the clean-room environment identity.
+5. Execute the verifier without implementation modification.
+6. Capture complete raw execution evidence.
+7. Record the result using the required disposition taxonomy.
+8. Preserve all failure information.
+9. Prevent later executions from overwriting prior evidence.
+10. Reconcile actual execution against the registered verifier and fixture identities.
+
+No verifier may be silently excluded.
+
+No verifier may be considered executed merely because it was collected, imported, discovered, or listed by a test framework.
+
+---
+
+## Fixture Execution Rules
+
+For every fixture used during behavioral verification, record:
+
+* canonical fixture identity;
+* fixture type;
+* source artifact;
+* verifier consumers;
+* setup behavior;
+* teardown behavior;
+* mutable state introduced;
+* persistence state introduced;
+* external dependency use;
+* execution result;
+* cleanup result.
+
+Where a verifier supports multiple constitutionally distinct fixtures, execute each applicable fixture or fixture combination required to demonstrate the relevant behavior.
+
+A fixture setup failure shall not be classified as a verifier PASS.
+
+A fixture teardown failure shall be preserved as an execution finding even where the asserted behavior otherwise passes.
+
+---
+
+## Execution Isolation
+
+Each verifier execution shall begin from a controlled state appropriate to its behavioral contract.
+
+Control and record:
+
+* temporary filesystem state;
+* database state;
+* persistence state;
+* cache state;
+* process state;
+* environment-variable state;
+* network availability;
+* system clock assumptions;
+* random seeds;
+* fixture state;
+* prior execution residue.
+
+Where complete isolation is technically impossible, document the shared state and demonstrate that execution ordering does not alter behavioral disposition.
+
+Undocumented execution-order dependence shall constitute a finding.
+
+---
+
+## Time and Randomness Control
+
+Identify all behavioral verification dependent upon:
+
+* current time;
+* elapsed time;
+* time zones;
+* timestamps;
+* expiry windows;
+* freshness windows;
+* randomized identifiers;
+* randomized fixture generation;
+* nondeterministic ordering;
+* concurrency scheduling.
+
+Record all controls used to make these inputs reproducible.
+
+Uncontrolled time or randomness that can alter behavioral disposition shall constitute a deterministic-execution failure.
+
+---
+
+## External Dependency Control
+
+Behavioral verification shall not silently access undocumented external services.
+
+For each external dependency encountered, record:
+
+* dependency identity;
+* consuming verifier;
+* consuming fixture;
+* access purpose;
+* documented status;
+* availability;
+* response-control method;
+* execution impact.
+
+Unexpected external access shall be blocked where technically feasible and recorded as a finding.
+
+A verifier dependent upon an unavailable or undocumented external service shall not receive a PASS disposition.
+
+---
+
+## Retry Governance
+
+Automatic retry shall be disabled unless explicitly required by the verifier contract or certification harness design.
+
+Where retry occurs, record:
+
+* original execution identity;
+* retry ordinal;
+* retry reason;
+* original result;
+* retry result;
+* evidence from every attempt.
+
+A passing retry shall not erase or replace an earlier failure.
+
+Flaky or non-reproducible behavior shall be recorded explicitly.
+
+---
+
+## Required Execution Dispositions
+
+Assign exactly one primary disposition to every planned verifier-fixture execution:
+
+* PASS;
+* FAIL;
+* NOT_APPLICABLE;
+* BLOCKED;
+* EXECUTION_ERROR;
+* NOT_EXECUTED.
+
+Apply dispositions as follows:
+
+### PASS
+
+The verifier executed completely and the asserted constitutional behavior was demonstrated by raw execution evidence.
+
+### FAIL
+
+The verifier executed completely and demonstrated behavioral nonconformance.
+
+### NOT_APPLICABLE
+
+The behavior is constitutionally inapplicable to the implementation candidate and possesses an explicit requirement-level justification.
+
+Verifier absence, fixture absence, dependency failure, unsupported execution, or implementation omission shall not justify NOT_APPLICABLE.
+
+### BLOCKED
+
+Execution could not begin or complete because a required artifact, fixture, dependency, configuration input, or environment capability was unavailable.
+
+### EXECUTION_ERROR
+
+The verifier or harness encountered an unexpected technical failure preventing a valid behavioral disposition.
+
+### NOT_EXECUTED
+
+A discovered verifier-fixture execution was omitted from the campaign.
+
+PASS shall be the only successful behavioral disposition.
+
+Skipped, deselected, expected-failure, quarantined, disabled, or ignored executions shall not be converted to PASS.
+
+---
+
+## Raw Evidence Preservation
+
+Preserve raw evidence for every execution, including:
+
+* execution command or invocation;
+* working directory;
+* environment identity;
+* configuration identity;
+* verifier identity;
+* fixture identity;
+* requirement identity;
+* start timestamp;
+* end timestamp;
+* execution duration;
+* standard output;
+* standard error;
+* exit code;
+* exception type;
+* exception message;
+* stack trace where available;
+* framework-reported result;
+* assertions executed;
+* assertion failures;
+* setup result;
+* teardown result;
+* generated temporary artifacts required to understand the result;
+* persistence-state observations required to understand the result.
+
+Raw evidence shall be immutable after capture.
+
+Normalized registries and summaries shall reference, but shall not replace, raw evidence.
+
+---
+
+## Sensitive Information Handling
+
+Raw evidence preservation shall not authorize disclosure of secrets or credentials.
+
+Where execution output contains sensitive values:
+
+* preserve the original evidence within the controlled certification workspace where permitted;
+* create a redacted presentation copy;
+* record the redaction event;
+* preserve the relationship between original and redacted evidence;
+* never fabricate replacement values;
+* never suppress the existence of the sensitive dependency.
+
+---
+
+## Behavioral Finding Generation
+
+Generate an objective finding for every:
+
+* FAIL;
+* BLOCKED;
+* EXECUTION_ERROR;
+* NOT_EXECUTED;
+* unjustified NOT_APPLICABLE;
+* fixture setup failure;
+* fixture teardown failure;
+* nondeterministic result;
+* order-dependent result;
+* undocumented dependency;
+* unexpected external access;
+* missing raw evidence;
+* verifier-to-requirement identity conflict;
+* fixture-to-verifier identity conflict;
+* duplicate execution identity;
+* overwritten evidence artifact.
+
+Each finding shall identify:
+
+* finding identity;
+* execution identity;
+* verifier identity;
+* fixture identity;
+* requirement identity;
+* behavioral domain;
+* affected implementation artifact;
+* finding classification;
+* objective evidence reference;
+* observed result;
+* expected constitutional behavior;
+* certification relevance.
+
+---
+
+## Reproduction Runs
+
+Execute sufficient independent repetitions to determine whether behavioral dispositions are reproducible.
+
+At minimum:
+
+* execute the complete verifier population once;
+* repeat executions whose results are nondeterministic, order-sensitive, timing-sensitive, concurrency-sensitive, or inconsistent with framework summaries;
+* repeat a representative deterministic subset to validate harness reproducibility.
+
+Record every repetition independently.
+
+Do not collapse inconsistent repetitions into a single PASS.
+
+---
+
+## Registry Generation
+
+Produce a deterministic **Behavioral Execution Registry** containing, at minimum:
+
+* execution identity;
+* verifier identity;
+* fixture identity;
+* implementation artifact identity;
+* requirement identity;
+* behavioral domain;
+* environment identity;
+* configuration identity;
+* execution sequence;
+* retry ordinal;
+* primary disposition;
+* framework result;
+* exit code;
+* duration;
+* raw evidence reference;
+* finding references.
+
+Produce a deterministic **Raw Behavioral Evidence Registry** containing:
+
+* evidence identity;
+* execution identity;
+* evidence type;
+* storage location;
+* cryptographic hash;
+* size;
+* creation timestamp;
+* redaction status;
+* source relationship;
+* integrity status.
+
+Produce a deterministic **Behavioral Findings Registry** containing:
+
+* finding identity;
+* finding classification;
+* severity;
+* execution identity;
+* verifier identity;
+* fixture identity;
+* requirement identity;
+* affected artifact;
+* evidence references;
+* disposition;
+* remediation relevance.
+
+Registry ordering and serialization shall be deterministic.
+
+---
+
+## Reconciliation Controls
+
+Before completion, reconcile:
+
+* discovered verifiers against executed verifiers;
+* discovered fixtures against consumed fixtures;
+* planned executions against completed executions;
+* framework summaries against execution-level evidence;
+* execution dispositions against raw evidence;
+* raw evidence files against the Raw Behavioral Evidence Registry;
+* findings against all unsuccessful or anomalous executions;
+* duplicate execution identities;
+* missing evidence references;
+* unregistered execution artifacts.
+
+Any mismatch shall produce an explicit finding.
+
+---
+
+## Prohibited Actions
+
+Do not:
+
+* modify implementation source;
+* modify implementation configuration to force success;
+* rewrite failing verifiers;
+* replace fixtures with manually curated substitutes;
+* suppress verifier collection;
+* deselect failing verifiers;
+* alter expected assertions;
+* reuse prior behavioral evidence as current evidence;
+* infer PASS from expected behavior;
+* infer PASS from historical results;
+* classify skipped execution as PASS;
+* generate proof or traceability claims;
+* issue an implementation-certification verdict.
+
+---
+
+## Fail-Closed Requirements
+
+This order shall fail closed when:
+
+* the complete discovered verifier population cannot be executed;
+* required fixtures are missing;
+* execution identity is nondeterministic;
+* raw evidence is incomplete;
+* execution results cannot be reconciled;
+* framework summaries conflict with raw evidence;
+* prior artifacts influence execution;
+* implementation modification is required;
+* undocumented external dependencies are required;
+* behavioral results cannot be reproduced;
+* any unsuccessful execution is silently omitted or converted to PASS.
+
+---
+
+## Required Deliverables
+
+Produce:
+
+* Behavioral Execution Registry;
+* Raw Behavioral Evidence Registry;
+* Behavioral Findings Registry;
+* deterministic execution-harness records;
+* verifier execution logs;
+* fixture execution logs;
+* execution-environment record;
+* execution reconciliation report;
+* order completion report.
+
+The order completion report shall state only whether this order completed its execution and evidence-generation obligations. It shall not issue a behavioral reproduction disposition or implementation-certification verdict.
+
+---
+
+## Acceptance Criteria
+
+This order shall complete only when:
+
+* every independently discovered applicable verifier has been executed;
+* every applicable fixture has participated as required;
+* every planned execution has a deterministic identity;
+* every execution has exactly one primary disposition;
+* every PASS is supported by raw execution evidence;
+* every non-PASS execution has an objective finding;
+* every NOT_APPLICABLE disposition has requirement-level constitutional justification;
+* stdout, stderr, exit status, duration, environment identity, verifier identity, fixture identity, and requirement identity have been preserved;
+* execution isolation and ordering effects have been evaluated;
+* time, randomness, concurrency, and external dependencies have been controlled or documented;
+* behavioral results are reproducible at the execution level;
+* all required registries have been generated deterministically;
+* registry contents reconcile completely with the preserved raw evidence;
+* no implementation artifact has been modified;
+* no proof, traceability, mutation, or certification verdict has been generated.

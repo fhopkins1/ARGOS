@@ -1,0 +1,315 @@
+[
+  {
+    "consuming_components": [
+      "Documentation/BROKER_RM002A_008_REPRODUCIBILITY/REPRODUCE.md",
+      "Documentation/BROKER_RM002A_S02_BEHAVIORAL_VERIFICATION/broker_rm002a_s02_behavioral_verification_baseline.json",
+      "Documentation/EO-DD_Test_Report.md",
+      "Documentation/EO-DE_Test_Report.md",
+      "Documentation/EO-DF_Test_Report.md",
+      "Documentation/EO-DG_Test_Report.md",
+      "Scripts/broker_rm002a_008_reproducibility.py",
+      "src/argos/control_panel/full_suite_failure_timeout_elimination.py",
+      "src/argos/trader_rm002a016_b01_runner.py",
+      "src/argos/trader_rm002a016_b02_runner.py",
+      "src/argos/trader_rm002a016_b03_runner.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0001",
+    "variable_name": "PYTHONPATH"
+  },
+  {
+    "consuming_components": [
+      "Scripts/closed_position_truth_ecs003_audit.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0002",
+    "variable_name": "CPT_AUDIT_ORDER_PATH"
+  },
+  {
+    "consuming_components": [
+      "Scripts/exit_decision_rm002_b05_independent_reproduction.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0003",
+    "variable_name": "PATH"
+  },
+  {
+    "consuming_components": [
+      "Scripts/generate_ifva001_audit_package.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0004",
+    "variable_name": "):\n            start = 0\n            while True:\n                idx = text.find(marker, start)\n                if idx < 0:\n                    break\n                frag = text[idx + len(marker) : idx + len(marker) + 120]\n                quote = "
+  },
+  {
+    "consuming_components": [
+      "Scripts/generate_ifva001_audit_package.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0005",
+    "variable_name": "ARGOS_RUNTIME_MODE"
+  },
+  {
+    "consuming_components": [
+      "Scripts/generate_ifva001_audit_package.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0006",
+    "variable_name": "ARGOS_TRUTH_DOMAIN"
+  },
+  {
+    "consuming_components": [
+      "Scripts/generate_ifva001_audit_package.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0007",
+    "variable_name": ", "
+  },
+  {
+    "consuming_components": [
+      "Scripts/launch_argos_control_panel.ps1"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0008",
+    "variable_name": "ProgramFiles"
+  },
+  {
+    "consuming_components": [
+      "Scripts/monitoring_rm002_b06_dependency_discovery_reconciliation.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0009",
+    "variable_name": "MONITORING_RM002_B06_OUTPUT_DIR"
+  },
+  {
+    "consuming_components": [
+      "Scripts/monitoring_rm002_b08_clean_room_reproducibility.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0010",
+    "variable_name": "MONITORING_RM002_B08_OUTPUT_DIR"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0011",
+    "variable_name": "OPENAI_API_KEY"
+  },
+  {
+    "consuming_components": [
+      "Tests/test_argos_control_panel_dashboard.py",
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0012",
+    "variable_name": "ARGOS_REAL_API_PROVIDER"
+  },
+  {
+    "consuming_components": [
+      "Tests/test_argos_control_panel_dashboard.py",
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0013",
+    "variable_name": "ARGOS_REAL_API_MODEL"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0014",
+    "variable_name": "ARGOS_REAL_API_MAX_COST_PER_WORKFLOW_USD"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0015",
+    "variable_name": "ARGOS_REAL_API_MAX_COST_PER_SESSION_USD"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0016",
+    "variable_name": "ARGOS_REAL_API_MAX_INPUT_TOKENS"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0017",
+    "variable_name": "ARGOS_REAL_API_MAX_OUTPUT_TOKENS"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/api_execution_gateway.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0018",
+    "variable_name": "ARGOS_REAL_API_TIMEOUT_SECONDS"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/cr_audit_closure.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0019",
+    "variable_name": "TZ"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/performance_truth_engine.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0020",
+    "variable_name": "ARGOS_BROKER_SIM_SLIPPAGE_BPS"
+  },
+  {
+    "consuming_components": [
+      "src/argos/control_panel/performance_truth_engine.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0021",
+    "variable_name": "ARGOS_BROKER_SIM_PARTIAL_FILL_RATIO"
+  },
+  {
+    "consuming_components": [
+      "Tests/test_argos_control_panel_dashboard.py",
+      "src/argos/control_panel/performance_truth_engine.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0022",
+    "variable_name": "ARGOS_BROKER_SIM_MARKET_SESSION"
+  },
+  {
+    "consuming_components": [
+      "src/argos/trader_ecs003_audit.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0023",
+    "variable_name": "TRADER_ECS003_EXECUTION_ID"
+  },
+  {
+    "consuming_components": [
+      "src/argos/trader_ecs003_audit.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0024",
+    "variable_name": "TRADER_ECS003_CANDIDATE_DIGEST"
+  },
+  {
+    "consuming_components": [
+      "src/argos/trader_ecs003_audit.py"
+    ],
+    "default_value_availability": "source-dependent",
+    "documented_status": "discovered in source",
+    "purpose": "runtime switch or configuration input",
+    "required_status": "optional unless code path requires it",
+    "startup_impact": "none detected for package validation",
+    "variable_id": "ENV-0025",
+    "variable_name": "TRADER_ECS003_RESULT_FILE"
+  }
+]

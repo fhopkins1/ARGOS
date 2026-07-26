@@ -1,0 +1,236 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-001-003
+
+# Configuration and Environment Validation Implementation
+
+## Objective
+
+Implement deterministic validation proving that the delivered Repository Package ZIP contains every configuration artifact required to execute the independent certification campaign without reliance upon hidden environment state, developer workstation configuration, undocumented secrets, cached execution state, or external configuration not explicitly documented.
+
+No implementation behavior shall be certified.
+
+No behavioral verification shall occur.
+
+No mutation of implementation artifacts shall occur.
+
+The validator shall perform configuration discovery and environment analysis only.
+
+---
+
+## Required Implementation
+
+Implement a Configuration and Environment Validator that automatically discovers and records every configuration input consumed by the implementation.
+
+The validator shall discover and inventory:
+
+* environment variables;
+* configuration files;
+* configuration directories;
+* runtime configuration objects;
+* startup configuration;
+* generated configuration;
+* command-line arguments;
+* secrets;
+* credentials;
+* certificates;
+* API keys;
+* tokens;
+* feature flags;
+* runtime switches;
+* persistence configuration;
+* logging configuration;
+* network endpoints;
+* filesystem locations;
+* temporary storage;
+* cache locations.
+
+---
+
+## Configuration Discovery
+
+Identify every configuration source used by the implementation, including but not limited to:
+
+* JSON;
+* YAML;
+* TOML;
+* XML;
+* INI;
+* ENV files;
+* properties files;
+* registry/configuration classes;
+* embedded defaults;
+* generated configuration.
+
+Record for each configuration source:
+
+* canonical identifier;
+* location;
+* discovery method;
+* ownership;
+* load mechanism;
+* required or optional status;
+* default availability;
+* startup dependency;
+* documented status.
+
+---
+
+## Environment Variable Discovery
+
+Automatically discover every referenced environment variable.
+
+For each variable record:
+
+* variable name;
+* consuming component;
+* purpose;
+* required or optional;
+* default value availability;
+* startup impact;
+* documented status.
+
+Flag every undocumented environment variable.
+
+---
+
+## Secret and Credential Discovery
+
+Identify every dependency upon:
+
+* secrets;
+* passwords;
+* tokens;
+* certificates;
+* API credentials;
+* signing keys;
+* encryption keys.
+
+Determine whether each is:
+
+* contained within the repository;
+* externally provisioned;
+* documented prerequisite;
+* undocumented dependency.
+
+Never expose secret values.
+
+Only record dependency metadata.
+
+---
+
+## External Endpoint Discovery
+
+Identify every external endpoint referenced by the implementation including:
+
+* REST APIs;
+* databases;
+* message brokers;
+* storage services;
+* authentication providers;
+* network services;
+* remote repositories.
+
+For each endpoint record:
+
+* endpoint identity;
+* consuming component;
+* purpose;
+* required or optional;
+* documented status.
+
+---
+
+## Deterministic Startup Validation
+
+Verify that startup configuration is deterministic.
+
+Demonstrate that startup behavior does not depend upon:
+
+* user profiles;
+* developer-local files;
+* IDE configuration;
+* cached runtime state;
+* undocumented environment variables;
+* undocumented feature flags;
+* manually prepared execution state.
+
+Record every discovered startup dependency.
+
+---
+
+## Configuration Completeness Validation
+
+Verify that every discovered configuration dependency is either:
+
+* contained within the Repository Package ZIP; or
+* explicitly documented as an external prerequisite.
+
+Every undocumented dependency shall be recorded as a clean-room blocker.
+
+---
+
+## Hidden Configuration Detection
+
+Detect dependency upon:
+
+* developer home directories;
+* profile folders;
+* machine-specific paths;
+* temporary directories;
+* cached configuration;
+* generated local files;
+* operating-system user state.
+
+Produce explicit findings for every hidden dependency.
+
+---
+
+## Reporting
+
+Generate:
+
+* Environment Registry;
+* Configuration Registry;
+* Environment Variable Registry;
+* Configuration Source Registry;
+* Secret Dependency Registry;
+* External Endpoint Registry;
+* Startup Dependency Registry;
+* Hidden Configuration Registry;
+* Environment Validation Report.
+
+Every registry shall contain deterministic identifiers and be reproducible across independent executions.
+
+---
+
+## Fail-Closed Requirements
+
+The validator shall fail closed whenever:
+
+* required configuration cannot be discovered;
+* undocumented environment variables are required;
+* undocumented secrets are required;
+* undocumented credentials are required;
+* hidden configuration is detected;
+* startup depends upon developer-local state;
+* configuration completeness cannot be proven.
+
+No assumptions shall be permitted.
+
+No inferred configuration shall be accepted.
+
+---
+
+## Acceptance Criteria
+
+This order shall complete only when:
+
+* every configuration source has been discovered;
+* every environment variable has been inventoried;
+* every secret dependency has been identified;
+* every credential dependency has been identified;
+* every external endpoint has been identified;
+* startup configuration has been validated for determinism;
+* hidden configuration dependencies have been eliminated or documented;
+* configuration completeness has been demonstrated;
+* all required registries and reports have been generated deterministically;
+* the implementation can be prepared for independent clean-room certification without undocumented configuration dependencies.

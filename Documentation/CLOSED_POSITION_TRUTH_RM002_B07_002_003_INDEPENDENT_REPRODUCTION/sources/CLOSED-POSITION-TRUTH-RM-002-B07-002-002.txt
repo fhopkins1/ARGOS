@@ -1,0 +1,337 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-002-002
+
+# Independent Verifier and Fixture Discovery
+
+## Objective
+
+Independently discover every verifier, test harness, executable verification entry point, and fixture participating in the Closed Position Truth Office behavioral certification campaign.
+
+Discovery shall originate exclusively from the extracted Repository Package ZIP and the deterministic clean-room environment validated under **CLOSED-POSITION-TRUTH-RM-002-B07-001**.
+
+No verifier inventory, fixture inventory, expected execution count, prior certification artifact, historical execution log, or manually maintained registry shall be accepted as authoritative discovery input.
+
+No implementation shall be modified.
+
+No behavioral verification shall occur under this order except where minimally necessary to establish discovery identity, collection behavior, or participation.
+
+No mutation campaign shall occur.
+
+No proof generation shall occur.
+
+No certification verdict shall be issued.
+
+---
+
+# Discovery Authority
+
+Verifier and fixture participation shall be established through objective repository and runtime evidence.
+
+Participation may be demonstrated through:
+
+* test collection;
+* test-runner discovery;
+* executable registration;
+* module imports;
+* runtime invocation paths;
+* dependency graphs;
+* fixture injection;
+* parameterization;
+* setup and teardown participation;
+* persistence construction;
+* replay construction;
+* recovery construction;
+* environment construction;
+* evidence-generation participation;
+* shared harness invocation.
+
+Participation shall not be established solely through:
+
+* filenames;
+* directory names;
+* documentation;
+* comments;
+* naming conventions;
+* previous manifests;
+* prior execution totals;
+* previous PASS or FAIL reports;
+* developer assertions.
+
+---
+
+# Verifier Discovery
+
+Independently discover every verifier capable of participating in behavioral certification, including where applicable:
+
+* unit verifiers;
+* behavioral verifiers;
+* integration verifiers;
+* end-to-end verifiers;
+* persistence verifiers;
+* reconciliation verifiers;
+* settlement verifiers;
+* closure verifiers;
+* residual quantity verifiers;
+* realized outcome verifiers;
+* correction verifiers;
+* supersession verifiers;
+* historical integrity verifiers;
+* replay verifiers;
+* restart verifiers;
+* process-recovery verifiers;
+* regression verifiers;
+* authorization rejection verifiers;
+* mutation-capable verifiers;
+* shared verification harnesses;
+* custom verification runners.
+
+For each verifier record:
+
+* deterministic verifier identity;
+* source artifact;
+* callable or executable entry point;
+* verification framework;
+* collection mechanism;
+* invocation mechanism;
+* applicable behavioral domain;
+* associated requirement identities where discoverable;
+* associated fixture identities;
+* parameterization identities;
+* dependency identities;
+* expected result vocabulary;
+* mutation capability;
+* enabled, disabled, skipped, quarantined, or conditional status.
+
+---
+
+# Fixture Discovery
+
+Independently discover every fixture participating in behavioral verification, including:
+
+* direct fixtures;
+* shared fixtures;
+* autouse fixtures;
+* parameterized fixtures;
+* factory fixtures;
+* behavioral fixtures;
+* domain-object fixtures;
+* persistence fixtures;
+* database fixtures;
+* settlement fixtures;
+* reconciliation fixtures;
+* replay fixtures;
+* restart fixtures;
+* process-recovery fixtures;
+* environment fixtures;
+* configuration fixtures;
+* time and clock fixtures;
+* identity fixtures;
+* evidence fixtures;
+* external-service substitutes;
+* mocks;
+* stubs;
+* fakes;
+* temporary filesystem fixtures;
+* cleanup and teardown fixtures.
+
+For each fixture record:
+
+* deterministic fixture identity;
+* source artifact;
+* fixture type;
+* construction mechanism;
+* scope;
+* parameterization;
+* dependent verifiers;
+* dependent fixtures;
+* created state;
+* mutated state;
+* persisted state;
+* teardown behavior;
+* environmental assumptions;
+* external dependencies.
+
+---
+
+# Runtime Collection Validation
+
+Execute the repository-native collection or discovery mechanism without performing the full behavioral campaign.
+
+Verify:
+
+* deterministic verifier collection;
+* deterministic fixture discovery;
+* stable collection identity;
+* stable verifier count;
+* stable parameterized execution population;
+* stable fixture binding;
+* absence of dependency upon collection caches;
+* absence of dependency upon prior execution artifacts;
+* absence of dependency upon developer-local plugins;
+* absence of dependency upon IDE test discovery;
+* absence of dependency upon Git state.
+
+Repeat collection from a clean state sufficient to demonstrate deterministic discovery.
+
+Any variance in discovered participation shall be preserved as a finding.
+
+---
+
+# Participation Classification
+
+Classify every discovered verifier as exactly one of:
+
+* REQUIRED_BEHAVIORAL_VERIFIER;
+* REQUIRED_INTEGRATION_VERIFIER;
+* REQUIRED_REPLAY_VERIFIER;
+* REQUIRED_RECOVERY_VERIFIER;
+* REQUIRED_PERSISTENCE_VERIFIER;
+* REQUIRED_REGRESSION_VERIFIER;
+* MUTATION_CAPABLE_VERIFIER;
+* SUPPORTING_VERIFIER;
+* NON_CERTIFICATION_VERIFIER;
+* ORPHAN_VERIFIER;
+* DUPLICATE_VERIFIER;
+* UNRESOLVED_VERIFIER.
+
+Classify every discovered fixture as exactly one of:
+
+* REQUIRED_BEHAVIORAL_FIXTURE;
+* REQUIRED_PERSISTENCE_FIXTURE;
+* REQUIRED_REPLAY_FIXTURE;
+* REQUIRED_RECOVERY_FIXTURE;
+* REQUIRED_ENVIRONMENT_FIXTURE;
+* SHARED_FIXTURE_INFRASTRUCTURE;
+* NON_CERTIFICATION_FIXTURE;
+* ORPHAN_FIXTURE;
+* DUPLICATE_FIXTURE;
+* UNDOCUMENTED_FIXTURE;
+* UNRESOLVED_FIXTURE.
+
+Every classification shall possess objective supporting evidence.
+
+---
+
+# Orphan and Duplicate Detection
+
+Identify every:
+
+* verifier not reachable through the certification execution path;
+* verifier collected but never executable;
+* verifier dependent upon unavailable fixtures;
+* verifier lacking an identifiable behavioral obligation;
+* fixture not consumed by any discovered verifier;
+* fixture shadowed by another fixture;
+* duplicate verifier implementation;
+* duplicate parameterized execution;
+* duplicate fixture construction;
+* disabled verifier;
+* skipped verifier;
+* quarantined verifier;
+* conditionally excluded verifier;
+* verifier excluded by configuration or environment.
+
+Skipped, disabled, quarantined, or conditionally excluded verifiers shall not be treated as successfully participating.
+
+---
+
+# Coverage Discovery
+
+Without issuing a certification disposition, map the discovered verifier population to the behavioral domains identified by the constitutional baseline.
+
+Determine whether discovered verifiers exist for each applicable domain, including:
+
+* constitutional closure;
+* execution completion;
+* fill reconciliation;
+* settlement verification;
+* settlement exemption;
+* residual quantity validation;
+* positive residual rejection;
+* negative residual rejection;
+* reconciliation success;
+* reconciliation failure;
+* duplicate prevention;
+* idempotency;
+* stale evidence rejection;
+* conflicting evidence rejection;
+* degraded analytical input handling;
+* realized outcome generation;
+* realized outcome validation;
+* correction creation;
+* supersession creation;
+* immutable history preservation;
+* archival eligibility;
+* replay;
+* restart recovery;
+* process recovery;
+* historical reconstruction;
+* unauthorized mutation rejection.
+
+Absence of a discovered verifier for an applicable behavioral domain shall be recorded as a discovery finding.
+
+---
+
+# Deterministic Identity Requirements
+
+Every verifier, fixture, and parameterized execution population shall receive a deterministic identity derived from stable repository and collection evidence.
+
+Identity shall not depend upon:
+
+* nondeterministic collection order;
+* temporary paths;
+* workstation usernames;
+* process identifiers;
+* timestamps;
+* memory addresses;
+* random values;
+* prior execution identifiers.
+
+Repeated discovery shall produce identical identities for an unchanged Repository Package ZIP and environment.
+
+---
+
+# Required Deliverables
+
+Produce:
+
+* Verifier Registry;
+* Fixture Registry;
+* Verifier-to-Fixture Binding Registry;
+* Parameterized Execution Registry;
+* Verifier Participation Registry;
+* Fixture Participation Registry;
+* Verifier Classification Registry;
+* Fixture Classification Registry;
+* Orphan Verifier Registry;
+* Orphan Fixture Registry;
+* Duplicate Verifier Registry;
+* Duplicate Fixture Registry;
+* Conditional Exclusion Registry;
+* Behavioral Domain Discovery Matrix;
+* Discovery Findings Registry;
+* Verifier and Fixture Discovery Report;
+* Order Completion Report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every repository-native verifier has been independently discovered;
+* every participating fixture has been independently discovered;
+* every verifier possesses deterministic identity;
+* every fixture possesses deterministic identity;
+* every parameterized execution population has been identified;
+* verifier-to-fixture bindings have been reconstructed;
+* collection determinism has been demonstrated;
+* every skipped, disabled, quarantined, and conditional verifier has been identified;
+* every orphan verifier has been identified;
+* every orphan fixture has been identified;
+* every duplicate verifier has been identified;
+* every duplicate fixture has been identified;
+* every undocumented fixture has been identified;
+* every mutation-capable verifier has been identified;
+* discovered behavioral domains have been mapped;
+* no verifier or fixture participation depends upon prior certification artifacts or developer knowledge;
+* the resulting registries are sufficient to authorize independent behavioral execution under **CLOSED-POSITION-TRUTH-RM-002-B07-002-003**.

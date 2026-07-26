@@ -1,0 +1,36 @@
+[
+  {
+    "affected_artifact": "Tests/test_closed_position_truth_ecs003_audit.py",
+    "disposition": "OPEN",
+    "evidence_references": [
+      "EVID-0674c2e5fcb3a7f2",
+      "EVID-a084d6c442d01474",
+      "EVID-0298fac5eb7f8d91"
+    ],
+    "execution_id": "EXEC-786f0aa88d976f8e",
+    "finding_classification": "FAIL",
+    "finding_id": "BFIND-f10f2b4ccc065b04",
+    "fixture_id": "fixture-set:025235dac8c5bdd5",
+    "remediation_relevance": "behavioral execution did not pass",
+    "requirement_id": "requirement-domain:c6f6d3a7a1d36c3c",
+    "severity": "BLOCKING",
+    "verifier_id": "VERIFIER-65714f7ff84a0656"
+  },
+  {
+    "affected_artifact": "Tests/test_closed_position_truth_rm002_b07_clean_room_audit.py",
+    "disposition": "OPEN",
+    "evidence_references": [
+      "EVID-5f94fde7c345ec7f",
+      "EVID-fd8fe030e10c5ff3",
+      "EVID-11e09799470dfce9"
+    ],
+    "execution_id": "EXEC-498070d22dc1af3f",
+    "finding_classification": "FAIL",
+    "finding_id": "BFIND-76a612d560858d82",
+    "fixture_id": "fixture-set:4a8b8f449dfa81cf",
+    "remediation_relevance": "behavioral execution did not pass",
+    "requirement_id": "requirement-domain:fb53bbaa9ac6cdec",
+    "severity": "BLOCKING",
+    "verifier_id": "VERIFIER-41570af2438c89ca"
+  }
+]

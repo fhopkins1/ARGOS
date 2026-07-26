@@ -1,0 +1,404 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-003-002
+
+# Requirement-Level Proof Regeneration
+
+## Objective
+
+Independently generate exactly one proof object for every canonical Closed Position Truth Office requirement using only the constitutional baseline, independently discovered implementation inventory, independently reproduced behavioral executions, and independently regenerated evidence.
+
+Proof regeneration shall originate exclusively from admissible clean-room evidence established under **CLOSED-POSITION-TRUTH-RM-002-B07-003-001**.
+
+No prior proof registry, proof object, traceability graph, certification report, manually curated mapping, expected result, or historical certification conclusion shall be accepted as proof authority.
+
+No implementation shall be modified.
+
+No mutation campaign shall occur.
+
+No certification verdict shall be issued.
+
+---
+
+# Proof Population Authority
+
+The canonical requirement population shall originate from the authoritative constitutional baseline established under **CLOSED-POSITION-TRUTH-RM-001**.
+
+Every canonical requirement shall receive exactly one regenerated proof object.
+
+No requirement shall be:
+
+* omitted;
+* merged;
+* split without constitutional authority;
+* represented by multiple competing proof objects;
+* assigned an implicit disposition;
+* treated as proven through aggregate campaign success.
+
+The proof population shall be complete only when the number and identity of regenerated proof objects reconcile exactly to the canonical requirement population.
+
+---
+
+# Required Proof Dispositions
+
+Each proof object shall issue exactly one disposition:
+
+* `PROVEN`;
+* `NOT_PROVEN`;
+* `NOT_APPLICABLE`.
+
+No alternate, intermediate, provisional, inherited, ambiguous, or null disposition is permitted.
+
+A requirement shall be classified as `PROVEN` only when admissible regenerated execution evidence directly demonstrates satisfaction of the requirement.
+
+A requirement shall be classified as `NOT_PROVEN` when:
+
+* required evidence is absent;
+* evidence is inadmissible;
+* execution failed;
+* execution was skipped;
+* execution was disabled;
+* execution was quarantined;
+* execution was inconclusive;
+* evidence lineage is broken;
+* the applicable implementation obligation was not exercised;
+* the verifier did not directly test the requirement;
+* conflicting evidence prevents proof.
+
+A requirement shall be classified as `NOT_APPLICABLE` only when explicit constitutional authority establishes that the requirement does not apply to the implementation candidate, operating mode, supported scope, or certified domain.
+
+Absence of implementation shall not by itself establish `NOT_APPLICABLE`.
+
+---
+
+# Proof Object Schema
+
+Every regenerated proof object shall contain:
+
+* deterministic proof identifier;
+* canonical requirement identifier;
+* requirement version;
+* governing constitutional authority;
+* requirement text or canonical reference;
+* applicability determination;
+* proof disposition;
+* implementation obligation identity;
+* implementation artifact identity;
+* verifier identity;
+* fixture identity;
+* execution identity;
+* evidence identity;
+* evidence hash;
+* environment identity;
+* proof justification;
+* proof provenance;
+* regeneration campaign identity;
+* proof creation ruleset identity.
+
+Where the disposition is `NOT_PROVEN`, the proof object shall additionally contain:
+
+* objective failure or insufficiency finding;
+* missing or inadmissible evidence identity;
+* affected implementation obligation;
+* affected verifier or execution;
+* blocking rationale.
+
+Where the disposition is `NOT_APPLICABLE`, the proof object shall additionally contain:
+
+* explicit constitutional authority;
+* scope exclusion or applicability rule;
+* applicability justification;
+* supporting implementation-scope evidence.
+
+---
+
+# Deterministic Proof Identity
+
+Proof identity shall be derived from stable canonical inputs.
+
+Proof identity shall not depend upon:
+
+* execution order;
+* wall-clock time;
+* temporary paths;
+* workstation identity;
+* process identifiers;
+* memory addresses;
+* random values;
+* prior proof identifiers;
+* manually assigned sequence numbers without deterministic derivation.
+
+Repeated regeneration from the same constitutional baseline, repository package, clean-room environment, execution population, and evidence population shall produce the same proof identity and disposition.
+
+Any nondeterministic proof identity or disposition shall be recorded as a blocking finding.
+
+---
+
+# Requirement-to-Evidence Mapping
+
+For every canonical requirement independently determine:
+
+* the governing constitutional authority;
+* the implementation obligation created by that authority;
+* the implementation artifact responsible for satisfying the obligation;
+* the verifier capable of testing the obligation;
+* the fixture state required by the verifier;
+* the execution that exercised the verifier;
+* the regenerated evidence produced by that execution.
+
+The complete evidentiary chain shall be:
+
+```text
+Canonical Requirement
+        │
+        ▼
+Implementation Obligation
+        │
+        ▼
+Implementation Artifact
+        │
+        ▼
+Verifier
+        │
+        ▼
+Fixture
+        │
+        ▼
+Execution
+        │
+        ▼
+Regenerated Evidence
+        │
+        ▼
+Requirement Proof
+```
+
+No proof shall be issued where the evidentiary chain cannot be reconstructed.
+
+---
+
+# Direct Proof Requirement
+
+Every `PROVEN` disposition shall possess evidence that directly demonstrates the governing requirement.
+
+Proof shall not be established solely through:
+
+* adjacent requirement success;
+* parent requirement success;
+* child requirement success;
+* implementation presence;
+* code inspection without execution where execution is required;
+* verifier existence;
+* fixture existence;
+* execution completion without relevant assertions;
+* aggregate suite success;
+* prior certification success;
+* traceability declarations;
+* completion reports;
+* expected behavior;
+* absence of observed failure.
+
+Where one execution supports multiple requirements, each proof object shall independently explain why the evidence directly supports the specific requirement.
+
+Evidence reuse without requirement-specific justification shall be rejected.
+
+---
+
+# Evidence Admissibility Validation
+
+Before evidence may support a `PROVEN` disposition, verify that it possesses:
+
+* deterministic identity;
+* valid provenance;
+* preserved raw execution output;
+* valid integrity hash;
+* originating verifier identity;
+* originating fixture identity;
+* originating execution identity;
+* originating environment identity;
+* requirement relevance;
+* complete lineage;
+* no unauthorized modification;
+* no dependence upon prior certification artifacts.
+
+Evidence failing any admissibility requirement shall not support proof.
+
+---
+
+# Prohibited Proof Forms
+
+Reject and record every instance of:
+
+* copied proof;
+* inherited proof;
+* inferred proof;
+* synthesized proof;
+* aggregate proof;
+* duplicate proof;
+* circular proof;
+* manually asserted proof;
+* expectation-derived proof;
+* report-derived proof;
+* registry-declaration-derived proof;
+* proof based solely upon implementation existence;
+* proof based solely upon verifier existence;
+* proof without execution evidence;
+* proof without requirement-specific justification.
+
+Rejected proof candidates shall not receive a `PROVEN` disposition.
+
+---
+
+# Duplicate Proof Detection
+
+Verify that:
+
+* every canonical requirement has exactly one proof object;
+* no proof object governs more than one canonical requirement;
+* no canonical requirement is represented by multiple proof objects;
+* no duplicate proof identifier exists;
+* no semantically duplicate proof object exists under a different identifier;
+* no requirement disposition conflicts with another proof artifact.
+
+Every duplicate or conflicting proof shall be recorded as a proof finding.
+
+The affected requirement shall remain `NOT_PROVEN` until the conflict is resolved through admissible regenerated evidence and deterministic proof generation.
+
+---
+
+# Circular Proof Detection
+
+Identify and reject proof relationships where:
+
+* a proof object depends upon itself;
+* requirement A is proven only because requirement B is proven and requirement B is proven only because requirement A is proven;
+* proof depends upon traceability generated from that same proof;
+* proof depends upon a completion report derived from that proof;
+* proof depends upon a certification conclusion that itself depends upon the proof;
+* evidence is created from the proof object it is intended to support.
+
+Every circular relationship shall be preserved in the Proof Findings Registry.
+
+---
+
+# Applicability Determination
+
+Determine applicability before proof disposition.
+
+Applicability shall be established from:
+
+* constitutional scope;
+* supported implementation scope;
+* operating mode;
+* canonical object participation;
+* lifecycle participation;
+* explicit constitutional exclusions.
+
+Applicability shall not be inferred from:
+
+* missing implementation;
+* missing verifier;
+* skipped execution;
+* unsupported fixture;
+* undocumented behavior;
+* failed verification;
+* developer preference.
+
+Where applicability cannot be conclusively established, the requirement shall remain applicable and receive `NOT_PROVEN`.
+
+---
+
+# Proof Regeneration Procedure
+
+For each canonical requirement:
+
+1. establish deterministic requirement identity;
+2. determine constitutional applicability;
+3. identify the governing implementation obligation;
+4. identify responsible implementation artifacts;
+5. identify relevant verifiers and fixtures;
+6. identify independently reproduced executions;
+7. identify admissible regenerated evidence;
+8. validate complete evidence lineage;
+9. determine exactly one proof disposition;
+10. generate the deterministic proof object;
+11. validate proof uniqueness;
+12. record all proof findings.
+
+Proof generation shall be performed for the entire canonical requirement population, including requirements for which no supporting implementation, verifier, execution, or evidence exists.
+
+---
+
+# Reconciliation Requirements
+
+Reconcile the regenerated proof population against:
+
+* canonical requirement count;
+* canonical requirement identities;
+* applicable requirement population;
+* `PROVEN` population;
+* `NOT_PROVEN` population;
+* `NOT_APPLICABLE` population;
+* implementation obligation population;
+* verifier population;
+* execution population;
+* evidence population.
+
+The following identity shall hold:
+
+```text
+TOTAL_CANONICAL_REQUIREMENTS
+=
+PROVEN
++
+NOT_PROVEN
++
+NOT_APPLICABLE
+```
+
+Any missing, duplicate, conflicting, or unclassified requirement shall constitute an incomplete proof population.
+
+---
+
+# Required Deliverables
+
+Produce:
+
+* Proof Registry;
+* Requirement Proof Registry;
+* Requirement Applicability Registry;
+* Requirement-to-Implementation Obligation Registry;
+* Requirement-to-Artifact Registry;
+* Requirement-to-Verifier Registry;
+* Requirement-to-Fixture Registry;
+* Requirement-to-Execution Registry;
+* Requirement-to-Evidence Registry;
+* Proof Evidence Reuse Registry;
+* Rejected Proof Candidate Registry;
+* Duplicate Proof Registry;
+* Circular Proof Registry;
+* Proof Findings Registry;
+* Proof Population Reconciliation Report;
+* Requirement-Level Proof Regeneration Report;
+* Order Completion Report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* the complete canonical requirement population has been independently established;
+* every canonical requirement possesses exactly one regenerated proof object;
+* every proof object possesses deterministic identity;
+* every proof object possesses exactly one permitted disposition;
+* every `PROVEN` disposition is supported by admissible regenerated execution evidence;
+* every `PROVEN` disposition possesses requirement-specific justification;
+* every `NOT_PROVEN` disposition possesses objective findings;
+* every `NOT_APPLICABLE` disposition possesses explicit constitutional justification;
+* every proof object possesses complete provenance;
+* every requirement-to-evidence relationship has been independently established;
+* every duplicate proof has been identified;
+* every circular proof has been identified;
+* every copied, inherited, inferred, synthesized, aggregate, manually asserted, or expectation-derived proof has been rejected;
+* the proof population reconciles exactly to the canonical requirement population;
+* no requirement remains omitted, multiply represented, ambiguously classified, or without disposition;
+* the resulting proof population is sufficient to authorize independent proof-lineage validation under **CLOSED-POSITION-TRUTH-RM-002-B07-003-003**.

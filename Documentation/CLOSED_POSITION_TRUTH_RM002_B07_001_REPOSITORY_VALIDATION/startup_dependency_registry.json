@@ -1,0 +1,2270 @@
+[
+  {
+    "deterministic": true,
+    "location": "audit_reproduce.py",
+    "startup_dependency_id": "STARTUP-0001",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "audit_trader_ecs003.py",
+    "startup_dependency_id": "STARTUP-0002",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "audit_trader_reproduce.py",
+    "startup_dependency_id": "STARTUP-0003",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Documentation/MONITORING_RM002_B05_CLEAN_ROOM_NEGATIVE_VALIDATION/raw_clean_room_execution/MON-B05-NEG-ESC-001-EXEC.stderr.log",
+    "startup_dependency_id": "STARTUP-0004",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/broker_rm002a_004_gap_closure.py",
+    "startup_dependency_id": "STARTUP-0005",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/broker_rm002a_005_remediation.py",
+    "startup_dependency_id": "STARTUP-0006",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/broker_rm002a_006_behavioral_completion.py",
+    "startup_dependency_id": "STARTUP-0007",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/broker_rm002a_007_final_certification.py",
+    "startup_dependency_id": "STARTUP-0008",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/broker_rm002a_008_reproducibility.py",
+    "startup_dependency_id": "STARTUP-0009",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/candidate_preflight.py",
+    "startup_dependency_id": "STARTUP-0010",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0011",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm001_b01_baseline.py",
+    "startup_dependency_id": "STARTUP-0012",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm001_b02_baseline.py",
+    "startup_dependency_id": "STARTUP-0013",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm001_b03_baseline.py",
+    "startup_dependency_id": "STARTUP-0014",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm001_b05_certification.py",
+    "startup_dependency_id": "STARTUP-0015",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm001a_b01_requirement_architecture.py",
+    "startup_dependency_id": "STARTUP-0016",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm002_b07_clean_room_audit.py",
+    "startup_dependency_id": "STARTUP-0017",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/closed_position_truth_rm002_implementation_certification.py",
+    "startup_dependency_id": "STARTUP-0018",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/ecs003_doctrine_library.py",
+    "startup_dependency_id": "STARTUP-0019",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/ecs003_rm_program_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0020",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0021",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm001_b01_constitutional_baseline.py",
+    "startup_dependency_id": "STARTUP-0022",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm001_b02_object_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0023",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm001_b03_decision_admissibility.py",
+    "startup_dependency_id": "STARTUP-0024",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm001_b04_interface_traceability.py",
+    "startup_dependency_id": "STARTUP-0025",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm001_b05_final_readiness.py",
+    "startup_dependency_id": "STARTUP-0026",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm002_b01_implementation_discovery.py",
+    "startup_dependency_id": "STARTUP-0027",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm002_b02_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0028",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm002_b03_implementation_remediation.py",
+    "startup_dependency_id": "STARTUP-0029",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm002_b04_proof_generation.py",
+    "startup_dependency_id": "STARTUP-0030",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/exit_decision_rm002_b05_independent_reproduction.py",
+    "startup_dependency_id": "STARTUP-0031",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/freeze_candidate.py",
+    "startup_dependency_id": "STARTUP-0032",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic01_candidate_integrity_evidence.py",
+    "startup_dependency_id": "STARTUP-0033",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic02_recovery_foundation_evidence.py",
+    "startup_dependency_id": "STARTUP-0034",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic03_css_separation_evidence.py",
+    "startup_dependency_id": "STARTUP-0035",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic04_proof_certification_evidence.py",
+    "startup_dependency_id": "STARTUP-0036",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic06_semantic_drift_evidence.py",
+    "startup_dependency_id": "STARTUP-0037",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic07_governance_ledger_evidence.py",
+    "startup_dependency_id": "STARTUP-0038",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cic_authoritative_chain_evidence.py",
+    "startup_dependency_id": "STARTUP-0039",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cr10_level3_paper_candidate_evidence.py",
+    "startup_dependency_id": "STARTUP-0040",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cr5_constitutional_trace_evidence.py",
+    "startup_dependency_id": "STARTUP-0041",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cr6_artifact_regeneration_evidence.py",
+    "startup_dependency_id": "STARTUP-0042",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cr7_full_suite_accounting_evidence.py",
+    "startup_dependency_id": "STARTUP-0043",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cr8_level2_campaign_a_evidence.py",
+    "startup_dependency_id": "STARTUP-0044",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cr_series_audit_evidence.py",
+    "startup_dependency_id": "STARTUP-0045",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_cs001_to_cs005_evidence.py",
+    "startup_dependency_id": "STARTUP-0046",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_css_sustainment_evidence.py",
+    "startup_dependency_id": "STARTUP-0047",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eodj_evidence.py",
+    "startup_dependency_id": "STARTUP-0048",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eodk_evidence.py",
+    "startup_dependency_id": "STARTUP-0049",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eodl_evidence.py",
+    "startup_dependency_id": "STARTUP-0050",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eodm_to_eodr_evidence.py",
+    "startup_dependency_id": "STARTUP-0051",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoea_evidence.py",
+    "startup_dependency_id": "STARTUP-0052",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoec_evidence.py",
+    "startup_dependency_id": "STARTUP-0053",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoed_evidence.py",
+    "startup_dependency_id": "STARTUP-0054",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoee_evidence.py",
+    "startup_dependency_id": "STARTUP-0055",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoef_evidence.py",
+    "startup_dependency_id": "STARTUP-0056",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoeg_evidence.py",
+    "startup_dependency_id": "STARTUP-0057",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoeh_evidence.py",
+    "startup_dependency_id": "STARTUP-0058",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoej_evidence.py",
+    "startup_dependency_id": "STARTUP-0059",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoek_to_eoeo_evidence.py",
+    "startup_dependency_id": "STARTUP-0060",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_eoint_intelligence_evidence.py",
+    "startup_dependency_id": "STARTUP-0061",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_ifva001_audit_package.py",
+    "startup_dependency_id": "STARTUP-0062",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_tc001_evidence.py",
+    "startup_dependency_id": "STARTUP-0063",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_tc002_to_tc004_evidence.py",
+    "startup_dependency_id": "STARTUP-0064",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/generate_tc005_to_tc008_evidence.py",
+    "startup_dependency_id": "STARTUP-0065",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0066",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm001_b01_constitutional_baseline.py",
+    "startup_dependency_id": "STARTUP-0067",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm001_b02_object_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0068",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm001_b03_interface_evidence_traceability.py",
+    "startup_dependency_id": "STARTUP-0069",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm001_b04_final_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0070",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b02_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0071",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b03_implementation_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0072",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b04_final_certification.py",
+    "startup_dependency_id": "STARTUP-0073",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b05_clean_room_negative_validation.py",
+    "startup_dependency_id": "STARTUP-0074",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b06_dependency_discovery_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0075",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b08_clean_room_reproducibility.py",
+    "startup_dependency_id": "STARTUP-0076",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/monitoring_rm002_b09_fail_closed_certification.py",
+    "startup_dependency_id": "STARTUP-0077",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0078",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_b01002a_s01_trading_boundaries.py",
+    "startup_dependency_id": "STARTUP-0079",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "startup_dependency_id": "STARTUP-0080",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_b01002a_s03_enterprise_governance_boundaries.py",
+    "startup_dependency_id": "STARTUP-0081",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_b01002a_s05_enterprise_dependencies.py",
+    "startup_dependency_id": "STARTUP-0082",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_b01002a_s06_constitutional_boundary_baseline.py",
+    "startup_dependency_id": "STARTUP-0083",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_constitutional_baseline.py",
+    "startup_dependency_id": "STARTUP-0084",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_s02_object_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0085",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_s03_interface_evidence_traceability.py",
+    "startup_dependency_id": "STARTUP-0086",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_s04_implementation_mapping.py",
+    "startup_dependency_id": "STARTUP-0087",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_s05_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0088",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm001_s06_final_certification.py",
+    "startup_dependency_id": "STARTUP-0089",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/position_registry_rm002a_final_closure.py",
+    "startup_dependency_id": "STARTUP-0090",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/start_argos_control_panel.py",
+    "startup_dependency_id": "STARTUP-0091",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Scripts/verify_repository_structure.py",
+    "startup_dependency_id": "STARTUP-0092",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/authorization_certify.py",
+    "startup_dependency_id": "STARTUP-0093",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/authorization_independent_certify.py",
+    "startup_dependency_id": "STARTUP-0094",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/authorization_package_certification.py",
+    "startup_dependency_id": "STARTUP-0095",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/broker_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0096",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/candidate_integrity.py",
+    "startup_dependency_id": "STARTUP-0097",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/control_panel/certification_governance_ledger.py",
+    "startup_dependency_id": "STARTUP-0098",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/control_panel/certified_baseline_bootstrap.py",
+    "startup_dependency_id": "STARTUP-0099",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/control_panel/proof_based_certification.py",
+    "startup_dependency_id": "STARTUP-0100",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/control_panel/semantic_drift_engine.py",
+    "startup_dependency_id": "STARTUP-0101",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/control_panel/server.py",
+    "startup_dependency_id": "STARTUP-0102",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader/rm002a016_b04_authorization_batch.py",
+    "startup_dependency_id": "STARTUP-0103",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader/rm002a016_b05_risk_batch.py",
+    "startup_dependency_id": "STARTUP-0104",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader/rm002a016_b06_enterprise_dashboard_batch.py",
+    "startup_dependency_id": "STARTUP-0105",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader/rm002a016_b07_candidate_readiness.py",
+    "startup_dependency_id": "STARTUP-0106",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader_audit.py",
+    "startup_dependency_id": "STARTUP-0107",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0108",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader_rm002a016_b01_runner.py",
+    "startup_dependency_id": "STARTUP-0109",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader_rm002a016_b02_runner.py",
+    "startup_dependency_id": "STARTUP-0110",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "src/argos/trader_rm002a016_b03_runner.py",
+    "startup_dependency_id": "STARTUP-0111",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_academy_framework.py",
+    "startup_dependency_id": "STARTUP-0112",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_academy_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0113",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_academy_readiness.py",
+    "startup_dependency_id": "STARTUP-0114",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_alternative_data_office.py",
+    "startup_dependency_id": "STARTUP-0115",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_department_framework.py",
+    "startup_dependency_id": "STARTUP-0116",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_readiness.py",
+    "startup_dependency_id": "STARTUP-0117",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_rm001_office_integrity.py",
+    "startup_dependency_id": "STARTUP-0118",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_rm002_office_completion.py",
+    "startup_dependency_id": "STARTUP-0119",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_rm003_office_specification.py",
+    "startup_dependency_id": "STARTUP-0120",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_rm004_office_certification.py",
+    "startup_dependency_id": "STARTUP-0121",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analyst_technical_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0122",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_analytical_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0123",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_argos_control_panel_dashboard.py",
+    "startup_dependency_id": "STARTUP-0124",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_audit_framework.py",
+    "startup_dependency_id": "STARTUP-0125",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_auditor_entrypoint.py",
+    "startup_dependency_id": "STARTUP-0126",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_authority.py",
+    "startup_dependency_id": "STARTUP-0127",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_authority_compliance.py",
+    "startup_dependency_id": "STARTUP-0128",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_final_certification.py",
+    "startup_dependency_id": "STARTUP-0129",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_implementation_closure.py",
+    "startup_dependency_id": "STARTUP-0130",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_independent_certification.py",
+    "startup_dependency_id": "STARTUP-0131",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_operational_readiness.py",
+    "startup_dependency_id": "STARTUP-0132",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_package_certification.py",
+    "startup_dependency_id": "STARTUP-0133",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_authorization_portable_certification.py",
+    "startup_dependency_id": "STARTUP-0134",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_behavioral_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0135",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0136",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_integration_office.py",
+    "startup_dependency_id": "STARTUP-0137",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm001_s02_ownership_custody.py",
+    "startup_dependency_id": "STARTUP-0138",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm001_s03_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0139",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm001_s04_interfaces.py",
+    "startup_dependency_id": "STARTUP-0140",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm001_s05_evidence_certification.py",
+    "startup_dependency_id": "STARTUP-0141",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm001_s06_traceability_readiness.py",
+    "startup_dependency_id": "STARTUP-0142",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm001_s07_governance_closure.py",
+    "startup_dependency_id": "STARTUP-0143",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_004_gap_closure.py",
+    "startup_dependency_id": "STARTUP-0144",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_005_remediation.py",
+    "startup_dependency_id": "STARTUP-0145",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_006_behavioral_completion.py",
+    "startup_dependency_id": "STARTUP-0146",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_007_final_certification.py",
+    "startup_dependency_id": "STARTUP-0147",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_008_reproducibility.py",
+    "startup_dependency_id": "STARTUP-0148",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_s02_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0149",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_s02_structural_verification.py",
+    "startup_dependency_id": "STARTUP-0150",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_broker_rm002a_s03_proof_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0151",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_bubble_detection_office.py",
+    "startup_dependency_id": "STARTUP-0152",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_case_study_office.py",
+    "startup_dependency_id": "STARTUP-0153",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_chief_of_staff.py",
+    "startup_dependency_id": "STARTUP-0154",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic01_candidate_integrity.py",
+    "startup_dependency_id": "STARTUP-0155",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic02_recovery_foundation.py",
+    "startup_dependency_id": "STARTUP-0156",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic03_css_separation.py",
+    "startup_dependency_id": "STARTUP-0157",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic04_proof_based_certification.py",
+    "startup_dependency_id": "STARTUP-0158",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic05_authoritative_chain.py",
+    "startup_dependency_id": "STARTUP-0159",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic06_semantic_drift_engine.py",
+    "startup_dependency_id": "STARTUP-0160",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cic07_governance_ledger.py",
+    "startup_dependency_id": "STARTUP-0161",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0162",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm001_b01_baseline.py",
+    "startup_dependency_id": "STARTUP-0163",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm001_b02_baseline.py",
+    "startup_dependency_id": "STARTUP-0164",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm001_b03_baseline.py",
+    "startup_dependency_id": "STARTUP-0165",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm001_b05_certification.py",
+    "startup_dependency_id": "STARTUP-0166",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm001a_b01_requirement_architecture.py",
+    "startup_dependency_id": "STARTUP-0167",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm002_b07_clean_room_audit.py",
+    "startup_dependency_id": "STARTUP-0168",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_closed_position_truth_rm002_implementation_certification.py",
+    "startup_dependency_id": "STARTUP-0169",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_command_console.py",
+    "startup_dependency_id": "STARTUP-0170",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_commander_decision_engine.py",
+    "startup_dependency_id": "STARTUP-0171",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_commander_notification_alert_center.py",
+    "startup_dependency_id": "STARTUP-0172",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_communication_framework.py",
+    "startup_dependency_id": "STARTUP-0173",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_configuration_framework.py",
+    "startup_dependency_id": "STARTUP-0174",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_contract_framework.py",
+    "startup_dependency_id": "STARTUP-0175",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cr1_candidate_identity.py",
+    "startup_dependency_id": "STARTUP-0176",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cr5_constitutional_trace_closure.py",
+    "startup_dependency_id": "STARTUP-0177",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cr6_cr7_certification_artifacts.py",
+    "startup_dependency_id": "STARTUP-0178",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cr8_cr10_operational_campaigns.py",
+    "startup_dependency_id": "STARTUP-0179",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cr_series_audit_closure.py",
+    "startup_dependency_id": "STARTUP-0180",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cross_discipline_review_office.py",
+    "startup_dependency_id": "STARTUP-0181",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cryptocurrency_office.py",
+    "startup_dependency_id": "STARTUP-0182",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_cs001_to_cs005_certification_series.py",
+    "startup_dependency_id": "STARTUP-0183",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_css_continuous_certification.py",
+    "startup_dependency_id": "STARTUP-0184",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_curriculum_office.py",
+    "startup_dependency_id": "STARTUP-0185",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_decision_evaluation_office.py",
+    "startup_dependency_id": "STARTUP-0186",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_derivatives_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0187",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_doctrine_management_office.py",
+    "startup_dependency_id": "STARTUP-0188",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_ecs003_doctrine_library.py",
+    "startup_dependency_id": "STARTUP-0189",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_ecs003_rm_program_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0190",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_enterprise_activity_bus.py",
+    "startup_dependency_id": "STARTUP-0191",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_enterprise_command_center.py",
+    "startup_dependency_id": "STARTUP-0192",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_enterprise_credit_governor.py",
+    "startup_dependency_id": "STARTUP-0193",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoda_constitutional_invariants.py",
+    "startup_dependency_id": "STARTUP-0194",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodb_runtime_bridge_certification.py",
+    "startup_dependency_id": "STARTUP-0195",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodc_truth_promotion.py",
+    "startup_dependency_id": "STARTUP-0196",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodd_transaction_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0197",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eode_fault_injection_lab.py",
+    "startup_dependency_id": "STARTUP-0198",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodf_long_duration_operations_lab.py",
+    "startup_dependency_id": "STARTUP-0199",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodg_read_only_integrity.py",
+    "startup_dependency_id": "STARTUP-0200",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodh_synthetic_truth_quarantine.py",
+    "startup_dependency_id": "STARTUP-0201",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodi_test_evidence_office.py",
+    "startup_dependency_id": "STARTUP-0202",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodj_market_data_boundary.py",
+    "startup_dependency_id": "STARTUP-0203",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodk_bridge_fabric.py",
+    "startup_dependency_id": "STARTUP-0204",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodl_office_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0205",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eodm_to_eodr_constitutional_closure.py",
+    "startup_dependency_id": "STARTUP-0206",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoea_canonical_bridge_denominator_execution.py",
+    "startup_dependency_id": "STARTUP-0207",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoec_production_synthetic_truth_elimination.py",
+    "startup_dependency_id": "STARTUP-0208",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoed_deterministic_persistence_recovery.py",
+    "startup_dependency_id": "STARTUP-0209",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoee_full_suite_failure_timeout_elimination.py",
+    "startup_dependency_id": "STARTUP-0210",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoef_wall_clock_operational_campaigns.py",
+    "startup_dependency_id": "STARTUP-0211",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoeg_missing_eoeb_closure.py",
+    "startup_dependency_id": "STARTUP-0212",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoeh_remaining_bridge_blocker_elimination.py",
+    "startup_dependency_id": "STARTUP-0213",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoej_full_suite_failure_error_closure.py",
+    "startup_dependency_id": "STARTUP-0214",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoek_to_eoeo_preflight.py",
+    "startup_dependency_id": "STARTUP-0215",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_eoint_constitutional_intelligence.py",
+    "startup_dependency_id": "STARTUP-0216",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_event_intelligence_office.py",
+    "startup_dependency_id": "STARTUP-0217",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_evidence_evaluation_office.py",
+    "startup_dependency_id": "STARTUP-0218",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_execution_quality_office.py",
+    "startup_dependency_id": "STARTUP-0219",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_executive_dashboard.py",
+    "startup_dependency_id": "STARTUP-0220",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_executive_framework.py",
+    "startup_dependency_id": "STARTUP-0221",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_executive_readiness.py",
+    "startup_dependency_id": "STARTUP-0222",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_executive_workflow.py",
+    "startup_dependency_id": "STARTUP-0223",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0224",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm001_b01_constitutional_baseline.py",
+    "startup_dependency_id": "STARTUP-0225",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm001_b02_object_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0226",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm001_b03_decision_admissibility.py",
+    "startup_dependency_id": "STARTUP-0227",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm001_b04_interface_traceability.py",
+    "startup_dependency_id": "STARTUP-0228",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm001_b05_final_readiness.py",
+    "startup_dependency_id": "STARTUP-0229",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm002_b01_implementation_discovery.py",
+    "startup_dependency_id": "STARTUP-0230",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm002_b02_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0231",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm002_b03_implementation_remediation.py",
+    "startup_dependency_id": "STARTUP-0232",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm002_b04_proof_generation.py",
+    "startup_dependency_id": "STARTUP-0233",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_exit_decision_rm002_b05_independent_reproduction.py",
+    "startup_dependency_id": "STARTUP-0234",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_finance_tutor_office.py",
+    "startup_dependency_id": "STARTUP-0235",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_foundation_readiness.py",
+    "startup_dependency_id": "STARTUP-0236",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_foundation_testing_framework.py",
+    "startup_dependency_id": "STARTUP-0237",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_fundamental_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0238",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_fundamental_research_office.py",
+    "startup_dependency_id": "STARTUP-0239",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0240",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_historian_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0241",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_historian_group_framework.py",
+    "startup_dependency_id": "STARTUP-0242",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_historian_readiness.py",
+    "startup_dependency_id": "STARTUP-0243",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_human_override.py",
+    "startup_dependency_id": "STARTUP-0244",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_hypothesis_validation_office.py",
+    "startup_dependency_id": "STARTUP-0245",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_identity_framework.py",
+    "startup_dependency_id": "STARTUP-0246",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_ifvr001_phase35_truth_envelope.py",
+    "startup_dependency_id": "STARTUP-0247",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_ifvr001_runtime_convergence.py",
+    "startup_dependency_id": "STARTUP-0248",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_inf001_infrastructure_boundaries.py",
+    "startup_dependency_id": "STARTUP-0249",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_inf002_to_inf005_infrastructure_doctrines.py",
+    "startup_dependency_id": "STARTUP-0250",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_inf006_governance_doctrine.py",
+    "startup_dependency_id": "STARTUP-0251",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_inf007_governance_additions.py",
+    "startup_dependency_id": "STARTUP-0252",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_inf_mo001_to_006_infrastructure_remediation.py",
+    "startup_dependency_id": "STARTUP-0253",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_inf_mo_revision_certification_execution.py",
+    "startup_dependency_id": "STARTUP-0254",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_infrastructure_resource_management.py",
+    "startup_dependency_id": "STARTUP-0255",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_institutional_knowledge_office.py",
+    "startup_dependency_id": "STARTUP-0256",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_instruction_office.py",
+    "startup_dependency_id": "STARTUP-0257",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_interactive_organization_explorer.py",
+    "startup_dependency_id": "STARTUP-0258",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_knowledge_assessment_office.py",
+    "startup_dependency_id": "STARTUP-0259",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_knowledge_graph_office.py",
+    "startup_dependency_id": "STARTUP-0260",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_learning_integration_office.py",
+    "startup_dependency_id": "STARTUP-0261",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_librarian_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0262",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_librarian_group_framework.py",
+    "startup_dependency_id": "STARTUP-0263",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_librarian_readiness.py",
+    "startup_dependency_id": "STARTUP-0264",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_liquidity_risk_office.py",
+    "startup_dependency_id": "STARTUP-0265",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_live_portfolio_performance_console.py",
+    "startup_dependency_id": "STARTUP-0266",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_macroeconomic_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0267",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_macroeconomic_office.py",
+    "startup_dependency_id": "STARTUP-0268",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_model_calibration_office.py",
+    "startup_dependency_id": "STARTUP-0269",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0270",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm001_b01_constitutional_baseline.py",
+    "startup_dependency_id": "STARTUP-0271",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm001_b02_object_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0272",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm001_b03_interface_evidence_traceability.py",
+    "startup_dependency_id": "STARTUP-0273",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm001_b04_final_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0274",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm002_b02_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0275",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm002_b03_implementation_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0276",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm002_b04_final_certification.py",
+    "startup_dependency_id": "STARTUP-0277",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm002_b05_clean_room_negative_validation.py",
+    "startup_dependency_id": "STARTUP-0278",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm002_b06_dependency_discovery_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0279",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_monitoring_rm002_b08_b09_reproducibility_outputs.py",
+    "startup_dependency_id": "STARTUP-0280",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_mosp001_source_registry.py",
+    "startup_dependency_id": "STARTUP-0281",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_mosp004_seeker_evidence_acquisition.py",
+    "startup_dependency_id": "STARTUP-0282",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_mosp005_to_008_search_doctrine.py",
+    "startup_dependency_id": "STARTUP-0283",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_mosp009_to_013_search_governance.py",
+    "startup_dependency_id": "STARTUP-0284",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_motr001_to_004_truth_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0285",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_motr005_to_008_domain_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0286",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_motr009_to_012_operational_reconciliation.py",
+    "startup_dependency_id": "STARTUP-0287",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_motr013_to_016_office_dispositions.py",
+    "startup_dependency_id": "STARTUP-0288",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_motr017_to_019_certification_controls.py",
+    "startup_dependency_id": "STARTUP-0289",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_news_sentiment_office.py",
+    "startup_dependency_id": "STARTUP-0290",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_office_operating_modes_scheduler.py",
+    "startup_dependency_id": "STARTUP-0291",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_options_flow_office.py",
+    "startup_dependency_id": "STARTUP-0292",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_or003_paper_brokerage.py",
+    "startup_dependency_id": "STARTUP-0293",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_or004_position_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0294",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_or005_canonical_runtime.py",
+    "startup_dependency_id": "STARTUP-0295",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_or006_enterprise_persistence.py",
+    "startup_dependency_id": "STARTUP-0296",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_or007_enterprise_certification.py",
+    "startup_dependency_id": "STARTUP-0297",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_order_management_office.py",
+    "startup_dependency_id": "STARTUP-0298",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_performance_measurement_office.py",
+    "startup_dependency_id": "STARTUP-0299",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_persistence_framework.py",
+    "startup_dependency_id": "STARTUP-0300",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_portfolio_risk_office.py",
+    "startup_dependency_id": "STARTUP-0301",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_management_office.py",
+    "startup_dependency_id": "STARTUP-0302",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0303",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_b01002a_s01_trading_boundaries.py",
+    "startup_dependency_id": "STARTUP-0304",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "startup_dependency_id": "STARTUP-0305",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_b01002a_s03_enterprise_governance_boundaries.py",
+    "startup_dependency_id": "STARTUP-0306",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_b01002a_s05_enterprise_dependencies.py",
+    "startup_dependency_id": "STARTUP-0307",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_b01002a_s06_constitutional_boundary_baseline.py",
+    "startup_dependency_id": "STARTUP-0308",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_constitutional_baseline.py",
+    "startup_dependency_id": "STARTUP-0309",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_s02_object_lifecycle.py",
+    "startup_dependency_id": "STARTUP-0310",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_s03_interface_evidence_traceability.py",
+    "startup_dependency_id": "STARTUP-0311",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_s04_implementation_mapping.py",
+    "startup_dependency_id": "STARTUP-0312",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_s05_behavioral_verification.py",
+    "startup_dependency_id": "STARTUP-0313",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm001_s06_final_certification.py",
+    "startup_dependency_id": "STARTUP-0314",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_registry_rm002a_final_closure.py",
+    "startup_dependency_id": "STARTUP-0315",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_position_risk_office.py",
+    "startup_dependency_id": "STARTUP-0316",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_prompt_evaluation_office.py",
+    "startup_dependency_id": "STARTUP-0317",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_prompt_specification_repository.py",
+    "startup_dependency_id": "STARTUP-0318",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_recovery_planning_office.py",
+    "startup_dependency_id": "STARTUP-0319",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_repository_structure.py",
+    "startup_dependency_id": "STARTUP-0320",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0321",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_interaction_office.py",
+    "startup_dependency_id": "STARTUP-0322",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_m4_operational_certification.py",
+    "startup_dependency_id": "STARTUP-0323",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_office_framework.py",
+    "startup_dependency_id": "STARTUP-0324",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_readiness.py",
+    "startup_dependency_id": "STARTUP-0325",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm001_office_integrity.py",
+    "startup_dependency_id": "STARTUP-0326",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm002_completion.py",
+    "startup_dependency_id": "STARTUP-0327",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm003_closure_operational.py",
+    "startup_dependency_id": "STARTUP-0328",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm003_object_foundation.py",
+    "startup_dependency_id": "STARTUP-0329",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm003_specification.py",
+    "startup_dependency_id": "STARTUP-0330",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm003_state_operational.py",
+    "startup_dependency_id": "STARTUP-0331",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm004_certification_completion.py",
+    "startup_dependency_id": "STARTUP-0332",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm004_closure_operational.py",
+    "startup_dependency_id": "STARTUP-0333",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm004_foundation_operational.py",
+    "startup_dependency_id": "STARTUP-0334",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm005_candidate_operational.py",
+    "startup_dependency_id": "STARTUP-0335",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm005_closure_operational.py",
+    "startup_dependency_id": "STARTUP-0336",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm005_execution_operational.py",
+    "startup_dependency_id": "STARTUP-0337",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm005_registry_operational.py",
+    "startup_dependency_id": "STARTUP-0338",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm005a_operational.py",
+    "startup_dependency_id": "STARTUP-0339",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_risk_rm006_independent_certification.py",
+    "startup_dependency_id": "STARTUP-0340",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_seek_rm001_to_007_office_integrity.py",
+    "startup_dependency_id": "STARTUP-0341",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_seeker_department_framework.py",
+    "startup_dependency_id": "STARTUP-0342",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_seeker_readiness.py",
+    "startup_dependency_id": "STARTUP-0343",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_sent_gov019_to_021_governance.py",
+    "startup_dependency_id": "STARTUP-0344",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_sent_mo001_002_canonical_runtime.py",
+    "startup_dependency_id": "STARTUP-0345",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_sent_mo001_to_005_sentinel_observation.py",
+    "startup_dependency_id": "STARTUP-0346",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_sent_mo_runtime_certification_revision.py",
+    "startup_dependency_id": "STARTUP-0347",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_sent_rm002_certification_support.py",
+    "startup_dependency_id": "STARTUP-0348",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_sent_rm003_office_integrity.py",
+    "startup_dependency_id": "STARTUP-0349",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_specification_repository_office.py",
+    "startup_dependency_id": "STARTUP-0350",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_statistical_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0351",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_tail_risk_office.py",
+    "startup_dependency_id": "STARTUP-0352",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_tc001_trace_equivalence.py",
+    "startup_dependency_id": "STARTUP-0353",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_tc002_to_tc004_trace_closure.py",
+    "startup_dependency_id": "STARTUP-0354",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_tc005_to_tc008_trace_closure.py",
+    "startup_dependency_id": "STARTUP-0355",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_technical_analysis_office.py",
+    "startup_dependency_id": "STARTUP-0356",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trade_execution_office.py",
+    "startup_dependency_id": "STARTUP-0357",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trade_monitoring_office.py",
+    "startup_dependency_id": "STARTUP-0358",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_audit_enablement.py",
+    "startup_dependency_id": "STARTUP-0359",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_constitutional_governance.py",
+    "startup_dependency_id": "STARTUP-0360",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_ecs003_audit.py",
+    "startup_dependency_id": "STARTUP-0361",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_fusion_office.py",
+    "startup_dependency_id": "STARTUP-0362",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_group_framework.py",
+    "startup_dependency_id": "STARTUP-0363",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_readiness.py",
+    "startup_dependency_id": "STARTUP-0364",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_requirement_proof.py",
+    "startup_dependency_id": "STARTUP-0365",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_requirement_verifier.py",
+    "startup_dependency_id": "STARTUP-0366",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002_constitution.py",
+    "startup_dependency_id": "STARTUP-0367",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b01_runner.py",
+    "startup_dependency_id": "STARTUP-0368",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b02_fill_fixtures.py",
+    "startup_dependency_id": "STARTUP-0369",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b02_runner.py",
+    "startup_dependency_id": "STARTUP-0370",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b03_runner.py",
+    "startup_dependency_id": "STARTUP-0371",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b04_authorization_batch.py",
+    "startup_dependency_id": "STARTUP-0372",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b05_risk_batch.py",
+    "startup_dependency_id": "STARTUP-0373",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b06_enterprise_dashboard_batch.py",
+    "startup_dependency_id": "STARTUP-0374",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a016_b07_candidate_readiness.py",
+    "startup_dependency_id": "STARTUP-0375",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_trader_rm002a_publication.py",
+    "startup_dependency_id": "STARTUP-0376",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_treasury_trading_control_panel.py",
+    "startup_dependency_id": "STARTUP-0377",
+    "startup_mechanism": "Python script entry point"
+  },
+  {
+    "deterministic": true,
+    "location": "Tests/test_volatility_risk_office.py",
+    "startup_dependency_id": "STARTUP-0378",
+    "startup_mechanism": "Python script entry point"
+  }
+]

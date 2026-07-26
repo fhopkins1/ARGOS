@@ -1,0 +1,624 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-003-003
+
+# Independent Proof Lineage Validation
+
+## Objective
+
+Independently validate complete, deterministic, bidirectional proof lineage for every proof object regenerated under **CLOSED-POSITION-TRUTH-RM-002-B07-003-002**.
+
+Validate the complete lineage chain:
+
+```text
+Constitution
+        │
+        ▼
+Canonical Requirement
+        │
+        ▼
+Implementation Obligation
+        │
+        ▼
+Implementation Artifact
+        │
+        ▼
+Verifier
+        │
+        ▼
+Fixture
+        │
+        ▼
+Execution
+        │
+        ▼
+Evidence
+        │
+        ▼
+Proof
+```
+
+This order shall determine whether every regenerated proof possesses complete and admissible lineage from constitutional authority through independently regenerated execution evidence.
+
+No implementation shall be modified.
+
+No behavioral verification shall occur except where strictly required to confirm missing or ambiguous lineage evidence.
+
+No mutation campaign shall occur.
+
+No traceability architecture shall be regenerated under this order.
+
+No certification verdict shall be issued.
+
+---
+
+## Authoritative Inputs
+
+Accept as authoritative inputs:
+
+* the constitutional architecture established under **CLOSED-POSITION-TRUTH-RM-001**;
+* the implementation candidate established under **CLOSED-POSITION-TRUTH-RM-002**;
+* the independently discovered implementation inventory established under **CLOSED-POSITION-TRUTH-RM-002-B07-002**;
+* the independently reproduced behavioral execution population;
+* the regenerated Evidence Registry;
+* the regenerated Evidence Identity Registry;
+* the regenerated Evidence Provenance Registry;
+* the regenerated Evidence Integrity Registry;
+* the regenerated Proof Registry;
+* the regenerated Requirement Proof Registry;
+* the regenerated Proof Findings Registry.
+
+Prior proof-lineage reports, historical traceability graphs, manually prepared mappings, previous certification conclusions, and inherited proof relationships shall not serve as authoritative lineage evidence.
+
+---
+
+## Lineage Model
+
+Represent each proof lineage as a deterministic directed graph containing the following canonical node classes:
+
+* CONSTITUTIONAL_AUTHORITY;
+* CANONICAL_REQUIREMENT;
+* IMPLEMENTATION_OBLIGATION;
+* IMPLEMENTATION_ARTIFACT;
+* VERIFIER;
+* FIXTURE;
+* EXECUTION;
+* EVIDENCE;
+* PROOF.
+
+Represent lineage relationships using, at minimum:
+
+* CONSTITUTION_GOVERNS_REQUIREMENT;
+* REQUIREMENT_CREATES_OBLIGATION;
+* OBLIGATION_BINDS_IMPLEMENTATION;
+* IMPLEMENTATION_IS_VERIFIED_BY;
+* VERIFIER_USES_FIXTURE;
+* VERIFIER_AND_FIXTURE_PRODUCE_EXECUTION;
+* EXECUTION_PRODUCES_EVIDENCE;
+* EVIDENCE_SUPPORTS_PROOF;
+* PROOF_DISPOSES_REQUIREMENT.
+
+Every node and relationship shall possess deterministic identity.
+
+---
+
+## Node Validation
+
+For every lineage node, verify:
+
+* canonical identity;
+* node class;
+* authoritative source;
+* existence;
+* uniqueness;
+* ownership;
+* provenance;
+* content integrity;
+* admissibility;
+* current status.
+
+Reject any node that is:
+
+* absent;
+* duplicated without justification;
+* inferred from a summary;
+* inherited from prior certification artifacts;
+* manually synthesized;
+* unsupported by authoritative source material;
+* identified only by filename or directory location;
+* represented solely by a completion report or registry declaration.
+
+---
+
+## Relationship Validation
+
+For every lineage relationship, verify:
+
+* originating node identity;
+* destination node identity;
+* relationship type;
+* relationship authority;
+* derivation method;
+* provenance;
+* admissibility;
+* uniqueness;
+* directionality;
+* constitutional relevance.
+
+A relationship shall not be accepted merely because both endpoint nodes exist.
+
+Each relationship shall possess objective support establishing why the originating node validly connects to the destination node.
+
+---
+
+## Forward Lineage Validation
+
+For every canonical constitutional requirement, traverse lineage forward through:
+
+1. constitutional authority;
+2. canonical requirement;
+3. implementation obligation;
+4. implementation artifact;
+5. verifier;
+6. fixture;
+7. execution;
+8. evidence;
+9. proof.
+
+Verify that every required stage exists and that each transition is supported by admissible provenance.
+
+Identify:
+
+* requirements without implementation obligations;
+* obligations without implementation artifacts;
+* implementation artifacts without verifiers;
+* verifiers without fixtures where fixtures are required;
+* verifiers or fixtures without executions;
+* executions without evidence;
+* evidence without proof;
+* requirements without exactly one proof disposition.
+
+A forward lineage path shall be complete only when it terminates in the proof object disposing the originating requirement.
+
+---
+
+## Backward Lineage Validation
+
+For every proof object, traverse lineage backward through:
+
+1. proof;
+2. evidence;
+3. execution;
+4. fixture;
+5. verifier;
+6. implementation artifact;
+7. implementation obligation;
+8. canonical requirement;
+9. constitutional authority.
+
+Verify that every proof can be traced to:
+
+* admissible regenerated evidence;
+* an independently reproduced execution;
+* the governing verifier;
+* the governing fixture where applicable;
+* the implementation artifact exercised;
+* the implementation obligation tested;
+* the exact canonical requirement disposed;
+* the governing constitutional authority.
+
+Any proof that cannot be traced completely backward shall be classified as an orphan or broken-lineage proof.
+
+---
+
+## Proof-Disposition Lineage Requirements
+
+### PROVEN
+
+A PROVEN disposition shall possess complete lineage through every applicable stage.
+
+The supporting evidence shall:
+
+* originate from an independently reproduced execution;
+* be admissible;
+* possess verified integrity;
+* directly support the requirement;
+* be produced by the identified verifier and fixture;
+* exercise the identified implementation artifact;
+* demonstrate the identified implementation obligation.
+
+A PROVEN disposition shall fail lineage validation if any required stage is absent, inferred, inherited, aggregate, or unsupported.
+
+### NOT_PROVEN
+
+A NOT_PROVEN disposition shall possess lineage to objective evidence or findings demonstrating why proof could not be established.
+
+Validate lineage through:
+
+* canonical requirement;
+* implementation obligation;
+* affected implementation artifact;
+* verifier or missing-verifier finding;
+* fixture or missing-fixture finding;
+* execution or execution-gap finding;
+* evidence or evidence-gap finding;
+* Proof Findings Registry entry;
+* NOT_PROVEN proof object.
+
+NOT_PROVEN shall not be treated as absence of lineage.
+
+### NOT_APPLICABLE
+
+A NOT_APPLICABLE disposition shall possess lineage to explicit constitutional authority establishing inapplicability.
+
+Validate:
+
+* the canonical requirement;
+* the relevant constitutional scope rule;
+* implementation-scope evidence;
+* the written justification;
+* the approving authority where defined;
+* the NOT_APPLICABLE proof object.
+
+Implementation absence, verifier absence, fixture absence, execution failure, or missing evidence shall not establish NOT_APPLICABLE lineage.
+
+---
+
+## Evidence-to-Proof Validation
+
+For every evidence-to-proof relationship, verify:
+
+* evidence identity exists in the Evidence Registry;
+* evidence integrity is valid;
+* evidence provenance is complete;
+* evidence was regenerated under the current clean-room campaign;
+* evidence directly supports the proof disposition;
+* evidence belongs to the identified execution;
+* execution belongs to the identified verifier and fixture;
+* evidence has not been copied from prior certification packages;
+* evidence has not been reconstructed from reports;
+* evidence is not used circularly to validate itself.
+
+Where one evidence artifact supports multiple requirements, require explicit constitutional justification demonstrating that the same execution independently establishes each requirement.
+
+Unjustified evidence reuse shall produce a lineage finding.
+
+---
+
+## Implementation Lineage Validation
+
+For every implementation artifact represented in proof lineage, verify that participation was established through dependency-derived discovery.
+
+Do not accept participation inferred solely from:
+
+* filenames;
+* directory names;
+* comments;
+* documentation;
+* naming conventions;
+* manually maintained implementation inventories;
+* prior traceability mappings.
+
+Validate that each implementation artifact is connected to the relevant obligation through objective evidence such as:
+
+* runtime invocation;
+* imports;
+* object construction;
+* dependency relationships;
+* persistence participation;
+* schema participation;
+* event production;
+* event consumption;
+* evidence generation.
+
+---
+
+## Verifier and Fixture Lineage Validation
+
+For every verifier and fixture relationship, verify:
+
+* verifier identity exists in the Verifier Registry;
+* fixture identity exists in the Fixture Registry;
+* the verifier actually consumed the fixture;
+* the execution record identifies both;
+* the raw execution evidence supports the relationship;
+* the fixture state was applicable to the requirement;
+* the verifier asserted the relevant behavior.
+
+Framework collection, fixture declaration, parameter naming, or static proximity shall not independently establish participation.
+
+---
+
+## Execution Lineage Validation
+
+For every execution represented in lineage, verify:
+
+* deterministic execution identity;
+* repository identity;
+* environment identity;
+* configuration identity;
+* verifier identity;
+* fixture identity;
+* requirement identity;
+* execution disposition;
+* raw evidence references;
+* integrity hashes.
+
+Reject lineage to:
+
+* planned but unexecuted verification;
+* skipped verification;
+* deselected verification;
+* overwritten execution evidence;
+* historical execution;
+* execution lacking deterministic identity;
+* execution whose raw evidence cannot be located or validated.
+
+---
+
+## Unique Proof Ownership
+
+Verify that every proof object disposes exactly one canonical requirement.
+
+Verify that every canonical requirement is disposed by exactly one proof object.
+
+Identify:
+
+* duplicate proof ownership;
+* multiple proof objects disposing one requirement;
+* one proof object disposing multiple unrelated requirements;
+* proof objects without requirements;
+* requirements without proof objects;
+* conflicting proof dispositions.
+
+Shared supporting evidence may be permitted only where constitutionally justified, but proof ownership shall remain requirement-specific.
+
+---
+
+## Circular-Lineage Detection
+
+Detect and reject all circular lineage, including:
+
+* proof supporting its own evidence;
+* proof validating its own requirement mapping;
+* registry declarations serving as evidence for the records they contain;
+* traceability artifacts serving as proof of their own correctness;
+* completion reports proving completion;
+* inferred relationships justified by downstream proof;
+* requirement mappings derived solely from existing proof objects;
+* evidence admissibility established solely by the proof it supports.
+
+Every accepted lineage path shall form an acyclic directed path from constitutional authority to proof.
+
+---
+
+## Orphan Detection
+
+Identify every:
+
+* orphan constitutional requirement;
+* orphan implementation obligation;
+* orphan implementation artifact;
+* orphan verifier;
+* orphan fixture;
+* orphan execution;
+* orphan evidence artifact;
+* orphan proof object;
+* orphan lineage relationship.
+
+An orphan is any required node or relationship that cannot participate in a complete admissible forward or backward lineage path.
+
+Non-participating artifacts shall be explicitly classified and justified rather than silently excluded.
+
+---
+
+## Broken-Lineage Classification
+
+Classify each lineage defect as one of:
+
+* MISSING_NODE;
+* MISSING_RELATIONSHIP;
+* INVALID_RELATIONSHIP;
+* INADMISSIBLE_SOURCE;
+* BROKEN_FORWARD_LINEAGE;
+* BROKEN_BACKWARD_LINEAGE;
+* ORPHAN_NODE;
+* ORPHAN_RELATIONSHIP;
+* DUPLICATE_PROOF_OWNERSHIP;
+* CONFLICTING_PROOF_DISPOSITION;
+* UNJUSTIFIED_EVIDENCE_REUSE;
+* CIRCULAR_LINEAGE;
+* NONDETERMINISTIC_LINEAGE;
+* PROVENANCE_FAILURE;
+* IDENTITY_CONFLICT;
+* INTEGRITY_FAILURE.
+
+Each defect shall produce an objective lineage finding.
+
+---
+
+## Deterministic Lineage Identity
+
+Assign deterministic identities to lineage paths and relationships.
+
+A lineage-path identity shall derive from, at minimum:
+
+* constitutional authority identity;
+* requirement identity;
+* implementation obligation identity;
+* implementation artifact identity;
+* verifier identity;
+* fixture identity or justified fixture-null identity;
+* execution identity;
+* evidence identity;
+* proof identity.
+
+Machine-specific paths, timestamps, random identifiers, and traversal order shall not independently determine canonical lineage identity.
+
+---
+
+## Proof Lineage Registry
+
+Produce a deterministic **Proof Lineage Registry** containing, at minimum:
+
+* lineage identity;
+* constitutional authority identity;
+* requirement identity;
+* implementation obligation identity;
+* implementation artifact identity;
+* verifier identity;
+* fixture identity;
+* execution identity;
+* evidence identity;
+* proof identity;
+* proof disposition;
+* forward-lineage status;
+* backward-lineage status;
+* provenance status;
+* integrity status;
+* ownership status;
+* finding references.
+
+Registry ordering and serialization shall be deterministic.
+
+---
+
+## Lineage Findings Registry
+
+Produce a deterministic **Lineage Findings Registry** containing, at minimum:
+
+* finding identity;
+* finding classification;
+* affected lineage identity;
+* affected node identity;
+* affected relationship identity;
+* affected requirement identity;
+* affected proof identity;
+* objective evidence references;
+* observed condition;
+* required lineage condition;
+* severity;
+* certification relevance;
+* remediation requirement.
+
+No lineage defect shall be omitted because the associated proof disposition is NOT_PROVEN or NOT_APPLICABLE.
+
+---
+
+## Lineage Validation Report
+
+Produce a **Lineage Validation Report** documenting:
+
+* validation scope;
+* authoritative inputs;
+* lineage model;
+* identity derivation;
+* forward-validation results;
+* backward-validation results;
+* proof-ownership results;
+* orphan analysis;
+* circular-lineage analysis;
+* evidence-reuse analysis;
+* provenance analysis;
+* integrity analysis;
+* unresolved lineage findings;
+* order completion status.
+
+The report shall not issue an implementation-certification verdict.
+
+---
+
+## Reconciliation Requirements
+
+Reconcile:
+
+* constitutional requirements against proof objects;
+* proof objects against evidence;
+* evidence against executions;
+* executions against verifiers and fixtures;
+* verifiers against implementation artifacts;
+* implementation artifacts against implementation obligations;
+* implementation obligations against canonical requirements;
+* canonical requirements against constitutional authority;
+* forward lineage against backward lineage;
+* lineage registry entries against source registries;
+* lineage findings against every incomplete or invalid path.
+
+Every discrepancy shall produce an explicit finding.
+
+---
+
+## Prohibited Actions
+
+Do not:
+
+* create missing implementation mappings manually;
+* infer proof lineage from naming conventions;
+* inherit prior lineage relationships;
+* use prior traceability graphs as authoritative inputs;
+* synthesize evidence-to-proof relationships;
+* convert aggregate behavioral success into requirement-level lineage;
+* treat registry presence as proof of validity;
+* suppress orphan nodes;
+* suppress circular relationships;
+* merge unrelated requirements into one proof;
+* alter proof dispositions to make lineage complete;
+* modify implementation, verifier, fixture, execution, evidence, or proof artifacts;
+* issue a certification verdict.
+
+---
+
+## Fail-Closed Requirements
+
+This order shall fail closed when:
+
+* any canonical requirement lacks exactly one proof object;
+* any PROVEN proof lacks complete admissible lineage;
+* any NOT_PROVEN proof lacks objective finding lineage;
+* any NOT_APPLICABLE proof lacks constitutional justification lineage;
+* any lineage node lacks deterministic identity;
+* any required relationship lacks objective provenance;
+* any orphan node or relationship remains unresolved;
+* duplicate proof ownership exists;
+* conflicting proof dispositions exist;
+* unjustified evidence reuse exists;
+* circular lineage exists;
+* forward and backward lineage do not reconcile;
+* lineage depends upon prior certification artifacts or manually assigned mappings.
+
+---
+
+## Required Deliverables
+
+Produce:
+
+* Proof Lineage Registry;
+* Lineage Findings Registry;
+* Lineage Validation Report;
+* deterministic lineage graph data;
+* forward-lineage reconciliation record;
+* backward-lineage reconciliation record;
+* proof-ownership reconciliation record;
+* orphan-node and orphan-relationship report;
+* circular-lineage analysis;
+* order completion report.
+
+---
+
+## Acceptance Criteria
+
+This order shall complete only when:
+
+* every canonical requirement possesses exactly one proof object;
+* every proof object possesses deterministic identity and unique requirement ownership;
+* every PROVEN proof possesses complete forward and backward lineage to admissible regenerated execution evidence;
+* every NOT_PROVEN proof possesses complete lineage to objective findings;
+* every NOT_APPLICABLE proof possesses complete lineage to explicit constitutional justification;
+* every lineage node and relationship possesses deterministic identity and provenance;
+* every implementation artifact relationship originates from dependency-derived discovery;
+* every verifier, fixture, execution, and evidence relationship is supported by objective records;
+* all forward lineage reconciles with backward lineage;
+* no orphan proof, evidence, execution, fixture, verifier, implementation artifact, obligation, or requirement remains;
+* no duplicate, conflicting, inferred, inherited, aggregate, synthesized, or circular lineage remains;
+* every lineage defect has been recorded in the Lineage Findings Registry;
+* all required registries and reports have been generated deterministically;
+* no implementation or regenerated evidence or proof artifact has been modified;
+* no traceability-regeneration or certification verdict has been issued.
