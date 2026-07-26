@@ -1,0 +1,33 @@
+[
+  {
+    "artifact_id": "PT-ART-26e0d9713368d6e5",
+    "fixture_id": "PT-FIX-9051a7952278e999",
+    "framework": "unittest",
+    "module": "Tests.test_performance_measurement_office",
+    "path": "Tests/test_performance_measurement_office.py",
+    "test_functions": [
+      "test_duplicate_datasets_are_rejected_to_preserve_history",
+      "test_historical_comparisons_and_trends_function",
+      "test_organizational_performance_reports_are_generated",
+      "test_scorecard_rankings_are_deterministic_and_traceable",
+      "test_standards_define_librarian_deliverables"
+    ],
+    "verifier_id": "PT-VER-26e0d9713368d6e5"
+  },
+  {
+    "artifact_id": "PT-ART-d78edd1d91c36b46",
+    "fixture_id": "PT-FIX-90377b32b8882f8e",
+    "framework": "unittest",
+    "module": "Tests.test_live_portfolio_performance_console",
+    "path": "Tests/test_live_portfolio_performance_console.py",
+    "test_functions": [
+      "test_lppc_calculates_risk_and_performance_metrics",
+      "test_lppc_detects_invalid_market_data",
+      "test_lppc_displays_all_portfolio_types_and_combined_metrics",
+      "test_lppc_drilldown_preserves_traceability_to_orders_evidence_and_history",
+      "test_paper_trading_activation_adds_paper_positions",
+      "test_ui_and_server_expose_lppc"
+    ],
+    "verifier_id": "PT-VER-d78edd1d91c36b46"
+  }
+]

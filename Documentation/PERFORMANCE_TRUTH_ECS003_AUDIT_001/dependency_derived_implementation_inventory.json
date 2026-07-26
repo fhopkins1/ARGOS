@@ -1,0 +1,208 @@
+[
+  {
+    "artifact_id": "PT-ART-6e1e0bb5795e49ca",
+    "classification": "BENCHMARK_COMPONENT",
+    "imports": [
+      "__future__",
+      "argos.foundation.contracts",
+      "dataclasses",
+      "datetime",
+      "hashlib",
+      "json",
+      "os",
+      "position_registry",
+      "truth_domain",
+      "truth_promotion",
+      "typing",
+      "zoneinfo"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "src/argos/control_panel/performance_truth_engine.py",
+    "sha256": "8a8b9c4ec6224f5a4414997ff5e96ab340420661aa9b58af781f59dc89f707da"
+  },
+  {
+    "artifact_id": "PT-ART-7089157c6e92daa3",
+    "classification": "EVIDENCE_COMPONENT",
+    "imports": [
+      "__future__",
+      "argos.foundation.audit",
+      "argos.foundation.configuration",
+      "argos.foundation.contracts",
+      "argos.foundation.identity",
+      "argos.foundation.persistence",
+      "argos.foundation.prompts",
+      "dataclasses",
+      "enum",
+      "group",
+      "hashlib",
+      "json",
+      "statistics",
+      "typing"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "src/argos/historian/performance.py",
+    "sha256": "e1f46f5c4c92536153652d39bd4fb98547dcd9845275d28a8a9da8cd0655e742"
+  },
+  {
+    "artifact_id": "PT-ART-803fe464034ed69f",
+    "classification": "BENCHMARK_COMPONENT",
+    "imports": [
+      "__future__",
+      "dataclasses",
+      "typing"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "src/argos/control_panel/strategy_performance_console.py",
+    "sha256": "711cedd3c4359f723b87bc6deac6c1169296b2d34a83700a6fd27c9bcd58e63b"
+  },
+  {
+    "artifact_id": "PT-ART-881c3400397151ad",
+    "classification": "BENCHMARK_COMPONENT",
+    "imports": [
+      "__future__",
+      "dataclasses",
+      "typing"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "src/argos/control_panel/enterprise_benchmark_engine.py",
+    "sha256": "064ae9146c8778c38abb9b3c0719344157d1c2c4dda2c39c2f3272c7ab11977c"
+  },
+  {
+    "artifact_id": "PT-ART-b51be35d373aaad0",
+    "classification": "AGGREGATION_COMPONENT",
+    "imports": [
+      "__future__",
+      "dataclasses",
+      "typing"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "src/argos/control_panel/lppc.py",
+    "sha256": "2a9d7639c6bb5e83603e89f13b2335ba0ac6a5e27959da7f48948517837094eb"
+  },
+  {
+    "artifact_id": "PT-ART-26e0d9713368d6e5",
+    "classification": "VERIFIER",
+    "imports": [
+      "argos.foundation.audit",
+      "argos.foundation.configuration",
+      "argos.foundation.persistence",
+      "argos.foundation.prompts",
+      "argos.historian",
+      "pathlib",
+      "sys",
+      "unittest"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "Tests/test_performance_measurement_office.py",
+    "sha256": "b5efa93c700012cde53defa2dc93fe7e17ea057021864db63e68602a6f42d8eb"
+  },
+  {
+    "artifact_id": "PT-ART-d78edd1d91c36b46",
+    "classification": "VERIFIER",
+    "imports": [
+      "argos.control_panel",
+      "pathlib",
+      "sys",
+      "unittest"
+    ],
+    "participation_basis": "dependency and content discovery",
+    "path": "Tests/test_live_portfolio_performance_console.py",
+    "sha256": "864854f476fa182e6dadde7afe344f73f61fec47efe54ea1912a147ba991c0f3"
+  },
+  {
+    "artifact_id": "PT-ART-9a58ace85d1233f7",
+    "classification": "PERFORMANCE_TRUTH_DEPENDENCY",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DA_Performance_and_Overhead_Report.md",
+    "sha256": "03f672da23fe634b8dc507c4a07926a6884eeb7c660f4160e32c976457415ba0"
+  },
+  {
+    "artifact_id": "PT-ART-7992b7e5d76ca3a3",
+    "classification": "PERFORMANCE_TRUTH_DEPENDENCY",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DB_Performance_and_Overhead_Report.md",
+    "sha256": "d8b25ba9d7e95cb48d693cc89620d52ad71478794d114f97796bbad4202668d4"
+  },
+  {
+    "artifact_id": "PT-ART-c3d181308e293b64",
+    "classification": "PERFORMANCE_TRUTH_DEPENDENCY",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DC_Broker_Position_and_Performance_Truth_Promotion.md",
+    "sha256": "5a6f25c9ffedf7c03657d598d37078e560b019151efd562f301ef2915d15d570"
+  },
+  {
+    "artifact_id": "PT-ART-a6fe582e0a372a22",
+    "classification": "PERFORMANCE_TRUTH_DEPENDENCY",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DC_Performance_and_Overhead_Report.md",
+    "sha256": "b3aca7e4f249e11270e7b7d331088a226535d7fe7c40edb6b164e4997e2621d1"
+  },
+  {
+    "artifact_id": "PT-ART-1af4efa5f29e846e",
+    "classification": "EVIDENCE_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DD_Performance_and_Overhead_Report.md",
+    "sha256": "f2662332ecae128859e7efad3dc14c632ec4f5388186c00f03a3e6f6980d0212"
+  },
+  {
+    "artifact_id": "PT-ART-db2c39e47fb4854f",
+    "classification": "EVIDENCE_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DD_Performance_Truth_and_Historian_Reconciliation.md",
+    "sha256": "eeebdb97f760b8873015355fd7ed3dd1ec105b64ab6fe047a96d41b92393ff93"
+  },
+  {
+    "artifact_id": "PT-ART-a1af091214f4cb2d",
+    "classification": "EVIDENCE_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DF_Performance_and_Overhead_Report.md",
+    "sha256": "b0eb202e727f9b0fe5094dd1c66a0b904f4670978253ca92f0fa52ee81083267"
+  },
+  {
+    "artifact_id": "PT-ART-f195b5ce6241e2e4",
+    "classification": "EVIDENCE_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DG_Performance_and_Overhead_Report.md",
+    "sha256": "95289310d6360b797fdb2a0adcd43beb50d4c3c8736ff2bda2f5ea37edad744b"
+  },
+  {
+    "artifact_id": "PT-ART-c0900c66825d10fb",
+    "classification": "BENCHMARK_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DH_Performance_and_Closed_Position_Truth_Audit.md",
+    "sha256": "86267e87dede0d4b96838f58aa91311a14d4bc69a633873051341c1818491622"
+  },
+  {
+    "artifact_id": "PT-ART-04e0017589c14593",
+    "classification": "PERFORMANCE_TRUTH_DEPENDENCY",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/EO-DI_Performance_and_Overhead_Report.md",
+    "sha256": "c3d0e6e2b79df3ccc550adf8894889246fa37d74c2d0ce01b6db98cf7407fce5"
+  },
+  {
+    "artifact_id": "PT-ART-bb6d6301b1abae68",
+    "classification": "AGGREGATION_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/live_portfolio_performance_console.md",
+    "sha256": "112f2a6c31868af0609f50e8f0e32398e195596870cacfc37683fb5b39fa1846"
+  },
+  {
+    "artifact_id": "PT-ART-a9b88a96dbedde1b",
+    "classification": "EVIDENCE_COMPONENT",
+    "imports": [],
+    "participation_basis": "dependency and content discovery",
+    "path": "Documentation/performance_measurement_office.md",
+    "sha256": "69883c5ed50832811209be6c3fbf0e616afbf298658a132552f1872ab5b94524"
+  }
+]
