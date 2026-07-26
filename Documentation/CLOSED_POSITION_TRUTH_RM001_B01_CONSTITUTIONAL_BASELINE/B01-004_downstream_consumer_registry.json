@@ -1,0 +1,67 @@
+[
+  {
+    "authority_owner": "Closed Position Truth Office",
+    "classification": "DOWNSTREAM_CONSUMER",
+    "consumer": "Performance Truth",
+    "dependency_direction": "Closed Position Truth Office -> Performance Truth",
+    "dependency_id": "CPT-DEP-006",
+    "dependency_owner": "Closed Position Truth Office",
+    "failure_behavior": "preserve published truth and emit consumer-facing evidence",
+    "information": "realized outcomes, realized profit/loss, holding duration, closure timestamps",
+    "provider": "Closed Position Truth Office",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Closed Position Truth Office",
+    "classification": "DOWNSTREAM_CONSUMER",
+    "consumer": "Historian",
+    "dependency_direction": "Closed Position Truth Office -> Historian",
+    "dependency_id": "CPT-DEP-007",
+    "dependency_owner": "Closed Position Truth Office",
+    "failure_behavior": "preserve published truth and emit consumer-facing evidence",
+    "information": "immutable records, supersession lineage, correction lineage, archival records",
+    "provider": "Closed Position Truth Office",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Closed Position Truth Office",
+    "classification": "DOWNSTREAM_CONSUMER",
+    "consumer": "Monitoring",
+    "dependency_direction": "Closed Position Truth Office -> Monitoring",
+    "dependency_id": "CPT-DEP-008",
+    "dependency_owner": "Closed Position Truth Office",
+    "failure_behavior": "preserve published truth and emit consumer-facing evidence",
+    "information": "closure events, anomalies, constitutional closure failures",
+    "provider": "Closed Position Truth Office",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Closed Position Truth Office",
+    "classification": "DOWNSTREAM_CONSUMER",
+    "consumer": "Analyst",
+    "dependency_direction": "Closed Position Truth Office -> Analyst",
+    "dependency_id": "CPT-DEP-009",
+    "dependency_owner": "Closed Position Truth Office",
+    "failure_behavior": "preserve published truth and emit consumer-facing evidence",
+    "information": "authoritative closed-position records",
+    "provider": "Closed Position Truth Office",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Closed Position Truth Office",
+    "classification": "DOWNSTREAM_CONSUMER",
+    "consumer": "Commander",
+    "dependency_direction": "Closed Position Truth Office -> Commander",
+    "dependency_id": "CPT-DEP-010",
+    "dependency_owner": "Closed Position Truth Office",
+    "failure_behavior": "preserve published truth and emit consumer-facing evidence",
+    "information": "enterprise reporting and operational visibility",
+    "provider": "Closed Position Truth Office",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  }
+]

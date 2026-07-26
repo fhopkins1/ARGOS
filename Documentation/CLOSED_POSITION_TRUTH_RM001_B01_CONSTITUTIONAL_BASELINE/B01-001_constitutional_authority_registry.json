@@ -1,0 +1,100 @@
+[
+  {
+    "authority_id": "CPT-AUTH-001",
+    "authority_name": "constitutional_closure_determination",
+    "authority_scope": "determine whether constitutional closure requirements are satisfied",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  },
+  {
+    "authority_id": "CPT-AUTH-002",
+    "authority_name": "authoritative_truth_creation",
+    "authority_scope": "create authoritative Closed Position Truth after every prerequisite is satisfied",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  },
+  {
+    "authority_id": "CPT-AUTH-003",
+    "authority_name": "closed_position_record_maintenance",
+    "authority_scope": "maintain immutable active Closed Position Truth records until archival transfer",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  },
+  {
+    "authority_id": "CPT-AUTH-004",
+    "authority_name": "successor_supersession",
+    "authority_scope": "supersede prior Closed Position Truth through successor records only",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  },
+  {
+    "authority_id": "CPT-AUTH-005",
+    "authority_name": "archival_eligibility",
+    "authority_scope": "determine archival eligibility before Historian custody transfer",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  },
+  {
+    "authority_id": "CPT-AUTH-006",
+    "authority_name": "invalid_closure_rejection",
+    "authority_scope": "reject, defer, or suspend truth creation when required evidence is absent or contradictory",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  },
+  {
+    "authority_id": "CPT-AUTH-007",
+    "authority_name": "upstream_truth_reconciliation",
+    "authority_scope": "reconcile closure eligibility using authorized upstream truth without owning upstream truth",
+    "constitutional_owner": "Closed Position Truth Office",
+    "limitations": [
+      "no upstream truth mutation",
+      "no trading authority",
+      "no broker truth authority",
+      "no downstream performance analytics ownership"
+    ],
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-001",
+    "status": "ESTABLISHED"
+  }
+]

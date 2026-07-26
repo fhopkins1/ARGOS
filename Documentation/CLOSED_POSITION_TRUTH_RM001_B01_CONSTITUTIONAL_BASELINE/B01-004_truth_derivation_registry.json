@@ -1,0 +1,17 @@
+{
+  "analytical_truth_creation_permitted": false,
+  "derivation_id": "CPT-DERIVATION-001",
+  "requires_successful_prior_stage": true,
+  "sequence": [
+    "Market Evidence",
+    "Broker Truth",
+    "Execution Reconciliation",
+    "Position Reconciliation",
+    "Constitutional Closure Validation",
+    "Closed Position Truth",
+    "Performance Truth",
+    "Historian"
+  ],
+  "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004",
+  "stage_skip_permitted": false
+}

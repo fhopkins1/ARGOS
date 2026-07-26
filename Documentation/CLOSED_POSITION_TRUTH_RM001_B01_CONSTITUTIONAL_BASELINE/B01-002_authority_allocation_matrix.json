@@ -1,0 +1,90 @@
+[
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Trader",
+    "owned_responsibilities": "execution intent, execution requests, trading workflow, execution control",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Broker",
+    "owned_responsibilities": "broker-originated facts, acknowledgements, execution confirmations, settlement communications",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Position Registry",
+    "owned_responsibilities": "open-position identity, quantity, lifecycle, and state",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Exit Decision",
+    "owned_responsibilities": "exit evaluation, recommendations, decisions, and rationale",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Risk",
+    "owned_responsibilities": "risk calculations, exposure assessments, and constraint evaluation",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": false,
+    "office": "Performance Truth",
+    "owned_responsibilities": "enterprise performance measurement and analytics",
+    "produced_by_closed_position_truth": true,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": false,
+    "office": "Historian",
+    "owned_responsibilities": "immutable archival custody and replay custody",
+    "produced_by_closed_position_truth": true,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Monitoring",
+    "owned_responsibilities": "operational observations, evidence, and alerts",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": false,
+    "office": "Analyst",
+    "owned_responsibilities": "analytical models, findings, and recommendations",
+    "produced_by_closed_position_truth": true,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": true,
+    "office": "Infrastructure",
+    "owned_responsibilities": "platform, storage, runtime availability",
+    "produced_by_closed_position_truth": false,
+    "shared_responsibility": false
+  },
+  {
+    "authority_overlap": false,
+    "consumed_by_closed_position_truth": false,
+    "office": "Commander",
+    "owned_responsibilities": "enterprise intent, strategic governance, constitutional oversight",
+    "produced_by_closed_position_truth": true,
+    "shared_responsibility": false
+  }
+]

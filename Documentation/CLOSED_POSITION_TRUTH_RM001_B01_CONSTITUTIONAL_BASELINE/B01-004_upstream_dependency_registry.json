@@ -1,0 +1,67 @@
+[
+  {
+    "authority_owner": "Broker",
+    "classification": "UPSTREAM_REQUIRED",
+    "consumer": "Closed Position Truth Office",
+    "dependency_direction": "Broker -> Closed Position Truth Office",
+    "dependency_id": "CPT-DEP-001",
+    "dependency_owner": "Broker",
+    "failure_behavior": "suspend truth creation and preserve evidence",
+    "information": "execution facts, timestamps, identifiers, acknowledgements, settlement evidence, broker transaction records",
+    "provider": "Broker",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Trader",
+    "classification": "UPSTREAM_REQUIRED",
+    "consumer": "Closed Position Truth Office",
+    "dependency_direction": "Trader -> Closed Position Truth Office",
+    "dependency_id": "CPT-DEP-002",
+    "dependency_owner": "Trader",
+    "failure_behavior": "suspend truth creation and preserve evidence",
+    "information": "execution requests, intent history, lifecycle state, reconciliation participation",
+    "provider": "Trader",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Position Registry",
+    "classification": "UPSTREAM_REQUIRED",
+    "consumer": "Closed Position Truth Office",
+    "dependency_direction": "Position Registry -> Closed Position Truth Office",
+    "dependency_id": "CPT-DEP-003",
+    "dependency_owner": "Position Registry",
+    "failure_behavior": "suspend truth creation and preserve evidence",
+    "information": "position identity, quantity, remaining position state, reconciliation state",
+    "provider": "Position Registry",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Exit Decision",
+    "classification": "UPSTREAM_REQUIRED",
+    "consumer": "Closed Position Truth Office",
+    "dependency_direction": "Exit Decision -> Closed Position Truth Office",
+    "dependency_id": "CPT-DEP-004",
+    "dependency_owner": "Exit Decision",
+    "failure_behavior": "suspend truth creation and preserve evidence",
+    "information": "exit decision identity, rationale, lineage, authority",
+    "provider": "Exit Decision",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "authority_owner": "Risk",
+    "classification": "UPSTREAM_REQUIRED",
+    "consumer": "Closed Position Truth Office",
+    "dependency_direction": "Risk -> Closed Position Truth Office",
+    "dependency_id": "CPT-DEP-005",
+    "dependency_owner": "Risk",
+    "failure_behavior": "suspend truth creation and preserve evidence",
+    "information": "realized risk context, final risk disposition",
+    "provider": "Risk",
+    "reconciliation_owner": "Closed Position Truth Office",
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  }
+]

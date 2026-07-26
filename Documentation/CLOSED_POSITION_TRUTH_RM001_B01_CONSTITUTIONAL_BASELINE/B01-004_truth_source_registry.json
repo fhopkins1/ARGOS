@@ -1,0 +1,58 @@
+[
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Broker",
+    "owned_truth": "broker acknowledgements, fills, cancellations, rejections, broker execution status, settlement facts",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  },
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Trader",
+    "owned_truth": "execution workflow, instructions, lifecycle, management, request lineage",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  },
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Position Registry",
+    "owned_truth": "open-position identity, current quantity, current state, mutation, active reconciliation",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  },
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Exit Decision",
+    "owned_truth": "exit evaluation, recommendation, decision, rationale, lineage",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  },
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Risk",
+    "owned_truth": "risk state, limits, exposure calculations, constraints",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  },
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Performance Truth",
+    "owned_truth": "enterprise, portfolio, strategy, attribution, risk-adjusted, and analytical performance truth",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  },
+  {
+    "closed_position_truth_may_consume": true,
+    "closed_position_truth_may_modify": false,
+    "office": "Historian",
+    "owned_truth": "permanent historical custody",
+    "ownership_transfer_to_closed_position_truth": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-003"
+  }
+]

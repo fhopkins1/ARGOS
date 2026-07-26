@@ -1,0 +1,44 @@
+[
+  {
+    "constitutional_disposition": "suspend truth creation, perform reconciliation, preserve evidence, prohibit authoritative closure",
+    "failure_condition": "Broker discrepancy",
+    "failure_id": "CPT-DEPFAIL-001",
+    "inferred_truth_allowed": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "constitutional_disposition": "prohibit closure, preserve intermediate evidence, generate findings",
+    "failure_condition": "Reconciliation failure",
+    "failure_id": "CPT-DEPFAIL-002",
+    "inferred_truth_allowed": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "constitutional_disposition": "prohibit authoritative closure unless constitutionally exempt",
+    "failure_condition": "Incomplete settlement",
+    "failure_id": "CPT-DEPFAIL-003",
+    "inferred_truth_allowed": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "constitutional_disposition": "trigger reconciliation, prohibit duplicate truth creation, preserve evidence",
+    "failure_condition": "Duplicate execution",
+    "failure_id": "CPT-DEPFAIL-004",
+    "inferred_truth_allowed": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "constitutional_disposition": "fail admissibility and prohibit truth creation",
+    "failure_condition": "Stale evidence",
+    "failure_id": "CPT-DEPFAIL-005",
+    "inferred_truth_allowed": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  },
+  {
+    "constitutional_disposition": "never create authoritative truth and never invalidate existing authoritative truth",
+    "failure_condition": "Degraded analytical input",
+    "failure_id": "CPT-DEPFAIL-006",
+    "inferred_truth_allowed": false,
+    "source_order": "CLOSED-POSITION-TRUTH-RM-001-B01-004"
+  }
+]
