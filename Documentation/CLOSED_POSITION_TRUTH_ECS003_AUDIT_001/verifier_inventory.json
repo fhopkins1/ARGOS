@@ -1,0 +1,110 @@
+[
+  {
+    "artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "459c017a9d47543253bc3cdb6511bb5a37486fa81d866396d034547ace957498",
+    "test_methods_with_closed_position_signal": [
+      "test_performance_truth_engine_records_immutable_ledgers_and_drives_dashboard_metrics",
+      "test_performance_truth_engine_isolates_paper_and_live_records_and_does_not_mutate_on_state_poll",
+      "test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+      "test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+      "test_eo_xe_closed_positive_quantity_is_rejected_and_no_ai_is_used",
+      "test_eo_xf_trader_bridge_displays_closed_position_truth_and_exposure",
+      "test_eo_y_detects_truth_drift_for_missing_closed_position_evidence",
+      "test_eo_ba_replay_buy_sell_positions_truth_and_benchmarks_are_isolated",
+      "test_decision_laboratory_replays_completed_workflow_and_preserves_truth",
+      "test_oe100a_capital_first_bridge_uses_truth_and_cost_sources",
+      "test_oe100a_performance_truth_history_drives_capital_metrics",
+      "test_eo_k_enterprise_configuration_registry_is_single_truth",
+      "test_eo_bi_capital_state_uses_performance_truth_authority",
+      "test_eo_bn_end_of_day_and_weekly_briefings_distinguish_truth_evidence"
+    ]
+  },
+  {
+    "artifact": "Tests/test_eoda_constitutional_invariants.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "168de5c8176ac009d8b1521ea27bbdc18493eeb7ddb4f0d350831ab9a329ec6c",
+    "test_methods_with_closed_position_signal": [
+      "test_canonical_runtime_startup_fails_closed_when_live_requested",
+      "test_truth_domain_gate_accepts_valid_envelope_and_rejects_proof",
+      "test_broker_position_monitor_detects_unfilled_position_lineage_and_duplicate_closed_truth",
+      "test_read_only_guard_detects_digest_mutation_without_creating_truth"
+    ]
+  },
+  {
+    "artifact": "Tests/test_eodd_transaction_reconciliation.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "722a44be0de479f35322efe4e448e3451b6b4b9405747f6ca775cf486ae81a0b",
+    "test_methods_with_closed_position_signal": []
+  },
+  {
+    "artifact": "Tests/test_eodg_read_only_integrity.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "5044798360f28240476bde645b86860c9176b7080b856009192a58a5bc8a5d2c",
+    "test_methods_with_closed_position_signal": []
+  },
+  {
+    "artifact": "Tests/test_eoed_deterministic_persistence_recovery.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "720ec30b26eec6711e0f6a5956c5ac080ad2babe79ba0cbe8ac275bcd7538033",
+    "test_methods_with_closed_position_signal": []
+  },
+  {
+    "artifact": "Tests/test_ifvr001_phase35_truth_envelope.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "fd311645810598e72a2650c91375273a3d93d1f38c59b883a0d10a6f75d2066c",
+    "test_methods_with_closed_position_signal": [
+      "test_operational_truth_envelope_rejects_missing_proof_simulation_and_degraded_inputs",
+      "test_decision_object_operational_path_rejects_non_operational_truth",
+      "test_performance_truth_requires_valid_broker_envelope_before_ledger_mutation",
+      "test_degraded_closed_position_output_is_analytical_only_and_not_learning_promoted"
+    ]
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm001_b01_constitutional_baseline.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "cd3aa865f0fe88705fe1a944677285222e71729cd25b2fd31ff20321cb73a05e",
+    "test_methods_with_closed_position_signal": []
+  },
+  {
+    "artifact": "Tests/test_or004_position_lifecycle.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "83afdcf920ae9869f9e7ea266362fd7dfcdac702899accde3eb5f90339aac9f3",
+    "test_methods_with_closed_position_signal": [
+      "test_partial_and_full_closure_require_broker_confirmed_fills"
+    ]
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "8b8088d6c5d328fe1a72d086db88826a6eafeb03a1583cced2ca5c6bc38de64f",
+    "test_methods_with_closed_position_signal": [
+      "test_truth_ownership_is_unique_and_complete"
+    ]
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s05_enterprise_dependencies.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "e04f0fe1ec5d373839577497a13e4b5c99566bcd998cd3c96c456975d5d8c87b",
+    "test_methods_with_closed_position_signal": []
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s03_interface_evidence_traceability.py",
+    "classification": "VERIFIER",
+    "derivation": "test artifact imports or references Closed Position Truth runtime participants",
+    "sha256": "4e6c0fe8bd776c939a5ba167ebbd2f858ae2ced30bd886aea1f077d8931d18f8",
+    "test_methods_with_closed_position_signal": [
+      "test_b03_002_truth_ownership_and_precedence_are_unambiguous"
+    ]
+  }
+]

@@ -1,0 +1,326 @@
+{
+  "edges": [
+    {
+      "from": "CPT-REQ-001",
+      "to": "CPT-PROOF-001",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-002",
+      "to": "CPT-PROOF-002",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-003",
+      "to": "CPT-PROOF-003",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-004",
+      "to": "CPT-PROOF-004",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-005",
+      "to": "CPT-PROOF-005",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-006",
+      "to": "CPT-PROOF-006",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-007",
+      "to": "CPT-PROOF-007",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-008",
+      "to": "CPT-PROOF-008",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-009",
+      "to": "CPT-PROOF-009",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-010",
+      "to": "CPT-PROOF-010",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-011",
+      "to": "CPT-PROOF-011",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-012",
+      "to": "CPT-PROOF-012",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-013",
+      "to": "CPT-PROOF-013",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-REQ-014",
+      "to": "CPT-PROOF-014",
+      "type": "REQUIREMENT_TO_PROOF"
+    },
+    {
+      "from": "CPT-BEH-001",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "CPT-BEH-002",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "CPT-BEH-003",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "CPT-BEH-004",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "CPT-BEH-005",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "CPT-BEH-006",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "CPT-BEH-007",
+      "to": "CPT-REQ-013",
+      "type": "EXECUTION_TO_BEHAVIOR_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/__init__.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/authority_promotion_closure.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/capital_allocation_engine.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/closed_position_truth.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/commander_strategic_dashboard.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/constitutional_certification_series.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/constitutional_invariants.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/deterministic_persistence_recovery_closure.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/enterprise_configuration_registry.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/enterprise_grand_strategy_engine.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/enterprise_reality_calibration.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/enterprise_risk_factor_engine.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/fault_injection_lab.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/financial_recovery_authority.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/full_position_lifecycle_runtime.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/long_duration_operations_lab.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/market_replay_engine.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/performance_truth_engine.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/position_lifecycle_manager.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/production_read_surface_registry.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/production_synthetic_truth_elimination.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/read_only_integrity.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/runtime.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/runtime_bridge_certification.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/synthetic_truth_quarantine.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/transaction_reconciliation.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    },
+    {
+      "from": "src/argos/control_panel/truth_promotion.py",
+      "to": "CPT-REQ-012",
+      "type": "IMPLEMENTATION_TO_DISCOVERY_REQUIREMENT"
+    }
+  ],
+  "graph_id": "CPT-ECS003-TRACEABILITY-GRAPH",
+  "nodes": {
+    "direct_implementation": [
+      "src/argos/control_panel/closed_position_truth.py"
+    ],
+    "executions": [
+      "CPT-BEH-001",
+      "CPT-BEH-002",
+      "CPT-BEH-003",
+      "CPT-BEH-004",
+      "CPT-BEH-005",
+      "CPT-BEH-006",
+      "CPT-BEH-007"
+    ],
+    "implementation": [
+      "src/argos/control_panel/__init__.py",
+      "src/argos/control_panel/authority_promotion_closure.py",
+      "src/argos/control_panel/canonical_enterprise_runtime.py",
+      "src/argos/control_panel/capital_allocation_engine.py",
+      "src/argos/control_panel/closed_position_truth.py",
+      "src/argos/control_panel/commander_strategic_dashboard.py",
+      "src/argos/control_panel/constitutional_certification_series.py",
+      "src/argos/control_panel/constitutional_invariants.py",
+      "src/argos/control_panel/deterministic_persistence_recovery_closure.py",
+      "src/argos/control_panel/enterprise_configuration_registry.py",
+      "src/argos/control_panel/enterprise_grand_strategy_engine.py",
+      "src/argos/control_panel/enterprise_reality_calibration.py",
+      "src/argos/control_panel/enterprise_risk_factor_engine.py",
+      "src/argos/control_panel/fault_injection_lab.py",
+      "src/argos/control_panel/financial_recovery_authority.py",
+      "src/argos/control_panel/full_position_lifecycle_runtime.py",
+      "src/argos/control_panel/long_duration_operations_lab.py",
+      "src/argos/control_panel/market_replay_engine.py",
+      "src/argos/control_panel/performance_truth_engine.py",
+      "src/argos/control_panel/position_lifecycle_manager.py",
+      "src/argos/control_panel/production_read_surface_registry.py",
+      "src/argos/control_panel/production_synthetic_truth_elimination.py",
+      "src/argos/control_panel/read_only_integrity.py",
+      "src/argos/control_panel/runtime.py",
+      "src/argos/control_panel/runtime_bridge_certification.py",
+      "src/argos/control_panel/synthetic_truth_quarantine.py",
+      "src/argos/control_panel/transaction_reconciliation.py",
+      "src/argos/control_panel/truth_promotion.py"
+    ],
+    "proofs": [
+      "CPT-PROOF-001",
+      "CPT-PROOF-002",
+      "CPT-PROOF-003",
+      "CPT-PROOF-004",
+      "CPT-PROOF-005",
+      "CPT-PROOF-006",
+      "CPT-PROOF-007",
+      "CPT-PROOF-008",
+      "CPT-PROOF-009",
+      "CPT-PROOF-010",
+      "CPT-PROOF-011",
+      "CPT-PROOF-012",
+      "CPT-PROOF-013",
+      "CPT-PROOF-014"
+    ],
+    "requirements": [
+      "CPT-REQ-001",
+      "CPT-REQ-002",
+      "CPT-REQ-003",
+      "CPT-REQ-004",
+      "CPT-REQ-005",
+      "CPT-REQ-006",
+      "CPT-REQ-007",
+      "CPT-REQ-008",
+      "CPT-REQ-009",
+      "CPT-REQ-010",
+      "CPT-REQ-011",
+      "CPT-REQ-012",
+      "CPT-REQ-013",
+      "CPT-REQ-014"
+    ]
+  }
+}

@@ -1,0 +1,594 @@
+[
+  {
+    "artifact": "Tests/test_argos_control_panel_dashboard.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "argos.control_panel.performance_truth_engine",
+        "argos.control_panel.performance_truth_engine.PerformanceTruthEngine",
+        "argos.control_panel.performance_truth_engine",
+        "argos.control_panel.performance_truth_engine.PerformanceTruthEngine",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.performance_truth_engine",
+        "argos.control_panel.performance_truth_engine.PerformanceTruthEngine",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder"
+      ],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth",
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": true
+    },
+    "sha256": "459c017a9d47543253bc3cdb6511bb5a37486fa81d866396d034547ace957498"
+  },
+  {
+    "artifact": "Tests/test_eoda_constitutional_invariants.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "168de5c8176ac009d8b1521ea27bbdc18493eeb7ddb4f0d350831ab9a329ec6c"
+  },
+  {
+    "artifact": "Tests/test_eodd_transaction_reconciliation.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "722a44be0de479f35322efe4e448e3451b6b4b9405747f6ca775cf486ae81a0b"
+  },
+  {
+    "artifact": "Tests/test_eodg_read_only_integrity.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "5044798360f28240476bde645b86860c9176b7080b856009192a58a5bc8a5d2c"
+  },
+  {
+    "artifact": "Tests/test_eoed_deterministic_persistence_recovery.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "720ec30b26eec6711e0f6a5956c5ac080ad2babe79ba0cbe8ac275bcd7538033"
+  },
+  {
+    "artifact": "Tests/test_ifvr001_phase35_truth_envelope.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "argos.control_panel.closed_position_truth",
+        "argos.control_panel.closed_position_truth.ClosedPositionTruthBuilder",
+        "argos.control_panel.performance_truth_engine",
+        "argos.control_panel.performance_truth_engine.PerformanceTruthEngine"
+      ],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth"
+      ],
+      "runtime_invocation_signal": true
+    },
+    "sha256": "fd311645810598e72a2650c91375273a3d93d1f38c59b883a0d10a6f75d2066c"
+  },
+  {
+    "artifact": "Tests/test_monitoring_rm001_b01_constitutional_baseline.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "cd3aa865f0fe88705fe1a944677285222e71729cd25b2fd31ff20321cb73a05e"
+  },
+  {
+    "artifact": "Tests/test_or004_position_lifecycle.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "83afdcf920ae9869f9e7ea266362fd7dfcdac702899accde3eb5f90339aac9f3"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s02_lifecycle_boundaries.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "8b8088d6c5d328fe1a72d086db88826a6eafeb03a1583cced2ca5c6bc38de64f"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_b01002a_s05_enterprise_dependencies.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "e04f0fe1ec5d373839577497a13e4b5c99566bcd998cd3c96c456975d5d8c87b"
+  },
+  {
+    "artifact": "Tests/test_position_registry_rm001_s03_interface_evidence_traceability.py",
+    "classification": "VERIFIER",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "4e6c0fe8bd776c939a5ba167ebbd2f858ae2ced30bd886aea1f077d8931d18f8"
+  },
+  {
+    "artifact": "src/argos/control_panel/__init__.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "closed_position_truth",
+        "closed_position_truth.ClosedPositionTruthBuilder",
+        "closed_position_truth.ClosedPositionTruthConfig",
+        "closed_position_truth.ClosedPositionTruthRecord",
+        "performance_truth_engine",
+        "performance_truth_engine.PerformanceTruthEngine"
+      ],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "90d1951f4d3241bcdb33af41b540934bc51cee61208ee6b4be09ce9da173be7a"
+  },
+  {
+    "artifact": "src/argos/control_panel/authority_promotion_closure.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "d394a8823c8a369d49dfbd4987fb9bcc7a3ebdc7aafc145b747b9ea0ba54a7b4"
+  },
+  {
+    "artifact": "src/argos/control_panel/canonical_enterprise_runtime.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "closed_position_truth",
+        "closed_position_truth.ClosedPositionTruthBuilder",
+        "performance_truth_engine",
+        "performance_truth_engine.PerformanceTruthEngine"
+      ],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth"
+      ],
+      "runtime_invocation_signal": true
+    },
+    "sha256": "a26b277b94c79d53f4374a14e8889399bdd2e6f9e38c0dc67d1178c0eef2bd20"
+  },
+  {
+    "artifact": "src/argos/control_panel/capital_allocation_engine.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "2813bd54c6f40e002a331b045e88fe1c6f7ef7c63252cf46a6a40f2ef28bb25d"
+  },
+  {
+    "artifact": "src/argos/control_panel/closed_position_truth.py",
+    "classification": "CLOSED_POSITION_DIRECT",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "a1f77379095a7dbda47aadd88ec432bda05b815f73166735fd8d9e1eb025abc3"
+  },
+  {
+    "artifact": "src/argos/control_panel/commander_strategic_dashboard.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "8a84448627dd3a3ccaa950e2ee74525a5f5bb3d76cef1d62a27d760d5cd3e2b1"
+  },
+  {
+    "artifact": "src/argos/control_panel/constitutional_certification_series.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "dc507d6703fff65a36ec3441e5e2efaea0ce54833ee939d48073b75c81225f39"
+  },
+  {
+    "artifact": "src/argos/control_panel/constitutional_invariants.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "2146287bf3cad775c20dfbaae0a6211ef28382752aea3a9914d4310378ae514d"
+  },
+  {
+    "artifact": "src/argos/control_panel/deterministic_persistence_recovery_closure.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "54a1620b8739742d3beb91520244f835cb335dc6199d6700271f9f7984f67c15"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_configuration_registry.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "7aeef329aec806d244f007bdc6a2af6330329c11a5b34306c9790ca8cfc65cce"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_grand_strategy_engine.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "9447bcb50c9991f9a68f922eb6383c3ec5292f4cd8e9d56a72778982b0eafa97"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_reality_calibration.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "a7bea6c46fb20c9fd0c1e0535a54a6ca0d54b29048e5848f7627eaef398df49e"
+  },
+  {
+    "artifact": "src/argos/control_panel/enterprise_risk_factor_engine.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "25bc3bb029397176f7f1b1c02133146dca0a93f4805cc3abd0f316b6628e729d"
+  },
+  {
+    "artifact": "src/argos/control_panel/fault_injection_lab.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "7e5697f368f133bfb48efa82e52bdc5af3926d22ceb1b2a701eb3f08a98377c8"
+  },
+  {
+    "artifact": "src/argos/control_panel/financial_recovery_authority.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "a8c78897a7397fdf47f19422840136e73a6a6cf307d9b3c5312e7cf007b6d15b"
+  },
+  {
+    "artifact": "src/argos/control_panel/full_position_lifecycle_runtime.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "performance_truth_engine",
+        "performance_truth_engine.PerformanceTruthEngine"
+      ],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "ca78240d1d15ac0a6f0a7050968830140754d683fc1271349b5b5adaa983934a"
+  },
+  {
+    "artifact": "src/argos/control_panel/long_duration_operations_lab.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "1615dc1b70d4081649c3fecaeec3e6c09b59b12a2c4cc5a5c6bd28e612c6c908"
+  },
+  {
+    "artifact": "src/argos/control_panel/market_replay_engine.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "bd40f20161ffd6c676e55a0f81379b9b95c831de48999b99cf8bea10d8324e53"
+  },
+  {
+    "artifact": "src/argos/control_panel/performance_truth_engine.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": true
+    },
+    "sha256": "8a8b9c4ec6224f5a4414997ff5e96ab340420661aa9b58af781f59dc89f707da"
+  },
+  {
+    "artifact": "src/argos/control_panel/position_lifecycle_manager.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "closed_position_truth",
+        "closed_position_truth.ClosedPositionTruthBuilder",
+        "performance_truth_engine",
+        "performance_truth_engine.PerformanceTruthEngine"
+      ],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth"
+      ],
+      "runtime_invocation_signal": true
+    },
+    "sha256": "5d139e6fdb260eab28feb374ac78b53b6147ff4b5e0a5a88c495819d3e78210f"
+  },
+  {
+    "artifact": "src/argos/control_panel/production_read_surface_registry.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "c309cacac6ffedc15f3cdef8b3e63c2b50a34d42312bb68808ad27b8a56aefb7"
+  },
+  {
+    "artifact": "src/argos/control_panel/production_synthetic_truth_elimination.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "1e38373944cb40a2292f01c4c8fd92d24c651552aaaead039ef44987f949887f"
+  },
+  {
+    "artifact": "src/argos/control_panel/read_only_integrity.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "0306072eac8a4e4ac8245b93dde3bd6d540b4a82c5b0a3a10529ebd47e0a28e7"
+  },
+  {
+    "artifact": "src/argos/control_panel/runtime.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [
+        "closed_position_truth",
+        "closed_position_truth.ClosedPositionTruthBuilder",
+        "performance_truth_engine",
+        "performance_truth_engine.PerformanceTruthEngine"
+      ],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth",
+        "closedPositionTruth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": true
+    },
+    "sha256": "9cc55307c175601fec3d116574bb1fb90fda1bbe0bda9459c99f96dfb2ba8e21"
+  },
+  {
+    "artifact": "src/argos/control_panel/runtime_bridge_certification.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder",
+        "closed_position_truth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "b151af74619343a10c47d9607576fbbc271cdcc1742aad4bc05d6502a71884e5"
+  },
+  {
+    "artifact": "src/argos/control_panel/synthetic_truth_quarantine.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "closed_position_truth",
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "db87c551284916a909a50f8d4381f9db8cf2b93906c50903a0a7648170523535"
+  },
+  {
+    "artifact": "src/argos/control_panel/transaction_reconciliation.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "Closed Position Truth"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "d905411102f4f9a952c365f7c4a08f4f110aad7abbf0c959ef0925dd4b02e461"
+  },
+  {
+    "artifact": "src/argos/control_panel/truth_promotion.py",
+    "classification": "CLOSED_POSITION_DEPENDENCY",
+    "dependency_evidence": {
+      "classification_basis": "AST import graph plus runtime reference scan; not filename-only.",
+      "imports": [],
+      "marker_hits": [
+        "ClosedPositionTruthBuilder"
+      ],
+      "runtime_invocation_signal": false
+    },
+    "sha256": "e9a9017fa7d99fa922c23a8e3c4898051521c93c1cfbe9bccaa29c42c9793709"
+  }
+]

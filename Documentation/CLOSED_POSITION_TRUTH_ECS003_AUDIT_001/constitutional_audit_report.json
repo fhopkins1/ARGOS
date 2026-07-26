@@ -1,0 +1,48 @@
+{
+  "findings": [
+    {
+      "affected_artifact": "office_boundaries",
+      "classification": "CONSTITUTIONAL_GAP",
+      "disposition": "OPEN_BLOCKING",
+      "finding_id": "CPT-ECS003-FIND-001",
+      "governing_requirement": "CPT-REQ-002",
+      "objective_evidence": "No authoritative Closed Position Truth constitutional artifact was discovered for this requirement domain.",
+      "remediation_recommendation": "Issue bounded remediation order; do not infer PASS from existing documentation or aggregate test counts.",
+      "severity": "CRITICAL"
+    },
+    {
+      "affected_artifact": "implementation_discovery",
+      "classification": "CONSTITUTIONAL_GAP",
+      "disposition": "OPEN_BLOCKING",
+      "finding_id": "CPT-ECS003-FIND-002",
+      "governing_requirement": "CPT-REQ-012",
+      "objective_evidence": "No authoritative Closed Position Truth constitutional artifact was discovered for this requirement domain.",
+      "remediation_recommendation": "Issue bounded remediation order; do not infer PASS from existing documentation or aggregate test counts.",
+      "severity": "CRITICAL"
+    },
+    {
+      "affected_artifact": "behavioral_verification",
+      "classification": "CONSTITUTIONAL_GAP",
+      "disposition": "OPEN_BLOCKING",
+      "finding_id": "CPT-ECS003-FIND-003",
+      "governing_requirement": "CPT-REQ-013",
+      "objective_evidence": "No authoritative Closed Position Truth constitutional artifact was discovered for this requirement domain.",
+      "remediation_recommendation": "Issue bounded remediation order; do not infer PASS from existing documentation or aggregate test counts.",
+      "severity": "CRITICAL"
+    },
+    {
+      "affected_artifact": "reproducibility",
+      "classification": "CONSTITUTIONAL_GAP",
+      "disposition": "OPEN_BLOCKING",
+      "finding_id": "CPT-ECS003-FIND-004",
+      "governing_requirement": "CPT-REQ-014",
+      "objective_evidence": "No authoritative Closed Position Truth constitutional artifact was discovered for this requirement domain.",
+      "remediation_recommendation": "Issue bounded remediation order; do not infer PASS from existing documentation or aggregate test counts.",
+      "severity": "CRITICAL"
+    }
+  ],
+  "freeze_authorized": false,
+  "phase": "PHASE_I",
+  "source_count": 302,
+  "verdict": "FAIL"
+}

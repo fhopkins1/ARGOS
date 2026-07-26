@@ -1,0 +1,108 @@
+[
+  {
+    "behavioral_scope": [
+      "closure_creation",
+      "fill_reconciliation",
+      "benchmark_evidence"
+    ],
+    "execution_id": "CPT-BEH-001",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-001.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-001.stdout.log",
+    "returncode": 0,
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "terminal_disposition": "PASS",
+    "timeout_seconds": 45
+  },
+  {
+    "behavioral_scope": [
+      "open_position_rejection",
+      "missing_exit_execution"
+    ],
+    "execution_id": "CPT-BEH-002",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-002.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-002.stdout.log",
+    "returncode": 0,
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "terminal_disposition": "PASS",
+    "timeout_seconds": 45
+  },
+  {
+    "behavioral_scope": [
+      "duplicate_closure_handling",
+      "performance_truth_consumption"
+    ],
+    "execution_id": "CPT-BEH-003",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-003.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-003.stdout.log",
+    "returncode": 0,
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+    "terminal_disposition": "PASS",
+    "timeout_seconds": 45
+  },
+  {
+    "behavioral_scope": [
+      "realized_performance",
+      "holding_period",
+      "surveillance_history"
+    ],
+    "execution_id": "CPT-BEH-004",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-004.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-004.stdout.log",
+    "returncode": 0,
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_lifecycle_analytics_calculate_pnl_holding_period_and_surveillance_extremes",
+    "terminal_disposition": "PASS",
+    "timeout_seconds": 45
+  },
+  {
+    "behavioral_scope": [
+      "degraded_benchmark_handling"
+    ],
+    "execution_id": "CPT-BEH-005",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-005.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-005.stdout.log",
+    "returncode": 1,
+    "stderr_sha256": "e1121b2575c5fa152533ed5b5873191c7d3379b9b2df59878d38f247b0736c2a",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_missing_benchmark_creates_degraded_section_when_allowed",
+    "terminal_disposition": "FAIL",
+    "timeout_seconds": 45
+  },
+  {
+    "behavioral_scope": [
+      "quantity_reconciliation",
+      "realized_pnl_reconciliation"
+    ],
+    "execution_id": "CPT-BEH-006",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-006.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-006.stdout.log",
+    "returncode": 0,
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_reconciliation_guards_quantity_and_pnl_mismatches",
+    "terminal_disposition": "PASS",
+    "timeout_seconds": 45
+  },
+  {
+    "behavioral_scope": [
+      "residual_quantity_rejection",
+      "no_ai_used"
+    ],
+    "execution_id": "CPT-BEH-007",
+    "raw_stderr": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-007.stderr.log",
+    "raw_stdout": "Documentation/CLOSED_POSITION_TRUTH_ECS003_AUDIT_001/raw_execution_evidence/CPT-BEH-007.stdout.log",
+    "returncode": 0,
+    "stderr_sha256": "d00440b887b0555b2a864d1e011fe55c1049d80771829e07b4300e0069f4de43",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_positive_quantity_is_rejected_and_no_ai_is_used",
+    "terminal_disposition": "PASS",
+    "timeout_seconds": 45
+  }
+]

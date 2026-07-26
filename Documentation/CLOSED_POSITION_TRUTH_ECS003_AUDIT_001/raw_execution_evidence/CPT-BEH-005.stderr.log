@@ -1,0 +1,14 @@
+E
+======================================================================
+ERROR: test_eo_xe_missing_benchmark_creates_degraded_section_when_allowed (Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_missing_benchmark_creates_degraded_section_when_allowed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Fletc\OneDrive\Documents\ARGOS 2\Tests\test_argos_control_panel_dashboard.py", line 2401, in test_eo_xe_missing_benchmark_creates_degraded_section_when_allowed
+    record = state["latestClosedPositionTruthRecords"][0]
+             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: tuple index out of range
+
+----------------------------------------------------------------------
+Ran 1 tests in <duration>s
+
+FAILED (errors=1)
