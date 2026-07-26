@@ -1,0 +1,476 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-004-002
+
+# Controlled Mutation Execution
+
+## Objective
+
+Independently execute every authorized mutation defined under **CLOSED-POSITION-TRUTH-RM-002-B07-004-001** against an isolated clean-room copy of the Closed Position Truth implementation candidate.
+
+Each mutation shall pass through the same implementation discovery, behavioral verification, evidence regeneration, proof regeneration, traceability regeneration, blocker evaluation, and certification pipeline used for the unmodified baseline.
+
+This order governs mutation execution only.
+
+It shall not determine whether the certification system successfully failed closed. That determination belongs to **CLOSED-POSITION-TRUTH-RM-002-B07-004-003**.
+
+No constitutional doctrine shall be modified.
+
+No implementation remediation shall occur.
+
+No mutation result shall be inferred.
+
+No mutation outcome shall be manually assigned.
+
+No mutation shall be executed against the authoritative unmodified repository package.
+
+---
+
+# Execution Authority
+
+The Mutation Plan, Mutation Registry, and Requirement-to-Mutation Registry produced under **CLOSED-POSITION-TRUTH-RM-002-B07-004-001** shall constitute the complete authorized mutation population.
+
+Only mutations possessing all of the following may execute:
+
+* deterministic mutation identity;
+* governing canonical requirement;
+* governing constitutional authority;
+* governing implementation obligation;
+* identified mutation target;
+* defined mutation operation;
+* expected constitutional violation;
+* isolation procedure;
+* rollback procedure.
+
+Any mutation lacking one or more required attributes shall not execute and shall be recorded as an execution blocker.
+
+No mutation may be introduced solely because a prior certification campaign used it.
+
+---
+
+# Baseline Preservation
+
+Before mutation execution begins, establish and preserve an immutable clean-room baseline containing:
+
+* Repository Package identity;
+* extracted repository identity;
+* repository hash;
+* implementation inventory identity;
+* verifier inventory identity;
+* fixture inventory identity;
+* environment identity;
+* configuration identity;
+* dependency identity;
+* baseline execution identity;
+* baseline evidence identity;
+* baseline proof identity;
+* baseline traceability identity;
+* baseline certification outcome.
+
+The authoritative clean-room baseline shall remain read-only.
+
+Every mutation execution candidate shall be created from a fresh copy of that baseline.
+
+No mutation candidate may become the source for another mutation candidate.
+
+---
+
+# Execution Isolation
+
+Every mutation shall execute within an independently identifiable isolation boundary.
+
+The isolation boundary shall prevent contamination through:
+
+* shared working directories;
+* shared persistence stores;
+* shared caches;
+* shared temporary files;
+* shared generated artifacts;
+* shared environment variables;
+* shared process state;
+* shared package-manager state;
+* shared evidence directories;
+* shared proof directories;
+* shared traceability directories;
+* shared logs;
+* prior mutation output.
+
+Each isolated candidate shall possess:
+
+* unique execution workspace identity;
+* baseline source identity;
+* mutation identity;
+* environment identity;
+* configuration identity;
+* persistence identity;
+* execution identity.
+
+Where infrastructure must be shared, the shared dependency and its isolation controls shall be explicitly documented.
+
+---
+
+# Single-Mutation Rule
+
+Each execution candidate shall contain exactly one authorized mutation wherever practical.
+
+The mutation shall modify only the minimum implementation necessary to create the intended constitutional defect.
+
+A mutation candidate shall not contain:
+
+* unrelated source changes;
+* formatting-only changes unrelated to the mutation;
+* dependency upgrades;
+* configuration changes not required by the mutation;
+* test changes intended to force a result;
+* fixture changes unrelated to the defect;
+* multiple constitutional defects unless the Mutation Plan explicitly authorizes a compound mutation.
+
+Where a single mutation necessarily creates multiple observable consequences, those consequences shall be recorded without reclassifying the candidate as a compound mutation.
+
+Any unauthorized collateral change shall invalidate the mutation execution.
+
+---
+
+# Mutation Application
+
+For every authorized mutation:
+
+1. create a fresh isolated implementation candidate from the immutable baseline;
+2. verify that the candidate initially matches the baseline;
+3. apply the authorized mutation;
+4. calculate the post-mutation artifact hash;
+5. confirm that the intended artifact changed;
+6. confirm that no unauthorized artifact changed;
+7. validate that the mutation matches the authorized mutation specification;
+8. assign the deterministic mutation execution identity;
+9. execute the complete certification pipeline;
+10. preserve all resulting artifacts;
+11. verify rollback or destroy the isolated candidate;
+12. create a fresh candidate before the next mutation.
+
+No mutation shall execute if baseline equivalence cannot first be demonstrated.
+
+---
+
+# Mutation Verification
+
+Before certification execution, verify the applied mutation against the Mutation Registry.
+
+Confirm:
+
+* mutation identity;
+* target artifact identity;
+* pre-mutation hash;
+* post-mutation hash;
+* exact changed region;
+* mutation operation;
+* governing requirement;
+* expected constitutional violation;
+* absence of unrelated changes.
+
+Where practical, preserve a deterministic mutation diff.
+
+The mutation diff shall be treated as execution evidence, not as proof that the certification system detected the defect.
+
+A mutation that was planned but not successfully applied shall be classified as `MUTATION_APPLICATION_FAILED`.
+
+---
+
+# Certification Pipeline Execution
+
+Every successfully applied mutation shall execute through the same clean-room certification pipeline as the baseline candidate.
+
+The pipeline shall include, where applicable:
+
+* implementation discovery;
+* runtime participation discovery;
+* verifier discovery;
+* fixture discovery;
+* behavioral execution;
+* behavioral coverage reconciliation;
+* evidence regeneration;
+* evidence integrity validation;
+* requirement-level proof regeneration;
+* proof-lineage validation;
+* traceability regeneration;
+* blocker generation;
+* certification disposition generation.
+
+No mutation-specific shortcut, verifier subset, alternate runner, manually selected proof path, or special blocker injection is permitted unless the same mechanism belongs to the ordinary certification pipeline.
+
+The pipeline configuration shall remain identical to the baseline except where the mutation itself constitutionally requires a changed input.
+
+---
+
+# Execution Evidence Preservation
+
+For every mutation execution preserve:
+
+* mutation identity;
+* mutation class;
+* governing requirement identity;
+* governing implementation obligation;
+* baseline repository identity;
+* isolated candidate identity;
+* modified artifact identity;
+* pre-mutation artifact hash;
+* post-mutation artifact hash;
+* mutation diff;
+* execution environment identity;
+* configuration identity;
+* dependency identity;
+* certification pipeline identity;
+* verifier identities;
+* fixture identities;
+* execution identities;
+* start time;
+* end time;
+* execution duration;
+* exit status;
+* stdout;
+* stderr;
+* raw behavioral evidence;
+* behavioral findings;
+* regenerated evidence;
+* regenerated proof;
+* regenerated traceability;
+* blocker findings;
+* certification outcome;
+* cleanup outcome.
+
+Raw evidence shall be preserved before any summarization or reconciliation occurs.
+
+---
+
+# Deterministic Execution Identity
+
+Every mutation execution shall possess a deterministic identity derived from stable inputs, including:
+
+* Repository Package identity;
+* clean-room baseline identity;
+* mutation identity;
+* mutation specification version;
+* environment identity;
+* configuration identity;
+* certification pipeline identity.
+
+Execution identity shall not depend upon:
+
+* random values;
+* temporary directory names;
+* process identifiers;
+* workstation usernames;
+* wall-clock timestamps;
+* memory addresses;
+* mutation execution order.
+
+Repeated execution of the same mutation against the same baseline and environment shall produce the same canonical mutation execution identity.
+
+Individual execution attempts may possess subordinate attempt identities where retries are required.
+
+---
+
+# Execution Order
+
+Mutation execution order shall be deterministic.
+
+Execution order shall not affect:
+
+* mutation content;
+* candidate state;
+* evidence generation;
+* proof generation;
+* traceability generation;
+* blocker generation;
+* certification outcome.
+
+Where execution order is randomized for robustness analysis, the randomization seed shall be fixed and recorded, and every mutation shall still execute from a fresh baseline candidate.
+
+No mutation result may depend upon an earlier mutation execution.
+
+---
+
+# Retry Governance
+
+A mutation execution may be retried only when:
+
+* infrastructure failure prevented completion;
+* the certification runner failed before reaching the mutation-sensitive domain;
+* evidence capture failed;
+* the isolated environment was corrupted;
+* the mutation was incorrectly applied;
+* another objective execution defect occurred.
+
+Retries shall not be used to replace an unfavorable certification outcome.
+
+Every attempt shall be preserved.
+
+The final recorded execution population shall distinguish:
+
+* completed execution;
+* incomplete execution;
+* infrastructure failure;
+* mutation application failure;
+* certification pipeline failure;
+* evidence preservation failure.
+
+No failed attempt may be deleted or overwritten.
+
+---
+
+# Baseline Control Executions
+
+Execute unmodified baseline controls at sufficient intervals to demonstrate that:
+
+* the clean-room implementation remains reproducible;
+* the certification pipeline remains operational;
+* mutation infrastructure has not contaminated baseline behavior;
+* compliant implementation acceptance remains stable;
+* verifier and fixture participation remain stable;
+* evidence, proof, and traceability regeneration remain deterministic.
+
+At minimum, execute:
+
+* one unmodified control before the first mutation;
+* one unmodified control after the final mutation.
+
+Additional controls shall be executed after any suspected contamination, infrastructure failure, or unexplained variance.
+
+Control executions shall remain distinct from mutation executions.
+
+---
+
+# Rollback and Candidate Destruction
+
+After every mutation execution:
+
+* preserve all required evidence;
+* verify the authoritative baseline remains unchanged;
+* remove or destroy the mutated candidate;
+* clear mutation-specific persistence;
+* clear mutation-specific temporary state;
+* clear mutation-specific generated artifacts;
+* clear mutation-specific environment changes;
+* verify that the next candidate originates from the immutable baseline.
+
+Rollback shall not consist solely of reversing the source edit inside the same candidate where complete candidate replacement is practical.
+
+Candidate destruction or reset shall be objectively recorded.
+
+---
+
+# Contamination Detection
+
+Detect and record any evidence of:
+
+* cross-mutation state leakage;
+* reused persistence state;
+* reused generated evidence;
+* reused proof artifacts;
+* reused traceability artifacts;
+* stale caches;
+* altered environment configuration;
+* modified baseline artifacts;
+* lingering processes;
+* port conflicts;
+* file-lock conflicts;
+* order-dependent execution outcomes.
+
+Any mutation affected by contamination shall be invalidated and re-executed from a verified clean candidate.
+
+Unresolved contamination shall constitute an execution blocker.
+
+---
+
+# Execution Outcome Classification
+
+Classify each mutation execution as exactly one of:
+
+* `EXECUTION_COMPLETED`;
+* `MUTATION_APPLICATION_FAILED`;
+* `BASELINE_EQUIVALENCE_FAILED`;
+* `ISOLATION_FAILED`;
+* `PIPELINE_EXECUTION_FAILED`;
+* `EVIDENCE_CAPTURE_FAILED`;
+* `ROLLBACK_FAILED`;
+* `EXECUTION_INVALIDATED`;
+* `EXECUTION_NOT_ATTEMPTED`.
+
+These classifications describe execution completion only.
+
+They shall not substitute for the fail-closed outcome classifications established under later orders.
+
+---
+
+# Prohibited Practices
+
+The following are prohibited:
+
+* modifying the authoritative baseline;
+* reusing a previously mutated candidate;
+* executing multiple unapproved mutations together;
+* editing verifiers to detect a mutation;
+* editing fixtures to force a failure;
+* injecting blockers manually;
+* assigning expected certification outcomes as actual outcomes;
+* copying prior mutation evidence;
+* copying prior proof or traceability;
+* suppressing stdout or stderr;
+* discarding failed attempts;
+* accepting partial pipeline execution as complete certification execution;
+* restoring a candidate without verifying baseline equivalence;
+* using mutation execution order as an implicit dependency.
+
+Any prohibited practice shall invalidate the affected execution.
+
+---
+
+# Required Deliverables
+
+Produce:
+
+* Mutation Candidate Registry;
+* Mutation Application Registry;
+* Mutation Diff Registry;
+* Mutation Execution Registry;
+* Mutation Attempt Registry;
+* Mutation Environment Registry;
+* Mutation Artifact Hash Registry;
+* Mutation Evidence Registry;
+* Mutation Behavioral Findings Registry;
+* Mutation Regenerated Evidence Registry;
+* Mutation Regenerated Proof Registry;
+* Mutation Regenerated Traceability Registry;
+* Mutation Blocker Findings Registry;
+* Mutation Certification Outcome Registry;
+* Baseline Control Execution Registry;
+* Isolation Validation Registry;
+* Rollback Validation Registry;
+* Contamination Findings Registry;
+* Mutation Execution Findings Registry;
+* Mutation Execution Report;
+* Order Completion Report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* the immutable clean-room baseline has been established and preserved;
+* every authorized mutation has been assigned an isolated execution candidate;
+* baseline equivalence has been verified before every mutation is applied;
+* every successfully applied mutation matches its authorized specification;
+* every mutation candidate contains only the authorized mutation wherever practical;
+* every mutation has executed through the complete ordinary certification pipeline;
+* every mutation execution possesses deterministic identity;
+* raw execution evidence has been preserved for every attempt;
+* behavioral findings have been preserved;
+* regenerated evidence has been preserved;
+* regenerated proof has been preserved;
+* regenerated traceability has been preserved;
+* blocker findings and certification outcomes have been preserved without inference;
+* every retry and incomplete attempt has been retained;
+* baseline control executions have demonstrated continued compliant operation;
+* every mutation candidate has been deterministically removed or reset;
+* no unresolved cross-mutation contamination remains;
+* every planned mutation is represented by a completed execution or an objective execution finding;
+* the resulting execution population is sufficient to authorize fail-closed validation under **CLOSED-POSITION-TRUTH-RM-002-B07-004-003**.

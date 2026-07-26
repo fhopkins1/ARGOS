@@ -1,0 +1,868 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07-004-003
+
+# Fail-Closed Validation
+
+## Objective
+
+Independently validate that the Closed Position Truth Office certification system detects and rejects every constitutionally defective implementation produced through the controlled mutation campaign established under **CLOSED-POSITION-TRUTH-RM-002-B07-004-001** and executed under **CLOSED-POSITION-TRUTH-RM-002-B07-004-002**.
+
+For every mutation, verify the complete fail-closed consequence chain:
+
+```text
+Constitutional Requirement
+        │
+        ▼
+Controlled Mutation
+        │
+        ▼
+Implementation Defect
+        │
+        ▼
+Behavioral Detection
+        │
+        ▼
+Evidence Defect
+        │
+        ▼
+Proof Invalidation
+        │
+        ▼
+Certification Blocker
+        │
+        ▼
+Certification Rejection
+```
+
+This order shall validate the certification system itself.
+
+No constitutional doctrine shall be modified.
+
+No implementation remediation shall occur.
+
+No mutation shall be altered to force detection.
+
+No mutation outcome shall be inferred.
+
+No certification rejection shall be manually assigned.
+
+Every fail-closed disposition shall originate exclusively from execution of the complete certification pipeline against the isolated mutated implementation candidate.
+
+---
+
+## Authoritative Inputs
+
+Accept as authoritative inputs:
+
+* the constitutional architecture established under **CLOSED-POSITION-TRUTH-RM-001**;
+* the unmodified implementation candidate established under **CLOSED-POSITION-TRUTH-RM-002**;
+* the clean-room repository and environment baseline established under **CLOSED-POSITION-TRUTH-RM-002-B07-001**;
+* the independently reproduced behavioral baseline established under **CLOSED-POSITION-TRUTH-RM-002-B07-002**;
+* the regenerated evidence, proof, and traceability baseline established under **CLOSED-POSITION-TRUTH-RM-002-B07-003**;
+* the Mutation Plan;
+* the Mutation Registry;
+* the Requirement-to-Mutation Registry;
+* the Mutation Execution Registry;
+* the Mutation Evidence Registry;
+* the Mutation Execution Report.
+
+Prior mutation campaigns, historical mutation results, expected blocker inventories, manually assigned outcomes, prior certification reports, and developer assertions shall not control validation.
+
+---
+
+## Required Validation Model
+
+For every executed mutation, independently determine whether the certification pipeline produced each constitutionally required consequence:
+
+1. the mutation created the registered implementation defect;
+2. the affected behavioral verifier failed or otherwise exposed the defect where behavioral detection is applicable;
+3. the regenerated evidence recorded the defect;
+4. the affected requirement proof became NOT_PROVEN or otherwise invalid;
+5. regenerated traceability connected the defect to the affected constitutional requirement;
+6. an objective certification blocker was created;
+7. the mutated implementation was rejected.
+
+Every stage shall be validated independently.
+
+A later-stage rejection shall not prove that all preceding stages operated correctly.
+
+A verifier failure alone shall not prove complete fail-closed behavior.
+
+A generated blocker alone shall not prove valid rejection unless the blocker possesses admissible supporting evidence and requirement lineage.
+
+---
+
+## Baseline Control Execution
+
+Before validating mutated candidates, execute the complete certification pipeline against a fresh unmodified clean-room implementation candidate.
+
+The baseline control execution shall establish:
+
+* implementation identity;
+* environment identity;
+* configuration identity;
+* verifier population;
+* fixture population;
+* execution population;
+* evidence population;
+* proof population;
+* traceability population;
+* blocker population;
+* certification disposition.
+
+The unmodified baseline shall not contain mutation-derived blockers.
+
+Failure of the unmodified baseline shall be recorded separately and shall prevent mutation rejection from being interpreted as valid fail-closed detection where the same failure exists without the mutation.
+
+---
+
+## Mutation Identity Validation
+
+For every mutation, verify:
+
+* canonical mutation identity;
+* governing requirement identity;
+* governing implementation obligation;
+* mutated artifact identity;
+* mutation class;
+* mutation operation;
+* pre-mutation artifact hash;
+* post-mutation artifact hash;
+* isolated candidate identity;
+* execution identity;
+* rollback identity;
+* fresh-baseline origin.
+
+Confirm that the executed mutation matches the Mutation Registry definition.
+
+Any unregistered, expanded, compound, contaminated, or incorrectly applied mutation shall produce a validation finding.
+
+---
+
+## Required Mutation Coverage
+
+At minimum, validate the following constitutionally meaningful mutation classes.
+
+### Premature Constitutional Closure
+
+Mutate the implementation to permit authoritative closure before all constitutional closure prerequisites are satisfied.
+
+Verify:
+
+* premature closure behavior is exercised;
+* the closure verifier fails;
+* invalid closure evidence is generated;
+* the closure requirement is not proven;
+* a closure blocker is generated;
+* certification is rejected.
+
+### Unresolved Reconciliation Acceptance
+
+Mutate the implementation to accept closure or completion while reconciliation remains unresolved.
+
+Verify detection of:
+
+* unresolved reconciliation state;
+* false reconciliation success;
+* missing reconciliation failure disposition;
+* invalid completion or closure transition.
+
+### Positive Residual Quantity Acceptance
+
+Mutate the implementation to accept a positive residual quantity as constitutionally closed.
+
+Verify:
+
+* positive residual is preserved in raw evidence;
+* zero-residual proof is invalidated;
+* the residual-quantity requirement becomes NOT_PROVEN;
+* a certification blocker is generated.
+
+### Negative Residual Quantity Acceptance
+
+Where constitutionally applicable, mutate the implementation to accept a negative residual quantity or over-closure condition.
+
+Verify rejection through the same evidence, proof, blocker, and certification chain.
+
+### Settlement Bypass
+
+Mutate the implementation to permit closure without required settlement verification or valid settlement exemption.
+
+Verify:
+
+* missing or bypassed settlement authority;
+* invalid closure transition;
+* settlement proof invalidation;
+* blocker creation;
+* certification rejection.
+
+### Degraded Analytical Input Acceptance
+
+Mutate the implementation to treat degraded, insufficient, stale, or otherwise inadmissible analytical input as constitutionally sufficient.
+
+Verify that the certification pipeline detects the invalid admissibility decision and rejects the candidate.
+
+### Duplicate Authoritative Closure Creation
+
+Mutate the implementation to permit more than one authoritative closure object or duplicate authoritative closure event for the same position.
+
+Verify:
+
+* duplicate creation is exercised;
+* uniqueness or idempotency verification fails;
+* duplicate evidence is preserved;
+* proof is invalidated;
+* a blocker is created.
+
+### Immutable History Mutation
+
+Mutate the implementation to overwrite, delete, or retroactively alter immutable historical state.
+
+Verify:
+
+* historical alteration is observable;
+* immutable-history verification fails;
+* original and altered state identities are preserved;
+* proof is invalidated;
+* certification is rejected.
+
+### Correction Overwrite
+
+Mutate correction handling so that a correction overwrites original authoritative history rather than creating an additive corrective object.
+
+Verify rejection of destructive correction behavior.
+
+### Supersession Removal
+
+Mutate the implementation to omit required supersession relationships or permit superseded truth to remain ambiguously authoritative.
+
+Verify:
+
+* missing supersession lineage;
+* conflicting authoritative state;
+* proof invalidation;
+* blocker generation.
+
+### Stale Evidence Acceptance
+
+Mutate evidence admissibility logic to accept evidence outside constitutionally permitted freshness limits.
+
+Verify:
+
+* stale evidence identity and timestamp are preserved;
+* freshness verification fails;
+* affected proof becomes NOT_PROVEN;
+* certification is rejected.
+
+### Conflicting Evidence Acceptance
+
+Mutate the implementation to accept conflicting authoritative evidence without constitutional conflict resolution.
+
+Verify:
+
+* the conflict is preserved in raw evidence;
+* conflict detection or resolution verification fails;
+* proof is invalidated;
+* a blocker is generated.
+
+### Missing Evidence Acceptance
+
+Mutate the implementation to permit closure, realized outcome generation, archival eligibility, or other authoritative disposition without required evidence.
+
+Verify that absence of evidence cannot produce a PROVEN disposition or certification acceptance.
+
+### Verifier Removal
+
+Remove or disable a constitutionally required verifier within the isolated mutated candidate.
+
+Verify:
+
+* verifier discovery detects the omission;
+* verifier coverage becomes incomplete;
+* the affected requirement is NOT_PROVEN;
+* a certification blocker is generated;
+* the candidate is rejected.
+
+A missing verifier shall not be treated as a passing verifier.
+
+### Implementation Discovery Failure
+
+Mutate implementation participation or discovery metadata so that a required implementation artifact becomes undiscoverable or is incorrectly excluded.
+
+Verify:
+
+* dependency-derived discovery identifies the discrepancy where possible;
+* inventory reconciliation fails;
+* traceability becomes incomplete;
+* certification is rejected.
+
+### Requirement Traceability Removal
+
+Remove a required traceability relationship while preserving the underlying implementation where practical.
+
+Verify:
+
+* forward or backward traceability fails;
+* the affected requirement or proof becomes orphaned;
+* a traceability blocker is generated;
+* certification is rejected.
+
+### Proof Corruption
+
+Mutate a regenerated proof object by changing:
+
+* requirement identity;
+* proof identity;
+* disposition;
+* supporting evidence reference;
+* execution reference;
+* provenance;
+* integrity hash.
+
+Verify:
+
+* proof integrity or lineage validation fails;
+* corrupted proof is rejected;
+* certification acceptance cannot rely upon the corrupted proof.
+
+### Replay Corruption
+
+Mutate replay behavior so that replayed state differs semantically from original authoritative state.
+
+Verify:
+
+* replay equivalence fails;
+* divergent state is preserved;
+* affected proof is invalidated;
+* a blocker is generated.
+
+### Restart Recovery Corruption
+
+Mutate restart or process-recovery behavior so that authoritative state is lost, duplicated, reordered, or changed after restart.
+
+Verify:
+
+* recovery verification fails;
+* pre-restart and post-restart states are preserved;
+* certification is rejected.
+
+### Realized Outcome Ownership Corruption
+
+Mutate ownership or mutation authority for realized outcome objects.
+
+Verify detection of:
+
+* unauthorized creation;
+* unauthorized mutation;
+* unauthorized custody transfer;
+* conflicting ownership;
+* ownership-proof invalidation.
+
+### Certification Blocker Suppression
+
+Mutate the certification system to suppress, downgrade, omit, or ignore an otherwise valid blocker.
+
+Verify:
+
+* the underlying defect remains observable;
+* evidence and proof remain defective;
+* missing blocker behavior is detected;
+* the certification pipeline does not incorrectly accept the candidate;
+* blocker-suppression failure itself generates a higher-order certification finding.
+
+---
+
+## Behavioral Detection Validation
+
+For each mutation, identify all behavioral verifiers expected to exercise the affected obligation.
+
+Validate:
+
+* verifier identity;
+* fixture identity;
+* execution identity;
+* mutation participation;
+* asserted behavior;
+* execution result;
+* raw evidence;
+* failure relevance.
+
+Classify behavioral detection as:
+
+* DETECTED_AS_EXPECTED;
+* DETECTED_BY_ALTERNATE_VALID_CONTROL;
+* PARTIALLY_DETECTED;
+* NOT_DETECTED;
+* NOT_BEHAVIORALLY_APPLICABLE.
+
+An alternate verifier may satisfy detection only when it directly exercises the affected constitutional obligation and possesses complete evidence lineage.
+
+Incidental failure in an unrelated verifier shall not constitute valid detection.
+
+---
+
+## Evidence Defect Validation
+
+For every mutation, verify that regenerated evidence accurately records the mutated behavior or certification defect.
+
+Validate:
+
+* evidence identity;
+* execution identity;
+* mutation identity;
+* evidence provenance;
+* evidence integrity;
+* defect observability;
+* affected requirement identity;
+* affected implementation artifact;
+* evidence admissibility.
+
+A mutation shall not be considered detected when the relevant defect exists only in a generated summary and is absent from raw or admissible regenerated evidence.
+
+---
+
+## Proof Invalidation Validation
+
+For every affected canonical requirement, verify that the mutation causes the regenerated proof disposition to reflect the executed defect.
+
+A constitutionally defective requirement shall not remain PROVEN.
+
+Validate:
+
+* affected proof identity;
+* affected requirement identity;
+* evidence references;
+* execution references;
+* proof disposition;
+* proof justification;
+* proof lineage;
+* integrity status.
+
+Acceptable affected dispositions are limited to those constitutionally authorized by the executed evidence.
+
+A mutation causing a requirement to remain PROVEN despite contradictory execution evidence shall constitute a false-negative fail-closed defect.
+
+---
+
+## Traceability Validation
+
+Verify that every mutation finding possesses complete traceability through:
+
+```text
+Constitutional Authority
+        │
+        ▼
+Canonical Requirement
+        │
+        ▼
+Implementation Obligation
+        │
+        ▼
+Mutated Implementation Artifact
+        │
+        ▼
+Verifier and Fixture
+        │
+        ▼
+Mutation Execution
+        │
+        ▼
+Mutation Evidence
+        │
+        ▼
+Affected Proof
+        │
+        ▼
+Certification Blocker
+```
+
+Broken or inferred mutation traceability shall not support a valid certification rejection.
+
+---
+
+## Certification Blocker Validation
+
+For every mutation, determine whether the certification system generated one or more objective blockers.
+
+Each blocker shall contain:
+
+* canonical blocker identity;
+* mutation identity;
+* governing requirement identity;
+* affected implementation artifact;
+* affected verifier;
+* affected execution;
+* affected evidence;
+* affected proof;
+* blocker classification;
+* blocker severity;
+* blocker authority;
+* supporting evidence references;
+* generation mechanism;
+* certification consequence.
+
+A blocker shall be valid only when supported by regenerated evidence and complete lineage.
+
+Reject blockers that are:
+
+* manually assigned;
+* inferred from the Mutation Plan;
+* copied from prior campaigns;
+* generated solely from expected outcomes;
+* unsupported by raw evidence;
+* unrelated to the mutated requirement;
+* duplicated without justification;
+* suppressed from the final certification disposition.
+
+---
+
+## Certification Rejection Validation
+
+Verify that every constitutionally defective mutated candidate receives a rejection disposition from the same certification pipeline applied to the unmodified candidate.
+
+The rejection shall:
+
+* reference objective blockers;
+* preserve all supporting evidence;
+* identify affected requirements;
+* identify affected proof objects;
+* remain deterministic across repeated execution;
+* survive regeneration of evidence, proof, and traceability;
+* not depend upon manual intervention.
+
+A process crash, harness failure, missing report, or inability to complete certification shall not automatically constitute valid rejection.
+
+Technical failure shall be classified separately unless the certification constitution explicitly requires that condition to produce a fail-closed rejection with an objective blocker.
+
+---
+
+## Unrelated-Domain Stability
+
+Where practical, verify that each isolated mutation affects only the intended constitutional domain and unavoidable downstream dependencies.
+
+Compare mutated execution against the unmodified baseline to identify:
+
+* expected affected verifiers;
+* unexpected affected verifiers;
+* expected proof invalidations;
+* unexpected proof invalidations;
+* expected blockers;
+* unrelated blockers;
+* excessive certification collapse.
+
+Unexpected unrelated failures shall be preserved for accuracy validation under **CLOSED-POSITION-TRUTH-RM-002-B07-004-004**.
+
+They shall not be suppressed merely because the mutated candidate was correctly rejected.
+
+---
+
+## Repetition and Determinism
+
+Repeat each mutation execution sufficiently to establish deterministic fail-closed behavior.
+
+At minimum:
+
+* execute every mutation once through the complete certification pipeline;
+* repeat every mutation whose outcome differs from its registered constitutional consequence;
+* repeat every mutation exhibiting timing, ordering, concurrency, replay, recovery, or environment sensitivity;
+* repeat a representative sample of all mutation classes;
+* rerun the unmodified control candidate after mutation batches to detect contamination.
+
+For each repetition, verify identical semantic outcomes for:
+
+* behavioral detection;
+* evidence defect;
+* proof invalidation;
+* traceability finding;
+* blocker generation;
+* certification rejection.
+
+Machine-specific identifiers, timestamps, durations, and temporary paths may vary but shall not alter semantic disposition.
+
+---
+
+## Mutation Isolation Validation
+
+For every mutation, verify:
+
+* execution began from a fresh clean-room candidate;
+* only the registered mutation was applied where practical;
+* no prior mutation artifact remained;
+* no prior mutation evidence influenced execution;
+* no mutated persistence state survived rollback;
+* implementation hashes returned to baseline after rollback;
+* control execution after rollback remained equivalent to the original baseline.
+
+Mutation contamination shall invalidate the affected execution.
+
+---
+
+## Required Fail-Closed Dispositions
+
+Assign exactly one fail-closed disposition to every executed mutation:
+
+* FAIL_CLOSED_CONFIRMED;
+* FAIL_CLOSED_CONFIRMED_WITH_SECONDARY_VARIANCE;
+* PARTIAL_FAIL_CLOSED_DETECTION;
+* FAIL_CLOSED_NOT_CONFIRMED;
+* INVALID_MUTATION_EXECUTION;
+* BLOCKED_VALIDATION.
+
+### FAIL_CLOSED_CONFIRMED
+
+The mutation created the intended constitutional defect, the defect was detected through admissible execution evidence, affected proof was invalidated, an objective blocker was generated, and the candidate was rejected.
+
+### FAIL_CLOSED_CONFIRMED_WITH_SECONDARY_VARIANCE
+
+The complete fail-closed consequence chain occurred, but additional unrelated or non-semantic variance was observed.
+
+### PARTIAL_FAIL_CLOSED_DETECTION
+
+The mutation was detected at one or more stages, but the complete evidence-to-rejection chain did not occur.
+
+### FAIL_CLOSED_NOT_CONFIRMED
+
+The mutation created the intended constitutional defect but the certification system failed to detect or reject it completely.
+
+### INVALID_MUTATION_EXECUTION
+
+The mutation was incorrectly applied, contaminated, compound, non-isolated, or failed to create the intended defect.
+
+### BLOCKED_VALIDATION
+
+Validation could not complete because the certification pipeline or required clean-room capability was unavailable.
+
+Only FAIL_CLOSED_CONFIRMED and FAIL_CLOSED_CONFIRMED_WITH_SECONDARY_VARIANCE constitute successful rejection outcomes for this order.
+
+---
+
+## Mutation Finding Classification
+
+Classify every mutation finding as one of:
+
+* MUTATION_NOT_APPLIED;
+* MUTATION_IDENTITY_CONFLICT;
+* MUTATION_SCOPE_EXPANSION;
+* MUTATION_CONTAMINATION;
+* EXPECTED_VERIFIER_FAILURE;
+* UNEXPECTED_VERIFIER_PASS;
+* UNRELATED_VERIFIER_FAILURE;
+* MISSING_BEHAVIORAL_DETECTION;
+* MISSING_EVIDENCE_DEFECT;
+* INADMISSIBLE_MUTATION_EVIDENCE;
+* PROOF_NOT_INVALIDATED;
+* INCORRECT_PROOF_INVALIDATION;
+* BROKEN_MUTATION_TRACEABILITY;
+* BLOCKER_NOT_GENERATED;
+* BLOCKER_UNSUPPORTED;
+* BLOCKER_SUPPRESSED;
+* BLOCKER_IDENTITY_CONFLICT;
+* INCORRECT_CERTIFICATION_ACCEPTANCE;
+* NONDETERMINISTIC_REJECTION;
+* ROLLBACK_FAILURE;
+* BASELINE_CONTAMINATION;
+* CERTIFICATION_PIPELINE_FAILURE.
+
+Every non-successful or anomalous condition shall generate an objective finding.
+
+---
+
+## Fail-Closed Validation Registry
+
+Produce a deterministic **Fail-Closed Validation Registry** containing, at minimum:
+
+* validation identity;
+* mutation identity;
+* governing requirement identity;
+* implementation obligation identity;
+* mutated artifact identity;
+* mutation execution identity;
+* affected verifier identities;
+* affected fixture identities;
+* behavioral detection disposition;
+* mutation evidence identities;
+* affected proof identities;
+* proof invalidation disposition;
+* traceability disposition;
+* blocker identities;
+* certification outcome;
+* fail-closed disposition;
+* baseline comparison identity;
+* repetition count;
+* determinism status;
+* finding references.
+
+Registry ordering and serialization shall be deterministic.
+
+---
+
+## Mutation Findings Registry
+
+Produce a deterministic **Mutation Findings Registry** containing, at minimum:
+
+* finding identity;
+* finding classification;
+* mutation identity;
+* governing requirement identity;
+* affected implementation artifact;
+* affected verifier;
+* affected execution;
+* affected evidence;
+* affected proof;
+* affected blocker;
+* observed condition;
+* required condition;
+* objective evidence references;
+* severity;
+* certification relevance;
+* remediation relevance.
+
+Do not omit findings merely because the mutated candidate was ultimately rejected.
+
+---
+
+## Blocker Generation Registry
+
+Produce a deterministic **Blocker Generation Registry** containing, at minimum:
+
+* blocker identity;
+* mutation identity;
+* requirement identity;
+* blocker classification;
+* blocker authority;
+* generation stage;
+* generating component;
+* affected verifier identity;
+* affected execution identity;
+* evidence references;
+* proof references;
+* traceability references;
+* certification consequence;
+* integrity status;
+* provenance status;
+* suppression status;
+* finding references.
+
+Every rejection shall reconcile to at least one valid blocker.
+
+Every blocker shall reconcile to admissible regenerated evidence.
+
+---
+
+## Reconciliation Requirements
+
+Reconcile:
+
+* planned mutations against executed mutations;
+* executed mutations against isolated candidate identities;
+* mutation definitions against actual artifact changes;
+* mutated artifacts against governing implementation obligations;
+* mutation executions against behavioral verifiers;
+* behavioral failures against raw mutation evidence;
+* mutation evidence against affected proof objects;
+* affected proof objects against certification blockers;
+* blockers against certification rejection;
+* repeated executions against semantic outcomes;
+* rollback records against baseline implementation hashes;
+* post-mutation controls against the original unmodified baseline;
+* registry entries against raw source artifacts.
+
+Every discrepancy shall generate an explicit finding.
+
+---
+
+## Prohibited Actions
+
+Do not:
+
+* modify constitutional requirements;
+* remediate implementation defects;
+* strengthen verifiers during the campaign;
+* alter fixtures to expose a mutation;
+* alter expected outcomes after execution;
+* manually assign mutation rejection;
+* manually generate blockers;
+* suppress unexpected verifier failures;
+* suppress unexpected verifier passes;
+* infer proof invalidation;
+* reuse prior mutation evidence;
+* execute mutations against a shared contaminated candidate;
+* treat process failure as automatic valid rejection;
+* treat a failing verifier as complete fail-closed validation;
+* issue the final mutation-campaign reconciliation disposition governed by **CLOSED-POSITION-TRUTH-RM-002-B07-004-005**.
+
+---
+
+## Fail-Closed Requirements
+
+This order shall fail closed when:
+
+* a registered mutation is not executed;
+* a mutation does not possess deterministic identity;
+* a mutation is not isolated;
+* the intended implementation defect cannot be demonstrated;
+* an applicable behavioral verifier fails to detect the defect;
+* regenerated evidence does not preserve the defect;
+* affected proof remains incorrectly PROVEN;
+* mutation traceability is incomplete;
+* an objective blocker is not generated;
+* the defective candidate is accepted;
+* rejection depends upon manual intervention;
+* blocker generation depends upon expected outcomes rather than execution;
+* mutation results are nondeterministic;
+* rollback fails;
+* mutation contamination affects later executions;
+* baseline control behavior cannot be distinguished from mutation behavior.
+
+---
+
+## Required Deliverables
+
+Produce:
+
+* Fail-Closed Validation Registry;
+* Mutation Findings Registry;
+* Blocker Generation Registry;
+* baseline control execution record;
+* mutation-to-verifier detection matrix;
+* mutation-to-evidence reconciliation record;
+* mutation-to-proof invalidation record;
+* mutation-to-blocker reconciliation record;
+* mutation-to-certification-outcome matrix;
+* mutation isolation and rollback report;
+* deterministic repetition report;
+* order completion report.
+
+The order completion report shall state whether this order completed its fail-closed validation obligations.
+
+It shall not issue the final series disposition of:
+
+* FAIL_CLOSED_VALIDATED;
+* FAIL_CLOSED_VALIDATED_WITH_VARIANCE; or
+* FAIL_CLOSED_NOT_VALIDATED.
+
+---
+
+## Acceptance Criteria
+
+This order shall complete only when:
+
+* every registered constitutionally defective mutation has been executed against an isolated clean-room candidate;
+* every mutation has been confirmed to create its intended constitutional defect;
+* every applicable behavioral defect has been exercised through the complete certification pipeline;
+* every mutation possesses raw execution evidence;
+* every relevant evidence defect has been regenerated and preserved;
+* every affected requirement proof has been correctly invalidated;
+* every mutation possesses complete requirement-to-blocker traceability;
+* every constitutionally defective candidate has generated at least one valid objective certification blocker;
+* every defective candidate has been rejected by the certification pipeline;
+* no rejection has been inferred or manually assigned;
+* certification-blocker suppression has itself been detected and rejected;
+* every mutation outcome possesses a deterministic fail-closed disposition;
+* repeated mutation executions produce equivalent semantic outcomes;
+* every mutation has been rolled back completely;
+* post-rollback control executions reconcile with the unmodified baseline;
+* every partial detection, missed defect, unsupported blocker, unrelated failure, contamination event, and nondeterministic result has been recorded;
+* the Fail-Closed Validation Registry reconciles completely with the Mutation Findings Registry and Blocker Generation Registry;
+* all deliverables have been generated deterministically;
+* no constitutional doctrine, implementation baseline, verifier, fixture, or expected result has been remediated or modified;
+* no final fail-closed campaign disposition or ECS-003 certification verdict has been issued.
