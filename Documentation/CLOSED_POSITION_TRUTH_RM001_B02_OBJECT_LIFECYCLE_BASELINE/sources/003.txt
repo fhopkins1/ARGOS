@@ -1,0 +1,824 @@
+CLOSED-POSITION-TRUTH-RM-001-B02-003
+
+# Canonical Lifecycle Constitution
+
+## Objective
+
+Establish deterministic constitutional lifecycle governance for every canonical object owned by the Closed Position Truth Office.
+
+This order shall define the complete state model governing proposed closure objects, validation objects, reconciliation objects, settlement-verification objects, exception objects, authoritative Closed Position Truth objects, correction objects, supersession objects, and archival objects.
+
+No implementation shall be modified.
+
+No behavioral verification shall occur.
+
+No implementation certification shall occur.
+
+This order governs constitutional doctrine only.
+
+Every lifecycle state shall possess one constitutional meaning.
+
+Every lifecycle transition shall possess one governing authority.
+
+Every transition shall require constitutionally admissible evidence.
+
+No transition shall create authority outside the Closed Position Truth Office boundaries established under **CLOSED-POSITION-TRUTH-RM-001-B01**.
+
+---
+
+# Constitutional Principles
+
+Lifecycle progression shall never be inferred.
+
+Execution completion shall not equal constitutional closure.
+
+Settlement completion shall not equal constitutional closure.
+
+Zero remaining quantity shall not independently equal constitutional closure.
+
+Analytical confidence shall not equal constitutional eligibility.
+
+A canonical Closed Position Record shall be created only after every required closure condition has been satisfied.
+
+No authoritative truth object shall possess a provisional, degraded, uncertain, or partially authoritative state.
+
+Before authoritative creation, an object may represent an unresolved closure process.
+
+After authoritative creation, the Closed Position Record shall remain immutable.
+
+Correction shall create a successor object.
+
+Supersession shall preserve the predecessor.
+
+Archival shall preserve ownership, identity, provenance, and lineage.
+
+A constitutionally closed position shall never transition back into an open-position state.
+
+---
+
+# Canonical Lifecycle Scope
+
+This order governs lifecycle participation for:
+
+* Closed Position Record;
+* Closed Position Identity;
+* Closure Determination;
+* Closure Validation Result;
+* Closure Evidence Record;
+* Settlement Verification Record;
+* Reconciliation Record;
+* Residual Position Resolution;
+* Realized Outcome Record;
+* Correction Record;
+* Supersession Record;
+* Closure Exception Record;
+* Historical Closure Record;
+* Archival Record.
+
+Each object shall participate only in lifecycle states consistent with its constitutional purpose.
+
+Supporting objects shall not independently create authoritative Closed Position Truth.
+
+---
+
+# Authoritative Lifecycle Model
+
+The constitutional closure lifecycle shall be:
+
+```text
+Proposed
+↓
+Pending Closure Validation
+↓
+Pending Reconciliation
+↓
+Pending Settlement Verification
+↓
+Eligible for Closure
+↓
+Constitutionally Closed
+↓
+Archived
+```
+
+Exceptional and historical branches shall include:
+
+```text
+Pending Closure Validation
+→ Exception
+
+Pending Reconciliation
+→ Exception
+
+Pending Settlement Verification
+→ Exception
+
+Exception
+→ Pending Closure Validation
+
+Exception
+→ Pending Reconciliation
+
+Exception
+→ Pending Settlement Verification
+
+Constitutionally Closed
+→ Corrected
+→ Superseded
+→ Archived
+```
+
+A corrected or superseding record shall enter the authoritative lifecycle as a new canonical object.
+
+The predecessor shall remain constitutionally closed and historically immutable.
+
+---
+
+# Lifecycle State Registry
+
+## Proposed
+
+### Purpose
+
+Represent a candidate closure process that has been initiated but has not yet passed constitutional closure validation.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Entry Requirements
+
+* valid candidate position identity;
+* identifiable initiating event;
+* constitutional basis for closure evaluation;
+* initial provenance record.
+
+### Required Evidence
+
+* candidate identity;
+* initiating authority;
+* initiation timestamp;
+* source references.
+
+### Permitted Transitions
+
+* Proposed → Pending Closure Validation;
+* Proposed → Exception.
+
+### Prohibited Meaning
+
+Proposed shall not mean:
+
+* execution complete;
+* reconciliation complete;
+* settlement verified;
+* eligible for closure;
+* constitutionally closed.
+
+---
+
+## Pending Closure Validation
+
+### Purpose
+
+Represent active validation of the constitutional prerequisites for closure.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Required Validation
+
+* position identity is authoritative;
+* execution evidence is complete;
+* execution activity is within scope;
+* required source provenance exists;
+* no unresolved identity conflict exists.
+
+### Required Evidence
+
+* Closure Validation Result;
+* source inventory;
+* validation findings;
+* contradiction record where applicable.
+
+### Permitted Transitions
+
+* Pending Closure Validation → Pending Reconciliation;
+* Pending Closure Validation → Exception.
+
+### Prohibited Transitions
+
+* Pending Closure Validation → Eligible for Closure;
+* Pending Closure Validation → Constitutionally Closed.
+
+---
+
+## Pending Reconciliation
+
+### Purpose
+
+Represent reconciliation of execution facts, position state, quantities, duplicates, corrections, and relevant upstream records.
+
+### Governing Authority
+
+Closed Position Truth Office for closure reconciliation, while upstream offices retain ownership of their source facts.
+
+### Required Reconciliation
+
+* execution population reconciled;
+* duplicate executions resolved;
+* execution corrections resolved;
+* position quantity reconciled;
+* conflicting source facts resolved;
+* zero remaining quantity established or residual quantity routed to resolution.
+
+### Required Evidence
+
+* Reconciliation Record;
+* authoritative execution references;
+* Position Registry references;
+* discrepancy disposition;
+* quantity reconciliation.
+
+### Permitted Transitions
+
+* Pending Reconciliation → Pending Settlement Verification;
+* Pending Reconciliation → Exception.
+
+### Prohibited Transitions
+
+* Pending Reconciliation → Constitutionally Closed;
+* Pending Reconciliation → Archived.
+
+---
+
+## Pending Settlement Verification
+
+### Purpose
+
+Represent verification that all constitutionally required settlement conditions are satisfied or that an explicit constitutional settlement exemption applies.
+
+### Governing Authority
+
+Closed Position Truth Office for closure eligibility determination.
+
+Broker or other designated settlement authority shall retain ownership of settlement facts.
+
+### Required Verification
+
+* settlement status identified;
+* settlement facts possess authoritative provenance;
+* settlement discrepancies resolved;
+* exemption authority established where settlement is not required.
+
+### Required Evidence
+
+* Settlement Verification Record;
+* settlement source references;
+* exemption record where applicable;
+* settlement discrepancy disposition.
+
+### Permitted Transitions
+
+* Pending Settlement Verification → Eligible for Closure;
+* Pending Settlement Verification → Exception.
+
+### Prohibited Transitions
+
+* Pending Settlement Verification → Constitutionally Closed without eligibility determination.
+
+---
+
+## Eligible for Closure
+
+### Purpose
+
+Represent the determination that every constitutional condition required for authoritative Closed Position Truth creation has been satisfied.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Required Conditions
+
+* closure validation succeeded;
+* execution reconciliation completed;
+* zero remaining position quantity confirmed;
+* residual quantity resolved;
+* settlement requirements satisfied or constitutionally exempt;
+* required realized-outcome inputs reconciled;
+* no unresolved contradiction remains;
+* evidence lineage is complete.
+
+### Required Evidence
+
+* Closure Determination;
+* completed Reconciliation Record;
+* Settlement Verification Record;
+* authoritative position-state reference;
+* closure evidence package.
+
+### Permitted Transitions
+
+* Eligible for Closure → Constitutionally Closed;
+* Eligible for Closure → Exception if a previously hidden contradiction is discovered before authoritative creation.
+
+### Restrictions
+
+Eligibility shall not itself constitute authoritative Closed Position Truth.
+
+---
+
+## Constitutionally Closed
+
+### Purpose
+
+Represent the existence of authoritative enterprise truth that the identified position has satisfied every constitutional closure condition.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Entry Requirements
+
+* valid Eligible for Closure state;
+* authoritative Closed Position Record created;
+* unique canonical identity assigned;
+* closure timestamp established;
+* closure reason established;
+* realized outcome established within constitutional scope;
+* provenance and evidence lineage completed.
+
+### Required Evidence
+
+* authoritative Closed Position Record;
+* authoritative creation event;
+* closure evidence references;
+* final reconciliation result;
+* final settlement-verification result;
+* Position Registry zero-quantity reference.
+
+### Constitutional Effect
+
+The position is authoritative closed-position truth within the enterprise.
+
+### Restrictions
+
+A Constitutionally Closed record shall not:
+
+* reopen;
+* return to a pending state;
+* be mutated;
+* be deleted;
+* be silently replaced;
+* lose predecessor or successor lineage.
+
+### Permitted Transitions
+
+* Constitutionally Closed → Archived;
+* Constitutionally Closed → Corrected through creation of a successor correction object;
+* Constitutionally Closed → Superseded through creation of a successor authoritative record.
+
+The original record itself shall not change state by field mutation.
+
+---
+
+## Exception
+
+### Purpose
+
+Represent a closure process that cannot lawfully progress because one or more required constitutional conditions are absent, contradictory, unresolved, or inadmissible.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Exception Conditions
+
+* missing execution evidence;
+* conflicting broker facts;
+* incomplete reconciliation;
+* unresolved duplicate execution;
+* nonzero residual quantity;
+* incomplete settlement;
+* stale evidence;
+* identity mismatch;
+* incomplete provenance;
+* failed evidence integrity;
+* unresolved authority conflict.
+
+### Required Evidence
+
+* Closure Exception Record;
+* affected object identity;
+* exception category;
+* source references;
+* responsible resolving authority;
+* reopening conditions.
+
+### Permitted Transitions
+
+Exception may return only to the appropriate unresolved lifecycle state after the constitutional defect is resolved:
+
+* Exception → Pending Closure Validation;
+* Exception → Pending Reconciliation;
+* Exception → Pending Settlement Verification.
+
+### Restrictions
+
+Exception shall not represent degraded authoritative truth.
+
+An Exception object shall not become Constitutionally Closed without re-entering and completing all required lifecycle stages.
+
+---
+
+## Corrected
+
+### Purpose
+
+Represent that an error affecting a constitutionally closed record has been established and that a successor correction process has been initiated.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Entry Requirements
+
+* demonstrable error exists;
+* authoritative correcting evidence exists;
+* correction authority is valid;
+* predecessor identity is preserved.
+
+### Required Evidence
+
+* Correction Record;
+* correction rationale;
+* predecessor reference;
+* correcting evidence;
+* correction authority.
+
+### Constitutional Effect
+
+Corrected shall not mutate the predecessor.
+
+A new candidate successor shall pass all applicable validation and reconciliation requirements before becoming authoritative.
+
+### Permitted Transition
+
+* Corrected → Superseded.
+
+---
+
+## Superseded
+
+### Purpose
+
+Represent that a successor Closed Position Record has become the current authoritative record while the predecessor remains immutable and historically accessible.
+
+### Governing Authority
+
+Closed Position Truth Office.
+
+### Entry Requirements
+
+* valid successor record exists;
+* successor satisfies applicable closure requirements;
+* predecessor-successor relationship is explicit;
+* supersession rationale is recorded;
+* only one current authoritative record exists.
+
+### Required Evidence
+
+* Supersession Record;
+* predecessor identity;
+* successor identity;
+* supersession authority;
+* supersession timestamp;
+* supporting evidence.
+
+### Restrictions
+
+Supersession shall not:
+
+* erase the predecessor;
+* modify the predecessor;
+* create parallel current authority;
+* reopen the position.
+
+### Permitted Transition
+
+* Superseded → Archived.
+
+---
+
+## Archived
+
+### Purpose
+
+Represent permanent historical custody of a finalized Closed Position Truth object and its complete lineage.
+
+### Governing Authority
+
+Historian for custody.
+
+Closed Position Truth shall retain constitutional ownership of the truth domain.
+
+### Entry Requirements
+
+* archival eligibility established;
+* authoritative lifecycle complete;
+* unresolved correction state absent;
+* unresolved supersession state absent;
+* evidence lineage complete;
+* integrity verification complete;
+* retention classification established.
+
+### Required Evidence
+
+* Archival Record;
+* custody-transfer record;
+* integrity verification;
+* complete lineage references.
+
+### Restrictions
+
+Archived records shall not:
+
+* return to active lifecycle states;
+* be mutated;
+* be deleted through ordinary lifecycle action;
+* lose provenance or lineage.
+
+---
+
+# Canonical Object Lifecycle Participation
+
+| Canonical Object               | Permitted Lifecycle Participation                                   |
+| ------------------------------ | ------------------------------------------------------------------- |
+| Closed Position Record         | Eligible for Closure, Constitutionally Closed, Superseded, Archived |
+| Closed Position Identity       | Proposed through Archived                                           |
+| Closure Determination          | Pending Closure Validation through Eligible for Closure             |
+| Closure Validation Result      | Pending Closure Validation                                          |
+| Closure Evidence Record        | All evidentiary lifecycle stages                                    |
+| Settlement Verification Record | Pending Settlement Verification through Archived                    |
+| Reconciliation Record          | Pending Reconciliation through Archived                             |
+| Residual Position Resolution   | Pending Reconciliation or Exception                                 |
+| Realized Outcome Record        | Eligible for Closure through Archived                               |
+| Correction Record              | Corrected through Archived                                          |
+| Supersession Record            | Superseded through Archived                                         |
+| Closure Exception Record       | Exception                                                           |
+| Historical Closure Record      | Constitutionally Closed through Archived                            |
+| Archival Record                | Archived                                                            |
+
+No supporting object shall independently enter Constitutionally Closed status as a substitute for the Closed Position Record.
+
+---
+
+# State Transition Registry
+
+| Transition                                               | Governing Authority                 | Required Evidence                          | Result                          |
+| -------------------------------------------------------- | ----------------------------------- | ------------------------------------------ | ------------------------------- |
+| Proposed → Pending Closure Validation                    | Closed Position Truth               | Initiation and identity evidence           | Validation begins               |
+| Proposed → Exception                                     | Closed Position Truth               | Initiation defect evidence                 | Progression blocked             |
+| Pending Closure Validation → Pending Reconciliation      | Closed Position Truth               | Successful Closure Validation Result       | Reconciliation begins           |
+| Pending Closure Validation → Exception                   | Closed Position Truth               | Validation failure evidence                | Progression blocked             |
+| Pending Reconciliation → Pending Settlement Verification | Closed Position Truth               | Successful Reconciliation Record           | Settlement verification begins  |
+| Pending Reconciliation → Exception                       | Closed Position Truth               | Reconciliation failure evidence            | Progression blocked             |
+| Pending Settlement Verification → Eligible for Closure   | Closed Position Truth               | Settlement verification or valid exemption | Closure eligibility established |
+| Pending Settlement Verification → Exception              | Closed Position Truth               | Settlement defect evidence                 | Progression blocked             |
+| Eligible for Closure → Constitutionally Closed           | Closed Position Truth               | Authoritative closure evidence package     | Closed Position Truth created   |
+| Eligible for Closure → Exception                         | Closed Position Truth               | Newly discovered contradiction             | Creation blocked                |
+| Exception → Pending Closure Validation                   | Closed Position Truth               | Validation defect resolution               | Validation resumes              |
+| Exception → Pending Reconciliation                       | Closed Position Truth               | Reconciliation defect resolution           | Reconciliation resumes          |
+| Exception → Pending Settlement Verification              | Closed Position Truth               | Settlement defect resolution               | Settlement verification resumes |
+| Constitutionally Closed → Archived                       | Closed Position Truth and Historian | Archival eligibility and custody transfer  | Permanent custody established   |
+| Constitutionally Closed → Corrected                      | Closed Position Truth               | Valid correction evidence                  | Successor process initiated     |
+| Corrected → Superseded                                   | Closed Position Truth               | Valid successor and supersession evidence  | Successor becomes authoritative |
+| Superseded → Archived                                    | Historian                           | Completed lineage and custody evidence     | Permanent custody established   |
+
+---
+
+# Prohibited Transition Registry
+
+The following transitions are constitutionally prohibited:
+
+* Proposed → Constitutionally Closed;
+* Pending Closure Validation → Constitutionally Closed;
+* Pending Reconciliation → Constitutionally Closed;
+* Pending Settlement Verification → Constitutionally Closed;
+* Exception → Constitutionally Closed;
+* Exception → Archived as authoritative truth;
+* Constitutionally Closed → Proposed;
+* Constitutionally Closed → Pending Closure Validation;
+* Constitutionally Closed → Pending Reconciliation;
+* Constitutionally Closed → Pending Settlement Verification;
+* Constitutionally Closed → open-position state;
+* Archived → active lifecycle state;
+* Superseded → current authoritative status without a new constitutional supersession event.
+
+No implementation may create an equivalent bypass under alternate terminology.
+
+---
+
+# Duplicate Prevention Constitution
+
+Every canonical object shall possess a deterministic identity sufficient to prevent duplicate authoritative truth.
+
+Before authoritative Closed Position Truth creation, the Office shall verify:
+
+* no authoritative Closed Position Record already exists for the same canonical closure identity;
+* no concurrent candidate can create parallel truth;
+* no duplicate execution population has been counted;
+* no duplicate lifecycle event has altered eligibility.
+
+A duplicate request or duplicate transition shall not create a second authoritative object.
+
+Duplicate activity shall produce:
+
+* duplicate detection evidence;
+* reference to the existing authoritative event or object;
+* deterministic no-op or reconciliation disposition.
+
+---
+
+# Idempotency Constitution
+
+Repeated processing of the same constitutionally identical input shall produce the same lifecycle result.
+
+Idempotent reprocessing shall not:
+
+* create a duplicate Closed Position Record;
+* create duplicate correction lineage;
+* create duplicate supersession lineage;
+* change an authoritative timestamp;
+* create a second execution or reconciliation path;
+* reactivate an Exception without resolving evidence.
+
+Idempotency shall preserve the first valid authoritative result.
+
+---
+
+# Replay Constitution
+
+Replay shall reproduce the original constitutional lifecycle outcome from the same admissible evidence population and governing doctrine version.
+
+Replay shall preserve:
+
+* event order;
+* object identities;
+* authority identities;
+* source evidence;
+* lifecycle decisions;
+* exception outcomes;
+* correction lineage;
+* supersession lineage.
+
+Replay shall not:
+
+* create new authoritative truth;
+* reopen a closed position;
+* alter archived history;
+* convert previously inadmissible evidence into admissible evidence without a new constitutional event;
+* create duplicate lifecycle transitions.
+
+---
+
+# Recovery Constitution
+
+Recovery after interruption shall restore the last constitutionally established lifecycle state.
+
+Recovery shall:
+
+* identify the last accepted transition;
+* preserve incomplete work as non-authoritative;
+* reject partial authoritative creation;
+* revalidate unresolved dependencies;
+* require reconciliation before further progression;
+* preserve all evidence generated before interruption.
+
+Recovery shall never infer successful completion from incomplete processing.
+
+---
+
+# Correction Behavior Constitution
+
+Correction shall begin only after authoritative error evidence exists.
+
+Correction shall:
+
+* preserve the predecessor object;
+* create a Correction Record;
+* create a candidate successor identity;
+* repeat all constitutionally affected validation steps;
+* preserve unchanged source lineage;
+* reconcile changed facts;
+* create a successor Closed Position Record only after eligibility is re-established.
+
+The predecessor shall remain historically valid as the record that was authoritative during its original period.
+
+---
+
+# Supersession Behavior Constitution
+
+A successor shall become authoritative only after:
+
+* correction requirements are satisfied;
+* successor validation is complete;
+* successor reconciliation is complete;
+* successor settlement requirements are satisfied or exempt;
+* predecessor-successor lineage is complete;
+* no parallel authoritative successor exists.
+
+Supersession shall change current-authority designation through a constitutional event.
+
+It shall not mutate either record.
+
+---
+
+# Archival Eligibility Constitution
+
+A canonical object shall become eligible for archival only when:
+
+* its lifecycle purpose is complete;
+* required evidence is retained;
+* provenance is complete;
+* correction and supersession status is resolved;
+* no unresolved Exception affects its authority;
+* integrity verification succeeds;
+* retention classification is assigned.
+
+Archival eligibility shall not permit destruction of operational or historical lineage.
+
+---
+
+# Transition Authority Matrix
+
+| Lifecycle Domain                    | Governing Authority                             |
+| ----------------------------------- | ----------------------------------------------- |
+| Candidate creation                  | Closed Position Truth                           |
+| Closure validation                  | Closed Position Truth                           |
+| Closure reconciliation              | Closed Position Truth                           |
+| Settlement-fact creation            | Broker or designated settlement authority       |
+| Settlement verification for closure | Closed Position Truth                           |
+| Residual-quantity truth             | Position Registry                               |
+| Residual-resolution determination   | Constitutionally designated resolving authority |
+| Closure eligibility                 | Closed Position Truth                           |
+| Closed Position Truth creation      | Closed Position Truth                           |
+| Correction initiation               | Closed Position Truth                           |
+| Successor creation                  | Closed Position Truth                           |
+| Supersession designation            | Closed Position Truth                           |
+| Archival eligibility                | Closed Position Truth                           |
+| Permanent historical custody        | Historian                                       |
+
+No authority listed as an upstream evidence producer shall thereby acquire authority to create Closed Position Truth.
+
+---
+
+# Deliverables
+
+This order shall produce:
+
+* Lifecycle Registry;
+* State Transition Registry;
+* Transition Authority Matrix;
+* prohibited-transition registry;
+* duplicate-prevention doctrine;
+* idempotency doctrine;
+* replay doctrine;
+* recovery doctrine;
+* correction lifecycle doctrine;
+* supersession lifecycle doctrine;
+* archival-eligibility doctrine;
+* completion report.
+
+---
+
+# Completion Criteria
+
+This order shall complete only when:
+
+* every canonical object possesses deterministic lifecycle participation;
+* every lifecycle state possesses one constitutional meaning;
+* every transition possesses one governing authority;
+* every transition possesses admissibility requirements;
+* every transition possesses required evidence;
+* every prohibited transition is defined;
+* closure cannot bypass validation;
+* closure cannot bypass reconciliation;
+* closure cannot bypass settlement verification or valid exemption;
+* Exception cannot become authoritative truth;
+* duplicate authoritative truth is prohibited;
+* idempotent processing is deterministic;
+* replay behavior is deterministic;
+* recovery behavior is deterministic;
+* correction creates a successor process;
+* supersession preserves immutable predecessor truth;
+* archival eligibility is deterministic;
+* closed positions cannot reopen;
+* no unresolved lifecycle ambiguity remains;
+* no unresolved transition-authority ambiguity remains.
+
+Successful completion of this order shall authorize progression to:
+
+**CLOSED-POSITION-TRUTH-RM-001-B02-004 — Historical Integrity Constitution**

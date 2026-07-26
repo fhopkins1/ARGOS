@@ -1,0 +1,524 @@
+[
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Closed Position Identity",
+    "relationship_id": "CPT-REL-001-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closed Position Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Closed Position Record",
+    "relationship_id": "CPT-REL-002-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closed Position Identity"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Closure Determination",
+    "relationship_id": "CPT-REL-002-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closed Position Identity"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Closed Position Identity",
+    "relationship_id": "CPT-REL-003-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Determination"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Closure Validation Result",
+    "relationship_id": "CPT-REL-003-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Determination"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Closure Determination",
+    "relationship_id": "CPT-REL-004-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Validation Result"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Closure Evidence Record",
+    "relationship_id": "CPT-REL-004-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Validation Result"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Closure Validation Result",
+    "relationship_id": "CPT-REL-005-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Evidence Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Settlement Verification Record",
+    "relationship_id": "CPT-REL-005-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Evidence Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Closure Evidence Record",
+    "relationship_id": "CPT-REL-006-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Settlement Verification Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Reconciliation Record",
+    "relationship_id": "CPT-REL-006-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Settlement Verification Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Settlement Verification Record",
+    "relationship_id": "CPT-REL-007-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Reconciliation Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Residual Position Resolution",
+    "relationship_id": "CPT-REL-007-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Reconciliation Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Reconciliation Record",
+    "relationship_id": "CPT-REL-008-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Residual Position Resolution"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Realized Outcome Record",
+    "relationship_id": "CPT-REL-008-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Residual Position Resolution"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Residual Position Resolution",
+    "relationship_id": "CPT-REL-009-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Realized Outcome Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Correction Record",
+    "relationship_id": "CPT-REL-009-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Realized Outcome Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Realized Outcome Record",
+    "relationship_id": "CPT-REL-010-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Correction Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Supersession Record",
+    "relationship_id": "CPT-REL-010-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Correction Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "lineage_preserves:predecessor",
+    "relationship_id": "CPT-REL-010-03",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Correction Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Correction Record",
+    "relationship_id": "CPT-REL-011-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Supersession Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Closure Exception Record",
+    "relationship_id": "CPT-REL-011-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Supersession Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "lineage_preserves:predecessor",
+    "relationship_id": "CPT-REL-011-03",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Supersession Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Supersession Record",
+    "relationship_id": "CPT-REL-012-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Exception Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Historical Closure Record",
+    "relationship_id": "CPT-REL-012-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Exception Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "blocks:authoritative_truth_creation",
+    "relationship_id": "CPT-REL-012-03",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Closure Exception Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Closure Exception Record",
+    "relationship_id": "CPT-REL-013-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Historical Closure Record"
+  },
+  {
+    "cardinality": "deterministic",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "supports:Archival Record",
+    "relationship_id": "CPT-REL-013-02",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Historical Closure Record"
+  },
+  {
+    "cardinality": "one-or-more evidence references",
+    "governing_authority": "Closed Position Truth Office",
+    "prohibited_relationship_forms": [
+      "upstream truth replacement",
+      "parallel authoritative truth",
+      "lineage destruction"
+    ],
+    "relationship": "derives_from:Historical Closure Record",
+    "relationship_id": "CPT-REL-014-01",
+    "required_evidence": [
+      "identity",
+      "provenance",
+      "lineage",
+      "integrity"
+    ],
+    "source_object": "Archival Record"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "acceptance_required": true,
+    "failure_behavior": "custody transfer fails closed; authoritative truth remains preserved by Closed Position Truth",
+    "prohibited_authority_transfer": [
+      "truth ownership",
+      "truth creation",
+      "correction authority",
+      "supersession authority"
+    ],
+    "receiving_office": "Historian",
+    "retained_authority": "Closed Position Truth ownership and correction/supersession authority",
+    "transfer_evidence": [
+      "Archival Record",
+      "integrity verification",
+      "complete lineage"
+    ],
+    "transfer_id": "CPT-B02-XFER-001",
+    "transferred_responsibility": "historical and archival custody",
+    "transferring_office": "Closed Position Truth Office"
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "from_state": "Proposed",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Initiation and identity evidence",
+    "result": "Validation begins",
+    "to_state": "Pending Closure Validation",
+    "transition_id": "CPT-B02-TRANS-001"
+  },
+  {
+    "from_state": "Proposed",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Initiation defect evidence",
+    "result": "Progression blocked",
+    "to_state": "Exception",
+    "transition_id": "CPT-B02-TRANS-002"
+  },
+  {
+    "from_state": "Pending Closure Validation",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Successful Closure Validation Result",
+    "result": "Reconciliation begins",
+    "to_state": "Pending Reconciliation",
+    "transition_id": "CPT-B02-TRANS-003"
+  },
+  {
+    "from_state": "Pending Closure Validation",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Validation failure evidence",
+    "result": "Progression blocked",
+    "to_state": "Exception",
+    "transition_id": "CPT-B02-TRANS-004"
+  },
+  {
+    "from_state": "Pending Reconciliation",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Successful Reconciliation Record",
+    "result": "Settlement verification begins",
+    "to_state": "Pending Settlement Verification",
+    "transition_id": "CPT-B02-TRANS-005"
+  },
+  {
+    "from_state": "Pending Reconciliation",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Reconciliation failure evidence",
+    "result": "Progression blocked",
+    "to_state": "Exception",
+    "transition_id": "CPT-B02-TRANS-006"
+  },
+  {
+    "from_state": "Pending Settlement Verification",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Settlement verification or valid exemption",
+    "result": "Closure eligibility established",
+    "to_state": "Eligible for Closure",
+    "transition_id": "CPT-B02-TRANS-007"
+  },
+  {
+    "from_state": "Pending Settlement Verification",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Settlement defect evidence",
+    "result": "Progression blocked",
+    "to_state": "Exception",
+    "transition_id": "CPT-B02-TRANS-008"
+  },
+  {
+    "from_state": "Eligible for Closure",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Authoritative closure evidence package",
+    "result": "Closed Position Truth created",
+    "to_state": "Constitutionally Closed",
+    "transition_id": "CPT-B02-TRANS-009"
+  },
+  {
+    "from_state": "Eligible for Closure",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "New contradiction before authoritative creation",
+    "result": "Creation blocked",
+    "to_state": "Exception",
+    "transition_id": "CPT-B02-TRANS-010"
+  },
+  {
+    "from_state": "Exception",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Validation defect resolution",
+    "result": "Validation resumes",
+    "to_state": "Pending Closure Validation",
+    "transition_id": "CPT-B02-TRANS-011"
+  },
+  {
+    "from_state": "Exception",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Reconciliation defect resolution",
+    "result": "Reconciliation resumes",
+    "to_state": "Pending Reconciliation",
+    "transition_id": "CPT-B02-TRANS-012"
+  },
+  {
+    "from_state": "Exception",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Settlement defect resolution",
+    "result": "Settlement verification resumes",
+    "to_state": "Pending Settlement Verification",
+    "transition_id": "CPT-B02-TRANS-013"
+  },
+  {
+    "from_state": "Constitutionally Closed",
+    "governing_authority": "Closed Position Truth and Historian",
+    "required_evidence": "Archival eligibility and custody transfer",
+    "result": "Permanent custody established",
+    "to_state": "Archived",
+    "transition_id": "CPT-B02-TRANS-014"
+  },
+  {
+    "from_state": "Constitutionally Closed",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Valid correction evidence",
+    "result": "Successor process initiated",
+    "to_state": "Corrected",
+    "transition_id": "CPT-B02-TRANS-015"
+  },
+  {
+    "from_state": "Corrected",
+    "governing_authority": "Closed Position Truth Office",
+    "required_evidence": "Valid successor and supersession evidence",
+    "result": "Successor becomes authoritative",
+    "to_state": "Superseded",
+    "transition_id": "CPT-B02-TRANS-016"
+  },
+  {
+    "from_state": "Superseded",
+    "governing_authority": "Closed Position Truth and Historian",
+    "required_evidence": "Completed lineage and custody evidence",
+    "result": "Permanent custody established",
+    "to_state": "Archived",
+    "transition_id": "CPT-B02-TRANS-017"
+  }
+]

@@ -1,0 +1,194 @@
+{
+  "authoritative_model": [
+    "Proposed",
+    "Pending Closure Validation",
+    "Pending Reconciliation",
+    "Pending Settlement Verification",
+    "Eligible for Closure",
+    "Constitutionally Closed",
+    "Archived"
+  ],
+  "correction_branch": [
+    "Constitutionally Closed -> Corrected -> Superseded -> Archived"
+  ],
+  "exception_branches": [
+    "Pending Closure Validation -> Exception",
+    "Pending Reconciliation -> Exception",
+    "Pending Settlement Verification -> Exception",
+    "Exception -> prior unresolved state"
+  ],
+  "lifecycle_id": "CPT-B02-LIFECYCLE-001",
+  "object_participation": [
+    {
+      "canonical_object": "Closed Position Record",
+      "permitted_states": [
+        "Eligible for Closure",
+        "Constitutionally Closed",
+        "Superseded",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Closed Position Identity",
+      "permitted_states": [
+        "Proposed",
+        "Pending Closure Validation",
+        "Pending Reconciliation",
+        "Pending Settlement Verification",
+        "Eligible for Closure",
+        "Constitutionally Closed",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Closure Determination",
+      "permitted_states": [
+        "Pending Closure Validation",
+        "Pending Reconciliation",
+        "Pending Settlement Verification",
+        "Eligible for Closure"
+      ]
+    },
+    {
+      "canonical_object": "Closure Validation Result",
+      "permitted_states": [
+        "Pending Closure Validation"
+      ]
+    },
+    {
+      "canonical_object": "Closure Evidence Record",
+      "permitted_states": [
+        "Proposed",
+        "Pending Closure Validation",
+        "Pending Reconciliation",
+        "Pending Settlement Verification",
+        "Eligible for Closure",
+        "Constitutionally Closed",
+        "Exception",
+        "Corrected",
+        "Superseded",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Settlement Verification Record",
+      "permitted_states": [
+        "Pending Settlement Verification",
+        "Eligible for Closure",
+        "Constitutionally Closed",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Reconciliation Record",
+      "permitted_states": [
+        "Pending Reconciliation",
+        "Pending Settlement Verification",
+        "Eligible for Closure",
+        "Constitutionally Closed",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Residual Position Resolution",
+      "permitted_states": [
+        "Pending Reconciliation",
+        "Exception"
+      ]
+    },
+    {
+      "canonical_object": "Realized Outcome Record",
+      "permitted_states": [
+        "Eligible for Closure",
+        "Constitutionally Closed",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Correction Record",
+      "permitted_states": [
+        "Corrected",
+        "Superseded",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Supersession Record",
+      "permitted_states": [
+        "Superseded",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Closure Exception Record",
+      "permitted_states": [
+        "Exception"
+      ]
+    },
+    {
+      "canonical_object": "Historical Closure Record",
+      "permitted_states": [
+        "Constitutionally Closed",
+        "Archived"
+      ]
+    },
+    {
+      "canonical_object": "Archival Record",
+      "permitted_states": [
+        "Archived"
+      ]
+    }
+  ],
+  "states": [
+    {
+      "constitutional_meaning": "candidate closure process initiated but not validated",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Proposed"
+    },
+    {
+      "constitutional_meaning": "constitutional prerequisite validation active",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Pending Closure Validation"
+    },
+    {
+      "constitutional_meaning": "execution, position, quantity, duplicate, and source reconciliation active",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Pending Reconciliation"
+    },
+    {
+      "constitutional_meaning": "settlement satisfaction or constitutional exemption under verification",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Pending Settlement Verification"
+    },
+    {
+      "constitutional_meaning": "all prerequisites satisfied but authoritative truth not yet created",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Eligible for Closure"
+    },
+    {
+      "constitutional_meaning": "authoritative Closed Position Truth exists",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Constitutionally Closed"
+    },
+    {
+      "constitutional_meaning": "progression blocked by missing, contradictory, unresolved, or inadmissible condition",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Exception"
+    },
+    {
+      "constitutional_meaning": "successor correction process initiated without predecessor mutation",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Corrected"
+    },
+    {
+      "constitutional_meaning": "successor is current authoritative record; predecessor remains immutable",
+      "governing_authority": "Closed Position Truth Office",
+      "state": "Superseded"
+    },
+    {
+      "constitutional_meaning": "permanent historical custody with identity, provenance, lineage, and retrieval preserved",
+      "governing_authority": "Historian custody; Closed Position Truth ownership retained",
+      "state": "Archived"
+    }
+  ]
+}

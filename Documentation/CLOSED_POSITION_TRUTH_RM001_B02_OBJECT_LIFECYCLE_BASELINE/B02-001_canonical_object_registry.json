@@ -1,0 +1,446 @@
+[
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Closed Position Record",
+    "classification": "authoritative truth object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "authoritative enterprise object representing a constitutionally closed trading position",
+    "downstream_consumers": [
+      "Performance Truth",
+      "Historian",
+      "Monitoring",
+      "Analyst",
+      "Commander"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CPR",
+    "lifecycle_role": [
+      "Eligible for Closure",
+      "Constitutionally Closed",
+      "Superseded",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-001",
+    "relationships": [
+      "supports:Closed Position Identity"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Closed Position Identity",
+    "classification": "authoritative truth object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "unique binding identity between Closed Position Truth and originating Position Registry identity",
+    "downstream_consumers": [
+      "Closed Position Truth",
+      "Historian"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CPI",
+    "lifecycle_role": [
+      "Proposed",
+      "Pending Closure Validation",
+      "Pending Reconciliation",
+      "Pending Settlement Verification",
+      "Eligible for Closure",
+      "Constitutionally Closed",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-002",
+    "relationships": [
+      "derives_from:Closed Position Record",
+      "supports:Closure Determination"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Closure Determination",
+    "classification": "constitutional determination object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "determines whether constitutional closure requirements are satisfied",
+    "downstream_consumers": [
+      "Closed Position Record",
+      "Certification"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CD",
+    "lifecycle_role": [
+      "Pending Closure Validation",
+      "Pending Reconciliation",
+      "Pending Settlement Verification",
+      "Eligible for Closure"
+    ],
+    "object_id": "CPT-OBJ-003",
+    "relationships": [
+      "derives_from:Closed Position Identity",
+      "supports:Closure Validation Result"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Closure Validation Result",
+    "classification": "validation object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "validates execution completion, reconciliation, zero quantity, settlement, evidence, and identity",
+    "downstream_consumers": [
+      "Closure Determination"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CVR",
+    "lifecycle_role": [
+      "Pending Closure Validation"
+    ],
+    "object_id": "CPT-OBJ-004",
+    "relationships": [
+      "derives_from:Closure Determination",
+      "supports:Closure Evidence Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Closure Evidence Record",
+    "classification": "evidence object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "preserves admissible upstream evidence without transferring upstream truth ownership",
+    "downstream_consumers": [
+      "Closure Validation Result",
+      "Reconciliation Record",
+      "Historian"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CER",
+    "lifecycle_role": [
+      "Proposed",
+      "Pending Closure Validation",
+      "Pending Reconciliation",
+      "Pending Settlement Verification",
+      "Eligible for Closure",
+      "Constitutionally Closed",
+      "Exception",
+      "Corrected",
+      "Superseded",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-005",
+    "relationships": [
+      "derives_from:Closure Validation Result",
+      "supports:Settlement Verification Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Settlement Verification Record",
+    "classification": "validation object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "records settlement satisfaction or constitutional exemption",
+    "downstream_consumers": [
+      "Closure Determination",
+      "Historian"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-SVR",
+    "lifecycle_role": [
+      "Pending Settlement Verification",
+      "Eligible for Closure",
+      "Constitutionally Closed",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-006",
+    "relationships": [
+      "derives_from:Closure Evidence Record",
+      "supports:Reconciliation Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Reconciliation Record",
+    "classification": "reconciliation object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "documents execution and position reconciliation and discrepancy disposition",
+    "downstream_consumers": [
+      "Closure Determination",
+      "Historian"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-RR",
+    "lifecycle_role": [
+      "Pending Reconciliation",
+      "Pending Settlement Verification",
+      "Eligible for Closure",
+      "Constitutionally Closed",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-007",
+    "relationships": [
+      "derives_from:Settlement Verification Record",
+      "supports:Residual Position Resolution"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Residual Position Resolution",
+    "classification": "reconciliation object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "documents residual quantity, cause, authority, status, and closure eligibility impact",
+    "downstream_consumers": [
+      "Reconciliation Record"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-RPR",
+    "lifecycle_role": [
+      "Pending Reconciliation",
+      "Exception"
+    ],
+    "object_id": "CPT-OBJ-008",
+    "relationships": [
+      "derives_from:Reconciliation Record",
+      "supports:Realized Outcome Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Realized Outcome Record",
+    "classification": "authoritative truth object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "records realized outcome truth within Closed Position Truth scope",
+    "downstream_consumers": [
+      "Closed Position Record",
+      "Performance Truth"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-ROR",
+    "lifecycle_role": [
+      "Eligible for Closure",
+      "Constitutionally Closed",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-009",
+    "relationships": [
+      "derives_from:Residual Position Resolution",
+      "supports:Correction Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Correction Record",
+    "classification": "correction object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "records authorized correction basis and successor-object requirement",
+    "downstream_consumers": [
+      "Supersession Record",
+      "Historian"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CR",
+    "lifecycle_role": [
+      "Corrected",
+      "Superseded",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-010",
+    "relationships": [
+      "derives_from:Realized Outcome Record",
+      "supports:Supersession Record",
+      "lineage_preserves:predecessor"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Supersession Record",
+    "classification": "supersession object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "records predecessor-successor authority, reason, time, and lineage",
+    "downstream_consumers": [
+      "Historical Closure Record",
+      "Historian"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-SR",
+    "lifecycle_role": [
+      "Superseded",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-011",
+    "relationships": [
+      "derives_from:Correction Record",
+      "supports:Closure Exception Record",
+      "lineage_preserves:predecessor"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Closure Exception Record",
+    "classification": "exception object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "records closure-blocking constitutional exception and disposition",
+    "downstream_consumers": [
+      "Monitoring",
+      "Closure Validation Result"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-CER",
+    "lifecycle_role": [
+      "Exception"
+    ],
+    "object_id": "CPT-OBJ-012",
+    "relationships": [
+      "derives_from:Supersession Record",
+      "supports:Historical Closure Record",
+      "blocks:authoritative_truth_creation"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Historical Closure Record",
+    "classification": "historical object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "preserves immutable historical representation and retrieval lineage",
+    "downstream_consumers": [
+      "Historian",
+      "Audit"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-HCR",
+    "lifecycle_role": [
+      "Constitutionally Closed",
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-013",
+    "relationships": [
+      "derives_from:Closure Exception Record",
+      "supports:Archival Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  },
+  {
+    "analytical_artifact": false,
+    "canonical_object": "Archival Record",
+    "classification": "archival object",
+    "constitutional_creator": "Closed Position Truth Office",
+    "constitutional_owner": "Closed Position Truth Office",
+    "constitutional_purpose": "records archival authority, eligibility, retention, retrieval, integrity, and lineage",
+    "downstream_consumers": [
+      "Historian",
+      "Audit"
+    ],
+    "governing_authority": "CLOSED-POSITION-TRUTH-RM-001-B02",
+    "identity_namespace": "CPT-AR",
+    "lifecycle_role": [
+      "Archived"
+    ],
+    "object_id": "CPT-OBJ-014",
+    "relationships": [
+      "derives_from:Historical Closure Record"
+    ],
+    "replaces_upstream_truth": false,
+    "retirement_conditions": [
+      "terminal lifecycle state reached",
+      "supersession state resolved",
+      "archival eligibility or historical retrieval preserved"
+    ],
+    "status": "CANONICAL"
+  }
+]
