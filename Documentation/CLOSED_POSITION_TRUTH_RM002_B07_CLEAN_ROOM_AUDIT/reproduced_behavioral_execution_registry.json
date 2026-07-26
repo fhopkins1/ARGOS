@@ -1,0 +1,196 @@
+[
+  {
+    "behavioral_domain": "valid constitutional closure",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "disposition": "PASS",
+    "duration_seconds": 1.876296,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "1a8edf19bd40a20040bb86c1036deb40aa194a67fb5393428579701f5144ec70",
+    "execution_id": "CPT-B07-BEH-001",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0015",
+      "CPT-CREQ-0017",
+      "CPT-CREQ-0023"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-001.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-001.stdout.log",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "verifier_id": "CPT-B07-VER-001"
+  },
+  {
+    "behavioral_domain": "incomplete execution and missing exit execution rejection",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "disposition": "PASS",
+    "duration_seconds": 0.891596,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "c92ce3d04cba44c12c2c3ecfdf023815aefd4fc49c29545e1f5ecf95f58d0e23",
+    "execution_id": "CPT-B07-BEH-002",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0005",
+      "CPT-CREQ-0016"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-002.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-002.stdout.log",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "verifier_id": "CPT-B07-VER-002"
+  },
+  {
+    "behavioral_domain": "duplicate closure prevention and idempotent repeated submission",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+    "disposition": "PASS",
+    "duration_seconds": 1.035529,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "676b3f94393c24b51834ceea68a807421fd4d7761cafe5f2dc39195248c04498",
+    "execution_id": "CPT-B07-BEH-003",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0014",
+      "CPT-CREQ-0030"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-003.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-003.stdout.log",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+    "verifier_id": "CPT-B07-VER-003"
+  },
+  {
+    "behavioral_domain": "realized outcome generation and P/L validation",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_lifecycle_analytics_calculate_pnl_holding_period_and_surveillance_extremes",
+    "disposition": "PASS",
+    "duration_seconds": 0.946897,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "1a8edf19bd40a20040bb86c1036deb40aa194a67fb5393428579701f5144ec70",
+    "execution_id": "CPT-B07-BEH-004",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0023",
+      "CPT-CREQ-0024",
+      "CPT-CREQ-0025"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-004.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-004.stdout.log",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_lifecycle_analytics_calculate_pnl_holding_period_and_surveillance_extremes",
+    "verifier_id": "CPT-B07-VER-004"
+  },
+  {
+    "behavioral_domain": "quantity reconciliation and P/L mismatch rejection",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_reconciliation_guards_quantity_and_pnl_mismatches",
+    "disposition": "PASS",
+    "duration_seconds": 1.041187,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "0dcf55b6562f39a75bde09fc8d39267f991af64ed2310d7a1a263122a3a2f548",
+    "execution_id": "CPT-B07-BEH-005",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0019",
+      "CPT-CREQ-0021",
+      "CPT-CREQ-0022"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-005.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-005.stdout.log",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_reconciliation_guards_quantity_and_pnl_mismatches",
+    "verifier_id": "CPT-B07-VER-005"
+  },
+  {
+    "behavioral_domain": "positive residual rejection and no AI/workflow side effects",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_positive_quantity_is_rejected_and_no_ai_is_used",
+    "disposition": "PASS",
+    "duration_seconds": 0.919881,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "d16cf0829cb0c9fad71cf1f73e7a69a77af207bad6db810ef4690e354e6bb049",
+    "execution_id": "CPT-B07-BEH-006",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0002",
+      "CPT-CREQ-0004",
+      "CPT-CREQ-0019"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-006.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-006.stdout.log",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_positive_quantity_is_rejected_and_no_ai_is_used",
+    "verifier_id": "CPT-B07-VER-006"
+  },
+  {
+    "behavioral_domain": "degraded analytical input behavior",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_ifvr001_phase35_truth_envelope.IFVR001Phase35TruthEnvelopeTests.test_degraded_closed_position_output_is_analytical_only_and_not_learning_promoted",
+    "disposition": "PASS",
+    "duration_seconds": 1.040381,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "d16cf0829cb0c9fad71cf1f73e7a69a77af207bad6db810ef4690e354e6bb049",
+    "execution_id": "CPT-B07-BEH-007",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0016",
+      "CPT-CREQ-0027"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-007.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-007.stdout.log",
+    "target": "Tests.test_ifvr001_phase35_truth_envelope.IFVR001Phase35TruthEnvelopeTests.test_degraded_closed_position_output_is_analytical_only_and_not_learning_promoted",
+    "verifier_id": "CPT-B07-VER-007"
+  },
+  {
+    "behavioral_domain": "partial closure rejection and full closure historical preservation",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_partial_and_full_closure_require_broker_confirmed_fills",
+    "disposition": "PASS",
+    "duration_seconds": 0.951405,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "f90d7d670e309ec1afb3a954661dbbf45f169f38da4a95e13bfa7d734186b7ff",
+    "execution_id": "CPT-B07-BEH-008",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0013",
+      "CPT-CREQ-0029"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-008.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-008.stdout.log",
+    "target": "Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_partial_and_full_closure_require_broker_confirmed_fills",
+    "verifier_id": "CPT-B07-VER-008"
+  },
+  {
+    "behavioral_domain": "requirement architecture integrity",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_closed_position_truth_rm001a_b01_requirement_architecture.ClosedPositionTruthRM001AB01RequirementArchitectureTests.test_integrity_disposition_is_complete_and_constitutional_only",
+    "disposition": "PASS",
+    "duration_seconds": 0.1843,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "1e6e4b1e89e326c695b807ec3d742e6a89c794132c1c32948f73d4565b1c9322",
+    "execution_id": "CPT-B07-BEH-009",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0031",
+      "CPT-CREQ-0034"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-009.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-009.stdout.log",
+    "target": "Tests.test_closed_position_truth_rm001a_b01_requirement_architecture.ClosedPositionTruthRM001AB01RequirementArchitectureTests.test_integrity_disposition_is_complete_and_constitutional_only",
+    "verifier_id": "CPT-B07-VER-009"
+  },
+  {
+    "behavioral_domain": "RM-002 implementation certification reproducibility",
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_closed_position_truth_rm002_implementation_certification.ClosedPositionTruthRM002ImplementationCertificationTests.test_independent_reproduction_and_final_verdict_certify_candidate",
+    "disposition": "PASS",
+    "duration_seconds": 11.957696,
+    "environment_id": "CPT-B07-ENV-001",
+    "evidence_hash": "12ced42334279f84d41afa1b3204dff4f627ecfc4bdc5f5017df624ecf442581",
+    "execution_id": "CPT-B07-BEH-010",
+    "fixture_id": "CPT-B07-FIX-001",
+    "requirement_ids": [
+      "CPT-CREQ-0033",
+      "CPT-CREQ-0034"
+    ],
+    "returncode": 0,
+    "stderr": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-010.stderr.log",
+    "stdout": "Documentation/CLOSED_POSITION_TRUTH_RM002_B07_CLEAN_ROOM_AUDIT/raw_execution_evidence/CPT-B07-BEH-010.stdout.log",
+    "target": "Tests.test_closed_position_truth_rm002_implementation_certification.ClosedPositionTruthRM002ImplementationCertificationTests.test_independent_reproduction_and_final_verdict_certify_candidate",
+    "verifier_id": "CPT-B07-VER-010"
+  }
+]

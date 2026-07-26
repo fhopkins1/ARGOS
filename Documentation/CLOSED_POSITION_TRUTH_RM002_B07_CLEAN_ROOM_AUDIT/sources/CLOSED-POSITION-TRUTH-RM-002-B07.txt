@@ -1,0 +1,692 @@
+# CLOSED-POSITION-TRUTH-RM-002-B07
+
+# Independent Clean-Room Reproduction and Fail-Closed Certification Audit
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the independent clean-room reproduction campaign required to verify the Closed Position Truth Office implementation certification without relying upon the prior certification execution, prior generated evidence, developer-local state, hidden repository state, or previously asserted conclusions.
+
+This order exists solely to determine whether the complete **CLOSED-POSITION-TRUTH-RM-002** certification result can be independently reproduced from the delivered Repository Package ZIP in a newly created isolated environment.
+
+The prior implementation certification package shall be treated only as the comparison baseline.
+
+It shall not be treated as proof of successful reproduction.
+
+The clean-room campaign shall independently reproduce:
+
+* repository validation;
+* environment construction;
+* dependency-derived implementation discovery;
+* runtime participation discovery;
+* verifier discovery;
+* fixture discovery;
+* behavioral verification;
+* evidence generation;
+* requirement-level proof generation;
+* implementation traceability;
+* certification blocker determination;
+* fail-closed mutation validation;
+* final ECS-003 implementation certification assessment.
+
+No prior generated evidence artifact may be reused as execution evidence.
+
+No prior proof artifact may be reused as reproduced proof.
+
+No prior certification conclusion may be imported into the reproduced verdict.
+
+No implementation remediation shall occur under this order.
+
+Any discovered defect shall be recorded as a finding and shall fail closed.
+
+---
+
+# Governing Baselines
+
+The constitutional architecture established under **CLOSED-POSITION-TRUTH-RM-001** and its accepted follow-on constitutional completion artifacts shall be treated as the authoritative constitutional baseline.
+
+The implementation delivered in the **CLOSED-POSITION-TRUTH-RM-002 Repository Package ZIP** shall be treated as the frozen implementation candidate.
+
+The **CLOSED-POSITION-TRUTH-RM-002 Evidence Package ZIP** shall be used only after independent execution for objective comparison.
+
+The clean-room auditor shall not use the submitted evidence package to determine:
+
+* implementation participation;
+* verifier participation;
+* fixture participation;
+* expected execution counts;
+* expected proof counts;
+* expected mutation results;
+* certification readiness;
+* final verdict.
+
+These values shall first be independently derived.
+
+---
+
+# Independence Requirements
+
+The campaign shall execute in a new isolated working directory.
+
+The campaign shall not depend upon:
+
+* the original source checkout;
+* Git metadata;
+* Git history;
+* developer workstation configuration;
+* pre-existing virtual environments;
+* pre-existing dependency caches unless their contents are fully identified and verified;
+* prior generated registries;
+* prior execution logs;
+* prior evidence objects;
+* prior proof objects;
+* prior traceability graphs;
+* prior certification reports;
+* undocumented environment variables;
+* undocumented secrets;
+* undocumented external services;
+* manually curated implementation inventories;
+* manually curated verifier inventories;
+* manually curated fixture inventories.
+
+The campaign shall begin from only:
+
+1. the delivered Repository Package ZIP;
+2. the frozen constitutional baseline;
+3. documented runtime prerequisites;
+4. the clean-room audit order.
+
+If the repository package cannot execute without unavailable hidden state, the campaign shall issue **NOT_REPRODUCIBLE**.
+
+---
+
+# Clean-Room Identity
+
+Create and preserve deterministic identities for:
+
+* repository package;
+* extracted repository;
+* repository content manifest;
+* clean-room environment;
+* operating system;
+* runtime;
+* dependencies;
+* configuration;
+* discovery campaign;
+* behavioral campaign;
+* mutation campaign;
+* evidence population;
+* proof population;
+* traceability population;
+* final certification assessment.
+
+Record cryptographic hashes for:
+
+* input packages;
+* extracted source files;
+* executable verification files;
+* generated evidence;
+* generated proof;
+* generated reports.
+
+---
+
+# Order Structure
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-001
+
+# Clean-Room Repository Validation
+
+## Objective
+
+Validate that the delivered Repository Package ZIP is complete, self-contained, extractable, and suitable for independent execution.
+
+## Required Actions
+
+1. Extract the repository into a new empty directory.
+2. Generate a complete content manifest.
+3. Record package and extracted-content hashes.
+4. Identify all declared runtime prerequisites.
+5. Identify all configuration inputs.
+6. Identify all environment variables.
+7. Identify all external service dependencies.
+8. Identify all generated-artifact dependencies.
+9. Confirm whether Git metadata is required.
+10. Confirm whether any source, verifier, fixture, configuration, or dependency is referenced but absent.
+
+The audit shall not reconstruct missing files from the Evidence Package ZIP.
+
+## Fail Conditions
+
+Fail if:
+
+* extraction is incomplete;
+* referenced files are missing;
+* execution requires Git metadata not delivered;
+* execution requires undocumented local state;
+* required configuration is absent;
+* required external dependencies cannot be deterministically isolated;
+* the package depends on prior generated evidence.
+
+## Deliverables
+
+* Clean-Room Repository Manifest;
+* Repository Identity Registry;
+* Repository Completeness Report;
+* Missing Dependency Registry;
+* Clean-Room Readiness Assessment.
+
+---
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-002
+
+# Independent Environment Construction
+
+## Objective
+
+Construct a new isolated execution environment using only documented repository requirements.
+
+## Required Actions
+
+1. Create a new isolated runtime environment.
+2. Install dependencies from delivered dependency declarations.
+3. Record exact dependency versions.
+4. Record operating-system and runtime identities.
+5. disable access to prior project directories;
+6. disable reliance on prior generated outputs;
+7. identify and isolate nondeterministic external calls;
+8. confirm that the certification pipeline can start from repository contents alone.
+
+Any dependency substitution shall be recorded as variance.
+
+Any undocumented manual intervention shall be recorded as a reproducibility finding.
+
+## Deliverables
+
+* Environment Identity Registry;
+* Dependency Installation Registry;
+* Configuration Registry;
+* External Dependency Registry;
+* Environment Construction Report.
+
+---
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-003
+
+# Independent Dependency-Derived Discovery
+
+## Objective
+
+Independently derive the complete implementation, verifier, fixture, persistence, evidence, and traceability participant populations.
+
+## Required Actions
+
+Discover participation through:
+
+* imports;
+* runtime invocation;
+* object construction;
+* schema use;
+* persistence access;
+* event production and consumption;
+* configuration references;
+* evidence production;
+* proof production;
+* verifier invocation;
+* fixture consumption;
+* transitive runtime dependency relationships.
+
+Do not establish participation solely from:
+
+* filenames;
+* directory names;
+* documentation;
+* prior registries;
+* prior test lists;
+* keyword matching;
+* expected counts.
+
+Classify every discovered artifact as:
+
+* CLOSED_POSITION_DIRECT;
+* CLOSED_POSITION_DEPENDENCY;
+* RECONCILIATION_COMPONENT;
+* SETTLEMENT_COMPONENT;
+* PERSISTENCE_COMPONENT;
+* EVIDENCE_COMPONENT;
+* PROOF_COMPONENT;
+* TRACEABILITY_COMPONENT;
+* VERIFIER;
+* FIXTURE;
+* SHARED_INFRASTRUCTURE;
+* NON_PARTICIPATING.
+
+Compare the independently derived population to the prior certification inventory only after discovery is complete.
+
+## Deliverables
+
+* Reproduced Implementation Inventory;
+* Reproduced Dependency Registry;
+* Reproduced Runtime Participation Registry;
+* Reproduced Verifier Registry;
+* Reproduced Fixture Registry;
+* Reproduced Persistence Registry;
+* Discovery Comparison Report;
+* Discovery Findings Registry.
+
+---
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-004
+
+# Independent Behavioral Verification
+
+## Objective
+
+Independently execute the complete Closed Position Truth behavioral verification population.
+
+## Required Behavioral Domains
+
+Execute and preserve raw evidence for:
+
+* valid constitutional closure;
+* incomplete execution rejection;
+* missing exit execution rejection;
+* settlement verification;
+* settlement exemption;
+* settlement failure;
+* fill reconciliation;
+* quantity reconciliation;
+* zero-residual enforcement;
+* positive residual rejection;
+* negative residual inconsistency;
+* partial closure rejection or constitutionally defined handling;
+* duplicate closure prevention;
+* idempotent repeated submission;
+* stale evidence rejection;
+* conflicting evidence rejection;
+* degraded analytical input behavior;
+* realized outcome generation;
+* realized profit-and-loss validation;
+* correction creation;
+* immutable prior-record preservation;
+* supersession creation;
+* supersession lineage;
+* archival eligibility;
+* archival immutability;
+* replay;
+* restart recovery;
+* process-discontinuity recovery;
+* reconciliation failure;
+* evidence generation;
+* historical reconstruction;
+* unauthorized mutation rejection.
+
+Every execution shall record:
+
+* execution identity;
+* verifier identity;
+* fixture identity;
+* requirement identity;
+* environment identity;
+* input identity;
+* observed output;
+* expected output;
+* disposition;
+* stdout;
+* stderr;
+* duration;
+* evidence hash.
+
+A skipped required behavior shall constitute a coverage blocker unless supported by an explicit constitutional `NOT_APPLICABLE` disposition.
+
+## Deliverables
+
+* Reproduced Behavioral Execution Registry;
+* Raw Execution Evidence;
+* Behavioral Coverage Matrix;
+* Behavioral Findings Registry;
+* Behavioral Reproduction Report.
+
+---
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-005
+
+# Independent Evidence, Proof, and Traceability Regeneration
+
+## Objective
+
+Regenerate all certification evidence, requirement-level proof, and execution-derived traceability from the clean-room campaign.
+
+## Required Actions
+
+For every canonical requirement, issue exactly one disposition:
+
+* PROVEN;
+* NOT_PROVEN;
+* NOT_APPLICABLE.
+
+A requirement may be marked `PROVEN` only when supported by admissible clean-room evidence.
+
+A requirement may be marked `NOT_APPLICABLE` only when the frozen constitutional baseline explicitly supports that disposition.
+
+Construct lineage:
+
+```text
+Constitutional Doctrine
+→ Canonical Requirement
+→ Implementation Obligation
+→ Implementation Artifact
+→ Verifier
+→ Fixture
+→ Execution
+→ Evidence
+→ Finding
+→ Proof
+→ Certification Disposition
+```
+
+Verify:
+
+* complete forward traceability;
+* complete backward traceability;
+* no orphan requirements;
+* no orphan implementation artifacts;
+* no orphan verifiers;
+* no orphan executions;
+* no orphan evidence;
+* no orphan proofs;
+* no circular proof;
+* no proof derived solely from prior conclusions.
+
+## Deliverables
+
+* Reproduced Evidence Registry;
+* Reproduced Proof Registry;
+* Reproduced Proof Lineage Registry;
+* Reproduced Implementation Traceability Graph;
+* Forward Traceability Matrix;
+* Backward Traceability Matrix;
+* Proof Findings Registry;
+* Proof Reproduction Report.
+
+---
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-006
+
+# Independent Fail-Closed Mutation Campaign
+
+## Objective
+
+Independently demonstrate that the certification system rejects constitutionally defective Closed Position Truth implementations.
+
+## Mutation Independence
+
+Do not rely solely upon the seven prior submitted mutations.
+
+Independently derive mutation classes from the frozen constitutional requirements.
+
+Prior mutation cases may be compared only after the independent mutation plan is complete.
+
+Each mutation shall:
+
+* alter exactly one governing behavior where practical;
+* possess deterministic identity;
+* identify the violated requirement;
+* identify the expected certification blocker;
+* preserve all unrelated implementation behavior where practical;
+* execute through the same certification pipeline as the unmodified candidate;
+* be removed before the next mutation unless explicitly testing combined defects.
+
+## Mandatory Mutation Classes
+
+Include at least one controlled mutation for each applicable domain:
+
+1. create authoritative truth before execution completion;
+2. create authoritative truth with positive residual quantity;
+3. accept unresolved reconciliation;
+4. bypass settlement verification or exemption;
+5. permit degraded analytical inputs to create authoritative truth;
+6. mutate an immutable closed-position record;
+7. overwrite rather than supersede a prior record;
+8. lose correction or supersession lineage;
+9. accept duplicate closure as a new authoritative record;
+10. accept stale or conflicting evidence;
+11. omit required evidence while retaining a PASS verdict;
+12. remove a required verifier;
+13. remove a required implementation participant from discovery;
+14. break requirement-to-execution traceability;
+15. inject circular or self-certifying proof;
+16. reuse prior evidence rather than regenerate evidence;
+17. corrupt replay or restart recovery;
+18. alter realized outcome ownership or derivation;
+19. permit unauthorized upstream or downstream mutation;
+20. omit a certification blocker while a known defect exists.
+
+## Required Validation
+
+For every mutation verify:
+
+* the behavioral verifier fails where applicable;
+* the evidence records the defect;
+* the requirement proof becomes `NOT_PROVEN`;
+* the certification blocker is created;
+* the final certification verdict is not PASS;
+* no unrelated false-positive blocker is introduced where practical.
+
+Record:
+
+* true positives;
+* false positives;
+* true negatives;
+* false negatives.
+
+Any false negative shall fail the campaign.
+
+Any unexplained false positive shall fail the campaign.
+
+## Deliverables
+
+* Independent Mutation Plan;
+* Mutation Registry;
+* Mutation Execution Registry;
+* Mutation Evidence Registry;
+* Mutation Blocker Registry;
+* False-Positive and False-Negative Report;
+* Fail-Closed Validation Report.
+
+---
+
+## CLOSED-POSITION-TRUTH-RM-002-B07-007
+
+# Reproduction Comparison and Final Independent Audit
+
+## Objective
+
+Compare the independently regenerated certification result to the submitted RM-002 certification baseline and issue the authoritative clean-room reproduction verdict.
+
+## Required Comparison
+
+Compare:
+
+* repository identity;
+* implementation participant population;
+* verifier population;
+* fixture population;
+* behavioral execution population;
+* behavioral results;
+* evidence population;
+* proof population;
+* traceability population;
+* certification blocker population;
+* mutation population;
+* mutation results;
+* certification readiness;
+* final certification verdict.
+
+Classify every variance as:
+
+* EXPECTED_ENVIRONMENT_VARIANCE;
+* NON_SEMANTIC_VARIANCE;
+* EXPLAINED_SEMANTIC_VARIANCE;
+* UNEXPLAINED_SEMANTIC_VARIANCE;
+* CERTIFICATION_BLOCKING_VARIANCE.
+
+No unexplained semantic variance may remain.
+
+## Final Reproduction Disposition
+
+Issue exactly one:
+
+* **REPRODUCIBLE**
+* **REPRODUCIBLE_WITH_VARIANCE**
+* **NOT_REPRODUCIBLE**
+
+`REPRODUCIBLE_WITH_VARIANCE` shall not authorize unconditional certification unless every variance is non-semantic, explained, and explicitly non-blocking.
+
+## Final Certification Disposition
+
+Issue exactly one:
+
+* **ECS003_IMPLEMENTATION_CERTIFIED**
+* **ECS003_IMPLEMENTATION_CERTIFICATION_DENIED**
+* **ECS003_IMPLEMENTATION_REMEDIATION_REQUIRED**
+
+Certification may be issued only when:
+
+* the repository package is independently executable;
+* discovery is independently reproducible;
+* all required behavioral verification passes;
+* all canonical requirements are proven or validly not applicable;
+* evidence is independently regenerated;
+* proof is independently regenerated;
+* traceability is complete;
+* fail-closed mutation validation passes;
+* false negatives equal zero;
+* unexplained false positives equal zero;
+* certification blockers equal zero;
+* the final reproduction disposition is `REPRODUCIBLE`.
+
+## Deliverables
+
+* Reproduction Comparison Registry;
+* Variance Registry;
+* Certification Blocker Registry;
+* Independent Clean-Room Reproduction Report;
+* Independent Fail-Closed Audit Report;
+* Final ECS-003 Certification Report;
+* Final Reproduction Disposition;
+* Final Certification Verdict;
+* Completion Report.
+
+---
+
+# Prohibited Shortcuts
+
+The campaign shall not:
+
+* copy prior evidence into the reproduced evidence directory;
+* copy prior proof into the reproduced proof directory;
+* use prior participant inventories as discovery inputs;
+* use prior execution counts as acceptance criteria;
+* accept aggregate test success without raw execution evidence;
+* accept completion reports as proof;
+* accept registry declarations without supporting execution;
+* mark unexecuted requirements as proven;
+* conceal failed tests through filtering;
+* modify the implementation candidate;
+* alter the constitutional baseline;
+* suppress discovered blockers;
+* issue PASS because results appear consistent with the prior package.
+
+---
+
+# Mandatory Completion Criteria
+
+This order shall complete only when:
+
+* the Repository Package ZIP has been extracted into a clean environment;
+* package-only execution has been demonstrated;
+* no hidden repository dependency remains;
+* no Git metadata dependency remains unless Git metadata is explicitly included and constitutionally required;
+* the implementation inventory has been independently derived;
+* the verifier and fixture inventories have been independently derived;
+* required behavioral domains have been executed;
+* raw execution evidence has been preserved;
+* requirement-level proof has been regenerated;
+* implementation traceability has been regenerated;
+* the certification verdict has been independently regenerated;
+* the fail-closed mutation plan has been independently derived;
+* all mandatory mutation classes have been executed or explicitly justified as constitutionally not applicable;
+* every applicable mutation has produced the expected rejection;
+* false negatives equal zero;
+* unexplained false positives equal zero;
+* all differences from the submitted certification package have been classified;
+* no unexplained semantic variance remains;
+* no certification blocker remains.
+
+---
+
+# Mandatory Deliverables
+
+Produce both:
+
+1. **CLOSED_POSITION_TRUTH_RM002_B07_REPOSITORY Package ZIP**
+2. **CLOSED_POSITION_TRUTH_RM002_B07_EVIDENCE Package ZIP**
+
+The Repository Package ZIP shall contain:
+
+* the exact clean-room-executed repository candidate;
+* clean-room execution tooling;
+* discovery tooling;
+* behavioral verification tooling;
+* evidence-generation tooling;
+* proof-generation tooling;
+* traceability-generation tooling;
+* mutation tooling;
+* deterministic reproduction instructions;
+* dependency declarations;
+* configuration declarations.
+
+The Evidence Package ZIP shall contain:
+
+* all registries required by this order;
+* raw stdout and stderr for every execution;
+* environment identity;
+* dependency identity;
+* repository manifests and hashes;
+* behavioral execution evidence;
+* mutation execution evidence;
+* evidence objects;
+* proof objects;
+* traceability graphs;
+* comparison artifacts;
+* variance classifications;
+* blocker determinations;
+* final clean-room reproduction report;
+* final fail-closed validation report;
+* final ECS-003 certification report;
+* final reproduction disposition;
+* final certification verdict.
+
+The completion response shall report:
+
+* repository hash;
+* clean-room environment identity;
+* discovered implementation count;
+* discovered verifier count;
+* discovered fixture count;
+* behavioral execution count;
+* behavioral pass count;
+* behavioral failure count;
+* mutation execution count;
+* expected rejection count;
+* successful rejection count;
+* false-positive count;
+* false-negative count;
+* proven requirement count;
+* not-proven requirement count;
+* not-applicable requirement count;
+* certification blocker count;
+* reproduction disposition;
+* final ECS-003 certification verdict.

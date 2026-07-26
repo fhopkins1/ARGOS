@@ -1,0 +1,62 @@
+[
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-001",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_position_truth_is_created_for_fully_closed_position",
+    "verifier_id": "CPT-B07-VER-001"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-002",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_rejects_open_position_and_missing_exit_execution",
+    "verifier_id": "CPT-B07-VER-002"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-003",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_builder_is_idempotent_and_performance_truth_consumes_record",
+    "verifier_id": "CPT-B07-VER-003"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-004",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_lifecycle_analytics_calculate_pnl_holding_period_and_surveillance_extremes",
+    "verifier_id": "CPT-B07-VER-004"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-005",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_reconciliation_guards_quantity_and_pnl_mismatches",
+    "verifier_id": "CPT-B07-VER-005"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-006",
+    "target": "Tests.test_argos_control_panel_dashboard.ARGOSControlPanelDashboardTests.test_eo_xe_closed_positive_quantity_is_rejected_and_no_ai_is_used",
+    "verifier_id": "CPT-B07-VER-006"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-007",
+    "target": "Tests.test_ifvr001_phase35_truth_envelope.IFVR001Phase35TruthEnvelopeTests.test_degraded_closed_position_output_is_analytical_only_and_not_learning_promoted",
+    "verifier_id": "CPT-B07-VER-007"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-008",
+    "target": "Tests.test_or004_position_lifecycle.PositionLifecycleTests.test_partial_and_full_closure_require_broker_confirmed_fills",
+    "verifier_id": "CPT-B07-VER-008"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-009",
+    "target": "Tests.test_closed_position_truth_rm001a_b01_requirement_architecture.ClosedPositionTruthRM001AB01RequirementArchitectureTests.test_integrity_disposition_is_complete_and_constitutional_only",
+    "verifier_id": "CPT-B07-VER-009"
+  },
+  {
+    "classification": "VERIFIER",
+    "execution_id": "CPT-B07-BEH-010",
+    "target": "Tests.test_closed_position_truth_rm002_implementation_certification.ClosedPositionTruthRM002ImplementationCertificationTests.test_independent_reproduction_and_final_verdict_certify_candidate",
+    "verifier_id": "CPT-B07-VER-010"
+  }
+]
