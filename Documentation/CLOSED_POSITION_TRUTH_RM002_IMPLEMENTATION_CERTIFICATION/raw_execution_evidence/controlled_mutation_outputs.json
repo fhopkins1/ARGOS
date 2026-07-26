@@ -11,7 +11,7 @@
     "assertion": "open position rejected",
     "deterministic_rejection": true,
     "disposition": "PASS",
-    "evidence_digest": "49bea0267bdeef181e3587235a2e167fb8e05bfc4b0caa0f8917a6c763e36182",
+    "evidence_digest": "514456781da1c4b7b3a9f7afe8ce5dd1f0a9819ed426aa332774fa415e71b0b3",
     "mutation": "closure_violation_open_position",
     "mutation_id": "CPT-MUT-002"
   },
@@ -19,7 +19,7 @@
     "assertion": "closed positive quantity rejected",
     "deterministic_rejection": true,
     "disposition": "PASS",
-    "evidence_digest": "22d83fe85d5ed58198fb0d7c64c83f4645146b729ccfcae9555dcdda7eb275e8",
+    "evidence_digest": "6fb4e3a7f6333207016da8a4f1ebd33c73cd66b773b1dccb12b5b30a54dad823",
     "mutation": "closure_violation_positive_quantity",
     "mutation_id": "CPT-MUT-003"
   },
@@ -27,7 +27,7 @@
     "assertion": "quantity mismatch rejected",
     "deterministic_rejection": true,
     "disposition": "PASS",
-    "evidence_digest": "76d122677ae697a127ec1f51db9d030e434b27c77e31024764ecc12aeb30dbf9",
+    "evidence_digest": "f1318835c68e0baf1b49f812beb9561c54af4a8e31c388e0630182dfc1d3d975",
     "mutation": "reconciliation_violation_quantity_mismatch",
     "mutation_id": "CPT-MUT-004"
   },
@@ -35,7 +35,7 @@
     "assertion": "pnl mismatch rejected",
     "deterministic_rejection": true,
     "disposition": "PASS",
-    "evidence_digest": "b54fc730aa8232b8125a49a9f1bf3e561b309f383f39ecd5afd58b7c3368b956",
+    "evidence_digest": "6546b8d7ac4e960c3d00000742a4b753ee56d034137a48cd90d6333ac297cd04",
     "mutation": "reconciliation_violation_pnl_mismatch",
     "mutation_id": "CPT-MUT-005"
   },
@@ -43,7 +43,7 @@
     "assertion": "degraded benchmark remains analytical-only",
     "deterministic_rejection": true,
     "disposition": "PASS",
-    "evidence_digest": "94d5ab3b56b71f7ffdd154eb3341ba613c6d679fcc2d2ad08322d2444039e403",
+    "evidence_digest": "2818767fe03f0f6d661ed69cc3c7ac20653c1ea1053411eb83a64948458b3e03",
     "mutation": "evidence_deficiency_degraded_analytical_only",
     "mutation_id": "CPT-MUT-006"
   },
