@@ -1,63 +1,64 @@
-# AUTH-IOC-001 Auditor Reproduction Guide
+# Performance Truth Independent Runtime Reproduction
 
-This package is reproduced with one package-bound command. No Git repository,
-development checkout, package installation, manual `PYTHONPATH`, network access,
-or prior evidence directory is required.
+This guide is the active auditor entrypoint for `PERFORMANCE-TRUTH-ECS003-AUDIT-003A`.
+It is specific to the Performance Truth Office.
 
 ## Supported Environment
 
-- Python 3.11 or newer
-- Windows, Linux, or macOS with UTF-8 capable filesystem paths
-- No third-party Python dependencies are required
+- Windows, macOS, or Linux with a writable filesystem.
+- Python 3.11 or newer.
+- No submitted evidence package is required or accepted as proof.
+- No Git metadata is required inside the candidate ZIP.
 
-## Environment Validation
+## Canonical Command
 
-```bash
-python -m argos.authorization_independent_certify --validate-environment --output auditor_environment
+```text
+python audit_reproduce.py --candidate <repository-package.zip> --output <empty-output-directory>
 ```
 
-When validating from a freshly extracted candidate, this equivalent wrapper also
-works without any environment-variable setup:
+The output directory must be new or empty. The command exits nonzero if the
+candidate ZIP is missing, the output directory is not empty, extraction fails,
+runtime validation fails, or any blocking finding is produced.
 
-```bash
-python audit_reproduce.py --validate-environment --output auditor_environment
+## Generated Outputs
+
+The reproduction output includes:
+
+- `candidate_hash.json`
+- `environment.json`
+- `repository_inventory.json`
+- `performance_truth_discovery.json`
+- `command_manifest.json`
+- `test_inventory.json`
+- `test_results.json`
+- `behavioral_results.json`
+- `replay_results.json`
+- `fail_closed_results.json`
+- `mutation_results.json`
+- `stress_results.json`
+- `findings.json`
+- `execution_summary.json`
+- `generated_artifact_inventory.json`
+- `output_hash_manifest.json`
+- `stdout/` and `stderr/` command logs
+- `transcripts/` command records
+
+## Exit Codes
+
+- `0`: execution completed and all required validations passed.
+- `2`: command-line or filesystem input failure.
+- `3`: candidate extraction or repository discovery failure.
+- `4`: build, test, runtime, replay, fail-closed, mutation, or stress failure.
+
+## Repeat Runs
+
+Use a new empty output directory for each run:
+
+```text
+python audit_reproduce.py --candidate ARGOS.zip --output audit-run-001
+python audit_reproduce.py --candidate ARGOS.zip --output audit-run-002
 ```
 
-## Candidate Hash Verification
-
-```bash
-python - <<'PY'
-import hashlib, pathlib, sys
-path = pathlib.Path(sys.argv[1])
-h = hashlib.sha256(path.read_bytes()).hexdigest()
-print(h)
-PY AUTHORIZATIONS_REPOSITORY_<candidate-id>_<timestamp>_auth-ioc001-final.zip
-```
-
-## Full Reproduction
-
-```bash
-python audit_reproduce.py --candidate "/path/to/final_repository.zip" --output "/path/to/new_empty_audit_output"
-```
-
-Equivalent module command:
-
-```bash
-python -m argos.authorization_independent_certify --candidate "/path/to/final_repository.zip" --output "/path/to/new_empty_audit_output"
-```
-
-## Expected Successful Result
-
-- Exit code: `0`
-- Final decision file:
-  `06_final/independent_certification_decision.json`
-- Expected decision:
-  `UNCONDITIONAL_INDEPENDENT_AUTHORIZATIONS_OFFICE_CERTIFICATION_PASS`
-- Primary execution output:
-  `01_primary_execution/certification_result.json`
-- Clean-room output:
-  `02_clean_room/run_001/certification_result.json`
-  `02_clean_room/run_002/certification_result.json`
-
-Troubleshooting is limited to installing a supported Python runtime and ensuring
-the candidate path and output path are valid.
+The entrypoint records the candidate ZIP hash and writes all runtime evidence
+to the requested output directory. It does not issue an ECS-003 certification
+decision and does not use historical reports as proof.

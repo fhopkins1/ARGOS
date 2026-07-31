@@ -97,15 +97,19 @@ def _file_digest(path: Path) -> str:
 
 
 def _candidate_digest() -> str:
+    package_digest = os.environ.get("PERFORMANCE_TRUTH_CANDIDATE_HASH")
+    if package_digest:
+        return package_digest
     result = subprocess.run(
         ["git", "rev-parse", "HEAD"],
         cwd=REPOSITORY_ROOT,
         capture_output=True,
         text=True,
-        check=True,
         timeout=30,
     )
-    return result.stdout.strip()
+    if result.returncode == 0:
+        return result.stdout.strip()
+    return _digest({"repository_root": str(REPOSITORY_ROOT), "git_metadata": "unavailable"})
 
 
 def _with_env(**updates: str) -> dict[str, str | None]:

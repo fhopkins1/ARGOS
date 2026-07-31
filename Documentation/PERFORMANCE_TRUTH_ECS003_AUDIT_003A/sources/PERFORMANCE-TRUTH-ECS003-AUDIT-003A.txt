@@ -1,0 +1,495 @@
+# PERFORMANCE-TRUTH-ECS003-AUDIT-003A
+
+# Performance Truth Independent Reproduction Entrypoint and Audit Package Correction
+
+## Purpose
+
+Correct the Performance Truth Audit-003 repository package so an independent auditor can reproduce the Performance Truth runtime validation directly from the submitted Repository Package ZIP.
+
+This order addresses audit-package defects only.
+
+It shall establish an accurate Performance Truth-specific reproduction entrypoint, correct all misleading auditor instructions, and ensure that runtime results can be generated in a clean environment without relying upon historical evidence or prior certification conclusions.
+
+This order shall not modify, repair, reinterpret, optimize, or extend the Performance Truth Office implementation.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* PERFORMANCE-TRUTH-MO-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-002;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003.
+
+Nothing within this order authorizes modification of constitutional behavior.
+
+---
+
+# Binding Scope
+
+Codex shall modify only the files required to:
+
+* provide the independent reproduction entrypoint;
+* provide accurate Performance Truth auditor instructions;
+* remove incorrect Authorizations Office references;
+* define the exact clean-room execution procedure;
+* capture raw execution results;
+* verify that the reproduction entrypoint operates from the Repository Package ZIP.
+
+Codex shall not modify:
+
+* Performance Truth business logic;
+* constitutional objects;
+* lifecycle behavior;
+* mathematical behavior;
+* ownership rules;
+* interface contracts;
+* evidence semantics;
+* reconciliation behavior;
+* replay behavior;
+* fail-closed behavior;
+* existing tests to obtain passing results.
+
+If the reproduction process exposes an implementation defect, Codex shall record the defect and stop. Codex shall not repair it under this order.
+
+---
+
+# Prohibition on Discretionary Decisions
+
+Codex shall make no architectural, constitutional, behavioral, certification, or business-logic decisions.
+
+Codex shall not:
+
+* infer missing requirements;
+* reinterpret failed behavior;
+* suppress failures;
+* change expected outputs;
+* relax acceptance criteria;
+* replace existing tests;
+* create substitute evidence;
+* declare certification;
+* convert incomplete execution into success;
+* repair unrelated defects.
+
+Where required information is absent or contradictory, Codex shall record an explicit blocking finding.
+
+---
+
+# Required Repository Corrections
+
+## 1. Auditor Guide Correction
+
+Replace or correct every auditor-facing instruction that improperly references:
+
+* AUTH-IOC-001;
+* the Authorizations Office;
+* `argos.authorization_independent_certify`;
+* Authorizations-specific outputs;
+* unrelated historical certification procedures.
+
+Produce a Performance Truth-specific `AUDITOR_README.md`.
+
+The corrected guide shall identify:
+
+* supported operating environment;
+* required Python version;
+* dependency requirements;
+* exact reproduction command;
+* expected input arguments;
+* output-directory requirements;
+* generated artifacts;
+* exit-code meanings;
+* failure behavior;
+* repeat-run procedure.
+
+The guide shall not instruct the auditor to trust existing reports.
+
+---
+
+## 2. Independent Reproduction Entrypoint
+
+Provide one canonical Performance Truth reproduction entrypoint.
+
+The preferred invocation form is:
+
+```text
+python audit_reproduce.py --candidate <repository-package.zip> --output <empty-output-directory>
+```
+
+An equivalent command is acceptable only where repository structure requires it and the command is fully documented.
+
+The entrypoint shall:
+
+* accept the untouched Repository Package ZIP as input;
+* require a new or empty output directory;
+* reject execution against a non-empty output directory unless explicitly placed in a separate new run directory;
+* record the candidate ZIP hash;
+* extract the candidate into a controlled workspace;
+* record environment information;
+* discover the Performance Truth implementation and tests;
+* execute the defined validation sequence;
+* preserve stdout, stderr, commands, exit codes, and durations;
+* produce machine-readable and human-readable result indexes;
+* terminate nonzero upon any blocking failure.
+
+The entrypoint shall not alter the candidate implementation.
+
+---
+
+## 3. Evidence-Package Isolation
+
+The reproduction entrypoint shall not accept the submitted Evidence Package as a source of proof.
+
+Historical reports may not be copied into regenerated output.
+
+The submitted Evidence Package may be compared only after independent execution has completed, and such comparison shall remain outside the reproduction entrypoint unless explicitly invoked as a separate non-certifying comparison operation.
+
+---
+
+# Required Execution Sequence
+
+The reproduction entrypoint shall execute the following sequence in order.
+
+## Phase 1 — Candidate Integrity
+
+Record:
+
+* original ZIP filename;
+* cryptographic hash;
+* file size;
+* extraction time;
+* extracted file inventory;
+* duplicate or conflicting path findings;
+* candidate modification status.
+
+Any modification of extracted candidate files by the audit process shall constitute failure.
+
+---
+
+## Phase 2 — Environment Capture
+
+Record:
+
+* operating system;
+* architecture;
+* Python implementation and version;
+* working directory;
+* environment variables relevant to execution;
+* installed dependency state;
+* timezone;
+* locale;
+* filesystem state;
+* process command line.
+
+Secrets shall be redacted without suppressing the existence of required variables.
+
+---
+
+## Phase 3 — Repository Discovery
+
+Independently identify:
+
+* Performance Truth source modules;
+* runtime entrypoints;
+* test modules;
+* fixtures;
+* configuration;
+* certification utilities;
+* replay utilities;
+* mutation utilities;
+* stress utilities;
+* cross-office test doubles or deterministic fixtures.
+
+Produce a discovery manifest derived from the extracted candidate.
+
+---
+
+## Phase 4 — Static and Build Validation
+
+Execute documented static, import, compilation, packaging, or build checks applicable to the repository.
+
+Record every command and result.
+
+A failed required check shall remain a failure.
+
+---
+
+## Phase 5 — Test Discovery
+
+Enumerate all discovered Performance Truth tests before execution.
+
+Record:
+
+* test identifiers;
+* source files;
+* classifications;
+* expected execution groups;
+* skipped or excluded tests;
+* exclusion reasons.
+
+Undocumented exclusion of discovered tests is prohibited.
+
+---
+
+## Phase 6 — Complete Runtime Test Execution
+
+Execute the complete applicable Performance Truth test suite without interruption.
+
+Record:
+
+* total discovered;
+* total executed;
+* passed;
+* failed;
+* errored;
+* skipped;
+* deselected;
+* interrupted;
+* timed out;
+* unavailable.
+
+A suite that is interrupted, times out, or does not execute all required tests shall not be represented as successful.
+
+---
+
+## Phase 7 — Behavioral Validation
+
+Execute the repository-defined validation of:
+
+* performance calculation;
+* aggregation;
+* attribution;
+* benchmark handling;
+* publication;
+* correction;
+* revision;
+* reconciliation;
+* lifecycle transitions;
+* evidence generation;
+* traceability;
+* historical preservation.
+
+Raw results shall be preserved.
+
+---
+
+## Phase 8 — Deterministic Replay
+
+Execute at least two replay runs from independently initialized run directories using identical controlled inputs.
+
+Compare constitutionally deterministic outputs by cryptographic hash or canonical semantic comparison.
+
+Record every difference.
+
+No unexplained difference may be suppressed.
+
+---
+
+## Phase 9 — Fail-Closed Validation
+
+Execute the repository-defined fail-closed scenarios for:
+
+* missing evidence;
+* corrupted evidence;
+* contradictory evidence;
+* invalid ownership;
+* duplicate inputs;
+* temporal disorder;
+* reconciliation failure;
+* dependency failure;
+* configuration failure;
+* invalid calculations.
+
+Record whether unsafe continuation occurred.
+
+---
+
+## Phase 10 — Mutation Validation
+
+Execute available mutation validations without altering the immutable baseline candidate.
+
+Each mutation shall operate against an isolated copy or controlled runtime input.
+
+Record:
+
+* mutation identity;
+* target;
+* expected constitutional detection;
+* actual detection mechanism;
+* result;
+* resulting exit status.
+
+A mutation shall not be counted as detected merely because the mutation harness recognizes its own marker. Detection must arise through the applicable constitutional control, validation, test, or fail-closed behavior.
+
+---
+
+## Phase 11 — Stress Validation
+
+Execute the documented Performance Truth stress validations.
+
+Record:
+
+* workload;
+* event volume;
+* concurrency;
+* duration;
+* resource observations;
+* failures;
+* retries;
+* invariant results.
+
+Stress execution shall not be silently shortened.
+
+---
+
+## Phase 12 — Output Finalization
+
+Produce a complete raw execution package.
+
+The reproduction entrypoint shall report execution results only.
+
+It shall not issue an ECS-003 certification decision.
+
+---
+
+# Required Outputs
+
+The output directory shall include at minimum:
+
+* `candidate_hash.json`;
+* `environment.json`;
+* `repository_inventory.json`;
+* `performance_truth_discovery.json`;
+* `command_manifest.json`;
+* `test_inventory.json`;
+* `test_results.json`;
+* `behavioral_results.json`;
+* `replay_results.json`;
+* `fail_closed_results.json`;
+* `mutation_results.json`;
+* `stress_results.json`;
+* `findings.json`;
+* `execution_summary.json`;
+* complete stdout logs;
+* complete stderr logs;
+* command transcripts;
+* generated-artifact inventory;
+* output hash manifest.
+
+Equivalent filenames are acceptable only if mapped explicitly in the auditor guide.
+
+Every output shall identify the candidate hash and reproduction-run identity.
+
+---
+
+# Exit-Code Contract
+
+The reproduction entrypoint shall use deterministic exit codes.
+
+At minimum:
+
+* `0` — execution completed and all required validations passed;
+* nonzero — execution failure, validation failure, incomplete execution, environment failure, or blocking finding.
+
+Distinct nonzero exit codes should identify major failure classes where the repository architecture supports them.
+
+A nonzero result shall never be rewritten as a successful run.
+
+---
+
+# Historical Material
+
+Existing Audit-003 reports and logs may remain in the repository for provenance, but they shall be clearly identified as historical and non-authoritative.
+
+They shall not be:
+
+* loaded as runtime inputs;
+* copied into regenerated outputs as new evidence;
+* used to determine expected success;
+* used to replace an unexecuted validation;
+* cited by the reproduction entrypoint as proof.
+
+Any historical command document containing stale or unrelated results shall be corrected, removed from the active auditor path, or explicitly marked historical.
+
+---
+
+# Self-Validation
+
+Codex shall test the corrected package by performing at least one complete invocation of the reproduction entrypoint against a freshly generated Repository Package ZIP.
+
+This self-validation exists only to prove that the entrypoint functions mechanically.
+
+It does not constitute independent certification.
+
+Codex shall record:
+
+* exact command;
+* candidate hash;
+* output location;
+* exit code;
+* execution duration;
+* test counts;
+* generated output inventory;
+* encountered failures.
+
+Codex shall not repair implementation failures discovered during self-validation.
+
+---
+
+# Acceptance Criteria
+
+This order is complete only when:
+
+* all incorrect Authorizations Office instructions are removed from the active Performance Truth auditor path;
+* a single canonical Performance Truth reproduction command exists;
+* the command accepts the Repository Package ZIP as its candidate input;
+* the command operates in a clean workspace;
+* the Evidence Package is not used as proof;
+* all commands, outputs, exit codes, and failures are preserved;
+* the complete required test suite is attempted without concealed interruption;
+* replay, fail-closed, mutation, and stress results are independently emitted from execution;
+* the reproduction entrypoint does not modify the candidate;
+* the reproduction entrypoint does not issue certification;
+* implementation defects are reported rather than repaired;
+* an independent auditor can follow the guide without historical knowledge.
+
+---
+
+# Deliverables
+
+Produce:
+
+* corrected `AUDITOR_README.md`;
+* canonical Performance Truth reproduction entrypoint;
+* execution-command reference;
+* output-schema reference;
+* exit-code reference;
+* historical-artifact classification record;
+* reproduction entrypoint test coverage;
+* self-validation execution log;
+* self-validation output manifest;
+* implementation-change manifest;
+* completion report.
+
+The implementation-change manifest shall demonstrate that no Performance Truth business logic, constitutional behavior, or certification criterion was modified under this order.
+
+---
+
+# Completion Decision
+
+Issue exactly one order-completion result:
+
+* **COMPLETE**
+* **INCOMPLETE**
+
+`COMPLETE` means only that the Performance Truth audit package now supports independent runtime reproduction.
+
+It shall not be represented as ECS-003 certification, runtime validation, or proof that the Performance Truth Office passes the independent audit.
