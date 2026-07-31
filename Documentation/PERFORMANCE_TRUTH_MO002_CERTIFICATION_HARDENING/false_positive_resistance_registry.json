@@ -1,0 +1,18 @@
+[
+  {
+    "challenge_id": "PT-FP-001",
+    "disposition": "PASS",
+    "expected": "ACCEPT",
+    "false_positive": false,
+    "observed": "ACCEPT",
+    "scenario": "valid RM-003 frozen candidate"
+  },
+  {
+    "challenge_id": "PT-FP-002",
+    "disposition": "PASS",
+    "expected": "DOCUMENT_NOT_REJECT",
+    "false_positive": false,
+    "observed": "DOCUMENT_NOT_REJECT",
+    "scenario": "duplicate but byte-identical source evidence"
+  }
+]

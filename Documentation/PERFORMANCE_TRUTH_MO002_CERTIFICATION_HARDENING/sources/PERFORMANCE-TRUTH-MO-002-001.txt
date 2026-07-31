@@ -1,0 +1,748 @@
+# PERFORMANCE-TRUTH-MO-002-001
+
+# Certification Assumption Discovery
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the adversarial discovery, classification, and resolution of every assumption relied upon by the ECS-003 certification process used to certify the Performance Truth Office.
+
+The purpose of this order is to determine whether any certification conclusion depends upon facts, interpretations, environmental conditions, auditor judgments, repository representations, evidence claims, or procedural conventions that have not themselves been constitutionally proven.
+
+The current certification baseline shall not be presumed complete, independent, or correct.
+
+Every certification decision shall be treated as potentially invalid until all assumptions supporting that decision have been identified, tested, and resolved.
+
+No certification conclusion may depend upon an unsupported assumption.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* Enterprise Modification Doctrine;
+* Evidence Doctrine;
+* Audit Doctrine;
+* Truth Doctrine.
+
+Nothing within this order may weaken constitutional guarantees, reduce required evidence, or increase discretionary auditor authority.
+
+Where an existing certification conclusion depends upon an unsupported assumption, that conclusion shall be treated as constitutionally unproven until the assumption is resolved.
+
+---
+
+# Modification Objectives
+
+This order shall:
+
+* identify every explicit and implicit assumption within the ECS-003 certification process;
+* identify where each assumption enters audit planning, execution, evidence evaluation, proof construction, finding classification, and certification decision-making;
+* determine whether each assumption is constitutionally proven;
+* identify certification conclusions dependent upon each assumption;
+* test whether false certification can occur when an assumption is false;
+* eliminate reliance upon unverifiable convention;
+* formalize necessary assumptions as explicit certification requirements;
+* remove unnecessary assumptions from certification methodology;
+* establish permanent evidence of assumption resolution;
+* determine whether previously issued certification decisions require revalidation.
+
+---
+
+# Certification Assumption Definition
+
+For purposes of this order, a certification assumption is any condition treated as true, complete, authentic, representative, deterministic, independent, or sufficient without direct constitutional proof.
+
+Certification assumptions include, but are not limited to:
+
+* presumed repository completeness;
+* presumed honesty of repository documentation;
+* presumed correspondence between documentation and behavior;
+* presumed completeness of test suites;
+* presumed representativeness of test fixtures;
+* presumed authenticity of evidence;
+* presumed independence of auditors;
+* presumed correctness of audit tooling;
+* presumed determinism of clean-room environments;
+* presumed equivalence between sampled and untested behavior;
+* presumed completeness of constitutional traceability matrices;
+* presumed absence of hidden execution paths;
+* presumed validity of dependency substitutes;
+* presumed correctness of generated reports;
+* presumed inability of implementation authors to conceal defects;
+* presumed sufficiency of passing tests;
+* presumed correctness of finding severity;
+* presumed equivalence between reproduced output and constitutionally correct output;
+* presumed validity of prior certification results;
+* presumed completeness of ECS-003 itself.
+
+An assumption remains within scope whether it exists in doctrine, audit procedure, scripts, tooling, templates, reports, auditor practice, test design, or informal interpretation.
+
+---
+
+# Scope of Discovery
+
+Assumption discovery shall include:
+
+* audit authorization;
+* auditor selection;
+* auditor independence;
+* repository intake;
+* repository identity;
+* package integrity;
+* environment preparation;
+* dependency resolution;
+* implementation discovery;
+* audit planning;
+* constitutional requirement mapping;
+* sampling;
+* test design;
+* test execution;
+* evidence generation;
+* evidence custody;
+* evidence interpretation;
+* proof construction;
+* mutation testing;
+* replay testing;
+* clean-room reproduction;
+* finding classification;
+* remediation verification;
+* certification decision;
+* certification report generation;
+* certification evidence preservation;
+* constitutional freeze authorization.
+
+No certification phase shall be excluded because it previously produced a PASS decision.
+
+---
+
+# Discovery Method
+
+For every certification requirement, audit procedure, proof, finding, and decision, the auditor shall ask:
+
+1. What must be true for this certification step to be valid?
+2. Where is that condition constitutionally required?
+3. What evidence proves the condition?
+4. Who produced that evidence?
+5. Who independently verified it?
+6. Could the condition be false while the audit still passes?
+7. Could repository authors manipulate the condition?
+8. Could two auditors interpret the condition differently?
+9. Could tooling produce a false result?
+10. Does the conclusion prove the constitutional property or merely support an inference?
+11. What happens when the assumption is intentionally falsified?
+12. Would the certification process detect that falsification deterministically?
+
+Any certification step lacking deterministic answers shall generate a Certification Assumption Candidate.
+
+---
+
+# Certification Assumption Candidate Record
+
+Every discovered assumption shall receive an immutable Certification Assumption Candidate Record containing:
+
+* assumption identifier;
+* assumption statement;
+* discovery source;
+* affected ECS-003 requirement;
+* affected audit phase;
+* affected proof;
+* affected evidence;
+* affected certification conclusion;
+* assumed constitutional guarantee;
+* assumed owner;
+* verification method currently used;
+* falsification method;
+* false-positive risk;
+* false-negative risk;
+* current documentary support;
+* current evidentiary support;
+* classification;
+* resolution status;
+* required doctrine amendment;
+* prior certification impact.
+
+All candidates shall be preserved regardless of final classification.
+
+---
+
+# Assumption Domains
+
+## PT-CAD-001
+
+### Repository Assumptions
+
+Identify assumptions concerning:
+
+* repository completeness;
+* repository authenticity;
+* package identity;
+* package integrity;
+* declared entry points;
+* undocumented modules;
+* generated files;
+* hidden dependencies;
+* alternate execution paths;
+* excluded files;
+* repository documentation.
+
+Certification shall not assume that the repository truthfully describes itself.
+
+---
+
+## PT-CAD-002
+
+### Implementation Discovery Assumptions
+
+Identify assumptions concerning:
+
+* discoverability of all executable behavior;
+* correspondence between files and runtime behavior;
+* absence of dynamically loaded components;
+* absence of generated or remote code;
+* completeness of dependency manifests;
+* completeness of configuration discovery;
+* accuracy of implementation inventories.
+
+Discovery evidence shall prove completeness rather than merely document what was found.
+
+---
+
+## PT-CAD-003
+
+### Test Coverage Assumptions
+
+Identify assumptions concerning:
+
+* completeness of test cases;
+* representativeness of fixtures;
+* boundary coverage;
+* lifecycle coverage;
+* interface coverage;
+* error-path coverage;
+* mutation coverage;
+* concurrency coverage;
+* temporal coverage;
+* untested behavior.
+
+Passing tests shall not be treated as proof that all constitutional behavior was exercised.
+
+---
+
+## PT-CAD-004
+
+### Evidence Assumptions
+
+Identify assumptions concerning:
+
+* evidence authenticity;
+* evidence completeness;
+* evidence independence;
+* evidence immutability;
+* evidence relevance;
+* evidence chain of custody;
+* evidence correspondence to the audited repository;
+* evidence correspondence to the claimed execution;
+* absence of fabricated or pre-generated evidence.
+
+Evidence shall prove the claimed constitutional property directly.
+
+---
+
+## PT-CAD-005
+
+### Proof Assumptions
+
+Identify assumptions concerning:
+
+* validity of proof structure;
+* sufficiency of proof premises;
+* logical connection between evidence and conclusion;
+* hidden premises;
+* circular proof;
+* indirect inference;
+* unverifiable claims;
+* substituted properties.
+
+A proof of execution shall not be accepted as proof of correctness unless correctness is independently established.
+
+---
+
+## PT-CAD-006
+
+### Auditor Assumptions
+
+Identify assumptions concerning:
+
+* auditor independence;
+* auditor competence;
+* auditor consistency;
+* freedom from implementation familiarity;
+* freedom from prior-result influence;
+* absence of confirmation bias;
+* consistent interpretation of doctrine;
+* resistance to persuasive documentation;
+* ability to identify deception.
+
+Auditor judgment shall not substitute for deterministic certification criteria.
+
+---
+
+## PT-CAD-007
+
+### Tooling Assumptions
+
+Identify assumptions concerning:
+
+* correctness of audit scripts;
+* correctness of test runners;
+* correctness of parsers;
+* correctness of hash and integrity tooling;
+* correctness of report generators;
+* correctness of dependency scanners;
+* reproducibility of tooling results;
+* independence of tooling from the implementation under audit.
+
+Audit tools shall themselves possess verified identity, version, and behavior.
+
+---
+
+## PT-CAD-008
+
+### Environment Assumptions
+
+Identify assumptions concerning:
+
+* operating system behavior;
+* runtime version;
+* dependency availability;
+* clock behavior;
+* locale;
+* timezone;
+* filesystem ordering;
+* network behavior;
+* concurrency;
+* random seeds;
+* environment variables;
+* external services.
+
+Certification conclusions shall not depend upon uncontrolled environmental behavior.
+
+---
+
+## PT-CAD-009
+
+### Determinism and Replay Assumptions
+
+Identify assumptions concerning:
+
+* input completeness;
+* preserved dependency versions;
+* preserved calculation context;
+* deterministic execution order;
+* stable serialization;
+* stable numeric behavior;
+* replay environment equivalence;
+* equivalence between repeated output and correct output.
+
+Identical output alone shall not prove constitutional correctness.
+
+---
+
+## PT-CAD-010
+
+### Clean-Room Assumptions
+
+Identify assumptions concerning:
+
+* actual isolation from prior knowledge;
+* completeness of the repository package;
+* absence of undocumented assistance;
+* reproducibility of setup;
+* independence of auditors;
+* independence of generated evidence;
+* sufficiency of repository documentation.
+
+A nominally clean environment shall not be treated as a clean-room certification without objective proof of isolation.
+
+---
+
+## PT-CAD-011
+
+### Finding Assumptions
+
+Identify assumptions concerning:
+
+* severity classification;
+* constitutional impact;
+* remediation sufficiency;
+* finding closure;
+* equivalence between observed and expected behavior;
+* absence of related undiscovered defects;
+* validity of accepted risk.
+
+No finding shall be downgraded or closed through subjective interpretation.
+
+---
+
+## PT-CAD-012
+
+### Certification Decision Assumptions
+
+Identify assumptions concerning:
+
+* completeness of prerequisite audits;
+* sufficiency of sampled evidence;
+* absence of hidden defects;
+* validity of conditional passes;
+* closure of previous findings;
+* reliability of compliance matrices;
+* authority to certify;
+* readiness for constitutional freeze.
+
+A PASS decision shall prove compliance rather than represent confidence in compliance.
+
+---
+
+## PT-CAD-013
+
+### Prior Certification Assumptions
+
+Identify assumptions inherited from:
+
+* earlier RM-series audits;
+* prior implementation certification;
+* previous clean-room reproduction;
+* previous mutation testing;
+* previous enterprise certification;
+* prior constitutional freeze decisions.
+
+Prior PASS decisions shall be treated as evidence inputs, not unquestionable premises.
+
+---
+
+## PT-CAD-014
+
+### Doctrine Completeness Assumptions
+
+Identify assumptions concerning whether ECS-003 itself covers:
+
+* every constitutional property;
+* every failure class;
+* every proof requirement;
+* every independence requirement;
+* every evidence standard;
+* every certification attack surface.
+
+Certification doctrine shall not presume its own completeness.
+
+---
+
+# Assumption Classification
+
+Every Certification Assumption Candidate shall receive exactly one classification.
+
+## Constitutionally Proven
+
+The assumption is directly established by explicit constitutional doctrine and independently verified evidence.
+
+The governing requirement and proof shall be cited.
+
+---
+
+## Indirectly Supported
+
+The assumption is supported by related doctrine or evidence but is not directly proven.
+
+Indirect support shall not authorize final certification unless the logical derivation is complete and no compliant counterexample exists.
+
+---
+
+## Unsupported but Necessary
+
+The assumption is necessary to reach a certification conclusion but is neither directly proven nor necessarily derived.
+
+The certification process shall be modified to establish or eliminate the assumption.
+
+Affected certification conclusions shall be suspended.
+
+---
+
+## Unsupported and Unnecessary
+
+The assumption is not required for constitutionally valid certification.
+
+The audit process shall be modified to remove reliance upon it.
+
+---
+
+## Contradictory
+
+The assumption conflicts with constitutional doctrine, verified evidence, or another certification requirement.
+
+Affected certification conclusions shall fail.
+
+---
+
+## Indeterminate
+
+The available doctrine and evidence cannot determine whether the assumption is valid.
+
+Indeterminate assumptions shall be treated as unsupported.
+
+---
+
+# Falsification Procedure
+
+Every assumption shall be tested through one or more controlled falsification scenarios.
+
+Each falsification shall:
+
+1. preserve the certified baseline;
+2. alter only the condition represented by the assumption;
+3. execute the affected certification procedure;
+4. determine whether the audit detects the false condition;
+5. determine whether certification can still pass;
+6. identify the first missed detection point;
+7. record the resulting false-positive or false-negative path;
+8. verify whether independent auditors reach equivalent conclusions;
+9. restore the baseline;
+10. reproduce the result independently.
+
+Any assumption whose falsification permits an incorrect PASS shall constitute a certification defect.
+
+---
+
+# False-Certification Path Analysis
+
+For each Unsupported, Contradictory, or Indeterminate assumption, the audit shall determine whether it can produce:
+
+* false repository completeness;
+* false implementation completeness;
+* false behavioral conformance;
+* false interface conformance;
+* false evidence completeness;
+* false traceability completeness;
+* false replay certification;
+* false clean-room certification;
+* false fail-closed certification;
+* false constitutional compliance;
+* false authorization for constitutional freeze.
+
+Every false-certification path shall generate a Certification Defect Record.
+
+---
+
+# Certification Defect Record
+
+Each confirmed certification defect shall specify:
+
+* defect identifier;
+* originating assumption;
+* affected ECS-003 requirement;
+* affected audit phase;
+* false-certification path;
+* constitutional property not proven;
+* evidence insufficiency;
+* affected prior certification decisions;
+* required audit control;
+* required evidence;
+* required tooling changes;
+* required doctrine amendment;
+* re-certification requirement;
+* deterministic acceptance criteria.
+
+No certification defect may be closed through assertion alone.
+
+---
+
+# Prior Certification Impact Review
+
+The review shall determine whether any prior PASS, CONDITIONAL PASS, freeze authorization, or certification report relied upon an unsupported assumption.
+
+For every affected decision, the review shall classify the impact as:
+
+* no impact;
+* evidence supplementation required;
+* bounded re-audit required;
+* complete re-certification required;
+* certification invalidated.
+
+Invalidated certifications shall not remain operationally authoritative.
+
+---
+
+# Required Doctrine Modifications
+
+Every necessary modification shall define:
+
+* the unsupported assumption being removed;
+* the explicit certification requirement replacing it;
+* responsible audit authority;
+* required evidence;
+* required independence control;
+* required proof standard;
+* required tooling validation;
+* required falsification test;
+* required replay procedure;
+* backward impact upon prior certifications;
+* acceptance criteria.
+
+No doctrine modification may introduce discretionary judgment as a substitute for proof.
+
+---
+
+# Required Evidence
+
+This order shall produce:
+
+* complete Certification Assumption Register;
+* ECS-003 requirement-to-assumption matrix;
+* audit-phase assumption map;
+* proof-premise register;
+* tooling assumption register;
+* environmental assumption register;
+* falsification scenario catalog;
+* false-certification path analysis;
+* prior certification impact report;
+* Certification Defect Register;
+* required doctrine amendments;
+* unresolved assumption register;
+* final Certification Assumption Resolution Report.
+
+All artifacts shall be immutable, versioned, independently reproducible, and preserved within the Evidence Repository.
+
+---
+
+# Constitutional Invariants
+
+## PT-CAD-INV-001
+
+Every certification conclusion shall depend only upon constitutionally proven premises.
+
+## PT-CAD-INV-002
+
+No unsupported assumption may contribute to a PASS decision.
+
+## PT-CAD-INV-003
+
+Every necessary certification condition shall possess an explicit verification method.
+
+## PT-CAD-INV-004
+
+Every proof premise shall be traceable to objective evidence.
+
+## PT-CAD-INV-005
+
+Every certification assumption shall be independently falsifiable.
+
+## PT-CAD-INV-006
+
+A passing test shall not be treated as proof beyond the behavior actually exercised.
+
+## PT-CAD-INV-007
+
+Prior certification shall not exempt any assumption from re-examination.
+
+## PT-CAD-INV-008
+
+Auditor judgment shall not replace deterministic evidence.
+
+## PT-CAD-INV-009
+
+Audit tooling shall not be trusted without verified identity and behavior.
+
+## PT-CAD-INV-010
+
+Clean-room status shall be objectively demonstrated.
+
+## PT-CAD-INV-011
+
+Every false-certification path shall produce a constitutional certification defect.
+
+## PT-CAD-INV-012
+
+The absence of discovered assumptions shall not prove certification completeness.
+
+---
+
+# Fail-Closed Behavior
+
+Certification shall fail closed whenever:
+
+* a certification conclusion depends upon an unclassified assumption;
+* an assumption is Unsupported, Contradictory, or Indeterminate;
+* required evidence proves existence but not the claimed constitutional property;
+* audit tooling cannot be independently validated;
+* auditor independence cannot be demonstrated;
+* falsification permits an incorrect PASS;
+* clean-room isolation cannot be proven;
+* prior certification relies upon an unresolved assumption;
+* proof premises cannot be traced to objective evidence;
+* two constitutionally competent auditors can reach incompatible decisions from identical evidence;
+* certification doctrine permits discretionary resolution of a material ambiguity.
+
+No affected certification decision, constitutional freeze, or operational authorization shall remain authoritative until the assumption is resolved and the affected property is independently re-certified.
+
+---
+
+# Completion Decision
+
+This order shall produce exactly one completion decision.
+
+## PASS
+
+Every discovered certification assumption has been classified and resolved.
+
+Every necessary premise is constitutionally proven.
+
+All unsupported assumptions have been eliminated or formalized through deterministic certification requirements.
+
+No unresolved Critical or Major certification defects remain.
+
+---
+
+## CONDITIONAL PASS
+
+No unsupported assumption presently permits false certification, but bounded Minor deficiencies remain.
+
+Each deficiency shall possess an approved owner, doctrine amendment, evidence requirement, and completion condition.
+
+All conditions shall be resolved before Certification Hardening Closure.
+
+---
+
+## FAIL
+
+One or more assumptions remain unsupported, contradictory, indeterminate, or capable of producing false certification.
+
+Affected certification decisions shall be suspended or invalidated until remediation and independent re-certification are complete.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every phase of the ECS-003 certification process has been reviewed for explicit and implicit assumptions.
+2. Every discovered assumption has an immutable Certification Assumption Candidate Record.
+3. Every assumption has received exactly one constitutional classification.
+4. Every Constitutionally Proven assumption possesses direct doctrine and independently verified evidence.
+5. Every Indirectly Supported assumption has been formally derived or reclassified as unsupported.
+6. Every unsupported necessary assumption has generated an explicit certification-process modification.
+7. Every unsupported unnecessary assumption has been removed from audit methodology.
+8. Every assumption has been subjected to controlled falsification.
+9. Every false-certification path has generated a Certification Defect Record.
+10. All prior certifications potentially affected by unsupported assumptions have undergone impact review.
+11. Complete traceability exists between assumptions, audit procedures, evidence, proofs, findings, and certification decisions.
+12. All evidence and resolutions have been preserved within the Evidence Repository.
+13. Exactly one completion decision—**PASS**, **CONDITIONAL PASS**, or **FAIL**—has been issued.
+14. No unsupported certification assumption remains capable of contributing to an ECS-003 PASS decision.

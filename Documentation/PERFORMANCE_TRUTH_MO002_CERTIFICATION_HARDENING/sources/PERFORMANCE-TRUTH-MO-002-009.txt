@@ -1,0 +1,526 @@
+# PERFORMANCE-TRUTH-MO-002-009
+
+# False Negative Resistance
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the False Negative Resistance audit governing the ECS-003 certification process for the Performance Truth Office.
+
+Its purpose is to determine whether a constitutionally compliant implementation can be denied certification because of defective audit methods, incomplete procedures, tooling limitations, environmental variation, ambiguous evidence requirements, or discretionary auditor interpretation.
+
+The objective is not to make certification easier.
+
+The objective is to ensure that certification fails only for actual constitutional nonconformance and never because the audit process cannot correctly recognize compliant behavior.
+
+Every compliant implementation incorrectly rejected shall constitute a certification-process defect requiring constitutional remediation.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* PERFORMANCE-TRUTH-RM-002
+* PERFORMANCE-TRUTH-RM-003
+* PERFORMANCE-TRUTH-MO-001
+* Enterprise Modification Doctrine
+* Audit Doctrine
+* Evidence Doctrine
+* Truth Doctrine
+
+Nothing within this order may weaken constitutional requirements, reduce required evidence, or permit uncertain implementations to receive certification.
+
+---
+
+# Audit Scope
+
+This audit shall investigate false-negative certification arising from:
+
+* incomplete audit procedures;
+* ambiguous certification criteria;
+* invalid test assumptions;
+* environment-specific audit behavior;
+* unsupported tooling expectations;
+* equivalent implementation differences;
+* evidence-format dependence;
+* repository-layout dependence;
+* dependency-discovery failures;
+* replay-method variation;
+* auditor interpretation;
+* procedural sequencing;
+* transient audit failure;
+* incorrect constitutional mapping.
+
+The audit shall distinguish actual implementation defects from failures of the certification method.
+
+---
+
+# Constitutional Audit Principle
+
+Certification shall depend upon demonstrated constitutional behavior rather than preferred implementation style.
+
+A compliant implementation shall not fail certification merely because it:
+
+* uses a different internal architecture;
+* uses different module boundaries;
+* uses different naming conventions;
+* uses different persistence mechanisms;
+* uses different programming languages;
+* produces evidence in an equivalent canonical form;
+* executes constitutional behavior through a different valid sequence.
+
+Equivalent constitutional behavior shall receive equivalent certification treatment.
+
+---
+
+# Compliant Reference Corpus
+
+The campaign shall establish a controlled corpus of implementations known to satisfy all applicable constitutional requirements.
+
+The corpus shall include:
+
+* the certified baseline implementation;
+* independently reproduced implementations;
+* behaviorally equivalent alternative implementations;
+* implementations using different internal architectures;
+* implementations using different supported environments;
+* implementations using different valid evidence representations.
+
+Each reference implementation shall possess independently verified constitutional ground truth.
+
+---
+
+# Ground-Truth Requirements
+
+Every compliant reference implementation shall include:
+
+* unique corpus identifier;
+* repository identity;
+* constitutional baseline;
+* implementation version;
+* dependency versions;
+* known behavioral properties;
+* verified evidence package;
+* deterministic replay results;
+* independent compliance proof;
+* integrity verification values.
+
+Ground truth shall be established before false-negative testing begins.
+
+---
+
+# Certification Execution
+
+Each compliant reference implementation shall undergo complete ECS-003 certification under clean-room conditions.
+
+Certification shall be repeated across controlled variations in:
+
+* auditor;
+* environment;
+* execution order;
+* supported platform;
+* tool version;
+* repository extraction path;
+* evidence traversal order;
+* test invocation order;
+* dependency initialization order.
+
+Every variation shall preserve the same certification conclusion.
+
+---
+
+# Equivalent Implementation Audit
+
+The auditor shall verify that certification does not depend upon internal implementation choices that are outside constitutional authority.
+
+The audit shall include implementations differing in:
+
+* service decomposition;
+* module organization;
+* storage design;
+* interface adapters;
+* calculation implementation;
+* evidence-generation mechanism;
+* orchestration structure;
+* serialization mechanism.
+
+Differences shall be accepted when they produce identical constitutional guarantees.
+
+---
+
+# Repository Layout Resistance
+
+Construct compliant repositories using different valid structures, including:
+
+* monolithic layouts;
+* modular layouts;
+* service-oriented layouts;
+* nested package layouts;
+* generated-source layouts;
+* separate test and evidence directories.
+
+Certification shall discover required artifacts through declared and independently verified inventory rather than assumed directory placement.
+
+---
+
+# Naming Independence
+
+The certification process shall not require undocumented names for:
+
+* modules;
+* functions;
+* classes;
+* directories;
+* services;
+* evidence files;
+* test files;
+* configuration files.
+
+Where canonical naming is constitutionally required, it shall be explicitly specified.
+
+Otherwise, certification shall verify purpose and behavior rather than preferred terminology.
+
+---
+
+# Evidence Representation Resistance
+
+Construct constitutionally equivalent evidence packages using different permitted representations.
+
+Variation may include:
+
+* record ordering;
+* archive layout;
+* supported serialization format;
+* equivalent identifier encoding;
+* evidence partitioning;
+* manifest ordering;
+* independent package segmentation.
+
+Certification shall verify evidence meaning, identity, provenance, and completeness rather than rely upon incidental formatting.
+
+---
+
+# Audit Tooling Resistance
+
+The auditor shall determine whether compliant implementations fail because of:
+
+* unsupported parser assumptions;
+* path-length limitations;
+* case-sensitivity assumptions;
+* platform-specific commands;
+* fixed dependency locations;
+* locale dependence;
+* time-zone dependence;
+* line-ending differences;
+* archive metadata differences;
+* non-semantic file ordering.
+
+Tooling defects shall not be misclassified as implementation nonconformance.
+
+---
+
+# Environment Variation Audit
+
+Compliant implementations shall be certified in multiple clean-room environments where constitutionally supported.
+
+The audit shall distinguish between:
+
+* constitutional environment requirements;
+* declared implementation requirements;
+* unsupported auditor assumptions;
+* accidental environment dependence.
+
+A certification environment incapable of executing a valid declared implementation shall produce an audit-method finding rather than an implementation failure unless the repository violates clean-room requirements.
+
+---
+
+# Dependency Discovery Audit
+
+The auditor shall verify that declared, packaged, and constitutionally permitted dependencies are correctly discovered.
+
+The audit shall test:
+
+* alternate valid dependency locations;
+* deterministic dependency installation;
+* packaged offline dependencies;
+* multiple supported dependency versions;
+* equivalent dependency resolution methods.
+
+Failure to discover a valid declared dependency shall not automatically establish implementation noncompliance.
+
+---
+
+# Behavioral Equivalence Audit
+
+The certification process shall recognize behaviorally equivalent implementations.
+
+Equivalent behavior shall be assessed through:
+
+* identical constitutional inputs;
+* identical constitutional outputs;
+* identical ownership effects;
+* identical lifecycle effects;
+* identical evidence obligations;
+* identical fail-closed outcomes;
+* identical replay results.
+
+Internal execution traces may differ where constitutional observables remain equivalent.
+
+---
+
+# Numerical Equivalence Audit
+
+The audit shall determine whether compliant mathematical implementations are incorrectly rejected because of representation differences.
+
+Permitted equivalence shall be governed by explicit constitutional rules for:
+
+* numeric precision;
+* rounding;
+* units;
+* canonicalization;
+* serialization;
+* comparison.
+
+No undocumented tolerance shall be introduced.
+
+Where exact equality is required, exact equality shall remain mandatory.
+
+---
+
+# Replay Method Equivalence
+
+Compliant implementations may reconstruct historical truth through different internal mechanisms.
+
+Certification shall verify:
+
+* identical replay inputs;
+* correct historical dependencies;
+* correct historical configuration;
+* correct correction state;
+* identical constitutional outputs;
+* complete replay evidence.
+
+A different internal replay method shall not constitute failure.
+
+---
+
+# Interface Equivalence Audit
+
+The audit shall verify that equivalent constitutionally compliant interface implementations receive equivalent certification outcomes.
+
+Variation may include:
+
+* synchronous or asynchronous transport;
+* supported serialization protocols;
+* adapter architecture;
+* batching;
+* internal queueing.
+
+All variations shall preserve constitutional ordering, identity, ownership, evidence, and failure guarantees.
+
+---
+
+# Evidence Volume Audit
+
+Certification shall not infer insufficiency solely from low evidence volume or sufficiency solely from high evidence volume.
+
+A concise evidence package that proves every required property shall remain certifiable.
+
+Duplicative evidence shall not be required when one artifact independently establishes the constitutional claim.
+
+---
+
+# Audit Sequencing Audit
+
+The auditor shall repeat certification using different valid procedural sequences.
+
+The result shall not depend upon whether the auditor verifies:
+
+* repository inventory before documentation;
+* behavior before evidence traversal;
+* replay before reconciliation;
+* interfaces before object persistence;
+* fail-closed behavior before normal behavior.
+
+Procedural order shall not change the final determination when all mandatory checks are completed.
+
+---
+
+# Transient Failure Analysis
+
+The audit shall distinguish constitutional defects from transient certification-environment failures involving:
+
+* temporary resource exhaustion;
+* interrupted audit execution;
+* corrupted extraction;
+* auditor tooling crashes;
+* unavailable non-constitutional audit services;
+* incomplete log collection.
+
+Transient failure shall result in an incomplete audit determination rather than a false implementation failure.
+
+Certification shall not be granted until the audit completes successfully.
+
+---
+
+# Auditor Interpretation Audit
+
+Multiple independent auditors shall evaluate identical compliant repositories.
+
+The campaign shall identify disagreements arising from:
+
+* ambiguous criteria;
+* undocumented expectations;
+* discretionary evidence interpretation;
+* inconsistent severity classification;
+* differing assumptions about implementation style.
+
+Every disagreement shall result in clarification or refinement of certification doctrine.
+
+---
+
+# Defect Attribution
+
+Every failed certification of a compliant reference implementation shall be analyzed to determine whether the cause is:
+
+* actual constitutional nonconformance;
+* incorrect ground-truth classification;
+* audit procedure defect;
+* auditor tooling defect;
+* environmental incompatibility;
+* ambiguous doctrine;
+* discretionary interpretation;
+* incomplete evidence requirement;
+* invalid test expectation.
+
+No failure shall be attributed to implementation without objective evidence of constitutional violation.
+
+---
+
+# False Negative Classification
+
+Each certification execution shall receive one of the following outcomes:
+
+* **Correct Certification** — Compliant implementation certified through complete evidence.
+* **False Negative** — Compliant implementation denied certification because of an audit-process defect.
+* **Valid Rejection** — Previously presumed compliant implementation shown to violate constitutional requirements.
+* **Inconclusive Audit** — The audit cannot determine compliance because required verification could not be completed.
+
+A False Negative shall constitute a certification-hardening defect.
+
+An Inconclusive Audit shall never be converted into certification or implementation failure without further evidence.
+
+---
+
+# Remediation Requirements
+
+Every False Negative shall produce a remediation finding identifying:
+
+* affected compliant implementation;
+* failed certification dimension;
+* audit method that produced the rejection;
+* invalid assumption;
+* missing doctrine;
+* tooling limitation;
+* required ECS-003 amendment;
+* required regression case;
+* effect upon previous certification outcomes.
+
+Remediation shall preserve all constitutional guarantees.
+
+No remediation may simply suppress or bypass a valid certification check.
+
+---
+
+# Regression Corpus
+
+Every compliant implementation that exposes a false-negative path shall become part of the permanent certification regression corpus.
+
+The corpus shall preserve:
+
+* reference repository;
+* constitutional compliance proof;
+* failed audit record;
+* identified certification defect;
+* amended audit procedure;
+* expected future certification outcome.
+
+Future ECS-003 revisions shall be validated against the complete compliant corpus.
+
+---
+
+# Balance With False Positive Resistance
+
+False-negative remediation shall not reduce resistance to false-positive certification.
+
+Every amended certification procedure shall be tested against:
+
+* the compliant reference corpus;
+* the adversarial defective corpus established under PERFORMANCE-TRUTH-MO-002-004;
+* false-positive cases established under PERFORMANCE-TRUTH-MO-002-008.
+
+A procedure shall be accepted only when it correctly distinguishes compliant and defective implementations.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold:
+
+* constitutionally equivalent behavior receives equivalent certification treatment;
+* implementation style does not determine certification;
+* audit tooling limitations are not misclassified as implementation defects;
+* environmental assumptions are explicit;
+* evidence is judged by proof quality rather than volume or layout;
+* auditor discretion cannot alter constitutional outcomes;
+* incomplete audits never become certification decisions;
+* false-negative remediation never weakens false-positive resistance;
+* every rejection identifies an objective constitutional violation;
+* compliant reference implementations remain reproducibly certifiable.
+
+Violation of any invariant constitutes certification-hardening failure.
+
+---
+
+# Required Evidence
+
+This order shall produce:
+
+* compliant reference corpus;
+* ground-truth compliance records;
+* repeated certification results;
+* cross-environment comparison;
+* cross-auditor comparison;
+* implementation-equivalence analysis;
+* repository-layout analysis;
+* evidence-representation analysis;
+* tooling-resistance analysis;
+* audit-sequencing analysis;
+* false-negative findings;
+* valid-rejection findings;
+* inconclusive-audit findings;
+* required ECS-003 amendments;
+* regression corpus manifest;
+* residual false-negative risk assessment.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when independent review demonstrates that:
+
+1. a representative corpus of independently proven compliant implementations has undergone complete repeated ECS-003 certification;
+2. certification outcomes remain consistent across auditors, supported environments, procedural sequences, and constitutionally irrelevant implementation differences;
+3. repository layout, naming conventions, internal architecture, evidence formatting, tooling assumptions, and execution mechanics do not cause rejection where constitutional behavior is equivalent;
+4. every rejection of a presumed compliant implementation has been traced to either an objective constitutional defect or a formally identified certification-process weakness;
+5. every False Negative has produced a general certification-doctrine remediation and permanent compliant regression case;
+6. no Inconclusive Audit has been misclassified as certification success or implementation failure;
+7. false-negative remediation has been tested against the complete adversarial defective corpus and has not weakened false-positive resistance;
+8. multiple independent auditors can reach equivalent conclusions from identical constitutional evidence;
+9. every final certification rejection identifies a specific, reproducible, and evidence-supported constitutional violation; and
+10. the hardened ECS-003 process reliably distinguishes constitutionally compliant implementations from defective implementations without dependence upon implementation style, auditor preference, or unsupported assumptions.

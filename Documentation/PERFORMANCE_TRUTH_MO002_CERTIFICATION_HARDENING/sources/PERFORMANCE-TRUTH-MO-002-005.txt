@@ -1,0 +1,517 @@
+# PERFORMANCE-TRUTH-MO-002-005
+
+# Audit Mutation Testing
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the Audit Mutation Testing campaign for the Performance Truth Office certification process.
+
+Its purpose is to determine whether the ECS-003 audit process can reliably detect intentional, controlled corruption introduced into the artifacts, evidence, implementation, documentation, and conclusions used to certify the office.
+
+This order shall assume that a certification process capable of passing mutated artifacts is constitutionally defective.
+
+Every material mutation shall either produce deterministic audit failure or be proven constitutionally irrelevant.
+
+---
+
+# Constitutional Authority
+
+This Modification Order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* PERFORMANCE-TRUTH-RM-002
+* PERFORMANCE-TRUTH-RM-003
+* PERFORMANCE-TRUTH-MO-001
+* PERFORMANCE-TRUTH-MO-002
+* Enterprise Modification Doctrine
+* Audit Doctrine
+* Evidence Doctrine
+* Truth Doctrine
+
+Nothing within this order may weaken previously certified constitutional guarantees.
+
+---
+
+# Campaign Objective
+
+The objective of this campaign is to test the certification process rather than the Performance Truth implementation.
+
+The campaign shall systematically introduce controlled mutations into certification-relevant artifacts and determine whether the audit process:
+
+* detects the mutation;
+* identifies the affected requirement;
+* rejects invalid evidence;
+* preserves audit traceability;
+* reaches the correct certification decision;
+* produces deterministic findings.
+
+An undetected material mutation constitutes a certification-process defect.
+
+---
+
+# Mutation Scope
+
+Mutation testing shall include:
+
+* constitutional evidence;
+* source code;
+* configuration;
+* dependency manifests;
+* repository manifests;
+* schemas;
+* canonical objects;
+* truth records;
+* timestamps;
+* ownership records;
+* traceability records;
+* reconciliation artifacts;
+* replay artifacts;
+* audit documentation;
+* certification reports;
+* package integrity records.
+
+No artifact relied upon by certification shall be presumed mutation-resistant.
+
+---
+
+# Mutation Governance
+
+Every mutation shall be:
+
+* intentional;
+* isolated where practicable;
+* uniquely identified;
+* reproducible;
+* evidence-backed;
+* reversible;
+* mapped to an expected audit outcome.
+
+Uncontrolled corruption shall not constitute valid mutation testing.
+
+---
+
+# Baseline Establishment
+
+Before mutation testing begins, the auditor shall establish a verified clean certification baseline.
+
+The baseline shall include:
+
+* repository package identity;
+* artifact inventory;
+* cryptographic integrity records;
+* expected certification findings;
+* expected certification decision;
+* audit toolchain versions;
+* dependency versions;
+* environmental configuration.
+
+Mutation results shall be compared exclusively against this verified baseline.
+
+---
+
+# Mutation Catalog
+
+A complete Mutation Catalog shall be established.
+
+Each mutation shall identify:
+
+* mutation identifier;
+* target artifact;
+* original state;
+* mutated state;
+* affected constitutional requirement;
+* expected detection mechanism;
+* expected audit finding;
+* expected certification consequence;
+* observed result.
+
+No mutation result shall be accepted without catalog entry.
+
+---
+
+# Evidence Mutation Testing
+
+The campaign shall mutate constitutional evidence through:
+
+* removal;
+* truncation;
+* duplication;
+* reordering;
+* substitution;
+* identifier alteration;
+* provenance alteration;
+* timestamp alteration;
+* signature or hash alteration;
+* scope alteration.
+
+The audit shall reject evidence that no longer proves the claimed constitutional property.
+
+---
+
+# Source Code Mutation Testing
+
+The campaign shall introduce controlled source-code mutations affecting:
+
+* calculation logic;
+* validation rules;
+* ownership enforcement;
+* reconciliation behavior;
+* publication behavior;
+* replay behavior;
+* evidence generation;
+* fail-closed behavior;
+* lifecycle transitions.
+
+The audit shall detect every mutation that changes constitutional behavior.
+
+---
+
+# Manifest Mutation Testing
+
+The campaign shall mutate:
+
+* repository manifests;
+* dependency manifests;
+* module inventories;
+* configuration inventories;
+* interface inventories;
+* generated-artifact listings.
+
+Mutations shall include:
+
+* missing entries;
+* additional hidden entries;
+* incorrect versions;
+* altered paths;
+* invalid identities;
+* stale dependency declarations.
+
+The audit shall detect divergence between manifests and actual repository contents.
+
+---
+
+# Documentation Mutation Testing
+
+The campaign shall mutate constitutional and implementation documentation through:
+
+* removal of requirements;
+* altered definitions;
+* conflicting interface contracts;
+* incorrect lifecycle descriptions;
+* omitted dependencies;
+* altered evidence obligations;
+* inconsistent terminology.
+
+The audit shall identify conflicts between documentation, implementation, and constitutional authority.
+
+---
+
+# Certification Report Mutation Testing
+
+The campaign shall mutate certification reports through:
+
+* altered findings;
+* omitted failures;
+* changed severity;
+* changed certification outcomes;
+* unsupported PASS declarations;
+* deleted evidence references;
+* false closure statements.
+
+The certification process shall detect conclusions unsupported by underlying evidence.
+
+---
+
+# Truth Record Mutation Testing
+
+The campaign shall mutate Performance Truth Records through:
+
+* value alteration;
+* identity alteration;
+* ownership alteration;
+* source-reference alteration;
+* attribution alteration;
+* revision-chain alteration;
+* benchmark-reference alteration;
+* certification-state alteration.
+
+Every constitutionally material mutation shall invalidate the affected record and produce deterministic audit failure.
+
+---
+
+# Timestamp Mutation Testing
+
+The campaign shall mutate:
+
+* Event Time;
+* Effective Time;
+* Observation Time;
+* Calculation Time;
+* Publication Time;
+* Correction Time;
+* Certification Time;
+* Archival Time.
+
+Mutations shall include:
+
+* inversion;
+* duplication;
+* truncation;
+* precision alteration;
+* impossible ordering;
+* invalid effective windows.
+
+Temporal mutations shall be detected through constitutional temporal validation.
+
+---
+
+# Ownership Mutation Testing
+
+The campaign shall alter ownership records through:
+
+* ownership removal;
+* duplicated ownership;
+* unauthorized transfer;
+* conflicting ownership;
+* owner substitution;
+* unowned object creation.
+
+The audit shall reject every mutation that violates constitutional ownership.
+
+---
+
+# Traceability Mutation Testing
+
+The campaign shall alter provenance and traceability through:
+
+* broken links;
+* substituted identifiers;
+* missing workflow references;
+* missing decision references;
+* missing authorization references;
+* incorrect execution references;
+* incomplete evidence chains;
+* circular traceability.
+
+The audit shall detect every material provenance defect.
+
+---
+
+# Reconciliation Mutation Testing
+
+The campaign shall mutate reconciliation inputs and outputs through:
+
+* value discrepancies;
+* missing records;
+* duplicate records;
+* altered source authority;
+* false reconciliation success;
+* suppressed discrepancy findings;
+* inconsistent correction state.
+
+The audit shall reject false reconciliation conclusions.
+
+---
+
+# Replay Mutation Testing
+
+The campaign shall mutate replay dependencies including:
+
+* historical configuration;
+* benchmark versions;
+* calculation versions;
+* revision history;
+* dependency versions;
+* event ordering;
+* source evidence.
+
+The audit shall detect any mutation that prevents exact historical reconstruction.
+
+---
+
+# Fail-Closed Mutation Testing
+
+The campaign shall intentionally mutate fail-closed behavior so that the implementation:
+
+* continues after missing evidence;
+* publishes incomplete calculations;
+* ignores dependency failure;
+* accepts ownership ambiguity;
+* suppresses reconciliation failure;
+* accepts invalid timestamps;
+* proceeds after repository corruption.
+
+The audit shall detect every fail-open mutation.
+
+---
+
+# Compound Mutation Testing
+
+The campaign shall apply combinations of mutations to determine whether defects can conceal one another.
+
+Compound mutations shall include:
+
+* evidence corruption combined with report alteration;
+* source-code mutation combined with documentation mutation;
+* ownership mutation combined with traceability mutation;
+* reconciliation mutation combined with timestamp mutation;
+* replay mutation combined with dependency-manifest mutation.
+
+Certification shall remain resistant to coordinated deception.
+
+---
+
+# Mutation Equivalence Analysis
+
+Some mutations may not alter constitutional behavior.
+
+For each surviving mutation, the auditor shall determine whether it is:
+
+* constitutionally equivalent;
+* unreachable;
+* redundant;
+* masked by stronger controls;
+* insufficiently tested.
+
+A mutation shall not be classified as harmless without objective evidence.
+
+---
+
+# Detection Mechanism Verification
+
+For every detected mutation, the campaign shall identify the exact detection mechanism.
+
+Detection mechanisms may include:
+
+* integrity validation;
+* schema validation;
+* behavioral testing;
+* evidence verification;
+* traceability reconstruction;
+* replay comparison;
+* reconciliation analysis;
+* independent calculation;
+* cross-artifact consistency checking.
+
+Incidental detection shall not substitute for a defined certification control.
+
+---
+
+# Mutation Survival Analysis
+
+Every mutation not detected by the audit shall be classified as a surviving mutation.
+
+Each surviving mutation shall produce:
+
+* certification defect finding;
+* affected constitutional requirement;
+* failed detection mechanism;
+* false-certification risk assessment;
+* required audit remediation;
+* permanent regression test.
+
+No material surviving mutation may remain unresolved.
+
+---
+
+# Deterministic Audit Outcome
+
+Repeated audit execution against the same mutated repository package shall produce:
+
+* identical mutation detection;
+* identical findings;
+* identical severity;
+* identical evidence references;
+* identical certification decision.
+
+Non-deterministic mutation results constitute certification-process failure.
+
+---
+
+# Independent Reproduction
+
+An independent auditor shall reproduce a representative subset of the mutation campaign using only:
+
+* the clean baseline package;
+* the Mutation Catalog;
+* the audit doctrine;
+* the required tooling and instructions.
+
+Independent reproduction shall confirm equivalent findings and certification decisions.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold:
+
+* every material mutation is detected;
+* every detected mutation maps to an explicit constitutional requirement;
+* every surviving mutation produces certification remediation;
+* every mutation result is independently reproducible;
+* every material artifact is included in mutation coverage;
+* certification reports cannot contradict underlying evidence;
+* fail-open mutations always cause certification failure;
+* compound mutations cannot conceal constitutional defects;
+* identical mutated packages produce identical audit outcomes.
+
+Violation of any invariant constitutes certification-hardening failure.
+
+---
+
+# Fail-Closed Requirements
+
+The certification process shall issue a failing determination whenever:
+
+* a material mutation is detected;
+* artifact integrity cannot be established;
+* mutation scope cannot be reconstructed;
+* expected detection controls are absent;
+* a certification report conflicts with source evidence;
+* a surviving mutation could permit false certification;
+* repeated audit outcomes differ;
+* independent reproduction fails;
+* mutation evidence is incomplete.
+
+Certification shall not proceed while any material mutation remains unresolved.
+
+---
+
+# Required Modification Evidence
+
+This campaign shall produce:
+
+* verified clean certification baseline;
+* complete Mutation Catalog;
+* mutation procedures;
+* mutated repository packages;
+* expected audit outcomes;
+* observed audit outcomes;
+* detection-mechanism mapping;
+* mutation survival register;
+* compound-mutation results;
+* deterministic repeatability results;
+* independent reproduction results;
+* certification-process defect findings;
+* permanent regression additions;
+* residual mutation risk assessment.
+
+---
+
+# Acceptance Criteria
+
+This Modification Order shall be considered complete when independent review demonstrates that:
+
+1. every certification-relevant artifact class has been subjected to systematic mutation testing;
+2. every constitutionally material mutation causes deterministic audit failure;
+3. every detected mutation is mapped to the affected constitutional requirement and supporting evidence;
+4. certification reports, evidence, manifests, implementation artifacts, truth records, reconciliation artifacts, and replay artifacts cannot be altered without detection;
+5. compound mutations cannot conceal constitutional defects or produce false certification;
+6. every surviving mutation has been remediated, incorporated into permanent audit regression coverage, or objectively proven constitutionally equivalent;
+7. repeated certification of identical mutated packages produces identical findings and decisions;
+8. independent auditors can reproduce the mutation results from the delivered campaign materials; and
+9. the ECS-003 certification process demonstrates materially greater resistance to artifact corruption, audit deception, and false-positive certification than the prior hardened certification baseline.

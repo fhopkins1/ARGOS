@@ -1,0 +1,66 @@
+[
+  {
+    "challenge_id": "MUT-EVIDENCE-REMOVE",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "remove required evidence reference"
+  },
+  {
+    "challenge_id": "MUT-EVIDENCE-HASH",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "alter evidence hash"
+  },
+  {
+    "challenge_id": "MUT-TRACEABILITY",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "orphan proof from requirement"
+  },
+  {
+    "challenge_id": "MUT-VERDICT",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "change verdict without evidence"
+  },
+  {
+    "challenge_id": "MUT-ORDER",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "truncate constitutional order"
+  },
+  {
+    "challenge_id": "MUT-DEPENDENCY",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "omit dependency participant"
+  },
+  {
+    "challenge_id": "MUT-PROOF",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "remove supporting evidence"
+  },
+  {
+    "challenge_id": "MUT-FINDING",
+    "disposition": "PASS",
+    "expected": "REJECT",
+    "false_negative": false,
+    "observed": "REJECT",
+    "scenario": "downgrade blocking finding"
+  }
+]

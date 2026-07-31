@@ -1,0 +1,82 @@
+[
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "remove required evidence reference",
+    "mutation_id": "MUT-EVIDENCE-REMOVE",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "certification evidence"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "alter evidence hash",
+    "mutation_id": "MUT-EVIDENCE-HASH",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "manifest"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "orphan proof from requirement",
+    "mutation_id": "MUT-TRACEABILITY",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "traceability"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "change verdict without evidence",
+    "mutation_id": "MUT-VERDICT",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "certification report"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "truncate constitutional order",
+    "mutation_id": "MUT-ORDER",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "source order"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "omit dependency participant",
+    "mutation_id": "MUT-DEPENDENCY",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "dependency inventory"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "remove supporting evidence",
+    "mutation_id": "MUT-PROOF",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "proof registry"
+  },
+  {
+    "affected_requirement": "ECS-003 certification integrity",
+    "certification_consequence": "FAIL_CLOSED_FINDING",
+    "disposition": "PASS",
+    "expected_detection": "DETECTED",
+    "mutation": "downgrade blocking finding",
+    "mutation_id": "MUT-FINDING",
+    "observed_detection": "DETECTED",
+    "target_artifact_class": "finding registry"
+  }
+]

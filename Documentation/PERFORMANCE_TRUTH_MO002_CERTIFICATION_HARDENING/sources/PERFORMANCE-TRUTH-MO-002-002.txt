@@ -1,0 +1,704 @@
+# PERFORMANCE-TRUTH-MO-002-002
+
+# Audit Coverage Analysis
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the certification-hardening audit responsible for determining whether every constitutional requirement governing the Performance Truth Office is explicitly, independently, and sufficiently examined by the ECS-003 certification process.
+
+The objective is to identify every unaudited, partially audited, indirectly audited, redundantly audited, ambiguously audited, or falsely assumed constitutional requirement.
+
+This order shall not evaluate whether the implementation is compliant.
+
+It shall evaluate whether the certification process is capable of reliably determining compliance.
+
+Every constitutional requirement shall possess explicit audit coverage, defined proof obligations, deterministic acceptance criteria, and independently reproducible evidence.
+
+---
+
+# Constitutional Authority
+
+This Modification Order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* PERFORMANCE-TRUTH-RM-002
+* PERFORMANCE-TRUTH-RM-003
+* PERFORMANCE-TRUTH-MO-001
+* PERFORMANCE-TRUTH-MO-002
+* Enterprise Modification Doctrine
+* Audit Doctrine
+* Evidence Doctrine
+* Truth Doctrine
+* Workflow Ownership Doctrine
+
+Nothing within this order may weaken previously certified constitutional guarantees.
+
+---
+
+# Modification Scope
+
+This audit shall examine the complete certification architecture governing the Performance Truth Office, including:
+
+* constitutional requirement discovery;
+* audit-control design;
+* test coverage;
+* proof coverage;
+* evidence coverage;
+* negative-test coverage;
+* mutation coverage;
+* lifecycle coverage;
+* interface coverage;
+* failure coverage;
+* replay coverage;
+* reconciliation coverage;
+* certification-decision coverage.
+
+The audit shall include every requirement established under RM-001, every implementation-certification obligation established under RM-002, every enterprise-certification obligation established under RM-003, and every applicable hardening requirement established under MO-001.
+
+---
+
+# Constitutional Principles
+
+The audit shall satisfy the following principles.
+
+1. Every constitutional requirement shall map to one or more explicit audit controls.
+
+2. Every audit control shall map back to an authoritative constitutional requirement.
+
+3. No requirement shall be considered covered solely because adjacent behavior is tested.
+
+4. No requirement shall be considered covered solely by documentation review.
+
+5. Positive-path evidence alone shall not establish complete coverage.
+
+6. Coverage shall include success, rejection, failure, correction, replay, and boundary behavior where applicable.
+
+7. Audit coverage shall be independently reproducible.
+
+8. Duplicated audit effort shall not conceal uncovered requirements.
+
+9. Coverage metrics shall distinguish execution from proof.
+
+10. Unproven coverage shall be classified as absent.
+
+---
+
+# Constitutional Requirement Inventory
+
+The auditor shall produce a complete, uniquely identified inventory of every auditable constitutional requirement.
+
+Each requirement entry shall include:
+
+* Requirement ID;
+* source doctrine;
+* source section;
+* requirement statement;
+* constitutional owner;
+* applicable business objects;
+* applicable lifecycle states;
+* applicable interfaces;
+* required observable behavior;
+* prohibited behavior;
+* required evidence;
+* fail-closed consequence;
+* certification significance.
+
+Composite doctrine statements shall be decomposed into independently auditable atomic requirements.
+
+No requirement may remain embedded only in narrative text.
+
+---
+
+# Audit Control Inventory
+
+The auditor shall produce a complete inventory of all certification controls currently used to examine the Performance Truth Office.
+
+Each control shall identify:
+
+* Control ID;
+* control purpose;
+* mapped requirement IDs;
+* control type;
+* test or review method;
+* required inputs;
+* expected outputs;
+* acceptance criteria;
+* rejection criteria;
+* required evidence;
+* execution environment;
+* independence requirements;
+* reproducibility requirements.
+
+Controls lacking explicit constitutional mappings shall be classified as unsupported audit activity.
+
+---
+
+# Bidirectional Coverage Matrix
+
+The auditor shall construct a bidirectional traceability matrix mapping:
+
+* every constitutional requirement to its audit controls; and
+* every audit control to its constitutional requirements.
+
+The matrix shall expose:
+
+* requirements with no controls;
+* controls with no requirements;
+* requirements covered only indirectly;
+* requirements covered by incomplete controls;
+* duplicated controls;
+* conflicting controls;
+* controls lacking deterministic acceptance criteria;
+* controls lacking sufficient evidence.
+
+A requirement shall not be considered covered merely because it appears in a checklist.
+
+---
+
+# Coverage Classification
+
+Every constitutional requirement shall be classified as one of the following:
+
+* Fully and Directly Audited;
+* Fully Audited Through Multiple Necessary Controls;
+* Partially Audited;
+* Indirectly Audited;
+* Documentation-Only Reviewed;
+* Evidence-Only Reviewed;
+* Duplicatively Audited;
+* Contradictorily Audited;
+* Unaudited;
+* Not Auditable as Currently Written.
+
+Only requirements classified as Fully and Directly Audited or Fully Audited Through Multiple Necessary Controls shall satisfy certification-hardening requirements.
+
+---
+
+# Direct Coverage Requirements
+
+Direct audit coverage shall independently exercise the constitutional property being certified.
+
+Direct coverage shall require, as applicable:
+
+* observable execution;
+* deterministic expected results;
+* constitutional evidence;
+* independent reproduction;
+* negative testing;
+* fail-closed testing;
+* provenance verification;
+* state verification before and after execution.
+
+Proxy evidence shall not satisfy direct coverage unless doctrine explicitly establishes that the proxy necessarily proves the claimed property.
+
+---
+
+# Positive Behavior Coverage
+
+For every permitted constitutional behavior, verify that the certification process tests:
+
+* valid preconditions;
+* authorized execution;
+* required state transition;
+* required output;
+* required evidence;
+* ownership preservation;
+* downstream effects;
+* historical preservation.
+
+Successful execution without proof of the applicable constitutional guarantees shall constitute incomplete coverage.
+
+---
+
+# Prohibited Behavior Coverage
+
+For every prohibited constitutional behavior, verify that the certification process attempts the prohibited action and proves deterministic rejection.
+
+The audit shall include, as applicable:
+
+* unauthorized creation;
+* unauthorized mutation;
+* illegal lifecycle transition;
+* duplicate publication;
+* orphaned object creation;
+* invalid ownership transfer;
+* unsupported calculation;
+* uncertified publication;
+* evidence-free certification;
+* historical deletion.
+
+A prohibition shall not be considered audited unless attempted or constitutionally proven unreachable.
+
+---
+
+# Failure Coverage
+
+For every constitutionally defined failure condition, verify that the certification process examines:
+
+* detection;
+* classification;
+* fail-closed response;
+* publication suppression;
+* certification suppression;
+* failure evidence;
+* historical preservation;
+* recovery eligibility;
+* downstream observability.
+
+Testing only the existence of an error response shall not establish fail-closed coverage.
+
+---
+
+# Lifecycle Coverage
+
+For every canonical object, verify that audit controls cover:
+
+* creation;
+* validation;
+* activation or publication;
+* correction;
+* revision;
+* supersession;
+* revocation where applicable;
+* archival;
+* historical replay.
+
+The audit shall verify both permitted and prohibited transitions.
+
+Unexercised lifecycle states shall be classified as coverage gaps.
+
+---
+
+# Canonical Object Coverage
+
+The coverage analysis shall explicitly evaluate every canonical object, including:
+
+* Performance Truth Record;
+* Performance Snapshot;
+* Performance Interval;
+* Performance Metric;
+* Performance Attribution;
+* Performance Baseline;
+* Performance Benchmark;
+* Performance Calculation Context;
+* Performance Correction;
+* Performance Revision;
+* Performance Evidence Package;
+* Performance Certification State.
+
+Coverage of one object shall not be inferred from tests of another object.
+
+---
+
+# Mathematical Coverage
+
+Verify that certification controls independently cover:
+
+* formulas;
+* precision;
+* rounding;
+* units;
+* normalization;
+* aggregation;
+* attribution;
+* benchmark comparison;
+* interval performance;
+* cumulative performance;
+* correction propagation;
+* boundary conditions;
+* undefined mathematical states.
+
+Test values shall include ordinary, boundary, degenerate, contradictory, and numerically sensitive cases.
+
+A calculation shall not be considered covered merely because one expected result is reproduced.
+
+---
+
+# Ownership Coverage
+
+Verify that certification controls cover:
+
+* owner identity;
+* owner authority;
+* creation authority;
+* mutation authority;
+* certification authority;
+* supersession authority;
+* interface custody;
+* prohibited foreign-office action;
+* lifecycle ownership continuity.
+
+Ownership declared in documentation but not enforced by observable behavior shall constitute incomplete coverage.
+
+---
+
+# Interface Coverage
+
+For every constitutional interface, verify coverage of:
+
+* valid request;
+* valid response;
+* required fields;
+* ownership boundary;
+* identity preservation;
+* evidence transfer;
+* duplicate request;
+* malformed request;
+* missing dependency;
+* timeout or interruption;
+* incompatible version;
+* reconciliation consequence;
+* fail-closed behavior.
+
+Every dependent office and enterprise bridge shall possess explicit interface coverage.
+
+---
+
+# Evidence Coverage
+
+Verify that certification controls establish:
+
+* evidence existence;
+* evidence completeness;
+* evidence correctness;
+* evidence provenance;
+* evidence immutability;
+* evidence-to-claim sufficiency;
+* historical availability;
+* replay utility.
+
+Evidence that merely records an event shall not be treated as proof that the event was constitutionally correct.
+
+---
+
+# Traceability Coverage
+
+Verify that audit controls reconstruct complete provenance from every published performance value through:
+
+* Performance Truth Record;
+* Metric;
+* Calculation Context;
+* Closed Position Truth;
+* execution;
+* decision;
+* authorization;
+* market data;
+* workflow;
+* evidence;
+* certification.
+
+Each traceability edge shall be independently audited.
+
+Testing only the first and final objects shall not prove the intervening chain.
+
+---
+
+# Temporal Coverage
+
+Verify audit coverage of:
+
+* event time;
+* effective time;
+* observation time;
+* calculation time;
+* publication time;
+* late-arriving information;
+* correction time;
+* revision order;
+* concurrent events;
+* historical replay order;
+* invalid sequencing.
+
+Temporal behavior shall be tested through controlled ordering variation rather than documentation review alone.
+
+---
+
+# Reconciliation Coverage
+
+Verify that the certification process covers reconciliation between Performance Truth and:
+
+* Closed Position Truth;
+* Broker;
+* Monitoring;
+* Historian;
+* Workflow Execution;
+* Decision Objects;
+* Authorization Truth;
+* Evidence Repository.
+
+Coverage shall include:
+
+* exact agreement;
+* explainable variance;
+* missing records;
+* duplicate records;
+* incompatible identities;
+* conflicting values;
+* stale versions;
+* unresolved conflict;
+* correction propagation.
+
+---
+
+# Determinism and Replay Coverage
+
+Verify that the audit process examines:
+
+* repeated execution;
+* clean-room execution;
+* independent auditor replay;
+* reordered input delivery;
+* historical reconstruction;
+* correction replay;
+* revision replay;
+* environment variation;
+* evidence regeneration;
+* certification-decision repeatability.
+
+Single successful execution shall not establish deterministic coverage.
+
+---
+
+# Enterprise Integration Coverage
+
+Verify that every cross-office constitutional guarantee has explicit audit coverage, including:
+
+* ownership preservation;
+* interface compatibility;
+* source authority;
+* evidence continuity;
+* deterministic handoff;
+* dependency failure;
+* reconciliation;
+* historical preservation;
+* downstream publication behavior.
+
+Enterprise integration shall not be considered covered solely because isolated office tests pass.
+
+---
+
+# Coverage Depth Requirements
+
+For each constitutional requirement, the auditor shall determine whether existing controls cover:
+
+* nominal behavior;
+* boundary behavior;
+* invalid behavior;
+* adversarial behavior;
+* failure behavior;
+* recovery behavior;
+* replay behavior;
+* cross-office behavior;
+* historical behavior.
+
+A requirement tested only under nominal conditions shall be classified as partially audited.
+
+---
+
+# Duplicate Audit Analysis
+
+Duplicated audit effort shall be identified and classified as:
+
+* necessary independent corroboration;
+* necessary layered control;
+* redundant execution;
+* redundant evidence review;
+* conflicting duplication;
+* duplication masking a coverage gap.
+
+Redundant controls may be consolidated only where coverage strength is preserved.
+
+No control shall be removed solely to simplify the audit.
+
+---
+
+# Indirect Coverage Analysis
+
+Every claim of indirect coverage shall identify:
+
+* the directly tested property;
+* the property inferred;
+* the constitutional rule making the inference valid;
+* the proof that no counterexample exists.
+
+Where the inference depends on implementation architecture, convention, or assumption, the requirement shall be classified as not directly covered.
+
+---
+
+# Audit Blind-Spot Discovery
+
+The auditor shall search for requirements that escape coverage because they are:
+
+* distributed across multiple doctrine sections;
+* expressed as invariants rather than actions;
+* embedded in definitions;
+* implied by ownership;
+* triggered only during failure;
+* triggered only during correction or revision;
+* dependent upon cross-office sequencing;
+* dependent upon historical depth;
+* dependent upon concurrency;
+* difficult to observe directly.
+
+Every discovered blind spot shall become an explicit audit obligation.
+
+---
+
+# Adversarial Coverage Validation
+
+The auditor shall construct defective implementations that satisfy existing tests while violating selected constitutional requirements.
+
+For each successful deception, determine:
+
+* which requirement was violated;
+* which audit controls passed;
+* why the controls failed to detect the defect;
+* what coverage addition is required;
+* whether similar requirements are exposed.
+
+Every successful deception shall constitute proof of a coverage defect.
+
+---
+
+# Coverage Metrics
+
+The audit shall calculate at minimum:
+
+* total atomic constitutional requirements;
+* directly audited requirements;
+* partially audited requirements;
+* indirectly audited requirements;
+* unaudited requirements;
+* requirements lacking negative tests;
+* requirements lacking fail-closed tests;
+* requirements lacking evidence sufficiency tests;
+* requirements lacking replay tests;
+* requirements lacking independent reproduction;
+* unsupported audit controls;
+* duplicated controls.
+
+A numeric coverage percentage shall not override substantive coverage defects.
+
+---
+
+# Coverage Defect Classification
+
+Every audit coverage weakness shall be classified as:
+
+* Missing Control;
+* Incomplete Control;
+* Indirect-Control Defect;
+* Acceptance-Criteria Defect;
+* Evidence-Sufficiency Defect;
+* Negative-Test Defect;
+* Failure-Coverage Defect;
+* Replay-Coverage Defect;
+* Independence Defect;
+* Duplication Defect;
+* Requirement-Ambiguity Defect;
+* Constitutional Auditability Defect.
+
+Each defect shall identify its certification consequence.
+
+---
+
+# Constitutional Remediation Requirements
+
+Every coverage defect shall result in one or more of the following:
+
+1. Creation of a direct audit control.
+
+2. Expansion of an incomplete audit control.
+
+3. Addition of negative or adversarial testing.
+
+4. Addition of fail-closed verification.
+
+5. Addition of evidence-sufficiency requirements.
+
+6. Addition of independent reproduction requirements.
+
+7. Clarification of an ambiguous constitutional requirement.
+
+8. Removal or consolidation of misleading duplicated controls.
+
+9. Proof that the requirement is necessarily covered by another control.
+
+No coverage defect may be closed through unsupported auditor judgment.
+
+---
+
+# Required Deliverables
+
+This order shall produce:
+
+* Atomic Constitutional Requirement Inventory;
+* Audit Control Inventory;
+* Bidirectional Requirement-to-Control Matrix;
+* Canonical Object Coverage Matrix;
+* Lifecycle Coverage Matrix;
+* Interface Coverage Matrix;
+* Failure Coverage Matrix;
+* Evidence and Traceability Coverage Matrix;
+* Determinism and Replay Coverage Matrix;
+* Audit Duplication Analysis;
+* Adversarial Coverage Test Results;
+* Coverage Defect Register;
+* Audit Coverage Analysis Report.
+
+All deliverables shall be immutable, versioned, traceable, and independently reproducible.
+
+---
+
+# Fail-Closed Certification Requirements
+
+Certification shall fail closed whenever:
+
+* any material constitutional requirement lacks direct or constitutionally sufficient audit coverage;
+* any required control lacks deterministic acceptance criteria;
+* any certification claim lacks sufficient evidence;
+* any prohibited behavior lacks rejection coverage;
+* any failure mode lacks fail-closed coverage;
+* any material traceability edge remains unaudited;
+* any adversarial defect can evade certification;
+* any requirement remains unauditable due to unresolved ambiguity.
+
+No aggregate coverage score may override a material coverage failure.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold.
+
+* Every constitutional requirement has explicit audit coverage.
+* Every audit control has explicit constitutional authority.
+* Coverage is bidirectionally traceable.
+* Existence evidence is not automatically correctness evidence.
+* Positive-path testing does not substitute for negative testing.
+* Documentation review does not substitute for behavioral verification.
+* Duplicated controls do not conceal missing controls.
+* Material audit gaps prevent certification.
+* Coverage conclusions are independently reproducible.
+* No constitutional requirement is certified through assumption alone.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every applicable constitutional statement has been decomposed into atomic, auditable requirements.
+2. Every requirement has been mapped to one or more explicit audit controls.
+3. Every audit control has been mapped to authoritative constitutional requirements.
+4. Unaudited, partially audited, indirectly audited, duplicated, and contradictory coverage has been identified.
+5. Positive, prohibited, failure, recovery, replay, historical, and enterprise behavior coverage has been evaluated where applicable.
+6. Every canonical object, lifecycle, interface, evidence obligation, traceability edge, and fail-closed requirement has explicit coverage.
+7. Adversarial defective implementations have been used to test whether the existing audit can be deceived.
+8. Every discovered coverage defect has been remediated or constitutionally disproven.
+9. Certification fails closed whenever any material requirement lacks sufficient coverage.
+10. Independent auditors can reproduce the complete coverage analysis and reach an equivalent certification conclusion without relying upon undocumented assumptions.
