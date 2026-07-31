@@ -1,0 +1,130 @@
+{
+  "candidate_digest": "447a74a308d34d96242c77cbd0c854af358ea49d",
+  "disposition": "PASS",
+  "implementation_inventory": [
+    {
+      "artifact_id": "PT-AUDIT002-IMPL-001",
+      "bytes": 65106,
+      "classification": "PERFORMANCE_TRUTH_IMPLEMENTATION",
+      "path": "src/argos/control_panel/performance_truth_engine.py",
+      "sha256": "8a8b9c4ec6224f5a4414997ff5e96ab340420661aa9b58af781f59dc89f707da"
+    },
+    {
+      "artifact_id": "PT-AUDIT002-IMPL-002",
+      "bytes": 29396,
+      "classification": "PERFORMANCE_TRUTH_IMPLEMENTATION",
+      "path": "src/argos/control_panel/strategy_performance_console.py",
+      "sha256": "711cedd3c4359f723b87bc6deac6c1169296b2d34a83700a6fd27c9bcd58e63b"
+    },
+    {
+      "artifact_id": "PT-AUDIT002-IMPL-003",
+      "bytes": 28786,
+      "classification": "PERFORMANCE_TRUTH_IMPLEMENTATION",
+      "path": "src/argos/control_panel/trade_attribution_engine.py",
+      "sha256": "c371528a720df774524b3135e8baea01142bf1ebe9f51f644fd47cefb36184bd"
+    }
+  ],
+  "package_only_probe": {
+    "disposition": "PASS",
+    "documentation_available": true,
+    "external_state_required": false,
+    "probe_digest": "af2290b8b4c6041649e02b618f75c999be8e44ace37f63dcb1e689156accaf43",
+    "repository_root_available": true,
+    "src_available": true,
+    "tests_available": true
+  },
+  "submitted_package_inventory": [
+    {
+      "available": true,
+      "digest": "02fb1e4065ef31b63a6377802cc1224ccb5add1658477fc671b331d872b8573b",
+      "file_count": 47,
+      "package_id": "RM001",
+      "path": "Documentation/PERFORMANCE_TRUTH_RM001_CONSTITUTIONAL_BASELINE"
+    },
+    {
+      "available": true,
+      "digest": "5620d1956476ad6a8f632d6981e00040e88f96a15a0211ee1f3c92b1550b7e0d",
+      "file_count": 37,
+      "package_id": "RM002",
+      "path": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION"
+    },
+    {
+      "available": true,
+      "digest": "75505ec9e118fe0e9ef7907939df33f419003d5a10b7a13153a62cf655860d54",
+      "file_count": 29,
+      "package_id": "RM003",
+      "path": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION"
+    },
+    {
+      "available": true,
+      "digest": "7f73953fe116731e37aa99e45f2098544cd8c13a8408926673e559767d9955ae",
+      "file_count": 44,
+      "package_id": "MO001",
+      "path": "Documentation/PERFORMANCE_TRUTH_MO001_CONSTITUTIONAL_HARDENING"
+    },
+    {
+      "available": true,
+      "digest": "c5fbb909414b90f4df514083c83e0496dc087f999a9f84b10f8dd910bfd6846f",
+      "file_count": 41,
+      "package_id": "MO002",
+      "path": "Documentation/PERFORMANCE_TRUTH_MO002_CERTIFICATION_HARDENING"
+    },
+    {
+      "available": true,
+      "digest": "a6fca43b6109a7337da7f1f2c979bc1c6942921b47e27584fc43764ffd02352e",
+      "file_count": 45,
+      "package_id": "MO003",
+      "path": "Documentation/PERFORMANCE_TRUTH_MO003_ARCHITECTURE_HARDENING"
+    }
+  ],
+  "verifier_inventory": [
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_ecs003_audit_001.py",
+      "sha256": "96d3b267f24b34c21a8e9f3da816a05b97c923ef6720f5821e6121da5a2549d1",
+      "verifier_id": "PT-AUDIT002-VERIFIER-001"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_ecs003_audit_002.py",
+      "sha256": "4672056865fddfb958502c9b14650058af0b0d6fd8af957a9e4014233afd5213",
+      "verifier_id": "PT-AUDIT002-VERIFIER-002"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_mo001_constitutional_hardening.py",
+      "sha256": "f902150d925d077cb3cc3f81c831e906bba6ae2d2931f1eb0116ae2b77d77dc7",
+      "verifier_id": "PT-AUDIT002-VERIFIER-003"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_mo002_certification_hardening.py",
+      "sha256": "649b784a7099cce431ecc286a68666907120ef1fc4d406e990f7edfcbfc1192c",
+      "verifier_id": "PT-AUDIT002-VERIFIER-004"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_mo003_architecture_hardening.py",
+      "sha256": "4f27486a296e71326ad2e0aa22a276830fb92e8b5c5394dcfb03cb812a51330b",
+      "verifier_id": "PT-AUDIT002-VERIFIER-005"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_rm001_constitutional_baseline.py",
+      "sha256": "d7bda05edd40df537e60db8b9229697a5081251e6c9d726765f1a7e82abefa2f",
+      "verifier_id": "PT-AUDIT002-VERIFIER-006"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_rm002_implementation_certification.py",
+      "sha256": "5d940dfc3defa7eed221c8ac77a35a89544e0a1821f040b87a36758194f1b17d",
+      "verifier_id": "PT-AUDIT002-VERIFIER-007"
+    },
+    {
+      "classification": "INDEPENDENT_OR_FOCUSED_VERIFIER",
+      "path": "Tests/test_performance_truth_rm003_final_certification.py",
+      "sha256": "d00c1e5bd9995cd78064dd1678fe3e88fe491c3c6eea07b72dba926c178ab068",
+      "verifier_id": "PT-AUDIT002-VERIFIER-008"
+    }
+  ]
+}

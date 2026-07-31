@@ -1,0 +1,92 @@
+[
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "flip performance engine digest",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "source_code",
+    "mutated_digest": "e9f7487ae831b68c7f1aaf9dac283f50a3e71259e3716941ebd3d3d78ede6f09",
+    "mutation_id": "PT-MUT-001"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "remove evidence package pointer",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "evidence",
+    "mutated_digest": "f9edb6714264edd1bffac1f5e668570f8a77548c5464a254336fff40b9c1700b",
+    "mutation_id": "PT-MUT-002"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "alter truth record identity",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "truth_record",
+    "mutated_digest": "30559df7f22e528527cff175037510d77a1a1492b20704bb08237cb366fb69c3",
+    "mutation_id": "PT-MUT-003"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "alter calculated value",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "calculation",
+    "mutated_digest": "68bb01ff1790222bf978e8abace4b43e1836a953d9814409df844c81d4e2c3c3",
+    "mutation_id": "PT-MUT-004"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "move timestamp outside admissible order",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "timestamp",
+    "mutated_digest": "815566aaacc1a67898b2f6d81821160326b97afc4537e9eeca9a042847c18bff",
+    "mutation_id": "PT-MUT-005"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "assign Performance Truth object to external owner",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "ownership",
+    "mutated_digest": "7aadad15a69651747bb536eff04d7be66520975cd18be7ee4f732a247d045e97",
+    "mutation_id": "PT-MUT-006"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "drop provenance from interface payload",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "interface",
+    "mutated_digest": "2b29a9ce38fc166d221c1b097d113b02d7681f0248397cbb75a3a4491b37e207",
+    "mutation_id": "PT-MUT-007"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "remove Closed Position Truth dependency",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "dependency",
+    "mutated_digest": "1356f2d06d09cde4eca85bb3d7a36a898cbd1ff061b22d0073a7dd77eab12625",
+    "mutation_id": "PT-MUT-008"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "accept contradictory reconciliation input",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "reconciliation",
+    "mutated_digest": "fe05ce7dcdf15e16808531de9b18b55cbbb2a2aa5070ddce8763ece8994e2c4f",
+    "mutation_id": "PT-MUT-009"
+  },
+  {
+    "base_digest": "6093243963d989785158d41ac9008c1bb06ff7139c8513093412871588c48141",
+    "description": "change verdict without supporting evidence",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "certification_artifact",
+    "mutated_digest": "83a110e18e28c3cfa4e5db816a12b3bdce460974bbde26c2e86cfc47c7edda1b",
+    "mutation_id": "PT-MUT-010"
+  }
+]
