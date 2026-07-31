@@ -1,0 +1,246 @@
+### HISTORIAN-RM-002A-009
+
+# Counterfactual Runtime Support
+
+## Purpose
+
+This order establishes the executable runtime behavior required for deterministic retrieval and reconstruction of constitutional counterfactual scenarios using immutable historical information preserved by the Historian Office.
+
+The Historian shall enable counterfactual analysis by preserving and reconstructing historical information only. It shall not generate hypotheses, evaluate alternatives, perform simulations, or recommend decisions.
+
+---
+
+# Constitutional Requirements
+
+Implement deterministic runtime support for retrieval and reconstruction of:
+
+* alternative evidence;
+* alternative decisions;
+* alternative authorizations;
+* alternative execution paths;
+* alternative risk assessments;
+* alternative monitoring outcomes;
+* alternative broker interactions;
+* alternative trade executions;
+* alternative exits;
+* alternative Enterprise Information Journeys;
+* TYPHON training scenarios.
+
+Every reconstruction shall originate exclusively from constitutionally preserved historical information.
+
+---
+
+# Counterfactual Request Runtime
+
+Implement runtime behavior that:
+
+* receives a counterfactual request;
+* validates requester authority;
+* validates requested scope;
+* resolves referenced historical objects;
+* verifies historical completeness;
+* initiates deterministic reconstruction.
+
+Unauthorized requests shall fail closed.
+
+---
+
+# Historical Information Resolution
+
+Implement deterministic resolution of all historical information required for reconstruction, including:
+
+* workflow execution records;
+* Decision Objects;
+* Performance Truth Records;
+* Authorization records;
+* Risk records;
+* monitoring records;
+* broker records;
+* execution evidence;
+* provenance graphs;
+* Enterprise Information Journeys.
+
+Every resolved object shall retain its original historical identity.
+
+---
+
+# Counterfactual Reconstruction Runtime
+
+Implement deterministic reconstruction of requested historical alternatives by assembling preserved historical records without modification.
+
+Reconstruction shall preserve:
+
+* execution ordering;
+* temporal relationships;
+* provenance relationships;
+* ownership;
+* custody;
+* evidence references;
+* historical context.
+
+No reconstructed information shall alter immutable historical records.
+
+---
+
+# Alternative Path Retrieval
+
+Implement runtime retrieval of historical branches including:
+
+* accepted alternatives;
+* rejected alternatives;
+* abandoned alternatives;
+* interrupted workflows;
+* superseded decisions;
+* failed authorizations;
+* cancelled executions;
+* rollback sequences.
+
+All retrieved branches shall preserve their original constitutional state.
+
+---
+
+# Historical Context Preservation
+
+Every reconstructed scenario shall include:
+
+* originating workflow;
+* originating journey;
+* initiating events;
+* triggering evidence;
+* responsible offices;
+* constitutional authorities;
+* dependency relationships;
+* temporal ordering;
+* uncertainty records;
+* information deficiencies.
+
+Context shall be identical to the preserved historical record.
+
+---
+
+# Provenance Preservation
+
+Every reconstructed counterfactual shall maintain complete provenance including:
+
+* source artifacts;
+* derivation lineage;
+* dependency graph;
+* supersession history;
+* custody history;
+* evidence lineage;
+* certification lineage.
+
+Provenance shall never be regenerated independently of preserved history.
+
+---
+
+# TYPHON Training Support
+
+Implement deterministic retrieval interfaces supporting historical reconstruction for Enterprise training environments.
+
+Support retrieval of:
+
+* historical market conditions;
+* enterprise state;
+* available information;
+* office outputs;
+* decision alternatives;
+* rejected actions;
+* uncertainties;
+* resulting enterprise behavior.
+
+The Historian shall provide historical information only.
+
+Simulation and evaluation remain outside Historian authority.
+
+---
+
+# Reconstruction Integrity Verification
+
+Verify every reconstructed scenario for:
+
+* historical completeness;
+* provenance continuity;
+* custody continuity;
+* deterministic ordering;
+* artifact integrity;
+* evidence integrity;
+* identity preservation;
+* reproducibility.
+
+Any integrity failure shall terminate reconstruction.
+
+---
+
+# Runtime Interfaces
+
+Implement deterministic interfaces supporting:
+
+* counterfactual request;
+* scenario retrieval;
+* historical branch retrieval;
+* alternative decision retrieval;
+* alternative evidence retrieval;
+* journey reconstruction;
+* provenance retrieval;
+* historical context retrieval;
+* replay preparation.
+
+All interfaces shall return immutable historical information only.
+
+---
+
+# Runtime Evidence Generation
+
+Every counterfactual operation shall generate immutable evidence including:
+
+* request identifier;
+* requesting authority;
+* reconstructed scenario identifier;
+* referenced journey;
+* referenced artifacts;
+* reconstruction timestamps;
+* retrieved historical branches;
+* provenance references;
+* custody verification;
+* integrity verification;
+* completion status;
+* failure reason when applicable.
+
+Evidence shall be independently reproducible.
+
+---
+
+# Fail-Closed Requirements
+
+The Historian shall reject:
+
+* reconstruction of nonexistent history;
+* modification of historical records;
+* incomplete historical reconstruction;
+* broken provenance;
+* broken custody chains;
+* unresolved historical dependencies;
+* unauthorized reconstruction requests;
+* unverifiable historical artifacts.
+
+No incomplete or unverifiable reconstruction shall be returned.
+
+---
+
+# Behavioral Verification
+
+The behavioral certification suite shall verify:
+
+* deterministic counterfactual request processing;
+* deterministic historical retrieval;
+* deterministic reconstruction;
+* preservation of provenance;
+* preservation of custody;
+* preservation of historical context;
+* reproducible reconstruction outputs;
+* TYPHON retrieval readiness;
+* evidence generation;
+* fail-closed enforcement.
+
+Behavioral certification shall verify observable runtime behavior through independent execution and reproducible certification evidence.

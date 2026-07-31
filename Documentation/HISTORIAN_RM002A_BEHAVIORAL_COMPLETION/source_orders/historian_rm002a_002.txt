@@ -1,0 +1,212 @@
+## HISTORIAN-RM-002A-002
+
+### Journey Artifact Registration
+
+#### Purpose
+
+Implement deterministic runtime behavior governing the registration of every constitutional historical artifact into its corresponding Enterprise Information Journey.
+
+The registration process shall ensure that every artifact entering the Historian Office becomes an immutable, uniquely identifiable, constitutionally owned component of exactly one Enterprise Information Journey while preserving complete provenance, custody, and traceability.
+
+No historical artifact may exist outside the Enterprise Information Journey model.
+
+---
+
+### Constitutional Requirements
+
+The implementation shall provide deterministic runtime behavior for:
+
+* artifact discovery;
+* artifact acceptance;
+* artifact identity generation;
+* artifact normalization;
+* artifact classification;
+* artifact ownership validation;
+* journey association;
+* registration persistence;
+* registration verification;
+* immutable registration preservation.
+
+Registration shall execute identically for equivalent inputs.
+
+---
+
+### Registration Behavior
+
+For every historical artifact received, the Historian shall:
+
+1. validate artifact integrity;
+
+2. determine constitutional artifact type;
+
+3. verify artifact ownership;
+
+4. determine the corresponding Enterprise Information Journey;
+
+5. assign immutable artifact identity;
+
+6. establish registration timestamp;
+
+7. establish custody assignment;
+
+8. create provenance relationships;
+
+9. record lifecycle state;
+
+10. persist immutable registration;
+
+11. emit registration evidence.
+
+Registration shall complete atomically or fail without partial persistence.
+
+---
+
+### Identity Verification
+
+The implementation shall verify:
+
+* globally unique artifact identity;
+* immutable identity assignment;
+* duplicate detection;
+* identity consistency;
+* deterministic identity reproduction.
+
+Identity conflicts shall fail closed.
+
+---
+
+### Ownership Verification
+
+The implementation shall verify:
+
+* constitutional owner;
+* workflow ownership;
+* originating office;
+* producing workflow;
+* authority to register.
+
+Unauthorized registration shall be rejected.
+
+---
+
+### Journey Association
+
+The implementation shall verify that every artifact:
+
+* belongs to exactly one Enterprise Information Journey;
+* references a valid journey identity;
+* maintains journey continuity;
+* preserves chronological consistency;
+* cannot create orphaned historical records.
+
+Association ambiguity shall fail closed.
+
+---
+
+### Registration Persistence
+
+The implementation shall persist:
+
+* artifact identifier;
+* artifact type;
+* registration timestamp;
+* constitutional owner;
+* workflow identity;
+* journey identity;
+* custody assignment;
+* lifecycle state;
+* provenance references;
+* registration metadata.
+
+Persisted registrations shall be immutable.
+
+---
+
+### Lifecycle Registration
+
+The implementation shall register lifecycle transitions including:
+
+* created;
+* accepted;
+* registered;
+* updated through supersession;
+* archived;
+* retained.
+
+Historical lifecycle records shall never be deleted.
+
+---
+
+### Duplicate Handling
+
+The implementation shall detect:
+
+* duplicate registrations;
+* conflicting identities;
+* repeated submissions;
+* conflicting ownership;
+* conflicting journey assignment.
+
+Duplicate detection shall generate objective evidence while preventing constitutional inconsistency.
+
+---
+
+### Failure Behavior
+
+Registration shall fail closed upon detection of:
+
+* invalid identity;
+* missing ownership;
+* missing journey;
+* invalid custody;
+* malformed artifact;
+* duplicate identity conflict;
+* persistence failure;
+* provenance generation failure.
+
+No partial registration shall remain after failure.
+
+---
+
+### Runtime Evidence
+
+Execution shall generate evidence demonstrating:
+
+* artifact discovery;
+* registration request;
+* identity generation;
+* ownership verification;
+* journey association;
+* registration persistence;
+* provenance creation;
+* lifecycle recording;
+* custody assignment;
+* successful completion or failure.
+
+Evidence shall be independently reproducible.
+
+---
+
+### Deterministic Verification
+
+Verification shall demonstrate:
+
+* identical inputs produce identical registrations;
+* registration ordering is deterministic;
+* identities remain immutable;
+* journey associations are reproducible;
+* persistence is deterministic;
+* duplicate handling is deterministic.
+
+---
+
+### Acceptance Criteria
+
+This order shall be considered complete when independent certification demonstrates that:
+
+* every constitutional artifact is deterministically registered into exactly one Enterprise Information Journey;
+* artifact identity, ownership, custody, lifecycle, and provenance are objectively verified;
+* duplicate and invalid registrations fail closed;
+* immutable registration records are preserved;
+* registration evidence is independently reproducible;
+* equivalent executions produce constitutionally identical registration results under repeated execution.

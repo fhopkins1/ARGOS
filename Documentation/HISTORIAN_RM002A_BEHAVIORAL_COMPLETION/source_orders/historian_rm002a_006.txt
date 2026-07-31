@@ -1,0 +1,274 @@
+### HISTORIAN-RM-002A-006
+
+# Deterministic Replay Runtime
+
+## Purpose
+
+This order establishes the executable runtime responsible for deterministic replay of Enterprise Information Journeys managed by the Historian Office.
+
+The objective is to guarantee that any historical execution can be reproduced from preserved historical artifacts without modification, omission, interpretation, or nondeterministic behavior.
+
+Replay exists solely to reconstruct constitutional execution exactly as originally recorded.
+
+It shall not alter enterprise history.
+
+---
+
+# Constitutional Requirements
+
+The Deterministic Replay Runtime shall:
+
+* replay complete Enterprise Information Journeys;
+* reconstruct historical execution state;
+* restore historical custody;
+* restore provenance relationships;
+* restore historical evidence;
+* reproduce constitutional outputs;
+* preserve historical ordering;
+* generate replay evidence.
+
+Replay shall be entirely read-only.
+
+---
+
+# Replay Scope
+
+The runtime shall support deterministic replay of:
+
+* Workflow Execution Tokens;
+* Decision Objects;
+* Prompt Contracts;
+* Audit Records;
+* Performance Truth Records;
+* Historical Records;
+* Enterprise Information Journeys;
+* Provenance Graphs;
+* custody assignments;
+* constitutional metadata.
+
+No historical artifact may be modified during replay.
+
+---
+
+# Replay Initialization
+
+Prior to replay the runtime shall verify:
+
+* journey identity;
+* replay request authorization;
+* historical completeness;
+* artifact availability;
+* provenance graph integrity;
+* custody continuity;
+* evidence availability.
+
+Replay shall fail closed if any prerequisite cannot be satisfied.
+
+---
+
+# Replay Reconstruction
+
+The runtime shall reconstruct:
+
+* historical timeline;
+* artifact creation order;
+* ownership transitions;
+* custody transitions;
+* provenance evolution;
+* dependency relationships;
+* correction history;
+* supersession history.
+
+Reconstruction shall follow original historical ordering.
+
+---
+
+# Artifact Restoration
+
+Each replayed artifact shall be restored with:
+
+* original identifier;
+* original timestamps;
+* constitutional owner;
+* historical version;
+* immutable content;
+* provenance relationships;
+* custody status.
+
+No replay-generated identifiers shall replace historical identifiers.
+
+---
+
+# Provenance Replay
+
+The runtime shall replay:
+
+* node creation;
+* edge creation;
+* derivation chains;
+* dependency graphs;
+* correction lineage;
+* supersession lineage;
+* certification lineage.
+
+The reconstructed graph shall be constitutionally equivalent to the preserved graph.
+
+---
+
+# Historical State Replay
+
+Replay shall reconstruct:
+
+* enterprise state;
+* workflow state;
+* historical decisions;
+* historical authorizations;
+* historical constraints;
+* historical uncertainties;
+* historical information availability.
+
+Historical state shall match preserved evidence.
+
+---
+
+# Custody Replay
+
+Replay shall reconstruct:
+
+* custody assignment;
+* custody transfer;
+* custody validation;
+* custody continuity;
+* custody verification;
+* custody evidence.
+
+Historical custody shall remain immutable.
+
+---
+
+# Evidence Replay
+
+Replay shall reproduce:
+
+* historical evidence;
+* audit evidence;
+* certification evidence;
+* behavioral evidence;
+* provenance evidence;
+* custody evidence.
+
+Evidence reproduced during replay shall remain traceable to original historical artifacts.
+
+---
+
+# Deterministic Validation
+
+The runtime shall verify that replay produces identical:
+
+* artifact identities;
+* execution ordering;
+* ownership assignments;
+* provenance graphs;
+* custody chains;
+* historical outputs;
+* certification evidence.
+
+Any deviation shall terminate replay.
+
+---
+
+# Replay Failure Detection
+
+The runtime shall detect:
+
+* missing artifacts;
+* duplicate artifacts;
+* corrupted history;
+* invalid provenance;
+* broken custody;
+* ordering violations;
+* evidence inconsistencies;
+* nondeterministic reconstruction.
+
+Failures shall produce objective diagnostic evidence.
+
+---
+
+# Fail-Closed Requirements
+
+Replay shall terminate immediately upon detection of:
+
+* missing historical records;
+* provenance inconsistencies;
+* custody violations;
+* evidence corruption;
+* unauthorized replay requests;
+* constitutional validation failures.
+
+Partial replay shall not be certified.
+
+---
+
+# Runtime Evidence
+
+The runtime shall generate evidence recording:
+
+* replay initiation;
+* replay authorization;
+* artifact restoration;
+* provenance reconstruction;
+* custody reconstruction;
+* historical state reconstruction;
+* validation results;
+* replay completion.
+
+Evidence shall be immutable.
+
+---
+
+# Runtime Metrics
+
+The Historian shall measure:
+
+* replay duration;
+* artifacts replayed;
+* provenance nodes restored;
+* provenance edges restored;
+* custody records restored;
+* evidence records restored;
+* replay failures;
+* deterministic equivalence rate.
+
+Metrics shall support independent certification.
+
+---
+
+# Behavioral Verification
+
+Certification testing shall verify:
+
+* complete journey replay;
+* deterministic artifact restoration;
+* provenance replay;
+* custody replay;
+* historical state replay;
+* evidence replay;
+* fail-closed behavior;
+* reproducible replay outputs.
+
+Each test shall produce objective certification evidence.
+
+---
+
+# Completion Criteria
+
+This order shall be considered complete only when:
+
+* Enterprise Information Journeys are replayed deterministically;
+* historical state is reconstructed without deviation;
+* provenance graphs are faithfully restored;
+* custody history is reproduced completely;
+* historical evidence is regenerated identically;
+* replay outputs are constitutionally equivalent to original execution;
+* fail-closed behavior is demonstrated under fault conditions;
+* independent certification confirms deterministic replay across repeated executions.

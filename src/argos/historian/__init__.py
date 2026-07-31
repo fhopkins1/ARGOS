@@ -158,6 +158,22 @@ from .search_reconstruction import (
     classify_temporal_evidence,
     historical_record_from_search_evidence,
 )
+from .enterprise_information_journey import (
+    CounterfactualBranch,
+    CustodyState,
+    EnterpriseInformationJourney,
+    EnterpriseInformationJourneyRuntime,
+    ProvenanceEdgeType,
+    HistoricalArtifact,
+    HistoricalCustodyRecord,
+    HistoricalReconstructionResult,
+    HistorianRuntimeError,
+    JourneyState,
+    LanguageArtifact,
+    MissingInformationClassification,
+    MissingInformationRecord,
+    ReplayResult,
+)
 
 __all__ = [
     "HISTORIAN_CHIEF_OFFICE_ID",
@@ -298,4 +314,18 @@ __all__ = [
     "TemporalEvidenceClassification",
     "classify_temporal_evidence",
     "historical_record_from_search_evidence",
+    "CounterfactualBranch",
+    "CustodyState",
+    "EnterpriseInformationJourney",
+    "EnterpriseInformationJourneyRuntime",
+    "ProvenanceEdgeType",
+    "HistoricalArtifact",
+    "HistoricalCustodyRecord",
+    "HistoricalReconstructionResult",
+    "HistorianRuntimeError",
+    "JourneyState",
+    "LanguageArtifact",
+    "MissingInformationClassification",
+    "MissingInformationRecord",
+    "ReplayResult",
 ]

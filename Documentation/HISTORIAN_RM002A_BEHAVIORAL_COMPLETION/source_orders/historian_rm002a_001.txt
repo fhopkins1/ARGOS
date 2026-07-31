@@ -1,0 +1,271 @@
+# HISTORIAN-RM-002A-001
+
+## Enterprise Information Journey Runtime Lifecycle
+
+### Objective
+
+Implement the complete executable runtime lifecycle governing Enterprise Information Journeys such that every journey progresses through constitutionally defined states using deterministic, observable, independently reproducible behavior.
+
+This implementation establishes the runtime state machine for Enterprise Information Journeys and serves as the behavioral foundation for all subsequent Historian runtime capabilities.
+
+---
+
+## Constitutional Requirements
+
+The implementation shall:
+
+* execute every lifecycle transition deterministically;
+* preserve immutable historical custody;
+* prohibit undocumented lifecycle states;
+* prohibit discretionary state transitions;
+* preserve constitutional ownership;
+* generate complete runtime evidence;
+* fail closed upon lifecycle violations;
+* support deterministic replay.
+
+---
+
+# Runtime Lifecycle States
+
+The Enterprise Information Journey shall implement the following canonical lifecycle.
+
+### State 1 — Created
+
+A new Enterprise Information Journey is established following constitutional authorization.
+
+The runtime shall:
+
+* generate the canonical Journey Identifier;
+* establish constitutional ownership;
+* initialize immutable metadata;
+* record creation timestamp;
+* initialize lifecycle state.
+
+No historical artifacts may exist prior to successful creation.
+
+---
+
+### State 2 — Initialized
+
+Initialization prepares the journey for historical accumulation.
+
+Runtime shall verify:
+
+* ownership validity;
+* constitutional authorization;
+* identity uniqueness;
+* repository availability;
+* metadata completeness.
+
+Initialization failures shall prevent further execution.
+
+---
+
+### State 3 — Active
+
+The Active state represents normal historical accumulation.
+
+During this state the runtime shall permit deterministic registration of:
+
+* decisions;
+* evidence;
+* workflow executions;
+* authorizations;
+* interfaces;
+* provenance relationships;
+* historical metadata;
+* constitutional events.
+
+Every registration shall immediately generate observable runtime evidence.
+
+---
+
+### State 4 — Complete
+
+Completion indicates that all expected constitutional information has been accumulated.
+
+Runtime shall verify:
+
+* required historical artifacts exist;
+* ownership remains valid;
+* provenance graph integrity passes;
+* custody continuity remains intact;
+* lifecycle integrity remains valid.
+
+Completion shall not modify historical information.
+
+---
+
+### State 5 — Closed
+
+Closure permanently seals the Enterprise Information Journey.
+
+Closure shall:
+
+* prohibit additional artifact insertion;
+* preserve immutable history;
+* finalize provenance relationships;
+* finalize custody records;
+* finalize certification lineage.
+
+Closed journeys become read-only.
+
+---
+
+### State 6 — Superseded
+
+A journey may become superseded by constitutionally authorized replacement.
+
+Supersession shall:
+
+* preserve the original journey;
+* establish supersession linkage;
+* preserve historical lineage;
+* prohibit modification of superseded content;
+* maintain complete replay capability.
+
+Supersession shall never delete history.
+
+---
+
+# Runtime State Transition Rules
+
+The runtime shall permit only the following transitions.
+
+Created → Initialized
+
+Initialized → Active
+
+Active → Complete
+
+Complete → Closed
+
+Closed → Superseded
+
+No additional transitions are authorized.
+
+Reverse transitions are prohibited.
+
+Skipped lifecycle states are prohibited.
+
+Runtime rollback is prohibited.
+
+---
+
+# Runtime Validation
+
+Every lifecycle transition shall validate:
+
+* journey identity;
+* constitutional ownership;
+* authorization;
+* previous lifecycle state;
+* transition legality;
+* metadata integrity;
+* timestamp monotonicity;
+* custody continuity.
+
+Validation failures shall terminate execution.
+
+---
+
+# Failure Detection
+
+The runtime shall detect:
+
+* duplicate creation;
+* duplicate initialization;
+* invalid transition order;
+* skipped lifecycle stages;
+* unauthorized closure;
+* unauthorized supersession;
+* ownership mismatch;
+* corrupted metadata;
+* missing custody;
+* lifecycle ambiguity.
+
+Failures shall generate deterministic error records.
+
+---
+
+# Fail-Closed Behavior
+
+Upon lifecycle failure the runtime shall:
+
+* reject the transition;
+* preserve current historical state;
+* prevent partial updates;
+* generate failure evidence;
+* generate diagnostic records;
+* preserve replay consistency.
+
+Automatic recovery is prohibited.
+
+---
+
+# Runtime Evidence
+
+Every lifecycle transition shall emit immutable evidence including:
+
+* Journey Identifier;
+* previous lifecycle state;
+* new lifecycle state;
+* transition identifier;
+* execution timestamp;
+* executing workflow;
+* ownership validation;
+* authorization validation;
+* validation results;
+* runtime outcome;
+* failure reason when applicable.
+
+Evidence shall become part of the permanent historical record.
+
+---
+
+# Deterministic Replay Requirements
+
+Replay execution shall reproduce:
+
+* identical lifecycle ordering;
+* identical transition sequence;
+* identical state evolution;
+* identical validation outcomes;
+* identical evidence generation;
+* identical failure behavior.
+
+Equivalent inputs shall always produce constitutionally equivalent outputs.
+
+---
+
+# Behavioral Verification
+
+The implementation shall verify:
+
+* creation execution;
+* initialization execution;
+* active accumulation;
+* completion validation;
+* closure behavior;
+* supersession behavior;
+* invalid transition rejection;
+* fail-closed operation;
+* deterministic replay;
+* evidence generation;
+* ownership preservation;
+* custody continuity.
+
+All behavioral verification shall execute independently of implementation structure.
+
+---
+
+# Completion Criteria
+
+This order shall be considered complete only when:
+
+* every lifecycle state executes deterministically;
+* every authorized transition executes successfully;
+* every unauthorized transition fails closed;
+* runtime evidence is generated for every transition;
+* deterministic replay reproduces identical lifecycle behavior;
+* all behavioral verification tests pass without constitutional deviation.

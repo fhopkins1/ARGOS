@@ -1,0 +1,288 @@
+# HISTORIAN-RM-002A-004
+
+## Provenance Graph Runtime Construction
+
+### Objective
+
+Implement deterministic runtime behavior that constructs, validates, preserves, and certifies Enterprise Provenance Graphs for every constitutional artifact governed by the Historian Office.
+
+The Provenance Graph shall provide a complete, immutable, executable representation of historical relationships throughout the Enterprise Information Journey.
+
+Implementation shall generate provenance during runtime rather than reconstruct it after execution.
+
+---
+
+## Constitutional Requirements
+
+The implementation shall construct provenance graphs containing constitutional representations of:
+
+* provenance nodes;
+* provenance edges;
+* dependency relationships;
+* derivation relationships;
+* correction relationships;
+* supersession relationships;
+* certification lineage.
+
+The implementation shall preserve constitutional ownership while exposing complete historical lineage.
+
+---
+
+## Runtime Provenance Node Generation
+
+Implement deterministic runtime creation of provenance nodes for every constitutional historical object including:
+
+* Workflow Execution Tokens;
+* Decision Objects;
+* Prompt Contracts;
+* Performance Truth Records;
+* Audit Records;
+* Authorization Objects;
+* Risk Assessments;
+* Enterprise Information Journeys;
+* Historical Custody Records;
+* Evidence Packages;
+* Certification Results;
+* Replay Sessions;
+* Counterfactual Sessions.
+
+Every node shall possess:
+
+* immutable identifier;
+* object classification;
+* constitutional owner;
+* creation timestamp;
+* producing workflow;
+* producing execution;
+* historical version;
+* certification state.
+
+Node creation shall be deterministic.
+
+Duplicate node creation shall fail closed.
+
+---
+
+## Runtime Provenance Edge Generation
+
+Implement executable generation of immutable provenance edges representing constitutional relationships.
+
+Supported edge types shall include:
+
+* Created By;
+* Produced By;
+* Derived From;
+* Consumes;
+* References;
+* Depends On;
+* Authorized By;
+* Validated By;
+* Certified By;
+* Corrects;
+* Supersedes;
+* Reconstructs;
+* Replays;
+* Supports;
+* Rejects.
+
+Every edge shall record:
+
+* source node;
+* destination node;
+* relationship type;
+* creation event;
+* workflow owner;
+* evidence reference.
+
+Edges shall never be mutable after creation.
+
+---
+
+## Dependency Relationship Construction
+
+Implement deterministic runtime construction of dependency relationships between constitutional objects.
+
+Dependency construction shall identify:
+
+* direct dependencies;
+* indirect dependencies;
+* transitive dependencies;
+* constitutional ownership boundaries;
+* workflow boundaries;
+* execution dependencies;
+* authorization dependencies;
+* evidence dependencies.
+
+Dependency cycles prohibited by constitutional architecture shall fail closed.
+
+---
+
+## Derivation Relationship Construction
+
+Implement executable tracking of historical derivation.
+
+The Historian shall preserve:
+
+* originating artifact;
+* derived artifact;
+* derivation operation;
+* derivation timestamp;
+* producing workflow;
+* derivation evidence;
+* constitutional authority.
+
+Complete derivation chains shall remain permanently reconstructable.
+
+---
+
+## Correction Relationship Construction
+
+Implement runtime preservation of historical corrections.
+
+Corrections shall never overwrite historical information.
+
+Every correction shall generate:
+
+* original node;
+* correcting node;
+* correction rationale;
+* correction authority;
+* correction evidence;
+* correction timestamp.
+
+Historical reconstruction shall preserve both corrected and correcting records.
+
+---
+
+## Supersession Relationship Construction
+
+Implement deterministic supersession tracking.
+
+Supersession shall preserve:
+
+* superseded artifact;
+* successor artifact;
+* supersession authority;
+* supersession reason;
+* supersession timestamp;
+* constitutional ownership.
+
+Superseded information shall remain historically accessible.
+
+---
+
+## Certification Lineage Construction
+
+Implement executable certification lineage generation connecting:
+
+* implementation;
+* evidence;
+* behavioral validation;
+* certification execution;
+* certification decision;
+* audit result;
+* enterprise approval.
+
+Certification lineage shall remain fully traversable from any certified artifact.
+
+---
+
+## Provenance Graph Integrity Validation
+
+Implement continuous runtime validation verifying:
+
+* graph connectivity;
+* node uniqueness;
+* edge validity;
+* ownership consistency;
+* immutable history;
+* deterministic construction;
+* absence of orphan nodes;
+* constitutional relationship integrity.
+
+Integrity failures shall immediately fail closed.
+
+---
+
+## Graph Traversal Runtime
+
+Implement deterministic traversal supporting:
+
+* forward lineage;
+* reverse lineage;
+* dependency tracing;
+* certification tracing;
+* ownership tracing;
+* historical reconstruction traversal;
+* replay traversal;
+* counterfactual traversal.
+
+Traversal shall produce deterministic outputs regardless of execution order.
+
+---
+
+## Graph Persistence
+
+Implement immutable storage of provenance graphs.
+
+Persistence shall guarantee:
+
+* append-only behavior;
+* immutable historical state;
+* version preservation;
+* deterministic retrieval;
+* replay compatibility;
+* reconstruction compatibility.
+
+Historical provenance shall never be deleted.
+
+---
+
+## Runtime Evidence Generation
+
+Generate observable evidence for:
+
+* node creation;
+* edge creation;
+* dependency generation;
+* derivation generation;
+* correction recording;
+* supersession recording;
+* certification lineage generation;
+* graph validation;
+* graph traversal;
+* graph persistence.
+
+Evidence shall be independently reproducible.
+
+---
+
+## Behavioral Verification
+
+Verify through deterministic execution that:
+
+* provenance nodes are generated correctly;
+* edge relationships are constitutionally valid;
+* dependency graphs remain complete;
+* derivation chains are reconstructable;
+* correction history remains immutable;
+* supersession history is preserved;
+* certification lineage is complete;
+* graph traversal is deterministic;
+* integrity validation detects corruption;
+* invalid graph mutations fail closed.
+
+---
+
+## Acceptance Criteria
+
+This order shall be considered complete only when:
+
+* every constitutional historical artifact automatically generates provenance nodes;
+* all constitutional relationships produce immutable provenance edges;
+* provenance graphs remain deterministic across repeated executions;
+* complete historical lineage can be reconstructed from any artifact;
+* certification lineage is fully traceable;
+* graph integrity validation succeeds under all valid execution scenarios;
+* invalid graph mutations fail closed;
+* all runtime behaviors emit independently certifiable evidence suitable for ECS-003 behavioral certification.

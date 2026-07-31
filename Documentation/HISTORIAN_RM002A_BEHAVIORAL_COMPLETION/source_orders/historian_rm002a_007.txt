@@ -1,0 +1,276 @@
+# HISTORIAN-RM-002A-007
+
+## Language and Missing Information Runtime
+
+### Objective
+
+Implement executable runtime behavior for the immutable preservation, classification, retrieval, and replay of both recorded language and explicitly missing information within Enterprise Information Journeys. The Historian shall preserve what was known, what was recorded, how it was expressed, and what was absent at every point in constitutional execution.
+
+---
+
+# Constitutional Requirements
+
+The implementation shall:
+
+* preserve all original language without modification;
+* preserve structured constitutional representations alongside original language;
+* explicitly preserve known information deficiencies;
+* distinguish absence of information from information not yet discovered;
+* preserve semantic meaning without replacing original records;
+* generate observable runtime evidence;
+* support deterministic replay;
+* fail closed upon preservation ambiguity.
+
+---
+
+# Runtime Language Preservation
+
+The runtime shall preserve every constitutional language artifact exactly as received.
+
+Preserved artifacts shall include:
+
+* workflow inputs;
+* workflow outputs;
+* prompts;
+* responses;
+* decisions;
+* rationale;
+* authorizations;
+* findings;
+* audit observations;
+* evidence descriptions;
+* certification records;
+* historical annotations.
+
+Original language shall remain immutable.
+
+---
+
+# Structured Constitutional Representation
+
+For each preserved language artifact, the runtime shall generate a structured constitutional representation without altering the original record.
+
+Structured representations may include:
+
+* canonical identifiers;
+* artifact classifications;
+* ownership references;
+* constitutional relationships;
+* workflow associations;
+* timestamps;
+* lifecycle references;
+* provenance references.
+
+The structured representation supplements, but never replaces, the original language.
+
+---
+
+# Semantic Preservation Runtime
+
+The runtime shall preserve semantic interpretations that are explicitly generated during constitutional execution.
+
+Semantic records shall:
+
+* reference their originating language artifact;
+* identify the producing workflow;
+* record interpretation methodology;
+* preserve interpretation version;
+* remain independently replayable.
+
+Semantic interpretations shall never overwrite original language.
+
+---
+
+# Missing Information Classification Runtime
+
+The runtime shall explicitly preserve every identified information deficiency.
+
+Each missing information record shall be classified as one of the following constitutional categories:
+
+* Unknown;
+* Not Collected;
+* Not Yet Available;
+* Withheld by Authority;
+* Outside Constitutional Scope;
+* Lost Prior to Acquisition;
+* Invalidated;
+* Pending Verification;
+* Conflicting Sources;
+* Insufficient Evidence.
+
+No missing information shall be represented as null without constitutional classification.
+
+---
+
+# Missing Information Registration
+
+Whenever execution encounters unavailable information, the runtime shall register:
+
+* deficiency identifier;
+* affected artifact;
+* constitutional owner;
+* workflow detecting the deficiency;
+* deficiency classification;
+* discovery timestamp;
+* associated evidence;
+* impact assessment;
+* recovery status.
+
+Registration shall occur immediately upon detection.
+
+---
+
+# Historical Context Preservation
+
+The runtime shall preserve the historical context surrounding every language artifact and missing information record.
+
+Context shall include:
+
+* originating workflow;
+* execution phase;
+* predecessor artifacts;
+* successor artifacts;
+* related decisions;
+* related evidence;
+* associated authorizations;
+* provenance relationships.
+
+Context shall remain immutable.
+
+---
+
+# Runtime Retrieval
+
+The Historian shall provide deterministic retrieval of:
+
+* original language;
+* structured records;
+* semantic records;
+* missing information records;
+* deficiency classifications;
+* historical context;
+* provenance relationships;
+* custody history.
+
+Equivalent retrieval requests shall always produce constitutionally equivalent outputs.
+
+---
+
+# Replay Behavior
+
+Deterministic replay shall reproduce:
+
+* original language exactly;
+* semantic interpretations;
+* structured representations;
+* missing information records;
+* historical deficiencies;
+* contextual relationships;
+* retrieval behavior.
+
+Replay shall not reconstruct information that did not historically exist.
+
+---
+
+# Validation
+
+The runtime shall verify:
+
+* language immutability;
+* identifier uniqueness;
+* semantic linkage;
+* structured representation integrity;
+* deficiency classification validity;
+* contextual completeness;
+* provenance consistency;
+* custody continuity.
+
+Validation failures shall terminate execution.
+
+---
+
+# Failure Detection
+
+The runtime shall detect:
+
+* modified historical language;
+* overwritten semantic records;
+* missing provenance;
+* orphaned language artifacts;
+* orphaned deficiency records;
+* duplicate registrations;
+* invalid classifications;
+* inconsistent contextual references;
+* replay divergence.
+
+All failures shall produce deterministic diagnostic records.
+
+---
+
+# Fail-Closed Behavior
+
+Upon failure the runtime shall:
+
+* reject the operation;
+* preserve all existing historical records;
+* prevent partial preservation;
+* generate immutable failure evidence;
+* maintain deterministic replay integrity.
+
+Automatic correction is prohibited.
+
+---
+
+# Runtime Evidence Generation
+
+Every preservation and retrieval operation shall generate immutable evidence including:
+
+* operation identifier;
+* Journey Identifier;
+* artifact identifier;
+* language artifact reference;
+* structured record reference;
+* semantic record reference;
+* deficiency identifier when applicable;
+* classification;
+* executing workflow;
+* ownership verification;
+* validation results;
+* execution timestamp;
+* operation outcome.
+
+Evidence shall become part of the permanent Enterprise Information Journey.
+
+---
+
+# Behavioral Verification
+
+The implementation shall independently verify:
+
+* immutable language preservation;
+* structured record generation;
+* semantic preservation;
+* missing information registration;
+* deficiency classification;
+* contextual preservation;
+* deterministic retrieval;
+* deterministic replay;
+* validation behavior;
+* fail-closed execution;
+* evidence generation.
+
+Behavioral verification shall evaluate runtime execution rather than implementation structure.
+
+---
+
+# Completion Criteria
+
+This order shall be considered complete only when:
+
+* all original language is preserved immutably;
+* structured constitutional records are generated deterministically;
+* semantic interpretations remain permanently linked to their originating language;
+* every missing information condition is explicitly classified and preserved;
+* deterministic retrieval reproduces identical historical records and deficiencies;
+* replay faithfully reproduces historical language, semantics, and information gaps;
+* all behavioral verification tests pass with independently certifiable evidence.

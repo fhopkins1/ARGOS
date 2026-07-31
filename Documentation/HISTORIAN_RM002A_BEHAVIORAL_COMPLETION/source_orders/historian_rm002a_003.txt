@@ -1,0 +1,265 @@
+### HISTORIAN-RM-002A-003
+
+# Historical Custody Runtime Behavior
+
+## Purpose
+
+This order establishes the executable runtime behavior governing constitutional custody of every historical artifact managed by the Historian Office.
+
+The objective is to ensure that historical custody exists as an observable, deterministic runtime process rather than a static architectural concept.
+
+Every custody transition shall be independently verifiable, fully traceable, and cryptographically attributable throughout the complete Enterprise Information Journey.
+
+---
+
+# Constitutional Requirements
+
+The implementation shall provide deterministic runtime behavior for:
+
+* custody assignment;
+* custody acceptance;
+* custody validation;
+* custody verification;
+* custody transfer;
+* custody continuity;
+* custody reconciliation;
+* custody supersession;
+* custody archival;
+* custody failure detection.
+
+No historical artifact shall exist without an active constitutional custodian.
+
+---
+
+# Runtime Custody Object
+
+Implement the canonical **Historical Custody Record (HCR)** containing at minimum:
+
+* Custody Identifier;
+* Artifact Identifier;
+* Artifact Type;
+* Enterprise Information Journey Identifier;
+* Current Custodian Office;
+* Previous Custodian;
+* Custody State;
+* Assignment Authority;
+* Assignment Timestamp;
+* Acceptance Timestamp;
+* Validation Timestamp;
+* Verification Status;
+* Supersession Status;
+* Custody Evidence References;
+* Cryptographic Integrity Values.
+
+The custody record shall be immutable following publication.
+
+State changes shall create successor records.
+
+---
+
+# Custody Assignment Runtime
+
+Implement executable behavior that:
+
+* receives custody requests;
+* validates constitutional authority;
+* validates ownership rules;
+* confirms artifact identity;
+* records assignment evidence;
+* activates constitutional custody.
+
+Assignment shall fail closed upon any validation failure.
+
+---
+
+# Custody Acceptance Runtime
+
+Implement runtime acceptance behavior whereby the receiving constitutional office shall:
+
+* verify artifact integrity;
+* verify identity;
+* verify completeness;
+* verify constitutional authority;
+* acknowledge custody acceptance.
+
+Custody shall not become active until acceptance succeeds.
+
+---
+
+# Custody Validation Runtime
+
+Implement deterministic validation of:
+
+* constitutional ownership;
+* artifact identity;
+* cryptographic integrity;
+* required metadata;
+* historical completeness;
+* lifecycle consistency.
+
+Validation failures shall automatically invalidate custody activation.
+
+---
+
+# Custody Verification Runtime
+
+Implement continuous runtime verification ensuring:
+
+* custody ownership remains valid;
+* artifacts remain unchanged;
+* references remain resolvable;
+* provenance remains intact;
+* historical lineage remains complete.
+
+Verification shall execute whenever custody is accessed.
+
+---
+
+# Custody Continuity Runtime
+
+Implement runtime mechanisms ensuring uninterrupted constitutional custody throughout:
+
+* artifact creation;
+* workflow execution;
+* decision generation;
+* evidence production;
+* historical archival;
+* replay;
+* reconstruction.
+
+No custody gaps shall be permitted.
+
+---
+
+# Custody Transfer Runtime
+
+Implement deterministic custody transfer behavior requiring:
+
+* originating custodian verification;
+* receiving custodian validation;
+* constitutional authorization;
+* transfer evidence generation;
+* continuity verification.
+
+Transfers shall be atomic.
+
+Partial transfers are prohibited.
+
+---
+
+# Custody Reconciliation Runtime
+
+Implement periodic reconciliation verifying:
+
+* every historical artifact possesses custody;
+* custody references remain valid;
+* no duplicate custodians exist;
+* no orphaned artifacts exist;
+* custody lineage remains continuous.
+
+All reconciliation discrepancies shall generate constitutional defects.
+
+---
+
+# Custody Supersession Runtime
+
+When historical artifacts are superseded:
+
+* existing custody shall remain immutable;
+* successor custody shall be established;
+* historical relationships shall be preserved;
+* provenance shall reference both custody records.
+
+Historical custody shall never be overwritten.
+
+---
+
+# Custody Failure Detection
+
+Implement automatic detection of:
+
+* missing custodians;
+* duplicate custody;
+* unauthorized custody changes;
+* broken custody chains;
+* invalid ownership;
+* missing custody evidence;
+* corrupted custody records;
+* unresolved transfers.
+
+Detection shall execute continuously.
+
+---
+
+# Runtime Evidence Generation
+
+Every custody operation shall emit immutable evidence including:
+
+* operation identifier;
+* custody identifier;
+* artifact identifier;
+* workflow identifier;
+* journey identifier;
+* responsible office;
+* triggering event;
+* timestamps;
+* validation outcomes;
+* verification outcomes;
+* integrity verification;
+* failure reason when applicable.
+
+Evidence shall be independently reproducible.
+
+---
+
+# Runtime Interfaces
+
+Implement deterministic interfaces supporting:
+
+* custody assignment;
+* custody lookup;
+* custody validation;
+* custody verification;
+* custody transfer;
+* custody history retrieval;
+* custody reconciliation;
+* custody replay.
+
+All interfaces shall preserve deterministic behavior.
+
+---
+
+# Fail-Closed Requirements
+
+The Historian shall reject:
+
+* custody without authority;
+* custody without identity;
+* custody without evidence;
+* duplicate custodians;
+* orphaned artifacts;
+* incomplete custody chains;
+* unverifiable custody;
+* corrupted custody metadata.
+
+No invalid custody state shall be committed.
+
+---
+
+# Behavioral Verification
+
+The behavioral certification suite shall verify:
+
+* deterministic custody assignment;
+* deterministic acceptance;
+* deterministic validation;
+* deterministic verification;
+* custody continuity;
+* custody transfer correctness;
+* reconciliation accuracy;
+* supersession behavior;
+* failure detection;
+* evidence reproducibility;
+* fail-closed enforcement.
+
+Behavioral verification shall be based solely upon observable runtime execution and independently regenerated certification evidence.

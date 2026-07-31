@@ -1,0 +1,229 @@
+[
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "journey_lifecycle",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "transition": "CREATE"
+    },
+    "evidence_digest": "f85e88886b3af4c0c10e66cbd8c6a06f3ded9ae4c73ebb43fe08af85c548ce72",
+    "evidence_id": "EVID-23A8003908CB3946",
+    "execution_id": "EXEC-326610C7BB3F23C3",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:30:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "journey_lifecycle",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "from": "Created",
+      "to": "Initialized"
+    },
+    "evidence_digest": "5aa06206d2cecc08b294265c334573b9cab46a2f13c974f5848bbea0fc66d76e",
+    "evidence_id": "EVID-7F7E8CDA985FAC54",
+    "execution_id": "EXEC-CE5DF57CA7587359",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:31:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "journey_lifecycle",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "from": "Initialized",
+      "to": "Active"
+    },
+    "evidence_digest": "ccda9312dab9e0d5272739512e99e5718d3980e9d99243bd246db23b7662133f",
+    "evidence_id": "EVID-025FF40A43FBA443",
+    "execution_id": "EXEC-0B7405997F26AD62",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:32:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "HART-F584317F6C070CAD",
+    "capability": "artifact_registration",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "artifact_type": "Decision Object",
+      "owner": "Exit Decision Office"
+    },
+    "evidence_digest": "8a97589d35cf85e43a341a9a95abc94dfc353606ec8b096956a23bdf3f37980d",
+    "evidence_id": "EVID-8D8A8EFB3E2E17C9",
+    "execution_id": "EXEC-A74B981CC37A6B68",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:33:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "HART-8888E57B352FF3E2",
+    "capability": "artifact_registration",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "artifact_type": "Evidence Object",
+      "owner": "Analyst Office"
+    },
+    "evidence_digest": "d0014b043b09f559c6c73506a4017b80cfc4bef31822d4aa93eb172fe643e622",
+    "evidence_id": "EVID-744BCACE30312A70",
+    "execution_id": "EXEC-8275D79D41A88F32",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:34:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "PEDGE-AA6412C2AB496A31",
+    "capability": "provenance_graph",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "relationship_type": "SUPPORTS"
+    },
+    "evidence_digest": "2bfe1d950c006fbd621381c9bfabf514342c60478f0c73b8a9f10d2df8d905aa",
+    "evidence_id": "EVID-38E3DAD39141FAE4",
+    "execution_id": "EXEC-25858F68001751C0",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:35:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "LANG-5C7ADBE8A0ABD4B5",
+    "capability": "language_preservation",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "source_language": "en-US"
+    },
+    "evidence_digest": "a34b2f9a335a8fcda2c847ebbbfd932fe7effefeeb5b97d23d771e38f24e90a2",
+    "evidence_id": "EVID-786BDD66C7B54BB9",
+    "execution_id": "EXEC-AEFCD4683A4AD99E",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:36:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "HART-F584317F6C070CAD",
+    "capability": "missing_information",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "classification": "Insufficient Evidence"
+    },
+    "evidence_digest": "ba52d7dff8d426605e25a190db70e8ec2758cd6040251633c99d25bb93bfc95e",
+    "evidence_id": "EVID-95100934037ECD01",
+    "execution_id": "EXEC-2C481207BFA9691B",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:37:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "HART-F584317F6C070CAD",
+    "capability": "counterfactual_retrieval",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "branch_type": "TYPHON_SCENARIO_INPUT"
+    },
+    "evidence_digest": "0683701ecdbfff6641e44b64bc7d9d8c95c2b2781dae5bdb6c817d03a525ca2c",
+    "evidence_id": "EVID-AA412798D083E46A",
+    "execution_id": "EXEC-E101F8D8F5C65010",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:38:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "journey_lifecycle",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "from": "Active",
+      "to": "Complete"
+    },
+    "evidence_digest": "e92c1675a9342905adf5858570901685d9cc709a1da18c11e754a553f4dee21a",
+    "evidence_id": "EVID-F8B0D207F382B067",
+    "execution_id": "EXEC-70EFCF524C5E53AC",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:39:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "journey_lifecycle",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "from": "Complete",
+      "to": "Closed"
+    },
+    "evidence_digest": "c247354115c9c198c041a72ad5475addd7a1ab19115e5760d2a7f8949c1b9087",
+    "evidence_id": "EVID-A26C8ED82CA14EEC",
+    "execution_id": "EXEC-04CD5A90E6D32B27",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:40:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "deterministic_replay",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "reconstruction_digest": "2ca00c1776c65f995c48d3345693817cb49e1a4bb51918888432c2cbda0427ec"
+    },
+    "evidence_digest": "66d6723a6aa166f19c3c53e56d932299f94ee9d8da2d2cfb9308c2e2144b75b5",
+    "evidence_id": "EVID-35368699CA8F3FAF",
+    "execution_id": "EXEC-03D40118B773F959",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:41:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  },
+  {
+    "artifact_id": "EIJ-16DDBC30D57E41FB",
+    "capability": "enterprise_learning_retrieval",
+    "classification": "BEHAVIORAL",
+    "details": {
+      "requester": "Enterprise Learning"
+    },
+    "evidence_digest": "69edcec7c0b60f8f34b6a263702a86f5c95fab71bc1af1da057d207ced5e2767",
+    "evidence_id": "EVID-42D0BCAA66B6DCAB",
+    "execution_id": "EXEC-E50C618F42AE0F12",
+    "journey_id": "EIJ-16DDBC30D57E41FB",
+    "outcome": "PASS",
+    "producing_component": "EnterpriseInformationJourneyRuntime",
+    "producing_office": "Historian Office",
+    "timestamp": "2026-07-31T23:42:00Z",
+    "workflow_id": "WF-HIST-RM002A-CERT"
+  }
+]
