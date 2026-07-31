@@ -1,0 +1,201 @@
+[
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "PerformanceTruthEngine",
+      "TradeLedgerRecord",
+      "PortfolioLedgerRecord"
+    ],
+    "object_id": "PT-OBJ-001",
+    "object_name": "Performance Truth Record",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/control_panel/performance_truth_engine.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "snapshot",
+      "PortfolioLedgerRecord"
+    ],
+    "object_id": "PT-OBJ-002",
+    "object_name": "Performance Snapshot",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "Tests/test_ifvr001_phase35_truth_envelope.py",
+      "src/argos/control_panel/closed_position_truth.py",
+      "src/argos/control_panel/enterprise_benchmark_engine.py",
+      "src/argos/control_panel/monte_carlo_portfolio_engine.py",
+      "src/argos/control_panel/performance_truth_engine.py",
+      "src/argos/control_panel/portfolio_construction_engine.py",
+      "src/argos/control_panel/strategy_performance_console.py",
+      "src/argos/control_panel/trade_attribution_engine.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "PerformanceTrend",
+      "HistoricalComparisonRecord",
+      "period_id"
+    ],
+    "object_id": "PT-OBJ-003",
+    "object_name": "Performance Interval",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/historian/performance.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "OrganizationalPerformanceMetrics",
+      "MetricCalculationTrace"
+    ],
+    "object_id": "PT-OBJ-004",
+    "object_name": "Performance Metric",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/historian/performance.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "WorkflowAttributionRecord",
+      "OfficeAttributionRecord"
+    ],
+    "object_id": "PT-OBJ-005",
+    "object_name": "Performance Attribution",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/control_panel/performance_truth_engine.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "HistoricalComparisonRecord",
+      "baseline_period_id"
+    ],
+    "object_id": "PT-OBJ-006",
+    "object_name": "Performance Baseline",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/historian/performance.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "BenchmarkRecord",
+      "BENCHMARK_RETURNS"
+    ],
+    "object_id": "PT-OBJ-007",
+    "object_name": "Performance Benchmark",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/control_panel/performance_truth_engine.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "MetricCalculationTrace",
+      "formula_version",
+      "calculation"
+    ],
+    "object_id": "PT-OBJ-008",
+    "object_name": "Performance Calculation Context",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "Documentation/PERFORMANCE_TRUTH_ECS003_AUDIT_001/calculation_definition_registry.json",
+      "Documentation/PERFORMANCE_TRUTH_RM001_CONSTITUTIONAL_BASELINE/calculation_governance_registry.json",
+      "Scripts/performance_truth_rm001_constitutional_baseline.py",
+      "src/argos/control_panel/performance_truth_engine.py",
+      "src/argos/historian/performance.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "correction"
+    ],
+    "object_id": "PT-OBJ-009",
+    "object_name": "Performance Correction",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "Documentation/CLOSED_POSITION_TRUTH_RM001_B02_OBJECT_LIFECYCLE_BASELINE/B02-002_correction_authority_registry.json",
+      "Documentation/CLOSED_POSITION_TRUTH_RM001_B02_OBJECT_LIFECYCLE_BASELINE/B02-003_correction_lifecycle_doctrine.json",
+      "Documentation/CLOSED_POSITION_TRUTH_RM001_B02_OBJECT_LIFECYCLE_BASELINE/B02-004_correction_lineage_registry.json",
+      "Documentation/CLOSED_POSITION_TRUTH_RM001_B03_CLOSURE_RECONCILIATION_BASELINE/B03-002_settlement_correction_registry.json",
+      "Documentation/CLOSED_POSITION_TRUTH_RM001_B03_CLOSURE_RECONCILIATION_BASELINE/B03-004_correction_lineage_registry.json",
+      "Documentation/PERFORMANCE_TRUTH_ECS003_AUDIT_001/correction_and_supersession_registry.json"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "revision",
+      "historical_performance_archive"
+    ],
+    "object_id": "PT-OBJ-010",
+    "object_name": "Performance Revision",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/control_panel/strategy_performance_console.py",
+      "src/argos/historian/performance.py",
+      "src/argos/intelligence/temporal_truth.py"
+    ]
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "source_audit_ids",
+      "trace_ids",
+      "evidence_digest"
+    ],
+    "object_id": "PT-OBJ-011",
+    "object_name": "Performance Evidence Package",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": []
+  },
+  {
+    "immutable_identity_evidence": true,
+    "implementation_status": "PASS",
+    "matched_implementation_terms": [
+      "certificationStatus",
+      "validation_status"
+    ],
+    "object_id": "PT-OBJ-012",
+    "object_name": "Performance Certification State",
+    "persistence_evidence": true,
+    "serialization_evidence": true,
+    "supporting_artifacts": [
+      "src/argos/control_panel/truth_domain.py"
+    ]
+  }
+]

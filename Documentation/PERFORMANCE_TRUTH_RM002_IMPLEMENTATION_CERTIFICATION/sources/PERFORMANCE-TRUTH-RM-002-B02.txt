@@ -1,0 +1,465 @@
+# PERFORMANCE-TRUTH-RM-002-B02
+
+# Canonical Object Verification
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the independent implementation certification campaign for every canonical business object defined under **PERFORMANCE-TRUTH-RM-001-002**.
+
+The purpose of this certification is to verify that every constitutional business object has been completely implemented, that no undocumented behavior exists, and that every object satisfies the constitutional guarantees governing identity, ownership, lifecycle, immutability, validation, serialization, persistence, and traceability.
+
+This order certifies implementation only.
+
+It shall not redefine constitutional behavior.
+
+---
+
+# Constitutional Authority
+
+Implementation shall conform completely to the canonical object architecture established under:
+
+* PERFORMANCE-TRUTH-RM-001-002
+* PERFORMANCE-TRUTH-RM-001-003
+* PERFORMANCE-TRUTH-RM-001-006
+* PERFORMANCE-TRUTH-RM-001-007
+* PERFORMANCE-TRUTH-RM-001-008
+* PERFORMANCE-TRUTH-RM-001-010
+
+Where implementation and constitutional doctrine disagree, constitutional doctrine shall govern.
+
+---
+
+# Certification Scope
+
+The audit shall independently verify the implementation of every canonical object, including:
+
+* Performance Truth Record
+* Performance Snapshot
+* Performance Interval
+* Performance Metric
+* Performance Attribution
+* Performance Baseline
+* Performance Benchmark
+* Performance Calculation Context
+* Performance Correction
+* Performance Revision
+* Performance Evidence Package
+* Performance Certification State
+
+Every implementation shall be independently discovered from the repository without developer assistance.
+
+---
+
+# Constitutional Verification Requirements
+
+For every canonical object, the auditor shall independently verify:
+
+* implementation exists;
+* immutable identity;
+* ownership enforcement;
+* required fields;
+* schema completeness;
+* lifecycle implementation;
+* lifecycle restrictions;
+* validation behavior;
+* serialization;
+* deserialization;
+* persistence;
+* referential integrity;
+* immutability;
+* historical preservation;
+* traceability;
+* evidence generation.
+
+No requirement may be assumed satisfied without objective implementation evidence.
+
+---
+
+# Identity Verification
+
+Verify that every canonical object:
+
+* possesses immutable identity;
+* generates unique identifiers;
+* prevents identifier mutation;
+* preserves identity across persistence;
+* preserves identity during replay;
+* preserves identity during serialization.
+
+Failure of any identity guarantee shall constitute certification failure.
+
+---
+
+# Ownership Verification
+
+Verify that every canonical object:
+
+* possesses exactly one constitutional owner;
+* rejects unauthorized modification;
+* rejects unauthorized creation;
+* rejects unauthorized deletion;
+* rejects unauthorized supersession;
+* rejects unauthorized certification.
+
+Ownership shall remain deterministic under all operating conditions.
+
+---
+
+# Required Field Verification
+
+Verify that every required constitutional field:
+
+* exists;
+* is validated;
+* cannot be omitted;
+* cannot violate constitutional constraints;
+* remains consistent after persistence;
+* remains reproducible during replay.
+
+Missing required fields shall constitute certification failure.
+
+---
+
+# Lifecycle Verification
+
+Verify implementation of every constitutional lifecycle state.
+
+For each canonical object verify:
+
+* creation;
+* validation;
+* publication (where applicable);
+* correction (where applicable);
+* supersession (where applicable);
+* archival.
+
+Verify:
+
+* every permitted transition;
+* every prohibited transition;
+* rejection of illegal transitions;
+* deterministic lifecycle behavior.
+
+No undocumented lifecycle transition shall exist.
+
+---
+
+# Validation Verification
+
+Verify that every canonical object performs constitutional validation including:
+
+* required field validation;
+* identity validation;
+* ownership validation;
+* relationship validation;
+* temporal validation;
+* referential integrity validation;
+* evidence validation.
+
+Invalid objects shall fail closed.
+
+---
+
+# Serialization Verification
+
+Verify that every canonical object can be:
+
+* serialized;
+* deserialized;
+* reconstructed;
+* reproduced;
+* independently interpreted.
+
+Serialization shall preserve:
+
+* identity;
+* ownership;
+* relationships;
+* timestamps;
+* certification state;
+* evidence references.
+
+No constitutional information may be lost during serialization.
+
+---
+
+# Persistence Verification
+
+Verify that every canonical object:
+
+* persists correctly;
+* preserves immutable identity;
+* preserves relationships;
+* preserves historical revisions;
+* preserves evidence;
+* preserves certification state.
+
+Persistence shall not alter constitutional meaning.
+
+---
+
+# Referential Integrity Verification
+
+Verify that every canonical relationship defined under RM-001 is enforced.
+
+The audit shall verify:
+
+* parent-child relationships;
+* dependency references;
+* evidence references;
+* revision references;
+* correction references;
+* benchmark references;
+* attribution references;
+* calculation context references.
+
+Broken references shall constitute certification failure.
+
+---
+
+# Immutability Verification
+
+Verify that immutable constitutional objects cannot be modified after publication.
+
+The audit shall verify protection of:
+
+* immutable identity;
+* historical records;
+* evidence packages;
+* published metrics;
+* certification records;
+* historical revisions.
+
+Implementation shall reject all unauthorized mutation attempts.
+
+---
+
+# Historical Preservation Verification
+
+Verify that implementation preserves:
+
+* superseded records;
+* historical revisions;
+* archived objects;
+* correction history;
+* historical certification;
+* historical evidence.
+
+Historical deletion shall constitute certification failure.
+
+---
+
+# Traceability Verification
+
+Verify that every canonical object can be traced through:
+
+* workflow execution;
+* calculation context;
+* evidence package;
+* upstream dependencies;
+* revisions;
+* certification state.
+
+No canonical object shall possess incomplete provenance.
+
+---
+
+# Object-Specific Certification Requirements
+
+## Performance Truth Record
+
+Verify:
+
+* identity;
+* lifecycle;
+* publication;
+* revision;
+* evidence linkage;
+* certification linkage;
+* historical preservation.
+
+---
+
+## Performance Snapshot
+
+Verify:
+
+* snapshot construction;
+* immutable membership;
+* aggregation integrity;
+* temporal correctness.
+
+---
+
+## Performance Interval
+
+Verify:
+
+* interval boundaries;
+* deterministic aggregation;
+* interval reconstruction;
+* historical replay.
+
+---
+
+## Performance Metric
+
+Verify:
+
+* deterministic calculation;
+* units;
+* evidence linkage;
+* calculation context;
+* historical immutability.
+
+---
+
+## Performance Attribution
+
+Verify:
+
+* attribution generation;
+* supporting evidence;
+* traceability;
+* deterministic attribution behavior.
+
+---
+
+## Performance Baseline
+
+Verify:
+
+* baseline identity;
+* effective interval;
+* immutability;
+* version preservation.
+
+---
+
+## Performance Benchmark
+
+Verify:
+
+* benchmark source;
+* normalization;
+* comparison implementation;
+* historical preservation.
+
+---
+
+## Performance Calculation Context
+
+Verify:
+
+* dependency recording;
+* formula version;
+* configuration capture;
+* replay capability.
+
+---
+
+## Performance Correction
+
+Verify:
+
+* correction creation;
+* affected object linkage;
+* historical preservation;
+* evidence generation.
+
+---
+
+## Performance Revision
+
+Verify:
+
+* supersession;
+* previous version preservation;
+* replacement linkage;
+* historical integrity.
+
+---
+
+## Performance Evidence Package
+
+Verify:
+
+* completeness;
+* evidence inventory;
+* integrity verification;
+* immutability;
+* historical preservation.
+
+---
+
+## Performance Certification State
+
+Verify:
+
+* certification lifecycle;
+* certification authority;
+* certification evidence;
+* revocation behavior;
+* historical preservation.
+
+---
+
+# Negative Testing
+
+The auditor shall deliberately attempt to create:
+
+* invalid identities;
+* duplicate identities;
+* orphaned objects;
+* missing required fields;
+* invalid ownership;
+* broken relationships;
+* illegal lifecycle transitions;
+* unauthorized revisions;
+* unauthorized corrections;
+* invalid serialization;
+* incomplete persistence;
+* historical mutation.
+
+Every invalid operation shall fail closed.
+
+---
+
+# Required Evidence
+
+Certification shall produce objective evidence demonstrating:
+
+* implementation discovery;
+* schema verification;
+* identity verification;
+* ownership verification;
+* lifecycle verification;
+* validation verification;
+* serialization verification;
+* persistence verification;
+* referential integrity verification;
+* immutability verification;
+* historical preservation verification;
+* traceability verification;
+* fail-closed behavior.
+
+All evidence shall be independently reproducible.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every canonical business object defined under RM-001 has been independently discovered and verified.
+2. Immutable identity has been verified for every object.
+3. Constitutional ownership has been verified for every object.
+4. Required fields and schema completeness have been verified.
+5. Every constitutional lifecycle has been fully exercised.
+6. Validation, serialization, deserialization, and persistence have been independently verified.
+7. Referential integrity has been verified for every canonical relationship.
+8. Historical preservation and immutability have been verified.
+9. Invalid operations deterministically fail closed under all tested conditions.
+10. No undocumented behavior, undocumented canonical object, or constitutional implementation deficiency remains within the Performance Truth Office.

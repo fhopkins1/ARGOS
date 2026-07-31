@@ -1,0 +1,396 @@
+# PERFORMANCE-TRUTH-RM-002-B03
+
+# Behavioral Verification
+
+## Doctrine Statement
+
+### Purpose
+
+This implementation certification order establishes the independent behavioral verification campaign for the Performance Truth Office.
+
+The purpose of this order is to verify that every constitutional behavior specified under **PERFORMANCE-TRUTH-RM-001** has been completely and correctly implemented, produces deterministic results, generates complete evidence, preserves constitutional guarantees, and behaves identically under independent execution.
+
+This order certifies observable implementation behavior only.
+
+Implementation architecture, code style, optimization techniques, and internal design remain outside the scope of this certification.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* PERFORMANCE-TRUTH-RM-002
+* Workflow Ownership Doctrine
+* Truth Doctrine
+* Evidence Doctrine
+* Audit Doctrine
+
+---
+
+# Certification Objectives
+
+The audit shall independently verify implementation of:
+
+* Performance Truth calculation;
+* publication;
+* validation;
+* correction;
+* revision;
+* supersession;
+* aggregation;
+* attribution;
+* benchmark comparison;
+* baseline comparison;
+* reconciliation;
+* deterministic replay;
+* historical reconstruction;
+* temporal behavior;
+* fail-closed behavior.
+
+Every constitutional behavior shall be exercised independently.
+
+---
+
+# Behavioral Certification Principles
+
+Implementation shall demonstrate:
+
+* deterministic execution;
+* observable constitutional behavior;
+* objective evidence generation;
+* complete traceability;
+* reproducibility;
+* fail-closed operation.
+
+Behavior shall be evaluated solely through observable implementation results.
+
+---
+
+# B03-001 Performance Truth Calculation Verification
+
+Verify implementation of:
+
+* metric calculation;
+* interval calculation;
+* cumulative calculation;
+* rolling calculations;
+* snapshot generation;
+* performance normalization;
+* benchmark-relative calculations;
+* baseline-relative calculations;
+* attribution calculations.
+
+Certification shall verify:
+
+* deterministic outputs;
+* identical repeated execution;
+* complete evidence generation;
+* correct ownership;
+* correct lifecycle advancement.
+
+---
+
+# B03-002 Validation Behavior Verification
+
+Verify implementation of constitutional validation including:
+
+* required fields;
+* ownership verification;
+* identity validation;
+* dependency availability;
+* lifecycle validity;
+* evidence completeness;
+* calculation prerequisites.
+
+Objects failing validation shall fail closed.
+
+---
+
+# B03-003 Publication Behavior Verification
+
+Verify implementation of publication behavior including:
+
+* publication eligibility;
+* publication authorization;
+* immutable publication;
+* publication timestamp generation;
+* publication evidence;
+* publication traceability;
+* publication certification.
+
+Published records shall become constitutionally immutable.
+
+---
+
+# B03-004 Aggregation Verification
+
+Verify implementation of:
+
+* interval aggregation;
+* portfolio aggregation;
+* workflow aggregation;
+* cumulative aggregation;
+* hierarchical aggregation;
+* weighted aggregation;
+* aggregation reproducibility.
+
+Aggregation shall remain deterministic.
+
+---
+
+# B03-005 Benchmark and Baseline Verification
+
+Verify implementation of:
+
+* benchmark selection;
+* benchmark calculation;
+* benchmark comparison;
+* baseline comparison;
+* benchmark evidence generation;
+* benchmark traceability.
+
+Independent execution shall produce identical comparison results.
+
+---
+
+# B03-006 Attribution Verification
+
+Verify implementation of:
+
+* performance attribution;
+* contribution calculations;
+* weighting;
+* gain attribution;
+* loss attribution;
+* benchmark attribution;
+* interval attribution.
+
+Attribution calculations shall be reproducible.
+
+---
+
+# B03-007 Correction Verification
+
+Verify implementation of:
+
+* correction request;
+* correction validation;
+* recalculation;
+* correction evidence;
+* correction publication;
+* historical preservation.
+
+Corrections shall never modify historical publications.
+
+---
+
+# B03-008 Revision and Supersession Verification
+
+Verify implementation of:
+
+* revision creation;
+* supersession;
+* revision lineage;
+* historical preservation;
+* revision evidence;
+* revision traceability.
+
+Previous published records shall remain immutable.
+
+---
+
+# B03-009 Reconciliation Verification
+
+Verify reconciliation implementation with:
+
+* Closed Position Truth;
+* Broker;
+* Monitoring;
+* Historian;
+* Workflow Engine;
+* Decision Objects;
+* Authorization;
+* Risk.
+
+Certification shall verify:
+
+* deterministic reconciliation;
+* discrepancy detection;
+* discrepancy reporting;
+* fail-closed behavior.
+
+---
+
+# B03-010 Historical Replay Verification
+
+Verify implementation of:
+
+* historical replay;
+* historical reconstruction;
+* deterministic recalculation;
+* version reconstruction;
+* replay evidence;
+* replay traceability.
+
+Independent replay shall reproduce identical historical outputs.
+
+---
+
+# B03-011 Temporal Behavior Verification
+
+Verify implementation of:
+
+* effective timestamps;
+* publication timestamps;
+* calculation windows;
+* late-arriving information;
+* historical revisions;
+* temporal ordering;
+* temporal immutability.
+
+Temporal violations shall fail closed.
+
+---
+
+# B03-012 Dependency Behavior Verification
+
+Verify implementation behavior when dependencies:
+
+* are available;
+* are delayed;
+* provide incomplete information;
+* return conflicting information;
+* become unavailable.
+
+Implementation shall preserve constitutional guarantees under every dependency condition.
+
+---
+
+# B03-013 Evidence Generation Verification
+
+Verify implementation generates evidence for:
+
+* validation;
+* calculations;
+* aggregation;
+* attribution;
+* reconciliation;
+* publication;
+* corrections;
+* revisions;
+* replay;
+* certification.
+
+Missing evidence constitutes implementation failure.
+
+---
+
+# B03-014 Traceability Verification
+
+Verify implementation preserves complete traceability from every published Performance Truth Record back to:
+
+* Workflow Execution;
+* Decision Object;
+* Authorization;
+* Risk;
+* market data;
+* Broker;
+* Closed Position Truth;
+* calculations;
+* evidence packages.
+
+Broken provenance constitutes certification failure.
+
+---
+
+# B03-015 Determinism Verification
+
+Execute identical workflows repeatedly.
+
+Verify:
+
+* identical calculations;
+* identical publications;
+* identical evidence;
+* identical traceability;
+* identical reconciliation;
+* identical replay results.
+
+No observable nondeterminism shall exist.
+
+---
+
+# B03-016 Failure Behavior Verification
+
+Verify fail-closed implementation for:
+
+* missing evidence;
+* incomplete calculations;
+* reconciliation failures;
+* duplicate publication;
+* dependency failures;
+* invalid ownership;
+* temporal violations;
+* inconsistent truth;
+* invalid lifecycle transitions;
+* corrupted calculation context.
+
+Unsafe publication shall never occur.
+
+---
+
+# Required Evidence
+
+The implementation certification shall produce:
+
+* behavioral execution logs;
+* reproduced calculations;
+* validation records;
+* reconciliation reports;
+* evidence packages;
+* traceability graphs;
+* replay results;
+* deterministic execution comparisons;
+* discrepancy reports;
+* certification artifacts.
+
+---
+
+# Certification Criteria
+
+Behavioral certification shall PASS only if:
+
+* every constitutional behavior executes successfully;
+* calculations are deterministic;
+* publications are immutable;
+* corrections preserve historical truth;
+* revisions preserve lineage;
+* reconciliation succeeds;
+* temporal behavior conforms to doctrine;
+* replay is deterministic;
+* evidence is complete;
+* traceability is complete;
+* fail-closed behavior is demonstrated for every tested failure condition.
+
+Failure of any behavioral certification requirement shall result in **FAIL**.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+* every constitutional behavior defined under **PERFORMANCE-TRUTH-RM-001** has been independently exercised;
+* every behavior has objective implementation evidence;
+* deterministic execution has been demonstrated;
+* replay has been independently reproduced;
+* reconciliation behavior has been verified;
+* correction and revision behavior preserve immutable historical truth;
+* complete evidence and traceability have been verified;
+* fail-closed behavior has been demonstrated for all constitutional failure conditions;
+* no undocumented implementation behavior remains;
+* the Performance Truth Office is certified as behaviorally conformant to its constitutional specification.

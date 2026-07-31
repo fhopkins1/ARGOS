@@ -1,0 +1,72 @@
+[
+  {
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_performance_measurement_office",
+    "disposition": "PASS",
+    "elapsed_seconds": 0.8039,
+    "execution_id": "PT-BEH-001",
+    "returncode": 0,
+    "stderr": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-001.stderr.log",
+    "stderr_sha256": "ccda05ddcf0e90894762427549a256e0f6d912494f6ee1bd0f7f564de21aa4fe",
+    "stdout": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-001.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_performance_measurement_office",
+    "verification_class": "performance_measurement_reports"
+  },
+  {
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_live_portfolio_performance_console",
+    "disposition": "PASS",
+    "elapsed_seconds": 4.5817,
+    "execution_id": "PT-BEH-002",
+    "returncode": 0,
+    "stderr": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-002.stderr.log",
+    "stderr_sha256": "a4012c01837958967bd225bf65cab4e11b4526b0656549173f23673e6011a04b",
+    "stdout": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-002.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_live_portfolio_performance_console",
+    "verification_class": "live_portfolio_performance_console"
+  },
+  {
+    "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_performance_truth_ecs003_audit_001",
+    "disposition": "PASS",
+    "elapsed_seconds": 6.2126,
+    "execution_id": "PT-BEH-003",
+    "returncode": 0,
+    "stderr": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-003.stderr.log",
+    "stderr_sha256": "afdfeb2697ae64d8f00bf9b888e9eb50e08721bbd5e3fa7da00ad45ece56702b",
+    "stdout": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-003.stdout.log",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target": "Tests.test_performance_truth_ecs003_audit_001",
+    "verification_class": "initial_performance_truth_audit_regression"
+  },
+  {
+    "disposition": "PASS",
+    "evidence": "Documentation/PERFORMANCE_TRUTH_RM002_IMPLEMENTATION_CERTIFICATION/raw_execution_evidence/PT-BEH-PROBE.json",
+    "evidence_sha256": "371781defbd41802038b0e6ba67b45644c43f810e7c72e400b4ba6da6dc1adab",
+    "execution_id": "PT-BEH-004",
+    "probe": {
+      "audit_document_created": true,
+      "benchmark_history_present": true,
+      "duplicate_dataset_rejected": true,
+      "empty_dataset_rejected": true,
+      "manual_order_statuses": [
+        "QUEUED",
+        "QUEUED",
+        "QUEUED"
+      ],
+      "measurement_reports_generated": [
+        "executive_performance_report",
+        "organizational_performance_report",
+        "organizational_scorecard",
+        "performance_trend_report"
+      ],
+      "negative_quantity_failed_closed": true,
+      "organizational_rankings_deterministic": true,
+      "persisted_organizational_report": true,
+      "portfolio_ledger_present": true,
+      "prohibited_upstream_mutation_observed": false,
+      "snapshot_hashes_valid": true,
+      "snapshot_repeat_digest_equal": true
+    },
+    "verification_class": "independent_behavior_probe"
+  }
+]

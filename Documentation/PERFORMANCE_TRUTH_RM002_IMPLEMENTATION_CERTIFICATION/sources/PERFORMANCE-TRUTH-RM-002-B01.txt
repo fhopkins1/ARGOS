@@ -1,0 +1,377 @@
+# PERFORMANCE-TRUTH-RM-002-B01
+
+# Repository and Dependency Inventory
+
+## Doctrine Statement
+
+### Purpose
+
+This implementation certification order establishes the independent discovery and certification of the complete Performance Truth Office implementation inventory.
+
+The purpose of this order is to determine, without reliance upon developer knowledge, whether the delivered repository contains every implementation component required to satisfy the constitutional specification established under **PERFORMANCE-TRUTH-RM-001**.
+
+This order certifies implementation completeness only.
+
+It does not certify behavioral correctness, interface behavior, evidence generation, deterministic execution, or fail-closed operation.
+
+---
+
+# Certification Objectives
+
+The certification shall independently determine:
+
+* repository completeness;
+* implementation completeness;
+* implementation discoverability;
+* implementation organization;
+* dependency completeness;
+* configuration completeness;
+* interface inventory completeness;
+* generated artifact completeness.
+
+Every discovered implementation component shall be uniquely identified and recorded.
+
+---
+
+# Constitutional Authority
+
+This certification derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* Repository Certification Doctrine;
+* Workflow Ownership Doctrine.
+
+No implementation artifact shall be considered certified unless independently discovered.
+
+---
+
+# Certification Scope
+
+The certification shall independently discover and inventory every implementation component including:
+
+* source code;
+* modules;
+* packages;
+* libraries;
+* services;
+* repositories;
+* configuration files;
+* environment definitions;
+* interface definitions;
+* schemas;
+* canonical object definitions;
+* calculation engines;
+* reconciliation engines;
+* publication services;
+* revision services;
+* validation services;
+* persistence layers;
+* evidence generators;
+* traceability generators;
+* serialization components;
+* replay components;
+* dependency declarations;
+* build definitions;
+* deployment definitions;
+* generated artifacts;
+* documentation required for independent implementation understanding.
+
+---
+
+# Repository Discovery
+
+The auditor shall perform repository discovery without prior implementation knowledge.
+
+Repository discovery shall identify:
+
+* repository root;
+* directory structure;
+* module boundaries;
+* package hierarchy;
+* implementation ownership;
+* dependency declarations;
+* configuration hierarchy;
+* generated artifacts;
+* documentation hierarchy.
+
+Discovery shall rely exclusively upon repository contents.
+
+No external explanation shall be required.
+
+---
+
+# Module Inventory
+
+Every implementation module shall be cataloged.
+
+Each module inventory entry shall include:
+
+* module identifier;
+* module name;
+* constitutional responsibility;
+* repository location;
+* implementation owner;
+* version identity;
+* dependency list;
+* exported interfaces;
+* imported interfaces;
+* implementation status.
+
+No implementation module may remain unidentified.
+
+---
+
+# Service Inventory
+
+Every executable service shall be identified.
+
+Each service shall include:
+
+* service identifier;
+* service purpose;
+* startup mechanism;
+* shutdown mechanism;
+* dependencies;
+* external interfaces;
+* configuration sources;
+* evidence produced.
+
+---
+
+# Canonical Object Inventory
+
+The repository shall contain implementations corresponding to every canonical object defined under **PERFORMANCE-TRUTH-RM-001**.
+
+The inventory shall verify implementation of:
+
+* Performance Truth Record;
+* Performance Snapshot;
+* Performance Interval;
+* Performance Metric;
+* Performance Attribution;
+* Performance Baseline;
+* Performance Benchmark;
+* Performance Calculation Context;
+* Performance Correction;
+* Performance Revision;
+* Performance Evidence Package;
+* Performance Certification State.
+
+Each implementation shall be recorded with:
+
+* repository location;
+* implementation type;
+* serialization implementation;
+* persistence implementation;
+* validation implementation.
+
+Behavior shall not be certified under this order.
+
+---
+
+# Interface Inventory
+
+Every constitutional interface shall be independently discovered.
+
+The inventory shall identify implementations supporting communication with:
+
+* Commander;
+* Workflow Engine;
+* Historian;
+* Closed Position Truth;
+* Decision Objects;
+* Trader;
+* Monitoring;
+* Risk;
+* Broker;
+* Sentinel;
+* Evidence Repository;
+* Audit Office.
+
+Each interface shall record:
+
+* implementation location;
+* interface contract;
+* dependency;
+* configuration source;
+* implementation status.
+
+Behavior shall be certified under subsequent orders.
+
+---
+
+# Dependency Inventory
+
+Every implementation dependency shall be identified.
+
+Dependencies include:
+
+* internal modules;
+* external libraries;
+* runtime services;
+* persistence systems;
+* configuration providers;
+* messaging systems;
+* storage systems;
+* cryptographic libraries;
+* serialization libraries;
+* testing frameworks;
+* build systems.
+
+Each dependency shall record:
+
+* dependency identity;
+* version;
+* purpose;
+* constitutional necessity;
+* optional or mandatory classification.
+
+---
+
+# Configuration Inventory
+
+Every configuration artifact shall be cataloged.
+
+Configuration includes:
+
+* application configuration;
+* runtime configuration;
+* environment variables;
+* feature flags;
+* dependency configuration;
+* interface configuration;
+* persistence configuration;
+* logging configuration;
+* replay configuration.
+
+Each configuration artifact shall include:
+
+* repository location;
+* purpose;
+* default behavior;
+* required values.
+
+---
+
+# Generated Artifact Inventory
+
+Every generated artifact shall be identified.
+
+Generated artifacts include:
+
+* schemas;
+* reports;
+* evidence packages;
+* generated documentation;
+* serialized outputs;
+* build artifacts;
+* replay artifacts;
+* certification artifacts.
+
+Each artifact shall record:
+
+* generation source;
+* generation mechanism;
+* output location;
+* constitutional purpose.
+
+---
+
+# Documentation Inventory
+
+The repository shall contain sufficient documentation to permit independent implementation discovery.
+
+Documentation inventory shall include:
+
+* architectural documentation;
+* repository organization;
+* module descriptions;
+* interface descriptions;
+* dependency descriptions;
+* build procedures;
+* deployment procedures;
+* replay procedures;
+* certification documentation.
+
+Documentation completeness shall be evaluated solely for implementation discoverability.
+
+---
+
+# Repository Completeness Verification
+
+The certification shall verify:
+
+* every constitutional implementation requirement possesses a repository implementation;
+* no undocumented implementation modules exist;
+* no orphaned modules exist;
+* every implementation component is reachable through repository discovery;
+* implementation organization is internally consistent.
+
+---
+
+# Required Evidence
+
+The certification shall generate evidence including:
+
+* repository inventory report;
+* module inventory;
+* dependency inventory;
+* interface inventory;
+* canonical object inventory;
+* configuration inventory;
+* generated artifact inventory;
+* repository structure map;
+* discovery methodology;
+* certification observations;
+* identified deficiencies.
+
+All evidence shall be preserved within the Evidence Repository.
+
+---
+
+# Failure Classification
+
+Repository certification shall fail whenever:
+
+* required modules are absent;
+* undocumented implementation components exist;
+* dependencies cannot be identified;
+* repository organization prevents independent discovery;
+* canonical object implementations are missing;
+* required interfaces are absent;
+* configuration required for operation is undiscoverable;
+* generated artifacts cannot be reproduced.
+
+---
+
+# Fail-Closed Behavior
+
+Certification shall immediately fail closed whenever:
+
+* repository completeness cannot be established;
+* implementation ownership is ambiguous;
+* implementation inventory cannot be reproduced;
+* dependency discovery is incomplete;
+* undocumented executable behavior is identified;
+* repository contents are inconsistent with constitutional specifications.
+
+No subsequent implementation certification order shall proceed until repository completeness has been successfully established.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. The entire repository has been independently discovered without external guidance.
+2. Every implementation module has been uniquely identified and inventoried.
+3. Every canonical object implementation has been located and documented.
+4. Every constitutional interface implementation has been identified.
+5. Every internal and external dependency has been cataloged.
+6. Every configuration artifact has been inventoried.
+7. Every generated artifact has been identified and traced to its source.
+8. Repository organization is sufficient to permit independent implementation discovery.
+9. Complete certification evidence has been generated and preserved.
+10. No implementation ambiguity remains regarding repository completeness or dependency inventory.

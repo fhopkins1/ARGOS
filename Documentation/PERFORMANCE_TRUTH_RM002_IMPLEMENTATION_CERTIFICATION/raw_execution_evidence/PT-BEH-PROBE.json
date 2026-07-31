@@ -1,0 +1,890 @@
+{
+  "probe": {
+    "audit_document_created": true,
+    "benchmark_history_present": true,
+    "duplicate_dataset_rejected": true,
+    "empty_dataset_rejected": true,
+    "manual_order_statuses": [
+      "QUEUED",
+      "QUEUED",
+      "QUEUED"
+    ],
+    "measurement_reports_generated": [
+      "executive_performance_report",
+      "organizational_performance_report",
+      "organizational_scorecard",
+      "performance_trend_report"
+    ],
+    "negative_quantity_failed_closed": true,
+    "organizational_rankings_deterministic": true,
+    "persisted_organizational_report": true,
+    "portfolio_ledger_present": true,
+    "prohibited_upstream_mutation_observed": false,
+    "snapshot_hashes_valid": true,
+    "snapshot_repeat_digest_equal": true
+  },
+  "snapshot": {
+    "benchmarkHistory": [
+      {
+        "alpha": -0.82,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "SPY",
+        "benchmark_return": 0.82,
+        "execution_environment": "paper",
+        "hash": "45077d837927ada7a419f4ccfb4f6a41dd5b5bd9e59a3a57d3727899437ee4d0",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.672608Z"
+      },
+      {
+        "alpha": -1.04,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "QQQ",
+        "benchmark_return": 1.04,
+        "execution_environment": "paper",
+        "hash": "ed3603134d8aefb1a422edf7dc9e3b78fc94aad45b1bd971303ee8a73f4262ab",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.672608Z"
+      },
+      {
+        "alpha": -0.47,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "DIA",
+        "benchmark_return": 0.47,
+        "execution_environment": "paper",
+        "hash": "182d923998ab9ad3ea4808b439b7fb5e42ffa6bb9d6e88ea54200bba782372ea",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.672608Z"
+      },
+      {
+        "alpha": -0.31,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "IWM",
+        "benchmark_return": 0.31,
+        "execution_environment": "paper",
+        "hash": "4b11261143e6c9feccb775f58cf1ab2bb5ed8f74efcbc9db067e2c3ae377982c",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.672608Z"
+      },
+      {
+        "alpha": -0.68,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "USER_SELECTED",
+        "benchmark_return": 0.68,
+        "execution_environment": "paper",
+        "hash": "1cd74ade2747a23fa1fedd2d4ce64f2f5d65d5e0aa2030ebe21d5687a58d20ea",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.672608Z"
+      },
+      {
+        "alpha": -0.82,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "SPY",
+        "benchmark_return": 0.82,
+        "execution_environment": "paper",
+        "hash": "5d598ed0def0d8ced82815ee6eca9e6269ee49ae175cb764d754a296e15a3af5",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.679147Z"
+      },
+      {
+        "alpha": -1.04,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "QQQ",
+        "benchmark_return": 1.04,
+        "execution_environment": "paper",
+        "hash": "60fb5ce0d9b6ba2f8aaa6f28a12b23aad3e5b5a3f780660ee94599f0091469a4",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.679147Z"
+      },
+      {
+        "alpha": -0.47,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "DIA",
+        "benchmark_return": 0.47,
+        "execution_environment": "paper",
+        "hash": "814567dd445bb103ddcc690426063a86c135d6b049711ca3e617f6ab01754fa3",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.679147Z"
+      },
+      {
+        "alpha": -0.31,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "IWM",
+        "benchmark_return": 0.31,
+        "execution_environment": "paper",
+        "hash": "274dfb64c9853666d55cebf720a1e106f66c6262ab92bd865dc3539b74342289",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.679147Z"
+      },
+      {
+        "alpha": -0.68,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark": "USER_SELECTED",
+        "benchmark_return": 0.68,
+        "execution_environment": "paper",
+        "hash": "8f0677e9148652c4f617c446f65b31111931743fa7e8cf65b1bdebe93eed1e1b",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.679147Z"
+      },
+      {
+        "alpha": -0.82,
+        "audit_identifier": "TOK-PT-RM002-BAD",
+        "benchmark": "SPY",
+        "benchmark_return": 0.82,
+        "execution_environment": "paper",
+        "hash": "1fbb01c04069216e1d5afb4b64f8f40e2a24db7d124241de29a1fb064db2f244",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.680677Z"
+      },
+      {
+        "alpha": -1.04,
+        "audit_identifier": "TOK-PT-RM002-BAD",
+        "benchmark": "QQQ",
+        "benchmark_return": 1.04,
+        "execution_environment": "paper",
+        "hash": "d5986a9c346d9267b817e382fc5dc1faee86699a797ae74bb1e34923835c184d",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.680677Z"
+      },
+      {
+        "alpha": -0.47,
+        "audit_identifier": "TOK-PT-RM002-BAD",
+        "benchmark": "DIA",
+        "benchmark_return": 0.47,
+        "execution_environment": "paper",
+        "hash": "7a60bad0200d2d93377f8610ce8f55b46a7055802d7a464ec66ebee5fb5bb8bf",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.680677Z"
+      },
+      {
+        "alpha": -0.31,
+        "audit_identifier": "TOK-PT-RM002-BAD",
+        "benchmark": "IWM",
+        "benchmark_return": 0.31,
+        "execution_environment": "paper",
+        "hash": "c38f16ea7a53273d01dfff0890570f037e2d184bfe21865fb0d19c1ac1ffeb67",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.680677Z"
+      },
+      {
+        "alpha": -0.68,
+        "audit_identifier": "TOK-PT-RM002-BAD",
+        "benchmark": "USER_SELECTED",
+        "benchmark_return": 0.68,
+        "execution_environment": "paper",
+        "hash": "5f63340ddb1f800167a8f0c08642e38f18a71b546f25989c750d8cf9eb6cfcf8",
+        "portfolio_return": 0.0,
+        "timestamp": "2026-07-31T00:17:16.680677Z"
+      }
+    ],
+    "brokerProfile": {
+      "accountType": "Cash Retail Paper Account",
+      "buyingPowerRule": "cash_available_minus_reserved_buying_power",
+      "cashAccountRestrictions": true,
+      "configuration": {
+        "allowAfterHoursTrading": false,
+        "allowFractionalShares": true,
+        "allowMargin": false,
+        "defaultSlippageBasisPoints": 8,
+        "defaultSpreadBasisPoints": 5,
+        "executionRealismAuditThresholdPercent": 2.5,
+        "liquidityModelMode": "DETERMINISTIC_QUOTE_TABLE",
+        "marketHoursEnforcement": true,
+        "maxOrderNotional": 25000.0,
+        "maxPortfolioConcentration": 0.35,
+        "maxPositionNotional": 50000.0,
+        "paperBrokerEnabled": true,
+        "settlementModelMode": "IMMEDIATE_BUYING_POWER_CASH_ACCOUNT_TODO_T_PLUS_ONE"
+      },
+      "cryptoPermissions": false,
+      "dayTradingRules": "pattern day trading tracked when margin enabled",
+      "extendedHoursRules": "disabled unless explicitly configured",
+      "fees": {
+        "equityCommission": 0.0,
+        "regulatoryFeesModeled": true
+      },
+      "fillRules": "orders only fill when asset, permission, session, buying power, order type, liquidity, and spread checks pass",
+      "fractionalShares": true,
+      "marginPermissions": false,
+      "optionsApprovalLevel": 0,
+      "orderTypes": [
+        "market",
+        "limit"
+      ],
+      "profileId": "BROKER-ROBINHOOD-LIKE-RETAIL",
+      "profileName": "Robinhood-like Retail Account",
+      "regularTradingHours": "09:30-16:00 America/New_York",
+      "settlementRules": "cash settlement tracked; no instant margin assumed",
+      "spreadBehavior": "deterministic quote table with non-zero bid/ask spread",
+      "supportedAssets": [
+        "AAPL",
+        "MSFT",
+        "TLT",
+        "SPY",
+        "GLD",
+        "US_EXCHANGE_LISTED_STOCK",
+        "ETF",
+        "CEF",
+        "SUPPORTED_ADR",
+        "SUPPORTED_OPTIONS",
+        "SUPPORTED_CRYPTO"
+      ],
+      "unsupportedAssets": [
+        "UNSUPPORTED_OTC",
+        "UNAPPROVED_OPTIONS",
+        "UNSUPPORTED_CRYPTO"
+      ]
+    },
+    "calculations": {
+      "benchmarks": [
+        {
+          "alpha": -0.82,
+          "argosReturnPercent": 0.0,
+          "benchmark": "SPY",
+          "benchmarkReturnPercent": 0.82,
+          "relativePerformance": "UNDERPERFORMING",
+          "timestamp": "2026-07-31T00:17:16.680677Z",
+          "trackingDifference": 0.82
+        },
+        {
+          "alpha": -1.04,
+          "argosReturnPercent": 0.0,
+          "benchmark": "QQQ",
+          "benchmarkReturnPercent": 1.04,
+          "relativePerformance": "UNDERPERFORMING",
+          "timestamp": "2026-07-31T00:17:16.680677Z",
+          "trackingDifference": 1.04
+        },
+        {
+          "alpha": -0.47,
+          "argosReturnPercent": 0.0,
+          "benchmark": "DIA",
+          "benchmarkReturnPercent": 0.47,
+          "relativePerformance": "UNDERPERFORMING",
+          "timestamp": "2026-07-31T00:17:16.680677Z",
+          "trackingDifference": 0.47
+        },
+        {
+          "alpha": -0.31,
+          "argosReturnPercent": 0.0,
+          "benchmark": "IWM",
+          "benchmarkReturnPercent": 0.31,
+          "relativePerformance": "UNDERPERFORMING",
+          "timestamp": "2026-07-31T00:17:16.680677Z",
+          "trackingDifference": 0.31
+        },
+        {
+          "alpha": -0.68,
+          "argosReturnPercent": 0.0,
+          "benchmark": "USER_SELECTED",
+          "benchmarkReturnPercent": 0.68,
+          "relativePerformance": "UNDERPERFORMING",
+          "timestamp": "2026-07-31T00:17:16.680677Z",
+          "trackingDifference": 0.68
+        }
+      ],
+      "decisionAccuracy": 0.0,
+      "office": [
+        {
+          "averageConfidenceIncrease": 0.0,
+          "contributionValue": 0,
+          "decisionImprovements": 0,
+          "historicalAccuracy": 70,
+          "office": "Seeker",
+          "riskAdjustments": 0,
+          "structuredOutputsProduced": 0,
+          "tradeApprovals": 0
+        },
+        {
+          "averageConfidenceIncrease": 0.0,
+          "contributionValue": 0,
+          "decisionImprovements": 0,
+          "historicalAccuracy": 70,
+          "office": "Analyst",
+          "riskAdjustments": 0,
+          "structuredOutputsProduced": 0,
+          "tradeApprovals": 0
+        },
+        {
+          "averageConfidenceIncrease": 0.0,
+          "contributionValue": 0,
+          "decisionImprovements": 0,
+          "historicalAccuracy": 70,
+          "office": "Risk",
+          "riskAdjustments": 0,
+          "structuredOutputsProduced": 0,
+          "tradeApprovals": 0
+        },
+        {
+          "averageConfidenceIncrease": 0.0,
+          "contributionValue": 0,
+          "decisionImprovements": 0,
+          "historicalAccuracy": 70,
+          "office": "Trader",
+          "riskAdjustments": 0,
+          "structuredOutputsProduced": 0,
+          "tradeApprovals": 0
+        },
+        {
+          "averageConfidenceIncrease": 0.0,
+          "contributionValue": 0,
+          "decisionImprovements": 0,
+          "historicalAccuracy": 70,
+          "office": "Historian",
+          "riskAdjustments": 0,
+          "structuredOutputsProduced": 0,
+          "tradeApprovals": 0
+        }
+      ],
+      "performance": {
+        "averageGain": 0.0,
+        "averageHoldingPeriod": "0m",
+        "averageLoss": 0.0,
+        "beta": 0.0,
+        "expectancy": 0.0,
+        "profitFactor": 0,
+        "sharpeRatio": 0.0,
+        "sortinoRatio": 0.0,
+        "winRate": 0.0
+      },
+      "portfolio": {
+        "alpha": -0.82,
+        "buyingPower": 100000.0,
+        "cash": 100000.0,
+        "currentExposure": 0,
+        "dailyReturnPercent": 0.0,
+        "investedCapital": 0,
+        "marketValue": 0,
+        "maximumDrawdown": 0.0,
+        "numberOfPositions": 0,
+        "portfolioValue": 100000.0,
+        "realizedPnl": 0,
+        "totalReturnPercent": 0.0,
+        "unrealizedPnl": 0
+      },
+      "strategy": [],
+      "workflow": []
+    },
+    "closedLifecycleAnalytics": {
+      "averageExecutionQuality": 0.0,
+      "closedTruthRecordCount": 0,
+      "learningPayloadsAvailable": 0,
+      "netRealizedPnl": 0
+    },
+    "closedPositionTruth": [],
+    "decisionObjectOutcomes": [],
+    "engineName": "Performance Truth Engine",
+    "engineeringOrder": "OE-011C",
+    "enterprisePrinciple": "One Event -> One Truth Record -> Many Views",
+    "executionEnvironment": "paper",
+    "executionRealism": {
+      "brokerRealistic": true,
+      "executionRealismScore": 100,
+      "fantasyTradeWarnings": [],
+      "filledOrders": 0,
+      "partialFills": 0,
+      "performanceSpikeAudit": {
+        "latestPortfolioJumpPercent": 0.0,
+        "status": "CLEAR",
+        "thresholdPercent": 2.5,
+        "triggered": false
+      },
+      "portfolioValueRequiresExecutionRecord": true,
+      "queuedOrders": 3,
+      "rejectedOrders": 0,
+      "slippageCost": 0.0,
+      "spreadCost": 0.0
+    },
+    "integrity": {
+      "appendOnly": true,
+      "correctionsAppendOnly": true,
+      "crossModeContaminationAttempts": 0,
+      "hashesValid": true,
+      "immutable": true,
+      "missingProvenanceRecords": 0,
+      "paperLiveIsolated": true,
+      "proofModeTruthAttempts": 0,
+      "recordedWorkflowCount": 0,
+      "runtimeAuthoredFinancialProductAttempts": 0,
+      "syntheticTruthRejected": 0,
+      "unauthorizedProducerRecords": 0,
+      "uniqueWorkflowAttribution": true
+    },
+    "officeAttribution": [],
+    "orderLedger": [
+      {
+        "account_type": "Cash Retail Paper Account",
+        "ask_price": 529.01,
+        "asset_type": "ETF",
+        "available_volume": 1200,
+        "average_fill_price": 0.0,
+        "bid_price": 528.99,
+        "broker_profile_id": "BROKER-ROBINHOOD-LIKE-RETAIL",
+        "broker_validation": [
+          {
+            "check": "Tradable Asset",
+            "evidence": "SPY",
+            "passed": true
+          },
+          {
+            "check": "Account Permission",
+            "evidence": "ETF",
+            "passed": true
+          },
+          {
+            "check": "Market Session",
+            "evidence": "CLOSED",
+            "passed": false
+          },
+          {
+            "check": "Quantity",
+            "evidence": "1.0",
+            "passed": true
+          },
+          {
+            "check": "Buying Power",
+            "evidence": "100000.0 >= 529.4336",
+            "passed": true
+          },
+          {
+            "check": "Position Quantity",
+            "evidence": "0.0 >= 1.0",
+            "passed": true
+          },
+          {
+            "check": "Max Order Notional",
+            "evidence": "529.01",
+            "passed": true
+          },
+          {
+            "check": "Max Position Notional",
+            "evidence": "529.01",
+            "passed": true
+          },
+          {
+            "check": "Order Type",
+            "evidence": "market",
+            "passed": true
+          },
+          {
+            "check": "Liquidity",
+            "evidence": "1200",
+            "passed": true
+          },
+          {
+            "check": "Spread Slippage",
+            "evidence": "spread 0.02 slippage 0.4236",
+            "passed": true
+          }
+        ],
+        "buying_power_after": 100000.0,
+        "buying_power_before": 100000.0,
+        "cash_impact": 0.0,
+        "decision_object_id": "DO-PT-RM002",
+        "estimated_notional": 529.01,
+        "execution_environment": "paper",
+        "fantasy_warnings": [],
+        "fill_probability": 0.0,
+        "filled_quantity": 0.0,
+        "hash": "8fdb559fde0f3171bca218919e9afb65eabc0ec5e33e17a4be7f25141ce24c95",
+        "intended_order": {
+          "orderType": "market",
+          "requestedQuantity": 1.0,
+          "side": "BUY",
+          "sourceRecommendation": "BUY",
+          "symbol": "SPY",
+          "truthMetadata": {
+            "certificationStatus": "PAPER_BROKER_PROVISIONAL_OR003",
+            "commanderTruthLabel": "PAPER - PROVISIONAL BROKER MODEL",
+            "createdAt": "2026-07-31T00:17:16.672608Z",
+            "decisionObjectId": "DO-PT-RM002",
+            "deterministicId": "TRUTH-C99E0D6532949EE2",
+            "environment": "paper",
+            "executionMode": "PAPER",
+            "officeAuthority": "TRADER_REQUIRED",
+            "provenanceStatus": "UNVERIFIED",
+            "sourceRecordIds": [
+              "TOK-PT-RM002",
+              "DO-PT-RM002"
+            ],
+            "sourceSystem": "PerformanceTruthEngine.PaperBrokerModel",
+            "truthClassification": "PAPER_PROVISIONAL_BROKER_MODEL",
+            "workflowId": "WF-PT-RM002"
+          }
+        },
+        "last_price": 529.0,
+        "limit_price": 0.0,
+        "liquidity": "HIGH",
+        "market_session": "CLOSED",
+        "mid_price": 529.0,
+        "order_id": "BRP-ORD-000001",
+        "order_type": "market",
+        "partial_fill_probability": 0.0,
+        "queued_reason": "MARKET_CLOSED",
+        "realized_profit_loss": 0.0,
+        "rejection_reason": "",
+        "remaining_quantity": 1.0,
+        "requested_quantity": 1.0,
+        "side": "BUY",
+        "slippage": 0.0,
+        "spread_cost": 0.0,
+        "status": "QUEUED",
+        "strategy_id": "Commander Manual Paper Order",
+        "symbol": "SPY",
+        "time_in_force": "day",
+        "timestamp": "2026-07-31T00:17:16.672608Z",
+        "token_id": "TOK-PT-RM002",
+        "workflow_id": "WF-PT-RM002"
+      },
+      {
+        "account_type": "Cash Retail Paper Account",
+        "ask_price": 529.01,
+        "asset_type": "ETF",
+        "available_volume": 1200,
+        "average_fill_price": 0.0,
+        "bid_price": 528.99,
+        "broker_profile_id": "BROKER-ROBINHOOD-LIKE-RETAIL",
+        "broker_validation": [
+          {
+            "check": "Tradable Asset",
+            "evidence": "SPY",
+            "passed": true
+          },
+          {
+            "check": "Account Permission",
+            "evidence": "ETF",
+            "passed": true
+          },
+          {
+            "check": "Market Session",
+            "evidence": "CLOSED",
+            "passed": false
+          },
+          {
+            "check": "Quantity",
+            "evidence": "1.0",
+            "passed": true
+          },
+          {
+            "check": "Buying Power",
+            "evidence": "100000.0 >= 529.4135",
+            "passed": true
+          },
+          {
+            "check": "Position Quantity",
+            "evidence": "0.0 >= 1.0",
+            "passed": false
+          },
+          {
+            "check": "Max Order Notional",
+            "evidence": "528.99",
+            "passed": true
+          },
+          {
+            "check": "Max Position Notional",
+            "evidence": "0.0",
+            "passed": true
+          },
+          {
+            "check": "Order Type",
+            "evidence": "market",
+            "passed": true
+          },
+          {
+            "check": "Liquidity",
+            "evidence": "1200",
+            "passed": true
+          },
+          {
+            "check": "Spread Slippage",
+            "evidence": "spread 0.02 slippage 0.4235",
+            "passed": true
+          }
+        ],
+        "buying_power_after": 100000.0,
+        "buying_power_before": 100000.0,
+        "cash_impact": 0.0,
+        "decision_object_id": "DO-PT-RM002",
+        "estimated_notional": 528.99,
+        "execution_environment": "paper",
+        "fantasy_warnings": [],
+        "fill_probability": 0.0,
+        "filled_quantity": 0.0,
+        "hash": "05e2396030a0774d9c51c01d246e693d584c7c98cfc79ca9ae4f181bf967851b",
+        "intended_order": {
+          "orderType": "market",
+          "requestedQuantity": 1.0,
+          "side": "SELL",
+          "sourceRecommendation": "SELL",
+          "symbol": "SPY",
+          "truthMetadata": {
+            "certificationStatus": "PAPER_BROKER_PROVISIONAL_OR003",
+            "commanderTruthLabel": "PAPER - PROVISIONAL BROKER MODEL",
+            "createdAt": "2026-07-31T00:17:16.679147Z",
+            "decisionObjectId": "DO-PT-RM002",
+            "deterministicId": "TRUTH-C99E0D6532949EE2",
+            "environment": "paper",
+            "executionMode": "PAPER",
+            "officeAuthority": "TRADER_REQUIRED",
+            "provenanceStatus": "UNVERIFIED",
+            "sourceRecordIds": [
+              "TOK-PT-RM002",
+              "DO-PT-RM002"
+            ],
+            "sourceSystem": "PerformanceTruthEngine.PaperBrokerModel",
+            "truthClassification": "PAPER_PROVISIONAL_BROKER_MODEL",
+            "workflowId": "WF-PT-RM002"
+          }
+        },
+        "last_price": 529.0,
+        "limit_price": 0.0,
+        "liquidity": "HIGH",
+        "market_session": "CLOSED",
+        "mid_price": 529.0,
+        "order_id": "BRP-ORD-000002",
+        "order_type": "market",
+        "partial_fill_probability": 0.0,
+        "queued_reason": "MARKET_CLOSED",
+        "realized_profit_loss": 0.0,
+        "rejection_reason": "",
+        "remaining_quantity": 1.0,
+        "requested_quantity": 1.0,
+        "side": "SELL",
+        "slippage": 0.0,
+        "spread_cost": 0.0,
+        "status": "QUEUED",
+        "strategy_id": "Commander Manual Paper Order",
+        "symbol": "SPY",
+        "time_in_force": "day",
+        "timestamp": "2026-07-31T00:17:16.679147Z",
+        "token_id": "TOK-PT-RM002",
+        "workflow_id": "WF-PT-RM002"
+      },
+      {
+        "account_type": "Cash Retail Paper Account",
+        "ask_price": 529.01,
+        "asset_type": "ETF",
+        "available_volume": 1200,
+        "average_fill_price": 0.0,
+        "bid_price": 528.99,
+        "broker_profile_id": "BROKER-ROBINHOOD-LIKE-RETAIL",
+        "broker_validation": [
+          {
+            "check": "Tradable Asset",
+            "evidence": "SPY",
+            "passed": true
+          },
+          {
+            "check": "Account Permission",
+            "evidence": "ETF",
+            "passed": true
+          },
+          {
+            "check": "Market Session",
+            "evidence": "CLOSED",
+            "passed": false
+          },
+          {
+            "check": "Quantity",
+            "evidence": "-1.0",
+            "passed": false
+          },
+          {
+            "check": "Buying Power",
+            "evidence": "100000.0 >= 0.0000",
+            "passed": true
+          },
+          {
+            "check": "Position Quantity",
+            "evidence": "0.0 >= -1.0",
+            "passed": true
+          },
+          {
+            "check": "Max Order Notional",
+            "evidence": "0.0",
+            "passed": true
+          },
+          {
+            "check": "Max Position Notional",
+            "evidence": "-529.01",
+            "passed": true
+          },
+          {
+            "check": "Order Type",
+            "evidence": "market",
+            "passed": true
+          },
+          {
+            "check": "Liquidity",
+            "evidence": "1200",
+            "passed": true
+          },
+          {
+            "check": "Spread Slippage",
+            "evidence": "spread 0.02 slippage 0.0",
+            "passed": false
+          }
+        ],
+        "buying_power_after": 100000.0,
+        "buying_power_before": 100000.0,
+        "cash_impact": 0.0,
+        "decision_object_id": "DO-PT-RM002-BAD",
+        "estimated_notional": 0.0,
+        "execution_environment": "paper",
+        "fantasy_warnings": [],
+        "fill_probability": 0.0,
+        "filled_quantity": 0.0,
+        "hash": "3b85aa98e918858fe18aedd15a7c1041930bdeac0e33339486003c6ec0fd0233",
+        "intended_order": {
+          "orderType": "market",
+          "requestedQuantity": -1.0,
+          "side": "BUY",
+          "sourceRecommendation": "BUY",
+          "symbol": "SPY",
+          "truthMetadata": {
+            "certificationStatus": "PAPER_BROKER_PROVISIONAL_OR003",
+            "commanderTruthLabel": "PAPER - PROVISIONAL BROKER MODEL",
+            "createdAt": "2026-07-31T00:17:16.680677Z",
+            "decisionObjectId": "DO-PT-RM002-BAD",
+            "deterministicId": "TRUTH-982361E390292B16",
+            "environment": "paper",
+            "executionMode": "PAPER",
+            "officeAuthority": "TRADER_REQUIRED",
+            "provenanceStatus": "UNVERIFIED",
+            "sourceRecordIds": [
+              "TOK-PT-RM002-BAD",
+              "DO-PT-RM002-BAD"
+            ],
+            "sourceSystem": "PerformanceTruthEngine.PaperBrokerModel",
+            "truthClassification": "PAPER_PROVISIONAL_BROKER_MODEL",
+            "workflowId": "WF-PT-RM002-BAD"
+          }
+        },
+        "last_price": 529.0,
+        "limit_price": 0.0,
+        "liquidity": "HIGH",
+        "market_session": "CLOSED",
+        "mid_price": 529.0,
+        "order_id": "BRP-ORD-000003",
+        "order_type": "market",
+        "partial_fill_probability": 0.0,
+        "queued_reason": "MARKET_CLOSED",
+        "realized_profit_loss": 0.0,
+        "rejection_reason": "",
+        "remaining_quantity": 0.0,
+        "requested_quantity": -1.0,
+        "side": "BUY",
+        "slippage": 0.0,
+        "spread_cost": 0.0,
+        "status": "QUEUED",
+        "strategy_id": "Commander Manual Paper Order",
+        "symbol": "SPY",
+        "time_in_force": "day",
+        "timestamp": "2026-07-31T00:17:16.680677Z",
+        "token_id": "TOK-PT-RM002-BAD",
+        "workflow_id": "WF-PT-RM002-BAD"
+      }
+    ],
+    "paperAccount": {
+      "accountRestrictions": [],
+      "buyingPower": 100000.0,
+      "cash": 100000.0,
+      "cryptoHoldings": 0.0,
+      "dayTrades": 0,
+      "marginAvailable": 0.0,
+      "openOrders": 3,
+      "openPositions": 0,
+      "optionsCollateral": 0.0,
+      "reservedBuyingPower": 0.0,
+      "settledCash": 100000.0,
+      "unsettledCash": 0.0
+    },
+    "portfolioLedger": [
+      {
+        "alpha": -0.82,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark_value": 100820.0,
+        "buying_power": 100000.0,
+        "cash": 100000.0,
+        "daily_return": 0.0,
+        "decision_object_id": "DO-PT-RM002",
+        "drawdown": 0.0,
+        "execution_environment": "paper",
+        "hash": "e10d239dd5cf232bd4ba14e38514ebb7b0fa5931ed54f51fe2070215b6c5f343",
+        "invested_capital": 0,
+        "margin_used": 0.0,
+        "market_value": 0,
+        "timestamp": "2026-07-31T00:17:16.672608Z",
+        "token_id": "TOK-PT-RM002",
+        "total_equity": 100000.0,
+        "total_return": 0.0,
+        "workflow_id": "WF-PT-RM002"
+      },
+      {
+        "alpha": -0.82,
+        "audit_identifier": "TOK-PT-RM002",
+        "benchmark_value": 100820.0,
+        "buying_power": 100000.0,
+        "cash": 100000.0,
+        "daily_return": 0.0,
+        "decision_object_id": "DO-PT-RM002",
+        "drawdown": 0.0,
+        "execution_environment": "paper",
+        "hash": "003f408fcd6348a6e5fe970e63758387ba76413cc121b6fe255006c8a5aff8f3",
+        "invested_capital": 0,
+        "margin_used": 0.0,
+        "market_value": 0,
+        "timestamp": "2026-07-31T00:17:16.679147Z",
+        "token_id": "TOK-PT-RM002",
+        "total_equity": 100000.0,
+        "total_return": 0.0,
+        "workflow_id": "WF-PT-RM002"
+      },
+      {
+        "alpha": -0.82,
+        "audit_identifier": "TOK-PT-RM002-BAD",
+        "benchmark_value": 100820.0,
+        "buying_power": 100000.0,
+        "cash": 100000.0,
+        "daily_return": 0.0,
+        "decision_object_id": "DO-PT-RM002-BAD",
+        "drawdown": 0.0,
+        "execution_environment": "paper",
+        "hash": "2cff6d493cd957b89771b890123c1dad3a538eca05d72075b7bab20c0d6731b8",
+        "invested_capital": 0,
+        "margin_used": 0.0,
+        "market_value": 0,
+        "timestamp": "2026-07-31T00:17:16.680677Z",
+        "token_id": "TOK-PT-RM002-BAD",
+        "total_equity": 100000.0,
+        "total_return": 0.0,
+        "workflow_id": "WF-PT-RM002-BAD"
+      }
+    ],
+    "positionLedger": [],
+    "positionRegistry": {
+      "activePositions": [],
+      "allPositions": [],
+      "auditEvents": [],
+      "commandBridgePositions": [],
+      "constitutionalOwnership": {
+        "Analyst": "Decision Objects",
+        "Historian": "Institutional memory",
+        "Performance Truth": "Completed outcome records",
+        "Trader": "Position Objects"
+      },
+      "engineeringOrder": "EO-XA",
+      "metrics": {
+        "activePositionCount": 0,
+        "auditEventCount": 0,
+        "historyRecordCount": 0,
+        "totalPositionCount": 0
+      },
+      "positionHistory": [],
+      "registryName": "Position Registry"
+    },
+    "rejectedTruthRecords": [],
+    "sourceOfTruth": "IMMUTABLE_LEDGER",
+    "tradeLedger": [],
+    "workflowAttribution": []
+  }
+}
