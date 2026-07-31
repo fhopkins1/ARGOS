@@ -1,0 +1,491 @@
+# PERFORMANCE-TRUTH-RM-001-010
+
+# Failure Behavior
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the complete constitutional fail-closed behavior governing the Performance Truth Office whenever constitutional guarantees cannot be satisfied.
+
+The purpose of this order is to ensure that the Performance Truth Office never publishes, certifies, or propagates performance information whose correctness, completeness, provenance, ownership, or reproducibility cannot be constitutionally guaranteed.
+
+This order governs constitutional failure behavior only. Implementation mechanisms for fault detection, logging, retry policies, monitoring infrastructure, or recovery orchestration remain outside the scope of this constitutional remediation program.
+
+---
+
+# Constitutional Principles
+
+The failure architecture shall satisfy the following constitutional principles.
+
+1. The Performance Truth Office shall fail closed by default.
+
+2. Constitutional correctness shall always take precedence over availability.
+
+3. No incomplete or uncertain performance information shall be published.
+
+4. Every failure shall produce constitutional evidence.
+
+5. Every failure shall be deterministic.
+
+6. Failure shall never corrupt historical truth.
+
+7. Recovery shall never modify immutable constitutional records.
+
+8. All downstream consumers shall observe deterministic failure behavior.
+
+9. Every failure shall preserve complete auditability.
+
+10. Constitutional violations shall never be silently ignored.
+
+---
+
+# Constitutional Failure Categories
+
+The Performance Truth Office shall recognize the following constitutional failure classes.
+
+* Missing Evidence
+* Incomplete Calculation
+* Inconsistent Truth
+* Reconciliation Failure
+* Temporal Integrity Violation
+* Duplicate Publication
+* Ownership Violation
+* Dependency Failure
+* Calculation Context Failure
+* Certification Failure
+* Historical Replay Failure
+* Interface Failure
+* Internal Constitutional Violation
+
+No implementation-defined failure category may alter constitutional behavior.
+
+---
+
+# Missing Evidence
+
+## Definition
+
+Required constitutional evidence cannot be located, validated, or reproduced.
+
+Examples include:
+
+* missing source evidence;
+* missing calculation evidence;
+* missing benchmark evidence;
+* incomplete provenance;
+* missing certification evidence.
+
+## Constitutional Behavior
+
+The office shall immediately fail closed.
+
+The affected Performance Truth Record shall remain unpublished.
+
+No certification shall be issued.
+
+No downstream publication shall occur.
+
+A constitutional failure record shall be generated.
+
+---
+
+# Incomplete Calculation
+
+## Definition
+
+A calculation cannot be completed using constitutionally valid inputs.
+
+Examples include:
+
+* unavailable inputs;
+* invalid formula context;
+* unresolved dependencies;
+* interrupted execution;
+* partial aggregation.
+
+## Constitutional Behavior
+
+The calculation shall be abandoned.
+
+No partial results shall be retained as published truth.
+
+The incomplete calculation shall be recorded as constitutional evidence.
+
+Publication shall be prohibited.
+
+---
+
+# Inconsistent Truth
+
+## Definition
+
+Multiple constitutional sources produce mutually incompatible performance truth.
+
+Examples include:
+
+* conflicting closed-position results;
+* inconsistent decision references;
+* contradictory workflow outcomes;
+* incompatible market values.
+
+## Constitutional Behavior
+
+No source shall be selected through implementation discretion.
+
+Publication shall halt.
+
+The inconsistency shall be recorded.
+
+The discrepancy shall remain unresolved until constitutionally corrected.
+
+---
+
+# Reconciliation Failure
+
+## Definition
+
+Deterministic reconciliation cannot establish consistency between constitutional offices.
+
+Affected offices may include:
+
+* Closed Position Truth;
+* Broker;
+* Historian;
+* Monitoring;
+* Workflow Engine;
+* Decision Objects.
+
+## Constitutional Behavior
+
+Publication shall halt.
+
+Certification shall halt.
+
+The reconciliation discrepancy shall be preserved.
+
+No downstream office shall receive uncertified performance information.
+
+---
+
+# Temporal Integrity Violation
+
+## Definition
+
+Constitutional temporal requirements cannot be satisfied.
+
+Examples include:
+
+* invalid timestamps;
+* overlapping intervals;
+* impossible sequencing;
+* future-effective truth;
+* historical mutation.
+
+## Constitutional Behavior
+
+Affected records shall fail validation.
+
+Historical truth shall remain unchanged.
+
+Publication shall be prohibited.
+
+Temporal violation evidence shall be generated.
+
+---
+
+# Duplicate Publication
+
+## Definition
+
+Publication would create multiple authoritative representations of identical constitutional performance.
+
+Examples include:
+
+* duplicate Performance Truth Records;
+* duplicate revisions;
+* duplicate certification;
+* duplicate snapshots.
+
+## Constitutional Behavior
+
+The duplicate publication shall be rejected.
+
+Existing constitutional truth shall remain authoritative.
+
+Duplicate publication evidence shall be generated.
+
+No duplicate authoritative record shall exist.
+
+---
+
+# Ownership Violation
+
+## Definition
+
+An office attempts to create, modify, certify, supersede, or publish a constitutional object outside its jurisdiction.
+
+Examples include:
+
+* unauthorized record modification;
+* unauthorized certification;
+* unauthorized evidence creation;
+* unauthorized revision.
+
+## Constitutional Behavior
+
+The operation shall be rejected.
+
+Ownership boundaries shall remain unchanged.
+
+The attempted violation shall be recorded.
+
+No ownership shall transfer implicitly.
+
+---
+
+# Dependency Failure
+
+## Definition
+
+A required constitutional dependency cannot satisfy its constitutional guarantees.
+
+Examples include:
+
+* unavailable Closed Position Truth;
+* unavailable Historian;
+* unavailable Decision Objects;
+* unavailable Workflow Execution;
+* unavailable Evidence Repository.
+
+## Constitutional Behavior
+
+Dependent calculations shall not execute.
+
+Publication shall halt.
+
+Certification shall halt.
+
+Dependency failure evidence shall be produced.
+
+---
+
+# Calculation Context Failure
+
+## Definition
+
+The complete calculation environment cannot be reproduced.
+
+Examples include:
+
+* unknown formula version;
+* missing configuration;
+* missing dependency version;
+* invalid calculation context.
+
+## Constitutional Behavior
+
+The calculation shall be constitutionally invalid.
+
+Publication shall not occur.
+
+Historical records shall remain unaffected.
+
+Failure evidence shall be preserved.
+
+---
+
+# Certification Failure
+
+## Definition
+
+A Performance Truth Record cannot satisfy constitutional certification requirements.
+
+Examples include:
+
+* incomplete evidence;
+* unresolved reconciliation;
+* failed validation;
+* incomplete provenance.
+
+## Constitutional Behavior
+
+Certification shall be denied.
+
+The certification state shall remain non-certified.
+
+No downstream consumer shall treat the record as authoritative.
+
+---
+
+# Historical Replay Failure
+
+## Definition
+
+Historical replay cannot reproduce previously published constitutional performance.
+
+Examples include:
+
+* missing historical evidence;
+* inconsistent replay results;
+* missing calculation context;
+* incomplete provenance.
+
+## Constitutional Behavior
+
+The affected record shall be constitutionally invalid for certification.
+
+Replay failure evidence shall be generated.
+
+Historical records shall remain preserved.
+
+No reconstructed result shall replace historical truth.
+
+---
+
+# Interface Failure
+
+## Definition
+
+A constitutional interface fails to satisfy its required guarantees.
+
+Examples include:
+
+* incomplete interface inputs;
+* invalid ownership transfer;
+* missing required outputs;
+* invalid interface contracts.
+
+## Constitutional Behavior
+
+The interface transaction shall fail.
+
+No partial constitutional state shall be committed.
+
+Interface failure evidence shall be generated.
+
+---
+
+# Internal Constitutional Violation
+
+## Definition
+
+The Performance Truth Office detects behavior violating its own constitutional invariants.
+
+Examples include:
+
+* orphaned canonical objects;
+* invalid lifecycle transition;
+* broken referential integrity;
+* invariant violation.
+
+## Constitutional Behavior
+
+The violating operation shall terminate immediately.
+
+No invalid state shall become authoritative.
+
+Constitutional violation evidence shall be generated.
+
+---
+
+# Failure Recording Requirements
+
+Every constitutional failure shall generate an immutable Failure Record containing:
+
+* Failure Identifier
+* Failure Category
+* Detection Timestamp
+* Affected Objects
+* Workflow Identifier
+* Office Identifier
+* Detection Method
+* Failure Description
+* Constitutional Rule Violated
+* Evidence References
+* Dependency References
+* Resolution Status
+
+Failure Records shall themselves constitute constitutional evidence.
+
+---
+
+# Downstream Behavior
+
+Whenever the Performance Truth Office fails closed:
+
+* no uncertified performance values shall be published;
+* downstream offices shall receive no replacement values;
+* previously certified immutable records shall remain authoritative;
+* downstream consumers shall be able to determine that publication failed rather than infer missing data.
+
+No downstream office shall infer or synthesize substitute performance truth.
+
+---
+
+# Recovery Requirements
+
+Recovery from constitutional failure shall occur only after:
+
+* the constitutional defect has been corrected;
+* required evidence has been produced;
+* reconciliation has succeeded;
+* temporal integrity has been restored;
+* ownership validation has passed;
+* deterministic replay has succeeded;
+* constitutional certification requirements have been satisfied.
+
+Recovery shall produce new constitutional records.
+
+Previously published immutable records shall never be modified.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold.
+
+* The Performance Truth Office fails closed.
+* Partial performance truth shall never be published.
+* Historical truth remains immutable.
+* Every constitutional failure produces evidence.
+* Ownership violations never succeed.
+* Duplicate authoritative records never exist.
+* Missing evidence always prevents publication.
+* Reconciliation failures always prevent certification.
+* Temporal violations never alter historical records.
+* Constitutional correctness always supersedes availability.
+
+---
+
+# Required Evidence
+
+Implementation shall demonstrate:
+
+* deterministic fail-closed behavior for every constitutional failure category;
+* generation of immutable Failure Records;
+* preservation of historical truth during failure;
+* rejection of unauthorized ownership operations;
+* prevention of duplicate publication;
+* prevention of publication under incomplete evidence;
+* prevention of certification during reconciliation failure;
+* deterministic downstream behavior following failure;
+* successful recovery through creation of new constitutional records;
+* complete audit reconstruction of every failure event.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every constitutional failure category has been defined.
+2. Every failure category specifies deterministic fail-closed behavior.
+3. No constitutional failure permits publication of incomplete or uncertain performance truth.
+4. Every failure generates immutable constitutional evidence.
+5. Historical truth remains immutable during all failure conditions.
+6. Downstream behavior is deterministic and constitutionally defined.
+7. Recovery is permitted only after constitutional guarantees are restored.
+8. Every constitutional invariant remains enforceable during failure conditions.
+9. Independent auditors can reconstruct every constitutional failure solely from recorded evidence.
+10. No constitutional ambiguity remains regarding failure behavior within the Performance Truth Office.

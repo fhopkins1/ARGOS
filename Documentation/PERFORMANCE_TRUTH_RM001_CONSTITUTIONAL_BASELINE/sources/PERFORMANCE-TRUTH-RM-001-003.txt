@@ -1,0 +1,519 @@
+# PERFORMANCE-TRUTH-RM-001-003
+
+# Performance Truth Lifecycle
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the complete constitutional lifecycle governing every Performance Truth object managed by the Performance Truth Office.
+
+The lifecycle defines every permissible constitutional state, every authorized state transition, all ownership responsibilities, evidence requirements, publication rules, correction mechanisms, supersession behavior, archival requirements, and historical preservation guarantees.
+
+No Performance Truth object may exist outside this lifecycle.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* Workflow Ownership Doctrine
+* Truth Doctrine
+* Evidence Doctrine
+* Audit Doctrine
+
+---
+
+# Constitutional Principles
+
+The lifecycle shall ensure:
+
+* deterministic behavior;
+* immutable historical truth;
+* complete auditability;
+* reproducible calculations;
+* constitutional ownership at every stage;
+* complete evidence preservation;
+* fail-closed behavior whenever constitutional guarantees cannot be satisfied.
+
+No lifecycle transition may invalidate previously certified historical truth.
+
+---
+
+# Lifecycle Scope
+
+This lifecycle governs every canonical object defined by PERFORMANCE-TRUTH-RM-001-002 including:
+
+* Performance Truth Record
+* Performance Snapshot
+* Performance Interval
+* Performance Metric
+* Performance Attribution
+* Performance Baseline
+* Performance Benchmark
+* Performance Calculation Context
+* Performance Correction
+* Performance Revision
+* Performance Evidence Package
+* Performance Certification State
+
+---
+
+# Canonical Lifecycle States
+
+Every Performance Truth object shall exist in exactly one constitutional state.
+
+## State 1 — Draft
+
+The object has been created but has not yet completed constitutional validation.
+
+Characteristics:
+
+* owner assigned;
+* immutable identity established;
+* inputs may continue to arrive;
+* object not externally visible;
+* object not eligible for publication.
+
+---
+
+## State 2 — Pending Validation
+
+The object is awaiting constitutional validation.
+
+Validation shall verify:
+
+* required fields;
+* ownership;
+* evidence completeness;
+* dependency availability;
+* calculation eligibility;
+* lifecycle integrity.
+
+Objects failing validation shall not advance.
+
+---
+
+## State 3 — Validated
+
+The object has successfully completed constitutional validation.
+
+Requirements:
+
+* deterministic inputs verified;
+* required evidence attached;
+* dependencies satisfied;
+* provenance complete;
+* reconciliation prerequisites satisfied.
+
+Validated objects are eligible for calculation or publication.
+
+---
+
+## State 4 — Calculated
+
+All required deterministic calculations have completed.
+
+Requirements:
+
+* deterministic algorithm executed;
+* calculation context preserved;
+* inputs frozen;
+* outputs reproducible;
+* calculation evidence generated.
+
+No calculated value may be modified directly.
+
+---
+
+## State 5 — Reconciled
+
+The calculated object has successfully reconciled with all required constitutional dependencies.
+
+Required reconciliation includes, where applicable:
+
+* Closed Position Truth;
+* Broker;
+* Monitoring;
+* Historian;
+* Workflow Execution;
+* Decision Objects;
+* Authorization lineage.
+
+Any reconciliation discrepancy prevents advancement.
+
+---
+
+## State 6 — Certified
+
+The object has satisfied every constitutional publication prerequisite.
+
+Certification confirms:
+
+* calculation determinism;
+* evidence completeness;
+* traceability;
+* ownership integrity;
+* temporal integrity;
+* reconciliation completeness.
+
+Certification does not constitute publication.
+
+---
+
+## State 7 — Published
+
+The object becomes authoritative enterprise truth.
+
+Published objects:
+
+* become immutable;
+* acquire historical authority;
+* may be referenced by other offices;
+* may not be edited directly.
+
+Publication time becomes permanent constitutional history.
+
+---
+
+## State 8 — Corrected
+
+A constitutional defect has been identified requiring correction.
+
+Correction shall never modify the published record.
+
+Instead:
+
+* correction object created;
+* correction linked;
+* reason documented;
+* evidence attached;
+* provenance preserved.
+
+---
+
+## State 9 — Superseded
+
+A newer constitutional truth replaces a previously published object.
+
+Supersession:
+
+* preserves original publication;
+* establishes successor relationship;
+* documents supersession reason;
+* preserves complete audit lineage.
+
+Superseded objects remain historically accessible.
+
+---
+
+## State 10 — Archived
+
+Objects no longer participating in active enterprise operations transition to archival storage.
+
+Archival shall preserve:
+
+* identity;
+* evidence;
+* calculations;
+* provenance;
+* revisions;
+* certification history.
+
+Archival shall never discard constitutional truth.
+
+---
+
+# Lifecycle Transitions
+
+The following transitions are authorized.
+
+Draft
+
+↓
+
+Pending Validation
+
+↓
+
+Validated
+
+↓
+
+Calculated
+
+↓
+
+Reconciled
+
+↓
+
+Certified
+
+↓
+
+Published
+
+↓
+
+Archived
+
+Published
+
+↓
+
+Corrected
+
+↓
+
+Certified
+
+↓
+
+Published (New Revision)
+
+↓
+
+Superseded (Previous Revision)
+
+↓
+
+Archived
+
+---
+
+# Authorized Correction Lifecycle
+
+Corrections shall proceed as follows:
+
+Published Record
+
+↓
+
+Correction Request
+
+↓
+
+Correction Validation
+
+↓
+
+Deterministic Recalculation
+
+↓
+
+Reconciliation
+
+↓
+
+Certification
+
+↓
+
+New Publication
+
+↓
+
+Previous Publication Superseded
+
+At no point may historical records be overwritten.
+
+---
+
+# Historical Preservation Rules
+
+Every published revision shall permanently preserve:
+
+* original values;
+* corrected values;
+* correction reason;
+* evidence package;
+* approving authority;
+* calculation context;
+* timestamps;
+* dependency versions.
+
+Historical truth shall remain reproducible indefinitely.
+
+---
+
+# Immutable Lifecycle Elements
+
+The following elements become permanently immutable upon publication:
+
+* identity;
+* publication timestamp;
+* calculation inputs;
+* evidence references;
+* workflow lineage;
+* decision lineage;
+* authorization lineage;
+* calculation algorithm version;
+* benchmark references;
+* historical relationships.
+
+Subsequent revisions shall create new constitutional objects.
+
+---
+
+# Prohibited Lifecycle Transitions
+
+The following transitions are constitutionally prohibited:
+
+Published → Draft
+
+Published → Validated
+
+Published → Calculated
+
+Archived → Draft
+
+Archived → Published
+
+Certified → Draft
+
+Calculated → Draft
+
+Superseded → Published
+
+Deleted → Any State
+
+Direct modification of Published records
+
+Evidence removal from Published records
+
+Identity reassignment
+
+Ownership reassignment after publication
+
+Any prohibited transition shall fail closed.
+
+---
+
+# Ownership Requirements
+
+Lifecycle ownership shall remain constitutionally defined.
+
+Performance Truth Office owns:
+
+* lifecycle advancement;
+* validation;
+* calculation;
+* publication;
+* correction;
+* supersession;
+* archival.
+
+Historian owns:
+
+* permanent historical custody.
+
+Audit Office owns:
+
+* certification verification.
+
+Commander owns:
+
+* enterprise governance.
+
+Ownership shall never become ambiguous.
+
+---
+
+# Evidence Requirements by Lifecycle Stage
+
+Draft:
+
+* creation evidence.
+
+Pending Validation:
+
+* validation request evidence.
+
+Validated:
+
+* validation evidence.
+
+Calculated:
+
+* calculation evidence.
+
+Reconciled:
+
+* reconciliation evidence.
+
+Certified:
+
+* certification evidence.
+
+Published:
+
+* publication evidence.
+
+Corrected:
+
+* correction evidence.
+
+Superseded:
+
+* supersession evidence.
+
+Archived:
+
+* archival evidence.
+
+Missing required evidence shall prevent lifecycle advancement.
+
+---
+
+# Lifecycle Invariants
+
+The following invariants shall always hold:
+
+* every object has exactly one lifecycle state;
+* every state transition is deterministic;
+* every transition produces evidence;
+* every published record remains immutable;
+* every correction produces a new revision;
+* every superseded record remains historically accessible;
+* every archived object remains reproducible;
+* every lifecycle action preserves provenance.
+
+---
+
+# Fail-Closed Requirements
+
+Lifecycle progression shall immediately fail closed if:
+
+* evidence is incomplete;
+* validation fails;
+* reconciliation fails;
+* ownership is uncertain;
+* dependency truth is unavailable;
+* calculation is non-deterministic;
+* timestamps violate temporal integrity;
+* certification cannot be completed;
+* publication would violate historical immutability.
+
+No object may advance beyond the failing state until constitutional compliance has been restored.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+* every lifecycle state is formally defined;
+* every authorized transition is deterministic;
+* every prohibited transition is explicitly identified;
+* correction behavior preserves historical truth;
+* supersession behavior is constitutionally defined;
+* archival behavior guarantees permanent preservation;
+* ownership exists for every lifecycle stage;
+* evidence requirements exist for every transition;
+* fail-closed behavior is defined for every constitutional violation;
+* no lifecycle ambiguity remains.

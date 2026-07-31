@@ -1,0 +1,362 @@
+[
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-001",
+    "object_name": "Performance Truth Record",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-002",
+    "object_name": "Performance Snapshot",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-003",
+    "object_name": "Performance Interval",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-004",
+    "object_name": "Performance Metric",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-005",
+    "object_name": "Performance Attribution",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-006",
+    "object_name": "Performance Baseline",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-007",
+    "object_name": "Performance Benchmark",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-008",
+    "object_name": "Performance Calculation Context",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-009",
+    "object_name": "Performance Correction",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-010",
+    "object_name": "Performance Revision",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-011",
+    "object_name": "Performance Evidence Package",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  },
+  {
+    "history_is_immutable": true,
+    "initial_state": "created",
+    "object_id": "PT-OBJ-012",
+    "object_name": "Performance Certification State",
+    "permitted_transitions": [
+      "created -> source_evidence_bound",
+      "source_evidence_bound -> calculation_pending",
+      "calculation_pending -> calculated",
+      "calculated -> validation_pending",
+      "validation_pending -> validated",
+      "validated -> published",
+      "published -> correction_pending",
+      "correction_pending -> corrected",
+      "corrected -> superseded",
+      "superseded -> archived",
+      "created -> rejected",
+      "source_evidence_bound -> suspended",
+      "calculation_pending -> suspended",
+      "validation_pending -> suspended"
+    ],
+    "prohibited_transitions_reference": "state_transition_registry.json",
+    "terminal_states": [
+      "published",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ]
+  }
+]

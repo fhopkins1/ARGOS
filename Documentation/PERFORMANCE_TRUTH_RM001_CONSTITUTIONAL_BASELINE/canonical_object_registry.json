@@ -1,0 +1,482 @@
+[
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Truth Record ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-001",
+    "object_name": "Performance Truth Record",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Snapshot ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-002",
+    "object_name": "Performance Snapshot",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Interval ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-003",
+    "object_name": "Performance Interval",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Metric ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-004",
+    "object_name": "Performance Metric",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Attribution ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-005",
+    "object_name": "Performance Attribution",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Baseline ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-006",
+    "object_name": "Performance Baseline",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Benchmark ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-007",
+    "object_name": "Performance Benchmark",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Calculation Context ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-008",
+    "object_name": "Performance Calculation Context",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Correction ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-009",
+    "object_name": "Performance Correction",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Revision ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-010",
+    "object_name": "Performance Revision",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Evidence Package ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-011",
+    "object_name": "Performance Evidence Package",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  },
+  {
+    "constitutional_owner": "Performance Truth Office",
+    "custodian": "Performance Truth Office until Historian archival transfer",
+    "immutable_identity": "Performance Certification State ID",
+    "lifecycle": [
+      "created",
+      "source_evidence_bound",
+      "calculation_pending",
+      "calculated",
+      "validation_pending",
+      "validated",
+      "published",
+      "correction_pending",
+      "corrected",
+      "superseded",
+      "archived",
+      "rejected",
+      "suspended"
+    ],
+    "object_id": "PT-OBJ-012",
+    "object_name": "Performance Certification State",
+    "relationships": [
+      "source truth references",
+      "calculation context",
+      "evidence package",
+      "traceability records"
+    ],
+    "required_fields": [
+      "id",
+      "creation_timestamp",
+      "effective_timestamp",
+      "source_evidence_references",
+      "calculation_context_reference",
+      "revision_reference",
+      "certification_state",
+      "status"
+    ],
+    "traceability_required": true,
+    "versioning": "supersession and revision only; no destructive mutation"
+  }
+]

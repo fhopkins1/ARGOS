@@ -1,0 +1,212 @@
+[
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "realized_performance",
+    "calculation_id": "PT-CALC-001",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "workflow_performance",
+    "calculation_id": "PT-CALC-002",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "portfolio_performance",
+    "calculation_id": "PT-CALC-003",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "account_performance",
+    "calculation_id": "PT-CALC-004",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "benchmark_comparison",
+    "calculation_id": "PT-CALC-005",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "historical_performance",
+    "calculation_id": "PT-CALC-006",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "performance_attribution",
+    "calculation_id": "PT-CALC-007",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "cumulative_performance",
+    "calculation_id": "PT-CALC-008",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "interval_performance",
+    "calculation_id": "PT-CALC-009",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  },
+  {
+    "authority": "Performance Truth Office",
+    "calculation": "revision_propagation",
+    "calculation_id": "PT-CALC-010",
+    "correction_rule": "Corrections propagate through revision and supersession, preserving prior history.",
+    "determinism_rule": "Same inputs, same configuration, same precision, same result.",
+    "fail_closed_conditions": [
+      "missing source truth",
+      "stale source truth",
+      "conflicting source truth",
+      "undefined calculation context"
+    ],
+    "precision_rule": "Use declared calculation context precision and rounding; reject undefined precision.",
+    "source_truth": [
+      "Closed Position Truth",
+      "Decision Objects",
+      "Authorization",
+      "Market Data",
+      "Workflow Evidence"
+    ]
+  }
+]

@@ -1,0 +1,415 @@
+# PERFORMANCE-TRUTH-RM-001-007
+
+# Performance Truth Traceability
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the complete constitutional traceability requirements governing every Performance Truth value produced by the Performance Truth Office.
+
+The purpose of traceability is to ensure that every published performance value can be deterministically reconstructed from its originating enterprise events, calculations, evidence, and constitutional decisions. Every published metric shall possess complete provenance from origin through publication, certification, revision, and archival.
+
+No Performance Truth shall exist without complete constitutional traceability.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* Workflow Ownership Doctrine
+* Truth Doctrine
+* Evidence Doctrine
+* Audit Doctrine
+* Historian Doctrine
+
+---
+
+# Constitutional Principles
+
+Performance Truth traceability shall satisfy the following principles:
+
+* complete provenance;
+* deterministic reconstruction;
+* immutable lineage;
+* reproducible calculations;
+* complete ownership visibility;
+* constitutional auditability;
+* fail-closed validation.
+
+Traceability exists to prove why every published performance value is correct.
+
+---
+
+# Scope
+
+This order governs traceability for every canonical Performance Truth object, including:
+
+* Performance Truth Record;
+* Performance Snapshot;
+* Performance Interval;
+* Performance Metric;
+* Performance Attribution;
+* Performance Baseline;
+* Performance Benchmark;
+* Performance Calculation Context;
+* Performance Correction;
+* Performance Revision;
+* Performance Evidence Package;
+* Performance Certification State.
+
+---
+
+# Constitutional Traceability Requirement
+
+Every published Performance Truth value shall possess a complete constitutional provenance chain.
+
+The chain shall be complete, deterministic, immutable, and independently reproducible.
+
+No intermediate dependency may be omitted.
+
+---
+
+# Required Provenance Chain
+
+Every published performance value shall trace, directly or indirectly, to:
+
+* originating Workflow Execution;
+* originating Workflow Execution Token;
+* Decision Object;
+* Authorization;
+* Risk evaluation;
+* market data;
+* broker activity;
+* Monitoring observations;
+* Closed Position Truth;
+* calculation context;
+* calculation algorithm version;
+* benchmark references;
+* baseline references;
+* attribution calculations;
+* supporting evidence;
+* publication event;
+* certification decision.
+
+The complete chain shall remain permanently accessible.
+
+---
+
+# Workflow Traceability
+
+Every Performance Truth Record shall identify:
+
+* originating workflow;
+* workflow execution identifier;
+* workflow version;
+* workflow owner;
+* execution timestamp;
+* execution outcome;
+* execution evidence.
+
+Workflow lineage shall never be lost.
+
+---
+
+# Decision Traceability
+
+Every published performance value shall identify every Decision Object that materially contributed to its creation.
+
+Required information includes:
+
+* Decision Object identifier;
+* decision version;
+* decision timestamp;
+* decision authority;
+* decision evidence;
+* workflow relationship.
+
+Decision lineage shall remain immutable.
+
+---
+
+# Authorization Traceability
+
+Every Performance Truth object shall identify:
+
+* governing authorization;
+* authorization identifier;
+* authorization version;
+* authorization validity interval;
+* approving authority;
+* authorization evidence.
+
+Expired or revoked authorizations shall remain historically traceable.
+
+---
+
+# Market Data Traceability
+
+Every market-derived calculation shall identify:
+
+* market data source;
+* provider identity;
+* instrument identifier;
+* observation timestamp;
+* received timestamp;
+* normalization method;
+* version;
+* evidence reference.
+
+Every market input shall remain reproducible.
+
+---
+
+# Closed Position Traceability
+
+Every realized performance value shall reference:
+
+* Closed Position Truth identifier;
+* trade identifier;
+* execution identifiers;
+* settlement identifiers;
+* reconciliation evidence.
+
+Performance calculations shall never exist independently of Closed Position Truth.
+
+---
+
+# Broker Traceability
+
+Where broker activity contributes to performance, provenance shall include:
+
+* broker transaction identifier;
+* order identifier;
+* execution identifiers;
+* fills;
+* commissions;
+* fees;
+* settlement references.
+
+Broker lineage shall remain complete.
+
+---
+
+# Monitoring Traceability
+
+Performance values derived from monitored activity shall identify:
+
+* Monitoring event;
+* event identifier;
+* observation window;
+* monitored dependency;
+* monitoring evidence.
+
+Monitoring observations shall remain reproducible.
+
+---
+
+# Risk Traceability
+
+Every performance record shall identify:
+
+* governing Risk assessment;
+* risk identifier;
+* evaluated constraints;
+* approval status;
+* associated evidence.
+
+Risk lineage shall remain historically accessible.
+
+---
+
+# Calculation Traceability
+
+Every calculated value shall preserve:
+
+* calculation identifier;
+* algorithm version;
+* formula version;
+* input values;
+* intermediate values;
+* output values;
+* deterministic execution environment;
+* execution timestamp.
+
+Calculations shall be independently reproducible.
+
+---
+
+# Attribution Traceability
+
+Every attribution metric shall identify:
+
+* contributing positions;
+* contributing intervals;
+* contributing benchmarks;
+* weighting methodology;
+* attribution algorithm;
+* supporting calculations.
+
+No attribution value shall be published without complete contribution lineage.
+
+---
+
+# Baseline and Benchmark Traceability
+
+Every comparison shall identify:
+
+* baseline identifier;
+* benchmark identifier;
+* benchmark version;
+* benchmark source;
+* benchmark calculation;
+* benchmark evidence.
+
+Benchmark substitutions shall generate new provenance records.
+
+---
+
+# Evidence Traceability
+
+Every published value shall reference:
+
+* evidence package identifier;
+* evidence version;
+* evidence generation workflow;
+* evidence custody;
+* evidence integrity verification.
+
+Evidence relationships shall remain immutable.
+
+---
+
+# Publication Traceability
+
+Every published Performance Truth value shall identify:
+
+* publication identifier;
+* publication timestamp;
+* publication authority;
+* publication workflow;
+* certification reference.
+
+Publication shall permanently establish historical provenance.
+
+---
+
+# Certification Traceability
+
+Certification provenance shall include:
+
+* certification identifier;
+* certification workflow;
+* certifying authority;
+* certification evidence;
+* audit references;
+* certification timestamp.
+
+Certification history shall never be altered.
+
+---
+
+# Revision Traceability
+
+Every revision shall identify:
+
+* superseded Performance Truth Record;
+* revision identifier;
+* revision reason;
+* correction authority;
+* correction evidence;
+* revised calculation context.
+
+Revision history shall form an immutable chain.
+
+---
+
+# Historical Traceability
+
+Historical reconstruction shall permit deterministic recovery of:
+
+* original inputs;
+* intermediate calculations;
+* published outputs;
+* revisions;
+* supersessions;
+* evidence;
+* ownership;
+* dependencies.
+
+Every historical publication shall remain reproducible.
+
+---
+
+# Traceability Invariants
+
+The following constitutional invariants shall always hold:
+
+* every published value has complete provenance;
+* every dependency possesses immutable identity;
+* every relationship is deterministic;
+* every calculation is reproducible;
+* every revision preserves previous lineage;
+* every publication permanently preserves provenance;
+* every evidence package remains accessible;
+* every traceability relationship is immutable after publication.
+
+---
+
+# Missing Traceability
+
+The following constitute constitutional violations:
+
+* missing workflow lineage;
+* missing Decision Object;
+* missing authorization;
+* missing market source;
+* missing broker lineage;
+* missing Closed Position Truth;
+* missing calculation context;
+* missing evidence;
+* missing publication record;
+* missing certification record;
+* broken dependency chain;
+* ambiguous ownership.
+
+Any missing provenance invalidates publication eligibility.
+
+---
+
+# Fail-Closed Requirements
+
+The Performance Truth Office shall immediately fail closed whenever:
+
+* provenance cannot be completed;
+* dependency identity is unknown;
+* calculation lineage is incomplete;
+* evidence cannot be verified;
+* historical reconstruction fails;
+* workflow lineage is broken;
+* publication lineage is ambiguous;
+* certification lineage is incomplete;
+* ownership cannot be established.
+
+No Performance Truth value shall be published until complete constitutional traceability has been restored.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+* every published Performance Truth value possesses complete provenance;
+* deterministic traceability exists from publication to originating workflow execution;
+* every dependency relationship is formally defined;
+* every calculation is independently reproducible;
+* every revision preserves immutable historical lineage;
+* every evidence package is constitutionally traceable;
+* every publication is linked to certification;
+* every provenance gap results in deterministic fail-closed behavior;
+* historical reconstruction is guaranteed for every published Performance Truth;
+* no constitutional ambiguity remains regarding traceability.

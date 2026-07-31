@@ -1,0 +1,591 @@
+# PERFORMANCE-TRUTH-RM-001-002
+
+# Canonical Performance Truth Objects
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the complete constitutional specification governing every canonical business object owned by the Performance Truth Office.
+
+These objects constitute the sole constitutional representation of enterprise performance. Every published performance value, attribution, benchmark, revision, certification decision, and supporting calculation shall be represented exclusively through the canonical business objects defined herein.
+
+No implementation may introduce alternative business objects that alter constitutional meaning.
+
+---
+
+# Constitutional Principles
+
+The canonical object model shall satisfy the following constitutional principles.
+
+1. Every business object shall possess immutable identity.
+
+2. Every business object shall have exactly one constitutional owner.
+
+3. Every object shall define a deterministic lifecycle.
+
+4. Every object shall be fully traceable to constitutional evidence.
+
+5. Every object shall be historically reproducible.
+
+6. Every object shall be version controlled through supersession rather than mutation.
+
+7. No published object may lose historical provenance.
+
+8. No object may exist without constitutional justification.
+
+9. Every relationship between objects shall be explicitly defined.
+
+10. Every published performance value shall ultimately derive from constitutional truth owned by upstream offices.
+
+---
+
+# Canonical Object Inventory
+
+The Performance Truth Office shall own the following canonical business objects:
+
+1. Performance Truth Record
+
+2. Performance Snapshot
+
+3. Performance Interval
+
+4. Performance Metric
+
+5. Performance Attribution
+
+6. Performance Baseline
+
+7. Performance Benchmark
+
+8. Performance Calculation Context
+
+9. Performance Correction
+
+10. Performance Revision
+
+11. Performance Evidence Package
+
+12. Performance Certification State
+
+No additional constitutional business objects may be introduced without constitutional amendment.
+
+---
+
+# PERFORMANCE TRUTH RECORD
+
+## Purpose
+
+Represents the authoritative constitutional record describing one complete performance evaluation.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Performance Truth Record ID
+
+Identity shall never change.
+
+## Required Fields
+
+* Record ID
+* Creation Timestamp
+* Effective Timestamp
+* Workflow ID
+* Decision Object Reference
+* Closed Position Truth References
+* Calculation Context Reference
+* Metric References
+* Attribution References
+* Baseline Reference
+* Benchmark Reference
+* Evidence Package Reference
+* Certification State Reference
+* Current Revision Reference
+* Status
+
+## Relationships
+
+One Performance Truth Record may reference:
+
+* one Calculation Context;
+* one or more Metrics;
+* one or more Attribution records;
+* one Baseline;
+* zero or more Benchmarks;
+* one Evidence Package;
+* one Certification State;
+* zero or more Revisions;
+* zero or more Corrections.
+
+## Lifecycle
+
+* Created
+* Calculated
+* Validated
+* Published
+* Corrected
+* Superseded
+* Archived
+
+---
+
+# PERFORMANCE SNAPSHOT
+
+## Purpose
+
+Represents performance at one deterministic point in time.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Snapshot ID
+
+## Required Fields
+
+* Snapshot ID
+* Snapshot Timestamp
+* Scope
+* Included Records
+* Aggregate Metrics
+* Evidence Reference
+
+## Relationships
+
+References one or more Performance Truth Records.
+
+## Lifecycle
+
+Created → Validated → Published → Archived
+
+---
+
+# PERFORMANCE INTERVAL
+
+## Purpose
+
+Represents performance accumulated over a deterministic time interval.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Interval ID
+
+## Required Fields
+
+* Interval ID
+* Interval Start
+* Interval End
+* Included Records
+* Aggregate Calculations
+* Evidence Package
+
+## Relationships
+
+Aggregates multiple Performance Truth Records.
+
+## Lifecycle
+
+Created → Calculated → Published → Archived
+
+---
+
+# PERFORMANCE METRIC
+
+## Purpose
+
+Represents one constitutionally defined measurable quantity.
+
+Examples include:
+
+* Net Return
+* Gross Return
+* Win Rate
+* Profit Factor
+* Maximum Drawdown
+* Expectancy
+* Sharpe Ratio
+* Trade Count
+* Average Gain
+* Average Loss
+* Average Hold Time
+
+Additional metrics may be defined through constitutional amendment.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Metric ID
+
+## Required Fields
+
+* Metric ID
+* Metric Type
+* Value
+* Units
+* Calculation Method
+* Source Records
+* Calculation Timestamp
+* Evidence Reference
+
+## Relationships
+
+Belongs to exactly one Performance Truth Record.
+
+## Lifecycle
+
+Calculated → Validated → Published → Archived
+
+---
+
+# PERFORMANCE ATTRIBUTION
+
+## Purpose
+
+Explains why performance occurred.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Attribution ID
+
+## Required Fields
+
+* Attribution ID
+* Attribution Category
+* Source Object
+* Impact Value
+* Evidence Reference
+
+## Relationships
+
+References Metrics, Decisions, Closed Positions, Risk Decisions, or Workflow Executions.
+
+## Lifecycle
+
+Created → Validated → Published → Archived
+
+---
+
+# PERFORMANCE BASELINE
+
+## Purpose
+
+Represents the constitutional reference against which performance is measured.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Baseline ID
+
+## Required Fields
+
+* Baseline ID
+* Baseline Definition
+* Effective Interval
+* Source
+* Evidence
+
+## Relationships
+
+Referenced by one or more Performance Truth Records.
+
+## Lifecycle
+
+Created → Approved → Active → Retired
+
+---
+
+# PERFORMANCE BENCHMARK
+
+## Purpose
+
+Represents an external or internal comparison standard.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Benchmark ID
+
+## Required Fields
+
+* Benchmark ID
+* Benchmark Definition
+* Data Source
+* Measurement Interval
+* Evidence
+
+## Relationships
+
+Referenced by Performance Truth Records.
+
+## Lifecycle
+
+Created → Approved → Published → Retired
+
+---
+
+# PERFORMANCE CALCULATION CONTEXT
+
+## Purpose
+
+Defines every dependency required to reproduce a calculation.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Calculation Context ID
+
+## Required Fields
+
+* Context ID
+* Software Version
+* Formula Version
+* Dependency Versions
+* Input References
+* Configuration Values
+* Execution Timestamp
+
+## Relationships
+
+Referenced by every Performance Truth Record.
+
+## Lifecycle
+
+Created → Frozen → Archived
+
+No Calculation Context may be modified after use.
+
+---
+
+# PERFORMANCE CORRECTION
+
+## Purpose
+
+Represents correction of constitutional defects discovered after publication.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Correction ID
+
+## Required Fields
+
+* Correction ID
+* Reason
+* Affected Objects
+* Evidence
+* Timestamp
+* Authorizing Workflow
+
+## Relationships
+
+References affected Performance Truth Records and Revisions.
+
+## Lifecycle
+
+Created → Approved → Applied → Archived
+
+---
+
+# PERFORMANCE REVISION
+
+## Purpose
+
+Represents constitutionally approved supersession of previously published performance.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Revision ID
+
+## Required Fields
+
+* Revision ID
+* Previous Version
+* New Version
+* Reason
+* Evidence
+* Effective Timestamp
+
+## Relationships
+
+Links two immutable Performance Truth Records.
+
+## Lifecycle
+
+Created → Published → Historical
+
+Previous revisions shall remain permanently preserved.
+
+---
+
+# PERFORMANCE EVIDENCE PACKAGE
+
+## Purpose
+
+Collects every constitutional artifact supporting published performance.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Evidence Package ID
+
+## Required Fields
+
+* Package ID
+* Evidence Inventory
+* Hashes
+* Provenance References
+* Completeness Verification
+* Creation Timestamp
+
+## Relationships
+
+Referenced by every Performance Truth Record.
+
+## Lifecycle
+
+Created → Verified → Frozen → Archived
+
+Frozen packages shall never be modified.
+
+---
+
+# PERFORMANCE CERTIFICATION STATE
+
+## Purpose
+
+Represents constitutional certification status of a published performance record.
+
+## Constitutional Owner
+
+Performance Truth Office
+
+## Immutable Identity
+
+Certification State ID
+
+## Required Fields
+
+* Certification ID
+* Certification Status
+* Audit References
+* Approval Evidence
+* Certification Timestamp
+
+## Relationships
+
+References one Performance Truth Record.
+
+## Lifecycle
+
+Pending → Verified → Certified → Revoked (if constitutionally invalidated)
+
+Certification history shall remain immutable.
+
+---
+
+# Constitutional Relationship Rules
+
+The following relationships are mandatory.
+
+Every Performance Truth Record shall reference:
+
+* exactly one Performance Calculation Context;
+* exactly one Performance Evidence Package;
+* exactly one Performance Certification State;
+* one or more Performance Metrics.
+
+Every Metric shall reference the Calculation Context that produced it.
+
+Every Attribution shall reference one or more published Metrics.
+
+Every Revision shall reference exactly one superseded record and one replacement record.
+
+Every Correction shall reference affected objects and supporting evidence.
+
+Every Snapshot and Interval shall consist solely of published Performance Truth Records.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold.
+
+* Every canonical object possesses immutable identity.
+* Every object possesses exactly one constitutional owner.
+* Every published object is evidence-backed.
+* Every object is historically reproducible.
+* Every object is independently traceable.
+* No object may exist without a deterministic lifecycle.
+* Published objects shall never be deleted.
+* Historical supersession shall never destroy prior history.
+* Every relationship shall remain internally consistent.
+* No orphaned canonical objects shall exist.
+
+---
+
+# Required Evidence
+
+Implementation shall demonstrate:
+
+* complete creation of every canonical object;
+* immutable identity assignment;
+* ownership enforcement;
+* lifecycle enforcement;
+* relationship integrity;
+* historical preservation;
+* evidence linkage;
+* revision history;
+* supersession behavior;
+* certification state preservation.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every canonical Performance Truth business object has been constitutionally defined.
+2. Every object has a single constitutional owner.
+3. Every object possesses immutable identity.
+4. Every object defines required fields.
+5. Every object defines deterministic relationships.
+6. Every object defines a complete lifecycle.
+7. Constitutional invariants prohibit ambiguity and orphaned objects.
+8. Every published performance value can be represented exclusively through the canonical object model.
+9. Historical reproducibility and supersession are constitutionally guaranteed.
+10. No constitutional ambiguity remains regarding the business object architecture of the Performance Truth Office.

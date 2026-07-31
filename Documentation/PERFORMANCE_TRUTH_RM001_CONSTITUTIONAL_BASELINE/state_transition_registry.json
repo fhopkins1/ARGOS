@@ -1,0 +1,198 @@
+[
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "created",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "source_evidence_bound",
+    "transition": "created -> source_evidence_bound",
+    "transition_id": "PT-TRANS-001"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "source_evidence_bound",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "calculation_pending",
+    "transition": "source_evidence_bound -> calculation_pending",
+    "transition_id": "PT-TRANS-002"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "calculation_pending",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "calculated",
+    "transition": "calculation_pending -> calculated",
+    "transition_id": "PT-TRANS-003"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "calculated",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "validation_pending",
+    "transition": "calculated -> validation_pending",
+    "transition_id": "PT-TRANS-004"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "validation_pending",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "validated",
+    "transition": "validation_pending -> validated",
+    "transition_id": "PT-TRANS-005"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "validated",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "published",
+    "transition": "validated -> published",
+    "transition_id": "PT-TRANS-006"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "published",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "correction_pending",
+    "transition": "published -> correction_pending",
+    "transition_id": "PT-TRANS-007"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "correction_pending",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "corrected",
+    "transition": "correction_pending -> corrected",
+    "transition_id": "PT-TRANS-008"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "corrected",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "superseded",
+    "transition": "corrected -> superseded",
+    "transition_id": "PT-TRANS-009"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "superseded",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "archived",
+    "transition": "superseded -> archived",
+    "transition_id": "PT-TRANS-010"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "created",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "rejected",
+    "transition": "created -> rejected",
+    "transition_id": "PT-TRANS-011"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "source_evidence_bound",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "suspended",
+    "transition": "source_evidence_bound -> suspended",
+    "transition_id": "PT-TRANS-012"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "calculation_pending",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "suspended",
+    "transition": "calculation_pending -> suspended",
+    "transition_id": "PT-TRANS-013"
+  },
+  {
+    "entry_authority": "Performance Truth Office",
+    "exit_authority": "Performance Truth Office",
+    "from_state": "validation_pending",
+    "prohibited_without_evidence": true,
+    "required_evidence": [
+      "state transition evidence",
+      "governing source evidence",
+      "traceability update"
+    ],
+    "to_state": "suspended",
+    "transition": "validation_pending -> suspended",
+    "transition_id": "PT-TRANS-014"
+  }
+]

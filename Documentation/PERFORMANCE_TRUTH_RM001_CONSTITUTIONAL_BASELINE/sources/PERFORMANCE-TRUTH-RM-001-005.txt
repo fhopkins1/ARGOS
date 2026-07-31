@@ -1,0 +1,598 @@
+# PERFORMANCE-TRUTH-RM-001-005
+
+# Office Interfaces
+
+## Doctrine Statement
+
+### Purpose
+
+This order establishes the complete constitutional interface specification governing all interactions between the Performance Truth Office and every external office within the ARGOS Enterprise.
+
+The purpose of these interfaces is to ensure that all exchanges of information, authority, ownership, and evidence occur through deterministic, auditable, and constitutionally authorized interactions while preserving strict ownership boundaries and complete traceability.
+
+No interface defined herein grants authority to modify another office's constitutional responsibilities or ownership.
+
+---
+
+# Constitutional Principles
+
+Every constitutional interface shall:
+
+* preserve constitutional ownership;
+* expose only constitutionally authorized information;
+* remain deterministic;
+* be fully auditable;
+* be replayable;
+* be versioned;
+* preserve immutable provenance;
+* fail closed whenever constitutional guarantees cannot be satisfied.
+
+Interfaces define constitutional behavior only.
+
+Implementation technology, transport protocols, serialization formats, messaging systems, APIs, databases, and infrastructure remain outside the constitutional scope.
+
+---
+
+# General Interface Requirements
+
+Every interface shall specify:
+
+* producing office;
+* consuming office;
+* ownership before transfer;
+* ownership after transfer;
+* required inputs;
+* required outputs;
+* preconditions;
+* postconditions;
+* constitutional guarantees;
+* required evidence;
+* failure behavior.
+
+No interface may bypass constitutional validation.
+
+---
+
+# Interface: Commander
+
+## Purpose
+
+Provide authoritative enterprise performance for executive decision-making.
+
+### Producing Office
+
+Performance Truth
+
+### Consuming Office
+
+Commander
+
+### Required Inputs
+
+* Authorized performance publication request
+* Scope definition
+* Requested reporting interval
+
+### Required Outputs
+
+* Certified Performance Truth Record
+* Publication timestamp
+* Certification state
+* Supporting evidence references
+
+### Ownership
+
+Performance Truth retains ownership of all published Performance Truth objects.
+
+Commander receives read-only constitutional access.
+
+### Constitutional Guarantees
+
+* Published performance is certified.
+* Results are deterministic.
+* Historical revisions are identified.
+* Certification state is explicit.
+* Provenance is complete.
+
+---
+
+# Interface: Workflow Engine
+
+## Purpose
+
+Receive completed workflow execution information required for performance calculation.
+
+### Producing Office
+
+Workflow Engine
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Workflow Execution Token
+* Completion status
+* Execution timestamps
+* Workflow identifiers
+* Evidence references
+
+### Required Outputs
+
+* Receipt acknowledgment
+* Validation status
+* Dependency status
+
+### Ownership
+
+Workflow Engine retains ownership of Workflow Execution Tokens.
+
+Performance Truth receives immutable references only.
+
+### Constitutional Guarantees
+
+* Execution identity is immutable.
+* Workflow completion is verifiable.
+* Evidence references remain stable.
+* Duplicate submissions are detectable.
+
+---
+
+# Interface: Historian
+
+## Purpose
+
+Provide immutable historical preservation and retrieval.
+
+### Producing Office
+
+Historian
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Historical retrieval requests
+* Replay requests
+* Preservation requests
+
+### Required Outputs
+
+* Historical records
+* Archived revisions
+* Immutable preservation confirmation
+
+### Ownership
+
+Historian owns historical storage.
+
+Performance Truth owns Performance Truth Records.
+
+### Constitutional Guarantees
+
+* Historical records remain immutable.
+* Replay returns identical records.
+* Archived revisions remain permanently available.
+
+---
+
+# Interface: Closed Position Truth
+
+## Purpose
+
+Provide realized trading outcomes for performance calculation.
+
+### Producing Office
+
+Closed Position Truth
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Certified Closed Position Truth Record
+* Settlement status
+* Realized P&L
+* Fees
+* Currency information
+* Position identifiers
+
+### Required Outputs
+
+* Validation status
+* Attribution linkage
+* Performance inclusion status
+
+### Ownership
+
+Closed Position Truth retains ownership of Closed Position Truth Records.
+
+Performance Truth derives independent Performance Truth Records.
+
+### Constitutional Guarantees
+
+* Only certified closed positions are accepted.
+* Position identity remains immutable.
+* Settlement status is explicit.
+* Provenance is preserved.
+
+---
+
+# Interface: Decision Objects
+
+## Purpose
+
+Provide decision provenance required for attribution.
+
+### Producing Office
+
+Decision Office
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Decision Object identifier
+* Decision timestamp
+* Strategy identifiers
+* Workflow references
+
+### Required Outputs
+
+* Attribution linkage
+* Validation status
+
+### Ownership
+
+Decision Office retains ownership.
+
+Performance Truth stores immutable references only.
+
+### Constitutional Guarantees
+
+* Attribution is deterministic.
+* Decision identity remains immutable.
+* Historical decision revisions remain traceable.
+
+---
+
+# Interface: Trader
+
+## Purpose
+
+Provide execution identity necessary for attribution.
+
+### Producing Office
+
+Trader
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Trade identifiers
+* Execution references
+* Workflow identifiers
+
+### Required Outputs
+
+* Association confirmation
+* Validation status
+
+### Ownership
+
+Trader retains ownership of trading records.
+
+Performance Truth maintains only performance-derived information.
+
+### Constitutional Guarantees
+
+* Execution identity is preserved.
+* Duplicate trades are detectable.
+* Attribution remains deterministic.
+
+---
+
+# Interface: Monitoring
+
+## Purpose
+
+Provide operational observations relevant to certification and diagnostics.
+
+### Producing Office
+
+Monitoring
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Monitoring events
+* Health observations
+* Dependency status
+* System alerts
+
+### Required Outputs
+
+* Diagnostic acknowledgments
+* Recalculation requests when constitutionally authorized
+
+### Ownership
+
+Monitoring retains ownership of operational observations.
+
+Performance Truth stores references only.
+
+### Constitutional Guarantees
+
+* Monitoring cannot modify performance.
+* Monitoring data is informational only.
+* Certification decisions remain independent.
+
+---
+
+# Interface: Risk
+
+## Purpose
+
+Provide risk attribution information.
+
+### Producing Office
+
+Risk
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Risk identifiers
+* Exposure summaries
+* Risk classifications
+
+### Required Outputs
+
+* Attribution linkage
+* Validation status
+
+### Ownership
+
+Risk retains ownership of all risk records.
+
+Performance Truth stores attribution references only.
+
+### Constitutional Guarantees
+
+* Risk cannot alter published performance.
+* Risk information remains attributable.
+* Risk revisions remain historically traceable.
+
+---
+
+# Interface: Broker
+
+## Purpose
+
+Provide authoritative execution and settlement evidence.
+
+### Producing Office
+
+Broker
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Execution confirmations
+* Settlement confirmations
+* Commission records
+* Corporate action records
+* Currency settlement information
+
+### Required Outputs
+
+* Validation acknowledgment
+* Dependency status
+
+### Ownership
+
+Broker retains ownership of broker records.
+
+Performance Truth derives performance calculations without assuming ownership.
+
+### Constitutional Guarantees
+
+* Broker evidence is immutable.
+* Settlement identity is preserved.
+* Duplicate submissions are rejected.
+* Missing confirmations prevent publication.
+
+---
+
+# Interface: Sentinel
+
+## Purpose
+
+Provide enterprise event notifications affecting performance recalculation.
+
+### Producing Office
+
+Sentinel
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Enterprise events
+* Dependency notifications
+* Recalculation triggers
+* Correction notifications
+
+### Required Outputs
+
+* Trigger acknowledgment
+* Recalculation initiation status
+
+### Ownership
+
+Sentinel retains ownership of event records.
+
+Performance Truth records only the constitutional impact.
+
+### Constitutional Guarantees
+
+* Events are immutable.
+* Trigger identity is preserved.
+* Recalculation authority remains governed by Performance Truth.
+
+---
+
+# Interface: Evidence Repository
+
+## Purpose
+
+Provide immutable constitutional evidence storage.
+
+### Producing Office
+
+Evidence Repository
+
+### Consuming Office
+
+Performance Truth
+
+### Required Inputs
+
+* Evidence retrieval requests
+* Evidence preservation requests
+* Integrity verification requests
+
+### Required Outputs
+
+* Immutable evidence references
+* Integrity verification results
+* Preservation confirmation
+
+### Ownership
+
+Evidence Repository owns evidence storage.
+
+Performance Truth owns only evidence references contained within its records.
+
+### Constitutional Guarantees
+
+* Evidence remains immutable.
+* Evidence identity is permanent.
+* Integrity verification is deterministic.
+
+---
+
+# Interface: Audit Office
+
+## Purpose
+
+Support constitutional audits and certification.
+
+### Producing Office
+
+Performance Truth
+
+### Consuming Office
+
+Audit Office
+
+### Required Inputs
+
+* Audit requests
+* Replay requests
+* Certification requests
+
+### Required Outputs
+
+* Complete Performance Truth Records
+* Evidence Packages
+* Calculation Contexts
+* Provenance Chains
+* Historical Revisions
+* Certification States
+
+### Ownership
+
+Performance Truth retains ownership of all Performance Truth objects.
+
+Audit Office receives read-only constitutional access.
+
+### Constitutional Guarantees
+
+* Audit reconstruction is complete.
+* Replay is deterministic.
+* Every published value is reproducible.
+* Evidence completeness is demonstrable.
+* Certification inputs are immutable.
+
+---
+
+# Cross-Interface Constitutional Requirements
+
+The following requirements apply to every interface:
+
+* Ownership shall never transfer unless explicitly authorized by constitutional doctrine.
+* Every exchanged object shall possess immutable identity.
+* Every received object shall undergo constitutional validation.
+* Every interface interaction shall generate auditable evidence.
+* Every interaction shall be timestamped using constitutional temporal standards.
+* Every interaction shall preserve complete provenance.
+* Duplicate submissions shall be detected deterministically.
+* Version identity shall be preserved throughout all exchanges.
+* Interface failures shall never produce partial constitutional state.
+* Interfaces shall be fully reproducible during deterministic replay.
+
+---
+
+# Fail-Closed Behavior
+
+The Performance Truth Office shall reject any interface interaction when:
+
+* required inputs are absent;
+* object identity cannot be verified;
+* ownership is ambiguous;
+* certification prerequisites are unmet;
+* evidence integrity cannot be established;
+* timestamps violate constitutional temporal rules;
+* provenance is incomplete;
+* duplicate publication is detected;
+* dependency certification has failed;
+* reconciliation prerequisites are unsatisfied.
+
+Rejected interactions shall not alter constitutional state.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered constitutionally complete when:
+
+1. Every constitutional interface of the Performance Truth Office is explicitly defined.
+2. Required inputs and outputs are specified for each interface.
+3. Ownership before and after each interaction is unambiguous.
+4. Constitutional guarantees are defined for every interface.
+5. Interface preconditions and postconditions are deterministic.
+6. Cross-interface invariants preserve ownership, provenance, and replayability.
+7. Universal fail-closed behavior is defined for all interface failures.
+8. No constitutional ambiguity remains regarding external interactions of the Performance Truth Office.
