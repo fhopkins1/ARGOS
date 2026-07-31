@@ -1,0 +1,27 @@
+{
+  "candidate_digest": "e9abc9db7c848c3146d714a85790bb29b91c55a0",
+  "constitutional_freeze_authorized": false,
+  "decision": "HISTORIAN-RM-003 is blocked by failed RM-002 implementation certification.",
+  "enterprise_certification_execution_authorized": false,
+  "generated_at_utc": "2026-07-31T23:05:00+00:00",
+  "hist_ecs003_audit_002_authorized": false,
+  "observed_rm002_final_disposition": "FAIL_CLOSED",
+  "observed_rm003_authorized": false,
+  "operational_transition_authorized": false,
+  "order_id": "HISTORIAN-RM-003",
+  "precondition_gate": "FAILED",
+  "required_precondition": "HISTORIAN-RM-002 implementation certification PASS and rm003_authorized true",
+  "rm002_blocking_findings": [
+    "HIST-RM002-FIND-B02-001",
+    "HIST-RM002-FIND-B03-001",
+    "HIST-RM002-FIND-B04-001",
+    "HIST-RM002-FIND-B05-001",
+    "HIST-RM002-FIND-B06-001",
+    "HIST-RM002-FIND-B08-001",
+    "HIST-RM002-FIND-B09-001",
+    "HIST-RM002-FIND-B10-001",
+    "HIST-RM002-FIND-B11-001",
+    "HIST-RM002-FIND-B12-001",
+    "HIST-RM002-FIND-B00-001"
+  ]
+}

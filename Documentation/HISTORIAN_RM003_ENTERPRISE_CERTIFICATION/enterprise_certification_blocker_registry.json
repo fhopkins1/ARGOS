@@ -1,0 +1,37 @@
+[
+  {
+    "affected_rm003_orders": [
+      "HISTORIAN-RM-003-B01",
+      "HISTORIAN-RM-003-B02",
+      "HISTORIAN-RM-003-B03",
+      "HISTORIAN-RM-003-B04",
+      "HISTORIAN-RM-003-B05",
+      "HISTORIAN-RM-003-B06",
+      "HISTORIAN-RM-003-B07",
+      "HISTORIAN-RM-003-B08",
+      "HISTORIAN-RM-003-B09",
+      "HISTORIAN-RM-003-B10",
+      "HISTORIAN-RM-003-B11",
+      "HISTORIAN-RM-003-B12"
+    ],
+    "blocker_id": "HIST-RM003-BLOCKER-RM002-GATE",
+    "certification_impact": "Blocks final constitutional certification, freeze, operational transition, and HISTORIAN-ECS003-AUDIT-002 initiation.",
+    "required_corrective_action": "Remediate and recertify RM-002 before RM-003 enterprise certification execution.",
+    "severity": "BLOCKING",
+    "source_disposition": "FAIL_CLOSED",
+    "source_findings": [
+      "HIST-RM002-FIND-B02-001",
+      "HIST-RM002-FIND-B03-001",
+      "HIST-RM002-FIND-B04-001",
+      "HIST-RM002-FIND-B05-001",
+      "HIST-RM002-FIND-B06-001",
+      "HIST-RM002-FIND-B08-001",
+      "HIST-RM002-FIND-B09-001",
+      "HIST-RM002-FIND-B10-001",
+      "HIST-RM002-FIND-B11-001",
+      "HIST-RM002-FIND-B12-001",
+      "HIST-RM002-FIND-B00-001"
+    ],
+    "source_order": "HISTORIAN-RM-002"
+  }
+]

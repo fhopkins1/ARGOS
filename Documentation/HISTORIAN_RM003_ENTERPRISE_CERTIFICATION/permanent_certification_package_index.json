@@ -1,0 +1,35 @@
+{
+  "candidate_digest": "e9abc9db7c848c3146d714a85790bb29b91c55a0",
+  "included_evidence": [
+    {
+      "evidence_id": "HIST-RM003-EVID-SOURCE-ORDER",
+      "exists": true,
+      "path": "C:\\Users\\Fletc\\.codex\\attachments\\433535f7-9dc8-4225-a131-ba2c01dde6f1\\pasted-text.txt",
+      "sha256": "43b6f3caa9da2e07f9af48a055d766025b39a5454a013782c115b2108af34364",
+      "summary": "User-provided RM-003 execution order."
+    },
+    {
+      "evidence_id": "HIST-RM003-EVID-RM002-REPORT",
+      "exists": true,
+      "path": "Documentation\\HISTORIAN_RM002_IMPLEMENTATION_CERTIFICATION\\implementation_completeness_report.json",
+      "sha256": "9512f93da634be56dbff469e21ac106c34678108c02fd6ad14050dc632245fe3",
+      "summary": "RM-002 implementation certification report."
+    },
+    {
+      "evidence_id": "HIST-RM003-EVID-RM002-BLOCKERS",
+      "exists": true,
+      "path": "Documentation\\HISTORIAN_RM002_IMPLEMENTATION_CERTIFICATION\\certification_blocker_registry.json",
+      "sha256": "1d939c87ef5c937dbabfc8fa55f5d860d41a9a8dac974d8e3fc72e18b0ef6f2d",
+      "summary": "RM-002 blocker registry."
+    },
+    {
+      "evidence_id": "HIST-RM003-EVID-MO001-BASELINE",
+      "exists": true,
+      "path": "Documentation\\HISTORIAN_MO001_INFORMATION_JOURNEY_HARDENING\\enterprise_information_journey_baseline.json",
+      "sha256": "8a568b4594f3b5b42e9ab98e7f72bce051d6aab6be7a8c617f920f85ab5f5108",
+      "summary": "MO-001 hardened Enterprise Information Journey baseline."
+    }
+  ],
+  "order_id": "HISTORIAN-RM-003",
+  "package_disposition": "PRECONDITION_BLOCKED_CERTIFICATION_RECORD"
+}
