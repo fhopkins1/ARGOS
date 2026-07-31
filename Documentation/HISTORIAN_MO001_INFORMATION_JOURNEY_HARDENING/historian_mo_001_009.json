@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Add Counterfactual Path nodes with path_id, source_decision, alternative_authority, admissibility_status, rejection_reason, and replay_constraints.",
+    "Require TYPHON scenario archives to reference production journeys without mutating them.",
+    "Preserve alternative evidence and alternative execution paths as non-authoritative historical branches."
+  ],
+  "audit_objective": "Attempt deterministic reconstruction of alternative evidence, decisions, authorizations, execution paths, exits, and TYPHON scenarios.",
+  "baseline_rules": [
+    "Counterfactual paths are historical records of considered or simulated alternatives, not production truth.",
+    "TYPHON archives remain segregated from production Journey authority.",
+    "Replay must be deterministic over both chosen and rejected branches."
+  ],
+  "constitutional_weaknesses": [
+    "Counterfactual reconstruction requires rejected, prohibited, unavailable, and alternative path evidence that was not uniformly required.",
+    "TYPHON scenario archives require separation from production history.",
+    "Alternative authorizations and exits were not first-class journey path nodes."
+  ],
+  "order_id": "HISTORIAN-MO-001-009",
+  "residual_risks": [
+    "Future derivative, margin, and multi-asset scenarios may require additional branch classes."
+  ],
+  "status": "COMPLETE",
+  "title": "Counterfactual Readiness Audit"
+}

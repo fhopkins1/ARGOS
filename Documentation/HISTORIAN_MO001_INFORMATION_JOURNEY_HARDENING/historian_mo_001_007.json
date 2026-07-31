@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Expand missing-information states to include OBSERVED_ABSENT, NOT_AUTHORIZED_TO_REQUEST, REQUEST_PROHIBITED, REQUEST_DEFERRED, SOURCE_SILENT, PARTIALLY_AVAILABLE, RATE_LIMITED, COST_PROHIBITED, PRIVACY_RESTRICTED, RETENTION_EXPIRED, and UNKNOWN_CAUSE.",
+    "Require cause, authority, requesting office, affected decision path, and learning consequence for each missing-information declaration.",
+    "Require closure disposition for every missing-information state before journey certification."
+  ],
+  "audit_objective": "Determine whether missing-information preservation is complete and learning-ready.",
+  "baseline_rules": [
+    "Missing information is a first-class historical fact.",
+    "Historian records absence cause without inferring unavailable content.",
+    "Enterprise Learning receives missing-information classifications, not reconstructed guesses."
+  ],
+  "constitutional_weaknesses": [
+    "Existing missing states omit materially distinct enterprise learning signals.",
+    "Absent data could be collapsed into generic unavailable status.",
+    "Unknown and deliberately unobserved states were not separated."
+  ],
+  "order_id": "HISTORIAN-MO-001-007",
+  "residual_risks": [
+    "Some external-source restrictions may require legal or policy authorities not yet modeled."
+  ],
+  "status": "COMPLETE",
+  "title": "Missing Information Hardening"
+}

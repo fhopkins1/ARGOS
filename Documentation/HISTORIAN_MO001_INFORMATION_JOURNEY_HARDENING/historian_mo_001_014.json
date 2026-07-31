@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Reframe Journey as a graph-backed immutable custody constitution rather than a document bundle.",
+    "Bind all truth objects by reference unless archival custody transfer is explicit.",
+    "Require negative-history, missing-information, and counterfactual branch support for every applicable workflow."
+  ],
+  "audit_objective": "Assume the Journey was fundamentally misdesigned and attempt to falsify identity, boundaries, provenance, custody, completeness, learning readiness, and counterfactual readiness.",
+  "baseline_rules": [
+    "Falsification succeeded against passive archive, truth-copy, and terminal-only designs.",
+    "The hardened baseline rejects those designs.",
+    "The accepted design is custody-only, graph-backed, reference-first, and reconstruction-certified."
+  ],
+  "constitutional_weaknesses": [
+    "The Journey would be misdesigned if treated as a passive archive file instead of a constitutional graph.",
+    "The Journey would be misdesigned if it owned external truth rather than custody relationships.",
+    "The Journey would be misdesigned if it preserved only terminal outcomes."
+  ],
+  "order_id": "HISTORIAN-MO-001-014",
+  "residual_risks": [
+    "The accepted design still requires follow-on implementation and verifier certification."
+  ],
+  "status": "COMPLETE",
+  "title": "Independent Architectural Review"
+}

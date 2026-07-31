@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Create mandatory graph edge classes: OBSERVED_BY, PRODUCED_BY, DERIVED_FROM, DEPENDS_ON, TRANSFORMED_BY, REJECTED_BY, SUPERSEDED_BY, CORRECTED_BY, CERTIFIED_BY, ARCHIVED_BY, RECONSTRUCTS.",
+    "Require edge identity, edge owner, source node, target node, temporal bounds, evidence digest, and correction status.",
+    "Require graph integrity checks before closure."
+  ],
+  "audit_objective": "Challenge whether every transformation preserves source, ownership, derivation, dependency, correction, supersession, certification, and lineage.",
+  "baseline_rules": [
+    "A Journey is reconstructable only when every node and edge is identity-bound and digest-bound.",
+    "Provenance cannot be represented by narrative text alone.",
+    "Correction and supersession modify graph relationships by append-only successor edges."
+  ],
+  "constitutional_weaknesses": [
+    "Existing provenance references were office-specific rather than one Historian journey graph.",
+    "Correction and certification relationships were not uniformly represented as edge classes.",
+    "Dependency provenance could be flattened into evidence notes."
+  ],
+  "order_id": "HISTORIAN-MO-001-004",
+  "residual_risks": [
+    "A future graph storage compatibility matrix is required for distributed Historian archives."
+  ],
+  "status": "COMPLETE",
+  "title": "Provenance Graph Hardening"
+}

@@ -1,0 +1,181 @@
+[
+  {
+    "order_id": "HISTORIAN-MO-001-001",
+    "residual_risks": [
+      "Future office-specific identity schemes must map to journey identity without replacing it."
+    ],
+    "title": "Enterprise Information Journey Identity Audit",
+    "weaknesses": [
+      "Journey identity was not previously established as the primary Historian constitutional object.",
+      "Identity could be confused with workflow, evidence, decision, case-file, or archive identifiers.",
+      "Completion and archival identity boundaries were not independently specified."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-002",
+    "residual_risks": [
+      "Some future high-volume artifacts may require storage-tier doctrine before embedding is practical."
+    ],
+    "title": "Journey Boundary Audit",
+    "weaknesses": [
+      "Boundaries between preserved history and office-owned truth objects were ambiguous.",
+      "Duplicating complete external truth records inside the journey would create hidden shared custody.",
+      "Referencing too little external state would make reconstruction incomplete."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-003",
+    "residual_risks": [
+      "Some offices may need follow-on doctrine to emit complete negative-history events."
+    ],
+    "title": "Historical Completeness Audit",
+    "weaknesses": [
+      "Completed-action history alone creates selection bias.",
+      "Rejected alternatives and abandoned workflows were not guaranteed first-class preservation.",
+      "Intermediate reasoning and uncertainty could be lost when only terminal artifacts are archived."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-004",
+    "residual_risks": [
+      "A future graph storage compatibility matrix is required for distributed Historian archives."
+    ],
+    "title": "Provenance Graph Hardening",
+    "weaknesses": [
+      "Existing provenance references were office-specific rather than one Historian journey graph.",
+      "Correction and certification relationships were not uniformly represented as edge classes.",
+      "Dependency provenance could be flattened into evidence notes."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-005",
+    "residual_risks": [
+      "Compression, retention, and tiering policy remain separate operational doctrines."
+    ],
+    "title": "Historical Minimality Audit",
+    "weaknesses": [
+      "Historical completeness could be misread as authorization to duplicate all office state.",
+      "Derived metrics may be stored redundantly when they can be reconstructed.",
+      "Duplicated external truth could create divergent historical copies."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-006",
+    "residual_risks": [
+      "Cross-language archives require later doctrine for translation source authority."
+    ],
+    "title": "Language Preservation Audit",
+    "weaknesses": [
+      "Raw language and interpreted meaning can be conflated during normalization.",
+      "Enterprise hypotheses can be mistaken for historical truth.",
+      "Translated or summarized records can lose original linguistic context."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-007",
+    "residual_risks": [
+      "Some external-source restrictions may require legal or policy authorities not yet modeled."
+    ],
+    "title": "Missing Information Hardening",
+    "weaknesses": [
+      "Existing missing states omit materially distinct enterprise learning signals.",
+      "Absent data could be collapsed into generic unavailable status.",
+      "Unknown and deliberately unobserved states were not separated."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-008",
+    "residual_risks": [
+      "Enterprise Learning may still require its own sufficiency thresholds for sparse journey histories."
+    ],
+    "title": "Enterprise Learning Readiness Audit",
+    "weaknesses": [
+      "Learning readiness was dependent on direct access to several office-specific records.",
+      "Recommendation and learning code implied Historian analysis rather than custody-only history.",
+      "Performance outcomes and rejected alternatives were not guaranteed in one learning-ready journey package."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-009",
+    "residual_risks": [
+      "Future derivative, margin, and multi-asset scenarios may require additional branch classes."
+    ],
+    "title": "Counterfactual Readiness Audit",
+    "weaknesses": [
+      "Counterfactual reconstruction requires rejected, prohibited, unavailable, and alternative path evidence that was not uniformly required.",
+      "TYPHON scenario archives require separation from production history.",
+      "Alternative authorizations and exits were not first-class journey path nodes."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-010",
+    "residual_risks": [
+      "Operational storage policy must later specify concrete retention and retrieval SLAs."
+    ],
+    "title": "Enterprise Scalability Audit",
+    "weaknesses": [
+      "Single-store assumptions do not scale to multi-decade distributed history.",
+      "Journey identity lacked enterprise-instance namespace and shard independence.",
+      "Replay archives and TYPHON archives can become storage competitors without tiering and reference rules."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-011",
+    "residual_risks": [
+      "Existing code names may still use Historian for recommendation concepts until follow-on implementation remediation occurs."
+    ],
+    "title": "Constitutional Separation Audit",
+    "weaknesses": [
+      "Historian analysis, recommendations, institutional lessons, and learning records blur custody with learning.",
+      "Performance Truth and Closed Position Truth references risk hidden truth ownership transfer.",
+      "Decision Laboratory replay inputs risk being mistaken for historical mutation authority."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-012",
+    "residual_risks": [
+      "Some historical domains will need office-specific adapters to emit gate-compatible records."
+    ],
+    "title": "Enterprise Information Journey Sufficiency Challenge",
+    "weaknesses": [
+      "A journey without negative-history, missing-information, and graph-edge closure cannot support full replay or counterfactual experimentation.",
+      "A journey without custody and interface closure cannot support independent certification.",
+      "A journey without language layer preservation cannot support reliable long-term audit."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-013",
+    "residual_risks": [
+      "Some user-facing views may still require derived summaries outside Historian authority."
+    ],
+    "title": "Enterprise Information Journey Simplicity Audit",
+    "weaknesses": [
+      "Overly broad Journey payloads would increase storage, duplication, and custody risk.",
+      "Separate local custody records could duplicate Journey graph functions.",
+      "Multiple record families could obscure a small canonical object model."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-014",
+    "residual_risks": [
+      "The accepted design still requires follow-on implementation and verifier certification."
+    ],
+    "title": "Independent Architectural Review",
+    "weaknesses": [
+      "The Journey would be misdesigned if treated as a passive archive file instead of a constitutional graph.",
+      "The Journey would be misdesigned if it owned external truth rather than custody relationships.",
+      "The Journey would be misdesigned if it preserved only terminal outcomes."
+    ]
+  },
+  {
+    "order_id": "HISTORIAN-MO-001-015",
+    "residual_risks": [
+      "Implementation and verifier conformance remain outside this campaign and require future orders."
+    ],
+    "title": "Constitutional Hardening Closure",
+    "weaknesses": [
+      "Pre-hardening architecture lacked a complete baseline for identity, boundary, provenance, custody, learning projection, counterfactual replay, and simplicity.",
+      "Residual implementation alignment is not proven by this constitutional campaign."
+    ]
+  }
+]

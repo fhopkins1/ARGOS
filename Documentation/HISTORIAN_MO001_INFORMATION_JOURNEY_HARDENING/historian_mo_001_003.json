@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Require positive, negative, dormant, abandoned, contradicted, uncertain, denied, and alternative path records.",
+    "Require every decision path to preserve admitted evidence, rejected evidence, unavailable evidence, alternatives considered, and rejection rationale.",
+    "Require abandoned workflows and dormant observations to receive terminal historical dispositions."
+  ],
+  "audit_objective": "Challenge whether preserved journeys can reconstruct observations, rejected paths, uncertainty, contradictions, and intermediate reasoning.",
+  "baseline_rules": [
+    "Historical completeness includes what happened, what did not happen, what could not be known, and what was rejected.",
+    "No journey may close while mandatory negative-history declarations remain unresolved.",
+    "Intermediate reasoning is preserved as lineage references without allowing Historian reinterpretation."
+  ],
+  "constitutional_weaknesses": [
+    "Completed-action history alone creates selection bias.",
+    "Rejected alternatives and abandoned workflows were not guaranteed first-class preservation.",
+    "Intermediate reasoning and uncertainty could be lost when only terminal artifacts are archived."
+  ],
+  "order_id": "HISTORIAN-MO-001-003",
+  "residual_risks": [
+    "Some offices may need follow-on doctrine to emit complete negative-history events."
+  ],
+  "status": "COMPLETE",
+  "title": "Historical Completeness Audit"
+}

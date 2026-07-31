@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Define Journey certification gates for identity, boundary, custody, provenance graph, missing information, language preservation, negative history, counterfactual branches, and learning projection completeness.",
+    "Require failed gates to produce blocking constitutional findings.",
+    "Require each Journey to include a reconstruction manifest sufficient for independent replay and audit."
+  ],
+  "audit_objective": "Attempt to prove that a journey cannot independently support replay, learning, reconstruction, audit, counterfactual experimentation, and certification.",
+  "baseline_rules": [
+    "Journey sufficiency is proven by deterministic reconstruction, not by narrative assurance.",
+    "Incomplete journey gates prevent archival certification.",
+    "Certification consumes the Journey graph at requirement level."
+  ],
+  "constitutional_weaknesses": [
+    "A journey without negative-history, missing-information, and graph-edge closure cannot support full replay or counterfactual experimentation.",
+    "A journey without custody and interface closure cannot support independent certification.",
+    "A journey without language layer preservation cannot support reliable long-term audit."
+  ],
+  "order_id": "HISTORIAN-MO-001-012",
+  "residual_risks": [
+    "Some historical domains will need office-specific adapters to emit gate-compatible records."
+  ],
+  "status": "COMPLETE",
+  "title": "Enterprise Information Journey Sufficiency Challenge"
+}

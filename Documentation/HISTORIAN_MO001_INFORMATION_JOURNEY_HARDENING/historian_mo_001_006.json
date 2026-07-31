@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Require each language-bearing event to preserve raw_language_ref, normalized_language_ref, interpretation_ref, truth_disposition_ref, and hypothesis_use_ref.",
+    "Forbid Historian from generating semantic interpretations; it preserves interpretations emitted by the owning office.",
+    "Require translation, redaction, and summarization lineage as explicit graph edges."
+  ],
+  "audit_objective": "Challenge preservation of raw language, normalized language, constitutional records, semantic interpretation, hypotheses, and enterprise truth.",
+  "baseline_rules": [
+    "Raw language is immutable evidence, normalized language is derived evidence, interpretation belongs to the interpreting office, truth belongs to the truth owner, and hypotheses belong to learning offices.",
+    "No language layer may overwrite another.",
+    "Historical ambiguity is preserved, not corrected by Historian inference."
+  ],
+  "constitutional_weaknesses": [
+    "Raw language and interpreted meaning can be conflated during normalization.",
+    "Enterprise hypotheses can be mistaken for historical truth.",
+    "Translated or summarized records can lose original linguistic context."
+  ],
+  "order_id": "HISTORIAN-MO-001-006",
+  "residual_risks": [
+    "Cross-language archives require later doctrine for translation source authority."
+  ],
+  "status": "COMPLETE",
+  "title": "Language Preservation Audit"
+}

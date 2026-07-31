@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Adopt reference-by-digest as the default for externally owned truth and derived values.",
+    "Embed only raw events, custody transfer evidence, missing-information declarations, and graph edges required for reconstruction.",
+    "Require minimality justification for every embedded payload over size and sensitivity thresholds."
+  ],
+  "audit_objective": "Search for preserved information that has no constitutional historical value or should be referenced rather than copied.",
+  "baseline_rules": [
+    "Store source facts once under the owning office; Historian stores immutable custody and reconstruction references.",
+    "Derived values are recomputed during reconstruction unless their historical computed value is itself under audit.",
+    "Minimality may never remove negative-history, uncertainty, or provenance obligations."
+  ],
+  "constitutional_weaknesses": [
+    "Historical completeness could be misread as authorization to duplicate all office state.",
+    "Derived metrics may be stored redundantly when they can be reconstructed.",
+    "Duplicated external truth could create divergent historical copies."
+  ],
+  "order_id": "HISTORIAN-MO-001-005",
+  "residual_risks": [
+    "Compression, retention, and tiering policy remain separate operational doctrines."
+  ],
+  "status": "COMPLETE",
+  "title": "Historical Minimality Audit"
+}

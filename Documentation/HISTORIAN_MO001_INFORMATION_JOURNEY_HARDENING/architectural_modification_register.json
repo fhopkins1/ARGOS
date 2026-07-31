@@ -1,0 +1,215 @@
+[
+  {
+    "baseline_rules": [
+      "Every journey has exactly one canonical identity.",
+      "Journey identity survives correction, supersession, replay, archival, and reconstruction.",
+      "A superseded journey remains immutable and points to the successor; it is never overwritten."
+    ],
+    "modifications": [
+      "Define Enterprise Information Journey as the immutable Historian-owned historical container for one constitutional information path.",
+      "Require journey_id, journey_version, origin_event_id, originating_office, workflow_token, authority_chain, lifecycle_state, archival_state, and predecessor_successor lineage.",
+      "Require identity creation before first custody transfer and prohibit identity reuse."
+    ],
+    "order_id": "HISTORIAN-MO-001-001",
+    "title": "Enterprise Information Journey Identity Audit"
+  },
+  {
+    "baseline_rules": [
+      "The journey records historical relationships, not external truth ownership.",
+      "Copied payloads require explicit constitutional archival transfer; otherwise references are used.",
+      "Every included artifact must declare why embedding is required instead of referencing."
+    ],
+    "modifications": [
+      "Classify journey contents as embedded immutable event facts, immutable references, relationship edges, missing-information declarations, and reconstruction indexes.",
+      "Store externally owned truth as digest-bound references unless the source office transfers archival custody.",
+      "Forbid Journey from owning Performance Truth, Closed Position Truth, Broker Truth, Risk Truth, Authorization Truth, or Enterprise Learning hypotheses."
+    ],
+    "order_id": "HISTORIAN-MO-001-002",
+    "title": "Journey Boundary Audit"
+  },
+  {
+    "baseline_rules": [
+      "Historical completeness includes what happened, what did not happen, what could not be known, and what was rejected.",
+      "No journey may close while mandatory negative-history declarations remain unresolved.",
+      "Intermediate reasoning is preserved as lineage references without allowing Historian reinterpretation."
+    ],
+    "modifications": [
+      "Require positive, negative, dormant, abandoned, contradicted, uncertain, denied, and alternative path records.",
+      "Require every decision path to preserve admitted evidence, rejected evidence, unavailable evidence, alternatives considered, and rejection rationale.",
+      "Require abandoned workflows and dormant observations to receive terminal historical dispositions."
+    ],
+    "order_id": "HISTORIAN-MO-001-003",
+    "title": "Historical Completeness Audit"
+  },
+  {
+    "baseline_rules": [
+      "A Journey is reconstructable only when every node and edge is identity-bound and digest-bound.",
+      "Provenance cannot be represented by narrative text alone.",
+      "Correction and supersession modify graph relationships by append-only successor edges."
+    ],
+    "modifications": [
+      "Create mandatory graph edge classes: OBSERVED_BY, PRODUCED_BY, DERIVED_FROM, DEPENDS_ON, TRANSFORMED_BY, REJECTED_BY, SUPERSEDED_BY, CORRECTED_BY, CERTIFIED_BY, ARCHIVED_BY, RECONSTRUCTS.",
+      "Require edge identity, edge owner, source node, target node, temporal bounds, evidence digest, and correction status.",
+      "Require graph integrity checks before closure."
+    ],
+    "order_id": "HISTORIAN-MO-001-004",
+    "title": "Provenance Graph Hardening"
+  },
+  {
+    "baseline_rules": [
+      "Store source facts once under the owning office; Historian stores immutable custody and reconstruction references.",
+      "Derived values are recomputed during reconstruction unless their historical computed value is itself under audit.",
+      "Minimality may never remove negative-history, uncertainty, or provenance obligations."
+    ],
+    "modifications": [
+      "Adopt reference-by-digest as the default for externally owned truth and derived values.",
+      "Embed only raw events, custody transfer evidence, missing-information declarations, and graph edges required for reconstruction.",
+      "Require minimality justification for every embedded payload over size and sensitivity thresholds."
+    ],
+    "order_id": "HISTORIAN-MO-001-005",
+    "title": "Historical Minimality Audit"
+  },
+  {
+    "baseline_rules": [
+      "Raw language is immutable evidence, normalized language is derived evidence, interpretation belongs to the interpreting office, truth belongs to the truth owner, and hypotheses belong to learning offices.",
+      "No language layer may overwrite another.",
+      "Historical ambiguity is preserved, not corrected by Historian inference."
+    ],
+    "modifications": [
+      "Require each language-bearing event to preserve raw_language_ref, normalized_language_ref, interpretation_ref, truth_disposition_ref, and hypothesis_use_ref.",
+      "Forbid Historian from generating semantic interpretations; it preserves interpretations emitted by the owning office.",
+      "Require translation, redaction, and summarization lineage as explicit graph edges."
+    ],
+    "order_id": "HISTORIAN-MO-001-006",
+    "title": "Language Preservation Audit"
+  },
+  {
+    "baseline_rules": [
+      "Missing information is a first-class historical fact.",
+      "Historian records absence cause without inferring unavailable content.",
+      "Enterprise Learning receives missing-information classifications, not reconstructed guesses."
+    ],
+    "modifications": [
+      "Expand missing-information states to include OBSERVED_ABSENT, NOT_AUTHORIZED_TO_REQUEST, REQUEST_PROHIBITED, REQUEST_DEFERRED, SOURCE_SILENT, PARTIALLY_AVAILABLE, RATE_LIMITED, COST_PROHIBITED, PRIVACY_RESTRICTED, RETENTION_EXPIRED, and UNKNOWN_CAUSE.",
+      "Require cause, authority, requesting office, affected decision path, and learning consequence for each missing-information declaration.",
+      "Require closure disposition for every missing-information state before journey certification."
+    ],
+    "order_id": "HISTORIAN-MO-001-007",
+    "title": "Missing Information Hardening"
+  },
+  {
+    "baseline_rules": [
+      "Historian provides complete immutable inputs; Enterprise Learning performs learning.",
+      "Learning projections are deterministic views, not new historical truth.",
+      "No recommendation, ranking, optimization, or enterprise modification authority belongs to Historian."
+    ],
+    "modifications": [
+      "Define a read-only Journey Learning Projection generated from Journey records without mutation or inference.",
+      "Require decision, uncertainty, evidence deficiency, performance outcome, dependency, and negative-history references in each projection.",
+      "Assign learning inference exclusively to Enterprise Learning or other authorized offices."
+    ],
+    "order_id": "HISTORIAN-MO-001-008",
+    "title": "Enterprise Learning Readiness Audit"
+  },
+  {
+    "baseline_rules": [
+      "Counterfactual paths are historical records of considered or simulated alternatives, not production truth.",
+      "TYPHON archives remain segregated from production Journey authority.",
+      "Replay must be deterministic over both chosen and rejected branches."
+    ],
+    "modifications": [
+      "Add Counterfactual Path nodes with path_id, source_decision, alternative_authority, admissibility_status, rejection_reason, and replay_constraints.",
+      "Require TYPHON scenario archives to reference production journeys without mutating them.",
+      "Preserve alternative evidence and alternative execution paths as non-authoritative historical branches."
+    ],
+    "order_id": "HISTORIAN-MO-001-009",
+    "title": "Counterfactual Readiness Audit"
+  },
+  {
+    "baseline_rules": [
+      "Journey authority is independent of storage location.",
+      "Distributed storage cannot alter identity, ownership, provenance, or reconstruction semantics.",
+      "Archive tiering may affect availability latency, not historical truth."
+    ],
+    "modifications": [
+      "Add enterprise_instance_id, archive_namespace, storage_tier, shard_key, retention_class, legal_hold_status, and portability_manifest_ref to Journey identity metadata.",
+      "Require distributed archives to preserve digest verification and graph-edge identity.",
+      "Require replay archives and TYPHON archives to use digest references to production journeys."
+    ],
+    "order_id": "HISTORIAN-MO-001-010",
+    "title": "Enterprise Scalability Audit"
+  },
+  {
+    "baseline_rules": [
+      "Historian may expose read-only reconstruction views and custody attestations only.",
+      "Historian shall not learn, infer, summarize, optimize, recommend, rank, predict, authorize, or modify records.",
+      "All cross-office consumers must treat Journey records as immutable inputs."
+    ],
+    "modifications": [
+      "Assign Historian solely to immutable custody, journey identity, graph preservation, archive integrity, and reconstruction service.",
+      "Assign Enterprise Learning to learning observations and recommendations.",
+      "Assign Decision Laboratory to counterfactual experimentation; Performance Truth and Closed Position Truth retain their truth ownership."
+    ],
+    "order_id": "HISTORIAN-MO-001-011",
+    "title": "Constitutional Separation Audit"
+  },
+  {
+    "baseline_rules": [
+      "Journey sufficiency is proven by deterministic reconstruction, not by narrative assurance.",
+      "Incomplete journey gates prevent archival certification.",
+      "Certification consumes the Journey graph at requirement level."
+    ],
+    "modifications": [
+      "Define Journey certification gates for identity, boundary, custody, provenance graph, missing information, language preservation, negative history, counterfactual branches, and learning projection completeness.",
+      "Require failed gates to produce blocking constitutional findings.",
+      "Require each Journey to include a reconstruction manifest sufficient for independent replay and audit."
+    ],
+    "order_id": "HISTORIAN-MO-001-012",
+    "title": "Enterprise Information Journey Sufficiency Challenge"
+  },
+  {
+    "baseline_rules": [
+      "The smallest sufficient Journey is an immutable graph-backed custody container.",
+      "Profiles add validation obligations without creating competing ownership.",
+      "Simplicity cannot remove completeness, provenance, negative-history, or replay guarantees."
+    ],
+    "modifications": [
+      "Reduce the Journey model to five canonical record families: Identity, Event, Reference, Graph Edge, and Certification Gate.",
+      "Use profiles for language, missing information, counterfactual, learning projection, and archival views rather than separate primary objects.",
+      "Make reference-by-digest the default representation for externally owned truth."
+    ],
+    "order_id": "HISTORIAN-MO-001-013",
+    "title": "Enterprise Information Journey Simplicity Audit"
+  },
+  {
+    "baseline_rules": [
+      "Falsification succeeded against passive archive, truth-copy, and terminal-only designs.",
+      "The hardened baseline rejects those designs.",
+      "The accepted design is custody-only, graph-backed, reference-first, and reconstruction-certified."
+    ],
+    "modifications": [
+      "Reframe Journey as a graph-backed immutable custody constitution rather than a document bundle.",
+      "Bind all truth objects by reference unless archival custody transfer is explicit.",
+      "Require negative-history, missing-information, and counterfactual branch support for every applicable workflow."
+    ],
+    "order_id": "HISTORIAN-MO-001-014",
+    "title": "Independent Architectural Review"
+  },
+  {
+    "baseline_rules": [
+      "Journey identity is complete.",
+      "Boundaries are explicit and reference-first.",
+      "Provenance is graph-backed.",
+      "Custody is singular.",
+      "Learning and counterfactual consumers receive deterministic read-only projections.",
+      "Historian remains custody-only."
+    ],
+    "modifications": [
+      "Publish Enterprise Information Journey Constitutional Baseline v1.0.",
+      "Close all 15 hardening orders with constitutional modifications recorded.",
+      "Authorize only follow-on constitutional-to-implementation mapping and certification activities."
+    ],
+    "order_id": "HISTORIAN-MO-001-015",
+    "title": "Constitutional Hardening Closure"
+  }
+]

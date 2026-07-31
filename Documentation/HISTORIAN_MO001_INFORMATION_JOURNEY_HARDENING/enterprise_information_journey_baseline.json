@@ -1,0 +1,82 @@
+{
+  "authority": "HISTORIAN-MO-001",
+  "baseline_id": "HIST-EIJ-BASELINE-1.0",
+  "canonical_record_families": [
+    "Journey Identity",
+    "Journey Event",
+    "Journey Reference",
+    "Journey Graph Edge",
+    "Journey Certification Gate"
+  ],
+  "closure_gates": [
+    "identity_complete",
+    "boundary_classified",
+    "single_custody_confirmed",
+    "provenance_graph_complete",
+    "language_layers_preserved",
+    "missing_information_dispositioned",
+    "negative_history_complete",
+    "counterfactual_paths_classified",
+    "learning_projection_complete",
+    "archive_portability_validated",
+    "reconstruction_manifest_complete"
+  ],
+  "constitutional_owner": "Historian Office",
+  "graph_edge_classes": [
+    "OBSERVED_BY",
+    "PRODUCED_BY",
+    "DERIVED_FROM",
+    "DEPENDS_ON",
+    "TRANSFORMED_BY",
+    "REJECTED_BY",
+    "SUPERSEDED_BY",
+    "CORRECTED_BY",
+    "CERTIFIED_BY",
+    "ARCHIVED_BY",
+    "RECONSTRUCTS"
+  ],
+  "historian_authority": "immutable enterprise historical custody and deterministic reconstruction service",
+  "historian_prohibitions": [
+    "learn",
+    "infer",
+    "summarize",
+    "optimize",
+    "recommend",
+    "rank",
+    "predict",
+    "authorize",
+    "modify_historical_records"
+  ],
+  "mandatory_profiles": [
+    "language_preservation",
+    "missing_information",
+    "negative_history",
+    "counterfactual_path",
+    "learning_projection",
+    "archive_portability"
+  ],
+  "missing_information_states": [
+    "UNAVAILABLE",
+    "NOT_REQUESTED",
+    "STALE",
+    "CONTRADICTORY",
+    "CORRUPTED",
+    "INTENTIONALLY_EXCLUDED",
+    "REDACTED",
+    "NOT_APPLICABLE",
+    "OBSERVED_ABSENT",
+    "NOT_AUTHORIZED_TO_REQUEST",
+    "REQUEST_PROHIBITED",
+    "REQUEST_DEFERRED",
+    "SOURCE_SILENT",
+    "PARTIALLY_AVAILABLE",
+    "RATE_LIMITED",
+    "COST_PROHIBITED",
+    "PRIVACY_RESTRICTED",
+    "RETENTION_EXPIRED",
+    "UNKNOWN_CAUSE"
+  ],
+  "modification_order_count": 15,
+  "object_name": "Enterprise Information Journey",
+  "status": "HARDENED_CONSTITUTIONAL_BASELINE_PUBLISHED"
+}

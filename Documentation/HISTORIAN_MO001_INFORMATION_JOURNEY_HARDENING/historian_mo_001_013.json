@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Reduce the Journey model to five canonical record families: Identity, Event, Reference, Graph Edge, and Certification Gate.",
+    "Use profiles for language, missing information, counterfactual, learning projection, and archival views rather than separate primary objects.",
+    "Make reference-by-digest the default representation for externally owned truth."
+  ],
+  "audit_objective": "Search for simplifications that reduce complexity without reducing constitutional guarantees.",
+  "baseline_rules": [
+    "The smallest sufficient Journey is an immutable graph-backed custody container.",
+    "Profiles add validation obligations without creating competing ownership.",
+    "Simplicity cannot remove completeness, provenance, negative-history, or replay guarantees."
+  ],
+  "constitutional_weaknesses": [
+    "Overly broad Journey payloads would increase storage, duplication, and custody risk.",
+    "Separate local custody records could duplicate Journey graph functions.",
+    "Multiple record families could obscure a small canonical object model."
+  ],
+  "order_id": "HISTORIAN-MO-001-013",
+  "residual_risks": [
+    "Some user-facing views may still require derived summaries outside Historian authority."
+  ],
+  "status": "COMPLETE",
+  "title": "Enterprise Information Journey Simplicity Audit"
+}

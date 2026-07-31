@@ -1,0 +1,24 @@
+{
+  "architectural_modifications": [
+    "Assign Historian solely to immutable custody, journey identity, graph preservation, archive integrity, and reconstruction service.",
+    "Assign Enterprise Learning to learning observations and recommendations.",
+    "Assign Decision Laboratory to counterfactual experimentation; Performance Truth and Closed Position Truth retain their truth ownership."
+  ],
+  "audit_objective": "Challenge separation between Historian, Enterprise Learning, Decision Laboratory, Performance Truth, and Closed Position Truth.",
+  "baseline_rules": [
+    "Historian may expose read-only reconstruction views and custody attestations only.",
+    "Historian shall not learn, infer, summarize, optimize, recommend, rank, predict, authorize, or modify records.",
+    "All cross-office consumers must treat Journey records as immutable inputs."
+  ],
+  "constitutional_weaknesses": [
+    "Historian analysis, recommendations, institutional lessons, and learning records blur custody with learning.",
+    "Performance Truth and Closed Position Truth references risk hidden truth ownership transfer.",
+    "Decision Laboratory replay inputs risk being mistaken for historical mutation authority."
+  ],
+  "order_id": "HISTORIAN-MO-001-011",
+  "residual_risks": [
+    "Existing code names may still use Historian for recommendation concepts until follow-on implementation remediation occurs."
+  ],
+  "status": "COMPLETE",
+  "title": "Constitutional Separation Audit"
+}
