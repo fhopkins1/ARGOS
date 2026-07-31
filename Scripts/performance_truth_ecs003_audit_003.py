@@ -23,7 +23,7 @@ from argos.control_panel.truth_domain import make_paper_operational_truth_envelo
 
 OUTPUT_DIR = REPOSITORY_ROOT / "Documentation" / "PERFORMANCE_TRUTH_ECS003_AUDIT_003"
 RAW_DIR = OUTPUT_DIR / "runtime_audit_log"
-ORDER_SOURCE = Path(r"C:\Users\Fletc\.codex\attachments\8b57da45-406a-4e10-a43a-fa76ff327f2d\pasted-text.txt")
+ORDER_SOURCE = REPOSITORY_ROOT / "Documentation" / "PERFORMANCE_TRUTH_ECS003_AUDIT_003" / "sources" / "PERFORMANCE-TRUTH-ECS003-AUDIT-003.txt"
 
 IMPLEMENTATION_FILES = (
     REPOSITORY_ROOT / "src" / "argos" / "control_panel" / "performance_truth_engine.py",

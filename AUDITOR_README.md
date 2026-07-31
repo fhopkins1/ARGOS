@@ -1,6 +1,6 @@
 # Performance Truth Independent Runtime Reproduction
 
-This guide is the active auditor entrypoint for `PERFORMANCE-TRUTH-ECS003-AUDIT-003A`.
+This guide is the active auditor entrypoint for `PERFORMANCE-TRUTH-ECS003-AUDIT-004A`.
 It is specific to the Performance Truth Office.
 
 ## Supported Environment
@@ -9,6 +9,10 @@ It is specific to the Performance Truth Office.
 - Python 3.11 or newer.
 - No submitted evidence package is required or accepted as proof.
 - No Git metadata is required inside the candidate ZIP.
+- All required inputs are resolved from the extracted repository package by
+  repository-relative path.
+- Absolute developer-local paths, user-profile paths, parent traversal, hidden
+  local files, and network retrieval are rejected.
 
 ## Canonical Command
 
@@ -18,7 +22,9 @@ python audit_reproduce.py --candidate <repository-package.zip> --output <empty-o
 
 The output directory must be new or empty. The command exits nonzero if the
 candidate ZIP is missing, the output directory is not empty, extraction fails,
-runtime validation fails, or any blocking finding is produced.
+runtime validation fails, zero runtime tests are collected or executed, any
+controlling execution fails, any phase lacks required evidence, or any blocking
+finding is produced.
 
 ## Generated Outputs
 
@@ -61,4 +67,6 @@ python audit_reproduce.py --candidate ARGOS.zip --output audit-run-002
 
 The entrypoint records the candidate ZIP hash and writes all runtime evidence
 to the requested output directory. It does not issue an ECS-003 certification
-decision and does not use historical reports as proof.
+decision and does not use historical reports as proof. PASS-classified phase
+evidence is emitted only when its controlling command completed successfully
+and the raw command output exists in the same run output directory.

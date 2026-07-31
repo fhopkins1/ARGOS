@@ -1,0 +1,35 @@
+{
+  "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+  "controlling_command_id": "runtime-audit-003",
+  "derivation_chain": {
+    "phase_result_source": "deterministic_replay_report.json",
+    "raw_command": "runtime-audit-003",
+    "raw_result": {
+      "args": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "Scripts/performance_truth_ecs003_audit_003.py"
+      ],
+      "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+      "command_id": "runtime-audit-003",
+      "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_004A\\self_validation_raw\\run_a\\_workspace\\candidate",
+      "duration_seconds": 3.5199,
+      "generation_timestamp": "2026-07-31T12:24:08Z",
+      "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+      "returncode": 0,
+      "run_id": "PT-REPRO-1785500631",
+      "status": "PASS",
+      "stderr": "stderr/runtime-audit-003.stderr.log",
+      "stdout": "stdout/runtime-audit-003.stdout.log",
+      "timed_out": false,
+      "tool_version": "performance-truth-audit-reproduce/004A"
+    }
+  },
+  "deterministic": true,
+  "disposition": "PASS",
+  "first_replay_digest": "e62c12c3b922c661c6de7375ffa9cb45201285e7d76bb83bc4033750e32572c0",
+  "generation_timestamp": "2026-07-31T12:24:08Z",
+  "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+  "run_id": "PT-REPRO-1785500631",
+  "second_replay_digest": "e62c12c3b922c661c6de7375ffa9cb45201285e7d76bb83bc4033750e32572c0",
+  "tool_version": "performance-truth-audit-reproduce/004A"
+}

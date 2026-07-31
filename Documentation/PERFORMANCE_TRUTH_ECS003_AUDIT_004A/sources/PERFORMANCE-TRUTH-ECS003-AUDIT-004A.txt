@@ -1,0 +1,545 @@
+# PERFORMANCE-TRUTH-ECS003-AUDIT-004A
+
+# Independent Runtime Reproduction Defect Remediation and Audit Harness Integrity Correction
+
+## Purpose
+
+Correct the specific certification-blocking defects discovered during **PERFORMANCE-TRUTH-ECS003-AUDIT-004**.
+
+This order shall remediate only the defects proven by independent execution:
+
+* developer-local runtime dependency;
+* incomplete runtime test discovery;
+* false PASS artifact emission after controlling execution failure;
+* candidate-hash mismatch between submitted repository and supplied evidence;
+* inadequate binding between generated evidence and the exact audited candidate.
+
+This order does not authorize constitutional redesign, business-logic modification, architectural refactoring, behavioral reinterpretation, or certification.
+
+---
+
+## Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* PERFORMANCE-TRUTH-MO-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003A;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-004;
+* Independent Audit-004 Findings Register.
+
+The independent Audit-004 findings control this remediation order.
+
+---
+
+# Binding Findings
+
+Codex shall treat the following as established facts.
+
+## Finding 1 — External Developer-Local Dependency
+
+The runtime audit references:
+
+```text
+C:\Users\Fletc\.codex\attachments\8b57da45-406a-4e10-a43a-fa76ff327f2d\pasted-text.txt
+```
+
+The submitted repository does not contain this required source.
+
+The clean-room audit therefore terminates with `FileNotFoundError`.
+
+---
+
+## Finding 2 — No Runtime Tests Completed
+
+The designated runtime test module fails during `setUpClass`.
+
+The underlying test result is:
+
+```text
+Ran 0 tests
+FAILED (errors=1)
+```
+
+No runtime test method completed.
+
+---
+
+## Finding 3 — Incomplete Test Discovery
+
+The reproduction harness discovers only:
+
+```text
+Tests.test_performance_truth_ecs003_audit_003
+```
+
+The harness does not demonstrate complete discovery of the applicable Performance Truth runtime test suite.
+
+---
+
+## Finding 4 — False PASS Artifact Emission
+
+The reproduction harness emits PASS-classified replay, mutation, fail-closed, and stress artifacts after controlling runtime commands fail.
+
+A failed controlling execution cannot produce valid PASS evidence.
+
+---
+
+## Finding 5 — Candidate and Evidence Hash Mismatch
+
+The independently audited repository candidate hash is:
+
+```text
+e9a4f00976e8e71abb8ca5db0f04986486beb955c5e2bf86bca2ca26454f02a2
+```
+
+The supplied evidence claims execution against:
+
+```text
+014344ae0eae3dce7a131cfa9d48766cbfc173ea45435b25534e29cf6924130d
+```
+
+The supplied evidence therefore does not prove the submitted candidate.
+
+---
+
+# Scope Restrictions
+
+Codex may modify only:
+
+* audit input packaging;
+* audit-path resolution;
+* runtime test discovery;
+* audit orchestration;
+* execution-result propagation;
+* evidence-generation gating;
+* candidate-hash binding;
+* auditor documentation;
+* tests governing the corrected audit harness.
+
+Codex shall not modify:
+
+* Performance Truth calculations;
+* Performance Truth object semantics;
+* lifecycle rules;
+* ownership rules;
+* reconciliation behavior;
+* evidence meaning;
+* traceability meaning;
+* temporal behavior;
+* cross-office contracts;
+* constitutional acceptance criteria;
+* runtime expected results merely to obtain PASS.
+
+If an underlying Performance Truth implementation defect is discovered, record it and stop. Do not repair it under this order.
+
+---
+
+# Prohibition on Codex Decision-Making
+
+Codex shall not:
+
+* infer missing constitutional requirements;
+* choose substitute business behavior;
+* invent new expected outputs;
+* weaken test assertions;
+* exclude failing tests;
+* relabel failures as environmental success;
+* preserve historical PASS artifacts after execution failure;
+* manufacture evidence from templates;
+* copy prior audit evidence into new outputs;
+* repair unrelated implementation defects;
+* issue ECS-003 certification.
+
+Where requirements are absent or contradictory, produce a blocking finding.
+
+---
+
+# Required Corrections
+
+## 1. Remove the Developer-Local Dependency
+
+Eliminate all active runtime dependence on:
+
+```text
+C:\Users\Fletc\.codex\attachments\8b57da45-406a-4e10-a43a-fa76ff327f2d\pasted-text.txt
+```
+
+Search the complete repository for:
+
+* the exact path;
+* the attachment identifier;
+* `pasted-text.txt`;
+* equivalent absolute local paths;
+* environment-specific developer paths.
+
+Every active reference shall be removed from the execution path.
+
+Required source material shall be:
+
+* included within the repository package;
+* identified by a repository-relative path;
+* cryptographically bound to the candidate package;
+* documented in the auditor guide.
+
+Codex shall not reconstruct missing source material from memory or inferred intent.
+
+If the required source material is absent, classify the order as `INCOMPLETE`.
+
+---
+
+## 2. Establish Repository-Relative Input Resolution
+
+All required audit inputs shall resolve from the extracted candidate root.
+
+Input resolution shall:
+
+* reject absolute developer paths;
+* reject paths outside the extracted candidate;
+* reject undocumented network retrieval;
+* reject hidden user-profile dependencies;
+* record the resolved path and file hash;
+* fail closed when a required input is absent.
+
+Add tests proving rejection of:
+
+* Windows user-profile paths;
+* Unix home-directory paths;
+* parent-directory traversal;
+* unavailable external files;
+* unrecorded environment-dependent paths.
+
+---
+
+## 3. Correct Runtime Test Discovery
+
+Replace predefined single-module discovery with deterministic repository-based discovery of all applicable Performance Truth runtime tests.
+
+Discovery shall:
+
+* begin from the extracted candidate;
+* identify all Performance Truth runtime test modules;
+* record every discovered test identifier;
+* record all exclusions;
+* require explicit constitutional justification for each exclusion;
+* fail if no tests are discovered;
+* fail if collection terminates with errors;
+* fail if the discovered test inventory is inconsistent between identical runs.
+
+Do not classify documentation checks, file-presence checks, or report-generation checks as runtime behavioral tests.
+
+---
+
+## 4. Enforce Zero-Test Failure
+
+The audit harness shall fail whenever:
+
+* zero tests are collected;
+* zero tests are executed;
+* collection fails before test execution;
+* all tests are skipped;
+* the controlling test process terminates before completing required tests.
+
+The harness shall preserve the raw framework result, including:
+
+* collected count;
+* executed count;
+* passed count;
+* failed count;
+* error count;
+* skipped count;
+* deselected count;
+* timeout count;
+* interruption count;
+* process exit code.
+
+A summarized count shall not conceal `Ran 0 tests`.
+
+---
+
+## 5. Establish Controlling Execution Gates
+
+Each certification-relevant artifact shall identify its controlling execution.
+
+At minimum, independently gate:
+
+* behavioral results;
+* replay results;
+* fail-closed results;
+* mutation results;
+* stress results;
+* cross-office results;
+* final execution summary.
+
+A result may be marked `PASS` only when:
+
+* its controlling command executed;
+* the controlling command completed;
+* the controlling command returned the required successful exit code;
+* required raw outputs exist;
+* required assertions executed;
+* no upstream blocking dependency failed.
+
+If a controlling execution fails, the dependent artifact shall be marked:
+
+* `FAIL`; or
+* `NOT_EXECUTED`.
+
+It shall never be marked `PASS`.
+
+---
+
+## 6. Propagate Failures Deterministically
+
+The reproduction entrypoint shall calculate its final exit status from raw controlling executions.
+
+It shall return nonzero if any required phase is:
+
+* failed;
+* errored;
+* timed out;
+* interrupted;
+* incomplete;
+* not executed;
+* missing evidence;
+* unsupported.
+
+No later artifact-generation phase may overwrite or neutralize an earlier failure.
+
+Add tests proving that failure in each required phase forces a nonzero final exit.
+
+---
+
+## 7. Prevent Template or Synthetic PASS Generation
+
+Review every evidence generator for:
+
+* hard-coded PASS values;
+* default-success values;
+* PASS templates;
+* file-presence-only success;
+* exception suppression;
+* failure-to-empty conversion;
+* missing-result-to-PASS conversion.
+
+Remove all such behavior from the active audit path.
+
+Every certification-relevant status shall be derived from recorded raw execution.
+
+The output shall include the derivation chain from:
+
+```text
+raw command
+→ raw result
+→ phase result
+→ final reproduction result
+```
+
+---
+
+## 8. Bind Every Output to the Exact Candidate
+
+Every generated artifact shall include:
+
+* Repository Package SHA-256;
+* extracted candidate root hash or manifest hash;
+* audit run identifier;
+* generation timestamp;
+* controlling command identifier;
+* tool or script version;
+* result status.
+
+The reproduction harness shall reject any externally supplied artifact whose candidate hash does not equal the current Repository Package hash.
+
+Historical evidence may be compared only after execution and shall remain classified as external evidence.
+
+---
+
+## 9. Correct Evidence-Package Generation
+
+The Evidence-Only Package shall contain only artifacts generated from the current candidate execution.
+
+It shall not include as current evidence:
+
+* previous Audit-003 evidence;
+* previous Audit-003A evidence;
+* previous Audit-004 evidence;
+* self-validation evidence from a different candidate;
+* reports whose embedded candidate hash differs;
+* copied historical PASS conclusions.
+
+Before packaging, perform a candidate-hash consistency check across every evidence artifact.
+
+Any mismatch shall block packaging.
+
+---
+
+## 10. Establish Repository and Evidence Package Pairing
+
+Generate the Repository Package and Evidence-Only Package from one controlled packaging operation.
+
+Both package names shall contain the same package-set identifier.
+
+Produce a package-set manifest containing:
+
+* Repository Package filename;
+* Repository Package SHA-256;
+* Evidence Package filename;
+* Evidence Package SHA-256;
+* candidate source commit or repository state identifier where available;
+* audit run identifier;
+* packaging timestamp;
+* evidence candidate hash;
+* package-set consistency result.
+
+The evidence candidate hash must equal the Repository Package hash actually audited.
+
+---
+
+# Required Harness Tests
+
+Add or correct tests proving:
+
+1. absolute developer-local paths are rejected;
+2. missing required repository inputs fail closed;
+3. repository-relative inputs resolve successfully;
+4. zero collected tests cause failure;
+5. collection errors cause failure;
+6. interrupted execution causes failure;
+7. timeout causes failure;
+8. nonzero child-process exit causes failure;
+9. failed behavioral execution blocks PASS behavioral evidence;
+10. failed replay execution blocks PASS replay evidence;
+11. failed mutation execution blocks PASS mutation evidence;
+12. failed fail-closed execution blocks PASS fail-closed evidence;
+13. failed stress execution blocks PASS stress evidence;
+14. upstream failure prevents dependent PASS artifacts;
+15. historical artifacts are not copied as current evidence;
+16. candidate-hash mismatch causes failure;
+17. evidence-package hash inconsistency blocks packaging;
+18. identical candidate runs produce equivalent test inventories;
+19. no required phase defaults to PASS;
+20. final exit status reflects every required phase.
+
+Tests shall exercise the actual production audit path.
+
+Mock-only proof is insufficient where the production path can be exercised deterministically.
+
+---
+
+# Self-Validation
+
+After corrections, perform two self-validation runs from separate empty workspaces against the newly produced Repository Package ZIP.
+
+Self-validation shall:
+
+* use the documented independent reproduction command;
+* use the same exact Repository Package ZIP for both runs;
+* exclude the Evidence Package from runtime inputs;
+* preserve all raw outputs;
+* report candidate hashes;
+* report test discovery;
+* report test execution;
+* report phase results;
+* report final exit codes.
+
+Self-validation does not constitute independent certification.
+
+Codex shall not repair defects discovered during self-validation.
+
+If either run fails, package the failure evidence and issue `INCOMPLETE`.
+
+---
+
+# Required Deliverables
+
+Produce:
+
+* corrected runtime input package;
+* corrected repository-relative path resolver;
+* corrected runtime test discovery implementation;
+* corrected execution-gating implementation;
+* corrected failure-propagation implementation;
+* corrected candidate-hash binding;
+* corrected evidence-packaging implementation;
+* corrected `AUDITOR_README.md`;
+* complete audit-harness test suite;
+* Run A self-validation package;
+* Run B self-validation package;
+* deterministic comparison report;
+* external-path removal report;
+* active-input inventory;
+* candidate-binding report;
+* package-set manifest;
+* implementation-change manifest;
+* findings register;
+* order completion report.
+
+---
+
+# Implementation-Change Manifest
+
+The implementation-change manifest shall identify every changed file and classify it as:
+
+* audit input packaging;
+* audit path resolution;
+* test discovery;
+* audit orchestration;
+* evidence gating;
+* hash binding;
+* packaging;
+* documentation;
+* audit-harness testing.
+
+Any change outside these classifications shall be identified as unauthorized and shall cause order failure.
+
+---
+
+# Acceptance Criteria
+
+This order is complete only when:
+
+* no active developer-local path remains;
+* all required inputs are repository-contained and repository-relative;
+* complete Performance Truth runtime test discovery is implemented;
+* zero tests cannot produce success;
+* collection failure cannot produce success;
+* every evidence result is controlled by actual execution;
+* failed controlling executions cannot emit PASS artifacts;
+* failures propagate to the final exit code;
+* no certification-relevant status defaults to PASS;
+* every artifact is bound to the exact candidate hash;
+* evidence from a different candidate is rejected;
+* Repository and Evidence packages form one hash-consistent package set;
+* two self-validation runs use the same exact candidate;
+* self-validation results are preserved without repair or reinterpretation;
+* no Performance Truth business logic is modified;
+* no ECS-003 certification decision is issued.
+
+---
+
+# Completion Decision
+
+Issue exactly one:
+
+* **COMPLETE**
+* **INCOMPLETE**
+
+`COMPLETE` means only that the independently discovered Audit-004 reproduction defects have been corrected and that the package is ready for a new independent runtime audit.
+
+`COMPLETE` shall not be represented as:
+
+* ECS-003 PASS;
+* runtime certification;
+* constitutional certification;
+* successful independent reproduction;
+* proof that the Performance Truth Office is correct.
+
+If `INCOMPLETE`, identify every unresolved blocking finding and preserve all failed execution evidence.

@@ -54,6 +54,7 @@ def _make_candidate_zip(path: Path) -> None:
     include = {
         "AUDITOR_README.md",
         "audit_reproduce.py",
+        "Documentation/PERFORMANCE_TRUTH_ECS003_AUDIT_003/sources/PERFORMANCE-TRUTH-ECS003-AUDIT-003.txt",
         "Scripts/performance_truth_ecs003_audit_003.py",
         "Tests/test_performance_truth_ecs003_audit_003.py",
     }
