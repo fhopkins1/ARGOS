@@ -1,0 +1,162 @@
+{
+  "disposition": "FAIL",
+  "hardcoded_detection_findings": [
+    {
+      "mutation_id": "PT-AUDIT003-MUT-005",
+      "path": "Scripts/performance_truth_ecs003_audit_003.py",
+      "rule": "mutation_specific_hardcoded_detection"
+    },
+    {
+      "mutation_id": "PT-AUDIT003-MUT-006",
+      "path": "Scripts/performance_truth_ecs003_audit_003.py",
+      "rule": "mutation_specific_hardcoded_detection"
+    }
+  ],
+  "mutation_records": [
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-001",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-002",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-003",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-004",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-005",
+      "ordinary_control_evidence": "INSUFFICIENT",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-006",
+      "ordinary_control_evidence": "INSUFFICIENT",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-007",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-008",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_a"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-001",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-002",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-003",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-004",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-005",
+      "ordinary_control_evidence": "INSUFFICIENT",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-006",
+      "ordinary_control_evidence": "INSUFFICIENT",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-007",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_b"
+    },
+    {
+      "controlling_command_id": "runtime-audit-003",
+      "detected": true,
+      "disposition": "PASS",
+      "mutation_id": "PT-AUDIT003-MUT-008",
+      "ordinary_control_evidence": "RECORDED",
+      "run_id": "run_b"
+    }
+  ],
+  "phase_result": {
+    "disposition": "PASS",
+    "runs": [
+      {
+        "artifact": "mutation_results.json",
+        "disposition": "PASS",
+        "payload_digest": "41694215736680d3eb816ad1272ad1266fdd9e7b8c2ec14e4a1e0dba3884b7a3",
+        "run_id": "run_a"
+      },
+      {
+        "artifact": "mutation_results.json",
+        "disposition": "PASS",
+        "payload_digest": "68539d8224dbb535b89bd3cb59ddad707381e8860d074de3f69045a92cc78461",
+        "run_id": "run_b"
+      }
+    ]
+  }
+}

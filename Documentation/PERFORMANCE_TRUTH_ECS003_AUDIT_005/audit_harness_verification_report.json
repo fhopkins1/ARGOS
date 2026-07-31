@@ -1,0 +1,22 @@
+{
+  "active_files_inspected": [
+    "AUDITOR_README.md",
+    "audit_reproduce.py",
+    "Scripts/performance_truth_ecs003_audit_003.py",
+    "Tests/test_performance_truth_ecs003_audit_003.py"
+  ],
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "mutation_id": "PT-AUDIT003-MUT-005",
+      "path": "Scripts/performance_truth_ecs003_audit_003.py",
+      "rule": "mutation_specific_hardcoded_detection"
+    },
+    {
+      "mutation_id": "PT-AUDIT003-MUT-006",
+      "path": "Scripts/performance_truth_ecs003_audit_003.py",
+      "rule": "mutation_specific_hardcoded_detection"
+    }
+  ],
+  "repository_member_count": 395
+}

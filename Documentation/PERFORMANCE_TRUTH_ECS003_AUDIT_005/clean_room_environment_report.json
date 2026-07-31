@@ -1,0 +1,41 @@
+{
+  "disposition": "PASS",
+  "runs": [
+    {
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_a\\submitted_repository\\audit_reproduce.py",
+        "--candidate",
+        "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_004A\\runtime_input_package\\PERFORMANCE_TRUTH_ECS003_AUDIT004A_RUNTIME_CANDIDATE.zip",
+        "--output",
+        "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_a\\runtime_output"
+      ],
+      "environment": {
+        "architecture": "AMD64",
+        "os": "Windows-11-10.0.26200-SP0",
+        "python_version": "3.14.5",
+        "working_directory": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_a\\submitted_repository"
+      },
+      "exit_code": 0,
+      "run_id": "run_a"
+    },
+    {
+      "command": [
+        "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\submitted_repository\\audit_reproduce.py",
+        "--candidate",
+        "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_004A\\runtime_input_package\\PERFORMANCE_TRUTH_ECS003_AUDIT004A_RUNTIME_CANDIDATE.zip",
+        "--output",
+        "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output"
+      ],
+      "environment": {
+        "architecture": "AMD64",
+        "os": "Windows-11-10.0.26200-SP0",
+        "python_version": "3.14.5",
+        "working_directory": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\submitted_repository"
+      },
+      "exit_code": 0,
+      "run_id": "run_b"
+    }
+  ]
+}

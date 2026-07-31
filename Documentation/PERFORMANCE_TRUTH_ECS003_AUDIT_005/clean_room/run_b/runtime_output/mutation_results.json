@@ -1,0 +1,298 @@
+[
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "broker fill quantity without fill evidence",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "corrupted truth",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-001",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "missing operational truth envelope",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "corrupted evidence",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-002",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "missing material field provenance",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "missing evidence",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-003",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "unauthorized producer decision object",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "invalid ownership",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-004",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "duplicate authoritative broker order id",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "duplicate events",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-005",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "stale timestamp mutation marker",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "temporal disorder",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-006",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "negative quantity order",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "invalid calculations",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-007",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  },
+  {
+    "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+    "controlling_command_id": "runtime-audit-003",
+    "derivation_chain": {
+      "phase_result_source": "runtime_mutation_validation_report.json",
+      "raw_command": "runtime-audit-003",
+      "raw_result": {
+        "args": [
+          "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+          "Scripts/performance_truth_ecs003_audit_003.py"
+        ],
+        "candidate_root_manifest_sha256": "a7abfb2ccef469ba7b7078fdc6636dc975615de0a40843b381ce3338765f9085",
+        "command_id": "runtime-audit-003",
+        "cwd": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2\\Documentation\\PERFORMANCE_TRUTH_ECS003_AUDIT_005\\clean_room\\run_b\\runtime_output\\_workspace\\candidate",
+        "duration_seconds": 3.2029,
+        "generation_timestamp": "2026-07-31T13:12:09Z",
+        "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+        "returncode": 0,
+        "run_id": "PT-REPRO-1785503513",
+        "status": "PASS",
+        "stderr": "stderr/runtime-audit-003.stderr.log",
+        "stdout": "stdout/runtime-audit-003.stdout.log",
+        "timed_out": false,
+        "tool_version": "performance-truth-audit-reproduce/004A"
+      }
+    },
+    "description": "wrong envelope caller",
+    "detected": true,
+    "disposition": "PASS",
+    "domain": "interface failures",
+    "generation_timestamp": "2026-07-31T13:12:09Z",
+    "mutation_id": "PT-AUDIT003-MUT-008",
+    "repository_package_sha256": "d1abd0322b564e1692af8671f2436da045e8c5db1b13798103aefb03487a0509",
+    "run_id": "PT-REPRO-1785503513",
+    "terminal_behavior": "FAIL_CLOSED",
+    "tool_version": "performance-truth-audit-reproduce/004A"
+  }
+]

@@ -1,0 +1,439 @@
+# PERFORMANCE-TRUTH-ECS003-AUDIT-005
+
+# Independent Verification of Audit-004A Remediation and Final Runtime Certification Audit
+
+## Purpose
+
+Conduct the final independent ECS-003 certification audit of the Performance Truth Office.
+
+This audit exists solely to determine whether the remediation implemented under **PERFORMANCE-TRUTH-ECS003-AUDIT-004A** has successfully resolved every certification-blocking finding identified during **PERFORMANCE-TRUTH-ECS003-AUDIT-004**.
+
+The audit shall independently reproduce the complete runtime validation from the submitted Repository Package ZIP.
+
+Repository-supplied evidence, self-validation reports, historical execution logs, and prior certification conclusions shall not constitute proof.
+
+The audit shall issue exactly one certification decision:
+
+* **PASS**
+* **FAIL**
+
+Conditional certification is prohibited.
+
+---
+
+# Constitutional Authority
+
+This audit derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* PERFORMANCE-TRUTH-MO-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-002;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003A;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-004;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-004A.
+
+This audit supersedes all previous certification conclusions.
+
+Only independently reproduced runtime evidence generated during this audit may support certification.
+
+---
+
+# Audit Scope
+
+The audit shall independently verify:
+
+* clean-room reproducibility;
+* repository integrity;
+* runtime execution;
+* runtime test discovery;
+* complete test execution;
+* deterministic replay;
+* fail-closed behavior;
+* mutation detection;
+* stress behavior;
+* evidence generation;
+* traceability generation;
+* reconciliation;
+* candidate hash integrity;
+* audit harness integrity;
+* correction of every Audit-004 finding.
+
+---
+
+# Independence Requirements
+
+The auditor shall not:
+
+* trust previous audit reports;
+* trust self-validation reports;
+* trust packaged evidence;
+* trust completion reports;
+* trust repository assertions;
+* repair implementation defects;
+* modify the repository;
+* suppress runtime failures;
+* reinterpret constitutional requirements;
+* issue PASS because previous audits nearly succeeded.
+
+Only independently generated runtime evidence shall be accepted.
+
+---
+
+# Phase 1 — Candidate Integrity
+
+Verify:
+
+* Repository Package SHA-256;
+* Evidence Package SHA-256;
+* archive integrity;
+* extraction integrity;
+* duplicate files;
+* unsafe paths;
+* extracted file inventory.
+
+Record the immutable repository hash.
+
+---
+
+# Phase 2 — Environment Construction
+
+Create two completely independent clean-room execution environments.
+
+Record:
+
+* operating system;
+* architecture;
+* Python version;
+* environment variables;
+* installed packages;
+* working directory;
+* execution commands.
+
+No historical workspace may be reused.
+
+---
+
+# Phase 3 — Audit Harness Validation
+
+Before execution verify that:
+
+* no developer-local paths remain;
+* all required inputs are repository-relative;
+* no external attachments are required;
+* no hidden dependencies exist;
+* no historical evidence is loaded;
+* no PASS templates exist;
+* no hard-coded certification results exist.
+
+Failure shall immediately constitute a certification finding.
+
+---
+
+# Phase 4 — Independent Runtime Reproduction
+
+Execute the canonical reproduction command exactly as documented.
+
+Perform two independent reproductions from separate clean-room environments.
+
+Capture:
+
+* stdout;
+* stderr;
+* exit codes;
+* execution duration;
+* generated artifacts;
+* command transcript;
+* runtime logs.
+
+Do not interrupt execution.
+
+---
+
+# Phase 5 — Runtime Test Verification
+
+Verify:
+
+* complete test discovery;
+* complete runtime execution;
+* collected tests;
+* executed tests;
+* passed tests;
+* failed tests;
+* skipped tests;
+* interrupted tests;
+* timeout status.
+
+A result of:
+
+```text
+Ran 0 tests
+```
+
+shall constitute immediate certification failure.
+
+---
+
+# Phase 6 — Audit-004 Finding Verification
+
+Verify correction of every previously established finding.
+
+Specifically verify:
+
+## Finding 1
+
+No developer-local path dependencies remain.
+
+Search the runtime execution for:
+
+* Windows user paths;
+* Unix home paths;
+* attachment references;
+* repository-external files.
+
+---
+
+## Finding 2
+
+Runtime tests execute successfully.
+
+No collection-only execution shall be accepted.
+
+---
+
+## Finding 3
+
+Complete runtime test discovery occurs.
+
+Every discovered exclusion shall possess constitutional justification.
+
+---
+
+## Finding 4
+
+Failed controlling executions cannot produce PASS evidence.
+
+Verify:
+
+* replay;
+* mutation;
+* fail-closed;
+* stress;
+* behavioral;
+* reconciliation.
+
+---
+
+## Finding 5
+
+Every regenerated artifact shall contain the Repository Package hash actually executed.
+
+Historical evidence using different hashes shall not be accepted.
+
+---
+
+# Phase 7 — Runtime Behavioral Verification
+
+Verify through execution:
+
+* performance calculations;
+* aggregation;
+* attribution;
+* benchmark calculations;
+* reconciliation;
+* lifecycle transitions;
+* publication;
+* correction;
+* revision;
+* historical preservation;
+* evidence generation;
+* traceability generation.
+
+Repository documentation alone shall not constitute proof.
+
+---
+
+# Phase 8 — Replay Verification
+
+Execute deterministic replay twice.
+
+Verify identical:
+
+* Performance Truth records;
+* calculations;
+* evidence;
+* reconciliation;
+* traceability.
+
+Unexplained differences constitute failure.
+
+---
+
+# Phase 9 — Fail-Closed Verification
+
+Exercise runtime scenarios including:
+
+* missing evidence;
+* corrupted evidence;
+* contradictory evidence;
+* duplicate evidence;
+* dependency failures;
+* invalid ownership;
+* reconciliation failures;
+* temporal violations;
+* configuration failures;
+* invalid calculations.
+
+Unsafe continuation constitutes failure.
+
+---
+
+# Phase 10 — Mutation Verification
+
+Verify that mutations are detected by ordinary constitutional controls.
+
+Reject mutation evidence generated solely by mutation-specific code paths.
+
+Every successful mutation shall possess:
+
+* mutation identity;
+* controlling runtime command;
+* constitutional detector;
+* observed failure;
+* generated evidence.
+
+---
+
+# Phase 11 — Stress Verification
+
+Execute documented stress scenarios.
+
+Verify preservation of:
+
+* determinism;
+* ownership;
+* evidence generation;
+* reconciliation;
+* constitutional invariants.
+
+---
+
+# Phase 12 — Evidence Comparison
+
+Only after independent execution:
+
+Extract the supplied Evidence Package.
+
+Compare every submitted artifact against independently regenerated evidence.
+
+Classify each artifact as:
+
+* reproduced exactly;
+* reproduced semantically;
+* contradicted;
+* unsupported;
+* not reproduced.
+
+Submitted evidence shall never replace independently generated evidence.
+
+---
+
+# Phase 13 — Audit Harness Integrity
+
+Verify that the audit harness:
+
+* records rather than manufactures results;
+* propagates failures correctly;
+* derives PASS solely from successful execution;
+* binds every artifact to the executed Repository Package hash;
+* rejects stale evidence;
+* rejects mismatched candidate hashes.
+
+---
+
+# Certification Rules
+
+Issue **PASS** only if:
+
+* both clean-room reproductions succeed;
+* all required runtime tests execute;
+* no blocking runtime failures occur;
+* deterministic replay succeeds;
+* fail-closed validation succeeds;
+* mutation validation succeeds;
+* stress validation succeeds;
+* audit-harness integrity is confirmed;
+* every Audit-004 finding is demonstrably corrected;
+* no constitutional deficiencies remain;
+* no certification-blocking findings remain.
+
+Issue **FAIL** otherwise.
+
+Absence of evidence shall constitute failure.
+
+---
+
+# Deliverables
+
+Produce:
+
+* Candidate Integrity Report;
+* Clean-Room Environment Report;
+* Audit Harness Verification Report;
+* Run A Runtime Package;
+* Run B Runtime Package;
+* Runtime Test Verification Report;
+* Audit-004 Finding Verification Report;
+* Behavioral Verification Report;
+* Replay Verification Report;
+* Fail-Closed Verification Report;
+* Mutation Verification Report;
+* Stress Verification Report;
+* Evidence Comparison Report;
+* Audit Harness Integrity Report;
+* Certification Findings Register;
+* Final ECS-003 Certification Decision;
+* complete command transcripts;
+* stdout and stderr logs;
+* generated artifact inventories;
+* cryptographic hash manifests.
+
+---
+
+# Final Decision
+
+Issue exactly one:
+
+## PASS
+
+State:
+
+> The Performance Truth Office has been independently reproduced from the submitted Repository Package through two clean-room runtime executions. All previously identified Audit-004 findings have been independently verified as corrected. The independently generated runtime evidence demonstrates compliance with all applicable ECS-003 constitutional, implementation, behavioral, determinism, replay, evidence, traceability, reconciliation, mutation-resistance, stress, and fail-closed requirements.
+
+or:
+
+## FAIL
+
+State:
+
+> The Performance Truth Office has not satisfied independent ECS-003 runtime certification.
+
+List every certification-blocking finding with objective runtime evidence.
+
+No conditional, provisional, or qualified PASS shall be issued.
+
+---
+
+# Completion Condition
+
+This audit is complete only when:
+
+* the remediation implemented under Audit-004A has been independently verified through clean-room execution;
+* every previously identified certification-blocking finding has been objectively resolved or confirmed unresolved;
+* a final, unconditional **PASS** or **FAIL** has been issued based solely on independently reproduced runtime evidence.
