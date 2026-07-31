@@ -1,0 +1,254 @@
+[
+  {
+    "affected_requirement": "runtime_behavioral_verification",
+    "blocking": true,
+    "classification": "evidence deficiency",
+    "constitutional_authority": "PERFORMANCE-TRUTH-ECS003-AUDIT-004",
+    "finding_id": "PT-AUDIT004-FIND-001",
+    "objective_evidence": [
+      "Only one predefined Performance Truth runtime test was discovered/executed by the reproduction entrypoint.",
+      "Mutation records ['PT-AUDIT003-MUT-005', 'PT-AUDIT003-MUT-006'] lack recorded ordinary-control detection mechanism.",
+      "Stress validation did not materially exercise high volume or concurrency."
+    ],
+    "severity": "CERTIFICATION_BLOCKING",
+    "title": "Runtime Behavioral Verification failed AUDIT-004 certification rule"
+  },
+  {
+    "affected_requirement": "mutation_verification",
+    "blocking": true,
+    "classification": "evidence deficiency",
+    "constitutional_authority": "PERFORMANCE-TRUTH-ECS003-AUDIT-004",
+    "finding_id": "PT-AUDIT004-FIND-002",
+    "objective_evidence": {
+      "disposition": "FAIL",
+      "run_a": [
+        {
+          "description": "broker fill quantity without fill evidence",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "corrupted truth",
+          "mutation_id": "PT-AUDIT003-MUT-001",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "missing operational truth envelope",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "corrupted evidence",
+          "mutation_id": "PT-AUDIT003-MUT-002",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "missing material field provenance",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "missing evidence",
+          "mutation_id": "PT-AUDIT003-MUT-003",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "unauthorized producer decision object",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "invalid ownership",
+          "mutation_id": "PT-AUDIT003-MUT-004",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "duplicate authoritative broker order id",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "duplicate events",
+          "mutation_id": "PT-AUDIT003-MUT-005",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "stale timestamp mutation marker",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "temporal disorder",
+          "mutation_id": "PT-AUDIT003-MUT-006",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "negative quantity order",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "invalid calculations",
+          "mutation_id": "PT-AUDIT003-MUT-007",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "wrong envelope caller",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "interface failures",
+          "mutation_id": "PT-AUDIT003-MUT-008",
+          "terminal_behavior": "FAIL_CLOSED"
+        }
+      ],
+      "run_b": [
+        {
+          "description": "broker fill quantity without fill evidence",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "corrupted truth",
+          "mutation_id": "PT-AUDIT003-MUT-001",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "missing operational truth envelope",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "corrupted evidence",
+          "mutation_id": "PT-AUDIT003-MUT-002",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "missing material field provenance",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "missing evidence",
+          "mutation_id": "PT-AUDIT003-MUT-003",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "unauthorized producer decision object",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "invalid ownership",
+          "mutation_id": "PT-AUDIT003-MUT-004",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "duplicate authoritative broker order id",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "duplicate events",
+          "mutation_id": "PT-AUDIT003-MUT-005",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "stale timestamp mutation marker",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "temporal disorder",
+          "mutation_id": "PT-AUDIT003-MUT-006",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "negative quantity order",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "invalid calculations",
+          "mutation_id": "PT-AUDIT003-MUT-007",
+          "terminal_behavior": "FAIL_CLOSED"
+        },
+        {
+          "description": "wrong envelope caller",
+          "detected": true,
+          "disposition": "PASS",
+          "domain": "interface failures",
+          "mutation_id": "PT-AUDIT003-MUT-008",
+          "terminal_behavior": "FAIL_CLOSED"
+        }
+      ]
+    },
+    "severity": "CERTIFICATION_BLOCKING",
+    "title": "Mutation Verification failed AUDIT-004 certification rule"
+  },
+  {
+    "affected_requirement": "stress_verification",
+    "blocking": true,
+    "classification": "evidence deficiency",
+    "constitutional_authority": "PERFORMANCE-TRUTH-ECS003-AUDIT-004",
+    "finding_id": "PT-AUDIT004-FIND-003",
+    "objective_evidence": {
+      "disposition": "FAIL",
+      "run_a": {
+        "disposition": "PASS",
+        "events_submitted": 25,
+        "filled_count": 25,
+        "hashes_valid": true,
+        "ledger_count": 25,
+        "terminal_statuses": [
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED"
+        ]
+      },
+      "run_b": {
+        "disposition": "PASS",
+        "events_submitted": 25,
+        "filled_count": 25,
+        "hashes_valid": true,
+        "ledger_count": 25,
+        "terminal_statuses": [
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED",
+          "FILLED"
+        ]
+      }
+    },
+    "severity": "CERTIFICATION_BLOCKING",
+    "title": "Stress Verification failed AUDIT-004 certification rule"
+  },
+  {
+    "affected_requirement": "audit_harness_integrity",
+    "blocking": true,
+    "classification": "audit-harness deficiency",
+    "constitutional_authority": "PERFORMANCE-TRUTH-ECS003-AUDIT-004",
+    "finding_id": "PT-AUDIT004-FIND-004",
+    "objective_evidence": [
+      "AUDIT-003 mutation validation contains predeclared detection for at least one mutation instead of recorded ordinary-control detection.",
+      "Reproduction entrypoint constrains test discovery to its predefined test inventory rather than all discovered Performance Truth tests.",
+      "Stress acceptance is tied to a fixed 25-event serial loop and lacks concurrency/resource evidence required by AUDIT-004."
+    ],
+    "severity": "CERTIFICATION_BLOCKING",
+    "title": "Audit Harness Integrity failed AUDIT-004 certification rule"
+  }
+]

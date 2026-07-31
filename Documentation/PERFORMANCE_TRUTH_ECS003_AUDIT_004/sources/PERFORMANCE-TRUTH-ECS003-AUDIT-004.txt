@@ -1,0 +1,638 @@
+# PERFORMANCE-TRUTH-ECS003-AUDIT-004
+
+# Independent Clean-Room Runtime Reproduction and Final ECS-003 Certification Audit
+
+## Purpose
+
+Perform the independent runtime reproduction required to determine whether the Performance Truth Office satisfies ECS-003.
+
+This audit shall execute the submitted **PERFORMANCE_TRUTH_ECS003_AUDIT003A Repository Package ZIP** from a newly created clean-room workspace using the repository-provided independent reproduction entrypoint.
+
+The audit shall generate its own evidence through direct execution.
+
+Repository-supplied evidence, historical reports, previous certification decisions, and prior audit conclusions shall not constitute proof.
+
+This audit shall issue exactly one final ECS-003 decision:
+
+* **PASS**
+* **FAIL**
+
+Conditional certification is prohibited.
+
+---
+
+## Constitutional Authority
+
+This audit derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* PERFORMANCE-TRUTH-MO-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-002;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003;
+* PERFORMANCE-TRUTH-ECS003-AUDIT-003A.
+
+This audit may invalidate every prior certification conclusion.
+
+---
+
+## Candidate Inputs
+
+Use the submitted Audit-003A packages:
+
+* Repository Package ZIP;
+* Evidence Package ZIP.
+
+The Repository Package ZIP is the sole executable candidate.
+
+The Evidence Package ZIP shall remain isolated until independent execution and evidence generation are complete.
+
+Record the cryptographic hash and file size of both packages before beginning.
+
+---
+
+## Non-Modification Rule
+
+The auditor shall not modify the submitted candidate.
+
+The auditor shall not:
+
+* repair source code;
+* repair configuration;
+* add missing dependencies not authorized by repository instructions;
+* change tests;
+* change expected outputs;
+* suppress failures;
+* retry selectively to conceal instability;
+* exclude discovered tests without constitutional authority;
+* reinterpret failed behavior;
+* infer intended behavior;
+* substitute generated artifacts;
+* make architectural or business-logic decisions.
+
+If the candidate cannot reproduce successfully as delivered, record the failure and continue only where further execution remains possible without repair.
+
+---
+
+## Auditor Independence
+
+Treat all repository-supplied claims as unverified.
+
+Do not accept as proof:
+
+* certification reports;
+* completion reports;
+* packaged execution logs;
+* historical test results;
+* self-validation results;
+* generated manifests;
+* assertions that previous audits passed.
+
+Only evidence generated during this audit may support the certification decision.
+
+---
+
+# Phase 1 — Clean-Room Workspace Construction
+
+Create a new empty audit root containing separate directories for:
+
+* immutable input packages;
+* Run A;
+* Run B;
+* regenerated evidence;
+* submitted-evidence comparison;
+* final audit deliverables.
+
+Verify that the Run A and Run B output directories are empty before invocation.
+
+Record:
+
+* operating system;
+* architecture;
+* Python implementation and version;
+* timezone;
+* locale;
+* environment variables relevant to execution;
+* installed packages;
+* initial directory inventory;
+* available CPU, memory, and storage;
+* exact commands used.
+
+Redact secret values while preserving the existence and names of relevant variables.
+
+---
+
+# Phase 2 — Candidate Integrity Verification
+
+Verify and record:
+
+* Repository Package hash;
+* Evidence Package hash;
+* archive integrity;
+* archive member inventory;
+* duplicate archive paths;
+* unsafe extraction paths;
+* unexpected symbolic links;
+* extraction result;
+* candidate file hash manifest.
+
+Record the candidate filesystem hash before execution.
+
+After each run, verify that the reproduction process did not modify the extracted candidate.
+
+Any unauthorized candidate modification shall constitute failure.
+
+---
+
+# Phase 3 — Entrypoint Verification
+
+Locate and inspect only as necessary to invoke the canonical reproduction entrypoint documented by Audit-003A.
+
+The expected command form is:
+
+```text
+python audit_reproduce.py --candidate <repository-package.zip> --output <empty-output-directory>
+```
+
+Use the exact documented command unless the package itself specifies another canonical Performance Truth command.
+
+Do not alter the entrypoint.
+
+Before execution, confirm that:
+
+* it identifies Performance Truth rather than another office;
+* it accepts the Repository Package ZIP;
+* it requires an empty output destination;
+* it does not require the Evidence Package;
+* it does not load historical certification artifacts as proof;
+* it records commands, exit codes, outputs, and failures;
+* it does not issue the final ECS-003 certification decision.
+
+Any violation shall be recorded as an audit finding.
+
+---
+
+# Phase 4 — Independent Reproduction Run A
+
+Execute the canonical reproduction command against the untouched Repository Package ZIP using the empty Run A output directory.
+
+Capture:
+
+* exact command;
+* process start and end time;
+* duration;
+* stdout;
+* stderr;
+* exit code;
+* child-process commands;
+* discovered test count;
+* executed test count;
+* pass count;
+* failure count;
+* error count;
+* skipped count;
+* deselected count;
+* timeout count;
+* interruption count;
+* generated artifact inventory;
+* output hash manifest.
+
+Do not interrupt execution because of ordinary duration.
+
+If execution terminates abnormally, preserve all partial outputs and classify the run as failed or incomplete.
+
+A timed-out, interrupted, incomplete, or nonzero execution shall not be represented as successful.
+
+---
+
+# Phase 5 — Run A Result Validation
+
+Independently inspect the Run A outputs.
+
+Verify that the reproduction process actually performed and recorded:
+
+* repository discovery;
+* static or build validation;
+* complete Performance Truth test discovery;
+* complete applicable test execution;
+* behavioral validation;
+* deterministic replay validation;
+* fail-closed validation;
+* mutation validation;
+* stress validation;
+* evidence regeneration.
+
+Artifact presence alone is insufficient.
+
+Determine whether the raw command transcripts and test outputs substantiate each claimed activity.
+
+Record any discrepancy between:
+
+* claimed execution;
+* recorded command;
+* raw output;
+* summarized result;
+* exit status.
+
+The raw execution record shall control.
+
+---
+
+# Phase 6 — Independent Reproduction Run B
+
+Create a separate clean Run B workspace.
+
+Execute the same canonical command against the same untouched Repository Package ZIP using a new empty output directory.
+
+Use the same controlled environment and inputs.
+
+Capture the same information required for Run A.
+
+Run B shall not reuse:
+
+* Run A workspace;
+* Run A generated artifacts;
+* Run A caches unless unavoidable platform caches are identified and proven irrelevant;
+* Run A reports;
+* Run A conclusions.
+
+Any unavoidable shared state shall be documented.
+
+---
+
+# Phase 7 — Deterministic Equivalence Analysis
+
+Compare Run A and Run B.
+
+Classify outputs as:
+
+* constitutionally deterministic;
+* environmentally variable but semantically irrelevant;
+* unexplained.
+
+For every constitutionally deterministic artifact, compare using:
+
+* cryptographic hash; or
+* documented canonical semantic comparison.
+
+At minimum compare:
+
+* discovered implementation inventory;
+* test inventory;
+* test outcomes;
+* behavioral results;
+* replay results;
+* fail-closed results;
+* mutation results;
+* findings;
+* generated Performance Truth records;
+* reconciliation outputs;
+* traceability outputs;
+* certification-relevant summaries.
+
+Timestamps, absolute paths, random run identifiers, and environment metadata may differ only where explicitly classified as non-semantic.
+
+Every unexplained constitutional difference shall constitute a finding.
+
+---
+
+# Phase 8 — Independent Runtime Behavior Verification
+
+Using evidence generated by Runs A and B, verify direct execution of:
+
+* performance record creation;
+* deterministic performance calculation;
+* interval aggregation;
+* cumulative aggregation;
+* attribution;
+* benchmark comparison;
+* publication;
+* correction;
+* revision;
+* supersession;
+* reconciliation;
+* lifecycle transitions;
+* historical preservation;
+* evidence generation;
+* traceability generation.
+
+For every verified behavior, identify:
+
+* executable command or test;
+* input fixture;
+* observed output;
+* applicable constitutional requirement;
+* generated evidence location;
+* result.
+
+A documentation statement or source-code path without execution evidence shall not satisfy this phase.
+
+---
+
+# Phase 9 — Replay Verification
+
+Verify that replay was actually executed using controlled inputs.
+
+Confirm that repeated replay produced constitutionally equivalent:
+
+* Performance Truth Records;
+* calculations;
+* evidence;
+* traceability;
+* reconciliation;
+* correction results;
+* final state.
+
+Inspect raw replay commands and outputs.
+
+A replay report generated without an underlying recorded replay execution shall constitute failure.
+
+---
+
+# Phase 10 — Fail-Closed Verification
+
+Verify runtime exercise of at least the following conditions:
+
+* missing evidence;
+* corrupted evidence;
+* contradictory evidence;
+* invalid ownership;
+* duplicate input;
+* temporal disorder;
+* reconciliation failure;
+* dependency failure;
+* invalid configuration;
+* invalid calculation input.
+
+For each scenario determine:
+
+* how the fault was introduced;
+* which constitutional control detected it;
+* whether unsafe continuation occurred;
+* whether prohibited truth was published;
+* whether the failure was recorded;
+* whether recovery behavior remained deterministic.
+
+Unsafe continuation or unsupported fail-closed claims shall constitute failure.
+
+---
+
+# Phase 11 — Mutation Verification
+
+Inspect each mutation result generated during the independent runs.
+
+For every mutation record:
+
+* mutation identifier;
+* mutated target;
+* exact altered condition;
+* expected constitutional consequence;
+* actual detection mechanism;
+* test or runtime control that detected it;
+* observed output;
+* result.
+
+Reject any mutation as invalid where detection occurred only because:
+
+* the harness recognized its own marker;
+* the mutated fixture declared itself invalid;
+* a special mutation-only branch returned failure;
+* the ordinary constitutional control was not exercised.
+
+Undetected constitutional mutations shall constitute certification failure.
+
+---
+
+# Phase 12 — Stress Verification
+
+Verify actual execution of documented stress conditions.
+
+Record:
+
+* workload size;
+* concurrency;
+* duration;
+* input volume;
+* completed operations;
+* failed operations;
+* retries;
+* resource observations;
+* invariant checks;
+* final reconciliation result.
+
+A nominal loop labeled as stress testing without materially exercising increased load shall not satisfy this phase.
+
+Stress failure constitutes a certification finding where constitutional correctness, completeness, or determinism is affected.
+
+---
+
+# Phase 13 — Cross-Office Boundary Verification
+
+Verify executable Performance Truth interactions with required dependencies or constitutionally valid deterministic substitutes.
+
+Evaluate:
+
+* input contract enforcement;
+* ownership preservation;
+* authority preservation;
+* evidence continuity;
+* truth provenance;
+* failure propagation;
+* duplicate handling;
+* temporal handling;
+* reconciliation boundaries.
+
+Do not require unrelated offices to be fully operational where the Performance Truth package provides constitutionally valid deterministic fixtures.
+
+However, fixtures shall not bypass the behavior they claim to verify.
+
+---
+
+# Phase 14 — Submitted Evidence Comparison
+
+Only after Runs A and B are complete, extract the submitted Evidence Package into the isolated comparison directory.
+
+Compare submitted evidence against independently regenerated evidence.
+
+Classify every material artifact as:
+
+* reproduced exactly;
+* reproduced semantically;
+* not reproduced;
+* contradicted;
+* unsupported;
+* not applicable.
+
+Do not modify the independent outputs to match the submitted evidence.
+
+Any submitted claim contradicted by raw independent execution shall become a finding.
+
+---
+
+# Phase 15 — Audit Harness Integrity Review
+
+Determine whether `audit_reproduce.py` merely executes and records existing validations or improperly manufactures passing conclusions.
+
+Verify that the harness does not:
+
+* hard-code PASS outcomes;
+* copy packaged reports into output;
+* derive success from file presence alone;
+* suppress child-process failures;
+* ignore nonzero exit codes;
+* convert missing activities into successful summaries;
+* count excluded tests as passed;
+* fabricate mutation or replay results;
+* rely upon previous audit decisions.
+
+Any such behavior shall constitute a certification failure.
+
+---
+
+# Phase 16 — Findings Classification
+
+Record every finding with:
+
+* finding identifier;
+* title;
+* severity;
+* constitutional authority;
+* affected requirement;
+* objective evidence;
+* reproduction procedure;
+* expected behavior;
+* observed behavior;
+* classification.
+
+Use the following classifications:
+
+* constitutional deficiency;
+* implementation deficiency;
+* test deficiency;
+* evidence deficiency;
+* reproduction-package deficiency;
+* determinism deficiency;
+* fail-closed deficiency;
+* mutation-resistance deficiency;
+* stress deficiency;
+* audit-harness deficiency;
+* environmental blocker.
+
+Do not prescribe architectural or logical remedies.
+
+State only the violated requirement and the required observable correction.
+
+---
+
+# Certification Rules
+
+Issue **PASS** only if all of the following are true:
+
+* both independent clean-room runs complete;
+* both runs return successful documented exit status;
+* all required Performance Truth tests execute;
+* no required test fails, errors, times out, or remains unjustifiably skipped;
+* required behaviors are proven by runtime evidence;
+* deterministic outputs reproduce equivalently;
+* replay succeeds;
+* fail-closed scenarios prevent unsafe continuation;
+* mutations are detected through ordinary constitutional controls;
+* stress execution preserves constitutional guarantees;
+* cross-office boundaries are adequately exercised;
+* the reproduction harness does not manufacture results;
+* submitted evidence is not materially contradicted;
+* no unresolved certification-blocking finding remains.
+
+Issue **FAIL** if any PASS condition is not satisfied.
+
+Absence of evidence shall be treated as failure of the applicable requirement.
+
+---
+
+# Final Decision
+
+Issue exactly one:
+
+## PASS
+
+State:
+
+> The Performance Truth Office has been independently reproduced from the submitted Repository Package ZIP through two clean-room runtime executions. The independently generated evidence establishes that every applicable ECS-003 constitutional, implementation, behavioral, determinism, replay, evidence, traceability, reconciliation, mutation-resistance, stress, interface, and fail-closed requirement has been satisfied.
+
+or:
+
+## FAIL
+
+State:
+
+> The Performance Truth Office has not satisfied independent ECS-003 runtime certification.
+
+List every certification-blocking finding and its objective evidence.
+
+Do not issue:
+
+* conditional PASS;
+* provisional PASS;
+* substantial compliance;
+* apparent compliance;
+* structurally complete;
+* ready for certification;
+* PASS subject to later execution.
+
+---
+
+# Required Deliverables
+
+Produce:
+
+* Independent Audit Environment Record;
+* Candidate Integrity Report;
+* Entrypoint Verification Report;
+* Run A Complete Execution Package;
+* Run B Complete Execution Package;
+* Deterministic Equivalence Report;
+* Runtime Behavioral Verification Report;
+* Replay Verification Report;
+* Fail-Closed Verification Report;
+* Mutation Verification Report;
+* Stress Verification Report;
+* Cross-Office Boundary Verification Report;
+* Submitted Evidence Comparison Report;
+* Audit Harness Integrity Report;
+* Certification Findings Register;
+* Final ECS-003 Certification Decision;
+* complete command transcripts;
+* complete stdout and stderr logs;
+* generated-artifact inventories;
+* cryptographic output manifests.
+
+---
+
+# Delivery Packaging
+
+Produce:
+
+1. **Repository Package ZIP**
+
+   Include the untouched candidate repository together with the independent audit deliverables in a clearly separated audit-output location.
+
+2. **Evidence-Only Package ZIP**
+
+   Include only independently generated Audit-004 evidence.
+
+Do not include prior supplied evidence as independently generated evidence.
+
+Name the packages using the common content hash and execution timestamp.
+
+---
+
+# Completion Condition
+
+This order is complete only when the independent auditor has performed the two clean-room executions and issued the final PASS or FAIL decision.
+
+Creation of another reproduction script, self-validation report, or repository-supplied execution claim does not satisfy this order.

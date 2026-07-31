@@ -1,0 +1,8 @@
+{
+  "disposition": "FAIL",
+  "issues": [
+    "AUDIT-003 mutation validation contains predeclared detection for at least one mutation instead of recorded ordinary-control detection.",
+    "Reproduction entrypoint constrains test discovery to its predefined test inventory rather than all discovered Performance Truth tests.",
+    "Stress acceptance is tied to a fixed 25-event serial loop and lacks concurrency/resource evidence required by AUDIT-004."
+  ]
+}
