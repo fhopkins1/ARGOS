@@ -1,0 +1,830 @@
+# PERFORMANCE-TRUTH-MO-001-006
+
+# Enterprise Boundary Audit
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the adversarial audit and constitutional hardening of every boundary between the Performance Truth Office and all external ARGOS offices, repositories, workflows, and bridges.
+
+The purpose of this order is to determine whether any enterprise boundary permits hidden responsibility, overlapping authority, circular dependency, duplicated truth, ownership leakage, lifecycle leakage, or discretionary behavior that survived prior certification.
+
+Every boundary shall be treated as constitutionally suspect until independently demonstrated to be:
+
+* minimal;
+* deterministic;
+* complete;
+* non-overlapping;
+* non-circular;
+* auditable;
+* fail closed.
+
+No external office may perform Performance Truth responsibilities implicitly, and the Performance Truth Office may not assume authority belonging to another constitutional owner.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* Enterprise Modification Doctrine;
+* Workflow Ownership Doctrine;
+* Evidence Doctrine;
+* Truth Doctrine;
+* Bridge Doctrine.
+
+Nothing within this order may weaken certified constitutional guarantees or authorize implementation optimization.
+
+---
+
+# Modification Objectives
+
+This order shall:
+
+* discover every enterprise boundary touching Performance Truth;
+* identify all information, authority, evidence, and lifecycle movement crossing each boundary;
+* verify that each responsibility has exactly one constitutional owner;
+* detect overlapping or duplicated calculations;
+* detect hidden transformation of source truth;
+* detect circular dependency chains;
+* detect ownership or lifecycle leakage;
+* verify that interfaces remain constitutionally minimal;
+* eliminate undocumented coupling;
+* establish deterministic boundary failure behavior;
+* produce a hardened enterprise boundary baseline.
+
+---
+
+# Audit Scope
+
+The audit shall include boundaries between Performance Truth and:
+
+* Commander;
+* Sentinel;
+* Workflow Engine;
+* Trader;
+* Risk;
+* Broker;
+* Monitoring;
+* Closed Position Truth;
+* Historian;
+* Decision Objects;
+* Authorization Office;
+* Market Data authority;
+* Evidence Repository;
+* Audit Office;
+* all direct and indirect bridges;
+* all shared infrastructure affecting constitutional behavior.
+
+The audit shall include both declared and discovered boundaries.
+
+No boundary shall be excluded because it is indirect, read-only, asynchronous, internal, shared, or infrastructure-mediated.
+
+---
+
+# Boundary Definition
+
+For purposes of this order, an enterprise boundary exists wherever any of the following crosses between constitutional owners:
+
+* object identity;
+* business data;
+* calculated values;
+* authority;
+* custody;
+* lifecycle control;
+* evidence;
+* certification state;
+* temporal state;
+* reconciliation status;
+* publication status;
+* failure state;
+* workflow responsibility.
+
+A shared database, queue, schema, library, cache, report, or service constitutes a boundary whenever it can influence constitutional behavior across offices.
+
+---
+
+# Boundary Inventory
+
+Every boundary shall receive an immutable Boundary Record containing:
+
+* boundary identifier;
+* participating offices;
+* producing owner;
+* consuming owner;
+* bridge identifier;
+* exchanged objects;
+* exchanged fields;
+* authority conveyed;
+* ownership before exchange;
+* ownership after exchange;
+* lifecycle authority;
+* transformation authority;
+* evidence requirements;
+* temporal guarantees;
+* retry behavior;
+* duplicate behavior;
+* failure behavior;
+* downstream dependencies;
+* constitutional references;
+* implementation references;
+* current certification status.
+
+No discovered boundary may remain undocumented.
+
+---
+
+# Boundary Classification
+
+Each boundary shall be classified as exactly one of the following.
+
+## Authoritative Input Boundary
+
+Transfers immutable source truth into Performance Truth for constitutional consumption.
+
+The producing office retains ownership.
+
+---
+
+## Authoritative Output Boundary
+
+Publishes certified Performance Truth to an authorized consumer.
+
+Performance Truth retains ownership.
+
+---
+
+## Evidence Boundary
+
+Transfers or references evidence without transferring business ownership or calculation authority.
+
+---
+
+## Control Boundary
+
+Transfers constitutionally authorized requests, triggers, acknowledgments, or state notifications.
+
+A control boundary shall not transfer business ownership unless explicitly authorized.
+
+---
+
+## Reconciliation Boundary
+
+Exchanges identities and evidence solely to establish cross-office consistency.
+
+Reconciliation shall not create competing truth.
+
+---
+
+## Audit Boundary
+
+Provides immutable records, evidence, replay inputs, or certification artifacts for independent audit.
+
+---
+
+## Prohibited Boundary
+
+Represents an exchange or authority transfer not constitutionally authorized.
+
+Prohibited boundaries shall be removed or formally constitutionalized before continued operation.
+
+---
+
+# Boundary Audit Dimensions
+
+## PT-EBA-001
+
+### Ownership Minimality
+
+Verify that each boundary transfers only the access, reference, custody, or authority required for its constitutional purpose.
+
+The audit shall detect:
+
+* unnecessary field exposure;
+* unnecessary write authority;
+* implied ownership transfer;
+* shared mutable custody;
+* unauthorized object replacement;
+* hidden co-ownership.
+
+No boundary may create ambiguous ownership.
+
+---
+
+## PT-EBA-002
+
+### Responsibility Uniqueness
+
+Verify that every responsibility exercised across a boundary possesses exactly one constitutional owner.
+
+The audit shall detect:
+
+* duplicated calculations;
+* duplicated validation;
+* duplicated publication authority;
+* duplicated correction authority;
+* duplicated certification authority;
+* duplicated reconciliation decisions;
+* unowned responsibilities.
+
+Duplicated defensive validation is permitted only when it does not create competing authority or truth.
+
+---
+
+## PT-EBA-003
+
+### Interface Completeness
+
+Verify that every boundary contract explicitly defines:
+
+* required inputs;
+* permitted outputs;
+* preconditions;
+* postconditions;
+* rejection conditions;
+* evidence;
+* ownership;
+* lifecycle effect;
+* temporal guarantees;
+* retry semantics;
+* duplicate semantics.
+
+No consumer may infer behavior absent from the boundary contract.
+
+---
+
+## PT-EBA-004
+
+### Non-Overlap
+
+Verify that two or more boundaries do not provide competing routes for the same constitutional responsibility or truth.
+
+The audit shall identify:
+
+* duplicate source paths;
+* direct paths that bypass certified bridges;
+* competing publication channels;
+* parallel correction channels;
+* multiple reconciliation authorities;
+* inconsistent schema projections.
+
+Where multiple transport paths are necessary, they shall preserve one constitutional contract and one authoritative outcome.
+
+---
+
+## PT-EBA-005
+
+### Non-Circularity
+
+Construct the complete dependency graph for Performance Truth.
+
+Identify cycles involving:
+
+* calculation inputs;
+* certification state;
+* reconciliation;
+* publication;
+* correction;
+* evidence;
+* audit approval;
+* workflow completion.
+
+No Performance Truth result may directly or indirectly become an authoritative input to its own production or certification unless the cycle is explicitly bounded, versioned, and constitutionally authorized.
+
+---
+
+## PT-EBA-006
+
+### Transformation Control
+
+Verify that every transformation occurring at a boundary is explicitly owned and governed.
+
+The audit shall detect:
+
+* hidden normalization;
+* unit conversion;
+* currency conversion;
+* rounding;
+* aggregation;
+* filtering;
+* deduplication;
+* timestamp rewriting;
+* identity translation;
+* status reinterpretation.
+
+A bridge shall not silently alter constitutional meaning.
+
+---
+
+## PT-EBA-007
+
+### Lifecycle Containment
+
+Verify that no external office or bridge can create, validate, publish, correct, supersede, archive, restore, or certify a Performance Truth object without explicit authority.
+
+Verify that Performance Truth cannot alter the lifecycle of externally owned source objects.
+
+---
+
+## PT-EBA-008
+
+### Truth Containment
+
+Verify that:
+
+* source offices remain authoritative for source truth;
+* Performance Truth remains authoritative for published performance;
+* bridges do not create independent truth;
+* caches and reports do not become unofficial authoritative sources;
+* stale copies cannot supersede certified objects;
+* derived values cannot be mistaken for source truth.
+
+Every exchanged value shall identify its truth class and owner.
+
+---
+
+## PT-EBA-009
+
+### Temporal Boundary Integrity
+
+Verify that each boundary defines:
+
+* event time;
+* effective time;
+* transmission time;
+* receipt time;
+* processing time;
+* publication time;
+* ordering guarantee;
+* late-arrival behavior;
+* timeout behavior.
+
+No boundary may depend upon arrival order unless that order is constitutionally guaranteed.
+
+---
+
+## PT-EBA-010
+
+### Failure Containment
+
+Verify that failure at one boundary cannot silently create:
+
+* partial Performance Truth;
+* stale certified output;
+* duplicate publication;
+* orphaned lifecycle state;
+* unresolved ownership;
+* false reconciliation success;
+* incomplete evidence packages.
+
+Boundary failure shall remain localized, observable, and fail closed.
+
+---
+
+# Office-Specific Boundary Requirements
+
+## Commander Boundary
+
+Commander may request and consume certified Performance Truth.
+
+Commander shall not:
+
+* alter calculations;
+* waive evidence;
+* override reconciliation;
+* certify incomplete performance;
+* direct undocumented publication.
+
+---
+
+## Sentinel Boundary
+
+Sentinel may provide constitutionally authorized events and dependency notifications.
+
+Sentinel shall not:
+
+* modify Performance Truth;
+* determine calculation outcomes;
+* authorize corrections independently;
+* convert an alert into truth.
+
+---
+
+## Workflow Engine Boundary
+
+The Workflow Engine may provide workflow identity, state, and completion evidence.
+
+It shall not:
+
+* calculate performance;
+* certify publication;
+* infer closed-position outcomes;
+* alter Performance Truth lifecycle.
+
+---
+
+## Trader Boundary
+
+Trader may provide trade and execution associations required for provenance.
+
+Trader shall not:
+
+* publish realized performance;
+* revise Performance Truth;
+* substitute local calculations for certified Performance Truth;
+* bypass Closed Position Truth.
+
+---
+
+## Risk Boundary
+
+Risk may provide risk classifications and attribution context.
+
+Risk shall not:
+
+* alter realized or aggregate performance;
+* suppress certified performance;
+* redefine performance calculations;
+* become a publication authority.
+
+---
+
+## Broker Boundary
+
+Broker may provide authoritative execution and settlement evidence within its jurisdiction.
+
+Broker shall not:
+
+* publish enterprise performance;
+* determine constitutional attribution;
+* certify Performance Truth;
+* replace Closed Position Truth.
+
+---
+
+## Monitoring Boundary
+
+Monitoring may provide health, dependency, and operational observations.
+
+Monitoring shall not:
+
+* create business truth;
+* change calculated values;
+* resolve reconciliation discrepancies;
+* authorize publication.
+
+---
+
+## Closed Position Truth Boundary
+
+Closed Position Truth shall remain the authoritative source for constitutionally certified realized position outcomes.
+
+Performance Truth may derive performance from those outcomes but shall not:
+
+* alter closed-position truth;
+* create settlement facts;
+* bypass required certification;
+* silently reinterpret corrections.
+
+---
+
+## Historian Boundary
+
+Historian may preserve and retrieve immutable historical records.
+
+Historian shall not:
+
+* determine current truth;
+* alter certification states;
+* select authoritative revisions;
+* modify calculation context.
+
+---
+
+## Decision Object Boundary
+
+Decision Objects may provide decision identity and attribution context.
+
+They shall not:
+
+* determine realized performance;
+* rewrite historical outcomes;
+* certify performance;
+* replace workflow or authorization evidence.
+
+---
+
+## Authorization Boundary
+
+Authorization records may prove that enterprise activity was constitutionally permitted.
+
+Authorization shall not:
+
+* imply execution occurred;
+* imply a position closed;
+* imply performance was realized;
+* waive evidence requirements.
+
+---
+
+## Evidence Repository Boundary
+
+The Evidence Repository may preserve and retrieve immutable evidence.
+
+It shall not:
+
+* interpret evidence;
+* determine truth;
+* resolve discrepancies;
+* certify constitutional compliance.
+
+---
+
+## Audit Office Boundary
+
+The Audit Office may inspect, reproduce, challenge, and certify according to constitutional authority.
+
+It shall not:
+
+* modify operational Performance Truth;
+* repair evidence silently;
+* replace missing records;
+* assume office ownership.
+
+---
+
+# Circular Dependency Analysis
+
+The audit shall construct:
+
+* an office dependency graph;
+* an object dependency graph;
+* a calculation dependency graph;
+* a certification dependency graph;
+* a reconciliation dependency graph;
+* an evidence dependency graph.
+
+Every cycle shall be classified as:
+
+* prohibited;
+* benign and non-authoritative;
+* explicitly governed;
+* unresolved.
+
+A cycle is prohibited when it allows an output to validate, authorize, or certify itself.
+
+---
+
+# Hidden Coupling Discovery
+
+The audit shall search for coupling through:
+
+* shared mutable databases;
+* shared configuration;
+* shared caches;
+* common helper libraries;
+* implicit naming conventions;
+* global environment variables;
+* filesystem locations;
+* undocumented schemas;
+* operator procedures;
+* report exports;
+* test fixtures;
+* retry queues;
+* reconciliation scripts.
+
+Shared infrastructure shall not create shared constitutional ownership.
+
+---
+
+# Adversarial Boundary Tests
+
+Each boundary shall be tested against scenarios including:
+
+* missing fields;
+* extra fields;
+* stale objects;
+* future-dated objects;
+* duplicate messages;
+* reordered delivery;
+* delayed delivery;
+* conflicting versions;
+* invalid ownership;
+* schema drift;
+* partial transmission;
+* dependency outage;
+* retry after uncertain acknowledgment;
+* replay of previously consumed input;
+* forged source identity;
+* cross-enterprise object collision.
+
+Each test shall verify that no unauthorized state change or truth publication occurs.
+
+---
+
+# Boundary Finding Classification
+
+## Critical
+
+A boundary permits unauthorized authority, ownership transfer, competing truth, self-certification, or unsafe publication.
+
+Affected operation shall halt immediately.
+
+---
+
+## Major
+
+A boundary contract is incomplete, overlapping, circular, or capable of producing ambiguous constitutional behavior.
+
+Certification and freeze shall be suspended.
+
+---
+
+## Minor
+
+The boundary preserves constitutional behavior but lacks clarity, evidence, or formally complete specification.
+
+Correction is required before hardening closure.
+
+---
+
+## Observation
+
+A non-constitutional simplification or maintainability opportunity.
+
+Observations shall not affect certification status.
+
+---
+
+# Required Modifications
+
+Every confirmed boundary defect shall produce a Modification Record specifying:
+
+* defect identifier;
+* affected boundary;
+* affected offices;
+* violated doctrine;
+* ownership correction;
+* contract correction;
+* lifecycle correction;
+* evidence correction;
+* temporal correction;
+* failure-behavior correction;
+* bridge impact;
+* backward-compatibility impact;
+* historical impact;
+* acceptance criteria.
+
+No correction may relocate responsibility without explicit constitutional authority.
+
+---
+
+# Required Evidence
+
+This order shall produce:
+
+* complete Enterprise Boundary Register;
+* office dependency graph;
+* object dependency graph;
+* bridge dependency graph;
+* authority-transfer matrix;
+* ownership matrix;
+* lifecycle-control matrix;
+* truth-source matrix;
+* circular-dependency analysis;
+* hidden-coupling register;
+* adversarial boundary test results;
+* boundary finding register;
+* required Modification Records;
+* Enterprise Boundary Hardening Report.
+
+All artifacts shall be immutable, versioned, reproducible, and preserved within the Evidence Repository.
+
+---
+
+# Constitutional Invariants
+
+## PT-EBA-INV-001
+
+Every enterprise responsibility shall possess exactly one constitutional owner.
+
+## PT-EBA-INV-002
+
+No boundary shall create shared or ambiguous business ownership.
+
+## PT-EBA-INV-003
+
+No bridge shall create, redefine, or certify constitutional truth.
+
+## PT-EBA-INV-004
+
+Every transformation across a boundary shall be explicit, deterministic, and owned.
+
+## PT-EBA-INV-005
+
+No constitutional dependency chain shall permit self-authorization or self-certification.
+
+## PT-EBA-INV-006
+
+Every boundary shall expose only the minimum authority and information required.
+
+## PT-EBA-INV-007
+
+Boundary failure shall not produce partial or unofficial Performance Truth.
+
+## PT-EBA-INV-008
+
+Every exchanged object shall preserve immutable identity and provenance.
+
+## PT-EBA-INV-009
+
+Multiple transport paths shall not create multiple constitutional outcomes.
+
+## PT-EBA-INV-010
+
+No external office may control the lifecycle of Performance Truth without explicit authority.
+
+## PT-EBA-INV-011
+
+Performance Truth shall not control the lifecycle of externally owned source truth.
+
+## PT-EBA-INV-012
+
+Every boundary shall remain independently auditable and reproducible.
+
+---
+
+# Fail-Closed Behavior
+
+The Performance Truth Office shall fail closed whenever:
+
+* boundary ownership is ambiguous;
+* a responsibility has multiple authoritative owners;
+* an undocumented boundary is discovered;
+* a bridge performs an unauthorized transformation;
+* a dependency cycle permits self-validation or self-certification;
+* source truth hierarchy is unclear;
+* interface preconditions cannot be verified;
+* message identity or provenance cannot be established;
+* lifecycle authority is disputed;
+* duplicate paths produce inconsistent outcomes;
+* temporal ordering is undefined;
+* boundary failure could create partial constitutional state;
+* required boundary evidence is absent.
+
+No affected Performance Truth object shall be created, published, revised, reconciled as complete, or certified until the boundary defect is resolved.
+
+---
+
+# Completion Decision
+
+This order shall produce exactly one completion decision.
+
+## PASS
+
+Every enterprise boundary has been discovered, classified, tested, and hardened.
+
+No hidden ownership, overlapping authority, circular dependency, truth duplication, lifecycle leakage, or unresolved Major finding remains.
+
+---
+
+## CONDITIONAL PASS
+
+All boundaries preserve constitutional safety, but bounded Minor findings remain.
+
+Every condition shall possess an approved owner, Modification Record, and completion requirement.
+
+---
+
+## FAIL
+
+One or more boundaries permit unauthorized authority, ambiguous ownership, competing truth, circular certification, unsafe transformation, or non-fail-closed behavior.
+
+Affected interfaces shall remain disabled or restricted until remediation and independent verification are complete.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every direct and indirect enterprise boundary touching Performance Truth has been discovered and recorded.
+2. Every boundary has been assigned exactly one constitutional classification.
+3. Ownership, authority, lifecycle control, truth class, evidence, and temporal behavior are explicit for every boundary.
+4. No responsibility remains ownerless or possesses multiple authoritative owners.
+5. No bridge performs undocumented calculation, transformation, correction, reconciliation, or certification.
+6. All dependency cycles have been identified and constitutionally classified.
+7. All prohibited circular dependencies have been eliminated.
+8. Hidden coupling through shared infrastructure, configuration, storage, or operator practice has been resolved.
+9. Every boundary has passed adversarial failure and mutation testing.
+10. Every confirmed defect has generated a complete Modification Record.
+11. All boundary evidence has been preserved within the Evidence Repository.
+12. Exactly one completion decision—**PASS**, **CONDITIONAL PASS**, or **FAIL**—has been issued.
+13. No unresolved constitutional ambiguity remains at any Performance Truth enterprise boundary.

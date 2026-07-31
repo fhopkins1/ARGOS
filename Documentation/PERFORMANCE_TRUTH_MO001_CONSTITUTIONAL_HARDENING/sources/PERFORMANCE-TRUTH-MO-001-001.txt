@@ -1,0 +1,646 @@
+# PERFORMANCE-TRUTH-MO-001-001
+
+# Constitutional Assumption Discovery
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the adversarial discovery, classification, and resolution of every implicit assumption contained within the certified constitutional specification of the Performance Truth Office.
+
+The purpose of this order is to determine whether any required constitutional behavior depends upon facts, conditions, interpretations, conventions, or dependency behavior that the Constitution does not explicitly guarantee.
+
+The certified baseline shall not be presumed complete.
+
+Every behavior necessary to produce, preserve, reconcile, revise, audit, or certify Performance Truth shall be treated as unsupported until its governing assumptions are identified and constitutionally justified.
+
+Every discovered assumption shall be:
+
+* explicitly specified as constitutional doctrine;
+* demonstrated to follow necessarily from existing constitutional doctrine; or
+* eliminated from the office architecture.
+
+No unsupported assumption may remain within the hardened constitutional baseline.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* Enterprise Modification Doctrine.
+
+Nothing within this order may weaken, waive, reinterpret, or bypass previously certified constitutional guarantees.
+
+Where an existing requirement is found to depend upon an unsupported assumption, the requirement shall fail closed until the assumption is resolved.
+
+---
+
+# Modification Objectives
+
+This order shall:
+
+* identify every explicit and implicit assumption governing the office;
+* determine where assumptions enter constitutional behavior;
+* identify every artifact, lifecycle, calculation, interface, dependency, and certification decision affected by each assumption;
+* test whether each assumption is guaranteed by existing doctrine;
+* expose contradictions between assumptions and certified requirements;
+* eliminate reliance upon informal convention;
+* convert necessary assumptions into explicit constitutional requirements;
+* remove assumptions that are unnecessary or unsafe;
+* preserve backward compatibility with all valid certified behavior;
+* establish permanent evidence of assumption resolution.
+
+---
+
+# Scope of Discovery
+
+Assumption discovery shall include:
+
+* office governance;
+* constitutional authority;
+* jurisdiction;
+* ownership;
+* canonical objects;
+* object identity;
+* object completeness;
+* lifecycle transitions;
+* calculation governance;
+* precision and rounding;
+* aggregation;
+* attribution;
+* benchmarks;
+* temporal behavior;
+* interfaces;
+* dependency behavior;
+* evidence;
+* provenance;
+* reconciliation;
+* revisions;
+* publication;
+* replay;
+* auditability;
+* certification;
+* fail-closed behavior;
+* enterprise integration.
+
+No certified requirement shall be excluded merely because it previously passed audit.
+
+---
+
+# Assumption Definition
+
+For purposes of this order, a constitutional assumption is any condition treated as true, stable, complete, unique, available, ordered, compatible, or authoritative without an explicit constitutional guarantee establishing that condition.
+
+Assumptions include, but are not limited to:
+
+* presumed dependency availability;
+* presumed uniqueness of identifiers;
+* presumed completeness of evidence;
+* presumed ordering of events;
+* presumed stability of schemas;
+* presumed mathematical conventions;
+* presumed currency or unit consistency;
+* presumed finality of external truth;
+* presumed absence of duplicate inputs;
+* presumed ownership clarity;
+* presumed synchronization between offices;
+* presumed reliability of timestamps;
+* presumed deterministic iteration order;
+* presumed compatibility of revisions;
+* presumed retention of historical records;
+* presumed certification validity;
+* presumed equivalence between replay and original execution.
+
+An assumption remains constitutional even when embedded only within implementation, documentation, test fixtures, operator practice, or bridge behavior.
+
+---
+
+# Discovery Method
+
+The review shall examine every constitutional statement and ask:
+
+1. What must already be true for this requirement to function?
+2. Which office guarantees that condition?
+3. Where is that guarantee explicitly established?
+4. What occurs if the condition is false?
+5. Is the failure detected before constitutional state changes?
+6. Can two compliant implementations interpret the condition differently?
+7. Can replay produce a different result because the assumption was not preserved?
+8. Does certification evidence prove the condition or merely presume it?
+
+Any requirement lacking deterministic answers shall generate an Assumption Candidate.
+
+---
+
+# Assumption Candidate Record
+
+Every discovered Assumption Candidate shall include:
+
+* immutable assumption identifier;
+* assumption statement;
+* discovery source;
+* affected constitutional requirement;
+* affected canonical objects;
+* affected offices and bridges;
+* assumed producing authority;
+* assumed consuming behavior;
+* dependency upon the assumption;
+* failure consequences;
+* detectability;
+* current documentary support;
+* current evidence support;
+* classification;
+* resolution status;
+* required modification, if any.
+
+Assumption Candidates shall be preserved regardless of final disposition.
+
+---
+
+# Assumption Domains
+
+## PT-ASD-001
+
+### Governance Assumptions
+
+Identify assumptions concerning:
+
+* office mission;
+* authority;
+* jurisdiction;
+* separation of duties;
+* certification authority;
+* publication authority;
+* correction authority;
+* ownership boundaries.
+
+The review shall determine whether any responsibility is performed because it appears necessary rather than because it is constitutionally assigned.
+
+---
+
+## PT-ASD-002
+
+### Canonical Object Assumptions
+
+Identify assumptions concerning:
+
+* object uniqueness;
+* identity permanence;
+* required-field completeness;
+* field interpretation;
+* object versioning;
+* relationship cardinality;
+* serialization equivalence;
+* persistence guarantees;
+* object finality.
+
+No object property may depend upon undocumented convention.
+
+---
+
+## PT-ASD-003
+
+### Lifecycle Assumptions
+
+Identify assumptions concerning:
+
+* initial state;
+* transition authority;
+* transition ordering;
+* transition atomicity;
+* terminal states;
+* correction eligibility;
+* supersession behavior;
+* archival timing;
+* restoration;
+* partial transition recovery.
+
+Every reachable and unreachable state shall be constitutionally determined.
+
+---
+
+## PT-ASD-004
+
+### Mathematical Assumptions
+
+Identify assumptions concerning:
+
+* numeric representation;
+* precision;
+* rounding;
+* truncation;
+* sign convention;
+* currency;
+* units;
+* missing values;
+* zero values;
+* aggregation order;
+* benchmark alignment;
+* compounding;
+* allocation of residuals;
+* correction propagation.
+
+No calculation may rely upon platform defaults or conventional financial interpretation.
+
+---
+
+## PT-ASD-005
+
+### Temporal Assumptions
+
+Identify assumptions concerning:
+
+* clock authority;
+* timestamp precision;
+* timezone;
+* effective time;
+* observation time;
+* publication time;
+* event ordering;
+* concurrent events;
+* late-arriving information;
+* historical cutoffs;
+* replay chronology.
+
+Every temporal dependency shall possess explicit constitutional semantics.
+
+---
+
+## PT-ASD-006
+
+### Interface Assumptions
+
+Identify assumptions concerning:
+
+* message completeness;
+* delivery order;
+* delivery uniqueness;
+* acknowledgment meaning;
+* retry behavior;
+* schema compatibility;
+* dependency identity;
+* ownership retention;
+* response finality;
+* bridge availability.
+
+No consuming behavior may infer guarantees not established by the producing office.
+
+---
+
+## PT-ASD-007
+
+### Evidence and Provenance Assumptions
+
+Identify assumptions concerning:
+
+* evidence authenticity;
+* evidence completeness;
+* evidence immutability;
+* evidence availability;
+* evidence retention;
+* reference permanence;
+* provenance continuity;
+* repository integrity;
+* chain-of-custody completeness.
+
+Evidence shall prove constitutional behavior rather than merely document that it was asserted.
+
+---
+
+## PT-ASD-008
+
+### Truth and Reconciliation Assumptions
+
+Identify assumptions concerning:
+
+* source-of-truth hierarchy;
+* external record finality;
+* cross-office agreement;
+* discrepancy severity;
+* reconciliation timing;
+* correction ownership;
+* authoritative conflict resolution;
+* reconciliation completeness.
+
+No truth conflict may be resolved through precedence that is not explicitly constitutional.
+
+---
+
+## PT-ASD-009
+
+### Replay and Audit Assumptions
+
+Identify assumptions concerning:
+
+* preservation of calculation context;
+* preservation of dependency versions;
+* replay input completeness;
+* deterministic execution environment;
+* historical schema availability;
+* audit independence;
+* certification artifact integrity.
+
+Replay equivalence shall not depend upon environmental facts absent from preserved evidence.
+
+---
+
+## PT-ASD-010
+
+### Operational Assumptions
+
+Identify assumptions concerning:
+
+* dependency uptime;
+* process continuity;
+* storage capacity;
+* network reliability;
+* concurrency limits;
+* restart behavior;
+* recovery order;
+* operator intervention;
+* enterprise scale.
+
+Operational conditions necessary to constitutional behavior shall be explicitly governed or rendered irrelevant through fail-closed design.
+
+---
+
+# Assumption Classification
+
+Every Assumption Candidate shall receive exactly one classification.
+
+## Explicitly Specified
+
+The assumption is directly guaranteed by existing constitutional doctrine.
+
+The governing doctrine and evidence shall be cited.
+
+No modification is required unless the doctrine is ambiguous or incomplete.
+
+---
+
+## Indirectly Guaranteed
+
+The assumption follows necessarily from one or more existing constitutional requirements.
+
+The logical derivation shall be documented.
+
+An indirect guarantee shall be accepted only when no constitutionally compliant interpretation can violate the assumption.
+
+---
+
+## Unsupported but Necessary
+
+The assumption is required for constitutional behavior but is not presently guaranteed.
+
+A constitutional modification shall be produced.
+
+Affected behavior shall fail closed until the modification is certified.
+
+---
+
+## Unsupported and Unnecessary
+
+The assumption is not constitutionally guaranteed and need not exist.
+
+The architecture shall be modified to eliminate reliance upon it.
+
+---
+
+## Contradictory
+
+The assumption conflicts with existing constitutional doctrine or another required assumption.
+
+The conflict shall be resolved through formal constitutional modification.
+
+---
+
+## Indeterminate
+
+Available doctrine and evidence cannot determine whether the assumption is valid.
+
+Indeterminate assumptions shall be treated as unsupported and shall fail closed pending resolution.
+
+---
+
+# Assumption Dependency Analysis
+
+For every Unsupported, Contradictory, or Indeterminate assumption, the review shall identify:
+
+* upstream sources;
+* downstream consumers;
+* affected calculations;
+* affected publications;
+* affected revisions;
+* affected reconciliations;
+* affected evidence packages;
+* affected certification decisions;
+* affected historical records;
+* affected bridges;
+* potential propagation into other offices.
+
+The analysis shall determine whether previously certified records relied upon the assumption.
+
+Where historical reliance is possible, retrospective reconciliation shall be required.
+
+---
+
+# Adversarial Validation
+
+Each assumption shall be challenged through at least one scenario in which the assumption is false.
+
+The scenario shall determine whether:
+
+* the condition is detected;
+* detection occurs before publication;
+* constitutional state remains unchanged;
+* partial state is created;
+* evidence records the failure;
+* reconciliation is initiated;
+* replay reproduces the same failure;
+* recovery requires unauthorized discretion.
+
+An assumption shall not be considered harmless merely because normal execution does not violate it.
+
+---
+
+# Constitutional Modification Requirements
+
+Every required modification shall specify:
+
+* constitutional defect;
+* affected certified doctrine;
+* proposed explicit rule;
+* ownership;
+* authority;
+* required object changes;
+* required lifecycle changes;
+* required interface changes;
+* required evidence;
+* required reconciliation;
+* required fail-closed behavior;
+* backward-compatibility effect;
+* migration or historical review requirement;
+* deterministic acceptance criteria.
+
+No modification may rely upon another unresolved assumption.
+
+---
+
+# Backward Compatibility Review
+
+Every modification shall determine whether it:
+
+* preserves all previously valid Performance Truth Records;
+* changes interpretation of historical records;
+* requires revision of prior certifications;
+* requires new evidence;
+* changes bridge contracts;
+* changes replay behavior;
+* changes reconciliation outcomes.
+
+A modification that changes the meaning of previously certified truth shall not be applied silently.
+
+Affected records shall be preserved and revised through constitutional revision procedures.
+
+---
+
+# Required Evidence
+
+This order shall produce:
+
+* complete Assumption Candidate Register;
+* requirement-to-assumption traceability matrix;
+* assumption dependency graph;
+* classification evidence;
+* logical derivations for indirect guarantees;
+* adversarial scenario catalog;
+* falsification results;
+* historical impact analysis;
+* required constitutional modifications;
+* eliminated-assumption records;
+* unresolved-assumption register;
+* final Assumption Resolution Report.
+
+All artifacts shall be immutable, versioned, independently reproducible, and preserved within the Evidence Repository.
+
+---
+
+# Constitutional Invariants
+
+## PT-ASD-INV-001
+
+Every constitutional behavior shall depend only upon explicit or necessarily derived guarantees.
+
+## PT-ASD-INV-002
+
+No unsupported assumption may authorize publication or certification.
+
+## PT-ASD-INV-003
+
+Every necessary assumption shall possess an identifiable constitutional owner.
+
+## PT-ASD-INV-004
+
+Every assumption shall be traceable to all affected requirements and artifacts.
+
+## PT-ASD-INV-005
+
+Every indirect guarantee shall possess a documented and reproducible logical derivation.
+
+## PT-ASD-INV-006
+
+Every unsupported assumption shall be explicitly constitutionalized or eliminated.
+
+## PT-ASD-INV-007
+
+No assumption resolution may weaken previously certified guarantees.
+
+## PT-ASD-INV-008
+
+Historical reliance upon a defective assumption shall trigger constitutional impact review.
+
+## PT-ASD-INV-009
+
+Assumption failure shall be detectable before irreversible constitutional state change.
+
+## PT-ASD-INV-010
+
+The absence of discovered assumptions shall not itself constitute proof of completeness.
+
+---
+
+# Fail-Closed Behavior
+
+The Performance Truth Office shall fail closed whenever:
+
+* required behavior depends upon an unclassified assumption;
+* an assumption is classified as Unsupported, Contradictory, or Indeterminate;
+* the constitutional owner of a necessary condition cannot be identified;
+* an indirect guarantee cannot be logically proven;
+* assumption failure cannot be detected before publication;
+* historical records may rely upon an unresolved assumption;
+* required evidence cannot demonstrate assumption validity;
+* assumption resolution would weaken a certified guarantee;
+* multiple constitutional interpretations remain possible.
+
+No affected Performance Truth Record shall be newly published, revised, reconciled as complete, or certified until the governing assumption is resolved.
+
+---
+
+# Completion Decision
+
+This order shall produce exactly one completion decision.
+
+## PASS
+
+Every discovered assumption has been classified and resolved.
+
+All necessary assumptions are explicitly specified or necessarily guaranteed.
+
+All unsupported assumptions have been constitutionalized or eliminated.
+
+No unresolved Critical or Major assumption findings remain.
+
+---
+
+## CONDITIONAL PASS
+
+No unsupported assumption presently threatens published Performance Truth, but bounded Minor findings remain.
+
+Every condition shall possess an approved owner, remediation order, and completion requirement.
+
+Conditional findings shall be resolved before Constitutional Hardening Closure.
+
+---
+
+## FAIL
+
+One or more necessary assumptions remain unsupported, contradictory, indeterminate, ownerless, or capable of producing unsafe constitutional behavior.
+
+Affected functions shall remain fail closed until remediation and independent verification are complete.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. Every requirement within the certified Performance Truth constitutional baseline has been reviewed for implicit assumptions.
+2. Every discovered assumption has an immutable Assumption Candidate Record.
+3. Every assumption has received exactly one constitutional classification.
+4. Every indirect guarantee has been formally derived from existing doctrine.
+5. Every unsupported necessary assumption has generated an explicit constitutional modification.
+6. Every unsupported unnecessary assumption has been eliminated from required behavior.
+7. Every contradictory or indeterminate assumption has been resolved or placed under fail-closed restriction.
+8. Historical reliance upon defective assumptions has been assessed and reconciled where required.
+9. Complete traceability exists between assumptions, requirements, objects, offices, bridges, evidence, and certification decisions.
+10. All findings and resolutions have been preserved within the Evidence Repository.
+11. Exactly one completion decision—**PASS**, **CONDITIONAL PASS**, or **FAIL**—has been issued.
+12. No unsupported constitutional assumption remains within the hardened Performance Truth baseline.

@@ -1,0 +1,503 @@
+# PERFORMANCE-TRUTH-MO-001-010
+
+# Certification Blind Spot Discovery
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the Certification Blind Spot Discovery campaign for the Performance Truth Office.
+
+Its purpose is to assume that the completed ECS-003 certification campaign failed to inspect one or more constitutionally important properties and to identify every material dimension of correctness that may have escaped prior review.
+
+This order shall not presume that prior certification evidence is complete merely because certification was granted.
+
+Every omitted certification dimension shall either be proven constitutionally irrelevant or incorporated into the hardened certification baseline.
+
+---
+
+# Constitutional Authority
+
+This Modification Order derives authority from:
+
+* ARGOS Constitution
+* Enterprise Constitutional Standard ECS-003
+* PERFORMANCE-TRUTH-RM-001
+* PERFORMANCE-TRUTH-RM-002
+* PERFORMANCE-TRUTH-RM-003
+* Enterprise Modification Doctrine
+* Audit Doctrine
+* Evidence Doctrine
+* Truth Doctrine
+* Workflow Ownership Doctrine
+
+Nothing within this order may weaken previously certified constitutional guarantees.
+
+---
+
+# Campaign Objective
+
+The objective of this campaign is to discover properties that:
+
+* were not tested;
+* were tested incompletely;
+* were inferred rather than demonstrated;
+* were obscured by test design;
+* depended upon hidden assumptions;
+* were excluded by certification scope;
+* were represented by insufficient evidence;
+* could fail outside the certified scenarios.
+
+The campaign shall seek falsification rather than confirmation.
+
+---
+
+# Certification Scope Reconstruction
+
+The independent reviewer shall reconstruct the complete scope of prior certification.
+
+The reconstruction shall identify:
+
+* every constitutional requirement reviewed;
+* every implementation behavior tested;
+* every interface exercised;
+* every dependency represented;
+* every failure mode injected;
+* every replay scenario performed;
+* every evidence package examined;
+* every explicit exclusion;
+* every implicit exclusion;
+* every untested assumption.
+
+Certification scope shall be derived from evidence rather than summary claims.
+
+---
+
+# Requirement-to-Test Coverage
+
+Every constitutional requirement shall be mapped to one or more objective certification tests.
+
+The mapping shall identify:
+
+* requirement identifier;
+* responsible certification order;
+* test identifier;
+* tested behavior;
+* input conditions;
+* expected result;
+* generated evidence;
+* observed result;
+* coverage limitations.
+
+A requirement without direct test coverage constitutes a certification blind spot unless non-testability is constitutionally justified.
+
+---
+
+# Invariant Coverage
+
+Every constitutional invariant shall be independently mapped to evidence demonstrating:
+
+* normal-state enforcement;
+* failure-state enforcement;
+* boundary-state enforcement;
+* recovery-state enforcement;
+* replay enforcement;
+* cross-office enforcement.
+
+Certification of ordinary behavior alone shall not establish invariant coverage.
+
+---
+
+# Negative-Space Analysis
+
+The reviewer shall identify behavior that prior certification did not attempt to observe.
+
+Negative-space analysis shall include:
+
+* omitted inputs;
+* omitted lifecycle states;
+* omitted transition combinations;
+* omitted dependency states;
+* omitted interface sequences;
+* omitted temporal arrangements;
+* omitted evidence failures;
+* omitted concurrency conditions;
+* omitted recovery conditions;
+* omitted scale conditions.
+
+Absence from the certification suite shall not be interpreted as impossibility.
+
+---
+
+# Scenario Diversity Audit
+
+Prior certification scenarios shall be examined for excessive similarity.
+
+The audit shall determine whether certification relied upon:
+
+* repeated use of identical fixtures;
+* repeated use of identical workflows;
+* narrow value ranges;
+* single dependency configurations;
+* single temporal orderings;
+* single benchmark types;
+* single correction paths;
+* single publication paths.
+
+Insufficient scenario diversity constitutes a certification weakness.
+
+---
+
+# Oracle Integrity Audit
+
+Every prior certification decision shall be examined to determine whether the expected result was independently derived.
+
+The audit shall reject circular validation in which:
+
+* implementation output defines expected output;
+* duplicated implementation logic defines the test oracle;
+* generated evidence validates itself;
+* a single dependency serves as both source and verifier;
+* certification scripts reproduce the same defect as the implementation.
+
+Every certification oracle shall possess independent constitutional authority.
+
+---
+
+# Evidence Sufficiency Audit
+
+Certification evidence shall be examined for whether it proves the claimed property rather than merely documenting execution.
+
+The reviewer shall distinguish between:
+
+* proof of execution;
+* proof of result;
+* proof of causality;
+* proof of ownership;
+* proof of determinism;
+* proof of completeness;
+* proof of fail-closed behavior;
+* proof of historical preservation.
+
+Evidence that demonstrates only that a test ran shall not establish constitutional compliance.
+
+---
+
+# Sampling Blind Spot Audit
+
+Where prior certification relied upon sampling, the reviewer shall determine:
+
+* what population was sampled;
+* how samples were selected;
+* which classes were excluded;
+* whether rare states were represented;
+* whether boundary conditions were represented;
+* whether failure states were represented;
+* whether the sample can support the certification conclusion.
+
+Unsupported extrapolation from sampled behavior is prohibited.
+
+---
+
+# Lifecycle Coverage Audit
+
+The reviewer shall verify that certification exercised every legal lifecycle state and transition for every canonical object.
+
+The audit shall include:
+
+* creation;
+* validation;
+* publication;
+* correction;
+* revision;
+* supersession;
+* archival;
+* replay;
+* rejection;
+* recovery.
+
+Untested transitions constitute certification blind spots.
+
+---
+
+# Interface Sequence Audit
+
+Certification shall be challenged using interface sequences that differ from nominal operation.
+
+The reviewer shall examine:
+
+* reordered valid messages;
+* repeated messages;
+* delayed messages;
+* concurrent messages;
+* stale messages;
+* superseded messages;
+* partially completed exchanges;
+* recovery after interrupted exchanges.
+
+Interface correctness shall not be inferred from isolated endpoint validation.
+
+---
+
+# Cross-Requirement Interaction Audit
+
+The reviewer shall test whether individually certified requirements remain correct when combined.
+
+Interaction analysis shall include:
+
+* correction during reconciliation;
+* replay during dependency degradation;
+* publication during concurrent revision;
+* attribution following late-arriving evidence;
+* archival during certification;
+* benchmark revision during cumulative calculation;
+* ownership transfer during workflow interruption.
+
+Certification of isolated requirements shall not establish correctness of their interaction.
+
+---
+
+# Recovery Coverage Audit
+
+Every certified failure mode shall be examined for post-failure behavior.
+
+The reviewer shall verify:
+
+* state preservation;
+* failure evidence;
+* retry eligibility;
+* recovery authorization;
+* recalculation;
+* reconciliation;
+* publication eligibility;
+* historical continuity.
+
+A system that fails closed but cannot recover deterministically is not fully certified.
+
+---
+
+# Repeated-Failure Audit
+
+The campaign shall test repeated and compound failures, including:
+
+* the same failure occurring more than once;
+* a second failure during recovery;
+* evidence failure during failure reporting;
+* dependency failure during reconciliation;
+* archive failure during correction;
+* replay failure following prior replay failure.
+
+Single-failure certification shall not establish compound-failure correctness.
+
+---
+
+# Longitudinal Certification Audit
+
+The reviewer shall determine whether prior certification demonstrated continued correctness across time.
+
+The audit shall include:
+
+* repeated operation;
+* accumulated revisions;
+* prolonged evidence retention;
+* dependency upgrades;
+* benchmark evolution;
+* archival migration;
+* modification lineage;
+* certification renewal.
+
+Point-in-time success shall not automatically establish long-term constitutional stability.
+
+---
+
+# Environmental Assumption Audit
+
+The campaign shall identify environmental conditions assumed by prior certification, including:
+
+* storage availability;
+* clock behavior;
+* process ordering;
+* dependency latency;
+* repository layout;
+* configuration presence;
+* identifier uniqueness;
+* serialization stability;
+* resource availability.
+
+Every environmental assumption shall be made explicit and constitutionally governed where material.
+
+---
+
+# Human Procedure Audit
+
+Where certification depended upon human action, the reviewer shall determine whether:
+
+* instructions were complete;
+* decisions were deterministic;
+* discretion was constrained;
+* evidence was preserved;
+* authority was verified;
+* repeatability was demonstrated.
+
+Unbounded human discretion constitutes a certification blind spot.
+
+---
+
+# Toolchain Independence Audit
+
+Certification conclusions shall be challenged using independent tooling where practicable.
+
+The reviewer shall determine whether prior certification depended upon:
+
+* a single test runner;
+* a single parser;
+* a single evidence generator;
+* a single replay utility;
+* a single repository packaging process;
+* a single audit script.
+
+A defect shared by the implementation and certification toolchain shall not remain undetected.
+
+---
+
+# Certification Boundary Audit
+
+The reviewer shall identify properties excluded because they were assigned to another office, bridge, program, or future audit.
+
+For every exclusion, the reviewer shall verify:
+
+* constitutional ownership;
+* receiving certification authority;
+* actual test coverage;
+* evidence availability;
+* absence of coverage gaps between programs.
+
+A property assigned elsewhere but certified nowhere constitutes a constitutional defect.
+
+---
+
+# Blind Spot Classification
+
+Every discovered blind spot shall be classified as:
+
+* constitutional omission;
+* implementation omission;
+* test omission;
+* evidence omission;
+* oracle weakness;
+* scope exclusion;
+* interaction omission;
+* recovery omission;
+* longitudinal omission;
+* toolchain dependency.
+
+Classification shall not replace remediation.
+
+---
+
+# Required Constitutional Additions
+
+Where a blind spot reveals a missing constitutional property, this order shall produce a proposed constitutional addition specifying:
+
+* new requirement;
+* constitutional owner;
+* affected objects;
+* affected interfaces;
+* required invariants;
+* required evidence;
+* required fail-closed behavior;
+* required certification tests;
+* backward-compatibility impact.
+
+No constitutional addition becomes authoritative without approved modification authority.
+
+---
+
+# Certification Suite Expansion
+
+Every validated blind spot shall produce one or more permanent certification additions.
+
+Each addition shall define:
+
+* target requirement;
+* adversarial scenario;
+* independent oracle;
+* deterministic procedure;
+* required evidence;
+* acceptance criteria;
+* regression inclusion.
+
+New certification coverage shall become part of all future certification campaigns.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold:
+
+* every constitutional requirement possesses objective certification coverage;
+* every invariant is tested under normal, boundary, failure, and recovery conditions;
+* every certification conclusion is supported by sufficient evidence;
+* every test oracle is independent of the implementation under test;
+* every certification exclusion has an identified and verified certification owner;
+* every discovered blind spot produces remediation or constitutional disproof;
+* every permanent certification addition enters future regression testing;
+* certification scope is explicit and independently reconstructable.
+
+Violation of any invariant constitutes a constitutional hardening finding.
+
+---
+
+# Fail-Closed Requirements
+
+The Performance Truth Office shall not retain hardened certification status whenever:
+
+* material certification scope cannot be reconstructed;
+* constitutional requirements lack objective test coverage;
+* certification evidence is insufficient;
+* test oracles are circular;
+* exclusions create unowned certification gaps;
+* discovered blind spots remain unresolved;
+* new certification requirements have not been added to regression coverage;
+* prior certification conclusions cannot be independently reproduced.
+
+Certification confidence shall never substitute for demonstrated coverage.
+
+---
+
+# Required Modification Evidence
+
+This campaign shall produce:
+
+* prior certification scope reconstruction;
+* requirement-to-test coverage matrix;
+* invariant coverage matrix;
+* negative-space analysis;
+* scenario diversity analysis;
+* oracle integrity findings;
+* evidence sufficiency findings;
+* lifecycle coverage findings;
+* interaction coverage findings;
+* recovery and compound-failure findings;
+* environmental assumption inventory;
+* certification boundary analysis;
+* blind spot register;
+* constitutional modification proposals;
+* certification suite additions;
+* residual certification risk assessment.
+
+---
+
+# Acceptance Criteria
+
+This Modification Order shall be considered complete when independent adversarial review demonstrates that:
+
+1. the full scope and limitations of the prior ECS-003 certification campaign have been independently reconstructed;
+2. every constitutional requirement and invariant possesses direct, objective, and reproducible certification coverage;
+3. all negative-space, lifecycle, interface-sequence, interaction, recovery, compound-failure, and longitudinal dimensions have been examined;
+4. certification evidence proves the claimed constitutional properties rather than merely recording test execution;
+5. every certification oracle is independent and free from circular validation;
+6. every excluded property has a verified constitutional owner and confirmed certification coverage;
+7. every discovered blind spot has been remediated, incorporated into permanent regression certification, or constitutionally proven irrelevant;
+8. no unresolved material certification omission remains; and
+9. the Performance Truth Office demonstrates a materially stronger and more complete certification architecture than the **PERFORMANCE-TRUTH-RM-003 Constitutional Freeze Baseline**.

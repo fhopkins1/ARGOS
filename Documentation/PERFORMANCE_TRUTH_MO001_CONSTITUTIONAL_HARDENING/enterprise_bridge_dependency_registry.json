@@ -1,0 +1,110 @@
+[
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-828a3bf8551225f1",
+    "counterparty": "Commander",
+    "dependency_direction": "Performance Truth -> Commander",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-8f213cb4f72a9874",
+    "counterparty": "Workflow Engine",
+    "dependency_direction": "Workflow Engine -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-6e8a9279c2578b8f",
+    "counterparty": "Historian",
+    "dependency_direction": "Performance Truth -> Historian",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-6640ed0ac0fa0952",
+    "counterparty": "Closed Position Truth",
+    "dependency_direction": "Closed Position Truth -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-0d97e6c69e34c909",
+    "counterparty": "Decision Objects",
+    "dependency_direction": "Decision Objects -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-a3e8dd40445d6716",
+    "counterparty": "Trader",
+    "dependency_direction": "Trader -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-34850e766afed4ba",
+    "counterparty": "Monitoring",
+    "dependency_direction": "Monitoring -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-3cc241f704c4a5bc",
+    "counterparty": "Risk",
+    "dependency_direction": "Risk -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-89fbe3f079e42865",
+    "counterparty": "Broker",
+    "dependency_direction": "Broker -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-ed84f9806689265e",
+    "counterparty": "Sentinel",
+    "dependency_direction": "Sentinel -> Performance Truth",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-5da8384b353183d9",
+    "counterparty": "Evidence Repository",
+    "dependency_direction": "Performance Truth -> Evidence Repository",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  },
+  {
+    "availability_assumption": "not assumed; unavailable bridge fails closed",
+    "bridge_id": "PT-BRIDGE-38601f4029c656ef",
+    "counterparty": "Audit Office",
+    "dependency_direction": "Performance Truth -> Audit Office",
+    "hidden_dependency_detected": false,
+    "replay_dependency": "bridge evidence digest and interface record",
+    "status": "HARDENED"
+  }
+]

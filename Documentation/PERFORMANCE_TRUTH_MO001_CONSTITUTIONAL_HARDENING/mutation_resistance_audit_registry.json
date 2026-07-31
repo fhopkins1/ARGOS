@@ -1,0 +1,82 @@
+[
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "missing upstream truth",
+    "scenario_id": "PT-ADV-001",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "conflicting closed position truth",
+    "scenario_id": "PT-ADV-002",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "duplicate workflow evidence",
+    "scenario_id": "PT-ADV-003",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "late benchmark correction",
+    "scenario_id": "PT-ADV-004",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "clock skew",
+    "scenario_id": "PT-ADV-005",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "cross-office ownership leak",
+    "scenario_id": "PT-ADV-006",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "hidden bridge dependency",
+    "scenario_id": "PT-ADV-007",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "stale certification evidence",
+    "scenario_id": "PT-ADV-008",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "mutation of published history",
+    "scenario_id": "PT-ADV-009",
+    "state_mutation_allowed_before_detection": false
+  },
+  {
+    "evidence_required": true,
+    "expected_response": "FAIL_CLOSED",
+    "resolution_status": "HARDENED",
+    "scenario": "scalability pressure",
+    "scenario_id": "PT-ADV-010",
+    "state_mutation_allowed_before_detection": false
+  }
+]

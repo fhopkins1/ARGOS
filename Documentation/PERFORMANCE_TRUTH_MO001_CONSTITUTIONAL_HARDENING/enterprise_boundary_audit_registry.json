@@ -1,0 +1,254 @@
+[
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Commander",
+    "counterparty": "Commander",
+    "direction": "Performance Truth -> Commander",
+    "interface_id": "PT-IFACE-001",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Performance Truth Office",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Workflow Engine",
+    "direction": "Workflow Engine -> Performance Truth",
+    "interface_id": "PT-IFACE-002",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Workflow Engine",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Historian",
+    "counterparty": "Historian",
+    "direction": "Performance Truth -> Historian",
+    "interface_id": "PT-IFACE-003",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Performance Truth Office",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Closed Position Truth",
+    "direction": "Closed Position Truth -> Performance Truth",
+    "interface_id": "PT-IFACE-004",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Closed Position Truth",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Decision Objects",
+    "direction": "Decision Objects -> Performance Truth",
+    "interface_id": "PT-IFACE-005",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Decision Objects",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Trader",
+    "direction": "Trader -> Performance Truth",
+    "interface_id": "PT-IFACE-006",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Trader",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Monitoring",
+    "direction": "Monitoring -> Performance Truth",
+    "interface_id": "PT-IFACE-007",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Monitoring",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Risk",
+    "direction": "Risk -> Performance Truth",
+    "interface_id": "PT-IFACE-008",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Risk",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Broker",
+    "direction": "Broker -> Performance Truth",
+    "interface_id": "PT-IFACE-009",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Broker",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Performance Truth Office",
+    "counterparty": "Sentinel",
+    "direction": "Sentinel -> Performance Truth",
+    "interface_id": "PT-IFACE-010",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Sentinel",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Evidence Repository",
+    "counterparty": "Evidence Repository",
+    "direction": "Performance Truth -> Evidence Repository",
+    "interface_id": "PT-IFACE-011",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Performance Truth Office",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  },
+  {
+    "constitutional_guarantee": "Performance Truth never mutates counterparty-owned truth.",
+    "consumer": "Audit Office",
+    "counterparty": "Audit Office",
+    "direction": "Performance Truth -> Audit Office",
+    "interface_id": "PT-IFACE-012",
+    "interface_owner": "Performance Truth Office",
+    "ownership_transfer": "No source truth ownership transfer; custody of evidence references only.",
+    "provider": "Performance Truth Office",
+    "required_inputs": [
+      "authorized evidence",
+      "identity",
+      "timestamp",
+      "provenance digest"
+    ],
+    "required_outputs": [
+      "acknowledgement",
+      "accepted evidence reference",
+      "rejection evidence where applicable"
+    ]
+  }
+]
