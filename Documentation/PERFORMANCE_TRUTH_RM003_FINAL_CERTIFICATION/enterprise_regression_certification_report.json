@@ -1,0 +1,72 @@
+{
+  "all_regressions_passed": true,
+  "disposition": "PASS",
+  "executions": [
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_performance_truth_rm001_constitutional_baseline",
+      "disposition": "PASS",
+      "elapsed_seconds": 0.7421,
+      "execution_id": "PT-RM003-REG-001",
+      "regression_class": "constitutional_baseline_regression",
+      "returncode": 0,
+      "stderr": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-001.stderr.log",
+      "stderr_sha256": "eccf82712ce884f75471577b0a87916af4bbe55de677f60898f02c8d044c4086",
+      "stdout": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-001.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_performance_truth_rm001_constitutional_baseline"
+    },
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_performance_truth_rm002_implementation_certification",
+      "disposition": "PASS",
+      "elapsed_seconds": 21.1144,
+      "execution_id": "PT-RM003-REG-002",
+      "regression_class": "implementation_certification_regression",
+      "returncode": 0,
+      "stderr": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-002.stderr.log",
+      "stderr_sha256": "84b326e1e1598258e8396fc4a293a65602204fc9e3641d4e95da9195011a2357",
+      "stdout": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-002.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_performance_truth_rm002_implementation_certification"
+    },
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_performance_measurement_office",
+      "disposition": "PASS",
+      "elapsed_seconds": 0.5058,
+      "execution_id": "PT-RM003-REG-003",
+      "regression_class": "performance_measurement_regression",
+      "returncode": 0,
+      "stderr": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-003.stderr.log",
+      "stderr_sha256": "fd066b6efa8a759f5d4e421c8aa2bdd6a70a3decac360d1e440912e7a9cb51cb",
+      "stdout": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-003.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_performance_measurement_office"
+    },
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_live_portfolio_performance_console",
+      "disposition": "PASS",
+      "elapsed_seconds": 3.286,
+      "execution_id": "PT-RM003-REG-004",
+      "regression_class": "live_portfolio_console_regression",
+      "returncode": 0,
+      "stderr": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-004.stderr.log",
+      "stderr_sha256": "ab567b2f1b5d885db72b224a7630173d315d0622326917eaa012ae841a0ef634",
+      "stdout": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-004.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_live_portfolio_performance_console"
+    },
+    {
+      "command": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe -m unittest Tests.test_performance_truth_ecs003_audit_001",
+      "disposition": "PASS",
+      "elapsed_seconds": 5.0895,
+      "execution_id": "PT-RM003-REG-005",
+      "regression_class": "initial_audit_regression",
+      "returncode": 0,
+      "stderr": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-005.stderr.log",
+      "stderr_sha256": "5816abfd9111c58f52e0388cd321c9820400fc3278a8186c2e4fe5120c5f4352",
+      "stdout": "Documentation/PERFORMANCE_TRUTH_RM003_FINAL_CERTIFICATION/raw_execution_evidence/PT-RM003-REG-005.stdout.log",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "target": "Tests.test_performance_truth_ecs003_audit_001"
+    }
+  ],
+  "regression_id": "PERFORMANCE-TRUTH-RM-003-B03"
+}
