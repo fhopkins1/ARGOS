@@ -3,13 +3,13 @@ from __future__ import annotations
 import json
 import subprocess
 from dataclasses import asdict, dataclass
-from datetime import datetime, timezone
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
 
 ORDER_ID = "HISTORIAN-ECS003-AUDIT-001"
+AUDIT_EXECUTION_UTC = "2026-07-31T13:52:35+00:00"
 OUTPUT_DIR = Path("Documentation") / "HISTORIAN_ECS003_AUDIT_001"
 ATTACHMENT_PATH = Path(
     r"C:\Users\Fletc\.codex\attachments\71b78f6c-4bb2-4ab7-86a0-32b5ffc0227f\pasted-text.txt"
@@ -472,7 +472,7 @@ def _completion_report(findings: list[Finding]) -> dict[str, Any]:
     blocking = [finding.finding_id for finding in findings if finding.severity == "BLOCKING"]
     return {
         "order_id": ORDER_ID,
-        "generated_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
+        "generated_at_utc": AUDIT_EXECUTION_UTC,
         "audit_scope": "constitutional_architecture_only",
         "implementation_quality_evaluated": False,
         "runtime_behavior_modified": False,
