@@ -1,0 +1,234 @@
+{
+  "bridge_overreach_detected": false,
+  "circular_responsibility_detected": false,
+  "duplicate_responsibility_detected": false,
+  "edges": [
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-001"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-002"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-003"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-004"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-005"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-006"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-007"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-008"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-009"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-010"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-011"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-012"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-013"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-014"
+    },
+    {
+      "from": "PT-DEP-001",
+      "relationship": "source_or_evidence_input",
+      "to": "PT-RESP-015"
+    },
+    {
+      "from": "Designated upstream constitutional owner",
+      "relationship": "authoritative_owner",
+      "to": "PT-RESP-016"
+    },
+    {
+      "from": "Designated upstream constitutional owner",
+      "relationship": "authoritative_owner",
+      "to": "PT-RESP-017"
+    },
+    {
+      "from": "Designated upstream constitutional owner",
+      "relationship": "authoritative_owner",
+      "to": "PT-RESP-018"
+    },
+    {
+      "from": "PT-RESP-019",
+      "relationship": "boundary_transport",
+      "to": "PT-DEP-005"
+    },
+    {
+      "from": "Designated upstream constitutional owner",
+      "relationship": "authoritative_owner",
+      "to": "PT-RESP-020"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "PT-RESP-001",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-002",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-003",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-004",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-005",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-006",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-007",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-008",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-009",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-010",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-011",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-012",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-013",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-014",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-015",
+      "owner": "Performance Truth Office",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-016",
+      "owner": "Designated upstream constitutional owner",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-017",
+      "owner": "Designated upstream constitutional owner",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-018",
+      "owner": "Designated upstream constitutional owner",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-019",
+      "owner": "Enterprise bridge",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-RESP-020",
+      "owner": "Designated upstream constitutional owner",
+      "type": "responsibility"
+    },
+    {
+      "id": "PT-DEP-001",
+      "owner": "Closed Position Truth",
+      "type": "dependency"
+    },
+    {
+      "id": "PT-DEP-002",
+      "owner": "Position Registry",
+      "type": "dependency"
+    },
+    {
+      "id": "PT-DEP-003",
+      "owner": "Market Data",
+      "type": "dependency"
+    },
+    {
+      "id": "PT-DEP-004",
+      "owner": "Historian",
+      "type": "dependency"
+    },
+    {
+      "id": "PT-DEP-005",
+      "owner": "Enterprise Audit",
+      "type": "dependency"
+    }
+  ]
+}

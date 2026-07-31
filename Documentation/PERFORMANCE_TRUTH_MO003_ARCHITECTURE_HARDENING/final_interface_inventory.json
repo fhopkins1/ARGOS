@@ -1,0 +1,57 @@
+[
+  {
+    "constitutional_need": "consume closed-position source truth",
+    "failure_behavior": "FAIL_CLOSED",
+    "hidden_calculation_allowed": false,
+    "hidden_lifecycle_control_allowed": false,
+    "interface_id": "PT-IFACE-001",
+    "minimality_disposition": "RETAIN_MINIMAL",
+    "owner": "Performance Truth Office",
+    "provider_or_consumer_boundary": "explicit",
+    "purpose": "Closed Position Truth input"
+  },
+  {
+    "constitutional_need": "consume position lifecycle state",
+    "failure_behavior": "FAIL_CLOSED",
+    "hidden_calculation_allowed": false,
+    "hidden_lifecycle_control_allowed": false,
+    "interface_id": "PT-IFACE-002",
+    "minimality_disposition": "RETAIN_MINIMAL",
+    "owner": "Performance Truth Office",
+    "provider_or_consumer_boundary": "explicit",
+    "purpose": "Position Registry input"
+  },
+  {
+    "constitutional_need": "consume benchmark and price observations",
+    "failure_behavior": "FAIL_CLOSED",
+    "hidden_calculation_allowed": false,
+    "hidden_lifecycle_control_allowed": false,
+    "interface_id": "PT-IFACE-003",
+    "minimality_disposition": "RETAIN_MINIMAL",
+    "owner": "Performance Truth Office",
+    "provider_or_consumer_boundary": "explicit",
+    "purpose": "Market Data input"
+  },
+  {
+    "constitutional_need": "publish immutable performance evidence",
+    "failure_behavior": "FAIL_CLOSED",
+    "hidden_calculation_allowed": false,
+    "hidden_lifecycle_control_allowed": false,
+    "interface_id": "PT-IFACE-004",
+    "minimality_disposition": "RETAIN_MINIMAL",
+    "owner": "Performance Truth Office",
+    "provider_or_consumer_boundary": "explicit",
+    "purpose": "Historian output"
+  },
+  {
+    "constitutional_need": "publish certification evidence",
+    "failure_behavior": "FAIL_CLOSED",
+    "hidden_calculation_allowed": false,
+    "hidden_lifecycle_control_allowed": false,
+    "interface_id": "PT-IFACE-005",
+    "minimality_disposition": "RETAIN_MINIMAL",
+    "owner": "Performance Truth Office",
+    "provider_or_consumer_boundary": "explicit",
+    "purpose": "Enterprise Audit output"
+  }
+]

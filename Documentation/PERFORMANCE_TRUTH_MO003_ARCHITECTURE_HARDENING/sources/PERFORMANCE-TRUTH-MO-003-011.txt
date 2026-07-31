@@ -1,0 +1,870 @@
+# PERFORMANCE-TRUTH-MO-003-011
+
+# Enterprise Architecture Consistency Review
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the comparative constitutional review of the Performance Truth Office against every other certified ARGOS office.
+
+The purpose of this order is to determine whether the Performance Truth Office applies enterprise constitutional doctrine consistently with the broader ARGOS architecture, including ownership, lifecycle, interfaces, evidence, fail-closed behavior, auditability, and certification.
+
+The Performance Truth Office shall not be presumed architecturally correct merely because its internal doctrine is complete.
+
+Any inconsistency between Performance Truth and another certified office shall be investigated to determine whether:
+
+* Performance Truth is defective;
+* the compared office is defective;
+* enterprise doctrine is incomplete;
+* both offices rely upon incompatible interpretations;
+* the difference is constitutionally justified by distinct missions.
+
+No architectural inconsistency may remain unresolved solely because both offices were previously certified.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* PERFORMANCE-TRUTH-MO-003;
+* Enterprise Modification Doctrine;
+* Workflow Ownership Doctrine;
+* Evidence Doctrine;
+* Truth Doctrine;
+* Interface Doctrine;
+* Lifecycle Doctrine;
+* Audit Doctrine.
+
+Nothing within this order may weaken existing constitutional guarantees or impose superficial uniformity where mission-specific differences are constitutionally necessary.
+
+Consistency shall mean equivalent application of shared constitutional principles, not identical office design.
+
+---
+
+# Modification Objectives
+
+This order shall:
+
+* establish the authoritative architectural baseline for each certified ARGOS office;
+* compare Performance Truth against all applicable enterprise doctrine;
+* identify inconsistent ownership models;
+* identify inconsistent lifecycle models;
+* identify inconsistent interface semantics;
+* identify inconsistent evidence standards;
+* identify inconsistent fail-closed behavior;
+* identify inconsistent audit and certification requirements;
+* distinguish justified specialization from constitutional divergence;
+* resolve incompatible office architectures;
+* strengthen enterprise-wide architectural coherence.
+
+---
+
+# Review Scope
+
+The review shall compare Performance Truth with every certified office whose architecture affects or is affected by:
+
+* business-object ownership;
+* workflow ownership;
+* authority;
+* custody;
+* lifecycle;
+* truth production;
+* truth consumption;
+* evidence generation;
+* evidence preservation;
+* interface exchange;
+* reconciliation;
+* temporal behavior;
+* failure handling;
+* deterministic replay;
+* audit;
+* certification;
+* constitutional freeze.
+
+At minimum, the review shall include:
+
+* Commander;
+* Sentinel;
+* Seeker;
+* Analyst;
+* Risk;
+* Authorization;
+* Trader;
+* Broker;
+* Monitoring;
+* Exit Decision;
+* Closed Position Truth;
+* Historian;
+* Librarian;
+* Workflow Engine;
+* Evidence Repository;
+* Audit Office;
+* every certified bridge connected directly or indirectly to Performance Truth.
+
+No office shall be excluded because its interaction with Performance Truth is indirect.
+
+---
+
+# Enterprise Architecture Baseline
+
+Before comparison begins, the review shall construct an Enterprise Architecture Baseline containing, for every office:
+
+* constitutional mission;
+* authority;
+* jurisdiction;
+* owned canonical objects;
+* custody responsibilities;
+* lifecycle authority;
+* workflow responsibilities;
+* interfaces;
+* bridge dependencies;
+* evidence obligations;
+* temporal rules;
+* reconciliation responsibilities;
+* fail-closed requirements;
+* audit obligations;
+* certification state;
+* constitutional freeze status.
+
+The baseline shall identify both shared doctrine and office-specific doctrine.
+
+---
+
+# Consistency Principle
+
+Two offices are constitutionally consistent when they apply the same enterprise principle in materially equivalent ways unless a mission-specific distinction has been explicitly justified.
+
+Differences shall be presumed inconsistent when they arise from:
+
+* historical drafting variance;
+* implementation convenience;
+* office-specific terminology masking identical concepts;
+* undocumented exceptions;
+* inconsistent certification standards;
+* inherited assumptions;
+* duplicated doctrine;
+* conflicting interpretations.
+
+A difference shall be accepted only when its constitutional necessity is demonstrated.
+
+---
+
+# Consistency Review Dimensions
+
+## PT-EAC-001
+
+### Ownership Doctrine Consistency
+
+Verify consistent application of:
+
+* singular ownership;
+* immutable identity;
+* ownership retention;
+* custody separation;
+* authority separation;
+* read-only consumption;
+* ownership transfer prohibitions;
+* correction authority;
+* archival ownership.
+
+The review shall detect:
+
+* shared ownership;
+* implicit ownership transfer;
+* conflicting object owners;
+* different treatment of derived and source truth;
+* inconsistent ownership during correction or supersession.
+
+No equivalent business object class shall follow materially different ownership rules without explicit justification.
+
+---
+
+## PT-EAC-002
+
+### Workflow Ownership Consistency
+
+Verify consistent application of:
+
+* one authoritative workflow owner;
+* Workflow Execution Token custody;
+* transition authority;
+* completion responsibility;
+* recovery responsibility;
+* dependency responsibility;
+* LAW VII single-owner baton requirements.
+
+Performance Truth shall not rely upon workflow semantics incompatible with those governing other offices.
+
+---
+
+## PT-EAC-003
+
+### Authority Doctrine Consistency
+
+Verify that every office consistently distinguishes:
+
+* authority;
+* ownership;
+* execution;
+* custody;
+* validation;
+* certification;
+* audit.
+
+The review shall detect offices where technical capability or possession of data has been treated as constitutional authority.
+
+---
+
+## PT-EAC-004
+
+### Lifecycle Doctrine Consistency
+
+Compare lifecycle architecture governing:
+
+* creation;
+* validation;
+* authorization;
+* activation;
+* publication;
+* correction;
+* revision;
+* supersession;
+* invalidation;
+* archival;
+* historical preservation;
+* restoration.
+
+Equivalent transitions shall possess consistent:
+
+* ownership;
+* preconditions;
+* evidence;
+* temporal semantics;
+* failure behavior.
+
+Mission-specific lifecycle states shall remain permitted where explicitly justified.
+
+---
+
+## PT-EAC-005
+
+### Interface Doctrine Consistency
+
+Verify that all offices apply consistent interface principles governing:
+
+* producer and consumer identity;
+* immutable object identity;
+* ownership retention;
+* required fields;
+* preconditions;
+* postconditions;
+* acknowledgment;
+* retries;
+* duplicate delivery;
+* schema versions;
+* provenance;
+* temporal guarantees;
+* fail-closed rejection.
+
+The review shall identify interfaces that rely upon guarantees not required elsewhere in the enterprise.
+
+---
+
+## PT-EAC-006
+
+### Bridge Doctrine Consistency
+
+Verify that bridges consistently remain limited to:
+
+* transport;
+* binding;
+* routing;
+* identity correlation;
+* meaning-preserving schema translation;
+* acknowledgment;
+* boundary evidence.
+
+No bridge shall create business truth, resolve semantic disputes, control business lifecycles, or assume office authority.
+
+Any bridge privilege granted uniquely to Performance Truth shall require explicit constitutional justification.
+
+---
+
+## PT-EAC-007
+
+### Evidence Doctrine Consistency
+
+Compare requirements governing:
+
+* evidence identity;
+* authenticity;
+* completeness;
+* relevance;
+* chain of custody;
+* immutability;
+* retention;
+* provenance;
+* reconstruction;
+* certification use.
+
+The same class of constitutional claim shall require equivalent proof across offices.
+
+Evidence sufficient for one office shall not be rejected or accepted differently by another without doctrinal justification.
+
+---
+
+## PT-EAC-008
+
+### Truth Doctrine Consistency
+
+Verify consistent treatment of:
+
+* source truth;
+* derived truth;
+* decision truth;
+* authorization truth;
+* execution truth;
+* position truth;
+* performance truth;
+* monitoring truth;
+* historical truth;
+* certification truth.
+
+The review shall establish:
+
+* canonical owner;
+* truth hierarchy;
+* correction authority;
+* conflict resolution;
+* revision lineage;
+* publication authority.
+
+No office may use a truth category in a manner incompatible with the enterprise hierarchy.
+
+---
+
+## PT-EAC-009
+
+### Temporal Doctrine Consistency
+
+Compare rules governing:
+
+* event time;
+* effective time;
+* observation time;
+* receipt time;
+* processing time;
+* publication time;
+* clock authority;
+* timezone;
+* timestamp precision;
+* ordering;
+* concurrency;
+* late arrival;
+* replay chronology.
+
+Equivalent temporal events shall not receive contradictory constitutional treatment across offices.
+
+---
+
+## PT-EAC-010
+
+### Reconciliation Doctrine Consistency
+
+Verify consistent rules governing:
+
+* reconciliation ownership;
+* participating records;
+* authoritative comparison sources;
+* discrepancy classification;
+* correction initiation;
+* unresolved states;
+* evidence;
+* replay;
+* certification impact.
+
+No two offices may possess competing authority to resolve the same constitutional discrepancy.
+
+---
+
+## PT-EAC-011
+
+### Fail-Closed Doctrine Consistency
+
+Compare fail-closed requirements for:
+
+* missing evidence;
+* invalid identity;
+* ownership ambiguity;
+* dependency failure;
+* duplicate input;
+* conflicting truth;
+* temporal violation;
+* reconciliation failure;
+* invalid transition;
+* incomplete execution;
+* repository corruption.
+
+Equivalent constitutional failures shall produce equivalent safety outcomes.
+
+A weaker fail-closed standard in one office shall constitute an enterprise defect unless explicitly justified.
+
+---
+
+## PT-EAC-012
+
+### Audit Doctrine Consistency
+
+Verify consistent audit requirements for:
+
+* independence;
+* reproducibility;
+* clean-room execution;
+* coverage;
+* mutation testing;
+* evidence sufficiency;
+* finding classification;
+* remediation verification;
+* certification decisions;
+* historical preservation.
+
+No office shall receive materially weaker certification merely because its doctrine was authored earlier or under a different campaign.
+
+---
+
+## PT-EAC-013
+
+### Certification and Freeze Consistency
+
+Compare requirements governing:
+
+* certification prerequisites;
+* PASS;
+* CONDITIONAL PASS;
+* FAIL;
+* unresolved findings;
+* constitutional freeze;
+* post-freeze modification;
+* re-certification;
+* certification invalidation.
+
+Equivalent certification states shall possess consistent enterprise meaning.
+
+---
+
+## PT-EAC-014
+
+### Canonical Terminology Consistency
+
+Identify identical concepts expressed through inconsistent terminology.
+
+The review shall determine whether terminology differences:
+
+* reflect legitimate domain distinctions;
+* conceal conflicting rules;
+* create interface ambiguity;
+* impede enterprise auditability;
+* cause duplicate object classes.
+
+Terminology shall be standardized where doing so improves constitutional certainty.
+
+---
+
+# Comparison Procedure
+
+For every applicable enterprise principle, the review shall:
+
+1. identify the authoritative enterprise doctrine;
+2. identify the Performance Truth interpretation;
+3. identify the interpretation used by every compared office;
+4. compare requirements, evidence, lifecycle, and failure behavior;
+5. identify all differences;
+6. determine whether each difference is mission-essential;
+7. construct adversarial cross-office scenarios;
+8. determine whether the difference can produce conflicting enterprise behavior;
+9. classify the difference;
+10. issue a resolution or required constitutional amendment.
+
+No comparison may rely solely upon document titles or summary descriptions.
+
+---
+
+# Architectural Consistency Matrix
+
+The review shall produce an Architectural Consistency Matrix containing:
+
+* enterprise principle;
+* Performance Truth rule;
+* compared office rule;
+* shared constitutional source;
+* identified difference;
+* mission-specific justification;
+* behavioral consequence;
+* evidence consequence;
+* interface consequence;
+* audit consequence;
+* consistency status;
+* required modification;
+* responsible owner.
+
+Every applicable doctrine shall receive an explicit status.
+
+---
+
+# Difference Classification
+
+Every identified architectural difference shall receive exactly one classification.
+
+## Constitutionally Equivalent
+
+The offices use different language or structure but preserve materially identical guarantees.
+
+No modification is required.
+
+---
+
+## Mission-Justified Specialization
+
+The difference is necessary because the offices govern materially different truth, authority, lifecycle, or operational responsibilities.
+
+The justification shall be explicit and preserved.
+
+---
+
+## Standardization Opportunity
+
+The difference is constitutionally safe but creates unnecessary terminology, evidence, interface, or audit variation.
+
+Standardization should occur before architecture closure.
+
+---
+
+## Architectural Inconsistency
+
+The offices apply shared enterprise doctrine incompatibly.
+
+A constitutional amendment is required.
+
+---
+
+## Enterprise Doctrine Gap
+
+No authoritative enterprise rule determines which architecture is correct.
+
+Enterprise doctrine shall be amended before the inconsistency is resolved.
+
+---
+
+## Certification Inconsistency
+
+The offices were certified against materially different standards for equivalent constitutional properties.
+
+Affected certification shall undergo impact review.
+
+---
+
+## Critical Constitutional Conflict
+
+The difference permits competing ownership, authority, truth, lifecycle control, certification, or unsafe operation.
+
+Affected behavior shall fail closed immediately.
+
+---
+
+# Cross-Office Challenge Scenarios
+
+The review shall test scenarios including:
+
+* one object referenced by multiple offices under different ownership rules;
+* one workflow transitioning between offices with inconsistent lifecycle semantics;
+* duplicate messages treated differently by producer and consumer;
+* late-arriving correction crossing multiple truth offices;
+* evidence accepted by one office and rejected by another;
+* conflicting timestamps across office boundaries;
+* reconciliation initiated by multiple offices;
+* bridge transformation interpreted differently by connected offices;
+* one office failing open while another expects fail-closed behavior;
+* one office revising truth while another treats the prior version as immutable current truth;
+* one office receiving certification despite evidence that would fail another office;
+* post-freeze modifications propagated across offices using incompatible rules.
+
+Each scenario shall produce one deterministic enterprise outcome.
+
+---
+
+# Inconsistency Resolution Authority
+
+Where Performance Truth conflicts with another office, the review shall not presume either office correct.
+
+Resolution shall follow this hierarchy:
+
+1. ARGOS Constitution;
+2. authoritative enterprise doctrine;
+3. explicit cross-office constitutional contract;
+4. office-specific doctrine;
+5. certified implementation behavior.
+
+Lower authority shall not override higher authority.
+
+Where higher authority is incomplete, an Enterprise Doctrine Gap shall be declared.
+
+---
+
+# Constitutional Amendment Requirements
+
+Every required amendment shall specify:
+
+* inconsistency identifier;
+* affected offices;
+* affected enterprise doctrine;
+* current conflicting rules;
+* authoritative replacement rule;
+* ownership;
+* authority;
+* lifecycle effect;
+* interface effect;
+* evidence effect;
+* temporal effect;
+* fail-closed effect;
+* audit effect;
+* historical impact;
+* certification impact;
+* migration requirements;
+* acceptance criteria.
+
+An amendment may modify Performance Truth, the compared office, enterprise doctrine, or multiple offices as constitutionally necessary.
+
+---
+
+# Historical and Certification Impact Review
+
+Every Architectural Inconsistency, Certification Inconsistency, Enterprise Doctrine Gap, or Critical Constitutional Conflict shall be assessed for impact upon:
+
+* historical records;
+* active workflows;
+* published truth;
+* corrections and revisions;
+* bridge behavior;
+* evidence packages;
+* replay results;
+* prior PASS decisions;
+* constitutional freeze baselines;
+* downstream office certifications.
+
+Impact shall be classified as:
+
+* no material impact;
+* documentation correction required;
+* bounded reconciliation required;
+* bounded re-audit required;
+* cross-office re-certification required;
+* certification invalidated.
+
+No affected certification shall remain authoritative through presumption.
+
+---
+
+# Finding Severity
+
+## Critical
+
+An inconsistency permits competing ownership, authority, truth, lifecycle control, certification, or unsafe enterprise operation.
+
+Affected behavior shall halt immediately.
+
+---
+
+## Major
+
+An inconsistency materially weakens determinism, traceability, evidence, reconciliation, fail-closed behavior, or auditability.
+
+Architecture closure shall not proceed.
+
+---
+
+## Minor
+
+A safe but unnecessary inconsistency creates avoidable complexity or future ambiguity.
+
+Standardization is required before closure unless formally deferred.
+
+---
+
+## Observation
+
+A non-material architectural difference with no constitutional consequence.
+
+---
+
+# Required Evidence
+
+This order shall produce:
+
+* Enterprise Architecture Baseline;
+* certified-office architecture inventory;
+* shared-doctrine inventory;
+* Architectural Consistency Matrix;
+* ownership consistency matrix;
+* lifecycle consistency matrix;
+* interface consistency matrix;
+* bridge consistency matrix;
+* evidence consistency matrix;
+* truth hierarchy comparison;
+* temporal consistency matrix;
+* reconciliation consistency matrix;
+* fail-closed consistency matrix;
+* audit and certification consistency matrix;
+* terminology divergence register;
+* cross-office challenge results;
+* architectural inconsistency register;
+* Enterprise Doctrine Gap Register;
+* historical impact analysis;
+* certification impact analysis;
+* required constitutional amendments;
+* Enterprise Architecture Consistency Report.
+
+All artifacts shall be immutable, versioned, independently reproducible, and preserved within the Evidence Repository.
+
+---
+
+# Constitutional Invariants
+
+## PT-EAC-INV-001
+
+Shared enterprise doctrine shall possess materially consistent meaning across all certified offices.
+
+## PT-EAC-INV-002
+
+Mission-specific specialization shall be explicit and constitutionally justified.
+
+## PT-EAC-INV-003
+
+No two offices shall possess competing ownership or authority over the same constitutional responsibility.
+
+## PT-EAC-INV-004
+
+Equivalent lifecycle transitions shall preserve equivalent constitutional guarantees.
+
+## PT-EAC-INV-005
+
+Interfaces shall not rely upon incompatible producer and consumer assumptions.
+
+## PT-EAC-INV-006
+
+Bridges shall remain non-authoritative throughout the enterprise.
+
+## PT-EAC-INV-007
+
+Equivalent constitutional claims shall require equivalent evidence strength.
+
+## PT-EAC-INV-008
+
+Truth categories shall possess a single enterprise hierarchy and conflict-resolution model.
+
+## PT-EAC-INV-009
+
+Equivalent failures shall produce constitutionally compatible fail-closed outcomes.
+
+## PT-EAC-INV-010
+
+Equivalent audit properties shall receive equivalent certification rigor.
+
+## PT-EAC-INV-011
+
+Prior certification shall not preserve an architectural inconsistency.
+
+## PT-EAC-INV-012
+
+Terminology differences shall not conceal differences in ownership, authority, lifecycle, or truth.
+
+## PT-EAC-INV-013
+
+No office-specific doctrine shall override authoritative enterprise doctrine.
+
+## PT-EAC-INV-014
+
+Every cross-office inconsistency shall possess an explicit resolution or fail-closed restriction.
+
+---
+
+# Fail-Closed Behavior
+
+The Performance Truth Office and every affected enterprise interface shall fail closed whenever:
+
+* cross-office ownership is inconsistent;
+* lifecycle authority conflicts;
+* interfaces rely upon incompatible guarantees;
+* truth hierarchy is disputed;
+* reconciliation authority overlaps;
+* evidence standards materially conflict;
+* temporal semantics can produce different outcomes;
+* one office expects behavior another office does not constitutionally guarantee;
+* fail-closed behavior is incompatible across a boundary;
+* certification standards differ for equivalent properties;
+* an Enterprise Doctrine Gap affects active constitutional behavior;
+* historical truth may have been produced under conflicting architectural rules;
+* a Critical or Major inconsistency remains unresolved.
+
+No affected Performance Truth object shall be created, published, revised, reconciled as complete, certified, or used as authoritative enterprise truth until consistency is restored.
+
+---
+
+# Completion Decision
+
+This order shall produce exactly one completion decision.
+
+## PASS
+
+Performance Truth has been compared against every applicable certified ARGOS office.
+
+All shared constitutional doctrines are applied consistently.
+
+All remaining differences are constitutionally equivalent or mission-justified.
+
+No unresolved Critical or Major architectural inconsistency remains.
+
+---
+
+## CONDITIONAL PASS
+
+No inconsistency threatens current constitutional safety, but bounded Minor standardization findings remain.
+
+Each finding shall possess an approved owner, amendment, and completion condition before Constitutional Architecture Closure.
+
+---
+
+## FAIL
+
+One or more offices apply shared enterprise doctrine incompatibly in a manner affecting ownership, authority, lifecycle, truth, evidence, reconciliation, fail-closed behavior, audit, or certification.
+
+Affected behavior and architecture closure shall remain suspended until amendment and independent re-certification are complete.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when:
+
+1. A complete Enterprise Architecture Baseline has been established for Performance Truth and every applicable certified ARGOS office.
+2. Ownership, workflow, authority, lifecycle, interface, bridge, evidence, truth, temporal, reconciliation, fail-closed, audit, certification, and freeze doctrine have been compared.
+3. Every identified architectural difference has received exactly one constitutional classification.
+4. Every mission-specific difference has an explicit constitutional justification.
+5. Every Architectural Inconsistency has generated a complete constitutional amendment.
+6. Every Enterprise Doctrine Gap has been assigned for enterprise-level resolution.
+7. Every Certification Inconsistency has undergone historical and certification impact review.
+8. Every Critical Constitutional Conflict has been placed under immediate fail-closed restriction.
+9. Cross-office challenge scenarios produce one deterministic enterprise outcome.
+10. No bridge, office, or shared service possesses conflicting authority or truth ownership.
+11. All historical, operational, and certification impacts have been documented.
+12. All evidence has been preserved within the Evidence Repository.
+13. Exactly one completion decision—**PASS**, **CONDITIONAL PASS**, or **FAIL**—has been issued.
+14. No unresolved architectural inconsistency remains between Performance Truth and the certified ARGOS enterprise architecture.

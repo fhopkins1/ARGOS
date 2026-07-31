@@ -1,0 +1,593 @@
+# PERFORMANCE-TRUTH-MO-003-004
+
+# Architectural Coupling Analysis
+
+## Doctrine Statement
+
+### Purpose
+
+This Modification Order establishes the Architectural Coupling Analysis governing the constitutional architecture of the Performance Truth Office.
+
+Its purpose is to discover every explicit and hidden dependency through which the office relies upon another office, bridge, shared rule, shared state, timing assumption, calculation, lifecycle expectation, or coordination mechanism in order to perform its constitutional mission.
+
+The objective is not to eliminate all coupling.
+
+The objective is to ensure that every remaining coupling is constitutionally necessary, explicitly governed, minimal in scope, deterministic in effect, and incapable of creating shared authority, duplicated truth, circular dependency, or ambiguous ownership.
+
+Every coupling shall either:
+
+* be proven constitutionally necessary and correctly governed;
+* be reduced to a simpler constitutional dependency;
+* be reassigned to the proper constitutional owner; or
+* be eliminated.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* PERFORMANCE-TRUTH-RM-001;
+* PERFORMANCE-TRUTH-RM-002;
+* PERFORMANCE-TRUTH-RM-003;
+* PERFORMANCE-TRUTH-MO-001;
+* PERFORMANCE-TRUTH-MO-002;
+* Enterprise Modification Doctrine;
+* Workflow Ownership Doctrine;
+* Truth Doctrine;
+* Evidence Doctrine;
+* Audit Doctrine.
+
+Nothing within this order may weaken previously certified constitutional guarantees.
+
+---
+
+# Audit Scope
+
+This analysis shall examine coupling arising through:
+
+* shared calculations;
+* shared lifecycle assumptions;
+* duplicated truth;
+* timing dependencies;
+* implicit coordination;
+* shared state;
+* shared configuration;
+* shared persistence;
+* shared evidence;
+* shared identifiers;
+* shared reconciliation;
+* interface sequencing;
+* bridge behavior;
+* recovery behavior;
+* certification behavior.
+
+The analysis shall include both formally specified dependencies and dependencies inferred from implementation, workflow, evidence, or operating assumptions.
+
+---
+
+# Constitutional Coupling Principle
+
+The Performance Truth Office shall depend upon external offices only for constitutionally authoritative inputs and services that cannot properly belong within Performance Truth.
+
+No dependency may:
+
+* transfer undeclared authority;
+* create shared ownership;
+* require hidden coordination;
+* duplicate constitutional truth;
+* permit another office to determine Performance Truth behavior indirectly;
+* make constitutional correctness dependent upon incidental execution order.
+
+A dependency that cannot be stated as an explicit constitutional contract constitutes architectural weakness.
+
+---
+
+# Coupling Inventory
+
+The auditor shall construct a complete inventory of every coupling involving the Performance Truth Office.
+
+For each coupling, the inventory shall identify:
+
+* coupling identifier;
+* participating offices or bridges;
+* constitutional purpose;
+* dependency direction;
+* transported objects;
+* transported evidence;
+* authority relationship;
+* ownership relationship;
+* lifecycle relationship;
+* temporal relationship;
+* failure behavior;
+* recovery behavior;
+* certification relevance;
+* implementation manifestation.
+
+No coupling may remain undocumented.
+
+---
+
+# Coupling Classification
+
+Every discovered coupling shall be classified as one or more of the following:
+
+* authority coupling;
+* ownership coupling;
+* truth coupling;
+* calculation coupling;
+* lifecycle coupling;
+* temporal coupling;
+* evidence coupling;
+* configuration coupling;
+* persistence coupling;
+* interface coupling;
+* reconciliation coupling;
+* certification coupling;
+* operational coupling.
+
+Each classification shall be independently reviewed.
+
+---
+
+# Shared Calculation Audit
+
+The auditor shall determine whether Performance Truth and any external office or bridge perform the same or overlapping calculations.
+
+The audit shall search for shared or duplicated:
+
+* realized performance calculations;
+* unrealized performance calculations;
+* interval calculations;
+* cumulative calculations;
+* benchmark calculations;
+* normalization;
+* attribution;
+* currency conversion;
+* aggregation;
+* reconciliation arithmetic;
+* correction propagation;
+* rounding;
+* precision management.
+
+For every shared calculation, the auditor shall determine:
+
+* the unique constitutional owner;
+* whether the external calculation is authoritative, advisory, or evidentiary;
+* whether distinct implementations can produce conflicting results;
+* whether the calculation can be reduced to one authoritative source.
+
+No two offices shall independently own the same constitutional calculation.
+
+---
+
+# Shared Lifecycle Assumption Audit
+
+The auditor shall identify every dependency upon another office's lifecycle state.
+
+The analysis shall determine whether Performance Truth assumes that:
+
+* a Decision Object is final;
+* an authorization is valid;
+* an execution is complete;
+* a position is closed;
+* settlement is complete;
+* evidence is final;
+* a benchmark is published;
+* a correction is authoritative;
+* a workflow is complete.
+
+Every such assumption shall be replaced by an explicit constitutional state, evidence artifact, or interface guarantee.
+
+Performance Truth shall not infer external lifecycle completion from transport events, timing, silence, or implementation conventions.
+
+---
+
+# Duplicated Truth Audit
+
+The auditor shall search for circumstances in which Performance Truth and another office maintain competing versions of:
+
+* execution truth;
+* position truth;
+* realized profit and loss;
+* benchmark truth;
+* attribution truth;
+* reconciliation truth;
+* historical truth;
+* certification truth.
+
+For every duplicate representation, the auditor shall determine:
+
+* which record is authoritative;
+* whether the duplicate is merely evidence or projection;
+* whether divergence is possible;
+* how divergence is detected;
+* whether the duplicate can be eliminated.
+
+No duplicate representation shall become independently authoritative.
+
+---
+
+# Timing Dependency Audit
+
+The auditor shall identify every case where correct behavior depends upon:
+
+* one office executing before another;
+* a message arriving within an assumed interval;
+* a dependency responding before timeout;
+* a correction arriving before publication;
+* a benchmark arriving before interval close;
+* reconciliation completing before another workflow step;
+* clocks remaining synchronized;
+* retries occurring in a particular order.
+
+Every timing dependency shall be:
+
+* explicitly specified;
+* constitutionally necessary;
+* deterministically enforced;
+* independently observable;
+* fail-closed when unsatisfied.
+
+Incidental timing assumptions are prohibited.
+
+---
+
+# Implicit Coordination Audit
+
+The auditor shall search for coordination not represented by constitutional objects, workflows, or interfaces.
+
+Examples include:
+
+* shared conventions;
+* naming assumptions;
+* database polling;
+* status inferred from record presence;
+* manual sequencing;
+* external runbooks;
+* common caches;
+* environment variables used as coordination;
+* shared file locations;
+* administrative procedures;
+* operator knowledge.
+
+Constitutionally significant coordination shall be made explicit or eliminated.
+
+---
+
+# Shared State Audit
+
+The auditor shall determine whether Performance Truth shares mutable state with another office through:
+
+* databases;
+* caches;
+* message stores;
+* files;
+* configuration stores;
+* in-memory services;
+* common registries;
+* shared queues.
+
+Shared mutable state shall not permit:
+
+* cross-office modification of authoritative objects;
+* ownership ambiguity;
+* invisible lifecycle changes;
+* hidden dependencies;
+* untraceable correction;
+* bypass of constitutional interfaces.
+
+Where shared infrastructure is unavoidable, constitutional ownership and mutation authority shall remain explicit and enforceable.
+
+---
+
+# Configuration Coupling Audit
+
+The auditor shall identify configuration whose change can alter Performance Truth behavior.
+
+The audit shall include:
+
+* benchmark definitions;
+* normalization rules;
+* calculation parameters;
+* precision rules;
+* asset-class mappings;
+* office endpoints;
+* dependency versions;
+* temporal windows;
+* certification thresholds.
+
+For every configuration dependency, the audit shall verify:
+
+* unique authority;
+* immutable version identity;
+* change control;
+* evidence binding;
+* historical preservation;
+* deterministic replay.
+
+Undeclared configuration coupling is prohibited.
+
+---
+
+# Evidence Coupling Audit
+
+The auditor shall determine whether Performance Truth relies upon evidence whose meaning, availability, or completeness depends upon another office's undocumented behavior.
+
+Every evidence dependency shall specify:
+
+* evidence owner;
+* evidence identity;
+* required contents;
+* completeness criteria;
+* publication state;
+* retention obligation;
+* failure behavior.
+
+Evidence volume, naming, location, or format shall not substitute for an explicit evidence contract.
+
+---
+
+# Identity Coupling Audit
+
+The auditor shall verify whether Performance Truth relies upon external identifier schemes for:
+
+* workflows;
+* decisions;
+* authorizations;
+* executions;
+* positions;
+* benchmarks;
+* calculations;
+* evidence packages;
+* revisions.
+
+Identifier mapping shall be explicit, deterministic, collision-resistant, and historically preserved.
+
+Performance Truth shall not infer identity from mutable names, record order, location, or transport envelope.
+
+---
+
+# Reconciliation Coupling Audit
+
+The auditor shall identify every dependency in which reconciliation requires another office to:
+
+* interpret Performance Truth;
+* recalculate Performance Truth;
+* authorize Performance Truth correction;
+* resolve ownership ambiguity;
+* select the authoritative result.
+
+Reconciliation may compare authoritative truths.
+
+It shall not create shared authority over the underlying truth.
+
+Every reconciliation role shall remain uniquely assigned.
+
+---
+
+# Interface Sequencing Audit
+
+The auditor shall construct all valid and invalid sequences of interface interactions involving Performance Truth.
+
+The analysis shall test whether constitutional results change when:
+
+* messages are reordered;
+* valid inputs arrive concurrently;
+* corrections arrive during publication;
+* evidence arrives after source truth;
+* replay occurs during live operation;
+* dependent offices restart;
+* acknowledgments are delayed.
+
+Where sequence affects constitutional meaning, the required sequence shall be explicit and enforced.
+
+Where sequence should not matter, the outcome shall remain deterministic.
+
+---
+
+# Bridge Coupling Audit
+
+Every bridge connected to Performance Truth shall be examined to determine whether it introduces coupling through:
+
+* transformation;
+* buffering;
+* batching;
+* retry;
+* caching;
+* state retention;
+* routing;
+* compatibility behavior;
+* fallback behavior;
+* inferred lifecycle changes.
+
+Bridge behavior shall remain constitutionally minimal.
+
+No bridge shall become a hidden coordination office.
+
+---
+
+# Recovery Coupling Audit
+
+The auditor shall challenge recovery behavior involving:
+
+* partial publication;
+* interrupted persistence;
+* uncertain delivery;
+* dependency restart;
+* replay after failure;
+* evidence regeneration;
+* correction resumption;
+* reconciliation resumption.
+
+Recovery shall not depend upon undocumented knowledge shared between offices.
+
+Every recovery path shall derive from preserved constitutional state and evidence.
+
+---
+
+# Certification Coupling Audit
+
+The auditor shall determine whether certification of Performance Truth improperly depends upon:
+
+* prior certification conclusions;
+* another office's certification without evidence traversal;
+* shared audit assumptions;
+* common test fixtures;
+* inherited trust;
+* author familiarity;
+* certification order.
+
+Every certification dependency shall be explicitly justified.
+
+Certification shall not become circular.
+
+---
+
+# Circular Dependency Analysis
+
+The auditor shall construct a complete directed dependency graph.
+
+The graph shall include:
+
+* authority edges;
+* ownership edges;
+* truth edges;
+* lifecycle edges;
+* evidence edges;
+* reconciliation edges;
+* certification edges;
+* temporal edges.
+
+The auditor shall identify:
+
+* direct cycles;
+* indirect cycles;
+* mutual readiness dependencies;
+* circular validation;
+* circular reconciliation;
+* circular certification;
+* self-validating evidence chains.
+
+No authoritative input to Performance Truth shall depend upon Performance Truth output for its own constitutional validity.
+
+---
+
+# Coupling Necessity Test
+
+Every identified coupling shall be subjected to the following questions:
+
+1. Is the dependency required by constitutional mission?
+2. Can the dependency be replaced by a stable constitutional object?
+3. Can the dependency be reduced to a one-way interface?
+4. Can authority remain entirely within one office?
+5. Can shared state be replaced by immutable evidence?
+6. Can sequencing dependence be eliminated?
+7. Can the dependency be removed without reducing guarantees?
+
+A coupling that cannot be justified through these questions shall be modified or eliminated.
+
+---
+
+# Coupling Strength Classification
+
+Every coupling shall receive one of the following classifications:
+
+* **Essential** — Required to obtain authoritative truth or perform a constitutionally unique function.
+* **Reducible** — Necessary in purpose but broader than required.
+* **Misplaced** — Represents responsibility owned by the wrong office.
+* **Duplicative** — Repeats authority, truth, calculation, or state maintained elsewhere.
+* **Incidental** — Exists because of implementation or operating convention rather than constitutional necessity.
+* **Circular** — Creates direct or indirect self-dependence.
+* **Undefined** — Cannot be justified from constitutional doctrine.
+
+Only Essential coupling may remain unchanged.
+
+---
+
+# Modification Requirements
+
+Every non-essential coupling shall produce a modification proposal identifying:
+
+* affected offices;
+* current coupling;
+* constitutional risk;
+* target architecture;
+* ownership change;
+* authority change;
+* interface change;
+* evidence change;
+* lifecycle impact;
+* compatibility impact;
+* recertification scope.
+
+No coupling shall be resolved through undocumented implementation convention.
+
+---
+
+# Constitutional Invariants
+
+The following invariants shall always hold:
+
+* every coupling is explicit;
+* every dependency has one constitutional purpose;
+* every authoritative calculation has one owner;
+* no office shares ownership of constitutional truth;
+* external lifecycle state is never inferred;
+* timing assumptions are explicitly governed;
+* shared infrastructure does not create shared authority;
+* reconciliation does not create duplicate truth authority;
+* recovery depends only upon preserved constitutional state and evidence;
+* no circular authoritative dependency exists;
+* implementation convenience does not create constitutional coupling;
+* every remaining coupling is minimal and necessary.
+
+Violation of any invariant constitutes architectural weakness.
+
+---
+
+# Required Audit Evidence
+
+This analysis shall produce:
+
+* complete coupling inventory;
+* coupling classification matrix;
+* dependency graph;
+* authority dependency matrix;
+* ownership dependency matrix;
+* shared calculation inventory;
+* lifecycle assumption inventory;
+* duplicated truth analysis;
+* timing dependency analysis;
+* implicit coordination inventory;
+* shared state analysis;
+* configuration dependency analysis;
+* evidence dependency analysis;
+* reconciliation coupling analysis;
+* bridge coupling analysis;
+* recovery coupling analysis;
+* certification coupling analysis;
+* circular dependency findings;
+* coupling necessity determinations;
+* constitutional modification proposals;
+* residual coupling risk assessment.
+
+---
+
+# Acceptance Criteria
+
+This order shall be considered complete when independent architectural review demonstrates that:
+
+1. every explicit and hidden coupling involving the Performance Truth Office has been independently discovered and classified;
+2. every shared calculation has one uniquely identified constitutional owner;
+3. no external lifecycle state is inferred through timing, transport, record presence, or undocumented convention;
+4. no duplicated truth representation can become independently authoritative;
+5. every timing dependency is explicit, necessary, deterministic, observable, and fail-closed;
+6. no implicit coordination, shared mutable state, bridge behavior, or configuration dependency can alter constitutional behavior outside an authorized interface;
+7. reconciliation, recovery, and certification contain no circular authority or self-validating dependency;
+8. every remaining coupling has been proven constitutionally essential and reduced to its minimal form;
+9. every reducible, misplaced, duplicative, incidental, circular, or undefined coupling has produced an approved constitutional modification;
+10. no unresolved architectural coupling finding remains; and
+11. the Performance Truth Office demonstrates stronger constitutional independence, lower architectural complexity, and greater determinism than its prior hardened baseline.
