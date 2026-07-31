@@ -1,0 +1,121 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "learn",
+    "recommend",
+    "rank",
+    "predict",
+    "authorize"
+  ],
+  "findings": [
+    {
+      "category": "custody_only_boundary",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "Implementation files contain concepts tied to prohibited Historian activities from the hardened baseline.",
+      "finding_id": "HIST-RM002-FIND-B00-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B00-PROHIBITION-HITS",
+          "prohibition_hits": {
+            "authorize": [
+              "src\\argos\\historian\\search_reconstruction.py",
+              "src\\argos\\historian\\readiness.py"
+            ],
+            "infer": [],
+            "learn": [
+              "src\\argos\\historian\\__init__.py",
+              "src\\argos\\historian\\readiness.py",
+              "src\\argos\\historian\\prompt_evaluation.py",
+              "src\\argos\\historian\\performance.py",
+              "src\\argos\\historian\\hypothesis.py",
+              "src\\argos\\historian\\group.py",
+              "src\\argos\\historian\\fusion.py",
+              "src\\argos\\control_panel\\historian_recommendation_engine.py",
+              "src\\argos\\control_panel\\enterprise_learning_engine.py"
+            ],
+            "modify_historical_records": [],
+            "optimize": [],
+            "predict": [
+              "src\\argos\\historian\\__init__.py",
+              "src\\argos\\historian\\performance.py",
+              "src\\argos\\historian\\model_calibration.py",
+              "src\\argos\\historian\\group.py"
+            ],
+            "rank": [
+              "src\\argos\\historian\\performance.py",
+              "src\\argos\\control_panel\\enterprise_learning_engine.py"
+            ],
+            "recommend": [
+              "src\\argos\\historian\\__init__.py",
+              "src\\argos\\historian\\prompt_evaluation.py",
+              "src\\argos\\historian\\model_calibration.py",
+              "src\\argos\\historian\\hypothesis.py",
+              "src\\argos\\historian\\group.py",
+              "src\\argos\\historian\\fusion.py",
+              "src\\argos\\historian\\evidence_evaluation.py",
+              "src\\argos\\historian\\decision_evaluation.py",
+              "src\\argos\\control_panel\\historian_recommendation_engine.py",
+              "src\\argos\\control_panel\\enterprise_learning_engine.py"
+            ],
+            "summarize": []
+          }
+        }
+      ],
+      "recommended_remediation_objective": "Remove or reassign prohibited learning, inference, recommendation, ranking, prediction, authorization, and mutation semantics from Historian implementation scope.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B00-PROHIBITION-HITS",
+      "prohibition_hits": {
+        "authorize": [
+          "src\\argos\\historian\\search_reconstruction.py",
+          "src\\argos\\historian\\readiness.py"
+        ],
+        "infer": [],
+        "learn": [
+          "src\\argos\\historian\\__init__.py",
+          "src\\argos\\historian\\readiness.py",
+          "src\\argos\\historian\\prompt_evaluation.py",
+          "src\\argos\\historian\\performance.py",
+          "src\\argos\\historian\\hypothesis.py",
+          "src\\argos\\historian\\group.py",
+          "src\\argos\\historian\\fusion.py",
+          "src\\argos\\control_panel\\historian_recommendation_engine.py",
+          "src\\argos\\control_panel\\enterprise_learning_engine.py"
+        ],
+        "modify_historical_records": [],
+        "optimize": [],
+        "predict": [
+          "src\\argos\\historian\\__init__.py",
+          "src\\argos\\historian\\performance.py",
+          "src\\argos\\historian\\model_calibration.py",
+          "src\\argos\\historian\\group.py"
+        ],
+        "rank": [
+          "src\\argos\\historian\\performance.py",
+          "src\\argos\\control_panel\\enterprise_learning_engine.py"
+        ],
+        "recommend": [
+          "src\\argos\\historian\\__init__.py",
+          "src\\argos\\historian\\prompt_evaluation.py",
+          "src\\argos\\historian\\model_calibration.py",
+          "src\\argos\\historian\\hypothesis.py",
+          "src\\argos\\historian\\group.py",
+          "src\\argos\\historian\\fusion.py",
+          "src\\argos\\historian\\evidence_evaluation.py",
+          "src\\argos\\historian\\decision_evaluation.py",
+          "src\\argos\\control_panel\\historian_recommendation_engine.py",
+          "src\\argos\\control_panel\\enterprise_learning_engine.py"
+        ],
+        "summarize": []
+      }
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B00",
+  "title": "Custody-Only Prohibition Conflict Scan",
+  "verified_items": []
+}

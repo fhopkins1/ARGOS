@@ -1,0 +1,90 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "OBSERVED_BY",
+    "DERIVED_FROM",
+    "DEPENDS_ON",
+    "TRANSFORMED_BY",
+    "REJECTED_BY",
+    "CORRECTED_BY",
+    "CERTIFIED_BY",
+    "ARCHIVED_BY",
+    "RECONSTRUCTS"
+  ],
+  "findings": [
+    {
+      "category": "provenance_graph",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "The implementation does not demonstrate all hardened provenance graph edge classes.",
+      "finding_id": "HIST-RM002-FIND-B04-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B04-GRAPH-HITS",
+          "graph_edge_hits": {
+            "ARCHIVED_BY": [],
+            "CERTIFIED_BY": [],
+            "CORRECTED_BY": [],
+            "DEPENDS_ON": [],
+            "DERIVED_FROM": [],
+            "OBSERVED_BY": [],
+            "PRODUCED_BY": [
+              "src\\argos\\historian\\prompt_evaluation.py",
+              "src\\argos\\historian\\performance.py",
+              "src\\argos\\historian\\model_calibration.py",
+              "src\\argos\\historian\\hypothesis.py",
+              "src\\argos\\historian\\group.py",
+              "src\\argos\\historian\\fusion.py",
+              "src\\argos\\historian\\evidence_evaluation.py",
+              "src\\argos\\historian\\decision_evaluation.py"
+            ],
+            "RECONSTRUCTS": [],
+            "REJECTED_BY": [],
+            "SUPERSEDED_BY": [
+              "src\\argos\\historian\\search_reconstruction.py"
+            ],
+            "TRANSFORMED_BY": []
+          }
+        }
+      ],
+      "recommended_remediation_objective": "Implement and verify identity-bound graph nodes and all mandatory Journey graph edge classes.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B04-GRAPH-HITS",
+      "graph_edge_hits": {
+        "ARCHIVED_BY": [],
+        "CERTIFIED_BY": [],
+        "CORRECTED_BY": [],
+        "DEPENDS_ON": [],
+        "DERIVED_FROM": [],
+        "OBSERVED_BY": [],
+        "PRODUCED_BY": [
+          "src\\argos\\historian\\prompt_evaluation.py",
+          "src\\argos\\historian\\performance.py",
+          "src\\argos\\historian\\model_calibration.py",
+          "src\\argos\\historian\\hypothesis.py",
+          "src\\argos\\historian\\group.py",
+          "src\\argos\\historian\\fusion.py",
+          "src\\argos\\historian\\evidence_evaluation.py",
+          "src\\argos\\historian\\decision_evaluation.py"
+        ],
+        "RECONSTRUCTS": [],
+        "REJECTED_BY": [],
+        "SUPERSEDED_BY": [
+          "src\\argos\\historian\\search_reconstruction.py"
+        ],
+        "TRANSFORMED_BY": []
+      }
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B04",
+  "title": "Provenance and Historical Graph Verification",
+  "verified_items": [
+    "PRODUCED_BY",
+    "SUPERSEDED_BY"
+  ]
+}

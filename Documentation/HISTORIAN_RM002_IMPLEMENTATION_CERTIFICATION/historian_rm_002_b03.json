@@ -1,0 +1,59 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "Sentinel Events",
+    "Authorization Objects",
+    "Broker Objects",
+    "Execution Events",
+    "Decision Laboratory artifacts"
+  ],
+  "findings": [
+    {
+      "category": "historical_custody",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "No implementation-level custody registry proves exactly one constitutional custodian for every historical artifact class required by RM-002-B03.",
+      "finding_id": "HIST-RM002-FIND-B03-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B03-CUSTODY-SCOPE",
+          "required_artifact_classes": [
+            "Sentinel Events",
+            "Authorization Objects",
+            "Broker Objects",
+            "Execution Events",
+            "Decision Laboratory artifacts"
+          ]
+        }
+      ],
+      "recommended_remediation_objective": "Materialize a Historian custody registry and verifier covering every required artifact class.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B03-CUSTODY-SCOPE",
+      "required_artifact_classes": [
+        "Sentinel Events",
+        "Authorization Objects",
+        "Broker Objects",
+        "Execution Events",
+        "Decision Laboratory artifacts"
+      ]
+    },
+    {
+      "evidence_id": "HIST-RM002-EVID-B03-MODULE-MISSION",
+      "evidence_type": "source_line",
+      "excerpt": "\"\"\"Historian Group scientific evaluation organization.\"\"\"",
+      "line": 1,
+      "path": "src\\argos\\historian\\__init__.py"
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B03",
+  "title": "Historical Custody Verification",
+  "verified_items": [
+    "Closed Position Truth custody references",
+    "Exit Decision historical custody references"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "disposition": "VERIFIED_WITH_FINDINGS",
+  "failed_items": [
+    "complete Enterprise Information Journey reconstruction",
+    "counterfactual input reconstruction"
+  ],
+  "findings": [
+    {
+      "category": "reconstruction_replay",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "Search reconstruction exists, but no verifier proves complete Enterprise Information Journey, provenance graph, workflow history, replay input, and counterfactual input reconstruction.",
+      "finding_id": "HIST-RM002-FIND-B07-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B07-RECONSTRUCT",
+          "evidence_type": "source_line",
+          "excerpt": "def reconstruct(self, cutoff_id: str) -> HistoricalReconstruction:",
+          "line": 225,
+          "path": "src\\argos\\historian\\search_reconstruction.py"
+        }
+      ],
+      "recommended_remediation_objective": "Extend reconstruction from search archive scope to full Journey graph replay and counterfactual reconstruction scope.",
+      "severity": "MAJOR",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B07-ARCHIVE",
+      "evidence_type": "source_line",
+      "excerpt": "class HistorianSearchArchive:",
+      "line": 200,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    },
+    {
+      "evidence_id": "HIST-RM002-EVID-B07-RECONSTRUCT",
+      "evidence_type": "source_line",
+      "excerpt": "def reconstruct(self, cutoff_id: str) -> HistoricalReconstruction:",
+      "line": 225,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B07",
+  "title": "Historical Reconstruction and Replay Verification",
+  "verified_items": [
+    "HistoricalSearchRecord",
+    "HistoricalInformationCutoff",
+    "HistoricalReconstruction",
+    "HistorianSearchArchive.reconstruct"
+  ]
+}

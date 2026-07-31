@@ -1,0 +1,319 @@
+[
+  {
+    "category": "enterprise_information_journey",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "The implementation does not expose the hardened Enterprise Information Journey record families required by HISTORIAN-MO-001.",
+    "finding_id": "HIST-RM002-FIND-B02-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B02-JOURNEY-HITS",
+        "journey_term_hits": {
+          "Enterprise Information Journey": [],
+          "Journey Certification Gate": [],
+          "Journey Event": [],
+          "Journey Graph Edge": [],
+          "Journey Identity": [],
+          "Journey Reference": []
+        }
+      }
+    ],
+    "recommended_remediation_objective": "Implement Journey Identity, Event, Reference, Graph Edge, and Certification Gate records with lifecycle, supersession, archival, and reconstruction behavior.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "historical_custody",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "No implementation-level custody registry proves exactly one constitutional custodian for every historical artifact class required by RM-002-B03.",
+    "finding_id": "HIST-RM002-FIND-B03-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B03-CUSTODY-SCOPE",
+        "required_artifact_classes": [
+          "Sentinel Events",
+          "Authorization Objects",
+          "Broker Objects",
+          "Execution Events",
+          "Decision Laboratory artifacts"
+        ]
+      }
+    ],
+    "recommended_remediation_objective": "Materialize a Historian custody registry and verifier covering every required artifact class.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "provenance_graph",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "The implementation does not demonstrate all hardened provenance graph edge classes.",
+    "finding_id": "HIST-RM002-FIND-B04-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B04-GRAPH-HITS",
+        "graph_edge_hits": {
+          "ARCHIVED_BY": [],
+          "CERTIFIED_BY": [],
+          "CORRECTED_BY": [],
+          "DEPENDS_ON": [],
+          "DERIVED_FROM": [],
+          "OBSERVED_BY": [],
+          "PRODUCED_BY": [
+            "src\\argos\\historian\\prompt_evaluation.py",
+            "src\\argos\\historian\\performance.py",
+            "src\\argos\\historian\\model_calibration.py",
+            "src\\argos\\historian\\hypothesis.py",
+            "src\\argos\\historian\\group.py",
+            "src\\argos\\historian\\fusion.py",
+            "src\\argos\\historian\\evidence_evaluation.py",
+            "src\\argos\\historian\\decision_evaluation.py"
+          ],
+          "RECONSTRUCTS": [],
+          "REJECTED_BY": [],
+          "SUPERSEDED_BY": [
+            "src\\argos\\historian\\search_reconstruction.py"
+          ],
+          "TRANSFORMED_BY": []
+        }
+      }
+    ],
+    "recommended_remediation_objective": "Implement and verify identity-bound graph nodes and all mandatory Journey graph edge classes.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "historical_completeness",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "Historical search reconstruction preserves some failed and skipped search states, but does not prove complete preservation of rejected actions, ignored opportunities, denied authorizations, dormant observations, and rejected alternatives.",
+    "finding_id": "HIST-RM002-FIND-B05-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B05-FAILED-SEARCHES",
+        "evidence_type": "source_line",
+        "excerpt": "failed_searches: tuple[str, ...]",
+        "line": 190,
+        "path": "src\\argos\\historian\\search_reconstruction.py"
+      }
+    ],
+    "recommended_remediation_objective": "Add negative-history record families and verifiers for every RM-002-B05 historical completeness class.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "language_missing_information",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "The implementation does not preserve every hardened missing-information state and does not expose raw, structured, semantic, interpretation, and truth language layers as required.",
+    "finding_id": "HIST-RM002-FIND-B06-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B06-MISSING-HITS",
+        "missing_information_hits": {
+          "CONTRADICTORY": [],
+          "CORRUPTED": [],
+          "COST_PROHIBITED": [],
+          "INTENTIONALLY_EXCLUDED": [],
+          "NOT_APPLICABLE": [
+            "src\\argos\\historian\\search_reconstruction.py"
+          ],
+          "NOT_AUTHORIZED_TO_REQUEST": [],
+          "NOT_REQUESTED": [],
+          "OBSERVED_ABSENT": [],
+          "PARTIALLY_AVAILABLE": [],
+          "PRIVACY_RESTRICTED": [],
+          "RATE_LIMITED": [],
+          "REDACTED": [],
+          "REQUEST_DEFERRED": [],
+          "REQUEST_PROHIBITED": [],
+          "RETENTION_EXPIRED": [],
+          "SOURCE_SILENT": [],
+          "STALE": [
+            "src\\argos\\historian\\search_reconstruction.py"
+          ],
+          "UNAVAILABLE": [
+            "src\\argos\\historian\\search_reconstruction.py"
+          ],
+          "UNKNOWN_CAUSE": []
+        }
+      }
+    ],
+    "recommended_remediation_objective": "Implement language-layer preservation and the complete HIST-MO-001 missing-information taxonomy.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "interfaces",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "No implementation verifier proves every constitutional Historian interface, custody transfer, provenance preservation, and contract listed by RM-002-B08.",
+    "finding_id": "HIST-RM002-FIND-B08-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B08-READ-BOUNDARY",
+        "evidence_type": "source_line",
+        "excerpt": "Performance Truth, Closed Position Truth, EO-DC, and Historian views may display existing facts and assurance records.",
+        "line": 3,
+        "path": "Documentation\\EO-DG_Truth_and_Historian_Read_Boundaries.md"
+      }
+    ],
+    "recommended_remediation_objective": "Implement a Historian interface contract registry and independent interface verifiers for every named office.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "enterprise_learning_readiness",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "Learning readiness is coupled to Historian analysis and recommendations rather than a custody-only Journey learning projection.",
+    "finding_id": "HIST-RM002-FIND-B09-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B09-HISTORIAN-ANALYSIS",
+        "evidence_type": "source_line",
+        "excerpt": "\"Historian Analysis\",",
+        "line": 163,
+        "path": "src\\argos\\control_panel\\enterprise_learning_engine.py"
+      },
+      {
+        "evidence_id": "HIST-RM002-EVID-B09-RECOMMENDATIONS",
+        "evidence_type": "source_line",
+        "excerpt": "\"recommendationDatabase\": tuple(asdict(item) for item in recommendations),",
+        "line": 142,
+        "path": "src\\argos\\control_panel\\historian_recommendation_engine.py"
+      }
+    ],
+    "recommended_remediation_objective": "Replace Historian learning/recommendation coupling with read-only Journey Learning Projection inputs.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "counterfactual_readiness",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "The implementation does not prove preservation of alternative evidence, authorizations, execution paths, exits, and TYPHON scenario inputs as Journey branches.",
+    "finding_id": "HIST-RM002-FIND-B10-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B10-TYPHON-SEARCH",
+        "typhon_hits": []
+      }
+    ],
+    "recommended_remediation_objective": "Implement counterfactual path records and verifiers for all RM-002-B10 alternative path classes.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "determinism_fail_closed",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "Some append-only behavior exists, but fail-closed behavior is not verified across missing artifacts, corrupted provenance, duplicate Journey identities, ownership conflicts, graph corruption, interface failures, and reconstruction failures.",
+    "finding_id": "HIST-RM002-FIND-B11-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B11-CUTOFF-IMMUTABLE",
+        "evidence_type": "source_line",
+        "excerpt": "raise ValueError(\"information cutoffs are immutable\")",
+        "line": 219,
+        "path": "src\\argos\\historian\\search_reconstruction.py"
+      }
+    ],
+    "recommended_remediation_objective": "Add deterministic fail-closed verifiers for every RM-002-B11 failure class.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "implementation_completeness",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "The Historian implementation does not fully satisfy the constitutional architecture established under HISTORIAN-RM-001 and HISTORIAN-MO-001.",
+    "finding_id": "HIST-RM002-FIND-B12-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "artifact_count": 13,
+        "class_count": 126,
+        "evidence_id": "HIST-RM002-EVID-INVENTORY-001",
+        "evidence_type": "implementation_inventory",
+        "existing_artifact_count": 13,
+        "function_count": 192
+      },
+      {
+        "evidence_id": "HIST-RM002-EVID-RECONSTRUCTION-001",
+        "evidence_type": "source_line",
+        "excerpt": "class HistoricalReconstruction:",
+        "line": 179,
+        "path": "src\\argos\\historian\\search_reconstruction.py"
+      },
+      {
+        "evidence_id": "HIST-RM002-EVID-RECOMMENDATION-001",
+        "evidence_type": "source_line",
+        "excerpt": "\"engineName\": \"Historian Recommendation Engine\",",
+        "line": 115,
+        "path": "src\\argos\\control_panel\\historian_recommendation_engine.py"
+      }
+    ],
+    "recommended_remediation_objective": "Open a bounded Historian implementation remediation program before HISTORIAN-RM-003 enterprise certification.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  },
+  {
+    "category": "custody_only_boundary",
+    "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+    "constitutional_deficiency": "Implementation files contain concepts tied to prohibited Historian activities from the hardened baseline.",
+    "finding_id": "HIST-RM002-FIND-B00-001",
+    "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-RM002-EVID-B00-PROHIBITION-HITS",
+        "prohibition_hits": {
+          "authorize": [
+            "src\\argos\\historian\\search_reconstruction.py",
+            "src\\argos\\historian\\readiness.py"
+          ],
+          "infer": [],
+          "learn": [
+            "src\\argos\\historian\\__init__.py",
+            "src\\argos\\historian\\readiness.py",
+            "src\\argos\\historian\\prompt_evaluation.py",
+            "src\\argos\\historian\\performance.py",
+            "src\\argos\\historian\\hypothesis.py",
+            "src\\argos\\historian\\group.py",
+            "src\\argos\\historian\\fusion.py",
+            "src\\argos\\control_panel\\historian_recommendation_engine.py",
+            "src\\argos\\control_panel\\enterprise_learning_engine.py"
+          ],
+          "modify_historical_records": [],
+          "optimize": [],
+          "predict": [
+            "src\\argos\\historian\\__init__.py",
+            "src\\argos\\historian\\performance.py",
+            "src\\argos\\historian\\model_calibration.py",
+            "src\\argos\\historian\\group.py"
+          ],
+          "rank": [
+            "src\\argos\\historian\\performance.py",
+            "src\\argos\\control_panel\\enterprise_learning_engine.py"
+          ],
+          "recommend": [
+            "src\\argos\\historian\\__init__.py",
+            "src\\argos\\historian\\prompt_evaluation.py",
+            "src\\argos\\historian\\model_calibration.py",
+            "src\\argos\\historian\\hypothesis.py",
+            "src\\argos\\historian\\group.py",
+            "src\\argos\\historian\\fusion.py",
+            "src\\argos\\historian\\evidence_evaluation.py",
+            "src\\argos\\historian\\decision_evaluation.py",
+            "src\\argos\\control_panel\\historian_recommendation_engine.py",
+            "src\\argos\\control_panel\\enterprise_learning_engine.py"
+          ],
+          "summarize": []
+        }
+      }
+    ],
+    "recommended_remediation_objective": "Remove or reassign prohibited learning, inference, recommendation, ranking, prediction, authorization, and mutation semantics from Historian implementation scope.",
+    "severity": "BLOCKING",
+    "status": "OPEN"
+  }
+]

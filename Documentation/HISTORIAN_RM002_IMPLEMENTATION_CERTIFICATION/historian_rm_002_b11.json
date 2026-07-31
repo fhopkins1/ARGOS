@@ -1,0 +1,53 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "duplicate Journey identities",
+    "ownership conflicts",
+    "graph corruption",
+    "interface failures",
+    "unsafe reconstruction failures"
+  ],
+  "findings": [
+    {
+      "category": "determinism_fail_closed",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "Some append-only behavior exists, but fail-closed behavior is not verified across missing artifacts, corrupted provenance, duplicate Journey identities, ownership conflicts, graph corruption, interface failures, and reconstruction failures.",
+      "finding_id": "HIST-RM002-FIND-B11-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B11-CUTOFF-IMMUTABLE",
+          "evidence_type": "source_line",
+          "excerpt": "raise ValueError(\"information cutoffs are immutable\")",
+          "line": 219,
+          "path": "src\\argos\\historian\\search_reconstruction.py"
+        }
+      ],
+      "recommended_remediation_objective": "Add deterministic fail-closed verifiers for every RM-002-B11 failure class.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B11-APPEND-ONLY",
+      "evidence_type": "source_line",
+      "excerpt": "raise ValueError(\"historical search records are append-only by identifier\")",
+      "line": 211,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    },
+    {
+      "evidence_id": "HIST-RM002-EVID-B11-CUTOFF-IMMUTABLE",
+      "evidence_type": "source_line",
+      "excerpt": "raise ValueError(\"information cutoffs are immutable\")",
+      "line": 219,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B11",
+  "title": "Determinism and Fail-Closed Verification",
+  "verified_items": [
+    "append-only duplicate search rejection",
+    "immutable cutoff rejection"
+  ]
+}

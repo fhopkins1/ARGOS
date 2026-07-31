@@ -1,0 +1,55 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "Sentinel",
+    "Authorization",
+    "Trader",
+    "Broker",
+    "Monitoring",
+    "Decision Laboratory",
+    "Commander"
+  ],
+  "findings": [
+    {
+      "category": "interfaces",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "No implementation verifier proves every constitutional Historian interface, custody transfer, provenance preservation, and contract listed by RM-002-B08.",
+      "finding_id": "HIST-RM002-FIND-B08-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B08-READ-BOUNDARY",
+          "evidence_type": "source_line",
+          "excerpt": "Performance Truth, Closed Position Truth, EO-DC, and Historian views may display existing facts and assurance records.",
+          "line": 3,
+          "path": "Documentation\\EO-DG_Truth_and_Historian_Read_Boundaries.md"
+        }
+      ],
+      "recommended_remediation_objective": "Implement a Historian interface contract registry and independent interface verifiers for every named office.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B08-READ-BOUNDARY",
+      "evidence_type": "source_line",
+      "excerpt": "Performance Truth, Closed Position Truth, EO-DC, and Historian views may display existing facts and assurance records.",
+      "line": 3,
+      "path": "Documentation\\EO-DG_Truth_and_Historian_Read_Boundaries.md"
+    },
+    {
+      "evidence_id": "HIST-RM002-EVID-B08-COLLECT-DATA",
+      "evidence_type": "source_line",
+      "excerpt": "- Collect enterprise performance data from Executive, Seeker, Analyst, Risk, and Trader groups.",
+      "line": 13,
+      "path": "Documentation\\historian_group_framework.md"
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B08",
+  "title": "Interface Verification",
+  "verified_items": [
+    "Performance Truth read boundary",
+    "Closed Position Truth archival references"
+  ]
+}

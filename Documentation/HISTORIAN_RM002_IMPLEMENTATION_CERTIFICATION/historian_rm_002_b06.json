@@ -1,0 +1,111 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "NOT_REQUESTED",
+    "CONTRADICTORY",
+    "CORRUPTED",
+    "INTENTIONALLY_EXCLUDED",
+    "REDACTED",
+    "OBSERVED_ABSENT",
+    "NOT_AUTHORIZED_TO_REQUEST",
+    "REQUEST_PROHIBITED",
+    "REQUEST_DEFERRED",
+    "SOURCE_SILENT",
+    "PARTIALLY_AVAILABLE",
+    "RATE_LIMITED",
+    "COST_PROHIBITED",
+    "PRIVACY_RESTRICTED",
+    "RETENTION_EXPIRED",
+    "UNKNOWN_CAUSE"
+  ],
+  "findings": [
+    {
+      "category": "language_missing_information",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "The implementation does not preserve every hardened missing-information state and does not expose raw, structured, semantic, interpretation, and truth language layers as required.",
+      "finding_id": "HIST-RM002-FIND-B06-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B06-MISSING-HITS",
+          "missing_information_hits": {
+            "CONTRADICTORY": [],
+            "CORRUPTED": [],
+            "COST_PROHIBITED": [],
+            "INTENTIONALLY_EXCLUDED": [],
+            "NOT_APPLICABLE": [
+              "src\\argos\\historian\\search_reconstruction.py"
+            ],
+            "NOT_AUTHORIZED_TO_REQUEST": [],
+            "NOT_REQUESTED": [],
+            "OBSERVED_ABSENT": [],
+            "PARTIALLY_AVAILABLE": [],
+            "PRIVACY_RESTRICTED": [],
+            "RATE_LIMITED": [],
+            "REDACTED": [],
+            "REQUEST_DEFERRED": [],
+            "REQUEST_PROHIBITED": [],
+            "RETENTION_EXPIRED": [],
+            "SOURCE_SILENT": [],
+            "STALE": [
+              "src\\argos\\historian\\search_reconstruction.py"
+            ],
+            "UNAVAILABLE": [
+              "src\\argos\\historian\\search_reconstruction.py"
+            ],
+            "UNKNOWN_CAUSE": []
+          }
+        }
+      ],
+      "recommended_remediation_objective": "Implement language-layer preservation and the complete HIST-MO-001 missing-information taxonomy.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B06-MISSING-HITS",
+      "missing_information_hits": {
+        "CONTRADICTORY": [],
+        "CORRUPTED": [],
+        "COST_PROHIBITED": [],
+        "INTENTIONALLY_EXCLUDED": [],
+        "NOT_APPLICABLE": [
+          "src\\argos\\historian\\search_reconstruction.py"
+        ],
+        "NOT_AUTHORIZED_TO_REQUEST": [],
+        "NOT_REQUESTED": [],
+        "OBSERVED_ABSENT": [],
+        "PARTIALLY_AVAILABLE": [],
+        "PRIVACY_RESTRICTED": [],
+        "RATE_LIMITED": [],
+        "REDACTED": [],
+        "REQUEST_DEFERRED": [],
+        "REQUEST_PROHIBITED": [],
+        "RETENTION_EXPIRED": [],
+        "SOURCE_SILENT": [],
+        "STALE": [
+          "src\\argos\\historian\\search_reconstruction.py"
+        ],
+        "UNAVAILABLE": [
+          "src\\argos\\historian\\search_reconstruction.py"
+        ],
+        "UNKNOWN_CAUSE": []
+      }
+    },
+    {
+      "evidence_id": "HIST-RM002-EVID-B06-LANGUAGE",
+      "evidence_type": "source_line",
+      "excerpt": "canonical_query_text: str",
+      "line": 58,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B06",
+  "title": "Language and Missing-Information Verification",
+  "verified_items": [
+    "UNAVAILABLE",
+    "STALE",
+    "NOT_APPLICABLE"
+  ]
+}

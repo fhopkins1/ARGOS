@@ -1,0 +1,54 @@
+{
+  "disposition": "FAIL",
+  "failed_items": [
+    "ignored opportunities",
+    "denied authorizations",
+    "dormant observations",
+    "rejected alternatives",
+    "information deficiencies"
+  ],
+  "findings": [
+    {
+      "category": "historical_completeness",
+      "certification_impact": "Blocks Historian implementation certification until remediated or formally dispositioned.",
+      "constitutional_deficiency": "Historical search reconstruction preserves some failed and skipped search states, but does not prove complete preservation of rejected actions, ignored opportunities, denied authorizations, dormant observations, and rejected alternatives.",
+      "finding_id": "HIST-RM002-FIND-B05-001",
+      "governing_authority": "HISTORIAN-RM-002; HISTORIAN-MO-001; Enterprise Constitutional Standard ECS-003",
+      "objective_evidence": [
+        {
+          "evidence_id": "HIST-RM002-EVID-B05-FAILED-SEARCHES",
+          "evidence_type": "source_line",
+          "excerpt": "failed_searches: tuple[str, ...]",
+          "line": 190,
+          "path": "src\\argos\\historian\\search_reconstruction.py"
+        }
+      ],
+      "recommended_remediation_objective": "Add negative-history record families and verifiers for every RM-002-B05 historical completeness class.",
+      "severity": "BLOCKING",
+      "status": "OPEN"
+    }
+  ],
+  "objective_evidence": [
+    {
+      "evidence_id": "HIST-RM002-EVID-B05-FAILED-SEARCHES",
+      "evidence_type": "source_line",
+      "excerpt": "failed_searches: tuple[str, ...]",
+      "line": 190,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    },
+    {
+      "evidence_id": "HIST-RM002-EVID-B05-SKIPPED-SEARCHES",
+      "evidence_type": "source_line",
+      "excerpt": "skipped_searches: tuple[str, ...]",
+      "line": 191,
+      "path": "src\\argos\\historian\\search_reconstruction.py"
+    }
+  ],
+  "order_id": "HISTORIAN-RM-002-B05",
+  "title": "Historical Completeness Verification",
+  "verified_items": [
+    "failed_searches",
+    "skipped_searches",
+    "conflicts_known_at_cutoff"
+  ]
+}
