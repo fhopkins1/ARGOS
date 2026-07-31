@@ -1,0 +1,30 @@
+[
+  {
+    "check": "invalid_transition",
+    "code": "INVALID_TRANSITION",
+    "detected": true,
+    "evidence_digest": "633171a3d3ada2a4236072cd683ba5d32584daebca9fb8399566d0259fc2e12b",
+    "evidence_outcome": "FAIL_CLOSED"
+  },
+  {
+    "check": "duplicate_artifact",
+    "code": "DUPLICATE_ARTIFACT",
+    "detected": true,
+    "evidence_digest": "0dacdffec8102c7386ca3caa9145a37a155f445897ca38c9c1609afd9e179817",
+    "evidence_outcome": "FAIL_CLOSED"
+  },
+  {
+    "check": "unknown_provenance_artifact",
+    "code": "UNKNOWN_PROVENANCE_ARTIFACT",
+    "detected": true,
+    "evidence_digest": "cbd327d94f5a1d0a7cf202749a2e3e9515f5ed0c6eb1835feff04040d9705a9b",
+    "evidence_outcome": "FAIL_CLOSED"
+  },
+  {
+    "check": "unauthorized_learning_retrieval",
+    "code": "UNAUTHORIZED_LEARNING_RETRIEVAL",
+    "detected": true,
+    "evidence_digest": "a0af86ccb15b46e9764ee3c670612727326128483f386e7446b3f89b96fe6c09",
+    "evidence_outcome": "FAIL_CLOSED"
+  }
+]
