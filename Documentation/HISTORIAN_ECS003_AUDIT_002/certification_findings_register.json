@@ -1,0 +1,307 @@
+[
+  {
+    "certification_impact": "Final ECS-003 certification cannot pass because predecessor implementation and enterprise certification gates are not satisfied.",
+    "deficiency_classification": "certification deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-001",
+    "finding_type": "precondition_failure",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "blocking_findings": [
+          "HIST-RM002-FIND-B02-001",
+          "HIST-RM002-FIND-B03-001",
+          "HIST-RM002-FIND-B04-001",
+          "HIST-RM002-FIND-B05-001",
+          "HIST-RM002-FIND-B06-001",
+          "HIST-RM002-FIND-B08-001",
+          "HIST-RM002-FIND-B09-001",
+          "HIST-RM002-FIND-B10-001",
+          "HIST-RM002-FIND-B11-001",
+          "HIST-RM002-FIND-B12-001",
+          "HIST-RM002-FIND-B00-001"
+        ],
+        "evidence_id": "HIST-AUDIT002-EVID-RM002",
+        "rm002_final_disposition": "FAIL_CLOSED",
+        "rm003_authorized": false
+      },
+      {
+        "audit002_authorized": false,
+        "evidence_id": "HIST-AUDIT002-EVID-RM003",
+        "rm003_final_certification": "NOT_CERTIFIED_PRECONDITION_FAILED"
+      }
+    ],
+    "required_remediation": "Remediate RM-002 blockers and rerun RM-003 before requesting final independent certification.",
+    "severity": "BLOCKING"
+  },
+  {
+    "certification_impact": "Enterprise Information Journey creation, accumulation, termination, and reconstruction cannot be behaviorally demonstrated.",
+    "deficiency_classification": "implementation deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-002",
+    "finding_type": "enterprise_information_journey_behavior",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-JOURNEY-HITS",
+        "journey_record_family_hits": {
+          "Journey Certification Gate": [],
+          "Journey Event": [],
+          "Journey Graph Edge": [],
+          "Journey Identity": [],
+          "Journey Reference": []
+        }
+      }
+    ],
+    "required_remediation": "Implement executable Journey Identity, Event, Reference, Graph Edge, and Certification Gate behavior with independent verifiers.",
+    "severity": "BLOCKING"
+  },
+  {
+    "certification_impact": "The mandatory provenance graph cannot be independently regenerated or replayed.",
+    "deficiency_classification": "implementation deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-003",
+    "finding_type": "provenance_graph",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-GRAPH-HITS",
+        "graph_edge_hits": {
+          "ARCHIVED_BY": [],
+          "CERTIFIED_BY": [],
+          "CORRECTED_BY": [],
+          "DEPENDS_ON": [],
+          "DERIVED_FROM": [],
+          "OBSERVED_BY": [],
+          "PRODUCED_BY": [
+            "src\\argos\\historian\\decision_evaluation.py",
+            "src\\argos\\historian\\evidence_evaluation.py",
+            "src\\argos\\historian\\fusion.py",
+            "src\\argos\\historian\\group.py",
+            "src\\argos\\historian\\hypothesis.py",
+            "src\\argos\\historian\\model_calibration.py",
+            "src\\argos\\historian\\performance.py",
+            "src\\argos\\historian\\prompt_evaluation.py",
+            "src\\argos\\control_panel\\eab.py",
+            "src\\argos\\control_panel\\ecc.py"
+          ],
+          "RECONSTRUCTS": [],
+          "REJECTED_BY": [],
+          "SUPERSEDED_BY": [
+            "src\\argos\\historian\\search_reconstruction.py",
+            "src\\argos\\control_panel\\enterprise_memory_cache.py",
+            "src\\argos\\control_panel\\information_freshness_engine.py",
+            "src\\argos\\control_panel\\mission_planner.py",
+            "src\\argos\\control_panel\\test_evidence_office.py"
+          ],
+          "TRANSFORMED_BY": []
+        }
+      }
+    ],
+    "required_remediation": "Implement all mandatory graph edge classes and deterministic graph reconstruction verification.",
+    "severity": "BLOCKING"
+  },
+  {
+    "certification_impact": "Language preservation and full missing-information taxonomy preservation cannot be proven through execution.",
+    "deficiency_classification": "implementation deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-004",
+    "finding_type": "missing_information_language",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-MISSING-HITS",
+        "missing_information_hits": {
+          "CONTRADICTORY": [
+            "src\\argos\\control_panel\\information_freshness_engine.py",
+            "src\\argos\\control_panel\\office_duty_officer.py",
+            "src\\argos\\control_panel\\short_opportunity_office.py",
+            "src\\argos\\control_panel\\strategic_synthesis_office.py",
+            "src\\argos\\control_panel\\truth_promotion.py",
+            "src\\argos\\control_panel\\workflow_delta_engine.py"
+          ],
+          "CORRUPTED": [
+            "src\\argos\\control_panel\\deterministic_persistence_recovery_closure.py",
+            "src\\argos\\control_panel\\enterprise_failure_recovery.py",
+            "src\\argos\\control_panel\\enterprise_health_monitor.py"
+          ],
+          "COST_PROHIBITED": [],
+          "INTENTIONALLY_EXCLUDED": [],
+          "NOT_APPLICABLE": [
+            "src\\argos\\historian\\search_reconstruction.py",
+            "src\\argos\\control_panel\\canonical_bridge_denominator_execution.py",
+            "src\\argos\\control_panel\\canonical_bridge_fabric.py",
+            "src\\argos\\control_panel\\canonical_enterprise_runtime.py",
+            "src\\argos\\control_panel\\constitutional_certification_series.py",
+            "src\\argos\\control_panel\\constitutional_invariants.py",
+            "src\\argos\\control_panel\\cr_audit_closure.py",
+            "src\\argos\\control_panel\\market_data_provider.py",
+            "src\\argos\\control_panel\\read_only_integrity.py",
+            "src\\argos\\control_panel\\synthetic_truth_quarantine.py",
+            "src\\argos\\control_panel\\test_evidence_office.py",
+            "src\\argos\\control_panel\\transaction_reconciliation.py"
+          ],
+          "NOT_AUTHORIZED_TO_REQUEST": [],
+          "NOT_REQUESTED": [],
+          "OBSERVED_ABSENT": [],
+          "PARTIALLY_AVAILABLE": [],
+          "PRIVACY_RESTRICTED": [],
+          "RATE_LIMITED": [
+            "src\\argos\\control_panel\\market_data_provider.py"
+          ],
+          "REDACTED": [],
+          "REQUEST_DEFERRED": [],
+          "REQUEST_PROHIBITED": [],
+          "RETENTION_EXPIRED": [],
+          "SOURCE_SILENT": [],
+          "STALE": [
+            "src\\argos\\historian\\search_reconstruction.py",
+            "src\\argos\\control_panel\\black_swan_simulation_engine.py",
+            "src\\argos\\control_panel\\commander_briefing_generator.py",
+            "src\\argos\\control_panel\\commander_strategic_dashboard.py",
+            "src\\argos\\control_panel\\cr_audit_closure.py",
+            "src\\argos\\control_panel\\css_separation.py",
+            "src\\argos\\control_panel\\decline_intelligence_office.py",
+            "src\\argos\\control_panel\\deterministic_persistence_recovery_closure.py",
+            "src\\argos\\control_panel\\enterprise_communications_bus.py",
+            "src\\argos\\control_panel\\enterprise_configuration_registry.py",
+            "src\\argos\\control_panel\\enterprise_doctrine_policy_manager.py",
+            "src\\argos\\control_panel\\enterprise_efficiency_analytics.py",
+            "src\\argos\\control_panel\\enterprise_grand_strategy_engine.py",
+            "src\\argos\\control_panel\\enterprise_memory_cache.py",
+            "src\\argos\\control_panel\\enterprise_priority_engine.py",
+            "src\\argos\\control_panel\\enterprise_reality_calibration.py",
+            "src\\argos\\control_panel\\event_detection_engine.py",
+            "src\\argos\\control_panel\\full_suite_failure_error_closure.py",
+            "src\\argos\\control_panel\\information_freshness_engine.py",
+            "src\\argos\\control_panel\\market_data_provider.py",
+            "src\\argos\\control_panel\\mission_planner.py",
+            "src\\argos\\control_panel\\position_exit_decision_engine.py",
+            "src\\argos\\control_panel\\position_surveillance_engine.py",
+            "src\\argos\\control_panel\\production_synthetic_truth_elimination.py",
+            "src\\argos\\control_panel\\proof_based_certification.py",
+            "src\\argos\\control_panel\\runtime.py",
+            "src\\argos\\control_panel\\synthetic_truth_quarantine.py",
+            "src\\argos\\control_panel\\trace_closure_final.py",
+            "src\\argos\\control_panel\\truth_promotion.py"
+          ],
+          "UNAVAILABLE": [
+            "src\\argos\\historian\\search_reconstruction.py",
+            "src\\argos\\control_panel\\__init__.py",
+            "src\\argos\\control_panel\\authorization_authority.py",
+            "src\\argos\\control_panel\\authorization_independent_certification.py",
+            "src\\argos\\control_panel\\closed_position_truth.py",
+            "src\\argos\\control_panel\\commander_briefing_generator.py",
+            "src\\argos\\control_panel\\commander_daily_review_workspace.py",
+            "src\\argos\\control_panel\\correlation_intelligence_engine.py",
+            "src\\argos\\control_panel\\cr_audit_closure.py",
+            "src\\argos\\control_panel\\deterministic_persistence_recovery_closure.py",
+            "src\\argos\\control_panel\\enterprise_benchmark_engine.py",
+            "src\\argos\\control_panel\\enterprise_communications_bus.py",
+            "src\\argos\\control_panel\\enterprise_doctrine_policy_manager.py",
+            "src\\argos\\control_panel\\enterprise_efficiency_analytics.py",
+            "src\\argos\\control_panel\\enterprise_failure_recovery.py",
+            "src\\argos\\control_panel\\enterprise_persistence.py",
+            "src\\argos\\control_panel\\enterprise_priority_engine.py",
+            "src\\argos\\control_panel\\fault_injection_lab.py",
+            "src\\argos\\control_panel\\full_suite_failure_timeout_elimination.py",
+            "src\\argos\\control_panel\\information_freshness_engine.py",
+            "src\\argos\\control_panel\\long_duration_operations_lab.py",
+            "src\\argos\\control_panel\\market_data_provider.py",
+            "src\\argos\\control_panel\\mission_planner.py",
+            "src\\argos\\control_panel\\portfolio_construction_engine.py",
+            "src\\argos\\control_panel\\position_sizing_engine.py",
+            "src\\argos\\control_panel\\production_synthetic_truth_elimination.py",
+            "src\\argos\\control_panel\\scheduler.py",
+            "src\\argos\\control_panel\\synthetic_truth_quarantine.py",
+            "src\\argos\\control_panel\\trace_closure_final.py",
+            "src\\argos\\control_panel\\workflow_delta_engine.py"
+          ],
+          "UNKNOWN_CAUSE": []
+        }
+      },
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-LANGUAGE-001",
+        "evidence_type": "source_line",
+        "excerpt": "canonical_query_text: str",
+        "line": 58,
+        "path": "src\\argos\\historian\\search_reconstruction.py"
+      }
+    ],
+    "required_remediation": "Implement raw/structured/semantic/source language preservation and all MO-001 missing-information states.",
+    "severity": "BLOCKING"
+  },
+  {
+    "certification_impact": "Cross-office custody continuity and ownership continuity cannot be independently verified for every required office.",
+    "deficiency_classification": "implementation deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-005",
+    "finding_type": "historical_custody_cross_office",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-CROSS-OFFICE-SCOPE",
+        "required_offices": [
+          "Sentinel",
+          "Seeker",
+          "Analyst",
+          "Risk",
+          "Authorization",
+          "Trader",
+          "Broker",
+          "Monitoring",
+          "Exit Decision",
+          "Closed Position Truth",
+          "Performance Truth",
+          "Enterprise Learning",
+          "Decision Laboratory",
+          "Commander"
+        ]
+      }
+    ],
+    "required_remediation": "Materialize cross-office Historian interface and custody verifiers for every required office.",
+    "severity": "BLOCKING"
+  },
+  {
+    "certification_impact": "Counterfactual replay, mutation validation, and fail-closed behavior cannot be fully exercised against absent Journey implementation.",
+    "deficiency_classification": "implementation deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-006",
+    "finding_type": "counterfactual_mutation_replay",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-TYPHON-HITS",
+        "typhon_hits": []
+      },
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-RECONSTRUCT-001",
+        "evidence_type": "source_line",
+        "excerpt": "def reconstruct(self, cutoff_id: str) -> HistoricalReconstruction:",
+        "line": 225,
+        "path": "src\\argos\\historian\\search_reconstruction.py"
+      }
+    ],
+    "required_remediation": "Implement counterfactual path records, mutation detectors, and fail-closed Journey replay validation.",
+    "severity": "BLOCKING"
+  },
+  {
+    "certification_impact": "Historian-adjacent implementation still exposes analysis/recommendation semantics that conflict with custody-only certification unless formally reassigned.",
+    "deficiency_classification": "constitutional and implementation deficiency",
+    "finding_id": "HIST-ECS003-AUDIT002-FIND-007",
+    "finding_type": "custody_only_violation_risk",
+    "governing_authority": "HISTORIAN-ECS003-AUDIT-002; ECS-003; HISTORIAN-MO-001; HISTORIAN-RM-002; HISTORIAN-RM-003",
+    "objective_evidence": [
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-RECOMMENDATION-001",
+        "evidence_type": "source_line",
+        "excerpt": "\"recommendationDatabase\": tuple(asdict(item) for item in recommendations),",
+        "line": 142,
+        "path": "src\\argos\\control_panel\\historian_recommendation_engine.py"
+      },
+      {
+        "evidence_id": "HIST-AUDIT002-EVID-LEARNING-001",
+        "evidence_type": "source_line",
+        "excerpt": "\"Historian Analysis\",",
+        "line": 163,
+        "path": "src\\argos\\control_panel\\enterprise_learning_engine.py"
+      }
+    ],
+    "required_remediation": "Separate learning/recommendation behavior from Historian custody implementation and verify custody-only boundaries.",
+    "severity": "BLOCKING"
+  }
+]

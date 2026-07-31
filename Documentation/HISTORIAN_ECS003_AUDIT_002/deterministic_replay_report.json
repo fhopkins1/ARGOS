@@ -1,0 +1,45 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    "HIST-ECS003-AUDIT002-FIND-001",
+    "HIST-ECS003-AUDIT002-FIND-002",
+    "HIST-ECS003-AUDIT002-FIND-003",
+    "HIST-ECS003-AUDIT002-FIND-004",
+    "HIST-ECS003-AUDIT002-FIND-005",
+    "HIST-ECS003-AUDIT002-FIND-006",
+    "HIST-ECS003-AUDIT002-FIND-007"
+  ],
+  "objective_evidence": [
+    {
+      "candidate_digest": "93975c7f3f760ddef5e0514dc7068cee2a30c8ea",
+      "evidence_id": "HIST-AUDIT002-EVID-CANDIDATE"
+    },
+    {
+      "evidence_id": "HIST-AUDIT002-EVID-SOURCE-INDEX",
+      "submitted_evidence_inputs": [
+        {
+          "exists": true,
+          "file_count": 14,
+          "path": "Documentation\\HISTORIAN_ECS003_AUDIT_001"
+        },
+        {
+          "exists": true,
+          "file_count": 22,
+          "path": "Documentation\\HISTORIAN_MO001_INFORMATION_JOURNEY_HARDENING"
+        },
+        {
+          "exists": true,
+          "file_count": 21,
+          "path": "Documentation\\HISTORIAN_RM002_IMPLEMENTATION_CERTIFICATION"
+        },
+        {
+          "exists": true,
+          "file_count": 20,
+          "path": "Documentation\\HISTORIAN_RM003_ENTERPRISE_CERTIFICATION"
+        }
+      ]
+    }
+  ],
+  "report_id": "deterministic_replay_report",
+  "title": "Deterministic Replay Report"
+}
