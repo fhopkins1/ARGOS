@@ -1,0 +1,349 @@
+{
+  "assessment_id": "HISTORIAN-ECS003-AUDIT-001-CONSTITUTIONAL-RISK",
+  "blocking_findings": [
+    "HIST-ECS003-FIND-001",
+    "HIST-ECS003-FIND-002",
+    "HIST-ECS003-FIND-003",
+    "HIST-ECS003-FIND-007",
+    "HIST-ECS003-FIND-010"
+  ],
+  "finding_count": 10,
+  "findings": [
+    {
+      "category": "mission_boundary",
+      "constitutional_deficiency": "The available Historian doctrine describes the Historian Group as a scientific evaluation and organizational learning function, while the ECS-003 audit order requires a custody-only Historian that never learns, infers, summarizes, optimizes, recommends, ranks, predicts, authorizes, or modifies historical records.",
+      "constitutional_impact": "Historian custody authority is blended with learning and recommendation activity, creating unresolved ownership leakage between immutable memory, Enterprise Learning, and Decision Laboratory functions.",
+      "finding_id": "HIST-ECS003-FIND-001",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 mission under audit; Enterprise Truth Doctrine; Workflow Ownership Doctrine; Enterprise Improvement Group Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0005",
+          "evidence_type": "repository_text",
+          "excerpt": "The Historian Group is the scientific evaluation organization of ARGOS. It converts operational history into validated institutional knowledge by determining what happened, why it happened, which assumptions were correct, which assumptions ",
+          "line": 5,
+          "path": "Documentation/historian_group_framework.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0017",
+          "evidence_type": "repository_text",
+          "excerpt": "- Produce historical evaluations and validated learning records.",
+          "line": 17,
+          "path": "Documentation/historian_group_framework.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0115",
+          "evidence_type": "repository_text",
+          "excerpt": "\"engineName\": \"Historian Recommendation Engine\",",
+          "line": 115,
+          "path": "src/argos/control_panel/historian_recommendation_engine.py"
+        },
+        {
+          "evidence_id": "EVID-ENTERPRISE_LEARNING_ENGINE-0163",
+          "evidence_type": "repository_text",
+          "excerpt": "\"Historian Analysis\",",
+          "line": 163,
+          "path": "src/argos/control_panel/enterprise_learning_engine.py"
+        }
+      ],
+      "recommended_remediation_objective": "Publish a Historian constitutional charter that separates immutable custody from learning, analysis, recommendation, optimization, and laboratory authority.",
+      "severity": "BLOCKING"
+    },
+    {
+      "category": "historical_custody",
+      "constitutional_deficiency": "No canonical Historian custody registry was found that assigns exactly one historical custodian for every artifact class named by the audit order.",
+      "constitutional_impact": "Sentinel observations, Search missions, Evidence objects, Analyst assessments, Risk decisions, Authorization objects, Decision Objects, Broker objects, Execution objects, Monitoring observations, Exit decisions, Closed Position Truth, Performance Truth, and Enterprise Learning hypotheses do not share one audited Historian custody baseline.",
+      "finding_id": "HIST-ECS003-FIND-002",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Historical Custody Audit; Evidence Doctrine; Audit Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-__INIT__-0001",
+          "evidence_type": "repository_text",
+          "excerpt": "\"\"\"Historian Group scientific evaluation organization.\"\"\"",
+          "line": 1,
+          "path": "src/argos/historian/__init__.py"
+        },
+        {
+          "evidence_id": "EVID-EO-DG_TRUTH_AND_HISTORIAN_READ_BOUNDARIES-0005",
+          "evidence_type": "repository_text",
+          "excerpt": "Reads must not create truth envelopes, approve promotions, promote degraded records, build closed-position truth, ingest Performance Truth, append Historian records, or convert proof/replay/simulation/test evidence into paper truth.",
+          "line": 5,
+          "path": "Documentation/EO-DG_Truth_and_Historian_Read_Boundaries.md"
+        },
+        {
+          "evidence_id": "EVID-HIST-CUSTODY-REGISTRY-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "No explicit repository-wide canonical Historian custody registry was located; repository files containing 'canonical Historian custody registry': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Create an authoritative Historian historical custody registry covering every enterprise artifact class with owner, custodian, producer, transfer trigger, retention, and reconstruction obligation.",
+      "severity": "BLOCKING"
+    },
+    {
+      "category": "enterprise_information_journey",
+      "constitutional_deficiency": "The Enterprise Information Journey is not governed as a complete historical object with deterministic identity, initiation, completion, ownership, relationships, supersession, archival, and reconstruction rules.",
+      "constitutional_impact": "A completed workflow may be reconstructable only through office-specific evidence fragments rather than one deterministic journey record from observation through final archive.",
+      "finding_id": "HIST-ECS003-FIND-003",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Enterprise Journey Audit; Workflow Ownership Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-ENTERPRISE-JOURNEY-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "The exact constitutional object requested by the audit is not materially present; repository files containing 'Enterprise Information Journey': 0",
+          "line": 0,
+          "path": "repository_search"
+        },
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0179",
+          "evidence_type": "repository_text",
+          "excerpt": "class HistoricalReconstruction:",
+          "line": 179,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_OPERATIONAL_READINESS-0012",
+          "evidence_type": "repository_text",
+          "excerpt": "- Historical workflow execution",
+          "line": 12,
+          "path": "Documentation/historian_operational_readiness.md"
+        }
+      ],
+      "recommended_remediation_objective": "Define an Enterprise Information Journey constitution with canonical identity, event classes, edge classes, archival triggers, and reconstruction acceptance criteria.",
+      "severity": "BLOCKING"
+    },
+    {
+      "category": "missing_information",
+      "constitutional_deficiency": "The repository contains partial temporal classifications for historical search, but the complete missing-information taxonomy required by the audit is not established for all historical artifacts.",
+      "constitutional_impact": "Enterprise history can preserve selected negative states while still losing distinctions between not requested, requested unavailable, stale, contradictory, corrupted, redacted, and not applicable information.",
+      "finding_id": "HIST-ECS003-FIND-004",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Missing Information Audit; Evidence Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0021",
+          "evidence_type": "repository_text",
+          "excerpt": "AVAILABLE_NOT_COLLECTED = \"AVAILABLE_NOT_COLLECTED\"",
+          "line": 21,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0032",
+          "evidence_type": "repository_text",
+          "excerpt": "SOURCE_UNAVAILABLE = \"SOURCE_UNAVAILABLE\"",
+          "line": 32,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-MISSING-INFO-TAXONOMY-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "The requested missing-information state appears without a canonical Historian-wide taxonomy; repository files containing 'requested but unavailable': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Publish a Historian missing-information taxonomy and require every office archive transfer to preserve one terminal missing-information state where data is absent.",
+      "severity": "MAJOR"
+    },
+    {
+      "category": "language_preservation",
+      "constitutional_deficiency": "No Historian-wide doctrine was found that separates raw language, structured records, semantic interpretation, constitutional truth, and enterprise hypotheses.",
+      "constitutional_impact": "Historical meaning can drift if the preserved raw text, normalized record, interpreted meaning, and accepted constitutional truth are not independently identified and traceable.",
+      "finding_id": "HIST-ECS003-FIND-005",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Language Preservation Audit; Enterprise Truth Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0058",
+          "evidence_type": "repository_text",
+          "excerpt": "canonical_query_text: str",
+          "line": 58,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0038",
+          "evidence_type": "repository_text",
+          "excerpt": "No anecdotal evidence may support Historian conclusions. Every conclusion must be supported by measurable evidence and remain permanently reconstructable from preserved historical records.",
+          "line": 38,
+          "path": "Documentation/historian_group_framework.md"
+        },
+        {
+          "evidence_id": "EVID-LANGUAGE-PRESERVATION-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "Historian-specific separation of raw language from semantic interpretation was not found; repository files containing 'raw language': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Define a language preservation constitution that binds raw text, normalized fields, semantic interpretation, truth disposition, and hypothesis use through immutable lineage.",
+      "severity": "MAJOR"
+    },
+    {
+      "category": "historical_graph",
+      "constitutional_deficiency": "Historical graph governance is not complete for node identity, edge identity, ownership, versioning, supersession, correction, graph integrity, replay, and reconstruction.",
+      "constitutional_impact": "Historical reconstruction may omit relationship classes or silently rely on local object structures rather than an enterprise graph with audited edge semantics.",
+      "finding_id": "HIST-ECS003-FIND-006",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Historical Graph Audit; Audit Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0139",
+          "evidence_type": "repository_text",
+          "excerpt": "class EvidenceTemporalRelationship:",
+          "line": 139,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0150",
+          "evidence_type": "repository_text",
+          "excerpt": "class CorrectionRevisionLink:",
+          "line": 150,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORICAL-GRAPH-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "No canonical Historian historical graph baseline was located; repository files containing 'historical graph': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Create a Historian historical graph constitution with mandatory node and edge schemas, versioning, correction lineage, supersession lineage, and replay equivalence rules.",
+      "severity": "MAJOR"
+    },
+    {
+      "category": "interfaces",
+      "constitutional_deficiency": "The Historian interface model is not completely specified for every office named by the audit order, including Sentinel, Seeker, Analyst, Risk, Authorization, Trader, Broker, Monitoring, Exit Decision, Closed Position Truth, Performance Truth, Enterprise Learning, Decision Laboratory, and Commander.",
+      "constitutional_impact": "Undefined interfaces allow hidden coupling, implicit archive append authority, and ambiguous consumer/provider responsibilities.",
+      "finding_id": "HIST-ECS003-FIND-007",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Interface Audit; Workflow Ownership Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-EO-DG_TRUTH_AND_HISTORIAN_READ_BOUNDARIES-0003",
+          "evidence_type": "repository_text",
+          "excerpt": "Performance Truth, Closed Position Truth, EO-DC, and Historian views may display existing facts and assurance records.",
+          "line": 3,
+          "path": "Documentation/EO-DG_Truth_and_Historian_Read_Boundaries.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0013",
+          "evidence_type": "repository_text",
+          "excerpt": "- Collect enterprise performance data from Executive, Seeker, Analyst, Risk, and Trader groups.",
+          "line": 13,
+          "path": "Documentation/historian_group_framework.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN-INTERFACE-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "No complete Historian interface registry was found; repository files containing 'Historian Interface Registry': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Establish a Historian interface registry defining provider, consumer, custody transfer, validation, rejection, correction, and evidence obligations for each named office.",
+      "severity": "BLOCKING"
+    },
+    {
+      "category": "learning_readiness",
+      "constitutional_deficiency": "Enterprise Learning and Decision Laboratory readiness depends on historical analysis and recommendations, but no custody-only Historian doctrine guarantees that learning consumes immutable history without allowing Historian inference or recommendation authority.",
+      "constitutional_impact": "Learning outputs may be historically useful, but the constitutional owner of learning hypotheses, recommendations, counterfactuals, and historical memory remains blurred.",
+      "finding_id": "HIST-ECS003-FIND-008",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Enterprise Learning Readiness Audit; Enterprise Improvement Group Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-ENTERPRISE_LEARNING_ENGINE-0163",
+          "evidence_type": "repository_text",
+          "excerpt": "\"Historian Analysis\",",
+          "line": 163,
+          "path": "src/argos/control_panel/enterprise_learning_engine.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0142",
+          "evidence_type": "repository_text",
+          "excerpt": "\"recommendationDatabase\": tuple(asdict(item) for item in recommendations),",
+          "line": 142,
+          "path": "src/argos/control_panel/historian_recommendation_engine.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0150",
+          "evidence_type": "repository_text",
+          "excerpt": "\"requiresEnterpriseLearningEvaluation\": True,",
+          "line": 150,
+          "path": "src/argos/control_panel/historian_recommendation_engine.py"
+        }
+      ],
+      "recommended_remediation_objective": "Move learning, hypothesis, recommendation, ranking, and optimization authorities into explicit non-Historian offices while preserving read-only Historian custody interfaces.",
+      "severity": "MAJOR"
+    },
+    {
+      "category": "counterfactual_readiness",
+      "constitutional_deficiency": "The architecture does not fully require preservation of rejected actions, ignored opportunities, denied authorizations, alternative decisions, and counterfactual paths as first-class historical records.",
+      "constitutional_impact": "Enterprise history may become selection-biased by preserving completed or observed events more reliably than paths not taken.",
+      "finding_id": "HIST-ECS003-FIND-009",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Historical Completeness Audit and Counterfactual Readiness Audit.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-SEARCH_RECONSTRUCTION-0021",
+          "evidence_type": "repository_text",
+          "excerpt": "AVAILABLE_NOT_COLLECTED = \"AVAILABLE_NOT_COLLECTED\"",
+          "line": 21,
+          "path": "src/argos/historian/search_reconstruction.py"
+        },
+        {
+          "evidence_id": "EVID-ENTERPRISE_LEARNING_ENGINE-0215",
+          "evidence_type": "repository_text",
+          "excerpt": "f\"Decision Laboratory replay packages available: {len(decision_laboratory.get('workflowReplay', ())) }.\",",
+          "line": 215,
+          "path": "src/argos/control_panel/enterprise_learning_engine.py"
+        },
+        {
+          "evidence_id": "EVID-IGNORED-OPPORTUNITIES-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "No canonical requirement for preserving ignored opportunities was located; repository files containing 'opportunities ignored': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Create counterfactual and negative-history doctrine covering rejected actions, ignored opportunities, denied authorities, abandoned workflows, and alternative decisions.",
+      "severity": "MAJOR"
+    },
+    {
+      "category": "certification_readiness",
+      "constitutional_deficiency": "The Historian Office is not ready for ECS-003 certification because core constitutional baselines for custody, journeys, missing information, language preservation, graph relationships, interfaces, and learning separation are absent or incomplete.",
+      "constitutional_impact": "The office requires constitutional remediation before implementation quality can be meaningfully certified against ECS-003.",
+      "finding_id": "HIST-ECS003-FIND-010",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 final decision requirements; Enterprise Constitutional Standard ECS-003.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-HISTORIAN_OPERATIONAL_READINESS-0005",
+          "evidence_type": "repository_text",
+          "excerpt": "The Historian Operational Readiness Review (HORR) is the deterministic certification authority for the Historian Group. It introduces no new learning capability; it certifies that the Historian Group functions as a complete deterministic or",
+          "line": 5,
+          "path": "Documentation/historian_operational_readiness.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_OPERATIONAL_READINESS-0016",
+          "evidence_type": "repository_text",
+          "excerpt": "- Organizational learning capability",
+          "line": 16,
+          "path": "Documentation/historian_operational_readiness.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN-ECS003-BASELINE-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "No final Historian ECS-003 constitutional certification baseline was located; repository files containing 'Historian ECS-003 certification baseline': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Open a Historian constitutional remediation program before implementation verification, with one order each for mission boundary, custody, journey, provenance, completeness, interfaces, traceability, replay, and certification readiness.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "major_findings": [
+    "HIST-ECS003-FIND-004",
+    "HIST-ECS003-FIND-005",
+    "HIST-ECS003-FIND-006",
+    "HIST-ECS003-FIND-008",
+    "HIST-ECS003-FIND-009"
+  ],
+  "status": "HIGH",
+  "summary": "Constitutional remediation required before ECS-003 certification."
+}

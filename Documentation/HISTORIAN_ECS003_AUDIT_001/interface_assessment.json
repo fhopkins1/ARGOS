@@ -1,0 +1,44 @@
+{
+  "assessment_id": "HISTORIAN-ECS003-AUDIT-001-INTERFACE",
+  "blocking_findings": [
+    "HIST-ECS003-FIND-007"
+  ],
+  "finding_count": 1,
+  "findings": [
+    {
+      "category": "interfaces",
+      "constitutional_deficiency": "The Historian interface model is not completely specified for every office named by the audit order, including Sentinel, Seeker, Analyst, Risk, Authorization, Trader, Broker, Monitoring, Exit Decision, Closed Position Truth, Performance Truth, Enterprise Learning, Decision Laboratory, and Commander.",
+      "constitutional_impact": "Undefined interfaces allow hidden coupling, implicit archive append authority, and ambiguous consumer/provider responsibilities.",
+      "finding_id": "HIST-ECS003-FIND-007",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Interface Audit; Workflow Ownership Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-EO-DG_TRUTH_AND_HISTORIAN_READ_BOUNDARIES-0003",
+          "evidence_type": "repository_text",
+          "excerpt": "Performance Truth, Closed Position Truth, EO-DC, and Historian views may display existing facts and assurance records.",
+          "line": 3,
+          "path": "Documentation/EO-DG_Truth_and_Historian_Read_Boundaries.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0013",
+          "evidence_type": "repository_text",
+          "excerpt": "- Collect enterprise performance data from Executive, Seeker, Analyst, Risk, and Trader groups.",
+          "line": 13,
+          "path": "Documentation/historian_group_framework.md"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN-INTERFACE-SEARCH",
+          "evidence_type": "repository_search_summary",
+          "excerpt": "No complete Historian interface registry was found; repository files containing 'Historian Interface Registry': 0",
+          "line": 0,
+          "path": "repository_search"
+        }
+      ],
+      "recommended_remediation_objective": "Establish a Historian interface registry defining provider, consumer, custody transfer, validation, rejection, correction, and evidence obligations for each named office.",
+      "severity": "BLOCKING"
+    }
+  ],
+  "major_findings": [],
+  "status": "INCOMPLETE",
+  "summary": "Constitutional remediation required before ECS-003 certification."
+}

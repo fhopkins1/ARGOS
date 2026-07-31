@@ -1,0 +1,73 @@
+[
+  {
+    "category": "mission_boundary",
+    "constitutional_deficiency": "The available Historian doctrine describes the Historian Group as a scientific evaluation and organizational learning function, while the ECS-003 audit order requires a custody-only Historian that never learns, infers, summarizes, optimizes, recommends, ranks, predicts, authorizes, or modifies historical records.",
+    "constitutional_impact": "Historian custody authority is blended with learning and recommendation activity, creating unresolved ownership leakage between immutable memory, Enterprise Learning, and Decision Laboratory functions.",
+    "finding_id": "HIST-ECS003-FIND-001",
+    "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 mission under audit; Enterprise Truth Doctrine; Workflow Ownership Doctrine; Enterprise Improvement Group Doctrine.",
+    "objective_evidence": [
+      {
+        "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0005",
+        "evidence_type": "repository_text",
+        "excerpt": "The Historian Group is the scientific evaluation organization of ARGOS. It converts operational history into validated institutional knowledge by determining what happened, why it happened, which assumptions were correct, which assumptions ",
+        "line": 5,
+        "path": "Documentation/historian_group_framework.md"
+      },
+      {
+        "evidence_id": "EVID-HISTORIAN_GROUP_FRAMEWORK-0017",
+        "evidence_type": "repository_text",
+        "excerpt": "- Produce historical evaluations and validated learning records.",
+        "line": 17,
+        "path": "Documentation/historian_group_framework.md"
+      },
+      {
+        "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0115",
+        "evidence_type": "repository_text",
+        "excerpt": "\"engineName\": \"Historian Recommendation Engine\",",
+        "line": 115,
+        "path": "src/argos/control_panel/historian_recommendation_engine.py"
+      },
+      {
+        "evidence_id": "EVID-ENTERPRISE_LEARNING_ENGINE-0163",
+        "evidence_type": "repository_text",
+        "excerpt": "\"Historian Analysis\",",
+        "line": 163,
+        "path": "src/argos/control_panel/enterprise_learning_engine.py"
+      }
+    ],
+    "recommended_remediation_objective": "Publish a Historian constitutional charter that separates immutable custody from learning, analysis, recommendation, optimization, and laboratory authority.",
+    "severity": "BLOCKING"
+  },
+  {
+    "category": "learning_readiness",
+    "constitutional_deficiency": "Enterprise Learning and Decision Laboratory readiness depends on historical analysis and recommendations, but no custody-only Historian doctrine guarantees that learning consumes immutable history without allowing Historian inference or recommendation authority.",
+    "constitutional_impact": "Learning outputs may be historically useful, but the constitutional owner of learning hypotheses, recommendations, counterfactuals, and historical memory remains blurred.",
+    "finding_id": "HIST-ECS003-FIND-008",
+    "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Enterprise Learning Readiness Audit; Enterprise Improvement Group Doctrine.",
+    "objective_evidence": [
+      {
+        "evidence_id": "EVID-ENTERPRISE_LEARNING_ENGINE-0163",
+        "evidence_type": "repository_text",
+        "excerpt": "\"Historian Analysis\",",
+        "line": 163,
+        "path": "src/argos/control_panel/enterprise_learning_engine.py"
+      },
+      {
+        "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0142",
+        "evidence_type": "repository_text",
+        "excerpt": "\"recommendationDatabase\": tuple(asdict(item) for item in recommendations),",
+        "line": 142,
+        "path": "src/argos/control_panel/historian_recommendation_engine.py"
+      },
+      {
+        "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0150",
+        "evidence_type": "repository_text",
+        "excerpt": "\"requiresEnterpriseLearningEvaluation\": True,",
+        "line": 150,
+        "path": "src/argos/control_panel/historian_recommendation_engine.py"
+      }
+    ],
+    "recommended_remediation_objective": "Move learning, hypothesis, recommendation, ranking, and optimization authorities into explicit non-Historian offices while preserving read-only Historian custody interfaces.",
+    "severity": "MAJOR"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "assessment_id": "HISTORIAN-ECS003-AUDIT-001-ENTERPRISE-LEARNING",
+  "blocking_findings": [],
+  "finding_count": 1,
+  "findings": [
+    {
+      "category": "learning_readiness",
+      "constitutional_deficiency": "Enterprise Learning and Decision Laboratory readiness depends on historical analysis and recommendations, but no custody-only Historian doctrine guarantees that learning consumes immutable history without allowing Historian inference or recommendation authority.",
+      "constitutional_impact": "Learning outputs may be historically useful, but the constitutional owner of learning hypotheses, recommendations, counterfactuals, and historical memory remains blurred.",
+      "finding_id": "HIST-ECS003-FIND-008",
+      "governing_constitutional_authority": "HISTORIAN-ECS003-AUDIT-001 Enterprise Learning Readiness Audit; Enterprise Improvement Group Doctrine.",
+      "objective_evidence": [
+        {
+          "evidence_id": "EVID-ENTERPRISE_LEARNING_ENGINE-0163",
+          "evidence_type": "repository_text",
+          "excerpt": "\"Historian Analysis\",",
+          "line": 163,
+          "path": "src/argos/control_panel/enterprise_learning_engine.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0142",
+          "evidence_type": "repository_text",
+          "excerpt": "\"recommendationDatabase\": tuple(asdict(item) for item in recommendations),",
+          "line": 142,
+          "path": "src/argos/control_panel/historian_recommendation_engine.py"
+        },
+        {
+          "evidence_id": "EVID-HISTORIAN_RECOMMENDATION_ENGINE-0150",
+          "evidence_type": "repository_text",
+          "excerpt": "\"requiresEnterpriseLearningEvaluation\": True,",
+          "line": 150,
+          "path": "src/argos/control_panel/historian_recommendation_engine.py"
+        }
+      ],
+      "recommended_remediation_objective": "Move learning, hypothesis, recommendation, ranking, and optimization authorities into explicit non-Historian offices while preserving read-only Historian custody interfaces.",
+      "severity": "MAJOR"
+    }
+  ],
+  "major_findings": [
+    "HIST-ECS003-FIND-008"
+  ],
+  "status": "NOT_READY",
+  "summary": "Constitutional remediation required before ECS-003 certification."
+}
