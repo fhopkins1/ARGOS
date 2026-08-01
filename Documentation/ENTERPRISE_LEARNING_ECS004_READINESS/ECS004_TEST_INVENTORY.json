@@ -1,0 +1,162 @@
+[
+  {
+    "behavior_under_test": "complete runtime coverage",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "positive-path",
+    "test_identifier": "EL-ECS004-TEST-001",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_reference_runtime_produces_complete_certification_report"
+  },
+  {
+    "behavior_under_test": "dataset lifecycle and ownership",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "lifecycle",
+    "test_identifier": "EL-ECS004-TEST-002",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_dataset_preserves_source_ownership_and_reproducibility"
+  },
+  {
+    "behavior_under_test": "feature, experiment, hypothesis, model flow",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "positive-path",
+    "test_identifier": "EL-ECS004-TEST-003",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_feature_experiment_hypothesis_and_model_flow"
+  },
+  {
+    "behavior_under_test": "publication fail closed",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "negative-path",
+    "test_identifier": "EL-ECS004-TEST-004",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_publication_requires_evidence_explainability_and_provenance"
+  },
+  {
+    "behavior_under_test": "operational authority fail closed",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "authority-boundary",
+    "test_identifier": "EL-ECS004-TEST-005",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_boundary_enforcement_fails_closed_for_operational_authority"
+  },
+  {
+    "behavior_under_test": "missing dataset rejection",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "negative-path",
+    "test_identifier": "EL-ECS004-TEST-006",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_unknown_dataset_experiment_is_rejected"
+  },
+  {
+    "behavior_under_test": "orphan provenance detection",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "provenance",
+    "test_identifier": "EL-ECS004-TEST-007",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_provenance_graph_detects_orphans"
+  },
+  {
+    "behavior_under_test": "RM-002 completion evidence",
+    "constitutional_requirement": "Enterprise Learning RM-002 runtime behavior remains certifiable under ECS-004 reproduction.",
+    "deterministic_comparison_method": "normalized JSON exact comparison excluding archive names and host paths",
+    "expected_evidence": "RM-002 JSON evidence regenerated under Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION",
+    "expected_failure_behavior": "EnterpriseLearningRuntimeError or EnterpriseLearningBoundaryError for negative and boundary tests",
+    "expected_output": "unittest PASS",
+    "input_fixtures": [
+      "deterministic inline fixture in Scripts/enterprise_learning_rm002_behavioral_implementation.py"
+    ],
+    "prerequisites": [
+      "Python runtime",
+      "repository package",
+      "no external services"
+    ],
+    "test_classification": "evidence-integrity",
+    "test_identifier": "EL-ECS004-TEST-008",
+    "test_module": "Tests/test_enterprise_learning_rm002_runtime.py",
+    "test_name": "test_generated_completion_report_authorizes_next_series"
+  }
+]

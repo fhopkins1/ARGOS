@@ -1,0 +1,30 @@
+{
+  "external_data_required": false,
+  "fixture_package": "inline deterministic RM-002 reference runtime fixture",
+  "inputs": [
+    {
+      "consumer": "EnterpriseLearningRuntime.create_dataset",
+      "identifier": "EL-DS-001",
+      "purpose": "dataset lifecycle reproduction",
+      "schema": "workflow, return, risk, mode",
+      "version": "1.0.0"
+    },
+    {
+      "consumer": "EnterpriseLearningRuntime.define_feature",
+      "identifier": "EL-FEAT-001",
+      "purpose": "feature engineering reproduction",
+      "schema": "risk_adjusted_return transformation",
+      "version": "1.0.0"
+    },
+    {
+      "consumer": "EnterpriseLearningRuntime.register_hypothesis",
+      "identifier": "EL-HYP-001",
+      "purpose": "hypothesis lifecycle reproduction",
+      "schema": "objective, falsification, confidence, uncertainty",
+      "version": "1.0.0"
+    }
+  ],
+  "integrity_hash": "8604a6e41640b9e14b8c4882da555b5af609ede4fe4b8afaa014516feda20395",
+  "seed": 42,
+  "source": "Scripts/enterprise_learning_rm002_behavioral_implementation.py::build_reference_runtime"
+}

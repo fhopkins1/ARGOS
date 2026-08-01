@@ -1,0 +1,50 @@
+{
+  "invalid_evidence_disposition": "FAIL",
+  "schema_package": "Enterprise Learning ECS-004 schema manifest",
+  "schemas": [
+    {
+      "applies_to": "runtime evidence",
+      "required_fields": [
+        "evidence_id",
+        "authority",
+        "subject_id",
+        "event_type",
+        "event_time",
+        "inputs",
+        "outputs",
+        "digest"
+      ],
+      "schema_id": "EL-EVIDENCE-SCHEMA",
+      "validation_command": "python Scripts/enterprise_learning_ecs004_readiness_package.py"
+    },
+    {
+      "applies_to": "provenance evidence",
+      "required_fields": [
+        "edge_id",
+        "source_id",
+        "target_id",
+        "relationship",
+        "evidence_id",
+        "digest"
+      ],
+      "schema_id": "EL-PROVENANCE-SCHEMA",
+      "validation_command": "python -m unittest Tests.test_enterprise_learning_rm002_runtime"
+    },
+    {
+      "applies_to": "publication evidence",
+      "required_fields": [
+        "publication_id",
+        "product_id",
+        "product_class",
+        "consumer_contract",
+        "evidence_refs",
+        "explainability_ref",
+        "provenance_refs",
+        "state",
+        "digest"
+      ],
+      "schema_id": "EL-PUBLICATION-SCHEMA",
+      "validation_command": "python -m unittest Tests.test_enterprise_learning_rm002_runtime"
+    }
+  ]
+}

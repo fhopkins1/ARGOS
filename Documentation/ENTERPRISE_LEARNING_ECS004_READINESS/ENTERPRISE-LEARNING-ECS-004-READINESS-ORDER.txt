@@ -1,0 +1,630 @@
+# ENTERPRISE-LEARNING-ECS-004-READINESS-ORDER
+
+# Independent Reproducibility Submission Order
+
+## Purpose
+
+This order instructs Codex to prepare and return every repository artifact, execution instruction, environmental dependency, runtime record, and evidentiary package required for an independent **Enterprise Constitutional Standard ECS-004** reproducibility assessment of the Enterprise Learning Office.
+
+The submission shall enable an unrelated auditor to reproduce the certified behavior of the Enterprise Learning Office from a clean environment without access to prior generated outputs, developer knowledge, undocumented assumptions, cached state, or manual intervention.
+
+This order governs evidence preparation only.
+
+It shall not modify constitutional architecture, implementation behavior, source code, test expectations, certification criteria, or previously generated evidence.
+
+---
+
+# Source Authority
+
+The submission shall be prepared from the completed implementation and evidence established under:
+
+* ENTERPRISE-LEARNING-RM-001;
+* ENTERPRISE-LEARNING-MO-001;
+* ENTERPRISE-LEARNING-RM-002;
+* all subordinate implementation orders;
+* all current Enterprise Learning Office repository content;
+* all current Enterprise Learning Office behavioral evidence.
+
+The ECS-004 submission shall preserve the constitutional distinction between:
+
+* implementation evidence;
+* reproduced evidence;
+* certification conclusions;
+* enterprise truth.
+
+---
+
+# Submission Mission
+
+Codex shall produce a complete, self-contained ECS-004 assessment package sufficient for an independent auditor to:
+
+1. inspect the submitted repository;
+2. construct a clean execution environment;
+3. install all required dependencies;
+4. discover all certifiable behaviors;
+5. execute the complete behavioral suite;
+6. regenerate all required evidence;
+7. compare reproduced results against declared expectations;
+8. verify deterministic equivalence;
+9. test fail-closed constitutional behavior;
+10. determine ECS-004 compliance without developer assistance.
+
+No certification claim shall be accepted unless the underlying behavior can be independently regenerated.
+
+---
+
+# Required Repository Package
+
+Codex shall return a complete repository archive containing:
+
+* all production source code;
+* all test source code;
+* all runtime configuration;
+* all schemas;
+* all fixtures;
+* all migration assets;
+* all command-line entry points;
+* all dependency manifests;
+* all lock files;
+* all environment templates;
+* all build scripts;
+* all test runners;
+* all evidence-generation scripts;
+* all validation scripts;
+* all comparison utilities;
+* all constitutional rule definitions required at runtime.
+
+The repository shall exclude:
+
+* generated caches;
+* local virtual environments;
+* unrelated build artifacts;
+* developer-specific paths;
+* credentials;
+* secrets;
+* machine-specific state;
+* previously generated evidence presented as reproduced evidence.
+
+Codex shall confirm that the submitted archive is the exact repository used for the ECS-004 execution.
+
+---
+
+# Repository Manifest
+
+Codex shall provide a machine-readable and human-readable repository manifest containing:
+
+* repository identifier;
+* repository commit or immutable content hash;
+* archive hash;
+* creation timestamp;
+* file inventory;
+* file hashes;
+* executable entry points;
+* dependency manifests;
+* configuration files;
+* test modules;
+* evidence generators;
+* expected output locations.
+
+The manifest shall permit independent confirmation that the repository remains unchanged throughout assessment.
+
+---
+
+# Clean Environment Specification
+
+Codex shall provide an exact clean-environment specification containing:
+
+* supported operating system;
+* operating system version;
+* processor architecture;
+* runtime language versions;
+* package-manager versions;
+* database requirements;
+* service requirements;
+* environment variables;
+* filesystem requirements;
+* locale;
+* timezone;
+* encoding;
+* deterministic clock assumptions;
+* network requirements;
+* prohibited network dependencies;
+* minimum resource requirements.
+
+All environmental requirements shall be explicit.
+
+No requirement may depend upon undocumented developer knowledge.
+
+---
+
+# Dependency Specification
+
+Codex shall provide:
+
+* complete dependency manifests;
+* exact dependency versions;
+* lock files;
+* transitive dependency resolution;
+* external executable requirements;
+* installation commands;
+* dependency integrity hashes where available;
+* offline or mirrored installation instructions where required.
+
+Floating dependency versions shall not be accepted unless Codex demonstrates that they cannot affect reproducibility.
+
+---
+
+# Installation Procedure
+
+Codex shall provide a deterministic installation procedure beginning from a clean environment.
+
+The procedure shall include exact commands for:
+
+* repository extraction;
+* environment creation;
+* dependency installation;
+* service initialization;
+* database initialization;
+* schema initialization;
+* fixture installation;
+* configuration validation;
+* installation verification.
+
+Every command shall identify:
+
+* required working directory;
+* expected exit code;
+* expected output;
+* failure condition;
+* recovery instruction where constitutionally permitted.
+
+---
+
+# Execution Procedure
+
+Codex shall provide a single authoritative execution procedure capable of running the complete ECS-004 assessment.
+
+Where feasible, Codex shall provide one top-level command that performs:
+
+1. environment validation;
+2. repository validation;
+3. test discovery;
+4. behavioral execution;
+5. evidence generation;
+6. evidence validation;
+7. deterministic comparison;
+8. fail-closed mutation testing;
+9. report generation;
+10. final result emission.
+
+If multiple commands are unavoidable, their order and dependencies shall be explicit.
+
+---
+
+# Behavioral Inventory
+
+Codex shall provide a complete machine-readable behavioral inventory mapping every certifiable capability to its implementation and evidence.
+
+The inventory shall include at minimum:
+
+* behavior identifier;
+* governing constitutional order;
+* constitutional requirement;
+* source implementation location;
+* test location;
+* execution command;
+* expected result;
+* evidence artifact;
+* evidence schema;
+* failure condition;
+* reproducibility criterion.
+
+The inventory shall cover:
+
+* learning dataset lifecycle;
+* feature engineering;
+* experiment execution;
+* hypothesis lifecycle;
+* model lifecycle;
+* explainability generation;
+* learning provenance;
+* knowledge publication;
+* behavioral evidence generation;
+* advisory-only authority;
+* separation from enterprise truth;
+* fail-closed enforcement.
+
+No constitutional responsibility may remain unmapped.
+
+---
+
+# Test Inventory
+
+Codex shall provide a complete test inventory containing:
+
+* test identifier;
+* test module;
+* behavior under test;
+* constitutional requirement;
+* test classification;
+* prerequisites;
+* input fixtures;
+* expected output;
+* expected evidence;
+* expected failure behavior;
+* deterministic comparison method.
+
+The inventory shall distinguish:
+
+* positive-path tests;
+* negative-path tests;
+* boundary tests;
+* lifecycle tests;
+* determinism tests;
+* provenance tests;
+* explainability tests;
+* uncertainty tests;
+* authority-boundary tests;
+* fail-closed tests;
+* evidence-integrity tests;
+* replay tests.
+
+---
+
+# Fixture and Input Package
+
+Codex shall provide every dataset, fixture, seed, model input, configuration input, and reference artifact required for independent execution.
+
+Each input shall possess:
+
+* immutable identifier;
+* version;
+* source;
+* purpose;
+* schema;
+* integrity hash;
+* expected consumer;
+* provenance record.
+
+Generated fixtures shall include deterministic generation procedures and fixed seeds.
+
+No test may depend upon unavailable external data.
+
+---
+
+# Determinism Controls
+
+Codex shall identify and control every source of execution variability, including:
+
+* random seeds;
+* timestamps;
+* ordering;
+* concurrency;
+* asynchronous execution;
+* floating-point behavior;
+* locale;
+* timezone;
+* filesystem ordering;
+* generated identifiers;
+* database sequencing;
+* external service responses;
+* environment-specific paths.
+
+Codex shall document any permitted nondeterministic fields and provide a canonical normalization procedure.
+
+Unexplained output variance shall constitute ECS-004 failure.
+
+---
+
+# Evidence Generation Package
+
+Codex shall provide executable evidence-generation behavior for every certified runtime capability.
+
+Generated evidence shall include:
+
+* execution identifier;
+* behavior identifier;
+* repository hash;
+* environment identity;
+* input identity;
+* configuration identity;
+* start and completion timestamps;
+* outcome;
+* observations;
+* output hashes;
+* failure information;
+* provenance references;
+* test references;
+* constitutional requirement references.
+
+Evidence generation shall occur during the independent execution.
+
+Previously generated evidence may be supplied only as a declared comparison baseline and shall never substitute for regenerated evidence.
+
+---
+
+# Evidence Schema Package
+
+Codex shall provide all schemas required to validate:
+
+* runtime evidence;
+* lifecycle evidence;
+* provenance evidence;
+* explainability evidence;
+* uncertainty evidence;
+* publication evidence;
+* failure evidence;
+* certification evidence;
+* comparison reports.
+
+Schema validation shall be executable through a documented command.
+
+Invalid evidence shall fail closed.
+
+---
+
+# Baseline Comparison Package
+
+Codex shall provide declared baseline outputs sufficient to compare independent reproduction results against the completed RM-002 implementation.
+
+The baseline package shall contain:
+
+* baseline artifact inventory;
+* baseline artifact hashes;
+* normalized comparison fields;
+* excluded volatile fields;
+* comparison rules;
+* equivalence thresholds;
+* justification for every threshold;
+* expected pass and fail outcomes.
+
+Thresholds shall not conceal behavioral differences.
+
+Exact comparison shall be used wherever technically possible.
+
+---
+
+# Replay and Regeneration Requirements
+
+Codex shall provide procedures to demonstrate that:
+
+* the complete suite can be rerun;
+* evidence can be regenerated from source;
+* regenerated evidence does not depend upon prior evidence;
+* identical inputs produce equivalent outputs;
+* historical model and dataset versions remain reproducible;
+* archived learning products remain independently inspectable;
+* lifecycle transitions can be reconstructed from evidence.
+
+The reproduction process shall begin with empty evidence-output directories.
+
+---
+
+# Fail-Closed Mutation Package
+
+Codex shall provide a controlled mutation suite demonstrating constitutional failure when required conditions are violated.
+
+The suite shall include mutations for:
+
+* missing datasets;
+* altered dataset hashes;
+* invalid feature lineage;
+* missing experiment evidence;
+* incomplete hypothesis uncertainty;
+* invalid model provenance;
+* missing explainability;
+* unauthorized publication;
+* operational authority assignment;
+* attempted establishment of enterprise truth;
+* altered evidence;
+* missing evidence;
+* invalid evidence schema;
+* nondeterministic execution;
+* repository tampering;
+* dependency drift.
+
+Each mutation shall produce an expected failure result and objective failure evidence.
+
+A mutation that passes unexpectedly shall constitute certification failure.
+
+---
+
+# Independence Requirements
+
+The submitted package shall permit execution without:
+
+* communication with the original developer;
+* access to the original development machine;
+* access to undocumented services;
+* manually supplied identifiers;
+* hidden credentials;
+* private package registries unless explicitly packaged and authorized;
+* preexisting databases;
+* preexisting evidence;
+* cached model artifacts;
+* cached datasets;
+* manual correction of generated outputs.
+
+Any unavoidable external dependency shall be explicitly identified and constitutionally justified.
+
+---
+
+# Auditor Instructions
+
+Codex shall provide an auditor runbook containing:
+
+1. prerequisites;
+2. archive integrity verification;
+3. environment construction;
+4. installation;
+5. configuration;
+6. repository verification;
+7. behavioral inventory review;
+8. full-suite execution;
+9. evidence regeneration;
+10. evidence validation;
+11. deterministic comparison;
+12. mutation execution;
+13. result interpretation;
+14. failure diagnosis;
+15. cleanup;
+16. rerun procedure.
+
+The runbook shall contain exact commands and expected results.
+
+---
+
+# Machine-Readable Results
+
+The complete execution shall generate a machine-readable final result containing:
+
+* overall status;
+* execution identifier;
+* repository hash;
+* environment hash or identity;
+* behaviors discovered;
+* behaviors executed;
+* behaviors passed;
+* behaviors failed;
+* behaviors skipped;
+* evidence artifacts generated;
+* schema-validation results;
+* deterministic comparison results;
+* mutation results;
+* unresolved deviations;
+* ECS-004 readiness conclusion.
+
+The only permitted overall statuses shall be:
+
+* PASS;
+* FAIL;
+* INCOMPLETE.
+
+No ambiguous status shall be emitted.
+
+---
+
+# Human-Readable Results
+
+Codex shall also generate a human-readable report containing:
+
+* executive result;
+* repository identity;
+* environment identity;
+* execution summary;
+* behavioral coverage;
+* deterministic reproduction findings;
+* evidence-regeneration findings;
+* fail-closed findings;
+* constitutional authority-boundary findings;
+* deviations;
+* unresolved deficiencies;
+* recommended disposition.
+
+The report shall distinguish observed facts from conclusions.
+
+---
+
+# Submission Integrity
+
+Codex shall calculate and report cryptographic hashes for:
+
+* repository archive;
+* evidence archive;
+* manifest;
+* dependency lock files;
+* behavioral inventory;
+* test inventory;
+* baseline comparison package;
+* final reports.
+
+All hashes shall be generated after package completion.
+
+---
+
+# Prohibited Actions
+
+Codex shall not:
+
+* alter implementation to obtain a passing result;
+* weaken tests;
+* remove failing behaviors;
+* suppress errors;
+* replace regenerated evidence with prior evidence;
+* omit failed tests;
+* classify failures as expected without constitutional authority;
+* redefine equivalence after execution;
+* modify constitutional requirements;
+* infer certification from test count alone;
+* declare ECS-004 compliance.
+
+Codex shall prepare the assessment materials and report observed execution results.
+
+The independent auditor shall determine certification.
+
+---
+
+# Required Deliverables
+
+Codex shall return:
+
+1. **ENTERPRISE_LEARNING_ECS004_REPOSITORY.zip**
+2. **ENTERPRISE_LEARNING_ECS004_BASELINE_EVIDENCE.zip**
+3. **ECS004_REPOSITORY_MANIFEST.json**
+4. **ECS004_REPOSITORY_MANIFEST.md**
+5. **ECS004_ENVIRONMENT_SPECIFICATION.md**
+6. **ECS004_INSTALLATION_RUNBOOK.md**
+7. **ECS004_AUDITOR_EXECUTION_RUNBOOK.md**
+8. **ECS004_BEHAVIORAL_INVENTORY.json**
+9. **ECS004_TEST_INVENTORY.json**
+10. **ECS004_INPUT_AND_FIXTURE_MANIFEST.json**
+11. **ECS004_EVIDENCE_SCHEMA_MANIFEST.json**
+12. **ECS004_BASELINE_COMPARISON_RULES.json**
+13. **ECS004_DETERMINISM_CONTROLS.md**
+14. **ECS004_MUTATION_INVENTORY.json**
+15. **ECS004_EXPECTED_RESULTS.json**
+16. **ECS004_PACKAGE_HASHES.sha256**
+17. **ECS004_SUBMISSION_COMPLETENESS_REPORT.md**
+
+Codex shall also include any executable scripts referenced by these documents inside the repository archive.
+
+---
+
+# Submission Completeness Verification
+
+Before returning the package, Codex shall verify that:
+
+* every required deliverable exists;
+* every referenced file exists;
+* every command is executable;
+* every manifest entry resolves;
+* every required input is included;
+* every dependency is declared;
+* every behavior is mapped;
+* every test is mapped;
+* every evidence type has a schema;
+* every baseline has a comparison rule;
+* every mutation has an expected result;
+* all archive hashes are valid;
+* no secret material is present;
+* no developer-specific path remains;
+* execution can begin from a clean environment.
+
+Any unmet requirement shall be reported as an unresolved submission deficiency.
+
+---
+
+# Completion Response
+
+Upon completion, Codex shall return only:
+
+* the repository archive;
+* the baseline evidence archive;
+* the required manifests and runbooks;
+* the submission completeness report;
+* the cryptographic hash file;
+* a concise inventory of unresolved deficiencies.
+
+Codex shall not state that ECS-004 has passed.
+
+The returned materials shall be submitted for independent reproduction, evidence regeneration, fail-closed validation, and constitutional certification.

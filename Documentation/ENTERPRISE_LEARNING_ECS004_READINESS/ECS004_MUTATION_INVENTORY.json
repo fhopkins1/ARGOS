@@ -1,0 +1,114 @@
+[
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "UNKNOWN_DATASET",
+    "expected_result": "FAIL",
+    "mutation": "missing datasets",
+    "mutation_id": "EL-ECS004-MUT-001"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "DETERMINISTIC_COMPARISON_FAIL",
+    "expected_result": "FAIL",
+    "mutation": "altered dataset hashes",
+    "mutation_id": "EL-ECS004-MUT-002"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "UNKNOWN_DATASET",
+    "expected_result": "FAIL",
+    "mutation": "invalid feature lineage",
+    "mutation_id": "EL-ECS004-MUT-003"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "EXPERIMENT_METRICS_REQUIRED",
+    "expected_result": "FAIL",
+    "mutation": "missing experiment evidence",
+    "mutation_id": "EL-ECS004-MUT-004"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "HYPOTHESIS_MEASUREMENT_INVALID",
+    "expected_result": "FAIL",
+    "mutation": "incomplete hypothesis uncertainty",
+    "mutation_id": "EL-ECS004-MUT-005"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "MODEL_EXPERIMENT_REQUIRED",
+    "expected_result": "FAIL",
+    "mutation": "invalid model provenance",
+    "mutation_id": "EL-ECS004-MUT-006"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "PUBLICATION_EXPLAINABILITY_REQUIRED",
+    "expected_result": "FAIL",
+    "mutation": "missing explainability",
+    "mutation_id": "EL-ECS004-MUT-007"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "CONSUMER_CONTRACT_INCOMPLETE",
+    "expected_result": "FAIL",
+    "mutation": "unauthorized publication",
+    "mutation_id": "EL-ECS004-MUT-008"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "BOUNDARY_FAIL_CLOSED",
+    "expected_result": "FAIL",
+    "mutation": "operational authority assignment",
+    "mutation_id": "EL-ECS004-MUT-009"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "BOUNDARY_FAIL_CLOSED",
+    "expected_result": "FAIL",
+    "mutation": "attempted establishment of enterprise truth",
+    "mutation_id": "EL-ECS004-MUT-010"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "SCHEMA_OR_HASH_VALIDATION_FAIL",
+    "expected_result": "FAIL",
+    "mutation": "altered evidence",
+    "mutation_id": "EL-ECS004-MUT-011"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "PUBLICATION_EVIDENCE_REQUIRED",
+    "expected_result": "FAIL",
+    "mutation": "missing evidence",
+    "mutation_id": "EL-ECS004-MUT-012"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "SCHEMA_VALIDATION_FAIL",
+    "expected_result": "FAIL",
+    "mutation": "invalid evidence schema",
+    "mutation_id": "EL-ECS004-MUT-013"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "DETERMINISTIC_COMPARISON_FAIL",
+    "expected_result": "FAIL",
+    "mutation": "nondeterministic execution",
+    "mutation_id": "EL-ECS004-MUT-014"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "REPOSITORY_HASH_MISMATCH",
+    "expected_result": "FAIL",
+    "mutation": "repository tampering",
+    "mutation_id": "EL-ECS004-MUT-015"
+  },
+  {
+    "evidence_requirement": "objective failure evidence with requirement and behavior mapping",
+    "expected_failure_code": "ENVIRONMENT_SPEC_MISMATCH",
+    "expected_result": "FAIL",
+    "mutation": "dependency drift",
+    "mutation_id": "EL-ECS004-MUT-016"
+  }
+]
