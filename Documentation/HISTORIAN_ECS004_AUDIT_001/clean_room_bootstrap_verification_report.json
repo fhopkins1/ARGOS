@@ -1,0 +1,89 @@
+{
+  "bootstrap_returncode": 0,
+  "bootstrap_status": "PASS",
+  "bootstrap_stderr_digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "bootstrap_stdout_digest": "42301c93ea2a93ee2c7109f7f06e6ad468135113dea174650d8884f137e5344d",
+  "clean_room_fingerprint": "f0dcb9a7b12c4dfc1e6dd07adde873209ed6b9732216c3df322d424d783b5482",
+  "developer_knowledge_required": false,
+  "documented_command": "python Scripts/historian_rm004_clean_room_auditor.py",
+  "manual_intervention_required": false,
+  "repository_snapshot": {
+    "candidate_digest": "12850d87dc1a09781265e353b6ea7970ef49dd9e",
+    "repository_root": "C:\\Users\\Fletc\\OneDrive\\Documents\\ARGOS 2",
+    "required_assets": [
+      {
+        "category": "source",
+        "certification_role": "Historian runtime behavioral certification",
+        "exists": true,
+        "path": "src\\argos\\historian\\enterprise_information_journey.py",
+        "required": true,
+        "sha256": "37d02ae7b51a6a93f05e865a99e60fe3fcf5ede40b65eb23ace109db15ca1af2"
+      },
+      {
+        "category": "certification_asset",
+        "certification_role": "Historian runtime behavioral certification",
+        "exists": true,
+        "path": "Scripts\\historian_rm002a_behavioral_completion.py",
+        "required": true,
+        "sha256": "18bafaedc84357cb0db4d4a5bae6601a6901c74598311121353d204b51afd777"
+      },
+      {
+        "category": "certification_asset",
+        "certification_role": "ECS-003 baseline certification",
+        "exists": true,
+        "path": "Scripts\\historian_ecs003_audit_003.py",
+        "required": true,
+        "sha256": "ad061ed1729ea0dda879bb6e08bb911b8300687f40e672d63d6f57ad8a954a45"
+      },
+      {
+        "category": "certification_asset",
+        "certification_role": "ECS-004 reproducibility readiness",
+        "exists": true,
+        "path": "Scripts\\historian_rm004_reproducibility_readiness.py",
+        "required": true,
+        "sha256": "ba6d4bf1ff70b6cf94f27013ec7c0b9b688eb5abb173007fcd8f49af989f7ead"
+      },
+      {
+        "category": "certification_asset",
+        "certification_role": "auditor automation entry point",
+        "exists": true,
+        "path": "Scripts\\historian_rm004_clean_room_auditor.py",
+        "required": true,
+        "sha256": "29e5e4bda23cd399032902d99eb979cba14173e7730c9a765e6237559ae126d6"
+      },
+      {
+        "category": "certification_suite",
+        "certification_role": "Historian runtime behavioral certification",
+        "exists": true,
+        "path": "Tests\\test_historian_rm002a_enterprise_information_journey_runtime.py",
+        "required": true,
+        "sha256": "5ab71f985613ce2c85df42e6f121751bca7ab08396c43642e88e2475b7017d79"
+      },
+      {
+        "category": "certification_suite",
+        "certification_role": "Historian runtime behavioral certification",
+        "exists": true,
+        "path": "Tests\\test_historian_rm002a_behavioral_completion.py",
+        "required": true,
+        "sha256": "294dfdc9201e70a548b10e20794b8b37c4c5dc3dd5b182e37819ba72ee0dfffc"
+      },
+      {
+        "category": "certification_suite",
+        "certification_role": "ECS-003 baseline certification",
+        "exists": true,
+        "path": "Tests\\test_historian_ecs003_audit_003.py",
+        "required": true,
+        "sha256": "7b0322fdd255746e1c42906aae21fb508ed79ae20ff4ffe72d916778c02fb776"
+      },
+      {
+        "category": "certification_suite",
+        "certification_role": "ECS-004 reproducibility readiness",
+        "exists": true,
+        "path": "Tests\\test_historian_rm004_reproducibility_readiness.py",
+        "required": true,
+        "sha256": "51b68990d5113fd76b95e66a83e32a40d28810a3597e5be24b4009f67cfde103"
+      }
+    ],
+    "snapshot_complete": true
+  }
+}
