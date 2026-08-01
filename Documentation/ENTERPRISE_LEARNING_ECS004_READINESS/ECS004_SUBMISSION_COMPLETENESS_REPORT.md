@@ -2,7 +2,7 @@
 
 Observed facts:
 
-* Repository commit: `e1546d3b9cfd5c9c9b8c9b945b0a27c79620843f`
+* Repository commit: `87a88bb9ba9b2b1840ab191f514678556caf3a2d`
 * Required behavior mappings: 12
 * Required tests mapped: 8
 * Required mutations mapped: 16
