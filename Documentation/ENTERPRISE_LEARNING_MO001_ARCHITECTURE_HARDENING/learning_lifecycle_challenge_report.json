@@ -1,0 +1,115 @@
+{
+  "disposition": "PASS",
+  "long_term_scalability": "valid for multiple domains, high-volume experiments, and future enterprise instances because identity, lineage, and archival rules are stable",
+  "order_id": "ENTERPRISE-LEARNING-MO-001-006",
+  "scientific_governance_assessment": "failed, negative, inconclusive, contradictory, replication, and supersession outcomes remain preserved through evidence lifecycle",
+  "simplification_opportunities": [],
+  "state_assessment": [
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Proposed"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Defined"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Prepared"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Experimented"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Validated"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Published"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Active"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Superseded"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Retired"
+    },
+    {
+      "constitutionally_distinct": true,
+      "disposition": "Retain",
+      "state": "Archived"
+    }
+  ],
+  "transition_assessment": [
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Proposed",
+      "to": "Defined"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Defined",
+      "to": "Prepared"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Prepared",
+      "to": "Experimented"
+    },
+    {
+      "authority": "Decision Laboratory independent validation",
+      "evidence_required": true,
+      "from": "Experimented",
+      "to": "Validated"
+    },
+    {
+      "authority": "Enterprise Learning publication authority; Commander required for enterprise adoption",
+      "evidence_required": true,
+      "from": "Validated",
+      "to": "Published"
+    },
+    {
+      "authority": "Enterprise Learning publication authority; Commander required for enterprise adoption",
+      "evidence_required": true,
+      "from": "Published",
+      "to": "Active"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Active",
+      "to": "Superseded"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Superseded",
+      "to": "Retired"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Retired",
+      "to": "Archived"
+    }
+  ]
+}
