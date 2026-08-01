@@ -1,0 +1,34 @@
+{
+  "authority_preserved": true,
+  "determination": "explainability behavior implemented with objective evidence",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-XAI-001": {
+      "assumptions": [
+        "fixture population is representative only for certification behavior",
+        "consumer must treat output as advisory"
+      ],
+      "digest": "14631cb0550e7141499165fb25cdabd7688dcbd4b4185d51d35452f77e05e77a",
+      "evidence_id": "EL-EVID-59618f157aff",
+      "explanation_id": "EL-XAI-001",
+      "feature_importance": {
+        "mode": 0.22,
+        "risk_adjusted_return": 0.78
+      },
+      "product_id": "EL-MODEL-001",
+      "reproducibility": "REPRODUCIBLE_WITH_DECLARED_VARIANCE",
+      "supporting_evidence": [
+        "EL-EVID-9ee452849fcf",
+        "EL-EVID-3ab22aa9ccd9",
+        "EL-EVID-03a1d0ce5576",
+        "EL-EVID-0181d1a60ce9"
+      ],
+      "uncertainty": 0.12
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-006",
+  "title": "Explainability Runtime"
+}

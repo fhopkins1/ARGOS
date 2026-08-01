@@ -1,0 +1,50 @@
+[
+  {
+    "blocks_certification": false,
+    "category": "BOUNDARY_FAIL_CLOSED",
+    "evidence": {
+      "allowed": false,
+      "disposition": "FAIL_CLOSED",
+      "event_time": "2026-08-01T16:38:00+00:00",
+      "operation": "AUTHORIZE_TRADE_EXECUTION",
+      "requested_authority": "TRADER_EXECUTION_AUTHORITY",
+      "requesting_component": "enterprise-learning"
+    },
+    "finding_id": "EL-RM002-FIND-001",
+    "severity": "INFO",
+    "status": "CLOSED",
+    "subject": "AUTHORIZE_TRADE_EXECUTION"
+  },
+  {
+    "blocks_certification": false,
+    "category": "BOUNDARY_FAIL_CLOSED",
+    "evidence": {
+      "allowed": false,
+      "disposition": "FAIL_CLOSED",
+      "event_time": "2026-08-01T16:38:00+00:00",
+      "operation": "MODIFY_HISTORIAN_RECORD",
+      "requested_authority": "HISTORIAN_CUSTODY_AUTHORITY",
+      "requesting_component": "enterprise-learning"
+    },
+    "finding_id": "EL-RM002-FIND-002",
+    "severity": "INFO",
+    "status": "CLOSED",
+    "subject": "MODIFY_HISTORIAN_RECORD"
+  },
+  {
+    "blocks_certification": false,
+    "category": "BOUNDARY_FAIL_CLOSED",
+    "evidence": {
+      "allowed": false,
+      "disposition": "FAIL_CLOSED",
+      "event_time": "2026-08-01T16:38:00+00:00",
+      "operation": "CERTIFY_PERFORMANCE_TRUTH",
+      "requested_authority": "PERFORMANCE_TRUTH_AUTHORITY",
+      "requesting_component": "enterprise-learning"
+    },
+    "finding_id": "EL-RM002-FIND-003",
+    "severity": "INFO",
+    "status": "CLOSED",
+    "subject": "CERTIFY_PERFORMANCE_TRUTH"
+  }
+]

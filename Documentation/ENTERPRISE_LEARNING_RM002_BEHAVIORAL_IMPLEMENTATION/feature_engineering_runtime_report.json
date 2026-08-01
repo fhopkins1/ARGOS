@@ -1,0 +1,31 @@
+{
+  "authority_preserved": true,
+  "determination": "feature behavior implemented with lineage and quality evidence",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-FEAT-001": {
+      "dataset_id": "EL-DS-001",
+      "digest": "51bad6eeadd87c68914c2824a853368165497f7ba335dee7070f0bc0f8498f37",
+      "evidence_id": "EL-EVID-3ab22aa9ccd9",
+      "feature_id": "EL-FEAT-001",
+      "limitations": [
+        "not an execution signal"
+      ],
+      "quality_measurements": {
+        "determinism": 1.0,
+        "lineage_completeness": 1.0,
+        "non_null_ratio": 1.0
+      },
+      "source_fields": [
+        "return",
+        "risk"
+      ],
+      "transformation": "risk_adjusted_return = return / max(risk, 0.01)"
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-002",
+  "title": "Feature Engineering Runtime"
+}

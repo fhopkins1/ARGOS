@@ -1,0 +1,239 @@
+### ENTERPRISE-LEARNING-RM-002-001
+
+# Learning Dataset Runtime
+
+## Purpose
+
+This order establishes the executable runtime behavior governing the complete lifecycle of learning datasets used by the Enterprise Learning Office.
+
+Its purpose is to ensure every dataset is created, validated, versioned, published, and retired through deterministic workflows that generate complete behavioral evidence suitable for independent certification under Enterprise Constitutional Standard ECS-003.
+
+This order governs implementation behavior only and shall not modify constitutional architecture.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* Enterprise Truth Doctrine;
+* Enterprise Evidence Doctrine;
+* Enterprise Audit Doctrine;
+* Enterprise Reproducibility Doctrine;
+* Workflow Ownership Doctrine;
+* Historian Constitutional Baseline;
+* Performance Truth Constitutional Baseline;
+* ENTERPRISE-LEARNING-RM-001;
+* ENTERPRISE-LEARNING-MO-001;
+* ENTERPRISE-LEARNING-RM-002.
+
+---
+
+# Runtime Objectives
+
+The Learning Dataset Runtime shall implement deterministic behavior governing:
+
+* dataset creation;
+* dataset validation;
+* dataset registration;
+* dataset versioning;
+* dataset publication;
+* dataset retirement;
+* dataset reproducibility verification;
+* behavioral evidence generation.
+
+Every dataset lifecycle transition shall be observable.
+
+---
+
+# Dataset Identity
+
+Every dataset shall possess a unique immutable Dataset Identifier.
+
+The identifier shall never be reused.
+
+Dataset identity shall remain stable across every version.
+
+---
+
+# Dataset Registration
+
+Every dataset shall be registered before use.
+
+Registration shall record:
+
+* dataset identifier;
+* dataset name;
+* owner workflow;
+* creation timestamp;
+* intended purpose;
+* originating data sources;
+* governing schema;
+* initial version.
+
+Unregistered datasets shall fail closed.
+
+---
+
+# Dataset Creation Runtime
+
+Dataset creation shall execute through deterministic runtime behavior.
+
+Creation shall:
+
+* construct the dataset;
+* normalize input data;
+* apply approved preprocessing;
+* verify structural integrity;
+* generate reproducible outputs.
+
+Creation behavior shall be repeatable.
+
+---
+
+# Dataset Validation Runtime
+
+Validation shall verify:
+
+* schema compliance;
+* required fields;
+* permitted value ranges;
+* duplicate detection;
+* completeness;
+* consistency;
+* referential integrity.
+
+Validation failures shall prevent publication.
+
+---
+
+# Dataset Versioning Runtime
+
+Every modification shall create a new immutable dataset version.
+
+Version history shall preserve:
+
+* previous versions;
+* modification reason;
+* authoring workflow;
+* execution timestamp;
+* reproducibility references.
+
+Historical versions shall never be overwritten.
+
+---
+
+# Dataset Publication Runtime
+
+Publication shall verify:
+
+* successful validation;
+* reproducibility certification;
+* required metadata;
+* version integrity;
+* evidence completeness.
+
+Only validated datasets may be published.
+
+---
+
+# Dataset Retirement Runtime
+
+Retirement shall:
+
+* prevent future operational use;
+* preserve historical accessibility;
+* maintain version history;
+* preserve reproducibility records;
+* generate retirement evidence.
+
+Retired datasets shall remain auditable.
+
+---
+
+# Deterministic Execution
+
+Identical inputs, configuration, preprocessing behavior, and execution environment shall produce identical datasets.
+
+Behavior exhibiting nondeterministic output shall fail certification.
+
+---
+
+# Runtime Evidence
+
+Execution shall generate objective behavioral evidence including:
+
+* dataset identifier;
+* execution identifier;
+* lifecycle transition;
+* timestamps;
+* validation results;
+* version identifier;
+* publication status;
+* retirement status;
+* execution outcome.
+
+Evidence shall be immutable.
+
+---
+
+# Failure Handling
+
+Runtime shall fail closed upon detection of:
+
+* missing required metadata;
+* validation failure;
+* schema incompatibility;
+* unauthorized modification;
+* duplicate version identifiers;
+* incomplete provenance;
+* reproducibility failure;
+* evidence generation failure.
+
+No invalid dataset shall progress beyond the failing stage.
+
+---
+
+# Interface Constraints
+
+The Learning Dataset Runtime may consume enterprise information.
+
+It shall never:
+
+* establish enterprise truth;
+* modify constitutional ownership;
+* issue operational decisions;
+* override enterprise governance.
+
+---
+
+# Behavioral Evidence Requirements
+
+The implementation shall produce independently verifiable evidence demonstrating:
+
+* deterministic dataset creation;
+* successful validation;
+* immutable versioning;
+* controlled publication;
+* controlled retirement;
+* complete lifecycle traceability;
+* reproducible execution;
+* fail-closed enforcement.
+
+---
+
+# Completion Criteria
+
+This order shall be considered complete when independent auditors can verify that:
+
+* every dataset lifecycle stage executes deterministically;
+* every transition generates immutable behavioral evidence;
+* every published dataset satisfies validation requirements;
+* every dataset version is historically reproducible;
+* every retirement preserves complete auditability;
+* all constitutional constraints remain enforced;
+* all failures terminate safely through fail-closed behavior.
+
+Successful completion authorizes implementation of **ENTERPRISE-LEARNING-RM-002-002 — Feature Engineering Runtime**.

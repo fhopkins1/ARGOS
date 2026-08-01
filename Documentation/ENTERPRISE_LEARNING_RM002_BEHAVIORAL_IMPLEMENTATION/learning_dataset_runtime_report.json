@@ -1,0 +1,58 @@
+{
+  "authority_preserved": true,
+  "determination": "dataset lifecycle behavior implemented",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-DS-001": {
+      "dataset_id": "EL-DS-001",
+      "digest": "fbf237158cef78ed0c9b971154d1cd16ce173e42b8e2d9af64aa0e0336862e58",
+      "evidence_id": "EL-EVID-9ee452849fcf",
+      "limitations": [
+        "fixture-scale dataset",
+        "advisory learning only"
+      ],
+      "owner_refs": [
+        "Historian Office",
+        "Performance Truth Office"
+      ],
+      "purpose": "Identify repeatable patterns in completed workflow outcomes without owning truth.",
+      "records": [
+        {
+          "mode": "paper",
+          "return": 0.04,
+          "risk": 0.2,
+          "workflow": "WF-001"
+        },
+        {
+          "mode": "paper",
+          "return": -0.01,
+          "risk": 0.7,
+          "workflow": "WF-002"
+        },
+        {
+          "mode": "paper",
+          "return": 0.03,
+          "risk": 0.3,
+          "workflow": "WF-003"
+        }
+      ],
+      "reproducibility": "REPRODUCIBLE",
+      "source_refs": [
+        "HISTORIAN:JOURNEY-EL-001",
+        "PERFORMANCE-TRUTH:PT-EL-001"
+      ],
+      "state": "VALIDATED",
+      "validation_rules": [
+        "source ownership retained",
+        "records are immutable snapshots",
+        "no canonical truth mutation"
+      ],
+      "version": "1.0.0"
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-001",
+  "title": "Learning Dataset Runtime"
+}

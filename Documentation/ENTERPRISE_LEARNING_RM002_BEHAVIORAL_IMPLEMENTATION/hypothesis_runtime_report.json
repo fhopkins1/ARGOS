@@ -1,0 +1,29 @@
+{
+  "authority_preserved": true,
+  "determination": "hypothesis behavior implemented with confidence and uncertainty",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-HYP-001": {
+      "confidence": 0.81,
+      "digest": "937207371ee80fb96d0f32f599379e9a3a8258a8c037856c7b20f51389697da5",
+      "evidence_id": "EL-EVID-e152178dceed",
+      "falsification_criteria": [
+        "support fails if lower-risk cases do not outperform higher-risk cases"
+      ],
+      "hypothesis_id": "EL-HYP-001",
+      "objective": "Lower risk completed workflows produce more stable performance-truth outcomes.",
+      "status": "SUPPORTED",
+      "supporting_evidence": [
+        "EL-EVID-9ee452849fcf",
+        "EL-EVID-3ab22aa9ccd9",
+        "EL-EVID-e152178dceed"
+      ],
+      "uncertainty": 0.12
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-004",
+  "title": "Hypothesis Runtime"
+}

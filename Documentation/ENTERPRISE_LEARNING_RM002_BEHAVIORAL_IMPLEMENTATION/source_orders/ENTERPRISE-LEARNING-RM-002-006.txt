@@ -1,0 +1,284 @@
+## ENTERPRISE-LEARNING-RM-002-006
+
+# Explainability Runtime
+
+## Purpose
+
+This order establishes the executable runtime behavior governing explainability generation for every learning product produced by the Enterprise Learning Office.
+
+Its purpose is to ensure that every published hypothesis, predictive model, causal model, anomaly model, and learning recommendation is accompanied by deterministic, reproducible, evidence-backed explanations suitable for independent certification under Enterprise Constitutional Standard ECS-003.
+
+This order governs implementation behavior only and shall not modify constitutional architecture.
+
+---
+
+# Constitutional Authority
+
+This order derives authority from:
+
+* ARGOS Constitution;
+* Enterprise Constitutional Standard ECS-003;
+* Enterprise Truth Doctrine;
+* Enterprise Evidence Doctrine;
+* Enterprise Audit Doctrine;
+* Enterprise Reproducibility Doctrine;
+* Workflow Ownership Doctrine;
+* Historian Constitutional Baseline;
+* Performance Truth Constitutional Baseline;
+* ENTERPRISE-LEARNING-RM-001;
+* ENTERPRISE-LEARNING-MO-001;
+* ENTERPRISE-LEARNING-RM-002.
+
+---
+
+# Runtime Objectives
+
+The Explainability Runtime shall implement deterministic behavior governing:
+
+* explainability request processing;
+* explanation generation;
+* feature importance computation;
+* supporting evidence collection;
+* assumption disclosure;
+* uncertainty explanation;
+* competing explanation generation;
+* explanation publication;
+* behavioral evidence generation.
+
+Every published learning product shall possess executable explainability.
+
+---
+
+# Explainability Identity
+
+Every explanation shall possess an immutable Explainability Identifier.
+
+Each explanation shall be permanently linked to:
+
+* learning product identifier;
+* model identifier, when applicable;
+* hypothesis identifier, when applicable;
+* experiment identifier;
+* dataset version;
+* feature version;
+* execution identifier.
+
+Explainability identity shall never change.
+
+---
+
+# Explainability Request Runtime
+
+Runtime shall accept explainability requests only for valid learning products.
+
+Each request shall verify:
+
+* product existence;
+* completed execution;
+* complete provenance;
+* required evidence availability;
+* valid model version.
+
+Requests failing validation shall fail closed.
+
+---
+
+# Feature Importance Runtime
+
+The runtime shall deterministically compute feature contribution information.
+
+Feature importance shall identify:
+
+* influential features;
+* relative contribution;
+* interaction effects when supported;
+* omitted feature impacts when measurable.
+
+Feature importance shall be reproducible.
+
+---
+
+# Supporting Evidence Runtime
+
+Every explanation shall reference supporting evidence including:
+
+* originating experiments;
+* observational evidence;
+* dataset versions;
+* feature lineage;
+* validation metrics;
+* behavioral evidence records.
+
+No explanation shall rely upon undocumented assertions.
+
+---
+
+# Assumption Disclosure Runtime
+
+Every published explanation shall disclose applicable assumptions including:
+
+* model assumptions;
+* statistical assumptions;
+* preprocessing assumptions;
+* feature engineering assumptions;
+* environmental assumptions;
+* execution assumptions.
+
+Assumptions shall remain immutable after publication.
+
+---
+
+# Uncertainty Explanation Runtime
+
+Every explanation shall include uncertainty information.
+
+Uncertainty reporting shall include:
+
+* confidence estimates;
+* uncertainty sources;
+* known limitations;
+* confidence intervals when applicable;
+* data sufficiency indicators;
+* model applicability boundaries.
+
+Uncertainty shall never be suppressed.
+
+---
+
+# Competing Explanation Runtime
+
+Where multiple plausible explanations exist, runtime shall generate all materially supported alternatives.
+
+Each competing explanation shall include:
+
+* supporting evidence;
+* contradictory evidence;
+* comparative confidence;
+* uncertainty differences;
+* underlying assumptions.
+
+No competing explanation shall be discarded without recorded justification.
+
+---
+
+# Explainability Publication Runtime
+
+Publication shall verify:
+
+* complete explanation generation;
+* supporting evidence references;
+* feature importance availability;
+* uncertainty reporting;
+* assumption disclosure;
+* provenance completeness;
+* behavioral evidence generation.
+
+Incomplete explanations shall fail publication.
+
+---
+
+# Deterministic Execution
+
+Identical inputs including:
+
+* model version;
+* dataset version;
+* feature version;
+* execution environment;
+* configuration;
+
+shall produce identical explainability outputs.
+
+Non-deterministic explanation generation shall fail certification.
+
+---
+
+# Runtime Evidence
+
+The Explainability Runtime shall generate immutable behavioral evidence recording:
+
+* explainability identifier;
+* learning product identifier;
+* execution identifier;
+* feature importance results;
+* evidence references;
+* assumptions disclosed;
+* uncertainty outputs;
+* competing explanations generated;
+* publication status;
+* execution timestamps;
+* runtime outcome.
+
+Evidence shall remain permanently auditable.
+
+---
+
+# Failure Handling
+
+Runtime shall fail closed upon detection of:
+
+* incomplete provenance;
+* missing supporting evidence;
+* unavailable feature lineage;
+* unresolved model version;
+* inconsistent feature importance;
+* missing uncertainty reporting;
+* incomplete assumption disclosure;
+* publication integrity failure;
+* behavioral evidence generation failure.
+
+No incomplete explanation shall be published.
+
+---
+
+# Constitutional Constraints
+
+The Explainability Runtime shall:
+
+* explain learning behavior;
+* expose supporting evidence;
+* disclose uncertainty;
+* preserve reproducibility;
+* preserve constitutional ownership.
+
+The runtime shall never:
+
+* establish enterprise truth;
+* authorize operational decisions;
+* modify constitutional responsibilities;
+* conceal uncertainty;
+* replace enterprise decision-making authority.
+
+Explainability shall remain advisory.
+
+---
+
+# Behavioral Evidence Requirements
+
+Implementation shall produce independently certifiable evidence demonstrating:
+
+* deterministic explanation generation;
+* reproducible feature importance computation;
+* complete supporting evidence linkage;
+* assumption disclosure;
+* uncertainty reporting;
+* competing explanation generation;
+* successful publication verification;
+* fail-closed constitutional enforcement.
+
+---
+
+# Completion Criteria
+
+This order shall be considered complete when independent auditors verify that:
+
+* every published learning product possesses executable explainability;
+* explanations are deterministic and reproducible;
+* feature importance is supported by objective evidence;
+* assumptions are completely disclosed;
+* uncertainty is consistently reported;
+* competing explanations are preserved where applicable;
+* immutable behavioral evidence is generated for every execution;
+* all constitutional constraints are enforced through fail-closed behavior.
+
+Successful completion authorizes implementation of **ENTERPRISE-LEARNING-RM-002-007 — Learning Provenance Runtime**.

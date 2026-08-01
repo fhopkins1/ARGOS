@@ -1,0 +1,31 @@
+{
+  "authority_preserved": true,
+  "determination": "experiment behavior implemented with deterministic execution evidence",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-EXP-001": {
+      "completed": true,
+      "dataset_id": "EL-DS-001",
+      "digest": "57bcfa8454ac969b13cbe9dbd3c1e5890aa881cecf73c15c0b8a19ace6f51e7d",
+      "evidence_id": "EL-EVID-03a1d0ce5576",
+      "experiment_id": "EL-EXP-001",
+      "feature_ids": [
+        "EL-FEAT-001"
+      ],
+      "hypothesis_id": "EL-HYP-001",
+      "method": "deterministic-fixture-partition",
+      "metrics": {
+        "replication_count": 2.0,
+        "support_score": 0.81,
+        "variance": 0.07
+      },
+      "reproducibility": "REPRODUCIBLE",
+      "seed": 42
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-003",
+  "title": "Experiment Runtime"
+}

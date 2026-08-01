@@ -1,0 +1,51 @@
+{
+  "authority_preserved": true,
+  "determination": "knowledge publication behavior implemented with consumer contracts",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-PUB-001": {
+      "consumer_contract": {
+        "authorized_consumers": [
+          "Analyst Office",
+          "Decision Laboratory",
+          "Commander Review"
+        ],
+        "permitted_uses": [
+          "advisory review",
+          "decision laboratory replay planning"
+        ],
+        "prohibited_uses": [
+          "trade execution",
+          "canonical truth mutation",
+          "performance certification"
+        ]
+      },
+      "digest": "3396a8480a7f7b5c707f723b695b97869c168164fa6631df93a96433bf757902",
+      "evidence_id": "EL-EVID-43e1fe115010",
+      "evidence_refs": [
+        "EL-EVID-9ee452849fcf",
+        "EL-EVID-3ab22aa9ccd9",
+        "EL-EVID-03a1d0ce5576",
+        "EL-EVID-0181d1a60ce9",
+        "EL-EVID-59618f157aff"
+      ],
+      "explainability_ref": "EL-XAI-001",
+      "product_class": "PREDICTIVE_MODEL",
+      "product_id": "EL-MODEL-001",
+      "provenance_refs": [
+        "EL-PROV-653122ad0ede",
+        "EL-PROV-988362324029",
+        "EL-PROV-c404fd556a0c",
+        "EL-PROV-d0de995949a6",
+        "EL-PROV-a9578a7f79e0"
+      ],
+      "publication_id": "EL-PUB-001",
+      "state": "PUBLISHED"
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-008",
+  "title": "Knowledge Publication Runtime"
+}

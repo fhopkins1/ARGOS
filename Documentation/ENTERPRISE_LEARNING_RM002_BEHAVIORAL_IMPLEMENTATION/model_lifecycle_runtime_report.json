@@ -1,0 +1,26 @@
+{
+  "authority_preserved": true,
+  "determination": "model lifecycle behavior implemented",
+  "deterministic": true,
+  "disposition": "PASS",
+  "item_count": 1,
+  "items": {
+    "EL-MODEL-001": {
+      "digest": "8160b4125cbf4dccf576b99b4cee3d4b7eef05a96f1f0e5fead1fc6d6f609566",
+      "evidence_id": "EL-EVID-0181d1a60ce9",
+      "experiment_id": "EL-EXP-001",
+      "lifecycle_state": "VALIDATED",
+      "model_id": "EL-MODEL-001",
+      "product_class": "PREDICTIVE_MODEL",
+      "reproducibility": "REPRODUCIBLE",
+      "validation_metrics": {
+        "calibration": 0.91,
+        "drift_warning": 0.0,
+        "holdout_support": 0.8
+      }
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-005",
+  "title": "Model Lifecycle Runtime"
+}

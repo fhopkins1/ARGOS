@@ -1,0 +1,58 @@
+{
+  "authority_preserved": true,
+  "determination": "provenance behavior implemented",
+  "deterministic": true,
+  "disposition": "PASS",
+  "graph_validation": {
+    "cycle_detected": false,
+    "disposition": "PASS",
+    "edge_count": 5,
+    "orphan_edges": []
+  },
+  "item_count": 5,
+  "items": {
+    "EL-PROV-653122ad0ede": {
+      "digest": "cc0412e8992926bdc005c49be8c73a85d2276c3fcb4dcec6e2bc91aaf9f4f4ed",
+      "edge_id": "EL-PROV-653122ad0ede",
+      "evidence_id": "EL-EVID-3cbf3f08f1e0",
+      "relationship": "FEATURE_DERIVES_FROM_SOURCE",
+      "source_id": "EL-DS-001",
+      "target_id": "EL-FEAT-001"
+    },
+    "EL-PROV-988362324029": {
+      "digest": "3cc616675daa822a68eb237d8f4a8837c3c352f2ddc24d637ed436b6d5877f4b",
+      "edge_id": "EL-PROV-988362324029",
+      "evidence_id": "EL-EVID-f41129d47d8c",
+      "relationship": "DATASET_SUPPLIES_EXPERIMENT",
+      "source_id": "EL-DS-001",
+      "target_id": "EL-EXP-001"
+    },
+    "EL-PROV-a9578a7f79e0": {
+      "digest": "56401ba59eb164ce843147f66609c92c200b9e1f299144d901ebaa49f87d1001",
+      "edge_id": "EL-PROV-a9578a7f79e0",
+      "evidence_id": "EL-EVID-ff3a30f3d379",
+      "relationship": "EXPLAINABILITY_EXPLAINS_PRODUCT",
+      "source_id": "EL-XAI-001",
+      "target_id": "EL-MODEL-001"
+    },
+    "EL-PROV-c404fd556a0c": {
+      "digest": "cc17114c1e2d6f93720305d1ae8ad216d7fed31e92c0bdf7ebbc3e6d1efcb145",
+      "edge_id": "EL-PROV-c404fd556a0c",
+      "evidence_id": "EL-EVID-34546c3acf45",
+      "relationship": "EXPERIMENT_TESTS_HYPOTHESIS",
+      "source_id": "EL-EXP-001",
+      "target_id": "EL-HYP-001"
+    },
+    "EL-PROV-d0de995949a6": {
+      "digest": "3ed73ed9eff5c7d0511888ee2b28223527902d6d18df3ca5198ce028653b139e",
+      "edge_id": "EL-PROV-d0de995949a6",
+      "evidence_id": "EL-EVID-3d130b4097fe",
+      "relationship": "MODEL_DERIVED_FROM_EXPERIMENT",
+      "source_id": "EL-EXP-001",
+      "target_id": "EL-MODEL-001"
+    }
+  },
+  "objective_behavioral_evidence": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002-007",
+  "title": "Learning Provenance Runtime"
+}
