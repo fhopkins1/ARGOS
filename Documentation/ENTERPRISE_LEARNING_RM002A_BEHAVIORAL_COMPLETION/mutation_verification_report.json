@@ -1,0 +1,72 @@
+{
+  "disposition": "PASS",
+  "mutation_count": 8,
+  "order_id": "ENTERPRISE-LEARNING-RM-002A-005",
+  "results": [
+    {
+      "disposition": "PASS",
+      "expected_failure": "UNKNOWN_DATASET",
+      "mutation": "missing dataset",
+      "mutation_id": "EL-RM002A-MUT-001",
+      "objective_evidence": true,
+      "observed_failure": "UNKNOWN_DATASET"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "UNKNOWN_DATASET",
+      "mutation": "missing feature lineage",
+      "mutation_id": "EL-RM002A-MUT-002",
+      "objective_evidence": true,
+      "observed_failure": "UNKNOWN_DATASET"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "HYPOTHESIS_MEASUREMENT_INVALID",
+      "mutation": "missing hypothesis uncertainty",
+      "mutation_id": "EL-RM002A-MUT-003",
+      "objective_evidence": true,
+      "observed_failure": "HYPOTHESIS_MEASUREMENT_INVALID"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "MODEL_EXPERIMENT_REQUIRED",
+      "mutation": "invalid model provenance",
+      "mutation_id": "EL-RM002A-MUT-004",
+      "objective_evidence": true,
+      "observed_failure": "MODEL_EXPERIMENT_REQUIRED"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "PUBLICATION_EVIDENCE_REQUIRED",
+      "mutation": "missing publication evidence",
+      "mutation_id": "EL-RM002A-MUT-005",
+      "objective_evidence": true,
+      "observed_failure": "PUBLICATION_EVIDENCE_REQUIRED"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "BOUNDARY_FAIL_CLOSED",
+      "mutation": "operational authority assignment",
+      "mutation_id": "EL-RM002A-MUT-006",
+      "objective_evidence": true,
+      "observed_failure": "BOUNDARY_FAIL_CLOSED"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "BOUNDARY_FAIL_CLOSED",
+      "mutation": "attempted enterprise truth mutation",
+      "mutation_id": "EL-RM002A-MUT-007",
+      "objective_evidence": true,
+      "observed_failure": "BOUNDARY_FAIL_CLOSED"
+    },
+    {
+      "disposition": "PASS",
+      "expected_failure": "PROVENANCE_GRAPH_FAIL",
+      "mutation": "orphan provenance edge",
+      "mutation_id": "EL-RM002A-MUT-008",
+      "objective_evidence": true,
+      "observed_failure": "PROVENANCE_GRAPH_FAIL"
+    }
+  ],
+  "unexpected_passes": []
+}

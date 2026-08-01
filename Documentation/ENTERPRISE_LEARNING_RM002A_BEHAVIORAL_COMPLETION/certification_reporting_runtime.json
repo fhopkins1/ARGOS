@@ -1,0 +1,21 @@
+{
+  "disposition": "PASS",
+  "observations_separated_from_conclusions": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-002A-007",
+  "recommended_status": "PASS",
+  "report_statements": [
+    {
+      "evidence": "repository_independence_report.json",
+      "statement": "repository independence verified"
+    },
+    {
+      "evidence": "deterministic_regeneration_report.json",
+      "statement": "deterministic regeneration verified"
+    },
+    {
+      "evidence": "mutation_verification_report.json",
+      "statement": "mutation verification verified"
+    }
+  ],
+  "status_source": "objective runtime evidence"
+}

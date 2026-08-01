@@ -1,0 +1,219 @@
+## ENTERPRISE-LEARNING-RM-002A-002
+
+### Deterministic Regeneration Program
+
+### Objective
+
+Implement a complete deterministic regeneration runtime capable of reproducing every certification artifact from identical repository state, declared inputs, documented configuration, and approved dependencies.
+
+The regeneration system shall demonstrate that repeated execution under identical conditions produces objectively equivalent outputs suitable for independent constitutional certification.
+
+No regenerated artifact shall require manual intervention.
+
+---
+
+### Implementation Requirements
+
+Implement executable runtime behavior governing deterministic regeneration of:
+
+* behavioral evidence;
+* implementation verification reports;
+* explainability reports;
+* provenance reports;
+* dependency inventories;
+* configuration manifests;
+* execution manifests;
+* certification artifacts;
+* audit reports;
+* behavioral completion summaries;
+* runtime summaries;
+* reproducibility evidence.
+
+Every regenerated artifact shall declare:
+
+* source inputs;
+* repository revision;
+* dependency versions;
+* execution parameters;
+* generation timestamp;
+* normalization method;
+* deterministic identity;
+* artifact checksum;
+* provenance chain;
+* regeneration status.
+
+---
+
+### Deterministic Execution Requirements
+
+Regeneration shall execute solely from:
+
+* submitted repository;
+* documented execution procedures;
+* declared dependencies;
+* approved datasets;
+* approved configuration;
+* clean execution environment.
+
+Execution shall prohibit:
+
+* hidden local state;
+* developer workspaces;
+* cached artifacts;
+* undocumented configuration;
+* external mutable dependencies;
+* interactive operator decisions;
+* manual artifact editing.
+
+All execution inputs shall be explicitly declared before regeneration begins.
+
+---
+
+### Artifact Regeneration Pipeline
+
+Implement executable workflows for:
+
+1. environment verification;
+2. dependency restoration;
+3. repository validation;
+4. configuration validation;
+5. behavioral execution;
+6. evidence regeneration;
+7. explainability regeneration;
+8. provenance regeneration;
+9. certification artifact regeneration;
+10. runtime summary generation;
+11. normalization;
+12. deterministic comparison preparation.
+
+Each stage shall emit objective execution evidence.
+
+---
+
+### Normalization Requirements
+
+Implement executable normalization capable of eliminating non-deterministic variation including:
+
+* timestamps;
+* randomized identifiers;
+* execution ordering where constitutionally irrelevant;
+* filesystem ordering;
+* temporary directory names;
+* platform-specific formatting;
+* permitted environmental metadata.
+
+Normalization shall never modify constitutional evidence.
+
+Normalization rules shall themselves be version-controlled and independently reproducible.
+
+---
+
+### Deterministic Equivalence Verification
+
+Following regeneration, verify:
+
+* artifact identity;
+* artifact completeness;
+* checksum reproducibility;
+* normalized equivalence;
+* deterministic execution path;
+* execution consistency;
+* provenance consistency;
+* explainability consistency;
+* evidence consistency.
+
+Any unexpected divergence shall generate certification failure evidence.
+
+---
+
+### Failure Detection
+
+Automatically detect:
+
+* missing artifacts;
+* regenerated artifact mismatches;
+* inconsistent evidence;
+* dependency drift;
+* undocumented configuration;
+* execution instability;
+* provenance divergence;
+* behavioral divergence;
+* incomplete regeneration;
+* non-deterministic outputs.
+
+Every detected failure shall fail closed.
+
+---
+
+### Evidence Requirements
+
+Generate objective evidence including:
+
+* regeneration execution logs;
+* execution manifests;
+* regenerated artifact inventories;
+* normalization reports;
+* checksum reports;
+* equivalence reports;
+* provenance verification reports;
+* execution timing summaries;
+* dependency verification reports;
+* failure reports where applicable.
+
+Evidence shall be machine-readable and independently reproducible.
+
+---
+
+### Audit Requirements
+
+Record for every regeneration:
+
+* execution identifier;
+* repository identifier;
+* repository revision;
+* dependency manifest;
+* configuration manifest;
+* execution environment;
+* regenerated artifacts;
+* normalization version;
+* comparison results;
+* execution outcome;
+* evidence references.
+
+Audit records shall be immutable.
+
+---
+
+### Testing Requirements
+
+Implement automated verification covering:
+
+* successful deterministic regeneration;
+* repeated execution equivalence;
+* missing dependency detection;
+* configuration drift detection;
+* repository modification detection;
+* artifact corruption detection;
+* normalization correctness;
+* provenance regeneration;
+* evidence regeneration;
+* fail-closed enforcement.
+
+Testing shall demonstrate deterministic reproducibility across repeated executions.
+
+---
+
+### Acceptance Criteria
+
+This order shall be considered complete only when:
+
+* every supported artifact can be regenerated automatically;
+* repeated executions produce objectively equivalent normalized outputs;
+* all regeneration inputs are explicitly declared;
+* normalization is deterministic and reproducible;
+* provenance is regenerated without manual intervention;
+* evidence is regenerated automatically;
+* execution failures fail closed;
+* regeneration evidence is independently reproducible;
+* an unrelated auditor can regenerate certification artifacts using only the submitted repository and documentation;
+* objective evidence demonstrates deterministic regeneration readiness for ECS-004 certification.
