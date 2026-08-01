@@ -1,0 +1,801 @@
+# ENTERPRISE-LEARNING-RM-001-007
+
+## Evidence and Provenance Architecture
+
+### Objective
+
+Establish the constitutional architecture governing learning evidence, experiment evidence, feature lineage, model provenance, and publication provenance within the Enterprise Learning Office.
+
+This order shall define the distinction between:
+
+* learning evidence;
+* learning lineage;
+* model provenance;
+* publication provenance;
+* historical provenance.
+
+Enterprise Learning shall own evidence and lineage created through learning activity.
+
+The Historian shall remain the exclusive constitutional owner of historical provenance and permanent historical custody.
+
+---
+
+# Constitutional Requirements
+
+The architecture shall:
+
+* assign one constitutional owner to every evidence and provenance object;
+* preserve immutable historical provenance;
+* prevent Enterprise Learning from modifying historical records;
+* preserve complete learning lineage;
+* preserve model reproducibility;
+* preserve publication traceability;
+* distinguish derived learning relationships from historical facts;
+* require deterministic identity and lifecycle governance;
+* prohibit undocumented evidence;
+* prohibit provenance reconstruction by assumption;
+* fail closed whenever lineage or provenance cannot be established.
+
+No learning product shall be published without sufficient supporting evidence and provenance.
+
+---
+
+# Evidence Architecture
+
+Enterprise Learning shall own evidence generated through its constitutional learning activities.
+
+Learning evidence shall demonstrate:
+
+* what learning activity occurred;
+* which inputs were used;
+* which transformations were performed;
+* which methods were executed;
+* which outputs were produced;
+* which validations were completed;
+* which conclusions were supported;
+* which limitations remained;
+* whether the activity was reproducible.
+
+Learning evidence shall support learning claims.
+
+It shall not create historical truth or replace authoritative enterprise records.
+
+---
+
+# Learning Evidence Classes
+
+Enterprise Learning shall govern the following evidence classes:
+
+* dataset-construction evidence;
+* dataset-validation evidence;
+* feature-generation evidence;
+* feature-validation evidence;
+* hypothesis evidence;
+* experiment evidence;
+* training evidence;
+* model-validation evidence;
+* model-comparison evidence;
+* uncertainty evidence;
+* explainability evidence;
+* reproducibility evidence;
+* publication evidence;
+* monitoring-response evidence;
+* retirement evidence;
+* supersession evidence.
+
+Each evidence class shall possess a defined constitutional purpose and lifecycle.
+
+---
+
+# Canonical Learning Evidence Object
+
+Every learning evidence object shall include:
+
+* canonical evidence identifier;
+* evidence classification;
+* constitutional owner;
+* producing workflow;
+* producing activity;
+* creation timestamp;
+* source-object references;
+* dataset references;
+* feature references;
+* hypothesis references where applicable;
+* experiment references where applicable;
+* model references where applicable;
+* method identity;
+* environment identity;
+* configuration identity;
+* result;
+* interpretation;
+* uncertainty;
+* reproducibility status;
+* custody status;
+* Historian registration reference;
+* lifecycle state.
+
+Evidence lacking these minimum elements shall not support publication.
+
+---
+
+# Learning Evidence Ownership
+
+Enterprise Learning shall possess lifecycle authority over learning evidence while that evidence remains within the active learning lifecycle.
+
+Its authority shall include:
+
+* evidence creation;
+* evidence classification;
+* evidence validation;
+* evidence association;
+* evidence qualification;
+* evidence correction through supersession;
+* evidence publication;
+* evidence retirement.
+
+Enterprise Learning shall not silently alter previously published evidence.
+
+Corrections shall create new evidence objects linked through explicit correction or supersession relationships.
+
+---
+
+# Historical Custody of Learning Evidence
+
+The Historian shall possess permanent historical custody of learning evidence accepted into the enterprise historical record.
+
+Upon Historian acceptance:
+
+* the historical copy shall become immutable;
+* Enterprise Learning shall retain a reference rather than alteration authority;
+* corrections shall be submitted as new historical artifacts;
+* supersession shall preserve the original evidence;
+* historical ordering shall remain owned by the Historian;
+* historical provenance shall remain owned by the Historian.
+
+Enterprise Learning shall not delete, rewrite, or reclassify the Historian’s preserved record.
+
+---
+
+# Experiment Evidence Architecture
+
+Every governed experiment shall produce a complete experiment evidence set.
+
+The evidence set shall include:
+
+* experiment identity;
+* associated hypothesis;
+* experimental objective;
+* dataset versions;
+* feature versions;
+* method or model version;
+* control configuration;
+* comparison configuration;
+* environment identity;
+* dependency identity;
+* randomization controls;
+* deterministic seeds where applicable;
+* evaluation metrics;
+* acceptance criteria;
+* rejection criteria;
+* raw outputs;
+* transformed outputs;
+* validation results;
+* contradictory findings;
+* uncertainty;
+* final experiment disposition;
+* reproducibility result.
+
+Experiment conclusions unsupported by an experiment evidence set shall possess no publication authority.
+
+---
+
+# Negative and Inconclusive Evidence
+
+Enterprise Learning shall preserve:
+
+* failed experiments;
+* rejected hypotheses;
+* inconclusive results;
+* contradictory results;
+* null results;
+* validation failures;
+* reproducibility failures;
+* model underperformance;
+* data deficiencies.
+
+Negative and inconclusive evidence shall not be discarded merely because it does not support publication.
+
+Such evidence shall remain available to prevent repeated error, selective reporting, and unsupported learning claims.
+
+---
+
+# Feature Lineage Architecture
+
+Enterprise Learning shall own the complete lineage of every governed feature.
+
+Feature lineage shall describe the derivation of a learning feature from authorized source information.
+
+Each feature lineage record shall include:
+
+* feature identifier;
+* feature version;
+* semantic definition;
+* source-record references;
+* source-field references;
+* transformation sequence;
+* intermediate derived values or definitions;
+* calculation logic;
+* unit conversions;
+* temporal alignment rules;
+* aggregation rules;
+* missing-value treatment;
+* uncertainty treatment;
+* validation evidence;
+* dataset usage;
+* experiment usage;
+* model usage;
+* publication usage.
+
+Feature lineage shall be deterministic and reproducible.
+
+---
+
+# Feature Lineage Boundaries
+
+Feature lineage shall begin with references to constitutionally authorized source records.
+
+It shall not redefine or modify those source records.
+
+Historical provenance shall establish:
+
+* where the source record originated;
+* when it entered enterprise custody;
+* how it changed historically;
+* which historical relationships governed it.
+
+Feature lineage shall establish:
+
+* how Enterprise Learning selected the source;
+* how the source was transformed;
+* how the resulting feature was used.
+
+The two forms of provenance shall remain constitutionally distinct.
+
+---
+
+# Model Provenance Architecture
+
+Enterprise Learning shall own model provenance for every governed model.
+
+Model provenance shall establish the complete derivational history of the model, including:
+
+* model identifier;
+* model version;
+* model class;
+* intended purpose;
+* originating hypothesis;
+* training dataset versions;
+* validation dataset versions;
+* feature versions;
+* architecture or method definition;
+* parameter configuration;
+* training configuration;
+* environment identity;
+* dependency identity;
+* randomization controls;
+* training execution identity;
+* training evidence;
+* validation evidence;
+* comparison evidence;
+* explainability evidence;
+* uncertainty evidence;
+* reproducibility evidence;
+* publication state;
+* retirement or supersession relationships.
+
+A model without complete model provenance shall not be published.
+
+---
+
+# Model Artifact Integrity
+
+Every published model shall be bound to:
+
+* executable model artifact;
+* model definition;
+* parameter state;
+* configuration state;
+* dependency state;
+* input schema;
+* output schema;
+* feature schema;
+* validation record;
+* cryptographic identity.
+
+The published model identity shall change whenever a behaviorally material component changes.
+
+Undocumented mutation of a published model is prohibited.
+
+---
+
+# Publication Provenance Architecture
+
+Enterprise Learning shall own publication provenance for every learning product it publishes.
+
+Publication provenance shall establish:
+
+* what was published;
+* which version was published;
+* who possessed publication authority;
+* which evidence supported publication;
+* which assumptions applied;
+* which limitations applied;
+* which uncertainty was disclosed;
+* which intended uses were authorized;
+* which uses were prohibited;
+* when publication occurred;
+* which consumers received the product;
+* whether the product was later restricted, withdrawn, retired, or superseded.
+
+Publication provenance shall make every publication decision traceable to its supporting learning evidence.
+
+---
+
+# Publication Evidence Threshold
+
+Before publication, the architecture shall verify the existence of:
+
+* complete object identity;
+* complete lifecycle state;
+* supporting learning evidence;
+* experiment evidence where applicable;
+* feature lineage;
+* model provenance where applicable;
+* uncertainty disclosure;
+* explainability artifacts;
+* reproducibility status;
+* Historian registration status;
+* publication authority;
+* intended-use definition;
+* prohibited-use definition.
+
+Failure of any mandatory publication requirement shall block publication.
+
+---
+
+# Historical Provenance Ownership
+
+The Historian shall retain exclusive constitutional ownership of historical provenance.
+
+Historical provenance shall govern:
+
+* historical artifact origin;
+* historical custody;
+* historical ordering;
+* historical derivation;
+* historical correction;
+* historical supersession;
+* historical journey relationships;
+* historical certification lineage;
+* historical replay.
+
+Enterprise Learning may read and reference historical provenance.
+
+It shall not:
+
+* create authoritative historical provenance;
+* modify historical provenance;
+* delete historical provenance;
+* rewrite historical lineage;
+* reorder historical events;
+* replace Historian provenance with learning lineage;
+* certify historical completeness.
+
+---
+
+# Provenance Reference Architecture
+
+Learning evidence and lineage objects shall reference Historian-owned provenance through immutable identifiers.
+
+A provenance reference shall include:
+
+* Historian artifact identifier;
+* Historian journey identifier;
+* provenance node identifier;
+* relevant provenance edge identifiers;
+* custody status;
+* source version or historical state;
+* retrieval timestamp;
+* provenance verification result.
+
+References shall not duplicate authority.
+
+The Historian record shall remain authoritative where a conflict exists between a learning reference and historical provenance.
+
+---
+
+# Derived Interpretation Boundary
+
+Enterprise Learning may create derived interpretations of historical information.
+
+Derived interpretations shall:
+
+* remain separate from source records;
+* identify the interpreting method;
+* identify the source records;
+* identify assumptions;
+* identify uncertainty;
+* identify limitations;
+* possess their own learning-object identity;
+* never alter historical provenance.
+
+An interpretation shall not be represented as part of the historical record unless separately registered with the Historian as a new artifact.
+
+---
+
+# Provenance Graph Separation
+
+The architecture shall maintain distinct but linked graph domains.
+
+## Historian Provenance Graph
+
+The Historian graph shall represent:
+
+* historical custody;
+* historical derivation;
+* historical correction;
+* historical supersession;
+* enterprise information journeys;
+* historical certification lineage.
+
+## Enterprise Learning Lineage Graph
+
+The Enterprise Learning graph shall represent:
+
+* dataset derivation;
+* feature derivation;
+* hypothesis relationships;
+* experiment relationships;
+* model derivation;
+* evidence support;
+* publication support;
+* retirement and supersession of learning products.
+
+Cross-domain edges shall be references only.
+
+Enterprise Learning shall not assert ownership over Historian graph nodes or edges.
+
+---
+
+# Evidence Support Relationships
+
+The architecture shall define explicit relationships including:
+
+* evidence supports hypothesis;
+* evidence contradicts hypothesis;
+* experiment tests hypothesis;
+* dataset supplies experiment;
+* feature derives from source;
+* feature supplies dataset;
+* dataset trains model;
+* dataset validates model;
+* evidence validates feature;
+* evidence validates model;
+* evidence supports publication;
+* product supersedes product;
+* evidence corrects evidence;
+* publication references historical provenance.
+
+Relationships shall be canonical, typed, and deterministic.
+
+Free-text association alone shall not satisfy lineage requirements.
+
+---
+
+# Evidence Lifecycle
+
+Learning evidence shall progress through deterministic lifecycle states including:
+
+* Created;
+* Registered;
+* Under Validation;
+* Validated;
+* Qualified;
+* Published;
+* Restricted;
+* Superseded;
+* Retired;
+* Invalidated.
+
+Lifecycle transitions shall require defined authority and evidence.
+
+Invalidated evidence shall remain historically preserved but shall no longer support new publication.
+
+---
+
+# Provenance Lifecycle
+
+Learning lineage and model provenance records shall progress through states including:
+
+* Initialized;
+* Accumulating;
+* Complete;
+* Verified;
+* Published;
+* Superseded;
+* Retired.
+
+A provenance record shall not become Complete until every mandatory relationship has been resolved.
+
+A learning product shall not become Published until its required provenance record is Verified.
+
+---
+
+# Correction Architecture
+
+Evidence, lineage, and provenance errors shall be corrected through append-only constitutional mechanisms.
+
+Correction shall:
+
+* preserve the original object;
+* create a correction object;
+* identify the defect;
+* identify the corrected representation;
+* link original and correction;
+* disclose publication impact;
+* determine whether dependent products remain valid;
+* register the correction with the Historian.
+
+Direct overwrite of historically registered evidence is prohibited.
+
+---
+
+# Supersession Architecture
+
+When a new evidence object, feature definition, model, or learning product replaces a prior object, supersession shall:
+
+* preserve both objects;
+* identify the predecessor;
+* identify the successor;
+* record the reason;
+* record effective time;
+* identify affected publications;
+* identify affected consumers;
+* preserve full lineage;
+* register the relationship with the Historian.
+
+Supersession shall not imply that the predecessor never existed.
+
+---
+
+# Evidence Quality Requirements
+
+Learning evidence shall be evaluated for:
+
+* relevance;
+* completeness;
+* integrity;
+* reproducibility;
+* traceability;
+* methodological validity;
+* scope alignment;
+* uncertainty disclosure;
+* contradiction disclosure;
+* temporal applicability;
+* independence where required.
+
+Evidence quality status shall be explicit.
+
+Low-quality evidence may be preserved but shall not support claims beyond its qualified scope.
+
+---
+
+# Reproducibility Architecture
+
+Every learning evidence and provenance object supporting publication shall include a reproducibility status.
+
+The status shall identify whether the object is:
+
+* Not Evaluated;
+* Reproducible;
+* Reproducible with Declared Variance;
+* Partially Reproducible;
+* Not Reproducible;
+* Reproducibility Failed.
+
+Publication rules shall define which statuses are permitted for each learning-product class.
+
+A nonreproducible product shall not be published as fully qualified.
+
+---
+
+# Custody Architecture
+
+Working custody and historical custody shall remain distinct.
+
+Enterprise Learning shall possess working custody over:
+
+* active datasets;
+* active feature definitions;
+* active hypotheses;
+* active experiments;
+* active models;
+* draft learning evidence;
+* draft publication records.
+
+The Historian shall possess permanent historical custody over accepted:
+
+* dataset versions;
+* feature versions;
+* hypothesis states;
+* experiment records;
+* model versions;
+* evidence objects;
+* publication events;
+* retirement events;
+* supersession events.
+
+Transfer to historical custody shall not transfer constitutional ownership of the learning object itself.
+
+---
+
+# Interface Requirements
+
+## Historian Interface
+
+The interface shall support:
+
+* historical provenance retrieval;
+* historical artifact verification;
+* evidence registration;
+* lineage registration;
+* publication registration;
+* correction registration;
+* supersession registration;
+* immutable custody acknowledgment.
+
+## Performance Truth Interface
+
+The interface shall provide authoritative performance records used as learning inputs.
+
+Enterprise Learning shall reference those records without assuming performance-certification authority.
+
+## Monitoring Interface
+
+The interface shall provide drift, anomaly, degradation, and operational-observation records that may generate new learning evidence.
+
+## Librarian Interface
+
+The interface shall support cataloging and discovery of published evidence, lineage, and learning products without transferring ownership.
+
+All interfaces shall preserve authority boundaries.
+
+---
+
+# Evidence and Provenance Validation
+
+The architecture shall validate:
+
+* evidence identity;
+* evidence ownership;
+* source references;
+* lineage completeness;
+* provenance completeness;
+* relationship validity;
+* model-artifact binding;
+* publication-evidence binding;
+* historical provenance references;
+* custody status;
+* lifecycle legality;
+* correction integrity;
+* supersession integrity;
+* reproducibility status.
+
+Validation shall be deterministic and independently verifiable.
+
+---
+
+# Failure Conditions
+
+The architecture shall reject:
+
+* orphaned evidence;
+* evidence without producing activity;
+* features without source lineage;
+* models without training provenance;
+* publications without supporting evidence;
+* altered historical provenance;
+* undocumented transformations;
+* missing uncertainty;
+* missing contradictory evidence;
+* missing reproducibility status;
+* broken Historian references;
+* ambiguous custody;
+* circular derivation;
+* unauthorized correction;
+* silent supersession;
+* provenance claims unsupported by records.
+
+Unresolved provenance failure shall prevent publication.
+
+---
+
+# Fail-Closed Requirements
+
+When evidence or provenance cannot be established, Enterprise Learning shall:
+
+* reject qualification;
+* reject publication;
+* preserve existing valid records;
+* generate a constitutional finding;
+* identify the missing or invalid relationship;
+* prevent downstream reliance;
+* submit failure evidence to the Historian;
+* require remediation before reconsideration.
+
+The office shall not infer missing lineage or provenance from convention.
+
+---
+
+# Independent Verification Requirements
+
+Independent verification shall confirm:
+
+* complete learning evidence ownership;
+* complete experiment evidence;
+* complete feature lineage;
+* complete model provenance;
+* complete publication provenance;
+* immutable references to Historian provenance;
+* correct custody separation;
+* correction preservation;
+* supersession preservation;
+* deterministic lifecycle governance;
+* publication blocking upon incomplete provenance;
+* absence of historical-provenance authority within Enterprise Learning.
+
+Verification shall examine constitutional definitions, object schemas, interfaces, lifecycle rules, repository implementation, and observable behavior.
+
+---
+
+# Required Deliverables
+
+Execution of this order shall produce:
+
+* learning evidence architecture;
+* learning evidence object schema;
+* experiment evidence specification;
+* feature lineage specification;
+* model provenance specification;
+* publication provenance specification;
+* evidence classification registry;
+* provenance relationship registry;
+* evidence lifecycle state machine;
+* provenance lifecycle state machine;
+* Historian provenance reference contract;
+* custody separation matrix;
+* evidence quality framework;
+* correction and supersession specification;
+* publication evidence threshold;
+* evidence and provenance boundary report;
+* constitutional evidence and provenance certification.
+
+---
+
+# Completion Criteria
+
+This order shall be complete only when:
+
+* every learning evidence class possesses a defined owner and lifecycle;
+* experiment evidence requirements are complete;
+* every feature is traceable to authorized source records;
+* every model is traceable to datasets, features, methods, configurations, and evidence;
+* every publication is traceable to supporting evidence and authority;
+* learning lineage remains distinct from historical provenance;
+* historical provenance remains exclusively owned by the Historian;
+* permanent historical custody remains with the Historian;
+* corrections and supersessions preserve original records;
+* incomplete evidence or provenance blocks publication;
+* undocumented transformation is prohibited;
+* all cross-office provenance references preserve authority boundaries;
+* no unresolved evidence, lineage, provenance, or custody ambiguity remains.

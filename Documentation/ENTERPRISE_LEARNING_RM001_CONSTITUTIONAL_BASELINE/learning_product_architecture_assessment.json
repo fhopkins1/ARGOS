@@ -1,0 +1,114 @@
+{
+  "decision_separation_preserved": true,
+  "disposition": "PASS",
+  "fail_closed_conditions": [
+    "missing evidence",
+    "invalid reproducibility",
+    "missing uncertainty",
+    "unvalidated product",
+    "retired/withdrawn/suspended product"
+  ],
+  "historical_separation_preserved": true,
+  "order_id": "ENTERPRISE-LEARNING-RM-001-005",
+  "permitted_product_classes": [
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "hypothesis"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "predictive model"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "causal model"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "anomaly model"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "uncertainty estimate"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "explainability artifact"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "feature definition"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "model evaluation artifact"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "learning-derived recommendation"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "research finding"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "learning limitation"
+    },
+    {
+      "output_authority": "knowledge product only",
+      "owner": "Enterprise Learning Office",
+      "product_class": "reproducibility declaration"
+    }
+  ],
+  "publication_states": [
+    "Proposed",
+    "Experimental",
+    "Under Validation",
+    "Validated",
+    "Approved for Publication",
+    "Published",
+    "Restricted",
+    "Suspended",
+    "Superseded",
+    "Retired",
+    "Withdrawn",
+    "Rejected"
+  ],
+  "required_learning_product_record": [
+    "product identity",
+    "product class",
+    "owner",
+    "version",
+    "lifecycle state",
+    "intended purpose",
+    "permitted use",
+    "prohibited use",
+    "input definition",
+    "output definition",
+    "dataset lineage",
+    "feature lineage",
+    "experiment lineage",
+    "evaluation results",
+    "assumptions",
+    "confidence",
+    "uncertainty",
+    "explainability artifact",
+    "limitations",
+    "reproducibility status",
+    "publication authority",
+    "historical provenance reference"
+  ],
+  "truth_separation_preserved": true
+}

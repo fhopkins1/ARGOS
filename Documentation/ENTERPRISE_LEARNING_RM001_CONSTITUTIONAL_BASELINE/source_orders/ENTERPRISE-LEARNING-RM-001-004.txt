@@ -1,0 +1,275 @@
+## ENTERPRISE-LEARNING-RM-001-004
+
+# Enterprise Interface Architecture
+
+## Purpose
+
+This order establishes the constitutional interface architecture governing every interaction between the Enterprise Learning Office and the remaining constitutional offices of the ARGOS Enterprise.
+
+The objective is to define deterministic interface boundaries that preserve constitutional ownership, eliminate responsibility overlap, and ensure Enterprise Learning receives and publishes information without assuming authority belonging to other offices.
+
+No interface shall transfer constitutional ownership unless explicitly authorized by constitutional doctrine.
+
+---
+
+# Constitutional Requirements
+
+The Enterprise Learning Office shall expose only interfaces necessary to:
+
+* acquire constitutionally authorized learning inputs;
+* publish learning products;
+* publish learning evidence;
+* publish model metadata;
+* publish explainability artifacts;
+* support enterprise learning consumers.
+
+Every interface shall possess clearly defined ownership, authority, inputs, outputs, and lifecycle behavior.
+
+---
+
+# Interface Architecture Principles
+
+Every constitutional interface shall define:
+
+* interface purpose;
+* owning office;
+* consuming office;
+* constitutional authority;
+* permitted requests;
+* permitted responses;
+* ownership boundaries;
+* lifecycle responsibilities;
+* evidence requirements;
+* failure behavior.
+
+Interfaces shall be deterministic and independently auditable.
+
+---
+
+# Historian Interface
+
+The Historian shall provide Enterprise Learning with:
+
+* Enterprise Information Journeys;
+* historical decisions;
+* historical evidence;
+* historical context;
+* rejected alternatives;
+* uncertainties;
+* missing-information records;
+* provenance references;
+* replay data.
+
+Enterprise Learning shall consume historical information only.
+
+The Historian shall not perform learning.
+
+Enterprise Learning shall not modify historical records, provenance, custody, or replay information.
+
+---
+
+# Commander Interface
+
+The Commander shall provide:
+
+* enterprise objectives;
+* learning priorities;
+* research directives;
+* publication authorization;
+* strategic guidance.
+
+Enterprise Learning may publish learning products to the Commander.
+
+Enterprise Learning shall not perform enterprise decision making.
+
+The Commander shall not modify learning products.
+
+---
+
+# Analyst Interface
+
+The Analyst shall provide:
+
+* engineered features;
+* analytical outputs;
+* statistical summaries;
+* causal analyses;
+* feature quality assessments.
+
+Enterprise Learning may consume analytical outputs as learning inputs.
+
+Enterprise Learning shall not assume responsibility for analytical production.
+
+The Analyst shall not own learning models.
+
+---
+
+# Risk Interface
+
+The Risk Office shall provide:
+
+* risk outcomes;
+* risk classifications;
+* constraint violations;
+* exposure measurements;
+* risk evidence.
+
+Enterprise Learning may learn from historical risk behavior.
+
+Enterprise Learning shall not authorize or calculate operational risk decisions.
+
+---
+
+# Trader Interface
+
+The Trader shall provide:
+
+* execution outcomes;
+* order behavior;
+* position history;
+* execution evidence;
+* market interaction records.
+
+Enterprise Learning may consume execution history for model development.
+
+Enterprise Learning shall never execute trades or authorize market activity.
+
+---
+
+# Performance Truth Interface
+
+Performance Truth shall provide:
+
+* verified enterprise outcomes;
+* performance measurements;
+* realized results;
+* certification outcomes;
+* objective performance evidence.
+
+Enterprise Learning shall use Performance Truth as the constitutional source of learning labels and objective outcomes.
+
+Enterprise Learning shall not certify enterprise performance.
+
+---
+
+# Monitoring Interface
+
+Monitoring shall provide:
+
+* observations;
+* alerts;
+* operational events;
+* health indicators;
+* monitoring evidence.
+
+Enterprise Learning may consume monitoring observations for experimentation and model improvement.
+
+Enterprise Learning shall not perform enterprise monitoring.
+
+---
+
+# Librarian Interface
+
+The Librarian shall provide:
+
+* canonical doctrine;
+* constitutional specifications;
+* published schemas;
+* version-controlled reference material;
+* document retrieval services.
+
+Enterprise Learning shall retrieve authoritative documentation exclusively through the Librarian.
+
+Enterprise Learning shall not own constitutional documentation.
+
+---
+
+# Published Learning Interfaces
+
+Enterprise Learning may publish:
+
+* hypotheses;
+* predictive models;
+* causal models;
+* anomaly detection models;
+* uncertainty models;
+* feature definitions;
+* experiment reports;
+* explainability artifacts;
+* learning evidence;
+* publication metadata.
+
+Published outputs shall constitute knowledge products only.
+
+They shall not constitute enterprise decisions, truth, authorizations, or workflow commands.
+
+---
+
+# Interface Ownership
+
+Enterprise Learning shall own:
+
+* learning requests after acceptance;
+* learning datasets;
+* feature definitions;
+* experiment definitions;
+* trained models;
+* validation results;
+* explainability artifacts;
+* publication metadata;
+* learning evidence.
+
+Ownership of external information shall remain with the originating constitutional office.
+
+---
+
+# Interface Evidence
+
+Every interface interaction shall generate immutable evidence including:
+
+* interface identifier;
+* requesting office;
+* responding office;
+* request type;
+* response type;
+* exchanged artifacts;
+* timestamps;
+* authorization validation;
+* outcome status;
+* publication references when applicable.
+
+Interface evidence shall be independently auditable.
+
+---
+
+# Fail-Closed Requirements
+
+Enterprise Learning shall reject any interface request that attempts to:
+
+* modify historical records;
+* modify provenance;
+* alter constitutional truth;
+* authorize execution;
+* certify enterprise performance;
+* issue workflow commands;
+* overwrite externally owned artifacts;
+* violate constitutional ownership boundaries.
+
+All interface violations shall fail closed and generate constitutional audit evidence.
+
+---
+
+# Architectural Verification
+
+The constitutional architecture review shall verify:
+
+* complete interface coverage with every required constitutional office;
+* deterministic interface definitions;
+* constitutional ownership preservation;
+* authority separation;
+* lifecycle consistency;
+* evidence generation;
+* fail-closed enforcement;
+* absence of circular authority or ownership dependencies.
+
+Successful verification shall demonstrate that Enterprise Learning participates in the enterprise exclusively through constitutionally defined interfaces while preserving complete separation between learning, truth, decision making, workflow execution, historical preservation, and enterprise governance.

@@ -1,0 +1,156 @@
+{
+  "disposition": "PASS",
+  "exclusive_responsibilities": [
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "learning dataset governance"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "hypothesis governance"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "experiment governance"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "feature-definition governance"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "model-development governance"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "learning validation"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "learning evidence generation"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "learning-product publication"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "learning-product retirement"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "learning-product supersession"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "reproducibility qualification"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "explainability qualification"
+    },
+    {
+      "authority_type": "learning-only",
+      "decision_authority_transferred": false,
+      "owner": "Enterprise Learning Office",
+      "responsibility": "uncertainty disclosure"
+    }
+  ],
+  "historical_custody_owner": "Historian",
+  "learning_object_inventory": [
+    "learning dataset",
+    "dataset version",
+    "feature definition",
+    "feature version",
+    "hypothesis",
+    "experiment definition",
+    "experiment execution",
+    "experiment result",
+    "trained model",
+    "model metadata",
+    "model version",
+    "explainability artifact",
+    "uncertainty estimate",
+    "publication package",
+    "learning evidence",
+    "publication lifecycle record",
+    "retirement record",
+    "supersession record"
+  ],
+  "order_id": "ENTERPRISE-LEARNING-RM-001-002",
+  "prohibited_responsibility_register": [
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "create enterprise truth"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "modify historical records"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "alter provenance"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "alter historical custody"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "authorize workflow execution"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "authorize enterprise decisions"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "certify enterprise performance"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "execute workflows"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "own workflow decisions"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "own operational risk"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "publish constitutional doctrine"
+    },
+    {
+      "enforcement": "fail closed",
+      "prohibited_authority": "modify constitutional architecture"
+    }
+  ],
+  "truth_authority_owner": "designated truth offices"
+}

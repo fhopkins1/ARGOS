@@ -1,0 +1,535 @@
+# ENTERPRISE-LEARNING-RM-001-005
+
+## Learning Product Architecture
+
+### Objective
+
+Define the constitutional architecture governing every learning product created, validated, published, superseded, retired, or withdrawn by the Enterprise Learning Office.
+
+This order shall establish the permitted classes, required contents, ownership boundaries, lifecycle controls, publication rules, and constitutional limitations governing Enterprise Learning outputs.
+
+Enterprise Learning shall publish knowledge products for enterprise consumption.
+
+It shall not publish enterprise decisions, truth determinations, execution commands, authorizations, performance certifications, or historical conclusions.
+
+---
+
+## Constitutional Product Classes
+
+The Enterprise Learning Office may constitutionally create and publish:
+
+* hypotheses;
+* predictive models;
+* causal models;
+* anomaly models;
+* uncertainty estimates;
+* explainability artifacts;
+* feature definitions;
+* model evaluation artifacts;
+* learning-derived recommendations;
+* research findings;
+* learning limitations;
+* reproducibility declarations.
+
+No other learning product class shall be published without constitutional authorization.
+
+---
+
+## Hypothesis Architecture
+
+A hypothesis shall represent a testable proposition concerning an enterprise-observable relationship, behavior, condition, or outcome.
+
+Every hypothesis shall include:
+
+* immutable hypothesis identifier;
+* stated proposition;
+* intended scope;
+* originating question;
+* supporting observations;
+* assumptions;
+* falsification criteria;
+* required evidence;
+* known limitations;
+* status;
+* responsible owner;
+* lifecycle state.
+
+A hypothesis shall not be represented as established truth.
+
+Unvalidated hypotheses shall remain explicitly classified as unvalidated.
+
+---
+
+## Predictive Model Architecture
+
+A predictive model shall estimate a future, unknown, or unobserved outcome from declared inputs.
+
+Every predictive model shall include:
+
+* immutable model identifier;
+* prediction target;
+* input feature definitions;
+* training dataset identity;
+* validation dataset identity;
+* modeling method;
+* training procedure;
+* evaluation metrics;
+* confidence characterization;
+* uncertainty characterization;
+* scope of applicability;
+* known failure conditions;
+* reproducibility status;
+* publication state;
+* version identity.
+
+Predictive output shall remain advisory unless consumed by an authorized decision-owning workflow.
+
+The model shall not own the resulting decision.
+
+---
+
+## Causal Model Architecture
+
+A causal model shall represent a declared causal hypothesis concerning relationships among enterprise variables or events.
+
+Every causal model shall identify:
+
+* causal question;
+* treatment or initiating condition;
+* outcome definition;
+* causal assumptions;
+* confounders;
+* adjustment method;
+* identification strategy;
+* supporting evidence;
+* uncertainty;
+* limitations;
+* falsification conditions;
+* validation status.
+
+Correlation shall not be represented as causation without explicit causal justification.
+
+Causal conclusions shall remain learning products and shall not become historical truth by publication alone.
+
+---
+
+## Anomaly Model Architecture
+
+An anomaly model shall identify observations, behaviors, sequences, or conditions that deviate from a defined reference state.
+
+Every anomaly model shall define:
+
+* monitored domain;
+* reference population or baseline;
+* anomaly criteria;
+* scoring method;
+* detection threshold;
+* expected false-positive behavior;
+* expected false-negative behavior;
+* uncertainty;
+* scope limitations;
+* escalation interface;
+* publication status.
+
+An anomaly finding shall not independently authorize intervention, execution, or workflow alteration.
+
+---
+
+## Uncertainty Estimate Architecture
+
+Every material learning product shall include an uncertainty representation appropriate to its product class.
+
+Uncertainty estimates may include:
+
+* confidence intervals;
+* prediction intervals;
+* probability distributions;
+* calibration measures;
+* sensitivity ranges;
+* scenario ranges;
+* epistemic uncertainty;
+* aleatoric uncertainty;
+* data sufficiency limitations;
+* unresolved model risk.
+
+Uncertainty shall not be omitted where its absence could create false precision.
+
+Unknown uncertainty shall be declared rather than concealed.
+
+---
+
+## Explainability Artifact Architecture
+
+Explainability artifacts shall communicate how a learning product was produced, what evidence supports it, and where its conclusions may fail.
+
+Explainability artifacts shall include, where applicable:
+
+* supporting evidence;
+* governing assumptions;
+* feature contributions;
+* model behavior summaries;
+* influential observations;
+* counterfactual explanations;
+* sensitivity analysis;
+* confidence;
+* uncertainty;
+* known limitations;
+* reproducibility status.
+
+Explainability shall not be satisfied by implementation documentation alone.
+
+The explanation shall be interpretable by the constitutionally authorized consumer of the learning product.
+
+---
+
+## Learning Product Identity
+
+Every learning product shall possess:
+
+* globally unique identifier;
+* product class;
+* version;
+* Enterprise Learning owner;
+* creation timestamp;
+* lifecycle state;
+* originating dataset references;
+* feature-definition references;
+* experiment references;
+* validation references;
+* publication status;
+* supersession status;
+* provenance reference.
+
+Identity shall remain stable across publication, retrieval, retirement, and historical preservation.
+
+---
+
+## Product Ownership
+
+The Enterprise Learning Office shall own:
+
+* learning-product definition;
+* learning-product content;
+* learning-product lifecycle;
+* validation requirements;
+* publication decision;
+* retirement decision;
+* supersession decision;
+* product limitations;
+* reproducibility declaration.
+
+Enterprise Learning shall not own:
+
+* historical provenance;
+* enterprise truth;
+* workflow decisions;
+* execution authority;
+* risk acceptance;
+* trade authorization;
+* performance certification;
+* historical custody.
+
+Historical provenance and immutable preservation shall remain owned by the Historian.
+
+---
+
+## Publication Architecture
+
+A learning product may be published only when:
+
+* its identity is established;
+* its product class is valid;
+* required evidence exists;
+* validation is complete;
+* assumptions are documented;
+* uncertainty is characterized;
+* limitations are declared;
+* explainability requirements are satisfied;
+* reproducibility status is recorded;
+* publication authority is confirmed;
+* provenance registration is complete.
+
+Publication shall be an explicit lifecycle transition.
+
+Draft, experimental, rejected, retired, and superseded products shall not be represented as active published products.
+
+---
+
+## Publication States
+
+The constitutional publication states shall include:
+
+* Proposed;
+* Experimental;
+* Under Validation;
+* Validated;
+* Approved for Publication;
+* Published;
+* Restricted;
+* Suspended;
+* Superseded;
+* Retired;
+* Withdrawn;
+* Rejected.
+
+Every state transition shall be deterministic, authorized, evidenced, and historically preserved.
+
+No implementation-specific state shall bypass the constitutional lifecycle.
+
+---
+
+## Consumer Interface Contract
+
+Every published learning product shall declare:
+
+* intended consumers;
+* permitted uses;
+* prohibited uses;
+* required interpretation;
+* expected input contract;
+* output contract;
+* uncertainty semantics;
+* freshness requirements;
+* dependency requirements;
+* failure behavior;
+* escalation path.
+
+Consumers shall not infer authority not explicitly granted by the product contract.
+
+---
+
+## Decision Separation
+
+Enterprise Learning may provide:
+
+* predictions;
+* explanations;
+* hypotheses;
+* causal assessments;
+* anomaly indications;
+* ranked alternatives;
+* uncertainty estimates;
+* evidence summaries.
+
+Enterprise Learning shall not:
+
+* select the enterprise action;
+* authorize workflow execution;
+* approve risk;
+* direct the Trader;
+* certify enterprise performance;
+* declare historical truth;
+* alter historical records;
+* consume the decision-owning workflow baton.
+
+Any recommendation shall remain advisory and shall identify the constitutionally authorized decision owner.
+
+---
+
+## Truth Separation
+
+A published learning product shall not become enterprise truth solely because it is:
+
+* statistically significant;
+* highly accurate;
+* reproducible;
+* validated;
+* published;
+* repeatedly observed;
+* operationally useful.
+
+Truth ownership shall remain with the constitutionally authorized truth-owning office.
+
+Enterprise Learning may estimate, infer, predict, explain, or hypothesize.
+
+It shall not constitutionally declare truth outside its own learning-product state.
+
+---
+
+## Historical Separation
+
+The Enterprise Learning Office shall provide the Historian with:
+
+* product identity;
+* product version;
+* supporting evidence references;
+* dataset references;
+* experiment references;
+* model artifacts;
+* publication events;
+* retirement events;
+* supersession events;
+* reproducibility declarations.
+
+The Historian shall retain exclusive authority over immutable historical custody and historical provenance.
+
+Enterprise Learning shall not rewrite or delete prior learning-product history.
+
+---
+
+## Product Versioning
+
+Every material change to a learning product shall create a new version.
+
+Version changes shall preserve:
+
+* predecessor identity;
+* successor identity;
+* change rationale;
+* changed assumptions;
+* changed data;
+* changed features;
+* changed method;
+* changed validation;
+* changed uncertainty;
+* changed limitations;
+* publication decision;
+* supersession relationship.
+
+Material changes shall not overwrite published versions.
+
+---
+
+## Product Supersession
+
+A learning product may be superseded when:
+
+* a validated successor exists;
+* material assumptions change;
+* data validity changes;
+* feature definitions change;
+* performance materially degrades;
+* scope changes;
+* reproducibility is lost;
+* constitutional requirements change.
+
+Supersession shall not erase the predecessor.
+
+The successor shall explicitly identify the product it supersedes.
+
+---
+
+## Product Retirement and Withdrawal
+
+Retirement shall occur when a product is no longer intended for active use.
+
+Withdrawal shall occur when continued reliance would be constitutionally unsafe or materially misleading.
+
+Retirement or withdrawal shall record:
+
+* authority;
+* reason;
+* effective time;
+* affected consumers;
+* successor, if any;
+* residual risks;
+* required notifications;
+* historical preservation status.
+
+A retired or withdrawn product shall remain historically retrievable.
+
+---
+
+## Restricted Learning Products
+
+A product may be restricted where:
+
+* evidence is incomplete;
+* validation is limited;
+* applicable scope is narrow;
+* uncertainty is elevated;
+* data access is constrained;
+* publication presents enterprise risk;
+* experimental use remains constitutionally permissible.
+
+Restrictions shall be explicit, machine-readable, and enforced at retrieval.
+
+Restricted publication shall not be treated as general publication.
+
+---
+
+## Failure and Degradation Behavior
+
+A learning product shall fail closed when:
+
+* required inputs are absent;
+* input definitions are violated;
+* product version is unresolved;
+* provenance is incomplete;
+* reproducibility status is invalid;
+* freshness requirements are violated;
+* uncertainty cannot be represented;
+* validation status is insufficient;
+* the requested use exceeds published scope;
+* the product is retired, withdrawn, or suspended.
+
+Failure shall not silently produce an authoritative-looking output.
+
+---
+
+## Required Learning Product Record
+
+Every published learning product shall contain or reference:
+
+* product identity;
+* product class;
+* owner;
+* version;
+* lifecycle state;
+* intended purpose;
+* permitted use;
+* prohibited use;
+* input definition;
+* output definition;
+* dataset lineage;
+* feature lineage;
+* experiment lineage;
+* evaluation results;
+* assumptions;
+* confidence;
+* uncertainty;
+* explainability artifact;
+* limitations;
+* reproducibility status;
+* publication authority;
+* historical provenance reference.
+
+Incomplete products shall not enter the Published state.
+
+---
+
+## Constitutional Verification
+
+Verify that the architecture prevents Enterprise Learning from:
+
+* converting hypotheses into truth without authorization;
+* converting predictions into decisions;
+* converting anomalies into execution commands;
+* converting causal assessments into enterprise mandates;
+* concealing uncertainty;
+* publishing unexplained models;
+* overwriting prior product versions;
+* modifying historical provenance;
+* bypassing validation;
+* publishing without lifecycle authority.
+
+Each prohibited condition shall generate a constitutional failure.
+
+---
+
+## Acceptance Criteria
+
+This order shall be considered complete only when:
+
+* every permitted learning-product class is constitutionally defined;
+* every learning product possesses stable identity, ownership, lifecycle, evidence, uncertainty, explainability, and provenance requirements;
+* publication is governed by explicit deterministic state transitions;
+* published products communicate permitted and prohibited uses;
+* hypotheses remain distinguishable from validated findings;
+* predictions remain distinguishable from enterprise decisions;
+* causal models remain distinguishable from established truth;
+* anomaly findings cannot independently authorize action;
+* historical provenance remains exclusively owned by the Historian;
+* product retirement, withdrawal, versioning, and supersession preserve immutable history;
+* invalid, incomplete, stale, unsupported, or unauthorized products fail closed;
+* Enterprise Learning publishes knowledge while all enterprise decision, execution, truth, risk, performance, and historical authorities remain constitutionally separate.

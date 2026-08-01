@@ -1,0 +1,119 @@
+{
+  "correction_model": "append-only correction and supersession; no direct overwrite of historically registered evidence",
+  "disposition": "PASS",
+  "graph_domains": {
+    "enterprise_learning_lineage_graph": [
+      "dataset derivation",
+      "feature derivation",
+      "hypothesis relationships",
+      "experiment relationships",
+      "model derivation",
+      "publication support"
+    ],
+    "historian_provenance_graph": [
+      "historical custody",
+      "historical derivation",
+      "historical correction",
+      "historical supersession",
+      "enterprise information journeys",
+      "historical replay"
+    ]
+  },
+  "historical_provenance_owner": "Historian",
+  "learning_evidence_classes": [
+    {
+      "class": "dataset-construction evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "dataset-validation evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "feature-generation evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "feature-validation evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "hypothesis evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "experiment evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "training evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "model-validation evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "model-comparison evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "uncertainty evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "explainability evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "reproducibility evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "publication evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "monitoring-response evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "retirement evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    },
+    {
+      "class": "supersession evidence",
+      "historical_custodian": "Historian after acceptance",
+      "owner": "Enterprise Learning Office"
+    }
+  ],
+  "learning_lineage_owner": "Enterprise Learning Office",
+  "order_id": "ENTERPRISE-LEARNING-RM-001-007",
+  "publication_evidence_threshold": [
+    "identity",
+    "lifecycle state",
+    "learning evidence",
+    "feature lineage",
+    "model provenance",
+    "uncertainty",
+    "explainability",
+    "reproducibility",
+    "Historian registration",
+    "publication authority"
+  ]
+}

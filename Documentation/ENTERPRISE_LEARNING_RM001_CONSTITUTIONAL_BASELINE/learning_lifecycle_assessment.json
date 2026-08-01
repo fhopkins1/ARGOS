@@ -1,0 +1,95 @@
+{
+  "artifact_scope": [
+    "learning dataset",
+    "dataset version",
+    "feature definition",
+    "feature version",
+    "hypothesis",
+    "experiment definition",
+    "experiment execution",
+    "experiment result",
+    "trained model",
+    "model metadata",
+    "model version",
+    "explainability artifact",
+    "uncertainty estimate",
+    "publication package",
+    "learning evidence",
+    "publication lifecycle record",
+    "retirement record",
+    "supersession record"
+  ],
+  "canonical_lifecycle_states": [
+    "Proposed",
+    "Defined",
+    "Prepared",
+    "Experimented",
+    "Validated",
+    "Published",
+    "Active",
+    "Superseded",
+    "Retired",
+    "Archived"
+  ],
+  "disposition": "PASS",
+  "historian_preserves_lifecycle_events": true,
+  "lifecycle_failure_behavior": "fail closed upon absent evidence, incomplete validation, incomplete provenance, ambiguous ownership, missing reproducibility, or absent authority",
+  "order_id": "ENTERPRISE-LEARNING-RM-001-006",
+  "publication_is_enterprise_authorization": false,
+  "transition_registry": [
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Proposed",
+      "to": "Defined"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Defined",
+      "to": "Prepared"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Prepared",
+      "to": "Experimented"
+    },
+    {
+      "authority": "Decision Laboratory independent validation",
+      "evidence_required": true,
+      "from": "Experimented",
+      "to": "Validated"
+    },
+    {
+      "authority": "Enterprise Learning publication authority; Commander required for enterprise adoption",
+      "evidence_required": true,
+      "from": "Validated",
+      "to": "Published"
+    },
+    {
+      "authority": "Enterprise Learning publication authority; Commander required for enterprise adoption",
+      "evidence_required": true,
+      "from": "Published",
+      "to": "Active"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Active",
+      "to": "Superseded"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Superseded",
+      "to": "Retired"
+    },
+    {
+      "authority": "Enterprise Learning Office",
+      "evidence_required": true,
+      "from": "Retired",
+      "to": "Archived"
+    }
+  ]
+}
