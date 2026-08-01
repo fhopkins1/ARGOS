@@ -1,113 +1,23 @@
 {
-  "aggregate_mutation_status": "PASS",
-  "authoritative_inventory_size": 16,
-  "declared_mutation_ids": [
-    "EL-RM002A-MUT-001",
-    "EL-RM002A-MUT-002",
-    "EL-RM002A-MUT-003",
-    "EL-RM002A-MUT-004",
-    "EL-RM002A-MUT-005",
-    "EL-RM002A-MUT-006",
-    "EL-RM002A-MUT-007",
-    "EL-RM002A-MUT-008",
-    "EL-RM002A-MUT-009",
-    "EL-RM002A-MUT-010",
-    "EL-RM002A-MUT-011",
-    "EL-RM002A-MUT-012",
-    "EL-RM002A-MUT-013",
-    "EL-RM002A-MUT-014",
-    "EL-RM002A-MUT-015",
-    "EL-RM002A-MUT-016"
-  ],
-  "discovered_mutation_ids": [
-    "EL-RM002A-MUT-001",
-    "EL-RM002A-MUT-002",
-    "EL-RM002A-MUT-003",
-    "EL-RM002A-MUT-004",
-    "EL-RM002A-MUT-005",
-    "EL-RM002A-MUT-006",
-    "EL-RM002A-MUT-007",
-    "EL-RM002A-MUT-008",
-    "EL-RM002A-MUT-009",
-    "EL-RM002A-MUT-010",
-    "EL-RM002A-MUT-011",
-    "EL-RM002A-MUT-012",
-    "EL-RM002A-MUT-013",
-    "EL-RM002A-MUT-014",
-    "EL-RM002A-MUT-015",
-    "EL-RM002A-MUT-016"
-  ],
-  "discovery_count": 16,
   "disposition": "PASS",
-  "error_count": 0,
-  "evidenced_mutation_ids": [
-    "EL-RM002A-MUT-001",
-    "EL-RM002A-MUT-002",
-    "EL-RM002A-MUT-003",
-    "EL-RM002A-MUT-004",
-    "EL-RM002A-MUT-005",
-    "EL-RM002A-MUT-006",
-    "EL-RM002A-MUT-007",
-    "EL-RM002A-MUT-008",
-    "EL-RM002A-MUT-009",
-    "EL-RM002A-MUT-010",
-    "EL-RM002A-MUT-011",
-    "EL-RM002A-MUT-012",
-    "EL-RM002A-MUT-013",
-    "EL-RM002A-MUT-014",
-    "EL-RM002A-MUT-015",
-    "EL-RM002A-MUT-016"
-  ],
-  "executed_mutation_ids": [
-    "EL-RM002A-MUT-001",
-    "EL-RM002A-MUT-002",
-    "EL-RM002A-MUT-003",
-    "EL-RM002A-MUT-004",
-    "EL-RM002A-MUT-005",
-    "EL-RM002A-MUT-006",
-    "EL-RM002A-MUT-007",
-    "EL-RM002A-MUT-008",
-    "EL-RM002A-MUT-009",
-    "EL-RM002A-MUT-010",
-    "EL-RM002A-MUT-011",
-    "EL-RM002A-MUT-012",
-    "EL-RM002A-MUT-013",
-    "EL-RM002A-MUT-014",
-    "EL-RM002A-MUT-015",
-    "EL-RM002A-MUT-016"
-  ],
-  "execution_count": 16,
-  "execution_errors": [],
-  "expected_failure_count": 16,
-  "implementation_count": 16,
-  "implemented_mutation_ids": [
-    "EL-RM002A-MUT-001",
-    "EL-RM002A-MUT-002",
-    "EL-RM002A-MUT-003",
-    "EL-RM002A-MUT-004",
-    "EL-RM002A-MUT-005",
-    "EL-RM002A-MUT-006",
-    "EL-RM002A-MUT-007",
-    "EL-RM002A-MUT-008",
-    "EL-RM002A-MUT-009",
-    "EL-RM002A-MUT-010",
-    "EL-RM002A-MUT-011",
-    "EL-RM002A-MUT-012",
-    "EL-RM002A-MUT-013",
-    "EL-RM002A-MUT-014",
-    "EL-RM002A-MUT-015",
-    "EL-RM002A-MUT-016"
-  ],
-  "missing_evidence_count": 0,
-  "missing_evidence_records": [],
+  "inventory_reconciliation_gate": {
+    "aggregate_mutation_status": "PASS",
+    "authoritative_inventory_size": 16,
+    "discovery_count": 16,
+    "error_count": 0,
+    "execution_count": 16,
+    "expected_failure_count": 16,
+    "implementation_count": 16,
+    "missing_evidence_count": 0,
+    "unexpected_pass_count": 0
+  },
   "mutation_count": 16,
-  "order_id": "ENTERPRISE-LEARNING-RM-002A-005",
   "results": [
     {
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "657afee7b0442c4f6a08e7591f8fdb6167098f70f3315f0eea5bd9407c0b11c9",
+        "evidence_digest": "6061013d3ac26146518f9f6f61042830339938fa23fe4bad78c2c046603b7671",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "UNKNOWN_DATASET",
         "expected_result": "FAIL_CLOSED",
@@ -116,7 +26,7 @@
         "mutation_input": "missing dataset",
         "observed_failure_code": "UNKNOWN_DATASET",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "dataset runtime"
       },
@@ -135,7 +45,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "c48b010e665328265ee09758baba4ec88985c66e498bbd788fcd3ce5a3aa209b",
+        "evidence_digest": "b512814b994a16349389499bdb8b2e0ed298515f311700f6f362f918302d77b9",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "DETERMINISTIC_COMPARISON_FAIL",
         "expected_result": "FAIL_CLOSED",
@@ -144,7 +54,7 @@
         "mutation_input": "altered dataset hash",
         "observed_failure_code": "DETERMINISTIC_COMPARISON_FAIL",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "baseline dataset artifact"
       },
@@ -163,7 +73,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "f0dca9bf949eabdcf4af3de1a22a23cbc29ec22804c3aa5c25481ac3359992fc",
+        "evidence_digest": "63b327f77954e942ab8237207b46c481405a5079c2fea199564f7997e47fe712",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "UNKNOWN_DATASET",
         "expected_result": "FAIL_CLOSED",
@@ -172,7 +82,7 @@
         "mutation_input": "missing feature lineage",
         "observed_failure_code": "UNKNOWN_DATASET",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "feature runtime"
       },
@@ -191,7 +101,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "431da5dde6f4052eb628a62d6707306c8dd97dfae38373852bc9b084509af025",
+        "evidence_digest": "1fb3fa90901e39044df8b02e79ae217fa72c06c53bf1e9db38414db4d67fcebc",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "EXPERIMENT_METRICS_REQUIRED",
         "expected_result": "FAIL_CLOSED",
@@ -200,7 +110,7 @@
         "mutation_input": "missing experiment evidence",
         "observed_failure_code": "EXPERIMENT_METRICS_REQUIRED",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "experiment runtime"
       },
@@ -219,7 +129,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "9a92fbc91f0bb2bc797c0f78adb2970d1f41bfa34bcb6acda5227d42f06d7df3",
+        "evidence_digest": "70e1efd4bfc9a2e1cb85d2a393d702697c0cf6d265afda88c120380ace942109",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "HYPOTHESIS_MEASUREMENT_INVALID",
         "expected_result": "FAIL_CLOSED",
@@ -228,7 +138,7 @@
         "mutation_input": "invalid hypothesis uncertainty",
         "observed_failure_code": "HYPOTHESIS_MEASUREMENT_INVALID",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "hypothesis runtime"
       },
@@ -247,7 +157,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "04c5b3ededc9ea12cedf89f67475607e5cb54766580e12f16ddf678339723c39",
+        "evidence_digest": "bb810f0e57c641dc482ee98907f8113da89bc75b686a818e88edde4ff98cb72a",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "MODEL_EXPERIMENT_REQUIRED",
         "expected_result": "FAIL_CLOSED",
@@ -256,7 +166,7 @@
         "mutation_input": "invalid model provenance",
         "observed_failure_code": "MODEL_EXPERIMENT_REQUIRED",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "model runtime"
       },
@@ -275,7 +185,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "cf32bf0a3badc352451c6e84c44045d2d814cd019608e72fdb56fe296242e593",
+        "evidence_digest": "6df12eefa3304ce096106f0c9098bd413dafdf4ffae0a0af40e38590e3a954b2",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "PUBLICATION_EXPLAINABILITY_REQUIRED",
         "expected_result": "FAIL_CLOSED",
@@ -284,7 +194,7 @@
         "mutation_input": "missing explainability",
         "observed_failure_code": "PUBLICATION_EXPLAINABILITY_REQUIRED",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "publication runtime"
       },
@@ -303,7 +213,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "52b01104410b3d241cd9aed10fa6f06816291625ff7286b8c7031d8cc1e44f0d",
+        "evidence_digest": "224f047ec97fbe60e86ece8f27b2599c09498540c43038df36d9eeb49af52481",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "CONSUMER_CONTRACT_INCOMPLETE",
         "expected_result": "FAIL_CLOSED",
@@ -312,7 +222,7 @@
         "mutation_input": "unauthorized publication",
         "observed_failure_code": "CONSUMER_CONTRACT_INCOMPLETE",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "publication runtime"
       },
@@ -331,7 +241,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "09684d8e15f32bf2768356f10cb670d7da07df62f5647cbc84ee7f2d8840ead4",
+        "evidence_digest": "308ad32e0440eac5e2242192a5ff9a906482cc618f4b9c24ead623b4768fe51b",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "BOUNDARY_FAIL_CLOSED",
         "expected_result": "FAIL_CLOSED",
@@ -340,7 +250,7 @@
         "mutation_input": "operational authority assignment",
         "observed_failure_code": "BOUNDARY_FAIL_CLOSED",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "authority boundary"
       },
@@ -359,7 +269,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "0a3996fa73cdeecf19932539fb6858c0a298939b36fb7cf67ddb8fdeabd949e2",
+        "evidence_digest": "ec20f1e1524874821fafc2a02531d14712c594c7ad8de39f459458e7789db498",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "BOUNDARY_FAIL_CLOSED",
         "expected_result": "FAIL_CLOSED",
@@ -368,7 +278,7 @@
         "mutation_input": "attempted enterprise truth mutation",
         "observed_failure_code": "BOUNDARY_FAIL_CLOSED",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "truth boundary"
       },
@@ -387,7 +297,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "6f12592bd136766668b5db0b285779a6387e28ee3b2389d3cbdc5841341e4252",
+        "evidence_digest": "5523b7bb52ace2a33cb44c829c26fc363e41a5b0c5bd10804cd7499e15867dc7",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "SCHEMA_OR_HASH_VALIDATION_FAIL",
         "expected_result": "FAIL_CLOSED",
@@ -396,7 +306,7 @@
         "mutation_input": "altered evidence",
         "observed_failure_code": "SCHEMA_OR_HASH_VALIDATION_FAIL",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "evidence digest"
       },
@@ -415,7 +325,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "327652fa5248a20ef393635cd75d9720782ac23459f107cab629e88f6ffee5c3",
+        "evidence_digest": "aca5a74bb1541dc2bb2a57f67c1d49468ff198eac87508646a86d8af2fc10b4e",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "PUBLICATION_EVIDENCE_REQUIRED",
         "expected_result": "FAIL_CLOSED",
@@ -424,7 +334,7 @@
         "mutation_input": "missing evidence",
         "observed_failure_code": "PUBLICATION_EVIDENCE_REQUIRED",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "publication evidence"
       },
@@ -443,7 +353,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "49278dd2b963df4d9a9e915160348556042339043f963216627e5071dc0a1829",
+        "evidence_digest": "b21c2b6496a8718596f57abe825949f10b938de4485ddc0a740d96b15d4ccc19",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "SCHEMA_VALIDATION_FAIL",
         "expected_result": "FAIL_CLOSED",
@@ -452,7 +362,7 @@
         "mutation_input": "invalid evidence schema",
         "observed_failure_code": "SCHEMA_VALIDATION_FAIL",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "evidence schema"
       },
@@ -471,7 +381,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "59443a56ce887a3e1a6e251a67aa0da9ed8972df5143852698dacd7b63d83674",
+        "evidence_digest": "bbf527e16b8f28f1322df513bf8e4fa9590a6c9fb950e3d2e15326f182165b0f",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "DETERMINISTIC_COMPARISON_FAIL",
         "expected_result": "FAIL_CLOSED",
@@ -480,7 +390,7 @@
         "mutation_input": "nondeterministic execution",
         "observed_failure_code": "DETERMINISTIC_COMPARISON_FAIL",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "deterministic regeneration"
       },
@@ -499,7 +409,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "fb4ee9ff3780ef83b1611c3d6c9ac570b11d3d6440c4f649501a289a53a77948",
+        "evidence_digest": "f00993e1fce442b760f65a399185fabf8bb72b6a1ccdb9c19ae3aac9e24fb64c",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "REPOSITORY_HASH_MISMATCH",
         "expected_result": "FAIL_CLOSED",
@@ -508,7 +418,7 @@
         "mutation_input": "repository tampering",
         "observed_failure_code": "REPOSITORY_HASH_MISMATCH",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "repository integrity"
       },
@@ -527,7 +437,7 @@
       "cleanup_procedure": "discard mutated in-memory candidate and regenerate reference runtime",
       "disposition": "PASS",
       "evidence": {
-        "evidence_digest": "53b60503879ca59a81f6ff6739cb63ebd1583ef8ef22ca3d2fa2fc3753b7d650",
+        "evidence_digest": "ea8aeb39e62309b9ed3a788dda9e3c1a4352c28c4a1f58bccb1738aefb7754d8",
         "execution_environment": "python-standard-library",
         "expected_failure_code": "ENVIRONMENT_SPEC_MISMATCH",
         "expected_result": "FAIL_CLOSED",
@@ -536,7 +446,7 @@
         "mutation_input": "dependency drift",
         "observed_failure_code": "ENVIRONMENT_SPEC_MISMATCH",
         "observed_result": "FAIL_CLOSED",
-        "repository_identity": "50e135bde4b98949394ab3b4300bf0fac990761ae84213bc26189ab193b7d30f",
+        "repository_identity": "b1f8b33ac605a82af81441ec1f4b3f7f21524fe6c87d758eaad170c4897febb5",
         "restoration_status": "RESTORED",
         "target_identity": "dependency manifest"
       },
@@ -552,6 +462,6 @@
       "target": "dependency manifest"
     }
   ],
-  "unexpected_pass_count": 0,
-  "unexpected_passes": []
+  "source_report": "Documentation\\ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION\\mutation_verification_report.json",
+  "unexpected_results": []
 }

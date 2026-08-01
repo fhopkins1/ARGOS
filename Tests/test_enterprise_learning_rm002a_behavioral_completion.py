@@ -41,6 +41,14 @@ class EnterpriseLearningRM002ABehavioralCompletionTest(unittest.TestCase):
     def test_mutations_fail_closed(self) -> None:
         report = self._load("mutation_verification_report.json")
         self.assertEqual("PASS", report["disposition"])
+        self.assertEqual(16, report["authoritative_inventory_size"])
+        self.assertEqual(16, report["implementation_count"])
+        self.assertEqual(16, report["discovery_count"])
+        self.assertEqual(16, report["execution_count"])
+        self.assertEqual(16, report["expected_failure_count"])
+        self.assertEqual(0, report["unexpected_pass_count"])
+        self.assertEqual(0, report["error_count"])
+        self.assertEqual(0, report["missing_evidence_count"])
         self.assertEqual([], report["unexpected_passes"])
         self.assertTrue(all(item["observed_failure"] == item["expected_failure"] for item in report["results"]))
 

@@ -10,9 +10,9 @@ from typing import Any
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-OUTPUT_DIR = Path("Documentation") / "ENTERPRISE_LEARNING_RM002A_011_FINAL_ECS004_REMEDIATION"
+OUTPUT_DIR = Path("Documentation") / "ENTERPRISE_LEARNING_RM002A_012_MUTATION_GATE_REMEDIATION"
 EXECUTION_ID = "EL-ECS004-FINAL-20260801T181500Z"
-ORDER_ID = "ENTERPRISE-LEARNING-RM-002A-011"
+ORDER_ID = "ENTERPRISE-LEARNING-RM-002A-012"
 PROHIBITED_PATH_MARKERS = ("C:" + "\\Users\\Fletc", ".codex" + "\\attachments", ".codex" + "/attachments", "OneDrive" + "\\Desktop")
 RELEVANT_ROOTS = (
     Path("Scripts"),
@@ -23,6 +23,7 @@ RELEVANT_ROOTS = (
     Path("Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION"),
     Path("Documentation/ENTERPRISE_LEARNING_ECS004_READINESS"),
     Path("Documentation/ENTERPRISE_LEARNING_RM002A_011_FINAL_ECS004_REMEDIATION"),
+    Path("Documentation/ENTERPRISE_LEARNING_RM002A_012_MUTATION_GATE_REMEDIATION"),
     Path("src/argos/control_panel"),
     Path("src/argos/librarian"),
 )
@@ -36,7 +37,7 @@ def run() -> dict[str, Any]:
     regeneration = _run_step(
         "behavioral_regeneration",
         [sys.executable, "Scripts/enterprise_learning_rm002a_behavioral_completion.py"],
-        timeout=240,
+        timeout=600,
     )
     schema = _schema_validation()
     comparison = _baseline_comparison()
@@ -53,7 +54,7 @@ def run() -> dict[str, Any]:
             "Tests.test_enterprise_learning_rm001_constitutional_baseline",
             "Tests.test_learning_integration_office",
         ],
-        timeout=240,
+        timeout=600,
     )
     completion = _completion_review(repo, dependency, regeneration, schema, comparison, mutation, tests)
     machine = _machine_report(repo, dependency, regeneration, schema, comparison, mutation, tests, completion)
@@ -148,12 +149,36 @@ def _mutation_results() -> dict[str, Any]:
         for item in report.get("results", [])
         if item.get("observed_failure") != item.get("expected_failure") or item.get("observed_failure") == "UNEXPECTED_PASS"
     ]
+    missing_gate = {
+        "authoritative_inventory_size": report.get("authoritative_inventory_size"),
+        "implementation_count": report.get("implementation_count"),
+        "discovery_count": report.get("discovery_count"),
+        "execution_count": report.get("execution_count"),
+        "expected_failure_count": report.get("expected_failure_count"),
+        "unexpected_pass_count": report.get("unexpected_pass_count"),
+        "error_count": report.get("error_count"),
+        "missing_evidence_count": report.get("missing_evidence_count"),
+        "aggregate_mutation_status": report.get("aggregate_mutation_status"),
+    }
+    gate_pass = (
+        missing_gate["authoritative_inventory_size"] == 16
+        and missing_gate["implementation_count"] == 16
+        and missing_gate["discovery_count"] == 16
+        and missing_gate["execution_count"] == 16
+        and missing_gate["expected_failure_count"] == 16
+        and missing_gate["unexpected_pass_count"] == 0
+        and missing_gate["error_count"] == 0
+        and missing_gate["missing_evidence_count"] == 0
+        and missing_gate["aggregate_mutation_status"] == "PASS"
+        and not unexpected
+    )
     return {
         "source_report": str(report_path),
         "mutation_count": report.get("mutation_count", 0),
+        "inventory_reconciliation_gate": missing_gate,
         "results": report.get("results", []),
         "unexpected_results": unexpected,
-        "disposition": "PASS" if not unexpected and report.get("disposition") == "PASS" else "FAIL",
+        "disposition": "PASS" if gate_pass else ("INCOMPLETE" if report.get("mutation_count", 0) < 16 else "FAIL"),
     }
 
 
@@ -187,6 +212,7 @@ def _machine_report(*reports: dict[str, Any]) -> dict[str, Any]:
         "schemas_validated": reports[3],
         "baseline_comparison_results": reports[4],
         "mutation_results": reports[5],
+        "mutation_inventory_reconciliation": reports[5].get("inventory_reconciliation_gate", {}),
         "constitutional_failures": completion["failures"],
         "unresolved_deficiencies": completion["failures"],
         "overall_status": status,
@@ -200,6 +226,7 @@ def _provenance_report(repository_report: dict[str, Any]) -> dict[str, Any]:
         "Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION/source_orders",
         "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders",
         "Documentation/ENTERPRISE_LEARNING_RM002A_011_FINAL_ECS004_REMEDIATION/source_orders",
+        "Documentation/ENTERPRISE_LEARNING_RM002A_012_MUTATION_GATE_REMEDIATION/source_orders",
     ]
     missing = [path for path in source_dirs if not Path(path).exists()]
     return {
@@ -225,7 +252,7 @@ def _remediation_report(machine: dict[str, Any]) -> dict[str, Any]:
 
 
 def _human_report(machine: dict[str, Any]) -> str:
-    return f"""# Enterprise Learning RM-002A-011 Final ECS-004 Remediation Report
+    return f"""# Enterprise Learning RM-002A-012 Complete Mutation Coverage and Certification Gate Remediation Report
 
 ## Objective Observations
 
@@ -237,6 +264,14 @@ def _human_report(machine: dict[str, Any]) -> str:
 * Schema validation disposition: {machine['schemas_validated']['disposition']}
 * Baseline comparison disposition: {machine['baseline_comparison_results']['disposition']}
 * Mutation verification disposition: {machine['mutation_results']['disposition']}
+* Mutations declared: {machine['mutation_inventory_reconciliation'].get('authoritative_inventory_size')}
+* Mutations implemented: {machine['mutation_inventory_reconciliation'].get('implementation_count')}
+* Mutations discovered: {machine['mutation_inventory_reconciliation'].get('discovery_count')}
+* Mutations executed: {machine['mutation_inventory_reconciliation'].get('execution_count')}
+* Expected failures observed: {machine['mutation_inventory_reconciliation'].get('expected_failure_count')}
+* Unexpected passes: {machine['mutation_inventory_reconciliation'].get('unexpected_pass_count')}
+* Execution errors: {machine['mutation_inventory_reconciliation'].get('error_count')}
+* Missing mutation evidence records: {machine['mutation_inventory_reconciliation'].get('missing_evidence_count')}
 
 ## Constitutional Conclusion
 

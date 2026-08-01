@@ -36,7 +36,16 @@ class EnterpriseLearningECS004FinalCertificationTest(unittest.TestCase):
         report = self._load("complete_mutation_verification_report.json")
         self.assertEqual("PASS", report["disposition"])
         self.assertEqual([], report["unexpected_results"])
-        self.assertGreaterEqual(report["mutation_count"], 8)
+        self.assertEqual(16, report["mutation_count"])
+        gate = report["inventory_reconciliation_gate"]
+        self.assertEqual(16, gate["authoritative_inventory_size"])
+        self.assertEqual(16, gate["implementation_count"])
+        self.assertEqual(16, gate["discovery_count"])
+        self.assertEqual(16, gate["execution_count"])
+        self.assertEqual(16, gate["expected_failure_count"])
+        self.assertEqual(0, gate["unexpected_pass_count"])
+        self.assertEqual(0, gate["error_count"])
+        self.assertEqual(0, gate["missing_evidence_count"])
 
     def test_human_report_and_runbook_are_generated(self) -> None:
         self.assertTrue((final.OUTPUT_DIR / "human_readable_certification_report.md").exists())
