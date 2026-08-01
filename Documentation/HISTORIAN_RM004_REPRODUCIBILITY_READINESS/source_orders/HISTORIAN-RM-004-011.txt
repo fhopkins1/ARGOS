@@ -1,0 +1,427 @@
+# HISTORIAN-RM-004-011
+
+## Independent Reproduction Validation
+
+### Objective
+
+Execute and validate multiple independent clean-room reproductions of the complete Historian Office certification process.
+
+This order shall determine whether equivalent repositories, equivalent documented procedures, and independently reconstructed environments produce constitutionally equivalent runtime behavior, evidence, provenance, replay results, and certification outcomes.
+
+Independent reproduction shall be performed without developer assistance, previously generated evidence, implementation-specific knowledge, or reliance upon the original certification environment.
+
+---
+
+## Constitutional Requirements
+
+Independent reproduction shall verify:
+
+* deterministic runtime execution;
+* deterministic behavioral outputs;
+* deterministic evidence generation;
+* deterministic provenance generation;
+* deterministic historical reconstruction;
+* deterministic replay;
+* deterministic certification conclusions;
+* fail-closed reproducibility behavior.
+
+Certification shall be established through repeated execution rather than documentary comparison alone.
+
+---
+
+## Independent Reproduction Environments
+
+Execute the complete certification process in multiple independently constructed clean environments.
+
+Each environment shall be created exclusively from:
+
+* the submitted repository;
+* documented bootstrap instructions;
+* declared dependency manifests;
+* documented certification commands;
+* supported execution-platform requirements.
+
+Independent environments shall not share:
+
+* prior execution outputs;
+* generated evidence;
+* local caches;
+* mutable runtime state;
+* hidden configuration;
+* developer workspaces;
+* undocumented credentials;
+* implementation-specific setup knowledge.
+
+---
+
+## Minimum Reproduction Set
+
+Perform no fewer than three complete independent reproductions.
+
+The reproduction set shall include:
+
+* one primary clean-room reproduction;
+* one independently rebuilt equivalent-environment reproduction;
+* one repeated reproduction after complete destruction of prior runtime state.
+
+Where supported, execute an additional reproduction using a second constitutionally compatible platform or operating-system environment.
+
+---
+
+## Repository Identity Validation
+
+Before each reproduction, verify:
+
+* repository identity;
+* repository version;
+* source-tree completeness;
+* manifest integrity;
+* dependency-lock integrity;
+* absence of generated certification artifacts;
+* absence of untracked execution dependencies;
+* absence of prior runtime state.
+
+Each reproduction shall begin from the same certified source state.
+
+---
+
+## Environment Independence Validation
+
+Verify that each environment is independently reconstructed.
+
+Record:
+
+* operating-system identity;
+* interpreter identity;
+* dependency versions;
+* dependency hashes;
+* configuration values;
+* runtime variables;
+* bootstrap outputs;
+* environment fingerprint.
+
+Equivalent environmental requirements shall produce equivalent execution behavior.
+
+Undocumented environmental differences affecting certification shall fail closed.
+
+---
+
+## Complete Certification Execution
+
+Each reproduction shall execute the complete certification surface, including:
+
+* repository bootstrap;
+* dependency verification;
+* environment reconstruction;
+* repository structural validation;
+* runtime discovery;
+* certification suite execution;
+* behavioral verification;
+* evidence regeneration;
+* provenance regeneration;
+* historical reconstruction;
+* deterministic replay;
+* mutation validation;
+* certification report generation.
+
+Partial reproduction shall not satisfy this order.
+
+---
+
+## Deterministic Output Validation
+
+Compare all constitutionally significant outputs across independent reproductions.
+
+Verify equivalence of:
+
+* behavioral results;
+* lifecycle transitions;
+* custody conclusions;
+* provenance nodes;
+* provenance edges;
+* reconstruction outputs;
+* replay outputs;
+* certification findings;
+* pass-and-fail conclusions;
+* constitutional readiness determinations.
+
+Equivalent execution inputs shall produce equivalent constitutional outputs.
+
+---
+
+## Evidence Reproducibility Validation
+
+Verify that each independent reproduction regenerates complete certification evidence.
+
+Compare:
+
+* evidence classifications;
+* execution sequences;
+* artifact relationships;
+* behavioral conclusions;
+* traceability mappings;
+* integrity results;
+* certification lineage;
+* evidence completeness.
+
+Environment-specific metadata may differ only where explicitly designated non-semantic.
+
+Previously submitted evidence shall not be consumed as an execution input.
+
+---
+
+## Provenance Reproducibility Validation
+
+Verify equivalent regeneration of:
+
+* provenance nodes;
+* provenance edges;
+* dependency relationships;
+* derivation relationships;
+* correction relationships;
+* supersession relationships;
+* certification lineage.
+
+Canonical provenance structure shall remain equivalent across reproductions.
+
+Missing, added, reordered, or altered constitutional relationships shall generate reproducibility findings.
+
+---
+
+## Replay Reproducibility Validation
+
+Execute deterministic replay within every reproduction environment.
+
+Verify:
+
+* original-to-replay equivalence;
+* cross-environment replay equivalence;
+* historical-state equivalence;
+* custody-state equivalence;
+* provenance equivalence;
+* evidence equivalence;
+* certification-result equivalence.
+
+Replay divergence shall fail closed.
+
+---
+
+## Certification Reproducibility Validation
+
+Compare final certification outcomes across all independent reproductions.
+
+Verify equivalence of:
+
+* executed certification requirements;
+* test inventory;
+* pass results;
+* expected fail results;
+* mutation-detection results;
+* unresolved findings;
+* readiness conclusions;
+* certification status.
+
+Equivalent reproductions shall not produce contradictory certification outcomes.
+
+---
+
+## Canonical Comparison Model
+
+Implement a deterministic comparison model distinguishing between:
+
+* constitutionally significant outputs;
+* reproducibility-significant outputs;
+* permitted environmental metadata;
+* nondeterministic but non-semantic metadata;
+* prohibited execution divergence.
+
+Permitted differences shall be explicitly declared, normalized, and justified.
+
+Undeclared differences shall be treated as certification findings.
+
+---
+
+## Temporal Normalization
+
+Normalize non-semantic temporal values where necessary for comparison.
+
+Normalization may apply only to:
+
+* execution timestamps;
+* temporary file locations;
+* process identifiers;
+* environment-generated session identifiers;
+* platform-specific non-semantic metadata.
+
+Normalization shall never alter:
+
+* behavioral sequence;
+* lifecycle ordering;
+* custody relationships;
+* provenance relationships;
+* evidence meaning;
+* replay meaning;
+* certification conclusions.
+
+---
+
+## Reproduction Divergence Detection
+
+Implement automatic detection of divergence including:
+
+* differing discovered component inventories;
+* differing test inventories;
+* differing execution order;
+* missing evidence;
+* altered provenance;
+* replay mismatch;
+* custody mismatch;
+* reconstruction mismatch;
+* mutation-detection inconsistency;
+* certification-outcome inconsistency.
+
+Every divergence shall generate a machine-readable finding.
+
+---
+
+## Divergence Classification
+
+Classify each detected divergence as:
+
+* permitted non-semantic variation;
+* environment compatibility issue;
+* dependency drift;
+* execution nondeterminism;
+* evidence nondeterminism;
+* provenance nondeterminism;
+* replay nondeterminism;
+* certification nondeterminism;
+* repository incompleteness;
+* undocumented dependency;
+* constitutional failure.
+
+Unclassified divergence shall fail closed.
+
+---
+
+## Reproduction Failure Behavior
+
+The certification process shall fail closed when:
+
+* any required reproduction cannot execute;
+* environments cannot be independently reconstructed;
+* required evidence cannot be regenerated;
+* provenance differs materially;
+* replay outputs diverge;
+* certification conclusions conflict;
+* undocumented manual intervention is required;
+* unexplained nondeterminism remains;
+* comparison evidence is incomplete.
+
+A successful execution in only one environment shall not satisfy independent reproducibility.
+
+---
+
+## Reproduction Evidence
+
+Generate immutable evidence for each reproduction including:
+
+* reproduction identifier;
+* repository fingerprint;
+* environment fingerprint;
+* bootstrap record;
+* runtime inventory;
+* test inventory;
+* execution record;
+* regenerated evidence inventory;
+* provenance inventory;
+* replay result;
+* mutation result;
+* certification result;
+* divergence findings;
+* final reproduction conclusion.
+
+Evidence shall permit an unrelated auditor to verify the comparison independently.
+
+---
+
+## Independent Reproduction Report
+
+Produce a canonical Independent Reproduction Report containing:
+
+* reproduction scope;
+* environment descriptions;
+* repository identity;
+* execution procedures;
+* component inventories;
+* test inventories;
+* behavioral results;
+* evidence comparisons;
+* provenance comparisons;
+* replay comparisons;
+* mutation comparisons;
+* certification comparisons;
+* permitted differences;
+* detected divergences;
+* unresolved findings;
+* final reproducibility determination.
+
+The report shall be generated automatically from runtime evidence.
+
+---
+
+## Negative Validation
+
+Verify detection of controlled reproducibility failures including:
+
+* dependency-version drift;
+* missing repository file;
+* altered configuration;
+* hidden environment variable;
+* reordered nondeterministic output;
+* evidence omission;
+* provenance alteration;
+* replay corruption;
+* mutation-test bypass;
+* contradictory certification outcome.
+
+Each injected divergence shall be automatically detected and classified.
+
+Removal of the injected condition shall restore equivalent reproduction.
+
+---
+
+## Behavioral Verification
+
+Verify through execution that:
+
+* all required clean-room reproductions complete without developer assistance;
+* each environment is independently reconstructed;
+* equivalent inputs produce equivalent runtime behavior;
+* regenerated evidence is constitutionally equivalent;
+* regenerated provenance is constitutionally equivalent;
+* reconstruction outputs are equivalent;
+* replay outputs are equivalent;
+* mutation detection is consistent;
+* certification conclusions are equivalent;
+* prohibited divergence causes fail-closed behavior;
+* all reproduction evidence is independently verifiable.
+
+---
+
+## Acceptance Criteria
+
+This order shall be considered complete only when:
+
+* at least three complete independent clean-room reproductions have been executed;
+* every reproduction begins from the same verified repository state without supplied evidence artifacts;
+* every environment is reconstructed solely from documented repository instructions;
+* all constitutional runtime capabilities execute successfully in every valid reproduction;
+* regenerated behavioral evidence is constitutionally equivalent across reproductions;
+* provenance graphs and certification lineage are equivalent across reproductions;
+* historical reconstruction and replay produce equivalent outputs;
+* mutation tests produce consistent detection results;
+* final certification outcomes are equivalent;
+* all prohibited differences are automatically detected and classified;
+* unresolved nondeterminism causes certification failure;
+* the Independent Reproduction Report provides sufficient objective evidence to support the HISTORIAN-RM-004-012 ECS-004 Readiness Review.

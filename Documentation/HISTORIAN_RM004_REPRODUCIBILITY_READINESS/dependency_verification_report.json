@@ -1,0 +1,358 @@
+{
+  "dependency_mutation_report": [
+    {
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "modified_dependency_version"
+    },
+    {
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "deleted_dependency"
+    },
+    {
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "added_undeclared_dependency"
+    },
+    {
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "interpreter_version_mismatch"
+    },
+    {
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "stale_lock_artifact"
+    }
+  ],
+  "dependency_status": "PASS",
+  "drift_detected": false,
+  "graph": [
+    {
+      "dependency": "python",
+      "depends_on": []
+    },
+    {
+      "dependency": "argparse",
+      "depends_on": [
+        "python"
+      ]
+    },
+    {
+      "dependency": "ast",
+      "depends_on": [
+        "python"
+      ]
+    },
+    {
+      "dependency": "hashlib",
+      "depends_on": [
+        "python"
+      ]
+    },
+    {
+      "dependency": "json",
+      "depends_on": [
+        "python"
+      ]
+    },
+    {
+      "dependency": "pathlib",
+      "depends_on": [
+        "python"
+      ]
+    },
+    {
+      "dependency": "subprocess",
+      "depends_on": [
+        "python"
+      ]
+    },
+    {
+      "dependency": "unittest",
+      "depends_on": [
+        "python"
+      ]
+    }
+  ],
+  "installed_dependency_inventory": [
+    {
+      "canonical_name": "python",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "136ea2c648ee13ce95eea9cc24fa476ae1c1ac7b45760825aab95099157989fa",
+      "exact_version": "3.14.5",
+      "mandatory": true,
+      "package_source": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+      "platform_constraints": "Windows",
+      "purpose": "runtime/test/certification interpreter",
+      "runtime_classification": "runtime dependency"
+    },
+    {
+      "canonical_name": "argparse",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "ae0e1006b9f86a26cebe316b660b2e40e7598fb4dc1723af5c89effa09c8bea0",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "script entry point support",
+      "runtime_classification": "certification dependency"
+    },
+    {
+      "canonical_name": "ast",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "cf7eea437ac3d33adec9a1455b67ddab08d2c438deaa3b8508704a14221e5dec",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "structural verification",
+      "runtime_classification": "certification dependency"
+    },
+    {
+      "canonical_name": "hashlib",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "2dbff287c42a496dd96fa52bb2c3db43537597682938f0e3988f69582da98aff",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "cryptographic evidence hashing",
+      "runtime_classification": "evidence-generation dependency"
+    },
+    {
+      "canonical_name": "json",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "9229559df0e886bee0cd8f69d13a244484e6e1074be1a8e64e6d05147df32263",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "machine-readable evidence",
+      "runtime_classification": "evidence-generation dependency"
+    },
+    {
+      "canonical_name": "pathlib",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "4b69c569777e2272de180c6ebef0616e17ece4e796e6bd8043e78ee7b0cda19a",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "portable repository path handling",
+      "runtime_classification": "runtime dependency"
+    },
+    {
+      "canonical_name": "subprocess",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "0fe9b114e45c77def359adb97bcd9ed37d0af8865c37aff853e6a0f04f6b6bf9",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "certification self-execution",
+      "runtime_classification": "auditor dependency"
+    },
+    {
+      "canonical_name": "unittest",
+      "compatibility_constraints": "Python 3.14",
+      "cryptographic_hash": "2f0853008e34a260e661e542170d908495f90175b42282a6b314321ab672eb3c",
+      "exact_version": "stdlib",
+      "mandatory": true,
+      "package_source": "Python standard library",
+      "platform_constraints": "Windows",
+      "purpose": "behavioral certification suite",
+      "runtime_classification": "test dependency"
+    }
+  ],
+  "lock": {
+    "interpreter": "3.14.5",
+    "lock_digest": "f9d3dc0639df4af0808f4f8926ccb25b465f49bfdfc5104046d2f28aa86062d1",
+    "lock_id": "HISTORIAN-RM-004-DETERMINISTIC-LOCK",
+    "records": [
+      {
+        "canonical_name": "python",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "136ea2c648ee13ce95eea9cc24fa476ae1c1ac7b45760825aab95099157989fa",
+        "exact_version": "3.14.5",
+        "mandatory": true,
+        "package_source": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "platform_constraints": "Windows",
+        "purpose": "runtime/test/certification interpreter",
+        "runtime_classification": "runtime dependency"
+      },
+      {
+        "canonical_name": "argparse",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "ae0e1006b9f86a26cebe316b660b2e40e7598fb4dc1723af5c89effa09c8bea0",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "script entry point support",
+        "runtime_classification": "certification dependency"
+      },
+      {
+        "canonical_name": "ast",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "cf7eea437ac3d33adec9a1455b67ddab08d2c438deaa3b8508704a14221e5dec",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "structural verification",
+        "runtime_classification": "certification dependency"
+      },
+      {
+        "canonical_name": "hashlib",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "2dbff287c42a496dd96fa52bb2c3db43537597682938f0e3988f69582da98aff",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "cryptographic evidence hashing",
+        "runtime_classification": "evidence-generation dependency"
+      },
+      {
+        "canonical_name": "json",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "9229559df0e886bee0cd8f69d13a244484e6e1074be1a8e64e6d05147df32263",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "machine-readable evidence",
+        "runtime_classification": "evidence-generation dependency"
+      },
+      {
+        "canonical_name": "pathlib",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "4b69c569777e2272de180c6ebef0616e17ece4e796e6bd8043e78ee7b0cda19a",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "portable repository path handling",
+        "runtime_classification": "runtime dependency"
+      },
+      {
+        "canonical_name": "subprocess",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "0fe9b114e45c77def359adb97bcd9ed37d0af8865c37aff853e6a0f04f6b6bf9",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "certification self-execution",
+        "runtime_classification": "auditor dependency"
+      },
+      {
+        "canonical_name": "unittest",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "2f0853008e34a260e661e542170d908495f90175b42282a6b314321ab672eb3c",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "behavioral certification suite",
+        "runtime_classification": "test dependency"
+      }
+    ]
+  },
+  "manifest": {
+    "dependencies": [
+      {
+        "canonical_name": "python",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "136ea2c648ee13ce95eea9cc24fa476ae1c1ac7b45760825aab95099157989fa",
+        "exact_version": "3.14.5",
+        "mandatory": true,
+        "package_source": "C:\\Users\\Fletc\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe",
+        "platform_constraints": "Windows",
+        "purpose": "runtime/test/certification interpreter",
+        "runtime_classification": "runtime dependency"
+      },
+      {
+        "canonical_name": "argparse",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "ae0e1006b9f86a26cebe316b660b2e40e7598fb4dc1723af5c89effa09c8bea0",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "script entry point support",
+        "runtime_classification": "certification dependency"
+      },
+      {
+        "canonical_name": "ast",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "cf7eea437ac3d33adec9a1455b67ddab08d2c438deaa3b8508704a14221e5dec",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "structural verification",
+        "runtime_classification": "certification dependency"
+      },
+      {
+        "canonical_name": "hashlib",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "2dbff287c42a496dd96fa52bb2c3db43537597682938f0e3988f69582da98aff",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "cryptographic evidence hashing",
+        "runtime_classification": "evidence-generation dependency"
+      },
+      {
+        "canonical_name": "json",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "9229559df0e886bee0cd8f69d13a244484e6e1074be1a8e64e6d05147df32263",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "machine-readable evidence",
+        "runtime_classification": "evidence-generation dependency"
+      },
+      {
+        "canonical_name": "pathlib",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "4b69c569777e2272de180c6ebef0616e17ece4e796e6bd8043e78ee7b0cda19a",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "portable repository path handling",
+        "runtime_classification": "runtime dependency"
+      },
+      {
+        "canonical_name": "subprocess",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "0fe9b114e45c77def359adb97bcd9ed37d0af8865c37aff853e6a0f04f6b6bf9",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "certification self-execution",
+        "runtime_classification": "auditor dependency"
+      },
+      {
+        "canonical_name": "unittest",
+        "compatibility_constraints": "Python 3.14",
+        "cryptographic_hash": "2f0853008e34a260e661e542170d908495f90175b42282a6b314321ab672eb3c",
+        "exact_version": "stdlib",
+        "mandatory": true,
+        "package_source": "Python standard library",
+        "platform_constraints": "Windows",
+        "purpose": "behavioral certification suite",
+        "runtime_classification": "test dependency"
+      }
+    ],
+    "manifest_id": "HISTORIAN-RM-004-DEPENDENCY-MANIFEST"
+  },
+  "undeclared_dependencies_detected": false
+}

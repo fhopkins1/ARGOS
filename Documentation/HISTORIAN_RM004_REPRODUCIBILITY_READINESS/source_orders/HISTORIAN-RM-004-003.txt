@@ -1,0 +1,233 @@
+## HISTORIAN-RM-004-003
+
+### Environment Reconstruction
+
+#### Purpose
+
+Implement deterministic runtime behavior for complete reconstruction of the certified Historian execution environment from a pristine system.
+
+The reconstructed environment shall be sufficient for an unrelated independent auditor to execute every constitutional certification without developer assistance, undocumented assumptions, or previously generated artifacts.
+
+The reconstructed environment shall be objectively verifiable and independently reproducible.
+
+---
+
+### Constitutional Requirements
+
+The implementation shall provide deterministic runtime behavior governing:
+
+* execution environment discovery;
+* operating system validation;
+* interpreter installation and verification;
+* runtime dependency installation;
+* configuration reconstruction;
+* environment variable initialization;
+* filesystem preparation;
+* runtime verification;
+* environment certification;
+* environment evidence generation.
+
+Equivalent reconstruction procedures shall produce constitutionally equivalent execution environments.
+
+---
+
+### Environment Specification
+
+The certified environment shall define, at minimum:
+
+* supported operating systems;
+* required processor architecture;
+* interpreter version;
+* package manager version;
+* dependency versions;
+* cryptographic library versions;
+* filesystem requirements;
+* network requirements;
+* required environment variables;
+* configuration locations;
+* executable entry points.
+
+No required dependency may remain undocumented.
+
+---
+
+### Operating System Verification
+
+The implementation shall verify:
+
+* supported operating system;
+* operating system version;
+* architecture compatibility;
+* filesystem compatibility;
+* required operating system capabilities.
+
+Unsupported environments shall fail closed.
+
+---
+
+### Interpreter Reconstruction
+
+The implementation shall:
+
+* install or validate the required interpreter;
+* verify interpreter version;
+* verify executable availability;
+* verify runtime compatibility;
+* reject incompatible interpreter revisions.
+
+Interpreter verification shall be deterministic.
+
+---
+
+### Runtime Dependency Reconstruction
+
+The implementation shall reconstruct every certified runtime dependency by verifying:
+
+* package identity;
+* package version;
+* cryptographic hash;
+* source authenticity;
+* installation success;
+* compatibility with certified environment.
+
+Dependency substitutions shall be rejected.
+
+---
+
+### Configuration Reconstruction
+
+The implementation shall deterministically reconstruct:
+
+* application configuration;
+* certification configuration;
+* runtime configuration;
+* logging configuration;
+* evidence configuration;
+* replay configuration;
+* provenance configuration.
+
+Configuration shall be reproducible without manual modification.
+
+---
+
+### Environment Variable Initialization
+
+The implementation shall establish all required runtime variables including:
+
+* application paths;
+* repository paths;
+* execution directories;
+* temporary storage locations;
+* certification output locations;
+* deterministic runtime parameters.
+
+Undefined required variables shall prevent certification.
+
+---
+
+### Filesystem Preparation
+
+The implementation shall verify creation and accessibility of:
+
+* repository root;
+* executable directories;
+* certification output directories;
+* evidence storage;
+* replay storage;
+* provenance storage;
+* temporary execution workspace.
+
+Filesystem preparation shall be repeatable.
+
+---
+
+### Runtime Validation
+
+Prior to certification execution, the implementation shall verify:
+
+* interpreter readiness;
+* dependency readiness;
+* configuration integrity;
+* filesystem readiness;
+* executable accessibility;
+* deterministic startup capability.
+
+Certification shall not proceed unless every prerequisite is satisfied.
+
+---
+
+### Environment Fingerprinting
+
+The implementation shall generate a deterministic environment fingerprint including:
+
+* operating system identity;
+* interpreter version;
+* dependency manifest;
+* configuration hash;
+* environment variable hash;
+* filesystem structure hash;
+* certification configuration hash.
+
+Equivalent environments shall produce equivalent fingerprints.
+
+---
+
+### Failure Behavior
+
+Environment reconstruction shall fail closed upon detection of:
+
+* unsupported operating system;
+* interpreter incompatibility;
+* dependency mismatch;
+* missing dependency;
+* configuration inconsistency;
+* corrupted manifest;
+* invalid environment variables;
+* filesystem preparation failure;
+* fingerprint inconsistency.
+
+No certification execution shall begin following reconstruction failure.
+
+---
+
+### Runtime Evidence
+
+Execution shall generate objective evidence demonstrating:
+
+* operating system verification;
+* interpreter verification;
+* dependency installation;
+* dependency verification;
+* configuration reconstruction;
+* environment initialization;
+* filesystem preparation;
+* fingerprint generation;
+* environment certification;
+* successful completion or failure.
+
+Evidence shall be immutable, timestamped, and independently reproducible.
+
+---
+
+### Deterministic Verification
+
+Verification shall demonstrate that:
+
+* identical reconstruction procedures produce identical environments;
+* environment fingerprints are reproducible;
+* dependency resolution is deterministic;
+* configuration reconstruction is deterministic;
+* runtime validation produces equivalent outcomes;
+* independently reconstructed environments execute the certification suite without behavioral divergence.
+
+---
+
+### Acceptance Criteria
+
+This order shall be considered complete when independent certification demonstrates that:
+
+* the complete certified Historian execution environment can be reconstructed from a pristine system using only documented procedures;
+* every required interpreter, dependency, configuration, environment variable, and filesystem component is deterministically reproduced;
+* reconstructed environments generate identical environment fingerprints and support constitutionally equivalent execution;
+* reconstruction failures are detected automatically and fail closed;
+* environment reconstruction produces independently certifiable evidence suitable for ECS-004 reproducibility assessment.

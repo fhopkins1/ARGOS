@@ -1,0 +1,400 @@
+# HISTORIAN-RM-004-002
+
+## Dependency Determinism
+
+### Objective
+
+Implement deterministic identification, resolution, installation, validation, and certification of every dependency required to reproduce the Historian Office from a pristine execution environment.
+
+The implementation shall ensure that independent auditors receive the same dependency set, dependency integrity, and compatibility outcome for every equivalent repository execution.
+
+---
+
+# Constitutional Requirements
+
+The implementation shall:
+
+* declare every direct and transitive runtime dependency;
+* pin all dependency versions deterministically;
+* verify dependency integrity through cryptographic hashes;
+* eliminate undeclared environmental dependencies;
+* reject dependency substitution;
+* reject incompatible dependency resolution;
+* reject unavailable certified dependencies;
+* generate independently reproducible dependency evidence;
+* fail closed upon dependency drift or ambiguity.
+
+No certification execution shall proceed using an unverified dependency set.
+
+---
+
+# Canonical Dependency Manifest
+
+The repository shall contain a canonical machine-readable dependency manifest defining every dependency required for:
+
+* application execution;
+* behavioral verification;
+* certification execution;
+* evidence generation;
+* replay;
+* provenance generation;
+* mutation testing;
+* clean-room auditor automation.
+
+Each dependency record shall include:
+
+* canonical dependency name;
+* exact version;
+* package source;
+* cryptographic hash;
+* dependency purpose;
+* runtime classification;
+* platform constraints;
+* compatibility constraints;
+* transitive dependency relationships.
+
+Wildcard versions, floating versions, and unspecified latest-version resolution are prohibited.
+
+---
+
+# Dependency Classification
+
+Every dependency shall be classified as one of the following:
+
+* runtime dependency;
+* build dependency;
+* test dependency;
+* certification dependency;
+* evidence-generation dependency;
+* auditor dependency;
+* operating-system dependency;
+* optional non-certification dependency.
+
+Optional dependencies shall not affect certified behavior.
+
+Any dependency capable of changing certification results shall be classified as required.
+
+---
+
+# Transitive Dependency Resolution
+
+The implementation shall deterministically resolve all transitive dependencies.
+
+Resolution shall verify:
+
+* complete dependency closure;
+* exact transitive versions;
+* source authenticity;
+* hash integrity;
+* compatibility with direct dependencies;
+* compatibility with the certified interpreter;
+* absence of unresolved conflicts.
+
+The certified dependency graph shall be recorded as an immutable artifact.
+
+---
+
+# Dependency Locking
+
+The repository shall contain a deterministic lock artifact generated from the canonical dependency manifest.
+
+The lock artifact shall preserve:
+
+* resolved versions;
+* source locations;
+* package hashes;
+* dependency graph relationships;
+* platform markers;
+* interpreter requirements;
+* resolution metadata.
+
+The dependency manifest and lock artifact shall remain mutually consistent.
+
+Any divergence shall fail certification.
+
+---
+
+# Package Source Verification
+
+The runtime shall verify every dependency source before installation.
+
+Verification shall include:
+
+* approved package registry;
+* canonical package identity;
+* source availability;
+* transport integrity;
+* artifact hash;
+* package signature when supported;
+* package metadata consistency.
+
+Packages obtained from unapproved or undocumented sources shall be rejected.
+
+---
+
+# Installation Determinism
+
+Equivalent clean environments shall install an equivalent dependency set.
+
+Installation shall:
+
+* consume only the canonical manifest and lock artifact;
+* prohibit interactive resolution;
+* prohibit silent substitution;
+* prohibit automatic upgrades;
+* prohibit fallback to unverified local packages;
+* prohibit reliance upon undeclared system packages;
+* produce deterministic installation logs.
+
+Cached dependencies may be used only when their identities and hashes are independently verified.
+
+---
+
+# Environmental Drift Detection
+
+The runtime shall detect dependency drift including:
+
+* version changes;
+* hash changes;
+* package replacement;
+* source changes;
+* missing dependencies;
+* unexpected dependencies;
+* incompatible transitive resolution;
+* interpreter incompatibility;
+* platform incompatibility;
+* local package contamination.
+
+Any detected drift shall terminate certification execution.
+
+---
+
+# Dependency Inventory Validation
+
+Before executing the Historian runtime or certification suite, the implementation shall compare the installed dependency inventory against the certified dependency graph.
+
+Validation shall confirm:
+
+* every required dependency is installed;
+* every installed version is exact;
+* every artifact hash is valid;
+* no prohibited package is present;
+* no required dependency is missing;
+* no dependency source has changed;
+* no undeclared dependency influences execution.
+
+A successful installation alone shall not establish dependency validity.
+
+---
+
+# Compatibility Verification
+
+The runtime shall verify dependency compatibility with:
+
+* the certified interpreter;
+* the certified operating-system environment;
+* repository source;
+* certification tests;
+* evidence-generation components;
+* replay components;
+* provenance components;
+* auditor automation.
+
+Compatibility shall be established through executable validation rather than documentation alone.
+
+---
+
+# Offline Reproducibility Support
+
+Where constitutionally required, the repository or approved certification package shall provide a deterministic method for dependency installation without reliance upon mutable external state.
+
+Offline support may include:
+
+* verified dependency archives;
+* approved package mirrors;
+* cryptographically validated package caches;
+* reproducible container layers.
+
+Offline artifacts shall remain traceable to the canonical dependency manifest and lock artifact.
+
+---
+
+# Runtime Validation Sequence
+
+Dependency validation shall execute in the following order:
+
+1. discover the canonical dependency manifest;
+2. validate manifest structure;
+3. discover the dependency lock artifact;
+4. validate manifest-lock consistency;
+5. verify approved package sources;
+6. resolve the certified dependency graph;
+7. verify package availability;
+8. verify cryptographic hashes;
+9. install dependencies;
+10. inventory the installed environment;
+11. compare inventory against the certified graph;
+12. execute compatibility validation;
+13. emit dependency certification evidence.
+
+The order of validation shall be deterministic.
+
+---
+
+# Failure Detection
+
+The implementation shall detect:
+
+* missing dependency manifests;
+* malformed manifests;
+* missing lock artifacts;
+* manifest-lock divergence;
+* unpinned versions;
+* invalid hashes;
+* unavailable packages;
+* package source substitution;
+* unexpected package installation;
+* dependency graph conflicts;
+* incompatible dependencies;
+* undeclared system reliance;
+* contaminated environments;
+* nondeterministic resolution;
+* installation divergence.
+
+Each failure shall produce a deterministic diagnostic finding.
+
+---
+
+# Fail-Closed Behavior
+
+Upon dependency validation failure, the runtime shall:
+
+* reject environment certification;
+* prevent Historian startup;
+* prevent certification-suite execution;
+* prevent evidence certification;
+* preserve the failed dependency state for audit;
+* emit immutable failure evidence;
+* identify the exact dependency and validation rule violated;
+* preserve previously certified artifacts without modification.
+
+Automatic version substitution or compatibility override is prohibited.
+
+---
+
+# Mutation Validation
+
+The implementation shall include controlled dependency mutations covering:
+
+* modified dependency version;
+* modified package hash;
+* deleted dependency;
+* added undeclared dependency;
+* corrupted package artifact;
+* altered package source;
+* incompatible transitive dependency;
+* interpreter version mismatch;
+* stale lock artifact;
+* local package shadowing.
+
+Each mutation shall be automatically detected and shall prevent certification.
+
+---
+
+# Reproducibility Verification
+
+Execute dependency reconstruction in multiple pristine environments.
+
+Verify that equivalent runs produce:
+
+* identical direct dependency inventories;
+* identical transitive dependency graphs;
+* identical package versions;
+* identical package hashes;
+* equivalent installation outcomes;
+* equivalent compatibility results;
+* equivalent failure behavior;
+* equivalent dependency certification conclusions.
+
+Environment-specific differences shall be permitted only when explicitly declared and proven behaviorally equivalent.
+
+---
+
+# Dependency Evidence
+
+Every dependency certification execution shall emit immutable evidence including:
+
+* repository identity;
+* repository revision;
+* manifest identity;
+* lock artifact identity;
+* interpreter identity;
+* operating-system identity;
+* dependency inventory;
+* resolved dependency graph;
+* package versions;
+* package hashes;
+* package sources;
+* validation outcomes;
+* compatibility outcomes;
+* mutation outcomes;
+* execution timestamp;
+* final certification result.
+
+Evidence shall be generated from current execution and shall not rely upon previously submitted certification artifacts.
+
+---
+
+# Behavioral Verification
+
+The certification suite shall independently verify:
+
+* exact version resolution;
+* manifest completeness;
+* lock-file integrity;
+* transitive dependency closure;
+* cryptographic package verification;
+* deterministic installation;
+* environmental drift rejection;
+* undeclared dependency rejection;
+* compatibility verification;
+* clean-environment equivalence;
+* mutation detection;
+* fail-closed execution;
+* dependency evidence generation.
+
+Verification shall assess executable dependency behavior rather than manifest presence alone.
+
+---
+
+# Required Deliverables
+
+Execution of this order shall produce:
+
+* canonical dependency manifest;
+* deterministic dependency lock artifact;
+* certified dependency graph;
+* package integrity record;
+* installed dependency inventory;
+* dependency compatibility report;
+* dependency drift detection report;
+* dependency mutation report;
+* clean-room dependency reproduction report;
+* Dependency Reproducibility Certification.
+
+---
+
+# Completion Criteria
+
+This order shall be complete only when:
+
+* every required dependency is explicitly declared;
+* every direct and transitive version is deterministically fixed;
+* every package artifact is cryptographically verified;
+* equivalent pristine environments reconstruct equivalent dependency sets;
+* undeclared or altered dependencies are automatically rejected;
+* dependency drift causes deterministic fail-closed behavior;
+* controlled dependency mutations are detected;
+* all certification evidence is regenerated from execution;
+* the complete dependency verification suite passes without developer intervention;
+* an unrelated auditor can reproduce the certified dependency environment using only the repository and documented command.

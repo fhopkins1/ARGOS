@@ -1,0 +1,79 @@
+{
+  "certified_repository_permanently_modified": false,
+  "detected_count": 11,
+  "mutation_count": 11,
+  "mutation_detection_status": "PASS",
+  "mutations": [
+    {
+      "category": "repository integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "missing_source_file"
+    },
+    {
+      "category": "dependency integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "invalid_dependency_hash"
+    },
+    {
+      "category": "configuration integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "corrupted_configuration"
+    },
+    {
+      "category": "provenance integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "altered_provenance_edge"
+    },
+    {
+      "category": "custody integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "broken_custody_chain"
+    },
+    {
+      "category": "replay integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "corrupted_replay_output"
+    },
+    {
+      "category": "evidence integrity failure",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "missing_evidence_artifact"
+    },
+    {
+      "category": "behavioral integrity failure",
+      "code": "INVALID_TRANSITION",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "invalid_transition"
+    },
+    {
+      "category": "behavioral integrity failure",
+      "code": "DUPLICATE_ARTIFACT",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "duplicate_artifact"
+    },
+    {
+      "category": "behavioral integrity failure",
+      "code": "UNKNOWN_PROVENANCE_ARTIFACT",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "unknown_provenance_artifact"
+    },
+    {
+      "category": "behavioral integrity failure",
+      "code": "UNAUTHORIZED_LEARNING_RETRIEVAL",
+      "detected": true,
+      "disposition": "FAIL_CLOSED",
+      "mutation": "unauthorized_learning_retrieval"
+    }
+  ],
+  "restoration_verified": true
+}

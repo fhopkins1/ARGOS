@@ -1,0 +1,354 @@
+# HISTORIAN-RM-004-005
+
+## Independent Runtime Discovery
+
+### Objective
+
+Implement deterministic, automated discovery of every executable runtime component required to reproduce and certify the Historian Office from a clean repository.
+
+The independent auditor shall not be required to manually identify source modules, test suites, certification entry points, evidence generators, replay functions, provenance utilities, or supporting runtime components.
+
+Runtime discovery shall operate solely from repository-contained manifests, declared interfaces, deterministic conventions, and documented execution commands.
+
+---
+
+## Constitutional Requirements
+
+The implementation shall provide automated discovery of:
+
+* executable application components;
+* runtime entry points;
+* certification suites;
+* behavioral tests;
+* integration tests;
+* replay components;
+* reconstruction components;
+* evidence generators;
+* provenance generators;
+* custody validators;
+* mutation tests;
+* environment validators;
+* certification report generators.
+
+Discovery shall reflect the complete executable certification surface of the Historian Office.
+
+Undisclosed executable components shall be prohibited.
+
+---
+
+## Canonical Runtime Manifest
+
+Implement a canonical machine-readable runtime manifest identifying every component required for independent execution and certification.
+
+The manifest shall define:
+
+* component identifier;
+* component classification;
+* repository location;
+* executable entry point;
+* invocation method;
+* required dependencies;
+* required configuration;
+* input requirements;
+* expected outputs;
+* constitutional capability supported;
+* certification suite association.
+
+The runtime manifest shall be version-controlled and included within the submitted repository.
+
+---
+
+## Automated Component Discovery
+
+Implement a deterministic discovery mechanism that automatically inventories executable runtime components.
+
+Discovery shall include:
+
+* source packages;
+* executable modules;
+* command-line entry points;
+* service entry points;
+* test packages;
+* certification runners;
+* evidence generation modules;
+* replay runners;
+* reconstruction runners;
+* validation utilities;
+* mutation harnesses.
+
+Discovery shall not depend upon developer memory, undocumented file names, or manual repository inspection.
+
+---
+
+## Discovery Classification
+
+Every discovered component shall be assigned a deterministic classification.
+
+Supported classifications shall include:
+
+* production runtime;
+* certification runtime;
+* behavioral test;
+* integration test;
+* evidence generator;
+* provenance generator;
+* replay component;
+* reconstruction component;
+* custody validator;
+* mutation validator;
+* environment validator;
+* reporting component;
+* supporting utility.
+
+Components shall not remain unclassified.
+
+Unknown or ambiguous classifications shall fail closed.
+
+---
+
+## Entry-Point Resolution
+
+Implement automatic resolution of executable entry points.
+
+The discovery process shall verify:
+
+* entry-point existence;
+* entry-point accessibility;
+* invocation syntax;
+* package resolution;
+* dependency availability;
+* configuration requirements;
+* execution permissions;
+* runtime compatibility.
+
+Invalid or unresolved entry points shall prevent certification execution.
+
+---
+
+## Certification Surface Discovery
+
+Implement deterministic identification of every component contributing to certification.
+
+The discovered certification surface shall include all runtime behavior introduced under:
+
+* HISTORIAN-RM-001;
+* HISTORIAN-RM-002;
+* HISTORIAN-RM-002A;
+* HISTORIAN-RM-003;
+* HISTORIAN-RM-004;
+* HISTORIAN-MO-001.
+
+The discovery process shall map each constitutional capability to at least one executable verification path.
+
+Unmapped constitutional capabilities shall generate a certification failure.
+
+---
+
+## Test Discovery
+
+Implement automated discovery of the complete test and certification suite.
+
+Verify discovery of:
+
+* unit tests;
+* behavioral tests;
+* integration tests;
+* deterministic replay tests;
+* reconstruction tests;
+* provenance tests;
+* custody tests;
+* evidence tests;
+* fail-closed tests;
+* mutation tests;
+* clean-room reproducibility tests.
+
+Test discovery shall be deterministic across equivalent clean environments.
+
+---
+
+## Discovery Completeness Validation
+
+Implement executable validation comparing discovered components against:
+
+* repository manifests;
+* constitutional capability inventory;
+* certification requirements;
+* declared package metadata;
+* documented execution procedures;
+* expected certification assets.
+
+The validation shall detect:
+
+* missing components;
+* undeclared components;
+* inaccessible components;
+* duplicate components;
+* conflicting entry points;
+* orphaned tests;
+* unmapped constitutional capabilities;
+* undocumented execution dependencies.
+
+Discovery incompleteness shall fail closed.
+
+---
+
+## Undeclared Runtime Detection
+
+Implement automatic detection of executable components not represented in the canonical runtime manifest.
+
+Undeclared components shall include:
+
+* hidden scripts;
+* undocumented commands;
+* locally invoked utilities;
+* unregistered test modules;
+* externally supplied execution helpers;
+* developer-only bootstrap logic;
+* runtime behavior dependent upon untracked files.
+
+The presence of undeclared certification-relevant runtime behavior shall invalidate reproducibility certification.
+
+---
+
+## Deterministic Discovery Ordering
+
+Implement canonical ordering of all discovered components.
+
+Ordering shall be based upon stable properties such as:
+
+* component classification;
+* constitutional capability;
+* immutable component identifier;
+* canonical repository path;
+* declared dependency order.
+
+Filesystem enumeration order, process scheduling, host operating system behavior, and nondeterministic traversal shall not affect discovery results.
+
+---
+
+## Discovery Isolation
+
+Runtime discovery shall operate in a clean environment without access to:
+
+* developer workspaces;
+* local caches not created by the bootstrap process;
+* prior certification outputs;
+* external evidence packages;
+* undocumented environment variables;
+* untracked configuration;
+* implementation-specific auditor knowledge.
+
+Discovery shall rely exclusively upon the submitted repository and documented environment bootstrap.
+
+---
+
+## Discovery Evidence
+
+Generate immutable evidence recording:
+
+* repository identity;
+* repository hash;
+* discovery invocation;
+* discovery timestamp;
+* discovery environment;
+* discovered component inventory;
+* component classifications;
+* resolved entry points;
+* capability mappings;
+* excluded components;
+* discovery warnings;
+* completeness validation results;
+* final discovery status.
+
+Discovery evidence shall be independently reproducible.
+
+---
+
+## Discovery Inventory Output
+
+Produce a canonical machine-readable runtime inventory containing:
+
+* total component count;
+* component identifiers;
+* component classifications;
+* repository paths;
+* invocation commands;
+* dependency relationships;
+* certification mappings;
+* expected outputs;
+* discovery validation status.
+
+Equivalent repositories shall generate equivalent inventories.
+
+---
+
+## Negative Verification
+
+Verify fail-closed behavior through controlled conditions including:
+
+* removal of a declared component;
+* addition of an undeclared executable;
+* invalid entry-point declaration;
+* duplicate component identity;
+* ambiguous component classification;
+* missing certification mapping;
+* hidden test module;
+* inaccessible runtime package;
+* altered runtime manifest;
+* nondeterministic discovery ordering.
+
+Every condition shall be automatically detected and recorded.
+
+---
+
+## Independent Execution Verification
+
+Execute runtime discovery from multiple clean environments using only:
+
+* the submitted repository;
+* the documented bootstrap procedure;
+* the documented discovery command.
+
+Verify that each execution produces:
+
+* the same discovered component set;
+* the same component classifications;
+* the same entry-point resolutions;
+* the same capability mappings;
+* the same canonical inventory;
+* the same discovery conclusion.
+
+Environment-specific metadata may differ only where explicitly classified as non-semantic evidence.
+
+---
+
+## Behavioral Verification
+
+Verify through independent execution that:
+
+* every executable certification component is automatically discovered;
+* no manual module identification is required;
+* discovery is complete;
+* discovery is deterministic;
+* discovery results are canonically ordered;
+* all entry points are executable;
+* every constitutional capability maps to an executable verification path;
+* undeclared runtime behavior is detected;
+* incomplete discovery fails closed;
+* discovery evidence is independently regenerable.
+
+---
+
+## Acceptance Criteria
+
+This order shall be considered complete only when:
+
+* a clean-room auditor can automatically discover the complete Historian runtime and certification surface;
+* every required component is represented in the canonical runtime manifest;
+* every discovered component possesses a deterministic classification and executable entry point;
+* every constitutional capability is mapped to an independently executable verification path;
+* equivalent clean repositories produce equivalent discovery inventories;
+* missing, hidden, duplicate, inaccessible, ambiguous, or undeclared components are automatically detected;
+* incomplete or inconsistent runtime discovery prevents certification execution;
+* the auditor requires no implementation-specific knowledge beyond the documented repository command;
+* independently regenerated discovery evidence is sufficient to support ECS-004 reproducibility certification.

@@ -1,0 +1,69 @@
+{
+  "audit003_manifest": {
+    "audit_orders_passed": 12,
+    "audit_orders_total": 12,
+    "candidate_digest": "ff52247d84ef0dd42903b53aeb3bfa795b21e509",
+    "decision": "ECS-003 CERTIFIED",
+    "deliverables": [
+      "audit_manifest.json",
+      "behavioral_certification_suite_assessment.json",
+      "clean_room_run_a.json",
+      "clean_room_run_b.json",
+      "constitutional_traceability_assessment.json",
+      "deterministic_execution_assessment.json",
+      "ecs003_compliance_matrix.json",
+      "evidence_certification_report.json",
+      "fail_closed_validation_report.json",
+      "final_independent_certification_report.json",
+      "historical_reconstruction_assessment.json",
+      "independent_repository_verification_report.json",
+      "independent_reproduction_report.json",
+      "replay_equivalence_assessment.json",
+      "runtime_behavioral_assessment.json",
+      "source_order.txt"
+    ],
+    "generated_at_utc": "2026-07-31T23:58:00+00:00",
+    "order_id": "HISTORIAN-ECS003-AUDIT-003"
+  },
+  "evidence_regeneration_status": "PASS",
+  "regenerated_artifacts": [
+    {
+      "exists": true,
+      "path": "Documentation/HISTORIAN_RM002A_BEHAVIORAL_COMPLETION/behavioral_completion_report.json",
+      "sha256": "2688dd8f43239eca7ff99588a5e3b256d3ca8f05e56dda91242e1dfed92d760d"
+    },
+    {
+      "exists": true,
+      "path": "Documentation/HISTORIAN_RM002A_BEHAVIORAL_COMPLETION/reference_runtime_execution.json",
+      "sha256": "7c22af476addb7c87358ca92962cb1a32c54ca1955f47ae999509b3a46c84d47"
+    },
+    {
+      "exists": true,
+      "path": "Documentation/HISTORIAN_ECS003_AUDIT_003/final_independent_certification_report.json",
+      "sha256": "376e86a5bedecde280141fb14196d425dca502d9e62efa82f7199c4b0133332c"
+    },
+    {
+      "exists": true,
+      "path": "Documentation/HISTORIAN_ECS003_AUDIT_003/independent_reproduction_report.json",
+      "sha256": "c644bfcab0a4d59f648fee20bb526d6cbb1ede27d5756aabe15b24da45fe1385"
+    }
+  ],
+  "rm002a_manifest": {
+    "behavioral_completion_status": "PASS",
+    "candidate_digest": "ff52247d84ef0dd42903b53aeb3bfa795b21e509",
+    "deliverables": [
+      "behavioral_completion_report.json",
+      "behavioral_evidence_registry.json",
+      "behavioral_order_registry.json",
+      "campaign_manifest.json",
+      "reference_runtime_execution.json",
+      "source_orders"
+    ],
+    "generated_at_utc": "2026-07-31T23:45:00+00:00",
+    "order_id": "HISTORIAN-RM-002A",
+    "orders_passed": 12,
+    "orders_total": 12
+  },
+  "runtime_observation_manifest": "generated from current RM002A and ECS003 audit execution",
+  "uses_previous_evidence_as_input": false
+}

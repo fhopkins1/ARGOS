@@ -1,0 +1,471 @@
+# HISTORIAN-RM-004-008
+
+## Certification Equivalence
+
+### Objective
+
+Implement deterministic comparison between independently regenerated Historian certification results and the submitted certification baseline.
+
+The implementation shall determine whether clean-room execution produces constitutionally equivalent:
+
+* behavioral conclusions;
+* evidence;
+* provenance;
+* replay results;
+* certification outcomes.
+
+Certification equivalence shall be established through executable comparison rather than narrative assertion.
+
+---
+
+# Constitutional Requirements
+
+The implementation shall:
+
+* compare regenerated certification exclusively against an identified submitted baseline;
+* preserve both baseline and regenerated artifacts immutably;
+* distinguish exact identity from constitutional equivalence;
+* apply deterministic comparison rules;
+* detect all material divergence;
+* generate objective equivalence evidence;
+* prohibit discretionary auditor judgment within automated comparison;
+* fail closed whenever equivalence cannot be established.
+
+Equivalent certification shall not require byte-for-byte identity where nondeterministic metadata is constitutionally permitted.
+
+---
+
+# Certification Baseline Registration
+
+The runtime shall register the submitted certification baseline before comparison.
+
+The baseline record shall include:
+
+* certification identifier;
+* repository identity;
+* repository revision;
+* certification-suite version;
+* execution-environment identity;
+* evidence-package identity;
+* provenance-package identity;
+* replay-package identity;
+* certification outcome;
+* cryptographic hashes;
+* submission timestamp.
+
+An unidentified or internally inconsistent baseline shall be rejected.
+
+---
+
+# Regenerated Certification Registration
+
+The clean-room certification execution shall produce and register an independent certification set containing:
+
+* regenerated behavioral results;
+* regenerated evidence;
+* regenerated provenance;
+* regenerated replay outputs;
+* regenerated mutation results;
+* regenerated certification findings;
+* regenerated final outcome.
+
+The regenerated set shall be linked to the clean-room execution that created it.
+
+Previously submitted evidence shall not be reused as regenerated evidence.
+
+---
+
+# Comparison Domains
+
+Certification equivalence shall be evaluated across the following domains:
+
+1. repository identity;
+2. certification scope;
+3. behavioral coverage;
+4. test discovery;
+5. test execution;
+6. behavioral conclusions;
+7. evidence completeness;
+8. evidence integrity;
+9. provenance integrity;
+10. replay equivalence;
+11. mutation detection;
+12. fail-closed behavior;
+13. certification findings;
+14. final certification outcome.
+
+Each domain shall produce an independent comparison result.
+
+---
+
+# Exact Identity Comparison
+
+Where constitutional determinism requires exact identity, the runtime shall compare:
+
+* canonical artifact identifiers;
+* repository revision;
+* source hashes;
+* test inventory;
+* dependency lock identity;
+* configuration identity;
+* behaviorally significant serialized values;
+* evidence hashes;
+* provenance graph structure;
+* replay state outputs;
+* certification decision codes.
+
+Any unexplained difference shall constitute divergence.
+
+---
+
+# Constitutional Equivalence Comparison
+
+Where exact identity is not required, the runtime shall normalize only explicitly permitted nondeterministic fields.
+
+Permitted normalization may include:
+
+* execution timestamps;
+* temporary filesystem paths;
+* process identifiers;
+* machine-specific identifiers;
+* environment-specific path separators;
+* nondeterministic ordering proven to be semantically irrelevant.
+
+Normalization rules shall be:
+
+* documented;
+* machine-readable;
+* version-controlled;
+* deterministically applied;
+* independently testable.
+
+Normalization shall never conceal behaviorally material differences.
+
+---
+
+# Behavioral Conclusion Equivalence
+
+The runtime shall verify that both certification sets reach equivalent conclusions for every tested capability.
+
+Comparison shall include:
+
+* pass outcomes;
+* fail outcomes;
+* expected rejection outcomes;
+* mutation detection outcomes;
+* replay outcomes;
+* custody conclusions;
+* provenance conclusions;
+* evidence conclusions;
+* lifecycle conclusions;
+* final readiness conclusions.
+
+A changed conclusion for any constitutional capability shall fail equivalence.
+
+---
+
+# Evidence Equivalence
+
+Regenerated evidence shall be compared against submitted evidence for:
+
+* artifact coverage;
+* event coverage;
+* identity consistency;
+* ownership consistency;
+* custody continuity;
+* validation results;
+* failure evidence;
+* mutation evidence;
+* certification lineage;
+* cryptographic integrity.
+
+Evidence shall be considered equivalent only when it supports the same constitutional conclusions through independently regenerated execution.
+
+Missing evidence shall not be treated as equivalent.
+
+---
+
+# Provenance Equivalence
+
+The implementation shall compare submitted and regenerated provenance for:
+
+* node identity;
+* edge identity;
+* derivation relationships;
+* dependency relationships;
+* correction relationships;
+* supersession relationships;
+* certification lineage;
+* custody relationships;
+* graph completeness;
+* graph integrity.
+
+Equivalent provenance shall preserve the same historical and certification meaning.
+
+Orphaned, missing, added, or altered material relationships shall fail equivalence.
+
+---
+
+# Replay Equivalence
+
+The runtime shall compare deterministic replay results for:
+
+* journey reconstruction;
+* lifecycle reconstruction;
+* historical state;
+* artifact ordering;
+* custody state;
+* provenance state;
+* missing-information state;
+* language preservation;
+* certification evidence;
+* final replay outcome.
+
+Replay equivalence shall require constitutionally equivalent state evolution and conclusions.
+
+---
+
+# Certification Outcome Equivalence
+
+The final certification comparison shall verify equivalence of:
+
+* certification status;
+* certification scope;
+* unresolved findings;
+* exclusions;
+* limitations;
+* mutation results;
+* reproducibility result;
+* readiness determination.
+
+A submitted PASS and regenerated FAIL shall never be equivalent.
+
+A regenerated PASS with materially reduced scope shall never be equivalent to a full-scope submitted PASS.
+
+---
+
+# Divergence Classification
+
+Every detected difference shall be classified as one of the following:
+
+* Permitted Nondeterministic Difference;
+* Nonmaterial Representation Difference;
+* Evidence Difference;
+* Provenance Difference;
+* Replay Difference;
+* Behavioral Difference;
+* Scope Difference;
+* Environment Difference;
+* Certification Outcome Difference;
+* Unclassified Difference.
+
+Only the first two classifications may preserve equivalence.
+
+Unclassified differences shall fail closed.
+
+---
+
+# Materiality Rules
+
+A divergence shall be material when it affects:
+
+* constitutional behavior;
+* execution result;
+* ownership;
+* custody;
+* provenance;
+* replay;
+* evidence completeness;
+* mutation detection;
+* fail-closed behavior;
+* certification scope;
+* certification outcome.
+
+Materiality shall be determined by deterministic rules rather than auditor discretion.
+
+---
+
+# Runtime Comparison Sequence
+
+The equivalence workflow shall execute in the following order:
+
+1. register the submitted baseline;
+2. validate baseline integrity;
+3. register the regenerated certification set;
+4. validate regenerated-set integrity;
+5. validate scope equivalence;
+6. apply authorized normalization;
+7. compare behavioral conclusions;
+8. compare evidence;
+9. compare provenance;
+10. compare replay;
+11. compare mutation outcomes;
+12. compare certification findings;
+13. compare final certification outcomes;
+14. classify divergences;
+15. determine certification equivalence;
+16. emit the equivalence report.
+
+The comparison sequence shall be deterministic and fully automated.
+
+---
+
+# Failure Detection
+
+The implementation shall detect:
+
+* missing baseline artifacts;
+* missing regenerated artifacts;
+* baseline integrity failure;
+* regenerated-set integrity failure;
+* repository revision mismatch;
+* certification-suite mismatch;
+* reduced behavioral coverage;
+* unauthorized normalization;
+* evidence divergence;
+* provenance divergence;
+* replay divergence;
+* mutation-result divergence;
+* certification-scope divergence;
+* outcome divergence;
+* unexplained differences.
+
+Each failure shall generate a deterministic audit finding.
+
+---
+
+# Fail-Closed Behavior
+
+When equivalence cannot be established, the runtime shall:
+
+* reject certification equivalence;
+* preserve both certification sets;
+* preserve all comparison artifacts;
+* identify every divergence;
+* prevent issuance of an equivalence certification;
+* emit immutable failure evidence;
+* preserve reproducibility records;
+* require explicit remediation and re-execution.
+
+The runtime shall not downgrade material divergences to warnings.
+
+---
+
+# Mutation Validation
+
+The equivalence comparator shall be tested using controlled mutations including:
+
+* changed behavioral result;
+* removed evidence artifact;
+* altered evidence hash;
+* modified provenance edge;
+* corrupted replay output;
+* reduced certification scope;
+* omitted mutation result;
+* changed certification status;
+* unauthorized normalization rule;
+* altered repository revision.
+
+Each material mutation shall cause equivalence failure.
+
+---
+
+# Deterministic Reproduction
+
+Equivalent baseline and regenerated certification sets shall always produce:
+
+* identical domain comparison outcomes;
+* identical divergence classifications;
+* identical materiality decisions;
+* identical final equivalence result;
+* equivalent comparison evidence;
+* equivalent audit findings.
+
+Repeated comparisons shall not depend upon execution order, auditor identity, or machine identity.
+
+---
+
+# Runtime Evidence
+
+Every equivalence execution shall emit immutable evidence including:
+
+* baseline certification identity;
+* regenerated certification identity;
+* repository identities;
+* suite identities;
+* environment identities;
+* comparison-rule version;
+* normalization-rule version;
+* domain-level comparison results;
+* divergence inventory;
+* materiality determinations;
+* behavioral comparison results;
+* evidence comparison results;
+* provenance comparison results;
+* replay comparison results;
+* certification-outcome comparison;
+* final equivalence determination;
+* execution timestamp;
+* comparator identity.
+
+All evidence shall be generated from the current comparison execution.
+
+---
+
+# Behavioral Verification
+
+The certification suite shall independently verify:
+
+* baseline registration;
+* regenerated-set registration;
+* exact comparison behavior;
+* authorized normalization;
+* behavioral conclusion comparison;
+* evidence comparison;
+* provenance comparison;
+* replay comparison;
+* mutation-result comparison;
+* divergence classification;
+* materiality determination;
+* fail-closed behavior;
+* deterministic equivalence outcomes;
+* equivalence evidence generation.
+
+Verification shall evaluate executable comparison behavior rather than report formatting.
+
+---
+
+# Required Deliverables
+
+Execution of this order shall produce:
+
+* submitted certification baseline manifest;
+* regenerated certification manifest;
+* comparison-rule specification;
+* normalization-rule specification;
+* domain comparison records;
+* divergence inventory;
+* materiality determination record;
+* behavioral equivalence report;
+* evidence equivalence report;
+* provenance equivalence report;
+* replay equivalence report;
+* certification outcome equivalence report;
+* final Certification Equivalence Report.
+
+---
+
+# Completion Criteria
+
+This order shall be complete only when:
+
+* submitted and regenerated certification sets are independently registered and validated;
+* all required comparison domains are evaluated automatically;
+* authorized nondeterminism is normalized deterministically;
+* material differences are never concealed;
+* behavioral, evidence, provenance, replay, mutation, scope, and outcome differences are detected;
+* controlled mutations reliably cause equivalence failure;
+* equivalent certification sets produce equivalent comparison results across repeated executions;
+* unresolved or unclassified differences fail closed;
+* the complete comparison executes without implementation-specific auditor intervention;
+* the final equivalence determination is supported by independently reproducible runtime evidence.

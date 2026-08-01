@@ -1,0 +1,59 @@
+{
+  "certification_assets_verified": true,
+  "configuration_verified": true,
+  "documentation_verified": true,
+  "missing_methods": [],
+  "missing_symbols": [],
+  "observed_methods": [
+    "add_counterfactual_branch",
+    "add_provenance_edge",
+    "certification_report",
+    "create_journey",
+    "learning_projection",
+    "preserve_language",
+    "reconstruct",
+    "record_missing_information",
+    "register_artifact",
+    "replay",
+    "transition"
+  ],
+  "observed_symbols": [
+    "BehavioralEvidence",
+    "CounterfactualBranch",
+    "EnterpriseInformationJourneyRuntime",
+    "HistoricalArtifact",
+    "HistoricalCustodyRecord",
+    "JourneyState",
+    "LanguageArtifact",
+    "MissingInformationRecord",
+    "ProvenanceEdge",
+    "ProvenanceNode"
+  ],
+  "required_methods": [
+    "add_counterfactual_branch",
+    "add_provenance_edge",
+    "certification_report",
+    "create_journey",
+    "learning_projection",
+    "preserve_language",
+    "reconstruct",
+    "record_missing_information",
+    "register_artifact",
+    "replay",
+    "transition"
+  ],
+  "required_symbols": [
+    "BehavioralEvidence",
+    "CounterfactualBranch",
+    "EnterpriseInformationJourneyRuntime",
+    "HistoricalArtifact",
+    "HistoricalCustodyRecord",
+    "JourneyState",
+    "LanguageArtifact",
+    "MissingInformationRecord",
+    "ProvenanceEdge",
+    "ProvenanceNode"
+  ],
+  "runtime_path": "src\\argos\\historian\\enterprise_information_journey.py",
+  "structural_status": "PASS"
+}

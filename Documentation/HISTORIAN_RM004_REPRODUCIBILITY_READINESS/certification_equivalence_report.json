@@ -1,0 +1,44 @@
+{
+  "domain_comparison_records": [
+    {
+      "classification": "constitutionally_equivalent",
+      "domain": "behavioral_conclusions",
+      "equivalent": true
+    },
+    {
+      "classification": "constitutionally_equivalent",
+      "domain": "capability_coverage",
+      "equivalent": true
+    },
+    {
+      "classification": "constitutionally_equivalent",
+      "domain": "replay_equivalence",
+      "equivalent": true
+    },
+    {
+      "classification": "constitutionally_equivalent",
+      "domain": "reconstruction_equivalence",
+      "equivalent": true
+    },
+    {
+      "classification": "constitutionally_equivalent",
+      "domain": "learning_boundary",
+      "equivalent": true
+    }
+  ],
+  "equivalence_status": "PASS",
+  "material_divergences": [],
+  "normalization_rules": [
+    "ignore execution label",
+    "ignore execution timestamp",
+    "preserve behavioral conclusions"
+  ],
+  "regenerated_certification": {
+    "certification_status": "PASS",
+    "label": "REGENERATED"
+  },
+  "submitted_certification_baseline": {
+    "certification_status": "PASS",
+    "label": "BASELINE"
+  }
+}

@@ -1,0 +1,219 @@
+## HISTORIAN-RM-004-010
+
+# Clean-Room Auditor Automation
+
+## Purpose
+
+This order establishes the executable runtime behavior required to fully automate the independent ECS-004 certification process for the Historian Office.
+
+The objective is to enable an unrelated auditor to reproduce the complete certification using only the submitted repository, the documented execution command, and a clean execution environment, without requiring implementation-specific knowledge or manual intervention.
+
+The automated auditor shall derive all certification conclusions exclusively from observable runtime execution.
+
+---
+
+# Constitutional Requirements
+
+Implement a deterministic **Clean-Room Auditor** capable of executing the complete Historian certification workflow automatically.
+
+The auditor shall require only:
+
+* repository;
+* documented execution command;
+* supported execution environment.
+
+No additional implementation knowledge shall be required.
+
+---
+
+# Automated Certification Pipeline
+
+Implement a single deterministic certification pipeline executing, in constitutional order:
+
+1. repository bootstrap;
+2. dependency verification;
+3. environment reconstruction;
+4. repository structural verification;
+5. runtime component discovery;
+6. certification suite execution;
+7. evidence regeneration;
+8. provenance regeneration;
+9. certification equivalence validation;
+10. mutation detection;
+11. reproducibility validation;
+12. final certification determination.
+
+The pipeline shall execute without manual intervention.
+
+---
+
+# Automatic Runtime Discovery
+
+Implement executable discovery of:
+
+* executable modules;
+* certification suites;
+* manifests;
+* schemas;
+* configuration assets;
+* documentation;
+* runtime interfaces;
+* reproducibility tooling.
+
+The auditor shall never require manual identification of executable components.
+
+---
+
+# Automatic Execution Orchestration
+
+Implement deterministic orchestration that:
+
+* establishes the execution environment;
+* resolves dependencies;
+* initializes runtime;
+* executes certification workflows;
+* captures runtime evidence;
+* evaluates certification results;
+* produces certification reports.
+
+Execution ordering shall be deterministic.
+
+---
+
+# Runtime Observation
+
+The automated auditor shall observe and record:
+
+* executed commands;
+* execution sequence;
+* runtime outputs;
+* generated evidence;
+* provenance generation;
+* replay validation;
+* mutation results;
+* certification decisions.
+
+All observations shall be generated directly from runtime execution.
+
+---
+
+# Failure Management
+
+Implement deterministic handling of:
+
+* bootstrap failures;
+* dependency failures;
+* environment failures;
+* repository validation failures;
+* execution failures;
+* evidence inconsistencies;
+* mutation detection failures;
+* certification failures.
+
+Failures shall terminate certification immediately.
+
+No recovery shall conceal execution defects.
+
+---
+
+# Certification Decision Engine
+
+Implement executable certification logic that evaluates:
+
+* repository completeness;
+* execution success;
+* deterministic behavior;
+* regenerated evidence;
+* provenance integrity;
+* replay equivalence;
+* mutation resistance;
+* reproducibility validation.
+
+Certification outcomes shall be determined exclusively by objective execution results.
+
+---
+
+# Auditor Independence Verification
+
+Verify that the automated auditor operates without:
+
+* developer assertions;
+* implementation-specific configuration;
+* manually generated evidence;
+* manually selected tests;
+* hidden execution steps;
+* undocumented repository knowledge.
+
+Any dependency upon developer knowledge shall invalidate certification.
+
+---
+
+# Runtime Evidence Generation
+
+Every automated certification execution shall generate immutable evidence including:
+
+* certification execution identifier;
+* repository identifier;
+* execution environment identifier;
+* discovered runtime components;
+* executed certification stages;
+* regenerated evidence references;
+* provenance references;
+* mutation validation results;
+* certification decision;
+* execution timestamps;
+* failure information when applicable.
+
+Evidence shall be independently reproducible.
+
+---
+
+# Runtime Interfaces
+
+Implement deterministic interfaces supporting:
+
+* automated certification execution;
+* execution status retrieval;
+* certification progress;
+* runtime observation retrieval;
+* regenerated evidence retrieval;
+* certification decision retrieval;
+* failure reporting;
+* execution replay.
+
+All interfaces shall operate without manual configuration.
+
+---
+
+# Fail-Closed Requirements
+
+The automated auditor shall reject:
+
+* incomplete repositories;
+* undocumented execution procedures;
+* unresolved dependencies;
+* hidden runtime behavior;
+* non-deterministic execution;
+* unverifiable evidence;
+* irreproducible certification;
+* manual certification intervention.
+
+No certification shall be issued unless the entire workflow completes deterministically from a clean-room environment.
+
+---
+
+# Behavioral Verification
+
+The behavioral certification suite shall verify:
+
+* deterministic automated repository execution;
+* deterministic runtime discovery;
+* deterministic certification orchestration;
+* deterministic evidence regeneration;
+* deterministic provenance regeneration;
+* deterministic certification decisions;
+* auditor independence;
+* reproducible execution outputs;
+* fail-closed enforcement.
+
+Behavioral certification shall confirm that an unrelated auditor can reproduce the complete Historian certification solely through automated execution of the submitted repository, documented command, and clean execution environment, producing independently regenerated evidence and an equivalent certification outcome.

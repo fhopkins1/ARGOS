@@ -1,0 +1,250 @@
+## HISTORIAN-RM-004-009
+
+### Mutation Detection Runtime
+
+#### Purpose
+
+Implement deterministic runtime behavior that validates the integrity of the Historian implementation through controlled mutation testing.
+
+The mutation detection system shall demonstrate that independently certified behavior cannot continue to execute successfully after intentional corruption of constitutional artifacts, runtime dependencies, repository contents, configuration, provenance, custody, or historical state.
+
+Every injected mutation shall either be detected automatically or cause deterministic fail-closed behavior. Undetected mutations shall constitute certification failures.
+
+---
+
+### Constitutional Requirements
+
+The implementation shall provide deterministic runtime behavior governing:
+
+* mutation selection;
+* mutation isolation;
+* controlled mutation injection;
+* mutation execution;
+* integrity verification;
+* anomaly detection;
+* failure classification;
+* evidence generation;
+* environment restoration;
+* mutation certification.
+
+Mutation testing shall never alter the certified repository permanently.
+
+---
+
+### Mutation Categories
+
+The certification suite shall support controlled mutation of:
+
+* repository source files;
+* executable modules;
+* dependency manifests;
+* dependency versions;
+* dependency hashes;
+* runtime configuration;
+* environment variables;
+* certification manifests;
+* provenance records;
+* custody records;
+* replay artifacts;
+* historical records;
+* evidence artifacts;
+* workflow metadata;
+* journey metadata;
+* certification outputs.
+
+Each mutation category shall execute independently.
+
+---
+
+### Repository Mutation Verification
+
+The implementation shall inject controlled mutations including:
+
+* missing source files;
+* renamed files;
+* corrupted source;
+* incomplete repository structure;
+* invalid executable entry points;
+* missing documentation;
+* invalid manifests.
+
+Repository integrity verification shall detect every structural mutation.
+
+---
+
+### Dependency Mutation Verification
+
+The implementation shall inject:
+
+* version substitutions;
+* package removal;
+* corrupted packages;
+* invalid hashes;
+* incompatible libraries;
+* unavailable dependencies.
+
+Execution shall reject uncertified dependency states.
+
+---
+
+### Configuration Mutation Verification
+
+The implementation shall verify detection of:
+
+* corrupted configuration;
+* missing configuration;
+* invalid parameters;
+* conflicting configuration values;
+* unauthorized configuration changes;
+* malformed configuration syntax.
+
+Configuration mutations shall fail before certification execution.
+
+---
+
+### Provenance Mutation Verification
+
+The implementation shall inject mutations affecting:
+
+* provenance nodes;
+* provenance edges;
+* dependency relationships;
+* derivation relationships;
+* supersession relationships;
+* certification lineage.
+
+Graph validation shall detect every constitutional inconsistency.
+
+---
+
+### Historical Custody Mutation Verification
+
+The implementation shall verify detection of:
+
+* missing custody assignments;
+* duplicate custody;
+* broken custody chains;
+* invalid ownership transitions;
+* unauthorized custody modification;
+* incomplete custody history.
+
+Custody mutations shall invalidate certification.
+
+---
+
+### Replay Mutation Verification
+
+The implementation shall inject mutations affecting:
+
+* replay inputs;
+* replay ordering;
+* replay timestamps;
+* replay artifacts;
+* replay metadata;
+* replay outputs.
+
+Replay equivalence verification shall detect every deviation.
+
+---
+
+### Evidence Mutation Verification
+
+The implementation shall verify detection of:
+
+* missing evidence;
+* corrupted evidence;
+* altered timestamps;
+* invalid hashes;
+* incomplete evidence chains;
+* inconsistent certification records.
+
+Evidence integrity shall be objectively verified.
+
+---
+
+### Runtime Mutation Detection
+
+During execution, the implementation shall verify:
+
+* executable integrity;
+* runtime behavior;
+* deterministic outputs;
+* behavioral equivalence;
+* certification consistency;
+* replay consistency.
+
+Unexpected behavior shall terminate certification.
+
+---
+
+### Isolation Requirements
+
+Every mutation execution shall:
+
+* execute in an isolated environment;
+* preserve the certified repository;
+* restore the pristine environment automatically;
+* prevent mutation persistence;
+* prevent mutation contamination of subsequent tests.
+
+Each mutation shall be independently reproducible.
+
+---
+
+### Failure Classification
+
+Detected mutations shall be classified as:
+
+* repository integrity failure;
+* dependency integrity failure;
+* configuration integrity failure;
+* provenance integrity failure;
+* custody integrity failure;
+* replay integrity failure;
+* evidence integrity failure;
+* behavioral integrity failure;
+* certification integrity failure.
+
+Classification shall be deterministic.
+
+---
+
+### Runtime Evidence
+
+Execution shall generate objective evidence demonstrating:
+
+* mutation identity;
+* mutation category;
+* mutation injection;
+* integrity verification;
+* detection mechanism;
+* fail-closed behavior;
+* restoration completion;
+* certification outcome.
+
+Evidence shall be immutable and independently reproducible.
+
+---
+
+### Deterministic Verification
+
+Verification shall demonstrate that:
+
+* identical mutations produce identical detection outcomes;
+* equivalent certified repositories reject identical mutations consistently;
+* mutation classification is deterministic;
+* restoration produces equivalent pristine environments;
+* repeated executions generate equivalent evidence;
+* no mutation can silently alter certified behavior.
+
+---
+
+### Acceptance Criteria
+
+This order shall be considered complete when independent certification demonstrates that:
+
+* every supported mutation category is automatically detected or results in deterministic fail-closed behavior;
+* repository, dependency, configuration, provenance, custody, replay, and evidence corruption cannot evade certification;
+* mutation testing executes in isolated environments and restores pristine state after every execution;
+* mutation detection generates independently reproducible certification evidence;
+* equivalent mutation campaigns produce constitutionally identical detection results across repeated independent executions.

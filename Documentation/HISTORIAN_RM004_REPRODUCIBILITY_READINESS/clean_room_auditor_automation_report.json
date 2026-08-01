@@ -1,0 +1,49 @@
+{
+  "auditor_id": "HISTORIAN-RM-004-CLEAN-ROOM-AUDITOR",
+  "candidate_digest": "ff52247d84ef0dd42903b53aeb3bfa795b21e509",
+  "certification_decision": "ECS004_READY",
+  "documented_entry_point": "python Scripts/historian_rm004_clean_room_auditor.py",
+  "generated_at_utc": "2026-08-01T00:20:00+00:00",
+  "manual_test_selection_required": false,
+  "requires_developer_intervention": false,
+  "stages": [
+    {
+      "command": "python Scripts/historian_rm004_reproducibility_readiness.py",
+      "name": "repository_bootstrap",
+      "stage": 1,
+      "status": "PASS"
+    },
+    {
+      "command": "python -m py_compile Scripts/historian_rm004_reproducibility_readiness.py",
+      "name": "dependency_verification",
+      "stage": 2,
+      "status": "PASS"
+    },
+    {
+      "command": "python -m unittest Tests.test_historian_rm002a_enterprise_information_journey_runtime Tests.test_historian_rm002a_behavioral_completion Tests.test_historian_ecs003_audit_003",
+      "name": "certification_suite_execution",
+      "stage": 3,
+      "status": "PASS"
+    },
+    {
+      "command": "python Scripts/historian_rm002a_behavioral_completion.py && python Scripts/historian_ecs003_audit_003.py",
+      "name": "evidence_regeneration",
+      "stage": 4,
+      "status": "PASS"
+    },
+    {
+      "command": "embedded deterministic Historian fail-closed matrix",
+      "name": "mutation_detection",
+      "stage": 5,
+      "status": "PASS"
+    },
+    {
+      "command": "generated ECS-004 readiness decision",
+      "name": "final_readiness",
+      "stage": 6,
+      "status": "PASS"
+    }
+  ],
+  "terminal_status": "PASS",
+  "uses_previously_generated_evidence_as_input": false
+}

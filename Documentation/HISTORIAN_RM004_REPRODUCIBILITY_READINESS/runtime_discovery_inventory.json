@@ -1,0 +1,154 @@
+{
+  "component_count": 9,
+  "components": [
+    {
+      "classification": "behavioral test",
+      "component_id": "historian.rm002a.completion_tests",
+      "constitutional_capability": "HISTORIAN-RM-002A",
+      "entry_point": "python -m unittest Tests.test_historian_rm002a_behavioral_completion",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Tests/test_historian_rm002a_behavioral_completion.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "behavioral test",
+      "component_id": "historian.rm002a.runtime_tests",
+      "constitutional_capability": "HISTORIAN-RM-002A",
+      "entry_point": "python -m unittest Tests.test_historian_rm002a_enterprise_information_journey_runtime",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Tests/test_historian_rm002a_enterprise_information_journey_runtime.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "certification runtime",
+      "component_id": "historian.ecs003.audit003",
+      "constitutional_capability": "HISTORIAN-ECS003-AUDIT-003",
+      "entry_point": "python Scripts/historian_ecs003_audit_003.py",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Scripts/historian_ecs003_audit_003.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "certification test",
+      "component_id": "historian.ecs003.audit003_tests",
+      "constitutional_capability": "HISTORIAN-ECS003-AUDIT-003",
+      "entry_point": "python -m unittest Tests.test_historian_ecs003_audit_003",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Tests/test_historian_ecs003_audit_003.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "clean-room auditor",
+      "component_id": "historian.rm004.clean_room",
+      "constitutional_capability": "HISTORIAN-RM-004-010",
+      "entry_point": "python Scripts/historian_rm004_clean_room_auditor.py",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Scripts/historian_rm004_clean_room_auditor.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "evidence generator",
+      "component_id": "historian.rm002a.behavioral_completion",
+      "constitutional_capability": "HISTORIAN-RM-002A",
+      "entry_point": "python Scripts/historian_rm002a_behavioral_completion.py",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Scripts/historian_rm002a_behavioral_completion.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "production runtime",
+      "component_id": "historian.runtime.enterprise_information_journey",
+      "constitutional_capability": "HISTORIAN-RM-002A",
+      "entry_point": "import argos.historian.enterprise_information_journey",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "src/argos/historian/enterprise_information_journey.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "reproducibility auditor",
+      "component_id": "historian.rm004.readiness",
+      "constitutional_capability": "HISTORIAN-RM-004",
+      "entry_point": "python Scripts/historian_rm004_reproducibility_readiness.py",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Scripts/historian_rm004_reproducibility_readiness.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    },
+    {
+      "classification": "reproducibility test",
+      "component_id": "historian.rm004.readiness_tests",
+      "constitutional_capability": "HISTORIAN-RM-004",
+      "entry_point": "python -m unittest Tests.test_historian_rm004_reproducibility_readiness",
+      "exists": true,
+      "expected_outputs": [
+        "terminal status",
+        "machine-readable evidence"
+      ],
+      "repository_location": "Tests/test_historian_rm004_reproducibility_readiness.py",
+      "required_configuration": "repository root with src on PYTHONPATH",
+      "required_dependencies": [
+        "python"
+      ]
+    }
+  ],
+  "discovery_status": "PASS",
+  "duplicate_component_id_detected": false,
+  "runtime_manifest_id": "HISTORIAN-RM-004-RUNTIME-MANIFEST",
+  "undeclared_runtime_components_detected": false,
+  "unmapped_capabilities": []
+}

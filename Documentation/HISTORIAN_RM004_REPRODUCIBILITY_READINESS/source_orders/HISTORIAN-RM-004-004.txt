@@ -1,0 +1,239 @@
+## HISTORIAN-RM-004-004
+
+# Repository Structural Verification
+
+## Purpose
+
+This order establishes the executable runtime behavior required to verify that a submitted Historian repository contains every artifact necessary for independent reproducibility certification.
+
+The objective is to eliminate reliance upon auditor assumptions by ensuring repository completeness can be objectively and deterministically verified through automated execution.
+
+Repository completeness shall be established through observable runtime verification rather than manual inspection.
+
+---
+
+# Constitutional Requirements
+
+Implement deterministic verification of repository structure including:
+
+* source code;
+* executable entry points;
+* certification suites;
+* documentation;
+* manifests;
+* dependency specifications;
+* configuration assets;
+* schema definitions;
+* evidence definitions;
+* certification assets;
+* reproducibility tooling.
+
+No required certification artifact shall be omitted.
+
+---
+
+# Repository Manifest Runtime
+
+Implement a canonical **Repository Manifest** describing every certification-required repository artifact.
+
+The manifest shall include at minimum:
+
+* artifact identifier;
+* artifact category;
+* canonical path;
+* required status;
+* version identifier;
+* integrity hash;
+* dependency relationships;
+* certification role.
+
+The manifest shall be machine-readable and executable.
+
+---
+
+# Structural Discovery Runtime
+
+Implement deterministic runtime discovery of repository contents.
+
+Discovery shall identify:
+
+* source directories;
+* executable modules;
+* test suites;
+* configuration files;
+* documentation;
+* manifests;
+* schemas;
+* automation scripts;
+* certification resources.
+
+Discovery shall require no auditor-supplied repository knowledge.
+
+---
+
+# Repository Validation Runtime
+
+Implement executable validation verifying that every required repository component:
+
+* exists;
+* is uniquely identifiable;
+* resides at its documented location;
+* satisfies required integrity constraints;
+* is internally consistent;
+* is available for execution.
+
+Validation shall reject incomplete or inconsistent repositories.
+
+---
+
+# Documentation Verification
+
+Implement deterministic verification that required documentation exists for:
+
+* repository bootstrap;
+* environment creation;
+* dependency installation;
+* certification execution;
+* evidence regeneration;
+* clean-room reproduction;
+* auditor execution procedures.
+
+Documentation shall be sufficient for independent execution without developer assistance.
+
+---
+
+# Configuration Verification
+
+Implement runtime verification of all required configuration assets including:
+
+* runtime configuration;
+* certification configuration;
+* dependency manifests;
+* environment definitions;
+* execution profiles;
+* reproducibility settings.
+
+Configuration shall be complete, internally consistent, and executable.
+
+---
+
+# Certification Asset Verification
+
+Implement executable verification that certification assets include:
+
+* certification suites;
+* validation scripts;
+* mutation scenarios;
+* reproducibility tooling;
+* evidence schemas;
+* provenance schemas;
+* replay definitions;
+* certification specifications.
+
+Every certification asset shall be discoverable through automated execution.
+
+---
+
+# Structural Integrity Verification
+
+Verify:
+
+* manifest completeness;
+* artifact uniqueness;
+* path validity;
+* hash integrity;
+* dependency consistency;
+* schema consistency;
+* configuration consistency;
+* documentation consistency.
+
+Structural integrity failures shall prevent certification execution.
+
+---
+
+# Missing Artifact Detection
+
+Automatically detect:
+
+* missing source files;
+* missing documentation;
+* missing manifests;
+* missing configuration;
+* missing certification assets;
+* unresolved dependencies;
+* duplicate artifacts;
+* orphaned repository components.
+
+Detection shall execute deterministically for every repository.
+
+---
+
+# Runtime Evidence Generation
+
+Every structural verification shall generate immutable evidence including:
+
+* verification identifier;
+* repository identifier;
+* manifest version;
+* discovered artifacts;
+* validation results;
+* integrity verification results;
+* missing artifact findings;
+* structural discrepancies;
+* timestamps;
+* overall verification status.
+
+Evidence shall be independently reproducible.
+
+---
+
+# Runtime Interfaces
+
+Implement deterministic interfaces supporting:
+
+* repository discovery;
+* manifest loading;
+* structural validation;
+* integrity verification;
+* artifact enumeration;
+* documentation verification;
+* configuration verification;
+* certification asset verification;
+* verification evidence retrieval.
+
+All interfaces shall return deterministic results for identical repositories.
+
+---
+
+# Fail-Closed Requirements
+
+The repository verification process shall reject:
+
+* incomplete repositories;
+* undocumented executable components;
+* missing required artifacts;
+* invalid manifests;
+* corrupted configuration;
+* unresolved dependencies;
+* integrity verification failures;
+* inconsistent repository structure.
+
+No repository with unresolved structural deficiencies shall proceed to certification.
+
+---
+
+# Behavioral Verification
+
+The behavioral certification suite shall verify:
+
+* deterministic repository discovery;
+* deterministic manifest validation;
+* complete artifact verification;
+* structural integrity verification;
+* documentation completeness verification;
+* certification asset verification;
+* missing artifact detection;
+* reproducible verification evidence;
+* fail-closed enforcement.
+
+Behavioral certification shall verify observable runtime behavior exclusively through independently reproducible execution and regenerated certification evidence.
