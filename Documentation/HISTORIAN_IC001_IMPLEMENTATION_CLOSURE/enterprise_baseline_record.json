@@ -1,0 +1,48 @@
+{
+  "baseline_artifacts": [
+    {
+      "exists": true,
+      "path": "src\\argos\\historian\\enterprise_information_journey.py",
+      "sha256": "37d02ae7b51a6a93f05e865a99e60fe3fcf5ede40b65eb23ace109db15ca1af2"
+    },
+    {
+      "exists": true,
+      "path": "Scripts\\historian_rm002a_behavioral_completion.py",
+      "sha256": "18bafaedc84357cb0db4d4a5bae6601a6901c74598311121353d204b51afd777"
+    },
+    {
+      "exists": true,
+      "path": "Scripts\\historian_ecs003_audit_003.py",
+      "sha256": "ad061ed1729ea0dda879bb6e08bb911b8300687f40e672d63d6f57ad8a954a45"
+    },
+    {
+      "exists": true,
+      "path": "Scripts\\historian_rm004_reproducibility_readiness.py",
+      "sha256": "ba6d4bf1ff70b6cf94f27013ec7c0b9b688eb5abb173007fcd8f49af989f7ead"
+    },
+    {
+      "exists": true,
+      "path": "Scripts\\historian_ecs004_audit_001.py",
+      "sha256": "4d6b3c3b4c83142761d6941ff58fc917285242d0c576f7097940226ed249927c"
+    }
+  ],
+  "baseline_id": "HISTORIAN-ENTERPRISE-BASELINE-IC001",
+  "candidate_digest": "8c8b2f8d80304b9cf548fe0e70823da3608488a9",
+  "certified_capabilities": [
+    "Enterprise Information Journey management",
+    "immutable historical custody",
+    "provenance generation",
+    "provenance graph management",
+    "deterministic reconstruction",
+    "deterministic replay",
+    "language preservation",
+    "missing-information preservation",
+    "Enterprise Learning retrieval interfaces",
+    "counterfactual historical support",
+    "behavioral evidence generation",
+    "certification evidence generation"
+  ],
+  "constitutional_status": "FROZEN_OPERATIONAL_BASELINE",
+  "operational_baseline_status": "PASS",
+  "preserved_certification_count": 3
+}

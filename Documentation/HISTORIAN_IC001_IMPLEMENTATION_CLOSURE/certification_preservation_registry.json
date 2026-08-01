@@ -1,0 +1,25 @@
+{
+  "candidate_digest": "8c8b2f8d80304b9cf548fe0e70823da3608488a9",
+  "certification_preservation_status": "PASS",
+  "preserved_certifications": [
+    {
+      "certification_id": "HISTORIAN-ECS003-AUDIT-003",
+      "decision": "ECS-003 CERTIFIED",
+      "preservation_condition": "valid while constitutional behavior, runtime behavior, interfaces, evidence generation, and replay remain equivalent",
+      "scope": "behavioral_certification_only"
+    },
+    {
+      "certification_id": "HISTORIAN-ECS004-AUDIT-001",
+      "decision": "ECS-004 CERTIFIED",
+      "preservation_condition": "valid while reproducibility remains independently demonstrable from repository execution",
+      "scope": "Historian Office ECS-004 reproducibility certification"
+    },
+    {
+      "certification_id": "HISTORIAN-RM-004",
+      "decision": "READY",
+      "preservation_condition": "valid while clean-room auditor automation and RM-004 evidence regeneration remain equivalent",
+      "scope": "ECS-004 readiness"
+    }
+  ],
+  "registry_id": "HISTORIAN-IC-001-CERTIFICATION-PRESERVATION"
+}
