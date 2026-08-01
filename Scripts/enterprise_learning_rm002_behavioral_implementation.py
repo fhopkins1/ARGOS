@@ -27,16 +27,10 @@ ORDER_ID = "ENTERPRISE-LEARNING-RM-002"
 OUTPUT_DIR = Path("Documentation") / "ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION"
 EXECUTION_UTC = "2026-08-01T16:30:00+00:00"
 SOURCE_ATTACHMENTS = (
-    (Path(r"C:\Users\Fletc\.codex\attachments\3c617b90-ba67-4883-9b0c-7b8f970174c3\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-001"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\6a8f0d56-520f-4f80-83f3-860f45680fa9\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-002"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\e341228a-5cb1-47c4-998d-39a7da23e572\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-003"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\9b6b237e-15c7-4db7-b294-a8556cb518c8\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-004"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\e1a4f388-6ee0-4fc8-81e1-cf74ebd315d8\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-005"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\a64d00c8-d6ea-4774-8c5a-dd55edd6a827\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-006"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\631a4f19-b13d-407d-b539-e6487928eda1\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-007"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\94e57dcc-55d0-45c6-87ad-79983b1dfc53\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-008"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\032fb2b8-9818-42e1-b6bb-303a2d66ad5f\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-009"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\bb017535-d990-43f1-bedb-e90a4267466c\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002-010"),
+    *(
+        (OUTPUT_DIR / "source_orders" / f"ENTERPRISE-LEARNING-RM-002-{index:03d}.txt", f"ENTERPRISE-LEARNING-RM-002-{index:03d}")
+        for index in range(1, 11)
+    ),
 )
 
 ORDERS = {

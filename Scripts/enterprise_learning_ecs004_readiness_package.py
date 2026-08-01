@@ -82,14 +82,21 @@ def generate() -> dict[str, Any]:
         "file_count": len(inventory),
         "file_inventory": inventory,
         "executable_entry_points": [
+            "python Scripts/enterprise_learning_ecs004_final_certification.py",
             "python Scripts/enterprise_learning_rm002_behavioral_implementation.py",
+            "python Scripts/enterprise_learning_rm002a_behavioral_completion.py",
             "python Scripts/enterprise_learning_ecs004_readiness_package.py",
             "python -m unittest Tests.test_enterprise_learning_rm002_runtime Tests.test_enterprise_learning_mo001_architecture_hardening Tests.test_enterprise_learning_rm001_constitutional_baseline Tests.test_learning_integration_office",
         ],
         "dependency_manifests": ["pyproject.toml"],
         "configuration_files": [path for path in tracked_files if path.endswith((".env.example", ".toml", ".json", ".yml", ".yaml"))],
         "test_modules": [path for path in tracked_files if path.startswith("Tests/test_enterprise_learning") or path == "Tests/test_learning_integration_office.py"],
-        "evidence_generators": ["Scripts/enterprise_learning_rm002_behavioral_implementation.py", "Scripts/enterprise_learning_ecs004_readiness_package.py"],
+        "evidence_generators": [
+            "Scripts/enterprise_learning_ecs004_final_certification.py",
+            "Scripts/enterprise_learning_rm002a_behavioral_completion.py",
+            "Scripts/enterprise_learning_rm002_behavioral_implementation.py",
+            "Scripts/enterprise_learning_ecs004_readiness_package.py",
+        ],
         "expected_output_locations": [str(OUTPUT_DIR), str(RM002_DIR), str(RM001_DIR), str(MO001_DIR)],
     }
 
@@ -261,11 +268,18 @@ def _installation_runbook() -> str:
 def _auditor_runbook() -> str:
     return """# ECS-004 Auditor Execution Runbook
 
-Authoritative command sequence:
+Authoritative single-command workflow:
+
+1. `python Scripts\\enterprise_learning_ecs004_final_certification.py`
+
+The command performs repository verification, dependency verification, behavioral regeneration, evidence generation, schema validation, deterministic comparison, mutation execution, Behavioral Completion Review, and certification report generation.
+
+Fallback diagnostic command sequence:
 
 1. `python Scripts\\enterprise_learning_rm002_behavioral_implementation.py`
 2. `python Scripts\\enterprise_learning_ecs004_readiness_package.py`
-3. `python -m unittest Tests.test_enterprise_learning_rm002_runtime Tests.test_enterprise_learning_mo001_architecture_hardening Tests.test_enterprise_learning_rm001_constitutional_baseline Tests.test_learning_integration_office`
+3. `python Scripts\\enterprise_learning_rm002a_behavioral_completion.py`
+4. `python -m unittest Tests.test_enterprise_learning_rm002a_behavioral_completion Tests.test_enterprise_learning_rm002_runtime Tests.test_enterprise_learning_mo001_architecture_hardening Tests.test_enterprise_learning_rm001_constitutional_baseline Tests.test_learning_integration_office`
 
 Expected result: all tests pass, RM-002 evidence regenerates, ECS-004 readiness manifests regenerate, and no network or external service is used.
 
@@ -365,13 +379,51 @@ def _hash_deliverables() -> str:
 
 
 def _copy_order() -> None:
-    source = Path(r"C:\Users\Fletc\.codex\attachments\6530a117-4893-43c3-951b-2d0a852d4f76\pasted-text.txt")
+    source = OUTPUT_DIR / "ENTERPRISE-LEARNING-ECS-004-READINESS-ORDER.txt"
     if source.exists():
         (OUTPUT_DIR / "ENTERPRISE-LEARNING-ECS-004-READINESS-ORDER.txt").write_text(source.read_text(encoding="utf-8", errors="replace"), encoding="utf-8")
 
 
 def _git(*args: str) -> str:
-    return subprocess.check_output(["git", *args], text=True).strip()
+    try:
+        return subprocess.check_output(["git", *args], text=True).strip()
+    except Exception:
+        files = _repository_files()
+        if args == ("ls-files",):
+            return "\n".join(files)
+        if args == ("rev-parse", "HEAD"):
+            return _repository_content_hash(files)
+        if args == ("rev-parse", "--short=12", "HEAD"):
+            return _repository_content_hash(files)[:12]
+        raise
+
+
+def _repository_files() -> list[str]:
+    excluded_dirs = {".git", "__pycache__", ".pytest_cache", ".mypy_cache", ".venv", "venv"}
+    excluded_suffixes = {".pyc", ".pyo", ".zip"}
+    rows: list[str] = []
+    for path in Path(".").rglob("*"):
+        if not path.is_file():
+            continue
+        parts = set(path.parts)
+        if parts & excluded_dirs:
+            continue
+        if path.suffix.lower() in excluded_suffixes:
+            continue
+        rows.append(path.as_posix())
+    return sorted(rows)
+
+
+def _repository_content_hash(files: list[str]) -> str:
+    digest = hashlib.sha256()
+    for file_name in sorted(files):
+        path = Path(file_name)
+        digest.update(file_name.encode("utf-8"))
+        digest.update(b"\0")
+        if path.exists():
+            digest.update(_hash_file(path).encode("ascii"))
+        digest.update(b"\n")
+    return digest.hexdigest()
 
 
 def _hash_text(text: str) -> str:

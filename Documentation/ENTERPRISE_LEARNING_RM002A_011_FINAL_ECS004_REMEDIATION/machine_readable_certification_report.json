@@ -1,0 +1,101 @@
+{
+  "baseline_comparison_results": {
+    "artifact_comparison_count": 15,
+    "disposition": "PASS",
+    "failures": [],
+    "regeneration_equivalence": true,
+    "source_report": "Documentation\\ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION\\baseline_equivalence_report.json"
+  },
+  "behaviors_discovered": 12,
+  "behaviors_executed": 12,
+  "constitutional_failures": [],
+  "evidence_regenerated": true,
+  "execution_environment": {
+    "architecture": "AMD64",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.5"
+  },
+  "execution_identifier": "EL-ECS004-FINAL-20260801T181500Z",
+  "mutation_results": {
+    "disposition": "PASS",
+    "mutation_count": 8,
+    "results": [
+      {
+        "disposition": "PASS",
+        "expected_failure": "UNKNOWN_DATASET",
+        "mutation": "missing dataset",
+        "mutation_id": "EL-RM002A-MUT-001",
+        "objective_evidence": true,
+        "observed_failure": "UNKNOWN_DATASET"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "UNKNOWN_DATASET",
+        "mutation": "missing feature lineage",
+        "mutation_id": "EL-RM002A-MUT-002",
+        "objective_evidence": true,
+        "observed_failure": "UNKNOWN_DATASET"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "HYPOTHESIS_MEASUREMENT_INVALID",
+        "mutation": "missing hypothesis uncertainty",
+        "mutation_id": "EL-RM002A-MUT-003",
+        "objective_evidence": true,
+        "observed_failure": "HYPOTHESIS_MEASUREMENT_INVALID"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "MODEL_EXPERIMENT_REQUIRED",
+        "mutation": "invalid model provenance",
+        "mutation_id": "EL-RM002A-MUT-004",
+        "objective_evidence": true,
+        "observed_failure": "MODEL_EXPERIMENT_REQUIRED"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "PUBLICATION_EVIDENCE_REQUIRED",
+        "mutation": "missing publication evidence",
+        "mutation_id": "EL-RM002A-MUT-005",
+        "objective_evidence": true,
+        "observed_failure": "PUBLICATION_EVIDENCE_REQUIRED"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "BOUNDARY_FAIL_CLOSED",
+        "mutation": "operational authority assignment",
+        "mutation_id": "EL-RM002A-MUT-006",
+        "objective_evidence": true,
+        "observed_failure": "BOUNDARY_FAIL_CLOSED"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "BOUNDARY_FAIL_CLOSED",
+        "mutation": "attempted enterprise truth mutation",
+        "mutation_id": "EL-RM002A-MUT-007",
+        "objective_evidence": true,
+        "observed_failure": "BOUNDARY_FAIL_CLOSED"
+      },
+      {
+        "disposition": "PASS",
+        "expected_failure": "PROVENANCE_GRAPH_FAIL",
+        "mutation": "orphan provenance edge",
+        "mutation_id": "EL-RM002A-MUT-008",
+        "objective_evidence": true,
+        "observed_failure": "PROVENANCE_GRAPH_FAIL"
+      }
+    ],
+    "source_report": "Documentation\\ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION\\mutation_verification_report.json",
+    "unexpected_results": []
+  },
+  "overall_certification_disposition": "PASS",
+  "overall_status": "PASS",
+  "repository_identity": "ddcfd0d9f70c59b14315962b0c300fe46c6f75d5bd03744b9233e0e79b3f6263",
+  "schemas_validated": {
+    "disposition": "PASS",
+    "invalid_evidence": [],
+    "schemas_validated": 13,
+    "source_report": "Documentation\\ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION\\evidence_validation_report.json"
+  },
+  "unresolved_deficiencies": []
+}

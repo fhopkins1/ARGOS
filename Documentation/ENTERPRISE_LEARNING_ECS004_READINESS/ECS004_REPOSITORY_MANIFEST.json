@@ -1,5 +1,5 @@
 {
-  "commit": "ce39d44f24f4a2d80f0e461427a5cdc0cd5da96e",
+  "commit": "e1546d3b9cfd5c9c9b8c9b945b0a27c79620843f",
   "configuration_files": [
     ".env.example",
     "AUDIT_TEST_SUMMARY.json",
@@ -847,6 +847,18 @@
     "Documentation/ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE/learning_product_architecture_assessment.json",
     "Documentation/ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE/manifest.json",
     "Documentation/ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE/mo001_readiness_determination.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/baseline_equivalence_report.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/behavioral_completion_evidence_runtime.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/behavioral_completion_review.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/certification_reporting_runtime.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/clean_room_reproducibility_certification.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/completion_report.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/deterministic_regeneration_report.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/evidence_validation_report.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/independent_auditor_runtime_report.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/manifest.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/mutation_verification_report.json",
+    "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/repository_independence_report.json",
     "Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION/behavioral_evidence_runtime_report.json",
     "Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION/behavioral_findings_registry.json",
     "Documentation/ENTERPRISE_LEARNING_RM002_BEHAVIORAL_IMPLEMENTATION/behavioral_implementation_review.json",
@@ -4644,11 +4656,15 @@
     "pyproject.toml"
   ],
   "evidence_generators": [
+    "Scripts/enterprise_learning_ecs004_final_certification.py",
+    "Scripts/enterprise_learning_rm002a_behavioral_completion.py",
     "Scripts/enterprise_learning_rm002_behavioral_implementation.py",
     "Scripts/enterprise_learning_ecs004_readiness_package.py"
   ],
   "executable_entry_points": [
+    "python Scripts/enterprise_learning_ecs004_final_certification.py",
     "python Scripts/enterprise_learning_rm002_behavioral_implementation.py",
+    "python Scripts/enterprise_learning_rm002a_behavioral_completion.py",
     "python Scripts/enterprise_learning_ecs004_readiness_package.py",
     "python -m unittest Tests.test_enterprise_learning_rm002_runtime Tests.test_enterprise_learning_mo001_architecture_hardening Tests.test_enterprise_learning_rm001_constitutional_baseline Tests.test_learning_integration_office"
   ],
@@ -4658,7 +4674,7 @@
     "Documentation\\ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE",
     "Documentation\\ENTERPRISE_LEARNING_MO001_ARCHITECTURE_HARDENING"
   ],
-  "file_count": 6874,
+  "file_count": 6898,
   "file_inventory": [
     {
       "bytes": "335",
@@ -9961,9 +9977,9 @@
       "sha256": "6db4a3b0a06f10a56d2e4291e7f56d25577c824d0ae9c5812ebe3ae5a7e16a48"
     },
     {
-      "bytes": "888",
+      "bytes": "1394",
       "path": "Documentation/ENTERPRISE_LEARNING_ECS004_READINESS/ECS004_AUDITOR_EXECUTION_RUNBOOK.md",
-      "sha256": "e19e6dec008e1683b0aa7b544da128c22f98fb5b19da2a76aef68933020ccf70"
+      "sha256": "aba66155cdac4b483f8342f707e7ce5977c6c9a677de173524852f15d89b54a4"
     },
     {
       "bytes": "7334",
@@ -10013,22 +10029,22 @@
     {
       "bytes": "1524",
       "path": "Documentation/ENTERPRISE_LEARNING_ECS004_READINESS/ECS004_PACKAGE_HASHES.sha256",
-      "sha256": "cde802be8c8c9703b677af7d36f2665520c0a4a005e825b84a85180d50171dc0"
+      "sha256": "656cabfd91292ee83c29fe8f0939ee479b3e1fba4f8c1b4bf44b17b0ccdeb20f"
     },
     {
-      "bytes": "2067251",
+      "bytes": "2074668",
       "path": "Documentation/ENTERPRISE_LEARNING_ECS004_READINESS/ECS004_REPOSITORY_MANIFEST.json",
-      "sha256": "e9c75980579a9f1d70e190de49f55a7f15b9db36759bc1456fb68a09d78fcc58"
+      "sha256": "cf4d49efa5fa9846add25738bb8e1ed501bd58933adaf4da673adce918d2b29b"
     },
     {
-      "bytes": "602",
+      "bytes": "744",
       "path": "Documentation/ENTERPRISE_LEARNING_ECS004_READINESS/ECS004_REPOSITORY_MANIFEST.md",
-      "sha256": "19cae6b78fece66101a8a980e7783ae08273e4699334263f117ba1ec3f804353"
+      "sha256": "92a41d0771c83eb3d09fbd8f32e616675678e3bc5a996be8894062446bbb8af4"
     },
     {
       "bytes": "562",
       "path": "Documentation/ENTERPRISE_LEARNING_ECS004_READINESS/ECS004_SUBMISSION_COMPLETENESS_REPORT.md",
-      "sha256": "f990d84598201af98447a586c69783714d6e0656d30dbbec33fbbb7694d83bbc"
+      "sha256": "bd3b1495cfe63439f44e33fcc73b6afaa87cc5660c27af2e91f79404e934c670"
     },
     {
       "bytes": "8943",
@@ -10043,12 +10059,12 @@
     {
       "bytes": "463",
       "path": "Documentation/ENTERPRISE_LEARNING_MO001_ARCHITECTURE_HARDENING/completion_report.json",
-      "sha256": "51f84db128d318cab2fb51f81191c74f9156875117f5eb5e1e4edb9cb79f6907"
+      "sha256": "cd226e0b2d569d32d0e8f618eb5d2106357d9b8805111e3d1ed47dc453d24614"
     },
     {
       "bytes": "1320",
       "path": "Documentation/ENTERPRISE_LEARNING_MO001_ARCHITECTURE_HARDENING/constitutional_architecture_certification_report.json",
-      "sha256": "c52721bed2352deca682557eb5ef2ac1ff74f48e86f2db5b16f5c89c19e74a0b"
+      "sha256": "2cd7c91098bba0fa17bb88c94c509baa06f91955c33f88d3a43fa8e767beefa5"
     },
     {
       "bytes": "2417",
@@ -10093,7 +10109,7 @@
     {
       "bytes": "1579",
       "path": "Documentation/ENTERPRISE_LEARNING_MO001_ARCHITECTURE_HARDENING/manifest.json",
-      "sha256": "b4d4b7bc03c223ec889ea6c0f9fb513dc318b8c7b90484917d57482f6241655a"
+      "sha256": "c5ca279e612c4ec2d54e55a5d57a978ae54e9a744efad273f9b339e8032167b2"
     },
     {
       "bytes": "10419",
@@ -10183,7 +10199,7 @@
     {
       "bytes": "454",
       "path": "Documentation/ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE/completion_report.json",
-      "sha256": "68442557ba9280a8d1f57a32bc2020835b86c0d1bce1bd7cbcd14359f56f4356"
+      "sha256": "74eb727347f088620108d7f57fe85b473bb8fa7f1be1acec2b7899c45573708a"
     },
     {
       "bytes": "3225",
@@ -10238,7 +10254,7 @@
     {
       "bytes": "1665",
       "path": "Documentation/ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE/manifest.json",
-      "sha256": "e4776909f794c279c8b1f1b58b3a9d10d1d2175ea1ab199ded3cdd85caeaa1a8"
+      "sha256": "fe03d6b631c7331dd9385b62553ff0f6824d861d8f94a2fc87ccd5b2249ebd00"
     },
     {
       "bytes": "222",
@@ -10294,6 +10310,116 @@
       "bytes": "19170",
       "path": "Documentation/ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE/source_orders/ENTERPRISE-LEARNING-RM-001-010.txt",
       "sha256": "13da394c7a090d90c3abd1232742f93d6d0e93062de53ff4d58dc8ccf6823b47"
+    },
+    {
+      "bytes": "13628",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/baseline_equivalence_report.json",
+      "sha256": "0813f5f8043a8c703d987c0b2a68f38644881bdef5902ac5c09ef38f018c3cba"
+    },
+    {
+      "bytes": "1765",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/behavioral_completion_evidence_runtime.json",
+      "sha256": "4acc79a3ad28947e7964149bc8869a179878c7575bbf41be4e9db850601e092a"
+    },
+    {
+      "bytes": "365",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/behavioral_completion_review.json",
+      "sha256": "91cd043a8cdb610ad4c2351c329e15c492eeeb214bd826a81be58bb92410be45"
+    },
+    {
+      "bytes": "631",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/certification_reporting_runtime.json",
+      "sha256": "f936b7444831336259aec14777fa961704a242d712aee3cae42864f6cef04a34"
+    },
+    {
+      "bytes": "377",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/clean_room_reproducibility_certification.json",
+      "sha256": "375678bcf4914286864c105b246d180bcb062cef1b6e737bd646d40385a577e7"
+    },
+    {
+      "bytes": "355",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/completion_report.json",
+      "sha256": "b405f56b916bf8eb8a862e187de8fb989fba2ab24e84569fd08b4c6c63f7535a"
+    },
+    {
+      "bytes": "3475",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/deterministic_regeneration_report.json",
+      "sha256": "f4086e04a40a7269281c2971f125a304de67630cf8587615ca763e64201fb216"
+    },
+    {
+      "bytes": "333",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/evidence_validation_report.json",
+      "sha256": "ef5bb7ecddfa6be97ad90ab8e997f3a6e6905c61dc24ecf4c03112341d733827"
+    },
+    {
+      "bytes": "324",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/independent_auditor_runtime_report.json",
+      "sha256": "830452c5d0c15a4d2fb33f700d0c9c51d23ee5f65251881e6ffda7e1a50271a4"
+    },
+    {
+      "bytes": "716",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/manifest.json",
+      "sha256": "e8b2db5af34f380457ff8c3510fd08a0bb8eae64a9f1112c255790c9eff237c9"
+    },
+    {
+      "bytes": "2367",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/mutation_verification_report.json",
+      "sha256": "37a5919945de84bda4c324da0edd76d62dbda592fb3186ce2d036c5e6246b6e3"
+    },
+    {
+      "bytes": "633",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/repository_independence_report.json",
+      "sha256": "f69ffd2ca481e4a831afbfce8b643bb605abf46a84765094d28250dd2722760f"
+    },
+    {
+      "bytes": "6095",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-001.txt",
+      "sha256": "988f634ce8232b1dc7387eb8723d074787d73f497cde2a4876484e06a5e366d4"
+    },
+    {
+      "bytes": "5755",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-002.txt",
+      "sha256": "01557e9579b5b4cfd68064aff1d58035798ac86d0d3efc2ca5e58fdf8b2cc528"
+    },
+    {
+      "bytes": "6427",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-003.txt",
+      "sha256": "89badcd1c4031021cbe9499bb82ae14b39220f4aeb73e2005b77626f6f5e5aaa"
+    },
+    {
+      "bytes": "6161",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-004.txt",
+      "sha256": "06db0c2e33818fd9a5e867ddcc370f4141f273de43e1627ac5030b54340d8f41"
+    },
+    {
+      "bytes": "5562",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-005.txt",
+      "sha256": "cd98554e3326c07bf2db726b17073c1807268a4b0d5f225447f2b31883b7adb0"
+    },
+    {
+      "bytes": "6628",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-006.txt",
+      "sha256": "0657632b3f3b5e57026357fbeef1b212c2efb5198fecfb00b9427444f970e1be"
+    },
+    {
+      "bytes": "7261",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-007.txt",
+      "sha256": "ce9edb9c09d793dd18130d3149756b1b2ecaf600a4a771b15fd2fe977521e5cf"
+    },
+    {
+      "bytes": "7801",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-008.txt",
+      "sha256": "5ff179f1f62f1433875d56a40478a4d07cb31a55b33a137a116b2f50c820c601"
+    },
+    {
+      "bytes": "7728",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-009.txt",
+      "sha256": "5d9a36f403019113208dfe5a6bcbccbd291f2958247979d0c9f2604fdc2a5361"
+    },
+    {
+      "bytes": "6141",
+      "path": "Documentation/ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION/source_orders/ENTERPRISE-LEARNING-RM-002A-010.txt",
+      "sha256": "8b22edf2958de43600b57dd82440fbf271fdcfe3b5b6fb2efaee04535f5f6acf"
     },
     {
       "bytes": "7875",
@@ -34971,24 +35097,29 @@
       "sha256": "d971ec790f23ba3becd68df0dd986b71bf6b503714f84a98ca34518c57eb08b9"
     },
     {
-      "bytes": "22382",
+      "bytes": "24451",
       "path": "Scripts/enterprise_learning_ecs004_readiness_package.py",
-      "sha256": "af651f938dcef74be08bd37b0e9194d11a4804a049feffa202ff64e46a9f4c6d"
+      "sha256": "39a9a7e5d978726ead9d26779416f9e6824711a4ab581df17aecf89bd1117b00"
     },
     {
-      "bytes": "19993",
+      "bytes": "18801",
       "path": "Scripts/enterprise_learning_mo001_architecture_hardening.py",
-      "sha256": "ad808fe405f727b189648640bdd22b60d5b55442af47338696da1a0f95a2e4e3"
+      "sha256": "969413ffe6df721a95b2e78579dabaa391afa563317350a3a279e94ed4b0f4c4"
     },
     {
-      "bytes": "20023",
+      "bytes": "18831",
       "path": "Scripts/enterprise_learning_rm001_constitutional_baseline.py",
-      "sha256": "f999ea8f8898bc6f5ead5e092b861107c2b20c14b2f9660f230752e1ed909c30"
+      "sha256": "4d1f7bb040500860321bd772fe52d9a8733583346bf7f0a294babaadae10767e"
     },
     {
-      "bytes": "15330",
+      "bytes": "14138",
       "path": "Scripts/enterprise_learning_rm002_behavioral_implementation.py",
-      "sha256": "dadfd320192212cd8486d818afba7d219177e5d0c547906eb1d594040a3bc215"
+      "sha256": "673f63f170d8f72156de73b7192c34c12a81e80aea0826fb14fb95286ced0426"
+    },
+    {
+      "bytes": "18022",
+      "path": "Scripts/enterprise_learning_rm002a_behavioral_completion.py",
+      "sha256": "b0236d7904030199396b50ff8e0c1e5a886b1d3c9ee273879d44d680fc8eefc8"
     },
     {
       "bytes": "24587",
@@ -35929,6 +36060,11 @@
       "bytes": "5777",
       "path": "Tests/test_enterprise_learning_rm002_runtime.py",
       "sha256": "84e7c2befb1e1fb4f874253524b594dc1b627d84a3ea86043ee09c6d56946494"
+    },
+    {
+      "bytes": "2438",
+      "path": "Tests/test_enterprise_learning_rm002a_behavioral_completion.py",
+      "sha256": "63639d36ff4e45c7a4efaff96177dbbab7564fb3760560a1e20c205a221076a3"
     },
     {
       "bytes": "7918",
@@ -39033,11 +39169,12 @@
   ],
   "order_id": "ENTERPRISE-LEARNING-ECS-004-READINESS-ORDER",
   "repository_identifier": "ARGOS Enterprise Learning Office",
-  "short_commit": "ce39d44f24f4",
+  "short_commit": "e1546d3b9cfd",
   "test_modules": [
     "Tests/test_enterprise_learning_mo001_architecture_hardening.py",
     "Tests/test_enterprise_learning_rm001_constitutional_baseline.py",
     "Tests/test_enterprise_learning_rm002_runtime.py",
+    "Tests/test_enterprise_learning_rm002a_behavioral_completion.py",
     "Tests/test_learning_integration_office.py"
   ]
 }

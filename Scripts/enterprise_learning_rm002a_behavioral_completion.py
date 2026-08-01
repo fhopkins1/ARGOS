@@ -27,16 +27,10 @@ ORDER_ID = "ENTERPRISE-LEARNING-RM-002A"
 OUTPUT_DIR = Path("Documentation") / "ENTERPRISE_LEARNING_RM002A_BEHAVIORAL_COMPLETION"
 EXECUTION_UTC = "2026-08-01T18:00:00+00:00"
 SOURCE_ATTACHMENTS = (
-    (Path(r"C:\Users\Fletc\.codex\attachments\ba9b1f8d-94f7-4b29-b56b-dc141cb3f9f1\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-001"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\5aaa2bae-c49f-4929-9752-bcf042d32674\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-002"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\396d4a44-69e0-4a44-8c8e-ddfa79d6be2e\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-003"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\9e22f841-7a83-4a59-a70a-df3fd100ebfa\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-004"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\09cfa2f9-261d-4069-8206-374164a3f9e9\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-005"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\6df4f72b-6194-4e98-99ff-55645c0b9dae\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-006"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\0c79a77d-0176-440a-aebd-04e43f9a3f3e\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-007"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\a26952e9-0eb5-43e7-8969-5da89c184167\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-008"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\42d68063-312e-4524-98a9-851f2e9c61e8\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-009"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\a3a0f7d7-1755-42c1-8a9e-453ce09b50f4\pasted-text.txt"), "ENTERPRISE-LEARNING-RM-002A-010"),
+    *(
+        (OUTPUT_DIR / "source_orders" / f"ENTERPRISE-LEARNING-RM-002A-{index:03d}.txt", f"ENTERPRISE-LEARNING-RM-002A-{index:03d}")
+        for index in range(1, 11)
+    ),
 )
 
 ORDERS = {
@@ -358,7 +352,29 @@ def _write_json(name: str, payload: Any) -> None:
 
 
 def _git(*args: str) -> str:
-    return subprocess.check_output(["git", *args], text=True).strip()
+    try:
+        return subprocess.check_output(["git", *args], text=True).strip()
+    except Exception:
+        if args == ("rev-parse", "HEAD"):
+            return _repository_content_hash()
+        raise
+
+
+def _repository_content_hash() -> str:
+    digest = hashlib.sha256()
+    for path in sorted(Path(".").rglob("*")):
+        if not path.is_file():
+            continue
+        if {".git", "__pycache__", ".pytest_cache", ".venv", "venv"} & set(path.parts):
+            continue
+        if path.suffix.lower() in {".pyc", ".pyo", ".zip"}:
+            continue
+        name = path.as_posix()
+        digest.update(name.encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(_hash_file(path).encode("ascii"))
+        digest.update(b"\n")
+    return digest.hexdigest()
 
 
 def _hash_text(text: str) -> str:

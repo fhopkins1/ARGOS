@@ -11,16 +11,10 @@ OUTPUT_DIR = Path("Documentation") / "ENTERPRISE_LEARNING_MO001_ARCHITECTURE_HAR
 BASELINE_DIR = Path("Documentation") / "ENTERPRISE_LEARNING_RM001_CONSTITUTIONAL_BASELINE"
 EXECUTION_UTC = "2026-08-01T01:45:00+00:00"
 SOURCE_ATTACHMENTS = (
-    (Path(r"C:\Users\Fletc\.codex\attachments\d14ace14-9e21-4d1c-a14d-eb144be8156c\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-001"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\a1c91792-b15c-4944-add3-3261d754fb85\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-002"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\8a3669eb-167b-44ce-b6f1-416d7ce8623a\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-003"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\851bdea7-96d8-4e55-90c5-cd057f8b39b9\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-004"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\8a439dce-e834-4217-8382-c323b12efa11\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-005"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\314ad626-7645-401b-861a-b2d453b24b4c\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-006"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\44a139ee-f9b3-4958-9c59-9d3c72dc29a0\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-007"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\b802a2cc-3e3d-443b-9304-da3b15f30762\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-008"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\0b8c5f62-0ca3-43ea-b645-e361be30d62a\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-009"),
-    (Path(r"C:\Users\Fletc\.codex\attachments\739b3596-0c1c-4970-b004-c9b4857bdd5f\pasted-text.txt"), "ENTERPRISE-LEARNING-MO-001-010"),
+    *(
+        (OUTPUT_DIR / "source_orders" / f"ENTERPRISE-LEARNING-MO-001-{index:03d}.txt", f"ENTERPRISE-LEARNING-MO-001-{index:03d}")
+        for index in range(1, 11)
+    ),
 )
 
 ORDERS = {
